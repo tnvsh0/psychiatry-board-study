@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "metadata": {
+    "style": "Sketchy-medical-inspired animal mnemonics",
+    "language_of_description": "Hebrew + English",
+    "purpose": "Inject into image/video prompts so the same concept always evokes the same animal symbol across all daily-study artifacts",
+    "design_rules": [
+      "Each symbol should be an ANIMAL or animal-action whenever possible",
+      "Symbol should evoke the receptor name phonetically OR its clinical function",
+      "Same animal across all images for the same entity (color/size/action can vary)",
+      "When a drug TARGETS the receptor, depict the drug interacting with the animal (chained, fed, blocked, riding, etc.)",
+      "Antagonist = chains/cage/muzzle. Agonist = feeding/freeing/riding. Inverse agonist = mirror/upside-down."
+    ]
+  },
+  "symbols": {
+
+    "_BATCH_1A_dopamine_serotonin": "═══════════════════════════════════════════",
+
+    "D1_receptor": {
+      "category": "Dopamine receptor (Gs, excitatory)",
+      "animal": "Diamond-shelled Beetle (חיפושית יהלום)",
+      "visual": "A sparkling beetle with a diamond-shaped shell, jumping/active",
+      "function_link": "Gs → excitatory. 'D-1' → 'Diamond, first-class'. Beetle jumping = excitation.",
+      "use_when": "PFC dopamine, motor activation, working memory, D1-family discussions"
+    },
+    "D2_receptor": {
+      "category": "Dopamine receptor (Gi, inhibitory) — most clinically important",
+      "animal": "Big Brown Bear (דוב חום גדול)",
+      "visual": "A large brown bear with TWO prominent ears (D-2). When antipsychotic acts → bear is chained/muzzled. When psychosis → bear is wild and roaring.",
+      "function_link": "D2 antagonism = THE antipsychotic mechanism. Bear must be tamed.",
+      "use_when": "Antipsychotics, schizophrenia, EPS, hyperprolactinemia (bear pulls 'milk' chain)"
+    },
+    "D3_receptor": {
+      "category": "Dopamine receptor (Gi, limbic)",
+      "animal": "Three-toed Sloth (עצלן בעל שלוש אצבעות)",
+      "visual": "A slow sloth hanging from limbic-shaped tree branches",
+      "function_link": "D-3 → three toes. Limbic distribution → emotional/slow. Cariprazine targets D3.",
+      "use_when": "Cariprazine, limbic dopamine, addiction circuits, anhedonia"
+    },
+    "D4_receptor": {
+      "category": "Dopamine receptor (Gi, novel antipsychotic target)",
+      "animal": "Four-armed Octopus (תמנון בעל ארבע זרועות)",
+      "visual": "An octopus with exactly 4 highlighted arms holding a clozapine pill",
+      "function_link": "D-4 → four arms. Clozapine binds D4 prominently. Limited motor side effects.",
+      "use_when": "Clozapine, novel antipsychotics, ADHD pathophysiology"
+    },
+    "D5_receptor": {
+      "category": "Dopamine receptor (Gs, hippocampal)",
+      "animal": "Five-pointed Starfish (כוכב ים בעל חמש זרועות)",
+      "visual": "A purple starfish with 5 limbs, on a hippocampus-shaped seabed",
+      "function_link": "D-5 → five points. Hippocampal distribution. D1-family co-member.",
+      "use_when": "Memory, hippocampal dopamine. Less common in daily clinical context."
+    },
+
+    "5-HT1A_receptor": {
+      "category": "Serotonin receptor (Gi, autoreceptor + postsynaptic)",
+      "animal": "Wise Owl (ינשוף חכם)",
+      "visual": "A calm owl sitting on a branch — eyes closed, meditating. Buspirone offers it a peace pipe.",
+      "function_link": "5-HT-ONE-A → 'OWL-A'. Calm/wise owl = anxiolytic effect. Partial agonists (buspirone, vilazodone, vortioxetine, aripiprazole) feed the owl.",
+      "use_when": "Buspirone, vilazodone, vortioxetine, aripiprazole, serotonergic anxiolysis"
+    },
+    "5-HT2A_receptor": {
+      "category": "Serotonin receptor (Gq, cortical) — antipsychotic + psychedelic target",
+      "animal": "Two-headed Tiger (טיגריס דו-ראשי)",
+      "visual": "A striped tiger with TWO heads facing opposite directions — one hallucinating (psychedelic), one antipsychotic-blocked",
+      "function_link": "5-HT-TWO-A. Psychedelics (LSD) = agonist → hallucinating head free. Atypical antipsychotics = antagonist → muzzle on the other head.",
+      "use_when": "All atypical antipsychotics, hallucinogens, pimavanserin (inverse agonist), trazodone, mirtazapine"
+    },
+    "5-HT2C_receptor": {
+      "category": "Serotonin receptor (Gq, hypothalamic)",
+      "animal": "Chubby Cougar / Cookie Cougar (פומה שמנמנה)",
+      "visual": "A round, well-fed cougar guarding a cookie jar. When 2C is BLOCKED (mirtazapine, olanzapine) — the cougar steals all the cookies → weight gain.",
+      "function_link": "5-HT-2-C → 2 Cs (Chubby Cougar with Cookies). Blockade → ↑appetite, weight gain. Activation (lorcaserin) → weight loss.",
+      "use_when": "Weight gain side effects of mirtazapine/olanzapine/quetiapine, lorcaserin (withdrawn), trazodone"
+    },
+    "5-HT3_receptor": {
+      "category": "Serotonin receptor (LIGAND-GATED ION CHANNEL — unique!) — GI/CTZ",
+      "animal": "Three-Headed Sea Snake (נחש ים תלת-ראשי)",
+      "visual": "A snake with 3 hissing heads in the gut — vomiting fire. Ondansetron caps each head. Mirtazapine and vortioxetine also block.",
+      "function_link": "5-HT-3 → three heads. The ONLY ionotropic 5-HT receptor. Located on CTZ + gut = nausea/vomiting.",
+      "use_when": "Nausea, vomiting, mirtazapine antiemetic effect, vortioxetine, antiemetics (ondansetron family)"
+    },
+    "5-HT6_receptor": {
+      "category": "Serotonin receptor (Gs, cortical/striatal)",
+      "animal": "Six-legged Centipede in a thinking cap (נדל בעל שש רגליים)",
+      "visual": "A centipede with 6 emphasized legs wearing a tiny graduation cap, helping a brain study",
+      "function_link": "5-HT-6 → six legs. Cognitive enhancement target. Antagonism → procognitive (some atypicals).",
+      "use_when": "Cognition in schizophrenia, vortioxetine (5-HT6 antagonist), procognitive effects"
+    },
+    "5-HT7_receptor": {
+      "category": "Serotonin receptor (Gs, suprachiasmatic + hippocampal)",
+      "animal": "Seven Swans circling a clock (שבעה ברבורים)",
+      "visual": "Seven swans flying in a circle around a 7 o'clock clock-face (circadian rhythm)",
+      "function_link": "5-HT-7 → seven swans. Circadian rhythm + mood. Lurasidone is a key antagonist (antidepressant effect).",
+      "use_when": "Lurasidone, circadian rhythm disorders, bipolar depression, vortioxetine"
+    },
+    "SERT": {
+      "category": "Serotonin transporter (target of SSRIs/SNRIs/TCAs)",
+      "animal": "Sponge Sucker-fish (דג סופג סרוטונין)",
+      "visual": "A sponge-like fish vacuuming up serotonin molecules from the synapse. SSRI = a cork plugging the sponge's intake.",
+      "function_link": "SERT pulls serotonin BACK into presynaptic neuron. Block it → more serotonin in synapse.",
+      "use_when": "All SSRIs, SNRIs, TCAs (some), vortioxetine, SARIs"
+    },
+
+    "_BATCH_1B_other_receptors": "═══════════════════════ TBD next round ═══════════════════════",
+    "_BATCH_2_neurotransmitters_pathways": "═══════════════════════ TBD ═══════════════════════",
+    "_BATCH_3_brain_regions": "═══════════════════════ TBD ═══════════════════════",
+    "_BATCH_4_side_effect_mechanisms": "═══════════════════════ TBD ═══════════════════════",
+    "_BATCH_5_DSM_categories": "═══════════════════════ TBD ═══════════════════════",
+    "_BATCH_6_drug_families": "═══════════════════════ TBD ═══════════════════════"
+  }
+}
