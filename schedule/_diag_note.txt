@@ -1,0 +1,1679 @@
+Matched: 42d472f1-2a4... (Diagnoses inventory (script))
+ID: 42d472f1-2a49-4995-b6f5-9d6f32b7f9a4
+Title: Diagnoses inventory (script)
+Content:
+{
+  "diagnoses": [
+    {
+      "name_en": "Intellectual Developmental Disorder (Intellectual 
+Disability)",
+      "name_he": "מוגבלות שכלית התפתחותית",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F70-F73",
+      "dsm_page": 37,
+      "dulcan_chapter": "Chapter 7",
+      "dulcan_page": 112,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe",
+        "Profound"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Depressive disorders",
+        "Bipolar disorders",
+        "Anxiety disorders",
+        "ASD",
+        "Cerebral palsy",
+        "Epilepsy"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Global Developmental Delay",
+      "name_he": "עיכוב התפתחותי גלובלי",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F88",
+      "dsm_page": 46,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Language Disorder",
+      "name_he": "הפרעת שפה",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F80.2",
+      "dsm_page": 47,
+      "dulcan_chapter": "Chapter 9",
+      "dulcan_page": 160,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "ASD",
+        "Specific Learning Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Speech Sound Disorder",
+      "name_he": "הפרעת הגיית צלילים",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F80.0",
+      "dsm_page": 50,
+      "dulcan_chapter": "Chapter 9",
+      "dulcan_page": 160,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Language Disorder",
+        "Specific Learning Disorder"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Childhood-Onset Fluency Disorder (Stuttering)",
+      "name_he": "גמגום",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F80.81",
+      "dsm_page": 51,
+      "dulcan_chapter": "Chapter 9",
+      "dulcan_page": 160,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Language Disorder",
+        "Specific Learning Disorder"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Social (Pragmatic) Communication Disorder",
+      "name_he": "הפרעה בתקשורת חברתית (פרגמטית)",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F80.82",
+      "dsm_page": 54,
+      "dulcan_chapter": "Chapter 9",
+      "dulcan_page": 164,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "Specific Learning Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Autism Spectrum Disorder",
+      "name_he": "הפרעה על הספקטרום האוטיסטי",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F84.0",
+      "dsm_page": 56,
+      "dulcan_chapter": "Chapter 8",
+      "dulcan_page": 139,
+      "key_subtypes": [
+        "Requiring support",
+        "Requiring substantial support",
+        "Requiring very substantial support",
+        "With/without intellectual impairment",
+        "With/without language impairment"
+      ],
+      "comorbidities_common": [
+        "Intellectual Disability",
+        "ADHD",
+        "Anxiety disorders",
+        "Depression",
+        "Epilepsy",
+        "OCD"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Attention-Deficit/Hyperactivity Disorder",
+      "name_he": "הפרעת קשב וריכוז",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F90.x",
+      "dsm_page": 68,
+      "dulcan_chapter": "Chapter 10",
+      "dulcan_page": 173,
+      "key_subtypes": [
+        "Combined",
+        "Predominantly Inattentive",
+        "Predominantly Hyperactive/Impulsive"
+      ],
+      "comorbidities_common": [
+        "ODD",
+        "Conduct Disorder",
+        "Anxiety disorders",
+        "Depression",
+        "Specific Learning Disorder"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Specific Learning Disorder",
+      "name_he": "לקות למידה ספציפית",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F81.x",
+      "dsm_page": 76,
+      "dulcan_chapter": "Chapter 9",
+      "dulcan_page": 166,
+      "key_subtypes": [
+        "With impairment in reading",
+        "With impairment in written expression",
+        "With impairment in mathematics"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Communication Disorders",
+        "Anxiety disorders",
+        "Depression"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Developmental Coordination Disorder",
+      "name_he": "הפרעה בהתפתחות הקואורדינציה",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F82",
+      "dsm_page": 85,
+      "dulcan_chapter": "Chapter 9",
+      "dulcan_page": 169,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "ASD",
+        "Specific Learning Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Stereotypic Movement Disorder",
+      "name_he": "הפרעת תנועה סטריאוטיפית",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F98.4",
+      "dsm_page": 89,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With self-injurious behavior",
+        "Without self-injurious behavior"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Intellectual Disability"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Tourette's Disorder",
+      "name_he": "תסמונת טורט",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F95.2",
+      "dsm_page": 93,
+      "dulcan_chapter": "Chapter 20",
+      "dulcan_page": 439,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "OCD",
+        "Anxiety disorders",
+        "Depression"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Persistent (Chronic) Motor or Vocal Tic Disorder",
+      "name_he": "הפרעת טיקים מוטורית או קולית כרונית",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F95.1",
+      "dsm_page": 93,
+      "dulcan_chapter": "Chapter 20",
+      "dulcan_page": 439,
+      "key_subtypes": [
+        "With motor tics only",
+        "With vocal tics only"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "OCD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Provisional Tic Disorder",
+      "name_he": "הפרעת טיקים זמנית",
+      "dsm_category": "Neurodevelopmental Disorders",
+      "icd_code": "F95.0",
+      "dsm_page": 93,
+      "dulcan_chapter": "Chapter 20",
+      "dulcan_page": 439,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "OCD"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Schizophrenia",
+      "name_he": "סכיזופרניה",
+      "dsm_category": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "icd_code": "F20.9",
+      "dsm_page": 101,
+      "dulcan_chapter": "Chapter 18",
+      "dulcan_page": 389,
+      "key_subtypes": [
+        "First episode",
+        "Multiple episodes",
+        "Continuous"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Mood disorders",
+        "Substance use disorders",
+        "Anxiety disorders"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Schizoaffective Disorder",
+      "name_he": "הפרעה סכיזואפקטיבית",
+      "dsm_category": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "icd_code": "F25.0, F25.1",
+      "dsm_page": 121,
+      "dulcan_chapter": "Chapter 18",
+      "dulcan_page": 397,
+      "key_subtypes": [
+        "Bipolar type",
+        "Depressive type"
+      ],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Schizophreniform Disorder",
+      "name_he": "הפרעה סכיזופרניפורמית",
+      "dsm_category": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "icd_code": "F20.81",
+      "dsm_page": 111,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Mood disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Brief Psychotic Disorder",
+      "name_he": "הפרעה פסיכוטית קצרה",
+      "dsm_category": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "icd_code": "F23",
+      "dsm_page": 110,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With marked stressor",
+        "Without marked stressor",
+        "With peripartum onset"
+      ],
+      "comorbidities_common": [],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Attenuated Psychosis Syndrome",
+      "name_he": "תסמונת פסיכוזה מוחלשת",
+      "dsm_category": "Conditions for Further Study",
+      "icd_code": "F28",
+      "dsm_page": 904,
+      "dulcan_chapter": "Chapter 18",
+      "dulcan_page": 390,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Anxiety",
+        "Depressive disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Bipolar I Disorder",
+      "name_he": "הפרעה דו-קוטבית מסוג I",
+      "dsm_category": "Bipolar and Related Disorders",
+      "icd_code": "F31.x",
+      "dsm_page": 139,
+      "dulcan_chapter": "Chapter 14",
+      "dulcan_page": 288,
+      "key_subtypes": [
+        "Manic",
+        "Depressed",
+        "Mixed features",
+        "Rapid cycling",
+        "Psychotic features"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "ODD",
+        "Conduct disorder",
+        "Anxiety disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Bipolar II Disorder",
+      "name_he": "הפרעה דו-קוטבית מסוג II",
+      "dsm_category": "Bipolar and Related Disorders",
+      "icd_code": "F31.81",
+      "dsm_page": 150,
+      "dulcan_chapter": "Chapter 14",
+      "dulcan_page": 288,
+      "key_subtypes": [
+        "Current/most recent episode depressed",
+        "Current/most recent episode hypomanic",
+        "With anxious distress",
+        "With mixed features"
+      ],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Substance use disorders",
+        "Eating disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Cyclothymic Disorder",
+      "name_he": "הפרעה ציקלותימית",
+      "dsm_category": "Bipolar and Related Disorders",
+      "icd_code": "F34.0",
+      "dsm_page": 157,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With anxious distress"
+      ],
+      "comorbidities_common": [
+        "Substance use disorders",
+        "Sleep disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Disruptive Mood Dysregulation Disorder",
+      "name_he": "הפרעת ויסות מצב רוח משובש",
+      "dsm_category": "Depressive Disorders",
+      "icd_code": "F34.81",
+      "dsm_page": 178,
+      "dulcan_chapter": "Chapter 13",
+      "dulcan_page": 266,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "ODD",
+        "Anxiety disorders",
+        "MDD"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Major Depressive Disorder",
+      "name_he": "הפרעת דיכאון מז'ורי",
+      "dsm_category": "Depressive Disorders",
+      "icd_code": "F32.x, F33.x",
+      "dsm_page": 183,
+      "dulcan_chapter": "Chapter 13",
+      "dulcan_page": 246,
+      "key_subtypes": [
+        "Single episode",
+        "Recurrent",
+        "With anxious distress",
+        "With melancholic features",
+        "With atypical features",
+        "With psychotic features"
+      ],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Substance use disorders",
+        "Eating disorders",
+        "ADHD",
+        "Borderline Personality Disorder"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Persistent Depressive Disorder",
+      "name_he": "הפרעת דיכאון מתמשכת (דיסתימיה)",
+      "dsm_category": "Depressive Disorders",
+      "icd_code": "F34.1",
+      "dsm_page": 193,
+      "dulcan_chapter": "Chapter 13",
+      "dulcan_page": 249,
+      "key_subtypes": [
+        "Early onset",
+        "Late onset",
+        "With pure dysthymic syndrome",
+        "With persistent major depressive episode"
+      ],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Substance use disorders",
+        "Personality disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Premenstrual Dysphoric Disorder",
+      "name_he": "הפרעה דיספורית קדם-וסתית",
+      "dsm_category": "Depressive Disorders",
+      "icd_code": "F32.81",
+      "dsm_page": 197,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "MDD",
+        "Anxiety disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Separation Anxiety Disorder",
+      "name_he": "הפרעת חרדת פרידה",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F93.0",
+      "dsm_page": 217,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 312,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Generalized Anxiety Disorder",
+        "Specific Phobia",
+        "Depression"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Selective Mutism",
+      "name_he": "אילמות סלקטיבית",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F94.0",
+      "dsm_page": 222,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 315,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Social Anxiety Disorder",
+        "Separation Anxiety Disorder",
+        "Specific Phobia"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Specific Phobia",
+      "name_he": "פוביה ספציפית",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F40.2xx",
+      "dsm_page": 224,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 314,
+      "key_subtypes": [
+        "Animal",
+        "Natural environment",
+        "Blood-injection-injury",
+        "Situational"
+      ],
+      "comorbidities_common": [
+        "Other anxiety disorders",
+        "Depression",
+        "Substance use disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Social Anxiety Disorder",
+      "name_he": "הפרעת חרדה חברתית",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F40.10",
+      "dsm_page": 229,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 313,
+      "key_subtypes": [
+        "Performance only"
+      ],
+      "comorbidities_common": [
+        "Other anxiety disorders",
+        "Depressive disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Panic Disorder",
+      "name_he": "הפרעת פאניקה",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F41.0",
+      "dsm_page": 235,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 316,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Agoraphobia",
+        "Major Depressive Disorder",
+        "Bipolar disorder",
+        "Substance use disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Agoraphobia",
+      "name_he": "אגורפוביה",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F40.00",
+      "dsm_page": 246,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 317,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Panic Disorder",
+        "Other anxiety disorders",
+        "Depressive disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Generalized Anxiety Disorder",
+      "name_he": "הפרעת חרדה מוכללת",
+      "dsm_category": "Anxiety Disorders",
+      "icd_code": "F41.1",
+      "dsm_page": 250,
+      "dulcan_chapter": "Chapter 15",
+      "dulcan_page": 311,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Social Anxiety Disorder",
+        "Separation Anxiety Disorder",
+        "Depressive disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Obsessive-Compulsive Disorder",
+      "name_he": "הפרעה טורדנית-כפייתית",
+      "dsm_category": "Obsessive-Compulsive and Related Disorders",
+      "icd_code": "F42.2",
+      "dsm_page": 265,
+      "dulcan_chapter": "Chapter 17",
+      "dulcan_page": 365,
+      "key_subtypes": [
+        "With good or fair insight",
+        "With poor insight",
+        "With absent insight/delusional beliefs",
+        "Tic-related"
+      ],
+      "comorbidities_common": [
+        "Tic disorders",
+        "ADHD",
+        "Anxiety disorders",
+        "Depressive disorders"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Body Dysmorphic Disorder",
+      "name_he": "הפרעת גוף דיסמורפית",
+      "dsm_category": "Obsessive-Compulsive and Related Disorders",
+      "icd_code": "F45.22",
+      "dsm_page": 271,
+      "dulcan_chapter": "Chapter 17",
+      "dulcan_page": 365,
+      "key_subtypes": [
+        "With muscle dysmorphia",
+        "With insight specifiers"
+      ],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "Social Anxiety Disorder",
+        "OCD"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Hoarding Disorder",
+      "name_he": "הפרעת אגירה",
+      "dsm_category": "Obsessive-Compulsive and Related Disorders",
+      "icd_code": "F42.3",
+      "dsm_page": 277,
+      "dulcan_chapter": "Chapter 17",
+      "dulcan_page": 365,
+      "key_subtypes": [
+        "With excessive acquisition",
+        "With insight specifiers"
+      ],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "Social Anxiety Disorder",
+        "GAD",
+        "OCD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Trichotillomania (Hair-Pulling Disorder)",
+      "name_he": "טריכוטילומניה",
+      "dsm_category": "Obsessive-Compulsive and Related Disorders",
+      "icd_code": "F63.3",
+      "dsm_page": 281,
+      "dulcan_chapter": "Chapter 17",
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "Excoriation Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Excoriation (Skin-Picking) Disorder",
+      "name_he": "חיטוט בעור",
+      "dsm_category": "Obsessive-Compulsive and Related Disorders",
+      "icd_code": "F42.4",
+      "dsm_page": 284,
+      "dulcan_chapter": "Chapter 17",
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "OCD",
+        "Trichotillomania",
+        "Major Depressive Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Reactive Attachment Disorder",
+      "name_he": "הפרעת התקשרות תגובתית",
+      "dsm_category": "Trauma- and Stressor-Related Disorders",
+      "icd_code": "F94.1",
+      "dsm_page": 295,
+      "dulcan_chapter": "Chapter 16",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Persistent",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "Developmental delays",
+        "Depressive disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Disinhibited Social Engagement Disorder",
+      "name_he": "הפרעת מעורבות חברתית חסרת עכבות",
+      "dsm_category": "Trauma- and Stressor-Related Disorders",
+      "icd_code": "F94.2",
+      "dsm_page": 298,
+      "dulcan_chapter": "Chapter 16",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Persistent",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Cognitive delays"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Posttraumatic Stress Disorder",
+      "name_he": "הפרעת דחק פוסט-טראומטית",
+      "dsm_category": "Trauma- and Stressor-Related Disorders",
+      "icd_code": "F43.10",
+      "dsm_page": 301,
+      "dulcan_chapter": "Chapter 16",
+      "dulcan_page": 345,
+      "key_subtypes": [
+        "In children 6 years and younger",
+        "With dissociative symptoms",
+        "With delayed expression"
+      ],
+      "comorbidities_common": [
+        "Depression",
+        "Anxiety",
+        "Substance use disorders",
+        "ODD"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Acute Stress Disorder",
+      "name_he": "הפרעת דחק אקוטית",
+      "dsm_category": "Trauma- and Stressor-Related Disorders",
+      "icd_code": "F43.0",
+      "dsm_page": 313,
+      "dulcan_chapter": "Chapter 16",
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depression",
+        "Anxiety disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Adjustment Disorders",
+      "name_he": "הפרעות הסתגלות",
+      "dsm_category": "Trauma- and Stressor-Related Disorders",
+      "icd_code": "F43.2x",
+      "dsm_page": 319,
+      "dulcan_chapter": "Chapter 16",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With depressed mood",
+        "With anxiety",
+        "With mixed anxiety and depressed mood",
+        "With disturbance of conduct"
+      ],
+      "comorbidities_common": [],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Prolonged Grief Disorder",
+      "name_he": "הפרעת אבל ממושך",
+      "dsm_category": "Trauma- and Stressor-Related Disorders",
+      "icd_code": "F43.8",
+      "dsm_page": 322,
+      "dulcan_chapter": "Chapter 16",
+      "dulcan_page": 349,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "PTSD"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Dissociative Identity Disorder",
+      "name_he": "הפרעת זהות דיסוציאטיבית",
+      "dsm_category": "Dissociative Disorders",
+      "icd_code": "F44.81",
+      "dsm_page": 330,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "PTSD",
+        "Depressive disorders",
+        "Substance use disorders",
+        "Borderline Personality Disorder"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Dissociative Amnesia",
+      "name_he": "אמנזיה דיסוציאטיבית",
+      "dsm_category": "Dissociative Disorders",
+      "icd_code": "F44.0",
+      "dsm_page": 337,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With dissociative fugue"
+      ],
+      "comorbidities_common": [
+        "PTSD",
+        "Depressive disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Depersonalization/Derealization Disorder",
+      "name_he": "הפרעת דפרסונליזציה/דראליזציה",
+      "dsm_category": "Dissociative Disorders",
+      "icd_code": "F48.1",
+      "dsm_page": 343,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "Anxiety disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Somatic Symptom Disorder",
+      "name_he": "הפרעת סימפטומים סומטיים",
+      "dsm_category": "Somatic Symptom and Related Disorders",
+      "icd_code": "F45.1",
+      "dsm_page": 351,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With predominant pain",
+        "Persistent"
+      ],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Anxiety disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Illness Anxiety Disorder",
+      "name_he": "חרדת מחלות",
+      "dsm_category": "Somatic Symptom and Related Disorders",
+      "icd_code": "F45.21",
+      "dsm_page": 357,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Care-seeking type",
+        "Care-avoidant type"
+      ],
+      "comorbidities_common": [
+        "GAD",
+        "Panic Disorder",
+        "OCD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Functional Neurological Symptom Disorder",
+      "name_he": "הפרעה נוירולוגית תפקודית (קונברסיה)",
+      "dsm_category": "Somatic Symptom and Related Disorders",
+      "icd_code": "F44.x",
+      "dsm_page": 360,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With weakness or paralysis",
+        "With attacks or seizures",
+        "With mixed symptoms"
+      ],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Depressive disorders",
+        "Personality disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Factitious Disorder",
+      "name_he": "הפרעה מלאכותית",
+      "dsm_category": "Somatic Symptom and Related Disorders",
+      "icd_code": "F68.10",
+      "dsm_page": 367,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Imposed on self",
+        "Imposed on another"
+      ],
+      "comorbidities_common": [
+        "Personality disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Pica",
+      "name_he": "פיקה",
+      "dsm_category": "Feeding and Eating Disorders",
+      "icd_code": "F98.3",
+      "dsm_page": 372,
+      "dulcan_chapter": "Chapter 19",
+      "dulcan_page": 415,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Intellectual Disability",
+        "ASD",
+        "OCD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Rumination Disorder",
+      "name_he": "הפרעת העלאת גירה",
+      "dsm_category": "Feeding and Eating Disorders",
+      "icd_code": "F98.21",
+      "dsm_page": 374,
+      "dulcan_chapter": "Chapter 19",
+      "dulcan_page": 415,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Intellectual Disability"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Avoidant/Restrictive Food Intake Disorder",
+      "name_he": "הפרעת הימנעות/הגבלה של צריכת מזון",
+      "dsm_category": "Feeding and Eating Disorders",
+      "icd_code": "F50.82",
+      "dsm_page": 376,
+      "dulcan_chapter": "Chapter 19",
+      "dulcan_page": 415,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "ASD",
+        "ADHD"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Anorexia Nervosa",
+      "name_he": "אנורקסיה נרבוזה",
+      "dsm_category": "Feeding and Eating Disorders",
+      "icd_code": "F50.01",
+      "dsm_page": 381,
+      "dulcan_chapter": "Chapter 19",
+      "dulcan_page": 411,
+      "key_subtypes": [
+        "Restricting type",
+        "Binge-eating/purging type"
+      ],
+      "comorbidities_common": [
+        "Bipolar disorders",
+        "Depressive disorders",
+        "Anxiety disorders",
+        "OCD"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Bulimia Nervosa",
+      "name_he": "בולימיה נרבוזה",
+      "dsm_category": "Feeding and Eating Disorders",
+      "icd_code": "F50.2",
+      "dsm_page": 388,
+      "dulcan_chapter": "Chapter 19",
+      "dulcan_page": 413,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Anxiety disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Binge-Eating Disorder",
+      "name_he": "הפרעת אכילה התקפית",
+      "dsm_category": "Feeding and Eating Disorders",
+      "icd_code": "F50.81",
+      "dsm_page": 392,
+      "dulcan_chapter": "Chapter 19",
+      "dulcan_page": 414,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Bipolar disorders",
+        "Depressive disorders",
+        "Anxiety disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Enuresis",
+      "name_he": "הרטבה",
+      "dsm_category": "Elimination Disorders",
+      "icd_code": "F98.0",
+      "dsm_page": 399,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 457,
+      "key_subtypes": [
+        "Nocturnal only",
+        "Diurnal only",
+        "Nocturnal and diurnal"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Sleep disorders"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Encopresis",
+      "name_he": "הצטאות",
+      "dsm_category": "Elimination Disorders",
+      "icd_code": "F98.1",
+      "dsm_page": 402,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 465,
+      "key_subtypes": [
+        "With constipation and overflow incontinence",
+        "Without constipation and overflow incontinence"
+      ],
+      "comorbidities_common": [
+        "ODD",
+        "Conduct disorder",
+        "ADHD"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Insomnia Disorder",
+      "name_he": "נדודי שינה",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "F51.01",
+      "dsm_page": 409,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 409,
+      "key_subtypes": [
+        "Episodic",
+        "Persistent",
+        "Recurrent"
+      ],
+      "comorbidities_common": [
+        "Depression",
+        "Anxiety disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Hypersomnolence Disorder",
+      "name_he": "יתר שינה",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "F51.11",
+      "dsm_page": 417,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 417,
+      "key_subtypes": [
+        "Episodic",
+        "Persistent",
+        "Recurrent"
+      ],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Narcolepsy",
+      "name_he": "נרקולפסיה",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "G47.411",
+      "dsm_page": 422,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 422,
+      "key_subtypes": [
+        "With cataplexy or hypocretin deficiency",
+        "Without cataplexy"
+      ],
+      "comorbidities_common": [
+        "Bipolar disorders",
+        "Depressive disorders",
+        "Anxiety disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Obstructive Sleep Apnea Hypopnea",
+      "name_he": "דום נשימה חסימתי בשינה",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "G47.33",
+      "dsm_page": 429,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 429,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depression",
+        "Anxiety disorders",
+        "ADHD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Circadian Rhythm Sleep-Wake Disorders",
+      "name_he": "הפרעות שינה ועירות של הקצב הצירקדי",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "G47.2x",
+      "dsm_page": 443,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 443,
+      "key_subtypes": [
+        "Delayed sleep phase type",
+        "Advanced sleep phase type",
+        "Irregular sleep-wake type",
+        "Non-24-hour sleep-wake type",
+        "Shift work type"
+      ],
+      "comorbidities_common": [
+        "Depression",
+        "Bipolar disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Non-Rapid Eye Movement Sleep Arousal Disorders",
+      "name_he": "הפרעות יקיצה משינת NREM",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "F51.3",
+      "dsm_page": 452,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 452,
+      "key_subtypes": [
+        "Sleepwalking type",
+        "Sleep terror type"
+      ],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Depressive disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Nightmare Disorder",
+      "name_he": "הפרעת סיוטים",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "F51.5",
+      "dsm_page": 457,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 457,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "PTSD",
+        "Depression"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Rapid Eye Movement Sleep Behavior Disorder",
+      "name_he": "הפרעת התנהגות בשינת REM",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "G47.52",
+      "dsm_page": 461,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 461,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Neurocognitive disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Restless Legs Syndrome",
+      "name_he": "תסמונת רגליים חסרות מנוחה",
+      "dsm_category": "Sleep-Wake Disorders",
+      "icd_code": "G25.81",
+      "dsm_page": 464,
+      "dulcan_chapter": "Chapter 22",
+      "dulcan_page": 464,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Anxiety disorders",
+        "ADHD"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Oppositional Defiant Disorder",
+      "name_he": "הפרעת התנגדות",
+      "dsm_category": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "icd_code": "F91.3",
+      "dsm_page": 522,
+      "dulcan_chapter": "Chapter 11",
+      "dulcan_page": 205,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Anxiety disorders",
+        "Depression",
+        "Conduct Disorder"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Intermittent Explosive Disorder",
+      "name_he": "הפרעת התפרצות לסירוגין",
+      "dsm_category": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "icd_code": "F63.81",
+      "dsm_page": 527,
+      "dulcan_chapter": "Chapter 11",
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "Conduct Disorder",
+        "ODD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Conduct Disorder",
+      "name_he": "הפרעת התנהגות",
+      "dsm_category": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "icd_code": "F91.1",
+      "dsm_page": 530,
+      "dulcan_chapter": "Chapter 11",
+      "dulcan_page": 205,
+      "key_subtypes": [
+        "Childhood-onset type",
+        "Adolescent-onset type",
+        "With limited prosocial emotions"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "ODD",
+        "Substance use disorders"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Pyromania",
+      "name_he": "פירומניה",
+      "dsm_category": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "icd_code": "F63.1",
+      "dsm_page": 537,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Conduct Disorder",
+        "Substance use disorders"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Kleptomania",
+      "name_he": "קלפטומניה",
+      "dsm_category": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "icd_code": "F63.2",
+      "dsm_page": 539,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Anxiety disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Alcohol Use Disorder",
+      "name_he": "הפרעת שימוש באלכוהול",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F10.10",
+      "dsm_page": 553,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": 221,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe",
+        "In early remission",
+        "In sustained remission"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Conduct Disorder",
+        "Mood disorders",
+        "Anxiety disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Cannabis Use Disorder",
+      "name_he": "הפרעת שימוש בקנאביס",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F12.10",
+      "dsm_page": 575,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": 223,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Conduct Disorder",
+        "Depression",
+        "Schizophrenia spectrum"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Opioid Use Disorder",
+      "name_he": "הפרעת שימוש באופיואידים",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F11.10",
+      "dsm_page": 608,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "PTSD",
+        "Depression",
+        "Conduct Disorder"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Stimulant Use Disorder",
+      "name_he": "הפרעת שימוש בממריצים",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F15.10",
+      "dsm_page": 635,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Antisocial Personality Disorder",
+        "Conduct Disorder"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Tobacco Use Disorder",
+      "name_he": "הפרעת שימוש בטבק",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F17.200",
+      "dsm_page": 645,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Depressive disorders",
+        "Anxiety disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Inhalant Use Disorder",
+      "name_he": "הפרעת שימוש בחומרים נדיפים",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F18.10",
+      "dsm_page": 601,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Mild",
+        "Moderate",
+        "Severe"
+      ],
+      "comorbidities_common": [
+        "Conduct Disorder",
+        "Antisocial Personality Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Gambling Disorder",
+      "name_he": "הפרעת הימורים",
+      "dsm_category": "Substance-Related and Addictive Disorders",
+      "icd_code": "F63.0",
+      "dsm_page": 661,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "Episodic",
+        "Persistent"
+      ],
+      "comorbidities_common": [
+        "ADHD",
+        "Depressive disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Internet Gaming Disorder",
+      "name_he": "הפרעת הימורי אינטרנט",
+      "dsm_category": "Conditions for Further Study",
+      "icd_code": "N/A",
+      "dsm_page": 913,
+      "dulcan_chapter": "Chapter 12",
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "MDD",
+        "OCD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Borderline Personality Disorder",
+      "name_he": "הפרעת אישיות גבולית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.3",
+      "dsm_page": 752,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Bipolar disorders",
+        "Substance use disorders",
+        "Eating disorders",
+        "PTSD"
+      ],
+      "complexity": "very_high"
+    },
+    {
+      "name_en": "Antisocial Personality Disorder",
+      "name_he": "הפרעת אישיות אנטיסוציאלית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.2",
+      "dsm_page": 748,
+      "dulcan_chapter": "Chapter 11",
+      "dulcan_page": null,
+      "key_subtypes": [
+        "With psychopathic features"
+      ],
+      "comorbidities_common": [
+        "Substance use disorders",
+        "Conduct disorder"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Avoidant Personality Disorder",
+      "name_he": "הפרעת אישיות נמנעת",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.6",
+      "dsm_page": 764,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Social Anxiety Disorder",
+        "Depressive disorders",
+        "Dependent Personality Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Dependent Personality Disorder",
+      "name_he": "הפרעת אישיות תלותית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.7",
+      "dsm_page": 768,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Separation Anxiety Disorder",
+        "Depressive disorders",
+        "Avoidant Personality Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Obsessive-Compulsive Personality Disorder",
+      "name_he": "הפרעת אישיות אובססיבית-קומפולסיבית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.5",
+      "dsm_page": 771,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Anxiety disorders",
+        "Eating disorders",
+        "Depressive disorders",
+        "OCD"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Paranoid Personality Disorder",
+      "name_he": "הפרעת אישיות פרנואידית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.0",
+      "dsm_page": 737,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Schizotypal Personality Disorder",
+        "Substance use disorders"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Schizoid Personality Disorder",
+      "name_he": "הפרעת אישיות סכיזואידית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.1",
+      "dsm_page": 741,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Schizotypal Personality Disorder",
+        "Major Depressive Disorder"
+      ],
+      "complexity": "low"
+    },
+    {
+      "name_en": "Schizotypal Personality Disorder",
+      "name_he": "הפרעת אישיות סכיזוטיפלית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F21",
+      "dsm_page": 744,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "Paranoid Personality Disorder",
+        "Schizoid Personality Disorder"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Narcissistic Personality Disorder",
+      "name_he": "הפרעת אישיות נרקיסיסטית",
+      "dsm_category": "Personality Disorders",
+      "icd_code": "F60.81",
+      "dsm_page": 760,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Depressive disorders",
+        "Substance use disorders",
+        "Anorexia nervosa"
+      ],
+      "complexity": "medium"
+    },
+    {
+      "name_en": "Gender Dysphoria",
+      "name_he": "דיספוריה מגדרית",
+      "dsm_category": "Gender Dysphoria",
+      "icd_code": "F64.0, F64.2",
+      "dsm_page": 511,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [
+        "In children",
+        "In adolescents and adults"
+      ],
+      "comorbidities_common": [
+        "Depression",
+        "Anxiety",
+        "ASD"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Neurobehavioral Disorder Associated With Prenatal Alcohol 
+Exposure",
+      "name_he": "הפרעה נוירו-התנהגותית הקשורה לחשיפה טרום-לידתית לאלכוהול",
+      "dsm_category": "Conditions for Further Study",
+      "icd_code": "N/A",
+      "dsm_page": 916,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "ADHD",
+        "ODD",
+        "Conduct Disorder"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Nonsuicidal Self-Injury",
+      "name_he": "פציעה עצמית לא אובדנית",
+      "dsm_category": "Conditions for Further Study",
+      "icd_code": "R45.88, Z91.52",
+      "dsm_page": 923,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Borderline Personality Disorder",
+        "Depressive disorders",
+        "Eating disorders",
+        "Substance use disorders"
+      ],
+      "complexity": "high"
+    },
+    {
+      "name_en": "Suicidal Behavior Disorder",
+      "name_he": "הפרעת התנהגות אובדנית",
+      "dsm_category": "Conditions for Further Study",
+      "icd_code": "T14.91",
+      "dsm_page": 920,
+      "dulcan_chapter": null,
+      "dulcan_page": null,
+      "key_subtypes": [],
+      "comorbidities_common": [
+        "Major Depressive Disorder",
+        "Bipolar disorders",
+        "Substance use disorders",
+        "Borderline Personality Disorder"
+      ],
+      "complexity": "high"
+    }
+  ]
+}

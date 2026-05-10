@@ -1,0 +1,1645 @@
+Matched: d3e19f18-6a9... (Medications inventory (script))
+ID: d3e19f18-6a9b-4d2f-b0b6-c1ee2df7085e
+Title: Medications inventory (script)
+Content:
+{
+  "medications": [
+    {
+      "generic_name": "Amphetamine-D",
+      "brand_examples": [
+        "Dexedrine",
+        "Zenzedi",
+        "ProCentra"
+      ],
+      "drug_class": "Stimulant — dopamine/norepinephrine reuptake inhibitor and 
+releaser",
+      "key_indications_psych": [
+        "ADHD",
+        "Narcolepsy"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "DAT inhibitor",
+        "NET inhibitor",
+        "VMAT2 inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        467,
+        479
+      ],
+      "stahl_pediatric_pages": [
+        1,
+        18
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Amphetamine-D,L",
+      "brand_examples": [
+        "Adderall",
+        "Evekeo",
+        "Mydayis",
+        "Adzenys",
+        "Dyanavel"
+      ],
+      "drug_class": "Stimulant — dopamine/norepinephrine reuptake inhibitor and 
+releaser",
+      "key_indications_psych": [
+        "ADHD",
+        "Narcolepsy"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "DAT inhibitor",
+        "NET inhibitor",
+        "VMAT2 inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        467,
+        479
+      ],
+      "stahl_pediatric_pages": [
+        19,
+        36
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Lisdexamfetamine",
+      "brand_examples": [
+        "Vyvanse"
+      ],
+      "drug_class": "Stimulant — dopamine/norepinephrine reuptake inhibitor and 
+releaser",
+      "key_indications_psych": [
+        "ADHD",
+        "Binge-eating disorder"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "DAT inhibitor",
+        "NET inhibitor",
+        "VMAT2 inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        467,
+        479
+      ],
+      "stahl_pediatric_pages": [
+        269,
+        284
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Methylphenidate-D",
+      "brand_examples": [
+        "Focalin"
+      ],
+      "drug_class": "Stimulant — dopamine/norepinephrine reuptake inhibitor",
+      "key_indications_psych": [
+        "ADHD"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "DAT inhibitor",
+        "NET inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        469,
+        472
+      ],
+      "stahl_pediatric_pages": [
+        313,
+        330
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Methylphenidate-D,L",
+      "brand_examples": [
+        "Ritalin",
+        "Concerta",
+        "Daytrana",
+        "Metadate",
+        "Quillivant"
+      ],
+      "drug_class": "Stimulant — dopamine/norepinephrine reuptake inhibitor",
+      "key_indications_psych": [
+        "ADHD",
+        "Narcolepsy"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "DAT inhibitor",
+        "NET inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        469,
+        472
+      ],
+      "stahl_pediatric_pages": [
+        331,
+        350
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Atomoxetine",
+      "brand_examples": [
+        "Strattera"
+      ],
+      "drug_class": "Non-stimulant ADHD — selective norepinephrine reuptake 
+inhibitor",
+      "key_indications_psych": [
+        "ADHD"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "NET inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        480,
+        481
+      ],
+      "stahl_pediatric_pages": [
+        69,
+        82
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Guanfacine",
+      "brand_examples": [
+        "Intuniv",
+        "Tenex"
+      ],
+      "drug_class": "Non-stimulant ADHD — centrally acting alpha 2A agonist",
+      "key_indications_psych": [
+        "ADHD",
+        "Oppositional defiant disorder",
+        "Tourette syndrome"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "Alpha 2A agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        481,
+        483
+      ],
+      "stahl_pediatric_pages": [
+        243,
+        254
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Clonidine",
+      "brand_examples": [
+        "Kapvay",
+        "Catapres"
+      ],
+      "drug_class": "Non-stimulant ADHD — centrally acting alpha 2 agonist",
+      "key_indications_psych": [
+        "ADHD",
+        "Tourette syndrome",
+        "Hypertension"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "Alpha 2 agonist",
+        "Imidazoline receptor agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 11",
+      "stahl_essential_pages": [
+        481,
+        483
+      ],
+      "stahl_pediatric_pages": [
+        141,
+        154
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "ADHD"
+    },
+    {
+      "generic_name": "Fluoxetine",
+      "brand_examples": [
+        "Prozac",
+        "Sarafem",
+        "Symbyax"
+      ],
+      "drug_class": "Antidepressant — SSRI",
+      "key_indications_psych": [
+        "MDD",
+        "OCD",
+        "Bulimia nervosa",
+        "Bipolar depression"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "5HT2C antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        293,
+        294
+      ],
+      "stahl_pediatric_pages": [
+        199,
+        214
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Sertraline",
+      "brand_examples": [
+        "Zoloft"
+      ],
+      "drug_class": "Antidepressant — SSRI",
+      "key_indications_psych": [
+        "OCD",
+        "MDD",
+        "PTSD",
+        "Panic disorder",
+        "Social anxiety disorder"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "DAT inhibitor (weak)",
+        "Sigma 1 binding"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        294,
+        295
+      ],
+      "stahl_pediatric_pages": [
+        439,
+        452
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "OCD"
+    },
+    {
+      "generic_name": "Escitalopram",
+      "brand_examples": [
+        "Lexapro",
+        "Ciprilex"
+      ],
+      "drug_class": "Antidepressant — SSRI",
+      "key_indications_psych": [
+        "MDD",
+        "GAD"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "SERT inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        295,
+        296
+      ],
+      "stahl_pediatric_pages": [
+        185,
+        198
+      ],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Citalopram",
+      "brand_examples": [
+        "Celexa"
+      ],
+      "drug_class": "Antidepressant — SSRI",
+      "key_indications_psych": [
+        "Depression",
+        "OCD"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "H1 antagonist (weak)"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        295,
+        296
+      ],
+      "stahl_pediatric_pages": [
+        111,
+        124
+      ],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Fluvoxamine",
+      "brand_examples": [
+        "Luvox"
+      ],
+      "drug_class": "Antidepressant — SSRI",
+      "key_indications_psych": [
+        "OCD",
+        "Social anxiety disorder"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "Sigma 1 binding"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        295,
+        296
+      ],
+      "stahl_pediatric_pages": [
+        229,
+        242
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "OCD"
+    },
+    {
+      "generic_name": "Paroxetine",
+      "brand_examples": [
+        "Paxil",
+        "Brisdelle"
+      ],
+      "drug_class": "Antidepressant — SSRI",
+      "key_indications_psych": [
+        "MDD",
+        "OCD",
+        "Panic disorder",
+        "Social anxiety disorder",
+        "PTSD",
+        "GAD"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "NET inhibitor (weak)",
+        "M1 antagonist",
+        "NOS inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        294,
+        295
+      ],
+      "stahl_pediatric_pages": [
+        381,
+        396
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Venlafaxine",
+      "brand_examples": [
+        "Effexor"
+      ],
+      "drug_class": "Antidepressant — SNRI",
+      "key_indications_psych": [
+        "MDD",
+        "GAD",
+        "Social anxiety disorder",
+        "Panic disorder"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "NET inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        298,
+        301
+      ],
+      "stahl_pediatric_pages": [
+        479,
+        492
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Duloxetine",
+      "brand_examples": [
+        "Cymbalta"
+      ],
+      "drug_class": "Antidepressant — SNRI",
+      "key_indications_psych": [
+        "MDD",
+        "GAD",
+        "Neuropathic pain",
+        "Fibromyalgia"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "NET inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        301,
+        302
+      ],
+      "stahl_pediatric_pages": [
+        171,
+        184
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "GAD"
+    },
+    {
+      "generic_name": "Bupropion",
+      "brand_examples": [
+        "Wellbutrin",
+        "Zyban",
+        "Aplenzin"
+      ],
+      "drug_class": "Antidepressant — NDRI",
+      "key_indications_psych": [
+        "MDD",
+        "SAD",
+        "Nicotine addiction"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "NET inhibitor",
+        "DAT inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        303,
+        306
+      ],
+      "stahl_pediatric_pages": [
+        83,
+        96
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Mirtazapine",
+      "brand_examples": [
+        "Remeron"
+      ],
+      "drug_class": "Antidepressant — Alpha 2 antagonist",
+      "key_indications_psych": [
+        "Depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Alpha 2 antagonist",
+        "5HT2A antagonist",
+        "5HT2C antagonist",
+        "5HT3 antagonist",
+        "H1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        308,
+        310
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Vilazodone",
+      "brand_examples": [
+        "Viibryd"
+      ],
+      "drug_class": "Antidepressant — SPARI",
+      "key_indications_psych": [
+        "MDD"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "5HT1A partial agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        296,
+        299
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Vortioxetine",
+      "brand_examples": [
+        "Trintellix"
+      ],
+      "drug_class": "Antidepressant — Multimodal",
+      "key_indications_psych": [
+        "MDD"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "5HT3 antagonist",
+        "5HT7 antagonist",
+        "5HT1A agonist",
+        "5HT1B/D partial agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        315,
+        320
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Trazodone",
+      "brand_examples": [
+        "Desyrel",
+        "Oleptro"
+      ],
+      "drug_class": "Antidepressant — SARI",
+      "key_indications_psych": [
+        "Depression",
+        "Insomnia"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "5HT2A antagonist",
+        "5HT2C antagonist",
+        "SERT inhibitor",
+        "H1 antagonist",
+        "Alpha 1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        311,
+        315
+      ],
+      "stahl_pediatric_pages": [
+        453,
+        464
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Insomnia"
+    },
+    {
+      "generic_name": "Clomipramine",
+      "brand_examples": [
+        "Anafranil"
+      ],
+      "drug_class": "Antidepressant — TCA",
+      "key_indications_psych": [
+        "OCD"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "SERT inhibitor",
+        "NET inhibitor",
+        "H1 antagonist",
+        "M1 antagonist",
+        "Alpha 1 antagonist",
+        "VSSC blocker"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        333,
+        335
+      ],
+      "stahl_pediatric_pages": [
+        125,
+        140
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "OCD"
+    },
+    {
+      "generic_name": "Imipramine",
+      "brand_examples": [
+        "Tofranil"
+      ],
+      "drug_class": "Antidepressant — TCA",
+      "key_indications_psych": [
+        "Depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "NET inhibitor",
+        "SERT inhibitor",
+        "H1 antagonist",
+        "M1 antagonist",
+        "Alpha 1 antagonist",
+        "VSSC blocker"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        333,
+        335
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Tranylcypromine",
+      "brand_examples": [
+        "Parnate"
+      ],
+      "drug_class": "Antidepressant — MAOI",
+      "key_indications_psych": [
+        "Treatment-resistant depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "MAO-A inhibitor",
+        "MAO-B inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        336,
+        341
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Phenelzine",
+      "brand_examples": [
+        "Nardil"
+      ],
+      "drug_class": "Antidepressant — MAOI",
+      "key_indications_psych": [
+        "Treatment-resistant depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "MAO-A inhibitor",
+        "MAO-B inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        336,
+        341
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "MDD"
+    },
+    {
+      "generic_name": "Aripiprazole",
+      "brand_examples": [
+        "Abilify",
+        "Aristada",
+        "Maintena"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania",
+        "Autism-related irritability",
+        "Tourette syndrome"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 partial agonist",
+        "5HT1A partial agonist",
+        "5HT2A antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        239,
+        240
+      ],
+      "stahl_pediatric_pages": [
+        37,
+        54
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Risperidone",
+      "brand_examples": [
+        "Risperdal",
+        "Consta"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania",
+        "Autism-related irritability"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        234,
+        235
+      ],
+      "stahl_pediatric_pages": [
+        423,
+        438
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Olanzapine",
+      "brand_examples": [
+        "Zyprexa",
+        "Relprevv",
+        "Symbyax"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania",
+        "Bipolar depression"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist",
+        "H1 antagonist",
+        "M1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        225,
+        227
+      ],
+      "stahl_pediatric_pages": [
+        351,
+        366
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Quetiapine",
+      "brand_examples": [
+        "Seroquel"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania",
+        "Bipolar depression"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist",
+        "H1 antagonist",
+        "NET inhibitor",
+        "5HT1A partial agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        227,
+        230
+      ],
+      "stahl_pediatric_pages": [
+        409,
+        422
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Ziprasidone",
+      "brand_examples": [
+        "Geodon"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist",
+        "5HT1A partial agonist",
+        "SERT inhibitor",
+        "NET inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        235,
+        236
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Paliperidone",
+      "brand_examples": [
+        "Invega",
+        "Sustenna",
+        "Trinza"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Schizoaffective disorder"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        235,
+        235
+      ],
+      "stahl_pediatric_pages": [
+        367,
+        380
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Lurasidone",
+      "brand_examples": [
+        "Latuda"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar depression"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist",
+        "5HT7 antagonist",
+        "5HT1A partial agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        236,
+        237
+      ],
+      "stahl_pediatric_pages": [
+        299,
+        312
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Asenapine",
+      "brand_examples": [
+        "Saphris"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist",
+        "5HT2C antagonist",
+        "H1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        232,
+        233
+      ],
+      "stahl_pediatric_pages": [
+        55,
+        68
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Bipolar mania"
+    },
+    {
+      "generic_name": "Brexpiprazole",
+      "brand_examples": [
+        "Rexulti"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "MDD adjunct"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "D2 partial agonist",
+        "5HT1A partial agonist",
+        "5HT2A antagonist",
+        "Alpha 1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        239,
+        240
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Cariprazine",
+      "brand_examples": [
+        "Vraylar"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Bipolar mania",
+        "Bipolar depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "D3 partial agonist",
+        "D2 partial agonist",
+        "5HT1A partial agonist",
+        "5HT2A antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        240,
+        240
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Clozapine",
+      "brand_examples": [
+        "Clozaril",
+        "Versacloz",
+        "Fazaclo"
+      ],
+      "drug_class": "Antipsychotic — Second-generation",
+      "key_indications_psych": [
+        "Treatment-resistant schizophrenia",
+        "Suicide prevention"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "5HT2A antagonist",
+        "H1 antagonist",
+        "M1 antagonist",
+        "Alpha 1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        222,
+        225
+      ],
+      "stahl_pediatric_pages": [
+        155,
+        170
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Haloperidol",
+      "brand_examples": [
+        "Haldol"
+      ],
+      "drug_class": "Antipsychotic — First-generation",
+      "key_indications_psych": [
+        "Schizophrenia",
+        "Tourette syndrome",
+        "Severe behavioral problems"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        202,
+        203
+      ],
+      "stahl_pediatric_pages": [
+        255,
+        268
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Chlorpromazine",
+      "brand_examples": [
+        "Thorazine"
+      ],
+      "drug_class": "Antipsychotic — First-generation",
+      "key_indications_psych": [
+        "Severe behavioral problems",
+        "Schizophrenia",
+        "Bipolar mania"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist",
+        "H1 antagonist",
+        "M1 antagonist",
+        "Alpha 1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        201,
+        202
+      ],
+      "stahl_pediatric_pages": [
+        97,
+        110
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Fluphenazine",
+      "brand_examples": [
+        "Prolixin"
+      ],
+      "drug_class": "Antipsychotic — First-generation",
+      "key_indications_psych": [
+        "Schizophrenia"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "D2 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        202,
+        203
+      ],
+      "stahl_pediatric_pages": [
+        215,
+        228
+      ],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Schizophrenia"
+    },
+    {
+      "generic_name": "Pimozide",
+      "brand_examples": [
+        "Orap"
+      ],
+      "drug_class": "Antipsychotic — First-generation",
+      "key_indications_psych": [
+        "Tourette syndrome",
+        "Schizophrenia"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "D2 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 5",
+      "stahl_essential_pages": [
+        240,
+        240
+      ],
+      "stahl_pediatric_pages": [
+        397,
+        408
+      ],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Tourette syndrome"
+    },
+    {
+      "generic_name": "Lithium",
+      "brand_examples": [
+        "Eskalith",
+        "Lithobid"
+      ],
+      "drug_class": "Mood stabilizer",
+      "key_indications_psych": [
+        "Bipolar mania",
+        "Bipolar maintenance"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Enzyme interactions (GSK-3, IMPase)"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        345,
+        346
+      ],
+      "stahl_pediatric_pages": [
+        285,
+        298
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Valproate",
+      "brand_examples": [
+        "Depakote",
+        "Depakene",
+        "Stavzor"
+      ],
+      "drug_class": "Mood stabilizer / Anticonvulsant",
+      "key_indications_psych": [
+        "Complex partial seizures",
+        "Bipolar mania",
+        "Migraine prophylaxis"
+      ],
+      "approved_for_pediatric": true,
+      "primary_receptors_actions": [
+        "VSSC blocker",
+        "GABA enhancer"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        347,
+        350
+      ],
+      "stahl_pediatric_pages": [
+        465,
+        478
+      ],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Lamotrigine",
+      "brand_examples": [
+        "Lamictal"
+      ],
+      "drug_class": "Mood stabilizer / Anticonvulsant",
+      "key_indications_psych": [
+        "Bipolar maintenance",
+        "Seizures"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "VSSC blocker",
+        "Glutamate release inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        350,
+        351
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Carbamazepine",
+      "brand_examples": [
+        "Tegretol"
+      ],
+      "drug_class": "Mood stabilizer / Anticonvulsant",
+      "key_indications_psych": [
+        "Bipolar mania",
+        "Seizures",
+        "Neuropathic pain"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "VSSC blocker"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        350,
+        351
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Bipolar Disorder"
+    },
+    {
+      "generic_name": "Oxcarbazepine",
+      "brand_examples": [
+        "Trileptal"
+      ],
+      "drug_class": "Mood stabilizer / Anticonvulsant",
+      "key_indications_psych": [
+        "Seizures"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "VSSC blocker"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        352,
+        352
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Seizures"
+    },
+    {
+      "generic_name": "Benzodiazepines",
+      "brand_examples": [
+        "Valium",
+        "Xanax",
+        "Klonopin",
+        "Ativan"
+      ],
+      "drug_class": "Anxiolytic / Sedative-hypnotic",
+      "key_indications_psych": [
+        "Anxiety",
+        "Insomnia",
+        "Seizures"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "GABA-A positive allosteric modulator"
+      ],
+      "stahl_essential_chapter": "Chapter 8",
+      "stahl_essential_pages": [
+        366,
+        368
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Anxiety"
+    },
+    {
+      "generic_name": "Buspirone",
+      "brand_examples": [
+        "BuSpar"
+      ],
+      "drug_class": "Anxiolytic",
+      "key_indications_psych": [
+        "GAD"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "5HT1A partial agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 8",
+      "stahl_essential_pages": [
+        369,
+        370
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "GAD"
+    },
+    {
+      "generic_name": "Hydroxyzine",
+      "brand_examples": [
+        "Vistaril",
+        "Atarax"
+      ],
+      "drug_class": "Anxiolytic — Antihistamine",
+      "key_indications_psych": [
+        "Anxiety"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "H1 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 8",
+      "stahl_essential_pages": [
+        377,
+        378
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Anxiety"
+    },
+    {
+      "generic_name": "Gabapentin",
+      "brand_examples": [
+        "Neurontin"
+      ],
+      "drug_class": "Anxiolytic / Anticonvulsant",
+      "key_indications_psych": [
+        "Seizures",
+        "Neuropathic pain",
+        "Anxiety"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Voltage-sensitive calcium channel blocker (alpha-2-delta ligand)"
+      ],
+      "stahl_essential_chapter": "Chapter 9",
+      "stahl_essential_pages": [
+        398,
+        399
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Neuropathic pain"
+    },
+    {
+      "generic_name": "Pregabalin",
+      "brand_examples": [
+        "Lyrica"
+      ],
+      "drug_class": "Anxiolytic / Anticonvulsant",
+      "key_indications_psych": [
+        "Seizures",
+        "Neuropathic pain",
+        "Fibromyalgia",
+        "Anxiety"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Voltage-sensitive calcium channel blocker (alpha-2-delta ligand)"
+      ],
+      "stahl_essential_chapter": "Chapter 9",
+      "stahl_essential_pages": [
+        398,
+        399
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Neuropathic pain"
+    },
+    {
+      "generic_name": "Melatonin",
+      "brand_examples": [
+        "N/A"
+      ],
+      "drug_class": "Sleep aid / Chronobiotic",
+      "key_indications_psych": [
+        "Insomnia",
+        "Circadian rhythm disorders"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "MT1 agonist",
+        "MT2 agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 10",
+      "stahl_essential_pages": [
+        439,
+        440
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Insomnia"
+    },
+    {
+      "generic_name": "Ramelteon",
+      "brand_examples": [
+        "Rozerem"
+      ],
+      "drug_class": "Sleep aid / Chronobiotic",
+      "key_indications_psych": [
+        "Insomnia"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "MT1 agonist",
+        "MT2 agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 10",
+      "stahl_essential_pages": [
+        439,
+        440
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Insomnia"
+    },
+    {
+      "generic_name": "Suvorexant",
+      "brand_examples": [
+        "Belsomra"
+      ],
+      "drug_class": "Sleep aid / DORA",
+      "key_indications_psych": [
+        "Insomnia"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Orexin 1 antagonist",
+        "Orexin 2 antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 10",
+      "stahl_essential_pages": [
+        423,
+        425
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Insomnia"
+    },
+    {
+      "generic_name": "Eszopiclone",
+      "brand_examples": [
+        "Lunesta"
+      ],
+      "drug_class": "Sleep aid / Z-drug",
+      "key_indications_psych": [
+        "Insomnia"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "GABA-A positive allosteric modulator"
+      ],
+      "stahl_essential_chapter": "Chapter 10",
+      "stahl_essential_pages": [
+        422,
+        423
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Insomnia"
+    },
+    {
+      "generic_name": "Zolpidem",
+      "brand_examples": [
+        "Ambien"
+      ],
+      "drug_class": "Sleep aid / Z-drug",
+      "key_indications_psych": [
+        "Insomnia"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "GABA-A positive allosteric modulator (alpha 1 selective)"
+      ],
+      "stahl_essential_chapter": "Chapter 10",
+      "stahl_essential_pages": [
+        422,
+        423
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Insomnia"
+    },
+    {
+      "generic_name": "Esketamine",
+      "brand_examples": [
+        "Spravato"
+      ],
+      "drug_class": "Rapid-acting antidepressant",
+      "key_indications_psych": [
+        "Treatment-resistant depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "NMDA receptor antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        328,
+        331
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Depression"
+    },
+    {
+      "generic_name": "Brexanolone",
+      "brand_examples": [
+        "Zulresso"
+      ],
+      "drug_class": "Antidepressant / Neuroactive steroid",
+      "key_indications_psych": [
+        "Postpartum depression"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "GABA-A positive allosteric modulator"
+      ],
+      "stahl_essential_chapter": "Chapter 7",
+      "stahl_essential_pages": [
+        320,
+        323
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Depression"
+    },
+    {
+      "generic_name": "Modafinil",
+      "brand_examples": [
+        "Provigil"
+      ],
+      "drug_class": "Wake-promoting agent",
+      "key_indications_psych": [
+        "Narcolepsy",
+        "Obstructive sleep apnea",
+        "Shift work disorder"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "DAT inhibitor"
+      ],
+      "stahl_essential_chapter": "Chapter 10",
+      "stahl_essential_pages": [
+        442,
+        444
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Narcolepsy"
+    },
+    {
+      "generic_name": "Naltrexone",
+      "brand_examples": [
+        "Revia",
+        "Vivitrol"
+      ],
+      "drug_class": "Addiction treatment / Opioid antagonist",
+      "key_indications_psych": [
+        "Alcohol use disorder",
+        "Opioid use disorder"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Mu-opioid receptor antagonist"
+      ],
+      "stahl_essential_chapter": "Chapter 13",
+      "stahl_essential_pages": [
+        556,
+        563
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "medium",
+      "study_pair_with_diagnosis": "Substance use disorder"
+    },
+    {
+      "generic_name": "Acamprosate",
+      "brand_examples": [
+        "Campral"
+      ],
+      "drug_class": "Addiction treatment",
+      "key_indications_psych": [
+        "Alcohol use disorder"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "GABA/Glutamate modulator"
+      ],
+      "stahl_essential_chapter": "Chapter 13",
+      "stahl_essential_pages": [
+        556,
+        556
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "low",
+      "study_pair_with_diagnosis": "Substance use disorder"
+    },
+    {
+      "generic_name": "Buprenorphine",
+      "brand_examples": [
+        "Suboxone",
+        "Subutex"
+      ],
+      "drug_class": "Addiction treatment / Opioid partial agonist",
+      "key_indications_psych": [
+        "Opioid use disorder"
+      ],
+      "approved_for_pediatric": false,
+      "primary_receptors_actions": [
+        "Mu-opioid receptor partial agonist"
+      ],
+      "stahl_essential_chapter": "Chapter 13",
+      "stahl_essential_pages": [
+        560,
+        562
+      ],
+      "stahl_pediatric_pages": [],
+      "complexity": "high",
+      "study_pair_with_diagnosis": "Substance use disorder"
+    }
+  ]
+}
