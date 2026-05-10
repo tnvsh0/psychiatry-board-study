@@ -1262,33 +1262,6 @@
       "study_pair_with_diagnosis": "Seizures"
     },
     {
-      "generic_name": "Benzodiazepines",
-      "brand_examples": [
-        "Valium",
-        "Xanax",
-        "Klonopin",
-        "Ativan"
-      ],
-      "drug_class": "Anxiolytic / Sedative-hypnotic",
-      "key_indications_psych": [
-        "Anxiety",
-        "Insomnia",
-        "Seizures"
-      ],
-      "approved_for_pediatric": false,
-      "primary_receptors_actions": [
-        "GABA-A positive allosteric modulator"
-      ],
-      "stahl_essential_chapter": "Chapter 8",
-      "stahl_essential_pages": [
-        366,
-        368
-      ],
-      "stahl_pediatric_pages": [],
-      "complexity": "medium",
-      "study_pair_with_diagnosis": "Anxiety"
-    },
-    {
       "generic_name": "Buspirone",
       "brand_examples": [
         "BuSpar"
