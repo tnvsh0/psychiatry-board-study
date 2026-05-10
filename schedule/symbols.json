@@ -1,108 +1,206 @@
 {
-  "version": 1,
+  "version": 3,
   "metadata": {
-    "style": "Sketchy-medical-inspired animal mnemonics",
-    "language_of_description": "Hebrew + English",
-    "purpose": "Inject into image/video prompts so the same concept always evokes the same animal symbol across all daily-study artifacts",
+    "style": "Sketchy-medical-style scene-based mnemonics. Per-symbol logical link via phonetic, shape, acronym, or concept. Pharmacological subfamilies share visual base; functional opposites use contrasting visuals.",
     "design_rules": [
-      "Each symbol should be an ANIMAL or animal-action whenever possible",
-      "Symbol should evoke the receptor name phonetically OR its clinical function",
-      "Same animal across all images for the same entity (color/size/action can vary)",
-      "When a drug TARGETS the receptor, depict the drug interacting with the animal (chained, fed, blocked, riding, etc.)",
-      "Antagonist = chains/cage/muzzle. Agonist = feeding/freeing/riding. Inverse agonist = mirror/upside-down."
-    ]
+      "Pick the strongest link per symbol — phonetic, letter shape, acronym-as-object, conceptual association, word breakdown.",
+      "Receptor SUBFAMILIES with similar pharmacology (e.g. Gs vs Gi) get CONTRASTING visual bases.",
+      "Same concept = same recurring scene/object across all images. Different drawings of the same scene are fine.",
+      "Encode FUNCTION: agonist activates the scene; antagonist blocks/lowers/quiets it; inverse agonist reverses it.",
+      "Drugs appear as named characters/tools INSIDE the scene (the bus driver, the foreman, the postal worker).",
+      "Side effects naturally emerge from the same scene (EPS pyramids near a D2 barrier, cookies stolen near 2C, etc.)."
+    ],
+    "user_examples_kept_for_reference": {
+      "D-ring curtain": "letter shape — D for Dopamine",
+      "NET = fishing net": "acronym → real object",
+      "Polar bear scene = Lithium": "concept → bipolar",
+      "EXTRA + pyramid hats": "word breakdown — extrapyramidal"
+    }
   },
+
+  "scenes": {
+    "DOPA_MINE": {
+      "scene_name": "DOPA-MINE Co. — coal mine extracting dopamine ore",
+      "setting": "A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by pathway — Mesolimbic (heart-shaped chamber), Mesocortical (think-bubble chamber), Nigrostriatal (motor gear chamber), Tuberoinfundibular (milk-pump chamber).",
+      "recurring_characters": [
+        "Mine foreman = autoreceptor (controls release)",
+        "Coal carts on tracks = dopamine release vesicles",
+        "Vertical machinery = D1-family receptors (elevators going UP — Gs/excitatory)",
+        "Red barriers/locks = D2-family receptors (blocking flow — Gi/inhibitory)"
+      ],
+      "uses_for_pathology": {
+        "psychosis": "Mesolimbic chamber overflowing with carts (excess D2 stimulation)",
+        "negative_symptoms": "Mesocortical chamber empty, cobwebs (insufficient D1 stimulation)",
+        "EPS": "Nigrostriatal section: workers wearing newspaper PYRAMID hats labeled 'EXTRA' (when D2 barriers slammed too hard)",
+        "hyperprolactinemia": "Tuberoinfundibular pump SPRAYS milk when D2 barrier is closed"
+      }
+    },
+    "BUS_LINE_1A": {
+      "scene_name": "Aged-style bus stop — Line 1A",
+      "setting": "Old wooden bus-stop booth. Sign: '1A'. A frantic RABBIT (the universal anxiety creature) sits trembling on the bench.",
+      "recurring_characters": [
+        "Different buses on Line 1A = different 1A partial agonists (Buspirone, Vilazodone, Vortioxetine, Aripiprazole)",
+        "Late bus = the autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
+      ]
+    },
+    "TAROT_2A": {
+      "scene_name": "Tarot 2A — psychedelic reading room",
+      "setting": "Dim Victorian parlor. Round table with TWO Ace tarot cards (the '2A'). The reader is a tie-dye-shirted hippie. Walls swirl with psychedelic colors.",
+      "recurring_characters": [
+        "Hippie reader = LSD / Psilocybin / DMT (5-HT2A agonists → hallucinations)",
+        "Officer 'Atypical PD' with a flashlight = atypical antipsychotic (turns lights off, blocks 2A)",
+        "Special officer with mirror = Pimavanserin (inverse agonist — flips the tarot cards over)",
+        "Adjacent kitchen door = 5-HT2C cookie chefs",
+        "Adjacent water-gate room = 5-HT3 vomit gates"
+      ]
+    },
+    "CONVENIENCE_STORE_7": {
+      "scene_name": "7-Eleven on the corner — open 24/7",
+      "setting": "A 7-Eleven store, neon sign glowing at midnight. Big '7' on the door. Clock on the wall says 7:00 with both AM and PM marked.",
+      "recurring_characters": [
+        "Night clerk = Lurasidone (turning off lights = blocking 5-HT7)",
+        "Insomniac customer = circadian dysfunction"
+      ]
+    }
+  },
+
   "symbols": {
 
-    "_BATCH_1A_dopamine_serotonin": "═══════════════════════════════════════════",
+    "_BATCH_1A_DOPAMINE_FAMILY": "═══════════════════════════════════════════",
 
     "D1_receptor": {
-      "category": "Dopamine receptor (Gs, excitatory)",
-      "animal": "Diamond-shelled Beetle (חיפושית יהלום)",
-      "visual": "A sparkling beetle with a diamond-shaped shell, jumping/active",
-      "function_link": "Gs → excitatory. 'D-1' → 'Diamond, first-class'. Beetle jumping = excitation.",
-      "use_when": "PFC dopamine, motor activation, working memory, D1-family discussions"
-    },
-    "D2_receptor": {
-      "category": "Dopamine receptor (Gi, inhibitory) — most clinically important",
-      "animal": "Big Brown Bear (דוב חום גדול)",
-      "visual": "A large brown bear with TWO prominent ears (D-2). When antipsychotic acts → bear is chained/muzzled. When psychosis → bear is wild and roaring.",
-      "function_link": "D2 antagonism = THE antipsychotic mechanism. Bear must be tamed.",
-      "use_when": "Antipsychotics, schizophrenia, EPS, hyperprolactinemia (bear pulls 'milk' chain)"
-    },
-    "D3_receptor": {
-      "category": "Dopamine receptor (Gi, limbic)",
-      "animal": "Three-toed Sloth (עצלן בעל שלוש אצבעות)",
-      "visual": "A slow sloth hanging from limbic-shaped tree branches",
-      "function_link": "D-3 → three toes. Limbic distribution → emotional/slow. Cariprazine targets D3.",
-      "use_when": "Cariprazine, limbic dopamine, addiction circuits, anhedonia"
-    },
-    "D4_receptor": {
-      "category": "Dopamine receptor (Gi, novel antipsychotic target)",
-      "animal": "Four-armed Octopus (תמנון בעל ארבע זרועות)",
-      "visual": "An octopus with exactly 4 highlighted arms holding a clozapine pill",
-      "function_link": "D-4 → four arms. Clozapine binds D4 prominently. Limited motor side effects.",
-      "use_when": "Clozapine, novel antipsychotics, ADHD pathophysiology"
+      "category": "Dopamine receptor — D1-family (Gs, ↑cAMP, EXCITATORY)",
+      "scene": "DOPA_MINE",
+      "symbol": "Single elevator with '1↑' button, going UP to the PFC top floor",
+      "mnemonic_link": "UP arrow = excitatory (Gs/↑cAMP). Number = 1. Top floor = prefrontal cortex (working memory).",
+      "function_depiction": {
+        "agonism": "Elevator rides up smoothly — bright lights on each floor as it passes",
+        "antagonism": "Elevator stuck at ground floor"
+      },
+      "use_when": "Discussing PFC dopamine, working memory, positive symptoms via D1"
     },
     "D5_receptor": {
-      "category": "Dopamine receptor (Gs, hippocampal)",
-      "animal": "Five-pointed Starfish (כוכב ים בעל חמש זרועות)",
-      "visual": "A purple starfish with 5 limbs, on a hippocampus-shaped seabed",
-      "function_link": "D-5 → five points. Hippocampal distribution. D1-family co-member.",
-      "use_when": "Memory, hippocampal dopamine. Less common in daily clinical context."
+      "category": "Dopamine receptor — D1-family (Gs, ↑cAMP, EXCITATORY) — hippocampal",
+      "scene": "DOPA_MINE",
+      "symbol": "Glass elevator with '5' button, ascending through 5 floors of the hippocampus department",
+      "mnemonic_link": "Same UP/Gs visual as D1. Number = 5. Hippocampus = memory department (5 floors of bookshelves).",
+      "function_depiction": {
+        "agonism": "Elevator rises through library floors, books illuminated"
+      },
+      "use_when": "Hippocampal dopamine, memory consolidation"
     },
+    "D2_receptor": {
+      "category": "Dopamine receptor — D2-family (Gi, ↓cAMP, INHIBITORY) — THE central antipsychotic target",
+      "scene": "DOPA_MINE",
+      "symbol": "Massive RED BARRIER labeled '2' across the main mesolimbic track. A foreman stands by the lever.",
+      "mnemonic_link": "DOWN/blocking = inhibitory (Gi/↓cAMP). Number = 2. Mesolimbic = the psychosis track.",
+      "function_depiction": {
+        "antagonism": "Foreman LOWERS the barrier — carts pile up behind. EPS pyramid-hatted workers spawn nearby. Tuberoinfundibular milk-pump leaks (hyperprolactinemia).",
+        "partial_agonism": "Barrier hovers HALFWAY (Aripiprazole, Brexpiprazole, Cariprazine — the foreman is half-asleep)",
+        "agonism": "Barrier raised wide — runaway carts = stimulant psychosis"
+      },
+      "use_when": "All antipsychotics, schizophrenia, EPS, hyperprolactinemia, stimulant psychosis, tardive dyskinesia, NMS"
+    },
+    "D3_receptor": {
+      "category": "Dopamine receptor — D2-family (Gi, ↓cAMP) — limbic-restricted",
+      "scene": "DOPA_MINE",
+      "symbol": "Three small red barriers in a heart-shaped (limbic) sub-chamber",
+      "mnemonic_link": "Same red-barrier base as D2 (Gi family). Number = 3. Heart-shaped chamber = limbic.",
+      "function_depiction": {
+        "selective_partial_agonism": "Cariprazine wears a name-tag and operates ONLY these three barriers — the surrounding D2 main barrier untouched (selectivity)"
+      },
+      "use_when": "Cariprazine, limbic dopamine selectivity, addiction circuits, anhedonia"
+    },
+    "D4_receptor": {
+      "category": "Dopamine receptor — D2-family (Gi, ↓cAMP) — high clozapine affinity, low EPS",
+      "scene": "DOPA_MINE",
+      "symbol": "Four-bolt locking mechanism on a SILENT chamber door (no EPS workers around it)",
+      "mnemonic_link": "Same red-locked base (Gi family). Number = 4 bolts. Silence = low EPS profile.",
+      "function_depiction": {
+        "antagonism": "Clozapine carries a special Z-shaped key (the Z of cloZapine) that fits all 4 bolts"
+      },
+      "use_when": "Clozapine, novel atypicals with low EPS, theoretical ADHD pathophysiology"
+    },
+
+    "_BATCH_1A_SEROTONIN_FAMILY": "═══════════════════════════════════════════",
 
     "5-HT1A_receptor": {
-      "category": "Serotonin receptor (Gi, autoreceptor + postsynaptic)",
-      "animal": "Wise Owl (ינשוף חכם)",
-      "visual": "A calm owl sitting on a branch — eyes closed, meditating. Buspirone offers it a peace pipe.",
-      "function_link": "5-HT-ONE-A → 'OWL-A'. Calm/wise owl = anxiolytic effect. Partial agonists (buspirone, vilazodone, vortioxetine, aripiprazole) feed the owl.",
-      "use_when": "Buspirone, vilazodone, vortioxetine, aripiprazole, serotonergic anxiolysis"
+      "category": "Serotonin receptor (Gi — autoreceptor + postsynaptic)",
+      "scene": "BUS_LINE_1A",
+      "symbol": "Bus-stop sign '1A' with a trembling rabbit on the bench, awaiting a calming bus",
+      "mnemonic_link": "Bus-line number = 1A. Rabbit = the anxious patient. Bus arriving = anxiolysis.",
+      "function_depiction": {
+        "partial_agonism": "Buspirone Express bus arrives, rabbit boards, tension melts. Vilazodone, Vortioxetine, Aripiprazole = different buses on the SAME 1A line.",
+        "autoreceptor_role": "Sometimes the bus is empty for 4-6 weeks (SSRI delay-of-onset = autoreceptor desensitization)"
+      },
+      "use_when": "Buspirone, vilazodone, vortioxetine, aripiprazole, SSRI delay-of-onset, partial-agonist anxiolysis"
     },
     "5-HT2A_receptor": {
-      "category": "Serotonin receptor (Gq, cortical) — antipsychotic + psychedelic target",
-      "animal": "Two-headed Tiger (טיגריס דו-ראשי)",
-      "visual": "A striped tiger with TWO heads facing opposite directions — one hallucinating (psychedelic), one antipsychotic-blocked",
-      "function_link": "5-HT-TWO-A. Psychedelics (LSD) = agonist → hallucinating head free. Atypical antipsychotics = antagonist → muzzle on the other head.",
-      "use_when": "All atypical antipsychotics, hallucinogens, pimavanserin (inverse agonist), trazodone, mirtazapine"
+      "category": "Serotonin receptor (Gq, cortical) — psychedelic + atypical antipsychotic target",
+      "scene": "TAROT_2A",
+      "symbol": "Tarot table with TWO Ace cards. Tie-dye hippie reader. Psychedelic walls.",
+      "mnemonic_link": "2 Ace cards = '2A'. Tarot = visions = hallucinations. Psychedelic walls = LSD/psilocybin.",
+      "function_depiction": {
+        "agonism": "Hippie reads the cards aloud — walls swirl wildly (LSD trip)",
+        "antagonism": "Officer 'Atypical PD' enters with flashlight, walls fade to gray (atypical antipsychotic blockade — central to ALL atypicals)",
+        "inverse_agonism": "Special officer with mirror flips cards face-down (Pimavanserin)"
+      },
+      "use_when": "All atypical antipsychotics' core mechanism, hallucinogens (LSD/psilocybin/DMT), pimavanserin, trazodone, mirtazapine"
     },
     "5-HT2C_receptor": {
-      "category": "Serotonin receptor (Gq, hypothalamic)",
-      "animal": "Chubby Cougar / Cookie Cougar (פומה שמנמנה)",
-      "visual": "A round, well-fed cougar guarding a cookie jar. When 2C is BLOCKED (mirtazapine, olanzapine) — the cougar steals all the cookies → weight gain.",
-      "function_link": "5-HT-2-C → 2 Cs (Chubby Cougar with Cookies). Blockade → ↑appetite, weight gain. Activation (lorcaserin) → weight loss.",
-      "use_when": "Weight gain side effects of mirtazapine/olanzapine/quetiapine, lorcaserin (withdrawn), trazodone"
+      "category": "Serotonin receptor (Gq, hypothalamic — appetite control)",
+      "scene": "TAROT_2A (kitchen annex)",
+      "symbol": "Behind the tarot parlor, a kitchen with TWO chefs (the 'Cs') guarding a giant cookie jar",
+      "mnemonic_link": "2 Chefs / 2 Cookies = '2C'. Active receptor = chefs vigilant, no overeating.",
+      "function_depiction": {
+        "antagonism": "Mirtazapine/Olanzapine/Quetiapine sneak in, KO the chefs, eat all cookies → patient gains weight",
+        "agonism": "Lorcaserin (now withdrawn) makes chefs hyper-vigilant → weight loss"
+      },
+      "use_when": "Weight gain side effects of mirtazapine/olanzapine/quetiapine; trazodone; lorcaserin (historical)"
     },
     "5-HT3_receptor": {
-      "category": "Serotonin receptor (LIGAND-GATED ION CHANNEL — unique!) — GI/CTZ",
-      "animal": "Three-Headed Sea Snake (נחש ים תלת-ראשי)",
-      "visual": "A snake with 3 hissing heads in the gut — vomiting fire. Ondansetron caps each head. Mirtazapine and vortioxetine also block.",
-      "function_link": "5-HT-3 → three heads. The ONLY ionotropic 5-HT receptor. Located on CTZ + gut = nausea/vomiting.",
-      "use_when": "Nausea, vomiting, mirtazapine antiemetic effect, vortioxetine, antiemetics (ondansetron family)"
+      "category": "Serotonin receptor — UNIQUE: ligand-gated ion channel, not G-protein. CTZ + gut.",
+      "scene": "TAROT_2A (water-gate room)",
+      "symbol": "Three mighty IRON GATES (literally drawn as channels, not G-proteins) bursting open with green vomit-water",
+      "mnemonic_link": "3 = three gates. Iron channel = ionotropic (the only 5-HT receptor that is). Green water = nausea/vomiting from CTZ.",
+      "function_depiction": {
+        "antagonism": "Three identical PLUGS (Ondansetron the prototype) seal the gates. Mirtazapine and Vortioxetine carry plugs too (their antiemetic side effect).",
+        "agonism": "Excess serotonin (e.g. SSRI side effect) = gates flood open → diarrhea/nausea"
+      },
+      "use_when": "Nausea/vomiting, mirtazapine antiemetic effect, vortioxetine, chemotherapy nausea, SSRI GI side effects"
     },
     "5-HT6_receptor": {
-      "category": "Serotonin receptor (Gs, cortical/striatal)",
-      "animal": "Six-legged Centipede in a thinking cap (נדל בעל שש רגליים)",
-      "visual": "A centipede with 6 emphasized legs wearing a tiny graduation cap, helping a brain study",
-      "function_link": "5-HT-6 → six legs. Cognitive enhancement target. Antagonism → procognitive (some atypicals).",
-      "use_when": "Cognition in schizophrenia, vortioxetine (5-HT6 antagonist), procognitive effects"
+      "category": "Serotonin receptor (Gs, cortical/striatal — cognition)",
+      "scene": "TAROT_2A (back study)",
+      "symbol": "Library back-room with SIX framed PhD diplomas on the wall. An old professor sits reading.",
+      "mnemonic_link": "6 = SIX (sixth sense, six diplomas). Professor = cognition.",
+      "function_depiction": {
+        "antagonism": "Vortioxetine the professor sharpens his glasses — pro-cognitive effect"
+      },
+      "use_when": "Cognition in schizophrenia/depression, vortioxetine's cognitive edge, theoretical procognitive targets"
     },
     "5-HT7_receptor": {
-      "category": "Serotonin receptor (Gs, suprachiasmatic + hippocampal)",
-      "animal": "Seven Swans circling a clock (שבעה ברבורים)",
-      "visual": "Seven swans flying in a circle around a 7 o'clock clock-face (circadian rhythm)",
-      "function_link": "5-HT-7 → seven swans. Circadian rhythm + mood. Lurasidone is a key antagonist (antidepressant effect).",
-      "use_when": "Lurasidone, circadian rhythm disorders, bipolar depression, vortioxetine"
+      "category": "Serotonin receptor (Gs, suprachiasmatic + hippocampal — circadian)",
+      "scene": "CONVENIENCE_STORE_7",
+      "symbol": "A 7-Eleven store glowing at midnight, sign reads 'OPEN 24/7'",
+      "mnemonic_link": "7 = the store's name and hours. 24/7 = circadian (always running).",
+      "function_depiction": {
+        "antagonism": "Lurasidone the night-clerk turns off neon signs and locks doors — restored sleep-wake balance, antidepressant effect"
+      },
+      "use_when": "Lurasidone, vortioxetine (also hits 7), circadian rhythm disorders, bipolar depression sleep architecture"
     },
     "SERT": {
-      "category": "Serotonin transporter (target of SSRIs/SNRIs/TCAs)",
-      "animal": "Sponge Sucker-fish (דג סופג סרוטונין)",
-      "visual": "A sponge-like fish vacuuming up serotonin molecules from the synapse. SSRI = a cork plugging the sponge's intake.",
-      "function_link": "SERT pulls serotonin BACK into presynaptic neuron. Block it → more serotonin in synapse.",
-      "use_when": "All SSRIs, SNRIs, TCAs (some), vortioxetine, SARIs"
+      "category": "Serotonin transporter — SSRIs/SNRIs/TCAs target",
+      "scene": "(standalone — postal route through any synapse)",
+      "symbol": "A POSTAL CARRIER in a uniform reading 'SERT' (Service & Reuptake Transporter), collecting serotonin packages from synapse mailboxes",
+      "mnemonic_link": "SERT = Service. Postal worker = pickup-and-return = re-uptake.",
+      "function_depiction": {
+        "blockade": "SSRI tapes a 'NO PICKUPS TODAY' sign on every mailbox. Packages pile up in synapse (more serotonin available). Postal carrier paces frustrated for 4-6 weeks until he gives up (delay of onset)."
+      },
+      "use_when": "All SSRIs, SNRIs, TCAs (some), vortioxetine, SARIs, antidepressant onset delay"
     },
 
-    "_BATCH_1B_other_receptors": "═══════════════════════ TBD next round ═══════════════════════",
+    "_BATCH_1B_remaining_receptors": "═══════════════════════ TBD next round (NE, GABA, NMDA, opioid, nAChR, mAChR, H1) ═══════════════════════",
     "_BATCH_2_neurotransmitters_pathways": "═══════════════════════ TBD ═══════════════════════",
     "_BATCH_3_brain_regions": "═══════════════════════ TBD ═══════════════════════",
     "_BATCH_4_side_effect_mechanisms": "═══════════════════════ TBD ═══════════════════════",
