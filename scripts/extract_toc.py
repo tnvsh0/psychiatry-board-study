@@ -102,7 +102,6 @@ def main() -> int:
     rc, out, err = run_notebooklm([
         "ask", PROMPT,
         "--json",
-        "--new",
         "--save-as-note", "--note-title", "TOC extraction (script-generated)",
     ], timeout=600)
 

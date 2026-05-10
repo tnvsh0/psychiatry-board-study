@@ -98,7 +98,7 @@ def main() -> int:
     print("[2/2] Asking notebook for entity inventory (this may take 2-5 min)...")
     r = run_notebooklm([
         "ask", PROMPT,
-        "--json", "--new",
+        "--json",
         "--save-as-note", "--note-title", "Entity inventory (script-generated)",
     ], timeout=900)
     if r.returncode != 0:
