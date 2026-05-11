@@ -1,210 +1,517 @@
 {
-  "version": 3,
+  "version": 4,
   "metadata": {
     "style": "Sketchy-medical-style scene-based mnemonics. Per-symbol logical link via phonetic, shape, acronym, or concept. Pharmacological subfamilies share visual base; functional opposites use contrasting visuals.",
     "design_rules": [
-      "Pick the strongest link per symbol — phonetic, letter shape, acronym-as-object, conceptual association, word breakdown.",
-      "Receptor SUBFAMILIES with similar pharmacology (e.g. Gs vs Gi) get CONTRASTING visual bases.",
-      "Same concept = same recurring scene/object across all images. Different drawings of the same scene are fine.",
-      "Encode FUNCTION: agonist activates the scene; antagonist blocks/lowers/quiets it; inverse agonist reverses it.",
-      "Drugs appear as named characters/tools INSIDE the scene (the bus driver, the foreman, the postal worker).",
-      "Side effects naturally emerge from the same scene (EPS pyramids near a D2 barrier, cookies stolen near 2C, etc.)."
+      "PRIMARY HOOK first: the symbol must immediately evoke the RECEPTOR/DRUG name or number.",
+      "FUNCTION encoded second: how the symbol behaves matches the pharmacology.",
+      "Same concept = same recurring scene/object across all images.",
+      "DRUGS use GENERIC NAMES only — never brand names. Each drug has its own constant symbol that travels between scenes.",
+      "IONS get their own consistent symbol that appears in every channel they participate in.",
+      "Subfamilies sharing pharmacology share visual base; opposing-function subfamilies contrast visually."
     ],
-    "user_examples_kept_for_reference": {
-      "D-ring curtain": "letter shape — D for Dopamine",
-      "NET = fishing net": "acronym → real object",
-      "Polar bear scene = Lithium": "concept → bipolar",
-      "EXTRA + pyramid hats": "word breakdown — extrapyramidal"
-    }
+    "user_feedback_log": [
+      "2026-05-10: animal-only theme rejected — needs per-symbol logic.",
+      "2026-05-11: subfamilies must encode functional difference (Gs vs Gi).",
+      "2026-05-11: PRIMARY HOOK to receptor itself comes before function. Memorable cultural references (Professor X for 5-HT6) work great.",
+      "2026-05-11: drugs need their own constant symbols across scenes (Flumazenil = FLU character).",
+      "2026-05-11: GENERIC names only — no brand names ever. Lithium ≠ bipolar scene (Lithium itself = Li-ion battery)."
+    ]
   },
 
   "scenes": {
     "DOPA_MINE": {
       "scene_name": "DOPA-MINE Co. — coal mine extracting dopamine ore",
       "setting": "A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by pathway — Mesolimbic (heart-shaped chamber), Mesocortical (think-bubble chamber), Nigrostriatal (motor gear chamber), Tuberoinfundibular (milk-pump chamber).",
-      "recurring_characters": [
-        "Mine foreman = autoreceptor (controls release)",
-        "Coal carts on tracks = dopamine release vesicles",
-        "Vertical machinery = D1-family receptors (elevators going UP — Gs/excitatory)",
-        "Red barriers/locks = D2-family receptors (blocking flow — Gi/inhibitory)"
-      ],
-      "uses_for_pathology": {
-        "psychosis": "Mesolimbic chamber overflowing with carts (excess D2 stimulation)",
-        "negative_symptoms": "Mesocortical chamber empty, cobwebs (insufficient D1 stimulation)",
-        "EPS": "Nigrostriatal section: workers wearing newspaper PYRAMID hats labeled 'EXTRA' (when D2 barriers slammed too hard)",
-        "hyperprolactinemia": "Tuberoinfundibular pump SPRAYS milk when D2 barrier is closed"
-      }
+      "recurring_elements": [
+        "Vertical elevators going UP = D1-family receptors (Gs/excitatory)",
+        "Red barriers/locks blocking flow = D2-family receptors (Gi/inhibitory)",
+        "Coal carts = vesicular dopamine release",
+        "Newspaper PYRAMID hats labeled 'EXTRA' near nigrostriatal section = EPS",
+        "Milk pump at tuberoinfundibular section = prolactin"
+      ]
     },
     "BUS_LINE_1A": {
-      "scene_name": "Aged-style bus stop — Line 1A",
-      "setting": "Old wooden bus-stop booth. Sign: '1A'. A frantic RABBIT (the universal anxiety creature) sits trembling on the bench.",
-      "recurring_characters": [
-        "Different buses on Line 1A = different 1A partial agonists (Buspirone, Vilazodone, Vortioxetine, Aripiprazole)",
-        "Late bus = the autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
+      "scene_name": "Bus stop — Line 1A",
+      "setting": "Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= anxiety patient awaiting anxiolysis).",
+      "recurring_elements": [
+        "Different buses arriving = different 1A partial agonists (Buspirone bus, Vilazodone bus, etc.)",
+        "Late bus = autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
       ]
     },
     "TAROT_2A": {
-      "scene_name": "Tarot 2A — psychedelic reading room",
-      "setting": "Dim Victorian parlor. Round table with TWO Ace tarot cards (the '2A'). The reader is a tie-dye-shirted hippie. Walls swirl with psychedelic colors.",
-      "recurring_characters": [
-        "Hippie reader = LSD / Psilocybin / DMT (5-HT2A agonists → hallucinations)",
-        "Officer 'Atypical PD' with a flashlight = atypical antipsychotic (turns lights off, blocks 2A)",
-        "Special officer with mirror = Pimavanserin (inverse agonist — flips the tarot cards over)",
-        "Adjacent kitchen door = 5-HT2C cookie chefs",
-        "Adjacent water-gate room = 5-HT3 vomit gates"
+      "scene_name": "Tarot 2A — psychedelic reading parlor",
+      "setting": "Dim Victorian parlor. Round table with TWO Ace tarot cards. Tie-dye hippie reader. Walls swirl with psychedelic colors. Adjacent rooms: KITCHEN (5-HT2C), WATER-GATE ROOM (5-HT3), LIBRARY (5-HT6).",
+      "recurring_elements": [
+        "Hippie reader (tie-dye shirt) = LSD/Psilocybin agonist",
+        "Officer with flashlight = atypical antipsychotic (turns off the trip)",
+        "Officer with mirror = Pimavanserin (inverse agonist, flips cards face-down)"
       ]
     },
     "CONVENIENCE_STORE_7": {
-      "scene_name": "7-Eleven on the corner — open 24/7",
-      "setting": "A 7-Eleven store, neon sign glowing at midnight. Big '7' on the door. Clock on the wall says 7:00 with both AM and PM marked.",
-      "recurring_characters": [
-        "Night clerk = Lurasidone (turning off lights = blocking 5-HT7)",
-        "Insomniac customer = circadian dysfunction"
+      "scene_name": "7-Eleven open 24/7",
+      "setting": "Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty.",
+      "recurring_elements": ["Night-clerk turning off neon = Lurasidone blocking 5-HT7"]
+    },
+
+    "ALPHA_WOLF_PACK": {
+      "scene_name": "Alpha wolf pack in a snowy forest",
+      "setting": "Snowy pine forest. A wolf pack on the hunt. Some lone alphas charge forward, others stay behind on radio. Each wolf wears a numbered tag.",
+      "recurring_elements": [
+        "Lone alpha wolf (#1) = α1 receptor — true alpha hunts, post-synaptic action",
+        "Two wolves (one '#2' tag) = α2 receptor — #2 wolf pretends but is actually autoreceptor, calling pack back",
+        "Tranquilizer dart from a hunter = α1 blockade (Prazosin, antipsychotic α1 side effect)"
       ]
+    },
+    "BEETHOVEN_ORCHESTRA": {
+      "scene_name": "Beethoven conducting numbered symphonies",
+      "setting": "Concert hall. Beethoven (white wig, intense face) conducts. Different batons numbered for each symphony. Orchestra has heart-drums section (β1) and wind/brass section (β2).",
+      "recurring_elements": [
+        "Beethoven with '#1' baton + heart-drums section = β1 (heart)",
+        "Beethoven with '#2' baton + winds/brass = β2 (lungs)",
+        "A fishing NET hangs by the stage door = NET transporter; Beethoven catches stray notes (NE) and returns them"
+      ]
+    },
+    "AA_HOTEL": {
+      "scene_name": "Aa Hotel — 5-floor GABA-A receptor",
+      "setting": "Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on the α-subunit composition.",
+      "recurring_elements": [
+        "Floor 1 (α1): Sleep Lobby — giant bed in the entrance",
+        "Floor 2 (α2): Calm Lounge — armchairs and tea",
+        "Floor 3 (α3): Group-therapy Room — circle of chairs",
+        "Floor 5 (α5): Memory Penthouse — secure vault",
+        "Hotel Manager = GABA itself (holds master key)",
+        "Green CHLORINE SOLDIERS rushing INTO neurons = Cl⁻ influx → hyperpolarization → inhibition",
+        "Barbed-wire fence around hotel = Phenobarbital",
+        "Bayit-B small synagogue next door = GABA-B (metabotropic, Baclofen prays there)"
+      ]
+    },
+    "ASPARAGUS_VIP_DOOR": {
+      "scene_name": "NMDA VIP-club doorway (Mr. Asparagus's domain)",
+      "setting": "Heavy iron door labeled 'NMDA'. Outside: chalk-white Ca²⁺ guests with '2+' badges wait in line. The lock has a horseshoe MAGNET (Mg²⁺) wedged in it. Above the door: a neon sign that flickers when depolarized.",
+      "recurring_elements": [
+        "Mr. Asparagus (Mexican, methyl-mustache CH₃) = NMDA agonist itself (N-methyl-D-Aspartate)",
+        "G-shaped gray pebble at his feet = Glycine co-agonist",
+        "Horseshoe magnet in lock = Mg²⁺ block",
+        "Chalk-white guests with '2+' badges in line = Ca²⁺ entering",
+        "Neon sign flickering = depolarization (releases the magnet plug)"
+      ]
+    }
+  },
+
+  "ions": {
+    "Mg2+": {
+      "symbol": "Horseshoe magnet labeled 'Mg'",
+      "mnemonic_link": "Mg = Magnet (both start with M). Magnetic block of NMDA = literal magnet on the door.",
+      "appears_in": ["NMDA channel (block)", "Many enzyme co-factors"]
+    },
+    "Ca2+": {
+      "symbol": "Chalk-white VIP guest with '2+' lapel pin",
+      "mnemonic_link": "Ca = Calcium = chalk (calcareous). 2+ = the divalent charge as a name-badge.",
+      "appears_in": ["NMDA (afflux)", "Voltage-gated Ca channels", "Vesicle release"]
+    },
+    "Cl-": {
+      "symbol": "Green-skinned soldier carrying a '−' minus-shield",
+      "mnemonic_link": "Cl = Chlorine (green gas in WWI). Minus shield = the negative charge.",
+      "appears_in": ["GABA-A (influx → hyperpolarization)", "Glycine receptor", "Some Cl-channels"]
+    },
+    "Na+": {
+      "symbol": "Soldier wearing white SALT crystals with '+' epaulets",
+      "mnemonic_link": "Na = Sodium = salt. + epaulets = positive charge.",
+      "appears_in": ["AMPA/Kainate (excitatory influx)", "Voltage-gated Na channels", "Nicotinic AChR"]
+    },
+    "K+": {
+      "symbol": "Yellow banana with '+' sticker",
+      "mnemonic_link": "K = Potassium = banana (high-potassium food). + = positive charge.",
+      "appears_in": ["Repolarization (K+ efflux)", "GABA-B (K-channel opens)", "Resting potential"]
     }
   },
 
   "symbols": {
 
-    "_BATCH_1A_DOPAMINE_FAMILY": "═══════════════════════════════════════════",
+    "_BATCH_1A_dopamine_serotonin": "═══════════════════════════════════════════",
 
     "D1_receptor": {
-      "category": "Dopamine receptor — D1-family (Gs, ↑cAMP, EXCITATORY)",
+      "category": "Dopamine D1-family (Gs, ↑cAMP, EXCITATORY)",
       "scene": "DOPA_MINE",
-      "symbol": "Single elevator with '1↑' button, going UP to the PFC top floor",
-      "mnemonic_link": "UP arrow = excitatory (Gs/↑cAMP). Number = 1. Top floor = prefrontal cortex (working memory).",
-      "function_depiction": {
-        "agonism": "Elevator rides up smoothly — bright lights on each floor as it passes",
-        "antagonism": "Elevator stuck at ground floor"
-      },
-      "use_when": "Discussing PFC dopamine, working memory, positive symptoms via D1"
+      "symbol": "Single elevator with '1↑' button going UP to PFC top floor",
+      "mnemonic_link": "UP arrow = Gs/excitatory. '1' = D1. Top floor = PFC (working memory).",
+      "function_depiction": "Agonism = elevator rises bright; antagonism = stuck at ground."
     },
     "D5_receptor": {
-      "category": "Dopamine receptor — D1-family (Gs, ↑cAMP, EXCITATORY) — hippocampal",
+      "category": "Dopamine D1-family (Gs, ↑cAMP) — hippocampal",
       "scene": "DOPA_MINE",
-      "symbol": "Glass elevator with '5' button, ascending through 5 floors of the hippocampus department",
-      "mnemonic_link": "Same UP/Gs visual as D1. Number = 5. Hippocampus = memory department (5 floors of bookshelves).",
-      "function_depiction": {
-        "agonism": "Elevator rises through library floors, books illuminated"
-      },
-      "use_when": "Hippocampal dopamine, memory consolidation"
+      "symbol": "Glass elevator '5' ascending through 5 hippocampal library floors",
+      "mnemonic_link": "Same UP/Gs visual as D1. '5' = D5. Library = hippocampus/memory."
     },
     "D2_receptor": {
-      "category": "Dopamine receptor — D2-family (Gi, ↓cAMP, INHIBITORY) — THE central antipsychotic target",
+      "category": "Dopamine D2-family (Gi, ↓cAMP) — CENTRAL antipsychotic target",
       "scene": "DOPA_MINE",
-      "symbol": "Massive RED BARRIER labeled '2' across the main mesolimbic track. A foreman stands by the lever.",
-      "mnemonic_link": "DOWN/blocking = inhibitory (Gi/↓cAMP). Number = 2. Mesolimbic = the psychosis track.",
-      "function_depiction": {
-        "antagonism": "Foreman LOWERS the barrier — carts pile up behind. EPS pyramid-hatted workers spawn nearby. Tuberoinfundibular milk-pump leaks (hyperprolactinemia).",
-        "partial_agonism": "Barrier hovers HALFWAY (Aripiprazole, Brexpiprazole, Cariprazine — the foreman is half-asleep)",
-        "agonism": "Barrier raised wide — runaway carts = stimulant psychosis"
-      },
-      "use_when": "All antipsychotics, schizophrenia, EPS, hyperprolactinemia, stimulant psychosis, tardive dyskinesia, NMS"
+      "symbol": "Massive RED BARRIER labeled '2' across mesolimbic track with a foreman at lever",
+      "mnemonic_link": "DOWN = Gi/inhibitory. '2' = D2. Mesolimbic = psychosis track.",
+      "function_depiction": "Antagonism = foreman LOWERS barrier (carts pile up; EPS pyramid-hatted workers spawn; prolactin pump leaks). Partial agonism = barrier hovers halfway (Aripiprazole/Brexpiprazole/Cariprazine). Agonism = barrier raised wide → runaway carts = stimulant psychosis."
     },
     "D3_receptor": {
-      "category": "Dopamine receptor — D2-family (Gi, ↓cAMP) — limbic-restricted",
+      "category": "Dopamine D2-family (Gi) — limbic-restricted",
       "scene": "DOPA_MINE",
       "symbol": "Three small red barriers in a heart-shaped (limbic) sub-chamber",
-      "mnemonic_link": "Same red-barrier base as D2 (Gi family). Number = 3. Heart-shaped chamber = limbic.",
-      "function_depiction": {
-        "selective_partial_agonism": "Cariprazine wears a name-tag and operates ONLY these three barriers — the surrounding D2 main barrier untouched (selectivity)"
-      },
-      "use_when": "Cariprazine, limbic dopamine selectivity, addiction circuits, anhedonia"
+      "mnemonic_link": "Red-barrier base = Gi. '3' barriers. Heart shape = limbic.",
+      "function_depiction": "Cariprazine operates ONLY these three (selective partial agonist)."
     },
     "D4_receptor": {
-      "category": "Dopamine receptor — D2-family (Gi, ↓cAMP) — high clozapine affinity, low EPS",
+      "category": "Dopamine D2-family (Gi) — high clozapine affinity, low EPS",
       "scene": "DOPA_MINE",
-      "symbol": "Four-bolt locking mechanism on a SILENT chamber door (no EPS workers around it)",
-      "mnemonic_link": "Same red-locked base (Gi family). Number = 4 bolts. Silence = low EPS profile.",
-      "function_depiction": {
-        "antagonism": "Clozapine carries a special Z-shaped key (the Z of cloZapine) that fits all 4 bolts"
-      },
-      "use_when": "Clozapine, novel atypicals with low EPS, theoretical ADHD pathophysiology"
+      "symbol": "Four-bolt locking mechanism on a SILENT chamber door",
+      "mnemonic_link": "Same red-locked base (Gi). 4 bolts = D4. Silence = low EPS.",
+      "function_depiction": "Clozapine carries a Z-shaped master key that fits all 4 bolts."
     },
-
-    "_BATCH_1A_SEROTONIN_FAMILY": "═══════════════════════════════════════════",
 
     "5-HT1A_receptor": {
-      "category": "Serotonin receptor (Gi — autoreceptor + postsynaptic)",
+      "category": "Serotonin (Gi — autoreceptor + postsynaptic)",
       "scene": "BUS_LINE_1A",
-      "symbol": "Bus-stop sign '1A' with a trembling rabbit on the bench, awaiting a calming bus",
-      "mnemonic_link": "Bus-line number = 1A. Rabbit = the anxious patient. Bus arriving = anxiolysis.",
-      "function_depiction": {
-        "partial_agonism": "Buspirone Express bus arrives, rabbit boards, tension melts. Vilazodone, Vortioxetine, Aripiprazole = different buses on the SAME 1A line.",
-        "autoreceptor_role": "Sometimes the bus is empty for 4-6 weeks (SSRI delay-of-onset = autoreceptor desensitization)"
-      },
-      "use_when": "Buspirone, vilazodone, vortioxetine, aripiprazole, SSRI delay-of-onset, partial-agonist anxiolysis"
+      "symbol": "Bus-stop '1A' with anxious rabbit on bench",
+      "mnemonic_link": "Bus line 1A. Rabbit = anxiety. Bus arriving = anxiolysis.",
+      "function_depiction": "Partial agonists (Buspirone, Vilazodone, Vortioxetine, Aripiprazole) = different buses on the SAME 1A line. Empty bus for 4-6 weeks = SSRI delay-of-onset (autoreceptor desensitization)."
     },
     "5-HT2A_receptor": {
-      "category": "Serotonin receptor (Gq, cortical) — psychedelic + atypical antipsychotic target",
+      "category": "Serotonin (Gq, cortical) — psychedelic + atypical antipsychotic target",
       "scene": "TAROT_2A",
-      "symbol": "Tarot table with TWO Ace cards. Tie-dye hippie reader. Psychedelic walls.",
-      "mnemonic_link": "2 Ace cards = '2A'. Tarot = visions = hallucinations. Psychedelic walls = LSD/psilocybin.",
-      "function_depiction": {
-        "agonism": "Hippie reads the cards aloud — walls swirl wildly (LSD trip)",
-        "antagonism": "Officer 'Atypical PD' enters with flashlight, walls fade to gray (atypical antipsychotic blockade — central to ALL atypicals)",
-        "inverse_agonism": "Special officer with mirror flips cards face-down (Pimavanserin)"
-      },
-      "use_when": "All atypical antipsychotics' core mechanism, hallucinogens (LSD/psilocybin/DMT), pimavanserin, trazodone, mirtazapine"
+      "symbol": "Tarot table with 2 Ace cards, tie-dye hippie reader, swirling psychedelic walls",
+      "mnemonic_link": "2 Ace cards = '2A'. Tarot = hallucinations.",
+      "function_depiction": "Agonism (LSD/Psilocybin/DMT) = walls swirl wildly. Antagonism (all atypicals, Mirtazapine, Trazodone) = officer with flashlight turns lights off. Inverse agonism (Pimavanserin) = officer flips cards face-down."
     },
     "5-HT2C_receptor": {
-      "category": "Serotonin receptor (Gq, hypothalamic — appetite control)",
+      "category": "Serotonin (Gq, hypothalamic — appetite)",
       "scene": "TAROT_2A (kitchen annex)",
-      "symbol": "Behind the tarot parlor, a kitchen with TWO chefs (the 'Cs') guarding a giant cookie jar",
-      "mnemonic_link": "2 Chefs / 2 Cookies = '2C'. Active receptor = chefs vigilant, no overeating.",
-      "function_depiction": {
-        "antagonism": "Mirtazapine/Olanzapine/Quetiapine sneak in, KO the chefs, eat all cookies → patient gains weight",
-        "agonism": "Lorcaserin (now withdrawn) makes chefs hyper-vigilant → weight loss"
-      },
-      "use_when": "Weight gain side effects of mirtazapine/olanzapine/quetiapine; trazodone; lorcaserin (historical)"
+      "symbol": "Kitchen with TWO chefs guarding cookie jar",
+      "mnemonic_link": "2 Chefs / 2 Cookies = '2C'.",
+      "function_depiction": "Antagonism (Mirtazapine, Olanzapine, Quetiapine) = chefs KO'd, cookies stolen → weight gain."
     },
     "5-HT3_receptor": {
-      "category": "Serotonin receptor — UNIQUE: ligand-gated ion channel, not G-protein. CTZ + gut.",
+      "category": "Serotonin — LIGAND-GATED ION CHANNEL (unique!). CTZ + gut.",
       "scene": "TAROT_2A (water-gate room)",
-      "symbol": "Three mighty IRON GATES (literally drawn as channels, not G-proteins) bursting open with green vomit-water",
-      "mnemonic_link": "3 = three gates. Iron channel = ionotropic (the only 5-HT receptor that is). Green water = nausea/vomiting from CTZ.",
-      "function_depiction": {
-        "antagonism": "Three identical PLUGS (Ondansetron the prototype) seal the gates. Mirtazapine and Vortioxetine carry plugs too (their antiemetic side effect).",
-        "agonism": "Excess serotonin (e.g. SSRI side effect) = gates flood open → diarrhea/nausea"
-      },
-      "use_when": "Nausea/vomiting, mirtazapine antiemetic effect, vortioxetine, chemotherapy nausea, SSRI GI side effects"
+      "symbol": "Three iron CHANNELS gushing green vomit-water",
+      "mnemonic_link": "3 = three gates. Iron channels emphasize ionotropic uniqueness.",
+      "function_depiction": "Antagonism (Ondansetron, Mirtazapine, Vortioxetine) = three identical PLUGS seal the gates."
     },
     "5-HT6_receptor": {
-      "category": "Serotonin receptor (Gs, cortical/striatal — cognition)",
-      "scene": "TAROT_2A (back study)",
-      "symbol": "Library back-room with SIX framed PhD diplomas on the wall. An old professor sits reading.",
-      "mnemonic_link": "6 = SIX (sixth sense, six diplomas). Professor = cognition.",
-      "function_depiction": {
-        "antagonism": "Vortioxetine the professor sharpens his glasses — pro-cognitive effect"
-      },
-      "use_when": "Cognition in schizophrenia/depression, vortioxetine's cognitive edge, theoretical procognitive targets"
+      "category": "Serotonin (Gs, cortical/striatal — cognition)",
+      "scene": "TAROT_2A (back library)",
+      "symbol": "Library with 6 framed PhD diplomas; old professor reads",
+      "mnemonic_link": "6 = SIX diplomas. Professor = cognition.",
+      "function_depiction": "Antagonism (Vortioxetine) = professor sharpens glasses (procognitive)."
     },
     "5-HT7_receptor": {
-      "category": "Serotonin receptor (Gs, suprachiasmatic + hippocampal — circadian)",
+      "category": "Serotonin (Gs, suprachiasmatic + hippocampal — circadian)",
       "scene": "CONVENIENCE_STORE_7",
-      "symbol": "A 7-Eleven store glowing at midnight, sign reads 'OPEN 24/7'",
-      "mnemonic_link": "7 = the store's name and hours. 24/7 = circadian (always running).",
-      "function_depiction": {
-        "antagonism": "Lurasidone the night-clerk turns off neon signs and locks doors — restored sleep-wake balance, antidepressant effect"
-      },
-      "use_when": "Lurasidone, vortioxetine (also hits 7), circadian rhythm disorders, bipolar depression sleep architecture"
+      "symbol": "7-Eleven open 24/7",
+      "mnemonic_link": "7 = the store name and hours.",
+      "function_depiction": "Antagonism (Lurasidone) = clerk turns off neon, locks doors (restored sleep)."
     },
     "SERT": {
-      "category": "Serotonin transporter — SSRIs/SNRIs/TCAs target",
-      "scene": "(standalone — postal route through any synapse)",
-      "symbol": "A POSTAL CARRIER in a uniform reading 'SERT' (Service & Reuptake Transporter), collecting serotonin packages from synapse mailboxes",
-      "mnemonic_link": "SERT = Service. Postal worker = pickup-and-return = re-uptake.",
-      "function_depiction": {
-        "blockade": "SSRI tapes a 'NO PICKUPS TODAY' sign on every mailbox. Packages pile up in synapse (more serotonin available). Postal carrier paces frustrated for 4-6 weeks until he gives up (delay of onset)."
-      },
-      "use_when": "All SSRIs, SNRIs, TCAs (some), vortioxetine, SARIs, antidepressant onset delay"
+      "category": "Serotonin transporter — SSRI/SNRI/TCA target",
+      "scene": "(standalone — appears in any synapse scene)",
+      "symbol": "Postal carrier in 'SERT' uniform collecting serotonin packages",
+      "mnemonic_link": "SERT = Service (postal). Pick-up-and-return = re-uptake.",
+      "function_depiction": "SSRI = a 'NO PICKUPS TODAY' sign blocks the carrier. Packages pile up in synapse (more serotonin available). 4-6 week delay."
     },
 
-    "_BATCH_1B_remaining_receptors": "═══════════════════════ TBD next round (NE, GABA, NMDA, opioid, nAChR, mAChR, H1) ═══════════════════════",
-    "_BATCH_2_neurotransmitters_pathways": "═══════════════════════ TBD ═══════════════════════",
-    "_BATCH_3_brain_regions": "═══════════════════════ TBD ═══════════════════════",
-    "_BATCH_4_side_effect_mechanisms": "═══════════════════════ TBD ═══════════════════════",
-    "_BATCH_5_DSM_categories": "═══════════════════════ TBD ═══════════════════════",
-    "_BATCH_6_drug_families": "═══════════════════════ TBD ═══════════════════════"
+    "_BATCH_1B_norepinephrine_GABA_NMDA": "═══════════════════════════════════════════",
+
+    "alpha1_receptor": {
+      "category": "Adrenergic α1 — post-synaptic excitatory (Gq)",
+      "scene": "ALPHA_WOLF_PACK",
+      "symbol": "Single LONE ALPHA WOLF charging at full hunt",
+      "mnemonic_link": "α1 = ONE wolf = true alpha. Hunt = post-synaptic action (vasoconstriction, alertness).",
+      "function_depiction": "Antagonism (Prazosin, antipsychotic α1 block) = tranquilizer dart → wolf sits down → orthostasis. Prazosin specifically tames the wolf's nightmares (PTSD use)."
+    },
+    "alpha2_receptor": {
+      "category": "Adrenergic α2 — autoreceptor (presynaptic, Gi)",
+      "scene": "ALPHA_WOLF_PACK",
+      "symbol": "Two wolves; the one tagged '#2' pretends to be alpha but radios pack 'come back to base'",
+      "mnemonic_link": "α2 = TWO wolves. The #2 wolf isn't truly alpha → autoreceptor function (negative feedback).",
+      "function_depiction": "Agonism (Clonidine, Guanfacine) = friendly handlers feed the #2 wolf → whole pack calms (lowers central NE). ADHD = overactive pack settles."
+    },
+    "beta1_receptor": {
+      "category": "Adrenergic β1 — Gs (HEART)",
+      "scene": "BEETHOVEN_ORCHESTRA",
+      "symbol": "Beethoven holding baton '#1' conducting heart-shaped drum section",
+      "mnemonic_link": "BETHoven = β. Symphony #1 = β1. Drums = heart pounding.",
+      "function_depiction": "Antagonism (Propranolol, Metoprolol-class) = 'Quiet' sign mutes the drum section."
+    },
+    "beta2_receptor": {
+      "category": "Adrenergic β2 — Gs (LUNGS, muscle)",
+      "scene": "BEETHOVEN_ORCHESTRA",
+      "symbol": "Beethoven holding baton '#2' conducting brass/wind section",
+      "mnemonic_link": "Symphony #2 = β2. Winds/Brass = lungs/airways.",
+      "function_depiction": "Agonism (Albuterol) = winds blast open. Non-selective β-block (e.g. Propranolol) silences the winds → bronchospasm risk."
+    },
+    "NET": {
+      "category": "Norepinephrine transporter",
+      "scene": "BEETHOVEN_ORCHESTRA (stage-door)",
+      "symbol": "Fishing NET hanging by the stage door — Beethoven catches stray notes (NE) with it",
+      "mnemonic_link": "NET acronym = literal net. Catching notes = re-uptake.",
+      "function_depiction": "Atomoxetine = small atomic ox tearing holes in the net. Bupropion = bumper-cars also tears net (NDRI). TCAs/SNRIs (Venlafaxine, Duloxetine) = various NET-blockers."
+    },
+
+    "GABA_neurotransmitter": {
+      "category": "Main inhibitory neurotransmitter",
+      "scene": "AA_HOTEL",
+      "symbol": "Aa Hotel manager holding the master key",
+      "mnemonic_link": "GABA = manager who opens the Cl⁻ doors.",
+      "function_depiction": "Opens the receptor channel → green chlorine soldiers (Cl⁻) rush in → hyperpolarization (inhibition)."
+    },
+    "GABA_A_receptor": {
+      "category": "GABA-A — ionotropic Cl⁻ channel. Pentameric: usually 2α + 2β + 1γ.",
+      "scene": "AA_HOTEL",
+      "symbol": "The hotel itself — 5-floor building with α-floor-specific functions",
+      "mnemonic_link": "Hotel name 'Aa' = α-α. 5 floors = pentameric.",
+      "function_depiction": "BZD = a partygoer that tickles the manager → doors open MORE FREQUENTLY (↑frequency). Barbiturate (Phenobarbital, barbed-wire fence) = lock-picker holding doors open LONGER (↑duration; high dose can open without GABA → lethal). Alcohol = also bribes the manager. Flumazenil (FLU character with tissues) = security guard who throws BZDs out."
+    },
+    "GABA_A_alpha1_subunit": {
+      "category": "GABA-A α1 subunit — sedation, hypnosis",
+      "scene": "AA_HOTEL",
+      "symbol": "Floor 1 — Sleep Lobby with giant bed",
+      "mnemonic_link": "Floor 1 = ground floor = where you crash on arrival.",
+      "function_depiction": "Z-drugs (Zolpidem, Eszopiclone) = express elevators that ONLY go to Floor 1."
+    },
+    "GABA_A_alpha2_alpha3_subunits": {
+      "category": "GABA-A α2/α3 — anxiolysis",
+      "scene": "AA_HOTEL",
+      "symbol": "Floor 2 (Calm Lounge) + Floor 3 (Group-therapy circle)",
+      "mnemonic_link": "Middle floors = where you spend the calm part of your stay = anxiolysis.",
+      "function_depiction": "BZDs broadly target these floors (Diazepam, Alprazolam, Lorazepam — anxiolytic action)."
+    },
+    "GABA_A_alpha5_subunit": {
+      "category": "GABA-A α5 — memory/learning",
+      "scene": "AA_HOTEL",
+      "symbol": "Floor 5 — Memory Penthouse with a vault",
+      "mnemonic_link": "5 = penthouse = top floor = high-value memories.",
+      "function_depiction": "Knockout of α5 (e.g. Midazolam pre-surgical) = vault is robbed → amnesia."
+    },
+    "GABA_B_receptor": {
+      "category": "GABA-B — metabotropic (Gi → K⁺ channel opens). NOT a chloride channel!",
+      "scene": "AA_HOTEL (adjacent)",
+      "symbol": "Small synagogue 'Bayit B' next door to the hotel",
+      "mnemonic_link": "GABA-B = 'Bayit B' (House B in Hebrew). Separate building emphasizes that GABA-B is structurally different (G-protein, not ion channel).",
+      "function_depiction": "Baclofen prays here (spasticity treatment). GHB visits (illicit/narcolepsy)."
+    },
+
+    "NMDA_receptor": {
+      "category": "Glutamate receptor — ligand-gated + voltage-gated (Mg²⁺ block). Ca²⁺ influx.",
+      "scene": "ASPARAGUS_VIP_DOOR",
+      "symbol": "Heavy iron door labeled 'NMDA' with horseshoe magnet wedged in lock",
+      "mnemonic_link": "Door = channel. Mr. Asparagus (NMDA = N-methyl-D-Aspartate) is the agonist. Magnet = Mg²⁺ block. Glycine pebble at his feet = required co-agonist. Chalk-white '2+' guests = Ca²⁺ entry.",
+      "function_depiction": "Three conditions for opening: 1) Asparagus present (glutamate/NMDA), 2) Glycine pebble present, 3) Neon sign flickers (depolarization) → magnet falls out. NMDA hypothesis of schizophrenia = rusty magnet, door never opens properly → negative symptoms."
+    }
+  },
+
+  "drugs": {
+
+    "_BATCH_1_drugs_paired_with_above_receptors": "═══════════════════════════════════════════",
+
+    "Lithium": {
+      "symbol": "Giant Li-ion battery labeled 'Li' with charge indicator",
+      "mnemonic_link": "Li = chemical symbol on the battery.",
+      "function_depiction": "Narrow voltage band on the indicator = narrow therapeutic window (0.6–1.2 mEq/L). Overcharged battery EXPLODES = toxicity at >1.5 (tremor → ataxia → seizures → death). Rechargeable = mood stabilization between mania and depression.",
+      "appears_in_scenes": ["Bipolar polar-bear scene", "Acute mania ward", "Tox-emergency scene"]
+    },
+    "Valproate": {
+      "symbol": "Bald PRO athlete in a valley, holding a giant cake (weight gain) and stroking his bald head",
+      "mnemonic_link": "VAL-PRO = Valley + Pro. Bald + cake = hair loss + weight gain.",
+      "function_depiction": "Broad mood stabilizer + anticonvulsant. Hepatotoxic warning = liver dangling. Teratogen = pregnant woman shooed away."
+    },
+    "Lamotrigine": {
+      "symbol": "Lamb standing on a hair-trigger, with red rash on its wool",
+      "mnemonic_link": "Lamb-O-Trij → 'Lamb-on-Trigger'. Red rash = SJS / TEN warning.",
+      "function_depiction": "Slow titration = lamb slowly stepping onto trigger. Carbamazepine ↓ levels (induces metabolism). Valproate ↑ levels (inhibits) → must halve dose."
+    },
+    "Carbamazepine": {
+      "symbol": "A bread maze that redraws itself overnight",
+      "mnemonic_link": "Carb-A-Maze = CARB (bread) + Maze. Self-redrawing = auto-induction.",
+      "function_depiction": "CYP-induces own metabolism (auto-induction). HLA-B*1502 in Asians = SJS risk. SIADH (low sodium) = the maze fills with water."
+    },
+
+    "Diazepam": {
+      "symbol": "Backpacker in a green valley by a slow stream (DIA)",
+      "mnemonic_link": "Diaz → Day-az → Day in a calm valley.",
+      "function_depiction": "Long t½ + active metabolites = pitches a tent (stays awhile). Used in alcohol withdrawal (taper agent)."
+    },
+    "Alprazolam": {
+      "symbol": "Short, fluffy alpaca with a 'high-potency' boxing glove",
+      "mnemonic_link": "ALP-acalpaca. Short fluffy = short t½, high potency.",
+      "function_depiction": "Panic attacks = alpaca punches the attack. Inter-dose rebound = alpaca tantrum mid-day. Avoid in adolescents = no kids around alpaca."
+    },
+    "Lorazepam": {
+      "symbol": "Grandma by the fireplace telling ancient LORE",
+      "mnemonic_link": "Lor → Lore.",
+      "function_depiction": "Hepatic conjugation only (no oxidation) = grandma doesn't need her liver oven. Catatonia challenge = grandma jolts patient awake with a story. IV/IM/PO available."
+    },
+    "Clonazepam": {
+      "symbol": "Two identical CLONES walking together with long canes",
+      "mnemonic_link": "Clone → identical pair.",
+      "function_depiction": "Long t½ = canes = stable, far walking. Less rebound than Alprazolam."
+    },
+    "Midazolam": {
+      "symbol": "King MIDAS with a stopwatch — anything he touches turns rapid",
+      "mnemonic_link": "Midaz → Midas-touch.",
+      "function_depiction": "Rapid IM/IV/IN onset. Intranasal in pediatrics for seizures. Surgical sedation + amnesia (hits α5 vault on Floor 5)."
+    },
+    "Phenobarbital": {
+      "symbol": "Barbed-wire fence (BARB) encircling the Aa Hotel",
+      "mnemonic_link": "BARB = barbed wire = barbiturate.",
+      "function_depiction": "Keeps the hotel doors open LONGER (↑duration). At high doses, the wire opens the hotel WITHOUT GABA → lethal."
+    },
+    "Flumazenil": {
+      "symbol": "Security guard with the FLU — sneezing, throwing BZD partygoers out",
+      "mnemonic_link": "Flu-mazenil → FLU. (Inspired by user.)",
+      "function_depiction": "Competitive BZD antagonist. Can precipitate seizures in chronic BZD users."
+    },
+
+    "Fluoxetine": {
+      "symbol": "Glowing fluorescent OX that walks for weeks without resting",
+      "mnemonic_link": "FLUO-OX → fluorescent ox. Glow = long t½ (the ox is 'lit up' for weeks).",
+      "function_depiction": "Long t½ = ox needs slow taper or no taper. Best-tolerated in pediatric depression."
+    },
+    "Sertraline": {
+      "symbol": "Knight (SIR) riding on rails — straight, steady, dependable",
+      "mnemonic_link": "Sert → Sir + Train (on rails).",
+      "function_depiction": "Broad-spectrum SSRI. Decent first-line for PTSD."
+    },
+    "Paroxetine": {
+      "symbol": "Ox jumping out of plane with a PARAchute",
+      "mnemonic_link": "Paro → Parachute. Ox = like Fluoxetine.",
+      "function_depiction": "Short t½ + strong anticholinergic = parachute may fail → severe discontinuation syndrome. Most sedating SSRI. Teratogen warning (cardiac defects)."
+    },
+
+    "Bupropion": {
+      "symbol": "Bumper-car arena — cars colliding with high energy",
+      "mnemonic_link": "Bup → Bumper.",
+      "function_depiction": "NDRI = energizing (no sedation, no sexual dysfunction). Smoking cessation. ↓Seizure threshold = sparks flying when bumpers crash too hard. Avoid in eating disorders."
+    },
+    "Mirtazapine": {
+      "symbol": "Person sitting in front of a MIRROR holding a slice of cake under a PINE tree",
+      "mnemonic_link": "Mir + tas + pine → Mirror + cake + pine. Mirror = self-reflection at night (sedation). Cake = appetite/weight gain (5-HT2C + H1 block).",
+      "function_depiction": "Strong H1 sedation, 5-HT2C → weight gain, 5-HT3 → antiemetic. Used in elderly with poor appetite + insomnia + nausea."
+    },
+    "Vortioxetine": {
+      "symbol": "Wise tortoise wearing glasses, slow but multi-tasking",
+      "mnemonic_link": "Vortio → Tortoise.",
+      "function_depiction": "Multimodal: SERT block + 5-HT1A agonist + 5-HT3/7 antagonist + 5-HT6 antagonist (procognitive). Tortoise = slow + smart."
+    },
+
+    "Methylphenidate": {
+      "symbol": "Schoolchildren in a row, focused, with methyl-CH₃ caps and phenyl-ring glasses",
+      "mnemonic_link": "Methyl + Phenyl + Date (line) → focused line of students.",
+      "function_depiction": "DAT/NET inhibitor. Activates the entire DOPA-MINE (more dopamine release). Pulls down EPS pyramids when overdosed."
+    },
+    "Amphetamine": {
+      "symbol": "Guitar AMPlifier turned to 11 on stage",
+      "mnemonic_link": "AMP → amplifier.",
+      "function_depiction": "DAT/NET inhibitor + RELEASER (extra mechanism). Stronger than Methylphenidate. Higher dependence."
+    },
+    "Atomoxetine": {
+      "symbol": "Tiny ATOMIC ox riding the fishing NET (tearing holes)",
+      "mnemonic_link": "Atom + Ox = atomic ox. NET-specific (no DAT).",
+      "function_depiction": "Pure NRI. No abuse potential. Slow onset (weeks). Suicidality warning."
+    },
+    "Clonidine": {
+      "symbol": "Two identical CLONE handlers feeding the #2 wolf",
+      "mnemonic_link": "Clone + identical handlers = matches α2 'two wolves' scene.",
+      "function_depiction": "α2 agonist = lowers central NE. ADHD, tic disorders, opioid withdrawal, hypertension. Rebound hypertension if stopped abruptly."
+    },
+    "Guanfacine": {
+      "symbol": "Stoic GUARD with a stone face standing over the wolf pack",
+      "mnemonic_link": "Guan-face → Guard-face.",
+      "function_depiction": "α2A-selective = more PFC-specific (less sedation than Clonidine). ADHD adjunct."
+    },
+    "Propranolol": {
+      "symbol": "PROfessional musician on stage — calm hands, no tremor",
+      "mnemonic_link": "PRO + performer → performance anxiety.",
+      "function_depiction": "Non-selective β-block = mutes both heart drums (β1) AND wind section (β2 → bronchospasm warning). Akathisia treatment. PTSD prevention (debated). Lipophilic = crosses BBB."
+    },
+    "Prazosin": {
+      "symbol": "Soldier receiving PRAISE for a nightmare-free night watch",
+      "mnemonic_link": "Praz → Praise + son.",
+      "function_depiction": "α1 antagonist. Tranquilizer dart to the alpha wolf #1 = it sits → orthostasis (first-dose). PTSD nightmare relief. BPH."
+    },
+
+    "Haloperidol": {
+      "symbol": "Angel with a HALO holding a stiff DOLL (rigid as EPS)",
+      "mnemonic_link": "Halo + doll. Rigid doll = EPS!",
+      "function_depiction": "High-potency 1st-gen = aggressive D2 barrier slam → lots of EPS pyramids around. Acute agitation IM. LAI form available (Halo-decanoate)."
+    },
+    "Clozapine": {
+      "symbol": "Master Z-key opening D4's four-bolt lock",
+      "mnemonic_link": "clo-Z-apine = Z key. D4 affinity is unique.",
+      "function_depiction": "Treatment-resistant schizophrenia + reduces suicidality. Agranulocytosis = white blood cells dying → mandatory ANC monitoring. Seizures + myocarditis + drooling + weight gain + metabolic syndrome. The Z key opens many other locks too (broad receptor profile)."
+    },
+    "Aripiprazole": {
+      "symbol": "Pizza pie with one slice RIPPED OUT (only partial)",
+      "mnemonic_link": "A-RIP-piprazole = a rip in pizza. Partial slice = partial agonist.",
+      "function_depiction": "D2 partial agonist + 5-HT1A partial agonist + 5-HT2A antagonist. Less metabolic. Akathisia common. LAI available."
+    },
+    "Cariprazine": {
+      "symbol": "Person CARRYING a 'Praise' trophy to the limbic heart",
+      "mnemonic_link": "Carry + Praise. Trophy goes to heart-shaped (limbic) chamber = D3 selectivity.",
+      "function_depiction": "D3 > D2 partial agonist. Schizophrenia + bipolar depression + mixed states. Akathisia."
+    },
+    "Lurasidone": {
+      "symbol": "Fisherman with a LURE off the side of a boat — best taken WITH 350+ kcal meal",
+      "mnemonic_link": "Lure → fisherman. 'On the side' = food requirement.",
+      "function_depiction": "Bipolar depression + schizophrenia. Low metabolic burden. 5-HT7 antagonist (turning off 7-Eleven at night)."
+    },
+    "Quetiapine": {
+      "symbol": "QUIET pine tree under which everyone naps",
+      "mnemonic_link": "Quiet + pine. Quiet = sedation.",
+      "function_depiction": "Most sedating 2nd-gen (H1 + α1 block). Off-label for insomnia (low dose). Weight gain. Metabolic. Bipolar depression."
+    },
+    "Olanzapine": {
+      "symbol": "OLYMPIAN athlete sleeping under a pine, surrounded by OLIVES",
+      "mnemonic_link": "Ol-Lan-Z-A-Pine = Olympic-Land-Z-Pine. Olive = oil = metabolic.",
+      "function_depiction": "Maximum metabolic burden (weight gain, dyslipidemia, T2DM). Strong sedation. Acute agitation IM (avoid IM with BZDs = respiratory depression!). LAI = post-injection syndrome warning."
+    },
+
+    "Ketamine": {
+      "symbol": "Veterinary HORSE-tranquilizer dart wedged into NMDA door",
+      "mnemonic_link": "Ketamine is famous as 'horse tranquilizer' in vet medicine.",
+      "function_depiction": "Open-channel NMDA antagonist. Rapid-acting antidepressant (hours), treatment-resistant MDD, acute suicidality. Dissociation, BP↑, K-hole. IV/IM/IN."
+    },
+    "Esketamine": {
+      "symbol": "Same horse-dart, but labeled 'S' on the forehead",
+      "mnemonic_link": "S-enantiomer of ketamine.",
+      "function_depiction": "Intranasal, on-label for TRD. REMS program required."
+    },
+    "Memantine": {
+      "symbol": "Old grandmother (Mama-tine) with a cane — only blocks the rudest guests",
+      "mnemonic_link": "Mama-tine → Mama. Patient/lenient.",
+      "function_depiction": "Use-dependent low-affinity NMDA antagonist. Off-label pediatric: autism aggression, OCD."
+    },
+
+    "Naloxone": {
+      "symbol": "A NAIL knocking out a bull (OX-Knock-Out-Zone)",
+      "mnemonic_link": "Nal-Ox-One → Nail + Ox + KO. Knocks out opioid effect.",
+      "function_depiction": "μ-opioid antagonist. Intranasal/IM/IV for overdose reversal. Short t½ — may need re-dosing. Precipitates withdrawal."
+    },
+    "Methadone": {
+      "symbol": "Mafia DON in a controlled clinic dispensing milk to his cows",
+      "mnemonic_link": "Methadone → Meth + a + Don.",
+      "function_depiction": "Long-acting full μ-agonist. Once-daily OUD maintenance (clinic-controlled, federally regulated). QTc prolongation."
+    },
+    "Buprenorphine": {
+      "symbol": "Car BUMPER that only partially crashes into the door",
+      "mnemonic_link": "Bup → Bumper. Partial.",
+      "function_depiction": "Partial μ-agonist + κ-antagonist. Ceiling effect on respiratory depression. OUD maintenance. Combined with naloxone (Suboxone) = oral safety."
+    },
+    "Disulfiram": {
+      "symbol": "Sulfur-smelly RAM that follows you to the bar — you drink, you stink",
+      "mnemonic_link": "Disulf + Ram → sulfur ram.",
+      "function_depiction": "ALDH inhibitor. Drinking alcohol = acetaldehyde build-up = severe nausea, flushing, vomiting. CYP-2E1/3A4 inhibitor (DDI risk). Hepatotoxic."
+    },
+    "Varenicline": {
+      "symbol": "Half-finished cigarette held by a chanting monk",
+      "mnemonic_link": "Var + chanting → Chantix. Half cigarette = partial agonist.",
+      "function_depiction": "α4β2 nAChR partial agonist. ↓Craving + ↓nicotine reward."
+    }
   }
 }
