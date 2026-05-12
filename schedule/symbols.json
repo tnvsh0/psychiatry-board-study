@@ -96,6 +96,59 @@
         "Chalk-white guests with '2+' badges in line = Ca²⁺ entering",
         "Neon sign flickering = depolarization (releases the magnet plug)"
       ]
+    },
+
+    "DAIRY_FARM": {
+      "scene_name": "Dairy Farm — opioid receptors and their animal residents",
+      "setting": "A green farm on a hill. Each animal produces a different opioid-receptor effect. Hay bales, milk pails, and a Delta-Airlines plane droning overhead.",
+      "recurring_elements": [
+        "Mooing cow ('MOO') = μ-opioid receptor",
+        "Grumpy goat with 'K' tag, kicking = κ-opioid receptor (dysphoria)",
+        "Delta-Airlines plane (triangular logo) overhead = δ-opioid receptor (less clinical)",
+        "Peaceful endogenous farmer = endorphins",
+        "Pails labeled: Analgesia / Euphoria / Constipation / Resp. Depression / Miosis = the spectrum of μ-effects"
+      ]
+    },
+    "WONDERLAND_TEAPARTY": {
+      "scene_name": "Alice in Wonderland — Mad Hatter's tea party (Muscarinic receptors)",
+      "setting": "Iconic Wonderland tea party. Each character maps to one muscarinic receptor by NUMBER + FUNCTION. The whole tableau goes haywire under anticholinergic blockade.",
+      "recurring_elements": [
+        "White Rabbit with '1 O'Clock' pocket watch = M1 (CNS, memory of time)",
+        "Queen of Hearts holding TWO '2-of-Hearts' cards = M2 (heart)",
+        "Mad Hatter with 3 dripping teacups (saliva/tears/sweat) = M3 (glands)",
+        "Tweedledee & Tweedledum at the corners = M4 / M5 (less clinical)",
+        "Anticholinergic toxicity = whole scene gone wild: Mad Hatter mad, Red Queen flushed, March Hare hot, teacups bone-dry, Cheshire Cat invisible (pupils dilated)"
+      ]
+    },
+    "CIGARETTE_THEATER": {
+      "scene_name": "Cigarette Theater — Nicotinic receptors on a smoky stage",
+      "setting": "Dim theater with cigarettes as branded characters on stage. Smoke curls. A wooden match (Acetylcholine = אצית) ignites scenes.",
+      "recurring_elements": [
+        "Cigarette brand '42' = nAChR α4β2 (Hitchhiker's Guide answer — 4+2)",
+        "Old wise grandpa with 'Lucky 7' cigarette = nAChR α7 (cognition + schizophrenia hypothesis)",
+        "Backstage stagehand cigarettes = NMJ-type (α1β1γδ)",
+        "Wooden match (אצית) struck = Acetylcholine the agonist",
+        "Half-smoked cigarette in a smoker's hand = Varenicline partial agonism"
+      ]
+    },
+    "H_HOUSE": {
+      "scene_name": "Histamine House — H-shaped building, 4 floors for H1-H4",
+      "setting": "A literal H-shaped house. Each floor is a different histamine receptor subtype.",
+      "recurring_elements": [
+        "Floor 1 (Living Room) — snoozing couch resident = H1 (sedation/allergy/weight)",
+        "Floor 2 (Kitchen) — leaking 'H2O' pots of stomach acid = H2 (gastric)",
+        "Floor 3 (Study) — autoreceptor professor dozing on his own desk = H3 (CNS auto, cognition)",
+        "Floor 4 (Rooftop) — immune-cell pigeons circling = H4 (immune)"
+      ]
+    },
+    "ER_GUARD_POST": {
+      "scene_name": "Endoplasmic Reticulum guard post (σ1)",
+      "setting": "Doorway labeled 'ER'. A sentry guard with 'S-1' badge stands at attention, escorting misfolded proteins.",
+      "recurring_elements": [
+        "Guard with 'S-1' badge = sigma-1 chaperone protein",
+        "Misfolded proteins arriving in stress = clients of the chaperone",
+        "Fluvoxamine + Dextromethorphan visits = drug agonists at σ1"
+      ]
     }
   },
 
@@ -303,6 +356,147 @@
       "symbol": "Heavy iron door labeled 'NMDA' with horseshoe magnet wedged in lock",
       "mnemonic_link": "Door = channel. Mr. Asparagus (NMDA = N-methyl-D-Aspartate) is the agonist. Magnet = Mg²⁺ block. Glycine pebble at his feet = required co-agonist. Chalk-white '2+' guests = Ca²⁺ entry.",
       "function_depiction": "Three conditions for opening: 1) Asparagus present (glutamate/NMDA), 2) Glycine pebble present, 3) Neon sign flickers (depolarization) → magnet falls out. NMDA hypothesis of schizophrenia = rusty magnet, door never opens properly → negative symptoms."
+    },
+
+    "_BATCH_1C_opioid_cholinergic_histamine": "═══════════════════════════════════════════",
+
+    "Acetylcholine": {
+      "category": "Neurotransmitter — agonist for BOTH muscarinic AND nicotinic receptors",
+      "scene": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)",
+      "symbol": "Wooden MATCH being struck",
+      "mnemonic_link": "Acetyl = אצית (Hebrew for 'ignite'). Match = ignition.",
+      "function_depiction": "In Wonderland: the match lights the Mad Hatter's pipe (muscarinic activation). In Cigarette Theater: the same match lights the '42' and 'Lucky 7' cigarettes (nicotinic activation). One match = one ACh = two scenes (both receptor families share the same ligand)."
+    },
+
+    "mu_opioid_receptor": {
+      "category": "Opioid receptor μ — Gi (analgesia + euphoria + respiratory depression)",
+      "scene": "DAIRY_FARM",
+      "symbol": "Cow saying 'MOO', producing pails labeled Analgesia, Euphoria, Constipation, Resp. Depression, Miosis",
+      "mnemonic_link": "μ ≈ 'moo' — the sound a cow makes.",
+      "function_depiction": "Full agonism (Morphine, Fentanyl, Heroin, Oxycodone, Codeine) = milkers extracting effect. Partial agonism (Buprenorphine) = ceiling-effect milker. Antagonism (Naloxone, Naltrexone) = chase milkers off → withdrawal."
+    },
+    "kappa_opioid_receptor": {
+      "category": "Opioid receptor κ — Gi (dysphoria, sedation, diuresis)",
+      "scene": "DAIRY_FARM",
+      "symbol": "Grumpy goat with 'K' tag, kicking",
+      "mnemonic_link": "κ = Kappa = K tag. Goats kick (dysphoria).",
+      "function_depiction": "Endogenous agonist = Dynorphin (sad farmer's tears). κ-ANTAGONISM is an emerging antidepressant target (Buprenorphine has κ-antagonist activity → mood lift)."
+    },
+    "delta_opioid_receptor": {
+      "category": "Opioid receptor δ — Gi (less clinical, mood modulation in research)",
+      "scene": "DAIRY_FARM",
+      "symbol": "Delta-Airlines plane (triangular logo) overhead",
+      "mnemonic_link": "δ = Delta = airline triangle.",
+      "function_depiction": "Endogenous agonist = Enkephalins. No clinically used δ-selective drugs (research stage)."
+    },
+
+    "M1_receptor": {
+      "category": "Muscarinic M1 — Gq, CNS (memory, cortex)",
+      "scene": "WONDERLAND_TEAPARTY",
+      "symbol": "White Rabbit clutching his '1 O'Clock' pocket watch, frantic about being late",
+      "mnemonic_link": "Pocket watch reads '1' = M1. Obsession with time = memory.",
+      "function_depiction": "Block (Atropine, Scopolamine, Benztropine, Diphenhydramine, TCAs at high doses) = Mad-as-a-Hatter delirium = the rabbit drops his watch and becomes the Mad Hatter."
+    },
+    "M2_receptor": {
+      "category": "Muscarinic M2 — Gi, HEART (slows it via parasympathetic input)",
+      "scene": "WONDERLAND_TEAPARTY",
+      "symbol": "Queen of Hearts holding TWO '2 of Hearts' playing cards above her chest",
+      "mnemonic_link": "2 of Hearts = M2 + heart location.",
+      "function_depiction": "Block (Atropine) = Queen dizzy → tachycardia (loss of parasympathetic brake). Used clinically for symptomatic bradycardia."
+    },
+    "M3_receptor": {
+      "category": "Muscarinic M3 — Gq, GLANDS + smooth muscle (secretions, GI, bladder, ciliary)",
+      "scene": "WONDERLAND_TEAPARTY",
+      "symbol": "Mad Hatter's tea table with 3 teacups overflowing — labeled saliva, tears, sweat",
+      "mnemonic_link": "3 teacups = M3. Tea = wet = secretions.",
+      "function_depiction": "Block = Dry as a Bone (no saliva/tears), Hot as a Hare (no sweat), Blind as a Bat (pupils dilated — iris constrictor is M3), urinary retention, ↓GI motility."
+    },
+    "M4_receptor": {
+      "category": "Muscarinic M4 — Gi, CNS striatum (modulates dopamine release)",
+      "scene": "WONDERLAND_TEAPARTY",
+      "symbol": "Tweedledee at the corner of the party (less prominent)",
+      "mnemonic_link": "One of the lookalike twins (with M5) — pair for less-clinical receptors.",
+      "function_depiction": "Emerging antipsychotic target. Xanomeline (in KarXT, FDA-approved 2024) is an M1+M4 agonist — novel non-D2 antipsychotic."
+    },
+    "M5_receptor": {
+      "category": "Muscarinic M5 — Gq, CNS reward circuits (VTA)",
+      "scene": "WONDERLAND_TEAPARTY",
+      "symbol": "Tweedledum at the corner of the party",
+      "mnemonic_link": "Pairs with M4.",
+      "function_depiction": "Theoretical role in addiction reward. No clinical drugs target M5 selectively yet."
+    },
+    "anticholinergic_toxidrome": {
+      "category": "Anticholinergic syndrome — muscarinic blockade clinical presentation",
+      "scene": "WONDERLAND_TEAPARTY (gone wild)",
+      "symbol": "The whole Wonderland scene running riot — Mad Hatter completely mad, Red Queen flushed and screaming, March Hare panting hot, teacups bone-dry, Cheshire Cat invisible (just dilated pupils glowing)",
+      "mnemonic_link": "Each toxic sign = one Wonderland character. Memorable 5-character constellation.",
+      "function_depiction": "MAD as a HATTER (M1 CNS delirium), RED as a BEET (vasodilation), HOT as a HARE (M3 anhidrosis), DRY as a BONE (M3 hypo-secretion), BLIND as a BAT (M3 mydriasis + cycloplegia). Plus urinary retention + tachycardia (M2). Treatment: physostigmine (cholinesterase inhibitor) + supportive."
+    },
+
+    "nAChR_alpha4_beta2": {
+      "category": "Nicotinic ACh receptor α4β2 — ligand-gated Na⁺/Ca²⁺ channel. Brain reward.",
+      "scene": "CIGARETTE_THEATER",
+      "symbol": "Branded cigarette labeled '42' (the answer to life, universe and everything)",
+      "mnemonic_link": "'42' = α4β2. (Hitchhiker's Guide reference — universally memorable.)",
+      "function_depiction": "Agonism (Nicotine) = full activation → dopamine in VTA → reward. Partial agonism (Varenicline) = half-cigarette → enough to satisfy craving but blocks full nicotine reward → smoking cessation."
+    },
+    "nAChR_alpha7": {
+      "category": "Nicotinic ACh receptor α7 — Ca²⁺-permeable, cognition + schizophrenia hypothesis",
+      "scene": "CIGARETTE_THEATER",
+      "symbol": "Old wise grandpa smoking a 'Lucky 7' cigarette",
+      "mnemonic_link": "'Lucky 7' = α7. Wise grandpa = cognition.",
+      "function_depiction": "Hypofunction in schizophrenia (sensory gating deficit, low CHRNA7 expression). Explains ~80% smoking rate in schizophrenia (self-medication of α7). Drugs targeting α7 are in development for cognitive symptoms."
+    },
+
+    "H1_receptor": {
+      "category": "Histamine H1 — Gq (sedation, allergy, weight gain)",
+      "scene": "H_HOUSE",
+      "symbol": "Floor 1 living room — snoozing resident on a giant couch, allergy tissues nearby",
+      "mnemonic_link": "Floor 1 = ground level = where you collapse = sedation.",
+      "function_depiction": "Antagonism (Diphenhydramine, Hydroxyzine, Mirtazapine, Quetiapine, Olanzapine, Doxepin low-dose) = sleep mask → sedation + weight gain. Many antipsychotics + atypical antidepressants block H1 = the primary cause of their sedation."
+    },
+    "H2_receptor": {
+      "category": "Histamine H2 — Gs (gastric parietal cells → stomach acid)",
+      "scene": "H_HOUSE",
+      "symbol": "Floor 2 kitchen with pots labeled 'H2O' leaking stomach acid",
+      "mnemonic_link": "H2O = water = liquid stomach acid. '2' = H2.",
+      "function_depiction": "Antagonism (Famotidine, Ranitidine, Cimetidine) = lids on the pots → antacid effect. Cimetidine notable: CYP inhibitor, anti-androgen → gynecomastia."
+    },
+    "H3_receptor": {
+      "category": "Histamine H3 — Gi (CNS autoreceptor for histamine; also modulates other NTs)",
+      "scene": "H_HOUSE",
+      "symbol": "Floor 3 study — autoreceptor professor dozing at his desk (he's controlling his own histamine release)",
+      "mnemonic_link": "H + 3 = study floor. Auto-receptor = self-feedback (professor controlling himself).",
+      "function_depiction": "Agonism = professor sleeps deeper → drowsy patient. Inverse agonism (Pitolisant — alarm clock) = wakes him → ↑histamine release → wakefulness. Pitolisant approved for narcolepsy + EDS."
+    },
+    "H4_receptor": {
+      "category": "Histamine H4 — Gi (immune cells; minimal psychiatric relevance)",
+      "scene": "H_HOUSE",
+      "symbol": "Floor 4 rooftop with immune-cell pigeons circling",
+      "mnemonic_link": "H + 4 = highest floor. Pigeons = immune cells.",
+      "function_depiction": "Inflammation modulation. Not a psychiatric target."
+    },
+
+    "DAT": {
+      "category": "Dopamine transporter — reuptakes synaptic DA into the presynaptic terminal",
+      "scene": "DOPA_MINE",
+      "symbol": "A Jewish religious man (rabbi with payot and kippah) gathering scattered dopamine ore back home",
+      "mnemonic_link": "DAT = דת (Hebrew: 'religion'). 'Religious man' = איש דת. Collecting ore back home = reuptake.",
+      "function_depiction": "Inhibition (Methylphenidate, Amphetamine, Cocaine, Bupropion) = blindfold on the rabbi → can't see scattered ore → dopamine pools in synapse → enhanced postsynaptic effect."
+    },
+    "VMAT2": {
+      "category": "Vesicular monoamine transporter 2 — packages monoamines (DA, NE, 5-HT) into vesicles",
+      "scene": "DOPA_MINE (rest hall)",
+      "symbol": "Yoga mat labeled 'V-MAT 2' — monoamines rest on it before vesicular release",
+      "mnemonic_link": "VMAT = literal mat. 2 = subtype.",
+      "function_depiction": "Inhibition (Valbenazine, Deutetrabenazine, Tetrabenazine) = mat is stolen → monoamines never packaged → presynaptic depletion. Treats Tardive Dyskinesia + Huntington's chorea."
+    },
+    "sigma1_receptor": {
+      "category": "Sigma-1 — chaperone protein at the ER (mood, neuroprotection)",
+      "scene": "ER_GUARD_POST",
+      "symbol": "Sentry guard with 'S-1' badge at the door of the endoplasmic reticulum",
+      "mnemonic_link": "'S' = sigma + '1' = subtype. Guard = chaperone (escorts misfolded proteins).",
+      "function_depiction": "Agonism (Fluvoxamine — uniquely strong among SSRIs; Dextromethorphan; some antidepressants) = guard escorts more clients → mood lift + anti-OCD/anxiety. Explains Fluvoxamine's particular efficacy in OCD beyond SERT block."
     }
   },
 
@@ -509,9 +703,103 @@
       "function_depiction": "ALDH inhibitor. Drinking alcohol = acetaldehyde build-up = severe nausea, flushing, vomiting. CYP-2E1/3A4 inhibitor (DDI risk). Hepatotoxic."
     },
     "Varenicline": {
-      "symbol": "Half-finished cigarette held by a chanting monk",
-      "mnemonic_link": "Var + chanting → Chantix. Half cigarette = partial agonist.",
-      "function_depiction": "α4β2 nAChR partial agonist. ↓Craving + ↓nicotine reward."
+      "symbol": "Smoker holding a HALF-smoked cigarette — can't get the full hit",
+      "mnemonic_link": "Half cigarette = partial agonist of α4β2. (No brand reference.)",
+      "function_depiction": "α4β2 nAChR partial agonist. Enough activation to ease craving, BLOCKS full nicotine reward → smoking cessation. Inserts onto the '42' cigarette in CIGARETTE_THEATER."
+    },
+
+    "_BATCH_1C_drugs": "═══════════════════════════════════════════",
+
+    "Morphine": {
+      "symbol": "Greek statue with a face that MORPHS into serene calm — labeled 'FINE'",
+      "mnemonic_link": "Morph + fine.",
+      "function_depiction": "Full μ-agonist gold standard. Analgesia + euphoria + respiratory depression + constipation + miosis. The original opioid milker at the DAIRY_FARM cow."
+    },
+    "Fentanyl": {
+      "symbol": "Skyscraper PENTHOUSE on the top floor — extremely high-up view",
+      "mnemonic_link": "Fent → 'Penthouse' (high-rise potency).",
+      "function_depiction": "100× more potent than morphine. Surgical anesthesia, chronic-pain patches. Illicit fentanyl drives the overdose epidemic — tiny dose lethal."
+    },
+    "Oxycodone": {
+      "symbol": "Patient wearing an OXYGEN mask, beeper showing 'CODE-RED' (respiratory code)",
+      "mnemonic_link": "Oxy + Code → oxygen-code (respiratory failure).",
+      "function_depiction": "Semi-synthetic μ-agonist. Oral. High abuse potential. Part of the OxyContin abuse epidemic."
+    },
+    "Codeine": {
+      "symbol": "Coded message scroll being deciphered",
+      "mnemonic_link": "Code-ine = code.",
+      "function_depiction": "Prodrug → activated to morphine by CYP2D6. Cough suppressant + mild analgesic. CYP2D6 ultra-rapid metabolizers (5-10% of population, higher in some ethnicities) → high morphine levels = pediatric deaths reported (FDA contraindicated <12y for cough)."
+    },
+    "Tramadol": {
+      "symbol": "TRAM pulling a small DOLL down the street",
+      "mnemonic_link": "Tram + a + doll.",
+      "function_depiction": "Weak μ-agonist + SNRI (serotonin syndrome risk when combined with SSRIs/MAOIs!). Lowers seizure threshold. Prodrug via CYP2D6 (like Codeine)."
+    },
+    "Heroin": {
+      "symbol": "Fake HERO costume with a syringe sticking out of the cape (HERO-IN)",
+      "mnemonic_link": "Hero-in.",
+      "function_depiction": "Diacetylmorphine — lipophilic, crosses BBB rapidly → intense euphoric rush. Illicit. Major source of overdose deaths."
+    },
+
+    "Atropine": {
+      "symbol": "TROPICAL tourist in shorts, sun-hat, holding a piña colada (A-tropic vacation)",
+      "mnemonic_link": "A-tropine → tropic. Vacation = far from cholinergic norms.",
+      "function_depiction": "Non-selective muscarinic antagonist. Wonderland goes wild → antichol syndrome. Clinical uses: symptomatic bradycardia, organophosphate poisoning, pre-op secretion drying, mydriasis (ophthalmology)."
+    },
+    "Scopolamine": {
+      "symbol": "Pirate with a teleSCOPE scanning the horizon for ships",
+      "mnemonic_link": "Scope → telescope.",
+      "function_depiction": "Crosses BBB → motion sickness patch + amnesia (historical 'truth serum'). Anti-emetic for post-op nausea."
+    },
+    "Benztropine": {
+      "symbol": "Patient with a BENT-over back and SPRAINED wrist (Bent-Sprain) — relieved when given anticholinergic",
+      "mnemonic_link": "Bent + Sprain.",
+      "function_depiction": "M1 + H1 antagonist. FIRST-LINE for acute dystonia (IM 1-2mg = the iconic emergency-psych intervention). Drug-induced parkinsonism. Long t½ — once-daily."
+    },
+    "Trihexyphenidyl": {
+      "symbol": "Spinning idol made of a TRIangle + HEXagon + PHENyl ring",
+      "mnemonic_link": "Tri + Hex + Phenyl + Idyl.",
+      "function_depiction": "Oral anticholinergic for drug-induced parkinsonism + dystonia. Less sedating than Benztropine."
+    },
+    "Diphenhydramine": {
+      "symbol": "Multi-headed HYDRA biting both Wonderland (M1) AND the Histamine House Floor 1 (H1)",
+      "mnemonic_link": "Hydra = multi-receptor (H1 + M1).",
+      "function_depiction": "OTC sleep aid + anti-allergy. IM 25-50mg for acute dystonia (alternative to Benztropine). Anticholinergic side effects in elderly → cognitive impairment."
+    },
+    "Hydroxyzine": {
+      "symbol": "Sleepy guest in the H-House Floor 1 living room with a 'Zzz' bubble — no IV bag (not addictive)",
+      "mnemonic_link": "Hydroxy-zine → ends in 'zine' = sleep.",
+      "function_depiction": "H1 antagonist anxiolytic. Pediatric anxiety, pre-op anxiety, pruritus. NON-ADDICTIVE alternative to BZDs (no GABA action)."
+    },
+    "Pitolisant": {
+      "symbol": "Alarm clock RINGING in Floor 3 study — wakes the H3 professor",
+      "mnemonic_link": "Pit-Olisant → wakes the H3 professor.",
+      "function_depiction": "H3 inverse agonist. FDA-approved for narcolepsy + excessive daytime sleepiness. Non-stimulant alternative to modafinil."
+    },
+    "Dextromethorphan": {
+      "symbol": "Old cough-syrup bottle labeled 'D' — sometimes drunk recreationally by teens",
+      "mnemonic_link": "Dex → D-shape bottle.",
+      "function_depiction": "NMDA antagonist + σ1 agonist + cough suppressant. Recreational dissociative ('robotripping') at high doses. With quinidine (CYP2D6 inhibitor → ↑DXM levels) used for pseudobulbar affect."
+    },
+    "Valbenazine": {
+      "symbol": "Thief stealing the V-MAT yoga mat — once a day",
+      "mnemonic_link": "Val → mat-grabber.",
+      "function_depiction": "VMAT2 inhibitor. FDA-approved for tardive dyskinesia. Once-daily dosing."
+    },
+    "Deutetrabenazine": {
+      "symbol": "Same V-MAT thief, but with DEUTERIUM-armor (doubled hydrogens = slower clearance)",
+      "mnemonic_link": "Deute → deuterium.",
+      "function_depiction": "Deuterated → longer t½ than tetrabenazine. BID. TD + Huntington's chorea + Tourette's. Better tolerated than original tetrabenazine."
+    },
+    "Tetrabenazine": {
+      "symbol": "Old-school V-MAT thief — works, but his victims become depressed afterward",
+      "mnemonic_link": "Tetra → older generation.",
+      "function_depiction": "Original VMAT2 inhibitor. Huntington's chorea. BLACK BOX: depression + suicidality. CYP2D6-dosed."
+    },
+    "Fluvoxamine": {
+      "symbol": "Singer with a FLU-affected VOice at the S-1 guard post, intrusive OCD lyrics",
+      "mnemonic_link": "Flu + Vox + amine. Voice problems = OCD intrusive thoughts.",
+      "function_depiction": "SSRI + strong σ1 agonist (UNIQUE among SSRIs — explains OCD/anxiety efficacy). FIRST-LINE pediatric OCD. CYP1A2 inhibitor → ↑clozapine, theophylline, caffeine levels."
     }
   }
 }
