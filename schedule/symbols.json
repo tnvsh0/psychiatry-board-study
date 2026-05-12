@@ -149,6 +149,45 @@
         "Misfolded proteins arriving in stress = clients of the chaperone",
         "Fluvoxamine + Dextromethorphan visits = drug agonists at σ1"
       ]
+    },
+
+    "RAPHE_TAPESTRY": {
+      "scene_name": "Raphe nuclei — serotonin's tapestry workshop in the brainstem",
+      "setting": "A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin serotonin-yarn into rugs that get shipped EVERYWHERE.",
+      "recurring_elements": [
+        "Tapestry seam down the middle = raphe (literally 'seam' in Greek)",
+        "Weavers = raphe neurons producing 5-HT",
+        "Shipping crates labeled cortex/limbic/hypothalamus = projections everywhere",
+        "Old loom that won't start for 4-6 weeks = SSRI delay-of-onset (autoreceptor downregulation)"
+      ]
+    },
+    "LOCUS_COERULEUS_BLUEPOST": {
+      "scene_name": "Locus Coeruleus — the BLUE police box of norepinephrine",
+      "setting": "A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brainstem. Every emergency call goes through it.",
+      "recurring_elements": [
+        "Blue box dispatcher = LC neurons firing in arousal",
+        "Phone lines fanning out = NE projections everywhere",
+        "Panic-button red light = hyperactive LC in panic/PTSD/withdrawal",
+        "Prazosin curtain = α1 blockade calming the dispatch noise (PTSD nightmares)"
+      ]
+    },
+    "TUBEROMAMMILLARY_DAIRY": {
+      "scene_name": "Tuberomammillary nucleus — histamine's milking parlor",
+      "setting": "A dairy section in the hypothalamus (mammillary = mammary). Cows pump out histamine to keep the brain awake.",
+      "recurring_elements": [
+        "Mammary cows pumping histamine = TMN neurons → wakefulness",
+        "Histamine bottles distributed to H-House = upstream of all H1/H3 effects",
+        "Dimmer switch when blocked = sedation from H1 antagonists"
+      ]
+    },
+    "MEYNERT_MYNAH": {
+      "scene_name": "Basal nucleus of Meynert — the talking Mynah bird",
+      "setting": "A wise old MYNAH bird perched in the basal forebrain. It mimics what it hears (cortical ACh = memory).",
+      "recurring_elements": [
+        "Mynah bird = basal nucleus of Meynert (phonetic)",
+        "Bird whispers memorize cortex = cholinergic projections for memory",
+        "Bird dies = Alzheimer's pathology (skipped per user, but explains baseline)"
+      ]
     }
   },
 
@@ -497,6 +536,483 @@
       "symbol": "Sentry guard with 'S-1' badge at the door of the endoplasmic reticulum",
       "mnemonic_link": "'S' = sigma + '1' = subtype. Guard = chaperone (escorts misfolded proteins).",
       "function_depiction": "Agonism (Fluvoxamine — uniquely strong among SSRIs; Dextromethorphan; some antidepressants) = guard escorts more clients → mood lift + anti-OCD/anxiety. Explains Fluvoxamine's particular efficacy in OCD beyond SERT block."
+    },
+
+    "_BATCH_2_pathways_nuclei": "═══════════════════════════════════════════",
+
+    "VTA": {
+      "category": "Ventral Tegmental Area — midbrain dopamine source (mesolimbic + mesocortical)",
+      "scene": "DOPA_MINE (supervisor's office)",
+      "symbol": "The mine SUPERVISOR'S OFFICE — VTA chairman dispatches carts to two destinations",
+      "mnemonic_link": "VTA = the management hub of DOPA-MINE Co.",
+      "function_depiction": "Dispatches mesolimbic carts (to limbic 'casino') and mesocortical carts (to cortical 'café'). Hyperactivity → too much to limbic (psychosis). Hypoactivity → too little to cortex (negative symptoms)."
+    },
+    "substantia_nigra_pars_compacta": {
+      "category": "Substantia nigra pars compacta — nigrostriatal dopamine source",
+      "scene": "DOPA_MINE (the BLACK SHAFT)",
+      "symbol": "A literally BLACK mine shaft — substantia NIGRA = 'black substance'",
+      "mnemonic_link": "Latin: nigra = black. Compacta = densely packed neurons.",
+      "function_depiction": "Sends nigrostriatal carts to motor striatum. Neurodegeneration → Parkinson's disease (the black shaft caves in). D2 blockade → drug-induced parkinsonism (EXTRA pyramid hats around the motor section)."
+    },
+    "mesolimbic_pathway": {
+      "category": "Dopamine pathway — VTA → Nucleus Accumbens (reward, positive symptoms)",
+      "scene": "DOPA_MINE → THE CASINO (NAc)",
+      "symbol": "Train tracks marked 'MESO-LIMB' running from VTA supervisor's office to a CASINO (nucleus accumbens — reward gambling)",
+      "mnemonic_link": "Meso = middle, Limbic = emotional. Casino = reward.",
+      "function_depiction": "Hyperactivity = train overloaded with carts → POSITIVE SYMPTOMS of schizophrenia (delusions, hallucinations). Stimulants also flood this track → stimulant psychosis. Reward of addiction = casino lights flashing."
+    },
+    "mesocortical_pathway": {
+      "category": "Dopamine pathway — VTA → PFC (cognition, negative symptoms when low)",
+      "scene": "DOPA_MINE → THE COFFEE SHOP (PFC)",
+      "symbol": "Train tracks marked 'MESO-CORT' running from VTA office to a fancy intellectual COFFEE SHOP atop the PFC",
+      "mnemonic_link": "Meso = middle, Cortical = thinking floor.",
+      "function_depiction": "HYPOactivity (track is empty) = NEGATIVE SYMPTOMS of schizophrenia (avolition, alogia, flat affect). Difficult-to-treat — D2 blockade also dampens this track."
+    },
+    "nigrostriatal_pathway": {
+      "category": "Dopamine pathway — substantia nigra → striatum (motor control)",
+      "scene": "DOPA_MINE → MOTOR GEAR CHAMBER (striatum)",
+      "symbol": "Train tracks marked 'NIGRO-STRIA' from the black mine shaft to a giant gear-shaped chamber (striatum)",
+      "mnemonic_link": "Nigro = black source; Striatum = gear chamber (striped striatum).",
+      "function_depiction": "Hypoactivity (cells die in Parkinson's, or D2 blockade by antipsychotics) → EXTRA pyramid hats spawn = EPS. Hyperactivity → chorea/hyperkinetic disorders."
+    },
+    "tuberoinfundibular_pathway": {
+      "category": "Dopamine pathway — arcuate nucleus → pituitary (prolactin inhibition)",
+      "scene": "DOPA_MINE → MILK-PUMP SECTION (pituitary)",
+      "symbol": "Tubes labeled 'TUBE-INFUNDIBULAR' running from hypothalamus to a giant MILK PUMP",
+      "mnemonic_link": "Tubero = the tubes. Infundibular = funnel (pituitary stalk).",
+      "function_depiction": "Normal: DA TONIC-inhibits prolactin secretion. D2 blockade (typical antipsychotics, paliperidone, risperidone) → tubes blocked → milk pump leaks UNCONTROLLED → HYPERPROLACTINEMIA (galactorrhea, amenorrhea, gynecomastia, sexual dysfunction)."
+    },
+
+    "raphe_nuclei": {
+      "category": "Brainstem 5-HT source — seam of midline nuclei",
+      "scene": "RAPHE_TAPESTRY",
+      "symbol": "Persian-rug weaving workshop along the brainstem seam — weavers produce 5-HT yarn",
+      "mnemonic_link": "Raphe = 'seam' in Greek. Tapestry = woven projection everywhere.",
+      "function_depiction": "Source of essentially all CNS serotonin → projections to cortex, limbic, hypothalamus, spinal cord. SSRI/SNRI/TCA action on terminals downstream. Old loom won't start for weeks = SSRI onset delay."
+    },
+    "locus_coeruleus": {
+      "category": "Brainstem NE source — the 'blue spot' (locus coeruleus)",
+      "scene": "LOCUS_COERULEUS_BLUEPOST",
+      "symbol": "A Doctor-Who-style BLUE police box in the rostral pons, phone wires fanning out",
+      "mnemonic_link": "Locus = spot, Coeruleus = blue (Latin).",
+      "function_depiction": "Source of essentially all CNS norepinephrine. Hyperactive in panic, PTSD, opioid withdrawal (red light flashing). Clonidine/Guanfacine = friendly dispatcher (α2 autoreceptor) calms the box. Propranolol = blocks downstream effects. Prazosin = blocks α1 effects on nightmares."
+    },
+    "tuberomammillary_nucleus": {
+      "category": "Brainstem/hypothalamus histamine source (wakefulness)",
+      "scene": "TUBEROMAMMILLARY_DAIRY",
+      "symbol": "Mammary cows pumping histamine in the posterior hypothalamus",
+      "mnemonic_link": "Mammillary = mammary (cow association). Hypothalamic location.",
+      "function_depiction": "Sole source of CNS histamine → wakefulness. Hypofunction = narcolepsy connection (Pitolisant boosts it via H3 inverse agonism). H1-blocking drugs = sedation downstream."
+    },
+    "basal_nucleus_meynert": {
+      "category": "Basal forebrain ACh source for cortex (memory)",
+      "scene": "MEYNERT_MYNAH",
+      "symbol": "A wise old MYNAH bird in the basal forebrain whispering memories to cortex",
+      "mnemonic_link": "Meynert = Mynah (phonetic).",
+      "function_depiction": "Cortical cholinergic projections. Degenerates in Alzheimer's (skipped per user). Anticholinergic syndrome → 'Mad as a Hatter' = silencing the Mynah → delirium."
+    },
+    "dorsal_raphe": {
+      "category": "Specific raphe nucleus — primary 5-HT source for cortex",
+      "scene": "RAPHE_TAPESTRY",
+      "symbol": "The DORSAL (top) weaving station of the Persian-rug workshop",
+      "mnemonic_link": "Dorsal = top. Most clinically referenced raphe subnucleus.",
+      "function_depiction": "Main 5-HT input to PFC. 5-HT1A autoreceptors here = SSRI delay-of-onset mechanism."
+    },
+    "pedunculopontine_nucleus": {
+      "category": "Brainstem ACh + arousal nucleus (PPN)",
+      "scene": "(brainstem)",
+      "symbol": "A foot-pedal organ at the pons-midbrain junction, played to keep the brain alert",
+      "mnemonic_link": "Pedunculo = foot/peduncle. Pontine = pons.",
+      "function_depiction": "REM sleep regulation + arousal. Targeted in Parkinson's DBS for gait freezing."
+    },
+
+    "_BATCH_3_brain_regions": "═══════════════════════════════════════════",
+
+    "prefrontal_cortex": {
+      "category": "Prefrontal Cortex (PFC) — executive function HQ",
+      "scene": "(brain map)",
+      "symbol": "Glass-walled CEO OFFICE at the front of a skyscraper. PFC = 'Pretty Fancy Corner-office'.",
+      "mnemonic_link": "PreFrontal Cortex = front of brain = the CEO suite.",
+      "function_depiction": "Working memory, planning, inhibition. ↓DA mesocortical = empty office (negative symptoms). α2A agonists (Guanfacine) = strict secretary keeping the CEO focused (ADHD). Alcohol/BZDs = drunk CEO making bad decisions."
+    },
+    "anterior_cingulate_cortex": {
+      "category": "ACC — conflict monitor + emotional regulation",
+      "scene": "(brain map)",
+      "symbol": "A police DETECTIVE at the front of a courthouse, watching for contradictions",
+      "mnemonic_link": "Anterior CINGulate → CINGulate = detective sniffing inconsistency.",
+      "function_depiction": "Conflict detection, error monitoring, social cognition. Hyperactive in OCD (over-detecting errors). Hypoactive in depression. DBS target for treatment-resistant depression."
+    },
+    "orbitofrontal_cortex": {
+      "category": "OFC — value/reward + moral judgment",
+      "scene": "(brain map)",
+      "symbol": "A JUDGE in robes weighing scales with money on one side, ethics on the other, sitting above the EYE SOCKETS (orbits)",
+      "mnemonic_link": "ORBITO = orbit = eye socket. Judge weighs value/morality.",
+      "function_depiction": "Damage = disinhibition, poor decision-making (Phineas Gage). OCD = hyperactive judge in a loop. Klüver-Bucy = OFC + temporal damage = inappropriate behavior."
+    },
+    "dorsolateral_prefrontal_cortex": {
+      "category": "dlPFC — working memory + cognitive control",
+      "scene": "(brain map)",
+      "symbol": "A LIBRARIAN organizing books at the side of the CEO office",
+      "mnemonic_link": "DorsoLateral = top-side of PFC. Books = working memory.",
+      "function_depiction": "rTMS depression target (left dlPFC stimulation, right dlPFC inhibition). Hypoactive in schizophrenia (negative symptoms)."
+    },
+    "ventromedial_prefrontal_cortex": {
+      "category": "vmPFC — emotional regulation + self-reference",
+      "scene": "(brain map)",
+      "symbol": "A meditation cushion at the BOTTOM-CENTER of the PFC office",
+      "mnemonic_link": "VentroMedial = bottom-middle. Cushion = emotional self-care.",
+      "function_depiction": "Default Mode Network hub. Hyperactive rumination in depression. Mindfulness/CBT modulate vmPFC."
+    },
+
+    "amygdala": {
+      "category": "Amygdala — threat detector + emotional memory",
+      "scene": "(brain map)",
+      "symbol": "An ALMOND-shaped panic alarm (amygdala = Greek for 'almond')",
+      "mnemonic_link": "Amygdala = almond literally. Always-on threat scanner.",
+      "function_depiction": "Hyperactive in PTSD/anxiety = alarm constantly ringing. SSRIs dampen the alarm over weeks. β-blockers (Propranolol) can blunt emotional memory consolidation. Klüver-Bucy = bilateral amygdala damage = fearlessness."
+    },
+    "hippocampus": {
+      "category": "Hippocampus — declarative memory + spatial navigation",
+      "scene": "(brain map)",
+      "symbol": "A literal SEAHORSE (hippocampus = Greek for 'seahorse') with a TINY MAP",
+      "mnemonic_link": "Hippocampus = seahorse (etymological).",
+      "function_depiction": "Shrinks in chronic stress (cortisol toxic), depression, PTSD. SSRI/exercise = neurogenesis (seahorse grows). Memory loss with BZDs (especially α5 block, Midazolam). Hippocampal sclerosis = temporal-lobe epilepsy + depression."
+    },
+    "basal_ganglia": {
+      "category": "Basal ganglia — motor control + habit/reward",
+      "scene": "(brain map)",
+      "symbol": "A complex GEAR SYSTEM at the base of the brain — striated stripes visible",
+      "mnemonic_link": "Basal = bottom. Ganglia = clusters of gears.",
+      "function_depiction": "Contains: caudate, putamen (=striatum), globus pallidus (internal/external), subthalamic nucleus, substantia nigra. Hypofunction = Parkinson's. Hyperfunction = chorea (Huntington's). OCD = caudate gear stuck on repeat."
+    },
+    "striatum_caudate_putamen": {
+      "category": "Striatum (Caudate + Putamen) — input to basal ganglia",
+      "scene": "(brain map, basal ganglia)",
+      "symbol": "Striped (striated) sweater worn by a worker — caudate = 'C-shaped tail', putamen = 'shell'",
+      "mnemonic_link": "Striatum = striated. Caudate = tail. Putamen = shell.",
+      "function_depiction": "Receives nigrostriatal DA + cortical glutamate input. D2 blockade in striatum → EPS. Hyperdopaminergic → tics, OCD, hyperkinetics."
+    },
+    "globus_pallidus": {
+      "category": "Globus pallidus (GPe/GPi) — basal ganglia output",
+      "scene": "(brain map, basal ganglia)",
+      "symbol": "PALE round bouncer at the exit of the basal ganglia gear system",
+      "mnemonic_link": "Globus = round + Pallidus = pale.",
+      "function_depiction": "DBS target for Parkinson's (GPi stimulation). Inhibitory output to thalamus."
+    },
+    "subthalamic_nucleus": {
+      "category": "STN — basal ganglia indirect pathway hub",
+      "scene": "(brain map, basal ganglia)",
+      "symbol": "A small but mighty engine UNDER the thalamus",
+      "mnemonic_link": "Sub-thalamic = under the thalamus.",
+      "function_depiction": "DBS target #1 for Parkinson's. Hyperactivity = hemiballismus (one-sided flinging)."
+    },
+    "thalamus": {
+      "category": "Thalamus — central relay station",
+      "scene": "(brain map)",
+      "symbol": "A grand CENTRAL TRAIN STATION at the brain core, lines coming and going everywhere",
+      "mnemonic_link": "Thalamus = inner chamber = central relay.",
+      "function_depiction": "All sensory (except smell) and motor passes through. Thalamocortical oscillations disrupted in schizophrenia. Sleep spindles (α1-GABA in thalamus) → sleep depth."
+    },
+    "hypothalamus": {
+      "category": "Hypothalamus — body's thermostat + neuroendocrine",
+      "scene": "(brain map)",
+      "symbol": "A THERMOSTAT/control panel UNDER the thalamus station",
+      "mnemonic_link": "Hypo-thalamus = under the relay station.",
+      "function_depiction": "Sleep (suprachiasmatic n.), appetite (arcuate, paraventricular), temperature, HPA axis. Lesions cause classical syndromes (Kleine-Levin = appetite + sleep + sex)."
+    },
+    "insula": {
+      "category": "Insula — interoception + emotional awareness",
+      "scene": "(brain map)",
+      "symbol": "A small ISLAND tucked between the temporal and frontal lobes",
+      "mnemonic_link": "Insula = island (Latin).",
+      "function_depiction": "Bodily awareness (interoception). Hyperactive in panic disorder (over-noticing heart). Addiction craving signal. Disgust + empathy."
+    },
+    "cerebellum": {
+      "category": "Cerebellum — motor coordination + cognitive timing",
+      "scene": "(brain map)",
+      "symbol": "A LITTLE BRAIN hanging at the back ('cerebellum' = little brain)",
+      "mnemonic_link": "Latin: cerebellum = little brain.",
+      "function_depiction": "Motor coordination. Also: cognitive timing, language. Lithium toxicity = cerebellar damage (ataxia). Alcoholism = cerebellar atrophy → broad-based gait."
+    },
+    "default_mode_network": {
+      "category": "DMN — daydreaming, self-referential thought",
+      "scene": "(brain map)",
+      "symbol": "A coffee-shop COMMITTEE of brain regions chatting when nothing else is going on (vmPFC, posterior cingulate, angular gyrus)",
+      "mnemonic_link": "Default Mode = idle mode = daydreaming committee.",
+      "function_depiction": "Hyperactive in depression (rumination, self-criticism). Psilocybin/ketamine 'reset' the DMN — proposed antidepressant mechanism. Mindfulness reduces DMN activity."
+    },
+    "nucleus_accumbens": {
+      "category": "Nucleus Accumbens (NAc) — reward center",
+      "scene": "DOPA_MINE (THE CASINO)",
+      "symbol": "A CASINO with slot machines flashing — the mesolimbic train's destination",
+      "mnemonic_link": "NAc = the reward jackpot.",
+      "function_depiction": "Addiction substrate. Stimulant + opioid + nicotine all flood DA here. DBS target for treatment-resistant depression + OCD."
+    },
+
+    "_BATCH_4_side_effect_mechanisms": "═══════════════════════════════════════════",
+
+    "neuroleptic_malignant_syndrome": {
+      "category": "NMS — antipsychotic-induced hyperthermia + rigidity emergency",
+      "scene": "(DOPA_MINE in catastrophic mode)",
+      "symbol": "The mesolimbic D2 barrier is SLAMMED SHUT — all workers turn into RIGID PYRAMID STATUES, the mine catches FIRE (hyperthermia), and a heart monitor shows wild swings",
+      "mnemonic_link": "NMS = Neuroleptic Massive Shutdown of DA system.",
+      "function_depiction": "Caused by: any antipsychotic (esp. high-potency 1st-gen). 4-Symptom rule: Fever + Encephalopathy (altered mental status) + Vital instability + Elevated enzymes (↑CK >1000). Treatment: STOP antipsychotic, supportive cooling, dantrolene/bromocriptine, ICU. DDx: serotonin syndrome (clonus vs. rigidity)."
+    },
+    "serotonin_syndrome": {
+      "category": "Serotonin syndrome — excess 5-HT emergency",
+      "scene": "(serotonin scenes overload)",
+      "symbol": "The Persian-rug Raphe workshop in FRENZY — looms spinning out of control, weavers shaking with CLONUS (rhythmic limbs), hot from overdrive",
+      "mnemonic_link": "Looms = 5-HT production. Out-of-control = excess.",
+      "function_depiction": "Caused by: SSRI/SNRI/MAOI combos, Tramadol + SSRI, Linezolid + SSRI, MAOI + cheese (tyramine — but that's hypertensive crisis, different). HUNTER CRITERIA: spontaneous CLONUS, inducible clonus + agitation/diaphoresis, ocular clonus + agitation, tremor + hyperreflexia, hypertonia + temp >38 + clonus. Treatment: STOP serotonergic, supportive, CYPROHEPTADINE (5-HT2A antagonist). DDx vs. NMS: clonus + hyperreflexia (5-HT) vs. rigidity + ↑CK (NMS)."
+    },
+    "EPS_acute_dystonia": {
+      "category": "Acute dystonic reaction — sudden muscle spasm from D2 block",
+      "scene": "DOPA_MINE (nigrostriatal section)",
+      "symbol": "A worker FROZEN MID-STEP with neck CRANED upward (oculogyric crisis), tongue out",
+      "mnemonic_link": "Within hours-days of antipsychotic, esp. young male.",
+      "function_depiction": "Tx: IM Benztropine 1-2mg or IM Diphenhydramine 25-50mg. Resolves within minutes."
+    },
+    "EPS_akathisia": {
+      "category": "Akathisia — subjective + objective restlessness",
+      "scene": "DOPA_MINE (workers pacing)",
+      "symbol": "Workers PACING back and forth, unable to sit still, even though they want to",
+      "mnemonic_link": "A-kathisia (Greek): 'not-sitting'.",
+      "function_depiction": "Sense of inner restlessness + objective movements. Links to SUICIDALITY warnings. Tx: ↓antipsychotic dose, switch (Aripiprazole common offender), Propranolol 10-20mg TID, BZD, Mirtazapine."
+    },
+    "EPS_parkinsonism": {
+      "category": "Drug-induced parkinsonism",
+      "scene": "DOPA_MINE (nigrostriatal blockade)",
+      "symbol": "Workers move in SLOW MOTION, hunched posture, mask-like faces, tremor",
+      "mnemonic_link": "Like real Parkinson's, but caused by D2 block (not cell death).",
+      "function_depiction": "Bradykinesia + rigidity + tremor + masked facies. Tx: ↓dose, anticholinergic (Benztropine), Amantadine. Reversible (vs. real Parkinson's)."
+    },
+    "tardive_dyskinesia": {
+      "category": "TD — late-onset involuntary movements (often OROFACIAL)",
+      "scene": "DOPA_MINE (chronic blockade aftermath)",
+      "symbol": "Workers with chronically TWITCHY FACES, chewing-like jaw movements, lip-smacking — appears AFTER prolonged blockade",
+      "mnemonic_link": "Tardive = late.",
+      "function_depiction": "Risk ↑ with: years of 1st-gen exposure, female, elderly, diabetes. AIMS scale screening. Tx: switch to Clozapine/Quetiapine (lowest TD risk), VMAT2 inhibitors (Valbenazine, Deutetrabenazine). Often IRREVERSIBLE."
+    },
+    "hyperprolactinemia": {
+      "category": "Hyperprolactinemia — D2 blockade of tuberoinfundibular pathway",
+      "scene": "DOPA_MINE (TUBE-INFUNDIBULAR section)",
+      "symbol": "The MILK PUMP at the pituitary section LEAKS UNCONTROLLED — milk everywhere",
+      "mnemonic_link": "DA tonically inhibits prolactin. Block DA → prolactin floods.",
+      "function_depiction": "Sx: galactorrhea, amenorrhea, gynecomastia, sexual dysfunction, osteoporosis (long-term). Worst offenders: Risperidone, Paliperidone, Haloperidol. Sparing: Aripiprazole (partial agonist), Quetiapine, Clozapine."
+    },
+    "metabolic_syndrome": {
+      "category": "Metabolic syndrome — antipsychotic-induced weight gain + dyslipidemia + T2DM",
+      "scene": "(beyond DOPA-MINE: the Olympic athlete eating)",
+      "symbol": "The Olympic athlete (Olanzapine character) gorging on pizza + sleeping under the Quiet Pine — surrounded by olives (oil) and a glucose meter showing 250",
+      "mnemonic_link": "Combined H1 (↑appetite) + 5-HT2C (↑appetite) + ? (insulin resistance) block.",
+      "function_depiction": "Risk ranking: Olanzapine > Clozapine > Quetiapine > Risperidone > Paliperidone > Aripiprazole > Ziprasidone > Lurasidone (lowest). Annual fasting glucose + lipid panel + waist circumference monitoring required."
+    },
+    "QT_prolongation": {
+      "category": "QT prolongation — drug-induced arrhythmia risk",
+      "scene": "(heart ECG strip)",
+      "symbol": "An EKG strip with the QT interval STRETCHED LONG — like a rubber band about to snap (into torsades de pointes)",
+      "mnemonic_link": "Q-T interval visibly stretched.",
+      "function_depiction": "Major offenders: Methadone, Ziprasidone, IV Haloperidol, TCAs, Citalopram (dose-dependent), some MAOIs. Risk factors: hypokalemia, hypomagnesemia, bradycardia, female. Baseline + follow-up EKG when stacking risk."
+    },
+    "agranulocytosis_clozapine": {
+      "category": "Agranulocytosis — neutrophil depletion (CLOZAPINE specifically)",
+      "scene": "(bone marrow ward)",
+      "symbol": "White blood cell soldiers VANISHING — body without defenders. The Z-key from clozapine sits next to them.",
+      "mnemonic_link": "Clozapine's notorious risk.",
+      "function_depiction": "Risk 1-2% over years. MANDATORY ANC monitoring: weekly × 6 mo, biweekly × next 6 mo, monthly thereafter. REMS program in US. Other offenders (rare): Carbamazepine, Phenytoin, Mirtazapine."
+    },
+    "SJS_TEN": {
+      "category": "Stevens-Johnson Syndrome / TEN — severe skin reaction",
+      "scene": "(Lamb on trigger)",
+      "symbol": "The Lamb (Lamotrigine) covered in PEELING RED RASH — skin falling off in sheets",
+      "mnemonic_link": "Lamb + trigger + rash.",
+      "function_depiction": "Drugs at highest risk: Lamotrigine (slow titration crucial!), Carbamazepine (esp. HLA-B*1502 in Asian descent — test before starting), Phenobarbital, Phenytoin. Mortality high. Treatment: STOP drug, ICU."
+    },
+    "SIADH_hyponatremia": {
+      "category": "SIADH — drug-induced hyponatremia",
+      "scene": "(Carbamazepine maze fills with water)",
+      "symbol": "The bread-maze (Carbamazepine) FLOODED with water — patient drowning in low sodium",
+      "mnemonic_link": "Carb-A-Maze drowning in water = SIADH.",
+      "function_depiction": "Offenders: Carbamazepine, Oxcarbazepine (more than Carba!), SSRIs (esp. in elderly), Antipsychotics (rare). Sx: confusion, headache, seizures if severe. Check Na in elderly within 2 weeks of starting."
+    },
+    "hepatotoxicity": {
+      "category": "Drug-induced hepatotoxicity",
+      "scene": "(failing liver)",
+      "symbol": "A liver DANGLING ON THE EDGE — labeled with offending drugs",
+      "mnemonic_link": "Liver in distress.",
+      "function_depiction": "High-risk: Valproate (esp. pediatric <2y, in mitochondrial disease — black box), Nefazodone (withdrawn US), Disulfiram, Naltrexone (high doses), MAOIs. Check LFTs at baseline + periodically."
+    },
+    "suicidality_warning": {
+      "category": "FDA suicidality warning — paradoxical risk in young patients",
+      "scene": "(black-box warning label)",
+      "symbol": "A BLACK BOX with skull-and-crossbones on antidepressant pill bottles, specifically for <25y",
+      "mnemonic_link": "FDA's black-box warning is literal in this symbol.",
+      "function_depiction": "Risk increase in first 1-2 months of SSRI/SNRI use in <25y. Warn families. Close monitoring. ABSOLUTE risk small; benefit usually outweighs."
+    },
+    "discontinuation_syndrome_FINISH": {
+      "category": "Antidepressant discontinuation syndrome",
+      "scene": "(abrupt SSRI cessation)",
+      "symbol": "Patient suddenly OFF the SERT-postal-route — body experiences withdrawal: dizzy, flu-like, electric-shocks ('brain zaps'), GI",
+      "mnemonic_link": "FINISH mnemonic: Flu-like, Insomnia, Nausea, Imbalance, Sensory disturbance, Hyperarousal.",
+      "function_depiction": "Worst with: Paroxetine, Venlafaxine (short t½). Best tolerated: Fluoxetine (long t½ self-tapers). Tx: re-start + slow taper. NOT relapse (timing differs)."
+    },
+    "lithium_toxicity": {
+      "category": "Lithium toxicity — narrow therapeutic window",
+      "scene": "(Li-ion battery exploding)",
+      "symbol": "The Li-ion battery OVER-CHARGED, smoking, swelling — tremor → ataxia → confusion → seizures → coma",
+      "mnemonic_link": "Battery explosion = toxicity.",
+      "function_depiction": "Mild (1.5-2.0): tremor coarse, N/V, diarrhea. Moderate (2.0-2.5): ataxia, confusion. Severe (>2.5): seizures, dialysis indicated. Triggers: dehydration, NSAIDs, ACE-I/ARB, diuretics (thiazides), renal disease. Annual TSH + Cr."
+    },
+    "lithium_hypothyroid_DI": {
+      "category": "Lithium → hypothyroidism + nephrogenic diabetes insipidus",
+      "scene": "(Li-ion battery affects body systems)",
+      "symbol": "Battery cables wrapped around a SLOW THYROID (goiter) and a DRY/THIRSTY KIDNEY",
+      "mnemonic_link": "Chronic Lithium effects.",
+      "function_depiction": "Hypothyroidism (10-20% over years) — TSH q6-12mo, supplement with levothyroxine. Nephrogenic DI (polyuria, polydipsia) — Amiloride blocks Li uptake into collecting duct."
+    },
+    "priapism_trazodone": {
+      "category": "Priapism — prolonged painful erection (α1 antagonism)",
+      "scene": "(Trazodone's specific risk)",
+      "symbol": "A traffic 'TRACK + ZONE' sign labeled 'STAYED TOO LONG' — emergency!",
+      "mnemonic_link": "Trazodone's notorious risk via α1 blockade.",
+      "function_depiction": "Rare but emergency (>4 hr = surgical urology). Warn male patients. Also reported with: Risperidone (α1 block), Chlorpromazine, rare with others."
+    },
+    "sexual_dysfunction_SSRI": {
+      "category": "Sexual dysfunction — common SSRI side effect",
+      "scene": "(SERT routes overloaded)",
+      "symbol": "A 'CLOSED' sign on the bedroom door + sad lover — SSRI dampens libido + delays climax",
+      "mnemonic_link": "↑5-HT → ↓ DA in reward + autonomic effects.",
+      "function_depiction": "30-70% on SSRI. ↓libido, anorgasmia, delayed ejaculation. Strategies: drug holiday (with short t½, NOT Fluoxetine), switch to Bupropion / Mirtazapine / Vilazodone / Vortioxetine, add Bupropion / Cyproheptadine / Sildenafil."
+    },
+    "antichol_toxidrome_emergency": {
+      "category": "Anticholinergic syndrome — clinical emergency (see Wonderland scene)",
+      "scene": "WONDERLAND_TEAPARTY (gone wild)",
+      "symbol": "All Wonderland characters in mania — already covered in anticholinergic_toxidrome (batch 1C)",
+      "mnemonic_link": "See WONDERLAND_TEAPARTY for full scene.",
+      "function_depiction": "TCA overdose, antihistamine overdose, scopolamine. Tx: Physostigmine (cholinesterase inhibitor), supportive."
+    },
+
+    "_BATCH_5_DSM_categories": "═══════════════════════════════════════════",
+
+    "DSM_neurodevelopmental": {
+      "category": "Neurodevelopmental Disorders — DSM Chapter 1 (onset in childhood)",
+      "symbol": "A CHILDREN'S PLAYGROUND with developmental milestones marked on a tree-ring chart — some children stuck at younger rings",
+      "mnemonic_link": "Develops from childhood. Tree rings = age stages.",
+      "function_depiction": "Includes: ID, GDD, Comm Disorders, ASD, ADHD, SLD, Motor (Tic, Dev coord), Stereotypic. Common scene element: tree-rings or developmental ladder."
+    },
+    "DSM_psychotic": {
+      "category": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "symbol": "A CRACKED MIRROR reflecting a distorted reality — voices visible as colored sound-waves",
+      "mnemonic_link": "Broken reality. Voices = hallucinations.",
+      "function_depiction": "Schizophrenia (>6 mo), Schizoaffective, Schizophreniform (1-6 mo), Brief Psychotic (<1 mo), Delusional, Catatonia. D2 blockade calms the mirror."
+    },
+    "DSM_bipolar": {
+      "category": "Bipolar and Related Disorders",
+      "symbol": "A SEE-SAW oscillating between a sun (mania) and a storm cloud (depression). North-pole iceberg in the background (Lithium connection).",
+      "mnemonic_link": "Bi-polar = two poles.",
+      "function_depiction": "Bipolar I (mania), Bipolar II (hypomania + MDE), Cyclothymia. Mood stabilizers (Lithium battery, Lamb-trigger, etc.) balance the see-saw."
+    },
+    "DSM_depressive": {
+      "category": "Depressive Disorders",
+      "symbol": "A GRAY RAIN CLOUD over a slumped figure — the SERT postal carrier piles up undelivered serotonin packages",
+      "mnemonic_link": "Depression = rain cloud.",
+      "function_depiction": "MDD (≥2wk), PDD (≥2y), DMDD (children <18 with chronic irritability), PMDD. SIGECAPS mnemonic for symptoms."
+    },
+    "DSM_anxiety": {
+      "category": "Anxiety Disorders",
+      "symbol": "A FRIGHTENED RABBIT (from BUS_LINE_1A scene) multiplied — different rabbits for different anxieties",
+      "mnemonic_link": "Anxious rabbit family.",
+      "function_depiction": "Separation Anxiety, Selective Mutism, Specific Phobia, Social Anxiety, Panic, Agoraphobia, GAD. Buspirone bus + SSRI/SNRI from elsewhere."
+    },
+    "DSM_OCD_related": {
+      "category": "Obsessive-Compulsive and Related Disorders",
+      "symbol": "Hands SCRUBBING IN A LOOP — water spiraling endlessly, with a tally counter clicking",
+      "mnemonic_link": "Looping action + counting = OCD ritual.",
+      "function_depiction": "OCD, BDD, Hoarding, Trichotillomania, Excoriation. High-dose SSRI (Fluvoxamine, Sertraline) + Clomipramine (TCA-SSRI hybrid). ERP therapy gold standard."
+    },
+    "DSM_trauma_stressor": {
+      "category": "Trauma- and Stressor-Related Disorders",
+      "symbol": "A BROKEN PHOTO frame with a shattered timeline behind it — flashback arrows pointing backward in time",
+      "mnemonic_link": "Trauma = broken timeline.",
+      "function_depiction": "PTSD, Acute Stress, Adjustment, RAD, DSED. Prazosin's praise-soldier helps with nightmares. SSRIs first-line. Trauma-focused CBT, EMDR."
+    },
+    "DSM_dissociative": {
+      "category": "Dissociative Disorders",
+      "symbol": "A FRAGMENTED MIRROR showing multiple selves, or a watch with the present erased",
+      "mnemonic_link": "Self fragmented.",
+      "function_depiction": "DID, Depersonalization/Derealization, Dissociative Amnesia. Trauma-focused psychotherapy primary."
+    },
+    "DSM_somatic": {
+      "category": "Somatic Symptom and Related Disorders",
+      "symbol": "A patient with EXAGGERATED body markings (pain arrows) but doctor's stethoscope finds nothing",
+      "mnemonic_link": "Body sensations dominate the mind.",
+      "function_depiction": "SSD, Illness Anxiety, Conversion, Factitious. CBT primary. Antidepressants for comorbid mood."
+    },
+    "DSM_feeding_eating": {
+      "category": "Feeding and Eating Disorders",
+      "symbol": "Empty plate next to a measuring tape (Anorexia) + binge plate (Bulimia/BED) + restricted food list (ARFID)",
+      "mnemonic_link": "Food-and-body distortions.",
+      "function_depiction": "AN, BN, BED, ARFID, Pica, Rumination. AN: highest mortality of psych disorders. SSRIs (Fluoxetine for BN), Topiramate for BED. Family-based therapy in adolescent AN."
+    },
+    "DSM_elimination": {
+      "category": "Elimination Disorders",
+      "symbol": "A toilet with a question mark — Enuresis (wet bed) or Encopresis (soiled clothes)",
+      "mnemonic_link": "Elimination = where it shouldn't go.",
+      "function_depiction": "Enuresis: behavioral (bell-and-pad), Desmopressin (V2 ADH agonist), low-dose Imipramine. Encopresis: pediatrics workup first."
+    },
+    "DSM_sleep_wake": {
+      "category": "Sleep-Wake Disorders",
+      "symbol": "A MOON + CLOCK + tired patient with sheep refusing to be counted — different sub-scenes for each",
+      "mnemonic_link": "Sleep-wake imagery.",
+      "function_depiction": "Insomnia, Hypersomnolence, Narcolepsy (Pitolisant alarm clock at H3), Breathing-related, Circadian, Parasomnias, RLS. CBT-I first-line for chronic insomnia."
+    },
+    "DSM_sexual_dysfunction": {
+      "category": "Sexual Dysfunctions",
+      "symbol": "A 'PAUSED' relationship icon — different specifics for different dysfunctions",
+      "mnemonic_link": "Function pause.",
+      "function_depiction": "Delayed Ejaculation, ED, Female Orgasmic, FSIAD, Genito-Pelvic Pain, Male Hypoactive Desire, Premature Ejaculation, Substance-induced. SSRI sexual side effects are major substance-induced cause."
+    },
+    "DSM_gender_dysphoria": {
+      "category": "Gender Dysphoria",
+      "symbol": "A figure with two different reflections in a mirror — assigned vs. experienced",
+      "mnemonic_link": "Mismatch between body and identity.",
+      "function_depiction": "Supportive care, gender-affirming therapy. Psychiatric comorbidities (depression, anxiety) treated standardly."
+    },
+    "DSM_disruptive_impulse": {
+      "category": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "symbol": "An EXPLOSION sign with broken rules — ODD (defiant child), Conduct (escalation), IED (anger explosion)",
+      "mnemonic_link": "Acting out outward.",
+      "function_depiction": "ODD, CD, IED, Kleptomania, Pyromania, Antisocial PD. Behavioral therapy + parent management. Sometimes Risperidone for severe aggression."
+    },
+    "DSM_substance_addictive": {
+      "category": "Substance-Related and Addictive Disorders",
+      "symbol": "A bottle + syringe + cigarette + dice — addictive substances + behaviors converging on the DOPA-MINE CASINO",
+      "mnemonic_link": "All addictions converge on mesolimbic reward.",
+      "function_depiction": "Alcohol (Naltrexone, Acamprosate, Disulfiram), Opioid (Methadone, Buprenorphine), Tobacco (Varenicline, NRT, Bupropion), Stimulants (limited pharm), Cannabis, Gambling, etc."
+    },
+    "DSM_neurocognitive": {
+      "category": "Neurocognitive Disorders (skipped per user — geriatric)",
+      "symbol": "(Skipped — geriatric scope)",
+      "mnemonic_link": "User requested skipping dementia-focused content.",
+      "function_depiction": "Delirium remains relevant (acute confusion in any age). Memorize: hyperactive/hypoactive/mixed; reversible causes; antipsychotic for severe agitation only (Haloperidol or atypical low-dose)."
+    },
+    "DSM_personality_disorders": {
+      "category": "Personality Disorders (General + Clusters A/B/C)",
+      "symbol": "A wall of 10 different THEATER MASKS — each PD a distinct mask. Above them: a frame labeled 'General PD Criteria A-F' (the master criteria).",
+      "mnemonic_link": "Personality = masks worn consistently.",
+      "function_depiction": "Cluster A (odd/eccentric — Paranoid, Schizoid, Schizotypal), Cluster B (dramatic — Antisocial, Borderline, Histrionic, Narcissistic), Cluster C (anxious — Avoidant, Dependent, OCPD). General criteria: enduring + pervasive + impairing + stable + traceable to adolescence + not better explained."
+    },
+    "DSM_paraphilic": {
+      "category": "Paraphilic Disorders",
+      "symbol": "A 'CAUTION' sign — atypical sexual interest causing distress or harm",
+      "mnemonic_link": "Para-philia = beside-love.",
+      "function_depiction": "Voyeuristic, Exhibitionistic, Frotteuristic, Sexual Masochism, Sexual Sadism, Pedophilic, Fetishistic, Transvestic. Forensic + ethical implications. CBT + sometimes anti-androgens."
+    },
+    "DSM_medication_induced": {
+      "category": "Medication-Induced Movement Disorders & Other Adverse Effects",
+      "symbol": "A pharmacy with bottles labeled 'NMS', 'Serotonin Syndrome', 'EPS', 'Akathisia', 'TD', 'Lithium toxicity', 'Discontinuation syndrome'",
+      "mnemonic_link": "Drug-caused syndromes get their own chapter.",
+      "function_depiction": "All the side-effect symbols above belong here. Recognize + treat + prevent."
     }
   },
 
