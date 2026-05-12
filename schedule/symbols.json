@@ -18,7 +18,6 @@
       "2026-05-11: GENERIC names only — no brand names ever. Lithium ≠ bipolar scene (Lithium itself = Li-ion battery)."
     ]
   },
-
   "scenes": {
     "DOPA_MINE": {
       "scene_name": "DOPA-MINE Co. — coal mine extracting dopamine ore",
@@ -29,7 +28,8 @@
         "Coal carts = vesicular dopamine release",
         "Newspaper PYRAMID hats labeled 'EXTRA' near nigrostriatal section = EPS",
         "Milk pump at tuberoinfundibular section = prolactin"
-      ]
+      ],
+      "hebrew_explanation": "מכרה DOPA-MINE — סצנה ראשית לדופמין. ארבעה אגפים (מסולימבי, מסוקורטיקלי, ניגרוסטריאטלי, טוברואינפונדיבולרי). מעליות עולות = D1-family (Gs); מחסומים אדומים = D2-family (Gi); קרונות = שחרור דופמין."
     },
     "BUS_LINE_1A": {
       "scene_name": "Bus stop — Line 1A",
@@ -37,7 +37,8 @@
       "recurring_elements": [
         "Different buses arriving = different 1A partial agonists (Buspirone bus, Vilazodone bus, etc.)",
         "Late bus = autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
-      ]
+      ],
+      "hebrew_explanation": "תחנת אוטובוס 1A. שפן רועד = חרדה. אוטובוסים שונים בקו = אגוניסטים חלקיים שונים ל-5-HT1A. אוטובוס מאחר = השהיית הופעת SSRI."
     },
     "TAROT_2A": {
       "scene_name": "Tarot 2A — psychedelic reading parlor",
@@ -46,14 +47,17 @@
         "Hippie reader (tie-dye shirt) = LSD/Psilocybin agonist",
         "Officer with flashlight = atypical antipsychotic (turns off the trip)",
         "Officer with mirror = Pimavanserin (inverse agonist, flips cards face-down)"
-      ]
+      ],
+      "hebrew_explanation": "פרלור טארוט אפלולי עם שני קלפי Ace = 5-HT2A. ההיפי הקורא = פסיכדלים. שוטר עם פנס = אנטיפסיכוטי אטיפי. חדרים סמוכים: מטבח (2C), חדר-מים (5-HT3), ספרייה (5-HT6)."
     },
     "CONVENIENCE_STORE_7": {
       "scene_name": "7-Eleven open 24/7",
       "setting": "Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty.",
-      "recurring_elements": ["Night-clerk turning off neon = Lurasidone blocking 5-HT7"]
+      "recurring_elements": [
+        "Night-clerk turning off neon = Lurasidone blocking 5-HT7"
+      ],
+      "hebrew_explanation": "7-Eleven פתוח 24/7. השלט 7 = קולטן 5-HT7. ה-clerk הלילי = Lurasidone שמכבה אורות = שיקום מקצב יממה."
     },
-
     "ALPHA_WOLF_PACK": {
       "scene_name": "Alpha wolf pack in a snowy forest",
       "setting": "Snowy pine forest. A wolf pack on the hunt. Some lone alphas charge forward, others stay behind on radio. Each wolf wears a numbered tag.",
@@ -61,7 +65,8 @@
         "Lone alpha wolf (#1) = α1 receptor — true alpha hunts, post-synaptic action",
         "Two wolves (one '#2' tag) = α2 receptor — #2 wolf pretends but is actually autoreceptor, calling pack back",
         "Tranquilizer dart from a hunter = α1 blockade (Prazosin, antipsychotic α1 side effect)"
-      ]
+      ],
+      "hebrew_explanation": "להקת זאבי אלפא ביער מושלג. זאב בודד = α1 (אמיתי, פוסט-סינפסי). שני זאבים שבהם #2 = α2 (אוטו-רצפטור, רק מתחזה לאלפא)."
     },
     "BEETHOVEN_ORCHESTRA": {
       "scene_name": "Beethoven conducting numbered symphonies",
@@ -70,7 +75,8 @@
         "Beethoven with '#1' baton + heart-drums section = β1 (heart)",
         "Beethoven with '#2' baton + winds/brass = β2 (lungs)",
         "A fishing NET hangs by the stage door = NET transporter; Beethoven catches stray notes (NE) and returns them"
-      ]
+      ],
+      "hebrew_explanation": "תזמורת בטהובן. שרביט #1 + תופי-לב = β1 (לב). שרביט #2 + נשיפה = β2 (ריאות). רשת דייגים בכניסה = NET, בטהובן 'דג' תווים תועים (NE) חזרה."
     },
     "AA_HOTEL": {
       "scene_name": "Aa Hotel — 5-floor GABA-A receptor",
@@ -84,7 +90,8 @@
         "Green CHLORINE SOLDIERS rushing INTO neurons = Cl⁻ influx → hyperpolarization → inhibition",
         "Barbed-wire fence around hotel = Phenobarbital",
         "Bayit-B small synagogue next door = GABA-B (metabotropic, Baclofen prays there)"
-      ]
+      ],
+      "hebrew_explanation": "מלון Aa בן 5 קומות — קולטן GABA-A. שם המלון = α-α (תת-יחידות). חיילי כלוריד ירוקים = Cl⁻ נכנסים פנימה. גדר תיל = ברביטורט. בית כנסת בית-ב' לידו = GABA-B."
     },
     "ASPARAGUS_VIP_DOOR": {
       "scene_name": "NMDA VIP-club doorway (Mr. Asparagus's domain)",
@@ -95,9 +102,9 @@
         "Horseshoe magnet in lock = Mg²⁺ block",
         "Chalk-white guests with '2+' badges in line = Ca²⁺ entering",
         "Neon sign flickering = depolarization (releases the magnet plug)"
-      ]
+      ],
+      "hebrew_explanation": "דלת מועדון NMDA. מר אספרגוס (N-methyl-D-Aspartate) = אגוניסט. חלוק-G אפור = Glycine קו-אגוניסט. מגנט פרסה = Mg²⁺ block. אורחים מסויידים '2+' = Ca²⁺ נכנסים."
     },
-
     "DAIRY_FARM": {
       "scene_name": "Dairy Farm — opioid receptors and their animal residents",
       "setting": "A green farm on a hill. Each animal produces a different opioid-receptor effect. Hay bales, milk pails, and a Delta-Airlines plane droning overhead.",
@@ -107,7 +114,8 @@
         "Delta-Airlines plane (triangular logo) overhead = δ-opioid receptor (less clinical)",
         "Peaceful endogenous farmer = endorphins",
         "Pails labeled: Analgesia / Euphoria / Constipation / Resp. Depression / Miosis = the spectrum of μ-effects"
-      ]
+      ],
+      "hebrew_explanation": "חוות חלב לאופיואידים. פרה 'MOO' = μ. תיש בועט 'K' = κ (דיספוריה). מטוס Delta = δ. דליי מסומנים: אנלגזיה / אופוריה / דיכוי נשימה / עצירות."
     },
     "WONDERLAND_TEAPARTY": {
       "scene_name": "Alice in Wonderland — Mad Hatter's tea party (Muscarinic receptors)",
@@ -118,7 +126,8 @@
         "Mad Hatter with 3 dripping teacups (saliva/tears/sweat) = M3 (glands)",
         "Tweedledee & Tweedledum at the corners = M4 / M5 (less clinical)",
         "Anticholinergic toxicity = whole scene gone wild: Mad Hatter mad, Red Queen flushed, March Hare hot, teacups bone-dry, Cheshire Cat invisible (pupils dilated)"
-      ]
+      ],
+      "hebrew_explanation": "מסיבת התה של Alice במולנדרלנד — כל דמות = קולטן מוסקריני. הארנב הלבן (שעון 1 O'Clock) = M1. מלכת לבבות (2 of Hearts) = M2. ה-Mad Hatter עם 3 כוסות = M3. רעלת אנטיכולינרגית = הכל יוצא משליטה."
     },
     "CIGARETTE_THEATER": {
       "scene_name": "Cigarette Theater — Nicotinic receptors on a smoky stage",
@@ -129,7 +138,8 @@
         "Backstage stagehand cigarettes = NMJ-type (α1β1γδ)",
         "Wooden match (אצית) struck = Acetylcholine the agonist",
         "Half-smoked cigarette in a smoker's hand = Varenicline partial agonism"
-      ]
+      ],
+      "hebrew_explanation": "תיאטרון סיגריות לקולטנים ניקוטיניים. מותג '42' = α4β2. 'Lucky 7' של סבא חכם = α7. גפרור עץ (אצית) = Acetylcholine."
     },
     "H_HOUSE": {
       "scene_name": "Histamine House — H-shaped building, 4 floors for H1-H4",
@@ -139,7 +149,8 @@
         "Floor 2 (Kitchen) — leaking 'H2O' pots of stomach acid = H2 (gastric)",
         "Floor 3 (Study) — autoreceptor professor dozing on his own desk = H3 (CNS auto, cognition)",
         "Floor 4 (Rooftop) — immune-cell pigeons circling = H4 (immune)"
-      ]
+      ],
+      "hebrew_explanation": "בית בצורת H בן 4 קומות = קולטני היסטמין. קומה 1 (סלון נמנום) = H1. קומה 2 (מטבח H2O) = H2 (חומצת קיבה). קומה 3 (חדר עבודה) = H3 (אוטו-רצפטור). קומה 4 (גג) = H4 (חיסון)."
     },
     "ER_GUARD_POST": {
       "scene_name": "Endoplasmic Reticulum guard post (σ1)",
@@ -148,9 +159,9 @@
         "Guard with 'S-1' badge = sigma-1 chaperone protein",
         "Misfolded proteins arriving in stress = clients of the chaperone",
         "Fluvoxamine + Dextromethorphan visits = drug agonists at σ1"
-      ]
+      ],
+      "hebrew_explanation": "סנטרי-S1 בכניסה ל-ER (אנדופלסמטית רטיקולום) = chaperone protein sigma-1. Fluvoxamine ו-Dextromethorphan = מבקרים תכופים."
     },
-
     "RAPHE_TAPESTRY": {
       "scene_name": "Raphe nuclei — serotonin's tapestry workshop in the brainstem",
       "setting": "A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin serotonin-yarn into rugs that get shipped EVERYWHERE.",
@@ -159,7 +170,8 @@
         "Weavers = raphe neurons producing 5-HT",
         "Shipping crates labeled cortex/limbic/hypothalamus = projections everywhere",
         "Old loom that won't start for 4-6 weeks = SSRI delay-of-onset (autoreceptor downregulation)"
-      ]
+      ],
+      "hebrew_explanation": "סדנת שטיחים פרסיים לאורך הגזע מוחי = גרעיני raphe. אורגים = נוירוני 5-HT. השם 'raphe' = 'תפר' ביוונית."
     },
     "LOCUS_COERULEUS_BLUEPOST": {
       "scene_name": "Locus Coeruleus — the BLUE police box of norepinephrine",
@@ -169,7 +181,8 @@
         "Phone lines fanning out = NE projections everywhere",
         "Panic-button red light = hyperactive LC in panic/PTSD/withdrawal",
         "Prazosin curtain = α1 blockade calming the dispatch noise (PTSD nightmares)"
-      ]
+      ],
+      "hebrew_explanation": "תא טלפון משטרתי כחול = locus coeruleus ('כתם כחול' בלטינית). מוקד כל ה-NE במוח. מתפרסם לכל מקום."
     },
     "TUBEROMAMMILLARY_DAIRY": {
       "scene_name": "Tuberomammillary nucleus — histamine's milking parlor",
@@ -178,7 +191,8 @@
         "Mammary cows pumping histamine = TMN neurons → wakefulness",
         "Histamine bottles distributed to H-House = upstream of all H1/H3 effects",
         "Dimmer switch when blocked = sedation from H1 antagonists"
-      ]
+      ],
+      "hebrew_explanation": "פרות מימרי בהיפותלמוס הפוסטריורי = גרעין histamine. שואבות היסטמין שמדליק את המוח (ערות)."
     },
     "MEYNERT_MYNAH": {
       "scene_name": "Basal nucleus of Meynert — the talking Mynah bird",
@@ -187,1135 +201,1294 @@
         "Mynah bird = basal nucleus of Meynert (phonetic)",
         "Bird whispers memorize cortex = cholinergic projections for memory",
         "Bird dies = Alzheimer's pathology (skipped per user, but explains baseline)"
-      ]
+      ],
+      "hebrew_explanation": "ציפור מינה חכמה בבזאל פורברין = הגרעין הבזאלי של מיינרט (אצטיל-כולין → קליפת המוח, זיכרון)."
     }
   },
-
   "ions": {
     "Mg2+": {
       "symbol": "Horseshoe magnet labeled 'Mg'",
       "mnemonic_link": "Mg = Magnet (both start with M). Magnetic block of NMDA = literal magnet on the door.",
-      "appears_in": ["NMDA channel (block)", "Many enzyme co-factors"]
+      "appears_in": [
+        "NMDA channel (block)",
+        "Many enzyme co-factors"
+      ],
+      "hebrew_explanation": "מגנט פרסה. Mg = Magnesium = מגנט (אותה אות M). חוסם NMDA במנוחה."
     },
     "Ca2+": {
       "symbol": "Chalk-white VIP guest with '2+' lapel pin",
       "mnemonic_link": "Ca = Calcium = chalk (calcareous). 2+ = the divalent charge as a name-badge.",
-      "appears_in": ["NMDA (afflux)", "Voltage-gated Ca channels", "Vesicle release"]
+      "appears_in": [
+        "NMDA (afflux)",
+        "Voltage-gated Ca channels",
+        "Vesicle release"
+      ],
+      "hebrew_explanation": "אורחים מסויידים-לבנים עם תגית '2+'. Ca = סידן = chalk (גיר). 2+ = המטען החיובי."
     },
     "Cl-": {
       "symbol": "Green-skinned soldier carrying a '−' minus-shield",
       "mnemonic_link": "Cl = Chlorine (green gas in WWI). Minus shield = the negative charge.",
-      "appears_in": ["GABA-A (influx → hyperpolarization)", "Glycine receptor", "Some Cl-channels"]
+      "appears_in": [
+        "GABA-A (influx → hyperpolarization)",
+        "Glycine receptor",
+        "Some Cl-channels"
+      ],
+      "hebrew_explanation": "חיילים ירוקים עם מגן '−'. Cl = chlorine = הגז הירוק במלחמת העולם הראשונה. נכנס לתעלת GABA-A → היפרפולריזציה."
     },
     "Na+": {
       "symbol": "Soldier wearing white SALT crystals with '+' epaulets",
       "mnemonic_link": "Na = Sodium = salt. + epaulets = positive charge.",
-      "appears_in": ["AMPA/Kainate (excitatory influx)", "Voltage-gated Na channels", "Nicotinic AChR"]
+      "appears_in": [
+        "AMPA/Kainate (excitatory influx)",
+        "Voltage-gated Na channels",
+        "Nicotinic AChR"
+      ],
+      "hebrew_explanation": "חיילים עם גבישי מלח לבנים ו-'+'. Na = sodium = מלח. עיקרי בתעלות AMPA, nAChR."
     },
     "K+": {
       "symbol": "Yellow banana with '+' sticker",
       "mnemonic_link": "K = Potassium = banana (high-potassium food). + = positive charge.",
-      "appears_in": ["Repolarization (K+ efflux)", "GABA-B (K-channel opens)", "Resting potential"]
+      "appears_in": [
+        "Repolarization (K+ efflux)",
+        "GABA-B (K-channel opens)",
+        "Resting potential"
+      ],
+      "hebrew_explanation": "בננות צהובות עם '+' . K = potassium = banana (עשירה בקליום). זרימה החוצה → ריפולריזציה."
     }
   },
-
   "symbols": {
-
     "_BATCH_1A_dopamine_serotonin": "═══════════════════════════════════════════",
-
     "D1_receptor": {
       "category": "Dopamine D1-family (Gs, ↑cAMP, EXCITATORY)",
       "scene": "DOPA_MINE",
       "symbol": "Single elevator with '1↑' button going UP to PFC top floor",
       "mnemonic_link": "UP arrow = Gs/excitatory. '1' = D1. Top floor = PFC (working memory).",
-      "function_depiction": "Agonism = elevator rises bright; antagonism = stuck at ground."
+      "function_depiction": "Agonism = elevator rises bright; antagonism = stuck at ground.",
+      "hebrew_explanation": "קולטן D1 — דופמין מ-D1-family (Gs, מעורר). סמל: מעלית '1↑' עולה לקומה העליונה של PFC. תפקיד: זיכרון עבודה, סימפטומים חיוביים. Gs = ↑cAMP."
     },
     "D5_receptor": {
       "category": "Dopamine D1-family (Gs, ↑cAMP) — hippocampal",
       "scene": "DOPA_MINE",
       "symbol": "Glass elevator '5' ascending through 5 hippocampal library floors",
-      "mnemonic_link": "Same UP/Gs visual as D1. '5' = D5. Library = hippocampus/memory."
+      "mnemonic_link": "Same UP/Gs visual as D1. '5' = D5. Library = hippocampus/memory.",
+      "hebrew_explanation": "קולטן D5 — D1-family (Gs). סמל: מעלית '5' בספריית ההיפוקמפוס. בעיקר זיכרון. פחות קליני."
     },
     "D2_receptor": {
       "category": "Dopamine D2-family (Gi, ↓cAMP) — CENTRAL antipsychotic target",
       "scene": "DOPA_MINE",
       "symbol": "Massive RED BARRIER labeled '2' across mesolimbic track with a foreman at lever",
       "mnemonic_link": "DOWN = Gi/inhibitory. '2' = D2. Mesolimbic = psychosis track.",
-      "function_depiction": "Antagonism = foreman LOWERS barrier (carts pile up; EPS pyramid-hatted workers spawn; prolactin pump leaks). Partial agonism = barrier hovers halfway (Aripiprazole/Brexpiprazole/Cariprazine). Agonism = barrier raised wide → runaway carts = stimulant psychosis."
+      "function_depiction": "Antagonism = foreman LOWERS barrier (carts pile up; EPS pyramid-hatted workers spawn; prolactin pump leaks). Partial agonism = barrier hovers halfway (Aripiprazole/Brexpiprazole/Cariprazine). Agonism = barrier raised wide → runaway carts = stimulant psychosis.",
+      "hebrew_explanation": "קולטן D2 — D2-family (Gi, מעכב). הקולטן ה-קריטי ביותר באנטיפסיכוטיים. סמל: מחסום אדום ענק '2' במסלול מסולימבי. חסימה = פסיכוזה מטופלת; אבל גם פירמידות EPS, חלב פרולקטין, ועוד."
     },
     "D3_receptor": {
       "category": "Dopamine D2-family (Gi) — limbic-restricted",
       "scene": "DOPA_MINE",
       "symbol": "Three small red barriers in a heart-shaped (limbic) sub-chamber",
       "mnemonic_link": "Red-barrier base = Gi. '3' barriers. Heart shape = limbic.",
-      "function_depiction": "Cariprazine operates ONLY these three (selective partial agonist)."
+      "function_depiction": "Cariprazine operates ONLY these three (selective partial agonist).",
+      "hebrew_explanation": "קולטן D3 — D2-family. סמל: שלושה מחסומים בלימבי (לב). Cariprazine סלקטיבי-D3 (דיכאון בביפולר)."
     },
     "D4_receptor": {
       "category": "Dopamine D2-family (Gi) — high clozapine affinity, low EPS",
       "scene": "DOPA_MINE",
       "symbol": "Four-bolt locking mechanism on a SILENT chamber door",
       "mnemonic_link": "Same red-locked base (Gi). 4 bolts = D4. Silence = low EPS.",
-      "function_depiction": "Clozapine carries a Z-shaped master key that fits all 4 bolts."
+      "function_depiction": "Clozapine carries a Z-shaped master key that fits all 4 bolts.",
+      "hebrew_explanation": "קולטן D4 — D2-family. סמל: ארבעה ברגים על דלת שקטה (low-EPS). Clozapine עם מפתח-Z פותח שם."
     },
-
     "5-HT1A_receptor": {
       "category": "Serotonin (Gi — autoreceptor + postsynaptic)",
       "scene": "BUS_LINE_1A",
       "symbol": "Bus-stop '1A' with anxious rabbit on bench",
       "mnemonic_link": "Bus line 1A. Rabbit = anxiety. Bus arriving = anxiolysis.",
-      "function_depiction": "Partial agonists (Buspirone, Vilazodone, Vortioxetine, Aripiprazole) = different buses on the SAME 1A line. Empty bus for 4-6 weeks = SSRI delay-of-onset (autoreceptor desensitization)."
+      "function_depiction": "Partial agonists (Buspirone, Vilazodone, Vortioxetine, Aripiprazole) = different buses on the SAME 1A line. Empty bus for 4-6 weeks = SSRI delay-of-onset (autoreceptor desensitization).",
+      "hebrew_explanation": "קולטן 5-HT1A — סרוטונין (Gi, אוטו-רצפטור + post-syn). שפן רגוע באוטובוס 1A. Buspirone, Vilazodone, Vortioxetine, Aripiprazole = אוטובוסים שונים בקו 1A (partial agonists). דחיית-הופעת SSRI דרך desensitization."
     },
     "5-HT2A_receptor": {
       "category": "Serotonin (Gq, cortical) — psychedelic + atypical antipsychotic target",
       "scene": "TAROT_2A",
       "symbol": "Tarot table with 2 Ace cards, tie-dye hippie reader, swirling psychedelic walls",
       "mnemonic_link": "2 Ace cards = '2A'. Tarot = hallucinations.",
-      "function_depiction": "Agonism (LSD/Psilocybin/DMT) = walls swirl wildly. Antagonism (all atypicals, Mirtazapine, Trazodone) = officer with flashlight turns lights off. Inverse agonism (Pimavanserin) = officer flips cards face-down."
+      "function_depiction": "Agonism (LSD/Psilocybin/DMT) = walls swirl wildly. Antagonism (all atypicals, Mirtazapine, Trazodone) = officer with flashlight turns lights off. Inverse agonism (Pimavanserin) = officer flips cards face-down.",
+      "hebrew_explanation": "קולטן 5-HT2A — סרוטונין (Gq, cortical). שולחן טארוט עם 2 קלפי Ace. אגוניסט = LSD/פסילוסיבין. אנטיפסיכוטיים אטיפיים חוסמים = מנגנון מרכזי שלהם. Pimavanserin = inverse agonist."
     },
     "5-HT2C_receptor": {
       "category": "Serotonin (Gq, hypothalamic — appetite)",
       "scene": "TAROT_2A (kitchen annex)",
       "symbol": "Kitchen with TWO chefs guarding cookie jar",
       "mnemonic_link": "2 Chefs / 2 Cookies = '2C'.",
-      "function_depiction": "Antagonism (Mirtazapine, Olanzapine, Quetiapine) = chefs KO'd, cookies stolen → weight gain."
+      "function_depiction": "Antagonism (Mirtazapine, Olanzapine, Quetiapine) = chefs KO'd, cookies stolen → weight gain.",
+      "hebrew_explanation": "קולטן 5-HT2C — סרוטונין (Gq, היפותלמוס/תיאבון). מטבח עם 2 שפים שומרים על צנצנת עוגיות. חסימה (Mirtazapine, Olanzapine, Quetiapine) = שודדים שמתפרצים = עליה במשקל."
     },
     "5-HT3_receptor": {
       "category": "Serotonin — LIGAND-GATED ION CHANNEL (unique!). CTZ + gut.",
       "scene": "TAROT_2A (water-gate room)",
       "symbol": "Three iron CHANNELS gushing green vomit-water",
       "mnemonic_link": "3 = three gates. Iron channels emphasize ionotropic uniqueness.",
-      "function_depiction": "Antagonism (Ondansetron, Mirtazapine, Vortioxetine) = three identical PLUGS seal the gates."
+      "function_depiction": "Antagonism (Ondansetron, Mirtazapine, Vortioxetine) = three identical PLUGS seal the gates.",
+      "hebrew_explanation": "קולטן 5-HT3 — ה-יחיד היונוטרופי בסרוטונין! שלושה שערי ברזל לוהטים זורקים מי-בחילה ירוקים. חסימה (Ondansetron, Mirtazapine, Vortioxetine) = פקקים שעוצרים בחילה."
     },
     "5-HT6_receptor": {
       "category": "Serotonin (Gs, cortical/striatal — cognition)",
       "scene": "TAROT_2A (back library)",
       "symbol": "Library with 6 framed PhD diplomas; old professor reads",
       "mnemonic_link": "6 = SIX diplomas. Professor = cognition.",
-      "function_depiction": "Antagonism (Vortioxetine) = professor sharpens glasses (procognitive)."
+      "function_depiction": "Antagonism (Vortioxetine) = professor sharpens glasses (procognitive).",
+      "hebrew_explanation": "קולטן 5-HT6 — סרוטונין (Gs, קוגניציה). ספרייה עם 6 תעודות PhD. חסימה (Vortioxetine) = פרוקוגניטיבי."
     },
     "5-HT7_receptor": {
       "category": "Serotonin (Gs, suprachiasmatic + hippocampal — circadian)",
       "scene": "CONVENIENCE_STORE_7",
       "symbol": "7-Eleven open 24/7",
       "mnemonic_link": "7 = the store name and hours.",
-      "function_depiction": "Antagonism (Lurasidone) = clerk turns off neon, locks doors (restored sleep)."
+      "function_depiction": "Antagonism (Lurasidone) = clerk turns off neon, locks doors (restored sleep).",
+      "hebrew_explanation": "קולטן 5-HT7 — סרוטונין (Gs, מקצב יממה). 7-Eleven פתוח 24/7. חסימה (Lurasidone) = מקצב שינה-ערות משוקם."
     },
     "SERT": {
       "category": "Serotonin transporter — SSRI/SNRI/TCA target",
       "scene": "(standalone — appears in any synapse scene)",
       "symbol": "Postal carrier in 'SERT' uniform collecting serotonin packages",
       "mnemonic_link": "SERT = Service (postal). Pick-up-and-return = re-uptake.",
-      "function_depiction": "SSRI = a 'NO PICKUPS TODAY' sign blocks the carrier. Packages pile up in synapse (more serotonin available). 4-6 week delay."
+      "function_depiction": "SSRI = a 'NO PICKUPS TODAY' sign blocks the carrier. Packages pile up in synapse (more serotonin available). 4-6 week delay.",
+      "hebrew_explanation": "מובל סרוטונין — מטרת SSRI/SNRI/TCA. דוור 'SERT' אוסף חבילות מהסינפסה. SSRI = שלט 'אין משלוחים' = יותר סרוטונין בסינפסה. דחיית הופעת 4-6 שבועות."
     },
-
     "_BATCH_1B_norepinephrine_GABA_NMDA": "═══════════════════════════════════════════",
-
     "alpha1_receptor": {
       "category": "Adrenergic α1 — post-synaptic excitatory (Gq)",
       "scene": "ALPHA_WOLF_PACK",
       "symbol": "Single LONE ALPHA WOLF charging at full hunt",
       "mnemonic_link": "α1 = ONE wolf = true alpha. Hunt = post-synaptic action (vasoconstriction, alertness).",
-      "function_depiction": "Antagonism (Prazosin, antipsychotic α1 block) = tranquilizer dart → wolf sits down → orthostasis. Prazosin specifically tames the wolf's nightmares (PTSD use)."
+      "function_depiction": "Antagonism (Prazosin, antipsychotic α1 block) = tranquilizer dart → wolf sits down → orthostasis. Prazosin specifically tames the wolf's nightmares (PTSD use).",
+      "hebrew_explanation": "קולטן α1 — אדרנרגי פוסט-סינפסי (Gq, מעורר). זאב אלפא אחד יוצא לציד. חסימה (Prazosin = הרגעת סיוטי PTSD; אנטיפסיכוטיים = orthostasis צד)."
     },
     "alpha2_receptor": {
       "category": "Adrenergic α2 — autoreceptor (presynaptic, Gi)",
       "scene": "ALPHA_WOLF_PACK",
       "symbol": "Two wolves; the one tagged '#2' pretends to be alpha but radios pack 'come back to base'",
       "mnemonic_link": "α2 = TWO wolves. The #2 wolf isn't truly alpha → autoreceptor function (negative feedback).",
-      "function_depiction": "Agonism (Clonidine, Guanfacine) = friendly handlers feed the #2 wolf → whole pack calms (lowers central NE). ADHD = overactive pack settles."
+      "function_depiction": "Agonism (Clonidine, Guanfacine) = friendly handlers feed the #2 wolf → whole pack calms (lowers central NE). ADHD = overactive pack settles.",
+      "hebrew_explanation": "קולטן α2 — אוטו-רצפטור פרה-סינפסי (Gi). שני זאבים שבהם '#2' מתחזה לאלפא וקורא לעדר חזור. Clonidine, Guanfacine = אגוניסטים שמרגיעים את העדר = ADHD, גמילת אופיואידים, יל\"ד."
     },
     "beta1_receptor": {
       "category": "Adrenergic β1 — Gs (HEART)",
       "scene": "BEETHOVEN_ORCHESTRA",
       "symbol": "Beethoven holding baton '#1' conducting heart-shaped drum section",
       "mnemonic_link": "BETHoven = β. Symphony #1 = β1. Drums = heart pounding.",
-      "function_depiction": "Antagonism (Propranolol, Metoprolol-class) = 'Quiet' sign mutes the drum section."
+      "function_depiction": "Antagonism (Propranolol, Metoprolol-class) = 'Quiet' sign mutes the drum section.",
+      "hebrew_explanation": "קולטן β1 — אדרנרגי Gs (לב). בטהובן עם שרביט '#1' מנצח על תופי לב. חסימה (Propranolol) = לב רגוע."
     },
     "beta2_receptor": {
       "category": "Adrenergic β2 — Gs (LUNGS, muscle)",
       "scene": "BEETHOVEN_ORCHESTRA",
       "symbol": "Beethoven holding baton '#2' conducting brass/wind section",
       "mnemonic_link": "Symphony #2 = β2. Winds/Brass = lungs/airways.",
-      "function_depiction": "Agonism (Albuterol) = winds blast open. Non-selective β-block (e.g. Propranolol) silences the winds → bronchospasm risk."
+      "function_depiction": "Agonism (Albuterol) = winds blast open. Non-selective β-block (e.g. Propranolol) silences the winds → bronchospasm risk.",
+      "hebrew_explanation": "קולטן β2 — אדרנרגי Gs (ריאות, שריר). בטהובן עם שרביט '#2' מנצח על כלי נשיפה. אגוניסט (Albuterol) = פתיחת דרכי אוויר; חסימה לא-סלקטיבית = ברונכוספסם."
     },
     "NET": {
       "category": "Norepinephrine transporter",
       "scene": "BEETHOVEN_ORCHESTRA (stage-door)",
       "symbol": "Fishing NET hanging by the stage door — Beethoven catches stray notes (NE) with it",
       "mnemonic_link": "NET acronym = literal net. Catching notes = re-uptake.",
-      "function_depiction": "Atomoxetine = small atomic ox tearing holes in the net. Bupropion = bumper-cars also tears net (NDRI). TCAs/SNRIs (Venlafaxine, Duloxetine) = various NET-blockers."
+      "function_depiction": "Atomoxetine = small atomic ox tearing holes in the net. Bupropion = bumper-cars also tears net (NDRI). TCAs/SNRIs (Venlafaxine, Duloxetine) = various NET-blockers.",
+      "hebrew_explanation": "מובל נוראפינפרין — רשת דייגים (NET = רשת!) בכניסת התזמורת. אטומוקסטין, בופרופיון, SNRI, TCA = קורעים בה חורים = יותר NE בסינפסה."
     },
-
     "GABA_neurotransmitter": {
       "category": "Main inhibitory neurotransmitter",
       "scene": "AA_HOTEL",
       "symbol": "Aa Hotel manager holding the master key",
       "mnemonic_link": "GABA = manager who opens the Cl⁻ doors.",
-      "function_depiction": "Opens the receptor channel → green chlorine soldiers (Cl⁻) rush in → hyperpolarization (inhibition)."
+      "function_depiction": "Opens the receptor channel → green chlorine soldiers (Cl⁻) rush in → hyperpolarization (inhibition).",
+      "hebrew_explanation": "GABA — המעכב הראשי. מנהל מלון Aa עם המפתח הראשי. פותח את התעלה → חיילי כלוריד ירוקים נכנסים → היפרפולריזציה."
     },
     "GABA_A_receptor": {
       "category": "GABA-A — ionotropic Cl⁻ channel. Pentameric: usually 2α + 2β + 1γ.",
       "scene": "AA_HOTEL",
       "symbol": "The hotel itself — 5-floor building with α-floor-specific functions",
       "mnemonic_link": "Hotel name 'Aa' = α-α. 5 floors = pentameric.",
-      "function_depiction": "BZD = a partygoer that tickles the manager → doors open MORE FREQUENTLY (↑frequency). Barbiturate (Phenobarbital, barbed-wire fence) = lock-picker holding doors open LONGER (↑duration; high dose can open without GABA → lethal). Alcohol = also bribes the manager. Flumazenil (FLU character with tissues) = security guard who throws BZDs out."
+      "function_depiction": "BZD = a partygoer that tickles the manager → doors open MORE FREQUENTLY (↑frequency). Barbiturate (Phenobarbital, barbed-wire fence) = lock-picker holding doors open LONGER (↑duration; high dose can open without GABA → lethal). Alcohol = also bribes the manager. Flumazenil (FLU character with tissues) = security guard who throws BZDs out.",
+      "hebrew_explanation": "קולטן GABA-A — תעלת כלוריד יונוטרופית, 5-מרית. המלון עצמו (5 קומות). BZD = מבקר שדגדג את המנהל → הדלת נפתחת תכופות. ברביטורט = פורץ-מנעולים → הדלת נשארת פתוחה זמן רב יותר."
     },
     "GABA_A_alpha1_subunit": {
       "category": "GABA-A α1 subunit — sedation, hypnosis",
       "scene": "AA_HOTEL",
       "symbol": "Floor 1 — Sleep Lobby with giant bed",
       "mnemonic_link": "Floor 1 = ground floor = where you crash on arrival.",
-      "function_depiction": "Z-drugs (Zolpidem, Eszopiclone) = express elevators that ONLY go to Floor 1."
+      "function_depiction": "Z-drugs (Zolpidem, Eszopiclone) = express elevators that ONLY go to Floor 1.",
+      "hebrew_explanation": "תת-יחידה α1 של GABA-A — קומה 1 'sleep lobby'. Z-drugs (Zolpidem, Eszopiclone) = מעלית אקספרס שיורדת רק לכאן = שינה."
     },
     "GABA_A_alpha2_alpha3_subunits": {
       "category": "GABA-A α2/α3 — anxiolysis",
       "scene": "AA_HOTEL",
       "symbol": "Floor 2 (Calm Lounge) + Floor 3 (Group-therapy circle)",
       "mnemonic_link": "Middle floors = where you spend the calm part of your stay = anxiolysis.",
-      "function_depiction": "BZDs broadly target these floors (Diazepam, Alprazolam, Lorazepam — anxiolytic action)."
+      "function_depiction": "BZDs broadly target these floors (Diazepam, Alprazolam, Lorazepam — anxiolytic action).",
+      "hebrew_explanation": "תת-יחידות α2/α3 — קומות אמצעיות (calm lounge + group therapy). BZD רגילים מטפלים בחרדה דרכן."
     },
     "GABA_A_alpha5_subunit": {
       "category": "GABA-A α5 — memory/learning",
       "scene": "AA_HOTEL",
       "symbol": "Floor 5 — Memory Penthouse with a vault",
       "mnemonic_link": "5 = penthouse = top floor = high-value memories.",
-      "function_depiction": "Knockout of α5 (e.g. Midazolam pre-surgical) = vault is robbed → amnesia."
+      "function_depiction": "Knockout of α5 (e.g. Midazolam pre-surgical) = vault is robbed → amnesia.",
+      "hebrew_explanation": "תת-יחידה α5 — קומה 5 'memory penthouse' עם כספת. נטרול (Midazolam פרה-ניתוחי) = שדידת הכספת = אמנזיה."
     },
     "GABA_B_receptor": {
       "category": "GABA-B — metabotropic (Gi → K⁺ channel opens). NOT a chloride channel!",
       "scene": "AA_HOTEL (adjacent)",
       "symbol": "Small synagogue 'Bayit B' next door to the hotel",
       "mnemonic_link": "GABA-B = 'Bayit B' (House B in Hebrew). Separate building emphasizes that GABA-B is structurally different (G-protein, not ion channel).",
-      "function_depiction": "Baclofen prays here (spasticity treatment). GHB visits (illicit/narcolepsy)."
+      "function_depiction": "Baclofen prays here (spasticity treatment). GHB visits (illicit/narcolepsy).",
+      "hebrew_explanation": "קולטן GABA-B — מטבוטרופי (Gi → תעלות K⁺). 'בית-ב' סמוך למלון. Baclofen מתפלל שם = ספסטיות."
     },
-
     "NMDA_receptor": {
       "category": "Glutamate receptor — ligand-gated + voltage-gated (Mg²⁺ block). Ca²⁺ influx.",
       "scene": "ASPARAGUS_VIP_DOOR",
       "symbol": "Heavy iron door labeled 'NMDA' with horseshoe magnet wedged in lock",
       "mnemonic_link": "Door = channel. Mr. Asparagus (NMDA = N-methyl-D-Aspartate) is the agonist. Magnet = Mg²⁺ block. Glycine pebble at his feet = required co-agonist. Chalk-white '2+' guests = Ca²⁺ entry.",
-      "function_depiction": "Three conditions for opening: 1) Asparagus present (glutamate/NMDA), 2) Glycine pebble present, 3) Neon sign flickers (depolarization) → magnet falls out. NMDA hypothesis of schizophrenia = rusty magnet, door never opens properly → negative symptoms."
+      "function_depiction": "Three conditions for opening: 1) Asparagus present (glutamate/NMDA), 2) Glycine pebble present, 3) Neon sign flickers (depolarization) → magnet falls out. NMDA hypothesis of schizophrenia = rusty magnet, door never opens properly → negative symptoms.",
+      "hebrew_explanation": "קולטן NMDA — גלוטמט יונוטרופי. דלת ברזל עם מגנט-מנעול (Mg²⁺). פתיחה דורשת 3 תנאים: גלוטמט/NMDA + Glycine + דה-פולריזציה. כשפתוח → Ca²⁺ נכנס → פלסטיות, learning."
     },
-
     "_BATCH_1C_opioid_cholinergic_histamine": "═══════════════════════════════════════════",
-
     "Acetylcholine": {
       "category": "Neurotransmitter — agonist for BOTH muscarinic AND nicotinic receptors",
       "scene": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)",
       "symbol": "Wooden MATCH being struck",
       "mnemonic_link": "Acetyl = אצית (Hebrew for 'ignite'). Match = ignition.",
-      "function_depiction": "In Wonderland: the match lights the Mad Hatter's pipe (muscarinic activation). In Cigarette Theater: the same match lights the '42' and 'Lucky 7' cigarettes (nicotinic activation). One match = one ACh = two scenes (both receptor families share the same ligand)."
+      "function_depiction": "In Wonderland: the match lights the Mad Hatter's pipe (muscarinic activation). In Cigarette Theater: the same match lights the '42' and 'Lucky 7' cigarettes (nicotinic activation). One match = one ACh = two scenes (both receptor families share the same ligand).",
+      "hebrew_explanation": "אצטיל-כולין — גפרור עץ נצמת ('אצית' עברית = להדליק). עובר בין סצנת Wonderland (mAChR) לסצנת Cigarette Theater (nAChR)."
     },
-
     "mu_opioid_receptor": {
       "category": "Opioid receptor μ — Gi (analgesia + euphoria + respiratory depression)",
       "scene": "DAIRY_FARM",
       "symbol": "Cow saying 'MOO', producing pails labeled Analgesia, Euphoria, Constipation, Resp. Depression, Miosis",
       "mnemonic_link": "μ ≈ 'moo' — the sound a cow makes.",
-      "function_depiction": "Full agonism (Morphine, Fentanyl, Heroin, Oxycodone, Codeine) = milkers extracting effect. Partial agonism (Buprenorphine) = ceiling-effect milker. Antagonism (Naloxone, Naltrexone) = chase milkers off → withdrawal."
+      "function_depiction": "Full agonism (Morphine, Fentanyl, Heroin, Oxycodone, Codeine) = milkers extracting effect. Partial agonism (Buprenorphine) = ceiling-effect milker. Antagonism (Naloxone, Naltrexone) = chase milkers off → withdrawal.",
+      "hebrew_explanation": "קולטן μ-opioid (Gi). פרה שאומרת 'MOO' (= μ) עם דליים: אנלגזיה / אופוריה / דיכוי נשימה / עצירות / מיוזה. Morphine, Fentanyl, Heroin = חולבים מלאים. Buprenorphine = חולב חלקי."
     },
     "kappa_opioid_receptor": {
       "category": "Opioid receptor κ — Gi (dysphoria, sedation, diuresis)",
       "scene": "DAIRY_FARM",
       "symbol": "Grumpy goat with 'K' tag, kicking",
       "mnemonic_link": "κ = Kappa = K tag. Goats kick (dysphoria).",
-      "function_depiction": "Endogenous agonist = Dynorphin (sad farmer's tears). κ-ANTAGONISM is an emerging antidepressant target (Buprenorphine has κ-antagonist activity → mood lift)."
+      "function_depiction": "Endogenous agonist = Dynorphin (sad farmer's tears). κ-ANTAGONISM is an emerging antidepressant target (Buprenorphine has κ-antagonist activity → mood lift).",
+      "hebrew_explanation": "קולטן κ-opioid (Gi). תיש בועט עם תווית 'K'. אגוניסט = דיספוריה. חסימת κ = טרגט אנטי-דיכאוני חדש (חלק ממנגנון Buprenorphine)."
     },
     "delta_opioid_receptor": {
       "category": "Opioid receptor δ — Gi (less clinical, mood modulation in research)",
       "scene": "DAIRY_FARM",
       "symbol": "Delta-Airlines plane (triangular logo) overhead",
       "mnemonic_link": "δ = Delta = airline triangle.",
-      "function_depiction": "Endogenous agonist = Enkephalins. No clinically used δ-selective drugs (research stage)."
+      "function_depiction": "Endogenous agonist = Enkephalins. No clinically used δ-selective drugs (research stage).",
+      "hebrew_explanation": "קולטן δ-opioid (Gi). מטוס Delta Airlines מעל החווה. אנקפלינים אנדוגניים. פחות קליני."
     },
-
     "M1_receptor": {
       "category": "Muscarinic M1 — Gq, CNS (memory, cortex)",
       "scene": "WONDERLAND_TEAPARTY",
       "symbol": "White Rabbit clutching his '1 O'Clock' pocket watch, frantic about being late",
       "mnemonic_link": "Pocket watch reads '1' = M1. Obsession with time = memory.",
-      "function_depiction": "Block (Atropine, Scopolamine, Benztropine, Diphenhydramine, TCAs at high doses) = Mad-as-a-Hatter delirium = the rabbit drops his watch and becomes the Mad Hatter."
+      "function_depiction": "Block (Atropine, Scopolamine, Benztropine, Diphenhydramine, TCAs at high doses) = Mad-as-a-Hatter delirium = the rabbit drops his watch and becomes the Mad Hatter.",
+      "hebrew_explanation": "קולטן M1 — מוסקריני (Gq, CNS, זיכרון). הארנב הלבן עם שעון '1 O'Clock'. חסימה (Atropine וכו') = Mad as a Hatter (דליריום)."
     },
     "M2_receptor": {
       "category": "Muscarinic M2 — Gi, HEART (slows it via parasympathetic input)",
       "scene": "WONDERLAND_TEAPARTY",
       "symbol": "Queen of Hearts holding TWO '2 of Hearts' playing cards above her chest",
       "mnemonic_link": "2 of Hearts = M2 + heart location.",
-      "function_depiction": "Block (Atropine) = Queen dizzy → tachycardia (loss of parasympathetic brake). Used clinically for symptomatic bradycardia."
+      "function_depiction": "Block (Atropine) = Queen dizzy → tachycardia (loss of parasympathetic brake). Used clinically for symptomatic bradycardia.",
+      "hebrew_explanation": "קולטן M2 — מוסקריני (Gi, לב). מלכת לבבות עם 2 קלפי 'Two of Hearts'. חסימה (Atropine) = ברדיקרדיה מתהפכת לטכיקרדיה."
     },
     "M3_receptor": {
       "category": "Muscarinic M3 — Gq, GLANDS + smooth muscle (secretions, GI, bladder, ciliary)",
       "scene": "WONDERLAND_TEAPARTY",
       "symbol": "Mad Hatter's tea table with 3 teacups overflowing — labeled saliva, tears, sweat",
       "mnemonic_link": "3 teacups = M3. Tea = wet = secretions.",
-      "function_depiction": "Block = Dry as a Bone (no saliva/tears), Hot as a Hare (no sweat), Blind as a Bat (pupils dilated — iris constrictor is M3), urinary retention, ↓GI motility."
+      "function_depiction": "Block = Dry as a Bone (no saliva/tears), Hot as a Hare (no sweat), Blind as a Bat (pupils dilated — iris constrictor is M3), urinary retention, ↓GI motility.",
+      "hebrew_explanation": "קולטן M3 — מוסקריני (Gq, בלוטות + שריר חלק). שולחן ה-Mad Hatter עם 3 כוסות תה דולפות (רוק, דמעות, זיעה). חסימה = Dry as a Bone, Hot as a Hare, Blind as a Bat."
     },
     "M4_receptor": {
       "category": "Muscarinic M4 — Gi, CNS striatum (modulates dopamine release)",
       "scene": "WONDERLAND_TEAPARTY",
       "symbol": "Tweedledee at the corner of the party (less prominent)",
       "mnemonic_link": "One of the lookalike twins (with M5) — pair for less-clinical receptors.",
-      "function_depiction": "Emerging antipsychotic target. Xanomeline (in KarXT, FDA-approved 2024) is an M1+M4 agonist — novel non-D2 antipsychotic."
+      "function_depiction": "Emerging antipsychotic target. Xanomeline (in KarXT, FDA-approved 2024) is an M1+M4 agonist — novel non-D2 antipsychotic.",
+      "hebrew_explanation": "קולטן M4 — מוסקריני (Gi, סטריאטום). Tweedledee בפינה. טרגט אנטיפסיכוטי מתפתח (Xanomeline/KarXT 2024)."
     },
     "M5_receptor": {
       "category": "Muscarinic M5 — Gq, CNS reward circuits (VTA)",
       "scene": "WONDERLAND_TEAPARTY",
       "symbol": "Tweedledum at the corner of the party",
       "mnemonic_link": "Pairs with M4.",
-      "function_depiction": "Theoretical role in addiction reward. No clinical drugs target M5 selectively yet."
+      "function_depiction": "Theoretical role in addiction reward. No clinical drugs target M5 selectively yet.",
+      "hebrew_explanation": "קולטן M5 — מוסקריני (Gq, VTA reward). Tweedledum. תאוריה בהתמכרות, אין תרופות."
     },
     "anticholinergic_toxidrome": {
       "category": "Anticholinergic syndrome — muscarinic blockade clinical presentation",
       "scene": "WONDERLAND_TEAPARTY (gone wild)",
       "symbol": "The whole Wonderland scene running riot — Mad Hatter completely mad, Red Queen flushed and screaming, March Hare panting hot, teacups bone-dry, Cheshire Cat invisible (just dilated pupils glowing)",
       "mnemonic_link": "Each toxic sign = one Wonderland character. Memorable 5-character constellation.",
-      "function_depiction": "MAD as a HATTER (M1 CNS delirium), RED as a BEET (vasodilation), HOT as a HARE (M3 anhidrosis), DRY as a BONE (M3 hypo-secretion), BLIND as a BAT (M3 mydriasis + cycloplegia). Plus urinary retention + tachycardia (M2). Treatment: physostigmine (cholinesterase inhibitor) + supportive."
+      "function_depiction": "MAD as a HATTER (M1 CNS delirium), RED as a BEET (vasodilation), HOT as a HARE (M3 anhidrosis), DRY as a BONE (M3 hypo-secretion), BLIND as a BAT (M3 mydriasis + cycloplegia). Plus urinary retention + tachycardia (M2). Treatment: physostigmine (cholinesterase inhibitor) + supportive.",
+      "hebrew_explanation": "תסמונת אנטיכולינרגית. כל Wonderland משתגעת: Mad as a Hatter (M1, דליריום), Red as a Beet (vasodilation), Hot as a Hare (M3 אין הזעה), Dry as a Bone (M3 יבש), Blind as a Bat (M3 אישונים מורחבים). טיפול: Physostigmine."
     },
-
     "nAChR_alpha4_beta2": {
       "category": "Nicotinic ACh receptor α4β2 — ligand-gated Na⁺/Ca²⁺ channel. Brain reward.",
       "scene": "CIGARETTE_THEATER",
       "symbol": "Branded cigarette labeled '42' (the answer to life, universe and everything)",
       "mnemonic_link": "'42' = α4β2. (Hitchhiker's Guide reference — universally memorable.)",
-      "function_depiction": "Agonism (Nicotine) = full activation → dopamine in VTA → reward. Partial agonism (Varenicline) = half-cigarette → enough to satisfy craving but blocks full nicotine reward → smoking cessation."
+      "function_depiction": "Agonism (Nicotine) = full activation → dopamine in VTA → reward. Partial agonism (Varenicline) = half-cigarette → enough to satisfy craving but blocks full nicotine reward → smoking cessation.",
+      "hebrew_explanation": "nAChR α4β2 — תעלה יונוטרופית CNS. סיגריית '42' (תשובה לחיים, ליקום, ולמה). מטרת Varenicline (אגוניסט חלקי)."
     },
     "nAChR_alpha7": {
       "category": "Nicotinic ACh receptor α7 — Ca²⁺-permeable, cognition + schizophrenia hypothesis",
       "scene": "CIGARETTE_THEATER",
       "symbol": "Old wise grandpa smoking a 'Lucky 7' cigarette",
       "mnemonic_link": "'Lucky 7' = α7. Wise grandpa = cognition.",
-      "function_depiction": "Hypofunction in schizophrenia (sensory gating deficit, low CHRNA7 expression). Explains ~80% smoking rate in schizophrenia (self-medication of α7). Drugs targeting α7 are in development for cognitive symptoms."
+      "function_depiction": "Hypofunction in schizophrenia (sensory gating deficit, low CHRNA7 expression). Explains ~80% smoking rate in schizophrenia (self-medication of α7). Drugs targeting α7 are in development for cognitive symptoms.",
+      "hebrew_explanation": "nAChR α7 — תעלה Ca²⁺-permeable, קוגניציה. סיגריית 'Lucky 7' של סבא חכם. היפו-תפקוד בסכיזופרניה (~80% מעשנים = self-medication)."
     },
-
     "H1_receptor": {
       "category": "Histamine H1 — Gq (sedation, allergy, weight gain)",
       "scene": "H_HOUSE",
       "symbol": "Floor 1 living room — snoozing resident on a giant couch, allergy tissues nearby",
       "mnemonic_link": "Floor 1 = ground level = where you collapse = sedation.",
-      "function_depiction": "Antagonism (Diphenhydramine, Hydroxyzine, Mirtazapine, Quetiapine, Olanzapine, Doxepin low-dose) = sleep mask → sedation + weight gain. Many antipsychotics + atypical antidepressants block H1 = the primary cause of their sedation."
+      "function_depiction": "Antagonism (Diphenhydramine, Hydroxyzine, Mirtazapine, Quetiapine, Olanzapine, Doxepin low-dose) = sleep mask → sedation + weight gain. Many antipsychotics + atypical antidepressants block H1 = the primary cause of their sedation.",
+      "hebrew_explanation": "קולטן H1 — היסטמין (Gq). קומה 1 בית-H (סלון נמנום). חסימה (Diphenhydramine, Mirtazapine, Quetiapine, Olanzapine) = סדציה + עליה במשקל."
     },
     "H2_receptor": {
       "category": "Histamine H2 — Gs (gastric parietal cells → stomach acid)",
       "scene": "H_HOUSE",
       "symbol": "Floor 2 kitchen with pots labeled 'H2O' leaking stomach acid",
       "mnemonic_link": "H2O = water = liquid stomach acid. '2' = H2.",
-      "function_depiction": "Antagonism (Famotidine, Ranitidine, Cimetidine) = lids on the pots → antacid effect. Cimetidine notable: CYP inhibitor, anti-androgen → gynecomastia."
+      "function_depiction": "Antagonism (Famotidine, Ranitidine, Cimetidine) = lids on the pots → antacid effect. Cimetidine notable: CYP inhibitor, anti-androgen → gynecomastia.",
+      "hebrew_explanation": "קולטן H2 — היסטמין (Gs, פריאטל גסטרי). קומה 2 (מטבח H2O). חסימה (Famotidine) = אנטאצידים."
     },
     "H3_receptor": {
       "category": "Histamine H3 — Gi (CNS autoreceptor for histamine; also modulates other NTs)",
       "scene": "H_HOUSE",
       "symbol": "Floor 3 study — autoreceptor professor dozing at his desk (he's controlling his own histamine release)",
       "mnemonic_link": "H + 3 = study floor. Auto-receptor = self-feedback (professor controlling himself).",
-      "function_depiction": "Agonism = professor sleeps deeper → drowsy patient. Inverse agonism (Pitolisant — alarm clock) = wakes him → ↑histamine release → wakefulness. Pitolisant approved for narcolepsy + EDS."
+      "function_depiction": "Agonism = professor sleeps deeper → drowsy patient. Inverse agonism (Pitolisant — alarm clock) = wakes him → ↑histamine release → wakefulness. Pitolisant approved for narcolepsy + EDS.",
+      "hebrew_explanation": "קולטן H3 — היסטמין (Gi, אוטו-רצפטור CNS). פרופסור נרדם על השולחן בקומה 3. Pitolisant = inverse agonist → ערות → טיפול בנרקולפסיה."
     },
     "H4_receptor": {
       "category": "Histamine H4 — Gi (immune cells; minimal psychiatric relevance)",
       "scene": "H_HOUSE",
       "symbol": "Floor 4 rooftop with immune-cell pigeons circling",
       "mnemonic_link": "H + 4 = highest floor. Pigeons = immune cells.",
-      "function_depiction": "Inflammation modulation. Not a psychiatric target."
+      "function_depiction": "Inflammation modulation. Not a psychiatric target.",
+      "hebrew_explanation": "קולטן H4 — היסטמין (Gi, תאי חיסון). גג בית-H עם יוני חיסון. לא פסיכיאטרי."
     },
-
     "DAT": {
       "category": "Dopamine transporter — reuptakes synaptic DA into the presynaptic terminal",
       "scene": "DOPA_MINE",
       "symbol": "A Jewish religious man (rabbi with payot and kippah) gathering scattered dopamine ore back home",
       "mnemonic_link": "DAT = דת (Hebrew: 'religion'). 'Religious man' = איש דת. Collecting ore back home = reuptake.",
-      "function_depiction": "Inhibition (Methylphenidate, Amphetamine, Cocaine, Bupropion) = blindfold on the rabbi → can't see scattered ore → dopamine pools in synapse → enhanced postsynaptic effect."
+      "function_depiction": "Inhibition (Methylphenidate, Amphetamine, Cocaine, Bupropion) = blindfold on the rabbi → can't see scattered ore → dopamine pools in synapse → enhanced postsynaptic effect.",
+      "hebrew_explanation": "מובל דופמין — איש דת (רב חרדי עם פאות) במכרה DOPA-MINE אוסף עפרת דופמין שפוזרה חזרה הביתה. דת = DAT (משחק עברי). חסימה (Methylphenidate, Amphetamine, Cocaine, Bupropion) = כיסוי עיניים לרב."
     },
     "VMAT2": {
       "category": "Vesicular monoamine transporter 2 — packages monoamines (DA, NE, 5-HT) into vesicles",
       "scene": "DOPA_MINE (rest hall)",
       "symbol": "Yoga mat labeled 'V-MAT 2' — monoamines rest on it before vesicular release",
       "mnemonic_link": "VMAT = literal mat. 2 = subtype.",
-      "function_depiction": "Inhibition (Valbenazine, Deutetrabenazine, Tetrabenazine) = mat is stolen → monoamines never packaged → presynaptic depletion. Treats Tardive Dyskinesia + Huntington's chorea."
+      "function_depiction": "Inhibition (Valbenazine, Deutetrabenazine, Tetrabenazine) = mat is stolen → monoamines never packaged → presynaptic depletion. Treats Tardive Dyskinesia + Huntington's chorea.",
+      "hebrew_explanation": "מובל ווסיקולרי 2 — מזרון יוגה 'V-MAT 2' באולם מנוחה. מונואמינים שוכבים עליו לפני שחרור. גנבים (Valbenazine, Deutetrabenazine, Tetrabenazine) = TD treatment."
     },
     "sigma1_receptor": {
       "category": "Sigma-1 — chaperone protein at the ER (mood, neuroprotection)",
       "scene": "ER_GUARD_POST",
       "symbol": "Sentry guard with 'S-1' badge at the door of the endoplasmic reticulum",
       "mnemonic_link": "'S' = sigma + '1' = subtype. Guard = chaperone (escorts misfolded proteins).",
-      "function_depiction": "Agonism (Fluvoxamine — uniquely strong among SSRIs; Dextromethorphan; some antidepressants) = guard escorts more clients → mood lift + anti-OCD/anxiety. Explains Fluvoxamine's particular efficacy in OCD beyond SERT block."
+      "function_depiction": "Agonism (Fluvoxamine — uniquely strong among SSRIs; Dextromethorphan; some antidepressants) = guard escorts more clients → mood lift + anti-OCD/anxiety. Explains Fluvoxamine's particular efficacy in OCD beyond SERT block.",
+      "hebrew_explanation": "קולטן σ1 — chaperone protein ב-ER (מצב רוח, ניאו-פרוטקציה). סנטרי 'S-1'. Fluvoxamine אגוניסט ייחודי בקרב SSRI (עוצמת OCD/חרדה). גם Dextromethorphan."
     },
-
     "_BATCH_2_pathways_nuclei": "═══════════════════════════════════════════",
-
     "VTA": {
       "category": "Ventral Tegmental Area — midbrain dopamine source (mesolimbic + mesocortical)",
       "scene": "DOPA_MINE (supervisor's office)",
       "symbol": "The mine SUPERVISOR'S OFFICE — VTA chairman dispatches carts to two destinations",
       "mnemonic_link": "VTA = the management hub of DOPA-MINE Co.",
-      "function_depiction": "Dispatches mesolimbic carts (to limbic 'casino') and mesocortical carts (to cortical 'café'). Hyperactivity → too much to limbic (psychosis). Hypoactivity → too little to cortex (negative symptoms)."
+      "function_depiction": "Dispatches mesolimbic carts (to limbic 'casino') and mesocortical carts (to cortical 'café'). Hyperactivity → too much to limbic (psychosis). Hypoactivity → too little to cortex (negative symptoms).",
+      "hebrew_explanation": "Ventral Tegmental Area — משרד יו\"ר ב-DOPA-MINE. מקור מסולימבי + מסוקורטיקלי. היפראקטיביות = פסיכוזה; היפו = תסמינים שליליים."
     },
     "substantia_nigra_pars_compacta": {
       "category": "Substantia nigra pars compacta — nigrostriatal dopamine source",
       "scene": "DOPA_MINE (the BLACK SHAFT)",
       "symbol": "A literally BLACK mine shaft — substantia NIGRA = 'black substance'",
       "mnemonic_link": "Latin: nigra = black. Compacta = densely packed neurons.",
-      "function_depiction": "Sends nigrostriatal carts to motor striatum. Neurodegeneration → Parkinson's disease (the black shaft caves in). D2 blockade → drug-induced parkinsonism (EXTRA pyramid hats around the motor section)."
+      "function_depiction": "Sends nigrostriatal carts to motor striatum. Neurodegeneration → Parkinson's disease (the black shaft caves in). D2 blockade → drug-induced parkinsonism (EXTRA pyramid hats around the motor section).",
+      "hebrew_explanation": "Substantia Nigra — פיר 'שחור' (nigra = שחור) במכרה. מקור ניגרוסטריאטלי. ניוון = פרקינסון; חסימת D2 = פרקינסוניזם תרופתי."
     },
     "mesolimbic_pathway": {
       "category": "Dopamine pathway — VTA → Nucleus Accumbens (reward, positive symptoms)",
       "scene": "DOPA_MINE → THE CASINO (NAc)",
       "symbol": "Train tracks marked 'MESO-LIMB' running from VTA supervisor's office to a CASINO (nucleus accumbens — reward gambling)",
       "mnemonic_link": "Meso = middle, Limbic = emotional. Casino = reward.",
-      "function_depiction": "Hyperactivity = train overloaded with carts → POSITIVE SYMPTOMS of schizophrenia (delusions, hallucinations). Stimulants also flood this track → stimulant psychosis. Reward of addiction = casino lights flashing."
+      "function_depiction": "Hyperactivity = train overloaded with carts → POSITIVE SYMPTOMS of schizophrenia (delusions, hallucinations). Stimulants also flood this track → stimulant psychosis. Reward of addiction = casino lights flashing.",
+      "hebrew_explanation": "מסלול מסולימבי — קווי רכבת VTA→ קזינו (NAc). היפראקטיביות = סימפטומים חיוביים בסכיזופרניה. גם reward של התמכרות."
     },
     "mesocortical_pathway": {
       "category": "Dopamine pathway — VTA → PFC (cognition, negative symptoms when low)",
       "scene": "DOPA_MINE → THE COFFEE SHOP (PFC)",
       "symbol": "Train tracks marked 'MESO-CORT' running from VTA office to a fancy intellectual COFFEE SHOP atop the PFC",
       "mnemonic_link": "Meso = middle, Cortical = thinking floor.",
-      "function_depiction": "HYPOactivity (track is empty) = NEGATIVE SYMPTOMS of schizophrenia (avolition, alogia, flat affect). Difficult-to-treat — D2 blockade also dampens this track."
+      "function_depiction": "HYPOactivity (track is empty) = NEGATIVE SYMPTOMS of schizophrenia (avolition, alogia, flat affect). Difficult-to-treat — D2 blockade also dampens this track.",
+      "hebrew_explanation": "מסלול מסוקורטיקלי — VTA → בית-קפה אינטלקטואלי (PFC). היפואקטיביות = סימפטומים שליליים. קשה לטפל."
     },
     "nigrostriatal_pathway": {
       "category": "Dopamine pathway — substantia nigra → striatum (motor control)",
       "scene": "DOPA_MINE → MOTOR GEAR CHAMBER (striatum)",
       "symbol": "Train tracks marked 'NIGRO-STRIA' from the black mine shaft to a giant gear-shaped chamber (striatum)",
       "mnemonic_link": "Nigro = black source; Striatum = gear chamber (striped striatum).",
-      "function_depiction": "Hypoactivity (cells die in Parkinson's, or D2 blockade by antipsychotics) → EXTRA pyramid hats spawn = EPS. Hyperactivity → chorea/hyperkinetic disorders."
+      "function_depiction": "Hypoactivity (cells die in Parkinson's, or D2 blockade by antipsychotics) → EXTRA pyramid hats spawn = EPS. Hyperactivity → chorea/hyperkinetic disorders.",
+      "hebrew_explanation": "מסלול ניגרוסטריאטלי — substantia nigra → תא גלגלי-שיניים (סטריאטום). היפו = EPS (פירמידות), פרקינסון."
     },
     "tuberoinfundibular_pathway": {
       "category": "Dopamine pathway — arcuate nucleus → pituitary (prolactin inhibition)",
       "scene": "DOPA_MINE → MILK-PUMP SECTION (pituitary)",
       "symbol": "Tubes labeled 'TUBE-INFUNDIBULAR' running from hypothalamus to a giant MILK PUMP",
       "mnemonic_link": "Tubero = the tubes. Infundibular = funnel (pituitary stalk).",
-      "function_depiction": "Normal: DA TONIC-inhibits prolactin secretion. D2 blockade (typical antipsychotics, paliperidone, risperidone) → tubes blocked → milk pump leaks UNCONTROLLED → HYPERPROLACTINEMIA (galactorrhea, amenorrhea, gynecomastia, sexual dysfunction)."
+      "function_depiction": "Normal: DA TONIC-inhibits prolactin secretion. D2 blockade (typical antipsychotics, paliperidone, risperidone) → tubes blocked → milk pump leaks UNCONTROLLED → HYPERPROLACTINEMIA (galactorrhea, amenorrhea, gynecomastia, sexual dysfunction).",
+      "hebrew_explanation": "מסלול טוברואינפונדיבולרי — היפותלמוס → היפופיזה. DA תונית-מעכב פרולקטין. חסימת D2 = הצפת פרולקטין (galactorrhea, amenorrhea)."
     },
-
     "raphe_nuclei": {
       "category": "Brainstem 5-HT source — seam of midline nuclei",
       "scene": "RAPHE_TAPESTRY",
       "symbol": "Persian-rug weaving workshop along the brainstem seam — weavers produce 5-HT yarn",
       "mnemonic_link": "Raphe = 'seam' in Greek. Tapestry = woven projection everywhere.",
-      "function_depiction": "Source of essentially all CNS serotonin → projections to cortex, limbic, hypothalamus, spinal cord. SSRI/SNRI/TCA action on terminals downstream. Old loom won't start for weeks = SSRI onset delay."
+      "function_depiction": "Source of essentially all CNS serotonin → projections to cortex, limbic, hypothalamus, spinal cord. SSRI/SNRI/TCA action on terminals downstream. Old loom won't start for weeks = SSRI onset delay.",
+      "hebrew_explanation": "גרעיני raphe (תפר במרכז הגזע מוחי) — סדנת שטיחים פרסיים. מקור כל הסרוטונין במוח. SSRI/SNRI/TCA פעולה בטרמינלים. דחיית הופעת = הלום ישן."
     },
     "locus_coeruleus": {
       "category": "Brainstem NE source — the 'blue spot' (locus coeruleus)",
       "scene": "LOCUS_COERULEUS_BLUEPOST",
       "symbol": "A Doctor-Who-style BLUE police box in the rostral pons, phone wires fanning out",
       "mnemonic_link": "Locus = spot, Coeruleus = blue (Latin).",
-      "function_depiction": "Source of essentially all CNS norepinephrine. Hyperactive in panic, PTSD, opioid withdrawal (red light flashing). Clonidine/Guanfacine = friendly dispatcher (α2 autoreceptor) calms the box. Propranolol = blocks downstream effects. Prazosin = blocks α1 effects on nightmares."
+      "function_depiction": "Source of essentially all CNS norepinephrine. Hyperactive in panic, PTSD, opioid withdrawal (red light flashing). Clonidine/Guanfacine = friendly dispatcher (α2 autoreceptor) calms the box. Propranolol = blocks downstream effects. Prazosin = blocks α1 effects on nightmares.",
+      "hebrew_explanation": "Locus Coeruleus — תא טלפון משטרתי כחול ('כתם כחול'). מקור כל ה-NE במוח. היפראקטיבי בפניקה, PTSD, גמילה. Clonidine/Guanfacine = מרגיעים."
     },
     "tuberomammillary_nucleus": {
       "category": "Brainstem/hypothalamus histamine source (wakefulness)",
       "scene": "TUBEROMAMMILLARY_DAIRY",
       "symbol": "Mammary cows pumping histamine in the posterior hypothalamus",
       "mnemonic_link": "Mammillary = mammary (cow association). Hypothalamic location.",
-      "function_depiction": "Sole source of CNS histamine → wakefulness. Hypofunction = narcolepsy connection (Pitolisant boosts it via H3 inverse agonism). H1-blocking drugs = sedation downstream."
+      "function_depiction": "Sole source of CNS histamine → wakefulness. Hypofunction = narcolepsy connection (Pitolisant boosts it via H3 inverse agonism). H1-blocking drugs = sedation downstream.",
+      "hebrew_explanation": "Tuberomammillary — פרות מימרי בהיפותלמוס. מקור כל ההיסטמין במוח. ערות. Pitolisant מגביר (H3 inverse agonist)."
     },
     "basal_nucleus_meynert": {
       "category": "Basal forebrain ACh source for cortex (memory)",
       "scene": "MEYNERT_MYNAH",
       "symbol": "A wise old MYNAH bird in the basal forebrain whispering memories to cortex",
       "mnemonic_link": "Meynert = Mynah (phonetic).",
-      "function_depiction": "Cortical cholinergic projections. Degenerates in Alzheimer's (skipped per user). Anticholinergic syndrome → 'Mad as a Hatter' = silencing the Mynah → delirium."
+      "function_depiction": "Cortical cholinergic projections. Degenerates in Alzheimer's (skipped per user). Anticholinergic syndrome → 'Mad as a Hatter' = silencing the Mynah → delirium.",
+      "hebrew_explanation": "גרעין Meynert — ציפור מינה חכמה ב-basal forebrain. מקור אצטיל-כולין לקליפת המוח. ניוון באלצהיימר."
     },
     "dorsal_raphe": {
       "category": "Specific raphe nucleus — primary 5-HT source for cortex",
       "scene": "RAPHE_TAPESTRY",
       "symbol": "The DORSAL (top) weaving station of the Persian-rug workshop",
       "mnemonic_link": "Dorsal = top. Most clinically referenced raphe subnucleus.",
-      "function_depiction": "Main 5-HT input to PFC. 5-HT1A autoreceptors here = SSRI delay-of-onset mechanism."
+      "function_depiction": "Main 5-HT input to PFC. 5-HT1A autoreceptors here = SSRI delay-of-onset mechanism.",
+      "hebrew_explanation": "Dorsal raphe — תחנת האריגה העליונה. עיקר ה-5-HT לקליפת המוח. 5-HT1A autoreceptors כאן = מנגנון השהיית SSRI."
     },
     "pedunculopontine_nucleus": {
       "category": "Brainstem ACh + arousal nucleus (PPN)",
       "scene": "(brainstem)",
       "symbol": "A foot-pedal organ at the pons-midbrain junction, played to keep the brain alert",
       "mnemonic_link": "Pedunculo = foot/peduncle. Pontine = pons.",
-      "function_depiction": "REM sleep regulation + arousal. Targeted in Parkinson's DBS for gait freezing."
+      "function_depiction": "REM sleep regulation + arousal. Targeted in Parkinson's DBS for gait freezing.",
+      "hebrew_explanation": "PPN — דוושה אורגנית. ערות + REM. מטרת DBS בפרקינסון לקיפאון הליכה."
     },
-
     "_BATCH_3_brain_regions": "═══════════════════════════════════════════",
-
     "prefrontal_cortex": {
       "category": "Prefrontal Cortex (PFC) — executive function HQ",
       "scene": "(brain map)",
       "symbol": "Glass-walled CEO OFFICE at the front of a skyscraper. PFC = 'Pretty Fancy Corner-office'.",
       "mnemonic_link": "PreFrontal Cortex = front of brain = the CEO suite.",
-      "function_depiction": "Working memory, planning, inhibition. ↓DA mesocortical = empty office (negative symptoms). α2A agonists (Guanfacine) = strict secretary keeping the CEO focused (ADHD). Alcohol/BZDs = drunk CEO making bad decisions."
+      "function_depiction": "Working memory, planning, inhibition. ↓DA mesocortical = empty office (negative symptoms). α2A agonists (Guanfacine) = strict secretary keeping the CEO focused (ADHD). Alcohol/BZDs = drunk CEO making bad decisions.",
+      "hebrew_explanation": "PFC — משרד מנכ\"ל מזוגג בחזית. תפקוד ביצועי, זיכרון עבודה, עיכוב. ↓DA מסוקורטיקלי = משרד ריק = סימפטומים שליליים."
     },
     "anterior_cingulate_cortex": {
       "category": "ACC — conflict monitor + emotional regulation",
       "scene": "(brain map)",
       "symbol": "A police DETECTIVE at the front of a courthouse, watching for contradictions",
       "mnemonic_link": "Anterior CINGulate → CINGulate = detective sniffing inconsistency.",
-      "function_depiction": "Conflict detection, error monitoring, social cognition. Hyperactive in OCD (over-detecting errors). Hypoactive in depression. DBS target for treatment-resistant depression."
+      "function_depiction": "Conflict detection, error monitoring, social cognition. Hyperactive in OCD (over-detecting errors). Hypoactive in depression. DBS target for treatment-resistant depression.",
+      "hebrew_explanation": "ACC — בלש שמרחרח סתירות. ניטור קונפליקטים, ויסות רגשי. היפראקטיבי ב-OCD; היפואקטיבי בדיכאון. מטרת DBS לדיכאון עמיד."
     },
     "orbitofrontal_cortex": {
       "category": "OFC — value/reward + moral judgment",
       "scene": "(brain map)",
       "symbol": "A JUDGE in robes weighing scales with money on one side, ethics on the other, sitting above the EYE SOCKETS (orbits)",
       "mnemonic_link": "ORBITO = orbit = eye socket. Judge weighs value/morality.",
-      "function_depiction": "Damage = disinhibition, poor decision-making (Phineas Gage). OCD = hyperactive judge in a loop. Klüver-Bucy = OFC + temporal damage = inappropriate behavior."
+      "function_depiction": "Damage = disinhibition, poor decision-making (Phineas Gage). OCD = hyperactive judge in a loop. Klüver-Bucy = OFC + temporal damage = inappropriate behavior.",
+      "hebrew_explanation": "OFC — שופט מעל הארובות (orbits = ארובות עיניים). שיפוט ערך + מוסר. פגיעה = Phineas Gage (פיזור עיכוב). OCD = שופט תקוע בלולאה."
     },
     "dorsolateral_prefrontal_cortex": {
       "category": "dlPFC — working memory + cognitive control",
       "scene": "(brain map)",
       "symbol": "A LIBRARIAN organizing books at the side of the CEO office",
       "mnemonic_link": "DorsoLateral = top-side of PFC. Books = working memory.",
-      "function_depiction": "rTMS depression target (left dlPFC stimulation, right dlPFC inhibition). Hypoactive in schizophrenia (negative symptoms)."
+      "function_depiction": "rTMS depression target (left dlPFC stimulation, right dlPFC inhibition). Hypoactive in schizophrenia (negative symptoms).",
+      "hebrew_explanation": "dlPFC — ספרן בצד המשרד. זיכרון עבודה, בקרה קוגניטיבית. מטרת rTMS לדיכאון (גירוי שמאל). היפואקטיבי בסכיזופרניה."
     },
     "ventromedial_prefrontal_cortex": {
       "category": "vmPFC — emotional regulation + self-reference",
       "scene": "(brain map)",
       "symbol": "A meditation cushion at the BOTTOM-CENTER of the PFC office",
       "mnemonic_link": "VentroMedial = bottom-middle. Cushion = emotional self-care.",
-      "function_depiction": "Default Mode Network hub. Hyperactive rumination in depression. Mindfulness/CBT modulate vmPFC."
+      "function_depiction": "Default Mode Network hub. Hyperactive rumination in depression. Mindfulness/CBT modulate vmPFC.",
+      "hebrew_explanation": "vmPFC — כרית מדיטציה בתחתית המשרד. ויסות רגשי, הפנמה. רכזת ב-Default Mode Network. רומינציה דיכאונית."
     },
-
     "amygdala": {
       "category": "Amygdala — threat detector + emotional memory",
       "scene": "(brain map)",
       "symbol": "An ALMOND-shaped panic alarm (amygdala = Greek for 'almond')",
       "mnemonic_link": "Amygdala = almond literally. Always-on threat scanner.",
-      "function_depiction": "Hyperactive in PTSD/anxiety = alarm constantly ringing. SSRIs dampen the alarm over weeks. β-blockers (Propranolol) can blunt emotional memory consolidation. Klüver-Bucy = bilateral amygdala damage = fearlessness."
+      "function_depiction": "Hyperactive in PTSD/anxiety = alarm constantly ringing. SSRIs dampen the alarm over weeks. β-blockers (Propranolol) can blunt emotional memory consolidation. Klüver-Bucy = bilateral amygdala damage = fearlessness.",
+      "hebrew_explanation": "אמיגדלה — אזעקה בצורת שקד (amygdala = שקד ביוונית). זיהוי איום + זיכרון רגשי. היפראקטיבית ב-PTSD/חרדה. Klüver-Bucy = פגיעה דו-צדדית."
     },
     "hippocampus": {
       "category": "Hippocampus — declarative memory + spatial navigation",
       "scene": "(brain map)",
       "symbol": "A literal SEAHORSE (hippocampus = Greek for 'seahorse') with a TINY MAP",
       "mnemonic_link": "Hippocampus = seahorse (etymological).",
-      "function_depiction": "Shrinks in chronic stress (cortisol toxic), depression, PTSD. SSRI/exercise = neurogenesis (seahorse grows). Memory loss with BZDs (especially α5 block, Midazolam). Hippocampal sclerosis = temporal-lobe epilepsy + depression."
+      "function_depiction": "Shrinks in chronic stress (cortisol toxic), depression, PTSD. SSRI/exercise = neurogenesis (seahorse grows). Memory loss with BZDs (especially α5 block, Midazolam). Hippocampal sclerosis = temporal-lobe epilepsy + depression.",
+      "hebrew_explanation": "היפוקמפוס — סוסון ים עם מפת מסלולים (hippocampus = סוסון ים). זיכרון דקלרטיבי + ניווט מרחבי. מצטמק בלחץ כרוני. נוירוגנזה מ-SSRI/ספורט."
     },
     "basal_ganglia": {
       "category": "Basal ganglia — motor control + habit/reward",
       "scene": "(brain map)",
       "symbol": "A complex GEAR SYSTEM at the base of the brain — striated stripes visible",
       "mnemonic_link": "Basal = bottom. Ganglia = clusters of gears.",
-      "function_depiction": "Contains: caudate, putamen (=striatum), globus pallidus (internal/external), subthalamic nucleus, substantia nigra. Hypofunction = Parkinson's. Hyperfunction = chorea (Huntington's). OCD = caudate gear stuck on repeat."
+      "function_depiction": "Contains: caudate, putamen (=striatum), globus pallidus (internal/external), subthalamic nucleus, substantia nigra. Hypofunction = Parkinson's. Hyperfunction = chorea (Huntington's). OCD = caudate gear stuck on repeat.",
+      "hebrew_explanation": "Basal Ganglia — מערכת גלגלי שיניים בבסיס המוח. בקרת תנועה + הרגלים. כולל: caudate, putamen (= striatum), globus pallidus, STN, substantia nigra."
     },
     "striatum_caudate_putamen": {
       "category": "Striatum (Caudate + Putamen) — input to basal ganglia",
       "scene": "(brain map, basal ganglia)",
       "symbol": "Striped (striated) sweater worn by a worker — caudate = 'C-shaped tail', putamen = 'shell'",
       "mnemonic_link": "Striatum = striated. Caudate = tail. Putamen = shell.",
-      "function_depiction": "Receives nigrostriatal DA + cortical glutamate input. D2 blockade in striatum → EPS. Hyperdopaminergic → tics, OCD, hyperkinetics."
+      "function_depiction": "Receives nigrostriatal DA + cortical glutamate input. D2 blockade in striatum → EPS. Hyperdopaminergic → tics, OCD, hyperkinetics.",
+      "hebrew_explanation": "סטריאטום (caudate + putamen) — סוודר פסים שלובש פועל. ה-input של ה-basal ganglia. חסימת D2 כאן = EPS. היפר-DA = טיקים, OCD."
     },
     "globus_pallidus": {
       "category": "Globus pallidus (GPe/GPi) — basal ganglia output",
       "scene": "(brain map, basal ganglia)",
       "symbol": "PALE round bouncer at the exit of the basal ganglia gear system",
       "mnemonic_link": "Globus = round + Pallidus = pale.",
-      "function_depiction": "DBS target for Parkinson's (GPi stimulation). Inhibitory output to thalamus."
+      "function_depiction": "DBS target for Parkinson's (GPi stimulation). Inhibitory output to thalamus.",
+      "hebrew_explanation": "Globus Pallidus — באוונצ'ר חיוור עגול ביציאת מערכת הגלגלי שיניים. מטרת DBS לפרקינסון."
     },
     "subthalamic_nucleus": {
       "category": "STN — basal ganglia indirect pathway hub",
       "scene": "(brain map, basal ganglia)",
       "symbol": "A small but mighty engine UNDER the thalamus",
       "mnemonic_link": "Sub-thalamic = under the thalamus.",
-      "function_depiction": "DBS target #1 for Parkinson's. Hyperactivity = hemiballismus (one-sided flinging)."
+      "function_depiction": "DBS target #1 for Parkinson's. Hyperactivity = hemiballismus (one-sided flinging).",
+      "hebrew_explanation": "STN — מנוע קטן אך עוצמתי מתחת לתלמוס. מטרת DBS #1 לפרקינסון. היפראקטיביות = hemiballismus."
     },
     "thalamus": {
       "category": "Thalamus — central relay station",
       "scene": "(brain map)",
       "symbol": "A grand CENTRAL TRAIN STATION at the brain core, lines coming and going everywhere",
       "mnemonic_link": "Thalamus = inner chamber = central relay.",
-      "function_depiction": "All sensory (except smell) and motor passes through. Thalamocortical oscillations disrupted in schizophrenia. Sleep spindles (α1-GABA in thalamus) → sleep depth."
+      "function_depiction": "All sensory (except smell) and motor passes through. Thalamocortical oscillations disrupted in schizophrenia. Sleep spindles (α1-GABA in thalamus) → sleep depth.",
+      "hebrew_explanation": "תלמוס — תחנת רכבת מרכזית גרנדיוזית. ממסר חושי (חוץ מריח) + מוטורי. פגיעה ב-thalamocortical oscillations = סכיזופרניה."
     },
     "hypothalamus": {
       "category": "Hypothalamus — body's thermostat + neuroendocrine",
       "scene": "(brain map)",
       "symbol": "A THERMOSTAT/control panel UNDER the thalamus station",
       "mnemonic_link": "Hypo-thalamus = under the relay station.",
-      "function_depiction": "Sleep (suprachiasmatic n.), appetite (arcuate, paraventricular), temperature, HPA axis. Lesions cause classical syndromes (Kleine-Levin = appetite + sleep + sex)."
+      "function_depiction": "Sleep (suprachiasmatic n.), appetite (arcuate, paraventricular), temperature, HPA axis. Lesions cause classical syndromes (Kleine-Levin = appetite + sleep + sex).",
+      "hebrew_explanation": "היפותלמוס — תרמוסטט מתחת לתלמוס. שינה (SCN), תיאבון (arcuate), חום, ציר HPA."
     },
     "insula": {
       "category": "Insula — interoception + emotional awareness",
       "scene": "(brain map)",
       "symbol": "A small ISLAND tucked between the temporal and frontal lobes",
       "mnemonic_link": "Insula = island (Latin).",
-      "function_depiction": "Bodily awareness (interoception). Hyperactive in panic disorder (over-noticing heart). Addiction craving signal. Disgust + empathy."
+      "function_depiction": "Bodily awareness (interoception). Hyperactive in panic disorder (over-noticing heart). Addiction craving signal. Disgust + empathy.",
+      "hebrew_explanation": "אינסולה — אי קטן בין האונה הטמפורלית לפרונטלית (insula = אי בלטינית). מודעות גופנית (interoception). היפראקטיבית בפניקה."
     },
     "cerebellum": {
       "category": "Cerebellum — motor coordination + cognitive timing",
       "scene": "(brain map)",
       "symbol": "A LITTLE BRAIN hanging at the back ('cerebellum' = little brain)",
       "mnemonic_link": "Latin: cerebellum = little brain.",
-      "function_depiction": "Motor coordination. Also: cognitive timing, language. Lithium toxicity = cerebellar damage (ataxia). Alcoholism = cerebellar atrophy → broad-based gait."
+      "function_depiction": "Motor coordination. Also: cognitive timing, language. Lithium toxicity = cerebellar damage (ataxia). Alcoholism = cerebellar atrophy → broad-based gait.",
+      "hebrew_explanation": "צרבלום — 'מוח קטן' בעורף (cerebellum = מוח קטן בלטינית). קואורדינציה מוטורית + תזמון קוגניטיבי. רעלת ליתיום פוגעת = אטקסיה."
     },
     "default_mode_network": {
       "category": "DMN — daydreaming, self-referential thought",
       "scene": "(brain map)",
       "symbol": "A coffee-shop COMMITTEE of brain regions chatting when nothing else is going on (vmPFC, posterior cingulate, angular gyrus)",
       "mnemonic_link": "Default Mode = idle mode = daydreaming committee.",
-      "function_depiction": "Hyperactive in depression (rumination, self-criticism). Psilocybin/ketamine 'reset' the DMN — proposed antidepressant mechanism. Mindfulness reduces DMN activity."
+      "function_depiction": "Hyperactive in depression (rumination, self-criticism). Psilocybin/ketamine 'reset' the DMN — proposed antidepressant mechanism. Mindfulness reduces DMN activity.",
+      "hebrew_explanation": "DMN — ועד קופי-שופ של אזורי מוח (vmPFC, PCC, angular). פעיל ב-rest = חלום-בהקיץ. היפראקטיבי בדיכאון (רומינציה)."
     },
     "nucleus_accumbens": {
       "category": "Nucleus Accumbens (NAc) — reward center",
       "scene": "DOPA_MINE (THE CASINO)",
       "symbol": "A CASINO with slot machines flashing — the mesolimbic train's destination",
       "mnemonic_link": "NAc = the reward jackpot.",
-      "function_depiction": "Addiction substrate. Stimulant + opioid + nicotine all flood DA here. DBS target for treatment-resistant depression + OCD."
+      "function_depiction": "Addiction substrate. Stimulant + opioid + nicotine all flood DA here. DBS target for treatment-resistant depression + OCD.",
+      "hebrew_explanation": "Nucleus Accumbens (NAc) — קזינו עם מכונות פוקר. מרכז התגמול. כל ההתמכרויות מציפות DA כאן."
     },
-
     "_BATCH_4_side_effect_mechanisms": "═══════════════════════════════════════════",
-
     "neuroleptic_malignant_syndrome": {
       "category": "NMS — antipsychotic-induced hyperthermia + rigidity emergency",
       "scene": "(DOPA_MINE in catastrophic mode)",
       "symbol": "The mesolimbic D2 barrier is SLAMMED SHUT — all workers turn into RIGID PYRAMID STATUES, the mine catches FIRE (hyperthermia), and a heart monitor shows wild swings",
       "mnemonic_link": "NMS = Neuroleptic Massive Shutdown of DA system.",
-      "function_depiction": "Caused by: any antipsychotic (esp. high-potency 1st-gen). 4-Symptom rule: Fever + Encephalopathy (altered mental status) + Vital instability + Elevated enzymes (↑CK >1000). Treatment: STOP antipsychotic, supportive cooling, dantrolene/bromocriptine, ICU. DDx: serotonin syndrome (clonus vs. rigidity)."
+      "function_depiction": "Caused by: any antipsychotic (esp. high-potency 1st-gen). 4-Symptom rule: Fever + Encephalopathy (altered mental status) + Vital instability + Elevated enzymes (↑CK >1000). Treatment: STOP antipsychotic, supportive cooling, dantrolene/bromocriptine, ICU. DDx: serotonin syndrome (clonus vs. rigidity).",
+      "hebrew_explanation": "NMS — תסמונת ממאירה ניורולפטית. מצב חירום: היפרתרמיה + נוקשות שרירים + אי-יציבות אוטונומית + ↑CK. גורם: אנטיפסיכוטיים (במיוחד דור 1 פוטנטיים). טיפול: הפסקת תרופה + Dantrolene/Bromocriptine + טיפול תומך. DDx: serotonin syndrome (clonus vs rigidity)."
     },
     "serotonin_syndrome": {
       "category": "Serotonin syndrome — excess 5-HT emergency",
       "scene": "(serotonin scenes overload)",
       "symbol": "The Persian-rug Raphe workshop in FRENZY — looms spinning out of control, weavers shaking with CLONUS (rhythmic limbs), hot from overdrive",
       "mnemonic_link": "Looms = 5-HT production. Out-of-control = excess.",
-      "function_depiction": "Caused by: SSRI/SNRI/MAOI combos, Tramadol + SSRI, Linezolid + SSRI, MAOI + cheese (tyramine — but that's hypertensive crisis, different). HUNTER CRITERIA: spontaneous CLONUS, inducible clonus + agitation/diaphoresis, ocular clonus + agitation, tremor + hyperreflexia, hypertonia + temp >38 + clonus. Treatment: STOP serotonergic, supportive, CYPROHEPTADINE (5-HT2A antagonist). DDx vs. NMS: clonus + hyperreflexia (5-HT) vs. rigidity + ↑CK (NMS)."
+      "function_depiction": "Caused by: SSRI/SNRI/MAOI combos, Tramadol + SSRI, Linezolid + SSRI, MAOI + cheese (tyramine — but that's hypertensive crisis, different). HUNTER CRITERIA: spontaneous CLONUS, inducible clonus + agitation/diaphoresis, ocular clonus + agitation, tremor + hyperreflexia, hypertonia + temp >38 + clonus. Treatment: STOP serotonergic, supportive, CYPROHEPTADINE (5-HT2A antagonist). DDx vs. NMS: clonus + hyperreflexia (5-HT) vs. rigidity + ↑CK (NMS).",
+      "hebrew_explanation": "תסמונת סרוטונרגית — clonus + היפר-רפלקסיה + agitation + autonomic + חום. גורם: SSRI+MAOI, Tramadol+SSRI, Linezolid+SSRI. Hunter criteria. טיפול: הפסקת תרופה + Cyproheptadine. DDx: NMS (clonus = serotonin, rigidity = NMS)."
     },
     "EPS_acute_dystonia": {
       "category": "Acute dystonic reaction — sudden muscle spasm from D2 block",
       "scene": "DOPA_MINE (nigrostriatal section)",
       "symbol": "A worker FROZEN MID-STEP with neck CRANED upward (oculogyric crisis), tongue out",
       "mnemonic_link": "Within hours-days of antipsychotic, esp. young male.",
-      "function_depiction": "Tx: IM Benztropine 1-2mg or IM Diphenhydramine 25-50mg. Resolves within minutes."
+      "function_depiction": "Tx: IM Benztropine 1-2mg or IM Diphenhydramine 25-50mg. Resolves within minutes.",
+      "hebrew_explanation": "דיסטוניה אקוטית — עווית שרירים פתאומית (oculogyric crisis, torticollis). תוך שעות-ימים מאנטיפסיכוטיק, במיוחד בגברים צעירים. טיפול: Benztropine IM 1-2mg או Diphenhydramine IM 25-50mg."
     },
     "EPS_akathisia": {
       "category": "Akathisia — subjective + objective restlessness",
       "scene": "DOPA_MINE (workers pacing)",
       "symbol": "Workers PACING back and forth, unable to sit still, even though they want to",
       "mnemonic_link": "A-kathisia (Greek): 'not-sitting'.",
-      "function_depiction": "Sense of inner restlessness + objective movements. Links to SUICIDALITY warnings. Tx: ↓antipsychotic dose, switch (Aripiprazole common offender), Propranolol 10-20mg TID, BZD, Mirtazapine."
+      "function_depiction": "Sense of inner restlessness + objective movements. Links to SUICIDALITY warnings. Tx: ↓antipsychotic dose, switch (Aripiprazole common offender), Propranolol 10-20mg TID, BZD, Mirtazapine.",
+      "hebrew_explanation": "אקתיזיה — תחושת אי-שקט פנימית + תנועות חיצוניות. 'A-kathisia' = 'לא-יושב' ביוונית. קשור לסיכון אובדנות. טיפול: ↓מינון, Propranolol, BZD, Mirtazapine."
     },
     "EPS_parkinsonism": {
       "category": "Drug-induced parkinsonism",
       "scene": "DOPA_MINE (nigrostriatal blockade)",
       "symbol": "Workers move in SLOW MOTION, hunched posture, mask-like faces, tremor",
       "mnemonic_link": "Like real Parkinson's, but caused by D2 block (not cell death).",
-      "function_depiction": "Bradykinesia + rigidity + tremor + masked facies. Tx: ↓dose, anticholinergic (Benztropine), Amantadine. Reversible (vs. real Parkinson's)."
+      "function_depiction": "Bradykinesia + rigidity + tremor + masked facies. Tx: ↓dose, anticholinergic (Benztropine), Amantadine. Reversible (vs. real Parkinson's).",
+      "hebrew_explanation": "פרקינסוניזם תרופתי — bradykinesia + נוקשות + רעד + פנים מסיכה. דמוי פרקינסון אבל הפיך. טיפול: ↓מינון, Benztropine, Amantadine."
     },
     "tardive_dyskinesia": {
       "category": "TD — late-onset involuntary movements (often OROFACIAL)",
       "scene": "DOPA_MINE (chronic blockade aftermath)",
       "symbol": "Workers with chronically TWITCHY FACES, chewing-like jaw movements, lip-smacking — appears AFTER prolonged blockade",
       "mnemonic_link": "Tardive = late.",
-      "function_depiction": "Risk ↑ with: years of 1st-gen exposure, female, elderly, diabetes. AIMS scale screening. Tx: switch to Clozapine/Quetiapine (lowest TD risk), VMAT2 inhibitors (Valbenazine, Deutetrabenazine). Often IRREVERSIBLE."
+      "function_depiction": "Risk ↑ with: years of 1st-gen exposure, female, elderly, diabetes. AIMS scale screening. Tx: switch to Clozapine/Quetiapine (lowest TD risk), VMAT2 inhibitors (Valbenazine, Deutetrabenazine). Often IRREVERSIBLE.",
+      "hebrew_explanation": "טרדיב דיסקינזיה — תנועות פה-לסת בלתי רצוניות מאוחרות. סיכון ↑ עם שנות חשיפה לדור 1. AIMS scale screening. טיפול: מעבר ל-Clozapine/Quetiapine + VMAT2 inhibitors (Valbenazine, Deutetrabenazine)."
     },
     "hyperprolactinemia": {
       "category": "Hyperprolactinemia — D2 blockade of tuberoinfundibular pathway",
       "scene": "DOPA_MINE (TUBE-INFUNDIBULAR section)",
       "symbol": "The MILK PUMP at the pituitary section LEAKS UNCONTROLLED — milk everywhere",
       "mnemonic_link": "DA tonically inhibits prolactin. Block DA → prolactin floods.",
-      "function_depiction": "Sx: galactorrhea, amenorrhea, gynecomastia, sexual dysfunction, osteoporosis (long-term). Worst offenders: Risperidone, Paliperidone, Haloperidol. Sparing: Aripiprazole (partial agonist), Quetiapine, Clozapine."
+      "function_depiction": "Sx: galactorrhea, amenorrhea, gynecomastia, sexual dysfunction, osteoporosis (long-term). Worst offenders: Risperidone, Paliperidone, Haloperidol. Sparing: Aripiprazole (partial agonist), Quetiapine, Clozapine.",
+      "hebrew_explanation": "היפרפרולקטינמיה — חסימת D2 במסלול טוברואינפונדיבולרי → פרולקטין ↑. סימפטומים: galactorrhea, אמנוריאה, גינקומסטיה, dysfunction מיני, אוסטיאופורוזיס. גרועים: Risperidone, Paliperidone, Haloperidol. מינימליים: Aripiprazole, Quetiapine, Clozapine."
     },
     "metabolic_syndrome": {
       "category": "Metabolic syndrome — antipsychotic-induced weight gain + dyslipidemia + T2DM",
       "scene": "(beyond DOPA-MINE: the Olympic athlete eating)",
       "symbol": "The Olympic athlete (Olanzapine character) gorging on pizza + sleeping under the Quiet Pine — surrounded by olives (oil) and a glucose meter showing 250",
       "mnemonic_link": "Combined H1 (↑appetite) + 5-HT2C (↑appetite) + ? (insulin resistance) block.",
-      "function_depiction": "Risk ranking: Olanzapine > Clozapine > Quetiapine > Risperidone > Paliperidone > Aripiprazole > Ziprasidone > Lurasidone (lowest). Annual fasting glucose + lipid panel + waist circumference monitoring required."
+      "function_depiction": "Risk ranking: Olanzapine > Clozapine > Quetiapine > Risperidone > Paliperidone > Aripiprazole > Ziprasidone > Lurasidone (lowest). Annual fasting glucose + lipid panel + waist circumference monitoring required.",
+      "hebrew_explanation": "תסמונת מטבולית — עליה במשקל + דיסליפידמיה + T2DM. חסימת H1 + 5-HT2C משולבת. סיכון: Olanzapine > Clozapine > Quetiapine > Risperidone > ...> Lurasidone. ניטור שנתי: גלוקוז, ליפידים, מותן."
     },
     "QT_prolongation": {
       "category": "QT prolongation — drug-induced arrhythmia risk",
       "scene": "(heart ECG strip)",
       "symbol": "An EKG strip with the QT interval STRETCHED LONG — like a rubber band about to snap (into torsades de pointes)",
       "mnemonic_link": "Q-T interval visibly stretched.",
-      "function_depiction": "Major offenders: Methadone, Ziprasidone, IV Haloperidol, TCAs, Citalopram (dose-dependent), some MAOIs. Risk factors: hypokalemia, hypomagnesemia, bradycardia, female. Baseline + follow-up EKG when stacking risk."
+      "function_depiction": "Major offenders: Methadone, Ziprasidone, IV Haloperidol, TCAs, Citalopram (dose-dependent), some MAOIs. Risk factors: hypokalemia, hypomagnesemia, bradycardia, female. Baseline + follow-up EKG when stacking risk.",
+      "hebrew_explanation": "QT הארכה — סיכון לסוג של arrhythmia (torsades de pointes). גרועים: Methadone, Ziprasidone, IV Haloperidol, TCAs, Citalopram (תלוי מינון). גורמי סיכון: היפו-K, היפו-Mg, ברדיקרדיה. ניטור: EKG בסיס + מעקב."
     },
     "agranulocytosis_clozapine": {
       "category": "Agranulocytosis — neutrophil depletion (CLOZAPINE specifically)",
       "scene": "(bone marrow ward)",
       "symbol": "White blood cell soldiers VANISHING — body without defenders. The Z-key from clozapine sits next to them.",
       "mnemonic_link": "Clozapine's notorious risk.",
-      "function_depiction": "Risk 1-2% over years. MANDATORY ANC monitoring: weekly × 6 mo, biweekly × next 6 mo, monthly thereafter. REMS program in US. Other offenders (rare): Carbamazepine, Phenytoin, Mirtazapine."
+      "function_depiction": "Risk 1-2% over years. MANDATORY ANC monitoring: weekly × 6 mo, biweekly × next 6 mo, monthly thereafter. REMS program in US. Other offenders (rare): Carbamazepine, Phenytoin, Mirtazapine.",
+      "hebrew_explanation": "אגרנולוציטוזה — דלדול נויטרופילים, אופייני ל-Clozapine. סיכון 1-2% במשך שנים. ניטור ANC חובה: שבועי × 6 ח', דו-שבועי × 6 ח', חודשי לאחר מכן. גם: Carbamazepine, Mirtazapine (נדיר)."
     },
     "SJS_TEN": {
       "category": "Stevens-Johnson Syndrome / TEN — severe skin reaction",
       "scene": "(Lamb on trigger)",
       "symbol": "The Lamb (Lamotrigine) covered in PEELING RED RASH — skin falling off in sheets",
       "mnemonic_link": "Lamb + trigger + rash.",
-      "function_depiction": "Drugs at highest risk: Lamotrigine (slow titration crucial!), Carbamazepine (esp. HLA-B*1502 in Asian descent — test before starting), Phenobarbital, Phenytoin. Mortality high. Treatment: STOP drug, ICU."
+      "function_depiction": "Drugs at highest risk: Lamotrigine (slow titration crucial!), Carbamazepine (esp. HLA-B*1502 in Asian descent — test before starting), Phenobarbital, Phenytoin. Mortality high. Treatment: STOP drug, ICU.",
+      "hebrew_explanation": "SJS / TEN — תגובת עור חמורה (גליפת עור). תרופות בסיכון גבוה: Lamotrigine (טיטרציה איטית!), Carbamazepine (HLA-B*1502 באסיינים — בדיקה לפני התחלה), Phenobarbital, Phenytoin. תמותה גבוהה. טיפול: עצירת תרופה + ICU."
     },
     "SIADH_hyponatremia": {
       "category": "SIADH — drug-induced hyponatremia",
       "scene": "(Carbamazepine maze fills with water)",
       "symbol": "The bread-maze (Carbamazepine) FLOODED with water — patient drowning in low sodium",
       "mnemonic_link": "Carb-A-Maze drowning in water = SIADH.",
-      "function_depiction": "Offenders: Carbamazepine, Oxcarbazepine (more than Carba!), SSRIs (esp. in elderly), Antipsychotics (rare). Sx: confusion, headache, seizures if severe. Check Na in elderly within 2 weeks of starting."
+      "function_depiction": "Offenders: Carbamazepine, Oxcarbazepine (more than Carba!), SSRIs (esp. in elderly), Antipsychotics (rare). Sx: confusion, headache, seizures if severe. Check Na in elderly within 2 weeks of starting.",
+      "hebrew_explanation": "SIADH תרופתי — היפונתרמיה. תרופות: Carbamazepine, Oxcarbazepine (יותר!), SSRI (במיוחד קשישים), אנטיפסיכוטיים נדיר. סימפטומים: בלבול, כאב ראש, פרכוסים. בדיקת Na תוך שבועיים מהתחלה בקשישים."
     },
     "hepatotoxicity": {
       "category": "Drug-induced hepatotoxicity",
       "scene": "(failing liver)",
       "symbol": "A liver DANGLING ON THE EDGE — labeled with offending drugs",
       "mnemonic_link": "Liver in distress.",
-      "function_depiction": "High-risk: Valproate (esp. pediatric <2y, in mitochondrial disease — black box), Nefazodone (withdrawn US), Disulfiram, Naltrexone (high doses), MAOIs. Check LFTs at baseline + periodically."
+      "function_depiction": "High-risk: Valproate (esp. pediatric <2y, in mitochondrial disease — black box), Nefazodone (withdrawn US), Disulfiram, Naltrexone (high doses), MAOIs. Check LFTs at baseline + periodically.",
+      "hebrew_explanation": "רעלת כבד תרופתית. גבוה: Valproate (במיוחד פדיאטרי <2 שנה, מחלות מיטוכונדריאליות — black box), Nefazodone, Disulfiram, Naltrexone (במינונים גבוהים), MAOI. ניטור LFT בסיס + תקופתי."
     },
     "suicidality_warning": {
       "category": "FDA suicidality warning — paradoxical risk in young patients",
       "scene": "(black-box warning label)",
       "symbol": "A BLACK BOX with skull-and-crossbones on antidepressant pill bottles, specifically for <25y",
       "mnemonic_link": "FDA's black-box warning is literal in this symbol.",
-      "function_depiction": "Risk increase in first 1-2 months of SSRI/SNRI use in <25y. Warn families. Close monitoring. ABSOLUTE risk small; benefit usually outweighs."
+      "function_depiction": "Risk increase in first 1-2 months of SSRI/SNRI use in <25y. Warn families. Close monitoring. ABSOLUTE risk small; benefit usually outweighs.",
+      "hebrew_explanation": "אזהרת FDA — סיכון אובדנות פרדוקסלי בצעירים. עליה בסיכון בחודשים 1-2 של SSRI/SNRI בגיל <25. אזהרת black-box. ליווי קרוב במשפחה. הסיכון המוחלט קטן, התועלת בדרך כלל גוברת."
     },
     "discontinuation_syndrome_FINISH": {
       "category": "Antidepressant discontinuation syndrome",
       "scene": "(abrupt SSRI cessation)",
       "symbol": "Patient suddenly OFF the SERT-postal-route — body experiences withdrawal: dizzy, flu-like, electric-shocks ('brain zaps'), GI",
       "mnemonic_link": "FINISH mnemonic: Flu-like, Insomnia, Nausea, Imbalance, Sensory disturbance, Hyperarousal.",
-      "function_depiction": "Worst with: Paroxetine, Venlafaxine (short t½). Best tolerated: Fluoxetine (long t½ self-tapers). Tx: re-start + slow taper. NOT relapse (timing differs)."
+      "function_depiction": "Worst with: Paroxetine, Venlafaxine (short t½). Best tolerated: Fluoxetine (long t½ self-tapers). Tx: re-start + slow taper. NOT relapse (timing differs).",
+      "hebrew_explanation": "תסמונת הפסקת SSRI — הפסקה חדה → היפו-סרוטונין. FINISH: Flu-like, Insomnia, Nausea, Imbalance, Sensory disturbance (electric shocks/'brain zaps'), Hyperarousal. הגרוע: Paroxetine, Venlafaxine. הקל: Fluoxetine (t½ ארוך). טיפול: חזרה + טיטרציה איטית."
     },
     "lithium_toxicity": {
       "category": "Lithium toxicity — narrow therapeutic window",
       "scene": "(Li-ion battery exploding)",
       "symbol": "The Li-ion battery OVER-CHARGED, smoking, swelling — tremor → ataxia → confusion → seizures → coma",
       "mnemonic_link": "Battery explosion = toxicity.",
-      "function_depiction": "Mild (1.5-2.0): tremor coarse, N/V, diarrhea. Moderate (2.0-2.5): ataxia, confusion. Severe (>2.5): seizures, dialysis indicated. Triggers: dehydration, NSAIDs, ACE-I/ARB, diuretics (thiazides), renal disease. Annual TSH + Cr."
+      "function_depiction": "Mild (1.5-2.0): tremor coarse, N/V, diarrhea. Moderate (2.0-2.5): ataxia, confusion. Severe (>2.5): seizures, dialysis indicated. Triggers: dehydration, NSAIDs, ACE-I/ARB, diuretics (thiazides), renal disease. Annual TSH + Cr.",
+      "hebrew_explanation": "רעלת ליתיום — חלון טיפולי צר. קל (1.5-2.0): רעד, GI; בינוני (2.0-2.5): אטקסיה, בלבול; קשה (>2.5): פרכוסים, dialysis נדרש. טריגרים: התייבשות, NSAID, ACE-I/ARB, thiazides, מחלת כליה. ניטור: רמה, TSH, Cr שנתיים."
     },
     "lithium_hypothyroid_DI": {
       "category": "Lithium → hypothyroidism + nephrogenic diabetes insipidus",
       "scene": "(Li-ion battery affects body systems)",
       "symbol": "Battery cables wrapped around a SLOW THYROID (goiter) and a DRY/THIRSTY KIDNEY",
       "mnemonic_link": "Chronic Lithium effects.",
-      "function_depiction": "Hypothyroidism (10-20% over years) — TSH q6-12mo, supplement with levothyroxine. Nephrogenic DI (polyuria, polydipsia) — Amiloride blocks Li uptake into collecting duct."
+      "function_depiction": "Hypothyroidism (10-20% over years) — TSH q6-12mo, supplement with levothyroxine. Nephrogenic DI (polyuria, polydipsia) — Amiloride blocks Li uptake into collecting duct.",
+      "hebrew_explanation": "ליתיום → היפותירואידיזם + סוכרת תפלה נפרוגנית. היפותירואידיזם: 10-20% במשך שנים → TSH q6-12mo + Levothyroxine. נפרוגנית DI (פוליאוריה): Amiloride חוסם כניסת Li לאיסוף."
     },
     "priapism_trazodone": {
       "category": "Priapism — prolonged painful erection (α1 antagonism)",
       "scene": "(Trazodone's specific risk)",
       "symbol": "A traffic 'TRACK + ZONE' sign labeled 'STAYED TOO LONG' — emergency!",
       "mnemonic_link": "Trazodone's notorious risk via α1 blockade.",
-      "function_depiction": "Rare but emergency (>4 hr = surgical urology). Warn male patients. Also reported with: Risperidone (α1 block), Chlorpromazine, rare with others."
+      "function_depiction": "Rare but emergency (>4 hr = surgical urology). Warn male patients. Also reported with: Risperidone (α1 block), Chlorpromazine, rare with others.",
+      "hebrew_explanation": "Priapism — זיקפה מתמשכת וכואבת מחסימת α1. Trazodone הקלאסי. >4 שעות = חירום אורולוגי. גם: Risperidone, Chlorpromazine. הזהר זכרים."
     },
     "sexual_dysfunction_SSRI": {
       "category": "Sexual dysfunction — common SSRI side effect",
       "scene": "(SERT routes overloaded)",
       "symbol": "A 'CLOSED' sign on the bedroom door + sad lover — SSRI dampens libido + delays climax",
       "mnemonic_link": "↑5-HT → ↓ DA in reward + autonomic effects.",
-      "function_depiction": "30-70% on SSRI. ↓libido, anorgasmia, delayed ejaculation. Strategies: drug holiday (with short t½, NOT Fluoxetine), switch to Bupropion / Mirtazapine / Vilazodone / Vortioxetine, add Bupropion / Cyproheptadine / Sildenafil."
+      "function_depiction": "30-70% on SSRI. ↓libido, anorgasmia, delayed ejaculation. Strategies: drug holiday (with short t½, NOT Fluoxetine), switch to Bupropion / Mirtazapine / Vilazodone / Vortioxetine, add Bupropion / Cyproheptadine / Sildenafil.",
+      "hebrew_explanation": "Dysfunction מיני מ-SSRI — 30-70%. ↓libido, anorgasmia, ejaculation מאוחר. אסטרטגיות: drug holiday (לא Fluoxetine), מעבר ל-Bupropion/Mirtazapine/Vilazodone/Vortioxetine, הוספת Bupropion/Cyproheptadine/Sildenafil."
     },
     "antichol_toxidrome_emergency": {
       "category": "Anticholinergic syndrome — clinical emergency (see Wonderland scene)",
       "scene": "WONDERLAND_TEAPARTY (gone wild)",
       "symbol": "All Wonderland characters in mania — already covered in anticholinergic_toxidrome (batch 1C)",
       "mnemonic_link": "See WONDERLAND_TEAPARTY for full scene.",
-      "function_depiction": "TCA overdose, antihistamine overdose, scopolamine. Tx: Physostigmine (cholinesterase inhibitor), supportive."
+      "function_depiction": "TCA overdose, antihistamine overdose, scopolamine. Tx: Physostigmine (cholinesterase inhibitor), supportive.",
+      "hebrew_explanation": "תסמונת אנטיכולינרגית — מצב חירום. ראה WONDERLAND_TEAPARTY לסצנה מלאה. אובר-דוז של TCA/אנטיהיסטמין/Scopolamine. טיפול: Physostigmine + תומך."
     },
-
     "_BATCH_5_DSM_categories": "═══════════════════════════════════════════",
-
     "DSM_neurodevelopmental": {
       "category": "Neurodevelopmental Disorders — DSM Chapter 1 (onset in childhood)",
       "symbol": "A CHILDREN'S PLAYGROUND with developmental milestones marked on a tree-ring chart — some children stuck at younger rings",
       "mnemonic_link": "Develops from childhood. Tree rings = age stages.",
-      "function_depiction": "Includes: ID, GDD, Comm Disorders, ASD, ADHD, SLD, Motor (Tic, Dev coord), Stereotypic. Common scene element: tree-rings or developmental ladder."
+      "function_depiction": "Includes: ID, GDD, Comm Disorders, ASD, ADHD, SLD, Motor (Tic, Dev coord), Stereotypic. Common scene element: tree-rings or developmental ladder.",
+      "hebrew_explanation": "DSM פרק נוירו-התפתחותי. סמל: גן משחקים עם טבעות עץ של אבני דרך התפתחותיות. כולל: ID, GDD, תקשורת, ASD, ADHD, SLD, תנועה (טיק, dyspraxia), stereotypic."
     },
     "DSM_psychotic": {
       "category": "Schizophrenia Spectrum and Other Psychotic Disorders",
       "symbol": "A CRACKED MIRROR reflecting a distorted reality — voices visible as colored sound-waves",
       "mnemonic_link": "Broken reality. Voices = hallucinations.",
-      "function_depiction": "Schizophrenia (>6 mo), Schizoaffective, Schizophreniform (1-6 mo), Brief Psychotic (<1 mo), Delusional, Catatonia. D2 blockade calms the mirror."
+      "function_depiction": "Schizophrenia (>6 mo), Schizoaffective, Schizophreniform (1-6 mo), Brief Psychotic (<1 mo), Delusional, Catatonia. D2 blockade calms the mirror.",
+      "hebrew_explanation": "DSM פרק פסיכוטי. סמל: מראה סדוקה משקפת מציאות מעוותת, קולות כגלים צבעוניים. סכיזופרניה (>6ח), סכיזואפקטיב, סכיזופרניפורם (1-6ח), Brief Psychotic (<1ח), הזיות, Catatonia. חסימת D2 מרגיעה את המראה."
     },
     "DSM_bipolar": {
       "category": "Bipolar and Related Disorders",
       "symbol": "A SEE-SAW oscillating between a sun (mania) and a storm cloud (depression). North-pole iceberg in the background (Lithium connection).",
       "mnemonic_link": "Bi-polar = two poles.",
-      "function_depiction": "Bipolar I (mania), Bipolar II (hypomania + MDE), Cyclothymia. Mood stabilizers (Lithium battery, Lamb-trigger, etc.) balance the see-saw."
+      "function_depiction": "Bipolar I (mania), Bipolar II (hypomania + MDE), Cyclothymia. Mood stabilizers (Lithium battery, Lamb-trigger, etc.) balance the see-saw.",
+      "hebrew_explanation": "DSM פרק דו-קוטבי. סמל: see-saw בין שמש (מאניה) לענן סוער (דיכאון), קרחון קוטב צפוני ברקע. ביפולר I, II, ציקלוטימיה. סוללת Li + 'lamb-trigger' מאזנים."
     },
     "DSM_depressive": {
       "category": "Depressive Disorders",
       "symbol": "A GRAY RAIN CLOUD over a slumped figure — the SERT postal carrier piles up undelivered serotonin packages",
       "mnemonic_link": "Depression = rain cloud.",
-      "function_depiction": "MDD (≥2wk), PDD (≥2y), DMDD (children <18 with chronic irritability), PMDD. SIGECAPS mnemonic for symptoms."
+      "function_depiction": "MDD (≥2wk), PDD (≥2y), DMDD (children <18 with chronic irritability), PMDD. SIGECAPS mnemonic for symptoms.",
+      "hebrew_explanation": "DSM פרק דיכאוני. סמל: ענן גשם אפור מעל דמות שמוטה, ה-SERT דוור צובר חבילות סרוטונין שלא נמסרו. MDD (≥2ש), PDD (≥2שנה), DMDD (ילדים), PMDD. SIGECAPS."
     },
     "DSM_anxiety": {
       "category": "Anxiety Disorders",
       "symbol": "A FRIGHTENED RABBIT (from BUS_LINE_1A scene) multiplied — different rabbits for different anxieties",
       "mnemonic_link": "Anxious rabbit family.",
-      "function_depiction": "Separation Anxiety, Selective Mutism, Specific Phobia, Social Anxiety, Panic, Agoraphobia, GAD. Buspirone bus + SSRI/SNRI from elsewhere."
+      "function_depiction": "Separation Anxiety, Selective Mutism, Specific Phobia, Social Anxiety, Panic, Agoraphobia, GAD. Buspirone bus + SSRI/SNRI from elsewhere.",
+      "hebrew_explanation": "DSM פרק חרדה. סמל: שפן רועד (מתחנת אוטובוס 1A) מוכפל. Separation Anxiety, Selective Mutism, Phobia, Social Anxiety, Panic, Agoraphobia, GAD. אוטובוס Buspirone + SSRI/SNRI."
     },
     "DSM_OCD_related": {
       "category": "Obsessive-Compulsive and Related Disorders",
       "symbol": "Hands SCRUBBING IN A LOOP — water spiraling endlessly, with a tally counter clicking",
       "mnemonic_link": "Looping action + counting = OCD ritual.",
-      "function_depiction": "OCD, BDD, Hoarding, Trichotillomania, Excoriation. High-dose SSRI (Fluvoxamine, Sertraline) + Clomipramine (TCA-SSRI hybrid). ERP therapy gold standard."
+      "function_depiction": "OCD, BDD, Hoarding, Trichotillomania, Excoriation. High-dose SSRI (Fluvoxamine, Sertraline) + Clomipramine (TCA-SSRI hybrid). ERP therapy gold standard.",
+      "hebrew_explanation": "DSM פרק OCD. סמל: ידיים שוטפות בלולאה, מים מסתחררים אינסופית, מונה. OCD, BDD, Hoarding, Trichotillomania, Excoriation. SSRI במינון גבוה (Fluvoxamine, Sertraline) + Clomipramine. ERP זהב."
     },
     "DSM_trauma_stressor": {
       "category": "Trauma- and Stressor-Related Disorders",
       "symbol": "A BROKEN PHOTO frame with a shattered timeline behind it — flashback arrows pointing backward in time",
       "mnemonic_link": "Trauma = broken timeline.",
-      "function_depiction": "PTSD, Acute Stress, Adjustment, RAD, DSED. Prazosin's praise-soldier helps with nightmares. SSRIs first-line. Trauma-focused CBT, EMDR."
+      "function_depiction": "PTSD, Acute Stress, Adjustment, RAD, DSED. Prazosin's praise-soldier helps with nightmares. SSRIs first-line. Trauma-focused CBT, EMDR.",
+      "hebrew_explanation": "DSM פרק טראומה. סמל: מסגרת תמונה שבורה עם זמן מתופרר, חצי flashback אחורה. PTSD, Acute Stress, Adjustment, RAD, DSED. Prazosin לסיוטים. SSRI קו ראשון. TF-CBT, EMDR."
     },
     "DSM_dissociative": {
       "category": "Dissociative Disorders",
       "symbol": "A FRAGMENTED MIRROR showing multiple selves, or a watch with the present erased",
       "mnemonic_link": "Self fragmented.",
-      "function_depiction": "DID, Depersonalization/Derealization, Dissociative Amnesia. Trauma-focused psychotherapy primary."
+      "function_depiction": "DID, Depersonalization/Derealization, Dissociative Amnesia. Trauma-focused psychotherapy primary.",
+      "hebrew_explanation": "DSM פרק דיסוציאטיבי. סמל: מראה מקוטעת עם מספר עצמים, שעון עם הווה מחוק. DID, Depersonalization/Derealization, אמנזיה דיסוציאטיבית. פסיכותרפיה ממוקדת-טראומה."
     },
     "DSM_somatic": {
       "category": "Somatic Symptom and Related Disorders",
       "symbol": "A patient with EXAGGERATED body markings (pain arrows) but doctor's stethoscope finds nothing",
       "mnemonic_link": "Body sensations dominate the mind.",
-      "function_depiction": "SSD, Illness Anxiety, Conversion, Factitious. CBT primary. Antidepressants for comorbid mood."
+      "function_depiction": "SSD, Illness Anxiety, Conversion, Factitious. CBT primary. Antidepressants for comorbid mood.",
+      "hebrew_explanation": "DSM פרק סומטי. סמל: מטופל עם סימני גוף מודגשים אבל הסטטוסקופ של הרופא לא מוצא דבר. SSD, Illness Anxiety, Conversion, Factitious. CBT עיקרי."
     },
     "DSM_feeding_eating": {
       "category": "Feeding and Eating Disorders",
       "symbol": "Empty plate next to a measuring tape (Anorexia) + binge plate (Bulimia/BED) + restricted food list (ARFID)",
       "mnemonic_link": "Food-and-body distortions.",
-      "function_depiction": "AN, BN, BED, ARFID, Pica, Rumination. AN: highest mortality of psych disorders. SSRIs (Fluoxetine for BN), Topiramate for BED. Family-based therapy in adolescent AN."
+      "function_depiction": "AN, BN, BED, ARFID, Pica, Rumination. AN: highest mortality of psych disorders. SSRIs (Fluoxetine for BN), Topiramate for BED. Family-based therapy in adolescent AN.",
+      "hebrew_explanation": "DSM פרק אכילה. סמל: צלחת ריקה ליד סרט מדידה (Anorexia) + צלחת binge (BN, BED) + רשימה מגבילה (ARFID). AN: התמותה הגבוהה ביותר. Fluoxetine ל-BN. Topiramate ל-BED. FBT לנער/ה."
     },
     "DSM_elimination": {
       "category": "Elimination Disorders",
       "symbol": "A toilet with a question mark — Enuresis (wet bed) or Encopresis (soiled clothes)",
       "mnemonic_link": "Elimination = where it shouldn't go.",
-      "function_depiction": "Enuresis: behavioral (bell-and-pad), Desmopressin (V2 ADH agonist), low-dose Imipramine. Encopresis: pediatrics workup first."
+      "function_depiction": "Enuresis: behavioral (bell-and-pad), Desmopressin (V2 ADH agonist), low-dose Imipramine. Encopresis: pediatrics workup first.",
+      "hebrew_explanation": "DSM פרק הפרשה. אסלה עם סימן שאלה — Enuresis (ספיגה לילית), Encopresis. Enuresis: bell-and-pad, Desmopressin, Imipramine מינון נמוך. Encopresis: בירור פדיאטרי קודם."
     },
     "DSM_sleep_wake": {
       "category": "Sleep-Wake Disorders",
       "symbol": "A MOON + CLOCK + tired patient with sheep refusing to be counted — different sub-scenes for each",
       "mnemonic_link": "Sleep-wake imagery.",
-      "function_depiction": "Insomnia, Hypersomnolence, Narcolepsy (Pitolisant alarm clock at H3), Breathing-related, Circadian, Parasomnias, RLS. CBT-I first-line for chronic insomnia."
+      "function_depiction": "Insomnia, Hypersomnolence, Narcolepsy (Pitolisant alarm clock at H3), Breathing-related, Circadian, Parasomnias, RLS. CBT-I first-line for chronic insomnia.",
+      "hebrew_explanation": "DSM פרק שינה. ירח + שעון + מטופל עייף. Insomnia, Hypersomnolence, Narcolepsy (Pitolisant), Breathing-related, Circadian, Parasomnias, RLS. CBT-I קו ראשון ל-insomnia כרוני."
     },
     "DSM_sexual_dysfunction": {
       "category": "Sexual Dysfunctions",
       "symbol": "A 'PAUSED' relationship icon — different specifics for different dysfunctions",
       "mnemonic_link": "Function pause.",
-      "function_depiction": "Delayed Ejaculation, ED, Female Orgasmic, FSIAD, Genito-Pelvic Pain, Male Hypoactive Desire, Premature Ejaculation, Substance-induced. SSRI sexual side effects are major substance-induced cause."
+      "function_depiction": "Delayed Ejaculation, ED, Female Orgasmic, FSIAD, Genito-Pelvic Pain, Male Hypoactive Desire, Premature Ejaculation, Substance-induced. SSRI sexual side effects are major substance-induced cause.",
+      "hebrew_explanation": "DSM פרק תפקודים מיניים. סמל: סמל זוגיות 'מושהה'. Delayed Ejaculation, ED, Female Orgasmic, FSIAD, Genito-Pelvic Pain, Hypoactive Desire, Premature Ejaculation, Substance-induced. SSRI גורם חשוב."
     },
     "DSM_gender_dysphoria": {
       "category": "Gender Dysphoria",
       "symbol": "A figure with two different reflections in a mirror — assigned vs. experienced",
       "mnemonic_link": "Mismatch between body and identity.",
-      "function_depiction": "Supportive care, gender-affirming therapy. Psychiatric comorbidities (depression, anxiety) treated standardly."
+      "function_depiction": "Supportive care, gender-affirming therapy. Psychiatric comorbidities (depression, anxiety) treated standardly.",
+      "hebrew_explanation": "DSM פרק דיספוריה מגדרית. סמל: דמות עם שתי השתקפויות שונות במראה — מוקצה מול חוויה. טיפול תומך, gender-affirming care."
     },
     "DSM_disruptive_impulse": {
       "category": "Disruptive, Impulse-Control, and Conduct Disorders",
       "symbol": "An EXPLOSION sign with broken rules — ODD (defiant child), Conduct (escalation), IED (anger explosion)",
       "mnemonic_link": "Acting out outward.",
-      "function_depiction": "ODD, CD, IED, Kleptomania, Pyromania, Antisocial PD. Behavioral therapy + parent management. Sometimes Risperidone for severe aggression."
+      "function_depiction": "ODD, CD, IED, Kleptomania, Pyromania, Antisocial PD. Behavioral therapy + parent management. Sometimes Risperidone for severe aggression.",
+      "hebrew_explanation": "DSM פרק impulsive. סמל: סימן פיצוץ עם חוקים שבורים. ODD (התנגדות), CD (הסלמה), IED (כעס פתאומי), Kleptomania, Pyromania, Antisocial PD. טיפול: behavioral + parent management. לפעמים Risperidone לתוקפנות חמורה."
     },
     "DSM_substance_addictive": {
       "category": "Substance-Related and Addictive Disorders",
       "symbol": "A bottle + syringe + cigarette + dice — addictive substances + behaviors converging on the DOPA-MINE CASINO",
       "mnemonic_link": "All addictions converge on mesolimbic reward.",
-      "function_depiction": "Alcohol (Naltrexone, Acamprosate, Disulfiram), Opioid (Methadone, Buprenorphine), Tobacco (Varenicline, NRT, Bupropion), Stimulants (limited pharm), Cannabis, Gambling, etc."
+      "function_depiction": "Alcohol (Naltrexone, Acamprosate, Disulfiram), Opioid (Methadone, Buprenorphine), Tobacco (Varenicline, NRT, Bupropion), Stimulants (limited pharm), Cannabis, Gambling, etc.",
+      "hebrew_explanation": "DSM פרק חומרים. סמל: בקבוק + מזרק + סיגריה + קוביות — כולם מתכנסים לקזינו DOPA-MINE. Alcohol (Naltrexone, Acamprosate, Disulfiram), Opioid (Methadone, Buprenorphine), Tobacco (Varenicline, NRT, Bupropion), Stimulants, Cannabis, Gambling."
     },
     "DSM_neurocognitive": {
       "category": "Neurocognitive Disorders (skipped per user — geriatric)",
       "symbol": "(Skipped — geriatric scope)",
       "mnemonic_link": "User requested skipping dementia-focused content.",
-      "function_depiction": "Delirium remains relevant (acute confusion in any age). Memorize: hyperactive/hypoactive/mixed; reversible causes; antipsychotic for severe agitation only (Haloperidol or atypical low-dose)."
+      "function_depiction": "Delirium remains relevant (acute confusion in any age). Memorize: hyperactive/hypoactive/mixed; reversible causes; antipsychotic for severe agitation only (Haloperidol or atypical low-dose).",
+      "hebrew_explanation": "DSM פרק נוירו-קוגניטיבי — מדולג ע\"פ בקשה (גריאטרי). Delirium עדיין רלוונטי (בלבול אקוטי): hyperactive/hypoactive/mixed; חיפוש סיבה הפיכה; אנטיפסיכוטי במינון נמוך רק להתסערות חמורה."
     },
     "DSM_personality_disorders": {
       "category": "Personality Disorders (General + Clusters A/B/C)",
       "symbol": "A wall of 10 different THEATER MASKS — each PD a distinct mask. Above them: a frame labeled 'General PD Criteria A-F' (the master criteria).",
       "mnemonic_link": "Personality = masks worn consistently.",
-      "function_depiction": "Cluster A (odd/eccentric — Paranoid, Schizoid, Schizotypal), Cluster B (dramatic — Antisocial, Borderline, Histrionic, Narcissistic), Cluster C (anxious — Avoidant, Dependent, OCPD). General criteria: enduring + pervasive + impairing + stable + traceable to adolescence + not better explained."
+      "function_depiction": "Cluster A (odd/eccentric — Paranoid, Schizoid, Schizotypal), Cluster B (dramatic — Antisocial, Borderline, Histrionic, Narcissistic), Cluster C (anxious — Avoidant, Dependent, OCPD). General criteria: enduring + pervasive + impairing + stable + traceable to adolescence + not better explained.",
+      "hebrew_explanation": "DSM פרק אישיות. קיר 10 מסכות תיאטרון — כל PD מסכה. מעל: מסגרת 'קריטריונים כלליים A-F'. Cluster A (מוזר): Paranoid, Schizoid, Schizotypal. B (דרמטי): Antisocial, Borderline, Histrionic, Narcissistic. C (חרד): Avoidant, Dependent, OCPD."
     },
     "DSM_paraphilic": {
       "category": "Paraphilic Disorders",
       "symbol": "A 'CAUTION' sign — atypical sexual interest causing distress or harm",
       "mnemonic_link": "Para-philia = beside-love.",
-      "function_depiction": "Voyeuristic, Exhibitionistic, Frotteuristic, Sexual Masochism, Sexual Sadism, Pedophilic, Fetishistic, Transvestic. Forensic + ethical implications. CBT + sometimes anti-androgens."
+      "function_depiction": "Voyeuristic, Exhibitionistic, Frotteuristic, Sexual Masochism, Sexual Sadism, Pedophilic, Fetishistic, Transvestic. Forensic + ethical implications. CBT + sometimes anti-androgens.",
+      "hebrew_explanation": "DSM פרק paraphilic. סמל: שלט 'CAUTION' — עניין מיני אטיפי שגורם distress או נזק. Voyeuristic, Exhibitionistic, Frotteuristic, Masochism, Sadism, Pedophilic, Fetishistic, Transvestic. השלכות פורנזיות + אתיות. CBT + לפעמים anti-androgens."
     },
     "DSM_medication_induced": {
       "category": "Medication-Induced Movement Disorders & Other Adverse Effects",
       "symbol": "A pharmacy with bottles labeled 'NMS', 'Serotonin Syndrome', 'EPS', 'Akathisia', 'TD', 'Lithium toxicity', 'Discontinuation syndrome'",
       "mnemonic_link": "Drug-caused syndromes get their own chapter.",
-      "function_depiction": "All the side-effect symbols above belong here. Recognize + treat + prevent."
+      "function_depiction": "All the side-effect symbols above belong here. Recognize + treat + prevent.",
+      "hebrew_explanation": "DSM פרק תרופתי. בית מרקחת עם בקבוקים: NMS, Serotonin Syndrome, EPS, Akathisia, TD, Lithium toxicity, Discontinuation syndrome. זהה + טפל + מנע."
     }
   },
-
   "drugs": {
-
     "_BATCH_1_drugs_paired_with_above_receptors": "═══════════════════════════════════════════",
-
     "Lithium": {
       "symbol": "Giant Li-ion battery labeled 'Li' with charge indicator",
       "mnemonic_link": "Li = chemical symbol on the battery.",
       "function_depiction": "Narrow voltage band on the indicator = narrow therapeutic window (0.6–1.2 mEq/L). Overcharged battery EXPLODES = toxicity at >1.5 (tremor → ataxia → seizures → death). Rechargeable = mood stabilization between mania and depression.",
-      "appears_in_scenes": ["Bipolar polar-bear scene", "Acute mania ward", "Tox-emergency scene"]
+      "appears_in_scenes": [
+        "Bipolar polar-bear scene",
+        "Acute mania ward",
+        "Tox-emergency scene"
+      ],
+      "hebrew_explanation": "ליתיום — סוללת Li-ion ענקית עם מד-טעינה. רוחב חלון מתח צר = חלון טיפולי 0.6-1.2 mEq/L. סוללה במתח-יתר מתפוצצת = רעלת >1.5 (רעד → אטקסיה → פרכוסים → קומה). ניטור TSH + Cr שנתיים."
     },
     "Valproate": {
       "symbol": "Bald PRO athlete in a valley, holding a giant cake (weight gain) and stroking his bald head",
       "mnemonic_link": "VAL-PRO = Valley + Pro. Bald + cake = hair loss + weight gain.",
-      "function_depiction": "Broad mood stabilizer + anticonvulsant. Hepatotoxic warning = liver dangling. Teratogen = pregnant woman shooed away."
+      "function_depiction": "Broad mood stabilizer + anticonvulsant. Hepatotoxic warning = liver dangling. Teratogen = pregnant woman shooed away.",
+      "hebrew_explanation": "Valproate — אתלט מקצוען קירח בעמק עם עוגה גדולה. נושר שיער + עליה במשקל. רחב-spectrum (מצב רוח + נוגד פרכוסים). Hepatotoxic warning + טרטוגן (טרידה - black box פדיאטרי <2)."
     },
     "Lamotrigine": {
       "symbol": "Lamb standing on a hair-trigger, with red rash on its wool",
       "mnemonic_link": "Lamb-O-Trij → 'Lamb-on-Trigger'. Red rash = SJS / TEN warning.",
-      "function_depiction": "Slow titration = lamb slowly stepping onto trigger. Carbamazepine ↓ levels (induces metabolism). Valproate ↑ levels (inhibits) → must halve dose."
+      "function_depiction": "Slow titration = lamb slowly stepping onto trigger. Carbamazepine ↓ levels (induces metabolism). Valproate ↑ levels (inhibits) → must halve dose.",
+      "hebrew_explanation": "Lamotrigine — כבש על trigger עם פריחה אדומה על הצמר. טיטרציה איטית! Carbamazepine ↓ רמות (induces); Valproate ↑ רמות (חצי המינון). מצב רוח. סיכון SJS."
     },
     "Carbamazepine": {
       "symbol": "A bread maze that redraws itself overnight",
       "mnemonic_link": "Carb-A-Maze = CARB (bread) + Maze. Self-redrawing = auto-induction.",
-      "function_depiction": "CYP-induces own metabolism (auto-induction). HLA-B*1502 in Asians = SJS risk. SIADH (low sodium) = the maze fills with water."
+      "function_depiction": "CYP-induces own metabolism (auto-induction). HLA-B*1502 in Asians = SJS risk. SIADH (low sodium) = the maze fills with water.",
+      "hebrew_explanation": "Carbamazepine — מבוך לחם שמשרטט את עצמו מחדש מדי לילה. Carb + Maze. אוטו-אינדוקציה (CYP). HLA-B*1502 אסיינים = SJS. SIADH (היפונתרמיה)."
     },
-
     "Diazepam": {
       "symbol": "Backpacker in a green valley by a slow stream (DIA)",
       "mnemonic_link": "Diaz → Day-az → Day in a calm valley.",
-      "function_depiction": "Long t½ + active metabolites = pitches a tent (stays awhile). Used in alcohol withdrawal (taper agent)."
+      "function_depiction": "Long t½ + active metabolites = pitches a tent (stays awhile). Used in alcohol withdrawal (taper agent).",
+      "hebrew_explanation": "Diazepam — מטייל בעמק ירוק רגוע ליד נחל איטי. Dia = day-az = יום בעמק רגוע. t½ ארוך + מטבוליטים פעילים. ב-EtOH withdrawal taper."
     },
     "Alprazolam": {
       "symbol": "Short, fluffy alpaca with a 'high-potency' boxing glove",
       "mnemonic_link": "ALP-acalpaca. Short fluffy = short t½, high potency.",
-      "function_depiction": "Panic attacks = alpaca punches the attack. Inter-dose rebound = alpaca tantrum mid-day. Avoid in adolescents = no kids around alpaca."
+      "function_depiction": "Panic attacks = alpaca punches the attack. Inter-dose rebound = alpaca tantrum mid-day. Avoid in adolescents = no kids around alpaca.",
+      "hebrew_explanation": "Alprazolam — אלפקה קטנה רכה עם כפפת אגרוף 'high-potency'. t½ קצר, potency גבוהה. פאניקה. רבאונד inter-dose. הימנע בנער/ה."
     },
     "Lorazepam": {
       "symbol": "Grandma by the fireplace telling ancient LORE",
       "mnemonic_link": "Lor → Lore.",
-      "function_depiction": "Hepatic conjugation only (no oxidation) = grandma doesn't need her liver oven. Catatonia challenge = grandma jolts patient awake with a story. IV/IM/PO available."
+      "function_depiction": "Hepatic conjugation only (no oxidation) = grandma doesn't need her liver oven. Catatonia challenge = grandma jolts patient awake with a story. IV/IM/PO available.",
+      "hebrew_explanation": "Lorazepam — סבתא ליד האח מספרת LORE. מטבוליזם conjugation בלבד = בטוח בכבד + קשישים. Catatonia challenge. IV/IM/PO."
     },
     "Clonazepam": {
       "symbol": "Two identical CLONES walking together with long canes",
       "mnemonic_link": "Clone → identical pair.",
-      "function_depiction": "Long t½ = canes = stable, far walking. Less rebound than Alprazolam."
+      "function_depiction": "Long t½ = canes = stable, far walking. Less rebound than Alprazolam.",
+      "hebrew_explanation": "Clonazepam — שני clones זהים הולכים עם מקלות ארוכים. t½ ארוך = פחות רבאונד מ-Alprazolam."
     },
     "Midazolam": {
       "symbol": "King MIDAS with a stopwatch — anything he touches turns rapid",
       "mnemonic_link": "Midaz → Midas-touch.",
-      "function_depiction": "Rapid IM/IV/IN onset. Intranasal in pediatrics for seizures. Surgical sedation + amnesia (hits α5 vault on Floor 5)."
+      "function_depiction": "Rapid IM/IV/IN onset. Intranasal in pediatrics for seizures. Surgical sedation + amnesia (hits α5 vault on Floor 5).",
+      "hebrew_explanation": "Midazolam — מלך MIDAS עם שעון עצר. כל מה שנוגע הופך מהיר. IM/IV/IN פעולה מהירה. פדיאטרי intranasal לפרכוסים."
     },
     "Phenobarbital": {
       "symbol": "Barbed-wire fence (BARB) encircling the Aa Hotel",
       "mnemonic_link": "BARB = barbed wire = barbiturate.",
-      "function_depiction": "Keeps the hotel doors open LONGER (↑duration). At high doses, the wire opens the hotel WITHOUT GABA → lethal."
+      "function_depiction": "Keeps the hotel doors open LONGER (↑duration). At high doses, the wire opens the hotel WITHOUT GABA → lethal.",
+      "hebrew_explanation": "Phenobarbital — גדר תיל ברביר סביב מלון Aa. שומר על דלתות פתוחות זמן רב יותר. מינון גבוה פותח את המלון בלי GABA → קטלני."
     },
     "Flumazenil": {
       "symbol": "Security guard with the FLU — sneezing, throwing BZD partygoers out",
       "mnemonic_link": "Flu-mazenil → FLU. (Inspired by user.)",
-      "function_depiction": "Competitive BZD antagonist. Can precipitate seizures in chronic BZD users."
+      "function_depiction": "Competitive BZD antagonist. Can precipitate seizures in chronic BZD users.",
+      "hebrew_explanation": "Flumazenil — מאבטח עם FLU (מצונן), זורק BZD החוצה. אנטגוניסט תחרותי. עלול לעורר פרכוסים ב-BZD כרוני."
     },
-
     "Fluoxetine": {
       "symbol": "Glowing fluorescent OX that walks for weeks without resting",
       "mnemonic_link": "FLUO-OX → fluorescent ox. Glow = long t½ (the ox is 'lit up' for weeks).",
-      "function_depiction": "Long t½ = ox needs slow taper or no taper. Best-tolerated in pediatric depression."
+      "function_depiction": "Long t½ = ox needs slow taper or no taper. Best-tolerated in pediatric depression.",
+      "hebrew_explanation": "Fluoxetine — שור פלורסנטי שזוהר במשך שבועות. FLUO+OX. t½ ארוך = self-taper. הכי נסבל בילדים."
     },
     "Sertraline": {
       "symbol": "Knight (SIR) riding on rails — straight, steady, dependable",
       "mnemonic_link": "Sert → Sir + Train (on rails).",
-      "function_depiction": "Broad-spectrum SSRI. Decent first-line for PTSD."
+      "function_depiction": "Broad-spectrum SSRI. Decent first-line for PTSD.",
+      "hebrew_explanation": "Sertraline — אביר על מסילה (SIR-on-RAIL). רחב, יציב. SSRI ראשון ל-PTSD."
     },
     "Paroxetine": {
       "symbol": "Ox jumping out of plane with a PARAchute",
       "mnemonic_link": "Paro → Parachute. Ox = like Fluoxetine.",
-      "function_depiction": "Short t½ + strong anticholinergic = parachute may fail → severe discontinuation syndrome. Most sedating SSRI. Teratogen warning (cardiac defects)."
+      "function_depiction": "Short t½ + strong anticholinergic = parachute may fail → severe discontinuation syndrome. Most sedating SSRI. Teratogen warning (cardiac defects).",
+      "hebrew_explanation": "Paroxetine — שור בצניחת מצנח (PARA-chute). t½ קצר + אנטיכולינרגי חזק = discontinuation syndrome חמור. הכי מרדים. טרטוגן."
     },
-
     "Bupropion": {
       "symbol": "Bumper-car arena — cars colliding with high energy",
       "mnemonic_link": "Bup → Bumper.",
-      "function_depiction": "NDRI = energizing (no sedation, no sexual dysfunction). Smoking cessation. ↓Seizure threshold = sparks flying when bumpers crash too hard. Avoid in eating disorders."
+      "function_depiction": "NDRI = energizing (no sedation, no sexual dysfunction). Smoking cessation. ↓Seizure threshold = sparks flying when bumpers crash too hard. Avoid in eating disorders.",
+      "hebrew_explanation": "Bupropion — בומפר-קר באולם — מכוניות מתנגשות באנרגיה. NDRI מעורר. בלי dysfunction מיני, בלי סדציה. ↓סף פרכוסים. הימנע באכילה."
     },
     "Mirtazapine": {
       "symbol": "Person sitting in front of a MIRROR holding a slice of cake under a PINE tree",
       "mnemonic_link": "Mir + tas + pine → Mirror + cake + pine. Mirror = self-reflection at night (sedation). Cake = appetite/weight gain (5-HT2C + H1 block).",
-      "function_depiction": "Strong H1 sedation, 5-HT2C → weight gain, 5-HT3 → antiemetic. Used in elderly with poor appetite + insomnia + nausea."
+      "function_depiction": "Strong H1 sedation, 5-HT2C → weight gain, 5-HT3 → antiemetic. Used in elderly with poor appetite + insomnia + nausea.",
+      "hebrew_explanation": "Mirtazapine — אדם עם MIRror, עוגה ועץ אורן. ראי = self-reflection (סדציה). עוגה = תיאבון (5-HT2C + H1). 5-HT3 antiemetic. קשישים עם תיאבון נמוך + נדודי שינה."
     },
     "Vortioxetine": {
       "symbol": "Wise tortoise wearing glasses, slow but multi-tasking",
       "mnemonic_link": "Vortio → Tortoise.",
-      "function_depiction": "Multimodal: SERT block + 5-HT1A agonist + 5-HT3/7 antagonist + 5-HT6 antagonist (procognitive). Tortoise = slow + smart."
+      "function_depiction": "Multimodal: SERT block + 5-HT1A agonist + 5-HT3/7 antagonist + 5-HT6 antagonist (procognitive). Tortoise = slow + smart.",
+      "hebrew_explanation": "Vortioxetine — צב חכם עם משקפיים. רב-מודאלי: SERT + 5-HT1A agonist + 5-HT3/7 antagonist + 5-HT6 antagonist (procognitive). איטי + חכם."
     },
-
     "Methylphenidate": {
       "symbol": "Schoolchildren in a row, focused, with methyl-CH₃ caps and phenyl-ring glasses",
       "mnemonic_link": "Methyl + Phenyl + Date (line) → focused line of students.",
-      "function_depiction": "DAT/NET inhibitor. Activates the entire DOPA-MINE (more dopamine release). Pulls down EPS pyramids when overdosed."
+      "function_depiction": "DAT/NET inhibitor. Activates the entire DOPA-MINE (more dopamine release). Pulls down EPS pyramids when overdosed.",
+      "hebrew_explanation": "Methylphenidate — שורת ילדים מרוכזים עם כובעי CH3 ומשקפי phenyl. Methyl + Phenyl + שורת focus. חוסם DAT/NET. מפעיל את כל DOPA-MINE. במינון יתר → פירמידות EPS."
     },
     "Amphetamine": {
       "symbol": "Guitar AMPlifier turned to 11 on stage",
       "mnemonic_link": "AMP → amplifier.",
-      "function_depiction": "DAT/NET inhibitor + RELEASER (extra mechanism). Stronger than Methylphenidate. Higher dependence."
+      "function_depiction": "DAT/NET inhibitor + RELEASER (extra mechanism). Stronger than Methylphenidate. Higher dependence.",
+      "hebrew_explanation": "Amphetamine — מגבר גיטרה מוגבר ל-11 על הבמה. AMP = amplifier. חוסם DAT/NET + RELEASER. חזק יותר מ-Methylphenidate. תלות גבוהה."
     },
     "Atomoxetine": {
       "symbol": "Tiny ATOMIC ox riding the fishing NET (tearing holes)",
       "mnemonic_link": "Atom + Ox = atomic ox. NET-specific (no DAT).",
-      "function_depiction": "Pure NRI. No abuse potential. Slow onset (weeks). Suicidality warning."
+      "function_depiction": "Pure NRI. No abuse potential. Slow onset (weeks). Suicidality warning.",
+      "hebrew_explanation": "Atomoxetine — שור-אטומי קטנטן רוכב על רשת NET וקורע בה חורים. ATOM+OX. NRI טהור (לא DAT). אין פוטנציאל התמכרות. אזהרת אובדנות."
     },
     "Clonidine": {
       "symbol": "Two identical CLONE handlers feeding the #2 wolf",
       "mnemonic_link": "Clone + identical handlers = matches α2 'two wolves' scene.",
-      "function_depiction": "α2 agonist = lowers central NE. ADHD, tic disorders, opioid withdrawal, hypertension. Rebound hypertension if stopped abruptly."
+      "function_depiction": "α2 agonist = lowers central NE. ADHD, tic disorders, opioid withdrawal, hypertension. Rebound hypertension if stopped abruptly.",
+      "hebrew_explanation": "Clonidine — שני מטפלים זהים (clones) מאכילים את הזאב #2. α2 agonist = ↓NE מרכזי. ADHD, טיקים, גמילת אופיואידים, יל\"ד. רבאונד hypertension בהפסקה חדה."
     },
     "Guanfacine": {
       "symbol": "Stoic GUARD with a stone face standing over the wolf pack",
       "mnemonic_link": "Guan-face → Guard-face.",
-      "function_depiction": "α2A-selective = more PFC-specific (less sedation than Clonidine). ADHD adjunct."
+      "function_depiction": "α2A-selective = more PFC-specific (less sedation than Clonidine). ADHD adjunct.",
+      "hebrew_explanation": "Guanfacine — שומר עם פני אבן עומד מעל העדר. Guan-face = Guard-face. α2A-סלקטיבי = יותר PFC-ספציפי (פחות סדציה מ-Clonidine)."
     },
     "Propranolol": {
       "symbol": "PROfessional musician on stage — calm hands, no tremor",
       "mnemonic_link": "PRO + performer → performance anxiety.",
-      "function_depiction": "Non-selective β-block = mutes both heart drums (β1) AND wind section (β2 → bronchospasm warning). Akathisia treatment. PTSD prevention (debated). Lipophilic = crosses BBB."
+      "function_depiction": "Non-selective β-block = mutes both heart drums (β1) AND wind section (β2 → bronchospasm warning). Akathisia treatment. PTSD prevention (debated). Lipophilic = crosses BBB.",
+      "hebrew_explanation": "Propranolol — נגן מקצועי על הבמה — ידיים יציבות, בלי רעד. PRO+performer = חרדת ביצוע. β-block לא-סלקטיבי = משתיק תופי לב (β1) וגם נשיפה (β2 — ברונכוספסם!). אקתיזיה. PTSD prevention."
     },
     "Prazosin": {
       "symbol": "Soldier receiving PRAISE for a nightmare-free night watch",
       "mnemonic_link": "Praz → Praise + son.",
-      "function_depiction": "α1 antagonist. Tranquilizer dart to the alpha wolf #1 = it sits → orthostasis (first-dose). PTSD nightmare relief. BPH."
+      "function_depiction": "α1 antagonist. Tranquilizer dart to the alpha wolf #1 = it sits → orthostasis (first-dose). PTSD nightmare relief. BPH.",
+      "hebrew_explanation": "Prazosin — חייל מקבל praise על שמירת לילה ללא סיוטים. α1 antagonist. דארט מרגיע לזאב #1 = orthostasis (מנת-ראשון). PTSD nightmares. BPH."
     },
-
     "Haloperidol": {
       "symbol": "Angel with a HALO holding a stiff DOLL (rigid as EPS)",
       "mnemonic_link": "Halo + doll. Rigid doll = EPS!",
-      "function_depiction": "High-potency 1st-gen = aggressive D2 barrier slam → lots of EPS pyramids around. Acute agitation IM. LAI form available (Halo-decanoate)."
+      "function_depiction": "High-potency 1st-gen = aggressive D2 barrier slam → lots of EPS pyramids around. Acute agitation IM. LAI form available (Halo-decanoate).",
+      "hebrew_explanation": "Haloperidol — מלאך עם הילה (HALO) מחזיק בובה קשיחה (EPS!). דור 1 פוטנטיק = חסימה אגרסיבית של D2 → המון פירמידות. Acute agitation IM. LAI זמין."
     },
     "Clozapine": {
       "symbol": "Master Z-key opening D4's four-bolt lock",
       "mnemonic_link": "clo-Z-apine = Z key. D4 affinity is unique.",
-      "function_depiction": "Treatment-resistant schizophrenia + reduces suicidality. Agranulocytosis = white blood cells dying → mandatory ANC monitoring. Seizures + myocarditis + drooling + weight gain + metabolic syndrome. The Z key opens many other locks too (broad receptor profile)."
+      "function_depiction": "Treatment-resistant schizophrenia + reduces suicidality. Agranulocytosis = white blood cells dying → mandatory ANC monitoring. Seizures + myocarditis + drooling + weight gain + metabolic syndrome. The Z key opens many other locks too (broad receptor profile).",
+      "hebrew_explanation": "Clozapine — מפתח-Z מאסטר פותח את 4 הברגים של D4. סכיזופרניה עמידה + ↓אובדנות. אגרנולוציטוזה = WBC מתים → ניטור ANC חובה. פרכוסים + myocarditis + drooling + עליה במשקל + מטבולי."
     },
     "Aripiprazole": {
       "symbol": "Pizza pie with one slice RIPPED OUT (only partial)",
       "mnemonic_link": "A-RIP-piprazole = a rip in pizza. Partial slice = partial agonist.",
-      "function_depiction": "D2 partial agonist + 5-HT1A partial agonist + 5-HT2A antagonist. Less metabolic. Akathisia common. LAI available."
+      "function_depiction": "D2 partial agonist + 5-HT1A partial agonist + 5-HT2A antagonist. Less metabolic. Akathisia common. LAI available.",
+      "hebrew_explanation": "Aripiprazole — פיצה עם רק חצי פרוסה חתוכה (A-RIP). Partial agonist של D2 + 5-HT1A; antagonist של 5-HT2A. פחות מטבולי. אקתיזיה שכיחה. LAI זמין."
     },
     "Cariprazine": {
       "symbol": "Person CARRYING a 'Praise' trophy to the limbic heart",
       "mnemonic_link": "Carry + Praise. Trophy goes to heart-shaped (limbic) chamber = D3 selectivity.",
-      "function_depiction": "D3 > D2 partial agonist. Schizophrenia + bipolar depression + mixed states. Akathisia."
+      "function_depiction": "D3 > D2 partial agonist. Schizophrenia + bipolar depression + mixed states. Akathisia.",
+      "hebrew_explanation": "Cariprazine — דמות נושאת גביע 'Praise' אל הלב-לימבי. Carry+Praise. D3>D2 partial agonist. סכיזופרניה + דיכאון בביפולר + מצבים מעורבים. אקתיזיה."
     },
     "Lurasidone": {
       "symbol": "Fisherman with a LURE off the side of a boat — best taken WITH 350+ kcal meal",
       "mnemonic_link": "Lure → fisherman. 'On the side' = food requirement.",
-      "function_depiction": "Bipolar depression + schizophrenia. Low metabolic burden. 5-HT7 antagonist (turning off 7-Eleven at night)."
+      "function_depiction": "Bipolar depression + schizophrenia. Low metabolic burden. 5-HT7 antagonist (turning off 7-Eleven at night).",
+      "hebrew_explanation": "Lurasidone — דייג עם פיתיון בצד הסירה — לקחת עם ארוחה של 350+ kcal. Lure + side. דיכאון בביפולר + סכיזופרניה. נטל מטבולי נמוך. 5-HT7 antagonist (מכבה 7-Eleven בלילה)."
     },
     "Quetiapine": {
       "symbol": "QUIET pine tree under which everyone naps",
       "mnemonic_link": "Quiet + pine. Quiet = sedation.",
-      "function_depiction": "Most sedating 2nd-gen (H1 + α1 block). Off-label for insomnia (low dose). Weight gain. Metabolic. Bipolar depression."
+      "function_depiction": "Most sedating 2nd-gen (H1 + α1 block). Off-label for insomnia (low dose). Weight gain. Metabolic. Bipolar depression.",
+      "hebrew_explanation": "Quetiapine — אורן שקט (QUIET-pine) שכולם נמנמים תחתיו. הכי מרדים בדור 2 (H1 + α1 block). off-label לאינסומניה (מינון נמוך). עליה במשקל. מטבולי. דיכאון בביפולר."
     },
     "Olanzapine": {
       "symbol": "OLYMPIAN athlete sleeping under a pine, surrounded by OLIVES",
       "mnemonic_link": "Ol-Lan-Z-A-Pine = Olympic-Land-Z-Pine. Olive = oil = metabolic.",
-      "function_depiction": "Maximum metabolic burden (weight gain, dyslipidemia, T2DM). Strong sedation. Acute agitation IM (avoid IM with BZDs = respiratory depression!). LAI = post-injection syndrome warning."
+      "function_depiction": "Maximum metabolic burden (weight gain, dyslipidemia, T2DM). Strong sedation. Acute agitation IM (avoid IM with BZDs = respiratory depression!). LAI = post-injection syndrome warning.",
+      "hebrew_explanation": "Olanzapine — אתלט אולימפי ישן תחת אורן, סביבו זיתים שמנים. OL+LAN+Z+PINE. הנטל המטבולי המקסימלי (משקל, דיסליפידמיה, T2DM). סדציה חזקה. Acute agitation IM (לא משולב עם BZD!). LAI = post-injection syndrome."
     },
-
     "Ketamine": {
       "symbol": "Veterinary HORSE-tranquilizer dart wedged into NMDA door",
       "mnemonic_link": "Ketamine is famous as 'horse tranquilizer' in vet medicine.",
-      "function_depiction": "Open-channel NMDA antagonist. Rapid-acting antidepressant (hours), treatment-resistant MDD, acute suicidality. Dissociation, BP↑, K-hole. IV/IM/IN."
+      "function_depiction": "Open-channel NMDA antagonist. Rapid-acting antidepressant (hours), treatment-resistant MDD, acute suicidality. Dissociation, BP↑, K-hole. IV/IM/IN.",
+      "hebrew_explanation": "Ketamine — דארט וטרינרי 'horse tranquilizer' תקוע בדלת NMDA. Open-channel NMDA antagonist. אנטי-דיכאוני מהיר (שעות), TRD, אובדנות חריפה. דיסוסיאציה, BP↑, K-hole. IV/IM/IN."
     },
     "Esketamine": {
       "symbol": "Same horse-dart, but labeled 'S' on the forehead",
       "mnemonic_link": "S-enantiomer of ketamine.",
-      "function_depiction": "Intranasal, on-label for TRD. REMS program required."
+      "function_depiction": "Intranasal, on-label for TRD. REMS program required.",
+      "hebrew_explanation": "Esketamine — אותו דארט-סוס עם תווית 'S' על המצח. S-enantiomer של ketamine. Intranasal, on-label ל-TRD. REMS program נדרש."
     },
     "Memantine": {
       "symbol": "Old grandmother (Mama-tine) with a cane — only blocks the rudest guests",
       "mnemonic_link": "Mama-tine → Mama. Patient/lenient.",
-      "function_depiction": "Use-dependent low-affinity NMDA antagonist. Off-label pediatric: autism aggression, OCD."
+      "function_depiction": "Use-dependent low-affinity NMDA antagonist. Off-label pediatric: autism aggression, OCD.",
+      "hebrew_explanation": "Memantine — סבתא זקנה (Mama-tine) עם מקל — חוסמת רק את האורחים הכי גסים. Use-dependent low-affinity NMDA antagonist. ילדים off-label: תוקפנות באוטיזם, OCD."
     },
-
     "Naloxone": {
       "symbol": "A NAIL knocking out a bull (OX-Knock-Out-Zone)",
       "mnemonic_link": "Nal-Ox-One → Nail + Ox + KO. Knocks out opioid effect.",
-      "function_depiction": "μ-opioid antagonist. Intranasal/IM/IV for overdose reversal. Short t½ — may need re-dosing. Precipitates withdrawal."
+      "function_depiction": "μ-opioid antagonist. Intranasal/IM/IV for overdose reversal. Short t½ — may need re-dosing. Precipitates withdrawal.",
+      "hebrew_explanation": "Naloxone — מסמר נוקאאוט-OX (NAIL+OX+KO). אנטגוניסט μ. אינטרא-נזלי/IM/IV ל-overdose. t½ קצר — ייתכן צורך במנה חוזרת. מעורר withdrawal."
     },
     "Methadone": {
       "symbol": "Mafia DON in a controlled clinic dispensing milk to his cows",
       "mnemonic_link": "Methadone → Meth + a + Don.",
-      "function_depiction": "Long-acting full μ-agonist. Once-daily OUD maintenance (clinic-controlled, federally regulated). QTc prolongation."
+      "function_depiction": "Long-acting full μ-agonist. Once-daily OUD maintenance (clinic-controlled, federally regulated). QTc prolongation.",
+      "hebrew_explanation": "Methadone — Don של מאפיה ב-clinic מבוקרת, מחלק חלב לפרות שלו. אגוניסט μ ארוך-טווח. פעם ביום ל-OUD maintenance. QTc."
     },
     "Buprenorphine": {
       "symbol": "Car BUMPER that only partially crashes into the door",
       "mnemonic_link": "Bup → Bumper. Partial.",
-      "function_depiction": "Partial μ-agonist + κ-antagonist. Ceiling effect on respiratory depression. OUD maintenance. Combined with naloxone (Suboxone) = oral safety."
+      "function_depiction": "Partial μ-agonist + κ-antagonist. Ceiling effect on respiratory depression. OUD maintenance. Combined with naloxone (Suboxone) = oral safety.",
+      "hebrew_explanation": "Buprenorphine — בומפר שרק חצי מתנגש בדלת. אגוניסט μ חלקי + κ-antagonist. Ceiling effect לדיכוי נשימה. OUD maintenance. עם Naloxone (Suboxone)."
     },
     "Disulfiram": {
       "symbol": "Sulfur-smelly RAM that follows you to the bar — you drink, you stink",
       "mnemonic_link": "Disulf + Ram → sulfur ram.",
-      "function_depiction": "ALDH inhibitor. Drinking alcohol = acetaldehyde build-up = severe nausea, flushing, vomiting. CYP-2E1/3A4 inhibitor (DDI risk). Hepatotoxic."
+      "function_depiction": "ALDH inhibitor. Drinking alcohol = acetaldehyde build-up = severe nausea, flushing, vomiting. CYP-2E1/3A4 inhibitor (DDI risk). Hepatotoxic.",
+      "hebrew_explanation": "Disulfiram — תיש סולפר ('disulf+RAM') שמדיף ביצים מקולקלות. ALDH inhibitor. שתיית EtOH = הצטברות אצטאלדהיד = בחילה חמורה. CYP2E1/3A4 inhibitor. Hepatotoxic."
     },
     "Varenicline": {
       "symbol": "Smoker holding a HALF-smoked cigarette — can't get the full hit",
       "mnemonic_link": "Half cigarette = partial agonist of α4β2. (No brand reference.)",
-      "function_depiction": "α4β2 nAChR partial agonist. Enough activation to ease craving, BLOCKS full nicotine reward → smoking cessation. Inserts onto the '42' cigarette in CIGARETTE_THEATER."
+      "function_depiction": "α4β2 nAChR partial agonist. Enough activation to ease craving, BLOCKS full nicotine reward → smoking cessation. Inserts onto the '42' cigarette in CIGARETTE_THEATER.",
+      "hebrew_explanation": "Varenicline — מעשן מחזיק חצי-סיגריה — לא מקבל hit מלא. α4β2 nAChR partial agonist. ↓craving + ↓nicotine reward. נצמד לסיגריית '42' ב-CIGARETTE_THEATER."
     },
-
     "_BATCH_1C_drugs": "═══════════════════════════════════════════",
-
     "Morphine": {
       "symbol": "Greek statue with a face that MORPHS into serene calm — labeled 'FINE'",
       "mnemonic_link": "Morph + fine.",
-      "function_depiction": "Full μ-agonist gold standard. Analgesia + euphoria + respiratory depression + constipation + miosis. The original opioid milker at the DAIRY_FARM cow."
+      "function_depiction": "Full μ-agonist gold standard. Analgesia + euphoria + respiratory depression + constipation + miosis. The original opioid milker at the DAIRY_FARM cow.",
+      "hebrew_explanation": "Morphine — פסל יווני שמשנה צורה לפנים רגועות (MORPH+fine). אגוניסט μ זהב סטנדרט. אנלגזיה + אופוריה + דיכוי נשימה + עצירות + מיוזה."
     },
     "Fentanyl": {
       "symbol": "Skyscraper PENTHOUSE on the top floor — extremely high-up view",
       "mnemonic_link": "Fent → 'Penthouse' (high-rise potency).",
-      "function_depiction": "100× more potent than morphine. Surgical anesthesia, chronic-pain patches. Illicit fentanyl drives the overdose epidemic — tiny dose lethal."
+      "function_depiction": "100× more potent than morphine. Surgical anesthesia, chronic-pain patches. Illicit fentanyl drives the overdose epidemic — tiny dose lethal.",
+      "hebrew_explanation": "Fentanyl — פנטהאוז בקומה העליונה (Fent → Penthouse). פוטנטיות 100x מורפין. אנסטזיה, מדבקות לכאב כרוני. הוגנב לצח רחוב = מגיפת אובר-דוז."
     },
     "Oxycodone": {
       "symbol": "Patient wearing an OXYGEN mask, beeper showing 'CODE-RED' (respiratory code)",
       "mnemonic_link": "Oxy + Code → oxygen-code (respiratory failure).",
-      "function_depiction": "Semi-synthetic μ-agonist. Oral. High abuse potential. Part of the OxyContin abuse epidemic."
+      "function_depiction": "Semi-synthetic μ-agonist. Oral. High abuse potential. Part of the OxyContin abuse epidemic.",
+      "hebrew_explanation": "Oxycodone — מטופל במסכת חמצן + בייפר 'CODE-RED' (קוד נשימתי). Oxy+Code = oxygen-code. אגוניסט μ סינתטי-חצי. פוטנציאל התמכרות גבוה."
     },
     "Codeine": {
       "symbol": "Coded message scroll being deciphered",
       "mnemonic_link": "Code-ine = code.",
-      "function_depiction": "Prodrug → activated to morphine by CYP2D6. Cough suppressant + mild analgesic. CYP2D6 ultra-rapid metabolizers (5-10% of population, higher in some ethnicities) → high morphine levels = pediatric deaths reported (FDA contraindicated <12y for cough)."
+      "function_depiction": "Prodrug → activated to morphine by CYP2D6. Cough suppressant + mild analgesic. CYP2D6 ultra-rapid metabolizers (5-10% of population, higher in some ethnicities) → high morphine levels = pediatric deaths reported (FDA contraindicated <12y for cough).",
+      "hebrew_explanation": "Codeine — מגילה מקודדת מתפענחת. Prodrug → morphine דרך CYP2D6. נוגד שיעול + אנלגזיה מתונה. CYP2D6 Ultra-Rapid = רמות מורפין גבוהות = מוות פדיאטרי (FDA contraindicated <12)."
     },
     "Tramadol": {
       "symbol": "TRAM pulling a small DOLL down the street",
       "mnemonic_link": "Tram + a + doll.",
-      "function_depiction": "Weak μ-agonist + SNRI (serotonin syndrome risk when combined with SSRIs/MAOIs!). Lowers seizure threshold. Prodrug via CYP2D6 (like Codeine)."
+      "function_depiction": "Weak μ-agonist + SNRI (serotonin syndrome risk when combined with SSRIs/MAOIs!). Lowers seizure threshold. Prodrug via CYP2D6 (like Codeine).",
+      "hebrew_explanation": "Tramadol — חשמלית-tram מובילה בובה קטנה. אגוניסט μ חלש + SNRI (סיכון serotonin syndrome!). ↓סף פרכוסים. Prodrug דרך CYP2D6."
     },
     "Heroin": {
       "symbol": "Fake HERO costume with a syringe sticking out of the cape (HERO-IN)",
       "mnemonic_link": "Hero-in.",
-      "function_depiction": "Diacetylmorphine — lipophilic, crosses BBB rapidly → intense euphoric rush. Illicit. Major source of overdose deaths."
+      "function_depiction": "Diacetylmorphine — lipophilic, crosses BBB rapidly → intense euphoric rush. Illicit. Major source of overdose deaths.",
+      "hebrew_explanation": "Heroin — תחפושת hero מזויפת עם מזרק תקוע בקייפ (HERO-IN). דיאצטילמורפין. ליפופילי, חוצה BBB מהר → rush. מקור עיקרי למוות מ-OD."
     },
-
     "Atropine": {
       "symbol": "TROPICAL tourist in shorts, sun-hat, holding a piña colada (A-tropic vacation)",
       "mnemonic_link": "A-tropine → tropic. Vacation = far from cholinergic norms.",
-      "function_depiction": "Non-selective muscarinic antagonist. Wonderland goes wild → antichol syndrome. Clinical uses: symptomatic bradycardia, organophosphate poisoning, pre-op secretion drying, mydriasis (ophthalmology)."
+      "function_depiction": "Non-selective muscarinic antagonist. Wonderland goes wild → antichol syndrome. Clinical uses: symptomatic bradycardia, organophosphate poisoning, pre-op secretion drying, mydriasis (ophthalmology).",
+      "hebrew_explanation": "Atropine — תייר טרופי עם מכנסיים קצרים, כובע שמש, פיניה קולדה. A-tropine = tropic vacation. אנטגוניסט מוסקריני לא-סלקטיבי. Wonderland יוצא משליטה. שימושים: ברדיקרדיה, OP poisoning, מידריאזה."
     },
     "Scopolamine": {
       "symbol": "Pirate with a teleSCOPE scanning the horizon for ships",
       "mnemonic_link": "Scope → telescope.",
-      "function_depiction": "Crosses BBB → motion sickness patch + amnesia (historical 'truth serum'). Anti-emetic for post-op nausea."
+      "function_depiction": "Crosses BBB → motion sickness patch + amnesia (historical 'truth serum'). Anti-emetic for post-op nausea.",
+      "hebrew_explanation": "Scopolamine — פיראט עם טלסקופ (Scope). מדבקה למחלת תנועה + אמנזיה (truth serum היסטורי). Anti-emetic פוסט-ניתוחי."
     },
     "Benztropine": {
       "symbol": "Patient with a BENT-over back and SPRAINED wrist (Bent-Sprain) — relieved when given anticholinergic",
       "mnemonic_link": "Bent + Sprain.",
-      "function_depiction": "M1 + H1 antagonist. FIRST-LINE for acute dystonia (IM 1-2mg = the iconic emergency-psych intervention). Drug-induced parkinsonism. Long t½ — once-daily."
+      "function_depiction": "M1 + H1 antagonist. FIRST-LINE for acute dystonia (IM 1-2mg = the iconic emergency-psych intervention). Drug-induced parkinsonism. Long t½ — once-daily.",
+      "hebrew_explanation": "Benztropine — מטופל עם גב כפוף ויד פרוקה (Bent+Sprain) — קובל אחרי אנטיכולינרגי. M1+H1 antagonist. קו ראשון לדיסטוניה אקוטית IM 1-2mg. פרקינסוניזם תרופתי."
     },
     "Trihexyphenidyl": {
       "symbol": "Spinning idol made of a TRIangle + HEXagon + PHENyl ring",
       "mnemonic_link": "Tri + Hex + Phenyl + Idyl.",
-      "function_depiction": "Oral anticholinergic for drug-induced parkinsonism + dystonia. Less sedating than Benztropine."
+      "function_depiction": "Oral anticholinergic for drug-induced parkinsonism + dystonia. Less sedating than Benztropine.",
+      "hebrew_explanation": "Trihexyphenidyl — אליל מסתובב משולש+משושה+phenyl ring. Tri+Hex+Phenyl+Idyl. אנטיכולינרגי PO לפרקינסוניזם תרופתי."
     },
     "Diphenhydramine": {
       "symbol": "Multi-headed HYDRA biting both Wonderland (M1) AND the Histamine House Floor 1 (H1)",
       "mnemonic_link": "Hydra = multi-receptor (H1 + M1).",
-      "function_depiction": "OTC sleep aid + anti-allergy. IM 25-50mg for acute dystonia (alternative to Benztropine). Anticholinergic side effects in elderly → cognitive impairment."
+      "function_depiction": "OTC sleep aid + anti-allergy. IM 25-50mg for acute dystonia (alternative to Benztropine). Anticholinergic side effects in elderly → cognitive impairment.",
+      "hebrew_explanation": "Diphenhydramine — היידרה רב-ראשית שנושכת גם ב-Wonderland (M1) וגם בבית-H קומה 1 (H1). OTC sleep aid + anti-allergy. IM 25-50 מ\"ג לדיסטוניה אקוטית. אנטיכולינרגי בקשישים → cognitive impairment."
     },
     "Hydroxyzine": {
       "symbol": "Sleepy guest in the H-House Floor 1 living room with a 'Zzz' bubble — no IV bag (not addictive)",
       "mnemonic_link": "Hydroxy-zine → ends in 'zine' = sleep.",
-      "function_depiction": "H1 antagonist anxiolytic. Pediatric anxiety, pre-op anxiety, pruritus. NON-ADDICTIVE alternative to BZDs (no GABA action)."
+      "function_depiction": "H1 antagonist anxiolytic. Pediatric anxiety, pre-op anxiety, pruritus. NON-ADDICTIVE alternative to BZDs (no GABA action).",
+      "hebrew_explanation": "Hydroxyzine — אורח ישנוני בקומה 1 של בית-H עם בועת 'Zzz'. H1 antagonist anxiolytic. חרדת ילדים, פרה-מד. NON-ADDICTIVE (אין פעולה ב-GABA)."
     },
     "Pitolisant": {
       "symbol": "Alarm clock RINGING in Floor 3 study — wakes the H3 professor",
       "mnemonic_link": "Pit-Olisant → wakes the H3 professor.",
-      "function_depiction": "H3 inverse agonist. FDA-approved for narcolepsy + excessive daytime sleepiness. Non-stimulant alternative to modafinil."
+      "function_depiction": "H3 inverse agonist. FDA-approved for narcolepsy + excessive daytime sleepiness. Non-stimulant alternative to modafinil.",
+      "hebrew_explanation": "Pitolisant — שעון מעורר שצועק בקומה 3 (חדר עבודה) — מעיר את הפרופסור H3. Inverse agonist. אישור ל-narcolepsy + EDS. אלטרנטיבה לא-ממריצה ל-modafinil."
     },
     "Dextromethorphan": {
       "symbol": "Old cough-syrup bottle labeled 'D' — sometimes drunk recreationally by teens",
       "mnemonic_link": "Dex → D-shape bottle.",
-      "function_depiction": "NMDA antagonist + σ1 agonist + cough suppressant. Recreational dissociative ('robotripping') at high doses. With quinidine (CYP2D6 inhibitor → ↑DXM levels) used for pseudobulbar affect."
+      "function_depiction": "NMDA antagonist + σ1 agonist + cough suppressant. Recreational dissociative ('robotripping') at high doses. With quinidine (CYP2D6 inhibitor → ↑DXM levels) used for pseudobulbar affect.",
+      "hebrew_explanation": "Dextromethorphan — בקבוק סירופ שיעול עתיק עם תווית 'D' — נשתה רקריאציונלית. NMDA antagonist + σ1 agonist + נוגד שיעול. 'Robotripping' במינון גבוה. עם quinidine = pseudobulbar affect."
     },
     "Valbenazine": {
       "symbol": "Thief stealing the V-MAT yoga mat — once a day",
       "mnemonic_link": "Val → mat-grabber.",
-      "function_depiction": "VMAT2 inhibitor. FDA-approved for tardive dyskinesia. Once-daily dosing."
+      "function_depiction": "VMAT2 inhibitor. FDA-approved for tardive dyskinesia. Once-daily dosing.",
+      "hebrew_explanation": "Valbenazine — גנב שגונב את מזרון V-MAT — שוד פעם ביום. VMAT2 inhibitor. אישור ל-TD. פעם ביום."
     },
     "Deutetrabenazine": {
       "symbol": "Same V-MAT thief, but with DEUTERIUM-armor (doubled hydrogens = slower clearance)",
       "mnemonic_link": "Deute → deuterium.",
-      "function_depiction": "Deuterated → longer t½ than tetrabenazine. BID. TD + Huntington's chorea + Tourette's. Better tolerated than original tetrabenazine."
+      "function_depiction": "Deuterated → longer t½ than tetrabenazine. BID. TD + Huntington's chorea + Tourette's. Better tolerated than original tetrabenazine.",
+      "hebrew_explanation": "Deutetrabenazine — אותו גנב V-MAT אבל בשריון דאוטריום (כפל-מימן = פינוי איטי יותר). t½ ארוך יותר מ-tetrabenazine. BID. TD + Huntington + Tourette."
     },
     "Tetrabenazine": {
       "symbol": "Old-school V-MAT thief — works, but his victims become depressed afterward",
       "mnemonic_link": "Tetra → older generation.",
-      "function_depiction": "Original VMAT2 inhibitor. Huntington's chorea. BLACK BOX: depression + suicidality. CYP2D6-dosed."
+      "function_depiction": "Original VMAT2 inhibitor. Huntington's chorea. BLACK BOX: depression + suicidality. CYP2D6-dosed.",
+      "hebrew_explanation": "Tetrabenazine — גנב V-MAT הישן — עובד, אבל קורבנותיו הופכים מדוכאים. VMAT2 inhibitor הראשון. Huntington chorea. Black box: דיכאון/אובדנות. CYP2D6-dosed."
     },
     "Fluvoxamine": {
       "symbol": "Singer with a FLU-affected VOice at the S-1 guard post, intrusive OCD lyrics",
       "mnemonic_link": "Flu + Vox + amine. Voice problems = OCD intrusive thoughts.",
-      "function_depiction": "SSRI + strong σ1 agonist (UNIQUE among SSRIs — explains OCD/anxiety efficacy). FIRST-LINE pediatric OCD. CYP1A2 inhibitor → ↑clozapine, theophylline, caffeine levels."
+      "function_depiction": "SSRI + strong σ1 agonist (UNIQUE among SSRIs — explains OCD/anxiety efficacy). FIRST-LINE pediatric OCD. CYP1A2 inhibitor → ↑clozapine, theophylline, caffeine levels.",
+      "hebrew_explanation": "Fluvoxamine — זמרת עם FLU-voice (קול מצונן) בעמדת ה-S-1, שירים אובססיביים. SSRI + σ1 agonist חזק (ייחודי בקרב SSRI — מסביר את עוצמתה ב-OCD/חרדה). קו ראשון פדיאטרי ב-OCD. מעכב CYP1A2 → ↑clozapine, theophylline, caffeine."
     }
   }
 }
