@@ -81,7 +81,57 @@ def collect_symbol_descriptions(symbol_keys, symbols_data):
     return "\n".join(lines) if lines else "(אין סמלים ייעודיים ליום זה)"
 
 
-def build_base_context(day, symbol_block):
+def build_day_scene(day, symbols_data):
+    """A unified 'world' description for the day, shared by video + infographics
+    so the visual continuity is preserved across artifacts."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    symbol_keys = day.get("symbols_needed", [])
+
+    pools = {
+        **symbols_data.get("scenes", {}),
+        **symbols_data.get("ions", {}),
+        **symbols_data.get("symbols", {}),
+        **symbols_data.get("drugs", {}),
+    }
+    scene_parts = []
+    for key in symbol_keys[:8]:  # cap at 8 to keep prompt focused
+        item = pools.get(key)
+        if isinstance(item, dict):
+            sym = item.get("symbol", "") or item.get("scene_name", "")
+            if sym:
+                scene_parts.append(f"  • {key}: {sym}")
+
+    return f"""DAY SCENE SCRIPT (unified visual world for ALL artifacts of this day —
+the video animates this scene with narration; each infographic captures a still
+frame of one aspect within this same scene; all characters/symbols are consistent):
+
+Topic: {title_he}
+
+Recurring elements in today's scene:
+{chr(10).join(scene_parts) if scene_parts else '  (this day uses generic clinical visuals)'}
+
+Visual rule: whenever a concept from the symbol legend appears, render it using
+the corresponding symbol from the legend (e.g. D2 receptor → red barrier on the
+mesolimbic track; ACh → wooden match; M3 → 3 dripping teacups). Same symbol
+across video and infographics — the still frames must look like extracts from
+the same animated world."""
+
+
+BILINGUAL_DIRECTIVE = """
+LANGUAGE — bilingual (Hebrew-primary, like Israeli clinicians):
+- Hebrew narration / labels for explanation, concepts, and continuous prose.
+- KEEP IN ENGLISH: drug GENERIC names (Methylphenidate, Lorazepam, Clozapine,
+  never brand names like Ritalin/Ativan), receptor names (D2, 5-HT2A, NMDA,
+  α1, β2, GABA-A, M1), clinical acronyms (EPS, NMS, SSRI, SNRI, AUD, OCD),
+  the English mnemonics from the symbol legend (Mad as a Hatter, Lucky 7, 42,
+  Two of Hearts, Olympic athlete, etc.), drug classes (TCA, MAOI), and ratings
+  (DSM-5-TR, ICD).
+- Hebrew mnemonics from the legend stay in Hebrew (אצית for ACh, דת for DAT,
+  קוטב צפוני for bipolar, דובי for dopamine, בית-ב' for GABA-B, בית-H for histamine).
+"""
+
+
+def build_base_context(day, symbol_block, day_scene):
     """The Hebrew context block that every prompt starts with."""
     title_he = day.get("title_he", day.get("title_en", ""))
     aspects = day.get("aspects", [])
@@ -98,34 +148,41 @@ def build_base_context(day, symbol_block):
 מערכת סמלים ויזואליים עקביים (Sketchymedical-style) לשימוש בכל הציורים והסרטונים — בכל פעם שמושג מופיע בתוכן, השתמש בסמל הוויזואלי המתאים מהרשימה:
 {symbol_block}
 
+{day_scene}
+
+{BILINGUAL_DIRECTIVE}
+
 הוראות:
-- שפה: עברית לכל הטקסט הוויזואלי, הקריינות וההסברים.
 - הסתמך אך ורק על המקורות במחברת (DSM-5-TR, Dulcan, Stahl Essential, Stahl Pediatric, הסילבוס). אל תמציא.
 - מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר, לקראת בחינת שלב ב'."""
 
 
-def prompt_audio(day, symbol_block):
-    base = build_base_context(day, symbol_block)
+def prompt_audio(day, symbol_block, day_scene):
+    base = build_base_context(day, symbol_block, day_scene)
     return base + """
 
-צור פודקאסט deep-dive בעברית באורך כ-20-25 דקות. שיחה מעמיקה ומרתקת בין שני
-מנחים על הנושא. כיסוי שיטתי של כל ההיבטים שצוינו. דגש על משמעות קלינית
-ויישום מעשי. הזכר בשם תרופות גנריות בלבד (לא שמות מסחריים)."""
+צור פודקאסט deep-dive בעברית — כמה שיותר ארוך ומעמיק (--length long).
+שיחה מקיפה בין שני מנחים על הנושא. כיסוי שיטתי + יסודי של *כל* ההיבטים
+שצוינו, כולל nuances קלינים, ציטוטים מהמקור, וינייטות. דגש על משמעות
+קלינית ויישום מעשי. אזכור תרופות בשם גנרי באנגלית (לא מסחרי)."""
 
 
-def prompt_video(day, symbol_block):
-    base = build_base_context(day, symbol_block)
+def prompt_video(day, symbol_block, day_scene):
+    base = build_base_context(day, symbol_block, day_scene)
     return base + """
 
 צור סרטון הסבר באורך כ-10-15 דקות, סגנון whiteboard, בעברית.
-חשוב: כל פעם שמופיע מושג שיש לו סמל ויזואלי ברשימה למעלה, השתמש בסמל הזה.
-לדוגמה: כשמדברים על קולטן D2, הצג מחסום אדום על מסילה; כשמדברים על נוראפינפרין,
-הצג זאב אלפא; כשמדברים על GABA, הצג מנהל מלון פותח שערים. הסמלים בונים זיכרון
-ויזואלי עקבי. הוסף label בכל הופעה של סמל (כמו ב-Sketchymedical)."""
+**העלילה**: הסרטון מתרחש ב-DAY SCENE SCRIPT שתואר למעלה — אותם דמויות,
+אותם סמלים, אותה תפאורה. ערוץ את הסיפור כך שהאינפוגרפיקות (שייוצרו בנפרד)
+ייראו כתמונות-מתוך-הסרטון.
+
+כשמופיע D2 → מחסום אדום על מסילה (לא תיאור אחר); כשמופיע ACh → גפרור-עץ
+(אצית); כשמופיע M3 → 3 כוסות תה דולפות של ה-Mad Hatter. אותם סמלים גם
+בסרטון וגם באינפוגרפיקות. הוסף label בולט בכל הופעה של סמל (כמו Sketchymedical)."""
 
 
-def prompt_infographic(day, symbol_block, aspect):
-    base = build_base_context(day, symbol_block)
+def prompt_infographic(day, symbol_block, day_scene, aspect):
+    base = build_base_context(day, symbol_block, day_scene)
     aspect_prompts = {
         "dsm_criteria": "התמקד אך ורק בקריטריונים של DSM-5-TR לאבחנה זו. רשימה מסודרת + דוגמאות קליניות.",
         "epidemiology": "התמקד באפידמיולוגיה: prevalence, incidence, חלוקה לפי מין/גיל, גורמי סיכון, גורמים מגנים.",
@@ -161,12 +218,15 @@ def prompt_infographic(day, symbol_block, aspect):
     return base + f"""
 
 צור אינפוגרפיקה (תמונה אחת) בסגנון sketch-note, בעברית. {aspect_he}
-אינפוגרפיקה זו צריכה להיות ממוקדת ולא עמוסה — היבט אחד בלבד.
-השתמש בסמלים מהרשימה. הוסף label לכל סמל."""
+**תפאורה**: אותה סצינה כמו DAY SCENE SCRIPT — האינפוגרפיקה צריכה להיראות
+כמו תמונה-נייחת מתוך הסרטון של היום (אותם דמויות, אותם סמלים, אותו עולם).
+
+ממוקד היבט אחד בלבד — לא עמוס. השתמש בסמלים מהרשימה ב-{aspect}. הוסף label
+לכל סמל. כותרת ראשית: '{aspect}' בעברית-אנגלית."""
 
 
-def prompt_study_guide(day, symbol_block):
-    base = build_base_context(day, symbol_block)
+def prompt_study_guide(day, symbol_block, day_scene):
+    base = build_base_context(day, symbol_block, day_scene)
     return base + """
 
 צור מדריך לימוד מפורט (study guide) בפורמט markdown, בעברית.
@@ -186,21 +246,23 @@ def prompt_study_guide(day, symbol_block):
 עמודי מקור: ציון איפה כל פיסת מידע נמצאת ב-DSM/Dulcan/Stahl."""
 
 
-def prompt_flashcards(day, symbol_block):
-    base = build_base_context(day, symbol_block)
+def prompt_flashcards(day, symbol_block, day_scene):
+    base = build_base_context(day, symbol_block, day_scene)
     return base + """
 
-צור סט כרטיסיות שינון בעברית — שאלה + תשובה — לכיסוי high-yield של היום.
+צור סט כרטיסיות שינון — שאלה + תשובה — לכיסוי high-yield של היום.
 פורמט סטנדרטי. כמות: standard (15-20 כרטיסיות).
-מינוח קליני מדויק."""
+תייג כל כרטיסיה ב-aspect (dsm_criteria, treatment, drug_mechanism, etc.) כדי שב-UI
+נוכל להציג לצידה את האינפוגרפיקה הרלוונטית של אותו aspect."""
 
 
-def prompt_quiz(day, symbol_block):
-    base = build_base_context(day, symbol_block)
+def prompt_quiz(day, symbol_block, day_scene):
+    base = build_base_context(day, symbol_block, day_scene)
     return base + """
 
-צור קוויז של 8-10 שאלות בעברית. סוג שאלות: vignette קליני קצר + multiple choice (4 אופציות). רמה: בחינת שלב ב'.
-דגש על אבחנה מבדלת, סיבוכים נדירים, ניהול."""
+צור קוויז של 8-10 שאלות. סוג שאלות: vignette קליני קצר + multiple choice
+(4 אופציות + הסבר). רמה: בחינת שלב ב'. דגש על אבחנה מבדלת, סיבוכים נדירים,
+ניהול ב-vignette. כל הסבר תשובה מתייחס לסמלים מ-DAY SCENE."""
 
 
 # ── notebooklm CLI helpers ──────────────────────────────────────────────────
@@ -215,7 +277,8 @@ def use_notebook(nb_id):
 
 
 def start_audio(prompt):
-    r = nb_run(["generate", "audio", prompt, "--format", "deep-dive", "--language", "he", "--json"], timeout=120)
+    r = nb_run(["generate", "audio", prompt, "--format", "deep-dive",
+                "--language", "he", "--length", "long", "--json"], timeout=120)
     return _extract_task_id(r, "audio")
 
 
@@ -257,11 +320,13 @@ def _extract_task_id(r, kind):
 
 
 def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
-    """Poll until every task is completed or failed."""
+    """Poll until every task is completed or failed.
+    `task_ids` is already {uuid: kind} — keep that orientation."""
     if not task_ids:
         return {}
 
-    pending = {tid: kind for kind, tid in task_ids.items() if tid}
+    # Correct: iterate {uuid: kind} as (uuid, kind), keep same orientation in pending.
+    pending = {tid: kind for tid, kind in task_ids.items() if tid}
     results = {}
     start = time.time()
 
@@ -369,12 +434,15 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
 
     # Build symbol descriptions for prompts
     symbol_block = collect_symbol_descriptions(day.get("symbols_needed", []), symbols)
+    day_scene = build_day_scene(day, symbols)
 
     # Switch to main notebook
     use_notebook(NOTEBOOK_ID)
 
     if dry_run:
         print("[DRY RUN] Skipping NotebookLM API calls.")
+        print("=== DAY SCENE PREVIEW ===")
+        print(day_scene)
         return None
 
     # Decide how many infographics based on density
@@ -384,22 +452,29 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # Pick which aspects get their own infographic
     infographic_aspects = day.get("aspects", [])[:n_infographics]
 
-    # Fire off all artifacts
+    # Fire off all artifacts (space out launches to reduce throttling)
     task_ids = {}
     print("Starting artifacts...")
-    task_ids["audio"] = start_audio(prompt_audio(day, symbol_block))
-    time.sleep(5)
-    task_ids["video"] = start_video(prompt_video(day, symbol_block))
-    time.sleep(5)
-    task_ids["report"] = start_report(prompt_study_guide(day, symbol_block))
-    time.sleep(5)
-    task_ids["flashcards"] = start_flashcards(prompt_flashcards(day, symbol_block))
-    time.sleep(5)
-    task_ids["quiz"] = start_quiz(prompt_quiz(day, symbol_block))
+    task_ids["audio"] = start_audio(prompt_audio(day, symbol_block, day_scene))
+    print(f"  audio: {task_ids['audio']}")
+    time.sleep(15)
+    task_ids["video"] = start_video(prompt_video(day, symbol_block, day_scene))
+    print(f"  video: {task_ids['video']}")
+    time.sleep(15)
+    task_ids["report"] = start_report(prompt_study_guide(day, symbol_block, day_scene))
+    print(f"  report: {task_ids['report']}")
+    time.sleep(15)
+    task_ids["flashcards"] = start_flashcards(prompt_flashcards(day, symbol_block, day_scene))
+    print(f"  flashcards: {task_ids['flashcards']}")
+    time.sleep(15)
+    task_ids["quiz"] = start_quiz(prompt_quiz(day, symbol_block, day_scene))
+    print(f"  quiz: {task_ids['quiz']}")
 
     for i, aspect in enumerate(infographic_aspects):
-        time.sleep(5)
-        task_ids[f"infographic_{aspect}"] = start_infographic(prompt_infographic(day, symbol_block, aspect))
+        time.sleep(15)
+        tid = start_infographic(prompt_infographic(day, symbol_block, day_scene, aspect))
+        task_ids[f"infographic_{aspect}"] = tid
+        print(f"  infographic_{aspect}: {tid}")
 
     task_ids = {k: v for k, v in task_ids.items() if v}
     print(f"\n{len(task_ids)} artifacts launched. Waiting...\n")
