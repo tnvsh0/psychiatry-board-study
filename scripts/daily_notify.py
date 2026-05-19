@@ -82,6 +82,14 @@ def send_ntfy(day: dict, day_index: int):
 
 
 def main():
+    # Pull latest (so we see any Mark Done commits from the Streamlit UI)
+    import subprocess
+    try:
+        subprocess.run(["git", "-C", str(ROOT), "pull", "--ff-only"],
+                       capture_output=True, timeout=30)
+    except Exception:
+        pass
+
     if not SCHED.exists():
         print(f"schedule.json not found at {SCHED}")
         sys.exit(1)
