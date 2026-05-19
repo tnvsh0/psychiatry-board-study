@@ -72,11 +72,38 @@ def load_progress() -> dict:
 
 
 def save_progress(progress: dict) -> bool:
-    """Save progress.json locally. Optionally commit + push if running on VM
-    or wherever we have git write access."""
-    PROGRESS_LOCAL.parent.mkdir(parents=True, exist_ok=True)
-    PROGRESS_LOCAL.write_text(json.dumps(progress, ensure_ascii=False, indent=2), encoding="utf-8")
-    return True
+    """Save progress.json via GitHub Contents API (works on Cloud Run with GH_TOKEN)."""
+    if not GITHUB_TOKEN:
+        # Fallback: local write (useful for local dev)
+        PROGRESS_LOCAL.parent.mkdir(parents=True, exist_ok=True)
+        PROGRESS_LOCAL.write_text(json.dumps(progress, ensure_ascii=False, indent=2), encoding="utf-8")
+        return True
+
+    import base64
+    # Get current SHA (if file exists)
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+    }
+    file_path = "schedule/progress.json"
+    sha = None
+    r = requests.get(f"{API_BASE}/contents/{file_path}", headers=headers, timeout=10)
+    if r.status_code == 200:
+        sha = r.json().get("sha")
+    # Commit
+    content_str = json.dumps(progress, ensure_ascii=False, indent=2)
+    payload = {
+        "message": f"Update progress: day {progress.get('current_day_index', '?')}",
+        "content": base64.b64encode(content_str.encode("utf-8")).decode(),
+        "branch": BRANCH,
+    }
+    if sha:
+        payload["sha"] = sha
+    r = requests.put(f"{API_BASE}/contents/{file_path}", headers=headers, json=payload, timeout=15)
+    if r.status_code in (200, 201):
+        return True
+    st.warning(f"GitHub commit failed: {r.status_code} {r.text[:200]}")
+    return False
 
 
 @st.cache_data(ttl=300)
