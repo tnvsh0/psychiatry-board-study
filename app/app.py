@@ -40,35 +40,54 @@ PROGRESS_LOCAL = LOCAL_ROOT / "schedule" / "progress.json"
 
 
 # ── Data loading (cached) ───────────────────────────────────────────────────
+def _gh_fetch_json(path: str, fallback: dict | None = None) -> dict:
+    """Fetch a JSON file from the (possibly private) repo via Contents API."""
+    if GITHUB_TOKEN:
+        # Contents API works for private repos
+        import base64
+        headers = {
+            "Accept": "application/vnd.github+json",
+            "Authorization": f"Bearer {GITHUB_TOKEN}",
+        }
+        r = requests.get(f"{API_BASE}/contents/{path}?ref={BRANCH}", headers=headers, timeout=15)
+        if r.status_code == 200:
+            content = r.json().get("content", "")
+            try:
+                return json.loads(base64.b64decode(content).decode("utf-8"))
+            except Exception:
+                pass
+    # Try raw (works for public repos or if token-less)
+    r = requests.get(f"{RAW_BASE}/{path}", timeout=15)
+    if r.status_code == 200:
+        return r.json()
+    if fallback is not None:
+        return fallback
+    r.raise_for_status()
+    return {}
+
+
 @st.cache_data(ttl=300)
 def load_schedule() -> dict:
     if SCHEDULE_LOCAL.exists():
         return json.loads(SCHEDULE_LOCAL.read_text(encoding="utf-8"))
-    r = requests.get(f"{RAW_BASE}/schedule/schedule.json", timeout=30)
-    r.raise_for_status()
-    return r.json()
+    return _gh_fetch_json("schedule/schedule.json")
 
 
 @st.cache_data(ttl=300)
 def load_symbols() -> dict:
     if SYMBOLS_LOCAL.exists():
         return json.loads(SYMBOLS_LOCAL.read_text(encoding="utf-8"))
-    r = requests.get(f"{RAW_BASE}/schedule/symbols.json", timeout=30)
-    r.raise_for_status()
-    return r.json()
+    return _gh_fetch_json("schedule/symbols.json")
 
 
 @st.cache_data(ttl=60)
 def load_progress() -> dict:
     if PROGRESS_LOCAL.exists():
         return json.loads(PROGRESS_LOCAL.read_text(encoding="utf-8"))
-    try:
-        r = requests.get(f"{RAW_BASE}/schedule/progress.json", timeout=15)
-        if r.status_code == 200:
-            return r.json()
-    except Exception:
-        pass
-    return {"completed_days": [], "current_day_index": 1, "last_studied": None}
+    return _gh_fetch_json(
+        "schedule/progress.json",
+        fallback={"completed_days": [], "current_day_index": 1, "last_studied": None},
+    )
 
 
 def save_progress(progress: dict) -> bool:
