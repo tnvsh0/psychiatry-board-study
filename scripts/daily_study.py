@@ -44,7 +44,7 @@ GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 NOTEBOOKLM_BIN = "/opt/venv/bin/notebooklm"
 WAIT_INDEX_S = 60
 POLL_INTERVAL_S = 60
-ARTIFACT_MAX_WAIT_S = 45 * 60  # 45 min per batch
+ARTIFACT_MAX_WAIT_S = 60 * 60  # 60 min per batch (audio --length long is slower)
 
 
 def slugify(text: str) -> str:
@@ -276,6 +276,96 @@ def use_notebook(nb_id):
         raise RuntimeError(f"notebooklm use failed: {r.stderr[:300]}")
 
 
+def find_day_notebook(day_index, title_he):
+    """Look up existing per-day notebook by exact title match."""
+    expected_title = f"[Study-{day_index:03d}] {title_he}"
+    r = nb_run(["list", "--json"], timeout=60)
+    if r.returncode != 0:
+        return None, None
+    try:
+        nbs = json.loads(r.stdout).get("notebooks", [])
+    except Exception:
+        return None, None
+    for nb in nbs:
+        if nb.get("title", "").strip() == expected_title.strip():
+            return nb.get("id"), expected_title
+    return None, expected_title
+
+
+def create_day_notebook(title):
+    """Create an empty notebook with the given title."""
+    r = nb_run(["create", title, "--json"], timeout=60)
+    if r.returncode != 0:
+        raise RuntimeError(f"create notebook failed: {r.stderr[:300]}")
+    try:
+        data = json.loads(r.stdout.strip())
+    except Exception as e:
+        raise RuntimeError(f"create notebook parse failed: {e}; raw: {r.stdout[:300]}")
+    nb_id = (data.get("notebook") or {}).get("id") or data.get("id")
+    if not nb_id:
+        raise RuntimeError(f"no id in create response: {r.stdout[:300]}")
+    return nb_id
+
+
+def add_text_source(nb_id, content, title):
+    """Add inline text as a source. Returns source_id (or None)."""
+    # Write to a temp .md so source add picks it up as file
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False, encoding="utf-8") as f:
+        f.write(content)
+        tmp_path = f.name
+    r = nb_run(["source", "add", tmp_path, "--title", title, "--json", "-n", nb_id], timeout=180)
+    Path(tmp_path).unlink(missing_ok=True)
+    if r.returncode != 0:
+        print(f"  ⚠ source add failed: {r.stderr[:200]}")
+        return None
+    try:
+        data = json.loads(r.stdout.strip())
+        return (data.get("source") or {}).get("id") or data.get("id")
+    except Exception:
+        return None
+
+
+def extract_day_content_from_main(day, symbols_block, main_notebook_id):
+    """Use the MAIN notebook to extract comprehensive material for this day's
+    topic into a markdown file. This .md becomes the focused source for the
+    per-day notebook."""
+    title_he = day.get("title_he", "")
+    aspects = day.get("aspects", [])
+    focus = day.get("prompt_focus", "")
+
+    extraction_prompt = f"""Extract from this notebook (DSM-5-TR, Dulcan, Stahl Essential, Stahl Pediatric, and the syllabus) ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
+
+Topic: {title_he}
+
+Focus: {focus}
+
+Aspects to cover comprehensively:
+{', '.join(aspects)}
+
+Output as a long, well-structured Markdown document in Hebrew (with English drug/receptor/concept names as they appear in source). Include:
+- Page references from each source (DSM p.NNN, Dulcan p.NNN, Stahl p.NNN)
+- Direct citations / paraphrases (lots — this is the source material)
+- All clinically relevant detail (criteria, epidemiology, etiology, treatment, monitoring, special considerations for pediatric population)
+- Cross-references between sources where they agree/disagree
+
+Length: long and thorough — 3000-6000 words. This is study material, not a summary."""
+
+    # Switch to main notebook
+    use_notebook(main_notebook_id)
+    print("  Extracting comprehensive content from main notebook (this may take 3-5 min)...")
+    r = nb_run(["ask", extraction_prompt, "--json"], timeout=600)
+    if r.returncode != 0:
+        print(f"  ⚠ extraction ask failed: {r.stderr[:200]}")
+        return None
+    try:
+        resp = json.loads(r.stdout)
+        return resp.get("answer", "")
+    except Exception as e:
+        print(f"  ⚠ extraction parse failed: {e}")
+        return None
+
+
 def start_audio(prompt):
     r = nb_run(["generate", "audio", prompt, "--format", "deep-dive",
                 "--language", "he", "--length", "long", "--json"], timeout=120)
@@ -436,14 +526,44 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     symbol_block = collect_symbol_descriptions(day.get("symbols_needed", []), symbols)
     day_scene = build_day_scene(day, symbols)
 
-    # Switch to main notebook
-    use_notebook(NOTEBOOK_ID)
-
     if dry_run:
         print("[DRY RUN] Skipping NotebookLM API calls.")
         print("=== DAY SCENE PREVIEW ===")
         print(day_scene)
         return None
+
+    # === Per-day notebook architecture ===
+    # 1. Check if per-day notebook already exists
+    day_nb_id, day_nb_title = find_day_notebook(day_index, day.get("title_he", title_en))
+    if day_nb_id:
+        print(f"Found existing per-day notebook: {day_nb_id} ('{day_nb_title}')")
+    else:
+        # 2. Extract focused content from MAIN notebook
+        extract_md = extract_day_content_from_main(day, symbol_block, NOTEBOOK_ID)
+        if not extract_md:
+            print("⚠ Could not extract content from main notebook. Aborting.")
+            return None
+        print(f"  Extracted {len(extract_md)} characters of source material.")
+
+        # 3. Create per-day notebook
+        print(f"Creating per-day notebook: {day_nb_title}")
+        day_nb_id = create_day_notebook(day_nb_title)
+        print(f"  Created notebook: {day_nb_id}")
+
+        # 4. Add the extracted .md as source
+        source_title = f"Day {day_index} — Source material (extracted from DSM/Dulcan/Stahl)"
+        src_id = add_text_source(day_nb_id, extract_md, source_title)
+        if not src_id:
+            print("⚠ Could not add source. Aborting.")
+            return None
+        print(f"  Added source: {src_id}")
+
+        # 5. Wait for indexing (text source = fast)
+        print(f"  Waiting {WAIT_INDEX_S}s for indexing...")
+        time.sleep(WAIT_INDEX_S)
+
+    # Switch to the per-day notebook for artifact generation
+    use_notebook(day_nb_id)
 
     # Decide how many infographics based on density
     density = day.get("estimated_density", "medium")

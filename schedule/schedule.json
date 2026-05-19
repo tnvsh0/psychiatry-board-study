@@ -27,7 +27,10 @@
         "parent_interview",
         "play_observation"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "developmental_red_flags",
+        "developmental_ladder"
+      ],
       "estimated_density": "high",
       "index": 1,
       "phase": 1,
@@ -216,7 +219,11 @@
         "language",
         "red_flags"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "brazelton_still_face",
+        "developmental_red_flags",
+        "developmental_ladder"
+      ],
       "estimated_density": "medium",
       "index": 8,
       "phase": 1,
@@ -233,7 +240,10 @@
         "language",
         "play_development"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "piaget_4_stages",
+        "developmental_ladder"
+      ],
       "estimated_density": "medium",
       "index": 9,
       "phase": 1,
@@ -249,7 +259,11 @@
         "moral_development",
         "self_concept"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "erikson_8_stages",
+        "piaget_4_stages",
+        "developmental_ladder"
+      ],
       "estimated_density": "medium",
       "index": 10,
       "phase": 1,
@@ -267,8 +281,11 @@
         "brain_maturation"
       ],
       "symbols_needed": [
-        "prefrontal_cortex",
-        "nucleus_accumbens"
+        "nucleus_accumbens",
+        "erikson_8_stages",
+        "developmental_ladder",
+        "piaget_4_stages",
+        "prefrontal_cortex"
       ],
       "estimated_density": "medium",
       "index": 11,
@@ -285,7 +302,11 @@
         "mentalization_concept",
         "clinical_implications"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "fonagy_mentalization",
+        "attachment_4_styles",
+        "brazelton_still_face"
+      ],
       "estimated_density": "medium",
       "index": 12,
       "phase": 1,
@@ -301,7 +322,9 @@
         "goodness_of_fit",
         "temperament_to_personality"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "thomas_chess_temperament"
+      ],
       "estimated_density": "low",
       "index": 13,
       "phase": 1,
@@ -2640,7 +2663,13 @@
         "evidence",
         "indications"
       ],
-      "symbols_needed": [],
+      "symbols_needed": [
+        "kohut_self_psychology",
+        "anna_freud_defenses",
+        "winnicott_holding",
+        "fonagy_mentalization",
+        "klein_positions"
+      ],
       "estimated_density": "high",
       "index": 119,
       "phase": 10,
