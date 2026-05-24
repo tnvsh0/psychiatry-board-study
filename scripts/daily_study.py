@@ -49,7 +49,11 @@ NOTEBOOK_ID = os.environ.get(
 )
 GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 
-NOTEBOOKLM_BIN = "/opt/venv/bin/notebooklm"
+NOTEBOOKLM_BIN = os.environ.get("NOTEBOOKLM_BIN", "/opt/venv/bin/notebooklm")
+# Fall back to bare 'notebooklm' (in PATH) if the absolute default doesn't exist
+# — lets the script run on Windows / non-VM envs without setup.
+if not Path(NOTEBOOKLM_BIN).exists():
+    NOTEBOOKLM_BIN = "notebooklm"
 WAIT_INDEX_S = 60
 POLL_INTERVAL_S = 60
 ARTIFACT_MAX_WAIT_S = 60 * 60  # 60 min per batch (audio --length long is slower)
