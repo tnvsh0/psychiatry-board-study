@@ -37,6 +37,10 @@ LOCAL_ROOT = Path(__file__).resolve().parent.parent
 SCHEDULE_LOCAL = LOCAL_ROOT / "schedule" / "schedule.json"
 SYMBOLS_LOCAL = LOCAL_ROOT / "schedule" / "symbols.json"
 PROGRESS_LOCAL = LOCAL_ROOT / "schedule" / "progress.json"
+PALETTE_LOCAL = LOCAL_ROOT / "schedule" / "phase_palette.json"
+
+# Fallback palette if file missing
+_DEFAULT_PALETTE_ENTRY = {"name": "Unknown", "hex": "#808080", "prompt": ""}
 
 
 # ── Data loading (cached) ───────────────────────────────────────────────────
@@ -78,6 +82,34 @@ def load_symbols() -> dict:
     if SYMBOLS_LOCAL.exists():
         return json.loads(SYMBOLS_LOCAL.read_text(encoding="utf-8"))
     return _gh_fetch_json("schedule/symbols.json")
+
+
+@st.cache_data(ttl=300)
+def load_palette() -> dict:
+    """Phase palette (hex + prompt) per phase number 1-10."""
+    if PALETTE_LOCAL.exists():
+        return json.loads(PALETTE_LOCAL.read_text(encoding="utf-8"))
+    return _gh_fetch_json("schedule/phase_palette.json", fallback={})
+
+
+def phase_entry(phase: int, palette: dict) -> dict:
+    """Lookup a palette entry safely. Strip the _comment key."""
+    entry = palette.get(str(phase)) or palette.get(phase)
+    if isinstance(entry, dict):
+        return entry
+    return dict(_DEFAULT_PALETTE_ENTRY)
+
+
+@st.cache_data(ttl=300)
+def fetch_text(url: str) -> str:
+    """Fetch a text file (used for sketchy captions). Empty string on failure."""
+    try:
+        r = requests.get(url, timeout=15)
+        if r.ok:
+            return r.text
+    except Exception:
+        pass
+    return ""
 
 
 @st.cache_data(ttl=60)
@@ -148,6 +180,24 @@ def day_tag(day: dict) -> str:
 
 
 # ── UI components ───────────────────────────────────────────────────────────
+def render_phase_header(day: dict, palette: dict) -> None:
+    """Colored bar at the top of a day page indicating the phase identity."""
+    phase = day.get("phase", 0)
+    entry = phase_entry(phase, palette)
+    color = entry.get("hex", "#808080")
+    pname = entry.get("name", day.get("phase_name", ""))
+    st.markdown(
+        f"""<div style="
+            background: linear-gradient(90deg, {color}cc, {color}33);
+            border-left: 6px solid {color};
+            padding: 8px 14px; margin: 0 0 12px 0; border-radius: 4px;
+            color: #fff; font-weight: 600; letter-spacing: 0.5px;">
+            Phase {phase} — {pname}
+        </div>""",
+        unsafe_allow_html=True,
+    )
+
+
 def render_progress_overall(schedule, progress):
     total = len(schedule["days"])
     done = len(set(progress.get("completed_days", [])))
@@ -189,7 +239,7 @@ def render_phase_sidebar(schedule, progress, current_phase=None):
     return selected_day_idx
 
 
-def render_day_page(day, symbols, progress):
+def render_day_page(day, symbols, progress, palette):
     """The main per-day content page."""
     idx = day["index"]
     title_he = day.get("title_he", day.get("title_en", ""))
@@ -199,8 +249,9 @@ def render_day_page(day, symbols, progress):
     completed = set(progress.get("completed_days", []))
     is_done = idx in completed
 
+    render_phase_header(day, palette)
     st.markdown(f"# יום {idx}: {title_he}")
-    st.caption(f"**Phase {phase}** — {phase_name} | **Type**: {day.get('type', '')} | **Density**: {day.get('estimated_density', 'medium')}")
+    st.caption(f"**Type**: {day.get('type', '')} | **Density**: {day.get('estimated_density', 'medium')}")
 
     if is_done:
         st.success("✅ סומן כהושלם")
@@ -249,10 +300,41 @@ def render_day_page(day, symbols, progress):
         st.video(video_url)
         st.caption(f"[הורד MP4]({video_url})")
 
-    # Infographics gallery
+    # Sketchy scenes (Gemini) — primary visual mnemonic + Hebrew narrative caption
+    sketchy_images = sorted(k for k in assets if k.startswith("sketchy_") and k.endswith(".png"))
+    if sketchy_images:
+        st.markdown("### 🎨 סצנות Sketchy")
+        for name in sketchy_images:
+            aspect = name.replace("sketchy_", "").replace(".png", "")
+            caption_name = f"sketchy_{aspect}.txt"
+            caption_url = assets.get(caption_name)
+
+            with st.container():
+                img_col, txt_col = st.columns([1, 1])
+                with img_col:
+                    st.markdown(f"**{aspect}**")
+                    st.image(assets[name], use_container_width=True)
+                with txt_col:
+                    if caption_url:
+                        caption_text = fetch_text(caption_url)
+                        if caption_text:
+                            st.markdown(
+                                f'<div dir="rtl" style="text-align: right; '
+                                f'font-size: 1.0em; line-height: 1.65; padding: 6px 4px;">'
+                                f'{caption_text}</div>',
+                                unsafe_allow_html=True,
+                            )
+                        else:
+                            st.caption(f"(לא הצלחתי לטעון את הקפסולה)")
+                            st.markdown(f"[פתח טקסט]({caption_url})")
+                    else:
+                        st.caption("(אין קפסולת הסבר לתמונה זו)")
+                st.divider()
+
+    # Standard infographics (NotebookLM) — structured reference
     infographics = sorted(k for k in assets if k.startswith("infographic_") and k.endswith(".png"))
     if infographics:
-        st.markdown("### 🖼 אינפוגרפיקות")
+        st.markdown("### 🖼 אינפוגרפיקות (NotebookLM)")
         cols = st.columns(min(len(infographics), 3))
         for i, name in enumerate(infographics):
             with cols[i % len(cols)]:
@@ -260,18 +342,26 @@ def render_day_page(day, symbols, progress):
                 st.markdown(f"**{aspect}**")
                 st.image(assets[name])
 
-    # Study guide
-    report_url = assets.get("report.md")
-    if report_url:
-        with st.expander("📖 מדריך לימוד (study guide)", expanded=False):
+    # Study guide — prefer the new focused study_guide.md (from ask),
+    # fall back to legacy report.md (from old generate report)
+    sg_url = assets.get("study_guide.md") or assets.get("report.md")
+    sg_label = "📖 מדריך לימוד ממוקד (עם הפניות לעמודי המקור)" if assets.get("study_guide.md") else "📖 מדריך לימוד (legacy)"
+    if sg_url:
+        with st.expander(sg_label, expanded=True):
             try:
-                r = requests.get(report_url, timeout=15)
+                r = requests.get(sg_url, timeout=15)
                 if r.ok:
-                    st.markdown(r.text)
+                    # Render with explicit RTL wrapper so Hebrew flows correctly
+                    st.markdown(
+                        f'<div dir="rtl" style="text-align: right; font-size: 1.05em; line-height: 1.7;">\n\n{r.text}\n\n</div>',
+                        unsafe_allow_html=True,
+                    )
+                    st.divider()
+                    st.caption(f"[הורד MD]({sg_url})")
                 else:
-                    st.markdown(f"[פתח study guide]({report_url})")
+                    st.markdown(f"[פתח study guide]({sg_url})")
             except Exception:
-                st.markdown(f"[פתח study guide]({report_url})")
+                st.markdown(f"[פתח study guide]({sg_url})")
 
     # Flashcards
     flashcards_url = assets.get("flashcards.json")
@@ -367,6 +457,7 @@ def main():
         schedule = load_schedule()
         symbols = load_symbols()
         progress = load_progress()
+        palette = load_palette()
     except Exception as e:
         st.error(f"שגיאת טעינה: {e}")
         return
@@ -403,7 +494,7 @@ def main():
         st.error(f"יום {requested_day} לא נמצא ב-schedule")
         return
 
-    render_day_page(day, symbols, progress)
+    render_day_page(day, symbols, progress, palette)
 
 
 if __name__ == "__main__":
