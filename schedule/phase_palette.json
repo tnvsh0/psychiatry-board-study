@@ -1,0 +1,53 @@
+{
+  "_comment": "Palette per phase. 'hex' is for UI theming in Streamlit. 'prompt' is a GENTLE hint appended to the image prompt — keep it short, suggestive, never harsh or degrading. The natural scene colors should always win; the palette only nudges.",
+  "1": {
+    "name": "Foundations",
+    "hex": "#5B7B9A",
+    "prompt": "with calm scholarly notebook tones"
+  },
+  "2": {
+    "name": "Neurodevelopmental",
+    "hex": "#F4B6C2",
+    "prompt": "with soft pastel accents"
+  },
+  "3": {
+    "name": "Mood + Anxiety",
+    "hex": "#7A95B8",
+    "prompt": "with cool muted blues and gentle greys"
+  },
+  "4": {
+    "name": "OCD + Trauma",
+    "hex": "#8B5A3C",
+    "prompt": "with warm earthen browns"
+  },
+  "5": {
+    "name": "Psychotic + Antipsychotics",
+    "hex": "#A8231B",
+    "prompt": "with deep dramatic reds and inky shadows"
+  },
+  "6": {
+    "name": "Sleep, Eating, Elimination",
+    "hex": "#4A3B7C",
+    "prompt": "with rich indigos and amber lamp light"
+  },
+  "7": {
+    "name": "Substance Use",
+    "hex": "#998866",
+    "prompt": "with warm dusty earth tones"
+  },
+  "8": {
+    "name": "Personality + Special Populations",
+    "hex": "#C4569E",
+    "prompt": "with vivid expressive colors"
+  },
+  "9": {
+    "name": "Neurology + Cross-cutting",
+    "hex": "#3D7DB5",
+    "prompt": "with cool clinical blues"
+  },
+  "10": {
+    "name": "Psychotherapy + Integration",
+    "hex": "#5C8159",
+    "prompt": "with warm forest greens and soft amber light"
+  }
+}
