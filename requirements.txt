@@ -1,0 +1,16 @@
+# Runtime dependencies for psychiatry-board-study.
+#
+# Install:   pip install -r requirements.txt
+# Or with uv: uv pip install -r requirements.txt
+
+# Streamlit course-site (app/app.py)
+streamlit>=1.40.0
+requests>=2.31.0
+
+# Gemini API — image generation + caption text (scripts/gemini_image.py)
+# Requires GEMINI_API_KEY in .env or environment.
+google-genai>=1.66.0
+
+# NotebookLM automation CLI (called via subprocess from scripts/daily_study.py)
+# Not pip-installed here — assumed pre-installed via the upstream notebooklm-py
+# package in the VM venv (/opt/venv/bin/notebooklm).
