@@ -32,6 +32,14 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+# Gemini-based image generation (Sketchymedical style) — replaces NotebookLM infographics
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from gemini_image import generate_image_with_caption as gemini_generate
+    HAS_GEMINI = True
+except ImportError:
+    HAS_GEMINI = False
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # Default IDs (override via env)
@@ -81,10 +89,11 @@ def collect_symbol_descriptions(symbol_keys, symbols_data):
     return "\n".join(lines) if lines else "(אין סמלים ייעודיים ליום זה)"
 
 
-def build_day_scene(day, symbols_data):
-    """A unified 'world' description for the day, shared by video + infographics
-    so the visual continuity is preserved across artifacts."""
-    title_he = day.get("title_he", day.get("title_en", ""))
+def build_symbol_legend(day, symbols_data):
+    """Build a symbol legend block for today — the visual representation of each
+    concept relevant to this day. Each image (and the video) renders these as
+    independent scenes; there is NO requirement that images of the same day
+    look like each other. Only the symbol identity is shared, not the framing."""
     symbol_keys = day.get("symbols_needed", [])
 
     pools = {
@@ -93,28 +102,54 @@ def build_day_scene(day, symbols_data):
         **symbols_data.get("symbols", {}),
         **symbols_data.get("drugs", {}),
     }
-    scene_parts = []
-    for key in symbol_keys[:8]:  # cap at 8 to keep prompt focused
+    parts = []
+    for key in symbol_keys[:8]:
         item = pools.get(key)
         if isinstance(item, dict):
             sym = item.get("symbol", "") or item.get("scene_name", "")
             if sym:
-                scene_parts.append(f"  • {key}: {sym}")
+                parts.append(f"  - {key}: {sym}")
 
-    return f"""DAY SCENE SCRIPT (unified visual world for ALL artifacts of this day —
-the video animates this scene with narration; each infographic captures a still
-frame of one aspect within this same scene; all characters/symbols are consistent):
+    if not parts:
+        return "(no specific symbols for this day — use generic clinical visuals)"
 
-Topic: {title_he}
+    return ("Symbol legend — when any of these concepts appears in the content, "
+            "depict it using the corresponding visual representation:\n"
+            + "\n".join(parts))
 
-Recurring elements in today's scene:
-{chr(10).join(scene_parts) if scene_parts else '  (this day uses generic clinical visuals)'}
 
-Visual rule: whenever a concept from the symbol legend appears, render it using
-the corresponding symbol from the legend (e.g. D2 receptor → red barrier on the
-mesolimbic track; ACh → wooden match; M3 → 3 dripping teacups). Same symbol
-across video and infographics — the still frames must look like extracts from
-the same animated world."""
+def build_caption_legend(day, symbols_data):
+    """Richer legend for the narrative caption generator — includes mnemonic
+    link and Hebrew explanation per symbol so the caption can explain WHY
+    each symbol represents what it does."""
+    symbol_keys = day.get("symbols_needed", [])
+
+    pools = {
+        **symbols_data.get("scenes", {}),
+        **symbols_data.get("ions", {}),
+        **symbols_data.get("symbols", {}),
+        **symbols_data.get("drugs", {}),
+    }
+    blocks = []
+    for key in symbol_keys[:8]:
+        item = pools.get(key)
+        if not isinstance(item, dict):
+            continue
+        sym = item.get("symbol", "") or item.get("scene_name", "")
+        mnemonic = item.get("mnemonic_link", "")
+        he = item.get("hebrew_explanation", "")
+        clinical = item.get("function_depiction", "")
+        block = [f"- {key}:"]
+        if sym:
+            block.append(f"    visual: {sym}")
+        if mnemonic:
+            block.append(f"    hook: {mnemonic}")
+        if clinical:
+            block.append(f"    clinical: {clinical}")
+        if he:
+            block.append(f"    hebrew: {he}")
+        blocks.append("\n".join(block))
+    return "\n".join(blocks) if blocks else "(no specific symbol entries for this day)"
 
 
 BILINGUAL_DIRECTIVE = """
@@ -131,7 +166,7 @@ LANGUAGE — bilingual (Hebrew-primary, like Israeli clinicians):
 """
 
 
-def build_base_context(day, symbol_block, day_scene):
+def build_base_context(day, symbol_block, legend_block):
     """The Hebrew context block that every prompt starts with."""
     title_he = day.get("title_he", day.get("title_en", ""))
     aspects = day.get("aspects", [])
@@ -145,10 +180,10 @@ def build_base_context(day, symbol_block, day_scene):
 היבטים לכיסוי:
 {', '.join(aspects)}
 
-מערכת סמלים ויזואליים עקביים (Sketchymedical-style) לשימוש בכל הציורים והסרטונים — בכל פעם שמושג מופיע בתוכן, השתמש בסמל הוויזואלי המתאים מהרשימה:
+מערכת סמלים ויזואליים עקביים (Sketchymedical-style). בכל פעם שאחד המושגים האלה מופיע בתוכן — השתמש בסמל הוויזואלי המתאים:
 {symbol_block}
 
-{day_scene}
+{legend_block}
 
 {BILINGUAL_DIRECTIVE}
 
@@ -157,8 +192,8 @@ def build_base_context(day, symbol_block, day_scene):
 - מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר, לקראת בחינת שלב ב'."""
 
 
-def prompt_audio(day, symbol_block, day_scene):
-    base = build_base_context(day, symbol_block, day_scene)
+def prompt_audio(day, symbol_block, legend_block):
+    base = build_base_context(day, symbol_block, legend_block)
     return base + """
 
 צור פודקאסט deep-dive בעברית — כמה שיותר ארוך ומעמיק (--length long).
@@ -167,22 +202,21 @@ def prompt_audio(day, symbol_block, day_scene):
 קלינית ויישום מעשי. אזכור תרופות בשם גנרי באנגלית (לא מסחרי)."""
 
 
-def prompt_video(day, symbol_block, day_scene):
-    base = build_base_context(day, symbol_block, day_scene)
+def prompt_video(day, symbol_block, legend_block):
+    base = build_base_context(day, symbol_block, legend_block)
     return base + """
 
 צור סרטון הסבר באורך כ-10-15 דקות, סגנון whiteboard, בעברית.
-**העלילה**: הסרטון מתרחש ב-DAY SCENE SCRIPT שתואר למעלה — אותם דמויות,
-אותם סמלים, אותה תפאורה. ערוץ את הסיפור כך שהאינפוגרפיקות (שייוצרו בנפרד)
-ייראו כתמונות-מתוך-הסרטון.
 
-כשמופיע D2 → מחסום אדום על מסילה (לא תיאור אחר); כשמופיע ACh → גפרור-עץ
-(אצית); כשמופיע M3 → 3 כוסות תה דולפות של ה-Mad Hatter. אותם סמלים גם
-בסרטון וגם באינפוגרפיקות. הוסף label בולט בכל הופעה של סמל (כמו Sketchymedical)."""
+השתמש בסמלים העקביים מהרשימה: כשמופיע D2 → מחסום אדום עם '2' על המסילה;
+כשמופיע ACh → גפרור-עץ (אצית); כשמופיע M3 → 3 כוסות תה דולפות של ה-Mad Hatter;
+וכן הלאה לפי ה-legend. הוסף תווית קצרה בכל הופעה של סמל (כמו Sketchymedical).
+
+הסרטון עומד בפני עצמו ולא חייב להיראות כמו תמונות סטילס אחרות של היום."""
 
 
-def prompt_infographic(day, symbol_block, day_scene, aspect):
-    base = build_base_context(day, symbol_block, day_scene)
+def prompt_infographic(day, symbol_block, legend_block, aspect):
+    base = build_base_context(day, symbol_block, legend_block)
     aspect_prompts = {
         "dsm_criteria": "התמקד אך ורק בקריטריונים של DSM-5-TR לאבחנה זו. רשימה מסודרת + דוגמאות קליניות.",
         "epidemiology": "התמקד באפידמיולוגיה: prevalence, incidence, חלוקה לפי מין/גיל, גורמי סיכון, גורמים מגנים.",
@@ -214,19 +248,22 @@ def prompt_infographic(day, symbol_block, day_scene, aspect):
         "differential": "התמקד באבחנה מבדלת — מה דומה, איך מבדילים.",
         "emergency_management": "התמקד בניהול המצב החירומי: גישה, תרופות, ניטור.",
     }
-    aspect_he = aspect_prompts.get(aspect, f"התמקד בהיבט: {aspect}")
+    aspect_he = aspect_prompts.get(aspect, f"Focus on aspect: {aspect}")
     return base + f"""
 
-צור אינפוגרפיקה (תמונה אחת) בסגנון sketch-note, בעברית. {aspect_he}
-**תפאורה**: אותה סצינה כמו DAY SCENE SCRIPT — האינפוגרפיקה צריכה להיראות
-כמו תמונה-נייחת מתוך הסרטון של היום (אותם דמויות, אותם סמלים, אותו עולם).
+Aspect focus for this image: {aspect_he}
 
-ממוקד היבט אחד בלבד — לא עמוס. השתמש בסמלים מהרשימה ב-{aspect}. הוסף label
-לכל סמל. כותרת ראשית: '{aspect}' בעברית-אנגלית."""
+Build a Sketchy-style scene that illustrates THIS aspect. The scene must include
+the relevant symbols from the legend above (e.g. if dopamine appears, use the
+DOPA-MINE scene with red-barrier D2 marked '2'; if opioids appear, use the
+dairy farm with the MOO cow and K goat; etc.).
+
+No text labels in the image itself — the explanation goes in the companion
+caption that will be generated alongside this image."""
 
 
-def prompt_study_guide(day, symbol_block, day_scene):
-    base = build_base_context(day, symbol_block, day_scene)
+def prompt_study_guide(day, symbol_block, legend_block):
+    base = build_base_context(day, symbol_block, legend_block)
     return base + """
 
 צור מדריך לימוד מפורט (study guide) בפורמט markdown, בעברית.
@@ -246,8 +283,8 @@ def prompt_study_guide(day, symbol_block, day_scene):
 עמודי מקור: ציון איפה כל פיסת מידע נמצאת ב-DSM/Dulcan/Stahl."""
 
 
-def prompt_flashcards(day, symbol_block, day_scene):
-    base = build_base_context(day, symbol_block, day_scene)
+def prompt_flashcards(day, symbol_block, legend_block):
+    base = build_base_context(day, symbol_block, legend_block)
     return base + """
 
 צור סט כרטיסיות שינון — שאלה + תשובה — לכיסוי high-yield של היום.
@@ -256,13 +293,13 @@ def prompt_flashcards(day, symbol_block, day_scene):
 נוכל להציג לצידה את האינפוגרפיקה הרלוונטית של אותו aspect."""
 
 
-def prompt_quiz(day, symbol_block, day_scene):
-    base = build_base_context(day, symbol_block, day_scene)
+def prompt_quiz(day, symbol_block, legend_block):
+    base = build_base_context(day, symbol_block, legend_block)
     return base + """
 
 צור קוויז של 8-10 שאלות. סוג שאלות: vignette קליני קצר + multiple choice
 (4 אופציות + הסבר). רמה: בחינת שלב ב'. דגש על אבחנה מבדלת, סיבוכים נדירים,
-ניהול ב-vignette. כל הסבר תשובה מתייחס לסמלים מ-DAY SCENE."""
+ניהול ב-vignette."""
 
 
 # ── notebooklm CLI helpers ──────────────────────────────────────────────────
@@ -383,8 +420,67 @@ def start_infographic(prompt):
 
 
 def start_report(prompt):
+    # DEPRECATED: notebooklm generate report uses a template that ignores the
+    # prompt and picks its own topic (usually the largest source). We now use
+    # ask_study_guide() instead, which is synchronous and honors the prompt.
     r = nb_run(["generate", "report", prompt, "--format", "study-guide", "--language", "he", "--json"], timeout=120)
     return _extract_task_id(r, "report")
+
+
+def ask_study_guide(day, symbol_block, legend_block, out_path):
+    """Generate a focused study guide via 'notebooklm ask' that honors the
+    day's specific topic AND includes page references to source books."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    aspects = day.get("aspects", [])
+    focus = day.get("prompt_focus", "")
+
+    prompt = f"""צור מדריך לימוד מקיף, ממוקד ומובנה בעברית עבור הנושא של היום הזה בלבד.
+
+נושא היום: {title_he}
+
+מיקוד: {focus}
+
+מבנה המדריך (מודולים מסודרים):
+
+# מדריך לימוד יום זה: {title_he}
+
+## 0. מפת המקורות (CRITICAL — page references)
+טבלה: לכל סעיף ב-מדריך, ציין באיזה ספר וב-איזה עמוד נמצא החומר.
+פורמט:
+| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | Stahl Essential עמ' | Stahl Pediatric עמ' | סילבוס עמ' |
+
+## 1. מבוא + הגדרה
+## 2. {aspects[0] if len(aspects) > 0 else 'קריטריונים'}
+## 3. {aspects[1] if len(aspects) > 1 else 'אפידמיולוגיה'}
+## 4. {aspects[2] if len(aspects) > 2 else 'אטיולוגיה'}
+## 5. {aspects[3] if len(aspects) > 3 else 'טיפול'}
+{chr(10).join(f'## {6+i}. {a}' for i, a in enumerate(aspects[4:]))}
+## נקודות high-yield לבחינה
+## סיכום מבני
+
+**הוראות מחייבות**:
+- שפה: עברית לכל הסבר. אנגלית רק לשמות תרופות גנריים, קולטנים (D2, 5-HT2A...), מונחים קליניים (EPS, NMS, SSRI), וקיצורי DSM/ICD.
+- **לכל פיסת מידע ציין עמוד מקור בסוגריים**: "(DSM p.347)" או "(Dulcan ch.7 p.412)".
+- אורך: 2000-4000 מילים. ממוקד מהותית בנושא היום, לא סקירה כללית.
+- אסמכתאות: מבוסס אך ורק על המקורות במחברת. אל תמציא עמודים — אם לא מצאת, ציין "(מקור: סילבוס/הקשר רחב)".
+- הסתמך על: DSM-5-TR, Dulcan's Textbook of Child and Adolescent Psychiatry 3e, Stahl's Essential Psychopharmacology, Stahl's Children & Adolescents Prescriber's Guide, ו-הסילבוס הרשמי."""
+
+    r = nb_run(["ask", prompt, "--json"], timeout=900)
+    if r.returncode != 0:
+        print(f"  ⚠ ask study_guide failed: {r.stderr[:200]}")
+        return False
+    try:
+        resp = json.loads(r.stdout)
+        answer = resp.get("answer", "")
+    except Exception as e:
+        print(f"  ⚠ parse study_guide failed: {e}")
+        return False
+    if not answer:
+        return False
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(answer, encoding="utf-8")
+    return out_path.exists() and out_path.stat().st_size > 0
 
 
 def start_flashcards(prompt):
@@ -524,12 +620,15 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
 
     # Build symbol descriptions for prompts
     symbol_block = collect_symbol_descriptions(day.get("symbols_needed", []), symbols)
-    day_scene = build_day_scene(day, symbols)
+    legend_block = build_symbol_legend(day, symbols)
+    caption_legend = build_caption_legend(day, symbols)
 
     if dry_run:
-        print("[DRY RUN] Skipping NotebookLM API calls.")
-        print("=== DAY SCENE PREVIEW ===")
-        print(day_scene)
+        print("[DRY RUN] Skipping NotebookLM + Gemini API calls.")
+        print("=== SYMBOL LEGEND PREVIEW ===")
+        print(legend_block)
+        print("\n=== CAPTION LEGEND PREVIEW ===")
+        print(caption_legend)
         return None
 
     # === Per-day notebook architecture ===
@@ -572,51 +671,101 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # Pick which aspects get their own infographic
     infographic_aspects = day.get("aspects", [])[:n_infographics]
 
-    # Fire off all artifacts (space out launches to reduce throttling)
+    # Fire off ALL NotebookLM artifacts: audio, video, report, flashcards, quiz,
+    # plus the standard NotebookLM infographics (kept — user wants both styles).
     task_ids = {}
-    print("Starting artifacts...")
-    task_ids["audio"] = start_audio(prompt_audio(day, symbol_block, day_scene))
+    print("Starting NotebookLM artifacts...")
+    task_ids["audio"] = start_audio(prompt_audio(day, symbol_block, legend_block))
     print(f"  audio: {task_ids['audio']}")
     time.sleep(15)
-    task_ids["video"] = start_video(prompt_video(day, symbol_block, day_scene))
+    task_ids["video"] = start_video(prompt_video(day, symbol_block, legend_block))
     print(f"  video: {task_ids['video']}")
     time.sleep(15)
-    task_ids["report"] = start_report(prompt_study_guide(day, symbol_block, day_scene))
-    print(f"  report: {task_ids['report']}")
-    time.sleep(15)
-    task_ids["flashcards"] = start_flashcards(prompt_flashcards(day, symbol_block, day_scene))
+    task_ids["flashcards"] = start_flashcards(prompt_flashcards(day, symbol_block, legend_block))
     print(f"  flashcards: {task_ids['flashcards']}")
     time.sleep(15)
-    task_ids["quiz"] = start_quiz(prompt_quiz(day, symbol_block, day_scene))
+    task_ids["quiz"] = start_quiz(prompt_quiz(day, symbol_block, legend_block))
     print(f"  quiz: {task_ids['quiz']}")
 
     for i, aspect in enumerate(infographic_aspects):
         time.sleep(15)
-        tid = start_infographic(prompt_infographic(day, symbol_block, day_scene, aspect))
+        tid = start_infographic(prompt_infographic(day, symbol_block, legend_block, aspect))
         task_ids[f"infographic_{aspect}"] = tid
         print(f"  infographic_{aspect}: {tid}")
 
+    # Synchronous: generate the study guide via 'ask' (NOT generate report —
+    # that ignores the prompt and picks its own topic). The ask format honors
+    # our day-specific prompt AND we ask for page references.
+    print("\nGenerating focused study guide (ask + page refs)...")
+    study_guide_path = day_dir / "study_guide.md"
+    if ask_study_guide(day, symbol_block, legend_block, study_guide_path):
+        size_kb = study_guide_path.stat().st_size / 1024
+        print(f"  ✓ study_guide.md ({size_kb:.1f} KB)")
+    else:
+        print("  ✗ study guide generation failed")
+        study_guide_path = None
+
+    # Generate Sketchy-style scenes via Gemini (image + Hebrew narrative caption,
+    # one .png + one .txt per aspect). Phase palette is injected automatically.
+    gemini_images = []  # list of (aspect, png_path, txt_path)
+    if HAS_GEMINI:
+        phase = day.get("phase")
+        print(f"\nGenerating {len(infographic_aspects)} Sketchy scene(s) via Gemini (phase {phase})...")
+        for aspect in infographic_aspects:
+            png_path = day_dir / f"sketchy_{aspect}.png"
+            txt_path = day_dir / f"sketchy_{aspect}.txt"
+            prompt = prompt_infographic(day, symbol_block, legend_block, aspect)
+            print(f"  sketchy_{aspect}: generating image + caption...")
+            ok, caption = gemini_generate(
+                prompt=prompt,
+                output_path=png_path,
+                caption_path=txt_path,
+                symbol_legend=caption_legend,
+                phase=phase,
+            )
+            if ok:
+                size_mb = png_path.stat().st_size / (1024 * 1024)
+                cap_kb = (txt_path.stat().st_size / 1024) if txt_path.exists() else 0
+                print(f"    [OK] {png_path.name} ({size_mb:.1f} MB) + caption ({cap_kb:.1f} KB)")
+                gemini_images.append((aspect, png_path, txt_path if txt_path.exists() else None))
+            else:
+                print(f"    [FAIL] Gemini generation failed for sketchy_{aspect}")
+    else:
+        print("[!] gemini_image module unavailable; skipping Sketchy scenes.")
+
     task_ids = {k: v for k, v in task_ids.items() if v}
-    print(f"\n{len(task_ids)} artifacts launched. Waiting...\n")
+    print(f"\n{len(task_ids)} NotebookLM artifacts launched. Waiting...\n")
 
     # Wait
     results = wait_for_artifacts({tid: kind for kind, tid in task_ids.items()})
 
-    # Download
+    # Download all NotebookLM artifacts (incl. infographics)
     assets = []
     for aid, (kind, status, art) in results.items():
         if status != "completed":
             print(f"  ✗ {kind} skipped ({status})")
             continue
-        ext = {"audio": "mp3", "video": "mp4", "infographic": "png", "report": "md", "flashcards": "json", "quiz": "json"}.get(kind.split("_")[0], "bin")
-        suffix = "" if kind == kind.split("_")[0] else f"_{kind.split('_', 1)[1]}"
-        out_path = day_dir / f"{kind.split('_')[0]}{suffix}.{ext}"
-        if download_artifact(kind.split("_")[0], aid, out_path):
+        ext_map = {"audio": "mp3", "video": "mp4", "infographic": "png", "report": "md", "flashcards": "json", "quiz": "json"}
+        base_kind = kind.split("_")[0]
+        ext = ext_map.get(base_kind, "bin")
+        suffix = "" if kind == base_kind else f"_{kind.split('_', 1)[1]}"
+        out_path = day_dir / f"{base_kind}{suffix}.{ext}"
+        if download_artifact(base_kind, aid, out_path):
             size_mb = out_path.stat().st_size / (1024 * 1024)
             print(f"  ✓ {out_path.name} ({size_mb:.1f} MB)")
             assets.append(out_path)
         else:
             print(f"  ✗ download failed: {kind}")
+
+    # Include Gemini Sketchy scenes (image + caption .txt — both go to Release)
+    for aspect, png_path, txt_path in gemini_images:
+        assets.append(png_path)
+        if txt_path:
+            assets.append(txt_path)
+
+    # Include the focused study guide (from ask, not generate report)
+    if study_guide_path and study_guide_path.exists():
+        assets.append(study_guide_path)
 
     if not assets:
         print("⚠ No assets downloaded. Aborting release.")
