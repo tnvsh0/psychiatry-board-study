@@ -358,7 +358,7 @@ def add_text_source(nb_id, content, title):
     r = nb_run(["source", "add", tmp_path, "--title", title, "--json", "-n", nb_id], timeout=180)
     Path(tmp_path).unlink(missing_ok=True)
     if r.returncode != 0:
-        print(f"  ⚠ source add failed: {r.stderr[:200]}")
+        print(f"  [!] source add failed: {r.stderr[:200]}")
         return None
     try:
         data = json.loads(r.stdout.strip())
@@ -397,13 +397,13 @@ Length: long and thorough — 3000-6000 words. This is study material, not a sum
     print("  Extracting comprehensive content from main notebook (this may take 3-5 min)...")
     r = nb_run(["ask", extraction_prompt, "--json"], timeout=600)
     if r.returncode != 0:
-        print(f"  ⚠ extraction ask failed: {r.stderr[:200]}")
+        print(f"  [!] extraction ask failed: {r.stderr[:200]}")
         return None
     try:
         resp = json.loads(r.stdout)
         return resp.get("answer", "")
     except Exception as e:
-        print(f"  ⚠ extraction parse failed: {e}")
+        print(f"  [!] extraction parse failed: {e}")
         return None
 
 
@@ -471,13 +471,13 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 
     r = nb_run(["ask", prompt, "--json"], timeout=900)
     if r.returncode != 0:
-        print(f"  ⚠ ask study_guide failed: {r.stderr[:200]}")
+        print(f"  [!] ask study_guide failed: {r.stderr[:200]}")
         return False
     try:
         resp = json.loads(r.stdout)
         answer = resp.get("answer", "")
     except Exception as e:
-        print(f"  ⚠ parse study_guide failed: {e}")
+        print(f"  [!] parse study_guide failed: {e}")
         return False
     if not answer:
         return False
@@ -499,13 +499,13 @@ def start_quiz(prompt):
 
 def _extract_task_id(r, kind):
     if r.returncode != 0:
-        print(f"  ⚠ start {kind} failed (exit {r.returncode}): {r.stderr[:200]}")
+        print(f"  [!] start {kind} failed (exit {r.returncode}): {r.stderr[:200]}")
         return None
     try:
         out = json.loads(r.stdout.strip())
         return out.get("task_id") or out.get("artifact_id") or out.get("id")
     except Exception as e:
-        print(f"  ⚠ parse {kind} output failed: {e}; raw: {r.stdout[:200]}")
+        print(f"  [!] parse {kind} output failed: {e}; raw: {r.stdout[:200]}")
         return None
 
 
@@ -542,7 +542,7 @@ def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
                     del pending[aid]
 
     if pending:
-        print(f"  ⚠ Timed out for: {list(pending.values())}")
+        print(f"  [!] Timed out for: {list(pending.values())}")
         for aid, kind in pending.items():
             results[aid] = (kind, "timeout", None)
     return results
@@ -644,7 +644,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         # 2. Extract focused content from MAIN notebook
         extract_md = extract_day_content_from_main(day, symbol_block, NOTEBOOK_ID)
         if not extract_md:
-            print("⚠ Could not extract content from main notebook. Aborting.")
+            print("[!] Could not extract content from main notebook. Aborting.")
             return None
         print(f"  Extracted {len(extract_md)} characters of source material.")
 
@@ -657,7 +657,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         source_title = f"Day {day_index} — Source material (extracted from DSM/Dulcan/Stahl)"
         src_id = add_text_source(day_nb_id, extract_md, source_title)
         if not src_id:
-            print("⚠ Could not add source. Aborting.")
+            print("[!] Could not add source. Aborting.")
             return None
         print(f"  Added source: {src_id}")
 
@@ -704,9 +704,9 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     study_guide_path = day_dir / "study_guide.md"
     if ask_study_guide(day, symbol_block, legend_block, study_guide_path):
         size_kb = study_guide_path.stat().st_size / 1024
-        print(f"  ✓ study_guide.md ({size_kb:.1f} KB)")
+        print(f"  [OK] study_guide.md ({size_kb:.1f} KB)")
     else:
-        print("  ✗ study guide generation failed")
+        print("  [X] study guide generation failed")
         study_guide_path = None
 
     # Generate Sketchy-style scenes via Gemini (image + Hebrew narrative caption,
@@ -747,7 +747,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     assets = []
     for aid, (kind, status, art) in results.items():
         if status != "completed":
-            print(f"  ✗ {kind} skipped ({status})")
+            print(f"  [X] {kind} skipped ({status})")
             continue
         ext_map = {"audio": "mp3", "video": "mp4", "infographic": "png", "report": "md", "flashcards": "json", "quiz": "json"}
         base_kind = kind.split("_")[0]
@@ -756,10 +756,10 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         out_path = day_dir / f"{base_kind}{suffix}.{ext}"
         if download_artifact(base_kind, aid, out_path):
             size_mb = out_path.stat().st_size / (1024 * 1024)
-            print(f"  ✓ {out_path.name} ({size_mb:.1f} MB)")
+            print(f"  [OK] {out_path.name} ({size_mb:.1f} MB)")
             assets.append(out_path)
         else:
-            print(f"  ✗ download failed: {kind}")
+            print(f"  [X] download failed: {kind}")
 
     # Include Gemini Sketchy scenes (image + caption .txt — both go to Release)
     for aspect, png_path, txt_path in gemini_images:
@@ -772,7 +772,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         assets.append(study_guide_path)
 
     if not assets:
-        print("⚠ No assets downloaded. Aborting release.")
+        print("[!] No assets downloaded. Aborting release.")
         return None
 
     # Upload to GitHub Release
