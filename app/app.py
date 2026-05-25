@@ -363,30 +363,34 @@ def render_day_page(day, symbols, progress, palette):
             caption_name = f"sketchy_{aspect}.txt"
             caption_url = assets.get(caption_name)
 
-            with st.container():
-                img_col, txt_col = st.columns([1, 1])
-                with img_col:
-                    st.markdown(f"**{aspect}**")
-                    local_img = fetch_asset_local(name, assets[name])
-                    if local_img:
-                        st.image(local_img, use_container_width=True)
-                    else:
-                        st.warning(f"לא הצלחתי לטעון את התמונה {name}.")
-                with txt_col:
-                    if caption_url:
-                        caption_text = fetch_text(caption_url)
-                        if caption_text:
-                            st.markdown(
-                                f'<div dir="rtl" style="text-align: right; '
-                                f'font-size: 1.0em; line-height: 1.65; padding: 6px 4px;">'
-                                f'{caption_text}</div>',
-                                unsafe_allow_html=True,
-                            )
-                        else:
-                            st.caption("(לא הצלחתי לטעון את הקפסולה)")
-                    else:
-                        st.caption("(אין קפסולת הסבר לתמונה זו)")
-                st.divider()
+            st.markdown(f"#### {aspect}")
+            # Image — full width, centered. Limit displayed width so it doesn't
+            # become huge on wide screens.
+            local_img = fetch_asset_local(name, assets[name])
+            if local_img:
+                left, mid, right = st.columns([1, 4, 1])
+                with mid:
+                    st.image(local_img, use_container_width=True)
+            else:
+                st.warning(f"לא הצלחתי לטעון את התמונה {name}.")
+
+            # Caption — below the image, RTL Hebrew narrative
+            if caption_url:
+                caption_text = fetch_text(caption_url)
+                if caption_text:
+                    st.markdown(
+                        f'<div dir="rtl" style="text-align: right; '
+                        f'font-size: 1.05em; line-height: 1.75; padding: 12px 20px; '
+                        f'background: rgba(0,0,0,0.02); border-right: 3px solid #ccc; '
+                        f'margin: 8px 0;">'
+                        f'{caption_text}</div>',
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    st.caption("(לא הצלחתי לטעון את הקפסולה)")
+            else:
+                st.caption("(אין קפסולת הסבר לתמונה זו)")
+            st.divider()
 
     # Standard infographics (NotebookLM) — structured reference
     infographics = sorted(k for k in assets if k.startswith("infographic_") and k.endswith(".png"))
@@ -418,7 +422,7 @@ def render_day_page(day, symbols, progress, palette):
             else:
                 st.warning("לא הצלחתי לטעון את מדריך הלימוד.")
 
-    # Flashcards
+    # Flashcards — interactive deck with reveal-to-flip
     flashcards_url = assets.get("flashcards.json")
     if flashcards_url:
         with st.expander("🃏 כרטיסיות שינון", expanded=False):
@@ -431,31 +435,57 @@ def render_day_page(day, symbols, progress, palette):
                 except Exception as e:
                     st.error(f"שגיאת פירוש JSON: {e}")
                     cards = None
-                # Try to detect structure
-                if isinstance(cards, dict) and "flashcards" in cards:
-                    cards = cards["flashcards"]
-                elif isinstance(cards, dict) and "cards" in cards:
-                    cards = cards["cards"]
-                if isinstance(cards, list):
-                    st.write(f"**{len(cards)} כרטיסיות**")
-                    for i, c in enumerate(cards):
-                        q = c.get("question") or c.get("front") or c.get("q", "")
-                        a = c.get("answer") or c.get("back") or c.get("a", "")
-                        aspect = c.get("aspect", "")
-                        with st.expander(f"כרטיסיה {i+1}: {q[:70]}" + (f" ({aspect})" if aspect else "")):
-                            st.markdown(f"**ש:** {q}")
-                            st.markdown(f"**ת:** {a}")
-                            # Pair with infographic if aspect matches
-                            if aspect and infographics:
-                                matching = [n for n in infographics if aspect in n]
-                                if matching:
-                                    local_img = fetch_asset_local(matching[0], assets[matching[0]])
-                                    if local_img:
-                                        st.image(local_img, caption=f"קישור ויזואלי: {aspect}")
+                # Normalize structure
+                if isinstance(cards, dict):
+                    cards = cards.get("cards") or cards.get("flashcards") or cards.get("items") or []
+                if isinstance(cards, list) and cards:
+                    # Init session state for current card index
+                    state_key = f"fc_idx_d{idx}"
+                    reveal_key = f"fc_rev_d{idx}"
+                    if state_key not in st.session_state:
+                        st.session_state[state_key] = 0
+                    if reveal_key not in st.session_state:
+                        st.session_state[reveal_key] = False
+
+                    i = st.session_state[state_key] % len(cards)
+                    c = cards[i]
+                    q = c.get("front") or c.get("question") or c.get("q", "")
+                    a = c.get("back") or c.get("answer") or c.get("a", "")
+
+                    st.caption(f"כרטיסיה {i+1} / {len(cards)}")
+                    # The card itself
+                    side = "תשובה" if st.session_state[reveal_key] else "שאלה"
+                    body = a if st.session_state[reveal_key] else q
+                    st.markdown(
+                        f'<div dir="rtl" style="text-align: right; min-height: 120px; '
+                        f'padding: 24px; border: 2px solid #ccc; border-radius: 12px; '
+                        f'background: rgba(0,0,0,0.03); font-size: 1.15em; line-height: 1.6;">'
+                        f'<div style="color:#888; font-size:0.85em; margin-bottom:10px;">{side}</div>'
+                        f'{body}</div>',
+                        unsafe_allow_html=True,
+                    )
+
+                    # Controls
+                    c1, c2, c3 = st.columns([1, 1, 1])
+                    with c1:
+                        if st.button("⏮ קודמת", key=f"fc_prev_d{idx}"):
+                            st.session_state[state_key] = (i - 1) % len(cards)
+                            st.session_state[reveal_key] = False
+                            st.rerun()
+                    with c2:
+                        label = "🙈 הסתר תשובה" if st.session_state[reveal_key] else "👁 חשוף תשובה"
+                        if st.button(label, key=f"fc_flip_d{idx}", type="primary"):
+                            st.session_state[reveal_key] = not st.session_state[reveal_key]
+                            st.rerun()
+                    with c3:
+                        if st.button("הבאה ⏭", key=f"fc_next_d{idx}"):
+                            st.session_state[state_key] = (i + 1) % len(cards)
+                            st.session_state[reveal_key] = False
+                            st.rerun()
                 elif cards is not None:
                     st.json(cards)
 
-    # Quiz
+    # Quiz — handles NotebookLM's answerOptions structure
     quiz_url = assets.get("quiz.json")
     if quiz_url:
         with st.expander("❓ קוויז", expanded=False):
@@ -468,30 +498,68 @@ def render_day_page(day, symbols, progress, palette):
                 except Exception as e:
                     st.error(f"שגיאת פירוש JSON: {e}")
                     quiz = None
-                if isinstance(quiz, dict) and "questions" in quiz:
-                    quiz = quiz["questions"]
-                if isinstance(quiz, list):
+                # Normalize: NotebookLM returns {title, questions: [...]}
+                if isinstance(quiz, dict):
+                    quiz = quiz.get("questions") or quiz.get("items") or []
+                if isinstance(quiz, list) and quiz:
                     st.write(f"**{len(quiz)} שאלות**")
                     for i, q in enumerate(quiz):
                         qtext = q.get("question") or q.get("q", "")
-                        choices = q.get("choices") or q.get("options") or []
-                        correct = q.get("correct") or q.get("answer", "")
-                        expl = q.get("explanation") or q.get("rationale", "")
-                        st.markdown(f"**שאלה {i+1}**: {qtext}")
-                        if isinstance(choices, list):
-                            user_pick = st.radio(
-                                "תשובה",
-                                choices,
-                                key=f"quiz_d{idx}_q{i}",
-                                label_visibility="collapsed",
-                            )
-                            if st.button("בדוק", key=f"check_d{idx}_q{i}"):
-                                if user_pick == correct or (isinstance(correct, int) and choices.index(user_pick) == correct):
+                        # NotebookLM format: answerOptions: [{text, isCorrect, rationale}]
+                        ao = q.get("answerOptions") or q.get("options") or q.get("choices") or []
+                        # Build a uniform [(text, is_correct, rationale)] list
+                        opts = []
+                        if ao and isinstance(ao[0], dict):
+                            for o in ao:
+                                opts.append((
+                                    o.get("text") or o.get("label", ""),
+                                    bool(o.get("isCorrect")),
+                                    o.get("rationale") or o.get("explanation", ""),
+                                ))
+                        elif ao and isinstance(ao[0], str):
+                            # Plain string list — separate 'correct' field
+                            correct = q.get("correct") or q.get("answer", "")
+                            for j, txt in enumerate(ao):
+                                is_corr = (txt == correct) or (isinstance(correct, int) and j == correct)
+                                opts.append((txt, is_corr, ""))
+
+                        st.markdown(
+                            f'<div dir="rtl" style="text-align:right; font-size:1.05em; '
+                            f'margin: 14px 0 6px 0;"><b>שאלה {i+1}:</b> {qtext}</div>',
+                            unsafe_allow_html=True,
+                        )
+
+                        if not opts:
+                            st.caption("(אין אפשרויות תשובה — בדוק את מבנה ה-JSON)")
+                            st.divider()
+                            continue
+
+                        labels = [o[0] for o in opts]
+                        user_pick = st.radio(
+                            "תשובה",
+                            labels,
+                            key=f"quiz_d{idx}_q{i}",
+                            label_visibility="collapsed",
+                            index=None,
+                        )
+                        if st.button("בדוק", key=f"check_d{idx}_q{i}"):
+                            if user_pick is None:
+                                st.warning("בחר תשובה לפני שלוחצים 'בדוק'.")
+                            else:
+                                chosen_idx = labels.index(user_pick)
+                                chosen_text, is_correct, chosen_rationale = opts[chosen_idx]
+                                # Find the correct option (for showing if user was wrong)
+                                correct_tuple = next((o for o in opts if o[1]), None)
+                                if is_correct:
                                     st.success("✅ נכון!")
+                                    if chosen_rationale:
+                                        st.info(f"💡 {chosen_rationale}")
                                 else:
-                                    st.error(f"❌ שגיאה. התשובה: {correct}")
-                                if expl:
-                                    st.info(f"💡 {expl}")
+                                    st.error(f"❌ שגיאה. התשובה הנכונה: **{correct_tuple[0] if correct_tuple else '?'}**")
+                                    if chosen_rationale:
+                                        st.caption(f"למה הבחירה שלך לא נכונה: {chosen_rationale}")
+                                    if correct_tuple and correct_tuple[2]:
+                                        st.info(f"💡 למה זה הנכון: {correct_tuple[2]}")
                         st.divider()
                 elif quiz is not None:
                     st.json(quiz)
