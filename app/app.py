@@ -16,8 +16,10 @@ Data sources:
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
+import tempfile
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -102,9 +104,12 @@ def phase_entry(phase: int, palette: dict) -> dict:
 
 @st.cache_data(ttl=300)
 def fetch_text(url: str) -> str:
-    """Fetch a text file (used for sketchy captions). Empty string on failure."""
+    """Fetch a release-asset text file with Bearer auth (private repo).
+    Returns empty string on failure."""
+    if not url:
+        return ""
     try:
-        r = requests.get(url, timeout=15)
+        r = requests.get(url, headers=_octet_headers(), timeout=30, allow_redirects=True)
         if r.ok:
             return r.text
     except Exception:
@@ -159,7 +164,12 @@ def save_progress(progress: dict) -> bool:
 
 @st.cache_data(ttl=300)
 def get_release_assets(tag: str) -> dict | None:
-    """Fetch release assets for a given day tag. Returns {asset_name: url}."""
+    """Fetch release assets for a given day tag.
+
+    Returns {asset_name: asset_api_url}. We use the GH API 'url' field rather
+    than 'browser_download_url' so private-repo assets can be downloaded with
+    a Bearer token via Accept: application/octet-stream.
+    """
     headers = {"Accept": "application/vnd.github+json"}
     if GITHUB_TOKEN:
         headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
@@ -167,7 +177,45 @@ def get_release_assets(tag: str) -> dict | None:
     if r.status_code != 200:
         return None
     data = r.json()
-    return {a["name"]: a["browser_download_url"] for a in data.get("assets", [])}
+    return {a["name"]: a["url"] for a in data.get("assets", [])}
+
+
+# Cache directory for downloaded assets — keep them between page reloads
+ASSET_CACHE_DIR = Path(tempfile.gettempdir()) / "psychiatry_streamlit_assets"
+ASSET_CACHE_DIR.mkdir(exist_ok=True)
+
+
+def _octet_headers() -> dict:
+    """Bearer-auth headers for downloading a single asset binary."""
+    h = {"Accept": "application/octet-stream"}
+    if GITHUB_TOKEN:
+        h["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+    return h
+
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_asset_local(asset_name: str, asset_url: str) -> str | None:
+    """Download a release asset to a local cache file. Returns the local path
+    as a string for use with st.audio / st.video / st.image. Returns None on
+    failure. Cached for an hour by Streamlit; the file itself stays on disk
+    until the OS cleans /tmp."""
+    if not asset_url:
+        return None
+    cache_key = hashlib.sha1(asset_url.encode("utf-8")).hexdigest()[:16] + "_" + asset_name
+    local_path = ASSET_CACHE_DIR / cache_key
+    if local_path.exists() and local_path.stat().st_size > 0:
+        return str(local_path)
+    try:
+        with requests.get(asset_url, headers=_octet_headers(), timeout=180, stream=True, allow_redirects=True) as r:
+            if not r.ok:
+                return None
+            with open(local_path, "wb") as f:
+                for chunk in r.iter_content(chunk_size=65536):
+                    if chunk:
+                        f.write(chunk)
+        return str(local_path) if local_path.stat().st_size > 0 else None
+    except Exception:
+        return None
 
 
 def slugify(text: str) -> str:
@@ -290,15 +338,21 @@ def render_day_page(day, symbols, progress, palette):
     audio_url = assets.get("audio.mp3")
     if audio_url:
         st.markdown("### 🎙 פודקאסט")
-        st.audio(audio_url)
-        st.caption(f"[הורד MP3]({audio_url})")
+        local = fetch_asset_local("audio.mp3", audio_url)
+        if local:
+            st.audio(local)
+        else:
+            st.warning("לא הצלחתי לטעון את האודיו (בעיית הרשאה?).")
 
     # Video
     video_url = assets.get("video.mp4")
     if video_url:
         st.markdown("### 🎬 וידאו")
-        st.video(video_url)
-        st.caption(f"[הורד MP4]({video_url})")
+        local = fetch_asset_local("video.mp4", video_url)
+        if local:
+            st.video(local)
+        else:
+            st.warning("לא הצלחתי לטעון את הוידאו (בעיית הרשאה?).")
 
     # Sketchy scenes (Gemini) — primary visual mnemonic + Hebrew narrative caption
     sketchy_images = sorted(k for k in assets if k.startswith("sketchy_") and k.endswith(".png"))
@@ -313,7 +367,11 @@ def render_day_page(day, symbols, progress, palette):
                 img_col, txt_col = st.columns([1, 1])
                 with img_col:
                     st.markdown(f"**{aspect}**")
-                    st.image(assets[name], use_container_width=True)
+                    local_img = fetch_asset_local(name, assets[name])
+                    if local_img:
+                        st.image(local_img, use_container_width=True)
+                    else:
+                        st.warning(f"לא הצלחתי לטעון את התמונה {name}.")
                 with txt_col:
                     if caption_url:
                         caption_text = fetch_text(caption_url)
@@ -325,8 +383,7 @@ def render_day_page(day, symbols, progress, palette):
                                 unsafe_allow_html=True,
                             )
                         else:
-                            st.caption(f"(לא הצלחתי לטעון את הקפסולה)")
-                            st.markdown(f"[פתח טקסט]({caption_url})")
+                            st.caption("(לא הצלחתי לטעון את הקפסולה)")
                     else:
                         st.caption("(אין קפסולת הסבר לתמונה זו)")
                 st.divider()
@@ -340,7 +397,11 @@ def render_day_page(day, symbols, progress, palette):
             with cols[i % len(cols)]:
                 aspect = name.replace("infographic_", "").replace(".png", "")
                 st.markdown(f"**{aspect}**")
-                st.image(assets[name])
+                local_img = fetch_asset_local(name, assets[name])
+                if local_img:
+                    st.image(local_img)
+                else:
+                    st.caption("(לא הצלחתי לטעון)")
 
     # Study guide — prefer the new focused study_guide.md (from ask),
     # fall back to legacy report.md (from old generate report)
@@ -348,94 +409,92 @@ def render_day_page(day, symbols, progress, palette):
     sg_label = "📖 מדריך לימוד ממוקד (עם הפניות לעמודי המקור)" if assets.get("study_guide.md") else "📖 מדריך לימוד (legacy)"
     if sg_url:
         with st.expander(sg_label, expanded=True):
-            try:
-                r = requests.get(sg_url, timeout=15)
-                if r.ok:
-                    # Render with explicit RTL wrapper so Hebrew flows correctly
-                    st.markdown(
-                        f'<div dir="rtl" style="text-align: right; font-size: 1.05em; line-height: 1.7;">\n\n{r.text}\n\n</div>',
-                        unsafe_allow_html=True,
-                    )
-                    st.divider()
-                    st.caption(f"[הורד MD]({sg_url})")
-                else:
-                    st.markdown(f"[פתח study guide]({sg_url})")
-            except Exception:
-                st.markdown(f"[פתח study guide]({sg_url})")
+            sg_text = fetch_text(sg_url)
+            if sg_text:
+                st.markdown(
+                    f'<div dir="rtl" style="text-align: right; font-size: 1.05em; line-height: 1.7;">\n\n{sg_text}\n\n</div>',
+                    unsafe_allow_html=True,
+                )
+            else:
+                st.warning("לא הצלחתי לטעון את מדריך הלימוד.")
 
     # Flashcards
     flashcards_url = assets.get("flashcards.json")
     if flashcards_url:
         with st.expander("🃏 כרטיסיות שינון", expanded=False):
-            try:
-                r = requests.get(flashcards_url, timeout=15)
-                if r.ok:
-                    cards = r.json()
-                    # Try to detect structure
-                    if isinstance(cards, dict) and "flashcards" in cards:
-                        cards = cards["flashcards"]
-                    elif isinstance(cards, dict) and "cards" in cards:
-                        cards = cards["cards"]
-                    if isinstance(cards, list):
-                        st.write(f"**{len(cards)} כרטיסיות**")
-                        for i, c in enumerate(cards):
-                            q = c.get("question") or c.get("front") or c.get("q", "")
-                            a = c.get("answer") or c.get("back") or c.get("a", "")
-                            aspect = c.get("aspect", "")
-                            with st.expander(f"כרטיסיה {i+1}: {q[:70]}" + (f" ({aspect})" if aspect else "")):
-                                st.markdown(f"**ש:** {q}")
-                                st.markdown(f"**ת:** {a}")
-                                # Pair with infographic if aspect matches
-                                if aspect and infographics:
-                                    matching = [n for n in infographics if aspect in n]
-                                    if matching:
-                                        st.image(assets[matching[0]], caption=f"קישור ויזואלי: {aspect}")
-                    else:
-                        st.json(cards)
-                else:
-                    st.markdown(f"[פתח flashcards.json]({flashcards_url})")
-            except Exception as e:
-                st.error(f"שגיאת טעינת כרטיסיות: {e}")
-                st.markdown(f"[פתח flashcards.json]({flashcards_url})")
+            raw = fetch_text(flashcards_url)
+            if not raw:
+                st.warning("לא הצלחתי לטעון את הכרטיסיות.")
+            else:
+                try:
+                    cards = json.loads(raw)
+                except Exception as e:
+                    st.error(f"שגיאת פירוש JSON: {e}")
+                    cards = None
+                # Try to detect structure
+                if isinstance(cards, dict) and "flashcards" in cards:
+                    cards = cards["flashcards"]
+                elif isinstance(cards, dict) and "cards" in cards:
+                    cards = cards["cards"]
+                if isinstance(cards, list):
+                    st.write(f"**{len(cards)} כרטיסיות**")
+                    for i, c in enumerate(cards):
+                        q = c.get("question") or c.get("front") or c.get("q", "")
+                        a = c.get("answer") or c.get("back") or c.get("a", "")
+                        aspect = c.get("aspect", "")
+                        with st.expander(f"כרטיסיה {i+1}: {q[:70]}" + (f" ({aspect})" if aspect else "")):
+                            st.markdown(f"**ש:** {q}")
+                            st.markdown(f"**ת:** {a}")
+                            # Pair with infographic if aspect matches
+                            if aspect and infographics:
+                                matching = [n for n in infographics if aspect in n]
+                                if matching:
+                                    local_img = fetch_asset_local(matching[0], assets[matching[0]])
+                                    if local_img:
+                                        st.image(local_img, caption=f"קישור ויזואלי: {aspect}")
+                elif cards is not None:
+                    st.json(cards)
 
     # Quiz
     quiz_url = assets.get("quiz.json")
     if quiz_url:
         with st.expander("❓ קוויז", expanded=False):
-            try:
-                r = requests.get(quiz_url, timeout=15)
-                if r.ok:
-                    quiz = r.json()
-                    if isinstance(quiz, dict) and "questions" in quiz:
-                        quiz = quiz["questions"]
-                    if isinstance(quiz, list):
-                        st.write(f"**{len(quiz)} שאלות**")
-                        for i, q in enumerate(quiz):
-                            qtext = q.get("question") or q.get("q", "")
-                            choices = q.get("choices") or q.get("options") or []
-                            correct = q.get("correct") or q.get("answer", "")
-                            expl = q.get("explanation") or q.get("rationale", "")
-                            st.markdown(f"**שאלה {i+1}**: {qtext}")
-                            if isinstance(choices, list):
-                                user_pick = st.radio(
-                                    "תשובה",
-                                    choices,
-                                    key=f"quiz_d{idx}_q{i}",
-                                    label_visibility="collapsed",
-                                )
-                                if st.button("בדוק", key=f"check_d{idx}_q{i}"):
-                                    if user_pick == correct or (isinstance(correct, int) and choices.index(user_pick) == correct):
-                                        st.success("✅ נכון!")
-                                    else:
-                                        st.error(f"❌ שגיאה. התשובה: {correct}")
-                                    if expl:
-                                        st.info(f"💡 {expl}")
-                            st.divider()
-                else:
-                    st.markdown(f"[פתח quiz.json]({quiz_url})")
-            except Exception as e:
-                st.error(f"שגיאת טעינת קוויז: {e}")
-                st.markdown(f"[פתח quiz.json]({quiz_url})")
+            raw = fetch_text(quiz_url)
+            if not raw:
+                st.warning("לא הצלחתי לטעון את הקוויז.")
+            else:
+                try:
+                    quiz = json.loads(raw)
+                except Exception as e:
+                    st.error(f"שגיאת פירוש JSON: {e}")
+                    quiz = None
+                if isinstance(quiz, dict) and "questions" in quiz:
+                    quiz = quiz["questions"]
+                if isinstance(quiz, list):
+                    st.write(f"**{len(quiz)} שאלות**")
+                    for i, q in enumerate(quiz):
+                        qtext = q.get("question") or q.get("q", "")
+                        choices = q.get("choices") or q.get("options") or []
+                        correct = q.get("correct") or q.get("answer", "")
+                        expl = q.get("explanation") or q.get("rationale", "")
+                        st.markdown(f"**שאלה {i+1}**: {qtext}")
+                        if isinstance(choices, list):
+                            user_pick = st.radio(
+                                "תשובה",
+                                choices,
+                                key=f"quiz_d{idx}_q{i}",
+                                label_visibility="collapsed",
+                            )
+                            if st.button("בדוק", key=f"check_d{idx}_q{i}"):
+                                if user_pick == correct or (isinstance(correct, int) and choices.index(user_pick) == correct):
+                                    st.success("✅ נכון!")
+                                else:
+                                    st.error(f"❌ שגיאה. התשובה: {correct}")
+                                if expl:
+                                    st.info(f"💡 {expl}")
+                        st.divider()
+                elif quiz is not None:
+                    st.json(quiz)
 
     # Direct release link
     st.divider()
