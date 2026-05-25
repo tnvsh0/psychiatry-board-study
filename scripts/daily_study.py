@@ -559,44 +559,81 @@ def download_artifact(kind, artifact_id, out_path):
     }
     if kind not in cmd:
         return False
+    # Remove any pre-existing file so notebooklm CLI doesn't suffix with " (2)", etc.
+    out_path = Path(out_path)
+    if out_path.exists():
+        try:
+            out_path.unlink()
+        except OSError:
+            pass
     r = nb_run(cmd[kind], timeout=300)
-    return r.returncode == 0 and Path(out_path).exists() and Path(out_path).stat().st_size > 0
+    return r.returncode == 0 and out_path.exists() and out_path.stat().st_size > 0
 
 
 # ── Github Release ──────────────────────────────────────────────────────────
+def _gh_ok(stage: str, r: subprocess.CompletedProcess) -> bool:
+    """Log + return whether a gh subprocess call succeeded."""
+    if r.returncode == 0:
+        return True
+    err = (r.stderr or r.stdout or "").strip().splitlines()
+    tail = err[-1] if err else "(no error message)"
+    print(f"  [FAIL] gh {stage} exit={r.returncode}: {tail}")
+    return False
+
+
 def upload_release(tag, title, notes_md, assets):
-    """Create or update a GitHub Release with all assets."""
+    """Create or update a GitHub Release with all assets.
+
+    Returns {"url": "<release_url>", "assets": [...]} on success,
+    or {"url": "", "assets": []} on failure (with errors printed).
+    """
     env = os.environ.copy()
+    if not env.get("GH_TOKEN"):
+        print("  [FAIL] GH_TOKEN not set — cannot create/upload Release. "
+              "Add GH_TOKEN to .env or environment, then re-run.")
+        return {"url": "", "assets": []}
+
     # Check if release exists
     r = subprocess.run(
         ["gh", "release", "view", tag, "--repo", GITHUB_REPO],
         capture_output=True, text=True, env=env,
     )
     if r.returncode == 0:
-        # Release exists — just upload assets (--clobber to replace)
+        # Release exists — upload each asset with --clobber
+        upload_failures = 0
         for a in assets:
-            subprocess.run(
+            ru = subprocess.run(
                 ["gh", "release", "upload", tag, str(a), "--repo", GITHUB_REPO, "--clobber"],
                 capture_output=True, text=True, env=env, timeout=300,
             )
+            if not _gh_ok(f"release upload {Path(a).name}", ru):
+                upload_failures += 1
+        if upload_failures:
+            print(f"  [!] {upload_failures}/{len(assets)} assets failed to upload.")
     else:
-        # Create new release
-        subprocess.run(
+        # Create new release with all assets attached at creation
+        rc = subprocess.run(
             ["gh", "release", "create", tag] + [str(a) for a in assets] + [
                 "--title", title, "--notes", notes_md, "--repo", GITHUB_REPO,
             ],
-            capture_output=True, text=True, env=env, timeout=300,
+            capture_output=True, text=True, env=env, timeout=600,
         )
-    # Return download URLs
-    r = subprocess.run(
+        if not _gh_ok("release create", rc):
+            return {"url": "", "assets": []}
+
+    # Read back assets / url
+    rv = subprocess.run(
         ["gh", "release", "view", tag, "--json", "assets,url",
          "--jq", "{url: .url, assets: [.assets[] | {name: .name, url: .url}]}",
          "--repo", GITHUB_REPO],
         capture_output=True, text=True, env=env,
     )
+    if not _gh_ok("release view (read-back)", rv):
+        return {"url": "", "assets": []}
     try:
-        return json.loads(r.stdout)
-    except Exception:
+        return json.loads(rv.stdout)
+    except Exception as e:
+        print(f"  [FAIL] could not parse gh release view output: {e}")
         return {"url": "", "assets": []}
 
 
