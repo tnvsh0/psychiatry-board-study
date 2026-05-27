@@ -1,22 +1,23 @@
 {
   "version": 1,
   "metadata": {
-    "total_days": 120,
+    "total_days": 126,
     "study_days_per_week": 5,
     "language": "Hebrew (primary), English (titles + drug names)",
     "phase_structure": {
-      "1": "Foundations (anatomy, neurotransmitters, development) — days 1-15",
-      "2": "Neurodevelopmental — days 16-25",
-      "3": "Mood + Anxiety — days 26-40",
-      "4": "OCD + Trauma — days 41-50",
-      "5": "Psychotic + Antipsychotics — days 51-65",
-      "6": "Sleep, Eating, Elimination — days 66-75",
-      "7": "Substance Use — days 76-85",
-      "8": "Personality + Special Populations — days 86-100",
-      "9": "Neurology + Cross-cutting — days 101-115",
-      "10": "Psychotherapy + Integration — days 116-120"
+      "1": "Foundations (anatomy, neurotransmitters, development) — chapters 1-15",
+      "2": "Neurodevelopmental — chapters 16-26",
+      "3": "Mood + Anxiety — chapters 27-41",
+      "4": "OCD + Trauma — chapters 42-51",
+      "5": "Psychotic + Antipsychotics — chapters 52-66",
+      "6": "Sleep, Eating, Elimination — chapters 67-76",
+      "7": "Substance Use — chapters 77-86",
+      "8": "Personality + Special Populations — chapters 87-106",
+      "9": "Neurology + Cross-cutting — chapters 107-121",
+      "10": "Psychotherapy + Integration — chapters 122-126"
     },
-    "build_date": "2026-05-12"
+    "build_date": "2026-05-26",
+    "unit_label": "chapter"
   },
   "days": [
     {
@@ -383,7 +384,8 @@
         "DAT",
         "NET",
         "prefrontal_cortex",
-        "DSM_neurodevelopmental"
+        "DSM_neurodevelopmental",
+        "adhd"
       ],
       "estimated_density": "high",
       "index": 16,
@@ -458,6 +460,7 @@
         "comorbidities"
       ],
       "symbols_needed": [
+        "asd",
         "DSM_neurodevelopmental"
       ],
       "estimated_density": "high",
@@ -481,6 +484,7 @@
         "etiology_genetic"
       ],
       "symbols_needed": [
+        "idd",
         "DSM_neurodevelopmental"
       ],
       "estimated_density": "high",
@@ -497,20 +501,48 @@
         "dsm_criteria",
         "epidemiology",
         "etiology",
-        "treatment_overview",
         "assessment_tools",
-        "medical_mimics"
+        "treatment_first_line",
+        "treatment_second_line",
+        "differential"
       ],
       "symbols_needed": [
+        "sld",
         "DSM_neurodevelopmental"
       ],
       "estimated_density": "medium",
       "index": 21,
       "phase": 2,
+      "phase_name": "Neurodevelopmental",
       "type": "diagnosis",
-      "title_en": "Learning disorders + Communication disorders",
-      "title_he": "הפרעות למידה + תקשורת",
-      "prompt_focus": "SLD (קריאה=dyslexia, חשבון=dyscalculia, כתיבה=dysgraphia). DSM-5-TR איגד את כל ה-SLD. Communication: Language disorder, Speech sound, Childhood-onset fluency (stuttering), Social communication."
+      "title_en": "Specific Learning Disorder (SLD)",
+      "title_he": "הפרעות למידה ספציפיות (SLD)",
+      "diagnosis": "Specific Learning Disorder",
+      "prompt_focus": "SLD: dyslexia / dyscalculia / dysgraphia. קריטריונים DSM-5-TR (≥6 חודשים למרות התערבות; הישגים מדידים מתחת לציפיות לגיל). בידול חיוני מ-IDD (ב-SLD יש IQ תקין בתחומים אחרים). ספציפיירס: קריאה / כתיבה / מתמטיקה. רמות חומרה: קל/בינוני/חמור."
+    },
+    {
+      "aspects": [
+        "dsm_criteria",
+        "epidemiology",
+        "etiology",
+        "assessment_tools",
+        "treatment_first_line",
+        "treatment_second_line",
+        "differential"
+      ],
+      "symbols_needed": [
+        "communication_disorders",
+        "DSM_neurodevelopmental"
+      ],
+      "estimated_density": "medium",
+      "index": 22,
+      "phase": 2,
+      "phase_name": "Neurodevelopmental",
+      "type": "diagnosis",
+      "title_en": "Communication Disorders (Language, Speech, Stuttering, Social-Pragmatic)",
+      "title_he": "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
+      "diagnosis": "Communication Disorders",
+      "prompt_focus": "ארבעה תת-סוגים: Language Disorder (אוצר מילים, מבנה משפט, שיח), Speech Sound Disorder (הפקת צלילים), Childhood-Onset Fluency / Stuttering (חזרות, הארכות, חסימות), Social (Pragmatic) Communication Disorder (שימוש חברתי בתקשורת, ללא restricted/repetitive — מבדיל מ-ASD). הערכה SLP, התערבות מוקדמת."
     },
     {
       "aspects": [
@@ -524,14 +556,15 @@
         "comorbidity_OCD_ADHD"
       ],
       "symbols_needed": [
-        "DSM_neurodevelopmental",
         "Clonidine",
         "Guanfacine",
         "Haloperidol",
-        "Aripiprazole"
+        "Aripiprazole",
+        "tic_disorders",
+        "DSM_neurodevelopmental"
       ],
       "estimated_density": "medium",
-      "index": 22,
+      "index": 23,
       "phase": 2,
       "type": "diagnosis",
       "title_en": "Tic disorders + Tourette's",
@@ -551,7 +584,7 @@
         "DSM_neurodevelopmental"
       ],
       "estimated_density": "low",
-      "index": 23,
+      "index": 24,
       "phase": 2,
       "type": "diagnosis",
       "title_en": "Stereotypic movement + Developmental coordination disorder",
@@ -573,7 +606,7 @@
         "DSM_neurodevelopmental"
       ],
       "estimated_density": "medium",
-      "index": 24,
+      "index": 25,
       "phase": 2,
       "type": "syndrome",
       "title_en": "ID review: Down syndrome + Fragile X",
@@ -594,7 +627,7 @@
         "DSM_neurodevelopmental"
       ],
       "estimated_density": "medium",
-      "index": 25,
+      "index": 26,
       "phase": 2,
       "type": "syndrome",
       "title_en": "Other neurodevelopmental: Rett, Prader-Willi, 22q11",
@@ -623,7 +656,7 @@
         "default_mode_network"
       ],
       "estimated_density": "high",
-      "index": 26,
+      "index": 27,
       "phase": 3,
       "phase_name": "Mood and Anxiety",
       "type": "diagnosis",
@@ -656,7 +689,7 @@
         "discontinuation_syndrome_FINISH"
       ],
       "estimated_density": "high",
-      "index": 27,
+      "index": 28,
       "phase": 3,
       "type": "drug_class",
       "title_en": "SSRIs deep dive",
@@ -685,7 +718,7 @@
         "Vilazodone"
       ],
       "estimated_density": "high",
-      "index": 28,
+      "index": 29,
       "phase": 3,
       "type": "drug_class",
       "title_en": "SNRIs + atypical antidepressants",
@@ -713,7 +746,7 @@
         "serotonin_syndrome"
       ],
       "estimated_density": "medium",
-      "index": 29,
+      "index": 30,
       "phase": 3,
       "type": "drug_class",
       "title_en": "TCAs + MAOIs",
@@ -733,7 +766,7 @@
         "DSM_depressive"
       ],
       "estimated_density": "medium",
-      "index": 30,
+      "index": 31,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Persistent Depressive + DMDD + PMDD",
@@ -759,7 +792,7 @@
         "Carbamazepine"
       ],
       "estimated_density": "high",
-      "index": 31,
+      "index": 32,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Bipolar I Disorder",
@@ -780,7 +813,7 @@
         "DSM_bipolar"
       ],
       "estimated_density": "medium",
-      "index": 32,
+      "index": 33,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Bipolar II + Cyclothymia + pediatric bipolar controversy",
@@ -806,7 +839,7 @@
         "DSM_bipolar"
       ],
       "estimated_density": "high",
-      "index": 33,
+      "index": 34,
       "phase": 3,
       "type": "medication_deep_dive",
       "title_en": "Lithium",
@@ -833,7 +866,7 @@
         "hepatotoxicity"
       ],
       "estimated_density": "high",
-      "index": 34,
+      "index": 35,
       "phase": 3,
       "type": "drug_class",
       "title_en": "Mood stabilizers: Valproate, Lamotrigine, Carbamazepine",
@@ -857,7 +890,7 @@
         "suicidality_warning"
       ],
       "estimated_density": "high",
-      "index": 35,
+      "index": 36,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Pediatric mood: DMDD vs pediatric bipolar; teen suicidality",
@@ -879,7 +912,7 @@
         "amygdala"
       ],
       "estimated_density": "medium",
-      "index": 36,
+      "index": 37,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Generalized Anxiety Disorder",
@@ -904,7 +937,7 @@
         "locus_coeruleus"
       ],
       "estimated_density": "medium",
-      "index": 37,
+      "index": 38,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Panic Disorder + Agoraphobia",
@@ -924,7 +957,7 @@
         "DSM_anxiety"
       ],
       "estimated_density": "low",
-      "index": 38,
+      "index": 39,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Social Anxiety + Selective Mutism",
@@ -944,7 +977,7 @@
         "DSM_anxiety"
       ],
       "estimated_density": "low",
-      "index": 39,
+      "index": 40,
       "phase": 3,
       "type": "diagnosis",
       "title_en": "Separation Anxiety + Specific Phobia",
@@ -972,7 +1005,7 @@
         "Buspirone"
       ],
       "estimated_density": "high",
-      "index": 40,
+      "index": 41,
       "phase": 3,
       "type": "drug_class",
       "title_en": "Benzodiazepines + Buspirone + sleep aids overview",
@@ -997,7 +1030,7 @@
         "SERT"
       ],
       "estimated_density": "high",
-      "index": 41,
+      "index": 42,
       "phase": 4,
       "phase_name": "OCD and Trauma",
       "type": "diagnosis",
@@ -1024,7 +1057,7 @@
         "SERT"
       ],
       "estimated_density": "medium",
-      "index": 42,
+      "index": 43,
       "phase": 4,
       "type": "treatment_focus",
       "title_en": "OCD treatment: ERP + high-dose SSRI",
@@ -1044,7 +1077,7 @@
         "DSM_OCD_related"
       ],
       "estimated_density": "low",
-      "index": 43,
+      "index": 44,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "Body Dysmorphic + Hoarding",
@@ -1064,7 +1097,7 @@
         "DSM_OCD_related"
       ],
       "estimated_density": "low",
-      "index": 44,
+      "index": 45,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "Trichotillomania + Excoriation",
@@ -1091,7 +1124,7 @@
         "locus_coeruleus"
       ],
       "estimated_density": "high",
-      "index": 45,
+      "index": 46,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "PTSD core",
@@ -1116,7 +1149,7 @@
         "alpha1_receptor"
       ],
       "estimated_density": "medium",
-      "index": 46,
+      "index": 47,
       "phase": 4,
       "type": "treatment_focus",
       "title_en": "PTSD treatment: Prazosin, SSRIs, trauma-focused therapies",
@@ -1136,7 +1169,7 @@
         "DSM_trauma_stressor"
       ],
       "estimated_density": "low",
-      "index": 47,
+      "index": 48,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "Acute Stress + Adjustment Disorder",
@@ -1156,7 +1189,7 @@
         "DSM_trauma_stressor"
       ],
       "estimated_density": "low",
-      "index": 48,
+      "index": 49,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "Reactive Attachment Disorder + Disinhibited Social Engagement",
@@ -1176,7 +1209,7 @@
         "DSM_dissociative"
       ],
       "estimated_density": "low",
-      "index": 49,
+      "index": 50,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "Dissociative disorders",
@@ -1196,7 +1229,7 @@
         "DSM_somatic"
       ],
       "estimated_density": "medium",
-      "index": 50,
+      "index": 51,
       "phase": 4,
       "type": "diagnosis",
       "title_en": "Somatic Symptom + Conversion + Factitious",
@@ -1224,7 +1257,7 @@
         "5-HT2A_receptor"
       ],
       "estimated_density": "high",
-      "index": 51,
+      "index": 52,
       "phase": 5,
       "phase_name": "Psychosis and Antipsychotics",
       "type": "diagnosis",
@@ -1248,7 +1281,7 @@
         "prefrontal_cortex"
       ],
       "estimated_density": "high",
-      "index": 52,
+      "index": 53,
       "phase": 5,
       "type": "foundation",
       "title_en": "Schizophrenia neurobiology: DA + NMDA + 5-HT hypotheses",
@@ -1268,7 +1301,7 @@
         "DSM_psychotic"
       ],
       "estimated_density": "medium",
-      "index": 53,
+      "index": 54,
       "phase": 5,
       "type": "diagnosis",
       "title_en": "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
@@ -1301,7 +1334,7 @@
         "hyperprolactinemia"
       ],
       "estimated_density": "high",
-      "index": 54,
+      "index": 55,
       "phase": 5,
       "type": "drug_class",
       "title_en": "First-generation antipsychotics",
@@ -1337,7 +1370,7 @@
         "Pimavanserin"
       ],
       "estimated_density": "high",
-      "index": 55,
+      "index": 56,
       "phase": 5,
       "type": "drug_class",
       "title_en": "Second-generation antipsychotics overview",
@@ -1363,7 +1396,7 @@
         "agranulocytosis_clozapine"
       ],
       "estimated_density": "high",
-      "index": 56,
+      "index": 57,
       "phase": 5,
       "type": "medication_deep_dive",
       "title_en": "Clozapine — the gold standard for treatment-resistant",
@@ -1389,7 +1422,7 @@
         "5-HT1A_receptor"
       ],
       "estimated_density": "medium",
-      "index": 57,
+      "index": 58,
       "phase": 5,
       "type": "medication_deep_dive",
       "title_en": "Partial agonists: Aripiprazole, Brexpiprazole, Cariprazine",
@@ -1418,7 +1451,7 @@
         "5-HT2C_receptor"
       ],
       "estimated_density": "medium",
-      "index": 58,
+      "index": 59,
       "phase": 5,
       "type": "medication_deep_dive",
       "title_en": "Metabolic-heavy SGAs: Olanzapine, Quetiapine, Risperidone",
@@ -1441,7 +1474,7 @@
         "QT_prolongation"
       ],
       "estimated_density": "medium",
-      "index": 59,
+      "index": 60,
       "phase": 5,
       "type": "medication_deep_dive",
       "title_en": "Low-metabolic SGAs: Lurasidone, Ziprasidone, Lumateperone",
@@ -1467,7 +1500,7 @@
         "Olanzapine"
       ],
       "estimated_density": "medium",
-      "index": 60,
+      "index": 61,
       "phase": 5,
       "type": "drug_class",
       "title_en": "Long-Acting Injectable Antipsychotics (LAIs)",
@@ -1491,7 +1524,7 @@
         "Propranolol"
       ],
       "estimated_density": "high",
-      "index": 61,
+      "index": 62,
       "phase": 5,
       "type": "syndrome",
       "title_en": "EPS spectrum: dystonia, akathisia, parkinsonism",
@@ -1513,7 +1546,7 @@
         "Tetrabenazine"
       ],
       "estimated_density": "medium",
-      "index": 62,
+      "index": 63,
       "phase": 5,
       "type": "syndrome",
       "title_en": "Tardive Dyskinesia + VMAT2 inhibitors",
@@ -1532,7 +1565,7 @@
         "serotonin_syndrome"
       ],
       "estimated_density": "high",
-      "index": 63,
+      "index": 64,
       "phase": 5,
       "type": "syndrome",
       "title_en": "Neuroleptic Malignant Syndrome",
@@ -1555,7 +1588,7 @@
         "Lorazepam"
       ],
       "estimated_density": "medium",
-      "index": 64,
+      "index": 65,
       "phase": 5,
       "type": "diagnosis",
       "title_en": "Catatonia",
@@ -1577,7 +1610,7 @@
         "Diphenhydramine"
       ],
       "estimated_density": "medium",
-      "index": 65,
+      "index": 66,
       "phase": 5,
       "type": "syndrome",
       "title_en": "Acute psychosis ED management",
@@ -1599,7 +1632,7 @@
         "DSM_sleep_wake"
       ],
       "estimated_density": "medium",
-      "index": 66,
+      "index": 67,
       "phase": 6,
       "phase_name": "Sleep, Eating, Elimination",
       "type": "diagnosis",
@@ -1629,7 +1662,7 @@
         "Doxepin"
       ],
       "estimated_density": "medium",
-      "index": 67,
+      "index": 68,
       "phase": 6,
       "type": "drug_class",
       "title_en": "Sleep aids: Z-drugs, DORAs, Melatonin",
@@ -1652,7 +1685,7 @@
         "Modafinil"
       ],
       "estimated_density": "low",
-      "index": 68,
+      "index": 69,
       "phase": 6,
       "type": "diagnosis",
       "title_en": "Narcolepsy + Pitolisant",
@@ -1672,7 +1705,7 @@
         "DSM_sleep_wake"
       ],
       "estimated_density": "low",
-      "index": 69,
+      "index": 70,
       "phase": 6,
       "type": "diagnosis",
       "title_en": "Parasomnias + RLS",
@@ -1695,7 +1728,7 @@
         "DSM_feeding_eating"
       ],
       "estimated_density": "high",
-      "index": 70,
+      "index": 71,
       "phase": 6,
       "type": "diagnosis",
       "title_en": "Anorexia Nervosa",
@@ -1718,7 +1751,7 @@
         "Topiramate"
       ],
       "estimated_density": "medium",
-      "index": 71,
+      "index": 72,
       "phase": 6,
       "type": "diagnosis",
       "title_en": "Bulimia Nervosa + Binge Eating Disorder",
@@ -1738,7 +1771,7 @@
         "DSM_feeding_eating"
       ],
       "estimated_density": "low",
-      "index": 72,
+      "index": 73,
       "phase": 6,
       "type": "diagnosis",
       "title_en": "ARFID + Pica + Rumination",
@@ -1759,7 +1792,7 @@
         "Imipramine"
       ],
       "estimated_density": "low",
-      "index": 73,
+      "index": 74,
       "phase": 6,
       "type": "diagnosis",
       "title_en": "Enuresis + Encopresis",
@@ -1776,7 +1809,7 @@
         "CONVENIENCE_STORE_7"
       ],
       "estimated_density": "medium",
-      "index": 74,
+      "index": 75,
       "phase": 6,
       "type": "foundation",
       "title_en": "Sleep development in children + adolescent shift",
@@ -1797,7 +1830,7 @@
         "DSM_feeding_eating"
       ],
       "estimated_density": "medium",
-      "index": 75,
+      "index": 76,
       "phase": 6,
       "type": "treatment_focus",
       "title_en": "Eating disorders intensive: FBT + medical stabilization",
@@ -1824,7 +1857,7 @@
         "Oxazepam"
       ],
       "estimated_density": "high",
-      "index": 76,
+      "index": 77,
       "phase": 7,
       "phase_name": "Substance Use",
       "type": "diagnosis",
@@ -1848,7 +1881,7 @@
         "Disulfiram"
       ],
       "estimated_density": "medium",
-      "index": 77,
+      "index": 78,
       "phase": 7,
       "type": "drug_class",
       "title_en": "Alcohol treatment: Naltrexone, Acamprosate, Disulfiram",
@@ -1871,7 +1904,7 @@
         "Clonidine"
       ],
       "estimated_density": "medium",
-      "index": 78,
+      "index": 79,
       "phase": 7,
       "type": "diagnosis",
       "title_en": "Opioid Use Disorder + Withdrawal",
@@ -1895,7 +1928,7 @@
         "mu_opioid_receptor"
       ],
       "estimated_density": "high",
-      "index": 79,
+      "index": 80,
       "phase": 7,
       "type": "drug_class",
       "title_en": "OUD treatment: Methadone, Buprenorphine, Naltrexone, Naloxone",
@@ -1915,7 +1948,7 @@
         "DSM_substance_addictive"
       ],
       "estimated_density": "medium",
-      "index": 80,
+      "index": 81,
       "phase": 7,
       "type": "diagnosis",
       "title_en": "Stimulant Use Disorder",
@@ -1935,7 +1968,7 @@
         "DSM_substance_addictive"
       ],
       "estimated_density": "medium",
-      "index": 81,
+      "index": 82,
       "phase": 7,
       "type": "diagnosis",
       "title_en": "Cannabis Use Disorder + Cannabis-induced disorders",
@@ -1957,7 +1990,7 @@
         "nAChR_alpha4_beta2"
       ],
       "estimated_density": "low",
-      "index": 82,
+      "index": 83,
       "phase": 7,
       "type": "drug_class",
       "title_en": "Tobacco cessation: Varenicline, NRT, Bupropion",
@@ -1978,7 +2011,7 @@
         "AA_HOTEL"
       ],
       "estimated_density": "medium",
-      "index": 83,
+      "index": 84,
       "phase": 7,
       "type": "diagnosis",
       "title_en": "Sedative/Hypnotic/Anxiolytic Use Disorder",
@@ -1999,7 +2032,7 @@
         "5-HT2A_receptor"
       ],
       "estimated_density": "medium",
-      "index": 84,
+      "index": 85,
       "phase": 7,
       "type": "diagnosis",
       "title_en": "Hallucinogen + Caffeine + Inhalants",
@@ -2020,7 +2053,7 @@
         "nucleus_accumbens"
       ],
       "estimated_density": "low",
-      "index": 85,
+      "index": 86,
       "phase": 7,
       "type": "diagnosis",
       "title_en": "Gambling Disorder + behavioral addictions",
@@ -2032,21 +2065,72 @@
         "dsm_criteria",
         "epidemiology",
         "etiology",
-        "treatment_overview",
-        "assessment_tools",
-        "medical_mimics"
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
       ],
       "symbols_needed": [
+        "paranoid_pd",
+        "general_PD_criteria",
         "DSM_personality_disorders"
       ],
-      "estimated_density": "low",
-      "index": 86,
+      "estimated_density": "medium",
+      "index": 87,
       "phase": 8,
       "phase_name": "Personality + Special Populations",
       "type": "diagnosis",
-      "title_en": "Cluster A Personality Disorders",
-      "title_he": "הפרעות אישיות Cluster A",
-      "prompt_focus": "Paranoid (suspicious), Schizoid (detached), Schizotypal (eccentric + cognitive). Cluster A = 'מוזר/אקסצנטרי'. גנטיקה: schizophrenia spectrum."
+      "title_en": "Paranoid Personality Disorder",
+      "title_he": "הפרעת אישיות פרנואידית",
+      "diagnosis": "Paranoid Personality Disorder",
+      "prompt_focus": "קריטריונים (≥4 מ-7): חשד בניצול ללא בסיס, ספקות נאמנות, אי-נכונות לחשוף, קריאת משמעויות נסתרות, נטירת טינה, תפיסת התקפות, חשד בבגידה זוגית. אבחנה-מבדלת: לא בזמן פסיכוזה, לא סכיזופרניה פרנואידית, לא Delusional Disorder. טיפול: פסיכותרפיה (קושי בברית טיפולית — שקיפות וגבולות ברורים), אנטיפסיכוטי במינון נמוך לסימפטומים פרנואידיים חמורים."
+    },
+    {
+      "aspects": [
+        "dsm_criteria",
+        "epidemiology",
+        "etiology",
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
+      ],
+      "symbols_needed": [
+        "schizoid_pd",
+        "general_PD_criteria",
+        "DSM_personality_disorders"
+      ],
+      "estimated_density": "medium",
+      "index": 88,
+      "phase": 8,
+      "phase_name": "Personality + Special Populations",
+      "type": "diagnosis",
+      "title_en": "Schizoid Personality Disorder",
+      "title_he": "הפרעת אישיות סכיזואידית",
+      "diagnosis": "Schizoid Personality Disorder",
+      "prompt_focus": "קריטריונים (≥4 מ-7): לא מעוניין בקשרים קרובים, פעילויות בודדות, חוסר עניין מיני, הנאה מועטה, אין חברים, אדישות לשבח/ביקורת, קרירות רגשית. הבדל קריטי מ-Avoidant (Schizoid לא רוצה, Avoidant פוחד). אבחנה-מבדלת מ-ASD (ב-ASD יש restricted/repetitive). טיפול: פסיכותרפיה תומכת, יחס מכבד למרחק שלהם."
+    },
+    {
+      "aspects": [
+        "dsm_criteria",
+        "epidemiology",
+        "etiology",
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
+      ],
+      "symbols_needed": [
+        "schizotypal_pd",
+        "general_PD_criteria",
+        "DSM_personality_disorders"
+      ],
+      "estimated_density": "medium",
+      "index": 89,
+      "phase": 8,
+      "phase_name": "Personality + Special Populations",
+      "type": "diagnosis",
+      "title_en": "Schizotypal Personality Disorder",
+      "title_he": "הפרעת אישיות סכיזוטיפלית",
+      "diagnosis": "Schizotypal Personality Disorder",
+      "prompt_focus": "קריטריונים (≥5 מ-9): ideas of reference, אמונות מאגיות (טלפתיה, סיקס סנס), חוויות תפיסה משונות, חשיבה/דיבור מעורפלים, חשדנות, אפקט לא הולם, התנהגות/מראה אקסצנטריים, אין חברים, חרדה חברתית מוגזמת ופרנואידית. מקושר גנטית לספקטרום סכיזופרני. אבחנה-מבדלת מ-Schizophrenia (אין פסיכוזה גלויה). טיפול: SSRI לחרדה, אנטיפסיכוטי במינון נמוך לפרנויה."
     },
     {
       "aspects": [
@@ -2062,10 +2146,12 @@
         "impulsivity"
       ],
       "symbols_needed": [
-        "DSM_personality_disorders"
+        "DSM_personality_disorders",
+        "borderline_pd",
+        "general_PD_criteria"
       ],
       "estimated_density": "high",
-      "index": 87,
+      "index": 90,
       "phase": 8,
       "type": "diagnosis",
       "title_en": "Borderline Personality Disorder",
@@ -2082,10 +2168,11 @@
         "indications"
       ],
       "symbols_needed": [
-        "DSM_personality_disorders"
+        "DSM_personality_disorders",
+        "borderline_pd"
       ],
       "estimated_density": "medium",
-      "index": 88,
+      "index": 91,
       "phase": 8,
       "type": "treatment_focus",
       "title_en": "BPD treatment: DBT",
@@ -2103,10 +2190,12 @@
       ],
       "symbols_needed": [
         "DSM_personality_disorders",
-        "DSM_disruptive_impulse"
+        "DSM_disruptive_impulse",
+        "antisocial_pd",
+        "general_PD_criteria"
       ],
       "estimated_density": "medium",
-      "index": 89,
+      "index": 92,
       "phase": 8,
       "type": "diagnosis",
       "title_en": "Antisocial PD + Conduct Disorder",
@@ -2118,40 +2207,120 @@
         "dsm_criteria",
         "epidemiology",
         "etiology",
-        "treatment_overview",
-        "assessment_tools",
-        "medical_mimics"
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
       ],
       "symbols_needed": [
+        "histrionic_pd",
+        "general_PD_criteria",
         "DSM_personality_disorders"
       ],
-      "estimated_density": "low",
-      "index": 90,
+      "estimated_density": "medium",
+      "index": 93,
       "phase": 8,
+      "phase_name": "Personality + Special Populations",
       "type": "diagnosis",
-      "title_en": "Histrionic + Narcissistic PD",
-      "title_he": "הפרעת אישיות היסטריונית + נרציסיסטית",
-      "prompt_focus": "Histrionic: attention-seeking, theatrical, suggestible, sexually provocative. Narcissistic: grandiosity + lack of empathy + need for admiration. Vulnerable subtype (covert) increasingly recognized."
+      "title_en": "Histrionic Personality Disorder",
+      "title_he": "הפרעת אישיות היסטריונית",
+      "diagnosis": "Histrionic Personality Disorder",
+      "prompt_focus": "קריטריונים (≥5 מ-8): אי-נוחות שלא במרכז תשומת לב, פיתוי לא הולם, רגש משתנה רדוד, שימוש במראה, דיבור רושמני, דרמטיזציה עצמית, סוגסטיביליות, חשיבה על קשרים כיותר אינטימיים. אבחנה-מבדלת מ-BPD (HPD רדוד; BPD = פחד נטישה עמוק + self-harm). טיפול: פסיכותרפיה דינמית; חיזוק יציבות אישיותית."
     },
     {
       "aspects": [
         "dsm_criteria",
         "epidemiology",
         "etiology",
-        "treatment_overview",
-        "assessment_tools",
-        "medical_mimics"
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
       ],
       "symbols_needed": [
+        "narcissistic_pd",
+        "general_PD_criteria",
         "DSM_personality_disorders"
       ],
-      "estimated_density": "low",
-      "index": 91,
+      "estimated_density": "medium",
+      "index": 94,
       "phase": 8,
+      "phase_name": "Personality + Special Populations",
       "type": "diagnosis",
-      "title_en": "Cluster C: Avoidant, Dependent, OCPD",
-      "title_he": "Cluster C: נמנע, תלותי, OCPD",
-      "prompt_focus": "Avoidant: socially inhibited + sense of inadequacy + hypersensitivity. Dependent: clinging + reluctance to disagree. OCPD: rigid + perfectionist + control-focused (≠ OCD — ego-syntonic). CBT mainstay."
+      "title_en": "Narcissistic Personality Disorder",
+      "title_he": "הפרעת אישיות נרציסיסטית",
+      "diagnosis": "Narcissistic Personality Disorder",
+      "prompt_focus": "קריטריונים (≥5 מ-9): גרנדיוזיות, פנטזיות הצלחה, אמונה ב'מיוחד', צורך בהערצה, זכאות, ניצול בין-אישי, חוסר אמפתיה, קנאה, התנשאות. 2 תתי-סוגים: גרנדיוזי (גלוי) ופגיע (סמוי, רגיש לביקורת). קומורבידיות דיכאון לאחר 'פגיעה נרציסיסטית'. טיפול: TFP, MBT, שיקום של ה-self."
+    },
+    {
+      "aspects": [
+        "dsm_criteria",
+        "epidemiology",
+        "etiology",
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
+      ],
+      "symbols_needed": [
+        "avoidant_pd",
+        "general_PD_criteria",
+        "DSM_personality_disorders"
+      ],
+      "estimated_density": "medium",
+      "index": 95,
+      "phase": 8,
+      "phase_name": "Personality + Special Populations",
+      "type": "diagnosis",
+      "title_en": "Avoidant Personality Disorder",
+      "title_he": "הפרעת אישיות נמנעת",
+      "diagnosis": "Avoidant Personality Disorder",
+      "prompt_focus": "קריטריונים (≥4 מ-7): נמנע ממקצועות עם מגע חברתי, לא מוכן לקשר אלא אם בטוח באהבה, מצומצם באינטימיות, עסוק בביקורת/דחייה, מעוכב במצבים חדשים, רואה את עצמו כחברתית-לא-מוצלח, נמנע מסיכונים. הבדל קריטי מ-Schizoid: רוצה קשרים, פוחד. אבחנה-מבדלת מ-SAD: כרוני וחוצה. טיפול: CBT, חשיפה הדרגתית, SSRI לחרדה משמעותית."
+    },
+    {
+      "aspects": [
+        "dsm_criteria",
+        "epidemiology",
+        "etiology",
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
+      ],
+      "symbols_needed": [
+        "dependent_pd",
+        "general_PD_criteria",
+        "DSM_personality_disorders"
+      ],
+      "estimated_density": "medium",
+      "index": 96,
+      "phase": 8,
+      "phase_name": "Personality + Special Populations",
+      "type": "diagnosis",
+      "title_en": "Dependent Personality Disorder",
+      "title_he": "הפרעת אישיות תלותית",
+      "diagnosis": "Dependent Personality Disorder",
+      "prompt_focus": "קריטריונים (≥5 מ-8): קושי בהחלטות ללא ייעוץ, צריך שאחרים יקחו אחריות, קושי לחלוק על דעה, קושי ליזום, הולך רחוק להשגת טיפוח, אי-נוחות לבד, מחפש קשר חדש כשנפסק קודם, פחד מטיפול-עצמי. שכיח יותר בנשים בקליניקה. טיפול: פסיכותרפיה לחיזוק עצמאות, אסרטיביות, טיפול קוגניטיבי על אמונות תלות."
+    },
+    {
+      "aspects": [
+        "dsm_criteria",
+        "epidemiology",
+        "etiology",
+        "differential",
+        "treatment_first_line",
+        "treatment_second_line"
+      ],
+      "symbols_needed": [
+        "ocpd",
+        "general_PD_criteria",
+        "DSM_personality_disorders"
+      ],
+      "estimated_density": "medium",
+      "index": 97,
+      "phase": 8,
+      "phase_name": "Personality + Special Populations",
+      "type": "diagnosis",
+      "title_en": "Obsessive-Compulsive Personality Disorder (OCPD)",
+      "title_he": "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)",
+      "diagnosis": "Obsessive-Compulsive Personality Disorder",
+      "prompt_focus": "קריטריונים (≥4 מ-8): עיסוק בפרטים/חוקים/רשימות, פרפקציוניזם, מסירות מוגזמת לעבודה, מצפוניות מוגזמת, חוסר השלכת חפצים, חוסר אצילה, חיסכון קמצני, נוקשות. הבדל קריטי מ-OCD: OCPD = ego-syntonic (חושב שכולם טועים, הוא בסדר); OCD = ego-dystonic (סובל מאובססיות). אבחנה-מבדלת מ-Hoarding (אין הצטברות אקסטרמית). טיפול: CBT לפרפקציוניזם, גמישות, עבודה על איזון עבודה-חיים."
     },
     {
       "aspects": [
@@ -2162,7 +2331,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 92,
+      "index": 98,
       "phase": 8,
       "type": "foundation",
       "title_en": "Forensic psychiatry: competency, insanity, Tarasoff",
@@ -2182,7 +2351,7 @@
         "DSM_gender_dysphoria"
       ],
       "estimated_density": "medium",
-      "index": 93,
+      "index": 99,
       "phase": 8,
       "type": "diagnosis",
       "title_en": "Gender Dysphoria + LGBTQ+ affirming care",
@@ -2203,7 +2372,7 @@
         "DSM_paraphilic"
       ],
       "estimated_density": "medium",
-      "index": 94,
+      "index": 100,
       "phase": 8,
       "type": "diagnosis",
       "title_en": "Sexual Dysfunctions + Paraphilic Disorders",
@@ -2223,7 +2392,7 @@
         "DSM_disruptive_impulse"
       ],
       "estimated_density": "low",
-      "index": 95,
+      "index": 101,
       "phase": 8,
       "type": "diagnosis",
       "title_en": "Disruptive/Impulse: ODD, IED, Kleptomania, Pyromania",
@@ -2242,7 +2411,7 @@
         "Lithium"
       ],
       "estimated_density": "high",
-      "index": 96,
+      "index": 102,
       "phase": 8,
       "type": "foundation",
       "title_en": "Adolescent suicidality",
@@ -2262,7 +2431,7 @@
         "DSM_disruptive_impulse"
       ],
       "estimated_density": "low",
-      "index": 97,
+      "index": 103,
       "phase": 8,
       "type": "diagnosis",
       "title_en": "Self-injurious behavior (NSSI)",
@@ -2283,7 +2452,7 @@
         "Valproate"
       ],
       "estimated_density": "high",
-      "index": 98,
+      "index": 104,
       "phase": 8,
       "type": "foundation",
       "title_en": "Perinatal psychiatry: postpartum depression + psychosis",
@@ -2305,7 +2474,7 @@
         "GABA_A_receptor"
       ],
       "estimated_density": "low",
-      "index": 99,
+      "index": 105,
       "phase": 8,
       "type": "medication_deep_dive",
       "title_en": "Brexanolone + Zuranolone (PPD-specific)",
@@ -2323,7 +2492,7 @@
         "Quetiapine"
       ],
       "estimated_density": "medium",
-      "index": 100,
+      "index": 106,
       "phase": 8,
       "type": "foundation",
       "title_en": "Geriatric overview (delirium focus — light touch)",
@@ -2345,7 +2514,7 @@
         "brainstem"
       ],
       "estimated_density": "medium",
-      "index": 101,
+      "index": 107,
       "phase": 9,
       "phase_name": "Neurology + Cross-cutting",
       "type": "foundation",
@@ -2363,7 +2532,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 102,
+      "index": 108,
       "phase": 9,
       "type": "neurology",
       "title_en": "Seizures + Epilepsy",
@@ -2382,7 +2551,7 @@
         "prefrontal_cortex"
       ],
       "estimated_density": "medium",
-      "index": 103,
+      "index": 109,
       "phase": 9,
       "type": "neurology",
       "title_en": "Head trauma + TBI sequelae",
@@ -2399,7 +2568,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "medium",
-      "index": 104,
+      "index": 110,
       "phase": 9,
       "type": "neurology",
       "title_en": "CNS infections with psychiatric sequelae",
@@ -2420,7 +2589,7 @@
         "Deutetrabenazine"
       ],
       "estimated_density": "medium",
-      "index": 105,
+      "index": 111,
       "phase": 9,
       "type": "neurology",
       "title_en": "Movement disorders: Huntington, Wilson",
@@ -2437,7 +2606,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "low",
-      "index": 106,
+      "index": 112,
       "phase": 9,
       "type": "neurology",
       "title_en": "Brain tumors + pseudotumor",
@@ -2454,7 +2623,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "low",
-      "index": 107,
+      "index": 113,
       "phase": 9,
       "type": "neurology",
       "title_en": "Cerebral palsy",
@@ -2471,7 +2640,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 108,
+      "index": 114,
       "phase": 9,
       "type": "syndrome",
       "title_en": "Neurogenetic syndromes: Williams, Prader-Willi, Angelman, 22q11",
@@ -2488,7 +2657,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "low",
-      "index": 109,
+      "index": 115,
       "phase": 9,
       "type": "syndrome",
       "title_en": "Neurocutaneous: Tuberous Sclerosis, Neurofibromatosis",
@@ -2508,7 +2677,7 @@
         "Topiramate"
       ],
       "estimated_density": "low",
-      "index": 110,
+      "index": 116,
       "phase": 9,
       "type": "neurology",
       "title_en": "Headache + Migraine",
@@ -2525,7 +2694,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 111,
+      "index": 117,
       "phase": 9,
       "type": "neurology",
       "title_en": "Metabolic disorders with psychiatric presentation",
@@ -2544,7 +2713,7 @@
         "NMDA_receptor"
       ],
       "estimated_density": "medium",
-      "index": 112,
+      "index": 118,
       "phase": 9,
       "type": "neurology",
       "title_en": "Autoimmune: NMDA-receptor encephalitis, lupus, PANDAS",
@@ -2561,7 +2730,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "low",
-      "index": 113,
+      "index": 119,
       "phase": 9,
       "type": "neurology",
       "title_en": "Neurodegenerative basics (FXTAS, HD pediatric, etc.)",
@@ -2579,7 +2748,7 @@
         "CONVENIENCE_STORE_7"
       ],
       "estimated_density": "medium",
-      "index": 114,
+      "index": 120,
       "phase": 9,
       "type": "foundation",
       "title_en": "Sleep medicine intensive",
@@ -2596,7 +2765,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 115,
+      "index": 121,
       "phase": 9,
       "type": "foundation",
       "title_en": "Psychotherapy theories overview",
@@ -2613,7 +2782,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 116,
+      "index": 122,
       "phase": 10,
       "phase_name": "Psychotherapy + Integration",
       "type": "psychotherapy",
@@ -2631,7 +2800,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 117,
+      "index": 123,
       "phase": 10,
       "type": "psychotherapy",
       "title_en": "DBT: theory + practice",
@@ -2648,7 +2817,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "medium",
-      "index": 118,
+      "index": 124,
       "phase": 10,
       "type": "psychotherapy",
       "title_en": "Family therapy + Parent management training",
@@ -2671,7 +2840,7 @@
         "klein_positions"
       ],
       "estimated_density": "high",
-      "index": 119,
+      "index": 125,
       "phase": 10,
       "type": "psychotherapy",
       "title_en": "Psychodynamic: Anna Freud, Klein, Kohut, Mentalization",
@@ -2686,7 +2855,7 @@
       ],
       "symbols_needed": [],
       "estimated_density": "high",
-      "index": 120,
+      "index": 126,
       "phase": 10,
       "type": "review",
       "title_en": "Integration + practice questions + weak-spot review",
