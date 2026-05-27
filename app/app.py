@@ -19,13 +19,21 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import sys
 import tempfile
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date
 from pathlib import Path
 
 import requests
 import streamlit as st
+
+# Import SR engine from scripts/ directory
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+from sr_engine import (  # noqa: E402
+    card_id, new_card_state, update_card, is_due, collect_due_cards, stats,
+    GRADE_AGAIN, GRADE_HARD, GRADE_GOOD, GRADE_EASY, GRADE_LABELS,
+)
 
 # ── Configuration ───────────────────────────────────────────────────────────
 GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
@@ -40,6 +48,7 @@ SCHEDULE_LOCAL = LOCAL_ROOT / "schedule" / "schedule.json"
 SYMBOLS_LOCAL = LOCAL_ROOT / "schedule" / "symbols.json"
 PROGRESS_LOCAL = LOCAL_ROOT / "schedule" / "progress.json"
 PALETTE_LOCAL = LOCAL_ROOT / "schedule" / "phase_palette.json"
+SR_PROGRESS_LOCAL = LOCAL_ROOT / "schedule" / "flashcard_progress.json"
 
 # Fallback palette if file missing
 _DEFAULT_PALETTE_ENTRY = {"name": "Unknown", "hex": "#808080", "prompt": ""}
@@ -115,6 +124,48 @@ def fetch_text(url: str) -> str:
     except Exception:
         pass
     return ""
+
+
+@st.cache_data(ttl=30)
+def load_sr_progress() -> dict:
+    """Flashcard SR progress (per-card state)."""
+    if SR_PROGRESS_LOCAL.exists():
+        try:
+            return json.loads(SR_PROGRESS_LOCAL.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return _gh_fetch_json("schedule/flashcard_progress.json", fallback={})
+
+
+def save_sr_progress(progress: dict) -> bool:
+    """Save flashcard SR progress via GitHub Contents API or local fallback."""
+    if not GITHUB_TOKEN:
+        SR_PROGRESS_LOCAL.parent.mkdir(parents=True, exist_ok=True)
+        SR_PROGRESS_LOCAL.write_text(
+            json.dumps(progress, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        return True
+    import base64
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+    }
+    file_path = "schedule/flashcard_progress.json"
+    sha = None
+    r = requests.get(f"{API_BASE}/contents/{file_path}", headers=headers, timeout=10)
+    if r.status_code == 200:
+        sha = r.json().get("sha")
+    content_str = json.dumps(progress, ensure_ascii=False, indent=2)
+    payload = {
+        "message": f"Flashcard SR: review at {datetime.now(timezone.utc).isoformat(timespec='seconds')}",
+        "content": base64.b64encode(content_str.encode("utf-8")).decode(),
+        "branch": BRANCH,
+    }
+    if sha:
+        payload["sha"] = sha
+    r = requests.put(f"{API_BASE}/contents/{file_path}", headers=headers, json=payload, timeout=15)
+    return r.status_code in (200, 201)
 
 
 @st.cache_data(ttl=60)
@@ -225,6 +276,145 @@ def slugify(text: str) -> str:
 
 def day_tag(day: dict) -> str:
     return f"study-{day['index']:03d}-{slugify(day.get('title_en', ''))}"
+
+
+# ── Flashcard SR rendering ─────────────────────────────────────────────────
+def _extract_qa(card_raw: dict) -> tuple[str, str]:
+    """Pull (question, answer) from a flashcard JSON record."""
+    q = card_raw.get("front") or card_raw.get("question") or card_raw.get("q", "")
+    a = card_raw.get("back") or card_raw.get("answer") or card_raw.get("a", "")
+    return q, a
+
+
+def render_chapter_flashcards_sr(chapter_idx: int, cards_raw: list) -> None:
+    """Render the chapter's flashcards as a Spaced-Repetition session.
+
+    On entry, computes the review queue = cards from this chapter that are
+    DUE today (including new cards never seen). User reveals + grades each.
+    Grades update flashcard_progress.json and recompute the queue.
+    """
+    sr_state = load_sr_progress()
+    if not isinstance(sr_state, dict):
+        sr_state = {}
+
+    # Index cards from THIS chapter into SR state if absent
+    chapter_card_index = {}  # card_id -> raw card dict
+    for c in cards_raw:
+        q, _ = _extract_qa(c)
+        if not q:
+            continue
+        cid = card_id(chapter_idx, q)
+        chapter_card_index[cid] = c
+        if cid not in sr_state:
+            sr_state[cid] = new_card_state(chapter_idx, q)
+
+    # Build the review queue: cards from THIS chapter that are due today
+    today = date.today()
+    queue = [cid for cid in chapter_card_index if is_due(sr_state[cid], today)]
+    # Order: new first, then by overdueness
+    queue.sort(key=lambda cid: (
+        int(sr_state[cid].get("review_count", 0)) > 0,   # new first
+        sr_state[cid].get("due_date", ""),                # then by due-date asc
+    ))
+
+    if not queue:
+        # All chapter cards are scheduled for the future
+        next_due_cid = min(chapter_card_index, key=lambda c: sr_state[c].get("due_date", "9999"))
+        next_date = sr_state[next_due_cid].get("due_date", "?")
+        st.success(f"🎉 סיימת היום את כל הכרטיסיות של פרק זה. החזרה הבאה: {next_date}.")
+        return
+
+    # Session state per chapter
+    pos_key = f"fc_pos_c{chapter_idx}"
+    rev_key = f"fc_reveal_c{chapter_idx}"
+    if pos_key not in st.session_state:
+        st.session_state[pos_key] = 0
+    if rev_key not in st.session_state:
+        st.session_state[rev_key] = False
+
+    pos = st.session_state[pos_key]
+    if pos >= len(queue):
+        st.success(f"🎉 סיימת את {len(queue)} הכרטיסיות שהיו בתור היום. רענן את הדף כדי להמשיך.")
+        if st.button("התחל מחדש", key=f"fc_restart_c{chapter_idx}"):
+            st.session_state[pos_key] = 0
+            st.session_state[rev_key] = False
+            st.rerun()
+        return
+
+    cid = queue[pos]
+    card = sr_state[cid]
+    q, a = _extract_qa(chapter_card_index[cid])
+    revealed = st.session_state[rev_key]
+
+    # Header
+    rc = int(card.get("review_count", 0))
+    ease = float(card.get("ease", 2.5))
+    interval = int(card.get("interval_days", 0))
+    new_flag = " · 🆕 כרטיסיה חדשה" if rc == 0 else f" · interval {interval}d · ease {ease:.1f}"
+    st.caption(f"כרטיסיה {pos+1} / {len(queue)} בתור היום{new_flag}")
+
+    # Card body — show question always; answer only when revealed
+    st.markdown(
+        f'<div dir="rtl" style="text-align: right; padding: 22px; '
+        f'border: 2px solid #ccc; border-radius: 12px; '
+        f'background: rgba(0,0,0,0.03); font-size: 1.15em; line-height: 1.6; '
+        f'margin: 10px 0;">'
+        f'<div style="color:#888; font-size:0.85em; margin-bottom:8px;">שאלה</div>'
+        f'<div>{q}</div>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+    if revealed:
+        st.markdown(
+            f'<div dir="rtl" style="text-align: right; padding: 22px; '
+            f'border: 2px solid #4caf50; border-radius: 12px; '
+            f'background: rgba(76,175,80,0.06); font-size: 1.10em; line-height: 1.6; '
+            f'margin: 10px 0;">'
+            f'<div style="color:#4caf50; font-size:0.85em; margin-bottom:8px;">תשובה</div>'
+            f'<div>{a}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    # Controls
+    if not revealed:
+        if st.button("👁  חשוף תשובה", key=f"fc_reveal_btn_c{chapter_idx}", type="primary", use_container_width=True):
+            st.session_state[rev_key] = True
+            st.rerun()
+    else:
+        st.markdown("**איך זה הלך?**")
+        cols = st.columns(4)
+        for g, col in zip([GRADE_AGAIN, GRADE_HARD, GRADE_GOOD, GRADE_EASY], cols):
+            with col:
+                en, he = GRADE_LABELS[g]
+                btn_type = "secondary" if g != GRADE_GOOD else "primary"
+                if st.button(en + "\n" + he, key=f"fc_grade_c{chapter_idx}_g{g}", use_container_width=True, type=btn_type):
+                    # Apply grade
+                    sr_state[cid] = update_card(card, g)
+                    if save_sr_progress(sr_state):
+                        st.session_state[pos_key] = pos + 1
+                        st.session_state[rev_key] = False
+                        # Invalidate cache so the next load reflects the new state
+                        load_sr_progress.clear()
+                        st.rerun()
+                    else:
+                        st.error("⚠ הגרייד לא נשמר ב-GitHub. נסה שוב.")
+
+
+def render_daily_review_banner(progress_sr: dict) -> None:
+    """Compact banner at the top of the dashboard showing how many cards
+    are due today across all chapters."""
+    s = stats(progress_sr)
+    if s["total"] == 0:
+        return
+    due = s["due_today"]
+    if due > 0:
+        st.info(
+            f"🃏 **{due} כרטיסיות לחזרה היום** מתוך {s['total']} סה\"כ "
+            f"({s['new']} חדשות · {s['mature']} בוגרות [≥21 ימים])"
+        )
+    else:
+        st.caption(f"🃏 {s['total']} כרטיסיות במאגר ({s['mature']} בוגרות) · אין מה לחזור היום")
 
 
 # ── UI components ───────────────────────────────────────────────────────────
@@ -422,68 +612,25 @@ def render_day_page(day, symbols, progress, palette):
             else:
                 st.warning("לא הצלחתי לטעון את מדריך הלימוד.")
 
-    # Flashcards — interactive deck with reveal-to-flip
+    # Flashcards — Spaced Repetition (SM-2) with reveal + 4-grade buttons
     flashcards_url = assets.get("flashcards.json")
     if flashcards_url:
-        with st.expander("🃏 כרטיסיות שינון", expanded=False):
+        with st.expander("🃏 כרטיסיות שינון (Spaced Repetition)", expanded=False):
             raw = fetch_text(flashcards_url)
             if not raw:
                 st.warning("לא הצלחתי לטעון את הכרטיסיות.")
             else:
                 try:
-                    cards = json.loads(raw)
+                    cards_raw = json.loads(raw)
                 except Exception as e:
                     st.error(f"שגיאת פירוש JSON: {e}")
-                    cards = None
-                # Normalize structure
-                if isinstance(cards, dict):
-                    cards = cards.get("cards") or cards.get("flashcards") or cards.get("items") or []
-                if isinstance(cards, list) and cards:
-                    # Init session state for current card index
-                    state_key = f"fc_idx_d{idx}"
-                    reveal_key = f"fc_rev_d{idx}"
-                    if state_key not in st.session_state:
-                        st.session_state[state_key] = 0
-                    if reveal_key not in st.session_state:
-                        st.session_state[reveal_key] = False
-
-                    i = st.session_state[state_key] % len(cards)
-                    c = cards[i]
-                    q = c.get("front") or c.get("question") or c.get("q", "")
-                    a = c.get("back") or c.get("answer") or c.get("a", "")
-
-                    st.caption(f"כרטיסיה {i+1} / {len(cards)}")
-                    # The card itself
-                    side = "תשובה" if st.session_state[reveal_key] else "שאלה"
-                    body = a if st.session_state[reveal_key] else q
-                    st.markdown(
-                        f'<div dir="rtl" style="text-align: right; min-height: 120px; '
-                        f'padding: 24px; border: 2px solid #ccc; border-radius: 12px; '
-                        f'background: rgba(0,0,0,0.03); font-size: 1.15em; line-height: 1.6;">'
-                        f'<div style="color:#888; font-size:0.85em; margin-bottom:10px;">{side}</div>'
-                        f'{body}</div>',
-                        unsafe_allow_html=True,
-                    )
-
-                    # Controls
-                    c1, c2, c3 = st.columns([1, 1, 1])
-                    with c1:
-                        if st.button("⏮ קודמת", key=f"fc_prev_d{idx}"):
-                            st.session_state[state_key] = (i - 1) % len(cards)
-                            st.session_state[reveal_key] = False
-                            st.rerun()
-                    with c2:
-                        label = "🙈 הסתר תשובה" if st.session_state[reveal_key] else "👁 חשוף תשובה"
-                        if st.button(label, key=f"fc_flip_d{idx}", type="primary"):
-                            st.session_state[reveal_key] = not st.session_state[reveal_key]
-                            st.rerun()
-                    with c3:
-                        if st.button("הבאה ⏭", key=f"fc_next_d{idx}"):
-                            st.session_state[state_key] = (i + 1) % len(cards)
-                            st.session_state[reveal_key] = False
-                            st.rerun()
-                elif cards is not None:
-                    st.json(cards)
+                    cards_raw = None
+                if isinstance(cards_raw, dict):
+                    cards_raw = cards_raw.get("cards") or cards_raw.get("flashcards") or cards_raw.get("items") or []
+                if isinstance(cards_raw, list) and cards_raw:
+                    render_chapter_flashcards_sr(idx, cards_raw)
+                elif cards_raw is not None:
+                    st.json(cards_raw)
 
     # Quiz — handles NotebookLM's answerOptions structure
     quiz_url = assets.get("quiz.json")
@@ -585,6 +732,7 @@ def main():
         symbols = load_symbols()
         progress = load_progress()
         palette = load_palette()
+        sr_progress = load_sr_progress()
     except Exception as e:
         st.error(f"שגיאת טעינה: {e}")
         return
@@ -592,6 +740,7 @@ def main():
     # Header
     st.title("📚 קורס שלב ב' — פסיכיאטריית ילד ומתבגר")
     st.caption("מבוסס על: DSM-5-TR · Dulcan's Textbook · Stahl's Essential + Pediatric · הסילבוס הרשמי")
+    render_daily_review_banner(sr_progress)
 
     # Sidebar: overall progress + phase navigation
     with st.sidebar:
