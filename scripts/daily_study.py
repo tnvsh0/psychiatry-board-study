@@ -58,6 +58,21 @@ WAIT_INDEX_S = 60
 POLL_INTERVAL_S = 60
 ARTIFACT_MAX_WAIT_S = 60 * 60  # 60 min per batch (audio --length long is slower)
 
+# Source PDFs uploaded to each per-day notebook so NotebookLM can cite page
+# numbers in the study guide. Configurable via env var so the path differs
+# between VM (/opt/sources) and local dev (anything you choose).
+SOURCE_PDF_DIR = Path(os.environ.get("SOURCE_PDF_DIR", "/opt/sources"))
+SOURCE_PDF_NAMES = [
+    "dsm-5-tr.pdf",
+    "dulcan.pdf",
+    "stahl-essential.pdf",
+    "kaplan-sadock-synopsis.pdf",
+    "syllabus.pdf",
+    # kaplan-sadock-comprehensive.pdf intentionally omitted — 352 MB,
+    # exceeds practical NotebookLM upload time for daily generation.
+    # Add it manually to the main notebook if you want comprehensive coverage.
+]
+
 
 def slugify(text: str) -> str:
     """Make a filesystem/URL-friendly slug from English text."""
@@ -365,6 +380,46 @@ def add_text_source(nb_id, content, title):
         return (data.get("source") or {}).get("id") or data.get("id")
     except Exception:
         return None
+
+
+def add_pdf_source(nb_id, pdf_path, title=None):
+    """Upload a single PDF as a source to the per-day notebook. Returns source_id or None."""
+    pdf_path = Path(pdf_path)
+    if not pdf_path.exists():
+        print(f"  [!] PDF not found, skipping: {pdf_path}")
+        return None
+    title = title or pdf_path.stem
+    r = nb_run(["source", "add", str(pdf_path), "--title", title, "--json", "-n", nb_id], timeout=600)
+    if r.returncode != 0:
+        print(f"  [!] PDF source add failed ({pdf_path.name}): {r.stderr[:200]}")
+        return None
+    try:
+        data = json.loads(r.stdout.strip())
+        return (data.get("source") or {}).get("id") or data.get("id")
+    except Exception:
+        return None
+
+
+def add_textbook_pdfs_to_day_notebook(nb_id):
+    """Upload all configured textbook PDFs to the per-day notebook so that the
+    study-guide generation step can cite real page numbers. Returns the count
+    of successfully added sources."""
+    if not SOURCE_PDF_DIR.exists():
+        print(f"  [!] SOURCE_PDF_DIR not found ({SOURCE_PDF_DIR}); skipping textbook PDFs.")
+        return 0
+    added = 0
+    for name in SOURCE_PDF_NAMES:
+        pdf = SOURCE_PDF_DIR / name
+        if not pdf.exists():
+            print(f"    skip (missing): {name}")
+            continue
+        size_mb = pdf.stat().st_size / (1024 * 1024)
+        print(f"    uploading {name} ({size_mb:.1f} MB)...")
+        sid = add_pdf_source(nb_id, pdf, title=pdf.stem)
+        if sid:
+            added += 1
+            print(f"      [OK] source_id={sid[:8]}")
+    return added
 
 
 def extract_day_content_from_main(day, symbols_block, main_notebook_id):
@@ -690,17 +745,24 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         day_nb_id = create_day_notebook(day_nb_title)
         print(f"  Created notebook: {day_nb_id}")
 
-        # 4. Add the extracted .md as source
-        source_title = f"Day {day_index} — Source material (extracted from DSM/Dulcan/Stahl)"
+        # 4a. Upload the textbook PDFs so the study guide can cite real pages.
+        #     Done BEFORE the focused .md so they form the foundation.
+        print(f"  Uploading textbook PDFs from {SOURCE_PDF_DIR}...")
+        n_pdfs = add_textbook_pdfs_to_day_notebook(day_nb_id)
+        print(f"  Added {n_pdfs} textbook PDF source(s).")
+
+        # 4b. Add the extracted .md as a focused-summary source.
+        source_title = f"Day {day_index} — Focused extract (from main notebook)"
         src_id = add_text_source(day_nb_id, extract_md, source_title)
         if not src_id:
-            print("[!] Could not add source. Aborting.")
-            return None
-        print(f"  Added source: {src_id}")
+            print("[!] Could not add focused-extract source. Continuing with PDFs only.")
+        else:
+            print(f"  Added focused-extract source: {src_id}")
 
-        # 5. Wait for indexing (text source = fast)
-        print(f"  Waiting {WAIT_INDEX_S}s for indexing...")
-        time.sleep(WAIT_INDEX_S)
+        # 5. Wait for indexing — PDFs need more time than text
+        wait_s = max(WAIT_INDEX_S, 120 if n_pdfs > 0 else WAIT_INDEX_S)
+        print(f"  Waiting {wait_s}s for indexing...")
+        time.sleep(wait_s)
 
     # Switch to the per-day notebook for artifact generation
     use_notebook(day_nb_id)
