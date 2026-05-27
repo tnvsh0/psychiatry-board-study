@@ -422,6 +422,18 @@ def add_textbook_pdfs_to_day_notebook(nb_id):
     return added
 
 
+def count_notebook_sources(nb_id):
+    """Return number of sources currently in the given notebook (or -1 on error)."""
+    r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
+    if r.returncode != 0:
+        return -1
+    try:
+        data = json.loads(r.stdout)
+        return data.get("count", len(data.get("sources", [])))
+    except Exception:
+        return -1
+
+
 def extract_day_content_from_main(day, symbols_block, main_notebook_id):
     """Use the MAIN notebook to extract comprehensive material for this day's
     topic into a markdown file. This .md becomes the focused source for the
@@ -732,6 +744,23 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     day_nb_id, day_nb_title = find_day_notebook(day_index, day.get("title_he", title_en))
     if day_nb_id:
         print(f"Found existing per-day notebook: {day_nb_id} ('{day_nb_title}')")
+        # Retrofit: if the notebook predates the PDF-wiring change, it only has
+        # the extracted .md as its single source. Upload PDFs now so the study
+        # guide can cite real page numbers.
+        n_sources = count_notebook_sources(day_nb_id)
+        # Minimum expected: 1 (extract.md) + len(SOURCE_PDF_NAMES) PDFs
+        min_expected = 1 + len([n for n in SOURCE_PDF_NAMES if (SOURCE_PDF_DIR / n).exists()])
+        if 0 < n_sources < min_expected:
+            print(f"  Notebook has only {n_sources} source(s) (expected {min_expected}). Retrofitting with textbook PDFs...")
+            added = add_textbook_pdfs_to_day_notebook(day_nb_id)
+            if added > 0:
+                wait_s = 180  # PDFs take longer to index than text
+                print(f"  Added {added} PDF source(s). Waiting {wait_s}s for indexing...")
+                time.sleep(wait_s)
+        elif n_sources >= min_expected:
+            print(f"  Notebook already has {n_sources} sources — skipping PDF retrofit.")
+        else:
+            print(f"  [!] Could not determine source count; continuing without retrofit.")
     else:
         # 2. Extract focused content from MAIN notebook
         extract_md = extract_day_content_from_main(day, symbol_block, NOTEBOOK_ID)
