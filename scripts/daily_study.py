@@ -323,91 +323,96 @@ def prompt_notebooklm_infographic(day, aspect):
 איסור: ללא דמויות-קומיקס, ללא סצנות, ללא סמלי-מנמוניקה ויזואליים. זו אינפוגרפיקה רגילה."""
 
 
+SKETCHY_PHILOSOPHY = """The power of a SketchyMedical-style image is NOT in literally illustrating clinical content. The power is in BIZARRE, UNEXPECTED, SURPRISING METAPHOR — and in the dissonance between the setting and the medical fact.
+
+Look at how the established symbols in our symbol legend already work:
+- μ-opioid receptor → a COW with 'MOO' on her side, in a DAIRY FARM. Cows have nothing to do with opioids — that dissonance is the entire point.
+- 5-HT2A receptor → a TAROT PARLOR with two Ace cards on the table. Tarot has nothing to do with serotonin.
+- GABA-A receptor → an Aa HOTEL with 5 floors (α-subunits). A hotel for a receptor.
+- D2 receptor → a giant RED BARRIER labeled '2' on a coal-mine train track.
+- DOPA-MINE (dopamine) → a literal coal MINE called DOPA-MINE Co. Mining for dopamine ore.
+- κ-opioid → a grumpy GOAT with a 'K' tag (visual + phonetic pun on kappa).
+- δ-opioid → a DELTA AIRLINES plane (triangular logo = δ).
+- β1 receptor → BEETHOVEN conducting with a '#1' baton in front of heart-drums (β1 = heart).
+
+PRINCIPLES that make these scenes memorable:
+1. UNEXPECTED SETTING — the scene takes place somewhere that has NOTHING to do with the medical topic (a circus, a wedding, a dairy farm, a heist, a deep-sea submarine, a medieval joust, a hot-air balloon race, an ancient temple, a Las Vegas casino, a Bollywood film set, a sushi conveyor belt, a junkyard).
+2. PHONETIC OR VISUAL PUNS — each medical fact is encoded as a character or object via wordplay (μ → MOO, δ → DELTA airline triangle, β1 → Beethoven's #1, '2' on a barrier for D2).
+3. NUMBERS ARE COUNTABLE OBJECTS — 6 symptoms = 6 of something (6 cupcakes, 6 dancers, 6 monks). Age 12 = 12 candles. 2 settings = 2 connected rooms.
+4. ABSURDITY OVER FAITHFULNESS — a wedding cake encoding antidepressant titration is BETTER than a literal dose-escalation chart. The dissonance encodes the memory.
+5. EMOTIONAL ACTIVATION — viewer should LAUGH, gasp, or say 'WHAT?' on first sight. That feeling cements the memory.
+
+EXPLICIT ANTI-PATTERNS — these RUIN Sketchy memorability and are FORBIDDEN:
+✗ A doctor's office showing patients with the disorder.
+✗ A lecture hall with charts of statistics.
+✗ Children behaving like ADHD children (literal, no symbolic substitution).
+✗ A laboratory split into zones for biopsychosocial etiology.
+✗ A pharmacy with the drug prominently displayed.
+✗ A "therapy room" showing techniques.
+✗ Anything that looks like a clinical illustration of the topic.
+✗ Floating informational labels, callout arrows, or chart-like overlays.
+
+The bizarre context is NOT decoration — it IS the mnemonic engine."""
+
+
 def prompt_sketchy_scene(day, symbol_block, legend_block, aspect):
-    """Prompt for the Gemini Sketchy-scene generator (Nano Banana 2). Heavy
-    visual symbol legend + per-aspect scene hint. NOT used by NotebookLM."""
+    """Prompt for the Gemini Sketchy-scene generator (Nano Banana 2).
+
+    Forces a BIZARRE METAPHORICAL scene — NOT a literal clinical illustration.
+    Each medical fact must be encoded through phonetic or visual pun, counted
+    object, or absurd character. The setting itself must be UNEXPECTED for
+    the topic. The aspect tells us WHICH FACTS to encode, not what setting
+    to draw."""
     base = build_visual_context(day, symbol_block, legend_block)
-    aspect_prompts = {
-        "dsm_criteria": "התמקד אך ורק בקריטריונים של DSM-5-TR לאבחנה זו. רשימה מסודרת + דוגמאות קליניות.",
-        "epidemiology": "התמקד באפידמיולוגיה: prevalence, incidence, חלוקה לפי מין/גיל, גורמי סיכון, גורמים מגנים.",
-        "etiology": "התמקד באטיולוגיה ביופסיכוסוציאלית: גנטיקה, נוירוביולוגיה, סביבה, פסיכולוגיה.",
-        "treatment_first_line": "התמקד בטיפול קו ראשון: תרופתי + לא-תרופתי + עוצמת ההמלצה.",
-        "treatment_second_line": "התמקד בטיפולי קו שני ומתפתחים: אינדיקציות, יעילות, סיכונים.",
-        "treatment_overview": "סקירת עץ-טיפול: קו 1 → קו 2 → augmentation → refractory.",
-        "drug_mechanism": "התמקד במנגנון פעולה: קולטנים, עוצמות קישור, downstream effects.",
-        "drug_side_effects": "התמקד בתופעות לוואי + המנגנון של כל אחת.",
-        "drug_monitoring": "התמקד בבדיקות לפני התחלה + ניטור במהלך הטיפול (תדירות + ערכים).",
-        "drug_practical": "התמקד בפרקטיקה: מינונים, איך להתחיל, איך לעלות/לרדת, אינטראקציות נפוצות.",
-        "drug_class_overview": "סקירה השוואתית של בני המשפחה: השוואה לפי t½, מטבוליזם, אינדיקציות.",
-        "indications": "התמקד באינדיקציות (FDA + off-label) + רמת הראיה.",
-        "side_effects_class": "התמקד בתופעות לוואי משותפות למשפחה.",
-        "monitoring": "התמקד בניטור: מה, מתי, איזה ערכים.",
-        "practical_use": "התמקד בפרקטיקה: בחירה בין בני המשפחה, אופן ההתחלה.",
-        "assessment_tools": "התמקד בכלי הערכה (שאלונים, סולמות) רלוונטיים.",
-        "medical_mimics": "התמקד באבחנה מבדלת רפואית ובמצבים 'Due to Another Medical Condition / Substance'.",
-        "core_concept": "התמקד בקונספט הליבה — מה זה ולמה זה חשוב.",
-        "anatomy_or_structure": "התמקד באנטומיה/מבנה — איפה זה ממוקם, איך זה נראה.",
-        "function": "התמקד בתפקוד — מה זה עושה, איך זה משפיע.",
-        "clinical_relevance": "התמקד ברלוונטיות קלינית — איפה זה פוגש מטופלים.",
-        "history_origin": "התמקד בהיסטוריה ומקור הטכניקה — מי פיתח, מתי, איפה.",
-        "core_principles": "התמקד בעקרונות יסוד של השיטה.",
-        "practice_method": "התמקד באיך זה נעשה בפועל — מבנה sessions, טכניקות.",
-        "evidence": "התמקד בעדויות אמפיריות — RCTs, meta-analyses, אינדיקציות מאושרות.",
-        "recognition": "התמקד בזיהוי מוקדם של המצב — סימנים אדומים.",
-        "diagnostic_criteria": "התמקד בקריטריונים הדיאגנוסטיים המדויקים.",
-        "differential": "התמקד באבחנה מבדלת — מה דומה, איך מבדילים.",
-        "emergency_management": "התמקד בניהול המצב החירומי: גישה, תרופות, ניטור.",
+    aspect_focus = {
+        "dsm_criteria": "Encode the DSM-5-TR diagnostic criteria — number of symptoms required, time-thresholds, age cutoffs, mandatory features.",
+        "epidemiology": "Encode prevalence, sex ratio, typical age of onset, key risk factors.",
+        "etiology": "Encode the biopsychosocial etiology — genetic component, neurobiological substrate, environmental/social contributors.",
+        "treatment_first_line": "Encode first-line treatments — the specific drug names, doses, and any first-line non-pharmacological options.",
+        "treatment_second_line": "Encode second-line treatments — names, indications, key risks.",
+        "treatment_overview": "Encode the treatment hierarchy — line 1 → line 2 → augmentation → refractory.",
+        "drug_mechanism": "Encode mechanism of action — which receptors/transporters, agonist/antagonist, downstream effects.",
+        "drug_side_effects": "Encode side effects + the mechanism of each.",
+        "drug_monitoring": "Encode monitoring labs and parameters before starting + during treatment.",
+        "drug_practical": "Encode dosing, titration schedule, common interactions.",
+        "drug_class_overview": "Encode comparison of family members — half-lives, metabolism, indications.",
+        "indications": "Encode FDA-approved indications + key off-label uses with evidence level.",
+        "side_effects_class": "Encode class-wide side effects.",
+        "monitoring": "Encode what is monitored, when, and acceptable value ranges.",
+        "practical_use": "Encode practical choice between family members + how to start.",
+        "assessment_tools": "Encode the assessment instruments — questionnaire names (Conners, ASEBA, CGI, etc.), cut-offs.",
+        "medical_mimics": "Encode medical mimics and 'Due to Another Medical Condition / Substance' differential.",
+        "core_concept": "Encode the core concept and why it matters.",
+        "anatomy_or_structure": "Encode anatomy / structure — location, shape, neighbors.",
+        "function": "Encode function — what it does, how it influences behavior.",
+        "clinical_relevance": "Encode clinical relevance — when and where it matters.",
+        "history_origin": "Encode the history and originator — who developed it, when, where.",
+        "core_principles": "Encode the core principles of the method.",
+        "practice_method": "Encode how it is delivered — session structure, techniques.",
+        "evidence": "Encode the evidence base — key RCTs, meta-analyses, approved indications.",
+        "recognition": "Encode early-warning signs of the condition.",
+        "diagnostic_criteria": "Encode precise diagnostic criteria.",
+        "differential": "Encode the differential diagnosis — what looks similar, how to tell apart.",
+        "emergency_management": "Encode emergency management — approach, drugs, monitoring.",
     }
-    aspect_he = aspect_prompts.get(aspect, f"Focus on aspect: {aspect}")
+    aspect_he = aspect_focus.get(aspect, f"Encode the day's facts most relevant to aspect: {aspect}")
 
-    # Per-aspect setting hints — each aspect gets a DIFFERENT scene to ensure
-    # the day's 3 images don't all look like minor variations of each other.
-    aspect_setting_hints = {
-        "dsm_criteria": "Setting: a doctor's CONSULTATION ROOM with a wall chart of DSM criteria. The criteria points are physically embodied in the scene (a patient demonstrating each one).",
-        "epidemiology": "Setting: a public-health LECTURE HALL with bar charts and population maps on the walls. Diverse patient figures of different ages/sexes show prevalence.",
-        "etiology": "Setting: a biopsychosocial LABORATORY split into three zones — genetics corner (DNA helix), brain-imaging corner (MRI), and family/social corner (family tree).",
-        "treatment_first_line": "Setting: a PHARMACY counter with the first-line treatment prominently displayed; a smiling patient receiving care.",
-        "treatment_second_line": "Setting: a SPECIALIST CLINIC room where a patient who failed first-line treatment is reassessed; second-line option emerges.",
-        "treatment_overview": "Setting: a TREATMENT-TREE DIAGRAM scene — a flowchart on a wall coming alive with patients moving down different branches.",
-        "drug_mechanism": "Setting: a microscopic NEURON CROSS-SECTION — a synapse interior, receptors visible, drug molecules acting.",
-        "drug_side_effects": "Setting: a side-effects WAITING ROOM — patient showing each common side effect in cartoon form.",
-        "drug_monitoring": "Setting: a LABORATORY where blood draws, ECG, weight scale, and a checklist of pre-treatment + ongoing monitoring values are visible.",
-        "drug_practical": "Setting: a CLINICAL TITRATION WORKSHOP — a doctor explaining starting dose, escalation schedule, taper, drug interactions.",
-        "drug_class_overview": "Setting: a FAMILY PORTRAIT room — different drugs of the class lined up like family members with t½, metabolism, indication tags.",
-        "indications": "Setting: a HOSPITAL DIRECTORY board — listing FDA-approved and off-label indications, each on a sign.",
-        "side_effects_class": "Setting: a SYMPTOM CHECKLIST scene — multiple patients showing class-wide side effects together.",
-        "monitoring": "Setting: a NURSE'S MONITORING STATION — clipboards, lab values, schedules.",
-        "practical_use": "Setting: a PRACTITIONER'S OFFICE choosing between family members; bottles lined up to compare.",
-        "assessment_tools": "Setting: a CLINICAL ASSESSMENT ROOM — questionnaires, rating scales (e.g., Conners, ASEBA, CGI), and a clinician filling them out.",
-        "medical_mimics": "Setting: a DIFFERENTIAL-DIAGNOSIS CORRIDOR — doors labeled 'Thyroid', 'Substance', 'Seizure', 'Anemia' each opening to a patient that looks similar but is medical not psychiatric.",
-        "core_concept": "Setting: a CONCEPT-MAP CLASSROOM — central idea drawn on a chalkboard with all related sub-ideas branching out, characters embodying each.",
-        "anatomy_or_structure": "Setting: an ANATOMY DISSECTION ROOM (cartoonized) — the structure is on a table, scaled up, characters pointing at parts.",
-        "function": "Setting: a FACTORY FLOOR where the function is being performed mechanically — workers doing the job the structure does.",
-        "clinical_relevance": "Setting: a HOSPITAL WARD scene showing real patients with the disorder — clinical impact visible.",
-        "history_origin": "Setting: a HISTORICAL PERIOD — vintage costumes, old photographs on the wall, the originator of the technique drawn as a character.",
-        "core_principles": "Setting: a THERAPY OFFICE with principles posted on the wall as commandments, therapist and patient embodying them.",
-        "practice_method": "Setting: a THERAPY ROOM IN ACTION — session structure visible, techniques being demonstrated.",
-        "evidence": "Setting: a RESEARCH CONFERENCE ROOM — RCT charts on screens, meta-analysis forest plot on the wall.",
-        "recognition": "Setting: a TRIAGE STATION — early warning signs marked on a chart, urgent patient being identified.",
-        "diagnostic_criteria": "Setting: a CRITERIA CHECKLIST WALL — each criterion shown as a character/object satisfying it.",
-        "differential": "Setting: a SIDE-BY-SIDE COMPARISON LINEUP — similar disorders displayed like a police lineup, key distinguishers labeled.",
-        "emergency_management": "Setting: an ER RESUS BAY — patient on a gurney mid-crisis, team executing the management algorithm.",
-    }
-    setting_hint = aspect_setting_hints.get(aspect, "Setting: choose a scene appropriate to the aspect.")
+    return f"""{SKETCHY_PHILOSOPHY}
 
-    return base + f"""
+{base}
 
-Aspect for this specific image: {aspect_he}
+Facts to encode in THIS image (aspect = {aspect}):
+{aspect_he}
 
-{setting_hint}
+YOUR TASK:
+1. INVENT a bizarre, unexpected setting with NO LITERAL connection to the medical topic. Examples of valid contexts (do NOT use these exact ones — invent your own that fits the facts you need to encode): a Las Vegas casino, a medieval joust, a sushi conveyor restaurant, a deep-sea submarine bar, a cowboy saloon, a hot-air balloon race, an Egyptian tomb, a Bollywood movie set, a junkyard, an opera house, a fast-food drive-through, a wedding banquet, a circus tent.
+2. ENCODE each fact above as a CHARACTER, OBJECT, or COUNTED-GROUP in that setting via PHONETIC or VISUAL PUN. Use pre-existing symbols from the legend when they fit (e.g., if dopamine appears, use the DOPA-MINE coal mine scene; if opioids appear, the DAIRY FARM cow with MOO).
+3. Numbers must be embodied (6 symptoms = 6 of something; age 12 = 12 candles; 2 settings = 2 rooms or 2 vehicles).
+4. The scene must be FUNNY or BIZARRE enough that a viewer SAYS 'WHAT?' on first sight.
 
-CRITICAL — make each of today's images DIFFERENT from each other:
-- This image must be a UNIQUE SCENE — NOT a variation of the other aspect images of the same day.
-- Different setting, different characters, different action.
-- The Sketchy-style symbol legend above is for reference. Use ONLY the symbols thematically relevant to THIS specific aspect — do not cram every symbol of the day into every image. If a symbol doesn't fit this aspect's scene, leave it out (it will appear in a different aspect's image).
-- A reader looking at all 3 images side-by-side should see 3 clearly different scenes that together cover the day's aspects.
+CRITICAL — each of the day's 3 images must be a TOTALLY DIFFERENT SETTING (different unexpected context for each aspect — no repeats today). Do NOT use clinical settings (doctor's office, lecture hall, laboratory, pharmacy, hospital ward, therapy room, ER). Do NOT show patients literally exhibiting the disorder.
 
-No text labels inside the image. The story-explanation goes in the companion caption (generated separately) that ties the visual symbols to the clinical content."""
+No text labels inside the image. The story tying symbols to clinical content goes in the companion caption (generated separately)."""
 
 
 def prompt_study_guide(day, symbol_block, legend_block):
