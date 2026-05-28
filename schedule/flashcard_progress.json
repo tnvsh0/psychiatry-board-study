@@ -31,12 +31,12 @@
   },
   "5f73e6656d5dd2a7": {
     "from_chapter": 1,
-    "ease": 2.5,
-    "interval_days": 0,
-    "due_date": "2026-05-28",
-    "review_count": 0,
-    "last_grade": null,
-    "last_seen": null,
+    "ease": 2.65,
+    "interval_days": 4,
+    "due_date": "2026-06-02",
+    "review_count": 1,
+    "last_grade": 3,
+    "last_seen": "2026-05-29T00:40:13",
     "question_preview": "מהי שיטת ה-Triangulation המומלצת לקבלת מידע מהימן בהערכת הילד?"
   },
   "4b472a1a65c7bbde": {
