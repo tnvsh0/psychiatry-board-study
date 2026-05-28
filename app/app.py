@@ -137,35 +137,68 @@ def load_sr_progress() -> dict:
     return _gh_fetch_json("schedule/flashcard_progress.json", fallback={})
 
 
-def save_sr_progress(progress: dict) -> bool:
-    """Save flashcard SR progress via GitHub Contents API or local fallback."""
+def _push_sr_progress_to_github_background(progress_snapshot: dict) -> None:
+    """Background-thread GitHub Contents API push. Logs but never raises so
+    the foreground UI thread is never blocked or crashed by network issues."""
     if not GITHUB_TOKEN:
-        SR_PROGRESS_LOCAL.parent.mkdir(parents=True, exist_ok=True)
-        SR_PROGRESS_LOCAL.write_text(
-            json.dumps(progress, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-        return True
+        return
     import base64
     headers = {
         "Accept": "application/vnd.github+json",
         "Authorization": f"Bearer {GITHUB_TOKEN}",
     }
     file_path = "schedule/flashcard_progress.json"
-    sha = None
-    r = requests.get(f"{API_BASE}/contents/{file_path}", headers=headers, timeout=10)
-    if r.status_code == 200:
-        sha = r.json().get("sha")
-    content_str = json.dumps(progress, ensure_ascii=False, indent=2)
-    payload = {
-        "message": f"Flashcard SR: review at {datetime.now(timezone.utc).isoformat(timespec='seconds')}",
-        "content": base64.b64encode(content_str.encode("utf-8")).decode(),
-        "branch": BRANCH,
-    }
-    if sha:
-        payload["sha"] = sha
-    r = requests.put(f"{API_BASE}/contents/{file_path}", headers=headers, json=payload, timeout=15)
-    return r.status_code in (200, 201)
+    try:
+        sha = None
+        r = requests.get(f"{API_BASE}/contents/{file_path}", headers=headers, timeout=10)
+        if r.status_code == 200:
+            sha = r.json().get("sha")
+        content_str = json.dumps(progress_snapshot, ensure_ascii=False, indent=2)
+        payload = {
+            "message": f"Flashcard SR: review at {datetime.now(timezone.utc).isoformat(timespec='seconds')}",
+            "content": base64.b64encode(content_str.encode("utf-8")).decode(),
+            "branch": BRANCH,
+        }
+        if sha:
+            payload["sha"] = sha
+        requests.put(f"{API_BASE}/contents/{file_path}", headers=headers, json=payload, timeout=15)
+    except Exception:
+        # Background — silent failure. Local file is already saved.
+        pass
+
+
+def save_sr_progress(progress: dict) -> bool:
+    """Save flashcard SR progress. LOCAL-FIRST for instant UX, then GitHub
+    push is fired in a background thread so the grade-click feels immediate.
+
+    Returns True if the local write succeeded. GitHub sync happens
+    asynchronously; on next page load the local file is the source of truth
+    (and it'll already include the latest grade)."""
+    # 1. Local write — fast, atomic, immediate. This is the source of truth
+    #    during the session.
+    try:
+        SR_PROGRESS_LOCAL.parent.mkdir(parents=True, exist_ok=True)
+        SR_PROGRESS_LOCAL.write_text(
+            json.dumps(progress, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    except Exception as e:
+        st.warning(f"שגיאת שמירה מקומית: {e}")
+        return False
+
+    # 2. Background push to GitHub — fire and forget. The UI doesn't wait.
+    if GITHUB_TOKEN:
+        import threading
+        # Copy the dict so the thread isn't affected by subsequent mutations.
+        snapshot = dict(progress)
+        t = threading.Thread(
+            target=_push_sr_progress_to_github_background,
+            args=(snapshot,),
+            daemon=True,
+        )
+        t.start()
+
+    return True
 
 
 @st.cache_data(ttl=60)
