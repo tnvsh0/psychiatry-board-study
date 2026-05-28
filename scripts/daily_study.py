@@ -270,7 +270,62 @@ def prompt_video(day, symbol_block, legend_block):
 חייב להיות קליני ולא דיון בציורים."""
 
 
-def prompt_infographic(day, symbol_block, legend_block, aspect):
+def prompt_notebooklm_infographic(day, aspect):
+    """Prompt for NotebookLM's native infographic generator (instructional /
+    professional style — NOT Sketchy). Information-dense, chart/table style,
+    clinical data. NO scene, NO cartoon mnemonic symbols. The Sketchy scene
+    is handled separately by prompt_sketchy_scene + Gemini."""
+    base = build_clinical_context(day)
+    aspect_prompts = {
+        "dsm_criteria": "קריטריונים DSM-5-TR — רשימה מספרית מסודרת + ספי-זמן + מספר תסמינים נדרש.",
+        "epidemiology": "אפידמיולוגיה — שכיחות, היארעות, פירוט לפי מין/גיל, גורמי סיכון.",
+        "etiology": "אטיולוגיה ביופסיכוסוציאלית — תרשים גנטיקה + נוירוביולוגיה + סביבה.",
+        "treatment_first_line": "טיפול קו ראשון — תרופתי + לא-תרופתי, עם דרגות המלצה.",
+        "treatment_second_line": "טיפולי קו שני ומתפתחים — אינדיקציות, יעילות, סיכונים.",
+        "treatment_overview": "עץ-טיפול — קו 1 → קו 2 → augmentation → refractory.",
+        "drug_mechanism": "מנגנון פעולה — קולטנים, עוצמות קישור, downstream effects.",
+        "drug_side_effects": "תופעות לוואי + מנגנון של כל אחת.",
+        "drug_monitoring": "ניטור — בדיקות לפני התחלה ובמהלך, תדירות וערכים.",
+        "drug_practical": "פרקטיקה — מינונים, התחלה, titration, אינטראקציות.",
+        "drug_class_overview": "סקירה משווה של בני המשפחה — t½, מטבוליזם, אינדיקציות.",
+        "indications": "אינדיקציות (FDA + off-label) ורמת הראיה.",
+        "side_effects_class": "תופעות לוואי משותפות למשפחת התרופות.",
+        "monitoring": "ניטור — מה, מתי, איזה ערכים.",
+        "practical_use": "פרקטיקה — בחירה בין בני המשפחה, אופן ההתחלה.",
+        "assessment_tools": "כלי הערכה — שאלונים, סולמות (Conners, ASEBA, CGI, וכו').",
+        "medical_mimics": "אבחנה מבדלת רפואית — מצבים 'Due to Another Medical Condition / Substance'.",
+        "core_concept": "קונספט הליבה — מה זה ולמה זה חשוב.",
+        "anatomy_or_structure": "אנטומיה/מבנה — איפה ממוקם, איך נראה.",
+        "function": "תפקוד — מה זה עושה, איך זה משפיע.",
+        "clinical_relevance": "רלוונטיות קלינית — איפה זה פוגש מטופלים.",
+        "history_origin": "היסטוריה ומקור הטכניקה — מי פיתח, מתי, איפה.",
+        "core_principles": "עקרונות יסוד של השיטה.",
+        "practice_method": "מבנה הסשנים בפועל וטכניקות.",
+        "evidence": "עדויות אמפיריות — RCTs, meta-analyses, אינדיקציות מאושרות.",
+        "recognition": "סימנים אדומים לזיהוי מוקדם.",
+        "diagnostic_criteria": "קריטריונים דיאגנוסטיים מדויקים.",
+        "differential": "אבחנה מבדלת — מה דומה, איך מבדילים.",
+        "emergency_management": "ניהול חירומי — גישה, תרופות, ניטור.",
+    }
+    aspect_he = aspect_prompts.get(aspect, f"התמקד בהיבט: {aspect}")
+    return base + f"""
+
+צור אינפוגרפיקה אינפורמטיבית-מבנית (לא בסגנון Sketchy, לא סצנה — אלא תרשים-מידע).
+היבט המוקד: {aspect_he}
+
+מבנה דרוש:
+- כותרת ראשית של ההיבט
+- מספרים, טבלאות, רשימות, תרשימים — מידע קליני בדחיסות גבוהה
+- שמות תרופות גנריים באנגלית; שמות-משתנים קליניים באנגלית; הסבר בעברית
+- עמודי מקור בסוגריים אחרי כל טענה מרכזית
+- מקסימום אינפורמטיבי, מינימום קישוט
+
+איסור: ללא דמויות-קומיקס, ללא סצנות, ללא סמלי-מנמוניקה ויזואליים. זו אינפוגרפיקה רגילה."""
+
+
+def prompt_sketchy_scene(day, symbol_block, legend_block, aspect):
+    """Prompt for the Gemini Sketchy-scene generator (Nano Banana 2). Heavy
+    visual symbol legend + per-aspect scene hint. NOT used by NotebookLM."""
     base = build_visual_context(day, symbol_block, legend_block)
     aspect_prompts = {
         "dsm_criteria": "התמקד אך ורק בקריטריונים של DSM-5-TR לאבחנה זו. רשימה מסודרת + דוגמאות קליניות.",
@@ -582,7 +637,11 @@ def start_video(prompt):
 
 
 def start_infographic(prompt):
-    r = nb_run(["generate", "infographic", prompt, "--style", "sketch-note", "--language", "he", "--json"], timeout=120)
+    # NotebookLM's native infographic style — instructional (info-dense,
+    # teaching-focused). NOT sketch-note: we use Gemini Nano Banana 2 for the
+    # actual Sketchy scenes, since NotebookLM's sketch-note style produces
+    # template infographics rather than real scene-based mnemonics.
+    r = nb_run(["generate", "infographic", prompt, "--style", "instructional", "--language", "he", "--json"], timeout=120)
     return _extract_task_id(r, "infographic")
 
 
@@ -917,7 +976,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
 
     for i, aspect in enumerate(infographic_aspects):
         time.sleep(15)
-        tid = start_infographic(prompt_infographic(day, symbol_block, legend_block, aspect))
+        # NotebookLM native infographic — clinical info-graphic style (NOT Sketchy)
+        tid = start_infographic(prompt_notebooklm_infographic(day, aspect))
         task_ids[f"infographic_{aspect}"] = tid
         print(f"  infographic_{aspect}: {tid}")
 
@@ -942,7 +1002,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         for aspect in infographic_aspects:
             png_path = day_dir / f"sketchy_{aspect}.png"
             txt_path = day_dir / f"sketchy_{aspect}.txt"
-            prompt = prompt_infographic(day, symbol_block, legend_block, aspect)
+            # Gemini Sketchy scene — visual-context + per-aspect distinct scene
+            prompt = prompt_sketchy_scene(day, symbol_block, legend_block, aspect)
             print(f"  sketchy_{aspect}: generating image + caption...")
             ok, caption = gemini_generate(
                 prompt=prompt,
