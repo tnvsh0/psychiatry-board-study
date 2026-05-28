@@ -11,12 +11,12 @@
   },
   "8fa72e19b5b9e431": {
     "from_chapter": 1,
-    "ease": 2.5,
-    "interval_days": 0,
-    "due_date": "2026-05-28",
-    "review_count": 0,
-    "last_grade": null,
-    "last_seen": null,
+    "ease": 2.65,
+    "interval_days": 4,
+    "due_date": "2026-06-02",
+    "review_count": 1,
+    "last_grade": 3,
+    "last_seen": "2026-05-29T00:39:55",
     "question_preview": "במסגרת ה-Developmental Ladder (מגדל בנאי 5 קומות), מה מסמל ה-Apprentice בקומה 3 "
   },
   "890409d6b3c1b64b": {
