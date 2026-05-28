@@ -185,8 +185,16 @@ LANGUAGE — bilingual (Hebrew-primary, like Israeli clinicians):
 """
 
 
-def build_base_context(day, symbol_block, legend_block):
-    """The Hebrew context block that every prompt starts with."""
+def build_clinical_context(day):
+    """Context for CLINICAL artifacts (audio, video, study guide, flashcards, quiz).
+
+    Deliberately omits the visual symbol legend — those are mnemonic aids
+    for the IMAGES only. Clinical content must come from the textbook PDFs
+    (DSM, Dulcan, Stahl, Synopsis, syllabus), NOT from the cartoon symbols.
+    Mentioning the cartoon symbols here causes NotebookLM to generate
+    flashcards/quiz items about the visual mnemonics ("what does the ninja
+    mask represent?") instead of the clinical content ("at what age should
+    babbling appear?")."""
     title_he = day.get("title_he", day.get("title_en", ""))
     aspects = day.get("aspects", [])
     focus = day.get("prompt_focus", "")
@@ -199,43 +207,71 @@ def build_base_context(day, symbol_block, legend_block):
 היבטים לכיסוי:
 {', '.join(aspects)}
 
-מערכת סמלים ויזואליים עקביים (Sketchymedical-style). בכל פעם שאחד המושגים האלה מופיע בתוכן — השתמש בסמל הוויזואלי המתאים:
+{BILINGUAL_DIRECTIVE}
+
+הוראות חובה — תוכן קליני בלבד:
+- ההוראות הללו מיועדות לחומר לימודי קליני. **אל תכתוב על הסמלים החזותיים/הציורים/האיורים** (אלה נועדו אך ורק לתמונות הליווי — הם לא נושא הלמידה).
+- כל פיסת תוכן חייבת להישען על המקורות במחברת: DSM-5-TR, Dulcan's Textbook of Child and Adolescent Psychiatry, Stahl's Essential Psychopharmacology, Kaplan & Sadock's Synopsis, והסילבוס הרשמי.
+- ציין הפניה לעמוד מקור בסוגריים אחרי כל טענה משמעותית (לדוגמה: "(DSM p.155)" או "(Dulcan p.245)").
+- מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר לקראת בחינת שלב ב' — חייב להיות תוכן בחינתי, לא מנמוניקה ויזואלית.
+- אל תמציא — אם המידע חסר במקורות, ציין זאת."""
+
+
+def build_visual_context(day, symbol_block, legend_block):
+    """Context for VISUAL artifacts (sketchy image generation only).
+
+    Includes the full symbol legend because images need the visual
+    mnemonics. Clinical accuracy is secondary to memorable iconography here."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    aspects = day.get("aspects", [])
+    focus = day.get("prompt_focus", "")
+
+    return f"""נושא היום: {title_he}
+
+מיקוד מיוחד:
+{focus}
+
+היבטים לכיסוי:
+{', '.join(aspects)}
+
+מערכת סמלים ויזואליים עקביים (Sketchymedical-style). בכל פעם שאחד המושגים האלה מופיע — השתמש בסמל הוויזואלי המתאים:
 {symbol_block}
 
 {legend_block}
 
-{BILINGUAL_DIRECTIVE}
-
-הוראות:
-- הסתמך אך ורק על המקורות במחברת (DSM-5-TR, Dulcan, Stahl Essential, Stahl Pediatric, הסילבוס). אל תמציא.
-- מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר, לקראת בחינת שלב ב'."""
+{BILINGUAL_DIRECTIVE}"""
 
 
 def prompt_audio(day, symbol_block, legend_block):
-    base = build_base_context(day, symbol_block, legend_block)
+    base = build_clinical_context(day)
     return base + """
 
 צור פודקאסט deep-dive בעברית — כמה שיותר ארוך ומעמיק (--length long).
-שיחה מקיפה בין שני מנחים על הנושא. כיסוי שיטתי + יסודי של *כל* ההיבטים
-שצוינו, כולל nuances קלינים, ציטוטים מהמקור, וינייטות. דגש על משמעות
-קלינית ויישום מעשי. אזכור תרופות בשם גנרי באנגלית (לא מסחרי)."""
+שיחה מקיפה בין שני מנחים על הנושא. כיסוי שיטתי + יסודי של *כל* ההיבטים שצוינו,
+כולל nuances קלינים, ציטוטים מהמקור, וינייטות קליניות, והפניות לעמודי מקור
+שצוינו לעיל. דגש על משמעות קלינית ויישום מעשי. אזכור תרופות בשם גנרי באנגלית
+(לא מסחרי).
+
+המנחים יכולים להזכיר בקצרה את המנמוניקה החזותית (תמונת ה-Sketchy של היום)
+כעוגן זיכרון — אבל מרבית הפודקאסט חייבת להיות חומר קליני, לא דיון על איורים."""
 
 
 def prompt_video(day, symbol_block, legend_block):
-    base = build_base_context(day, symbol_block, legend_block)
+    base = build_clinical_context(day)
     return base + """
 
 צור סרטון הסבר באורך כ-10-15 דקות, סגנון whiteboard, בעברית.
+התוכן חייב להיות חומר לימוד קליני מהמקורות (DSM, Dulcan, Stahl, Synopsis,
+סילבוס), עם הפניות לעמודים בעקבות כל טענה מרכזית. כיסוי מקיף של *כל*
+ההיבטים שצוינו.
 
-השתמש בסמלים העקביים מהרשימה: כשמופיע D2 → מחסום אדום עם '2' על המסילה;
-כשמופיע ACh → גפרור-עץ (אצית); כשמופיע M3 → 3 כוסות תה דולפות של ה-Mad Hatter;
-וכן הלאה לפי ה-legend. הוסף תווית קצרה בכל הופעה של סמל (כמו Sketchymedical).
-
-הסרטון עומד בפני עצמו ולא חייב להיראות כמו תמונות סטילס אחרות של היום."""
+הסרטון עומד בפני עצמו ולא חייב להיראות כמו תמונות סטילס אחרות של היום.
+ניתן להזכיר בקצרה את הסמלים החזותיים של היום כעוגנים, אבל תוכן הסרטון
+חייב להיות קליני ולא דיון בציורים."""
 
 
 def prompt_infographic(day, symbol_block, legend_block, aspect):
-    base = build_base_context(day, symbol_block, legend_block)
+    base = build_visual_context(day, symbol_block, legend_block)
     aspect_prompts = {
         "dsm_criteria": "התמקד אך ורק בקריטריונים של DSM-5-TR לאבחנה זו. רשימה מסודרת + דוגמאות קליניות.",
         "epidemiology": "התמקד באפידמיולוגיה: prevalence, incidence, חלוקה לפי מין/גיל, גורמי סיכון, גורמים מגנים.",
@@ -268,21 +304,59 @@ def prompt_infographic(day, symbol_block, legend_block, aspect):
         "emergency_management": "התמקד בניהול המצב החירומי: גישה, תרופות, ניטור.",
     }
     aspect_he = aspect_prompts.get(aspect, f"Focus on aspect: {aspect}")
+
+    # Per-aspect setting hints — each aspect gets a DIFFERENT scene to ensure
+    # the day's 3 images don't all look like minor variations of each other.
+    aspect_setting_hints = {
+        "dsm_criteria": "Setting: a doctor's CONSULTATION ROOM with a wall chart of DSM criteria. The criteria points are physically embodied in the scene (a patient demonstrating each one).",
+        "epidemiology": "Setting: a public-health LECTURE HALL with bar charts and population maps on the walls. Diverse patient figures of different ages/sexes show prevalence.",
+        "etiology": "Setting: a biopsychosocial LABORATORY split into three zones — genetics corner (DNA helix), brain-imaging corner (MRI), and family/social corner (family tree).",
+        "treatment_first_line": "Setting: a PHARMACY counter with the first-line treatment prominently displayed; a smiling patient receiving care.",
+        "treatment_second_line": "Setting: a SPECIALIST CLINIC room where a patient who failed first-line treatment is reassessed; second-line option emerges.",
+        "treatment_overview": "Setting: a TREATMENT-TREE DIAGRAM scene — a flowchart on a wall coming alive with patients moving down different branches.",
+        "drug_mechanism": "Setting: a microscopic NEURON CROSS-SECTION — a synapse interior, receptors visible, drug molecules acting.",
+        "drug_side_effects": "Setting: a side-effects WAITING ROOM — patient showing each common side effect in cartoon form.",
+        "drug_monitoring": "Setting: a LABORATORY where blood draws, ECG, weight scale, and a checklist of pre-treatment + ongoing monitoring values are visible.",
+        "drug_practical": "Setting: a CLINICAL TITRATION WORKSHOP — a doctor explaining starting dose, escalation schedule, taper, drug interactions.",
+        "drug_class_overview": "Setting: a FAMILY PORTRAIT room — different drugs of the class lined up like family members with t½, metabolism, indication tags.",
+        "indications": "Setting: a HOSPITAL DIRECTORY board — listing FDA-approved and off-label indications, each on a sign.",
+        "side_effects_class": "Setting: a SYMPTOM CHECKLIST scene — multiple patients showing class-wide side effects together.",
+        "monitoring": "Setting: a NURSE'S MONITORING STATION — clipboards, lab values, schedules.",
+        "practical_use": "Setting: a PRACTITIONER'S OFFICE choosing between family members; bottles lined up to compare.",
+        "assessment_tools": "Setting: a CLINICAL ASSESSMENT ROOM — questionnaires, rating scales (e.g., Conners, ASEBA, CGI), and a clinician filling them out.",
+        "medical_mimics": "Setting: a DIFFERENTIAL-DIAGNOSIS CORRIDOR — doors labeled 'Thyroid', 'Substance', 'Seizure', 'Anemia' each opening to a patient that looks similar but is medical not psychiatric.",
+        "core_concept": "Setting: a CONCEPT-MAP CLASSROOM — central idea drawn on a chalkboard with all related sub-ideas branching out, characters embodying each.",
+        "anatomy_or_structure": "Setting: an ANATOMY DISSECTION ROOM (cartoonized) — the structure is on a table, scaled up, characters pointing at parts.",
+        "function": "Setting: a FACTORY FLOOR where the function is being performed mechanically — workers doing the job the structure does.",
+        "clinical_relevance": "Setting: a HOSPITAL WARD scene showing real patients with the disorder — clinical impact visible.",
+        "history_origin": "Setting: a HISTORICAL PERIOD — vintage costumes, old photographs on the wall, the originator of the technique drawn as a character.",
+        "core_principles": "Setting: a THERAPY OFFICE with principles posted on the wall as commandments, therapist and patient embodying them.",
+        "practice_method": "Setting: a THERAPY ROOM IN ACTION — session structure visible, techniques being demonstrated.",
+        "evidence": "Setting: a RESEARCH CONFERENCE ROOM — RCT charts on screens, meta-analysis forest plot on the wall.",
+        "recognition": "Setting: a TRIAGE STATION — early warning signs marked on a chart, urgent patient being identified.",
+        "diagnostic_criteria": "Setting: a CRITERIA CHECKLIST WALL — each criterion shown as a character/object satisfying it.",
+        "differential": "Setting: a SIDE-BY-SIDE COMPARISON LINEUP — similar disorders displayed like a police lineup, key distinguishers labeled.",
+        "emergency_management": "Setting: an ER RESUS BAY — patient on a gurney mid-crisis, team executing the management algorithm.",
+    }
+    setting_hint = aspect_setting_hints.get(aspect, "Setting: choose a scene appropriate to the aspect.")
+
     return base + f"""
 
-Aspect focus for this image: {aspect_he}
+Aspect for this specific image: {aspect_he}
 
-Build a Sketchy-style scene that illustrates THIS aspect. The scene must include
-the relevant symbols from the legend above (e.g. if dopamine appears, use the
-DOPA-MINE scene with red-barrier D2 marked '2'; if opioids appear, use the
-dairy farm with the MOO cow and K goat; etc.).
+{setting_hint}
 
-No text labels in the image itself — the explanation goes in the companion
-caption that will be generated alongside this image."""
+CRITICAL — make each of today's images DIFFERENT from each other:
+- This image must be a UNIQUE SCENE — NOT a variation of the other aspect images of the same day.
+- Different setting, different characters, different action.
+- The Sketchy-style symbol legend above is for reference. Use ONLY the symbols thematically relevant to THIS specific aspect — do not cram every symbol of the day into every image. If a symbol doesn't fit this aspect's scene, leave it out (it will appear in a different aspect's image).
+- A reader looking at all 3 images side-by-side should see 3 clearly different scenes that together cover the day's aspects.
+
+No text labels inside the image. The story-explanation goes in the companion caption (generated separately) that ties the visual symbols to the clinical content."""
 
 
 def prompt_study_guide(day, symbol_block, legend_block):
-    base = build_base_context(day, symbol_block, legend_block)
+    base = build_clinical_context(day)
     return base + """
 
 צור מדריך לימוד מפורט (study guide) בפורמט markdown, בעברית.
@@ -299,26 +373,48 @@ def prompt_study_guide(day, symbol_block, legend_block):
 10. נקודות high-yield לבחינה
 11. סיכום
 
-עמודי מקור: ציון איפה כל פיסת מידע נמצאת ב-DSM/Dulcan/Stahl."""
+חובה: ציון עמוד מקור אחרי כל טענה משמעותית בפורמט "(DSM p.NNN)" / "(Dulcan p.NNN)" וכו'.
+
+איסור: אל תזכיר את תמונות ה-Sketchy או הסמלים הוויזואליים. המדריך הוא חומר קליני בלבד."""
 
 
 def prompt_flashcards(day, symbol_block, legend_block):
-    base = build_base_context(day, symbol_block, legend_block)
-    return base + """
+    base = build_clinical_context(day)
+    aspects = day.get("aspects", [])
+    return base + f"""
 
 צור סט כרטיסיות שינון — שאלה + תשובה — לכיסוי high-yield של היום.
-פורמט סטנדרטי. כמות: standard (15-20 כרטיסיות).
-תייג כל כרטיסיה ב-aspect (dsm_criteria, treatment, drug_mechanism, etc.) כדי שב-UI
-נוכל להציג לצידה את האינפוגרפיקה הרלוונטית של אותו aspect."""
+כמות: standard (15-20 כרטיסיות). פורמט: front (שאלה) + back (תשובה).
+
+כל כרטיסיה חייבת לבחון **תוכן קליני** מהמקורות:
+- קריטריוני אבחנה ספציפיים (גילים, מספר תסמינים, משך, חומרה)
+- אפידמיולוגיה (שכיחות, מין, גיל הופעה)
+- אטיולוגיה ופתופיזיולוגיה
+- טיפול קו ראשון/שני, מינונים, תופעות לוואי
+- ניטור (מה, מתי, איזה ערכים)
+- אבחנה מבדלת
+- היבטים ייחודיים לילדים/נוער
+
+**איסור מוחלט**: אל תכתוב כרטיסיות על הסמלים החזותיים של ה-Sketchy (אין שאלות כמו "מה מייצג הילד עם מסכת הנינג'ה?" — זה לא חומר בחינה). הכרטיסיות נבחנות בידע קליני אמיתי.
+
+תייג כל כרטיסיה ב-aspect מתוך הרשימה הזו: {', '.join(aspects)}.
+ה-aspect משמש ב-UI לקישור עם האינפוגרפיקה הרלוונטית."""
 
 
 def prompt_quiz(day, symbol_block, legend_block):
-    base = build_base_context(day, symbol_block, legend_block)
+    base = build_clinical_context(day)
     return base + """
 
-צור קוויז של 8-10 שאלות. סוג שאלות: vignette קליני קצר + multiple choice
-(4 אופציות + הסבר). רמה: בחינת שלב ב'. דגש על אבחנה מבדלת, סיבוכים נדירים,
-ניהול ב-vignette."""
+צור קוויז של 8-10 שאלות מסוג vignette קליני קצר + multiple choice (4 אופציות + הסבר).
+רמה: בחינת שלב ב'. דגש על:
+- vignettes קליניים (מקרה אמיתי בן 3-5 שורות) שדורשים אינטגרציה
+- אבחנה מבדלת
+- בחירה בטיפול אופטימלי
+- ניהול סיבוכים נדירים אבל חשובים
+- תופעות לוואי + אינטראקציות תרופתיות
+
+**איסור מוחלט**: אל תשאל על סמלים חזותיים של ה-Sketchy. אלו שאלות-בחינה קליניות,
+לא חידות-מנמוניקה."""
 
 
 # ── notebooklm CLI helpers ──────────────────────────────────────────────────
