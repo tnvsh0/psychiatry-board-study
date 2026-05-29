@@ -77,22 +77,24 @@ Composition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Ske
 
 CAPTION_INSTRUCTION = """You are explaining a SketchyMedical-style educational illustration to a psychiatric resident studying for the Israeli board exam (שלב ב).
 
-The illustration you must explain depicts:
+LOOK AT THE ATTACHED IMAGE. Your caption MUST describe what is ACTUALLY visible in the image — its specific characters, its specific setting, its specific labels. Do NOT invent a different scene. If the image shows a bakery, write about the bakery. If it shows a circus, write about the circus.
+
+Original generation prompt that produced this image (context only — the actual image may differ; trust what you SEE, not what was requested):
 
 {image_prompt}
 
-Reference legend for the symbols shown in this image (from the course's curated symbol codex):
+Reference legend for the curated symbols of this course (use these to interpret what the visible elements stand for):
 
 {symbol_legend}
 
-Write a Hebrew NARRATIVE CAPTION (one flowing paragraph, ~150-220 words). Tell the viewer what's happening in the scene as a coherent story, and weave in the symbolic meaning of each character / object / action naturally as part of the storytelling.
+Write a Hebrew NARRATIVE CAPTION (one flowing paragraph, ~150-220 words). Tell the viewer the story of WHAT IS VISIBLE IN THE IMAGE, and weave in the clinical meaning of each visible character / object / action naturally as part of the storytelling.
 
 REQUIREMENTS:
+- Describe the ACTUAL VISIBLE SCENE — do not invent characters or settings that are not in the image.
 - ONE flowing paragraph in Hebrew. NO bullet lists. NO numbered enumeration. NO headings.
-- Mention each visible mnemonic element (the cow with MOO, the kicking goat with K, the Delta plane, the farmer, the labeled pails, etc.) as it appears in the story.
-- For each one, explain WHY it represents what it does (the PRIMARY HOOK — the phonetic/visual/conceptual link).
-- Include the clinical significance briefly where it matters.
-- Use English for: drug generic names, receptor names (μ, κ, δ, D2, 5-HT2A, NMDA, GABA-A, α1, β2, M3), clinical acronyms (EPS, NMS, SSRI, OCD), and the mnemonic labels from the legend (MOO, K, EXTRA, '2', etc.).
+- For each visible mnemonic element, explain WHY it represents what it does (the PRIMARY HOOK — the phonetic/visual/conceptual link).
+- Include the clinical significance briefly where it matters — link visible objects to facts on the Israeli board exam.
+- Use English for: drug generic names, receptor names (μ, κ, δ, D2, 5-HT2A, NMDA, GABA-A, α1, β2, M3), clinical acronyms (EPS, NMS, SSRI, OCD), and any mnemonic labels visible in the image (MOO, K, EXTRA, '2', etc.).
 - Hebrew explanatory prose throughout.
 
 Begin the caption directly — no preamble, no "Here is the caption:", just the paragraph itself.
@@ -176,10 +178,16 @@ def generate_image(
 def generate_caption(
     image_prompt: str,
     symbol_legend: str,
+    image_path: Optional[str | Path] = None,
     api_key: Optional[str] = None,
     model: str = CAPTION_MODEL,
 ) -> str:
-    """Generate a Hebrew narrative caption for an image. Returns text or ''."""
+    """Generate a Hebrew narrative caption.
+
+    When image_path is provided, the actual saved image bytes are attached
+    to the request so the multimodal text model describes what's ACTUALLY
+    visible in the image rather than re-inventing a scene from the prompt.
+    Without the image, falls back to prompt-only mode (legacy)."""
     client = _get_client(api_key)
     if client is None:
         return ""
@@ -187,8 +195,23 @@ def generate_caption(
         image_prompt=image_prompt.strip(),
         symbol_legend=symbol_legend.strip() or "(no specific legend symbols provided)",
     )
+
+    contents: list = [instruction]
+    if image_path:
+        try:
+            from google.genai import types
+            img_path = Path(image_path)
+            if img_path.exists() and img_path.stat().st_size > 0:
+                contents.append(types.Part.from_bytes(
+                    data=img_path.read_bytes(),
+                    mime_type="image/png",
+                ))
+        except Exception as e:
+            # If image attachment fails, continue with prompt-only.
+            print(f"[!] Image attachment for caption failed: {e}", file=sys.stderr)
+
     try:
-        response = client.models.generate_content(model=model, contents=instruction)
+        response = client.models.generate_content(model=model, contents=contents)
     except Exception as e:
         print(f"[!] Caption generation failed: {e}", file=sys.stderr)
         return ""
@@ -211,13 +234,17 @@ def generate_image_with_caption(
 ) -> tuple[bool, str]:
     """Generate image AND narrative caption. Returns (image_ok, caption_text).
 
-    Two separate API calls: one to the image model, one to the text model.
-    The caption is grounded in the same prompt + the curated symbol legend.
-    """
+    The caption model is now given the actual generated image (multimodal
+    input) so the caption faithfully describes what is visible — instead
+    of inventing a separate scene from the same open-ended prompt."""
     image_ok = generate_image(prompt, output_path, api_key=api_key, phase=phase)
     if not image_ok:
         return False, ""
-    caption = generate_caption(prompt, symbol_legend, api_key=api_key)
+    caption = generate_caption(
+        prompt, symbol_legend,
+        image_path=output_path,
+        api_key=api_key,
+    )
     if caption and caption_path:
         cp = Path(caption_path)
         cp.parent.mkdir(parents=True, exist_ok=True)
