@@ -10,7 +10,7 @@ from daily_study import (  # noqa: E402
     load_schedule, load_symbols, build_caption_legend,
     prompt_sketchy_scene, facts_for_aspect,
 )
-from gemini_image import generate_image_with_caption  # noqa: E402
+from gemini_image import generate_image_with_caption, propose_anchor_theme  # noqa: E402
 
 OUT = Path(__file__).resolve().parent.parent / "_test_outputs"
 
@@ -75,11 +75,19 @@ def main():
     caption_legend = build_caption_legend(day, symbols)
     phase = day.get("phase")
 
+    anchor = propose_anchor_theme(day.get("title_he", "ADHD"), ASPECTS)
+    world = anchor.get("world") if anchor else None
+    zones = anchor.get("zones", {}) if anchor else {}
+    print(f"Anchor world: {world}")
+    for a, z in zones.items():
+        print(f"  {a} -> {z}")
+
     for aspect in ASPECTS:
         af = facts_for_aspect(aspect, ADHD_FACTS)
-        prompt = prompt_sketchy_scene(day, symbols, aspect, af)
-        png = OUT / f"smoke_adhd_v4_{aspect}.png"
-        txt = OUT / f"smoke_adhd_v4_{aspect}.txt"
+        prompt = prompt_sketchy_scene(day, symbols, aspect, af,
+                                      anchor_world=world, anchor_zone=zones.get(aspect))
+        png = OUT / f"smoke_adhd_v5_{aspect}.png"
+        txt = OUT / f"smoke_adhd_v5_{aspect}.txt"
         print(f"[{aspect}] prompt {len(prompt)} chars -> generating...")
         ok, cap = generate_image_with_caption(
             prompt=prompt, output_path=png, caption_path=txt,

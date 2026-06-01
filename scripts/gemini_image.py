@@ -225,6 +225,48 @@ def generate_caption(
     return "".join(text_parts).strip()
 
 
+def propose_anchor_theme(topic: str, aspects: list, api_key: Optional[str] = None,
+                         model: str = CAPTION_MODEL) -> dict:
+    """Pick ONE bizarre unifying 'world' for an entire chapter, and assign each
+    aspect a DISTINCT zone within that world. All of the chapter's Sketchy
+    images then share this world (aiding recall as a set) while each occupies
+    its own zone (preventing factual bleeding). Returns
+    {"world": str, "zones": {aspect: str}} or {} on failure."""
+    client = _get_client(api_key)
+    if client is None:
+        return {}
+    instruction = f"""You are designing a unified SketchyMedical-style mnemonic WORLD for one psychiatry chapter, so that all its images feel like parts of one memorable place.
+
+Chapter topic: {topic}
+Aspects that each need their own zone: {', '.join(aspects)}
+
+Pick ONE bizarre, funny, UNEXPECTED world that has NOTHING literally to do with medicine (e.g. a pirate cove, a Wild-West gold-rush town, a space station, an underwater city, a medieval castle, a circus, a Roman colosseum, a candy factory, an airport, a ski resort). The world must be rich enough to host several distinct zones.
+
+Then assign each aspect a DISTINCT named zone within that one world (e.g. world = 'Wild-West gold-rush town'; criteria zone = 'the SHERIFF''s wanted-poster office'; epidemiology zone = 'the saloon census board'; treatment zone = 'the blacksmith/apothecary').
+
+Return STRICT JSON only:
+{{"world": "<the one world>", "zones": {{{', '.join(f'"{a}": "<distinct zone for {a}>"' for a in aspects)}}}}}"""
+    try:
+        response = client.models.generate_content(model=model, contents=instruction)
+        text = ""
+        for cand in getattr(response, "candidates", []) or []:
+            for part in getattr(cand.content, "parts", []) or []:
+                if getattr(part, "text", None):
+                    text += part.text
+        t = text.strip()
+        if t.startswith("```"):
+            import re as _re
+            t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
+            t = _re.sub(r"\n```\s*$", "", t)
+        import json as _json
+        data = _json.loads(t.strip())
+        if isinstance(data, dict) and data.get("world"):
+            return data
+    except Exception as e:
+        print(f"[!] anchor theme generation failed: {e}", file=sys.stderr)
+    return {}
+
+
 def generate_image_with_caption(
     prompt: str,
     output_path: str | Path,

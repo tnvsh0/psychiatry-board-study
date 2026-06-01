@@ -36,6 +36,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
     from gemini_image import generate_image_with_caption as gemini_generate
+    from gemini_image import propose_anchor_theme
     HAS_GEMINI = True
 except ImportError:
     HAS_GEMINI = False
@@ -384,9 +385,42 @@ NUMBER_RULES = """NUMBER ENCODING (course-wide, consistent):
 - Exact decimals are NOT drawn — they live in the caption + study guide."""
 
 
-def _aspect_scoped_legend(day, aspect, symbols_data):
-    """Full-detail legend for ONLY the symbols relevant to this aspect."""
+def _symbols_named_in_facts(aspect_facts, symbols_data):
+    """Find constant symbols whose concept is NAMED in this aspect's facts, so
+    the symbol follows the drug/receptor wherever it is mentioned (e.g. the
+    Amphetamine AMPlifier appears in any treatment image that mentions
+    Amphetamine, even if that symbol 'belongs' to another chapter)."""
+    if not aspect_facts:
+        return []
+    import json as _json
+    text = aspect_facts if isinstance(aspect_facts, str) else _json.dumps(aspect_facts, ensure_ascii=False)
+    text_l = text.lower()
+    pools = _all_symbol_pools(symbols_data)
+    found = []
+    for key in pools:
+        # match the key and a few normalized forms against the facts text
+        candidates = {key.lower(), key.replace("_", " ").lower(),
+                      key.replace("_receptor", "").replace("_", " ").lower()}
+        for c in candidates:
+            if len(c) >= 3 and c in text_l:
+                found.append(key)
+                break
+    return found
+
+
+def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
+    """Full-detail legend for ONLY the symbols relevant to this aspect.
+
+    Includes (a) the day's symbols filtered by aspect tag, (b) epidemiology
+    meta-symbols + pegs for epi images, and (c) CRITICALLY — the constant
+    symbol of any drug/receptor/concept NAMED in this aspect's facts, even if
+    that symbol 'belongs' to a different chapter. A constant symbol must follow
+    its concept wherever it appears."""
     keys = _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
+    keys += _symbols_named_in_facts(aspect_facts, symbols_data)
+    # dedupe, preserve order
+    seen = set()
+    keys = [k for k in keys if not (k in seen or seen.add(k))]
     pools = _all_symbol_pools(symbols_data)
     blocks = []
     for key in keys:
@@ -445,48 +479,73 @@ _ASPECT_STRUCTURE = {
 }
 
 
-def prompt_sketchy_scene(day, symbols_data, aspect, aspect_facts=None):
+def prompt_sketchy_scene(day, symbols_data, aspect, aspect_facts=None,
+                         anchor_world=None, anchor_zone=None):
     """Prompt for the Gemini Sketchy-scene generator (Nano Banana 2).
 
-    ASPECT-SCOPED: receives ONLY this aspect's structured facts and ONLY the
-    symbols relevant to this aspect. This prevents bleeding between the day's
-    images (each image sees a different, narrow slice). Forces a BIZARRE
-    METAPHORICAL scene, encodes numbers via pegs, and (for criteria) enforces
-    cluster zones."""
+    ASPECT-SCOPED + ANCHOR-THEMED: all of a chapter's images share ONE bizarre
+    WORLD (anchor_world) for easy recall as a set, but each image occupies a
+    DISTINCT ZONE (anchor_zone) of that world and encodes ONLY its aspect's
+    facts — so the chapter feels unified while facts never bleed between
+    images."""
     title_he = day.get("title_he", day.get("title_en", ""))
-    scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data)
+    scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts)
     facts_text = _facts_block_for_aspect(aspect, aspect_facts)
     structure = _ASPECT_STRUCTURE.get(aspect, "")
 
+    if anchor_world and anchor_zone:
+        setting_block = f"""SETTING — SHARED CHAPTER WORLD (consistency across the chapter's images):
+This entire chapter lives in ONE bizarre world: {anchor_world}.
+THIS image is set specifically in: {anchor_zone}.
+Render that zone richly. The chapter's other aspect-images occupy OTHER zones
+of the SAME world — so a viewer recognizes them as one place — but this image
+must contain ONLY this zone and ONLY this aspect's facts (no bleeding)."""
+    else:
+        setting_block = """SETTING: invent ONE bizarre, unexpected world with NO literal connection to medicine (casino, medieval joust, pirate cove, space station, candy factory...). Do NOT use a clinical setting (clinic, lecture hall, lab, pharmacy, ward, ER)."""
+
     return f"""{SKETCHY_PHILOSOPHY}
 
-CHAPTER (for grounding only — do NOT cram the whole chapter into this image):
+CHAPTER (grounding only — do NOT cram the whole chapter into this image):
 {title_he}
 
+{setting_block}
+
 THIS IMAGE COVERS ONE ASPECT ONLY: {aspect}
-Encode ONLY the facts below. Do NOT include facts from other aspects of this
-chapter (criteria-facts belong only in the criteria image, epidemiology-facts
-only in the epidemiology image, etc.). This image is fully standalone.
+Encode ONLY the facts below. Criteria-facts belong only in the criteria image,
+epidemiology-facts only in the epidemiology image, etc.
 
 FACTS TO ENCODE (this aspect only):
 {facts_text}
 
-SYMBOLS available for THIS aspect (use the ones that fit; ignore the rest):
+SYMBOLS — use these EXACT constant symbols when their concept appears (do NOT
+invent a different drawing for a drug/receptor that already has a symbol here;
+reusing the constant symbol is the whole point of the course):
 {scoped_legend}
 
 {structure}
 
 {NUMBER_RULES}
 
+ABSOLUTE RULE — NO TEXT, ONLY SYMBOLS:
+- Do NOT write explanatory words in the image. A sleeping knight already MEANS
+  insomnia — do NOT also write "INSOMNIA". A racing heart-drum already means
+  tachycardia — do NOT write "FAST HEART". A shrinking ruler already means
+  growth delay — do NOT write "DELAYED".
+- If you feel the need to label something, that means the visual pun is too
+  weak — REPLACE it with a clearer pun instead of adding text.
+- The ONLY text allowed is tiny DIEGETIC text that is naturally part of an
+  object (a brand name on a bottle, a number on a jersey, a drug's own name
+  worked playfully into a sign). Even drug names should be woven in cleverly
+  (a wordplay, a logo) rather than printed as a plain caption.
+- The viewer must understand the whole scene with the sound off — pure picture.
+
 YOUR TASK:
-1. INVENT a bizarre, unexpected setting with NO literal connection to the medical topic (e.g. a casino, medieval joust, sushi conveyor, submarine bar, cowboy saloon, hot-air balloon race, Egyptian tomb, Bollywood set, junkyard, opera house — invent your own). Do NOT use a clinical setting (clinic, lecture hall, lab, pharmacy, ward, ER).
-2. ENCODE each fact above as a character/object/action via phonetic or visual pun. Reuse the legend's symbols where they fit.
-3. Numbers: ratios = relative team sizes; small counts (<=4) = countable objects; percentages & big numbers = number-pegs as the joke's punchline. Never just write a numeral.
+1. Build the zone described above as a bizarre, funny scene.
+2. ENCODE each fact as a character/object/action via visual or phonetic pun. REUSE the constant symbols listed above for any drug/receptor named.
+3. Numbers: ratios = relative team sizes; small counts (<=4) = countable objects; percentages & big numbers = number-pegs as the joke's punchline. Never write a numeral as a stat.
 4. The scene must make a viewer SAY 'WHAT?' — bizarre, funny, emotionally activating.
 
-ISOLATION: This image must look NOTHING like the chapter's other aspect-images — different setting, characters, action. Do not reference or resemble them.
-
-No explanatory text labels inside the image (diegetic puns only). The story tying symbols to the clinical facts goes in the companion caption, generated separately."""
+The story tying symbols to the clinical facts goes in the companion caption (generated separately) — NOT inside the image."""
 
 
 def prompt_study_guide(day, symbol_block, legend_block):
@@ -1189,12 +1248,21 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     gemini_images = []  # list of (aspect, png_path, txt_path)
     if HAS_GEMINI:
         phase = day.get("phase")
+        # ONE bizarre world for the whole chapter; each aspect = a distinct zone.
+        anchor = propose_anchor_theme(day.get("title_he", title_en), infographic_aspects)
+        anchor_world = anchor.get("world") if anchor else None
+        zones = anchor.get("zones", {}) if anchor else {}
+        if anchor_world:
+            print(f"  Anchor world: {anchor_world}")
         print(f"\nGenerating {len(infographic_aspects)} Sketchy scene(s) via Gemini (phase {phase})...")
         for aspect in infographic_aspects:
             png_path = day_dir / f"sketchy_{aspect}.png"
             txt_path = day_dir / f"sketchy_{aspect}.txt"
             aspect_facts = facts_for_aspect(aspect, facts)
-            prompt = prompt_sketchy_scene(day, symbols, aspect, aspect_facts)
+            prompt = prompt_sketchy_scene(
+                day, symbols, aspect, aspect_facts,
+                anchor_world=anchor_world, anchor_zone=zones.get(aspect),
+            )
             print(f"  sketchy_{aspect}: generating image + caption...")
             ok, caption = gemini_generate(
                 prompt=prompt,
