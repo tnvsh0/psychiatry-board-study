@@ -510,6 +510,67 @@ def render_phase_sidebar(schedule, progress, current_phase=None):
     return selected_day_idx
 
 
+def _extract_source_map(study_guide_md: str) -> str:
+    """Extract the '## 0. מפת המקורות' section from the study guide markdown.
+    Returns the section body (including its table) or '' if not found."""
+    if not study_guide_md:
+        return ""
+    lines = study_guide_md.splitlines()
+    start = None
+    for i, ln in enumerate(lines):
+        # Match the source-map heading (allow variations)
+        if ln.lstrip().startswith("#") and ("מפת המקורות" in ln or "source map" in ln.lower() or "page reference" in ln.lower()):
+            start = i
+            break
+    if start is None:
+        return ""
+    # Collect until the next heading of same-or-higher level (## or #)
+    body = []
+    for ln in lines[start + 1:]:
+        if ln.lstrip().startswith("## ") or (ln.startswith("# ") and body):
+            break
+        body.append(ln)
+    return "\n".join(body).strip()
+
+
+def _render_recommended_reading(day: dict, idx: int) -> None:
+    """Show the recommended source pages for this chapter at the top of the
+    page. Prefers the study guide's source-map table; falls back to the
+    chapter's prompt_focus."""
+    tag = day_tag(day)
+    assets = get_release_assets(tag)
+    source_map = ""
+    if assets:
+        sg_url = assets.get("study_guide.md") or assets.get("report.md")
+        if sg_url:
+            sg_text = fetch_text(sg_url)
+            source_map = _extract_source_map(sg_text)
+
+    with st.container():
+        if source_map:
+            st.markdown(
+                '<div dir="rtl" style="text-align:right; background:rgba(91,123,154,0.10); '
+                'border-right:4px solid #5B7B9A; border-radius:6px; padding:12px 16px; margin:6px 0 14px 0;">'
+                '<b>📚 עמודים מומלצים לקריאה בפרק זה</b></div>',
+                unsafe_allow_html=True,
+            )
+            st.markdown(
+                f'<div dir="rtl" style="text-align:right; font-size:0.95em; '
+                f'line-height:1.6; overflow-x:auto;">\n\n{source_map}\n\n</div>',
+                unsafe_allow_html=True,
+            )
+        else:
+            # No study guide yet (content not generated) — show the focus blurb
+            focus = day.get("prompt_focus", "")
+            if focus:
+                st.markdown(
+                    '<div dir="rtl" style="text-align:right; background:rgba(91,123,154,0.08); '
+                    'border-right:4px solid #ccc; border-radius:6px; padding:10px 14px; margin:6px 0 14px 0;">'
+                    f'<b>🎯 מיקוד הפרק</b><br>{focus}</div>',
+                    unsafe_allow_html=True,
+                )
+
+
 def render_day_page(day, symbols, progress, palette):
     """The main per-day content page."""
     idx = day["index"]
@@ -523,6 +584,10 @@ def render_day_page(day, symbols, progress, palette):
     render_phase_header(day, palette)
     st.markdown(f"# יום {idx}: {title_he}")
     st.caption(f"**Type**: {day.get('type', '')} | **Density**: {day.get('estimated_density', 'medium')}")
+
+    # Recommended reading (source pages) — pulled from the study guide's
+    # source-map section so the user knows exactly what to read in the books.
+    _render_recommended_reading(day, idx)
 
     if is_done:
         st.success("✅ סומן כהושלם")
