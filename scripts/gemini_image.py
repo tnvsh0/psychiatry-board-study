@@ -93,6 +93,7 @@ REQUIREMENTS:
 - Describe the ACTUAL VISIBLE SCENE — do not invent characters or settings that are not in the image.
 - ONE flowing paragraph in Hebrew. NO bullet lists. NO numbered enumeration. NO headings.
 - For each visible mnemonic element, explain WHY it represents what it does (the PRIMARY HOOK — the phonetic/visual/conceptual link).
+- NUMBER-PEGS — CRITICAL: whenever a number-shape peg appears in the image (a HAND/high-five or starfish = 5, a swan = 2, a cherry or six-shooter = 6, a candle = 1, a sailboat = 4, a boomerang = 7, a snowman/hourglass = 8, a balloon/cat = 9, a donut/ring = 0), you MUST name it in the story AND state the number it encodes AND the clinical figure it stands for — e.g. "היד שעושה high-five (5) חתומה ב-% מזכירה ששכיחות ADHD היא כ-5%". Never skip a visible peg; the whole point is to lock the number to the picture. A small wordplay on the number is a bonus, not required.
 - Include the clinical significance briefly where it matters — link visible objects to facts on the Israeli board exam.
 - Use English for: drug generic names, receptor names (μ, κ, δ, D2, 5-HT2A, NMDA, GABA-A, α1, β2, M3), clinical acronyms (EPS, NMS, SSRI, OCD), and any mnemonic labels visible in the image (MOO, K, EXTRA, '2', etc.).
 - Hebrew explanatory prose throughout.

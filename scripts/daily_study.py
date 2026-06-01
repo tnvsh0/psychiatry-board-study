@@ -88,16 +88,47 @@ def load_symbols():
     return json.loads((REPO_ROOT / "schedule" / "symbols.json").read_text(encoding="utf-8"))
 
 
+def _all_symbol_pools(symbols_data):
+    """Flatten every symbol category into one {key: entry} dict, including the
+    new epidemiology_meta and meta_systems categories."""
+    pools = {}
+    for cat in ("scenes", "ions", "symbols", "drugs", "epidemiology_meta", "meta_systems"):
+        for k, v in symbols_data.get(cat, {}).items():
+            if k.startswith("_"):  # skip _README / _BATCH markers
+                continue
+            pools[k] = v
+    return pools
+
+
+def _symbols_for_aspect(symbol_keys, aspect, symbols_data):
+    """Filter the day's symbol pool down to those relevant to a given aspect,
+    using each symbol's 'aspects' tag. Symbols without a tag are considered
+    general-purpose and always included. Epidemiology meta-symbols + the
+    number-peg system are auto-added for the epidemiology aspect."""
+    pools = _all_symbol_pools(symbols_data)
+    relevant = []
+    for key in symbol_keys:
+        item = pools.get(key)
+        if not isinstance(item, dict):
+            continue
+        tags = item.get("aspects")
+        if not tags or aspect in tags or "all" in tags:
+            relevant.append(key)
+
+    # Auto-inject meta-symbols for epidemiology images
+    if aspect in ("epidemiology",):
+        for mk in symbols_data.get("epidemiology_meta", {}):
+            if not mk.startswith("_"):
+                relevant.append(mk)
+        relevant.append("number_pegs")
+    return relevant
+
+
 # ── Prompt builders ─────────────────────────────────────────────────────────
 def collect_symbol_descriptions(symbol_keys, symbols_data):
     """Pull short Hebrew descriptions for the symbols used today."""
     lines = []
-    pools = {
-        **symbols_data.get("scenes", {}),
-        **symbols_data.get("ions", {}),
-        **symbols_data.get("symbols", {}),
-        **symbols_data.get("drugs", {}),
-    }
+    pools = _all_symbol_pools(symbols_data)
     for key in symbol_keys:
         item = pools.get(key)
         if not isinstance(item, dict):
@@ -115,12 +146,7 @@ def build_symbol_legend(day, symbols_data):
     look like each other. Only the symbol identity is shared, not the framing."""
     symbol_keys = day.get("symbols_needed", [])
 
-    pools = {
-        **symbols_data.get("scenes", {}),
-        **symbols_data.get("ions", {}),
-        **symbols_data.get("symbols", {}),
-        **symbols_data.get("drugs", {}),
-    }
+    pools = _all_symbol_pools(symbols_data)
     parts = []
     for key in symbol_keys[:8]:
         item = pools.get(key)
@@ -143,12 +169,7 @@ def build_caption_legend(day, symbols_data):
     each symbol represents what it does."""
     symbol_keys = day.get("symbols_needed", [])
 
-    pools = {
-        **symbols_data.get("scenes", {}),
-        **symbols_data.get("ions", {}),
-        **symbols_data.get("symbols", {}),
-        **symbols_data.get("drugs", {}),
-    }
+    pools = _all_symbol_pools(symbols_data)
     blocks = []
     for key in symbol_keys[:8]:
         item = pools.get(key)
@@ -355,64 +376,117 @@ EXPLICIT ANTI-PATTERNS — these RUIN Sketchy memorability and are FORBIDDEN:
 The bizarre context is NOT decoration — it IS the mnemonic engine."""
 
 
-def prompt_sketchy_scene(day, symbol_block, legend_block, aspect):
+NUMBER_RULES = """NUMBER ENCODING (course-wide, consistent):
+- RATIOS (2:1, 3:1) → relative team sizes / counts. The viewer SEES 2-vs-1; never reads it.
+- SMALL COUNTS (<=4-5: # symptoms-needed, age, months, # subtypes) → countable objects integrated into the action (subitizable at a glance).
+- PERCENTAGES and BIG NUMBERS (un-countable) → NUMBER-PEG SHAPES, never a written numeral and never 'count N of M'. Peg shapes: 0=donut/ring · 1=candle/pencil · 2=swan · 3=trident/handcuffs · 4=sailboat · 5=hand(high-five)/starfish · 6=six-shooter/cherry · 7=boomerang/scythe · 8=snowman/hourglass/octopus · 9=balloon/cat. Render the peg as a character/prop that is the PUNCHLINE of the scene's joke (e.g. 5% = a giant HAND high-fiving with a '%' on the palm).
+- When the board-relevant point is a RANK ('one of the MOST heritable', 'the RAREST'), lead with the qualitative visual (huge vs tiny) and let a peg carry the headline figure.
+- Exact decimals are NOT drawn — they live in the caption + study guide."""
+
+
+def _aspect_scoped_legend(day, aspect, symbols_data):
+    """Full-detail legend for ONLY the symbols relevant to this aspect."""
+    keys = _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
+    pools = _all_symbol_pools(symbols_data)
+    blocks = []
+    for key in keys:
+        item = pools.get(key)
+        if not isinstance(item, dict):
+            continue
+        sym = item.get("symbol", "") or item.get("scene_name", "")
+        hook = item.get("mnemonic_link", "")
+        b = [f"- {key}:"]
+        if sym:
+            b.append(f"    visual: {sym}")
+        if hook:
+            b.append(f"    hook: {hook}")
+        blocks.append("\n".join(b))
+    return "\n".join(blocks) if blocks else "(no specific symbols for this aspect — invent fitting puns)"
+
+
+def _facts_block_for_aspect(aspect, aspect_facts):
+    """Render the structured facts for this aspect as prompt text."""
+    if not aspect_facts:
+        return "(facts not available — encode the standard high-yield points for this aspect)"
+    if isinstance(aspect_facts, str):
+        return aspect_facts
+    # dict / list → readable lines
+    import json as _json
+    return _json.dumps(aspect_facts, ensure_ascii=False, indent=2)
+
+
+# Aspect-specific structural conventions for the image.
+_ASPECT_STRUCTURE = {
+    "dsm_criteria": (
+        "STRUCTURE — CRITERIA CLUSTERS: The disorder's criteria fall into named "
+        "clusters (e.g., Inattention vs Hyperactivity/Impulsivity). Render each "
+        "cluster as a VISUALLY DISTINCT ZONE of the scene (separate room / side / "
+        "color-team), so the viewer sees which symptom belongs to which cluster. "
+        "Give EACH individual criterion its own memorable character/object (one "
+        "per criterion — high resolution). Encode the diagnostic thresholds "
+        "(how many symptoms, minimum duration, age cutoff, number of settings) "
+        "as countable objects (<=5) or number-pegs."
+    ),
+    "diagnostic_criteria": (
+        "STRUCTURE — CRITERIA CLUSTERS: render each criteria cluster as a distinct "
+        "zone; one memorable element per individual criterion; thresholds as "
+        "countable objects or number-pegs."
+    ),
+    "epidemiology": (
+        "STRUCTURE — EPIDEMIOLOGY META-SYMBOLS: Use the recurring epidemiology "
+        "meta-symbols from the legend (tug-of-war = sex ratio; crowd density = "
+        "prevalence; conjoined twins = comorbidity carrying the comorbid disorder's "
+        "own symbol; weather forecaster = prognosis; family row + DNA = "
+        "heritability). Encode every numeric VALUE with the number-peg system "
+        "(0-9 shape pegs) as the punchline of the joke — NEVER ask the viewer to "
+        "count more than ~4 objects, and NEVER just write the numeral. Ratios = "
+        "relative team sizes."
+    ),
+}
+
+
+def prompt_sketchy_scene(day, symbols_data, aspect, aspect_facts=None):
     """Prompt for the Gemini Sketchy-scene generator (Nano Banana 2).
 
-    Forces a BIZARRE METAPHORICAL scene — NOT a literal clinical illustration.
-    Each medical fact must be encoded through phonetic or visual pun, counted
-    object, or absurd character. The setting itself must be UNEXPECTED for
-    the topic. The aspect tells us WHICH FACTS to encode, not what setting
-    to draw."""
-    base = build_visual_context(day, symbol_block, legend_block)
-    aspect_focus = {
-        "dsm_criteria": "Encode the DSM-5-TR diagnostic criteria — number of symptoms required, time-thresholds, age cutoffs, mandatory features.",
-        "epidemiology": "Encode prevalence, sex ratio, typical age of onset, key risk factors.",
-        "etiology": "Encode the biopsychosocial etiology — genetic component, neurobiological substrate, environmental/social contributors.",
-        "treatment_first_line": "Encode first-line treatments — the specific drug names, doses, and any first-line non-pharmacological options.",
-        "treatment_second_line": "Encode second-line treatments — names, indications, key risks.",
-        "treatment_overview": "Encode the treatment hierarchy — line 1 → line 2 → augmentation → refractory.",
-        "drug_mechanism": "Encode mechanism of action — which receptors/transporters, agonist/antagonist, downstream effects.",
-        "drug_side_effects": "Encode side effects + the mechanism of each.",
-        "drug_monitoring": "Encode monitoring labs and parameters before starting + during treatment.",
-        "drug_practical": "Encode dosing, titration schedule, common interactions.",
-        "drug_class_overview": "Encode comparison of family members — half-lives, metabolism, indications.",
-        "indications": "Encode FDA-approved indications + key off-label uses with evidence level.",
-        "side_effects_class": "Encode class-wide side effects.",
-        "monitoring": "Encode what is monitored, when, and acceptable value ranges.",
-        "practical_use": "Encode practical choice between family members + how to start.",
-        "assessment_tools": "Encode the assessment instruments — questionnaire names (Conners, ASEBA, CGI, etc.), cut-offs.",
-        "medical_mimics": "Encode medical mimics and 'Due to Another Medical Condition / Substance' differential.",
-        "core_concept": "Encode the core concept and why it matters.",
-        "anatomy_or_structure": "Encode anatomy / structure — location, shape, neighbors.",
-        "function": "Encode function — what it does, how it influences behavior.",
-        "clinical_relevance": "Encode clinical relevance — when and where it matters.",
-        "history_origin": "Encode the history and originator — who developed it, when, where.",
-        "core_principles": "Encode the core principles of the method.",
-        "practice_method": "Encode how it is delivered — session structure, techniques.",
-        "evidence": "Encode the evidence base — key RCTs, meta-analyses, approved indications.",
-        "recognition": "Encode early-warning signs of the condition.",
-        "diagnostic_criteria": "Encode precise diagnostic criteria.",
-        "differential": "Encode the differential diagnosis — what looks similar, how to tell apart.",
-        "emergency_management": "Encode emergency management — approach, drugs, monitoring.",
-    }
-    aspect_he = aspect_focus.get(aspect, f"Encode the day's facts most relevant to aspect: {aspect}")
+    ASPECT-SCOPED: receives ONLY this aspect's structured facts and ONLY the
+    symbols relevant to this aspect. This prevents bleeding between the day's
+    images (each image sees a different, narrow slice). Forces a BIZARRE
+    METAPHORICAL scene, encodes numbers via pegs, and (for criteria) enforces
+    cluster zones."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data)
+    facts_text = _facts_block_for_aspect(aspect, aspect_facts)
+    structure = _ASPECT_STRUCTURE.get(aspect, "")
 
     return f"""{SKETCHY_PHILOSOPHY}
 
-{base}
+CHAPTER (for grounding only — do NOT cram the whole chapter into this image):
+{title_he}
 
-Facts to encode in THIS image (aspect = {aspect}):
-{aspect_he}
+THIS IMAGE COVERS ONE ASPECT ONLY: {aspect}
+Encode ONLY the facts below. Do NOT include facts from other aspects of this
+chapter (criteria-facts belong only in the criteria image, epidemiology-facts
+only in the epidemiology image, etc.). This image is fully standalone.
+
+FACTS TO ENCODE (this aspect only):
+{facts_text}
+
+SYMBOLS available for THIS aspect (use the ones that fit; ignore the rest):
+{scoped_legend}
+
+{structure}
+
+{NUMBER_RULES}
 
 YOUR TASK:
-1. INVENT a bizarre, unexpected setting with NO LITERAL connection to the medical topic. Examples of valid contexts (do NOT use these exact ones — invent your own that fits the facts you need to encode): a Las Vegas casino, a medieval joust, a sushi conveyor restaurant, a deep-sea submarine bar, a cowboy saloon, a hot-air balloon race, an Egyptian tomb, a Bollywood movie set, a junkyard, an opera house, a fast-food drive-through, a wedding banquet, a circus tent.
-2. ENCODE each fact above as a CHARACTER, OBJECT, or COUNTED-GROUP in that setting via PHONETIC or VISUAL PUN. Use pre-existing symbols from the legend when they fit (e.g., if dopamine appears, use the DOPA-MINE coal mine scene; if opioids appear, the DAIRY FARM cow with MOO).
-3. Numbers must be embodied (6 symptoms = 6 of something; age 12 = 12 candles; 2 settings = 2 rooms or 2 vehicles).
-4. The scene must be FUNNY or BIZARRE enough that a viewer SAYS 'WHAT?' on first sight.
+1. INVENT a bizarre, unexpected setting with NO literal connection to the medical topic (e.g. a casino, medieval joust, sushi conveyor, submarine bar, cowboy saloon, hot-air balloon race, Egyptian tomb, Bollywood set, junkyard, opera house — invent your own). Do NOT use a clinical setting (clinic, lecture hall, lab, pharmacy, ward, ER).
+2. ENCODE each fact above as a character/object/action via phonetic or visual pun. Reuse the legend's symbols where they fit.
+3. Numbers: ratios = relative team sizes; small counts (<=4) = countable objects; percentages & big numbers = number-pegs as the joke's punchline. Never just write a numeral.
+4. The scene must make a viewer SAY 'WHAT?' — bizarre, funny, emotionally activating.
 
-CRITICAL — each of the day's 3 images must be a TOTALLY DIFFERENT SETTING (different unexpected context for each aspect — no repeats today). Do NOT use clinical settings (doctor's office, lecture hall, laboratory, pharmacy, hospital ward, therapy room, ER). Do NOT show patients literally exhibiting the disorder.
+ISOLATION: This image must look NOTHING like the chapter's other aspect-images — different setting, characters, action. Do not reference or resemble them.
 
-No text labels inside the image. The story tying symbols to clinical content goes in the companion caption (generated separately)."""
+No explanatory text labels inside the image (diegetic puns only). The story tying symbols to the clinical facts goes in the companion caption, generated separately."""
 
 
 def prompt_study_guide(day, symbol_block, legend_block):
@@ -588,6 +662,106 @@ def count_notebook_sources(nb_id):
         return data.get("count", len(data.get("sources", [])))
     except Exception:
         return -1
+
+
+def _strip_code_fence(text):
+    """Strip ```json ... ``` fences a model may wrap JSON in."""
+    t = text.strip()
+    if t.startswith("```"):
+        t = re.sub(r"^```[a-zA-Z]*\n", "", t)
+        t = re.sub(r"\n```\s*$", "", t)
+    return t.strip()
+
+
+def extract_facts(day, notebook_id):
+    """Extract STRUCTURED facts (the source of truth for the Sketchy images)
+    from the per-day notebook as JSON. Each aspect's image is later built ONLY
+    from its slice of this dict — guaranteeing high resolution and zero
+    bleeding between images. Returns a dict (possibly partial) or {}."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    aspects = day.get("aspects", [])
+
+    schema_prompt = f"""Based ONLY on the sources in this notebook (DSM-5-TR, Dulcan, Stahl, Kaplan & Sadock Synopsis, syllabus), extract the high-yield facts about: {title_he}
+
+Return STRICT JSON (no prose, no markdown fences) with this exact shape. Fill every field from the sources; if a field is genuinely not in the sources, use the string "לא צוין". Keep values SHORT and concrete (numbers, names) — this drives mnemonic image generation.
+
+{{
+  "criteria": {{
+    "clusters": [
+      {{"name": "<cluster name e.g. Inattention>", "items": ["<symptom 1>", "<symptom 2>", "..."]}},
+      {{"name": "<cluster name e.g. Hyperactivity/Impulsivity>", "items": ["..."]}}
+    ],
+    "thresholds": "<e.g. >=6/9 symptoms, <12yo onset, >=2 settings, >=6 months>",
+    "subtypes": ["<presentation 1>", "..."]
+  }},
+  "epidemiology": {{
+    "prevalence": "<e.g. ~5% children, ~2.5% adults>",
+    "sex_ratio": "<e.g. 2:1 male:female>",
+    "onset_age_typical": "<epidemiological peak onset, or לא צוין>",
+    "heritability": "<e.g. ~74%, one of the most heritable>",
+    "comorbidities": ["<e.g. ODD ~50%>", "<e.g. anxiety>", "..."],
+    "prognosis": "<e.g. ~60% persist into adulthood>"
+  }},
+  "etiology": {{
+    "genetic": "<short>",
+    "neurobiology": "<short — receptors, regions, circuits>",
+    "environmental": "<short>"
+  }},
+  "treatment": {{
+    "first_line": ["<drug or therapy + key detail>"],
+    "second_line": ["<...>"],
+    "key_side_effects": ["<...>"],
+    "monitoring": "<short>"
+  }},
+  "high_yield": ["<exam pearl 1>", "<exam pearl 2>", "..."]
+}}
+
+Only include the keys relevant to today's aspects ({', '.join(aspects)}); omit sections that don't apply (e.g., omit 'treatment' for a pure anatomy chapter). Output ONLY the JSON object."""
+
+    use_notebook(notebook_id)
+    print("  Extracting structured facts.json (this may take 1-2 min)...")
+    r = nb_run(["ask", schema_prompt, "--json"], timeout=600)
+    if r.returncode != 0:
+        print(f"  [!] facts extraction ask failed: {r.stderr[:200]}")
+        return {}
+    try:
+        answer = json.loads(r.stdout).get("answer", "")
+    except Exception as e:
+        print(f"  [!] facts ask parse failed: {e}")
+        return {}
+    try:
+        facts = json.loads(_strip_code_fence(answer))
+        if isinstance(facts, dict):
+            return facts
+    except Exception as e:
+        print(f"  [!] facts JSON parse failed: {e}. Raw head: {answer[:160]}")
+    return {}
+
+
+def facts_for_aspect(aspect, facts):
+    """Return the slice of facts.json relevant to a given image aspect."""
+    if not isinstance(facts, dict):
+        return None
+    # Map aspect → which facts.json section(s) to feed the image
+    mapping = {
+        "dsm_criteria": ["criteria"],
+        "diagnostic_criteria": ["criteria"],
+        "epidemiology": ["epidemiology"],
+        "etiology": ["etiology"],
+        "treatment_first_line": ["treatment"],
+        "treatment_second_line": ["treatment"],
+        "treatment_overview": ["treatment"],
+        "drug_mechanism": ["etiology", "treatment"],
+        "differential": ["criteria", "high_yield"],
+        "assessment_tools": ["criteria", "high_yield"],
+        "medical_mimics": ["high_yield"],
+    }
+    sections = mapping.get(aspect)
+    if not sections:
+        # default: give high_yield + anything matching the aspect name
+        sections = ["high_yield"]
+    slice_ = {s: facts[s] for s in sections if s in facts}
+    return slice_ or None
 
 
 def extract_day_content_from_main(day, symbols_block, main_notebook_id):
@@ -998,8 +1172,20 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         print("  [X] study guide generation failed")
         study_guide_path = None
 
-    # Generate Sketchy-style scenes via Gemini (image + Hebrew narrative caption,
-    # one .png + one .txt per aspect). Phase palette is injected automatically.
+    # Extract STRUCTURED facts (source of truth for the per-aspect images).
+    print("\nExtracting structured facts.json...")
+    facts = extract_facts(day, day_nb_id)
+    facts_path = day_dir / "facts.json"
+    if facts:
+        facts_path.write_text(json.dumps(facts, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"  [OK] facts.json ({len(json.dumps(facts))} bytes, keys: {list(facts.keys())})")
+    else:
+        print("  [!] facts.json empty — images will fall back to generic per-aspect points.")
+        facts_path = None
+
+    # Generate Sketchy-style scenes via Gemini. Each image is ASPECT-SCOPED:
+    # it receives ONLY its slice of facts.json and ONLY its aspect's symbols,
+    # so the day's images don't bleed into each other.
     gemini_images = []  # list of (aspect, png_path, txt_path)
     if HAS_GEMINI:
         phase = day.get("phase")
@@ -1007,8 +1193,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         for aspect in infographic_aspects:
             png_path = day_dir / f"sketchy_{aspect}.png"
             txt_path = day_dir / f"sketchy_{aspect}.txt"
-            # Gemini Sketchy scene — visual-context + per-aspect distinct scene
-            prompt = prompt_sketchy_scene(day, symbol_block, legend_block, aspect)
+            aspect_facts = facts_for_aspect(aspect, facts)
+            prompt = prompt_sketchy_scene(day, symbols, aspect, aspect_facts)
             print(f"  sketchy_{aspect}: generating image + caption...")
             ok, caption = gemini_generate(
                 prompt=prompt,
@@ -1060,6 +1246,10 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # Include the focused study guide (from ask, not generate report)
     if study_guide_path and study_guide_path.exists():
         assets.append(study_guide_path)
+
+    # Include the structured facts.json (source of truth + useful for the UI)
+    if facts_path and facts_path.exists():
+        assets.append(facts_path)
 
     if not assets:
         print("[!] No assets downloaded. Aborting release.")
