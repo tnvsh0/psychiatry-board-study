@@ -533,42 +533,89 @@ def _extract_source_map(study_guide_md: str) -> str:
     return "\n".join(body).strip()
 
 
+def _condense_source_map(table_md: str) -> dict:
+    """Collapse the per-subtopic source-map table into a per-book page list.
+    Returns {book_name: 'pages, ...'} — a compact reading list, not the full
+    per-subtopic detail (that stays inside the study guide)."""
+    import re
+    rows = [ln for ln in table_md.splitlines() if ln.strip().startswith("|")]
+    if len(rows) < 2:
+        return {}
+
+    def cells(row):
+        # strip leading/trailing pipe, split, strip each cell of markdown bold
+        parts = [c.strip().strip("*").strip() for c in row.strip().strip("|").split("|")]
+        return parts
+
+    header = cells(rows[0])
+    # column 0 = subtopic; columns 1.. = books. Clean "עמ'" suffix.
+    books = [h.replace("עמ'", "").strip() for h in header[1:]]
+    # rows[1] is the markdown separator (---); data starts at rows[2]
+    data_rows = rows[2:]
+
+    per_book = {b: [] for b in books}
+    for row in data_rows:
+        c = cells(row)
+        for bi, book in enumerate(books):
+            cell = c[bi + 1] if (bi + 1) < len(c) else ""
+            if not cell or cell in ("-", "—", "–"):
+                continue
+            for tok in cell.split(","):
+                tok = tok.strip()
+                if tok and tok not in ("-", "—", "–"):
+                    per_book[book].append(tok)
+
+    # Dedupe + sort numerically by leading integer
+    def sort_key(tok):
+        m = re.match(r"\d+", tok)
+        return int(m.group()) if m else 9999
+
+    out = {}
+    for book, toks in per_book.items():
+        uniq = sorted(set(toks), key=sort_key)
+        if uniq:
+            out[book] = ", ".join(uniq)
+    return out
+
+
 def _render_recommended_reading(day: dict, idx: int) -> None:
-    """Show the recommended source pages for this chapter at the top of the
-    page. Prefers the study guide's source-map table; falls back to the
-    chapter's prompt_focus."""
+    """Show a COMPACT reading list (book → pages) at the top of the chapter
+    page. The full per-subtopic detail stays inside the study guide."""
     tag = day_tag(day)
     assets = get_release_assets(tag)
-    source_map = ""
+    reading = {}
     if assets:
         sg_url = assets.get("study_guide.md") or assets.get("report.md")
         if sg_url:
             sg_text = fetch_text(sg_url)
             source_map = _extract_source_map(sg_text)
+            if source_map:
+                reading = _condense_source_map(source_map)
 
-    with st.container():
-        if source_map:
+    if reading:
+        # Build one compact line per book
+        items = "".join(
+            f'<div style="margin:2px 0;"><b>{book}:</b> {pages}</div>'
+            for book, pages in reading.items()
+        )
+        st.markdown(
+            '<div dir="rtl" style="text-align:right; background:rgba(91,123,154,0.10); '
+            'border-right:4px solid #5B7B9A; border-radius:6px; padding:12px 16px; margin:6px 0 14px 0;">'
+            '<b>📚 עמודים מומלצים לקריאה</b>'
+            f'<div style="font-size:0.95em; margin-top:6px;">{items}</div>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        # No study guide yet — show the focus blurb
+        focus = day.get("prompt_focus", "")
+        if focus:
             st.markdown(
-                '<div dir="rtl" style="text-align:right; background:rgba(91,123,154,0.10); '
-                'border-right:4px solid #5B7B9A; border-radius:6px; padding:12px 16px; margin:6px 0 14px 0;">'
-                '<b>📚 עמודים מומלצים לקריאה בפרק זה</b></div>',
+                '<div dir="rtl" style="text-align:right; background:rgba(91,123,154,0.08); '
+                'border-right:4px solid #ccc; border-radius:6px; padding:10px 14px; margin:6px 0 14px 0;">'
+                f'<b>🎯 מיקוד הפרק</b><br>{focus}</div>',
                 unsafe_allow_html=True,
             )
-            st.markdown(
-                f'<div dir="rtl" style="text-align:right; font-size:0.95em; '
-                f'line-height:1.6; overflow-x:auto;">\n\n{source_map}\n\n</div>',
-                unsafe_allow_html=True,
-            )
-        else:
-            # No study guide yet (content not generated) — show the focus blurb
-            focus = day.get("prompt_focus", "")
-            if focus:
-                st.markdown(
-                    '<div dir="rtl" style="text-align:right; background:rgba(91,123,154,0.08); '
-                    'border-right:4px solid #ccc; border-radius:6px; padding:10px 14px; margin:6px 0 14px 0;">'
-                    f'<b>🎯 מיקוד הפרק</b><br>{focus}</div>',
-                    unsafe_allow_html=True,
-                )
 
 
 def render_day_page(day, symbols, progress, palette):
