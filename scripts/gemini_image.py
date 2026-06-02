@@ -245,13 +245,27 @@ HOW REAL SKETCHY PICKS A WORLD — the disease NAME becomes a phonetic PUN that 
 - "Strep agalactiae" sounds like "galactic" → OUTER SPACE with an astronaut baby.
 - "Neisseria" → "Nice area" ; "Klebsiella" → a clay/"Klebs" scene ; etc.
 
-STRONGLY PREFER a world derived from a PHONETIC PUN on the disorder's name or a key word in it (English or transliterated). The pun-world is far more memorable because the world itself encodes the name. Only if no usable pun exists, pick a thematically resonant bizarre world (still NOT a clinical/medical setting).
+A name-pun world is great WHEN the pun is genuinely close — but a FORCED, weak pun is worse than no pun. RULES:
+- Use a phonetic pun ONLY if a listener would actually hear the resemblance out loud (e.g. pyogenes->Pie Genies is strong; 'Keshev'->'Cabbage' is a STRETCH — reject it).
+- The pun should be on the disorder's name or a salient word in it. Prefer English; a Hebrew/transliterated pun only if it is unmistakably close.
+- If there is NO strong pun (many disorders, e.g. 'ADHD', have none), DO NOT force one. Instead choose a STRONG THEMATIC bizarre world whose vibe matches the disorder's feel (e.g. for ADHD something chaotic and impossible-to-sit-still: a pinball machine, a rodeo, a fireworks factory). Never a clinical/medical setting.
+- Whatever you pick, the world must support a real STORY (an event is happening) — not just a themed backdrop with floating actors.
 
 The world must be rich enough to host several distinct, visually different zones.
-Then assign each aspect a DISTINCT named zone within that one world (different dominant colors/objects so the zones are not confused with each other).
+Assign each aspect a DISTINCT zone — and CRUCIALLY, each zone must be a place
+where THAT aspect's facts would naturally HAPPEN, so the later scene's events
+are motivated by the place (not pasted on):
+- a CRITERIA zone = somewhere people are tested/judged/sorted (a test track, an
+  audition, a border checkpoint) so symptoms show up as natural behaviour.
+- an EPIDEMIOLOGY zone = somewhere crowds/counts/families/forecasts live (a
+  stadium, a census fair, a betting parlour) so prevalence/ratios/heritability
+  arise naturally.
+- a TREATMENT zone = somewhere things are fixed/served/powered (a workshop, a
+  kitchen, a pit-stop) so drugs and their effects belong.
+Zones should differ in dominant colour/objects so they're never confused.
 
 Return STRICT JSON only:
-{{"world": "<the one world + the name-pun it came from>", "zones": {{{', '.join(f'"{a}": "<distinct zone for {a}>"' for a in aspects)}}}}}"""
+{{"world": "<the one world + (if used) the name-pun it came from>", "zones": {{{', '.join(f'"{a}": "<a zone where {a} facts naturally happen>"' for a in aspects)}}}}}"""
     try:
         response = client.models.generate_content(model=model, contents=instruction)
         text = ""

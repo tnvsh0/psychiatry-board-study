@@ -470,19 +470,24 @@ def _facts_block_for_aspect(aspect, aspect_facts):
 # Aspect-specific structural conventions for the image.
 _ASPECT_STRUCTURE = {
     "dsm_criteria": (
-        "STRUCTURE — CRITERIA CLUSTERS: The disorder's criteria fall into named "
-        "clusters (e.g., Inattention vs Hyperactivity/Impulsivity). Render each "
-        "cluster as a VISUALLY DISTINCT ZONE of the scene (separate room / side / "
-        "color-team), so the viewer sees which symptom belongs to which cluster. "
-        "Give EACH individual criterion its own memorable character/object (one "
-        "per criterion — high resolution). Encode the diagnostic thresholds "
-        "(how many symptoms, minimum duration, age cutoff, number of settings) "
-        "as countable objects (<=5) or number-pegs."
+        "STRUCTURE — CRITERIA, KEEP IT CLEAN (do NOT over-pack): An image with all "
+        "18 symptoms becomes unreadable clutter. Instead: make the THRESHOLDS and "
+        "STRUCTURE the visual stars, and use only 2-3 REPRESENTATIVE symptoms per "
+        "cluster (the most iconic ones) — the full list lives in the caption. "
+        "(1) Show the named clusters as two VISUALLY DISTINCT zones (different side/"
+        "color), each with just 2-3 vivid symptom-characters. "
+        "(2) Make the diagnostic THRESHOLDS prominent and pegged: number of symptoms "
+        "needed, minimum duration, age cutoff, number of settings — these are the "
+        "high-yield testable facts, so they should dominate, encoded as number-pegs "
+        "or small counts. "
+        "(3) There must be a STORY explaining WHY the scene is happening (e.g. a "
+        "contest/trial/inspection that the setting naturally hosts) — not random "
+        "characters in a themed box."
     ),
     "diagnostic_criteria": (
-        "STRUCTURE — CRITERIA CLUSTERS: render each criteria cluster as a distinct "
-        "zone; one memorable element per individual criterion; thresholds as "
-        "countable objects or number-pegs."
+        "STRUCTURE — CRITERIA, KEEP IT CLEAN: thresholds + cluster structure are the "
+        "visual stars (pegged); only 2-3 representative symptoms per cluster (rest "
+        "in caption); a real story explains the scene."
     ),
     "epidemiology": (
         "STRUCTURE — EPIDEMIOLOGY META-SYMBOLS: Use the recurring epidemiology "
@@ -556,27 +561,44 @@ Only pull an entry whose concept actually appears in the facts; ignore the rest.
 
 {NUMBER_RULES}
 
-YOU ARE THE SCENE DIRECTOR. Do NOT draw. Produce a brief for an illustrator + a key.
+YOU ARE THE SCENE DIRECTOR. Do NOT draw. Produce an illustrator's brief + a key.
 
-Compose ONE cohesive, bizarre, funny scene in the zone above. Every fact becomes
-a findable OBJECT/CHARACTER/ACTION (Where's-Waldo style), encoded by visual or
-phonetic pun. Reuse the EXACT constant symbols from the index for any
-drug/receptor/concept named in the facts. Numbers: ratios = relative team
-sizes; small counts (<=4) = countable objects; percentages & big numbers =
-number-peg shapes as the punchline (never a written stat).
+THE ONE RULE THAT MATTERS MOST — BELONGING (this is the soul of Sketchy):
+Real Sketchy works because EVERY element naturally BELONGS to the setting AND
+encodes a fact at the same time — nothing is pasted on. In the 'Pie Genies'
+bakery, a pie under a glass dome belongs (it's a bakery display) AND encodes
+'encapsulated'. A chef's hat belongs AND carries the 'M' protein.
 
-CRITICAL — the scene description must be PURELY VISUAL with NO clinical terms.
-The illustrator must never see a word like "insomnia", "prevalence", "sex
-ratio" — only the visual (e.g. "a knight snoring on a bench, eyes wide open").
-The ONLY words allowed to appear in the final image are short DIEGETIC labels
-that are naturally part of an object AND double as the mnemonic (a name on a
-tent, a number on a jersey) — list each such word explicitly in quotes. No
-explanatory text, no callouts, no floating labels.
+So your job is NOT 'pick a backdrop then place fact-actors in it'. Your job is:
+1. CHOOSE A SETTING + EVENT where THIS aspect's facts would HAPPEN ON THEIR OWN.
+   The characters' behaviours must be MOTIVATED by the setting, not imposed.
+   (Bad: cabbages randomly jumping in a courtroom — jumping has no reason there.
+    Good for ADHD criteria: a chaotic DRIVING TEST — a careless driver scraping
+    cones = inattention, an impatient driver jumping the light = impulsivity,
+    the examiner's scorecard needing 6/9 ticks = the symptom threshold. Each
+    behaviour is what people NATURALLY do there, and each also encodes a fact.)
+2. Make sure a real STORY/EVENT is unfolding (a test, a heist, a race, a
+   feast, a rescue) — coherent and FLOWING, with bizarre/funny/extreme beats so
+   it sticks. The viewer should be able to narrate what's happening.
+3. Map EACH fact to a thing that genuinely BELONGS in that setting and encodes
+   it by visual/phonetic pun. If a fact won't fit the setting naturally, you
+   chose the wrong setting — pick a better one. Reuse the EXACT constant symbols
+   from the index for any drug/receptor/concept named in the facts.
+4. Numbers: ratios = relative team sizes; small counts (<=4) = countable
+   objects; percentages/big numbers = number-peg shapes as a punchline. Never a
+   written stat.
+
+CRITICAL — the scene description must be PURELY VISUAL, NO clinical terms. The
+illustrator must never see 'insomnia' or 'prevalence' — only the visual (e.g.
+'a driver slumped asleep at the wheel, eyes still wide open'). The ONLY words
+allowed in the final image are short DIEGETIC labels that are naturally part of
+an object AND double as the mnemonic (a sign, a number on a jersey) — list each
+in quotes. No explanatory labels, callouts, or floating text.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<2-4 sentence purely-visual description of the single cohesive scene: the setting, each character/object/action, and any short quoted diegetic words. NO clinical terminology whatsoever.>",
-  "key": "<a numbered list mapping each visible element to the clinical fact it encodes and WHY (the phonetic/visual hook), including which number-peg encodes which figure. This is for the study caption, not the image.>"
+  "scene": "<3-5 sentence purely-visual description: the SETTING, the EVENT unfolding, and each character/object/action and what it is doing within that event (so the illustrator paints a coherent moment, not a collage). Include any short quoted diegetic words. NO clinical terminology.>",
+  "key": "<numbered list mapping each visible element to the clinical fact it encodes and WHY (the hook), including which number-peg encodes which figure. For the study caption, not the image.>"
 }}"""
 
 
