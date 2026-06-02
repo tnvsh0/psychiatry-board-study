@@ -45,9 +45,9 @@ SKETCHY_STYLE_PREFIX = """Create a single full-color hand-painted illustration i
 The image MUST be:
 - A full environment filling the entire frame (e.g. beach, kitchen, lab, forest, café, hospital ward, market, classroom, mine, opera house, courtroom — whatever fits the topic). NO blank or white background.
 - ONE CONTINUOUS SCENE — a single unified space. If the topic has multiple parts (e.g. 4 chambers of a mine, 5 floors of a hotel, 3 areas of a kitchen), render them as a single CUTAWAY / CROSS-SECTION view connected by tunnels, doorways, stairs, walkways. Different areas distinguished by contents and decoration, not by frames or borders.
-- Multiple characters present, each doing something — interacting, working, reacting.
+- A FEW characters (about 3-6), each doing something that matters — interacting, working, reacting. Not a crowd.
 - A specific moment in time: something is HAPPENING right now (someone cooking, performing, escaping, examining a patient, conducting an orchestra...).
-- Dense and detail-rich, like a single page from a children's storybook or a Where's Waldo scene.
+- CLEAN and UNCLUTTERED — every element must earn its place by encoding a fact. NO decorative filler, NO random extra props, NO busy background noise. Generous breathing space. (This is the opposite of a cluttered Where's-Waldo jumble — a viewer should parse the whole scene in a few seconds.)
 - Hand-painted watercolor with loose ink linework. Visible brush texture and paint bleed. Warm, saturated, slightly desaturated colors. NOT flat vector art. NOT digital corporate illustration. NOT 3D render.
 - Each concept from the legend embedded as a physical character, object, prop, or action — woven INTO the scene, NOT placed beside it like icons.
 
