@@ -781,6 +781,30 @@ def add_pdf_source(nb_id, pdf_path, title=None):
         return None
 
 
+def build_image_jobs(aspects, facts):
+    """Return [(label, aspect, facts_slice)]. Normally one job per aspect, but a
+    criteria aspect whose facts have 2+ symptom clusters is split into one job
+    per cluster (e.g. ADHD criteria -> inattention image + hyperactivity image),
+    each receiving only that cluster's items + the shared thresholds, so each
+    criterion has room to be its own distinct visual detail."""
+    jobs = []
+    for aspect in aspects:
+        slice_ = facts_for_aspect(aspect, facts)
+        if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(slice_, dict):
+            crit = slice_.get("criteria") if isinstance(slice_.get("criteria"), dict) else None
+            clusters = crit.get("clusters") if crit else None
+            if isinstance(clusters, list) and len(clusters) >= 2:
+                shared = {k: v for k, v in crit.items() if k != "clusters"}
+                for c in clusters:
+                    name = c.get("name", "cluster")
+                    label = f"{aspect}_{slugify(name)}"
+                    cf = {"criteria": {"cluster": name, "items": c.get("items", []), **shared}}
+                    jobs.append((label, aspect, cf))
+                continue
+        jobs.append((aspect, aspect, slice_))
+    return jobs
+
+
 def add_textbook_pdfs_to_day_notebook(nb_id):
     """Upload all configured textbook PDFs to the per-day notebook so that the
     study-guide generation step can cite real page numbers. Returns the count
@@ -1334,28 +1358,36 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         print("  [!] facts.json empty — images will fall back to generic per-aspect points.")
         facts_path = None
 
-    # Generate Sketchy-style scenes via Gemini. Each image is ASPECT-SCOPED:
-    # it receives ONLY its slice of facts.json and ONLY its aspect's symbols,
-    # so the day's images don't bleed into each other.
-    gemini_images = []  # list of (aspect, png_path, txt_path)
+    # Generate Sketchy-style scenes via Gemini. Each image is ASPECT-SCOPED
+    # (only its slice of facts.json + only its facts-named symbols) so the day's
+    # images don't bleed. A criteria aspect with 2+ symptom clusters is split
+    # into one image per cluster (e.g. ADHD: inattention image + hyperactivity
+    # image) so each criterion gets room to be a distinct detail.
+    gemini_images = []  # list of (label, png_path, txt_path)
     if HAS_GEMINI:
         phase = day.get("phase")
-        # ONE bizarre world for the whole chapter; each aspect = a distinct zone.
-        anchor = propose_anchor_theme(day.get("title_he", title_en), infographic_aspects)
-        anchor_world = anchor.get("world") if anchor else None
-        zones = anchor.get("zones", {}) if anchor else {}
-        if anchor_world:
-            print(f"  Anchor world: {anchor_world}")
-        print(f"\nGenerating {len(infographic_aspects)} Sketchy scene(s) via Gemini (phase {phase})...")
-        for aspect in infographic_aspects:
-            png_path = day_dir / f"sketchy_{aspect}.png"
-            txt_path = day_dir / f"sketchy_{aspect}.txt"
-            aspect_facts = facts_for_aspect(aspect, facts)
+        # World override from schedule (curated) takes priority; else auto-propose.
+        if day.get("anchor_world"):
+            anchor_world = day["anchor_world"]
+            zones = day.get("anchor_zones", {})
+            print(f"  Anchor world (curated): {anchor_world}")
+        else:
+            anchor = propose_anchor_theme(day.get("title_he", title_en), infographic_aspects)
+            anchor_world = anchor.get("world") if anchor else None
+            zones = anchor.get("zones", {}) if anchor else {}
+            if anchor_world:
+                print(f"  Anchor world (auto): {anchor_world}")
+
+        image_jobs = build_image_jobs(infographic_aspects, facts)
+        print(f"\nGenerating {len(image_jobs)} Sketchy scene(s) via Gemini (phase {phase})...")
+        for label, aspect, job_facts in image_jobs:
+            png_path = day_dir / f"sketchy_{label}.png"
+            txt_path = day_dir / f"sketchy_{label}.txt"
             director = build_director_instruction(
-                day, symbols, aspect, aspect_facts,
+                day, symbols, aspect, job_facts,
                 anchor_world=anchor_world, anchor_zone=zones.get(aspect),
             )
-            print(f"  sketchy_{aspect}: directing scene + generating...")
+            print(f"  sketchy_{label}: directing scene + generating...")
             ok, caption = generate_sketchy_directed(
                 director_instruction=director,
                 output_path=png_path,
@@ -1366,9 +1398,9 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 size_mb = png_path.stat().st_size / (1024 * 1024)
                 cap_kb = (txt_path.stat().st_size / 1024) if txt_path.exists() else 0
                 print(f"    [OK] {png_path.name} ({size_mb:.1f} MB) + caption ({cap_kb:.1f} KB)")
-                gemini_images.append((aspect, png_path, txt_path if txt_path.exists() else None))
+                gemini_images.append((label, png_path, txt_path if txt_path.exists() else None))
             else:
-                print(f"    [FAIL] Gemini generation failed for sketchy_{aspect}")
+                print(f"    [FAIL] Gemini generation failed for sketchy_{label}")
     else:
         print("[!] gemini_image module unavailable; skipping Sketchy scenes.")
 
@@ -1397,7 +1429,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             print(f"  [X] download failed: {kind}")
 
     # Include Gemini Sketchy scenes (image + caption .txt — both go to Release)
-    for aspect, png_path, txt_path in gemini_images:
+    for label, png_path, txt_path in gemini_images:
         assets.append(png_path)
         if txt_path:
             assets.append(txt_path)

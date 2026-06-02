@@ -395,7 +395,13 @@
       "title_en": "ADHD — core",
       "title_he": "הפרעת קשב וריכוז (ADHD) — ליבה",
       "diagnosis": "Attention-Deficit/Hyperactivity Disorder",
-      "prompt_focus": "ADHD criteria DSM-5-TR (לפחות 6 inattention או 6 hyperactivity/impulsivity, <12, ≥2 settings). 3 תת-סוגים. גיל מתבגר/מבוגר: 5 חובה. בריאות נפש, אקדמיה, חברה. ממצאי דמיה: PFC, סטריאטום."
+      "prompt_focus": "ADHD criteria DSM-5-TR (לפחות 6 inattention או 6 hyperactivity/impulsivity, <12, ≥2 settings). 3 תת-סוגים. גיל מתבגר/מבוגר: 5 חובה. בריאות נפש, אקדמיה, חברה. ממצאי דמיה: PFC, סטריאטום.",
+      "anchor_world": "A chaotic DRIVING TEST / driving school on a busy road — theme for ADHD: constant motion, impulsive moves, hard to stay on course",
+      "anchor_zones": {
+        "dsm_criteria": "the road-test crosswalk: a reckless learner-driver and a distracted pedestrian, watched by an examiner with a clipboard; the road forks with a clear signpost to 'SCHOOL' and to 'HOME'",
+        "epidemiology": "the DMV licence office: a waiting room with a big statistics noticeboard, a wall of licence photos, and a queue of applicants",
+        "etiology": "the car-assembly garage behind the track, where the ADHD car is built — engine = brain chemistry, wiring loom = genetics, fuel = environment"
+      }
     },
     {
       "aspects": [
