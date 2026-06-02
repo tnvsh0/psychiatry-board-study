@@ -101,11 +101,22 @@ def _all_symbol_pools(symbols_data):
     return pools
 
 
+# Inline aliases so a symbol is pulled when its CONCEPT appears in the facts
+# under a different word than its key (e.g. facts say "dopamine", key is DOPA_MINE).
+# Extend as needed. Keeps each image isolated to genuinely-relevant symbols.
+_SYMBOL_ALIASES = {
+    "DOPA_MINE": ["dopamine", "dopaminergic", "DA "],
+    "prefrontal_cortex": ["prefrontal", "PFC", "frontal"],
+    "DAT": ["dopamine transporter"],
+    "NET": ["norepinephrine transporter", "noradrenaline transporter"],
+}
+
+
 def _symbols_for_aspect(symbol_keys, aspect, symbols_data):
-    """Filter the day's symbol pool down to those relevant to a given aspect,
-    using each symbol's 'aspects' tag. Symbols without a tag are considered
-    general-purpose and always included. Epidemiology meta-symbols + the
-    number-peg system are auto-added for the epidemiology aspect."""
+    """Symbols EXPLICITLY tagged for this aspect (from the day's symbols_needed).
+    Untagged symbols are NOT included indiscriminately anymore — that caused
+    cross-aspect bleeding (e.g. DOPA_MINE leaking into the criteria image).
+    Relevance now comes from the facts (see _symbols_named_in_facts) + tags."""
     pools = _all_symbol_pools(symbols_data)
     relevant = []
     for key in symbol_keys:
@@ -113,15 +124,8 @@ def _symbols_for_aspect(symbol_keys, aspect, symbols_data):
         if not isinstance(item, dict):
             continue
         tags = item.get("aspects")
-        if not tags or aspect in tags or "all" in tags:
+        if tags and (aspect in tags or "all" in tags):
             relevant.append(key)
-
-    # Auto-inject meta-symbols for epidemiology images
-    if aspect in ("epidemiology",):
-        for mk in symbols_data.get("epidemiology_meta", {}):
-            if not mk.startswith("_"):
-                relevant.append(mk)
-        relevant.append("number_pegs")
     return relevant
 
 
@@ -397,10 +401,14 @@ def _symbols_named_in_facts(aspect_facts, symbols_data):
     text_l = text.lower()
     pools = _all_symbol_pools(symbols_data)
     found = []
-    for key in pools:
-        # match the key and a few normalized forms against the facts text
+    for key, item in pools.items():
+        # match the key, normalized forms, inline aliases, and any per-symbol
+        # 'aliases' field, against the facts text
         candidates = {key.lower(), key.replace("_", " ").lower(),
                       key.replace("_receptor", "").replace("_", " ").lower()}
+        candidates.update(a.lower() for a in _SYMBOL_ALIASES.get(key, []))
+        if isinstance(item, dict):
+            candidates.update(a.lower() for a in item.get("aliases", []))
         for c in candidates:
             if len(c) >= 3 and c in text_l:
                 found.append(key)
@@ -427,15 +435,19 @@ def _compact_symbol_index(symbols_data, exclude=None):
 
 
 def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
-    """Full-detail legend for ONLY the symbols relevant to this aspect.
-
-    Includes (a) the day's symbols filtered by aspect tag, (b) epidemiology
-    meta-symbols + pegs for epi images, and (c) CRITICALLY — the constant
-    symbol of any drug/receptor/concept NAMED in this aspect's facts, even if
-    that symbol 'belongs' to a different chapter. A constant symbol must follow
-    its concept wherever it appears."""
-    keys = _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
-    keys += _symbols_named_in_facts(aspect_facts, symbols_data)
+    """PRIORITY legend — the symbols most likely relevant to this aspect, in
+    full detail. This is NOT the only access the model has (it also gets the
+    full index as a lookup); it just highlights the high-confidence ones:
+      (a) constant symbols whose concept is NAMED in this aspect's facts
+          (with aliases) — the main driver,
+      (b) symbols explicitly TAGGED for this aspect,
+      (c) epidemiology meta-symbols for epi images,
+      (d) the number-peg system (numbers can appear in any aspect)."""
+    keys = _symbols_named_in_facts(aspect_facts, symbols_data)
+    keys += _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
+    if aspect == "epidemiology":
+        keys += [k for k in symbols_data.get("epidemiology_meta", {}) if not k.startswith("_")]
+    keys.append("number_pegs")
     # dedupe, preserve order
     seen = set()
     keys = [k for k in keys if not (k in seen or seen.add(k))]
@@ -556,14 +568,20 @@ epidemiology-facts only in the epidemiology image, etc.
 FACTS TO ENCODE (this aspect only):
 {facts_text}
 
-PRIORITY SYMBOLS for this aspect (full detail — use the ones that fit the facts):
+PRIORITY SYMBOLS for this aspect (full detail — concepts named in the facts above):
 {scoped_legend}
 
-FULL SYMBOL REFERENCE INDEX (the entire course vocabulary). RULE: if ANY concept
-in this aspect's facts above has a canonical symbol in this index, you MUST use
-that exact symbol — never invent a different drawing for a drug/receptor/concept
-that already has one (reusing constant symbols is the whole point of the course).
-Only pull an entry whose concept actually appears in the facts; ignore the rest.
+FULL SYMBOL REFERENCE INDEX — this is a LOOKUP TABLE, not a shopping list.
+HOW TO USE IT (cross-reference rule):
+- For each concept that actually appears in THIS image's FACTS above, check this
+  index; if it has a canonical symbol, you MUST use that exact symbol (reusing
+  constant symbols is the whole point of the course).
+- DO NOT pull a symbol whose concept does NOT appear in this image's facts.
+  NEGATIVE EXAMPLE: this is a CRITERIA image; 'dopamine' is NOT a criterion, so
+  the DOPA-MINE coal-mine scene MUST NOT appear here (it belongs only in images
+  whose facts mention dopamine, e.g. etiology). Likewise no drug symbols in an
+  epidemiology image unless a drug is in the epidemiology facts.
+- When unsure whether a concept is in the facts: it isn't — leave it out.
 {full_index}
 
 {structure}
@@ -593,6 +611,17 @@ So your job is NOT 'pick a backdrop then place fact-actors in it'. Your job is:
    it by visual/phonetic pun. If a fact won't fit the setting naturally, you
    chose the wrong setting — pick a better one. Reuse the EXACT constant symbols
    from the index for any drug/receptor/concept named in the facts.
+   DETAIL-PER-FACT, NOT CHARACTER-PER-FACT (strict, both directions):
+   - REQUIRED: every fact gets its OWN distinct visual representation — a
+     specific detail, prop, feature or action (e.g. 'no eye contact' = a face
+     pointedly looking away; 'loses things' = items dropping unnoticed from a
+     bag). Do not abstract a list into a vague 'a distracted person' or a mere
+     count — each item must be individually findable.
+   - FORBIDDEN: a separate CHARACTER (mascot) per fact — that is overload.
+     Cluster MANY details onto a FEW characters (one character can carry 5-6
+     distinct detail-facts: eyes averted + headphones + dropping items +
+     untied lace + glazed stare). A few rich characters, not a crowd of
+     single-trait mascots.
 4. Numbers: ratios = relative team sizes; small counts (<=4) = countable
    objects; percentages/big numbers = number-peg shapes as a punchline. Never a
    written stat.
