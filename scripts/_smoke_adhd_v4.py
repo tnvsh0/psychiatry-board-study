@@ -7,10 +7,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from daily_study import (  # noqa: E402
-    load_schedule, load_symbols, build_caption_legend,
-    prompt_sketchy_scene, facts_for_aspect,
+    load_schedule, load_symbols,
+    build_director_instruction, facts_for_aspect,
 )
-from gemini_image import generate_image_with_caption, propose_anchor_theme  # noqa: E402
+from gemini_image import generate_sketchy_directed, propose_anchor_theme  # noqa: E402
 
 OUT = Path(__file__).resolve().parent.parent / "_test_outputs"
 
@@ -72,7 +72,6 @@ def main():
     symbols = load_symbols()
     sched = load_schedule()
     day = next(d for d in sched["days"] if d["index"] == 16)
-    caption_legend = build_caption_legend(day, symbols)
     phase = day.get("phase")
 
     anchor = propose_anchor_theme(day.get("title_he", "ADHD"), ASPECTS)
@@ -84,14 +83,13 @@ def main():
 
     for aspect in ASPECTS:
         af = facts_for_aspect(aspect, ADHD_FACTS)
-        prompt = prompt_sketchy_scene(day, symbols, aspect, af,
-                                      anchor_world=world, anchor_zone=zones.get(aspect))
-        png = OUT / f"smoke_adhd_v5_{aspect}.png"
-        txt = OUT / f"smoke_adhd_v5_{aspect}.txt"
-        print(f"[{aspect}] prompt {len(prompt)} chars -> generating...")
-        ok, cap = generate_image_with_caption(
-            prompt=prompt, output_path=png, caption_path=txt,
-            symbol_legend=caption_legend, phase=phase,
+        director = build_director_instruction(day, symbols, aspect, af,
+                                              anchor_world=world, anchor_zone=zones.get(aspect))
+        png = OUT / f"smoke_adhd_v6_{aspect}.png"
+        txt = OUT / f"smoke_adhd_v6_{aspect}.txt"
+        print(f"[{aspect}] director {len(director)} chars -> directing + generating...")
+        ok, cap = generate_sketchy_directed(
+            director_instruction=director, output_path=png, caption_path=txt, phase=phase,
         )
         print(f"  {'OK' if ok else 'FAIL'} {png.name}; caption {len(cap)} chars")
 

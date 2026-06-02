@@ -240,12 +240,18 @@ def propose_anchor_theme(topic: str, aspects: list, api_key: Optional[str] = Non
 Chapter topic: {topic}
 Aspects that each need their own zone: {', '.join(aspects)}
 
-Pick ONE bizarre, funny, UNEXPECTED world that has NOTHING literally to do with medicine (e.g. a pirate cove, a Wild-West gold-rush town, a space station, an underwater city, a medieval castle, a circus, a Roman colosseum, a candy factory, an airport, a ski resort). The world must be rich enough to host several distinct zones.
+HOW REAL SKETCHY PICKS A WORLD — the disease NAME becomes a phonetic PUN that generates the whole world:
+- "Strep pyogenes" sounds like "Pie Genies" → a BAKERY full of genie-bakers.
+- "Strep agalactiae" sounds like "galactic" → OUTER SPACE with an astronaut baby.
+- "Neisseria" → "Nice area" ; "Klebsiella" → a clay/"Klebs" scene ; etc.
 
-Then assign each aspect a DISTINCT named zone within that one world (e.g. world = 'Wild-West gold-rush town'; criteria zone = 'the SHERIFF''s wanted-poster office'; epidemiology zone = 'the saloon census board'; treatment zone = 'the blacksmith/apothecary').
+STRONGLY PREFER a world derived from a PHONETIC PUN on the disorder's name or a key word in it (English or transliterated). The pun-world is far more memorable because the world itself encodes the name. Only if no usable pun exists, pick a thematically resonant bizarre world (still NOT a clinical/medical setting).
+
+The world must be rich enough to host several distinct, visually different zones.
+Then assign each aspect a DISTINCT named zone within that one world (different dominant colors/objects so the zones are not confused with each other).
 
 Return STRICT JSON only:
-{{"world": "<the one world>", "zones": {{{', '.join(f'"{a}": "<distinct zone for {a}>"' for a in aspects)}}}}}"""
+{{"world": "<the one world + the name-pun it came from>", "zones": {{{', '.join(f'"{a}": "<distinct zone for {a}>"' for a in aspects)}}}}}"""
     try:
         response = client.models.generate_content(model=model, contents=instruction)
         text = ""
@@ -267,6 +273,77 @@ Return STRICT JSON only:
     return {}
 
 
+def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
+                       model: str = CAPTION_MODEL) -> dict:
+    """The 'scene director': converts clinical facts into a PURE-VISUAL scene
+    description (no clinical terms — so the image model has nothing to label)
+    plus a numbered KEY mapping each visible element to its fact. Mirrors how a
+    real Sketchy page is authored: an artist gets a scene brief, the key is
+    separate text. Returns {"scene": str, "key": str} or {}."""
+    client = _get_client(api_key)
+    if client is None:
+        return {}
+    try:
+        resp = client.models.generate_content(model=model, contents=director_instruction)
+        text = ""
+        for cand in getattr(resp, "candidates", []) or []:
+            for part in getattr(cand.content, "parts", []) or []:
+                if getattr(part, "text", None):
+                    text += part.text
+        t = text.strip()
+        if t.startswith("```"):
+            import re as _re
+            t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
+            t = _re.sub(r"\n```\s*$", "", t)
+        import json as _json
+        data = _json.loads(t.strip())
+        if isinstance(data, dict) and data.get("scene"):
+            return {"scene": str(data.get("scene", "")), "key": str(data.get("key", ""))}
+    except Exception as e:
+        print(f"[!] scene director failed: {e}", file=sys.stderr)
+    return {}
+
+
+def generate_sketchy_directed(
+    director_instruction: str,
+    output_path: str | Path,
+    caption_path: str | Path | None = None,
+    api_key: Optional[str] = None,
+    phase: Optional[int] = None,
+) -> tuple[bool, str]:
+    """Full directed pipeline: director (facts→clean scene+key) → image model
+    (draws the clean scene, no clinical terms to label) → caption (reads the
+    actual image + the director's key → flowing Hebrew narrative).
+    Returns (image_ok, caption_text)."""
+    directed = run_scene_director(director_instruction, api_key=api_key)
+    if not directed:
+        print("[!] director returned nothing; cannot generate directed scene.", file=sys.stderr)
+        return False, ""
+    scene = directed["scene"]
+    key = directed["key"]
+
+    # Image prompt = visual STYLE spec + the clean SCENE (no clinical jargon).
+    image_prompt = (
+        SKETCHY_STYLE_PREFIX
+        + "\n\nSCENE TO ILLUSTRATE — draw EXACTLY this, as one cohesive scene:\n"
+        + scene
+        + "\n\nABSOLUTE: no written words anywhere in the image EXCEPT the few short"
+          " diegetic words explicitly quoted in the scene above (signs, name tags,"
+          " numbers on objects). No explanatory labels, no captions, no callouts."
+    )
+    image_ok = generate_image(image_prompt, output_path, api_key=api_key, phase=phase)
+    if not image_ok:
+        return False, ""
+
+    # Caption = read the actual image, grounded by the director's key.
+    caption = generate_caption(scene, key, image_path=output_path, api_key=api_key)
+    if caption and caption_path:
+        cp = Path(caption_path)
+        cp.parent.mkdir(parents=True, exist_ok=True)
+        cp.write_text(caption, encoding="utf-8")
+    return True, caption
+
+
 def generate_image_with_caption(
     prompt: str,
     output_path: str | Path,
@@ -275,11 +352,8 @@ def generate_image_with_caption(
     api_key: Optional[str] = None,
     phase: Optional[int] = None,
 ) -> tuple[bool, str]:
-    """Generate image AND narrative caption. Returns (image_ok, caption_text).
-
-    The caption model is now given the actual generated image (multimodal
-    input) so the caption faithfully describes what is visible — instead
-    of inventing a separate scene from the same open-ended prompt."""
+    """LEGACY direct pipeline (prompt → image → caption). Kept for the
+    non-directed path. New Sketchy generation uses generate_sketchy_directed."""
     image_ok = generate_image(prompt, output_path, api_key=api_key, phase=phase)
     if not image_ok:
         return False, ""

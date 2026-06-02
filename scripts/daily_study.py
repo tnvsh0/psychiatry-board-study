@@ -36,7 +36,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
     from gemini_image import generate_image_with_caption as gemini_generate
-    from gemini_image import propose_anchor_theme
+    from gemini_image import propose_anchor_theme, generate_sketchy_directed
     HAS_GEMINI = True
 except ImportError:
     HAS_GEMINI = False
@@ -408,6 +408,24 @@ def _symbols_named_in_facts(aspect_facts, symbols_data):
     return found
 
 
+def _compact_symbol_index(symbols_data, exclude=None):
+    """One short line per symbol across the WHOLE codex: 'key: short visual'.
+    Used as a reference so the model can always reach the canonical symbol for
+    ANY drug/receptor/concept that appears in the facts — never a miss."""
+    exclude = set(exclude or [])
+    pools = _all_symbol_pools(symbols_data)
+    lines = []
+    for key, item in pools.items():
+        if key in exclude or not isinstance(item, dict):
+            continue
+        sym = (item.get("symbol") or item.get("scene_name") or "").strip()
+        if not sym:
+            continue
+        short = sym if len(sym) <= 90 else sym[:88].rstrip() + "…"
+        lines.append(f"- {key}: {short}")
+    return "\n".join(lines)
+
+
 def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
     """Full-detail legend for ONLY the symbols relevant to this aspect.
 
@@ -479,27 +497,34 @@ _ASPECT_STRUCTURE = {
 }
 
 
-def prompt_sketchy_scene(day, symbols_data, aspect, aspect_facts=None,
-                         anchor_world=None, anchor_zone=None):
-    """Prompt for the Gemini Sketchy-scene generator (Nano Banana 2).
+def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
+                               anchor_world=None, anchor_zone=None):
+    """Build the SCENE DIRECTOR instruction (a text-model prompt).
 
-    ASPECT-SCOPED + ANCHOR-THEMED: all of a chapter's images share ONE bizarre
-    WORLD (anchor_world) for easy recall as a set, but each image occupies a
-    DISTINCT ZONE (anchor_zone) of that world and encodes ONLY its aspect's
-    facts — so the chapter feels unified while facts never bleed between
-    images."""
+    The director converts this aspect's clinical facts + the symbol vocabulary
+    + the name-pun world into (a) a PURE-VISUAL scene description with NO
+    clinical terms (so the image model has nothing to label) and (b) a numbered
+    KEY mapping each visible element to its fact (used for the caption). This
+    mirrors how a real Sketchy page is authored: scene brief + separate key.
+
+    ASPECT-SCOPED + ANCHOR-THEMED: all of a chapter's images share ONE world
+    (anchor_world) for recall as a set, but each occupies a DISTINCT zone
+    (anchor_zone) and encodes ONLY its aspect's facts — unified, no bleeding."""
     title_he = day.get("title_he", day.get("title_en", ""))
     scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts)
+    full_index = _compact_symbol_index(symbols_data)
     facts_text = _facts_block_for_aspect(aspect, aspect_facts)
     structure = _ASPECT_STRUCTURE.get(aspect, "")
 
     if anchor_world and anchor_zone:
-        setting_block = f"""SETTING — SHARED CHAPTER WORLD (consistency across the chapter's images):
-This entire chapter lives in ONE bizarre world: {anchor_world}.
-THIS image is set specifically in: {anchor_zone}.
-Render that zone richly. The chapter's other aspect-images occupy OTHER zones
-of the SAME world — so a viewer recognizes them as one place — but this image
-must contain ONLY this zone and ONLY this aspect's facts (no bleeding)."""
+        setting_block = f"""SETTING — SHARED CHAPTER WORLD (a LIGHT linking thread, not heavy sameness):
+This chapter's images all live in ONE world: {anchor_world}.
+THIS image is set in ONE distinct zone of it: {anchor_zone}.
+The shared world is just enough for the viewer to recall the chapter's images
+as a connected set. But this zone must be VISUALLY DISTINCT from the chapter's
+other zones — different dominant colors, objects and action — so the images are
+never confused with each other. Do NOT try to show the whole world or other
+aspects here; render only THIS zone and only THIS aspect's facts."""
     else:
         setting_block = """SETTING: invent ONE bizarre, unexpected world with NO literal connection to medicine (casino, medieval joust, pirate cove, space station, candy factory...). Do NOT use a clinical setting (clinic, lecture hall, lab, pharmacy, ward, ER)."""
 
@@ -517,35 +542,42 @@ epidemiology-facts only in the epidemiology image, etc.
 FACTS TO ENCODE (this aspect only):
 {facts_text}
 
-SYMBOLS — use these EXACT constant symbols when their concept appears (do NOT
-invent a different drawing for a drug/receptor that already has a symbol here;
-reusing the constant symbol is the whole point of the course):
+PRIORITY SYMBOLS for this aspect (full detail — use the ones that fit the facts):
 {scoped_legend}
+
+FULL SYMBOL REFERENCE INDEX (the entire course vocabulary). RULE: if ANY concept
+in this aspect's facts above has a canonical symbol in this index, you MUST use
+that exact symbol — never invent a different drawing for a drug/receptor/concept
+that already has one (reusing constant symbols is the whole point of the course).
+Only pull an entry whose concept actually appears in the facts; ignore the rest.
+{full_index}
 
 {structure}
 
 {NUMBER_RULES}
 
-ABSOLUTE RULE — NO TEXT, ONLY SYMBOLS:
-- Do NOT write explanatory words in the image. A sleeping knight already MEANS
-  insomnia — do NOT also write "INSOMNIA". A racing heart-drum already means
-  tachycardia — do NOT write "FAST HEART". A shrinking ruler already means
-  growth delay — do NOT write "DELAYED".
-- If you feel the need to label something, that means the visual pun is too
-  weak — REPLACE it with a clearer pun instead of adding text.
-- The ONLY text allowed is tiny DIEGETIC text that is naturally part of an
-  object (a brand name on a bottle, a number on a jersey, a drug's own name
-  worked playfully into a sign). Even drug names should be woven in cleverly
-  (a wordplay, a logo) rather than printed as a plain caption.
-- The viewer must understand the whole scene with the sound off — pure picture.
+YOU ARE THE SCENE DIRECTOR. Do NOT draw. Produce a brief for an illustrator + a key.
 
-YOUR TASK:
-1. Build the zone described above as a bizarre, funny scene.
-2. ENCODE each fact as a character/object/action via visual or phonetic pun. REUSE the constant symbols listed above for any drug/receptor named.
-3. Numbers: ratios = relative team sizes; small counts (<=4) = countable objects; percentages & big numbers = number-pegs as the joke's punchline. Never write a numeral as a stat.
-4. The scene must make a viewer SAY 'WHAT?' — bizarre, funny, emotionally activating.
+Compose ONE cohesive, bizarre, funny scene in the zone above. Every fact becomes
+a findable OBJECT/CHARACTER/ACTION (Where's-Waldo style), encoded by visual or
+phonetic pun. Reuse the EXACT constant symbols from the index for any
+drug/receptor/concept named in the facts. Numbers: ratios = relative team
+sizes; small counts (<=4) = countable objects; percentages & big numbers =
+number-peg shapes as the punchline (never a written stat).
 
-The story tying symbols to the clinical facts goes in the companion caption (generated separately) — NOT inside the image."""
+CRITICAL — the scene description must be PURELY VISUAL with NO clinical terms.
+The illustrator must never see a word like "insomnia", "prevalence", "sex
+ratio" — only the visual (e.g. "a knight snoring on a bench, eyes wide open").
+The ONLY words allowed to appear in the final image are short DIEGETIC labels
+that are naturally part of an object AND double as the mnemonic (a name on a
+tent, a number on a jersey) — list each such word explicitly in quotes. No
+explanatory text, no callouts, no floating labels.
+
+OUTPUT — STRICT JSON only (no markdown fence):
+{{
+  "scene": "<2-4 sentence purely-visual description of the single cohesive scene: the setting, each character/object/action, and any short quoted diegetic words. NO clinical terminology whatsoever.>",
+  "key": "<a numbered list mapping each visible element to the clinical fact it encodes and WHY (the phonetic/visual hook), including which number-peg encodes which figure. This is for the study caption, not the image.>"
+}}"""
 
 
 def prompt_study_guide(day, symbol_block, legend_block):
@@ -1259,16 +1291,15 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             png_path = day_dir / f"sketchy_{aspect}.png"
             txt_path = day_dir / f"sketchy_{aspect}.txt"
             aspect_facts = facts_for_aspect(aspect, facts)
-            prompt = prompt_sketchy_scene(
+            director = build_director_instruction(
                 day, symbols, aspect, aspect_facts,
                 anchor_world=anchor_world, anchor_zone=zones.get(aspect),
             )
-            print(f"  sketchy_{aspect}: generating image + caption...")
-            ok, caption = gemini_generate(
-                prompt=prompt,
+            print(f"  sketchy_{aspect}: directing scene + generating...")
+            ok, caption = generate_sketchy_directed(
+                director_instruction=director,
                 output_path=png_path,
                 caption_path=txt_path,
-                symbol_legend=caption_legend,
                 phase=phase,
             )
             if ok:
