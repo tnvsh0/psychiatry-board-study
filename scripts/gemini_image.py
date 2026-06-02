@@ -157,22 +157,29 @@ def generate_image(
     phase: Optional[int] = None,
     model: str = IMAGE_MODEL,
 ) -> bool:
-    """Generate one SketchyMedical-style scene. Returns True on success."""
+    """Generate one SketchyMedical-style scene. Returns True on success.
+
+    Retries a couple of times on transient image-model failures (empty
+    response / network hiccup / occasional safety refusal) — important for
+    long unattended bulk runs where a single transient miss shouldn't drop
+    a whole chapter's image."""
     client = _get_client(api_key)
     if client is None:
         return False
 
     full_prompt = SKETCHY_STYLE_PREFIX + _palette_directive(phase) + "\n\nContent to illustrate:\n" + prompt
 
-    try:
-        response = client.models.generate_content(model=model, contents=full_prompt)
-    except Exception as e:
-        print(f"[!] Image generation failed: {e}", file=sys.stderr)
-        return False
-
-    if _save_image_from_response(response, Path(output_path)):
-        return True
-    print("[!] Model returned no image data.", file=sys.stderr)
+    import time as _time
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(model=model, contents=full_prompt)
+            if _save_image_from_response(response, Path(output_path)):
+                return True
+            print(f"[!] Image attempt {attempt+1}/3 returned no image data.", file=sys.stderr)
+        except Exception as e:
+            print(f"[!] Image attempt {attempt+1}/3 failed: {e}", file=sys.stderr)
+        if attempt < 2:
+            _time.sleep(5 * (attempt + 1))
     return False
 
 

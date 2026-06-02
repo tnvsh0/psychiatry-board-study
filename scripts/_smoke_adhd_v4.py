@@ -85,8 +85,8 @@ def main():
         af = facts_for_aspect(aspect, ADHD_FACTS)
         director = build_director_instruction(day, symbols, aspect, af,
                                               anchor_world=world, anchor_zone=zones.get(aspect))
-        png = OUT / f"smoke_adhd_v6_{aspect}.png"
-        txt = OUT / f"smoke_adhd_v6_{aspect}.txt"
+        png = OUT / f"smoke_adhd_v7_{aspect}.png"
+        txt = OUT / f"smoke_adhd_v7_{aspect}.txt"
         print(f"[{aspect}] director {len(director)} chars -> directing + generating...")
         ok, cap = generate_sketchy_directed(
             director_instruction=director, output_path=png, caption_path=txt, phase=phase,
