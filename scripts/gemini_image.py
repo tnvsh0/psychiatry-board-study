@@ -50,6 +50,7 @@ The image MUST be:
 - CLEAN and UNCLUTTERED — every element must earn its place by encoding a fact. NO decorative filler, NO random extra props, NO busy background noise. Generous breathing space. (This is the opposite of a cluttered Where's-Waldo jumble — a viewer should parse the whole scene in a few seconds.)
 - Hand-painted watercolor with loose ink linework. Visible brush texture and paint bleed. Warm, saturated, slightly desaturated colors. NOT flat vector art. NOT digital corporate illustration. NOT 3D render.
 - Each concept from the legend embedded as a physical character, object, prop, or action — woven INTO the scene, NOT placed beside it like icons.
+- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.
 
 Text rules — STRICT:
 - NO callout arrows. NO captions. NO legend boxes. NO floating text overlays. NO explanation text.

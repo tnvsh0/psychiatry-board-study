@@ -1764,15 +1764,19 @@
     "_README": "Recurring 'which-fact' markers for the EPIDEMIOLOGY image of EVERY diagnosis chapter. THREE-LAYER MODEL: (1) the meta-symbol below is CONSTANT across all chapters — it tells the viewer WHICH epidemiological fact is being shown; (2) it is instantiated inside each chapter's UNIQUE bizarre scene — that tells WHICH disorder; (3) the numeric VALUE is encoded via the number_pegs system (see that category) integrated as the punchline of the scene's joke. Counting only works for subitizable quantities (<=4-5); for larger numbers and percentages, use number_pegs, NOT counting.",
     "epi_prevalence": {
       "category": "Epidemiology meta-symbol — prevalence / how common",
-      "aspects": ["epidemiology"],
-      "symbol": "A CROWD whose DENSITY shows how common the disorder is (packed crowd = common; near-empty street = rare). The exact percentage rides on a number-peg character standing in the crowd holding a giant '%' sign (e.g., 5% = a HAND doing a high-five with % stamped on the palm).",
+      "aspects": [
+        "epidemiology"
+      ],
+      "symbol": "A CROWD whose DENSITY shows how common the disorder is (packed crowd = common; near-empty street = rare). The exact percentage rides on a number-peg character standing in the crowd holding a giant '%' sign (e.g., 5% = a starfish/seahorse (5) wearing a % badge).",
       "mnemonic_link": "Crowd density = qualitative commonness; the number-peg + % badge = the exact figure. Never ask the viewer to count crowd members.",
       "function_depiction": "Use crowd density for the board-relevant qualitative ('one of the most common' vs 'rare'), and a number-peg for the headline percentage. Exact decimals go in the caption, not the image.",
       "hebrew_explanation": "סמל-מטא לשכיחות. צפיפות הקהל = כמה נפוץ (קהל צפוף = נפוץ; רחוב ריק = נדיר). האחוז המדויק רוכב על דמות-peg עם שלט '%' (5% = יד high-five עם % על הכף). לא סופרים את הקהל."
     },
     "epi_sex_ratio": {
       "category": "Epidemiology meta-symbol — sex ratio (M:F)",
-      "aspects": ["epidemiology"],
+      "aspects": [
+        "epidemiology"
+      ],
       "symbol": "A TUG-OF-WAR between a team of males (♂) and a team of females (♀). The number of pullers on each side equals the ratio (2:1 = two ♂ vs one ♀). The bigger/winning team is the predominant sex.",
       "mnemonic_link": "Ratios are subitizable (<=5) so you SEE 2-vs-1 without reading. Winning side = the majority sex.",
       "function_depiction": "Render the literal ratio as team sizes. If ratio is large (rare), use number-pegs for the value.",
@@ -1780,7 +1784,9 @@
     },
     "epi_age_onset": {
       "category": "Epidemiology meta-symbol — typical/peak age of onset (epidemiological, NOT a diagnostic age criterion)",
-      "aspects": ["epidemiology"],
+      "aspects": [
+        "epidemiology"
+      ],
       "symbol": "A BIRTHDAY CAKE whose candle(s) encode the peak onset age via number-pegs (not by counting many candles). E.g., onset in late teens = a cake with a '1' candle (pencil) beside an '8' candle (snowman). A clock or life-timeline in the background marks 'when it starts'.",
       "mnemonic_link": "Cake = 'when it begins' (a birthday). Age value via number-pegs, not by counting candles. Distinct from any diagnostic age-cutoff criterion (those live in the criteria image).",
       "function_depiction": "Use ONLY for disorders where typical/peak onset age is an epidemiological teaching point (e.g., schizophrenia late teens-20s). Do not use for diagnostic age criteria.",
@@ -1788,7 +1794,10 @@
     },
     "epi_heritability": {
       "category": "Epidemiology meta-symbol — heritability / genetic loading",
-      "aspects": ["epidemiology", "etiology"],
+      "aspects": [
+        "epidemiology",
+        "etiology"
+      ],
       "symbol": "A FAMILY ROW (parents + children) where the FRACTION affected encodes heritability via subitizing (<=4) — e.g., 3 of 4 family members share the trait = ~75%. A DNA strand woven through the family portrait reinforces 'genetic'.",
       "mnemonic_link": "Small fractions (3 of 4) are subitizable. DNA = heritability. The board-relevant point is usually the RANK ('one of the most heritable') — emphasize that.",
       "function_depiction": "Show the heritability fraction with a small subitizable family. Emphasize qualitative rank when high. Exact % in caption.",
@@ -1796,7 +1805,9 @@
     },
     "epi_comorbidity": {
       "category": "Epidemiology meta-symbol — comorbidity",
-      "aspects": ["epidemiology"],
+      "aspects": [
+        "epidemiology"
+      ],
       "symbol": "CONJOINED TWINS. One twin is the current disorder's character; the OTHER twin wears the established symbol (from this codex) of the comorbid disorder. The twins are physically fused = the disorders travel together. Multiple comorbidities = additional fused siblings.",
       "mnemonic_link": "Fused bodies = comorbid (they come together). The constant = twins; the variable = which symbol the second twin wears.",
       "function_depiction": "Attach the comorbid disorder's existing symbol to the second twin. E.g., ADHD twin fused to an ODD twin (angry shouting child).",
@@ -1804,7 +1815,10 @@
     },
     "epi_prognosis": {
       "category": "Epidemiology meta-symbol — course / prognosis",
-      "aspects": ["epidemiology", "clinical_relevance"],
+      "aspects": [
+        "epidemiology",
+        "clinical_relevance"
+      ],
       "symbol": "A WEATHER FORECASTER pointing at a forecast SCREEN. The forecast content = the specific prognosis: clear sunny skies = good outcome / remission; permanent storm = poor outcome; a child-shaped cloud growing into an adult-shaped cloud with half the sky still stormy = 'partially persists into adulthood'. Persistence percentage via number-pegs.",
       "mnemonic_link": "Forecaster + screen = 'prognosis'. Forecast content = the specific course. Persistence % via number-pegs floating in the clouds.",
       "function_depiction": "Constant = the forecaster; variable = the weather depicting the course. Encode persistence/remission rates with number-pegs.",
@@ -1814,11 +1828,14 @@
   "meta_systems": {
     "number_pegs": {
       "category": "Number-shape peg system — the COURSE-WIDE vocabulary for encoding stubborn numbers (percentages, large numbers) that cannot be subitized",
-      "aspects": ["epidemiology", "all"],
-      "symbol": "Each digit 0-9 is rendered as an object whose SHAPE resembles the digit, integrated into the scene as a character/prop (NOT written as a numeral). 0 = donut/ring/wheel. 1 = candle/pencil/lone tower. 2 = swan. 3 = trident/handcuffs. 4 = sailboat/four-leaf clover. 5 = HAND (high-five)/starfish/seahorse. 6 = revolver(six-shooter)/cherry. 7 = boomerang/scythe/lucky-7 dice. 8 = snowman/hourglass/octopus. 9 = balloon-on-string/cat/cannon.",
-      "mnemonic_link": "Shape resemblance makes each digit a memorable object. Two-digit numbers combine two pegs interacting. The number is always the PUNCHLINE of the scene's joke, never a floating numeral.",
-      "function_depiction": "Use for percentages and numbers >5 (un-subitizable). For <=5 use direct countable objects or ratios. For board-relevant facts where the rank matters more than the digit (e.g., 'most heritable'), lead with the qualitative and let the peg carry the headline figure. Exact decimals always also go in the caption + study guide.",
-      "hebrew_explanation": "מערכת peg לפי צורת-ספרה — אוצר-המילים של הקורס לקידוד מספרים עקשנים (אחוזים, מספרים גדולים) שאי אפשר לספור במבט. כל ספרה 0-9 = חפץ שצורתו דומה לספרה, משולב בסצנה כדמות/אביזר (לא נכתב כספרה). 0=סופגנייה. 1=נר/עיפרון. 2=ברבור. 3=קלשון/אזיקים. 4=סירת מפרש. 5=יד(high-five)/כוכב-ים. 6=אקדח-תוף/דובדבן. 7=בומרנג/חרמש. 8=בובת-שלג/שעון-חול/תמנון. 9=בלון/חתול. מספר דו-ספרתי = שני pegs מתקשרים. המספר תמיד הפאנץ' של הבדיחה."
+      "aspects": [
+        "epidemiology",
+        "all"
+      ],
+      "symbol": "Each digit 0-9 = a NATURAL OBJECT OF THE SCENE whose SHAPE resembles the digit (NOT a numeral, NOT a floating disembodied symbol — it must belong to the setting). 0=ring/wheel/donut/porthole. 1=candle/pencil/pole/mast. 2=swan/squiggle. 3=trident/pretzel. 4=sailboat/flag. 5=starfish/seahorse/hook (NOT a hand — a hand reads as a stray extra limb and clutters the scene). 6=cherry/golf-club. 7=boomerang/cliff. 8=hourglass/snowman. 9=balloon/tadpole.",
+      "mnemonic_link": "Shape resemblance makes each digit a memorable object. The peg MUST belong to the scene and be the punchline of its joke — never a floating numeral or floating symbol.",
+      "function_depiction": "Use ONLY for percentages/big un-countable numbers. For <=4-5 prefer counting natural belonging objects, or ratios. Concentrate numbers on one logical fixture; do not scatter peg-objects across the scene. Rank facts -> lead with qualitative; exact decimals -> caption/study guide.",
+      "hebrew_explanation": "מערכת peg לפי צורת-ספרה, למספרים עקשנים (אחוזים/גדולים) בלבד. כל ספרה = אובייקט טבעי של הסצנה בצורת הספרה (לא ספרה כתובה, לא סמל מרחף — חייב לשייך). 5=כוכב-ים/סוסון-ים/וו (לא יד — יד נראית כאיבר מיותר ומבלגנת). 6=דובדבן. 2=ברבור. למספרים <=4-5 עדיף לספור אובייקטים ששייכים; לרכז מספרים במקום אחד, לא לפזר."
     }
   }
 }

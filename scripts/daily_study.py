@@ -381,12 +381,25 @@ EXPLICIT ANTI-PATTERNS — these RUIN Sketchy memorability and are FORBIDDEN:
 The bizarre context is NOT decoration — it IS the mnemonic engine."""
 
 
-NUMBER_RULES = """NUMBER ENCODING (course-wide, consistent):
-- RATIOS (2:1, 3:1) → relative team sizes / counts. The viewer SEES 2-vs-1; never reads it.
-- SMALL COUNTS (<=4-5: # symptoms-needed, age, months, # subtypes) → countable objects integrated into the action (subitizable at a glance).
-- PERCENTAGES and BIG NUMBERS (un-countable) → NUMBER-PEG SHAPES, never a written numeral and never 'count N of M'. Peg shapes: 0=donut/ring · 1=candle/pencil · 2=swan · 3=trident/handcuffs · 4=sailboat · 5=hand(high-five)/starfish · 6=six-shooter/cherry · 7=boomerang/scythe · 8=snowman/hourglass/octopus · 9=balloon/cat. Render the peg as a character/prop that is the PUNCHLINE of the scene's joke (e.g. 5% = a giant HAND high-fiving with a '%' on the palm).
-- When the board-relevant point is a RANK ('one of the MOST heritable', 'the RAREST'), lead with the qualitative visual (huge vs tiny) and let a peg carry the headline figure.
-- Exact decimals are NOT drawn — they live in the caption + study guide."""
+NUMBER_RULES = """NUMBER ENCODING (course-wide, consistent) — and pegs MUST BELONG too:
+- PREFER COUNTING BELONGING OBJECTS for small numbers (<=4-5). The number is the
+  COUNT of things that already fit the scene — 2 settings = 2 road-signs; 6
+  months = 6 marks on the examiner's calendar. Do NOT add a floating peg-symbol
+  when a natural count works.
+- RATIOS (2:1, 3:1) → relative team sizes. The viewer SEES 2-vs-1.
+- ONLY for un-countable numbers (percentages, big numbers) use a NUMBER-PEG
+  SHAPE — but the peg MUST be a natural object of THIS scene that happens to be
+  shaped like the digit; NEVER a disembodied symbol floating in space. Shapes:
+  0=ring/wheel/donut · 1=candle/pencil/pole · 2=swan/squiggle · 3=trident/
+  pretzel · 4=sailboat/flag · 5=starfish/seahorse/hook · 6=cherry/golf-club ·
+  7=boomerang/cliff · 8=hourglass/snowman · 9=balloon/tadpole.
+- AVOID body-part pegs (a 'high-five hand' reads as a stray extra hand and
+  clutters the scene) — use starfish/seahorse/hook for 5 instead.
+- CONCENTRATE the threshold numbers on ONE belonging fixture (e.g. the examiner's
+  scoreboard/clipboard, a single road-sign) rather than scattering peg-objects
+  all over the scene. A few numbers, in one logical place.
+- RANK facts ('one of the MOST heritable') → lead with the qualitative visual
+  (huge vs tiny). Exact decimals live in the caption + study guide, NOT the image."""
 
 
 def _symbols_named_in_facts(aspect_facts, symbols_data):
