@@ -1,0 +1,15 @@
+# Keep the Cloud Run build context tiny: only app/app.py + scripts/sr_engine.py
+# are needed by the Dockerfile. Exclude everything heavy/irrelevant.
+.git/
+.venv/
+__pycache__/
+*.pyc
+_test_outputs/
+_generated/
+Text BOOKS/
+*.pdf
+.env
+schedule/*.log
+schedule/_*.txt
+schedule/_*.json
+schedule/_*.log
