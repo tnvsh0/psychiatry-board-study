@@ -67,12 +67,37 @@ Hebrew caption, study guide, flippable flashcards with **spaced repetition**, qu
   `sketchy_dsm_criteria_inattention.png`, `sketchy_dsm_criteria_hyperactivity-impulsivity.png`,
   `sketchy_epidemiology.png`, `sketchy_etiology.png` + audio/video/study guide/flashcards/quiz/facts.json.
 
+**Latest quality pass (image fidelity — this session):**
+- **Image model → Nano Banana Pro by default** (`gemini-3-pro-image-preview`),
+  overridable via env `SKETCHY_IMAGE_MODEL` (set `gemini-3.1-flash-image-preview`
+  for the cheap Flash model w/ ~500/day free tier). Pro = best text rendering +
+  instruction-following — directly helps labels + criteria completeness.
+- **Caption fidelity (two-stage):** caption now takes a literal VISUAL INVENTORY
+  of the rendered image first, then narrates ONLY what is actually there — no more
+  describing intended-but-undrawn elements. (`gemini_image.py`)
+- **Criteria completeness GUARANTEE:** a criteria image must contain a distinct
+  visual for EVERY criterion. Director now demands one hook per criterion (density
+  > cleanliness for criteria); `generate_sketchy_directed` runs a coverage-checked
+  retry loop (≤3×, keeps the most-complete render) via `check_coverage`, wired by
+  `required_items` for criteria jobs.
+- **Comorbidity redesign:** ONE conjoined-twin pair + the comorbid disorders as
+  worn/held/surrounding symbol-objects (NOT extra twin bodies). (`symbols.json`
+  `epi_comorbidity` + the epidemiology structure note.)
+- **Per-aspect SCOPED infographics:** each NotebookLM infographic is fed its OWN
+  facts.json slice as a dedicated source and generated with
+  `generate infographic -s <id>` — no cross-aspect bleeding/repetition.
+
 **Pending (the next big steps):**
 1. **Verify Day 16 clean set** visually (open the release assets or the Streamlit app).
-2. **Full bulk run** — regenerate ALL 126 chapters with the new quality. ~50h, ~$50-80 Gemini. On the VM via `nohup`. Open question: overwrite all vs `--resume`.
+2. **Full bulk run** — regenerate ALL 126 chapters on Nano Banana Pro (~$0.13/img,
+   ~$67 total). **STRATEGY: spread across months** via `--bulk --start-from/--end-at
+   --resume` (~12-18 chapters/month) so the Google AI Pro **$10/month Cloud credits**
+   absorb the cost (≈ free). Test ONE chapter (day 16) first. (Confirm the $10/mo
+   credits apply to the same billing account the server's `GEMINI_API_KEY` uses.)
 3. **Deploy Streamlit to Cloud Run** (online). Dockerfile + .gcloudignore are ready (§9).
 
-**Latest commit:** `97f2484`. **Branch:** `main`.
+**Latest:** image-fidelity quality pass (Pro model, two-stage caption, criteria
+completeness loop, comorbidity, scoped infographics). See `git log` on `main`.
 
 ---
 
@@ -165,7 +190,7 @@ Real SketchyMedical reference is in `Text BOOKS/` / `_test_outputs/sketchy_ref.p
 | File | Role |
 |------|------|
 | `scripts/daily_study.py` | **The orchestrator.** Per-chapter pipeline. Builds the scene-director prompts, calls NotebookLM + Gemini, uploads the Release. Run with `--day N` or `--bulk`. |
-| `scripts/gemini_image.py` | Gemini calls: `propose_anchor_theme`, `run_scene_director`, `generate_sketchy_directed` (director→image→caption), `generate_image` (3× retry), the `SKETCHY_STYLE_PREFIX` + `CAPTION_INSTRUCTION`. Model = `gemini-3.1-flash-image-preview` (Nano Banana 2). |
+| `scripts/gemini_image.py` | Gemini calls: `propose_anchor_theme`, `run_scene_director`, `generate_sketchy_directed` (director→image→[coverage-retry]→caption), `generate_image` (3× retry), `check_coverage` (criteria completeness), two-stage caption (`_visual_inventory` + `CAPTION_INSTRUCTION`), `SKETCHY_STYLE_PREFIX`. Model = `gemini-3-pro-image-preview` (Nano Banana Pro) by default; override via env `SKETCHY_IMAGE_MODEL` (e.g. `gemini-3.1-flash-image-preview` = Flash/free-tier). |
 | `schedule/symbols.json` | The symbol codex (3 tiers above). 156 `symbols` + 60 `drugs` + 17 `scenes` + 5 `ions` + 7 `epidemiology_meta` + `number_pegs`. |
 | `schedule/schedule.json` | The 126-chapter curriculum (10 phases). Each chapter: title, aspects, symbols_needed, prompt_focus, optional `anchor_world`/`anchor_zones` (curated world override — day 16 has the driving-test world). |
 | `schedule/phase_palette.json` | Per-phase color hints (UI theming + gentle image palette). |

@@ -56,6 +56,7 @@ NOTEBOOKLM_BIN = os.environ.get("NOTEBOOKLM_BIN", "/opt/venv/bin/notebooklm")
 if not Path(NOTEBOOKLM_BIN).exists():
     NOTEBOOKLM_BIN = "notebooklm"
 WAIT_INDEX_S = 60
+SCOPE_INDEX_WAIT_S = 60  # wait for per-aspect scope sources to index before scoped infographic gen
 POLL_INTERVAL_S = 60
 ARTIFACT_MAX_WAIT_S = 60 * 60  # 60 min per batch (audio --length long is slower)
 
@@ -296,44 +297,45 @@ def prompt_video(day, symbol_block, legend_block):
 חייב להיות קליני ולא דיון בציורים."""
 
 
+_INFOGRAPHIC_ASPECT_PROMPTS = {
+    "dsm_criteria": "קריטריונים DSM-5-TR — רשימה מספרית מסודרת + ספי-זמן + מספר תסמינים נדרש.",
+    "epidemiology": "אפידמיולוגיה — שכיחות, היארעות, פירוט לפי מין/גיל, גורמי סיכון.",
+    "etiology": "אטיולוגיה ביופסיכוסוציאלית — תרשים גנטיקה + נוירוביולוגיה + סביבה.",
+    "treatment_first_line": "טיפול קו ראשון — תרופתי + לא-תרופתי, עם דרגות המלצה.",
+    "treatment_second_line": "טיפולי קו שני ומתפתחים — אינדיקציות, יעילות, סיכונים.",
+    "treatment_overview": "עץ-טיפול — קו 1 → קו 2 → augmentation → refractory.",
+    "drug_mechanism": "מנגנון פעולה — קולטנים, עוצמות קישור, downstream effects.",
+    "drug_side_effects": "תופעות לוואי + מנגנון של כל אחת.",
+    "drug_monitoring": "ניטור — בדיקות לפני התחלה ובמהלך, תדירות וערכים.",
+    "drug_practical": "פרקטיקה — מינונים, התחלה, titration, אינטראקציות.",
+    "drug_class_overview": "סקירה משווה של בני המשפחה — t½, מטבוליזם, אינדיקציות.",
+    "indications": "אינדיקציות (FDA + off-label) ורמת הראיה.",
+    "side_effects_class": "תופעות לוואי משותפות למשפחת התרופות.",
+    "monitoring": "ניטור — מה, מתי, איזה ערכים.",
+    "practical_use": "פרקטיקה — בחירה בין בני המשפחה, אופן ההתחלה.",
+    "assessment_tools": "כלי הערכה — שאלונים, סולמות (Conners, ASEBA, CGI, וכו').",
+    "medical_mimics": "אבחנה מבדלת רפואית — מצבים 'Due to Another Medical Condition / Substance'.",
+    "core_concept": "קונספט הליבה — מה זה ולמה זה חשוב.",
+    "anatomy_or_structure": "אנטומיה/מבנה — איפה ממוקם, איך נראה.",
+    "function": "תפקוד — מה זה עושה, איך זה משפיע.",
+    "clinical_relevance": "רלוונטיות קלינית — איפה זה פוגש מטופלים.",
+    "history_origin": "היסטוריה ומקור הטכניקה — מי פיתח, מתי, איפה.",
+    "core_principles": "עקרונות יסוד של השיטה.",
+    "practice_method": "מבנה הסשנים בפועל וטכניקות.",
+    "evidence": "עדויות אמפיריות — RCTs, meta-analyses, אינדיקציות מאושרות.",
+    "recognition": "סימנים אדומים לזיהוי מוקדם.",
+    "diagnostic_criteria": "קריטריונים דיאגנוסטיים מדויקים.",
+    "differential": "אבחנה מבדלת — מה דומה, איך מבדילים.",
+    "emergency_management": "ניהול חירומי — גישה, תרופות, ניטור.",
+}
+
+
 def prompt_notebooklm_infographic(day, aspect):
-    """Prompt for NotebookLM's native infographic generator (instructional /
-    professional style — NOT Sketchy). Information-dense, chart/table style,
-    clinical data. NO scene, NO cartoon mnemonic symbols. The Sketchy scene
-    is handled separately by prompt_sketchy_scene + Gemini."""
+    """LEGACY whole-notebook infographic prompt (fallback when no per-aspect
+    scope source could be built). Prefer prompt_infographic_scoped, which is fed
+    only this aspect's facts.json slice and run with `generate infographic -s`."""
     base = build_clinical_context(day)
-    aspect_prompts = {
-        "dsm_criteria": "קריטריונים DSM-5-TR — רשימה מספרית מסודרת + ספי-זמן + מספר תסמינים נדרש.",
-        "epidemiology": "אפידמיולוגיה — שכיחות, היארעות, פירוט לפי מין/גיל, גורמי סיכון.",
-        "etiology": "אטיולוגיה ביופסיכוסוציאלית — תרשים גנטיקה + נוירוביולוגיה + סביבה.",
-        "treatment_first_line": "טיפול קו ראשון — תרופתי + לא-תרופתי, עם דרגות המלצה.",
-        "treatment_second_line": "טיפולי קו שני ומתפתחים — אינדיקציות, יעילות, סיכונים.",
-        "treatment_overview": "עץ-טיפול — קו 1 → קו 2 → augmentation → refractory.",
-        "drug_mechanism": "מנגנון פעולה — קולטנים, עוצמות קישור, downstream effects.",
-        "drug_side_effects": "תופעות לוואי + מנגנון של כל אחת.",
-        "drug_monitoring": "ניטור — בדיקות לפני התחלה ובמהלך, תדירות וערכים.",
-        "drug_practical": "פרקטיקה — מינונים, התחלה, titration, אינטראקציות.",
-        "drug_class_overview": "סקירה משווה של בני המשפחה — t½, מטבוליזם, אינדיקציות.",
-        "indications": "אינדיקציות (FDA + off-label) ורמת הראיה.",
-        "side_effects_class": "תופעות לוואי משותפות למשפחת התרופות.",
-        "monitoring": "ניטור — מה, מתי, איזה ערכים.",
-        "practical_use": "פרקטיקה — בחירה בין בני המשפחה, אופן ההתחלה.",
-        "assessment_tools": "כלי הערכה — שאלונים, סולמות (Conners, ASEBA, CGI, וכו').",
-        "medical_mimics": "אבחנה מבדלת רפואית — מצבים 'Due to Another Medical Condition / Substance'.",
-        "core_concept": "קונספט הליבה — מה זה ולמה זה חשוב.",
-        "anatomy_or_structure": "אנטומיה/מבנה — איפה ממוקם, איך נראה.",
-        "function": "תפקוד — מה זה עושה, איך זה משפיע.",
-        "clinical_relevance": "רלוונטיות קלינית — איפה זה פוגש מטופלים.",
-        "history_origin": "היסטוריה ומקור הטכניקה — מי פיתח, מתי, איפה.",
-        "core_principles": "עקרונות יסוד של השיטה.",
-        "practice_method": "מבנה הסשנים בפועל וטכניקות.",
-        "evidence": "עדויות אמפיריות — RCTs, meta-analyses, אינדיקציות מאושרות.",
-        "recognition": "סימנים אדומים לזיהוי מוקדם.",
-        "diagnostic_criteria": "קריטריונים דיאגנוסטיים מדויקים.",
-        "differential": "אבחנה מבדלת — מה דומה, איך מבדילים.",
-        "emergency_management": "ניהול חירומי — גישה, תרופות, ניטור.",
-    }
-    aspect_he = aspect_prompts.get(aspect, f"התמקד בהיבט: {aspect}")
+    aspect_he = _INFOGRAPHIC_ASPECT_PROMPTS.get(aspect, f"התמקד בהיבט: {aspect}")
     return base + f"""
 
 צור אינפוגרפיקה אינפורמטיבית-מבנית (לא בסגנון Sketchy, לא סצנה — אלא תרשים-מידע).
@@ -347,6 +349,49 @@ def prompt_notebooklm_infographic(day, aspect):
 - מקסימום אינפורמטיבי, מינימום קישוט
 
 איסור: ללא דמויות-קומיקס, ללא סצנות, ללא סמלי-מנמוניקה ויזואליים. זו אינפוגרפיקה רגילה."""
+
+
+def _render_scope_md(day, aspect, slice_):
+    """Render one aspect's facts.json slice as a small, focused Markdown source.
+    Uploaded as its OWN NotebookLM source so the aspect's infographic can be
+    scoped to ONLY it (`generate infographic -s <id>`) — the same per-aspect
+    isolation the Sketchy images use, now applied to the infographics."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    body = _facts_block_for_aspect(aspect, slice_)
+    return (
+        f"# {title_he} — היבט: {aspect}\n\n"
+        f"מקור ממוקד להיבט **{aspect}** בלבד (slice מתוך facts.json של היום). "
+        f"האינפוגרפיקה של היבט זה מסתמכת אך ורק על מקור זה — אין לכלול היבטים אחרים.\n\n"
+        f"## עובדות הליבה\n\n```json\n{body}\n```\n"
+    )
+
+
+def prompt_infographic_scoped(day, aspect, aspect_facts):
+    """Per-aspect infographic prompt, used with `generate infographic -s <scope>`
+    so the infographic is built ONLY from this aspect's facts slice — no
+    cross-aspect bleeding / repetition. Mirrors the Sketchy per-aspect isolation."""
+    title_he = day.get("title_he", day.get("title_en", ""))
+    aspect_he = _INFOGRAPHIC_ASPECT_PROMPTS.get(aspect, f"התמקד בהיבט: {aspect}")
+    facts_text = _facts_block_for_aspect(aspect, aspect_facts)
+    return f"""צור אינפוגרפיקה אינפורמטיבית-מבנית (לא בסגנון Sketchy, לא סצנה — תרשים-מידע) על היבט אחד בלבד.
+
+נושא: {title_he}
+ההיבט היחיד של אינפוגרפיקה זו: {aspect_he}
+
+הסתמך אך ורק על המקור שצורף (scope) — שמכיל את עובדות ההיבט הזה בלבד. אל תכלול מידע על היבטים אחרים של הנושא (אם זו אפידמיולוגיה — לא אטיולוגיה/טיפול, וכו').
+
+עובדות הליבה לכיסוי:
+{facts_text}
+
+מבנה דרוש:
+- כותרת ראשית של ההיבט
+- מספרים, טבלאות, רשימות, תרשימים — מידע קליני בדחיסות גבוהה, ממוקד בהיבט זה בלבד
+- שמות תרופות/קולטנים באנגלית; הסבר בעברית
+- מקסימום אינפורמטיבי, מינימום קישוט
+
+{BILINGUAL_DIRECTIVE}
+
+איסור: ללא דמויות-קומיקס, ללא סצנות, ללא סמלי-מנמוניקה ויזואליים, וללא היבטים אחרים. זו אינפוגרפיקה רגילה וממוקדת-היבט."""
 
 
 SKETCHY_PHILOSOPHY = """The power of a SketchyMedical-style image is NOT in literally illustrating clinical content. The power is in BIZARRE, UNEXPECTED, SURPRISING METAPHOR — and in the dissonance between the setting and the medical fact.
@@ -495,39 +540,51 @@ def _facts_block_for_aspect(aspect, aspect_facts):
 # Aspect-specific structural conventions for the image.
 _ASPECT_STRUCTURE = {
     "dsm_criteria": (
-        "STRUCTURE — CRITERIA AS ONE CLEAN, COHERENT SITUATION (do NOT make a "
-        "separate mascot per symptom — that was the failure; and keep it CLEAN, "
-        "not cluttered). Pick ONE situation where symptoms naturally CO-OCCUR as "
-        "beats of a continuous activity, shown by just a FEW characters (2-4), each "
-        "embodying SEVERAL criteria. WORKED EXAMPLE for ADHD (use this): a DRIVING "
-        "TEST on a road. ONE reckless DRIVER carries the Hyperactivity/Impulsivity "
-        "cluster — flooring it with a smoking motor (driven by a motor), honking and "
-        "cutting the queue (can't wait turn), lurching before the green light "
-        "(acts before thinking). A PEDESTRIAN (or a second dreamy driver) carries "
-        "the Inattention cluster — papers flying from their bag unnoticed (loses "
-        "things), staring at a billboard instead of the road (distracted), not "
-        "hearing the examiner's whistle (doesn't listen). A few clear characters, "
-        "each showing several symptoms — NOT one-per-symptom, NOT a crowd. "
-        "TWO SETTINGS, shown cleanly: the road forks with a clear sign — one arrow "
-        "to 'SCHOOL', the other to 'HOME' (symptoms must appear in >=2 settings). "
-        "THRESHOLDS as the situation's prominent fixtures: the examiner's CLIPBOARD "
-        "as a scoreboard showing the tally — how many of the 9 symptoms in each "
-        "cluster, and that >=6 are needed (>=5 if 17+) — encoded with number-pegs; "
-        "an age road-sign; a duration timer. Keep generous empty road/sky — clean, "
-        "parseable in seconds, a single narratable moment."
+        "STRUCTURE — CRITERIA: COMPLETENESS IS THE #1 RULE. The image MUST contain a "
+        "DISTINCT, separately findable visual hook for EVERY SINGLE criterion in the "
+        "facts below — if the facts list 9 symptoms, the image shows 9 distinct "
+        "hooks. NEVER drop, merge, or blur several criteria into one vague action "
+        "(e.g. a generic 'reckless driver') — each criterion is its OWN specific "
+        "detail the viewer can point to. Cluster a few distinct details onto each of "
+        "a few rich characters WHERE IT STAYS LEGIBLE, but completeness beats "
+        "cleanliness: if a character cannot clearly carry another distinct detail, "
+        "ADD another figure / prop / station rather than omit a criterion. Higher "
+        "density is fine here (real Sketchy criteria pages are busy on purpose) — "
+        "just keep every hook separated and facing the viewer so none hides. Pick "
+        "ONE situation where the symptoms naturally occur as beats of a continuous "
+        "activity. WORKED EXAMPLE for ADHD: a chaotic DRIVING TEST. The reckless "
+        "driver shows the Hyperactivity/Impulsivity symptoms, but EACH symptom is a "
+        "separate visible beat — a smoking floored motor (driven by a motor), a hand "
+        "on the horn cutting the queue (can't wait turn), lurching before the green "
+        "(acts before thinking), bouncing in the seat (fidgets), climbing out the "
+        "window (leaves seat), mouth mid-shout (blurts/talks excessively), etc.; the "
+        "distracted pedestrian shows EACH Inattention symptom separately — papers "
+        "flying unnoticed (loses things), eyes on a billboard (distracted), "
+        "headphones ignoring the whistle (doesn't listen), an unread checklist "
+        "(doesn't follow instructions), a tangled bag (poor organization), and so "
+        "on — one distinct detail per criterion, ALL present. TWO SETTINGS: the road "
+        "forks with a clear sign — 'SCHOOL' and 'HOME' (>=2 settings). THRESHOLDS as "
+        "the examiner's CLIPBOARD scoreboard: the tally and >=6/9 (>=5 if 17+), an "
+        "age road-sign, a duration timer — via number-pegs. Before finishing, COUNT "
+        "the distinct symptom-hooks: it MUST equal the number of criteria in the facts."
     ),
     "diagnostic_criteria": (
-        "STRUCTURE — ONE CLEAN coherent situation; a FEW characters each embody "
-        "several criteria (e.g. a reckless driver = hyperactivity cluster, a "
-        "distracted pedestrian = inattention cluster on a road forking to 'SCHOOL' "
-        "and 'HOME' = 2 settings). Examiner's clipboard-scoreboard shows the tally "
-        "and the >=6/9 threshold (pegged). NOT a mascot per symptom; not cluttered."
+        "STRUCTURE — CRITERIA: COMPLETENESS FIRST. Render a DISTINCT, findable visual "
+        "hook for EVERY criterion in the facts (N criteria -> N hooks); never drop, "
+        "merge, or blur them into a vague action. Cluster a few details per character "
+        "where legible, but ADD more figures/props/stations rather than omit any — "
+        "density is acceptable, completeness is mandatory. ONE coherent situation "
+        "(e.g. a driving test: reckless driver = hyperactivity beats, distracted "
+        "pedestrian = inattention beats, road forking to 'SCHOOL'/'HOME' = 2 "
+        "settings). Examiner's clipboard-scoreboard shows the tally and the >=N "
+        "threshold (pegged). Before finishing, COUNT the hooks — must equal N."
     ),
     "epidemiology": (
         "STRUCTURE — EPIDEMIOLOGY META-SYMBOLS: Use the recurring epidemiology "
         "meta-symbols from the legend (tug-of-war = sex ratio; crowd density = "
-        "prevalence; conjoined twins = comorbidity carrying the comorbid disorder's "
-        "own symbol; weather forecaster = prognosis; family row + DNA = "
+        "prevalence; ONE conjoined-twin pair = comorbidity, with the comorbid "
+        "disorders shown as objects/symbols the twins wear/hold/are surrounded by "
+        "(never extra twin bodies); weather forecaster = prognosis; family row + DNA = "
         "heritability). Encode every numeric VALUE with the number-peg system "
         "(0-9 shape pegs) as the punchline of the joke — NEVER ask the viewer to "
         "count more than ~4 objects, and NEVER just write the numeral. Ratios = "
@@ -648,7 +705,7 @@ in quotes. No explanatory labels, callouts, or floating text.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-5 sentence purely-visual description: the SETTING, the EVENT unfolding, and each character/object/action and what it is doing within that event (so the illustrator paints a coherent moment, not a collage). Include any short quoted diegetic words. NO clinical terminology.>",
+  "scene": "<purely-visual description (usually 3-5 sentences; but for criteria images make it AS LONG AS NEEDED to spell out a DISTINCT visual for EVERY criterion — never compress several criteria into one phrase): the SETTING, the EVENT unfolding, and each character/object/action and what it is doing within that event (so the illustrator paints a coherent moment, not a collage). Include any short quoted diegetic words. NO clinical terminology.>",
   "key": "<numbered list mapping each visible element to the clinical fact it encodes and WHY (the hook), including which number-peg encodes which figure. For the study caption, not the image.>"
 }}"""
 
@@ -1012,6 +1069,16 @@ def start_infographic(prompt):
     return _extract_task_id(r, "infographic")
 
 
+def start_infographic_scoped(prompt, source_id):
+    """Start a NotebookLM infographic scoped to a SINGLE source (the per-aspect
+    facts slice uploaded by _render_scope_md), via `generate infographic -s <id>`.
+    This isolates the infographic to one aspect so the day's infographics stop
+    sharing the whole-notebook soup (no repetition / mixed aspects)."""
+    r = nb_run(["generate", "infographic", prompt, "--style", "instructional",
+                "--language", "he", "--source", source_id, "--json"], timeout=120)
+    return _extract_task_id(r, "infographic")
+
+
 def start_report(prompt):
     # DEPRECATED: notebooklm generate report uses a template that ignores the
     # prompt and picks its own topic (usually the largest source). We now use
@@ -1325,8 +1392,10 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # Pick which aspects get their own infographic
     infographic_aspects = day.get("aspects", [])[:n_infographics]
 
-    # Fire off ALL NotebookLM artifacts: audio, video, report, flashcards, quiz,
-    # plus the standard NotebookLM infographics (kept — user wants both styles).
+    # Fire off the comprehensive NotebookLM artifacts first (audio, video,
+    # flashcards, quiz) — these legitimately draw on the WHOLE notebook. The
+    # per-aspect infographics are launched LATER (after facts.json exists), each
+    # scoped to ONLY its aspect's slice so they stop repeating each other.
     task_ids = {}
     print("Starting NotebookLM artifacts...")
     task_ids["audio"] = start_audio(prompt_audio(day, symbol_block, legend_block))
@@ -1340,13 +1409,6 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     time.sleep(15)
     task_ids["quiz"] = start_quiz(prompt_quiz(day, symbol_block, legend_block))
     print(f"  quiz: {task_ids['quiz']}")
-
-    for i, aspect in enumerate(infographic_aspects):
-        time.sleep(15)
-        # NotebookLM native infographic — clinical info-graphic style (NOT Sketchy)
-        tid = start_infographic(prompt_notebooklm_infographic(day, aspect))
-        task_ids[f"infographic_{aspect}"] = tid
-        print(f"  infographic_{aspect}: {tid}")
 
     # Synchronous: generate the study guide via 'ask' (NOT generate report —
     # that ignores the prompt and picks its own topic). The ask format honors
@@ -1370,6 +1432,44 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     else:
         print("  [!] facts.json empty — images will fall back to generic per-aspect points.")
         facts_path = None
+
+    # Per-aspect SCOPED infographics: upload each aspect's facts slice as its OWN
+    # NotebookLM source, then generate that aspect's infographic scoped to ONLY
+    # that source (`generate infographic -s <id>`). This isolates each
+    # infographic to its aspect — no cross-aspect bleeding / repetition — exactly
+    # like the Sketchy images. If facts / slice / upload / scoped-start is
+    # unavailable, falls back to the old whole-notebook infographic so we never
+    # lose one.
+    use_notebook(day_nb_id)
+    scope_source_ids = {}
+    if facts:
+        print("\nUploading per-aspect scope sources for infographics...")
+        for aspect in infographic_aspects:
+            slice_ = facts_for_aspect(aspect, facts)
+            if not slice_:
+                continue
+            sid = add_text_source(day_nb_id, _render_scope_md(day, aspect, slice_),
+                                  f"[SCOPE] {aspect}")
+            if sid:
+                scope_source_ids[aspect] = sid
+                print(f"  scope[{aspect}] = {sid[:8]}")
+        if scope_source_ids:
+            print(f"  Waiting {SCOPE_INDEX_WAIT_S}s for scope sources to index...")
+            time.sleep(SCOPE_INDEX_WAIT_S)
+
+    print("Starting per-aspect infographics...")
+    for aspect in infographic_aspects:
+        time.sleep(15)
+        sid = scope_source_ids.get(aspect)
+        if sid:
+            tid = start_infographic_scoped(
+                prompt_infographic_scoped(day, aspect, facts_for_aspect(aspect, facts)), sid)
+            note = "scoped"
+        else:
+            tid = start_infographic(prompt_notebooklm_infographic(day, aspect))
+            note = "whole-notebook (fallback)"
+        task_ids[f"infographic_{aspect}"] = tid
+        print(f"  infographic_{aspect}: {tid} [{note}]")
 
     # Generate Sketchy-style scenes via Gemini. Each image is ASPECT-SCOPED
     # (only its slice of facts.json + only its facts-named symbols) so the day's
@@ -1400,12 +1500,25 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 day, symbols, aspect, job_facts,
                 anchor_world=anchor_world, anchor_zone=zones.get(aspect),
             )
-            print(f"  sketchy_{label}: directing scene + generating...")
+            # For CRITERIA images, completeness is mandatory: pass the cluster's
+            # criterion items so generate_sketchy_directed runs the coverage-
+            # guaranteed retry loop until every criterion has a distinct visual.
+            required_items, max_tries = None, 1
+            if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(job_facts, dict):
+                crit = job_facts.get("criteria")
+                items = crit.get("items") if isinstance(crit, dict) else None
+                if items:
+                    required_items = [str(it) for it in items]
+                    max_tries = 3
+            print(f"  sketchy_{label}: directing scene + generating"
+                  f"{f' (criteria: {len(required_items)} items, <=3 tries)' if required_items else ''}...")
             ok, caption = generate_sketchy_directed(
                 director_instruction=director,
                 output_path=png_path,
                 caption_path=txt_path,
                 phase=phase,
+                required_items=required_items,
+                max_image_tries=max_tries,
             )
             if ok:
                 size_mb = png_path.stat().st_size / (1024 * 1024)

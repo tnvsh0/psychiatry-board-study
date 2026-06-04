@@ -36,8 +36,16 @@ _load_dotenv()
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PHASE_PALETTE_PATH = REPO_ROOT / "schedule" / "phase_palette.json"
 
-IMAGE_MODEL = "gemini-3.1-flash-image-preview"  # Nano Banana 2 — 16:9 native, improved text rendering
-CAPTION_MODEL = "gemini-2.5-flash"
+# Image model — overridable via env so you can flip between top-quality and
+# cheap/free without code edits:
+#   SKETCHY_IMAGE_MODEL=gemini-3-pro-image-preview       → Nano Banana Pro (top quality; best
+#                                                          text rendering + instruction-following;
+#                                                          ~$0.134/img, no real free tier)
+#   SKETCHY_IMAGE_MODEL=gemini-3.1-flash-image-preview   → Nano Banana 2 / Flash (~$0.039/img,
+#                                                          ~500 imgs/day FREE tier)
+# Default is Pro (highest quality, which helps most with labels + criteria completeness).
+IMAGE_MODEL = os.environ.get("SKETCHY_IMAGE_MODEL", "gemini-3-pro-image-preview")
+CAPTION_MODEL = "gemini-2.5-flash"  # text-only (director/caption/coverage) — cheap, leave as is
 
 
 SKETCHY_STYLE_PREFIX = """Create a single full-color hand-painted illustration in SketchyMedical / SketchyMicro style — a COMPLETE SCENE, not an infographic.
@@ -78,23 +86,32 @@ Composition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Ske
 
 CAPTION_INSTRUCTION = """You are explaining a SketchyMedical-style educational illustration to a psychiatric resident studying for the Israeli board exam (שלב ב).
 
-LOOK AT THE ATTACHED IMAGE. Your caption MUST describe what is ACTUALLY visible in the image — its specific characters, its specific setting, its specific labels. Do NOT invent a different scene. If the image shows a bakery, write about the bakery. If it shows a circus, write about the circus.
+LOOK AT THE ATTACHED IMAGE. Your caption MUST describe ONLY what is ACTUALLY visible in it.
 
-Original generation prompt that produced this image (context only — the actual image may differ; trust what you SEE, not what was requested):
+GROUND TRUTH — a literal visual inventory taken from the rendered image itself (this is what is REALLY there):
+{visual_inventory}
+
+Treat that inventory + the attached image as the ONLY ground truth. The two reference blocks below describe what the illustrator was ASKED to draw — the image OFTEN diverges from them (an element gets dropped, merged, or changed). Use the references ONLY to INTERPRET the meaning of elements that genuinely appear in the inventory / image.
+
+ironclad rule — DO NOT HALLUCINATE INTENDED-BUT-UNDRAWN ELEMENTS:
+- If something is named in the intended scene or the key but is NOT in the visual inventory / not clearly visible — DO NOT mention it, and do NOT describe it as if it were present. Silently omit it.
+- Never narrate "a swan encoding 2" (or any peg, prop, character, or label) unless that exact thing is actually visible. When in doubt, leave it out.
+
+Intended scene the illustrator was asked to draw (reference only — TRUST THE IMAGE OVER THIS):
 
 {image_prompt}
 
-Reference legend for the curated symbols of this course (use these to interpret what the visible elements stand for):
+Reference key for the curated symbols of this course (use ONLY to interpret VISIBLE elements):
 
 {symbol_legend}
 
 Write a Hebrew NARRATIVE CAPTION (one flowing paragraph, ~150-220 words). Tell the viewer the story of WHAT IS VISIBLE IN THE IMAGE, and weave in the clinical meaning of each visible character / object / action naturally as part of the storytelling.
 
 REQUIREMENTS:
-- Describe the ACTUAL VISIBLE SCENE — do not invent characters or settings that are not in the image.
+- Describe ONLY the actual visible scene (per the inventory + image) — do not invent characters, props, labels, or settings that are not there.
 - ONE flowing paragraph in Hebrew. NO bullet lists. NO numbered enumeration. NO headings.
 - For each visible mnemonic element, explain WHY it represents what it does (the PRIMARY HOOK — the phonetic/visual/conceptual link).
-- NUMBER-PEGS — CRITICAL: whenever a number-shape peg appears in the image (a HAND/high-five or starfish = 5, a swan = 2, a cherry or six-shooter = 6, a candle = 1, a sailboat = 4, a boomerang = 7, a snowman/hourglass = 8, a balloon/cat = 9, a donut/ring = 0), you MUST name it in the story AND state the number it encodes AND the clinical figure it stands for — e.g. "היד שעושה high-five (5) חתומה ב-% מזכירה ששכיחות ADHD היא כ-5%". Never skip a visible peg; the whole point is to lock the number to the picture. A small wordplay on the number is a bonus, not required.
+- NUMBER-PEGS: if a number-shape peg is ACTUALLY VISIBLE (donut/ring = 0, candle = 1, swan = 2, trident = 3, sailboat = 4, starfish/seahorse = 5, cherry = 6, boomerang = 7, snowman/hourglass = 8, balloon = 9), name it, state the number it encodes, and the clinical figure it stands for — e.g. "כוכב-הים (5) חתום ב-% מזכיר ששכיחות ADHD היא כ-5%". But if a peg the key expected is NOT visible, skip it silently — never describe a peg that isn't in the picture.
 - Include the clinical significance briefly where it matters — link visible objects to facts on the Israeli board exam.
 - Use English for: drug generic names, receptor names (μ, κ, δ, D2, 5-HT2A, NMDA, GABA-A, α1, β2, M3), clinical acronyms (EPS, NMS, SSRI, OCD), and any mnemonic labels visible in the image (MOO, K, EXTRA, '2', etc.).
 - Hebrew explanatory prose throughout.
@@ -184,6 +201,38 @@ def generate_image(
     return False
 
 
+def _visual_inventory(client, image_path: str | Path, model: str = CAPTION_MODEL) -> str:
+    """STAGE A of captioning: a literal, interpretation-free list of what is
+    actually visible in the RENDERED image. This grounds the caption so it can
+    never narrate intended-but-undrawn elements — the image (not the director's
+    key) is the source of truth. Returns a bullet list, or a soft fallback."""
+    try:
+        from google.genai import types
+        img = Path(image_path)
+        if not (img.exists() and img.stat().st_size > 0):
+            return "(image unavailable — describe only what is clearly implied)"
+        probe = (
+            "Look ONLY at the attached image. List, as terse plain bullet points, "
+            "every distinct thing you can ACTUALLY SEE: each character and what "
+            "they are doing; each object / prop; each sign, label, letter or number "
+            "(quote any text EXACTLY between quotation marks); and the setting. Do "
+            "NOT interpret meaning, do NOT mention medicine, do NOT guess at "
+            "anything that is not clearly visible. If you are unsure whether "
+            "something is there, leave it out."
+        )
+        contents = [probe, types.Part.from_bytes(data=img.read_bytes(), mime_type="image/png")]
+        resp = client.models.generate_content(model=model, contents=contents)
+        text = ""
+        for cand in getattr(resp, "candidates", []) or []:
+            for part in getattr(cand.content, "parts", []) or []:
+                if getattr(part, "text", None):
+                    text += part.text
+        return text.strip() or "(visual inventory came back empty)"
+    except Exception as e:
+        print(f"[!] visual inventory failed: {e}", file=sys.stderr)
+        return "(visual inventory unavailable — rely on the attached image directly)"
+
+
 def generate_caption(
     image_prompt: str,
     symbol_legend: str,
@@ -191,16 +240,21 @@ def generate_caption(
     api_key: Optional[str] = None,
     model: str = CAPTION_MODEL,
 ) -> str:
-    """Generate a Hebrew narrative caption.
+    """Generate a Hebrew narrative caption (two-stage when an image is given).
 
-    When image_path is provided, the actual saved image bytes are attached
-    to the request so the multimodal text model describes what's ACTUALLY
-    visible in the image rather than re-inventing a scene from the prompt.
+    When image_path is provided we first take a literal VISUAL INVENTORY of the
+    rendered image (stage A), then write the caption (stage B) grounded in that
+    inventory + the attached image, so the narrative describes what was ACTUALLY
+    drawn and never hallucinates intended-but-undrawn elements from the key.
     Without the image, falls back to prompt-only mode (legacy)."""
     client = _get_client(api_key)
     if client is None:
         return ""
+    inventory = "(no image attached — fall back to the intended scene below)"
+    if image_path:
+        inventory = _visual_inventory(client, image_path, model=model)
     instruction = CAPTION_INSTRUCTION.format(
+        visual_inventory=inventory.strip(),
         image_prompt=image_prompt.strip(),
         symbol_legend=symbol_legend.strip() or "(no specific legend symbols provided)",
     )
@@ -326,16 +380,75 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     return {}
 
 
+def check_coverage(client, image_path: str | Path, required_items: list,
+                   model: str = CAPTION_MODEL) -> list:
+    """Return the subset of `required_items` that are NOT clearly represented in
+    the rendered image. Used to GUARANTEE that criteria images contain a
+    distinct, findable visual hook for EVERY diagnostic criterion (for criteria,
+    completeness is mandatory — the resident must be able to find them all).
+    Fails open (returns []) on any error so it never blocks generation."""
+    try:
+        from google.genai import types
+        img = Path(image_path)
+        if client is None or not required_items or not (img.exists() and img.stat().st_size > 0):
+            return []
+        numbered = "\n".join(f"{i + 1}. {it}" for i, it in enumerate(required_items))
+        probe = (
+            "You are checking the COMPLETENESS of a mnemonic illustration. Below is a "
+            "numbered list of items; each should appear in the image as a distinct, "
+            "findable visual element (a metaphor / prop / action counts — it need not "
+            "be literal). Look at the attached image and decide, for EACH item, "
+            "whether a clearly findable visual element for it is present. Be strict: "
+            "if you cannot point to a specific element, it is missing. Return STRICT "
+            'JSON only: {"missing": [<exact numbers of the items with no clear visual>]}.'
+            "\n\nITEMS:\n" + numbered
+        )
+        contents = [probe, types.Part.from_bytes(data=img.read_bytes(), mime_type="image/png")]
+        resp = client.models.generate_content(model=model, contents=contents)
+        text = ""
+        for cand in getattr(resp, "candidates", []) or []:
+            for part in getattr(cand.content, "parts", []) or []:
+                if getattr(part, "text", None):
+                    text += part.text
+        t = text.strip()
+        if t.startswith("```"):
+            import re as _re
+            t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
+            t = _re.sub(r"\n```\s*$", "", t)
+        import json as _json
+        data = _json.loads(t.strip())
+        nums = data.get("missing", []) if isinstance(data, dict) else []
+        missing = []
+        for n in nums:
+            try:
+                idx = int(n) - 1
+            except (ValueError, TypeError):
+                continue
+            if 0 <= idx < len(required_items):
+                missing.append(required_items[idx])
+        return missing
+    except Exception as e:
+        print(f"[!] coverage check failed: {e}", file=sys.stderr)
+        return []
+
+
 def generate_sketchy_directed(
     director_instruction: str,
     output_path: str | Path,
     caption_path: str | Path | None = None,
     api_key: Optional[str] = None,
     phase: Optional[int] = None,
+    required_items: Optional[list] = None,
+    max_image_tries: int = 1,
 ) -> tuple[bool, str]:
-    """Full directed pipeline: director (facts→clean scene+key) → image model
-    (draws the clean scene, no clinical terms to label) → caption (reads the
-    actual image + the director's key → flowing Hebrew narrative).
+    """Full directed pipeline: director (facts→clean scene+key) → image model →
+    caption (reads the actual image + the key → flowing Hebrew narrative).
+
+    When `required_items` is given (criteria images), the image is rendered with a
+    COVERAGE-GUARANTEED retry loop: after each render we check which required
+    items are missing; if any are, we re-render (up to `max_image_tries`) with the
+    missing ones emphasized, and keep the MOST COMPLETE render. This enforces the
+    rule that a criteria image must contain a distinct visual for EVERY criterion.
     Returns (image_ok, caption_text)."""
     directed = run_scene_director(director_instruction, api_key=api_key)
     if not directed:
@@ -345,7 +458,7 @@ def generate_sketchy_directed(
     key = directed["key"]
 
     # Image prompt = visual STYLE spec + the clean SCENE (no clinical jargon).
-    image_prompt = (
+    base_image_prompt = (
         SKETCHY_STYLE_PREFIX
         + "\n\nSCENE TO ILLUSTRATE — draw EXACTLY this, as one cohesive scene:\n"
         + scene
@@ -353,11 +466,46 @@ def generate_sketchy_directed(
           " diegetic words explicitly quoted in the scene above (signs, name tags,"
           " numbers on objects). No explanatory labels, no captions, no callouts."
     )
-    image_ok = generate_image(image_prompt, output_path, api_key=api_key, phase=phase)
-    if not image_ok:
-        return False, ""
 
-    # Caption = read the actual image, grounded by the director's key.
+    client = _get_client(api_key) if required_items else None
+    tries = max(1, max_image_tries) if required_items else 1
+    image_prompt = base_image_prompt
+    best_bytes = None
+    best_missing = None  # None = not yet measured
+
+    for attempt in range(tries):
+        if not generate_image(image_prompt, output_path, api_key=api_key, phase=phase):
+            continue
+        if not required_items or client is None:
+            best_bytes = Path(output_path).read_bytes()
+            best_missing = []
+            break
+        missing = check_coverage(client, output_path, required_items)
+        if best_missing is None or len(missing) < len(best_missing):
+            best_bytes = Path(output_path).read_bytes()
+            best_missing = missing
+        if not missing:
+            break
+        print(f"[i] criteria image attempt {attempt + 1}/{tries}: missing "
+              f"{len(missing)}/{len(required_items)} item(s); retrying.", file=sys.stderr)
+        miss_txt = "; ".join(missing)
+        image_prompt = base_image_prompt + (
+            "\n\nCRITICAL COMPLETENESS FIX — the previous attempt was MISSING these "
+            f"required elements: {miss_txt}. This time you MUST include EVERY one of "
+            "them as its OWN distinct, clearly visible element, in addition to the "
+            "rest. Higher density is acceptable; COMPLETENESS IS MANDATORY — do not "
+            "drop or merge any required element."
+        )
+
+    if best_bytes is None:
+        return False, ""
+    # Restore the most-complete render (a later attempt may have been worse).
+    Path(output_path).write_bytes(best_bytes)
+    if best_missing:
+        print(f"[!] criteria image kept with {len(best_missing)} item(s) still not "
+              f"clearly rendered: {'; '.join(best_missing)}", file=sys.stderr)
+
+    # Caption = read the actual (best) image, grounded by the director's key.
     caption = generate_caption(scene, key, image_path=output_path, api_key=api_key)
     if caption and caption_path:
         cp = Path(caption_path)
