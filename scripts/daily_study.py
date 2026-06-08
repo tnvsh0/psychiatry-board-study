@@ -503,11 +503,13 @@ def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
       (d) the number-peg system (numbers can appear in any aspect)."""
     keys = _symbols_named_in_facts(aspect_facts, symbols_data)
     keys += _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
-    # Epidemiology no longer force-injects the rigid epidemiology_meta markers
-    # (weather-forecaster / tug-of-war / conjoined-twins): those imposed forms turned
-    # the image into a disconnected symbol-board. The director now invents scene-native
-    # representations per the epidemiology STRUCTURE block. Only number-pegs are kept.
-    keys.append("number_pegs")
+    # Epidemiology drops the rigid epidemiology_meta markers (weather-forecaster /
+    # tug-of-war / conjoined-twins) AND the number-pegs: those imposed forms plus a
+    # scoreboard of peg-shapes were what turned the image into a disconnected
+    # symbol-board. Epidemiology is now told QUALITATIVELY (exact figures live in the
+    # caption) per the epidemiology STRUCTURE block.
+    if aspect != "epidemiology":
+        keys.append("number_pegs")
     # dedupe, preserve order
     seen = set()
     keys = [k for k in keys if not (k in seen or seen.add(k))]
@@ -582,35 +584,28 @@ _ASPECT_STRUCTURE = {
         "threshold (pegged). Before finishing, COUNT the hooks — must equal N."
     ),
     "epidemiology": (
-        "STRUCTURE — EPIDEMIOLOGY THE SAME WAY AS CRITERIA/ETIOLOGY (this is the fix). "
-        "Do NOT impose fixed epidemiology icons — NO mandatory weather-forecaster, NO "
-        "mandatory tug-of-war, NO mandatory conjoined-twins. Those rigid forms are "
-        "exactly what turns the image into a disconnected symbol-board (a weather desk "
-        "has no reason to exist inside a licensing office). INSTEAD, treat each "
-        "epidemiological fact like a criterion: invent a representation NATIVE to your "
-        "ONE chosen event, so the whole picture reads as a single thing HAPPENING, not "
-        "a display of markers. "
-        "KEEP ONLY THESE QUANTITATIVE PRINCIPLES (they fit ANY scene): a RATIO (e.g. "
-        "2:1 male:female) = two groups of DIFFERENT SIZES doing the same thing (two "
-        "queues, two teams, two tables — the bigger group is the majority sex); "
-        "PREVALENCE / how common = how CROWDED or BUSY the place is (packed = common, "
-        "near-empty = rare); a RANK ('one of the most heritable') = something "
-        "OVERWHELMINGLY BIG vs tiny; a specific NUMBER/% = on an object that already "
-        "BELONGS (a number on a door / ticket / scoreboard the scene has), or a 0-9 "
-        "shape-peg ONLY when that shape is genuinely a prop of this scene — never a "
-        "floating shape. "
-        "EXPRESS EACH FACT AS AN EVENT-BEAT. The SAME fact, done scene-native in "
-        "different worlds: COMORBIDITY (things that arrive together) = an applicant who "
-        "can't reach the counter without two clingy companions hanging off them / a pet "
-        "that won't leave its owner / a case handcuffed to a wrist — each companion "
-        "bearing the comorbid disorder's symbol; PROGNOSIS (how it turns out) = the EXIT "
-        "of the place plus a pass-rate sign (most leave smiling vs half still stuck), "
-        "not a weather screen; ONSET AGE = the minimum-age sign at the entrance; "
-        "HERITABILITY = a parent and child who are comically identical, applying "
-        "together. "
-        "Pick ONE event, make every fact something that NATURALLY HAPPENS in it, and a "
-        "viewer should narrate it start to finish. (The old fixed markers in the codex "
-        "are now only OPTIONAL inspiration — use one solely if it genuinely fits.)"
+        "STRUCTURE — EPIDEMIOLOGY = ONE QUALITATIVE STORY; THE NUMBERS GO TO THE "
+        "CAPTION. Two hard rules learned the hard way: (1) NO fixed epidemiology icons "
+        "(no weather-forecaster, no mandatory tug-of-war or conjoined-twins) — invent a "
+        "representation NATIVE to your ONE chosen event, exactly like criteria/etiology "
+        "do. (2) NO scoreboard / statistics board / forecast board, and NO row of "
+        "number-shaped objects (boomerangs, swans, starfish, hourglasses, sailboats) "
+        "hung up as decoration — THAT is precisely the disconnected-symbol-board "
+        "failure we are eliminating. "
+        "Tell the epidemiology QUALITATIVELY, each fact as an event-beat in ONE scene: "
+        "it is COMMON = the place is packed/busy (rare = near-empty); SEX SKEW = two "
+        "groups of clearly different sizes doing the same thing (the bigger group = the "
+        "majority sex); COMES WITH OTHER CONDITIONS = the patient-character is trailed "
+        "by clingy companions, each bearing the comorbid disorder's OWN symbol; OFTEN "
+        "PERSISTS = most of the crowd are still there as grown-ups / a long queue still "
+        "stuck at the 'EXIT'; STARTS YOUNG = the characters are children, or a low age "
+        "on an entrance sign; RUNS IN FAMILIES = a parent and child who are comically "
+        "identical, together. "
+        "NUMBERS: default to NONE in the image — the precise figures (5%, 60%, 74%, "
+        "2:1) all go to the CAPTION. At most ONE number may appear, and only as a "
+        "natural part of an object the scene already has (an age on the door; the count "
+        "of a few key characters) — NEVER a peg hung as decoration, NEVER a stats wall. "
+        "Pick ONE event and make it narratable start to finish."
     ),
 }
 
