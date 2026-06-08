@@ -655,33 +655,32 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
     else:
         setting = ("SETTING — invent ONE bizarre, NON-clinical place (a market, a "
                    "fairground, a licensing office, a relay race...) and stay in it.")
-    return f"""You are the scene director for ONE SketchyMedical-style mnemonic illustration about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you output a clean illustrator's brief (scene) + a numbered key.
+    return f"""You are the scene director for ONE SketchyMedical-style mnemonic illustration about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you output an illustrator's brief (scene) + a numbered key.
 
 {setting}
 
-COMPOSITION — TOP PRIORITY: keep it CLEAN and SPARSE. A FEW characters only (aim for 3-5 total), each earning its place by encoding a fact. NO filler characters, NO decorative clutter, NO 'statistics board' or poster-wall of numbers. A viewer must parse the whole scene in a few seconds — density is the enemy.
+THIS IMAGE'S WHOLE JOB IS TO MAKE THE NUMBERS BELOW MEMORABLE. The viewer must be able to READ THE ACTUAL FIGURES off the scene. Do NOT drop them and do NOT leave them vague ('a small kid' is NOT an age). Every key figure below MUST be visible and countable.
 
-ENCODE ONLY THESE HIGH-YIELD EPIDEMIOLOGY FACTS (you need NOT cram in every number — if one cannot be shown cleanly, leave it for the caption):
+THE FIGURES TO ENCODE:
 {facts_text}
 
-SHOW THE CONCEPTS SCENE-NATIVE, woven into ONE happening:
-- PREVALENCE (how common) = how crowded vs sparse the place is.
-- SEX RATIO = two groups of different sizes doing the same thing (2 boys vs 1 girl = 2:1).
-- PERSISTENCE / prognosis = how many are still there as grown-ups (most of the queue are adults).
-- HERITABILITY = ONE family who look comically identical and are mostly affected (3 of 4 = ~75%).
-- COMORBIDITY = a FEW companions near the patient, each a fixed comorbidity symbol (below).
+HOW TO SHOW A NUMBER — MANDATORY METHOD:
+1. CONVERT each percentage/ratio to an EXACT COUNT and ENACT it, so the viewer literally COUNTS it off the scene: a ratio (2:1) = relative group sizes — EXACTLY 2 boys vs 1 girl doing the same thing; a percentage = N of M of a small group — 74% = EXACTLY 3 of 4 affected; 50% = 2 of 4; 33% = 1 of 3; ~60% = 3 of 5. Commit to specific counts (the closest clean fraction) and state the exact count in the key.
+2. CLUSTER several figures onto the SAME few characters so the scene stays CLEAN while being DATA-RICH — e.g. ONE family of 4 at the counter where 3 are affected (heritability ~75%), among them 2 boys + 1 girl (sex ratio 2:1), and 2 of the kids are defiant rule-breakers (ODD ~50%): one family = four figures, very few characters. Reuse the cast; do NOT add a separate group per number.
+3. ONSET AGE = candles on a birthday cake = the EXACT age (age 7 = 7 candles), or an age on one belonging object — never a vague 'young kid'.
+4. A precise number with NO clean fraction (e.g. population prevalence ~5%) = SPELL its digit with an object that BELONGS to the setting AND IS PART OF THE ACTION: something HAPPENS with it that ties to the meaning. Example ONLY (do NOT lock onto it): a cone bent into a '5' that a passer-by trips over — that one tripping person = the ~5% of the population affected. The digit-object must PARTICIPATE in an event, never sit as a decorative shape.
 
+ABSOLUTE: NEVER a bare percentage written on a sign/badge/shirt as the encoding, NEVER a 'statistics board', NEVER a row of decorative number-shapes. Each number must be COUNTED or ENACTED from the action.
+
+COMPOSITION: a SMALL rich cast (about 4-6 characters), CLEAN — but NOT empty. Cluster the data onto these few; no filler, no clutter; every element earns its place by carrying a figure or a fact.
+
+COMORBIDITY companions use these fixed symbols:
 {COMMON_COMORBIDITY_SYMBOLS}
-
-NUMBERS — THE HARD PART, GET THIS RIGHT. A number must be MEANINGFUL in the action — NEVER a figure written on a random prop, NEVER a stats board. Only two ways:
-1. ENACT IT as a situation you SEE — a ratio = relative group sizes; a percentage = a PROPORTION of a visible group (HALF the kids break the rules while the other half stay polite = ~50%; 1 of 3 cowering = ~33%; 3 of 4 of the family affected = ~75%). The number IS what is happening.
-2. If it truly cannot be enacted, SPELL ITS DIGITS with objects shaped like the digits that BELONG to this scene, fused into one prop (75% at a driving office = a '7' frame + a '5' wheel = a broken go-kart that won't pass; 65 = traffic cones bent into a '6' and a '5'). Chosen per scene — never a fixed reused shape.
-Show at most a FEW numbers this way (the headline figures); let the rest live in the caption. Do NOT write a bare percentage on a sign/badge/shirt as the encoding.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-6 sentence PURELY VISUAL description of the ONE clean scene: the setting, the FEW characters and what each is doing, and exactly how each shown number is enacted or spelled. NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list mapping each visible element to the epidemiology fact it encodes and why — for the caption.>"
+  "scene": "<3-6 sentence PURELY VISUAL description of the ONE scene: the setting, the few characters, the EXACT counts each group shows, and how each figure is enacted or spelled. NO clinical terms. Quote any short diegetic words.>",
+  "key": "<numbered list: each visible group/element -> the exact figure it encodes (e.g. '3 of 4 family affected = 74% heritability') and why — for the caption.>"
 }}"""
 
 
