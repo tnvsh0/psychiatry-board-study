@@ -503,13 +503,13 @@ def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
       (d) the number-peg system (numbers can appear in any aspect)."""
     keys = _symbols_named_in_facts(aspect_facts, symbols_data)
     keys += _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
-    # Epidemiology drops the rigid epidemiology_meta MARKERS (weather-forecaster /
-    # tug-of-war / conjoined-twins) — those imposed forms made a disconnected
-    # symbol-board. But its NUMBERS are high-yield exam material and MUST stay visible,
-    # so number_pegs stays available as ONE optional tool; the STRUCTURE block tells the
-    # director to weave each figure into the scene (counts / proportions / a number on a
-    # belonging object / a fitting symbol), never a stats-board of pegs.
-    keys.append("number_pegs")
+    # Epidemiology drops BOTH the rigid epidemiology_meta markers AND the fixed 0-9
+    # number-peg vocabulary. A fixed shape reused across every chapter (starfish=5) is
+    # a WEAK discriminating cue ("which scene had the starfish?") and a magnet for a
+    # disconnected stats-board. The director now invents a SCENE-SPECIFIC visual for
+    # each figure (per the epidemiology STRUCTURE block); other aspects keep the pegs.
+    if aspect != "epidemiology":
+        keys.append("number_pegs")
     # dedupe, preserve order
     seen = set()
     keys = [k for k in keys if not (k in seen or seen.add(k))]
@@ -600,13 +600,18 @@ _ASPECT_STRUCTURE = {
         "form); PREVALENCE rides on an entrance POSTER the office already has; SEX RATIO "
         "is simply the count of boys vs girls already playing; PERSISTENCE rides on the "
         "long queue (most are grown-ups, a sign at the exit). "
-        "REPRESENTATION IS THE DIRECTOR'S FREE CHOICE per number — a count of "
-        "characters, a proportion, a number written on a belonging object (Nano Banana "
-        "Pro renders short numbers well), OR a number-shape SYMBOL (starfish=5, swan=2, "
-        "hourglass=8, etc.). SYMBOLS ARE WELCOME — the rule is NOT 'avoid symbols', it "
-        "is 'never FORCE a symbol that does not fit': use a starfish for 5 only if a "
-        "starfish could plausibly belong in this scene; otherwise choose a "
-        "representation that does. "
+        "REPRESENTATION IS THE DIRECTOR'S FREE, SCENE-SPECIFIC CHOICE per number — there "
+        "is NO fixed number-symbol vocabulary to pull from (forget starfish=5 etc.). "
+        "Invent whatever reads most naturally in THIS scene: a count of "
+        "characters/objects (the 2 boys fighting over one toy car beside 1 calm girl = "
+        "the ~2:1 sex ratio), a proportion (3 of 4 of the family), a number written on a "
+        "belonging object (a '5%' on the entrance poster — Nano Banana Pro renders short "
+        "numbers well), or a free visual SYMBOL that genuinely fits THIS scene and its "
+        "story. Symbols are very welcome — but invent one that BELONGS to this "
+        "particular scene, NOT a generic shape reused across chapters. A scene-specific "
+        "cue is far stronger for recall: the viewer remembers 'the two boys fighting "
+        "over the car' (unique to this office) instead of straining to recall which of "
+        "many scenes had a starfish. "
         "Keep the meta-concepts scene-native (NO weather-forecaster, NO mandatory "
         "tug-of-war): comorbidity = clingy companions with their symbols; prognosis = "
         "who is still stuck in the crowd / at the exit; heritability = a near-identical "
@@ -631,9 +636,14 @@ def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
     (anchor_zone) and encodes ONLY its aspect's facts — unified, no bleeding."""
     title_he = day.get("title_he", day.get("title_en", ""))
     scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts)
-    full_index = _compact_symbol_index(symbols_data)
+    full_index = _compact_symbol_index(
+        symbols_data, exclude=["number_pegs"] if aspect == "epidemiology" else None)
     facts_text = _facts_block_for_aspect(aspect, aspect_facts)
     structure = _ASPECT_STRUCTURE.get(aspect, "")
+    # Epidemiology owns its number guidance (free, scene-specific representations) in its
+    # STRUCTURE block, so skip the generic 0-9 number-peg rules there — those primed the
+    # model to scatter fixed peg-shapes and build a stats board.
+    number_rules = "" if aspect == "epidemiology" else NUMBER_RULES
 
     if anchor_world and anchor_zone:
         setting_block = f"""SETTING — SHARED CHAPTER WORLD (a LIGHT linking thread, not heavy sameness):
@@ -679,7 +689,7 @@ HOW TO USE IT (cross-reference rule):
 
 {structure}
 
-{NUMBER_RULES}
+{number_rules}
 
 YOU ARE THE SCENE DIRECTOR. Do NOT draw. Produce an illustrator's brief + a key.
 
