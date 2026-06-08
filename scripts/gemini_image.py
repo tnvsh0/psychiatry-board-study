@@ -287,6 +287,33 @@ def generate_caption(
     return "".join(text_parts).strip()
 
 
+def _loads_first_json(text: str):
+    """Parse the FIRST JSON value out of a model response, tolerating code fences
+    and any trailing commentary the model appends after the JSON (which makes a
+    plain json.loads raise 'Extra data: ...'). Returns the parsed object, or None."""
+    import json as _json
+    import re as _re
+    if not text:
+        return None
+    t = text.strip()
+    if t.startswith("```"):
+        t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
+        t = _re.sub(r"\n```\s*$", "", t)
+        t = t.strip()
+    starts = [i for i in (t.find("{"), t.find("[")) if i != -1]
+    if not starts:
+        return None
+    frag = t[min(starts):]
+    try:
+        obj, _ = _json.JSONDecoder().raw_decode(frag)  # ignores trailing data
+        return obj
+    except Exception:
+        try:
+            return _json.loads(t)
+        except Exception:
+            return None
+
+
 def propose_anchor_theme(topic: str, aspects: list, api_key: Optional[str] = None,
                          model: str = CAPTION_MODEL) -> dict:
     """Pick ONE bizarre unifying 'world' for an entire chapter, and assign each
@@ -335,13 +362,7 @@ Return STRICT JSON only:
             for part in getattr(cand.content, "parts", []) or []:
                 if getattr(part, "text", None):
                     text += part.text
-        t = text.strip()
-        if t.startswith("```"):
-            import re as _re
-            t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
-            t = _re.sub(r"\n```\s*$", "", t)
-        import json as _json
-        data = _json.loads(t.strip())
+        data = _loads_first_json(text)
         if isinstance(data, dict) and data.get("world"):
             return data
     except Exception as e:
@@ -366,13 +387,7 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
             for part in getattr(cand.content, "parts", []) or []:
                 if getattr(part, "text", None):
                     text += part.text
-        t = text.strip()
-        if t.startswith("```"):
-            import re as _re
-            t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
-            t = _re.sub(r"\n```\s*$", "", t)
-        import json as _json
-        data = _json.loads(t.strip())
+        data = _loads_first_json(text)
         if isinstance(data, dict) and data.get("scene"):
             return {"scene": str(data.get("scene", "")), "key": str(data.get("key", ""))}
     except Exception as e:
@@ -410,13 +425,7 @@ def check_coverage(client, image_path: str | Path, required_items: list,
             for part in getattr(cand.content, "parts", []) or []:
                 if getattr(part, "text", None):
                     text += part.text
-        t = text.strip()
-        if t.startswith("```"):
-            import re as _re
-            t = _re.sub(r"^```[a-zA-Z]*\n", "", t)
-            t = _re.sub(r"\n```\s*$", "", t)
-        import json as _json
-        data = _json.loads(t.strip())
+        data = _loads_first_json(text)
         nums = data.get("missing", []) if isinstance(data, dict) else []
         missing = []
         for n in nums:
