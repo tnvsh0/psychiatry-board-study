@@ -503,13 +503,13 @@ def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
       (d) the number-peg system (numbers can appear in any aspect)."""
     keys = _symbols_named_in_facts(aspect_facts, symbols_data)
     keys += _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
-    # Epidemiology drops the rigid epidemiology_meta markers (weather-forecaster /
-    # tug-of-war / conjoined-twins) AND the number-pegs: those imposed forms plus a
-    # scoreboard of peg-shapes were what turned the image into a disconnected
-    # symbol-board. Epidemiology is now told QUALITATIVELY (exact figures live in the
-    # caption) per the epidemiology STRUCTURE block.
-    if aspect != "epidemiology":
-        keys.append("number_pegs")
+    # Epidemiology drops the rigid epidemiology_meta MARKERS (weather-forecaster /
+    # tug-of-war / conjoined-twins) — those imposed forms made a disconnected
+    # symbol-board. But its NUMBERS are high-yield exam material and MUST stay visible,
+    # so number_pegs stays available as ONE optional tool; the STRUCTURE block tells the
+    # director to weave each figure into the scene (counts / proportions / a number on a
+    # belonging object / a fitting symbol), never a stats-board of pegs.
+    keys.append("number_pegs")
     # dedupe, preserve order
     seen = set()
     keys = [k for k in keys if not (k in seen or seen.add(k))]
@@ -584,28 +584,31 @@ _ASPECT_STRUCTURE = {
         "threshold (pegged). Before finishing, COUNT the hooks — must equal N."
     ),
     "epidemiology": (
-        "STRUCTURE — EPIDEMIOLOGY = ONE QUALITATIVE STORY; THE NUMBERS GO TO THE "
-        "CAPTION. Two hard rules learned the hard way: (1) NO fixed epidemiology icons "
-        "(no weather-forecaster, no mandatory tug-of-war or conjoined-twins) — invent a "
-        "representation NATIVE to your ONE chosen event, exactly like criteria/etiology "
-        "do. (2) NO scoreboard / statistics board / forecast board, and NO row of "
-        "number-shaped objects (boomerangs, swans, starfish, hourglasses, sailboats) "
-        "hung up as decoration — THAT is precisely the disconnected-symbol-board "
-        "failure we are eliminating. "
-        "Tell the epidemiology QUALITATIVELY, each fact as an event-beat in ONE scene: "
-        "it is COMMON = the place is packed/busy (rare = near-empty); SEX SKEW = two "
-        "groups of clearly different sizes doing the same thing (the bigger group = the "
-        "majority sex); COMES WITH OTHER CONDITIONS = the patient-character is trailed "
-        "by clingy companions, each bearing the comorbid disorder's OWN symbol; OFTEN "
-        "PERSISTS = most of the crowd are still there as grown-ups / a long queue still "
-        "stuck at the 'EXIT'; STARTS YOUNG = the characters are children, or a low age "
-        "on an entrance sign; RUNS IN FAMILIES = a parent and child who are comically "
-        "identical, together. "
-        "NUMBERS: default to NONE in the image — the precise figures (5%, 60%, 74%, "
-        "2:1) all go to the CAPTION. At most ONE number may appear, and only as a "
-        "natural part of an object the scene already has (an age on the door; the count "
-        "of a few key characters) — NEVER a peg hung as decoration, NEVER a stats wall. "
-        "Pick ONE event and make it narratable start to finish."
+        "STRUCTURE — EPIDEMIOLOGY = ONE STORY *WITH ITS NUMBERS WOVEN IN*. The "
+        "epidemiological FIGURES (prevalence %, sex ratio, persistence %, heritability "
+        "%, onset age) are HIGH-YIELD exam material — they MUST be represented VISUALLY "
+        "in the scene, NOT left out and NOT banished to the caption. The ONLY failure to "
+        "avoid is collecting them onto a separate STATISTICS / SCOREBOARD with number-"
+        "shaped pegs hung up as decoration — THAT disconnected symbol-board is the "
+        "problem, not the numbers themselves. "
+        "INSTEAD, weave each figure smoothly into the ONE event as a natural part of the "
+        "world, and let the scene decide HOW to show each number (you are NOT obliged to "
+        "use any fixed peg vocabulary — symbols are welcome, but scene-fitting ones): "
+        "small counts & RATIOS = count belonging characters/objects (4 boys vs 2 girls "
+        "in the play area = the ~2:1 sex ratio); a PERCENTAGE = show it as a PROPORTION "
+        "of the scene (most of the long queue are adults = persistence; 3 of 4 of one "
+        "family share the trait = high heritability), and/or a number that naturally "
+        "lives on a scene object (a '5%' on an entrance poster, a badge, a stamped form "
+        "— Nano Banana Pro renders short numbers well), and/or a fitting number-shape "
+        "symbol IF that shape is genuinely a prop of the scene. Pick whichever reads "
+        "most smoothly per number; mix freely. Every figure must feel like it BELONGS "
+        "to the world (a real licensing office has signs, posters, forms and tickets "
+        "with numbers) — never an icon pasted onto a board. "
+        "Also drop the rigid epidemiology icons: comorbidity = the patient trailed by "
+        "clingy companions, each bearing the comorbid disorder's OWN symbol; prognosis = "
+        "the crowd / the exit (who is still stuck as a grown-up); heritability = a "
+        "near-identical parent and child together. ONE event, narratable start to "
+        "finish, with EVERY key figure findable inside it."
     ),
 }
 
