@@ -95,7 +95,7 @@ Treat that inventory + the attached image as the ONLY ground truth. The two refe
 
 ironclad rule — DO NOT HALLUCINATE INTENDED-BUT-UNDRAWN ELEMENTS:
 - If something is named in the intended scene or the key but is NOT in the visual inventory / not clearly visible — DO NOT mention it, and do NOT describe it as if it were present. Silently omit it.
-- Never narrate "a swan encoding 2" (or any peg, prop, character, or label) unless that exact thing is actually visible. When in doubt, leave it out.
+- Never narrate an object, character, label, or number unless that exact thing is unmistakably visible. When in doubt, leave it out. Do NOT pattern-match a vague shape into a number code.
 
 Intended scene the illustrator was asked to draw (reference only — TRUST THE IMAGE OVER THIS):
 
@@ -111,7 +111,7 @@ REQUIREMENTS:
 - Describe ONLY the actual visible scene (per the inventory + image) — do not invent characters, props, labels, or settings that are not there.
 - ONE flowing paragraph in Hebrew. NO bullet lists. NO numbered enumeration. NO headings.
 - For each visible mnemonic element, explain WHY it represents what it does (the PRIMARY HOOK — the phonetic/visual/conceptual link).
-- NUMBER-PEGS: if a number-shape peg is ACTUALLY VISIBLE (donut/ring = 0, candle = 1, swan = 2, trident = 3, sailboat = 4, starfish/seahorse = 5, cherry = 6, boomerang = 7, snowman/hourglass = 8, balloon = 9), name it, state the number it encodes, and the clinical figure it stands for — e.g. "כוכב-הים (5) חתום ב-% מזכיר ששכיחות ADHD היא כ-5%". But if a peg the key expected is NOT visible, skip it silently — never describe a peg that isn't in the picture.
+- NUMBERS: if the image genuinely shows a number — as a COUNT of objects/characters (2 boys vs 1 girl), a PROPORTION (3 of 4 affected), a written figure, or an object UNMISTAKABLY shaped like a digit and clearly meant as one — state the number and the clinical figure it stands for. Do NOT assume any fixed shape→digit code: never call something "a swan = 2" or "a boomerang = 7" from a vague resemblance. Report only a number you can truly, unambiguously see; otherwise mention none.
 - Include the clinical significance briefly where it matters — link visible objects to facts on the Israeli board exam.
 - Use English for: drug generic names, receptor names (μ, κ, δ, D2, 5-HT2A, NMDA, GABA-A, α1, β2, M3), clinical acronyms (EPS, NMS, SSRI, OCD), and any mnemonic labels visible in the image (MOO, K, EXTRA, '2', etc.).
 - Hebrew explanatory prose throughout.
