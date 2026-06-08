@@ -503,8 +503,10 @@ def _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts=None):
       (d) the number-peg system (numbers can appear in any aspect)."""
     keys = _symbols_named_in_facts(aspect_facts, symbols_data)
     keys += _symbols_for_aspect(day.get("symbols_needed", []), aspect, symbols_data)
-    if aspect == "epidemiology":
-        keys += [k for k in symbols_data.get("epidemiology_meta", {}) if not k.startswith("_")]
+    # Epidemiology no longer force-injects the rigid epidemiology_meta markers
+    # (weather-forecaster / tug-of-war / conjoined-twins): those imposed forms turned
+    # the image into a disconnected symbol-board. The director now invents scene-native
+    # representations per the epidemiology STRUCTURE block. Only number-pegs are kept.
     keys.append("number_pegs")
     # dedupe, preserve order
     seen = set()
@@ -580,31 +582,35 @@ _ASPECT_STRUCTURE = {
         "threshold (pegged). Before finishing, COUNT the hooks — must equal N."
     ),
     "epidemiology": (
-        "STRUCTURE — EPIDEMIOLOGY AS ONE STORY (not a board of disconnected symbols). "
-        "THE #1 FAILURE HERE is scattering the meta-symbols around with no plot — "
-        "icons floating with nothing linking them. FIX: choose ONE coherent EVENT "
-        "happening in this zone, and make EACH epidemiology meta-symbol a NATURAL "
-        "PARTICIPANT in that single event, motivated by what is happening — so a "
-        "viewer can NARRATE the scene start to finish as one moment. WORKED EXAMPLE "
-        "(ADHD, the DMV licence office) — 'a chaotic busy day at the licensing "
-        "office': the QUEUE has erupted into a TUG-OF-WAR between a big team of men "
-        "and a small team of women over who gets served first (sex ratio — the bigger "
-        "team wins); the waiting room is PACKED wall-to-wall (prevalence = common; a "
-        "near-empty room would read as rare); a pair of CONJOINED TWINS shuffles in "
-        "together to renew one licence, the second twin wearing the comorbid "
-        "disorder's symbol (comorbidity travels together); a clerk acting as a WEATHER "
-        "FORECASTER points at a screen showing the applicants' future (prognosis); a "
-        "FAMILY at the counter — parents and kids all filling the SAME form, joined by "
-        "a DNA-strand queue-rope (heritability). Every symbol is something ACTUALLY "
-        "HAPPENING at the office, not an icon pasted on. "
-        "NUMBERS — MAKE THEM BELONG TO THE STORY, never an arbitrary floating shape: "
-        "prefer a number that is naturally part of the event — a queue ticket reading "
-        "'5', a door numbered '5', a '5%' rubber-stamp the clerk bangs onto a form, "
-        "five clerks at five windows (the image model renders such short diegetic "
-        "numbers well now). Use a 0-9 SHAPE-peg ONLY if that shape is genuinely an "
-        "object that fits this scene; do NOT drop a starfish into an office just "
-        "because 5 looks like a starfish. Ratios = relative team sizes, seen at a "
-        "glance. Exact decimals live in the caption, not the image."
+        "STRUCTURE — EPIDEMIOLOGY THE SAME WAY AS CRITERIA/ETIOLOGY (this is the fix). "
+        "Do NOT impose fixed epidemiology icons — NO mandatory weather-forecaster, NO "
+        "mandatory tug-of-war, NO mandatory conjoined-twins. Those rigid forms are "
+        "exactly what turns the image into a disconnected symbol-board (a weather desk "
+        "has no reason to exist inside a licensing office). INSTEAD, treat each "
+        "epidemiological fact like a criterion: invent a representation NATIVE to your "
+        "ONE chosen event, so the whole picture reads as a single thing HAPPENING, not "
+        "a display of markers. "
+        "KEEP ONLY THESE QUANTITATIVE PRINCIPLES (they fit ANY scene): a RATIO (e.g. "
+        "2:1 male:female) = two groups of DIFFERENT SIZES doing the same thing (two "
+        "queues, two teams, two tables — the bigger group is the majority sex); "
+        "PREVALENCE / how common = how CROWDED or BUSY the place is (packed = common, "
+        "near-empty = rare); a RANK ('one of the most heritable') = something "
+        "OVERWHELMINGLY BIG vs tiny; a specific NUMBER/% = on an object that already "
+        "BELONGS (a number on a door / ticket / scoreboard the scene has), or a 0-9 "
+        "shape-peg ONLY when that shape is genuinely a prop of this scene — never a "
+        "floating shape. "
+        "EXPRESS EACH FACT AS AN EVENT-BEAT. The SAME fact, done scene-native in "
+        "different worlds: COMORBIDITY (things that arrive together) = an applicant who "
+        "can't reach the counter without two clingy companions hanging off them / a pet "
+        "that won't leave its owner / a case handcuffed to a wrist — each companion "
+        "bearing the comorbid disorder's symbol; PROGNOSIS (how it turns out) = the EXIT "
+        "of the place plus a pass-rate sign (most leave smiling vs half still stuck), "
+        "not a weather screen; ONSET AGE = the minimum-age sign at the entrance; "
+        "HERITABILITY = a parent and child who are comically identical, applying "
+        "together. "
+        "Pick ONE event, make every fact something that NATURALLY HAPPENS in it, and a "
+        "viewer should narrate it start to finish. (The old fixed markers in the codex "
+        "are now only OPTIONAL inspiration — use one solely if it genuinely fits.)"
     ),
 }
 
