@@ -533,6 +533,34 @@ def _extract_source_map(study_guide_md: str) -> str:
     return "\n".join(body).strip()
 
 
+def _merge_pages(tokens) -> str:
+    """Turn raw page tokens ('68', '68-70', '71-73', noise like '(מקור: הקשר רחב)')
+    into a clean, deduped, range-merged string e.g. '35, 68-79'. Consecutive pages
+    collapse into a range, no page repeats, and non-numeric notes are dropped."""
+    import re
+    pages: set[int] = set()
+    for tok in tokens:
+        for m in re.finditer(r"(\d+)\s*[-–—]\s*(\d+)|(\d+)", str(tok)):
+            if m.group(1) and m.group(2):
+                a, b = int(m.group(1)), int(m.group(2))
+                if a <= b and (b - a) < 1000:
+                    pages.update(range(a, b + 1))
+            elif m.group(3):
+                pages.add(int(m.group(3)))
+    if not pages:
+        return ""
+    sp = sorted(pages)
+    runs, start, prev = [], sp[0], sp[0]
+    for p in sp[1:]:
+        if p == prev + 1:
+            prev = p
+        else:
+            runs.append(str(start) if start == prev else f"{start}-{prev}")
+            start = prev = p
+    runs.append(str(start) if start == prev else f"{start}-{prev}")
+    return ", ".join(runs)
+
+
 def _condense_source_map(table_md: str) -> dict:
     """Collapse the per-subtopic source-map table into a per-book page list.
     Returns {book_name: 'pages, ...'} — a compact reading list, not the full
@@ -565,16 +593,13 @@ def _condense_source_map(table_md: str) -> dict:
                 if tok and tok not in ("-", "—", "–"):
                     per_book[book].append(tok)
 
-    # Dedupe + sort numerically by leading integer
-    def sort_key(tok):
-        m = re.match(r"\d+", tok)
-        return int(m.group()) if m else 9999
-
+    # Expand every token to individual pages, dedupe, and re-merge consecutive
+    # pages into ranges so the list is clean (no '68, 68-70'; no '71, 72, 73').
     out = {}
     for book, toks in per_book.items():
-        uniq = sorted(set(toks), key=sort_key)
-        if uniq:
-            out[book] = ", ".join(uniq)
+        merged = _merge_pages(toks)
+        if merged:
+            out[book] = merged
     return out
 
 
