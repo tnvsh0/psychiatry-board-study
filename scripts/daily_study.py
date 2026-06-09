@@ -659,29 +659,30 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
 
 {setting}
 
-THIS IMAGE'S WHOLE JOB IS TO MAKE THE NUMBERS BELOW MEMORABLE. The viewer must be able to READ THE ACTUAL FIGURES off the scene. Do NOT drop them and do NOT leave them vague ('a small kid' is NOT an age). Every key figure below MUST be visible and countable.
+GOAL: a CLEAN, memorable scene that ENACTS this disorder's epidemiological PROFILE. The image is the memorable HOOK; the precise percentages are carried by the written CAPTION, not crammed into the picture. Split them exactly as below — this is a GENERAL rule for every diagnosis, not just this one.
 
-THE FIGURES TO ENCODE:
+THE FACTS (the caption will state every exact figure; the image enacts only what enacts cleanly):
 {facts_text}
 
-HOW TO SHOW A NUMBER — three methods, used in this order of preference:
-1. ENACT AS A COUNT / PROPORTION (best — for ratios and clean fractions): a ratio (2:1) = relative group sizes (EXACTLY 2 boys vs 1 girl doing the same thing); a percentage = N of M of a small group (74% = 3 of 4 affected; 50% = 2 of 4; 33% = 1 of 3; ~60% = 3 of 5). The viewer COUNTS it off the scene.
-2. ONSET AGE = candles on a cake = the exact age (age 7 = 7 candles).
-3. DIGIT-OBJECT (for a precise number that will NOT become a clean fraction — e.g. prevalence ~5%, an odd comorbidity rate): build a REAL OBJECT OF THE SCENE whose STRUCTURE *is* the digits, woven INTO THE ACTION. CRUCIAL distinction: the digits must form the STRUCTURAL SHAPE of one coherent, recognisable object — e.g. a '5' lying on its back IS the wheel of a go-kart and a '7' IS its frame above → a go-kart (clearly built from 7 and 5) that 'won't pass its driving test' = the ~75%. It is NOT a numeral printed on a prop, NOT a giant number a character merely holds, NOT a number on a sign. The viewer should at once (a) read the number from the object's shape AND (b) see a real object that BELONGS to the setting and is doing something in an EVENT (it is driven / crashes / someone trips on it) whose meaning ties to the fact.
+ENACT IN THE IMAGE — only the parameters that read as a SITUATION you can SEE (do each ONLY if it appears in the facts; convert to an exact count):
+- SEX RATIO = two groups of clearly different sizes doing the same thing (2 vs 1; a lopsided ~9 vs 1 for an extreme skew like anorexia). The skew is seen at a glance.
+- AGE OF ONSET = candles on a cake = the exact age, or characters clearly that age (a toddler vs a teen vs a 20-something).
+- HERITABILITY / FAMILIAL = ONE family, N of M affected and look-alike (3 of 4 = strongly familial).
+- COURSE / PROGNOSIS = the visible trajectory — most still stuck (persists) vs most leaving recovered (remits); a long line of grown-ups vs people walking out smiling.
+- COMORBIDITY = a FEW companions near the patient, each a FIXED comorbidity symbol (below); their relative SIZE / closeness can show which is most common — but do NOT write their rates.
 
-CLUSTER methods onto a SMALL cast (one family of 4 can carry heritability + sex ratio + a comorbidity at once). Reach for a digit-object ONLY for the few numbers that truly can't enact, and make each a DIFFERENT scene-object inside the action — do not line several up.
+SEND TO THE CAPTION, NOT THE IMAGE: every exact percentage — PREVALENCE, exact comorbidity rates, exact heritability / persistence %, and any rate that is not a clean fraction. Do NOT scatter these as numbers in the scene.
 
-ABSOLUTE — the exact failure modes to avoid (we have hit all of them): NO numeral printed/written on a sign/badge/shirt; NO giant number a character merely holds; NO 'TAKE A NUMBER' / statistics board; NO floating number-shapes lined up as decoration. Every number is EITHER counted from a group, OR is the structural shape of a real object that participates in the action.
+OPTIONAL — ONE hero digit-object (at most ONCE, for the SINGLE most exam-defining precise figure, e.g. prevalence): build a real object of the scene whose STRUCTURE *is* the digits, woven into the action — a '5' lying as a wheel + a '7' as the frame = a go-kart that 'won't pass' (~75%). The digits must form ONE coherent object that DOES something (driven / crashes / tripped over); NEVER a numeral printed on a prop, NEVER a number a character merely holds. ONE only — everything else precise goes to the caption.
 
-COMPOSITION: a SMALL rich cast (about 4-6 characters), CLEAN — but NOT empty. Cluster the data onto these few; no filler, no clutter; every element earns its place by carrying a figure or a fact.
-
-COMORBIDITY companions use these fixed symbols:
 {COMMON_COMORBIDITY_SYMBOLS}
+
+COMPOSITION: a SMALL cast (about 4-6 characters), CLEAN — every element earns its place. NO statistics board, NO 'TAKE A NUMBER', NO scattered loose numbers, NO clutter.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-6 sentence PURELY VISUAL description of the ONE scene: the setting, the few characters, the EXACT counts each group shows, and how each figure is enacted or spelled. NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list: each visible group/element -> the exact figure it encodes (e.g. '3 of 4 family affected = 74% heritability') and why — for the caption.>"
+  "scene": "<3-6 sentence PURELY VISUAL description of the ONE clean scene: setting, the few characters, the exact COUNTS each enacted parameter shows, and (if used) the single hero digit-object. NO clinical terms. Quote any short diegetic words.>",
+  "key": "<numbered list. First map each visible element -> the parameter it encodes (with the exact count, e.g. '3 of 4 family = strongly heritable'). THEN add a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts (prevalence, comorbidity rates, heritability/persistence %), so the caption states them even though they are not drawn.>"
 }}"""
 
 

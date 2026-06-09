@@ -113,6 +113,7 @@ REQUIREMENTS:
 - For each visible mnemonic element, explain WHY it represents what it does (the PRIMARY HOOK — the phonetic/visual/conceptual link).
 - NUMBERS: if the image genuinely shows a number — as a COUNT of objects/characters (2 boys vs 1 girl), a PROPORTION (3 of 4 affected), a written figure, or an object UNMISTAKABLY shaped like a digit and clearly meant as one — state the number and the clinical figure it stands for. Do NOT assume any fixed shape→digit code: never call something "a swan = 2" or "a boomerang = 7" from a vague resemblance. Report only a number you can truly, unambiguously see; otherwise mention none.
 - Include the clinical significance briefly where it matters — link visible objects to facts on the Israeli board exam.
+- If the reference key contains a line beginning "EXACT FIGURES (state in caption)", you MUST state those precise figures (e.g. prevalence %, comorbidity rates, heritability %) as clinical data — clearly as statistics the resident must memorize, NOT as objects visible in the scene.
 - Use English for: drug generic names, receptor names (μ, κ, δ, D2, 5-HT2A, NMDA, GABA-A, α1, β2, M3), clinical acronyms (EPS, NMS, SSRI, OCD), and any mnemonic labels visible in the image (MOO, K, EXTRA, '2', etc.).
 - Hebrew explanatory prose throughout.
 
