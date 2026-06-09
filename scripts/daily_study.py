@@ -655,34 +655,36 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
     else:
         setting = ("SETTING — invent ONE bizarre, NON-clinical place (a market, a "
                    "fairground, a licensing office, a relay race...) and stay in it.")
-    return f"""You are the scene director for ONE SketchyMedical-style mnemonic illustration about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you output an illustrator's brief (scene) + a numbered key.
+    return f"""{SKETCHY_PHILOSOPHY}
+
+You are the scene director for ONE SketchyMedical-style image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you output an illustrator's brief (scene) + a numbered key.
 
 {setting}
 
-GOAL: a CLEAN, memorable scene that ENACTS this disorder's epidemiological PROFILE. The image is the memorable HOOK; the precise percentages are carried by the written CAPTION, not crammed into the picture. Split them exactly as below — this is a GENERAL rule for every diagnosis, not just this one.
+THE #1 RULE — IT MUST BE ONE BIZARRE STORY YOU CAN TELL, not scenery with symbols dotted around. Choose ONE setting where a single weird EVENT is unfolding (a contest, a heist, a race, a feast, a rescue, a chase, a breakout, a parade), and make this disorder's epidemiology PLAY OUT as beats of that ONE story. Every character and object BELONGS to the world AND carries a fact — woven into the unfolding action, never pasted on. Not every element must touch every other, but ALL must be part of the ONE story, and a viewer must be able to NARRATE it start to finish. (The chapter's etiology image works precisely because it is a real story — a garage building the 'ADHD car'. Match that bar: a STORY, not a tableau.)
 
-THE FACTS (the caption will state every exact figure; the image enacts only what enacts cleanly):
+THE FACTS (the caption states every exact figure; the image weaves the enactable ones INTO the story):
 {facts_text}
 
-ENACT IN THE IMAGE — only the parameters that read as a SITUATION you can SEE (do each ONLY if it appears in the facts; convert to an exact count):
-- SEX RATIO = two groups of clearly different sizes doing the same thing (2 vs 1; a lopsided ~9 vs 1 for an extreme skew like anorexia). The skew is seen at a glance.
-- AGE OF ONSET = candles on a cake = the exact age, or characters clearly that age (a toddler vs a teen vs a 20-something).
-- HERITABILITY / FAMILIAL = ONE family, N of M affected and look-alike (3 of 4 = strongly familial).
-- COURSE / PROGNOSIS = the visible trajectory — most still stuck (persists) vs most leaving recovered (remits); a long line of grown-ups vs people walking out smiling.
-- COMORBIDITY = a FEW companions near the patient, each a FIXED comorbidity symbol (below); their relative SIZE / closeness can show which is most common — but do NOT write their rates.
+WEAVE EACH FACT INTO THE STORY — encode it through what is HAPPENING, never as an isolated symbol to be counted:
+- SEX RATIO = a CONTEST or struggle in the story whose IMBALANCE *is* the ratio (a tug-of-war the big team is winning; a gang of boys chasing one girl). The RELATIONSHIP carries it — never separate characters lined up to tally.
+- HERITABILITY / FAMILIAL = a whole FAMILY swept up in the same act together, comically alike — the shared behaviour IS the heritability.
+- COMORBIDITY = companions caught up WITH the patient in the event — clinging to them, dragging them down, hitching a ride — each a FIXED symbol (below); size/closeness can hint which is most common.
+- COURSE / PROGNOSIS = where the story is HEADING — who is still stuck vs breaking free.
+- AGE OF ONSET = the age shown IN the action (candles on a cake, or the characters clearly that age).
 
-SEND TO THE CAPTION, NOT THE IMAGE: every exact percentage — PREVALENCE, exact comorbidity rates, exact heritability / persistence %, and any rate that is not a clean fraction. Do NOT scatter these as numbers in the scene.
+SEND TO THE CAPTION, NOT THE IMAGE: every exact percentage — prevalence, exact comorbidity rates, exact heritability / persistence %. Do NOT scatter numbers in the scene.
 
-OPTIONAL — ONE hero digit-object (at most ONCE, for the SINGLE most exam-defining precise figure, e.g. prevalence): build a real object of the scene whose STRUCTURE *is* the digits, woven into the action — a '5' lying as a wheel + a '7' as the frame = a go-kart that 'won't pass' (~75%). The digits must form ONE coherent object that DOES something (driven / crashes / tripped over); NEVER a numeral printed on a prop, NEVER a number a character merely holds. ONE only — everything else precise goes to the caption.
+ONE optional hero digit-object, woven INTO the action (at most once, for the single most exam-defining figure): an object whose STRUCTURE *is* the digits and that is PART OF THE STORY — a '7' frame + a '5' wheel = a go-kart being raced or crashing (~75%). NEVER a numeral printed on a prop or held up. One only; the rest precise → caption.
 
 {COMMON_COMORBIDITY_SYMBOLS}
 
-COMPOSITION: a SMALL cast (about 4-6 characters), CLEAN — every element earns its place. NO statistics board, NO 'TAKE A NUMBER', NO scattered loose numbers, NO clutter.
+COMPOSITION: a few characters (about 4-6), ALL inside the ONE unfolding event — clean, connected, narratable. NO statistics board, NO scattered numbers, NO mascots standing apart from the story.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-6 sentence PURELY VISUAL description of the ONE clean scene: setting, the few characters, the exact COUNTS each enacted parameter shows, and (if used) the single hero digit-object. NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list. First map each visible element -> the parameter it encodes (with the exact count, e.g. '3 of 4 family = strongly heritable'). THEN add a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts (prevalence, comorbidity rates, heritability/persistence %), so the caption states them even though they are not drawn.>"
+  "scene": "<3-6 sentences telling the ONE bizarre event as it unfolds: the setting, what is HAPPENING, and how each character/object plays its part in the story (the contest that IS the ratio, the family swept up together, the companions hitching along on the patient, the hero digit-object inside the action). A narratable STORY, not a tableau of separate symbols. NO clinical terms. Quote any short diegetic words.>",
+  "key": "<numbered list mapping each element -> the parameter it encodes. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts (prevalence, comorbidity rates, heritability/persistence %).>"
 }}"""
 
 
