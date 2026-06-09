@@ -661,7 +661,7 @@ You are the scene director for ONE SketchyMedical-style image about the EPIDEMIO
 
 {setting}
 
-THE #1 RULE — IT MUST BE ONE BIZARRE STORY YOU CAN TELL, not scenery with symbols dotted around. Choose ONE setting where a single weird EVENT is unfolding (a contest, a heist, a race, a feast, a rescue, a chase, a breakout, a parade), and make this disorder's epidemiology PLAY OUT as beats of that ONE story. Every character and object BELONGS to the world AND carries a fact — woven into the unfolding action, never pasted on. Not every element must touch every other, but ALL must be part of the ONE story, and a viewer must be able to NARRATE it start to finish. (The chapter's etiology image works precisely because it is a real story — a garage building the 'ADHD car'. Match that bar: a STORY, not a tableau.)
+THE #1 RULE — ONE SINGLE SITUATION THAT EVERY CHARACTER IS PART OF (this is the soul of Sketchy). Real Sketchy pages are never scattered symbols in a room: they are ONE situation with a CENTRAL anchor that the whole cast is inside — a medieval JOUST where everyone is part of the tournament, a DESERT REVIVAL gathered around one preacher, an OPERA where the whole cast is in the one show. So: pick ONE bizarre situation for this disorder (a contest, a race, a driving test, a ceremony, a breakdown, a heist, a parade) with a CENTRAL anchor, and make EVERY character a PARTICIPANT in that one situation and EVERY fact a role within it. FORBIDDEN: separate people each doing their own unrelated thing in a shared room — that 'tableau of vignettes' is exactly the failure to avoid. A viewer must narrate the WHOLE image as ONE unfolding event. (Our etiology image nails this — a garage where everyone is building the single 'ADHD car'; match that bar.)
 
 THE FACTS (the caption states every exact figure; the image weaves the enactable ones INTO the story):
 {facts_text}
@@ -679,7 +679,7 @@ ONE optional hero digit-object, woven INTO the action (at most once, for the sin
 
 {COMMON_COMORBIDITY_SYMBOLS}
 
-COMPOSITION: a few characters (about 4-6), ALL inside the ONE unfolding event — clean, connected, narratable. NO statistics board, NO scattered numbers, NO mascots standing apart from the story.
+COMPOSITION: a few characters (about 4-6), and EVERY ONE of them an active PARTICIPANT in the ONE situation (no bystanders doing their own unrelated thing) — clean, connected, narratable as a single event. NO statistics board, NO scattered numbers, NO mascots standing apart from the story.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
