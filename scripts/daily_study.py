@@ -642,49 +642,57 @@ COMMON_COMORBIDITY_SYMBOLS = (
 
 
 def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zone=None):
-    """CLEAN, from-scratch director prompt for the EPIDEMIOLOGY image. Deliberately
-    minimal (no accumulated cruft, no full symbol index, no peg vocabulary), with a
-    hard emphasis on (1) FEW elements / not cluttered and (2) numbers ENACTED as a
-    visible situation or spelled with scene-fitting digit-objects — never written on a
-    random prop, never a stats board."""
+    """CLEAN, from-scratch director prompt for the EPIDEMIOLOGY image, built on the
+    PROTAGONIST FRAME: ONE dominant central character (the personified patient) fills
+    the foreground, and every epidemiological fact hangs off that ONE figure or its
+    immediate surroundings (crowd = prevalence, family behind = heritability, clinging
+    entourage = comorbidity, an out-numbered foil = sex ratio, an age marker = onset,
+    the road = course). This yields an automatic dominant anchor (composition), an
+    automatic story spine, and facts CLUSTERED around one subject instead of a
+    scattered ensemble. Precise percentages live in the caption, never the picture.
+    Written fresh — no accumulated cruft, no peg vocabulary, no anti-pattern lists."""
     title_he = day.get("title_he", day.get("title_en", ""))
     facts_text = _facts_block_for_aspect("epidemiology", aspect_facts)
-    if anchor_world and anchor_zone:
-        setting = (f"SETTING — ONE scene: the zone '{anchor_zone}' of this chapter's "
-                   f"world '{anchor_world}'. Stay in this single place.")
+    if anchor_world:
+        world_line = (f"WORLD: stage the hero inside this chapter's bizarre world — "
+                      f"{anchor_world}. Keep that flavour, but the HERO and their "
+                      f"entourage are the subject, not the backdrop.")
     else:
-        setting = ("SETTING — invent ONE bizarre, NON-clinical place (a market, a "
-                   "fairground, a licensing office, a relay race...) and stay in it.")
-    return f"""{SKETCHY_PHILOSOPHY}
+        world_line = ("WORLD: put the hero in ONE bizarre, non-clinical world that fits "
+                      "the disorder's feel (a game-show stage, a circus ring, a lone "
+                      "knight's arena, a rock concert). Never a clinic or a lecture hall.")
+    return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. The scene contains NO clinical words (the illustrator must have nothing to label).
 
-You are the scene director for ONE SketchyMedical-style image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you output an illustrator's brief (scene) + a numbered key.
+THE FRAME — ONE DOMINANT PROTAGONIST; EVERY FACT HANGS OFF THEM.
+Epidemiology is a set of facts ABOUT a population, relative to one patient. So build the WHOLE image around ONE big central HERO — the personified patient — standing large in the CENTER FOREGROUND as the single most dominant thing in the frame. Every epidemiological fact is then a PROPERTY of this hero or of what is right around them. Do NOT make a democratic ensemble of equal-sized characters, and do NOT give each fact its own separate mini-scene — EVERYTHING attaches to the ONE hero. A viewer's eye must land on the hero first, then read the properties arranged around them.
 
-{setting}
+{world_line}
 
-THE #1 RULE — ONE SINGLE SITUATION THAT EVERY CHARACTER IS PART OF (this is the soul of Sketchy). Real Sketchy pages are never scattered symbols in a room: they are ONE situation with a CENTRAL anchor that the whole cast is inside — a medieval JOUST where everyone is part of the tournament, a DESERT REVIVAL gathered around one preacher, an OPERA where the whole cast is in the one show. So: pick ONE bizarre situation for this disorder (a contest, a race, a driving test, a ceremony, a breakdown, a heist, a parade) with a CENTRAL anchor, and make EVERY character a PARTICIPANT in that one situation and EVERY fact a role within it. FORBIDDEN: separate people each doing their own unrelated thing in a shared room — that 'tableau of vignettes' is exactly the failure to avoid. A viewer must narrate the WHOLE image as ONE unfolding event. (Our etiology image nails this — a garage where everyone is building the single 'ADHD car'; match that bar.)
+MAP EACH FACT ONTO THE HERO (use ONLY the facts listed below):
+- PREVALENCE (how common) = the CROWD of look-alikes behind/around the hero — packed shoulder-to-shoulder = common; a sparse, nearly-empty backdrop = rare. The hero is one of many identical figures (common) or almost alone (rare).
+- SEX RATIO = ONE rival/foil of the OPPOSITE sex beside the hero, clearly out-numbered or losing — the imbalance is a relationship centred on the hero (the hero's side big and winning, the foil's side tiny). Never a row of characters lined up to tally.
+- HERITABILITY / FAMILIAL = the hero's FAMILY lined up directly BEHIND them, comically identical (an echo/matryoshka of the same face). A tight stack of look-alikes = strongly familial.
+- COMORBIDITY = the hero's ENTOURAGE physically clinging to / riding on / dragging at the hero — each a FIXED companion symbol (below). The closest/biggest companion = the most common comorbidity.
+- AGE OF ONSET = an age marker ON the hero (a birthday sash or a cake with that many candles; or the hero is clearly that age).
+- COURSE / PROGNOSIS = the ROAD or conveyor the hero stands on, heading somewhere — most of the crowd trudging onward still burdened (persists) vs walking off free (remits).
 
-THE FACTS (the caption states every exact figure; the image weaves the enactable ones INTO the story):
+THE FACTS:
 {facts_text}
-
-WEAVE EACH FACT INTO THE STORY — encode it through what is HAPPENING, never as an isolated symbol to be counted:
-- SEX RATIO = a CONTEST or struggle in the story whose IMBALANCE *is* the ratio (a tug-of-war the big team is winning; a gang of boys chasing one girl). The RELATIONSHIP carries it — never separate characters lined up to tally.
-- HERITABILITY / FAMILIAL = a whole FAMILY swept up in the same act together, comically alike — the shared behaviour IS the heritability.
-- COMORBIDITY = companions caught up WITH the patient in the event — clinging to them, dragging them down, hitching a ride — each a FIXED symbol (below); size/closeness can hint which is most common.
-- COURSE / PROGNOSIS = where the story is HEADING — who is still stuck vs breaking free.
-- AGE OF ONSET = the age shown IN the action (candles on a cake, or the characters clearly that age).
-
-SEND TO THE CAPTION, NOT THE IMAGE: every exact percentage — prevalence, exact comorbidity rates, exact heritability / persistence %. Do NOT scatter numbers in the scene.
-
-ONE optional hero digit-object, woven INTO the action (at most once, for the single most exam-defining figure): an object whose STRUCTURE *is* the digits and that is PART OF THE STORY — a '7' frame + a '5' wheel = a go-kart being raced or crashing (~75%). NEVER a numeral printed on a prop or held up. One only; the rest precise → caption.
 
 {COMMON_COMORBIDITY_SYMBOLS}
 
-COMPOSITION: a few characters (about 4-6), and EVERY ONE of them an active PARTICIPANT in the ONE situation (no bystanders doing their own unrelated thing) — clean, connected, narratable as a single event. NO statistics board, NO scattered numbers, NO mascots standing apart from the story.
+NUMBERS: the image shows only the QUALITATIVE shape (big vs small crowd, lopsided rivalry, tight family stack, clinging entourage). Do NOT write percentages and do NOT scatter number-shapes — every exact figure goes to the CAPTION. OPTIONAL: at most ONE 'hero digit-object' — a real prop whose STRUCTURE is the digits and that is part of the hero's action (a '7' frame + '5' wheel go-kart the hero rides = ~75%) — for the single most exam-defining figure only.
+
+COMPOSITION — enforce this depth hierarchy so it reads as one composed image, not a scatter:
+- FOREGROUND, CENTER, LARGEST: the ONE hero (about half the frame).
+- MIDGROUND, smaller, arranged around the hero: the clinging entourage (comorbidities) and the family stacked behind.
+- BACKGROUND: the crowd (prevalence) and the road (course).
+Clean and readable. NO statistics board, NO scattered numbers, NO equal-sized ensemble, NO separate vignettes.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-6 sentences telling the ONE bizarre event as it unfolds: the setting, what is HAPPENING, and how each character/object plays its part in the story (the contest that IS the ratio, the family swept up together, the companions hitching along on the patient, the hero digit-object inside the action). A narratable STORY, not a tableau of separate symbols. NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list mapping each element -> the parameter it encodes. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts (prevalence, comorbidity rates, heritability/persistence %).>"
+  "scene": "<3-6 sentences: FIRST the ONE dominant hero in the center foreground and what they are doing, THEN each property arranged around them by depth (the crowd behind = how common, the out-numbered foil beside = the sex skew, the family stacked behind = familial, the companions clinging on = comorbidity, the age marker, the road ahead = course). Purely visual, NO clinical terms. Quote any short diegetic words.>",
+  "key": "<numbered list mapping each visible element -> the parameter it encodes. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts (prevalence, comorbidity rates, heritability/persistence %).>"
 }}"""
 
 
