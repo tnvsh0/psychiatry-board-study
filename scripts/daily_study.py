@@ -653,7 +653,33 @@ NUMBER_SHAPES = (
 )
 
 
-def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zone=None):
+EPI_HALVES = {
+    "who": {
+        "title": "WHO GETS IT",
+        "scope": (
+            "Cover ONLY these figures: PREVALENCE (its element = the CROWD of "
+            "look-alikes), HERITABILITY / familial risk (its element = the hero's "
+            "FAMILY), AGE OF ONSET (its element = an age marker on the hero), and the "
+            "SEX RATIO (shown as two groups of clearly different sizes — NOT digits). "
+            "Do NOT show comorbidities and do NOT show course/prognosis — they belong "
+            "to the other image."
+        ),
+    },
+    "comes_with": {
+        "title": "WHAT COMES WITH IT AND WHERE IT GOES",
+        "scope": (
+            "Cover ONLY these figures: each MAIN COMORBIDITY with its own rate (its "
+            "element = that comorbidity's own fixed companion, who carries its digits), "
+            "and the COURSE / PERSISTENCE (its element = the direction the story is "
+            "heading / the finish). Do NOT show prevalence, heritability, onset age or "
+            "the sex ratio — they belong to the other image."
+        ),
+    },
+}
+
+
+def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zone=None,
+                                half=None):
     """EPIDEMIOLOGY director — the 'SHAPES BUILD THE STORY' prototype.
 
     Key inversion (this is the whole experiment): instead of choosing a world and then
@@ -669,17 +695,16 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
     be free to generate their own world."""
     title_he = day.get("title_he", day.get("title_en", ""))
     facts_text = _facts_block_for_aspect("epidemiology", aspect_facts)
+    spec = EPI_HALVES.get(half or "who", EPI_HALVES["who"])
     return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. NO clinical words may appear in the scene.
+
+THIS IMAGE COVERS ONLY ONE HALF OF THE EPIDEMIOLOGY: **{spec['title']}**.
+{spec['scope']}
+Keeping to this half is what lets the picture stay a single composed scene instead of a scattered board.
 
 WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder.
 
-STEP 1 — LIST THE FIGURES AND THEIR CONCEPT-ELEMENT. Go through the facts below. Take every figure that has a natural CONCEPT-ELEMENT in an epidemiology scene (usually 5-6 of them):
-  - prevalence            -> its element is the CROWD of look-alikes
-  - heritability/familial -> its element is the hero's FAMILY
-  - each main comorbidity -> its element is THAT comorbidity's own companion (fixed symbols below)
-  - persistence/course    -> its element is the DIRECTION the story is heading / the finish
-  - sex ratio             -> show as two groups of clearly different sizes (NOT digit-shapes)
-A rare, minor figure with no natural element stays qualitative and goes to the caption only.
+STEP 1 — LIST YOUR FIGURES. From the facts below take ONLY the figures belonging to this half (about 3, never more than 4), each with its concept-element as named above. A rare, minor figure stays qualitative and goes to the caption only.
 
 STEP 2 — ROUND EACH FIGURE TO AT MOST **2 DIGITS**, then turn those digits into shape-objects from the vocabulary below (74.5% -> 75 -> a boomerang + a hook; 7.2% -> 7 -> a boomerang; 60-85% -> 70). Two shape-objects per figure maximum, so each cluster stays small and readable.
 
@@ -701,7 +726,11 @@ THE FACTS:
 
 {COMMON_COMORBIDITY_SYMBOLS}
 
-HARD RULES: NO written numerals anywhere in the image. NO statistics board. NO shape sitting around as decoration or floating free — every shape-object is a WORKING PROP held by its own concept-element. Composition: hero largest in the centre foreground, companions midground, crowd background — readable at a glance.
+HARD RULES:
+- **ZERO TEXT.** No words, no labels, no signs, no name-tags, no banners, no captions anywhere in the image. Do NOT label an element with the thing it represents (no "FAMILY RAFT", no "DEPRESSION", no "TREMBLING RABBIT"). If you catch yourself naming something in the scene, delete it — the picture must carry meaning by IMAGE ALONE.
+- NO written numerals. NO statistics board.
+- NO shape sitting around as decoration or floating free — every shape-object is a WORKING PROP held by its own concept-element.
+- Composition: hero largest in the centre foreground, companions midground, crowd background — readable at a glance, ONE connected scene.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
@@ -711,7 +740,7 @@ OUTPUT — STRICT JSON only (no markdown fence):
 
 
 def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
-                               anchor_world=None, anchor_zone=None):
+                               anchor_world=None, anchor_zone=None, half=None):
     """Build the SCENE DIRECTOR instruction (a text-model prompt).
 
     The director converts this aspect's clinical facts + the symbol vocabulary
@@ -728,7 +757,8 @@ def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
     # rules, producing cluttered, number-littered epidemiology images.
     if aspect == "epidemiology":
         return build_epidemiology_director(
-            day, aspect_facts, anchor_world=anchor_world, anchor_zone=anchor_zone)
+            day, aspect_facts, anchor_world=anchor_world, anchor_zone=anchor_zone,
+            half=half)
     title_he = day.get("title_he", day.get("title_en", ""))
     scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts)
     full_index = _compact_symbol_index(
@@ -984,10 +1014,20 @@ def build_image_jobs(aspects, facts):
     criteria aspect whose facts have 2+ symptom clusters is split into one job
     per cluster (e.g. ADHD criteria -> inattention image + hyperactivity image),
     each receiving only that cluster's items + the shared thresholds, so each
-    criterion has room to be its own distinct visual detail."""
+    criterion has room to be its own distinct visual detail.
+
+    Epidemiology is likewise split into TWO images — 'who gets it' (prevalence, sex
+    ratio, onset, heritability) and 'what comes with it / where it goes' (comorbidity
+    rates, course). One image cannot hold 5-6 figures without fragmenting into a
+    scattered board; ~3 figures each keeps every image a single composed scene while
+    still carrying all the data."""
     jobs = []
     for aspect in aspects:
         slice_ = facts_for_aspect(aspect, facts)
+        if aspect == "epidemiology" and isinstance(slice_, dict):
+            for half in ("who", "comes_with"):
+                jobs.append((f"epidemiology_{half}", aspect, slice_))
+            continue
         if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(slice_, dict):
             crit = slice_.get("criteria") if isinstance(slice_.get("criteria"), dict) else None
             clusters = crit.get("clusters") if crit else None
@@ -1627,6 +1667,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             director = build_director_instruction(
                 day, symbols, aspect, job_facts,
                 anchor_world=anchor_world, anchor_zone=zones.get(aspect),
+                half=label.split("epidemiology_")[-1] if label.startswith("epidemiology_") else None,
             )
             # For CRITERIA images, completeness is mandatory: pass the cluster's
             # criterion items so generate_sketchy_directed runs the coverage-

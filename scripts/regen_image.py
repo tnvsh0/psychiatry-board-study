@@ -81,6 +81,7 @@ def main():
         day, symbols, aspect, job_facts,
         anchor_world=day.get("anchor_world"),
         anchor_zone=day.get("anchor_zones", {}).get(aspect),
+        half=label.split("epidemiology_")[-1] if label.startswith("epidemiology_") else None,
     )
     png = day_dir / f"sketchy_{label}.png"
     txt = day_dir / f"sketchy_{label}.txt"
