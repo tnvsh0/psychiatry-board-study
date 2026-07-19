@@ -673,18 +673,26 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
 
 WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder.
 
-STEP 1 — CHOOSE 2-3 KEY FIGURES. From the facts below pick ONLY the 2-3 most exam-defining numbers (typically the prevalence, the sex ratio, and heritability or persistence). Everything else stays qualitative. NEVER more than 3.
+STEP 1 — LIST THE FIGURES AND THEIR CONCEPT-ELEMENT. Go through the facts below. Take every figure that has a natural CONCEPT-ELEMENT in an epidemiology scene (usually 5-6 of them):
+  - prevalence            -> its element is the CROWD of look-alikes
+  - heritability/familial -> its element is the hero's FAMILY
+  - each main comorbidity -> its element is THAT comorbidity's own companion (fixed symbols below)
+  - persistence/course    -> its element is the DIRECTION the story is heading / the finish
+  - sex ratio             -> show as two groups of clearly different sizes (NOT digit-shapes)
+A rare, minor figure with no natural element stays qualitative and goes to the caption only.
 
-STEP 2 — TURN EACH CHOSEN FIGURE INTO DIGIT-SHAPE OBJECTS. Write out its digits, then pick one shape-object per digit from the vocabulary below (choose the variant that will help you build a story). A ratio like 2:1 may instead be shown as two groups of different sizes.
+STEP 2 — ROUND EACH FIGURE TO AT MOST **2 DIGITS**, then turn those digits into shape-objects from the vocabulary below (74.5% -> 75 -> a boomerang + a hook; 7.2% -> 7 -> a boomerang; 60-85% -> 70). Two shape-objects per figure maximum, so each cluster stays small and readable.
 
-STEP 3 — INVENT THE STORY *FROM* THOSE OBJECTS. This is the crucial inversion. Look at the objects you are now holding (say: a boomerang, a sailboat and a hook) and invent ONE bizarre situation in which those exact objects are the natural, obvious props — a regatta, a pirate cove, a fishing contest, a circus act, a rooftop rescue. The OBJECTS COME FIRST; the world is built to fit THEM. NEVER pick a setting first and then insert the shapes — that is exactly what makes numbers look pasted on. The world needs NO connection to medicine; the stranger, the better.
+STEP 3 — INVENT THE STORY *FROM* ALL THOSE OBJECTS. This is the crucial inversion. Look at the collection of objects you are now holding and invent ONE bizarre situation in which those exact objects are the natural, obvious props — a regatta, a pirate cove, a fishing contest, a circus act, a rooftop rescue, a bakery. The OBJECTS COME FIRST; the world is built to fit THEM. NEVER pick a setting first and then insert the shapes — that is exactly what makes numbers look pasted on. If one shape refuses to fit the world, swap to another variant of that digit (a 7 can be a boomerang OR a cliff edge OR a bent mast) or invent a different world. The world needs NO connection to medicine; the stranger, the better.
 
-STEP 4 — PUT THE HERO IN IT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, caught up in that situation and physically involved with the shape-objects (riding the sailboat, snagged by the hook, ducking the boomerang).
+STEP 4 — BIND EVERY FIGURE TO ITS OWN ELEMENT (this is what removes ambiguity). Each figure's shape-objects must be physically CARRIED, WORN, RIDDEN or HELD by the element that represents that figure's concept, and grouped tightly together so they read as one unit:
+  - the FAMILY carries the heritability digits (they ride/hold them);
+  - EACH comorbidity companion carries ITS OWN rate's digits;
+  - the CROWD clusters around the prevalence digits;
+  - the FINISH/direction carries the persistence digits.
+STRICT 1:1 — no object may serve two different figures, and no digit-shape may float free.
 
-STEP 5 — ADD THE QUALITATIVE EPIDEMIOLOGY around the hero, with NO numbers at all:
-- the CROWD of look-alikes behind the hero = how common it is (packed = common, sparse = rare);
-- the hero's ENTOURAGE clinging to / dragging at them = the comorbidities, each a FIXED symbol (below);
-- where the story is HEADING = the course / prognosis.
+STEP 5 — PUT THE HERO IN IT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, caught up in the situation and physically involved with it.
 
 THE FACTS:
 {facts_text}
@@ -693,12 +701,12 @@ THE FACTS:
 
 {COMMON_COMORBIDITY_SYMBOLS}
 
-HARD RULES: NO written numerals anywhere in the image. NO statistics board. NO shape sitting around as decoration — every shape-object must be a WORKING PROP of the situation you invented, something the hero or the cast actually uses. Keep the cast small (about 4-6 figures). Composition: hero largest in the centre foreground, entourage midground, crowd background — readable at a glance.
+HARD RULES: NO written numerals anywhere in the image. NO statistics board. NO shape sitting around as decoration or floating free — every shape-object is a WORKING PROP held by its own concept-element. Composition: hero largest in the centre foreground, companions midground, crowd background — readable at a glance.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-6 sentences: the bizarre situation you invented, the hero at its centre, how each shape-object is a natural prop the hero interacts with, and the crowd + clinging entourage around them. Purely visual, NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list. For EACH shape-object state: object -> digit -> the figure it spells -> what that figure means (e.g. 'boomerang + sailboat = 7 and 4 = 74% heritability'). Then the qualitative elements (crowd, companions, direction). THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts.>"
+  "scene": "<3-6 sentences: the bizarre situation you invented, the hero at its centre, and — element by element — who is carrying which shape-objects (the family riding these, this companion clutching those, the crowd around that). Purely visual, NO clinical terms. Quote any short diegetic words.>",
+  "key": "<numbered list, ONE LINE PER FIGURE, in the form: 'element -> objects -> digits -> figure -> meaning' (e.g. 'the family rides a boomerang and a hook = 7,5 = 75% heritability'). Then the qualitative elements. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts.>"
 }}"""
 
 
