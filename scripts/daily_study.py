@@ -641,58 +641,64 @@ COMMON_COMORBIDITY_SYMBOLS = (
 )
 
 
+NUMBER_SHAPES = (
+    "DIGIT-SHAPE VOCABULARY — a digit is drawn as an object whose SHAPE looks like the "
+    "digit. There is NO code to memorise: the resemblance IS the mnemonic. Pick "
+    "whichever variant helps you build your story:\n"
+    "  0 = a ring / wheel / donut        5 = a hook / starfish\n"
+    "  1 = a candle / pencil / mast      6 = a golf club / cherry on a stem\n"
+    "  2 = a swan                        7 = a boomerang / cliff edge\n"
+    "  3 = a trident / double hump       8 = an hourglass / snowman\n"
+    "  4 = a sailboat / flag             9 = a balloon / tadpole"
+)
+
+
 def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zone=None):
-    """CLEAN, from-scratch director prompt for the EPIDEMIOLOGY image, built on the
-    PROTAGONIST FRAME: ONE dominant central character (the personified patient) fills
-    the foreground, and every epidemiological fact hangs off that ONE figure or its
-    immediate surroundings (crowd = prevalence, family behind = heritability, clinging
-    entourage = comorbidity, an out-numbered foil = sex ratio, an age marker = onset,
-    the road = course). This yields an automatic dominant anchor (composition), an
-    automatic story spine, and facts CLUSTERED around one subject instead of a
-    scattered ensemble. Precise percentages live in the caption, never the picture.
-    Written fresh — no accumulated cruft, no peg vocabulary, no anti-pattern lists."""
+    """EPIDEMIOLOGY director — the 'SHAPES BUILD THE STORY' prototype.
+
+    Key inversion (this is the whole experiment): instead of choosing a world and then
+    forcing number-symbols into it — which always reads as arbitrary — we FIRST turn the
+    2-3 most exam-critical figures into digit-SHAPE objects, and THEN invent the one
+    situation in which those exact objects are the natural props. The mnemonic generates
+    the world, exactly the way a real Sketchy page is built out of a name-pun, so the
+    numbers can never feel pasted on. A single dominant hero (the personified patient)
+    anchors the composition; the rest of the epidemiology stays qualitative (crowd,
+    clinging companions) and every exact percentage goes to the caption.
+
+    NOTE: the chapter's anchor_world is deliberately NOT imposed here — the shapes must
+    be free to generate their own world."""
     title_he = day.get("title_he", day.get("title_en", ""))
     facts_text = _facts_block_for_aspect("epidemiology", aspect_facts)
-    if anchor_world:
-        world_line = (f"WORLD: stage the hero inside this chapter's bizarre world — "
-                      f"{anchor_world}. Keep that flavour, but the HERO and their "
-                      f"entourage are the subject, not the backdrop.")
-    else:
-        world_line = ("WORLD: put the hero in ONE bizarre, non-clinical world that fits "
-                      "the disorder's feel (a game-show stage, a circus ring, a lone "
-                      "knight's arena, a rock concert). Never a clinic or a lecture hall.")
-    return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. The scene contains NO clinical words (the illustrator must have nothing to label).
+    return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. NO clinical words may appear in the scene.
 
-THE FRAME — ONE DOMINANT PROTAGONIST; EVERY FACT HANGS OFF THEM.
-Epidemiology is a set of facts ABOUT a population, relative to one patient. So build the WHOLE image around ONE big central HERO — the personified patient — standing large in the CENTER FOREGROUND as the single most dominant thing in the frame. Every epidemiological fact is then a PROPERTY of this hero or of what is right around them. Do NOT make a democratic ensemble of equal-sized characters, and do NOT give each fact its own separate mini-scene — EVERYTHING attaches to the ONE hero. A viewer's eye must land on the hero first, then read the properties arranged around them.
+WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder.
 
-{world_line}
+STEP 1 — CHOOSE 2-3 KEY FIGURES. From the facts below pick ONLY the 2-3 most exam-defining numbers (typically the prevalence, the sex ratio, and heritability or persistence). Everything else stays qualitative. NEVER more than 3.
 
-MAP EACH FACT ONTO THE HERO (use ONLY the facts listed below):
-- PREVALENCE (how common) = the CROWD of look-alikes behind/around the hero — packed shoulder-to-shoulder = common; a sparse, nearly-empty backdrop = rare. The hero is one of many identical figures (common) or almost alone (rare).
-- SEX RATIO = ONE rival/foil of the OPPOSITE sex beside the hero, clearly out-numbered or losing — the imbalance is a relationship centred on the hero (the hero's side big and winning, the foil's side tiny). Never a row of characters lined up to tally.
-- HERITABILITY / FAMILIAL = the hero's FAMILY lined up directly BEHIND them, comically identical (an echo/matryoshka of the same face). A tight stack of look-alikes = strongly familial.
-- COMORBIDITY = the hero's ENTOURAGE physically clinging to / riding on / dragging at the hero — each a FIXED companion symbol (below). The closest/biggest companion = the most common comorbidity.
-- AGE OF ONSET = an age marker ON the hero (a birthday sash or a cake with that many candles; or the hero is clearly that age).
-- COURSE / PROGNOSIS = the ROAD or conveyor the hero stands on, heading somewhere — most of the crowd trudging onward still burdened (persists) vs walking off free (remits).
+STEP 2 — TURN EACH CHOSEN FIGURE INTO DIGIT-SHAPE OBJECTS. Write out its digits, then pick one shape-object per digit from the vocabulary below (choose the variant that will help you build a story). A ratio like 2:1 may instead be shown as two groups of different sizes.
+
+STEP 3 — INVENT THE STORY *FROM* THOSE OBJECTS. This is the crucial inversion. Look at the objects you are now holding (say: a boomerang, a sailboat and a hook) and invent ONE bizarre situation in which those exact objects are the natural, obvious props — a regatta, a pirate cove, a fishing contest, a circus act, a rooftop rescue. The OBJECTS COME FIRST; the world is built to fit THEM. NEVER pick a setting first and then insert the shapes — that is exactly what makes numbers look pasted on. The world needs NO connection to medicine; the stranger, the better.
+
+STEP 4 — PUT THE HERO IN IT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, caught up in that situation and physically involved with the shape-objects (riding the sailboat, snagged by the hook, ducking the boomerang).
+
+STEP 5 — ADD THE QUALITATIVE EPIDEMIOLOGY around the hero, with NO numbers at all:
+- the CROWD of look-alikes behind the hero = how common it is (packed = common, sparse = rare);
+- the hero's ENTOURAGE clinging to / dragging at them = the comorbidities, each a FIXED symbol (below);
+- where the story is HEADING = the course / prognosis.
 
 THE FACTS:
 {facts_text}
 
+{NUMBER_SHAPES}
+
 {COMMON_COMORBIDITY_SYMBOLS}
 
-NUMBERS: the image shows only the QUALITATIVE shape (big vs small crowd, lopsided rivalry, tight family stack, clinging entourage). Do NOT write percentages and do NOT scatter number-shapes — every exact figure goes to the CAPTION. OPTIONAL: at most ONE 'hero digit-object' — a real prop whose STRUCTURE is the digits and that is part of the hero's action (a '7' frame + '5' wheel go-kart the hero rides = ~75%) — for the single most exam-defining figure only.
-
-COMPOSITION — enforce this depth hierarchy so it reads as one composed image, not a scatter:
-- FOREGROUND, CENTER, LARGEST: the ONE hero (about half the frame).
-- MIDGROUND, smaller, arranged around the hero: the clinging entourage (comorbidities) and the family stacked behind.
-- BACKGROUND: the crowd (prevalence) and the road (course).
-Clean and readable. NO statistics board, NO scattered numbers, NO equal-sized ensemble, NO separate vignettes.
+HARD RULES: NO written numerals anywhere in the image. NO statistics board. NO shape sitting around as decoration — every shape-object must be a WORKING PROP of the situation you invented, something the hero or the cast actually uses. Keep the cast small (about 4-6 figures). Composition: hero largest in the centre foreground, entourage midground, crowd background — readable at a glance.
 
 OUTPUT — STRICT JSON only (no markdown fence):
 {{
-  "scene": "<3-6 sentences: FIRST the ONE dominant hero in the center foreground and what they are doing, THEN each property arranged around them by depth (the crowd behind = how common, the out-numbered foil beside = the sex skew, the family stacked behind = familial, the companions clinging on = comorbidity, the age marker, the road ahead = course). Purely visual, NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list mapping each visible element -> the parameter it encodes. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts (prevalence, comorbidity rates, heritability/persistence %).>"
+  "scene": "<3-6 sentences: the bizarre situation you invented, the hero at its centre, how each shape-object is a natural prop the hero interacts with, and the crowd + clinging entourage around them. Purely visual, NO clinical terms. Quote any short diegetic words.>",
+  "key": "<numbered list. For EACH shape-object state: object -> digit -> the figure it spells -> what that figure means (e.g. 'boomerang + sailboat = 7 and 4 = 74% heritability'). Then the qualitative elements (crowd, companions, direction). THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts.>"
 }}"""
 
 
