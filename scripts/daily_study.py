@@ -642,14 +642,18 @@ COMMON_COMORBIDITY_SYMBOLS = (
 
 
 NUMBER_SHAPES = (
-    "DIGIT-SHAPE VOCABULARY — a digit is drawn as an object whose SHAPE looks like the "
-    "digit. There is NO code to memorise: the resemblance IS the mnemonic. Pick "
-    "whichever variant helps you build your story:\n"
-    "  0 = a ring / wheel / donut        5 = a hook / starfish\n"
-    "  1 = a candle / pencil / mast      6 = a golf club / cherry on a stem\n"
-    "  2 = a swan                        7 = a boomerang / cliff edge\n"
-    "  3 = a trident / double hump       8 = an hourglass / snowman\n"
-    "  4 = a sailboat / flag             9 = a balloon / tadpole"
+    "DIGIT-SHAPE PRINCIPLE — a digit is drawn as an object whose SHAPE looks like the "
+    "digit. There is NO code to memorise: the resemblance IS the mnemonic. But the "
+    "object must ALSO be a native object of THIS CHAPTER'S WORLD, so the picture stays "
+    "tied to the disorder. Generic shapes to guide you (0 = ring/wheel · 1 = upright "
+    "pole/candle · 2 = swan-curve over a base · 3 = double hump · 4 = sail/flag on a "
+    "post · 5 = hook · 6 = curled stem · 7 = bent arm/ramp · 8 = figure-of-eight/"
+    "hourglass · 9 = balloon on a string) — now find the version of that shape that "
+    "already LIVES in this world. Example, in a driving-school world: 0 = a tyre or "
+    "steering wheel, 1 = a traffic cone, 3 = two speed bumps, 5 = a tow hook, 7 = a "
+    "ramp or barrier arm, 8 = a figure-of-eight practice track. NEVER import an object "
+    "that is foreign to this world (no boomerangs at a driving school) — pick a "
+    "different native object with the same silhouette."
 )
 
 
@@ -691,12 +695,33 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
     anchors the composition; the rest of the epidemiology stays qualitative (crowd,
     clinging companions) and every exact percentage goes to the caption.
 
-    NOTE: the chapter's anchor_world is deliberately NOT imposed here — the shapes must
-    be free to generate their own world."""
+    The chapter's anchor_world IS imposed: an image set in a world unrelated to the
+    disorder (a beach, a carnival) is orphaned — the viewer cannot tell which disorder
+    it belongs to. So the world supplies both the EVENT (the plot engine) and the
+    digit-objects, which must be native to it. Shapes are therefore consistent WITHIN a
+    chapter and vary BETWEEN chapters: a scene-specific cue discriminates far better
+    than one shape reused across 126 chapters."""
     title_he = day.get("title_he", day.get("title_en", ""))
     facts_text = _facts_block_for_aspect("epidemiology", aspect_facts)
     spec = EPI_HALVES.get(half or "who", EPI_HALVES["who"])
+    if anchor_world:
+        world_block = (
+            f"THIS CHAPTER'S WORLD (everything happens here — do NOT invent a different "
+            f"world):\n{anchor_world}\n"
+            "This matters more than anything: the viewer must be able to look at the "
+            "picture and know instantly WHICH DISORDER it belongs to. A beach or a "
+            "carnival with no link to this chapter leaves the image orphaned and "
+            "useless. Stay inside this world."
+        )
+    else:
+        world_block = (
+            "THIS CHAPTER'S WORLD: invent ONE bizarre, non-clinical world whose flavour "
+            "unmistakably evokes THIS disorder (its feel, its name, its hallmark), and "
+            "stay inside it — the viewer must know which disorder the picture belongs to."
+        )
     return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. NO clinical words may appear in the scene.
+
+{world_block}
 
 THIS IMAGE COVERS ONLY ONE HALF OF THE EPIDEMIOLOGY: **{spec['title']}**.
 {spec['scope']}
@@ -706,9 +731,9 @@ WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder
 
 STEP 1 — LIST YOUR FIGURES. From the facts below take ONLY the figures belonging to this half (about 3, never more than 4), each with its concept-element as named above. A rare, minor figure stays qualitative and goes to the caption only.
 
-STEP 2 — ROUND EACH FIGURE TO AT MOST **2 DIGITS**, then turn those digits into shape-objects from the vocabulary below (74.5% -> 75 -> a boomerang + a hook; 7.2% -> 7 -> a boomerang; 60-85% -> 70). Two shape-objects per figure maximum, so each cluster stays small and readable.
+STEP 2 — ROUND EACH FIGURE TO AT MOST **2 DIGITS**, then turn those digits into shape-objects that are NATIVE TO THIS CHAPTER'S WORLD (see the digit-shape principle below). E.g. in a driving-school world: 74.5% -> 75 -> a ramp (7) + a tow hook (5); 7.2% -> 7 -> a barrier arm; 60-85% -> 70 -> a curled exhaust (6) + a tyre (0). Two shape-objects per figure maximum, so each cluster stays small and readable.
 
-STEP 3 — INVENT THE STORY *FROM* ALL THOSE OBJECTS. This is the crucial inversion. Look at the collection of objects you are now holding and invent ONE bizarre situation in which those exact objects are the natural, obvious props — a regatta, a pirate cove, a fishing contest, a circus act, a rooftop rescue, a bakery. The OBJECTS COME FIRST; the world is built to fit THEM. NEVER pick a setting first and then insert the shapes — that is exactly what makes numbers look pasted on. If one shape refuses to fit the world, swap to another variant of that digit (a 7 can be a boomerang OR a cliff edge OR a bent mast) or invent a different world. The world needs NO connection to medicine; the stranger, the better.
+STEP 3 — TAKE THE EVENT FROM THIS CHAPTER'S WORLD. Do NOT invent a new world. Pick ONE natural, bizarre EVENT that this chapter's world already supplies (in a driving-school world: a chaotic driving test, a race, a pile-up, a licence ceremony) and let that event be the story. Because the digit-objects you chose in STEP 2 are native to this same world, they slot into the event as ordinary props — nothing can look pasted on, and the picture stays unmistakably tied to this disorder. Something must be HAPPENING: a viewer should narrate the event start to finish, not describe a pose.
 
 STEP 4 — BIND EVERY FIGURE TO ITS OWN ELEMENT (this is what removes ambiguity). Each figure's shape-objects must be physically CARRIED, WORN, RIDDEN or HELD by the element that represents that figure's concept, and grouped tightly together so they read as one unit:
   - the FAMILY carries the heritability digits (they ride/hold them);
