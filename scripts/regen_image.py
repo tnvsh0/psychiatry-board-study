@@ -90,6 +90,7 @@ def main():
     ok, cap = generate_sketchy_directed(
         director_instruction=director, output_path=png, caption_path=txt,
         phase=day.get("phase"), required_items=required_items, max_image_tries=max_tries,
+        text_policy="environment" if aspect == "epidemiology" else "mnemonic",
     )
     if not ok:
         print(f"[FAIL] regeneration failed for sketchy_{label} (transient — try again).")

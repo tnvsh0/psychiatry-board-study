@@ -48,7 +48,7 @@ IMAGE_MODEL = os.environ.get("SKETCHY_IMAGE_MODEL", "gemini-3-pro-image-preview"
 CAPTION_MODEL = "gemini-2.5-flash"  # text-only (director/caption/coverage) — cheap, leave as is
 
 
-SKETCHY_STYLE_PREFIX = """Create a single full-color hand-painted illustration in SketchyMedical / SketchyMicro style — a COMPLETE SCENE, not an infographic.
+_STYLE_BASE = """Create a single full-color hand-painted illustration in SketchyMedical / SketchyMicro style — a COMPLETE SCENE, not an infographic.
 
 The image MUST be:
 - A full environment filling the entire frame (e.g. beach, kitchen, lab, forest, café, hospital ward, market, classroom, mine, opera house, courtroom — whatever fits the topic). NO blank or white background.
@@ -60,7 +60,15 @@ The image MUST be:
 - Each concept from the legend embedded as a physical character, object, prop, or action — woven INTO the scene, NOT placed beside it like icons.
 - ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.
 
-Text rules — STRICT:
+"""
+
+# --- Text / composition policy blocks -------------------------------------------------
+# Two regimes. "mnemonic" (default) is for images whose hook IS a diegetic word or letter
+# (a goat tagged "K" for kappa) — there, labels must be big and legible. "environment" is
+# for images whose hook is the SHAPE of objects (epidemiology): there, explanatory labels
+# actively destroy the mnemonic, so only incidental world signage is allowed.
+
+_TEXT_RULES_MNEMONIC = """Text rules — STRICT:
 - NO callout arrows. NO captions. NO legend boxes. NO floating text overlays. NO explanation text.
 - ONLY diegetic text — text that physically exists as part of the environment: signs on buildings, name tags on collars, single words painted on packages or barrels, numbers on equipment, lettering on a chef's hat.
 - BUT this diegetic text is CRITICAL — these labels are the primary mnemonic anchors the viewer must read at a glance. Render them PROMINENTLY and LEGIBLY: bold, large, clearly readable letters. A goat's name tag should have a big readable "K". A milk pail should have its single word painted BIG and BOLD. A storefront sign should fill its space confidently. Each label stays at 1-2 words / 1 letter / 1 number — but rendered LARGE enough to read instantly even at thumbnail size (about 200px wide).
@@ -78,10 +86,36 @@ Composition hierarchy — most prominent to least:
 3. Background environment (barn, sky, fields, walls, equipment, distant figures) sets the scene without distracting.
 
 A viewer's eye should hit the labeled anchors first, then explore supporting details, then take in the environment. Density should never come at the cost of label legibility.
+"""
 
+_TEXT_RULES_ENVIRONMENT = """Text rules — STRICT. This image must carry its meaning by IMAGE ALONE:
+- NO callout arrows. NO captions. NO legend boxes. NO floating text. NO explanation text.
+- NEVER label an element with what it REPRESENTS, or with its role, state or category. Forbidden examples: "WAITING BOYS", "WAITING GIRLS", "RAMP", "STUCK", "DEPRESSION", "ANXIETY", "FAMILY RAFT". If a word tells the viewer what something MEANS, delete it — that word is doing the picture's job and destroys the mnemonic.
+- Ordinary ENVIRONMENTAL signage that this world would carry anyway IS allowed and welcome: a shop name over a shop in a mall, "DRIVING SCHOOL" on the school building, a street sign, a brand on a barrel, a number on a race car. THE TEST: would this text be there if nobody were being taught anything? If yes, keep it. If it exists to explain, remove it.
+- Keep any such environmental text SMALL and incidental — background texture, never the focus, never large or bold.
+- NO written numerals used as data: the figures in this image are carried by the SHAPES of objects, never by digits printed on a prop or held up.
+
+Composition hierarchy — most prominent to least:
+1. ONE hero character in the centre foreground — the LARGEST, most eye-catching thing in the frame, caught mid-action.
+2. The shaped props and companions the hero is involved with — clearly smaller, arranged around the hero, each fully visible and not overlapping another.
+3. Background environment and crowd — sets the scene without competing.
+
+A viewer's eye should hit the hero first, then read the props around them. Every figure in frame must be a participant in the ONE event that is happening — never a line-up of separate characters spread across the width.
+"""
+
+_STYLE_TAIL = """
 Composition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.
 
 """
+
+
+def style_prefix(text_policy: str = "mnemonic") -> str:
+    """Full image-style prefix under the chosen text regime (see blocks above)."""
+    rules = _TEXT_RULES_ENVIRONMENT if text_policy == "environment" else _TEXT_RULES_MNEMONIC
+    return _STYLE_BASE + rules + _STYLE_TAIL
+
+
+SKETCHY_STYLE_PREFIX = style_prefix()  # backwards-compatible default
 
 
 CAPTION_INSTRUCTION = """You are explaining a SketchyMedical-style educational illustration to a psychiatric resident studying for the Israeli board exam (שלב ב).
@@ -175,6 +209,7 @@ def generate_image(
     api_key: Optional[str] = None,
     phase: Optional[int] = None,
     model: str = IMAGE_MODEL,
+    text_policy: str = "mnemonic",
 ) -> bool:
     """Generate one SketchyMedical-style scene. Returns True on success.
 
@@ -186,7 +221,7 @@ def generate_image(
     if client is None:
         return False
 
-    full_prompt = SKETCHY_STYLE_PREFIX + _palette_directive(phase) + "\n\nContent to illustrate:\n" + prompt
+    full_prompt = style_prefix(text_policy) + _palette_directive(phase) + "\n\nContent to illustrate:\n" + prompt
 
     import time as _time
     for attempt in range(3):
@@ -450,6 +485,7 @@ def generate_sketchy_directed(
     phase: Optional[int] = None,
     required_items: Optional[list] = None,
     max_image_tries: int = 1,
+    text_policy: str = "mnemonic",
 ) -> tuple[bool, str]:
     """Full directed pipeline: director (facts→clean scene+key) → image model →
     caption (reads the actual image + the key → flowing Hebrew narrative).
@@ -469,7 +505,7 @@ def generate_sketchy_directed(
 
     # Image prompt = visual STYLE spec + the clean SCENE (no clinical jargon).
     base_image_prompt = (
-        SKETCHY_STYLE_PREFIX
+        style_prefix(text_policy)
         + "\n\nSCENE TO ILLUSTRATE — draw EXACTLY this, as one cohesive scene:\n"
         + scene
         + "\n\nABSOLUTE: no written words anywhere in the image EXCEPT the few short"
@@ -484,7 +520,8 @@ def generate_sketchy_directed(
     best_missing = None  # None = not yet measured
 
     for attempt in range(tries):
-        if not generate_image(image_prompt, output_path, api_key=api_key, phase=phase):
+        if not generate_image(image_prompt, output_path, api_key=api_key, phase=phase,
+                              text_policy=text_policy):
             continue
         if not required_items or client is None:
             best_bytes = Path(output_path).read_bytes()

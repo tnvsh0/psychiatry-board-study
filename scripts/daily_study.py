@@ -742,7 +742,7 @@ STEP 4 — BIND EVERY FIGURE TO ITS OWN ELEMENT (this is what removes ambiguity)
   - the FINISH/direction carries the persistence digits.
 STRICT 1:1 — no object may serve two different figures, and no digit-shape may float free.
 
-STEP 5 — PUT THE HERO IN IT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, caught up in the situation and physically involved with it.
+STEP 5 — PUT THE HERO AT THE CENTRE OF THE EVENT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, and the event is HAPPENING TO or AROUND them: they are the one being tested, crashing, being chased, being cheered. Every other figure must be REACTING to the hero or taking part in the same event — pushing, pulling, grabbing, watching them. FORBIDDEN: characters spread evenly across the width of the frame each doing their own separate thing; that is a line-up, not a scene. If you can describe a figure without mentioning the hero or the event, it does not belong.
 
 THE FACTS:
 {facts_text}
@@ -1713,6 +1713,10 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 phase=phase,
                 required_items=required_items,
                 max_image_tries=max_tries,
+                # Epidemiology encodes its figures as object SHAPES, so explanatory
+                # labels would do the picture's job for it — switch off the
+                # label-forward text regime for those images only.
+                text_policy="environment" if aspect == "epidemiology" else "mnemonic",
             )
             if ok:
                 size_mb = png_path.stat().st_size / (1024 * 1024)
