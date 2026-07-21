@@ -68,12 +68,31 @@ SOURCE_PDF_NAMES = [
     "dsm-5-tr.pdf",
     "dulcan.pdf",
     "stahl-essential.pdf",
+    "stahl-pediatric.pdf",
     "kaplan-sadock-synopsis.pdf",
     "syllabus.pdf",
     # kaplan-sadock-comprehensive.pdf intentionally omitted — 352 MB,
     # exceeds practical NotebookLM upload time for daily generation.
     # Add it manually to the main notebook if you want comprehensive coverage.
 ]
+
+# INVARIANT: SOURCE_PDF_NAMES and BOOKS_DIRECTIVE must describe the same books.
+# A book named in a prompt but missing from the notebook does not produce an
+# error — NotebookLM invents plausible page numbers for it. That is exactly what
+# happened before "stahl-pediatric.pdf" was actually added: the day-16 study
+# guide cites "Stahl Pediatric pp. 600-612" in a book that is 525 pages long.
+BOOKS_DIRECTIVE = """המקורות במחברת, לפי סדר עדיפות:
+1. **Dulcan's Textbook of Child and Adolescent Psychiatry 3e** — ספר הליבה. ברירת המחדל לכל נושא קליני בילדים ונוער.
+2. **DSM-5-TR** — קריטריונים אבחנתיים מדויקים.
+3. **Stahl's Essential Psychopharmacology 5e** — מנגנון נוירוביולוגי, קולטנים, מסלולים.
+4. **Stahl's Prescriber's Guide — Children and Adolescents** — מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה (33 תרופות, 525 עמ') — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.
+5. **הסילבוס הרשמי של המועצה המדעית** — מגדיר מה נדרש לבחינה.
+6. **Kaplan & Sadock's Synopsis** — מקור השלמה בלבד. השתמש בו אך ורק כאשר נושא שנדרש לבחינה בילדים ונוער חסר ב-Dulcan (למשל הפרעות אישיות, שאין להן פרק ב-Dulcan). אל תייבא ממנו תוכן של פסיכיאטריה של מבוגרים שאינו רלוונטי לילדים ונוער (דמנציה/אלצהיימר, פסיכיאטריה גריאטרית, תפקוד מיני של מבוגרים וכו').
+
+כללי ציטוט מחייבים:
+- אחרי כל טענה משמעותית ציין עמוד מקור בסוגריים: "(DSM p.68)", "(Dulcan p.173)", "(Stahl C&A p.301)".
+- ל-Synopsis **אין מספרי עמודים** במהדורה שבמחברת. צטט אותו לפי פרק בלבד: "(Synopsis ch.19 Personality Disorders)". אל תמציא לו מספר עמוד.
+- אל תמציא עמודים באף מקור. אם לא מצאת — כתוב "(מקור: הקשר רחב)"."""
 
 
 def slugify(text: str) -> str:
@@ -217,7 +236,7 @@ def build_clinical_context(day):
 
     Deliberately omits the visual symbol legend — those are mnemonic aids
     for the IMAGES only. Clinical content must come from the textbook PDFs
-    (DSM, Dulcan, Stahl, Synopsis, syllabus), NOT from the cartoon symbols.
+    (see BOOKS_DIRECTIVE), NOT from the cartoon symbols.
     Mentioning the cartoon symbols here causes NotebookLM to generate
     flashcards/quiz items about the visual mnemonics ("what does the ninja
     mask represent?") instead of the clinical content ("at what age should
@@ -238,8 +257,10 @@ def build_clinical_context(day):
 
 הוראות חובה — תוכן קליני בלבד:
 - ההוראות הללו מיועדות לחומר לימודי קליני. **אל תכתוב על הסמלים החזותיים/הציורים/האיורים** (אלה נועדו אך ורק לתמונות הליווי — הם לא נושא הלמידה).
-- כל פיסת תוכן חייבת להישען על המקורות במחברת: DSM-5-TR, Dulcan's Textbook of Child and Adolescent Psychiatry, Stahl's Essential Psychopharmacology, Kaplan & Sadock's Synopsis, והסילבוס הרשמי.
-- ציין הפניה לעמוד מקור בסוגריים אחרי כל טענה משמעותית (לדוגמה: "(DSM p.155)" או "(Dulcan p.245)").
+- כל פיסת תוכן חייבת להישען על המקורות במחברת.
+
+{BOOKS_DIRECTIVE}
+
 - מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר לקראת בחינת שלב ב' — חייב להיות תוכן בחינתי, לא מנמוניקה ויזואלית.
 - אל תמציא — אם המידע חסר במקורות, ציין זאת."""
 
@@ -288,9 +309,8 @@ def prompt_video(day, symbol_block, legend_block):
     return base + """
 
 צור סרטון הסבר באורך כ-10-15 דקות, סגנון whiteboard, בעברית.
-התוכן חייב להיות חומר לימוד קליני מהמקורות (DSM, Dulcan, Stahl, Synopsis,
-סילבוס), עם הפניות לעמודים בעקבות כל טענה מרכזית. כיסוי מקיף של *כל*
-ההיבטים שצוינו.
+התוכן חייב להיות חומר לימוד קליני מהמקורות שבמחברת, עם הפניות לעמודים
+בעקבות כל טענה מרכזית. כיסוי מקיף של *כל* ההיבטים שצוינו.
 
 הסרטון עומד בפני עצמו ולא חייב להיראות כמו תמונות סטילס אחרות של היום.
 ניתן להזכיר בקצרה את הסמלים החזותיים של היום כעוגנים, אבל תוכן הסרטון
@@ -1119,7 +1139,9 @@ def extract_facts(day, notebook_id):
     title_he = day.get("title_he", day.get("title_en", ""))
     aspects = day.get("aspects", [])
 
-    schema_prompt = f"""Based ONLY on the sources in this notebook (DSM-5-TR, Dulcan, Stahl, Kaplan & Sadock Synopsis, syllabus), extract the high-yield facts about: {title_he}
+    schema_prompt = f"""Based ONLY on the sources in this notebook, extract the high-yield facts about: {title_he}
+
+{BOOKS_DIRECTIVE}
 
 Return STRICT JSON (no prose, no markdown fences) with this exact shape. Fill every field from the sources; if a field is genuinely not in the sources, use the string "לא צוין". Keep values SHORT and concrete (numbers, names) — this drives mnemonic image generation.
 
@@ -1210,7 +1232,9 @@ def extract_day_content_from_main(day, symbols_block, main_notebook_id):
     aspects = day.get("aspects", [])
     focus = day.get("prompt_focus", "")
 
-    extraction_prompt = f"""Extract from this notebook (DSM-5-TR, Dulcan, Stahl Essential, Stahl Pediatric, and the syllabus) ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
+    extraction_prompt = f"""Extract from the sources in this notebook ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
+
+{BOOKS_DIRECTIVE}
 
 Topic: {title_he}
 
@@ -1220,7 +1244,7 @@ Aspects to cover comprehensively:
 {', '.join(aspects)}
 
 Output as a long, well-structured Markdown document in Hebrew (with English drug/receptor/concept names as they appear in source). Include:
-- Page references from each source (DSM p.NNN, Dulcan p.NNN, Stahl p.NNN)
+- Page references from each source (DSM p.NNN, Dulcan p.NNN, Stahl p.NNN); Synopsis by chapter only
 - Direct citations / paraphrases (lots — this is the source material)
 - All clinically relevant detail (criteria, epidemiology, etiology, treatment, monitoring, special considerations for pediatric population)
 - Cross-references between sources where they agree/disagree
@@ -1300,7 +1324,11 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 ## 0. מפת המקורות (CRITICAL — page references)
 טבלה: לכל סעיף ב-מדריך, ציין באיזה ספר וב-איזה עמוד נמצא החומר.
 פורמט:
-| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | Stahl Essential עמ' | Stahl Pediatric עמ' | סילבוס עמ' |
+| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | Stahl Essential עמ' | Stahl C&A עמ' | Synopsis פרק | סילבוס עמ' |
+
+עמודת Synopsis מכילה **שם/מספר פרק בלבד**, לא עמודים, ורק כשבאמת נעשה בו שימוש
+להשלמת פער ב-Dulcan. אם לא נעשה בו שימוש — סמן "—".
+עמודת Stahl C&A רלוונטית רק לנושאים שכוללים תרופה מתוך 33 המונוגרפיות שבספר.
 
 ## 1. מבוא + הגדרה
 ## 2. {aspects[0] if len(aspects) > 0 else 'קריטריונים'}
@@ -1315,8 +1343,9 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 - שפה: עברית לכל הסבר. אנגלית רק לשמות תרופות גנריים, קולטנים (D2, 5-HT2A...), מונחים קליניים (EPS, NMS, SSRI), וקיצורי DSM/ICD.
 - **לכל פיסת מידע ציין עמוד מקור בסוגריים**: "(DSM p.347)" או "(Dulcan ch.7 p.412)".
 - אורך: 2000-4000 מילים. ממוקד מהותית בנושא היום, לא סקירה כללית.
-- אסמכתאות: מבוסס אך ורק על המקורות במחברת. אל תמציא עמודים — אם לא מצאת, ציין "(מקור: סילבוס/הקשר רחב)".
-- הסתמך על: DSM-5-TR, Dulcan's Textbook of Child and Adolescent Psychiatry 3e, Stahl's Essential Psychopharmacology, Stahl's Children & Adolescents Prescriber's Guide, ו-הסילבוס הרשמי."""
+- אסמכתאות: מבוסס אך ורק על המקורות במחברת.
+
+{BOOKS_DIRECTIVE}"""
 
     r = nb_run(["ask", prompt, "--json"], timeout=900)
     if r.returncode != 0:

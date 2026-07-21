@@ -22,7 +22,7 @@ Last updated: 2026-06-04
 | → SSH | `gcloud compute ssh weekly-review-vm --zone=me-west1-b --project=psych-research-agent` |
 | → repo on VM | `/opt/psychiatry-board-study` (does `git pull` to update) |
 | → venv on VM | `/opt/venv/bin/python`, `/opt/venv/bin/notebooklm` |
-| → textbook PDFs on VM | `/opt/sources/` (dsm-5-tr, dulcan, stahl-essential, kaplan-sadock-synopsis, syllabus) |
+| → textbook PDFs on VM | `/opt/sources/` (dsm-5-tr, dulcan, stahl-essential, **stahl-pediatric**, kaplan-sadock-synopsis, syllabus) |
 | **Smoke-test images (local)** | `_test_outputs/` (e.g. `smoke_adhd_v9_inattention.png`) — gitignored |
 | **Textbook PDFs (local)** | `Text BOOKS/` — gitignored |
 

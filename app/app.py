@@ -595,8 +595,19 @@ def _condense_source_map(table_md: str) -> dict:
 
     # Expand every token to individual pages, dedupe, and re-merge consecutive
     # pages into ranges so the list is clean (no '68, 68-70'; no '71, 72, 73').
+    #
+    # Exception: the Synopsis edition in the notebook has no printed page
+    # numbers, so its column holds chapter references ('ch.19 Personality
+    # Disorders'). Running those through _merge_pages would mine the digits out
+    # and render 'ch.19' as "page 19" — a citation that points nowhere. Pass
+    # chapter columns through verbatim instead.
     out = {}
     for book, toks in per_book.items():
+        if "פרק" in book or "ch." in book.lower():
+            seen = list(dict.fromkeys(t for t in toks if t))
+            if seen:
+                out[book] = ", ".join(seen)
+            continue
         merged = _merge_pages(toks)
         if merged:
             out[book] = merged
