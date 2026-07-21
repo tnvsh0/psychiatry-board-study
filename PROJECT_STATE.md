@@ -15,7 +15,7 @@ Last updated: 2026-06-04
 | **GitHub repo** (private) | https://github.com/tnvsh0/psychiatry-board-study |
 | **Releases** (one per chapter, holds all artifacts) | https://github.com/tnvsh0/psychiatry-board-study/releases |
 | → Day 1 release | https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-001-psychiatric-examination-of-child-and-adolescent |
-| → Day 16 (ADHD) release | https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-016-adhd-core |
+| → ADHD release (**stale tag**) | https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-016-adhd-core — ADHD is now chapter **17**, so the bulk run will publish `study-017-adhd-core` and this tag is orphaned. Delete it once 017 exists. |
 | **Streamlit app — LOCAL** | `streamlit run app/app.py` → http://localhost:8501 |
 | **Streamlit app — ONLINE (Cloud Run)** | NOT DEPLOYED YET (see §9). Will be a `*.run.app` URL. |
 | **Generation VM** | `weekly-review-vm`, zone `me-west1-b`, project `psych-research-agent` |
@@ -36,7 +36,7 @@ Last updated: 2026-06-04
 ## 2. What This Project Is
 
 An automated study course for the Israeli psychiatry board exam (שלב ב'), child &
-adolescent focus. **126 "chapters"** (originally "days"; renamed because each is a
+adolescent focus. **144 "chapters"** (originally "days"; renamed because each is a
 learning unit of variable length), organized into **10 phases** (foundations →
 neurodevelopmental → mood/anxiety → … → psychotherapy).
 
@@ -89,7 +89,7 @@ Hebrew caption, study guide, flippable flashcards with **spaced repetition**, qu
 
 **Pending (the next big steps):**
 1. **Verify Day 16 clean set** visually (open the release assets or the Streamlit app).
-2. **Full bulk run** — regenerate ALL 126 chapters on Nano Banana Pro (~$0.13/img,
+2. **Full bulk run** — regenerate ALL 144 chapters on Nano Banana Pro (~$0.13/img,
    ~$67 total). **STRATEGY: spread across months** via `--bulk --start-from/--end-at
    --resume` (~12-18 chapters/month) so the Google AI Pro **$10/month Cloud credits**
    absorb the cost (≈ free). Test ONE chapter (day 16) first. (Confirm the $10/mo
@@ -107,7 +107,7 @@ completeness loop, comorbidity, scoped infographics). See `git log` on `main`.
 scripts/daily_study.py  --day N   (or --bulk)
    │  (runs on the VM; calls the notebooklm CLI + Gemini)
    ├─ 1. find/create per-day NotebookLM notebook
-   ├─ 2. upload 5 textbook PDFs to it  (so study guide can cite pages)
+   ├─ 2. upload 6 textbook PDFs to it  (so study guide can cite pages)
    ├─ 3. extract a focused .md from the MAIN notebook → add as source
    ├─ 4. start NotebookLM artifacts (async): audio, video, infographics, flashcards, quiz
    ├─ 5. ask_study_guide()  → study_guide.md (with page refs)
@@ -192,7 +192,7 @@ Real SketchyMedical reference is in `Text BOOKS/` / `_test_outputs/sketchy_ref.p
 | `scripts/daily_study.py` | **The orchestrator.** Per-chapter pipeline. Builds the scene-director prompts, calls NotebookLM + Gemini, uploads the Release. Run with `--day N` or `--bulk`. |
 | `scripts/gemini_image.py` | Gemini calls: `propose_anchor_theme`, `run_scene_director`, `generate_sketchy_directed` (director→image→[coverage-retry]→caption), `generate_image` (3× retry), `check_coverage` (criteria completeness), two-stage caption (`_visual_inventory` + `CAPTION_INSTRUCTION`), `SKETCHY_STYLE_PREFIX`. Model = `gemini-3-pro-image-preview` (Nano Banana Pro) by default; override via env `SKETCHY_IMAGE_MODEL` (e.g. `gemini-3.1-flash-image-preview` = Flash/free-tier). |
 | `schedule/symbols.json` | The symbol codex (3 tiers above). 156 `symbols` + 60 `drugs` + 17 `scenes` + 5 `ions` + 7 `epidemiology_meta` + `number_pegs`. |
-| `schedule/schedule.json` | The 126-chapter curriculum (10 phases). Each chapter: title, aspects, symbols_needed, prompt_focus, optional `anchor_world`/`anchor_zones` (curated world override — day 16 has the driving-test world). |
+| `schedule/schedule.json` | The 144-chapter curriculum (10 phases). Each chapter: title, aspects, symbols_needed, prompt_focus, optional `anchor_world`/`anchor_zones` (curated world override — chapter 17 (ADHD) has the driving-test world). |
 | `schedule/phase_palette.json` | Per-phase color hints (UI theming + gentle image palette). |
 | `app/app.py` | **The Streamlit course site.** Reads Releases (private repo, server-side fetch with GH_TOKEN), renders each chapter. Spaced-repetition flashcards. Recommended-reading box (pages per book). |
 | `scripts/sr_engine.py` | SM-2 spaced-repetition algorithm (imported by app.py). |
