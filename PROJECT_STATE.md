@@ -196,6 +196,9 @@ Real SketchyMedical reference is in `Text BOOKS/` / `_test_outputs/sketchy_ref.p
 | `schedule/phase_palette.json` | Per-phase color hints (UI theming + gentle image palette). |
 | `app/app.py` | **The Streamlit course site.** Reads Releases (private repo, server-side fetch with GH_TOKEN), renders each chapter. Spaced-repetition flashcards. Recommended-reading box (pages per book). |
 | `scripts/sr_engine.py` | SM-2 spaced-repetition algorithm (imported by app.py). |
+| `scripts/build_book_map.py` | **Run once.** Extracts each textbook's chapter map + PRINTED page ranges into `schedule/book_map.json` (needs the local PDFs). Scans real page folios rather than assuming a fixed front-matter offset, because Dulcan's offset is not constant. |
+| `scripts/audit_coverage.py` | **The coverage check.** Reads the "מפת המקורות" table from every generated `study_guide.md`, accumulates cited pages per book, and reports which book chapters no chapter has touched — plus any page cited *past the book's last page*, i.e. fabricated. Run after each batch. |
+| `schedule/book_map.json` | Output of `build_book_map.py`; the audit runs off this, not off the 500 MB of PDFs. |
 | `Dockerfile` (root) + `.gcloudignore` | Cloud Run deploy (bundles app.py + sr_engine.py). |
 | `scripts/daily_notify.py` | (older) ntfy notification + progress tracking. |
 | `scripts/_smoke_adhd_v4.py` | Local Gemini-only smoke test for ADHD images (hand-built facts, no NotebookLM needed). |
@@ -221,6 +224,12 @@ python scripts/_smoke_adhd_v4.py        # writes _test_outputs/smoke_adhd_*.png 
 # --- Run the Streamlit app locally ---
 export GH_TOKEN=$(gh auth token)
 streamlit run app/app.py                # http://localhost:8501
+
+# --- Coverage audit: are we actually covering the books? ---
+python scripts/build_book_map.py     # once, locally, needs "Text BOOKS/"
+python scripts/audit_coverage.py     # after each batch; add --json for CI
+#   Reports per book: which chapters no study guide has cited, and any page
+#   cited past the book's last page (= the model invented it).
 
 # --- notebooklm auth (only needed on the VM, when it expires) ---
 notebooklm login    # opens a browser; run interactively (not via nohup)
