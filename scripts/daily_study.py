@@ -44,9 +44,12 @@ except ImportError:
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # Default IDs (override via env)
+# v2 notebook, rebuilt 2026-07-23 in the current Google account after the account
+# switch orphaned the original ("157ae88a…" belonged to the old account → RPC
+# GET_NOTEBOOK failed). Holds the 6 course textbooks (comprehensive omitted).
 NOTEBOOK_ID = os.environ.get(
     "BOARD_STUDY_NOTEBOOK_ID",
-    "157ae88a-ba4c-4d76-a1fd-c551d449a782",  # Board-Exam study material
+    "17546075-8a85-4998-96ff-8619238fc8a4",  # Board-Exam study material (v2)
 )
 GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 
