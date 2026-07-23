@@ -23,6 +23,9 @@ REPO = Path(__file__).resolve().parents[1]
 CAL = json.loads((REPO / "schedule" / "study_calendar.json").read_text(encoding="utf-8"))
 DAYS = {d["index"]: d for d in json.loads(
     (REPO / "schedule" / "schedule.json").read_text(encoding="utf-8"))["days"]}
+_rg_path = REPO / "schedule" / "reading_guide.json"
+READING = (json.loads(_rg_path.read_text(encoding="utf-8"))["chapters"]
+           if _rg_path.exists() else {})
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else REPO / "schedule" / "study_calendar.xlsx"
 
 FONT = "Arial"
@@ -51,6 +54,15 @@ def fmt(iso: str) -> str:
 def phase_name(p: int) -> str:
     return next((d.get("phase_name") for d in DAYS.values()
                  if d["phase"] == p and d.get("phase_name")), f"Phase {p}")
+
+
+def reading_cell(idx: int) -> str:
+    """Compose a compact multi-line reading pointer for one chapter."""
+    entry = READING.get(str(idx), {}).get("reading", {})
+    lines = [f"{book}: {val}" for book, val in entry.items() if book != "note"]
+    if entry.get("note"):
+        lines.append("ℹ " + entry["note"])
+    return "\n".join(lines)
 
 
 def style_header(ws, row, ncols):
@@ -115,13 +127,18 @@ def build_weekly(ws):
 def build_chapters(ws):
     ws.sheet_view.rightToLeft = True
 
+    headers = ["פרק", "נושא", "פאזה", "צפיפות", "שבוע", "מדריך קריאה (עמודים בספרים)", "הושלם"]
+    done_col = get_column_letter(len(headers))   # 'G' — the ✓ column
+    ch_col = get_column_letter(1)                 # 'A' — chapter number
+    first, last = 4, 3 + len(DAYS)                # data rows 4..147
+
     # Progress summary band (live formulas over the checklist below).
     ws["A1"] = "התקדמות:"
     ws["A1"].font = Font(name=FONT, bold=True, size=12)
     ws["B1"] = "הושלמו"
-    ws["C1"] = '=COUNTIF(F4:F147,"✓")'
+    ws["C1"] = f'=COUNTIF({done_col}{first}:{done_col}{last},"✓")'
     ws["D1"] = "מתוך"
-    ws["E1"] = "=COUNTA(A4:A147)"
+    ws["E1"] = f"=COUNTA({ch_col}{first}:{ch_col}{last})"
     ws["F1"] = "אחוז"
     ws["G1"] = "=IF(E1=0,0,C1/E1)"
     ws["G1"].number_format = "0.0%"
@@ -129,7 +146,6 @@ def build_chapters(ws):
         ws[f"{col}1"].font = Font(name=FONT, bold=True, size=12)
         ws[f"{col}1"].alignment = CENTER
 
-    headers = ["פרק", "נושא", "פאזה", "צפיפות", "שבוע", "הושלם"]
     ws.append([])              # row 2 spacer
     ws.append(headers)         # row 3
     style_header(ws, 3, len(headers))
@@ -142,22 +158,22 @@ def build_chapters(ws):
         d = DAYS[idx]
         ws.append([idx, d["title_he"], f'{d["phase"]}. {phase_name(d["phase"])}',
                    DENS_HE.get(d.get("estimated_density", "medium"), "בינונית"),
-                   ch_week.get(idx, ""), ""])
+                   ch_week.get(idx, ""), reading_cell(idx), ""])
         r = ws.max_row
         for c in range(1, len(headers) + 1):
             cell = ws.cell(row=r, column=c)
             cell.font = CFONT
             cell.border = BORDER
-            cell.alignment = RIGHT if c == 2 else CENTER
+            cell.alignment = RIGHT if c in (2, 6) else CENTER
 
-    widths = [6, 46, 34, 10, 8, 9]
+    widths = [6, 42, 30, 9, 7, 52, 9]
     for i, w in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A4"
 
     dv = DataValidation(type="list", formula1='"✓,"', allow_blank=True)
     ws.add_data_validation(dv)
-    dv.add(f"F4:F{ws.max_row}")
+    dv.add(f"{done_col}{first}:{done_col}{last}")
 
 
 def main() -> int:

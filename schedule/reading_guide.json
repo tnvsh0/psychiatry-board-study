@@ -1,0 +1,1141 @@
+{
+  "_note": "Chapter-level reading pointers derived from book_map.json via a hand-built curriculum->book-chapter map. Not the per-subtopic page refs that NotebookLM produces per generated chapter — those supersede these once a chapter's study guide exists. DSM cited by diagnostic class; Synopsis by chapter (unpaginated edition).",
+  "chapters": {
+    "1": {
+      "title_he": "בדיקת ילד ומתבגר",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 1+4+5, עמ' 3-16, 59-90"
+      }
+    },
+    "2": {
+      "title_he": "יסודות נוירואנטומיה לפסיכיאטר",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 6, עמ' 91-106",
+        "Stahl Essential": "פרק 1, עמ' 1-28"
+      }
+    },
+    "3": {
+      "title_he": "סקירה: נוירוטרנסמיטרים",
+      "phase": 1,
+      "reading": {
+        "Stahl Essential": "פרק 1+2, עמ' 1-50"
+      }
+    },
+    "4": {
+      "title_he": "מסלולי דופמין",
+      "phase": 1,
+      "reading": {
+        "Stahl Essential": "פרק 4, עמ' 77-158"
+      }
+    },
+    "5": {
+      "title_he": "מערכת הסרוטונין",
+      "phase": 1,
+      "reading": {
+        "Stahl Essential": "פרק 5, עמ' 159-243"
+      }
+    },
+    "6": {
+      "title_he": "מערכת הנוראפינפרין",
+      "phase": 1,
+      "reading": {
+        "Stahl Essential": "פרק 6, עמ' 244-282"
+      }
+    },
+    "7": {
+      "title_he": "איזון GABA / גלוטמט",
+      "phase": 1,
+      "reading": {
+        "Stahl Essential": "פרק 3+6, עמ' 51-76, 244-282"
+      }
+    },
+    "8": {
+      "title_he": "התפתחות נורמטיבית: גיל הינקות (0-2)",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 2, עמ' 17-38"
+      }
+    },
+    "9": {
+      "title_he": "התפתחות נורמטיבית: גיל הגן (2-5)",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 3, עמ' 39-58"
+      }
+    },
+    "10": {
+      "title_he": "התפתחות נורמטיבית: גיל בית ספר (6-12)",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 4, עמ' 59-74"
+      }
+    },
+    "11": {
+      "title_he": "התפתחות נורמטיבית: גיל ההתבגרות (13-18)",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 5, עמ' 75-90"
+      }
+    },
+    "12": {
+      "title_he": "תורת ההתקשרות ומנטליזציה",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 2, עמ' 17-38",
+        "Synopsis": "פרק 32",
+        "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "13": {
+      "title_he": "טמפרמנט",
+      "phase": 1,
+      "reading": {
+        "Synopsis": "פרק 32",
+        "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "14": {
+      "title_he": "קריטריונים כלליים להפרעת אישיות",
+      "phase": 1,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "15": {
+      "title_he": "מצב רוח, אפקט, טמפרמנט — הערכה קלינית",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 1, עמ' 3-16"
+      }
+    },
+    "16": {
+      "title_he": "עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים",
+      "phase": 1,
+      "reading": {
+        "Dulcan": "פרק 33, עמ' 677-694"
+      }
+    },
+    "17": {
+      "title_he": "הפרעת קשב וריכוז (ADHD) — ליבה",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 10, עמ' 173-196",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100",
+        "Stahl Essential": "פרק 11, עמ' 449-485"
+      }
+    },
+    "18": {
+      "title_he": "טיפול ב-ADHD: סטימולנטים",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 34, עמ' 695-728",
+        "Stahl Essential": "פרק 11, עמ' 449-485",
+        "Stahl C&A": "amphetamine-d, amphetamine-d,l, lisdexamfetamine, methylphenidate-d, methylphenidate-d,l (עמ' 1-36, 269-284, 313-350)"
+      }
+    },
+    "19": {
+      "title_he": "טיפול ב-ADHD: לא-סטימולנטים",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 34, עמ' 695-728",
+        "Stahl Essential": "פרק 11, עמ' 449-485",
+        "Stahl C&A": "atomoxetine, clonidine, guanfacine, bupropion (עמ' 69-96, 141-154, 243-254)"
+      }
+    },
+    "20": {
+      "title_he": "הפרעה אוטיסטית (ASD)",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 8, עמ' 135-156",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100"
+      }
+    },
+    "21": {
+      "title_he": "מוגבלות שכלית התפתחותית",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 7, עמ' 107-134",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100"
+      }
+    },
+    "22": {
+      "title_he": "הפרעות למידה ספציפיות (SLD)",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 9, עמ' 157-172",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100"
+      }
+    },
+    "23": {
+      "title_he": "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 9, עמ' 157-172",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100"
+      }
+    },
+    "24": {
+      "title_he": "הפרעות טיקים ותסמונת טורט",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 20, עמ' 437-456",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100"
+      }
+    },
+    "25": {
+      "title_he": "הפרעות תנועה סטראוטיפיות + Dyspraxia",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 9, עמ' 157-172",
+        "DSM-5-TR": "Neurodevelopmental, עמ' 35-100"
+      }
+    },
+    "26": {
+      "title_he": "ID — Down + Fragile X",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 7, עמ' 107-134"
+      }
+    },
+    "27": {
+      "title_he": "הפרעות נוירו-התפתחותיות נוספות",
+      "phase": 2,
+      "reading": {
+        "Dulcan": "פרק 7+8, עמ' 107-156"
+      }
+    },
+    "28": {
+      "title_he": "הפרעת דיכאון מז'ורית (MDD)",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 13, עמ' 245-278",
+        "DSM-5-TR": "Depressive, עמ' 177-214",
+        "Stahl Essential": "פרק 6+7, עמ' 244-358"
+      }
+    },
+    "29": {
+      "title_he": "SSRI לעומק",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 35, עמ' 729-762",
+        "Stahl Essential": "פרק 7, עמ' 283-358",
+        "Stahl C&A": "citalopram, escitalopram, fluoxetine, fluvoxamine, paroxetine, sertraline (עמ' 111-124, 185-214, 229-242, 381-396, 439-452)"
+      }
+    },
+    "30": {
+      "title_he": "SNRI + נוגדי דיכאון אטיפיים",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 35, עמ' 729-762",
+        "Stahl Essential": "פרק 7, עמ' 283-358",
+        "Stahl C&A": "duloxetine, venlafaxine, bupropion, trazodone (עמ' 83-96, 171-184, 453-464, 479-492)"
+      }
+    },
+    "31": {
+      "title_he": "TCA + MAOI",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 35, עמ' 729-762",
+        "Stahl Essential": "פרק 7, עמ' 283-358",
+        "Stahl C&A": "clomipramine (עמ' 125-140)"
+      }
+    },
+    "32": {
+      "title_he": "PDD + DMDD + PMDD",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 13, עמ' 245-278",
+        "DSM-5-TR": "Depressive, עמ' 177-214"
+      }
+    },
+    "33": {
+      "title_he": "הפרעה דו-קוטבית I",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 14, עמ' 279-308",
+        "DSM-5-TR": "Bipolar, עמ' 139-176",
+        "Stahl Essential": "פרק 6+7, עמ' 244-358"
+      }
+    },
+    "34": {
+      "title_he": "Bipolar II + Cyclothymia + bipolar בילדים",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 14, עמ' 279-308",
+        "DSM-5-TR": "Bipolar, עמ' 139-176"
+      }
+    },
+    "35": {
+      "title_he": "ליתיום",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 36, עמ' 763-784",
+        "Stahl Essential": "פרק 7, עמ' 283-358",
+        "Stahl C&A": "lithium (עמ' 285-298)"
+      }
+    },
+    "36": {
+      "title_he": "מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 36, עמ' 763-784",
+        "Stahl Essential": "פרק 7, עמ' 283-358",
+        "Stahl C&A": "valproate (עמ' 465-478)"
+      }
+    },
+    "37": {
+      "title_he": "ילדים: DMDD מול ביפולר; אובדנות נער",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 13+14+26, עמ' 245-308, 551-564"
+      }
+    },
+    "38": {
+      "title_he": "הפרעת חרדה מוכללת (GAD)",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 15, עמ' 309-344",
+        "DSM-5-TR": "Anxiety, עמ' 215-262",
+        "Stahl Essential": "פרק 8, עמ' 359-378"
+      }
+    },
+    "39": {
+      "title_he": "הפרעת פאניקה + אגורופוביה",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 15, עמ' 309-344",
+        "DSM-5-TR": "Anxiety, עמ' 215-262",
+        "Stahl Essential": "פרק 8, עמ' 359-378"
+      }
+    },
+    "40": {
+      "title_he": "חרדה חברתית + Selective Mutism",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 15, עמ' 309-344",
+        "DSM-5-TR": "Anxiety, עמ' 215-262"
+      }
+    },
+    "41": {
+      "title_he": "חרדת פרידה + פוביה ספציפית",
+      "phase": 3,
+      "reading": {
+        "Dulcan": "פרק 15, עמ' 309-344",
+        "DSM-5-TR": "Anxiety, עמ' 215-262"
+      }
+    },
+    "42": {
+      "title_he": "BZD + Buspirone + סקירת אנקסיוליטים",
+      "phase": 3,
+      "reading": {
+        "Stahl Essential": "פרק 8+10, עמ' 359-378, 401-448"
+      }
+    },
+    "43": {
+      "title_he": "OCD — ליבה",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 17, עמ' 365-388",
+        "DSM-5-TR": "Obsessive-Compulsive, עמ' 263-294",
+        "Stahl Essential": "פרק 13, עמ' 538-578"
+      }
+    },
+    "44": {
+      "title_he": "טיפול ב-OCD: ERP + SSRI מינון גבוה",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 17+43, עמ' 365-388, 967-984",
+        "Stahl Essential": "פרק 13, עמ' 538-578"
+      }
+    },
+    "45": {
+      "title_he": "BDD + Hoarding",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 17, עמ' 365-388",
+        "DSM-5-TR": "Obsessive-Compulsive, עמ' 263-294"
+      }
+    },
+    "46": {
+      "title_he": "Trichotillomania + Excoriation",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 17, עמ' 365-388",
+        "DSM-5-TR": "Obsessive-Compulsive, עמ' 263-294"
+      }
+    },
+    "47": {
+      "title_he": "PTSD — ליבה",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 16, עמ' 345-364",
+        "DSM-5-TR": "Trauma, עמ' 295-328",
+        "Stahl Essential": "פרק 8, עמ' 359-378"
+      }
+    },
+    "48": {
+      "title_he": "טיפול ב-PTSD: Prazosin, SSRI, TF-CBT, EMDR",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 16, עמ' 345-364",
+        "Stahl Essential": "פרק 8, עמ' 359-378"
+      }
+    },
+    "49": {
+      "title_he": "תגובת לחץ חריפה + הפרעת הסתגלות",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 16, עמ' 345-364",
+        "DSM-5-TR": "Trauma, עמ' 295-328"
+      }
+    },
+    "50": {
+      "title_he": "אבל, שכול והפרעת אבל ממושך",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 16, עמ' 345-364",
+        "DSM-5-TR": "Trauma, עמ' 295-328"
+      }
+    },
+    "51": {
+      "title_he": "התעללות והזנחה בילדים",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 24, עמ' 517-538"
+      }
+    },
+    "52": {
+      "title_he": "RAD + DSED",
+      "phase": 4,
+      "reading": {
+        "Dulcan": "פרק 16, עמ' 345-364",
+        "DSM-5-TR": "Trauma, עמ' 295-328"
+      }
+    },
+    "53": {
+      "title_he": "הפרעות דיסוציאטיביות",
+      "phase": 4,
+      "reading": {
+        "DSM-5-TR": "Dissociative, עמ' 329-348",
+        "Synopsis": "פרק 11"
+      }
+    },
+    "54": {
+      "title_he": "הפרעות סומטיות + Conversion + Factitious",
+      "phase": 4,
+      "reading": {
+        "DSM-5-TR": "Somatic Symptom, עמ' 349-370",
+        "Synopsis": "פרק 12"
+      }
+    },
+    "55": {
+      "title_he": "סכיזופרניה — ליבה",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 18, עמ' 389-410",
+        "DSM-5-TR": "Schizophrenia Spectrum, עמ' 101-138",
+        "Stahl Essential": "פרק 4, עמ' 77-158"
+      }
+    },
+    "56": {
+      "title_he": "ניורוביולוגיה של סכיזופרניה",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 18, עמ' 389-410",
+        "Stahl Essential": "פרק 4, עמ' 77-158"
+      }
+    },
+    "57": {
+      "title_he": "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 18, עמ' 389-410",
+        "DSM-5-TR": "Schizophrenia Spectrum, עמ' 101-138"
+      }
+    },
+    "58": {
+      "title_he": "אנטיפסיכוטיים דור ראשון (FGA)",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "chlorpromazine, fluphenazine, haloperidol, pimozide (עמ' 97-110, 215-228, 255-268, 397-408)"
+      }
+    },
+    "59": {
+      "title_he": "אנטיפסיכוטיים דור שני (SGA)",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "aripiprazole, asenapine, clozapine, lurasidone, olanzapine, paliperidone, quetiapine, risperidone (עמ' 37-68, 155-170, 299-312, 351-380, 409-438)"
+      }
+    },
+    "60": {
+      "title_he": "Clozapine — קלוזפין לעמיד לטיפול",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "clozapine (עמ' 155-170)"
+      }
+    },
+    "61": {
+      "title_he": "אגוניסטים חלקיים: Aripiprazole, Brexpiprazole, Cariprazine",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "aripiprazole (עמ' 37-54)"
+      }
+    },
+    "62": {
+      "title_he": "SGA מטבוליים: Olanzapine, Quetiapine, Risperidone",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "olanzapine, quetiapine, risperidone (עמ' 351-366, 409-438)"
+      }
+    },
+    "63": {
+      "title_he": "SGA לא-מטבוליים: Lurasidone, Ziprasidone, Lumateperone",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "lurasidone (עמ' 299-312)"
+      }
+    },
+    "64": {
+      "title_he": "זריקות אנטיפסיכוטיות ארוכות-טווח (LAI)",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "Stahl Essential": "פרק 5, עמ' 159-243",
+        "Stahl C&A": "paliperidone, risperidone (עמ' 367-380, 423-438)"
+      }
+    },
+    "65": {
+      "title_he": "EPS: דיסטוניה, אקתיזיה, פרקינסוניזם",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "DSM-5-TR": "Medication-Induced Movement, עמ' 807-820",
+        "Stahl Essential": "פרק 5, עמ' 159-243"
+      }
+    },
+    "66": {
+      "title_he": "Tardive Dyskinesia + מעכבי VMAT2",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37, עמ' 785-846",
+        "DSM-5-TR": "Medication-Induced Movement, עמ' 807-820"
+      }
+    },
+    "67": {
+      "title_he": "NMS — תסמונת ממאירה ניורולפטית",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 37+29, עמ' 605-620, 785-846",
+        "DSM-5-TR": "Medication-Induced Movement, עמ' 807-820"
+      }
+    },
+    "68": {
+      "title_he": "קטטוניה",
+      "phase": 5,
+      "reading": {
+        "DSM-5-TR": "Schizophrenia Spectrum, עמ' 101-138"
+      }
+    },
+    "69": {
+      "title_he": "ניהול פסיכוזה חריפה במיון",
+      "phase": 5,
+      "reading": {
+        "Dulcan": "פרק 29, עמ' 605-620"
+      }
+    },
+    "70": {
+      "title_he": "ECT וטיפולים סומטיים אחרים",
+      "phase": 5,
+      "reading": {
+        "Synopsis": "פרק 22",
+        "note": "ECT — Synopsis פרק 22; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "71": {
+      "title_he": "נדודי שינה + CBT-I",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 22, עמ' 473-502",
+        "DSM-5-TR": "Sleep-Wake, עמ' 407-476",
+        "Stahl Essential": "פרק 10, עמ' 401-448"
+      }
+    },
+    "72": {
+      "title_he": "תרופות שינה",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 22, עמ' 473-502",
+        "Stahl Essential": "פרק 10, עמ' 401-448"
+      }
+    },
+    "73": {
+      "title_he": "נרקולפסיה + Pitolisant",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 22, עמ' 473-502",
+        "DSM-5-TR": "Sleep-Wake, עמ' 407-476",
+        "Stahl Essential": "פרק 10, עמ' 401-448"
+      }
+    },
+    "74": {
+      "title_he": "פרסומניות + תסמונת רגליים חסרות מנוחה",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 22, עמ' 473-502",
+        "DSM-5-TR": "Sleep-Wake, עמ' 407-476"
+      }
+    },
+    "75": {
+      "title_he": "Anorexia Nervosa",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 19, עמ' 411-436",
+        "DSM-5-TR": "Feeding and Eating, עמ' 371-398"
+      }
+    },
+    "76": {
+      "title_he": "Bulimia Nervosa + Binge Eating Disorder",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 19, עמ' 411-436",
+        "DSM-5-TR": "Feeding and Eating, עמ' 371-398"
+      }
+    },
+    "77": {
+      "title_he": "ARFID + Pica + Rumination",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 19, עמ' 411-436",
+        "DSM-5-TR": "Feeding and Eating, עמ' 371-398"
+      }
+    },
+    "78": {
+      "title_he": "Enuresis + Encopresis",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 21, עמ' 457-472",
+        "DSM-5-TR": "Elimination, עמ' 399-406"
+      }
+    },
+    "79": {
+      "title_he": "התפתחות שינה בילדים + תזוזת מתבגרים",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 22, עמ' 473-502"
+      }
+    },
+    "80": {
+      "title_he": "הפרעות אכילה: FBT + ייצוב רפואי",
+      "phase": 6,
+      "reading": {
+        "Dulcan": "פרק 19+41, עמ' 411-436, 933-954"
+      }
+    },
+    "81": {
+      "title_he": "הפרעת שימוש באלכוהול + גמילה",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666"
+      }
+    },
+    "82": {
+      "title_he": "טיפול ב-AUD: Naltrexone, Acamprosate, Disulfiram",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "Stahl Essential": "פרק 13, עמ' 538-578"
+      }
+    },
+    "83": {
+      "title_he": "OUD + גמילה",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666"
+      }
+    },
+    "84": {
+      "title_he": "טיפול ב-OUD: Methadone, Buprenorphine, Naltrexone, Naloxone",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "Stahl Essential": "פרק 13, עמ' 538-578"
+      }
+    },
+    "85": {
+      "title_he": "הפרעת שימוש בסטימולנטים",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666",
+        "Stahl Essential": "פרק 13, עמ' 538-578"
+      }
+    },
+    "86": {
+      "title_he": "הפרעת שימוש בקנאביס",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666"
+      }
+    },
+    "87": {
+      "title_he": "גמילה מעישון: Varenicline, NRT, Bupropion",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "Stahl C&A": "bupropion (עמ' 83-96)"
+      }
+    },
+    "88": {
+      "title_he": "הפרעת שימוש בסדאטיביים/היפנוטיים/אנקסיוליטיים",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666"
+      }
+    },
+    "89": {
+      "title_he": "הלוצינוגנים + קפאין + שאיפות",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666"
+      }
+    },
+    "90": {
+      "title_he": "התמכרות התנהגותית: הימורים",
+      "phase": 7,
+      "reading": {
+        "Dulcan": "פרק 12, עמ' 221-244",
+        "DSM-5-TR": "Substance, עמ' 543-666",
+        "Stahl Essential": "פרק 13, עמ' 538-578"
+      }
+    },
+    "91": {
+      "title_he": "הפרעת אישיות פרנואידית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "92": {
+      "title_he": "הפרעת אישיות סכיזואידית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "93": {
+      "title_he": "הפרעת אישיות סכיזוטיפלית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "94": {
+      "title_he": "BPD — Borderline Personality Disorder",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "95": {
+      "title_he": "טיפול ב-BPD: DBT",
+      "phase": 8,
+      "reading": {
+        "Synopsis": "פרק 19, 23",
+        "note": "טיפול DBT ב-BPD — Synopsis; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "96": {
+      "title_he": "ASPD + Conduct Disorder",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 11, עמ' 197-220",
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "97": {
+      "title_he": "הפרעת אישיות היסטריונית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "98": {
+      "title_he": "הפרעת אישיות נרציסיסטית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "99": {
+      "title_he": "הפרעת אישיות נמנעת",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "100": {
+      "title_he": "הפרעת אישיות תלותית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "101": {
+      "title_he": "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Personality Disorders, עמ' 733-778",
+        "Synopsis": "פרק 19"
+      }
+    },
+    "102": {
+      "title_he": "פסיכיאטריה משפטית",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 31, עמ' 637-652",
+        "Synopsis": "פרק 28"
+      }
+    },
+    "103": {
+      "title_he": "החוק הישראלי בפסיכיאטריה של הילד והמתבגר",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 31, עמ' 637-652",
+        "note": "הדין הישראלי — חקיקה מקומית; לא מכוסה בספרי הלימוד"
+      }
+    },
+    "104": {
+      "title_he": "דיספוריה מגדרית + טיפול LGBTQ+",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 27, עמ' 565-580",
+        "DSM-5-TR": "Gender Dysphoria, עמ' 511-520"
+      }
+    },
+    "105": {
+      "title_he": "תפקודים מיניים + הפרעות פרפיליות",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Sexual Dysfunctions · Paraphilic, עמ' 477-510, 779-802",
+        "Synopsis": "פרק 16"
+      }
+    },
+    "106": {
+      "title_he": "ODD, IED, Kleptomania, Pyromania",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 11, עמ' 197-220",
+        "DSM-5-TR": "Disruptive, עמ' 521-542"
+      }
+    },
+    "107": {
+      "title_he": "אגרסיביות ואלימות בילדים ובמתבגרים",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 28, עמ' 581-604"
+      }
+    },
+    "108": {
+      "title_he": "אובדנות בנער/ה",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 26, עמ' 551-564"
+      }
+    },
+    "109": {
+      "title_he": "פגיעה עצמית ללא כוונת אובדנות (NSSI)",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 26, עמ' 551-564"
+      }
+    },
+    "110": {
+      "title_he": "מעברים משפחתיים: גירושין, אימוץ ואומנה",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 30, עמ' 621-636"
+      }
+    },
+    "111": {
+      "title_he": "היבטים תרבותיים ודתיים בבריאות הנפש של הילד",
+      "phase": 8,
+      "reading": {
+        "Dulcan": "פרק 25, עמ' 539-550"
+      }
+    },
+    "112": {
+      "title_he": "פסיכיאטריה פרינטלית",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Depressive, עמ' 177-214",
+        "note": "פסיכיאטריה פרינטלית — specifier peripartum ב-DSM; הרחבה בכרטיסיות"
+      }
+    },
+    "113": {
+      "title_he": "Brexanolone + Zuranolone לדיכאון לאחר לידה",
+      "phase": 8,
+      "reading": {
+        "Stahl Essential": "פרק 7, עמ' 283-358"
+      }
+    },
+    "114": {
+      "title_he": "גריאטריה — סקירה (delirium)",
+      "phase": 8,
+      "reading": {
+        "DSM-5-TR": "Neurocognitive, עמ' 667-732",
+        "Stahl Essential": "פרק 12, עמ' 486-537",
+        "Synopsis": "פרק 3"
+      }
+    },
+    "115": {
+      "title_he": "נוירואנטומיה + בדיקה נוירולוגית בילדים",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 6, עמ' 91-106",
+        "Stahl Essential": "פרק 1, עמ' 1-28"
+      }
+    },
+    "116": {
+      "title_he": "פרכוסים + אפילפסיה",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "117": {
+      "title_he": "חבלת ראש + סקוואלי TBI",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "118": {
+      "title_he": "זיהומים ב-CNS עם השלכות פסיכיאטריות",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "119": {
+      "title_he": "הפרעות תנועה: Huntington, Wilson",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "120": {
+      "title_he": "גידולי מוח + pseudotumor",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "121": {
+      "title_he": "שיתוק מוחין (Cerebral Palsy)",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "122": {
+      "title_he": "תסמונות נוירוגנטיות",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 7+8, עמ' 107-156",
+        "note": "סינדרומים נוירוגנטיים — Dulcan 7-8 + הסילבוס"
+      }
+    },
+    "123": {
+      "title_he": "תסמונות נוירוקוטנאיות",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 7, עמ' 107-134",
+        "note": "נוירוקוטנאיים — Dulcan 7 + הסילבוס"
+      }
+    },
+    "124": {
+      "title_he": "כאב ראש + מיגרנה",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "125": {
+      "title_he": "מחלות מטבוליות עם ביטוי פסיכיאטרי",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "126": {
+      "title_he": "אוטואימוני: NMDA encephalitis, lupus, PANDAS",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "127": {
+      "title_he": "ניוון עצבי בילדים",
+      "phase": 9,
+      "reading": {
+        "note": "נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה"
+      }
+    },
+    "128": {
+      "title_he": "רפואת שינה — אינטנסיבית",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 22, עמ' 473-502",
+        "Stahl Essential": "פרק 10, עמ' 401-448"
+      }
+    },
+    "129": {
+      "title_he": "חירום פסיכיאטרי בילדים ובמתבגרים",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 29, עמ' 605-620"
+      }
+    },
+    "130": {
+      "title_he": "ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 48+49, עמ' 1071-1161"
+      }
+    },
+    "131": {
+      "title_he": "סקירת תיאוריות פסיכותרפויטיות",
+      "phase": 9,
+      "reading": {
+        "Dulcan": "פרק 38, עמ' 847-872",
+        "Synopsis": "פרק 23"
+      }
+    },
+    "132": {
+      "title_he": "CBT — תיאוריה ופרקטיקה",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 43, עמ' 967-984",
+        "Synopsis": "פרק 23"
+      }
+    },
+    "133": {
+      "title_he": "DBT — תיאוריה ופרקטיקה",
+      "phase": 10,
+      "reading": {
+        "Synopsis": "פרק 23",
+        "note": "DBT — Synopsis פרק 23; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "134": {
+      "title_he": "IPT-A — פסיכותרפיה בין-אישית למתבגרים",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 42, עמ' 955-966"
+      }
+    },
+    "135": {
+      "title_he": "ראיון מוטיבציוני",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 44, עמ' 985-998"
+      }
+    },
+    "136": {
+      "title_he": "מסגרות טיפול: אשפוז, אשפוז יום, מגורים ו-Systems of Care",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 45+46, עמ' 999-1042"
+      }
+    },
+    "137": {
+      "title_he": "התערבויות וייעוץ במסגרת בית הספר",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 47, עמ' 1043-1070"
+      }
+    },
+    "138": {
+      "title_he": "טיפול משפחתי + הדרכת הורים",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 40+41, עמ' 899-954"
+      }
+    },
+    "139": {
+      "title_he": "פסיכודינמי: Anna Freud, Klein, Kohut, Mentalization",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 38, עמ' 847-872",
+        "Synopsis": "פרק 23"
+      }
+    },
+    "140": {
+      "title_he": "יחסי אובייקט: ויניקוט, מאהלר, קרנברג",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 38, עמ' 847-872",
+        "Synopsis": "פרק 23",
+        "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "141": {
+      "title_he": "תיאורטיקנים נוספים: אריקסון, ביון, אוגדן, לאקאן, שפיץ, שטרן וההתייחסותיים",
+      "phase": 10,
+      "reading": {
+        "Synopsis": "פרק 23",
+        "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
+      }
+    },
+    "142": {
+      "title_he": "בריאות נפש מרחוק לילדים ומתבגרים",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 32, עמ' 653-676"
+      }
+    },
+    "143": {
+      "title_he": "רפואה מבוססת ראיות בפסיכיאטריה של הילד",
+      "phase": 10,
+      "reading": {
+        "Dulcan": "פרק 23, עמ' 503-516"
+      }
+    },
+    "144": {
+      "title_he": "אינטגרציה + שאלות + סקירת נקודות חולשה",
+      "phase": 10,
+      "reading": {
+        "note": "סקירת אינטגרציה — כל החומר"
+      }
+    }
+  }
+}

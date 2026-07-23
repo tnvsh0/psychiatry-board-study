@@ -224,15 +224,32 @@ def main() -> int:
     fs = calendar["final_stretch"]
     L.append(f"| **בחינה** | {fmt(date.fromisoformat(fs['start']))} – {fmt(exam)} | {fs['note']} |")
     L.append("")
+    # Optional per-chapter reading pointers (schedule/reading_guide.json).
+    rg_path = REPO_ROOT / "schedule" / "reading_guide.json"
+    reading = (json.loads(rg_path.read_text(encoding="utf-8"))["chapters"]
+               if rg_path.exists() else {})
+
+    def reading_line(idx: int) -> str:
+        entry = reading.get(str(idx), {}).get("reading", {})
+        parts = [f"{b}: {v}" for b, v in entry.items() if b != "note"]
+        if entry.get("note"):
+            parts.append("ℹ " + entry["note"])
+        return "  \n  📖 " + " · ".join(parts) if parts else ""
+
     L.append("## פירוט פרקים לפי שבוע")
     L.append("")
+    if reading:
+        L.append("> 📖 = מדריך קריאה ברמת פרק-בספר, נגזר מ-`book_map.json`. "
+                 "הפניות העמודים המדויקות לכל תת-נושא נוצרות בזמן הרצת הפרק ב-NotebookLM "
+                 "ומחליפות את אלה. DSM מצוטט לפי מחלקה; Synopsis לפי פרק (אין עמודים).")
+        L.append("")
     for wk in weeks_out:
         if wk["kind"] != "learning":
             continue
         s = date.fromisoformat(wk["start"]); e = date.fromisoformat(wk["end"])
         L.append(f"### שבוע {wk['week']} · {fmt(s)}–{fmt(e)} · {wk['phases']}")
         for idx, title in zip(wk["chapters"], wk["chapter_titles_he"]):
-            L.append(f"- {idx}. {title}")
+            L.append(f"- **{idx}. {title}**{reading_line(idx)}")
         L.append("")
     OUT_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
 
