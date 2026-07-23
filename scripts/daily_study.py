@@ -688,6 +688,12 @@ EPI_HALVES = {
             "Do NOT show comorbidities and do NOT show course/prognosis — they belong "
             "to the other image."
         ),
+        "moment": (
+            "THE ONE MOMENT: the hero is being appraised by the crowd — a test, an "
+            "audition, a weigh-in, a starting line — so the crowd (prevalence), the "
+            "cheering/doubting family (heritability) and the two unequal groups (sex "
+            "ratio) are all reacting to the SAME instant centred on the hero."
+        ),
     },
     "comes_with": {
         "title": "WHAT COMES WITH IT AND WHERE IT GOES",
@@ -697,6 +703,17 @@ EPI_HALVES = {
             "and the COURSE / PERSISTENCE (its element = the direction the story is "
             "heading / the finish). Do NOT show prevalence, heritability, onset age or "
             "the sex ratio — they belong to the other image."
+        ),
+        "moment": (
+            "THE ONE MOMENT (critical — comorbidities tend to scatter into stations, do "
+            "NOT let them): all the companions must converge on the hero in a SINGLE "
+            "instant, not sit at separate points along a route. Stage ONE collision-type "
+            "event where they all pile onto the hero AT ONCE — a multi-car pile-up, a "
+            "dog-pile, a boarding scramble, everyone grabbing onto the hero's vehicle as "
+            "it lurches toward the finish. Each companion is physically ON or grabbing "
+            "the hero in that one instant; the finish/direction is the one shared thing "
+            "they are all heading to or crashing at. If a companion could be cropped out "
+            "without changing the moment, it is a station, not part of the event — fix it."
         ),
     },
 }
@@ -746,6 +763,8 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
 THIS IMAGE COVERS ONLY ONE HALF OF THE EPIDEMIOLOGY: **{spec['title']}**.
 {spec['scope']}
 Keeping to this half is what lets the picture stay a single composed scene instead of a scattered board.
+
+{spec['moment']}
 
 WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder.
 

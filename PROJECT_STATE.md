@@ -67,6 +67,39 @@ Hebrew caption, study guide, flippable flashcards with **spaced repetition**, qu
   `sketchy_dsm_criteria_inattention.png`, `sketchy_dsm_criteria_hyperactivity-impulsivity.png`,
   `sketchy_epidemiology.png`, `sketchy_etiology.png` + audio/video/study guide/flashcards/quiz/facts.json.
 
+**EPIDEMIOLOGY IMAGE — the design theory we converged on (READ before touching it).**
+The epidemiology image was the hardest problem in the project (~15 iterations, see
+`SKETCHY_IMAGE_CHALLENGE.md` for the full log). It has ~6-8 numeric facts and no innate
+story, so it kept coming out as either a scattered symbol-board or a cluttered melee.
+The working design, now in `build_epidemiology_director()` (`daily_study.py`):
+- **SPLIT INTO TWO IMAGES** (like criteria): `sketchy_epidemiology_who.png`
+  (prevalence, sex ratio, onset, heritability) and `sketchy_epidemiology_comes_with.png`
+  (comorbidity rates + course/persistence). ~3 figures each keeps every image a single
+  composed scene while all the data is still carried. Split lives in `build_image_jobs`;
+  a `half` arg ("who"/"comes_with") threads through `build_director_instruction`.
+- **ONE DOMINANT HERO** (the personified patient) in the centre foreground; every fact
+  is a property of the hero or something reacting to them — NOT a democratic ensemble.
+- **NUMBERS = DIGIT-SHAPE OBJECTS** (an object whose *shape* looks like the digit — no
+  code to learn, the resemblance is the mnemonic). Each figure is rounded to ≤2 digits.
+  The objects must be **native to the chapter's world** (0=tyre, 1=cone, 5=tow hook,
+  7=ramp in the ADHD driving world) — never imported. So digit-shapes are consistent
+  *within* a chapter, vary *between* chapters. Exact percentages still go to the caption.
+- **THE WORLD IS IMPOSED** (from `anchor_world`) and supplies BOTH the plot event and the
+  digit-objects — this is what keeps the image tied to the disorder (a beach/carnival is
+  "orphaned"; the viewer can't tell which disorder it is).
+- **BINDING (1:1):** each figure's digit-shapes are carried by the element that
+  represents its concept (family carries heritability, each companion carries its own
+  rate) so the encoding is unambiguous; no object serves two figures.
+- **TWO TEXT REGIMES** (`gemini_image.py` `style_prefix(text_policy=...)`): epidemiology
+  uses `"environment"` — it bans labels that say what an element *represents*
+  ("DEPRESSION", "WAITING BOYS") but ALLOWS ordinary world signage a place would carry
+  anyway ("DRIVING SCHOOL" on the building, "L" plate). Test: "would this text be there
+  if nobody were being taught?" All other aspects keep `"mnemonic"` (big legible labels).
+- **ONE MOMENT** per half (`EPI_HALVES[*]["moment"]`): everything reacts to the hero in a
+  single instant (a test / a pile-up), never stations spread across the frame.
+Day 16's two epidemiology halves are the reference for "good." Etiology/criteria are
+unchanged (they already work) and still use the generic `build_director_instruction`.
+
 **Latest quality pass (image fidelity — this session):**
 - **Image model → Nano Banana Pro by default** (`gemini-3-pro-image-preview`),
   overridable via env `SKETCHY_IMAGE_MODEL` (set `gemini-3.1-flash-image-preview`
