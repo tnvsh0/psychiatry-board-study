@@ -650,15 +650,22 @@ _ASPECT_STRUCTURE = {
 
 COMMON_COMORBIDITY_SYMBOLS = (
     "FIXED comorbidity symbols — draw each comorbid disorder the SAME memorable way "
-    "every time (they recur across chapters), as a COMPANION near the patient:\n"
-    "- Anxiety: a trembling figure clutching a scared white RABBIT (wide eyes).\n"
-    "- Depression: a small dark RAIN CLOUD raining over a slumped figure's head.\n"
-    "- ODD / Conduct Disorder: a scowling kid DEFYING rules — tearing up a 'RULES' "
-    "paper or kicking over a sign.\n"
+    "every time (they recur across chapters), as a COMPANION beside the patient. Make "
+    "the companion the SAME AGE as this chapter's patient (an adult chapter gets adult "
+    "companions, a child chapter gets children) — the SYMBOL is fixed, not the age:\n"
+    "- Anxiety: a trembling, wide-eyed figure clutching a scared white RABBIT.\n"
+    "- Depression: a slumped figure under a small dark RAIN CLOUD raining on their head.\n"
+    "- Mania / Bipolar: a wild grinning figure mid-leap, arms flung out, hair on end.\n"
+    "- ODD / Conduct Disorder: a scowling figure DEFYING rules — tearing up a 'RULES' "
+    "sheet or kicking over a sign.\n"
+    "- ADHD: a restless blurred figure in mid-motion, a spinning pinwheel in hand.\n"
+    "- OCD: a figure obsessively scrubbing or re-aligning objects into a rigid row.\n"
+    "- PTSD: a flinching figure shielding their face from a looming shadow.\n"
+    "- Eating disorder: a gaunt figure fixated on a mirror or a weighing scale.\n"
     "- Specific Learning Disorder: jumbled, scrambled letters floating around the head "
     "/ a book held upside-down.\n"
     "- Tic disorder: a figure caught mid-twitch (one eye scrunched, a shoulder jerking).\n"
-    "- Substance use: a slouched teen with a bottle or vape.\n"
+    "- Substance use: a slouched figure with a bottle or a vape.\n"
     "For a comorbidity not on this list, invent ONE clear simple companion and note it "
     "in the key. Keep them FEW — only the main comorbidities."
 )
@@ -701,11 +708,15 @@ EPI_HALVES = {
     "comes_with": {
         "title": "WHAT COMES WITH IT AND WHERE IT GOES",
         "scope": (
-            "Cover ONLY these figures: each MAIN COMORBIDITY with its own rate (its "
-            "element = that comorbidity's own fixed companion, who carries its digits), "
-            "and the COURSE / PERSISTENCE (its element = the direction the story is "
-            "heading / the finish). Do NOT show prevalence, heritability, onset age or "
-            "the sex ratio — they belong to the other image."
+            "Cover these: (1) the MAIN COMORBIDITIES — you MUST show a fixed companion "
+            "(below) for EVERY comorbidity in the facts, even one with NO percentage: a "
+            "comorbidity without a number is still shown, just qualitatively (the "
+            "companion is present but carries no digit-objects). Do NOT drop a "
+            "comorbidity just because it has no rate — that is the #1 failure here. If a "
+            "comorbidity DOES have a rate, its companion also carries that rate's digits. "
+            "(2) the COURSE / PERSISTENCE (its element = the direction the story heads / "
+            "the finish), with its digits. Do NOT show prevalence, heritability, onset "
+            "age or the sex ratio — they belong to the other image."
         ),
         "moment": (
             "THE ONE MOMENT (critical — comorbidities tend to scatter into stations, do "
@@ -759,6 +770,12 @@ def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zon
             "unmistakably evokes THIS disorder (its feel, its name, its hallmark), and "
             "stay inside it — the viewer must know which disorder the picture belongs to."
         )
+    world_block += (
+        " READABILITY: whatever the mood, the hero, the companions and the digit-objects "
+        "must stay clearly LEGIBLE — well-lit and high-contrast against the background. A "
+        "gloomy or dark world is fine as atmosphere, but never let it swallow the key "
+        "shapes; put a shaft of light or a colour pop on each shape-object so it reads."
+    )
     return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. NO clinical words may appear in the scene.
 
 {world_block}
