@@ -15,3 +15,8 @@ _generated/
 # Reference materials — copyrighted PDFs etc. kept locally only
 עותק של Sketchy.pdf
 *.pdf
+
+# Prototype scratch output (renders, composites)
+_proto/
+_view/
+_venue_input.json
