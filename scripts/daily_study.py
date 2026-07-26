@@ -417,57 +417,67 @@ def prompt_infographic_scoped(day, aspect, aspect_facts):
 איסור: ללא דמויות-קומיקס, ללא סצנות, ללא סמלי-מנמוניקה ויזואליים, וללא היבטים אחרים. זו אינפוגרפיקה רגילה וממוקדת-היבט."""
 
 
-SKETCHY_PHILOSOPHY = """The power of a SketchyMedical-style image is NOT in literally illustrating clinical content. The power is in BIZARRE, UNEXPECTED, SURPRISING METAPHOR — and in the dissonance between the setting and the medical fact.
+SKETCHY_PHILOSOPHY = """A SketchyMedical page is a MUNDANE PLACE whose NAME is a pun on the topic, packed edge to edge, indexed by a numbered legend. It is a search field, not a poster - and it is not a story.
 
-Look at how the established symbols in our symbol legend already work:
-- μ-opioid receptor → a COW with 'MOO' on her side, in a DAIRY FARM. Cows have nothing to do with opioids — that dissonance is the entire point.
-- 5-HT2A receptor → a TAROT PARLOR with two Ace cards on the table. Tarot has nothing to do with serotonin.
-- GABA-A receptor → an Aa HOTEL with 5 floors (α-subunits). A hotel for a receptor.
-- D2 receptor → a giant RED BARRIER labeled '2' on a coal-mine train track.
-- DOPA-MINE (dopamine) → a literal coal MINE called DOPA-MINE Co. Mining for dopamine ore.
-- κ-opioid → a grumpy GOAT with a 'K' tag (visual + phonetic pun on kappa).
-- δ-opioid → a DELTA AIRLINES plane (triangular logo = δ).
-- β1 receptor → BEETHOVEN conducting with a '#1' baton in front of heart-drums (β1 = heart).
+Reverse-engineered from 19 corpus pages and 113 classified legend items:
 
-PRINCIPLES that make these scenes memorable:
-1. UNEXPECTED SETTING — the scene takes place somewhere that has NOTHING to do with the medical topic (a circus, a wedding, a dairy farm, a heist, a deep-sea submarine, a medieval joust, a hot-air balloon race, an ancient temple, a Las Vegas casino, a Bollywood film set, a sushi conveyor belt, a junkyard).
-2. PHONETIC OR VISUAL PUNS — each medical fact is encoded as a character or object via wordplay (μ → MOO, δ → DELTA airline triangle, β1 → Beethoven's #1, '2' on a barrier for D2).
-3. NUMBERS ARE COUNTABLE OBJECTS — 6 symptoms = 6 of something (6 cupcakes, 6 dancers, 6 monks). Age 12 = 12 candles. 2 settings = 2 connected rooms.
-4. ABSURDITY OVER FAITHFULNESS — a wedding cake encoding antidepressant titration is BETTER than a literal dose-escalation chart. The dissonance encodes the memory.
-5. EMOTIONAL ACTIVATION — viewer should LAUGH, gasp, or say 'WHAT?' on first sight. That feeling cements the memory.
+1. THE VENUE IS THE PUN, AND THE PUN IS PAINTED ON A SIGN.
+   SSRIs -> a travel agency lettered "expreSS tRIps". The -azine antipsychotics -> an art
+   gallery lettered "STARRY GAZING". Benzodiazepines -> "Ben's Diner". Barbiturates -> a
+   BARBershop. Carbamazepine -> the "Carpe Drive-in". Nephrotic syndrome -> a castle
+   siege, because the WALL is the basement membrane.
+   Never choose a setting for being bizarre, unexpected or mood-matched. The exam cue is
+   the chapter name: if the name does not generate the world, the name retrieves nothing.
 
-EXPLICIT ANTI-PATTERNS — these RUIN Sketchy memorability and are FORBIDDEN:
-✗ A doctor's office showing patients with the disorder.
-✗ A lecture hall with charts of statistics.
-✗ Children behaving like ADHD children (literal, no symbolic substitution).
-✗ A laboratory split into zones for biopsychosocial etiology.
-✗ A pharmacy with the drug prominently displayed.
-✗ A "therapy room" showing techniques.
-✗ Anything that looks like a clinical illustration of the topic.
-✗ Floating informational labels, callout arrows, or chart-like overlays.
+2. THE SETTING IS BORING; THE OBJECTS ARE STRANGE.
+   An office, a diner, a schoolyard, a wine cellar. Nothing floats, no impossible physics.
+   A boring container is what makes the anomalies pop.
 
-The bizarre context is NOT decoration — it IS the mnemonic engine."""
+3. NO PLOT AND NO PROTAGONIST.
+   Zero causal links between figures; zero characters whose fate is followed. The dominant
+   element is an INANIMATE structure cutting the frame on a diagonal. What binds 25
+   strangers into one frame is ONE shared ambient activity - everyone works the shift,
+   views the art, besieges the castle. One verb, thirty variations.
+   Pairwise relations are allowed, and REQUIRED where the fact's verb is transitive: a man
+   barring another from the post-it drawer IS reuptake inhibition; a serpent across the
+   ramp IS VMAT blockade. What is banned is a narrative arc.
+
+4. DEPICT CLINICAL STATES LITERALLY - the single largest mechanism, about 41%.
+   An anxious coworker is GAD. A shy guy is social anxiety. Sticking out a tongue is
+   tardive dyskinesia. NEVER mint a fresh evocative metaphor for an affective state:
+   across 113 items there are ZERO. Use, in order: a person exhibiting it, a fixed lexicon
+   token, or a famous artwork that already depicts it.
+
+5. TEXT IS THE HIGHEST-DENSITY DEVICE, not a last resort.
+   4-15 hand-lettered diegetic signs per page, and on most pages several legend items ARE
+   the painted string. Signs are props, never overlays.
+
+6. NUMBERS ARE WRITTEN DIGITS ON OBJECTS WHOSE JOB IS TO BEAR DIGITS.
+   "35" branded on the meat cart; "52" and "53" on retired-jersey banners; "CYP-450" on a
+   licence plate. There is no digit-shape cipher anywhere in the corpus. Triage hard: 0-2
+   painted numbers per page is the norm, and a number with no natural numbered prop is
+   dropped, not forced. Every painted numeral carries a short referent tag on the same
+   object, or it is just a floating digit.
+
+7. ONE FACT PER FIGURE, AND PACK THE FRAME.
+   About 30 facts across 12-25 same-scale figures plus labelled props, with roughly as
+   much ordinary non-mnemonic filler as meaningful detail.
+
+8. THE LEXICON IS FIXED AND SHARED.
+   A symbol means exactly the same thing on every page it appears, so half the vocabulary
+   is already owned before the chapter opens. See schedule/lexicon.json.
+
+EXPLICIT ANTI-PATTERNS - these RUIN memorability and are FORBIDDEN:
+X A setting chosen for atmosphere or shock rather than a pun, a literal picture, or a
+  spatial mapping.
+X A hero the scene revolves around, or a plot the viewer is meant to narrate.
+X An invented metaphor for a feeling (a rain cloud for depression, a frightened rabbit
+  for anxiety).
+X Floating informational labels, callout arrows, chart-like overlays, legend boxes.
+X Generous empty space, or a scene meant to be parsed in a few seconds.
+X A digit-shape cipher, or an exact figure left out of the picture on principle."""
 
 
-NUMBER_RULES = """NUMBER ENCODING (course-wide, consistent) — and pegs MUST BELONG too:
-- PREFER COUNTING BELONGING OBJECTS for small numbers (<=4-5). The number is the
-  COUNT of things that already fit the scene — 2 settings = 2 road-signs; 6
-  months = 6 marks on the examiner's calendar. Do NOT add a floating peg-symbol
-  when a natural count works.
-- RATIOS (2:1, 3:1) → relative team sizes. The viewer SEES 2-vs-1.
-- ONLY for un-countable numbers (percentages, big numbers) use a NUMBER-PEG
-  SHAPE — but the peg MUST be a natural object of THIS scene that happens to be
-  shaped like the digit; NEVER a disembodied symbol floating in space. Shapes:
-  0=ring/wheel/donut · 1=candle/pencil/pole · 2=swan/squiggle · 3=trident/
-  pretzel · 4=sailboat/flag · 5=starfish/seahorse/hook · 6=cherry/golf-club ·
-  7=boomerang/cliff · 8=hourglass/snowman · 9=balloon/tadpole.
-- AVOID body-part pegs (a 'high-five hand' reads as a stray extra hand and
-  clutters the scene) — use starfish/seahorse/hook for 5 instead.
-- CONCENTRATE the threshold numbers on ONE belonging fixture (e.g. the examiner's
-  scoreboard/clipboard, a single road-sign) rather than scattering peg-objects
-  all over the scene. A few numbers, in one logical place.
-- RANK facts ('one of the MOST heritable') → lead with the qualitative visual
-  (huge vs tiny). Exact decimals live in the caption + study guide, NOT the image."""
 
 
 def _symbols_named_in_facts(aspect_facts, symbols_data):
@@ -648,179 +658,12 @@ _ASPECT_STRUCTURE = {
 }
 
 
-COMMON_COMORBIDITY_SYMBOLS = (
-    "FIXED comorbidity symbols — draw each comorbid disorder the SAME memorable way "
-    "every time (they recur across chapters), as a COMPANION beside the patient. Make "
-    "the companion the SAME AGE as this chapter's patient (an adult chapter gets adult "
-    "companions, a child chapter gets children) — the SYMBOL is fixed, not the age:\n"
-    "- Anxiety: a trembling, wide-eyed figure clutching a scared white RABBIT.\n"
-    "- Depression: a slumped figure under a small dark RAIN CLOUD raining on their head.\n"
-    "- Mania / Bipolar: a wild grinning figure mid-leap, arms flung out, hair on end.\n"
-    "- ODD / Conduct Disorder: a scowling figure DEFYING rules — tearing up a 'RULES' "
-    "sheet or kicking over a sign.\n"
-    "- ADHD: a restless blurred figure in mid-motion, a spinning pinwheel in hand.\n"
-    "- OCD: a figure obsessively scrubbing or re-aligning objects into a rigid row.\n"
-    "- PTSD: a flinching figure shielding their face from a looming shadow.\n"
-    "- Eating disorder: a gaunt figure fixated on a mirror or a weighing scale.\n"
-    "- Specific Learning Disorder: jumbled, scrambled letters floating around the head "
-    "/ a book held upside-down.\n"
-    "- Tic disorder: a figure caught mid-twitch (one eye scrunched, a shoulder jerking).\n"
-    "- Substance use: a slouched figure with a bottle or a vape.\n"
-    "For a comorbidity not on this list, invent ONE clear simple companion and note it "
-    "in the key. Keep them FEW — only the main comorbidities."
-)
 
 
-NUMBER_SHAPES = (
-    "DIGIT-SHAPE PRINCIPLE — a digit is drawn as an object whose SHAPE looks like the "
-    "digit. There is NO code to memorise: the resemblance IS the mnemonic. But the "
-    "object must ALSO be a native object of THIS CHAPTER'S WORLD, so the picture stays "
-    "tied to the disorder. Generic shapes to guide you (0 = ring/wheel · 1 = upright "
-    "pole/candle · 2 = swan-curve over a base · 3 = double hump · 4 = sail/flag on a "
-    "post · 5 = hook · 6 = curled stem · 7 = bent arm/ramp · 8 = figure-of-eight/"
-    "hourglass · 9 = balloon on a string) — now find the version of that shape that "
-    "already LIVES in this world. Example, in a driving-school world: 0 = a tyre or "
-    "steering wheel, 1 = a traffic cone, 3 = two speed bumps, 5 = a tow hook, 7 = a "
-    "ramp or barrier arm, 8 = a figure-of-eight practice track. NEVER import an object "
-    "that is foreign to this world (no boomerangs at a driving school) — pick a "
-    "different native object with the same silhouette."
-)
 
 
-EPI_HALVES = {
-    "who": {
-        "title": "WHO GETS IT",
-        "scope": (
-            "Cover ONLY these figures: PREVALENCE (its element = the CROWD of "
-            "look-alikes), HERITABILITY / familial risk (its element = the hero's "
-            "FAMILY), AGE OF ONSET (its element = an age marker on the hero), and the "
-            "SEX RATIO (shown as two groups of clearly different sizes — NOT digits). "
-            "Do NOT show comorbidities and do NOT show course/prognosis — they belong "
-            "to the other image."
-        ),
-        "moment": (
-            "THE ONE MOMENT: the hero is being appraised by the crowd — a test, an "
-            "audition, a weigh-in, a starting line — so the crowd (prevalence), the "
-            "cheering/doubting family (heritability) and the two unequal groups (sex "
-            "ratio) are all reacting to the SAME instant centred on the hero."
-        ),
-    },
-    "comes_with": {
-        "title": "WHAT COMES WITH IT AND WHERE IT GOES",
-        "scope": (
-            "Cover these: (1) the MAIN COMORBIDITIES — you MUST show a fixed companion "
-            "(below) for EVERY comorbidity in the facts, even one with NO percentage: a "
-            "comorbidity without a number is still shown, just qualitatively (the "
-            "companion is present but carries no digit-objects). Do NOT drop a "
-            "comorbidity just because it has no rate — that is the #1 failure here. If a "
-            "comorbidity DOES have a rate, its companion also carries that rate's digits. "
-            "(2) the COURSE / PERSISTENCE (its element = the direction the story heads / "
-            "the finish), with its digits. Do NOT show prevalence, heritability, onset "
-            "age or the sex ratio — they belong to the other image."
-        ),
-        "moment": (
-            "THE ONE MOMENT (critical — comorbidities tend to scatter into stations, do "
-            "NOT let them): all the companions must converge on the hero in a SINGLE "
-            "instant, not sit at separate points along a route. Stage ONE collision-type "
-            "event where they all pile onto the hero AT ONCE — a multi-car pile-up, a "
-            "dog-pile, a boarding scramble, everyone grabbing onto the hero's vehicle as "
-            "it lurches toward the finish. Each companion is physically ON or grabbing "
-            "the hero in that one instant; the finish/direction is the one shared thing "
-            "they are all heading to or crashing at. If a companion could be cropped out "
-            "without changing the moment, it is a station, not part of the event — fix it."
-        ),
-    },
-}
 
 
-def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zone=None,
-                                half=None):
-    """EPIDEMIOLOGY director — the 'SHAPES BUILD THE STORY' prototype.
-
-    Key inversion (this is the whole experiment): instead of choosing a world and then
-    forcing number-symbols into it — which always reads as arbitrary — we FIRST turn the
-    2-3 most exam-critical figures into digit-SHAPE objects, and THEN invent the one
-    situation in which those exact objects are the natural props. The mnemonic generates
-    the world, exactly the way a real Sketchy page is built out of a name-pun, so the
-    numbers can never feel pasted on. A single dominant hero (the personified patient)
-    anchors the composition; the rest of the epidemiology stays qualitative (crowd,
-    clinging companions) and every exact percentage goes to the caption.
-
-    The chapter's anchor_world IS imposed: an image set in a world unrelated to the
-    disorder (a beach, a carnival) is orphaned — the viewer cannot tell which disorder
-    it belongs to. So the world supplies both the EVENT (the plot engine) and the
-    digit-objects, which must be native to it. Shapes are therefore consistent WITHIN a
-    chapter and vary BETWEEN chapters: a scene-specific cue discriminates far better
-    than one shape reused across 126 chapters."""
-    title_he = day.get("title_he", day.get("title_en", ""))
-    facts_text = _facts_block_for_aspect("epidemiology", aspect_facts)
-    spec = EPI_HALVES.get(half or "who", EPI_HALVES["who"])
-    if anchor_world:
-        world_block = (
-            f"THIS CHAPTER'S WORLD (everything happens here — do NOT invent a different "
-            f"world):\n{anchor_world}\n"
-            "This matters more than anything: the viewer must be able to look at the "
-            "picture and know instantly WHICH DISORDER it belongs to. A beach or a "
-            "carnival with no link to this chapter leaves the image orphaned and "
-            "useless. Stay inside this world."
-        )
-    else:
-        world_block = (
-            "THIS CHAPTER'S WORLD: invent ONE bizarre, non-clinical world whose flavour "
-            "unmistakably evokes THIS disorder (its feel, its name, its hallmark), and "
-            "stay inside it — the viewer must know which disorder the picture belongs to."
-        )
-    world_block += (
-        " READABILITY: whatever the mood, the hero, the companions and the digit-objects "
-        "must stay clearly LEGIBLE — well-lit and high-contrast against the background. A "
-        "gloomy or dark world is fine as atmosphere, but never let it swallow the key "
-        "shapes; put a shaft of light or a colour pop on each shape-object so it reads."
-    )
-    return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. NO clinical words may appear in the scene.
-
-{world_block}
-
-THIS IMAGE COVERS ONLY ONE HALF OF THE EPIDEMIOLOGY: **{spec['title']}**.
-{spec['scope']}
-Keeping to this half is what lets the picture stay a single composed scene instead of a scattered board.
-
-{spec['moment']}
-
-WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder.
-
-STEP 1 — LIST YOUR FIGURES. From the facts below take ONLY the figures belonging to this half (about 3, never more than 4), each with its concept-element as named above. A rare, minor figure stays qualitative and goes to the caption only.
-
-STEP 2 — ROUND EACH FIGURE TO AT MOST **2 DIGITS**, then turn those digits into shape-objects that are NATIVE TO THIS CHAPTER'S WORLD (see the digit-shape principle below). E.g. in a driving-school world: 74.5% -> 75 -> a ramp (7) + a tow hook (5); 7.2% -> 7 -> a barrier arm; 60-85% -> 70 -> a curled exhaust (6) + a tyre (0). Two shape-objects per figure maximum, so each cluster stays small and readable.
-
-STEP 3 — TAKE THE EVENT FROM THIS CHAPTER'S WORLD. Do NOT invent a new world. Pick ONE natural, bizarre EVENT that this chapter's world already supplies (in a driving-school world: a chaotic driving test, a race, a pile-up, a licence ceremony) and let that event be the story. Because the digit-objects you chose in STEP 2 are native to this same world, they slot into the event as ordinary props — nothing can look pasted on, and the picture stays unmistakably tied to this disorder. Something must be HAPPENING: a viewer should narrate the event start to finish, not describe a pose.
-
-STEP 4 — BIND EVERY FIGURE TO ITS OWN ELEMENT (this is what removes ambiguity). Each figure's shape-objects must be physically CARRIED, WORN, RIDDEN or HELD by the element that represents that figure's concept, and grouped tightly together so they read as one unit:
-  - the FAMILY carries the heritability digits (they ride/hold them);
-  - EACH comorbidity companion carries ITS OWN rate's digits;
-  - the CROWD clusters around the prevalence digits;
-  - the FINISH/direction carries the persistence digits.
-STRICT 1:1 — no object may serve two different figures, and no digit-shape may float free.
-
-STEP 5 — PUT THE HERO AT THE CENTRE OF THE EVENT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, and the event is HAPPENING TO or AROUND them: they are the one being tested, crashing, being chased, being cheered. Every other figure must be REACTING to the hero or taking part in the same event — pushing, pulling, grabbing, watching them. FORBIDDEN: characters spread evenly across the width of the frame each doing their own separate thing; that is a line-up, not a scene. If you can describe a figure without mentioning the hero or the event, it does not belong.
-
-THE FACTS:
-{facts_text}
-
-{NUMBER_SHAPES}
-
-{COMMON_COMORBIDITY_SYMBOLS}
-
-HARD RULES:
-- **ZERO TEXT.** No words, no labels, no signs, no name-tags, no banners, no captions anywhere in the image. Do NOT label an element with the thing it represents (no "FAMILY RAFT", no "DEPRESSION", no "TREMBLING RABBIT"). If you catch yourself naming something in the scene, delete it — the picture must carry meaning by IMAGE ALONE.
-- NO written numerals. NO statistics board.
-- NO shape sitting around as decoration or floating free — every shape-object is a WORKING PROP held by its own concept-element.
-- Composition: hero largest in the centre foreground, companions midground, crowd background — readable at a glance, ONE connected scene.
-
-OUTPUT — STRICT JSON only (no markdown fence):
-{{
-  "scene": "<3-6 sentences: the bizarre situation you invented, the hero at its centre, and — element by element — who is carrying which shape-objects (the family riding these, this companion clutching those, the crowd around that). Purely visual, NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list, ONE LINE PER FIGURE, in the form: 'element -> objects -> digits -> figure -> meaning' (e.g. 'the family rides a boomerang and a hook = 7,5 = 75% heritability'). Then the qualitative elements. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts.>"
-}}"""
 
 
 def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
@@ -828,31 +671,26 @@ def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
     """Build the SCENE DIRECTOR instruction (a text-model prompt).
 
     The director converts this aspect's clinical facts + the symbol vocabulary
-    + the name-pun world into (a) a PURE-VISUAL scene description with NO
-    clinical terms (so the image model has nothing to label) and (b) a numbered
-    KEY mapping each visible element to its fact (used for the caption). This
-    mirrors how a real Sketchy page is authored: scene brief + separate key.
+    + the name-pun world into (a) a scene description and (b) a numbered KEY
+    mapping each visible element to its fact. This mirrors how a real Sketchy
+    page is authored: scene brief plus a separate key.
 
-    ASPECT-SCOPED + ANCHOR-THEMED: all of a chapter's images share ONE world
-    (anchor_world) for recall as a set, but each occupies a DISTINCT zone
-    (anchor_zone) and encodes ONLY its aspect's facts — unified, no bleeding."""
-    # Epidemiology uses a CLEAN, from-scratch director prompt (no accumulated cruft):
-    # the generic path below kept dragging in the full symbol index + layered number
-    # rules, producing cluttered, number-littered epidemiology images.
-    if aspect == "epidemiology":
-        return build_epidemiology_director(
-            day, aspect_facts, anchor_world=anchor_world, anchor_zone=anchor_zone,
-            half=half)
+    `half` is accepted and ignored — the epidemiology who/comes_with split is
+    gone. It never really existed: build_image_jobs handed BOTH halves the
+    identical unsplit facts slice, so the two renders differed only by prose,
+    and the branch's own "ZERO TEXT / NO written numerals" block is what
+    stripped every figure out of the epidemiology images.
+    """
     title_he = day.get("title_he", day.get("title_en", ""))
     scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts)
-    full_index = _compact_symbol_index(
-        symbols_data, exclude=["number_pegs"] if aspect == "epidemiology" else None)
+    full_index = _compact_symbol_index(symbols_data)
     facts_text = _facts_block_for_aspect(aspect, aspect_facts)
     structure = _ASPECT_STRUCTURE.get(aspect, "")
-    # Epidemiology owns its number guidance (free, scene-specific representations) in its
-    # STRUCTURE block, so skip the generic 0-9 number-peg rules there — those primed the
-    # model to scatter fixed peg-shapes and build a stats board.
-    number_rules = "" if aspect == "epidemiology" else NUMBER_RULES
+    # Number handling now lives entirely in sketchy_spec.normalize_number and in
+    # the TEXT TO PAINT block. The old NUMBER_RULES shipped a 0-9 digit-shape
+    # cipher that has zero instances across the whole corpus, alongside "NEVER
+    # just write the numeral" — the precise inverse of what Sketchy does.
+    number_rules = ""
 
     if anchor_world and anchor_zone:
         setting_block = f"""SETTING — SHARED CHAPTER WORLD (a LIGHT linking thread, not heavy sameness):
@@ -1100,26 +938,27 @@ def build_image_jobs(aspects, facts):
     each receiving only that cluster's items + the shared thresholds, so each
     criterion has room to be its own distinct visual detail.
 
-    Epidemiology is likewise split into TWO images — 'who gets it' (prevalence, sex
-    ratio, onset, heritability) and 'what comes with it / where it goes' (comorbidity
-    rates, course). One image cannot hold 5-6 figures without fragmenting into a
-    scattered board; ~3 figures each keeps every image a single composed scene while
-    still carrying all the data."""
+    The epidemiology who/comes_with split is GONE. It only ever existed in prose:
+    both halves were handed the identical unsplit facts slice, so the two renders
+    differed by wording alone, and the branch that produced them also carried the
+    "ZERO TEXT / NO written numerals" rule that stripped every figure out of the
+    epidemiology images. Epidemiology is now one aspect of the chapter's main
+    plate — see sketchy_spec.plan_plates for the hybrid main/criteria split that
+    replaces per-aspect jobs wholesale."""
     jobs = []
     for aspect in aspects:
         slice_ = facts_for_aspect(aspect, facts)
-        if aspect == "epidemiology" and isinstance(slice_, dict):
-            for half in ("who", "comes_with"):
-                jobs.append((f"epidemiology_{half}", aspect, slice_))
-            continue
         if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(slice_, dict):
             crit = slice_.get("criteria") if isinstance(slice_.get("criteria"), dict) else None
             clusters = crit.get("clusters") if crit else None
             if isinstance(clusters, list) and len(clusters) >= 2:
                 shared = {k: v for k, v in crit.items() if k != "clusters"}
-                for c in clusters:
+                for n, c in enumerate(clusters, 1):
                     name = c.get("name", "cluster")
-                    label = f"{aspect}_{slugify(name)}"
+                    # slugify strips non-Latin characters, so a Hebrew cluster
+                    # name ("תסמיני ליבה") collapses to "" and the asset ships
+                    # as sketchy_dsm_criteria_.png. Fall back to the ordinal.
+                    label = f"{aspect}_{slugify(name) or f'cluster{n}'}"
                     cf = {"criteria": {"cluster": name, "items": c.get("items", []), **shared}}
                     jobs.append((label, aspect, cf))
                 continue
@@ -1760,7 +1599,6 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             director = build_director_instruction(
                 day, symbols, aspect, job_facts,
                 anchor_world=anchor_world, anchor_zone=zones.get(aspect),
-                half=label.split("epidemiology_")[-1] if label.startswith("epidemiology_") else None,
             )
             # For CRITERIA images, completeness is mandatory: pass the cluster's
             # criterion items so generate_sketchy_directed runs the coverage-
@@ -1781,10 +1619,6 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 phase=phase,
                 required_items=required_items,
                 max_image_tries=max_tries,
-                # Epidemiology encodes its figures as object SHAPES, so explanatory
-                # labels would do the picture's job for it — switch off the
-                # label-forward text regime for those images only.
-                text_policy="environment" if aspect == "epidemiology" else "mnemonic",
             )
             if ok:
                 size_mb = png_path.stat().st_size / (1024 * 1024)

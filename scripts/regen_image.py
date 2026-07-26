@@ -81,7 +81,6 @@ def main():
         day, symbols, aspect, job_facts,
         anchor_world=day.get("anchor_world"),
         anchor_zone=day.get("anchor_zones", {}).get(aspect),
-        half=label.split("epidemiology_")[-1] if label.startswith("epidemiology_") else None,
     )
     png = day_dir / f"sketchy_{label}.png"
     txt = day_dir / f"sketchy_{label}.txt"
@@ -90,7 +89,6 @@ def main():
     ok, cap = generate_sketchy_directed(
         director_instruction=director, output_path=png, caption_path=txt,
         phase=day.get("phase"), required_items=required_items, max_image_tries=max_tries,
-        text_policy="environment" if aspect == "epidemiology" else "mnemonic",
     )
     if not ok:
         print(f"[FAIL] regeneration failed for sketchy_{label} (transient — try again).")
