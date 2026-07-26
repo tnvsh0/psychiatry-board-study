@@ -96,6 +96,19 @@ siege castle — i.e. nearly every venue the corpus actually uses. `schedule/ven
 with 144 hand-authored entries is the **primary** mechanism, not a fallback.
 This is a required up-front deliverable and it is manual work.
 
+**Place categories must be globally unique across all 144 chapters.**
+`[DECISION 2026-07-26]` The first authoring run batched chapters twelve at a
+time, so no agent could see the others; it produced six launderettes, three
+bowling alleys, four garden centres, three self-storage depots and the identical
+sign `ODDS & ENDS` on two chapters. That breaks the one thing the venue buys: if
+the chapter name does not retrieve a single unique world, it retrieves nothing.
+Dedup is global, not per phase — a resident revisits chapters out of order.
+
+The one licensed exception is the corpus's **shared universe** (§R10): venues
+may be neighbouring premises on one street when the adjacency itself encodes a
+pharmacological relationship, and that adjacency must be declared in
+`adjacent_to`. Accidental collision is not a shared universe.
+
 ### R2 — The setting is mundane; the strangeness lives in the objects `[CORPUS]`
 
 An office, a diner, a schoolyard, a wine cellar, a quarry. Nothing floats,
@@ -204,6 +217,29 @@ the glyph in chapter 90 silently invalidates every chapter already studied.
 `schedule/lexicon.json` must be versioned and append-only **before** it is
 widened. Code *substitutes* the canonical pair into the element table; it does
 not suggest it to a model.
+
+**The course's own 17 scenes become lexicon tokens, not venues.**
+`[DECISION 2026-07-26]` `schedule/symbols.json` already holds hand-built scenes
+— the Aa Hotel (GABA-A, five floors for five subunits), the Raphe tapestry
+workshop, the DOPA-MINE colliery, the H-shaped Histamine House, the NMDA VIP
+door. Almost all of them are **receptors and nuclei**: fixed symbols, not
+places. They are seeded into `lexicon.json` and must appear as props *inside*
+whichever venue the chapter draws, never in place of it. The Aa Hotel stands
+inside the GABA chapter's world; it is not the world.
+
+Two consequences for the venue brief, both of which the first run got wrong
+because it was never shown `symbols.json`:
+- The brief must list the chapter's required lexicon tokens, and the venue must
+  be able to physically host them.
+- A venue that cannot host them is rejected, not the token.
+
+The exception is chapter 3 (Neurotransmitters overview), where seven of our
+scenes *are* the content. There the plate is a street of those seven premises,
+and no new venue is invented.
+
+Retired regardless: the invented affective metaphors (`DSM_anxiety` = a
+frightened rabbit, `DSM_depressive` = a grey rain cloud). Those are the one
+mechanism with zero corpus instances — see §5.
 
 ### R10 — Shared universe: adjacency IS a fact `[CORPUS]`
 
@@ -376,6 +412,30 @@ deletes a device the corpus uses on nearly every page.)
 **Any string that is the SOLE carrier of a legend row must be gated.** It may
 not be demoted to the ungated "may be small, angled, clipped" pool.
 
+**Prop descriptions leak into the picture as painted text.** `[OBSERVED
+2026-07-26]` The eight venue previews were told that *only* the venue sign must
+be legible and everything else must be squiggles. The model ignored that and
+lettered words straight out of the prop descriptions: the DOPA-MINE gallery
+mouths came back reading `Hand-board` — my own descriptive adjective, rendered
+as signage — and the courtroom produced `EVIDENCE` six times plus
+`HEARSAY — INADMISSIBLE` and `CORRIDOR NOTICE`.
+
+So the model treats any noun phrase in the brief as a candidate string. Two
+rules follow:
+- `TEXT TO PAINT` is the sole authority on what is lettered. Every other line
+  of the prompt is written to be undrawable as text — no quoted words, no
+  capitalised labels, no "a sign reading…" phrasing outside that block.
+- Prop descriptions get a scrub pass in code before they reach the illustrator:
+  strip quotation marks, strip ALL-CAPS tokens, and drop parentheticals (which
+  in `venues.json` carry the *teaching* note, e.g. "(reuptake)" — exactly the
+  kind of word that must never be painted).
+
+Not all leakage is harmful — the courtroom's `EVIDENCE` bags are plausible
+diegetic signage and the bakery volunteered `90% OF OUR STOCK IS IN THE BACK`,
+which happens to be a real serotonin fact. The danger is that ungated strings
+compete with gated ones and that stray numerals break the NUMBER gate. Hence:
+leaked *words* are tolerated, leaked *numerals* are not (§3).
+
 Mid-word capital highlighting (`expreSS tRIps`, `EXTRA`) carries ~33 corpus
 cues and lives entirely in the Latin cue — keep it. Note that no current image
 model does reliable on-demand mid-word colour highlighting; request it, do not
@@ -433,15 +493,28 @@ punned drugs get scattered into a venue that cannot supply their props.
 
 ## 6. Scene structure
 
-**One plate per chapter, not one per aspect.** `[CORPUS]` p204 carries drug
-identity + mechanism + every indication + every adverse effect in 33 rows on
-one image. Per-aspect splitting is what orphaned our images and forced the weak
-`who` / `comes_with` epidemiology split — which was never real anyway:
+**Hybrid: one main plate per chapter, plus a dedicated DSM-criteria plate.**
+`[DECISION 2026-07-26]`
+
+The corpus itself puts everything on one plate — p204 carries drug identity +
+mechanism + every indication + every adverse effect in 33 rows on one image.
+Per-aspect splitting is what orphaned our images and forced the weak
+`who` / `comes_with` epidemiology split, which was never real anyway:
 `build_image_jobs` at line 1111 hands *both* halves the identical unsplit facts
 slice.
 
-- `plates = ceil(N / 30)`, with a split threshold of ~45–50 rather than 34
-  (p210 carries 41 entries and p144 carries 40, both on one plate).
+We keep one deviation from the corpus, deliberately: **DSM criteria get their
+own plate.** They are memorised verbatim and recited under exam conditions, so
+they earn a page the reader can hold separately from the chapter's world. Every
+other aspect — epidemiology, etiology, treatment, course, comorbidity — goes on
+the main plate.
+
+So per chapter: `main` plate always, `criteria` plate when the chapter has DSM
+criteria. Two renders, down from five to seven.
+
+- `plates = ceil(N / 30)` within each of the two tracks, with a split threshold
+  of ~45–50 rather than 34 (p210 carries 41 entries and p144 carries 40, both
+  on one plate).
 - **Legend overflow uses the reprint device, not a second scene.** p272/p273
   and p214/p215 are pixel-identical images reprinted with a continuing legend
   (verified at diff 0.00). Copy the PNG in code and continue the numbering.
