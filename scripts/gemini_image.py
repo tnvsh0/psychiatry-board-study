@@ -441,6 +441,126 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     return {}
 
 
+def _probe(client, image_path, prompt: str, model: str = CAPTION_MODEL):
+    """Ask the vision model one question about a rendered image.
+
+    Returns the answer text, or None when the probe COULD NOT RUN (no client,
+    missing file, API error). None and "" mean different things: "" is a genuine
+    empty answer, None means we learned nothing. Conflating them made a hiccup
+    look like a failed render, which over 144 chapters would burn the whole
+    retry budget re-rendering images that were fine.
+    """
+    try:
+        from google.genai import types
+        img = Path(image_path)
+        if client is None or not (img.exists() and img.stat().st_size > 0):
+            return None
+        contents = [prompt, types.Part.from_bytes(data=img.read_bytes(),
+                                                  mime_type="image/png")]
+        resp = client.models.generate_content(model=model, contents=contents)
+        return "".join(
+            part.text
+            for cand in getattr(resp, "candidates", []) or []
+            for part in getattr(cand.content, "parts", []) or []
+            if getattr(part, "text", None)
+        )
+    except Exception as e:  # noqa: BLE001
+        print(f"[!] probe failed: {e}", file=sys.stderr)
+        return None
+
+
+def check_numbers(client, image_path, required: list[tuple[str, str]]) -> dict:
+    """Verify each painted numeral, PER CARRIER, and reject strays.
+
+    `required` is [(paint_string, carrier_description)].
+
+    Deliberately not a global "list every numeral" probe: that cannot tell the
+    milepost from a decoy clock, so a render that paints every required digit
+    onto the WRONG object scores 100% while teaching nothing. Asking per
+    carrier binds the numeral to the thing it quantifies.
+
+    Matching is EXACT. Fuzzy matching on numerals is actively harmful — a
+    render that paints '48' for '4-8' would pass, and a wrong number burned
+    into a study image out-competes the correct legend at recall.
+
+    Returns {"probed": bool, "missing": [...], "wrong": [(want, got)],
+    "extra": [...]}. When `probed` is False nothing was measured, and the
+    caller must NOT treat that as a failed render.
+    """
+    out = {"probed": False, "missing": [], "wrong": [], "extra": []}
+    for paint, carrier in required:
+        got = _probe(client, image_path,
+                     f"Look only at the {carrier} in this image. What digit-string, "
+                     f"if any, is written on it? Answer with the characters exactly "
+                     f"as they appear and nothing else, or the single word NONE.")
+        if got is None:
+            return out
+        out["probed"] = True
+        got = got.strip().strip('".\'')
+        if not got or got.upper() == "NONE":
+            out["missing"].append(paint)
+        elif got != paint:
+            out["wrong"].append((paint, got))
+
+    # Any other numeral competes with the load-bearing ones and muddies recall.
+    seen = _probe(client, image_path,
+                  "List every numeral or digit-string visible anywhere in this "
+                  "image, verbatim, one per line. If there are none, answer NONE.")
+    if seen is not None:
+        wanted = {p for p, _ in required}
+        for line in seen.splitlines():
+            tok = line.strip().strip('-•".\'')
+            if tok and tok.upper() != "NONE" and any(c.isdigit() for c in tok):
+                if tok not in wanted:
+                    out["extra"].append(tok)
+    return out
+
+
+def check_text_strings(client, image_path, required: list[str]) -> tuple[bool, list]:
+    """Which required strings are NOT legible. Returns (probed, missing).
+
+    Exact then case-folded only. No Levenshtein: a fuzzy match would let the
+    legend quote a clean string the picture does not actually contain, sending
+    the reader hunting for text that is not there.
+    """
+    if not required:
+        return True, []
+    seen = _probe(client, image_path,
+                  "List every readable string of letters in this image, verbatim, "
+                  "one per line, each in double quotes. Do not interpret or "
+                  "translate. If unsure of a string, omit it.")
+    if seen is None:
+        return False, []
+    found = {s.strip().strip('"') for s in seen.splitlines() if s.strip()}
+    folded = {s.casefold() for s in found}
+    return True, [r for r in required
+                  if r not in found and r.casefold() not in folded]
+
+
+def check_composition(client, image_path) -> dict:
+    """Three coarse structural questions that answer the 'no linkage' complaint.
+
+    Per-object presence probes read ~100% over a cluttered cartoon regardless of
+    quality; these ask about the frame as a whole, which a vision model answers
+    far more reliably. A key is absent when its probe could not run.
+    """
+    ask = {
+        "anchor_is_object": "Is the single largest object in this image an "
+                            "inanimate structure rather than a person? Answer YES or NO.",
+        "figures_even": "Are the human figures all roughly the same size, with no "
+                        "one figure dominating the picture? Answer YES or NO.",
+        "frame_filled": "Is this image filled with content all the way to all four "
+                        "edges, with no blank margin and no darkened vignette? "
+                        "Answer YES or NO.",
+    }
+    out = {}
+    for k, q in ask.items():
+        ans = _probe(client, image_path, q)
+        if ans is not None:
+            out[k] = ans.strip().upper().startswith("YES")
+    return out
+
+
 def check_coverage(client, image_path: str | Path, required_items: list,
                    model: str = CAPTION_MODEL) -> list:
     """Return the subset of `required_items` that are NOT clearly represented in
