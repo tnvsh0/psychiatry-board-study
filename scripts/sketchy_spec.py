@@ -174,6 +174,29 @@ _UNIT_CANON = {
 }
 
 
+def _is_identifier(text: str, m: re.Match) -> bool:
+    """True when this digit names a molecule or receptor, not a quantity.
+
+    Psychiatry text is full of digits that are part of a NAME — 5-HT, 5-HT2A,
+    D2, H1, alpha-2, CYP450, IPT-A. Left alone they were extracted as
+    quantities: "חסר ב-5-HT" yielded the figure "5", which then queued for
+    painting on a carrier and, worse, for the narrator to read aloud as a
+    statistic. The tell is that a real quantity is bounded by a unit, a space
+    or Hebrew, never welded to Latin letters.
+    """
+    before = text[:m.start("a")]
+    after = text[m.end():]
+    # welded to Latin letters on either side: P450, D2, 5-HT, 5HT2A
+    if re.search(r"[A-Za-z]-?$", before):
+        return True
+    if re.match(r"-?[A-Za-z]", after):
+        return True
+    # a stripped unit still leaves the letters in `after` only when the regex
+    # consumed one, so also check the raw text right after the digits
+    tail = text[m.end("b") if m.group("b") else m.end("a"):]
+    return bool(re.match(r"-[A-Za-z]", tail))
+
+
 def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
     """Extract every numeric value from a fact and normalise it for painting.
 
@@ -186,6 +209,8 @@ def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
     out: list[NumberSpec] = []
     prio = _priority(fid)
     for m in _NUM.finditer(text):
+        if _is_identifier(text, m):
+            continue
         a, b, sep = m.group("a"), m.group("b"), m.group("sep")
         op = (m.group("op") or "").strip()
         raw_unit = (m.group("unit") or "").strip().lower()
