@@ -147,9 +147,46 @@ def _text_call(client, prompt: str, model: str = TEXT_MODEL) -> str:
 
 _BANNED = re.compile(r"בתמונה|בסצנה|באיור|אנו רואים|אנחנו רואים|מסמל|מייצג|ברקע")
 
+# Replacements for banned phrases. The model refuses to stop using these despite
+# explicit instructions and re-ask loops (defect #4 in SKETCHY_V2_STATUS.md: all
+# three attempts tripped the ban-list). So we scrub them post-hoc with neutral
+# alternatives that preserve sentence flow.
+_SCRUB_PATTERNS = [
+    # "we see X" -> just "X" (the colon or prop name already introduces it)
+    (re.compile(r"אנו רואים\s+"), ""),
+    (re.compile(r"אנחנו רואים\s+"), ""),
+    # "X symbolizes Y" -> "X — Y" (the hook format we want)
+    (re.compile(r"\s*מסמל\s+"), " — "),
+    (re.compile(r"\s*מייצג\s+"), " — "),
+    # "in the picture/scene" -> just remove (adds nothing)
+    (re.compile(r"\s*בתמונה\s*"), " "),
+    (re.compile(r"\s*בסצנה\s*"), " "),
+    (re.compile(r"\s*באיור\s*"), " "),
+    (re.compile(r"\s*ברקע\s*"), " "),
+]
+
+
+def scrub_banned_phrases(script: str) -> str:
+    """Remove picture-description phrases that the model cannot stop using.
+
+    The instruction says "never say מסמל / אנחנו רואים" but the model ignores
+    it even after three retry loops with the failures appended. Stripping in
+    code post-hoc is cheaper and 100% reliable.
+    """
+    for pattern, repl in _SCRUB_PATTERNS:
+        script = pattern.sub(repl, script)
+    # clean up double spaces left behind
+    script = re.sub(r" {2,}", " ", script)
+    script = re.sub(r"\s+([,.\n])", r"\1", script)
+    return script.strip()
+
 
 def check_narration(script: str, figures: list[str]) -> list[str]:
-    """Hard problems worth a retry. Empty list == good enough to ship."""
+    """Hard problems worth a retry. Empty list == good enough to ship.
+
+    Note: banned phrase check is now AFTER scrubbing, so it only triggers if
+    scrub_banned_phrases somehow missed something (shouldn't happen).
+    """
     errs = []
     for m in set(_BANNED.findall(script or "")):
         errs.append(f'describes the picture instead of explaining it: "{m}"')
@@ -165,13 +202,20 @@ def check_narration(script: str, figures: list[str]) -> list[str]:
 
 
 def write_narration(client, brief: str, figures: list[str], tries: int = 3) -> str:
-    """Generate the script, re-asking on hard failures. Returns the best attempt."""
+    """Generate the script, re-asking on hard failures. Returns the best attempt.
+
+    The banned-phrase scrub runs on every attempt, so retries focus on real
+    issues (missing figures, wrong length) rather than re-asking the model to
+    stop saying "מסמל" — it won't, and code-stripping is 100% reliable.
+    """
     prompt = f"{NARRATION_INSTRUCTION}\n\n---\n\n{brief}"
     best, best_errs = "", None
     for attempt in range(tries):
         script = _text_call(client, prompt)
         if not script:
             continue
+        # scrub banned phrases BEFORE checking — eliminates the endless re-ask loop
+        script = scrub_banned_phrases(script)
         errs = check_narration(script, figures)
         if best_errs is None or len(errs) < len(best_errs):
             best, best_errs = script, errs
@@ -179,6 +223,7 @@ def write_narration(client, brief: str, figures: list[str], tries: int = 3) -> s
             return script
         print(f"[i] narration attempt {attempt+1}/{tries}: {len(errs)} issue(s); "
               f"{errs[0]}", file=sys.stderr)
+        # re-ask only covers non-phrase issues now (figures, length, list format)
         prompt = (f"{NARRATION_INSTRUCTION}\n\n---\n\n{brief}\n\n"
                   f"YOUR PREVIOUS ATTEMPT HAD THESE PROBLEMS — fix every one:\n"
                   + "\n".join(f"- {e}" for e in errs))
@@ -231,6 +276,36 @@ def speak(client, script: str, out_path: str | Path,
 
 
 # ── self-test ──────────────────────────────────────────────────────────────
+def _test_scrub_banned_phrases() -> None:
+    """Verify that banned phrases are stripped post-hoc."""
+    cases = [
+        # "we see X" -> just "X"
+        ("אנחנו רואים את הקרס הכבד", "את הקרס הכבד"),
+        ("אנו רואים ילד", "ילד"),
+        # "X symbolizes Y" -> "X — Y"
+        ("הכלב מסמל נאמנות", "הכלב — נאמנות"),
+        ("העץ מייצג צמיחה", "העץ — צמיחה"),
+        # "in the picture" -> removed
+        ("בתמונה יש פרחים", "יש פרחים"),
+        ("נמצא בסצנה", "נמצא"),
+        ("באיור מופיע", "מופיע"),
+        ("ברקע נראים הרים", "נראים הרים"),
+    ]
+    for inp, want in cases:
+        got = scrub_banned_phrases(inp)
+        assert got == want, f"scrub_banned_phrases({inp!r}) = {got!r}, want {want!r}"
+    print("  [OK] scrub_banned_phrases removes all banned patterns")
+
+    # combined test: a sentence with multiple banned phrases
+    nasty = "אנחנו רואים בתמונה איש שמסמל תקווה"
+    got = scrub_banned_phrases(nasty)
+    assert "אנחנו רואים" not in got, f"missed 'אנחנו רואים' in {got!r}"
+    assert "בתמונה" not in got, f"missed 'בתמונה' in {got!r}"
+    assert "מסמל" not in got, f"missed 'מסמל' in {got!r}"
+    assert "תקווה" in got, f"lost the payload 'תקווה' in {got!r}"
+    print("  [OK] scrub_banned_phrases handles compound bans")
+
+
 def _demo_table(plate) -> dict:
     """A stand-in element table so the brief can be exercised without a director."""
     zones = ["הרמפה", "רצפת הבור", "השפה"]
@@ -252,6 +327,10 @@ def _demo_table(plate) -> dict:
 
 
 def main() -> int:
+    print("── unit tests ──")
+    _test_scrub_banned_phrases()
+    print()
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--facts", default="_view/facts.json")
     ap.add_argument("--plate", default="main", choices=["main", "criteria"])
