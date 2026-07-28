@@ -34,6 +34,12 @@ PLATE_SPLIT_AT = 45        # split into a second plate only past this
 MAX_PAINTED_NUMBERS = 3    # per plate. 0 is an explicitly legal outcome.
 MAX_REQUIRED_STRINGS = 18  # gated legible strings, <=5 words each
 MAX_RELATIONS = 6          # bounded pairwise relations; never a plot
+# Cue length. Six was guesswork and it rejects the corpus's own grammar:
+# "Alpha1 scout w/ single candle up high" is 7 words, "Prevented from picking up
+# smiley face and compass balls" is 9. Capping at 6 burned re-asks on every
+# plate for cues that a real Sketchy legend would print unchanged. Nine still
+# forbids a sentence, which is the thing the cap is actually for.
+MAX_CUE_WORDS = 9
 
 # Chroma keys for deterministic number compositing (Path B, §3). Each painted
 # number gets its own key so detection is a pure hue mask — see
@@ -428,8 +434,8 @@ def validate_table(table: dict, facts: list[Fact]) -> list[str]:
         cue = (e.get("cue") or "").strip()
         if not cue:
             errs.append(f"{eid}: empty cue")
-        elif len(cue.split()) > 6:
-            errs.append(f"{eid}: cue over 6 words — {cue!r}")
+        elif len(cue.split()) > MAX_CUE_WORDS:
+            errs.append(f"{eid}: cue over {MAX_CUE_WORDS} words — {cue!r}")
         elif cue.lower() in cues:
             errs.append(f"{eid}: cue collides with {cues[cue.lower()]} — {cue!r}")
         else:
@@ -659,7 +665,7 @@ RULES
 - Any fact whose verb is transitive (blocks, inhibits, prevents, converts,
   transports) MUST use `relates_to` + `relation`. At most {MAX_RELATIONS} relations
   on the plate — this is a place, not a plot. No figure is the protagonist.
-- `cue` is a bare noun phrase naming ONE prop, at most 6 words, unique on the
+- `cue` is a bare noun phrase naming ONE prop, at most {MAX_CUE_WORDS} words, unique on the
   plate, and in Latin script wherever the wordplay lives in an English word.
   A positional phrase in a cue is fine — it is the address.
 - `text` only where a string is genuinely painted in the world, at most 5 words.
@@ -699,8 +705,8 @@ def check_legend_row(cue: str, fact: str, hook: str) -> list[str]:
         errs.append(f"fact half describes the picture: {fact!r}")
     if _BAN_FACT.search(hook or ""):
         errs.append(f"hook describes the picture: {hook!r}")
-    if len(cue.split()) > 6:
-        errs.append(f"cue over 6 words: {cue!r}")
+    if len(cue.split()) > MAX_CUE_WORDS:
+        errs.append(f"cue over {MAX_CUE_WORDS} words: {cue!r}")
     return errs
 
 
