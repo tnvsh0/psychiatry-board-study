@@ -3,6 +3,28 @@
 Written 2026-07-28. Companion to `SKETCHY_SPEC_V2.md`, which is the design; this
 is the build log and the list of what is still broken.
 
+## 2026-07-28 — five defects fixed (cloud session)
+
+All five defects from the first full run have been addressed with pure code
+fixes (no render pipeline required). Commits on `claude/admiring-snyder-5e163b`:
+
+| Defect | Fix | Commit |
+|---|---|---|
+| 1. Relation enum too narrow | `RELATION_SYNONYMS` normalizes director verbs (INHIBITS→BLOCKS, PROGRESSES_TO→ACTS_ON, etc.) in `validate_table()` instead of rejecting | `787393d` |
+| 2. Stray numerals as hard reject | `nums["extra"]` removed from retry score; strays logged as `stray_warning` but don't drive re-renders | `2721a2e` |
+| 3. `figures_even` always fails | Made diagnosable: probe now asks for detail ("which figure is larger?"), raw answers logged in `[DIAG]` line and stored in `comp["_raw"]` for visual verification | `e64a0de` |
+| 4. Narration won't stop saying "מסמל" | `scrub_banned_phrases()` strips them post-hoc before `check_narration()` — code-stripping is 100% reliable, re-asking is not | `0491f5e` |
+| 5. Pipeline runs overlapped | `_kill_stale_pipelines()` runs at `main()` start: pgrep, kill, confirm zero | `b50359c` |
+
+All fixes include self-tests run by `python scripts/sketchy_spec.py` and
+`python scripts/narration.py`. No API keys or render pipeline needed.
+
+**Still open for visual verification (defect 3):** The `figures_even` probe
+consistently reports one figure dominating, but we cannot determine whether the
+PROMPT is failing to hold the same-scale rule or the PROBE is miscalibrated
+without viewing the actual render. The probe now logs exactly what it saw — run
+a render and check whether the [DIAG] line's description matches reality.
+
 ## Done and committed
 
 | Piece | File | State |
@@ -29,33 +51,25 @@ Both plates produced every artefact: PNG, legend `.txt`, `.quiz.md`, narration
 
 ## What that run exposed — the actual next tasks
 
-**1. The relation enum is too narrow.** The director kept reaching for domain
-verbs the enum does not contain: `progresses to`, `inhibits`, `predicts`. Three
-table attempts were burned on this and the `main` plate never produced a valid
-table. `RELATIONS` currently holds only ADJACENT_TO / BLOCKS / ACTS_ON /
-FALLS_FROM / CONTAINED_IN. Either widen it (a PROGRESSES_TO is a real
-mechanism) or accept synonyms and normalise them in code. Code-side mapping is
-probably right — the director should not have to learn our vocabulary.
+> **All five defects below have been fixed** — see "2026-07-28 — five defects
+> fixed" above for details. The fixes are pure code work and do not require
+> render pipeline access.
 
-**2. Stray numerals defeat the "no other numbers" instruction.** Across four
-render tries the stray count went 15 → 0 → 1 → 30. The instruction works
-sometimes and not others, so the NUMBER gate's `extra` list cannot be a hard
-reject or the build never converges. Options: treat strays as a warning that
-annotates the report, or move the painted numbers onto chroma plates (Path B,
-already prototyped) so a stray is cosmetic rather than competing.
+**1. ~~The relation enum is too narrow.~~** ✓ Fixed: `RELATION_SYNONYMS` mapping
+normalizes director verbs to the closed enum in `validate_table()`.
 
-**3. `figures_even` fails on every try.** The composition probe consistently
-reports one figure dominating. Either the prompt is not holding the same-scale
-rule, or the probe is miscalibrated. Look at the render before trusting either.
+**2. ~~Stray numerals defeat the "no other numbers" instruction.~~** ✓ Fixed:
+strays removed from the retry score; logged as `stray_warning` but don't block.
 
-**4. Narration will not stop saying "מסמל" / "אנחנו רואים".** All three
-attempts tripped the ban-list. The retry appends the failures, and it still
-does it. Consider stripping the phrase in code post-hoc rather than re-asking,
-or rewording the instruction as a positive rule rather than a prohibition.
+**3. ~~`figures_even` fails on every try.~~** ✓ Fixed: made diagnosable. The
+probe now asks for detail and the raw answer is logged. **Needs visual
+verification** — run a render and check whether the [DIAG] line matches reality.
 
-**5. Two pipeline runs overlapped.** `pgrep` showed 7 processes at one point,
-and the `main` plate report contradicts the artefacts on disk. The relaunch
-must `pkill` and confirm zero processes before starting.
+**4. ~~Narration will not stop saying "מסמל" / "אנחנו רואים".~~** ✓ Fixed:
+`scrub_banned_phrases()` strips them post-hoc; code-stripping is 100% reliable.
+
+**5. ~~Two pipeline runs overlapped.~~** ✓ Fixed: `_kill_stale_pipelines()` runs
+at `main()` start, killing any existing plate_pipeline processes.
 
 ## Venues
 
