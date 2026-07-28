@@ -586,6 +586,87 @@ frame is {table['anchor_structure'][:120]}; no protagonist.
 """
 
 
+def build_plate_director(plate: Plate, venue: dict, topic: str,
+                         tokens: dict | None = None) -> str:
+    """The director prompt. Its output contract is the ELEMENT TABLE, not prose.
+
+    v1 asked for a free-text scene and a loose key, which is why nothing could
+    be validated: there was no stable name for any element, so no gate could
+    ask whether it had been drawn. Here the director fills in a table whose
+    shape code already fixed, and `validate_table` rejects it mechanically.
+    """
+    numbers = [n for f in plate.facts for n in f.numbers if n.drawn]
+    fact_lines = "\n".join(
+        f"  {f.id}  [{f.aspect}/{f.subkey}]  {f.text}" for f in plate.facts
+    )
+    num_lines = "\n".join(
+        f'  - "{n.paint}" tagged "{n.tag}" — carrier class {n.carrier or "choose one"}'
+        for n in numbers
+    ) or "  (no numbers are painted on this plate)"
+
+    tok_lines = ""
+    if tokens:
+        tok_lines = "\n\nCOURSE-WIDE FIXED SYMBOLS this chapter needs. These may NOT be\n" \
+                    "redesigned. Each must stand as a prop INSIDE the venue, never in place\n" \
+                    "of it. Use the given cue and prop verbatim:\n" + "\n".join(
+            f'  - {k}: cue "{v["cue"]}" — {v["prop"][:120]}' for k, v in tokens.items()
+        )
+
+    return f"""You are the scene director for a SketchyMedical-style study plate.
+
+TOPIC: {topic}
+
+THE VENUE IS FIXED — do not invent another one:
+  sign over the door : "{venue['sign_text']}"
+  the place          : {venue['place']}
+  what everyone does : {venue['activity']}
+  the anchor         : {venue.get('anchor_structure', '')}
+  things it contains : {', '.join(venue.get('stock_props', [])[:15])}
+
+THE FACTS — every one of these must be represented by exactly one element.
+An element MAY carry several facts (shared class effects), but no fact may be
+dropped or merged away.
+{fact_lines}
+
+NUMBERS TO PAINT — these exact characters, each with its tag on the SAME object:
+{num_lines}
+{tok_lines}
+
+RULES
+- Derive each element from the closed list, preferring the earlier ones:
+  LITERAL_DEPICTION (a person actually doing it — the corpus's largest
+  mechanism), PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT,
+  PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN,
+  CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR (last resort, at most
+  one element in twenty).
+- NEVER invent a metaphor for a feeling. Draw a person exhibiting it, or use a
+  fixed token, or borrow an artwork that already depicts it.
+- Give 3 or 4 zones, named after parts of this place, and put every element in one.
+- Any fact whose verb is transitive (blocks, inhibits, prevents, converts,
+  transports) MUST use `relates_to` + `relation`. At most {MAX_RELATIONS} relations
+  on the plate — this is a place, not a plot. No figure is the protagonist.
+- `cue` is a bare noun phrase naming ONE prop, at most 6 words, unique on the
+  plate, and in Latin script wherever the wordplay lives in an English word.
+  A positional phrase in a cue is fine — it is the address.
+- `text` only where a string is genuinely painted in the world, at most 5 words.
+  At most {MAX_REQUIRED_STRINGS} of them.
+- `triple` is [category, material, dominant colour] and must be unique across
+  elements whose facts are unrelated.
+- `hook` is at most 8 words saying WHY this prop carries this fact. Never
+  "represents" or "symbolizes" — name the derivation.
+
+Return STRICT JSON only, matching this shape:
+{{"venue": {{"sign_text": "...", "place": "...", "activity": "..."}},
+ "anchor_structure": "...",
+ "zones": ["...", "..."],
+ "elements": [
+   {{"id": "e1", "fact_ids": ["..."], "cue": "...", "prop": "...",
+     "zone": "...", "text": "", "derivation": "LITERAL_DEPICTION",
+     "triple": ["...", "...", "..."], "relates_to": "", "relation": "",
+     "hook": "..."}}
+ ]}}"""
+
+
 # ── legend ─────────────────────────────────────────────────────────────────
 # Banned in the FACT half only. Positional words in a CUE are the address, not
 # narration — the corpus writes "Barbershop next to Cab-A" and "Butter in front
