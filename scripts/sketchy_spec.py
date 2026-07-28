@@ -70,6 +70,22 @@ FREE_METAPHOR_CAP = 0.05
 
 RELATIONS = ("ADJACENT_TO", "BLOCKS", "ACTS_ON", "FALLS_FROM", "CONTAINED_IN")
 
+# The director reaches for domain verbs the enum does not contain: `progresses to`,
+# `inhibits`, `predicts`. Three table attempts burned on chapter 28 because of this.
+# Rather than teach the director our vocabulary, accept synonyms and normalize them.
+RELATION_SYNONYMS = {
+    # transitive verbs the model naturally reaches for, mapped to the closest enum
+    "INHIBITS": "BLOCKS", "PREVENTS": "BLOCKS", "STOPS": "BLOCKS",
+    "ANTAGONIZES": "BLOCKS", "ANTAGONISES": "BLOCKS", "SUPPRESSES": "BLOCKS",
+    "PROGRESSES_TO": "ACTS_ON", "LEADS_TO": "ACTS_ON", "CAUSES": "ACTS_ON",
+    "CONVERTS_TO": "ACTS_ON", "TRANSFORMS": "ACTS_ON", "TRIGGERS": "ACTS_ON",
+    "PREDICTS": "ACTS_ON", "INDICATES": "ACTS_ON", "PRECEDES": "ACTS_ON",
+    "TRANSPORTS": "ACTS_ON", "RELEASES": "ACTS_ON", "POTENTIATES": "ACTS_ON",
+    "NEXT_TO": "ADJACENT_TO", "BESIDE": "ADJACENT_TO", "NEAR": "ADJACENT_TO",
+    "INSIDE": "CONTAINED_IN", "WITHIN": "CONTAINED_IN", "PART_OF": "CONTAINED_IN",
+    "DROPS_FROM": "FALLS_FROM", "DESCENDS_FROM": "FALLS_FROM",
+}
+
 # Objects whose real-world job is to bear digits (§3 stage 3).
 CARRIERS = (
     "JERSEY_OR_BIB", "GATE_OR_PLATFORM_NUMBER", "PRICE_OR_MENU_BOARD",
@@ -458,7 +474,13 @@ def validate_table(table: dict, facts: list[Fact]) -> list[str]:
             errs.append(f"{eid}: derivation {der!r} is not one of {', '.join(DERIVATIONS)}")
         rel = e.get("relation")
         if rel and rel not in RELATIONS:
-            errs.append(f"{eid}: relation {rel!r} is not one of {', '.join(RELATIONS)}")
+            # accept synonyms — the director shouldn't have to learn our vocabulary
+            canonical = RELATION_SYNONYMS.get(rel.upper().replace(" ", "_"))
+            if canonical:
+                e["relation"] = canonical  # mutate in place so the prompt sees the right one
+            else:
+                errs.append(f"{eid}: relation {rel!r} is not one of {', '.join(RELATIONS)} "
+                            f"and has no known synonym")
         if rel and not e.get("relates_to"):
             errs.append(f"{eid}: relation without relates_to")
         if e.get("relates_to") and e["relates_to"] not in {x.get("id") for x in els}:
@@ -768,6 +790,39 @@ def render_quiz(legend: str) -> str:
 
 
 # ── self-test ──────────────────────────────────────────────────────────────
+def _test_relation_normalization() -> None:
+    """Verify that director synonyms are normalized rather than rejected."""
+    # a minimal table with one element using a synonym the director naturally reaches for
+    test_facts = [Fact(id="f1", aspect="test", subkey="x", text="test fact",
+                       track="main", priority=50)]
+    table = {
+        "venue": {"sign_text": "TEST", "place": "a test place", "activity": "testing"},
+        "anchor_structure": "a large inanimate object",
+        "zones": ["zone A", "zone B"],
+        "elements": [{
+            "id": "e1", "fact_ids": ["f1"], "cue": "test prop",
+            "prop": "a test prop", "zone": "zone A", "derivation": "LITERAL_DEPICTION",
+            "relates_to": "e2", "relation": "INHIBITS",  # synonym, not in RELATIONS
+        }, {
+            "id": "e2", "fact_ids": ["f1"], "cue": "another prop",
+            "prop": "another prop", "zone": "zone B", "derivation": "LITERAL_DEPICTION",
+        }],
+    }
+    errs = validate_table(table, test_facts)
+    # should NOT reject because INHIBITS is a synonym for BLOCKS
+    assert "INHIBITS" not in " ".join(errs), f"INHIBITS was rejected: {errs}"
+    # should have been normalized to BLOCKS
+    assert table["elements"][0]["relation"] == "BLOCKS", (
+        f"relation not normalized: {table['elements'][0]['relation']}")
+    print("  [OK] relation normalization: INHIBITS -> BLOCKS")
+
+    # test an unknown relation still fails
+    table["elements"][0]["relation"] = "MYSTIFIES"
+    errs = validate_table(table, test_facts)
+    assert any("MYSTIFIES" in e for e in errs), f"unknown relation MYSTIFIES not rejected: {errs}"
+    print("  [OK] unknown relation MYSTIFIES rejected")
+
+
 def _demo(path: Path) -> None:
     facts = atomize(json.loads(path.read_text(encoding="utf-8")))
     print(f"atomized {len(facts)} facts from {path.name}\n")
@@ -790,6 +845,10 @@ def _demo(path: Path) -> None:
 
 if __name__ == "__main__":
     import sys
+    print("── unit tests ──")
+    _test_relation_normalization()
+    print()
+
     p = Path(sys.argv[1] if len(sys.argv) > 1 else "_view/facts.json")
     if not p.exists():
         raise SystemExit(f"no facts file at {p}")
