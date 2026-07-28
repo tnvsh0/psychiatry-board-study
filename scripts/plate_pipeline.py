@@ -241,7 +241,59 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     return report
 
 
+def _kill_stale_pipelines() -> None:
+    """Kill any existing plate_pipeline processes before starting a new run.
+
+    Defect #5 in SKETCHY_V2_STATUS.md: two pipeline runs overlapped, pgrep
+    showed 7 processes at one point, and the main plate report contradicts
+    the artefacts on disk. The fix: relaunch must pkill and confirm zero
+    processes before starting.
+    """
+    import os
+    import subprocess
+    my_pid = os.getpid()
+
+    # find all plate_pipeline.py processes except this one
+    try:
+        result = subprocess.run(
+            ["pgrep", "-f", "plate_pipeline.py"],
+            capture_output=True, text=True, timeout=5
+        )
+        pids = [int(p) for p in result.stdout.strip().split() if p]
+        pids = [p for p in pids if p != my_pid]
+    except (subprocess.TimeoutExpired, FileNotFoundError, ValueError):
+        pids = []
+
+    if pids:
+        print(f"[!] found {len(pids)} stale plate_pipeline process(es): {pids}",
+              file=sys.stderr)
+        for pid in pids:
+            try:
+                os.kill(pid, 9)  # SIGKILL
+                print(f"[i] killed PID {pid}", file=sys.stderr)
+            except OSError:
+                pass  # already dead
+
+        # confirm zero remain (wait a moment for process table to update)
+        import time
+        time.sleep(0.5)
+        try:
+            result = subprocess.run(
+                ["pgrep", "-f", "plate_pipeline.py"],
+                capture_output=True, text=True, timeout=5
+            )
+            remaining = [int(p) for p in result.stdout.strip().split() if p]
+            remaining = [p for p in remaining if p != my_pid]
+            if remaining:
+                raise SystemExit(f"[!] could not kill stale processes: {remaining}")
+        except (subprocess.TimeoutExpired, FileNotFoundError, ValueError):
+            pass
+
+
 def main() -> int:
+    # guard against overlapping runs (defect #5)
+    _kill_stale_pipelines()
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--day", type=int, required=True)
     ap.add_argument("--facts", default="_view/facts.json")
