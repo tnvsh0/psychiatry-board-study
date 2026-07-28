@@ -443,10 +443,22 @@ def validate_table(table: dict, facts: list[Fact]) -> list[str]:
             else:
                 triples[tri] = eid
 
-        if e.get("relation") and not e.get("relates_to"):
+        # The closed enums live in ELEMENT_TABLE_SCHEMA, but nothing runs a
+        # JSON-schema validator over the director's output, so they were being
+        # declared and never checked. A relation of "predicts" sailed through
+        # here and then crashed prompt construction on a dict lookup.
+        der = e.get("derivation")
+        if der not in DERIVATIONS:
+            errs.append(f"{eid}: derivation {der!r} is not one of {', '.join(DERIVATIONS)}")
+        rel = e.get("relation")
+        if rel and rel not in RELATIONS:
+            errs.append(f"{eid}: relation {rel!r} is not one of {', '.join(RELATIONS)}")
+        if rel and not e.get("relates_to"):
             errs.append(f"{eid}: relation without relates_to")
         if e.get("relates_to") and e["relates_to"] not in {x.get("id") for x in els}:
             errs.append(f"{eid}: relates_to unknown element {e['relates_to']}")
+        if e.get("number") is not None and not isinstance(e.get("number"), dict):
+            errs.append(f"{eid}: number must be an object")
 
     n_rel = sum(1 for e in els if e.get("relates_to"))
     if n_rel > MAX_RELATIONS:
@@ -530,10 +542,12 @@ ZONES, and what belongs in each: {' · '.join(zones)}"""
             line += f" — in the {scrub_prop_text(e['zone'])}"
         if e.get("relates_to") and e.get("relation"):
             tgt = next((x for x in els if x.get("id") == e["relates_to"]), None)
+            # .get, not [], so an unvalidated relation degrades to a plain
+            # adjacency instead of taking the whole build down
+            verb = {"BLOCKS": "physically blocking", "ACTS_ON": "acting on",
+                    "ADJACENT_TO": "right beside", "FALLS_FROM": "falling from",
+                    "CONTAINED_IN": "inside"}.get(e["relation"], "right beside")
             if tgt:
-                verb = {"BLOCKS": "physically blocking", "ACTS_ON": "acting on",
-                        "ADJACENT_TO": "right beside", "FALLS_FROM": "falling from",
-                        "CONTAINED_IN": "inside"}[e["relation"]]
                 line += f", {verb} {scrub_prop_text(tgt['prop'])}"
         props.append(line)
 

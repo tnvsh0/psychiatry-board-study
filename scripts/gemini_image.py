@@ -441,6 +441,33 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     return {}
 
 
+def run_json_director(instruction: str, api_key: Optional[str] = None,
+                      model: str = CAPTION_MODEL) -> dict:
+    """Run a text prompt whose contract is 'return STRICT JSON', and parse it.
+
+    Separate from run_scene_director because that one enforces the v1 contract:
+    it requires a "scene" key and discards everything else, so a v2 element
+    table came back as {} and the plate pipeline reported "output was not an
+    element table" without ever having looked at what the model actually said.
+    """
+    client = _get_client(api_key)
+    if client is None:
+        return {}
+    try:
+        resp = client.models.generate_content(model=model, contents=instruction)
+        text = "".join(
+            p.text
+            for c in getattr(resp, "candidates", []) or []
+            for p in getattr(c.content, "parts", []) or []
+            if getattr(p, "text", None)
+        )
+        data = _loads_first_json(text)
+        return data if isinstance(data, dict) else {}
+    except Exception as e:  # noqa: BLE001
+        print(f"[!] json director failed: {e}", file=sys.stderr)
+        return {}
+
+
 def _probe(client, image_path, prompt: str, model: str = CAPTION_MODEL):
     """Ask the vision model one question about a rendered image.
 

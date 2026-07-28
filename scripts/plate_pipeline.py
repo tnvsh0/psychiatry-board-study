@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -77,6 +78,22 @@ def _carrier_score(prop: str) -> int:
                default=0)
 
 
+def _short_carrier(prop: str) -> str:
+    """Trim a stock-prop line to a short noun phrase naming the object.
+
+    venues.json entries read like "recipe board chalked in percent on weight of
+    goods" — a whole clause. Handed to the director as a carrier, it copied the
+    clause verbatim into `cue`, which then failed the six-word limit on every
+    numeric element. Cut at the first participle or preposition; the descriptive
+    tail is scene-setting, not the object's name.
+    """
+    head = re.split(r"\s+(?:chalked|hung|stacked|slung|set|painted|bolted|"
+                    r"printed|with|on|in|at|of|across|over|by|for|down|up)\b",
+                    prop.strip(), maxsplit=1)[0]
+    words = head.split()
+    return " ".join(words[:4]) if words else prop.strip()[:40]
+
+
 def _assign_carriers(plate: spec.Plate, venue: dict) -> None:
     """Give each painted number a carrier drawn from the venue's own inventory.
 
@@ -87,6 +104,7 @@ def _assign_carriers(plate: spec.Plate, venue: dict) -> None:
     """
     props = [p.split("(")[0].strip() for p in venue.get("stock_props", [])]
     ranked = sorted(props, key=_carrier_score, reverse=True)
+    ranked = [_short_carrier(p) for p in ranked]
     nums = sorted((x for f in plate.facts for x in f.numbers if x.drawn),
                   key=lambda n: -n.priority)
     for i, n in enumerate(nums):
@@ -117,12 +135,16 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     # ── director -> element table, re-asked on schema failure ──────────────
     table, errs = None, []
     for attempt in range(3):
-        raw = gi.run_scene_director(director if attempt == 0 else
-                                    director + "\n\nYOUR LAST ANSWER WAS REJECTED:\n"
-                                    + "\n".join(f"- {e}" for e in errs[:12]))
-        cand = raw if isinstance(raw, dict) and "elements" in raw else None
+        raw = gi.run_json_director(director if attempt == 0 else
+                                   director + "\n\nYOUR LAST ANSWER WAS REJECTED:\n"
+                                   + "\n".join(f"- {e}" for e in errs[:12]))
+        cand = raw if isinstance(raw, dict) and raw.get("elements") else None
         if cand is None:
-            errs = ["output was not an element table"]
+            errs = ["output had no `elements` array — return the element table "
+                    "JSON exactly as specified, with no prose around it"]
+            print(f"[i] element table attempt {attempt+1}/3: "
+                  f"director returned keys {sorted(raw)[:8] if raw else '(nothing)'}",
+                  file=sys.stderr)
             continue
         errs = spec.validate_table(cand, plate.facts)
         if not errs:
