@@ -193,7 +193,9 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # treating strays as a hard reject means the build never converges. They
         # are logged as a warning, reported, and annotated in the legend, but
         # they do not drive retries. (See defect #2 in SKETCHY_V2_STATUS.md.)
-        score = len(missing_all) + sum(1 for v in comp.values() if not v)
+        # comp now contains `_raw` with the full probe answers for diagnosis — exclude it
+        comp_fails = sum(1 for k, v in comp.items() if k != "_raw" and not v)
+        score = len(missing_all) + comp_fails
 
         snap = {"numbers": nums, "text_missing": miss_txt, "composition": comp,
                 "missing_all": missing_all, "score": score,

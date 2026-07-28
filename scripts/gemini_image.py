@@ -570,21 +570,39 @@ def check_composition(client, image_path) -> dict:
     Per-object presence probes read ~100% over a cluttered cartoon regardless of
     quality; these ask about the frame as a whole, which a vision model answers
     far more reliably. A key is absent when its probe could not run.
+
+    DIAGNOSIS NOTE for `figures_even` (defect #3 in SKETCHY_V2_STATUS.md):
+    This probe failed on every try in the chapter 28 run, consistently reporting
+    one figure dominating. Either the prompt is not holding the same-scale rule
+    OR the probe is miscalibrated. The raw answer is now logged alongside the
+    boolean so whoever can view the actual render can determine which side is
+    wrong. If the probe is miscalibrated (e.g., it interprets "dominating" as
+    visual salience rather than size), the prompt may need rewording.
     """
     ask = {
         "anchor_is_object": "Is the single largest object in this image an "
                             "inanimate structure rather than a person? Answer YES or NO.",
-        "figures_even": "Are the human figures all roughly the same size, with no "
-                        "one figure dominating the picture? Answer YES or NO.",
+        # `figures_even` uses an extended prompt to get diagnostic detail
+        "figures_even": "Look at the human figures in this image. (1) Are they all "
+                        "roughly the same size? (2) Is there one figure that is clearly "
+                        "larger than the others? If so, describe it briefly. Answer in "
+                        "the format: 'YES all similar' or 'NO, the <description> is larger'.",
         "frame_filled": "Is this image filled with content all the way to all four "
                         "edges, with no blank margin and no darkened vignette? "
                         "Answer YES or NO.",
     }
     out = {}
+    raw = {}  # store raw answers for diagnosis
     for k, q in ask.items():
         ans = _probe(client, image_path, q)
         if ans is not None:
+            raw[k] = ans.strip()
             out[k] = ans.strip().upper().startswith("YES")
+    # log figures_even raw answer for diagnosing defect #3
+    if "figures_even" in raw and not out.get("figures_even"):
+        print(f"[DIAG] figures_even probe returned NO: {raw['figures_even']!r}",
+              file=sys.stderr)
+    out["_raw"] = raw  # include raw answers for report inspection
     return out
 
 
