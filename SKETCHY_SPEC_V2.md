@@ -341,7 +341,7 @@ Constraints code enforces:
 - **Ban filler numerals.** Instruct that no numeral other than the required
   ones appears anywhere in the frame, so the gate is not noisy. (The corpus
   violates this — p207 is covered in decorative jersey numbers — but we cannot
-  afford the ambiguity at 768 px.)
+  afford the ambiguity even at 2K.)
 - **MAGNITUDE PARTNER.** Every painted number sits beside a prop whose sheer
   quantity redundantly shows direction, so a failed digit still yields
   "massive" vs "trace". p272's heaped cart vs p274's scattered scraps.
@@ -730,12 +730,13 @@ becomes visible.
 back `[לא מצויר]`. As currently specified, a legal/ethical plate that drops 70%
 of its facts passes every gate and logs green.
 
-**Resolution is the binding constraint and must be decided, not noted.**
-Current renders are 1376×768. A 3.1%-of-height glyph — the measured size of
-p207's `52` — is 24 px at that height, right at the legibility floor before any
-model garbling. Either raise the render resolution or cap at ~22 elements and
-~8 required strings. Without an explicit trade, the first v2 render will be a
-smaller version of the same failure.
+**Resolution — DECIDED.** v1 never set a size and silently took the default
+1376×768, where a 3.1%-of-height glyph (the measured size of p207's `52`) is
+24 px: the legibility floor before any model garbling. `SKETCHY_IMAGE_SIZE`
+now defaults to **2K** (2752×1536), which doubles both axes and puts that same
+glyph near 48 px. Because the hybrid split also cuts renders per chapter from
+five-to-seven down to two, the cost per chapter falls even at the larger size.
+Judge element and string budgets against 2K, not against the old default.
 
 ---
 
@@ -787,8 +788,8 @@ denominator · stair sign `"THE DROP"` = puberty, where both the rate and the
 sex ratio change (`PRINTED_TEXT`; adjacency is the fact).
 
 Six required strings total — `MAJOR PIT`, `70% AGAIN`, `40-60% GENES`,
-`4-8% TEENS`, `RULES`, `THE DROP` — well under the 18 cap and within reach at
-768 px.
+`4-8% TEENS`, `RULES`, `THE DROP` — well under the 18 cap and comfortable at
+2K.
 
 **Legend as `render_legend` emits it:**
 
