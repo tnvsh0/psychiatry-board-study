@@ -20,5 +20,8 @@ _generated/
 _proto/
 _view/
 _venue_input.json
+
+# The venue drafts are real deliverables, not scratch — many hours of
+# authoring and review live in them, and they were only ever on one machine.
+# _venue_audit.json stays ignored: it is derived, rebuilt by _venue_audit.py.
 _venue_audit.json
-_verdicts_partial.json
