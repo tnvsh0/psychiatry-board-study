@@ -181,31 +181,31 @@ def build_chapters(ws):
 
 def build_questions(ws):
     ws.sheet_view.rightToLeft = True
-    letters = "א ב ג ד ה".split()
-    headers = ["שבוע", "#", "שאלה", "א", "ב", "ג", "ד", "תשובה", "הסבר", "מקור"]
+    kind_he = {"vignette": "וינייטה", "discussion": "דיון"}
+    headers = ["שבוע", "#", "סוג", "שאלה", "תת-שאלות", "נקודות מפתח לתשובה", "מקור"]
     ws.append(headers)
     style_header(ws, 1, len(headers))
 
     top = Alignment(horizontal="right", vertical="top", wrap_text=True)
     for wk in QUESTIONS:
-        for i, q in enumerate(wk["questions"], start=1):
-            opts = q["options"] + [""] * (4 - len(q["options"]))
-            ans = letters[q["answer"]] if q["answer"] < len(letters) else "?"
-            ws.append([wk["week"], i, q["q"], opts[0], opts[1], opts[2], opts[3],
-                       ans, q.get("explanation", ""), q.get("source", "")])
+        for i, it in enumerate(wk["items"], start=1):
+            sub = "\n".join(f"• {s}" for s in it.get("sub", []))
+            pts = "\n".join(f"◾ {p}" for p in it.get("points", []))
+            ws.append([wk["week"], i, kind_he.get(it["type"], it["type"]),
+                       it["stem"], sub, pts, it.get("source", "")])
             r = ws.max_row
             fill = LEARN if wk["week"] % 2 else "FFFFFF"
             for c in range(1, len(headers) + 1):
                 cell = ws.cell(row=r, column=c)
                 cell.font = CFONT
                 cell.border = BORDER
-                cell.alignment = CENTER if c in (1, 2, 8) else top
-                if c in (1, 2):
+                cell.alignment = CENTER if c in (1, 2, 3) else top
+                if c in (1, 2, 3):
                     cell.fill = PatternFill("solid", fgColor=fill)
-                if c == 8:  # answer — highlight
-                    cell.font = Font(name=FONT, bold=True, size=11, color="1F6B2E")
+                if c == 6:  # model-answer points
+                    cell.font = Font(name=FONT, size=10, color="1F4E3D")
 
-    widths = [6, 4, 50, 20, 20, 20, 20, 8, 55, 20]
+    widths = [6, 4, 10, 46, 40, 56, 22]
     for i, w in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A2"
@@ -220,7 +220,7 @@ def main() -> int:
     if QUESTIONS:
         build_questions(wb.create_sheet("שאלות תרגול"))
     wb.save(OUT)
-    print(f"Wrote {OUT}  ({sum(len(w['questions']) for w in QUESTIONS)} questions)")
+    print(f"Wrote {OUT}  ({sum(len(w['items']) for w in QUESTIONS)} exam-style items)")
     return 0
 
 
