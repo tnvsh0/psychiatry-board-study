@@ -186,6 +186,54 @@ MAP: dict[int, dict] = {
 }
 
 
+# ── flashcard-summary pages (the traditional 310-page resident summary) ──────
+# curriculum index -> page range(s) in "סיכומי כרטיסיות שלב ב.pdf" (printed == pdf).
+# Ranges taken from its extracted TOC (schedule/flashcard_toc.json). This is what
+# rescues the pediatric-neurology block, which the core textbooks do not cover
+# but the summary does (its neurology section is pp.293-295).
+FC_MAP: dict[int, list[list[int]]] = {
+    2: [[283, 285]], 3: [[281, 282]], 4: [[281, 282]], 5: [[281, 282]],
+    6: [[281, 282]], 7: [[281, 282]],
+    8: [[300, 300], [304, 307]], 9: [[302, 307]], 10: [[302, 303]],
+    12: [[275, 277], [304, 307]], 13: [[301, 301]],
+    16: [[281, 282]],
+    17: [[133, 144]], 18: [[133, 144]], 19: [[133, 144]],
+    20: [[145, 156]], 21: [[160, 162]], 22: [[157, 159]], 23: [[176, 180]],
+    24: [[169, 175]], 25: [[163, 168]], 26: [[287, 292]], 27: [[287, 292]],
+    28: [[4, 15]], 29: [[4, 15]], 30: [[4, 15]], 31: [[4, 15]],
+    32: [[21, 22], [4, 15]], 33: [[23, 34]], 34: [[23, 34]], 35: [[23, 34]],
+    36: [[23, 34]], 37: [[16, 20], [21, 22], [23, 34]],
+    38: [[57, 57]], 39: [[59, 60]], 40: [[53, 53], [58, 58]], 41: [[54, 56]],
+    42: [[61, 64]], 43: [[84, 89]], 44: [[84, 89]], 45: [[90, 91]],
+    46: [[92, 94]], 47: [[100, 108]], 48: [[100, 108]], 49: [[95, 99]],
+    50: [[95, 96]], 52: [[109, 110]], 53: [[217, 221]],
+    55: [[65, 71]], 56: [[65, 71], [283, 285]], 57: [[72, 75]],
+    58: [[76, 83]], 59: [[76, 83]], 60: [[76, 83]], 61: [[76, 83]],
+    62: [[76, 83]], 63: [[76, 83]], 64: [[76, 83]], 65: [[76, 83]],
+    66: [[76, 83]], 67: [[76, 83]], 68: [[75, 75]], 69: [[65, 71]],
+    70: [[35, 36]],
+    71: [[208, 216]], 72: [[208, 216]], 73: [[208, 216]], 74: [[208, 216]],
+    75: [[111, 132]], 76: [[111, 132]], 77: [[111, 132]], 78: [[181, 188]],
+    79: [[208, 216]], 80: [[111, 132]],
+    81: [[192, 202]], 82: [[192, 202]], 83: [[192, 202]], 84: [[192, 202]],
+    85: [[192, 202]], 86: [[192, 202]], 87: [[192, 202]], 88: [[192, 202]],
+    89: [[192, 202]], 90: [[192, 202]],
+    94: [[203, 207]], 95: [[203, 207]], 96: [[42, 44]],
+    102: [[222, 224]], 103: [[222, 224]], 104: [[189, 191]],
+    106: [[37, 49]], 107: [[38, 41]], 108: [[16, 20]], 109: [[16, 20]],
+    110: [[308, 309]],
+    115: [[283, 285], [293, 295]],
+    116: [[293, 295]], 117: [[293, 295]], 118: [[293, 295]], 119: [[293, 295]],
+    120: [[293, 295]], 121: [[293, 295]], 122: [[287, 292], [293, 295]],
+    123: [[293, 295]], 124: [[293, 295]], 125: [[293, 295]], 126: [[293, 295]],
+    127: [[293, 295]],
+    128: [[208, 216]], 130: [[296, 299]],
+    131: [[225, 236]], 132: [[278, 280]], 133: [[203, 207], [225, 236]],
+    134: [[237, 242]], 135: [[237, 242]], 138: [[237, 242]],
+    139: [[243, 265]], 140: [[253, 261]], 141: [[266, 277]],
+}
+
+
 def leading_num(title: str):
     m = re.match(r"\s*(\d+)\b", title)
     return int(m.group(1)) if m else None
@@ -271,6 +319,8 @@ def main() -> int:
                 entry["Stahl C&A"] = f"{drugs} (עמ' {merge_pages(rs)})"
         if m.get("SYN"):
             entry["Synopsis"] = "פרק " + ", ".join(str(n) for n in m["SYN"])
+        if idx in FC_MAP:
+            entry["כרטיסיות"] = "עמ' " + merge_pages(FC_MAP[idx])
         if m.get("note"):
             entry["note"] = m["note"]
 
@@ -289,12 +339,16 @@ def main() -> int:
         "chapters": guide,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    have = sum(1 for g in guide.values() if any(k != "note" for k in g["reading"]))
-    note_only = sum(1 for g in guide.values()
-                    if list(g["reading"]) == ["note"] or not g["reading"])
+    BOOKS = {"Dulcan", "DSM-5-TR", "Stahl Essential", "Stahl C&A", "Synopsis"}
+    textbook = sum(1 for g in guide.values() if BOOKS & set(g["reading"]))
+    fc_only = sum(1 for g in guide.values()
+                  if not (BOOKS & set(g["reading"])) and "כרטיסיות" in g["reading"])
+    nothing = [int(i) for i, g in guide.items()
+               if not (BOOKS & set(g["reading"])) and "כרטיסיות" not in g["reading"]]
     print(f"Wrote {OUT}")
-    print(f"  {have}/{len(guide)} chapters have a book page reference")
-    print(f"  {note_only} are note-only (no clean textbook home)")
+    print(f"  {textbook}/{len(guide)} chapters have a textbook page reference")
+    print(f"  {fc_only} more are covered only by the flashcard summary")
+    print(f"  {len(nothing)} have no page reference at all: {nothing}")
     return 0
 
 

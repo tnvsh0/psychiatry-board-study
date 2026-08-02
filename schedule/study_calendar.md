@@ -40,199 +40,199 @@
 - **1. בדיקת ילד ומתבגר**  
   📖 Dulcan: פרק 1+4+5, עמ' 3-16, 59-90
 - **2. יסודות נוירואנטומיה לפסיכיאטר**  
-  📖 Dulcan: פרק 6, עמ' 91-106 · Stahl Essential: פרק 1, עמ' 1-28
+  📖 Dulcan: פרק 6, עמ' 91-106 · Stahl Essential: פרק 1, עמ' 1-28 · כרטיסיות: עמ' 283-285
 - **3. סקירה: נוירוטרנסמיטרים**  
-  📖 Stahl Essential: פרק 1+2, עמ' 1-50
+  📖 Stahl Essential: פרק 1+2, עמ' 1-50 · כרטיסיות: עמ' 281-282
 - **4. מסלולי דופמין**  
-  📖 Stahl Essential: פרק 4, עמ' 77-158
+  📖 Stahl Essential: פרק 4, עמ' 77-158 · כרטיסיות: עמ' 281-282
 - **5. מערכת הסרוטונין**  
-  📖 Stahl Essential: פרק 5, עמ' 159-243
+  📖 Stahl Essential: פרק 5, עמ' 159-243 · כרטיסיות: עמ' 281-282
 - **6. מערכת הנוראפינפרין**  
-  📖 Stahl Essential: פרק 6, עמ' 244-282
+  📖 Stahl Essential: פרק 6, עמ' 244-282 · כרטיסיות: עמ' 281-282
 - **7. איזון GABA / גלוטמט**  
-  📖 Stahl Essential: פרק 3+6, עמ' 51-76, 244-282
+  📖 Stahl Essential: פרק 3+6, עמ' 51-76, 244-282 · כרטיסיות: עמ' 281-282
 - **8. התפתחות נורמטיבית: גיל הינקות (0-2)**  
-  📖 Dulcan: פרק 2, עמ' 17-38
+  📖 Dulcan: פרק 2, עמ' 17-38 · כרטיסיות: עמ' 300, 304-307
 - **9. התפתחות נורמטיבית: גיל הגן (2-5)**  
-  📖 Dulcan: פרק 3, עמ' 39-58
+  📖 Dulcan: פרק 3, עמ' 39-58 · כרטיסיות: עמ' 302-307
 
 ### שבוע 2 · 3 אוג–9 אוג · Foundations · Neurodevelopmental
 - **10. התפתחות נורמטיבית: גיל בית ספר (6-12)**  
-  📖 Dulcan: פרק 4, עמ' 59-74
+  📖 Dulcan: פרק 4, עמ' 59-74 · כרטיסיות: עמ' 302-303
 - **11. התפתחות נורמטיבית: גיל ההתבגרות (13-18)**  
   📖 Dulcan: פרק 5, עמ' 75-90
 - **12. תורת ההתקשרות ומנטליזציה**  
-  📖 Dulcan: פרק 2, עמ' 17-38 · Synopsis: פרק 32 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
+  📖 Dulcan: פרק 2, עמ' 17-38 · Synopsis: פרק 32 · כרטיסיות: עמ' 275-277, 304-307 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
 - **13. טמפרמנט**  
-  📖 Synopsis: פרק 32 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
+  📖 Synopsis: פרק 32 · כרטיסיות: עמ' 301 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
 - **14. קריטריונים כלליים להפרעת אישיות**  
   📖 DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19
 - **15. מצב רוח, אפקט, טמפרמנט — הערכה קלינית**  
   📖 Dulcan: פרק 1, עמ' 3-16
 - **16. עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים**  
-  📖 Dulcan: פרק 33, עמ' 677-694
+  📖 Dulcan: פרק 33, עמ' 677-694 · כרטיסיות: עמ' 281-282
 - **17. הפרעת קשב וריכוז (ADHD) — ליבה**  
-  📖 Dulcan: פרק 10, עמ' 173-196 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · Stahl Essential: פרק 11, עמ' 449-485
+  📖 Dulcan: פרק 10, עמ' 173-196 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · Stahl Essential: פרק 11, עמ' 449-485 · כרטיסיות: עמ' 133-144
 - **18. טיפול ב-ADHD: סטימולנטים**  
-  📖 Dulcan: פרק 34, עמ' 695-728 · Stahl Essential: פרק 11, עמ' 449-485 · Stahl C&A: amphetamine-d, amphetamine-d,l, lisdexamfetamine, methylphenidate-d, methylphenidate-d,l (עמ' 1-36, 269-284, 313-350)
+  📖 Dulcan: פרק 34, עמ' 695-728 · Stahl Essential: פרק 11, עמ' 449-485 · Stahl C&A: amphetamine-d, amphetamine-d,l, lisdexamfetamine, methylphenidate-d, methylphenidate-d,l (עמ' 1-36, 269-284, 313-350) · כרטיסיות: עמ' 133-144
 - **19. טיפול ב-ADHD: לא-סטימולנטים**  
-  📖 Dulcan: פרק 34, עמ' 695-728 · Stahl Essential: פרק 11, עמ' 449-485 · Stahl C&A: atomoxetine, clonidine, guanfacine, bupropion (עמ' 69-96, 141-154, 243-254)
+  📖 Dulcan: פרק 34, עמ' 695-728 · Stahl Essential: פרק 11, עמ' 449-485 · Stahl C&A: atomoxetine, clonidine, guanfacine, bupropion (עמ' 69-96, 141-154, 243-254) · כרטיסיות: עמ' 133-144
 - **20. הפרעה אוטיסטית (ASD)**  
-  📖 Dulcan: פרק 8, עמ' 135-156 · DSM-5-TR: Neurodevelopmental, עמ' 35-100
+  📖 Dulcan: פרק 8, עמ' 135-156 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · כרטיסיות: עמ' 145-156
 
 ### שבוע 3 · 10 אוג–16 אוג · Neurodevelopmental · Mood and Anxiety
 - **21. מוגבלות שכלית התפתחותית**  
-  📖 Dulcan: פרק 7, עמ' 107-134 · DSM-5-TR: Neurodevelopmental, עמ' 35-100
+  📖 Dulcan: פרק 7, עמ' 107-134 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · כרטיסיות: עמ' 160-162
 - **22. הפרעות למידה ספציפיות (SLD)**  
-  📖 Dulcan: פרק 9, עמ' 157-172 · DSM-5-TR: Neurodevelopmental, עמ' 35-100
+  📖 Dulcan: פרק 9, עמ' 157-172 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · כרטיסיות: עמ' 157-159
 - **23. הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)**  
-  📖 Dulcan: פרק 9, עמ' 157-172 · DSM-5-TR: Neurodevelopmental, עמ' 35-100
+  📖 Dulcan: פרק 9, עמ' 157-172 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · כרטיסיות: עמ' 176-180
 - **24. הפרעות טיקים ותסמונת טורט**  
-  📖 Dulcan: פרק 20, עמ' 437-456 · DSM-5-TR: Neurodevelopmental, עמ' 35-100
+  📖 Dulcan: פרק 20, עמ' 437-456 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · כרטיסיות: עמ' 169-175
 - **25. הפרעות תנועה סטראוטיפיות + Dyspraxia**  
-  📖 Dulcan: פרק 9, עמ' 157-172 · DSM-5-TR: Neurodevelopmental, עמ' 35-100
+  📖 Dulcan: פרק 9, עמ' 157-172 · DSM-5-TR: Neurodevelopmental, עמ' 35-100 · כרטיסיות: עמ' 163-168
 - **26. ID — Down + Fragile X**  
-  📖 Dulcan: פרק 7, עמ' 107-134
+  📖 Dulcan: פרק 7, עמ' 107-134 · כרטיסיות: עמ' 287-292
 - **27. הפרעות נוירו-התפתחותיות נוספות**  
-  📖 Dulcan: פרק 7+8, עמ' 107-156
+  📖 Dulcan: פרק 7+8, עמ' 107-156 · כרטיסיות: עמ' 287-292
 - **28. הפרעת דיכאון מז'ורית (MDD)**  
-  📖 Dulcan: פרק 13, עמ' 245-278 · DSM-5-TR: Depressive, עמ' 177-214 · Stahl Essential: פרק 6+7, עמ' 244-358
+  📖 Dulcan: פרק 13, עמ' 245-278 · DSM-5-TR: Depressive, עמ' 177-214 · Stahl Essential: פרק 6+7, עמ' 244-358 · כרטיסיות: עמ' 4-15
 - **29. SSRI לעומק**  
-  📖 Dulcan: פרק 35, עמ' 729-762 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: citalopram, escitalopram, fluoxetine, fluvoxamine, paroxetine, sertraline (עמ' 111-124, 185-214, 229-242, 381-396, 439-452)
+  📖 Dulcan: פרק 35, עמ' 729-762 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: citalopram, escitalopram, fluoxetine, fluvoxamine, paroxetine, sertraline (עמ' 111-124, 185-214, 229-242, 381-396, 439-452) · כרטיסיות: עמ' 4-15
 - **30. SNRI + נוגדי דיכאון אטיפיים**  
-  📖 Dulcan: פרק 35, עמ' 729-762 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: duloxetine, venlafaxine, bupropion, trazodone (עמ' 83-96, 171-184, 453-464, 479-492)
+  📖 Dulcan: פרק 35, עמ' 729-762 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: duloxetine, venlafaxine, bupropion, trazodone (עמ' 83-96, 171-184, 453-464, 479-492) · כרטיסיות: עמ' 4-15
 
 ### שבוע 4 · 17 אוג–23 אוג · Mood and Anxiety
 - **31. TCA + MAOI**  
-  📖 Dulcan: פרק 35, עמ' 729-762 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: clomipramine (עמ' 125-140)
+  📖 Dulcan: פרק 35, עמ' 729-762 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: clomipramine (עמ' 125-140) · כרטיסיות: עמ' 4-15
 - **32. PDD + DMDD + PMDD**  
-  📖 Dulcan: פרק 13, עמ' 245-278 · DSM-5-TR: Depressive, עמ' 177-214
+  📖 Dulcan: פרק 13, עמ' 245-278 · DSM-5-TR: Depressive, עמ' 177-214 · כרטיסיות: עמ' 4-15, 21-22
 - **33. הפרעה דו-קוטבית I**  
-  📖 Dulcan: פרק 14, עמ' 279-308 · DSM-5-TR: Bipolar, עמ' 139-176 · Stahl Essential: פרק 6+7, עמ' 244-358
+  📖 Dulcan: פרק 14, עמ' 279-308 · DSM-5-TR: Bipolar, עמ' 139-176 · Stahl Essential: פרק 6+7, עמ' 244-358 · כרטיסיות: עמ' 23-34
 - **34. Bipolar II + Cyclothymia + bipolar בילדים**  
-  📖 Dulcan: פרק 14, עמ' 279-308 · DSM-5-TR: Bipolar, עמ' 139-176
+  📖 Dulcan: פרק 14, עמ' 279-308 · DSM-5-TR: Bipolar, עמ' 139-176 · כרטיסיות: עמ' 23-34
 - **35. ליתיום**  
-  📖 Dulcan: פרק 36, עמ' 763-784 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: lithium (עמ' 285-298)
+  📖 Dulcan: פרק 36, עמ' 763-784 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: lithium (עמ' 285-298) · כרטיסיות: עמ' 23-34
 - **36. מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine**  
-  📖 Dulcan: פרק 36, עמ' 763-784 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: valproate (עמ' 465-478)
+  📖 Dulcan: פרק 36, עמ' 763-784 · Stahl Essential: פרק 7, עמ' 283-358 · Stahl C&A: valproate (עמ' 465-478) · כרטיסיות: עמ' 23-34
 - **37. ילדים: DMDD מול ביפולר; אובדנות נער**  
-  📖 Dulcan: פרק 13+14+26, עמ' 245-308, 551-564
+  📖 Dulcan: פרק 13+14+26, עמ' 245-308, 551-564 · כרטיסיות: עמ' 16-34
 - **38. הפרעת חרדה מוכללת (GAD)**  
-  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262 · Stahl Essential: פרק 8, עמ' 359-378
+  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262 · Stahl Essential: פרק 8, עמ' 359-378 · כרטיסיות: עמ' 57
 - **39. הפרעת פאניקה + אגורופוביה**  
-  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262 · Stahl Essential: פרק 8, עמ' 359-378
+  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262 · Stahl Essential: פרק 8, עמ' 359-378 · כרטיסיות: עמ' 59-60
 - **40. חרדה חברתית + Selective Mutism**  
-  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262
+  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262 · כרטיסיות: עמ' 53, 58
 
 ### שבוע 5 · 24 אוג–30 אוג · Mood and Anxiety · OCD and Trauma
 - **41. חרדת פרידה + פוביה ספציפית**  
-  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262
+  📖 Dulcan: פרק 15, עמ' 309-344 · DSM-5-TR: Anxiety, עמ' 215-262 · כרטיסיות: עמ' 54-56
 - **42. BZD + Buspirone + סקירת אנקסיוליטים**  
-  📖 Stahl Essential: פרק 8+10, עמ' 359-378, 401-448
+  📖 Stahl Essential: פרק 8+10, עמ' 359-378, 401-448 · כרטיסיות: עמ' 61-64
 - **43. OCD — ליבה**  
-  📖 Dulcan: פרק 17, עמ' 365-388 · DSM-5-TR: Obsessive-Compulsive, עמ' 263-294 · Stahl Essential: פרק 13, עמ' 538-578
+  📖 Dulcan: פרק 17, עמ' 365-388 · DSM-5-TR: Obsessive-Compulsive, עמ' 263-294 · Stahl Essential: פרק 13, עמ' 538-578 · כרטיסיות: עמ' 84-89
 - **44. טיפול ב-OCD: ERP + SSRI מינון גבוה**  
-  📖 Dulcan: פרק 17+43, עמ' 365-388, 967-984 · Stahl Essential: פרק 13, עמ' 538-578
+  📖 Dulcan: פרק 17+43, עמ' 365-388, 967-984 · Stahl Essential: פרק 13, עמ' 538-578 · כרטיסיות: עמ' 84-89
 - **45. BDD + Hoarding**  
-  📖 Dulcan: פרק 17, עמ' 365-388 · DSM-5-TR: Obsessive-Compulsive, עמ' 263-294
+  📖 Dulcan: פרק 17, עמ' 365-388 · DSM-5-TR: Obsessive-Compulsive, עמ' 263-294 · כרטיסיות: עמ' 90-91
 - **46. Trichotillomania + Excoriation**  
-  📖 Dulcan: פרק 17, עמ' 365-388 · DSM-5-TR: Obsessive-Compulsive, עמ' 263-294
+  📖 Dulcan: פרק 17, עמ' 365-388 · DSM-5-TR: Obsessive-Compulsive, עמ' 263-294 · כרטיסיות: עמ' 92-94
 - **47. PTSD — ליבה**  
-  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328 · Stahl Essential: פרק 8, עמ' 359-378
+  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328 · Stahl Essential: פרק 8, עמ' 359-378 · כרטיסיות: עמ' 100-108
 - **48. טיפול ב-PTSD: Prazosin, SSRI, TF-CBT, EMDR**  
-  📖 Dulcan: פרק 16, עמ' 345-364 · Stahl Essential: פרק 8, עמ' 359-378
+  📖 Dulcan: פרק 16, עמ' 345-364 · Stahl Essential: פרק 8, עמ' 359-378 · כרטיסיות: עמ' 100-108
 - **49. תגובת לחץ חריפה + הפרעת הסתגלות**  
-  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328
+  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328 · כרטיסיות: עמ' 95-99
 - **50. אבל, שכול והפרעת אבל ממושך**  
-  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328
+  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328 · כרטיסיות: עמ' 95-96
 - **51. התעללות והזנחה בילדים**  
   📖 Dulcan: פרק 24, עמ' 517-538
 
 ### שבוע 6 · 31 אוג–6 ספט · OCD and Trauma · Psychosis and Antipsychotics
 - **52. RAD + DSED**  
-  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328
+  📖 Dulcan: פרק 16, עמ' 345-364 · DSM-5-TR: Trauma, עמ' 295-328 · כרטיסיות: עמ' 109-110
 - **53. הפרעות דיסוציאטיביות**  
-  📖 DSM-5-TR: Dissociative, עמ' 329-348 · Synopsis: פרק 11
+  📖 DSM-5-TR: Dissociative, עמ' 329-348 · Synopsis: פרק 11 · כרטיסיות: עמ' 217-221
 - **54. הפרעות סומטיות + Conversion + Factitious**  
   📖 DSM-5-TR: Somatic Symptom, עמ' 349-370 · Synopsis: פרק 12
 - **55. סכיזופרניה — ליבה**  
-  📖 Dulcan: פרק 18, עמ' 389-410 · DSM-5-TR: Schizophrenia Spectrum, עמ' 101-138 · Stahl Essential: פרק 4, עמ' 77-158
+  📖 Dulcan: פרק 18, עמ' 389-410 · DSM-5-TR: Schizophrenia Spectrum, עמ' 101-138 · Stahl Essential: פרק 4, עמ' 77-158 · כרטיסיות: עמ' 65-71
 - **56. ניורוביולוגיה של סכיזופרניה**  
-  📖 Dulcan: פרק 18, עמ' 389-410 · Stahl Essential: פרק 4, עמ' 77-158
+  📖 Dulcan: פרק 18, עמ' 389-410 · Stahl Essential: פרק 4, עמ' 77-158 · כרטיסיות: עמ' 65-71, 283-285
 - **57. Schizoaffective + Schizophreniform + Brief Psychotic + Delusional**  
-  📖 Dulcan: פרק 18, עמ' 389-410 · DSM-5-TR: Schizophrenia Spectrum, עמ' 101-138
+  📖 Dulcan: פרק 18, עמ' 389-410 · DSM-5-TR: Schizophrenia Spectrum, עמ' 101-138 · כרטיסיות: עמ' 72-75
 - **58. אנטיפסיכוטיים דור ראשון (FGA)**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: chlorpromazine, fluphenazine, haloperidol, pimozide (עמ' 97-110, 215-228, 255-268, 397-408)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: chlorpromazine, fluphenazine, haloperidol, pimozide (עמ' 97-110, 215-228, 255-268, 397-408) · כרטיסיות: עמ' 76-83
 - **59. אנטיפסיכוטיים דור שני (SGA)**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: aripiprazole, asenapine, clozapine, lurasidone, olanzapine, paliperidone, quetiapine, risperidone (עמ' 37-68, 155-170, 299-312, 351-380, 409-438)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: aripiprazole, asenapine, clozapine, lurasidone, olanzapine, paliperidone, quetiapine, risperidone (עמ' 37-68, 155-170, 299-312, 351-380, 409-438) · כרטיסיות: עמ' 76-83
 - **60. Clozapine — קלוזפין לעמיד לטיפול**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: clozapine (עמ' 155-170)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: clozapine (עמ' 155-170) · כרטיסיות: עמ' 76-83
 - **61. אגוניסטים חלקיים: Aripiprazole, Brexpiprazole, Cariprazine**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: aripiprazole (עמ' 37-54)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: aripiprazole (עמ' 37-54) · כרטיסיות: עמ' 76-83
 
 ### שבוע 7 · 7 ספט–13 ספט · Psychosis and Antipsychotics
 - **62. SGA מטבוליים: Olanzapine, Quetiapine, Risperidone**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: olanzapine, quetiapine, risperidone (עמ' 351-366, 409-438)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: olanzapine, quetiapine, risperidone (עמ' 351-366, 409-438) · כרטיסיות: עמ' 76-83
 - **63. SGA לא-מטבוליים: Lurasidone, Ziprasidone, Lumateperone**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: lurasidone (עמ' 299-312)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: lurasidone (עמ' 299-312) · כרטיסיות: עמ' 76-83
 - **64. זריקות אנטיפסיכוטיות ארוכות-טווח (LAI)**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: paliperidone, risperidone (עמ' 367-380, 423-438)
+  📖 Dulcan: פרק 37, עמ' 785-846 · Stahl Essential: פרק 5, עמ' 159-243 · Stahl C&A: paliperidone, risperidone (עמ' 367-380, 423-438) · כרטיסיות: עמ' 76-83
 - **65. EPS: דיסטוניה, אקתיזיה, פרקינסוניזם**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · DSM-5-TR: Medication-Induced Movement, עמ' 807-820 · Stahl Essential: פרק 5, עמ' 159-243
+  📖 Dulcan: פרק 37, עמ' 785-846 · DSM-5-TR: Medication-Induced Movement, עמ' 807-820 · Stahl Essential: פרק 5, עמ' 159-243 · כרטיסיות: עמ' 76-83
 - **66. Tardive Dyskinesia + מעכבי VMAT2**  
-  📖 Dulcan: פרק 37, עמ' 785-846 · DSM-5-TR: Medication-Induced Movement, עמ' 807-820
+  📖 Dulcan: פרק 37, עמ' 785-846 · DSM-5-TR: Medication-Induced Movement, עמ' 807-820 · כרטיסיות: עמ' 76-83
 - **67. NMS — תסמונת ממאירה ניורולפטית**  
-  📖 Dulcan: פרק 37+29, עמ' 605-620, 785-846 · DSM-5-TR: Medication-Induced Movement, עמ' 807-820
+  📖 Dulcan: פרק 37+29, עמ' 605-620, 785-846 · DSM-5-TR: Medication-Induced Movement, עמ' 807-820 · כרטיסיות: עמ' 76-83
 - **68. קטטוניה**  
-  📖 DSM-5-TR: Schizophrenia Spectrum, עמ' 101-138
+  📖 DSM-5-TR: Schizophrenia Spectrum, עמ' 101-138 · כרטיסיות: עמ' 75
 - **69. ניהול פסיכוזה חריפה במיון**  
-  📖 Dulcan: פרק 29, עמ' 605-620
+  📖 Dulcan: פרק 29, עמ' 605-620 · כרטיסיות: עמ' 65-71
 - **70. ECT וטיפולים סומטיים אחרים**  
-  📖 Synopsis: פרק 22 · ℹ ECT — Synopsis פרק 22; אין פרק ייעודי ב-Dulcan
+  📖 Synopsis: פרק 22 · כרטיסיות: עמ' 35-36 · ℹ ECT — Synopsis פרק 22; אין פרק ייעודי ב-Dulcan
 
 ### שבוע 8 · 14 ספט–20 ספט · Sleep, Eating, Elimination
 - **71. נדודי שינה + CBT-I**  
-  📖 Dulcan: פרק 22, עמ' 473-502 · DSM-5-TR: Sleep-Wake, עמ' 407-476 · Stahl Essential: פרק 10, עמ' 401-448
+  📖 Dulcan: פרק 22, עמ' 473-502 · DSM-5-TR: Sleep-Wake, עמ' 407-476 · Stahl Essential: פרק 10, עמ' 401-448 · כרטיסיות: עמ' 208-216
 - **72. תרופות שינה**  
-  📖 Dulcan: פרק 22, עמ' 473-502 · Stahl Essential: פרק 10, עמ' 401-448
+  📖 Dulcan: פרק 22, עמ' 473-502 · Stahl Essential: פרק 10, עמ' 401-448 · כרטיסיות: עמ' 208-216
 - **73. נרקולפסיה + Pitolisant**  
-  📖 Dulcan: פרק 22, עמ' 473-502 · DSM-5-TR: Sleep-Wake, עמ' 407-476 · Stahl Essential: פרק 10, עמ' 401-448
+  📖 Dulcan: פרק 22, עמ' 473-502 · DSM-5-TR: Sleep-Wake, עמ' 407-476 · Stahl Essential: פרק 10, עמ' 401-448 · כרטיסיות: עמ' 208-216
 - **74. פרסומניות + תסמונת רגליים חסרות מנוחה**  
-  📖 Dulcan: פרק 22, עמ' 473-502 · DSM-5-TR: Sleep-Wake, עמ' 407-476
+  📖 Dulcan: פרק 22, עמ' 473-502 · DSM-5-TR: Sleep-Wake, עמ' 407-476 · כרטיסיות: עמ' 208-216
 - **75. Anorexia Nervosa**  
-  📖 Dulcan: פרק 19, עמ' 411-436 · DSM-5-TR: Feeding and Eating, עמ' 371-398
+  📖 Dulcan: פרק 19, עמ' 411-436 · DSM-5-TR: Feeding and Eating, עמ' 371-398 · כרטיסיות: עמ' 111-132
 - **76. Bulimia Nervosa + Binge Eating Disorder**  
-  📖 Dulcan: פרק 19, עמ' 411-436 · DSM-5-TR: Feeding and Eating, עמ' 371-398
+  📖 Dulcan: פרק 19, עמ' 411-436 · DSM-5-TR: Feeding and Eating, עמ' 371-398 · כרטיסיות: עמ' 111-132
 - **77. ARFID + Pica + Rumination**  
-  📖 Dulcan: פרק 19, עמ' 411-436 · DSM-5-TR: Feeding and Eating, עמ' 371-398
+  📖 Dulcan: פרק 19, עמ' 411-436 · DSM-5-TR: Feeding and Eating, עמ' 371-398 · כרטיסיות: עמ' 111-132
 - **78. Enuresis + Encopresis**  
-  📖 Dulcan: פרק 21, עמ' 457-472 · DSM-5-TR: Elimination, עמ' 399-406
+  📖 Dulcan: פרק 21, עמ' 457-472 · DSM-5-TR: Elimination, עמ' 399-406 · כרטיסיות: עמ' 181-188
 - **79. התפתחות שינה בילדים + תזוזת מתבגרים**  
-  📖 Dulcan: פרק 22, עמ' 473-502
+  📖 Dulcan: פרק 22, עמ' 473-502 · כרטיסיות: עמ' 208-216
 - **80. הפרעות אכילה: FBT + ייצוב רפואי**  
-  📖 Dulcan: פרק 19+41, עמ' 411-436, 933-954
+  📖 Dulcan: פרק 19+41, עמ' 411-436, 933-954 · כרטיסיות: עמ' 111-132
 
 ### שבוע 9 · 21 ספט–27 ספט · Substance Use
 - **81. הפרעת שימוש באלכוהול + גמילה**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · כרטיסיות: עמ' 192-202
 - **82. טיפול ב-AUD: Naltrexone, Acamprosate, Disulfiram**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · Stahl Essential: פרק 13, עמ' 538-578
+  📖 Dulcan: פרק 12, עמ' 221-244 · Stahl Essential: פרק 13, עמ' 538-578 · כרטיסיות: עמ' 192-202
 - **83. OUD + גמילה**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · כרטיסיות: עמ' 192-202
 - **84. טיפול ב-OUD: Methadone, Buprenorphine, Naltrexone, Naloxone**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · Stahl Essential: פרק 13, עמ' 538-578
+  📖 Dulcan: פרק 12, עמ' 221-244 · Stahl Essential: פרק 13, עמ' 538-578 · כרטיסיות: עמ' 192-202
 - **85. הפרעת שימוש בסטימולנטים**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · Stahl Essential: פרק 13, עמ' 538-578
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · Stahl Essential: פרק 13, עמ' 538-578 · כרטיסיות: עמ' 192-202
 - **86. הפרעת שימוש בקנאביס**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · כרטיסיות: עמ' 192-202
 - **87. גמילה מעישון: Varenicline, NRT, Bupropion**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · Stahl C&A: bupropion (עמ' 83-96)
+  📖 Dulcan: פרק 12, עמ' 221-244 · Stahl C&A: bupropion (עמ' 83-96) · כרטיסיות: עמ' 192-202
 - **88. הפרעת שימוש בסדאטיביים/היפנוטיים/אנקסיוליטיים**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · כרטיסיות: עמ' 192-202
 - **89. הלוצינוגנים + קפאין + שאיפות**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · כרטיסיות: עמ' 192-202
 - **90. התמכרות התנהגותית: הימורים**  
-  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · Stahl Essential: פרק 13, עמ' 538-578
+  📖 Dulcan: פרק 12, עמ' 221-244 · DSM-5-TR: Substance, עמ' 543-666 · Stahl Essential: פרק 13, עמ' 538-578 · כרטיסיות: עמ' 192-202
 
 ### שבוע 10 · 28 ספט–4 אוק · Personality + Special Populations
 - **91. הפרעת אישיות פרנואידית**  
@@ -242,11 +242,11 @@
 - **93. הפרעת אישיות סכיזוטיפלית**  
   📖 DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19
 - **94. BPD — Borderline Personality Disorder**  
-  📖 DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19
+  📖 DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19 · כרטיסיות: עמ' 203-207
 - **95. טיפול ב-BPD: DBT**  
-  📖 Synopsis: פרק 19, 23 · ℹ טיפול DBT ב-BPD — Synopsis; אין פרק ייעודי ב-Dulcan
+  📖 Synopsis: פרק 19, 23 · כרטיסיות: עמ' 203-207 · ℹ טיפול DBT ב-BPD — Synopsis; אין פרק ייעודי ב-Dulcan
 - **96. ASPD + Conduct Disorder**  
-  📖 Dulcan: פרק 11, עמ' 197-220 · DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19
+  📖 Dulcan: פרק 11, עמ' 197-220 · DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19 · כרטיסיות: עמ' 42-44
 - **97. הפרעת אישיות היסטריונית**  
   📖 DSM-5-TR: Personality Disorders, עמ' 733-778 · Synopsis: פרק 19
 - **98. הפרעת אישיות נרציסיסטית**  
@@ -260,23 +260,23 @@
 
 ### שבוע 11 · 5 אוק–11 אוק · Personality + Special Populations
 - **102. פסיכיאטריה משפטית**  
-  📖 Dulcan: פרק 31, עמ' 637-652 · Synopsis: פרק 28
+  📖 Dulcan: פרק 31, עמ' 637-652 · Synopsis: פרק 28 · כרטיסיות: עמ' 222-224
 - **103. החוק הישראלי בפסיכיאטריה של הילד והמתבגר**  
-  📖 Dulcan: פרק 31, עמ' 637-652 · ℹ הדין הישראלי — חקיקה מקומית; לא מכוסה בספרי הלימוד
+  📖 Dulcan: פרק 31, עמ' 637-652 · כרטיסיות: עמ' 222-224 · ℹ הדין הישראלי — חקיקה מקומית; לא מכוסה בספרי הלימוד
 - **104. דיספוריה מגדרית + טיפול LGBTQ+**  
-  📖 Dulcan: פרק 27, עמ' 565-580 · DSM-5-TR: Gender Dysphoria, עמ' 511-520
+  📖 Dulcan: פרק 27, עמ' 565-580 · DSM-5-TR: Gender Dysphoria, עמ' 511-520 · כרטיסיות: עמ' 189-191
 - **105. תפקודים מיניים + הפרעות פרפיליות**  
   📖 DSM-5-TR: Sexual Dysfunctions · Paraphilic, עמ' 477-510, 779-802 · Synopsis: פרק 16
 - **106. ODD, IED, Kleptomania, Pyromania**  
-  📖 Dulcan: פרק 11, עמ' 197-220 · DSM-5-TR: Disruptive, עמ' 521-542
+  📖 Dulcan: פרק 11, עמ' 197-220 · DSM-5-TR: Disruptive, עמ' 521-542 · כרטיסיות: עמ' 37-49
 - **107. אגרסיביות ואלימות בילדים ובמתבגרים**  
-  📖 Dulcan: פרק 28, עמ' 581-604
+  📖 Dulcan: פרק 28, עמ' 581-604 · כרטיסיות: עמ' 38-41
 - **108. אובדנות בנער/ה**  
-  📖 Dulcan: פרק 26, עמ' 551-564
+  📖 Dulcan: פרק 26, עמ' 551-564 · כרטיסיות: עמ' 16-20
 - **109. פגיעה עצמית ללא כוונת אובדנות (NSSI)**  
-  📖 Dulcan: פרק 26, עמ' 551-564
+  📖 Dulcan: פרק 26, עמ' 551-564 · כרטיסיות: עמ' 16-20
 - **110. מעברים משפחתיים: גירושין, אימוץ ואומנה**  
-  📖 Dulcan: פרק 30, עמ' 621-636
+  📖 Dulcan: פרק 30, עמ' 621-636 · כרטיסיות: עמ' 308-309
 - **111. היבטים תרבותיים ודתיים בבריאות הנפש של הילד**  
   📖 Dulcan: פרק 25, עמ' 539-550
 - **112. פסיכיאטריה פרינטלית**  
@@ -288,63 +288,63 @@
 - **114. גריאטריה — סקירה (delirium)**  
   📖 DSM-5-TR: Neurocognitive, עמ' 667-732 · Stahl Essential: פרק 12, עמ' 486-537 · Synopsis: פרק 3
 - **115. נוירואנטומיה + בדיקה נוירולוגית בילדים**  
-  📖 Dulcan: פרק 6, עמ' 91-106 · Stahl Essential: פרק 1, עמ' 1-28
+  📖 Dulcan: פרק 6, עמ' 91-106 · Stahl Essential: פרק 1, עמ' 1-28 · כרטיסיות: עמ' 283-285, 293-295
 - **116. פרכוסים + אפילפסיה**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **117. חבלת ראש + סקוואלי TBI**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **118. זיהומים ב-CNS עם השלכות פסיכיאטריות**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **119. הפרעות תנועה: Huntington, Wilson**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **120. גידולי מוח + pseudotumor**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **121. שיתוק מוחין (Cerebral Palsy)**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **122. תסמונות נוירוגנטיות**  
-  📖 Dulcan: פרק 7+8, עמ' 107-156 · ℹ סינדרומים נוירוגנטיים — Dulcan 7-8 + הסילבוס
+  📖 Dulcan: פרק 7+8, עמ' 107-156 · כרטיסיות: עמ' 287-295 · ℹ סינדרומים נוירוגנטיים — Dulcan 7-8 + הסילבוס
 - **123. תסמונות נוירוקוטנאיות**  
-  📖 Dulcan: פרק 7, עמ' 107-134 · ℹ נוירוקוטנאיים — Dulcan 7 + הסילבוס
+  📖 Dulcan: פרק 7, עמ' 107-134 · כרטיסיות: עמ' 293-295 · ℹ נוירוקוטנאיים — Dulcan 7 + הסילבוס
 - **124. כאב ראש + מיגרנה**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 
 ### שבוע 13 · 19 אוק–25 אוק · Neurology + Cross-cutting · Psychotherapy + Integration
 - **125. מחלות מטבוליות עם ביטוי פסיכיאטרי**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **126. אוטואימוני: NMDA encephalitis, lupus, PANDAS**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **127. ניוון עצבי בילדים**  
-  📖 ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
+  📖 כרטיסיות: עמ' 293-295 · ℹ נוירולוגיה — מהסילבוס ומהכרטיסיות; אין פרק ייעודי בספרי הליבה
 - **128. רפואת שינה — אינטנסיבית**  
-  📖 Dulcan: פרק 22, עמ' 473-502 · Stahl Essential: פרק 10, עמ' 401-448
+  📖 Dulcan: פרק 22, עמ' 473-502 · Stahl Essential: פרק 10, עמ' 401-448 · כרטיסיות: עמ' 208-216
 - **129. חירום פסיכיאטרי בילדים ובמתבגרים**  
   📖 Dulcan: פרק 29, עמ' 605-620
 - **130. ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות**  
-  📖 Dulcan: פרק 48+49, עמ' 1071-1161
+  📖 Dulcan: פרק 48+49, עמ' 1071-1161 · כרטיסיות: עמ' 296-299
 - **131. סקירת תיאוריות פסיכותרפויטיות**  
-  📖 Dulcan: פרק 38, עמ' 847-872 · Synopsis: פרק 23
+  📖 Dulcan: פרק 38, עמ' 847-872 · Synopsis: פרק 23 · כרטיסיות: עמ' 225-236
 - **132. CBT — תיאוריה ופרקטיקה**  
-  📖 Dulcan: פרק 43, עמ' 967-984 · Synopsis: פרק 23
+  📖 Dulcan: פרק 43, עמ' 967-984 · Synopsis: פרק 23 · כרטיסיות: עמ' 278-280
 - **133. DBT — תיאוריה ופרקטיקה**  
-  📖 Synopsis: פרק 23 · ℹ DBT — Synopsis פרק 23; אין פרק ייעודי ב-Dulcan
+  📖 Synopsis: פרק 23 · כרטיסיות: עמ' 203-207, 225-236 · ℹ DBT — Synopsis פרק 23; אין פרק ייעודי ב-Dulcan
 - **134. IPT-A — פסיכותרפיה בין-אישית למתבגרים**  
-  📖 Dulcan: פרק 42, עמ' 955-966
+  📖 Dulcan: פרק 42, עמ' 955-966 · כרטיסיות: עמ' 237-242
 
 ### שבוע 14 · 26 אוק–1 נוב · Psychotherapy + Integration
 - **135. ראיון מוטיבציוני**  
-  📖 Dulcan: פרק 44, עמ' 985-998
+  📖 Dulcan: פרק 44, עמ' 985-998 · כרטיסיות: עמ' 237-242
 - **136. מסגרות טיפול: אשפוז, אשפוז יום, מגורים ו-Systems of Care**  
   📖 Dulcan: פרק 45+46, עמ' 999-1042
 - **137. התערבויות וייעוץ במסגרת בית הספר**  
   📖 Dulcan: פרק 47, עמ' 1043-1070
 - **138. טיפול משפחתי + הדרכת הורים**  
-  📖 Dulcan: פרק 40+41, עמ' 899-954
+  📖 Dulcan: פרק 40+41, עמ' 899-954 · כרטיסיות: עמ' 237-242
 - **139. פסיכודינמי: Anna Freud, Klein, Kohut, Mentalization**  
-  📖 Dulcan: פרק 38, עמ' 847-872 · Synopsis: פרק 23
+  📖 Dulcan: פרק 38, עמ' 847-872 · Synopsis: פרק 23 · כרטיסיות: עמ' 243-265
 - **140. יחסי אובייקט: ויניקוט, מאהלר, קרנברג**  
-  📖 Dulcan: פרק 38, עמ' 847-872 · Synopsis: פרק 23 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
+  📖 Dulcan: פרק 38, עמ' 847-872 · Synopsis: פרק 23 · כרטיסיות: עמ' 253-261 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
 - **141. תיאורטיקנים נוספים: אריקסון, ביון, אוגדן, לאקאן, שפיץ, שטרן וההתייחסותיים**  
-  📖 Synopsis: פרק 23 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
+  📖 Synopsis: פרק 23 · כרטיסיות: עמ' 266-277 · ℹ תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan
 - **142. בריאות נפש מרחוק לילדים ומתבגרים**  
   📖 Dulcan: פרק 32, עמ' 653-676
 - **143. רפואה מבוססת ראיות בפסיכיאטריה של הילד**  
