@@ -15,3 +15,5 @@ _generated/
 # Reference materials — copyrighted PDFs etc. kept locally only
 עותק של Sketchy.pdf
 *.pdf
+# ...but our own generated study materials are original content — keep them
+!schedule/question_booklet.pdf
