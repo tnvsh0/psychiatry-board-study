@@ -30,6 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import gemini_image as gi  # noqa: E402
 import narration as narr  # noqa: E402
 import sketchy_spec as spec  # noqa: E402
+import _proto_number_plate as comp_mod  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_TRIES = 4
@@ -112,14 +113,17 @@ def _assign_carriers(plate: spec.Plate, venue: dict) -> None:
 
 
 def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
-              out_dir: Path, dry_run: bool = False) -> dict:
+              out_dir: Path, dry_run: bool = False,
+              numbers_mode: str = "composite") -> dict:
     topic = f"{day.get('title_en', '')} — {day.get('title_he', '')}"
     spec.triage_numbers(plate)
     _assign_carriers(plate, venue)
 
     director = spec.build_plate_director(plate, venue, topic, tokens)
+    painted = [n for f in plate.facts for n in f.numbers if n.drawn]
     report = {"day": day.get("index"), "plate": plate.name,
-              "facts": len(plate.facts), "tries": 0}
+              "facts": len(plate.facts), "tries": 0,
+              "numbers_mode": numbers_mode}
 
     if dry_run:
         print(director)
@@ -166,7 +170,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
 
     for attempt in range(MAX_TRIES):
         report["tries"] = attempt + 1
-        prompt = spec.build_image_prompt(table, plate, gi.style_prefix())
+        prompt = spec.build_image_prompt(table, plate, gi.style_prefix(),
+                                        chroma_plates=(numbers_mode == "composite"))
         if attempt == 1 and best:
             prompt += ("\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n"
                        + "\n".join(f'  "{s}"' for s in best["missing_all"]))
@@ -183,10 +188,23 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         if not gi.generate_image(prompt, png):
             continue
 
-        nums = gi.check_numbers(client, png, required)
+        # In composite mode the model was asked for BLANK plates, so there are
+        # no digits yet — probing for them would report every number missing and
+        # burn the whole retry budget. What matters at this stage is that the
+        # blank plates exist and are findable, which the compositor reports
+        # after the loop. In model mode the digits are the render's job, so the
+        # gate is the only thing standing between a wrong number and the learner.
+        if numbers_mode == "composite":
+            found = comp_mod.count_chroma_plates(png, len(painted))
+            nums = {"probed": True, "missing": [], "wrong": [], "extra": [],
+                    "blank_plates_found": found, "blank_plates_wanted": len(painted)}
+            missing_nums = [n.paint for n in painted[found:]]
+        else:
+            nums = gi.check_numbers(client, png, required)
+            missing_nums = nums["missing"] + [w for w, _ in nums["wrong"]]
         probed_txt, miss_txt = gi.check_text_strings(client, png, strings)
         comp = gi.check_composition(client, png)
-        missing_all = (nums["missing"] + [w for w, _ in nums["wrong"]] + miss_txt)
+        missing_all = missing_nums + miss_txt
         # Strays (nums["extra"]) are NOT counted in the rejection score.
         # Evidence from the first full run: stray count went 15 -> 0 -> 1 -> 30
         # across four tries. The instruction works sometimes and not others, so
@@ -217,6 +235,18 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             for n in f.numbers:
                 if n.drawn and n.paint in best["missing_all"]:
                     n.drawn = False
+
+    # ── write the numbers onto their blank plates ──────────────────────────
+    # Only in `composite` mode. In `model` mode no blank plates were requested,
+    # so there is nothing to find. Skipping this step while still ASKING for the
+    # plates is what shipped raw magenta and green rectangles in the first
+    # chapter-28 render.
+    if numbers_mode == "composite":
+        slots = [{"id": n.tag or n.paint, "chroma": rgb,
+                  "paint": n.paint, "tag": n.tag}
+                 for (_, rgb), n in zip(spec.CHROMA_KEYS, painted)]
+        if slots:
+            report["compositing"] = comp_mod.composite_plate(png, slots)
 
     # ── legend, quiz, narration ────────────────────────────────────────────
     undrawn = [f"{n.op}{n.paint}".strip()
@@ -300,6 +330,12 @@ def main() -> int:
     ap.add_argument("--plate", choices=["main", "criteria", "all"], default="all")
     ap.add_argument("--out", default="_proto/plate")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--numbers", choices=["composite", "model"],
+                    default="composite",
+                    help="composite: model draws blank chroma plates and code "
+                         "letters the exact digits onto them (correct by "
+                         "construction). model: the illustrator writes them "
+                         "itself (more natural, sometimes wrong).")
     a = ap.parse_args()
 
     sched = json.loads((ROOT / "schedule/schedule.json").read_text(encoding="utf-8"))
@@ -316,7 +352,8 @@ def main() -> int:
         if a.plate != "all" and plate.track != a.plate:
             continue
         print(f"\n=== plate {plate.name} ({len(plate.facts)} facts) ===")
-        r = run_plate(day, plate, venue, tokens, Path(a.out), a.dry_run)
+        r = run_plate(day, plate, venue, tokens, Path(a.out), a.dry_run,
+                      numbers_mode=a.numbers)
         if not a.dry_run:
             print(json.dumps(r, ensure_ascii=False, indent=1, default=str)[:900])
     return 0

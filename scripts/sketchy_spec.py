@@ -422,6 +422,10 @@ ELEMENT_TABLE_SCHEMA = {
 }
 
 _HERO_WORDS = re.compile(r"\b(hero|protagonist|central figure|main character)\b", re.I)
+_HAS_HEBREW = re.compile(r"[֐-׿]")
+# A hook that says what the prop SHOWS is just the picture read back. The point
+# of the field is the derivation — why THIS object and not another one.
+_HOOK_DESCRIBES = re.compile(r"מציג|מראה|מתאר|נראה|יש בו|עליו כתוב|מסמל|מייצג")
 
 
 def validate_table(table: dict, facts: list[Fact]) -> list[str]:
@@ -469,6 +473,18 @@ def validate_table(table: dict, facts: list[Fact]) -> list[str]:
         # JSON-schema validator over the director's output, so they were being
         # declared and never checked. A relation of "predicts" sailed through
         # here and then crashed prompt construction on a dict lookup.
+        # The legend is read by a Hebrew speaker. An English hook or cue is not
+        # a style preference — it makes the row unusable to its only audience,
+        # which is how the first chapter-28 legend shipped.
+        if not _HAS_HEBREW.search(e.get("cue_he") or ""):
+            errs.append(f"{eid}: cue_he must be in Hebrew — got {e.get('cue_he')!r}")
+        hook = (e.get("hook") or "").strip()
+        if not _HAS_HEBREW.search(hook):
+            errs.append(f"{eid}: hook must be in Hebrew — got {hook!r}")
+        elif _HOOK_DESCRIBES.search(hook):
+            errs.append(f"{eid}: hook describes instead of explaining — say WHY "
+                        f"this prop carries the fact, not what it shows: {hook!r}")
+
         der = e.get("derivation")
         if der not in DERIVATIONS:
             errs.append(f"{eid}: derivation {der!r} is not one of {', '.join(DERIVATIONS)}")
@@ -688,22 +704,31 @@ RULES
   transports) MUST use `relates_to` + `relation`. At most {MAX_RELATIONS} relations
   on the plate — this is a place, not a plot. No figure is the protagonist.
 - `cue` is a bare noun phrase naming ONE prop, at most {MAX_CUE_WORDS} words, unique on the
-  plate, and in Latin script wherever the wordplay lives in an English word.
-  A positional phrase in a cue is fine — it is the address.
+  plate, in Latin script. A positional phrase in a cue is fine — it is the address.
+- `cue_he` is the SAME cue in Hebrew, and it is what the learner actually reads.
+  Keep clinical terms and any word genuinely painted in the picture in English
+  inside it — the legend prints the English separately, in brackets.
 - `text` only where a string is genuinely painted in the world, at most 5 words.
   At most {MAX_REQUIRED_STRINGS} of them.
 - `triple` is [category, material, dominant colour] and must be unique across
   elements whose facts are unrelated.
-- `hook` is at most 8 words saying WHY this prop carries this fact. Never
-  "represents" or "symbolizes" — name the derivation.
+- `hook` is IN HEBREW, at most 12 words, saying WHY this prop carries this fact.
+  Not what it shows — why it is the right object. "לוח מתכונים מציג שיעורי
+  שכיחות" is a description and is useless; "מתכון צביעה נמדד באחוז ממשקל הבד"
+  is the reason. Never "מסמל" or "מייצג" — name the derivation.
+- `venue_he` and `zones_he` are the place, the shared activity and the zone
+  names in Hebrew. The whole legend is read by a Hebrew speaker; leaving the
+  header in English makes the page unreadable to them.
 
 Return STRICT JSON only, matching this shape:
 {{"venue": {{"sign_text": "...", "place": "...", "activity": "..."}},
+ "venue_he": {{"place": "...", "activity": "..."}},
  "anchor_structure": "...",
  "zones": ["...", "..."],
+ "zones_he": ["...", "..."],
  "elements": [
-   {{"id": "e1", "fact_ids": ["..."], "cue": "...", "prop": "...",
-     "zone": "...", "text": "", "derivation": "LITERAL_DEPICTION",
+   {{"id": "e1", "fact_ids": ["..."], "cue": "...", "cue_he": "...",
+     "prop": "...", "zone": "...", "text": "", "derivation": "LITERAL_DEPICTION",
      "triple": ["...", "...", "..."], "relates_to": "", "relation": "",
      "hook": "..."}}
  ]}}"""
@@ -732,6 +757,19 @@ def check_legend_row(cue: str, fact: str, hook: str) -> list[str]:
     return errs
 
 
+# Unicode bidi isolate. Without it a Latin run inside a Hebrew line drags its
+# neighbouring punctuation around — "[BLACK BOX]" renders as "]BLACK BOX[", and
+# a bracketed string ending in a digit or a quote scrambles worse than that.
+# FSI/PDI tells the renderer to lay the run out on its own and put it back where
+# it belongs, which is what makes a mixed-direction legend readable at all.
+_FSI, _PDI = "⁨", "⁩"
+
+
+def _ltr(s: str) -> str:
+    """Isolate a Latin run so it renders correctly inside Hebrew text."""
+    return f"{_FSI}{s}{_PDI}" if s else s
+
+
 def render_legend(table: dict, plate: Plate, topic: str,
                   undrawn: list[str] | None = None) -> str:
     """The .txt file: topic line, 3-sentence walkthrough, numbered rows.
@@ -740,14 +778,16 @@ def render_legend(table: dict, plate: Plate, topic: str,
     verbal address and a one-clause derivation, and every figure is stated
     verbatim whether or not it reached the pixels.
     """
-    v, els = table["venue"], table["elements"]
+    els = table["elements"]
+    v = table.get("venue_he") or table["venue"]
+    zones = table.get("zones_he") or table.get("zones", [])
     by_id = {f.id: f for f in plate.facts}
 
     head = [
         topic,
         f"המקום: {v['place'].split(':')[0].strip()}. "
         f"מה כולם עושים: {v['activity'].split('.')[0].strip()}. "
-        f"האזורים: {' · '.join(table.get('zones', []))}.",
+        f"האזורים: {' · '.join(zones)}.",
         "",
     ]
 
@@ -758,9 +798,17 @@ def render_legend(table: dict, plate: Plate, topic: str,
             if not f:
                 continue
             n += 1
-            cue = e["cue"]
+            # Hebrew cue for reading, the Latin address in brackets for finding.
+            # Both are needed: many props are lettered in English in the picture
+            # (BLACK BOX, 5-HT, CBT) because the terms are clinical, so a purely
+            # Hebrew cue cannot point at them — but a purely Latin cue makes a
+            # Hebrew page unreadable.
+            cue = (e.get("cue_he") or e.get("cue") or "").strip()
+            latin = (e.get("cue") or "").strip()
             if e.get("text"):
-                cue = f'{cue} "{e["text"]}"'
+                latin = f'{latin} "{e["text"]}"' if latin else f'"{e["text"]}"'
+            if latin and latin != cue:
+                cue = f"{cue} [{_ltr(latin)}]"
             hook = (e.get("hook") or "").strip()
             rows.append(f"{n}. {cue}: {f.text}" + (f" — {hook}" if hook else ""))
 

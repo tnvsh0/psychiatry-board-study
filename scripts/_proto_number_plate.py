@@ -369,6 +369,20 @@ def _quad_from_mask(mask: np.ndarray) -> tuple[list[tuple[int, int]] | None, dic
 GROW_PX = 4      # outward growth of the detected quad before warping the face
 DILATE_PX = 5    # MaxFilter kernel (odd) covering the anti-aliased chroma rim
 
+# Look of a composited plate when the caller does not specify one. Warm cream
+# with near-black ink reads as painted signage in almost any venue.
+_SLOT_DEFAULTS = {"plate_color": (246, 242, 230), "ink": (32, 28, 24),
+                  "id": "", "tag": ""}
+
+# Canonical chroma order, kept identical to sketchy_spec.CHROMA_KEYS so the Nth
+# painted number uses the Nth key on both sides of the handoff. If these two
+# lists ever drift, the pipeline asks for one colour and looks for another.
+CHROMA_KEYS_ORDER = [
+    ("PURE GREEN", (0, 177, 64)),
+    ("PURE MAGENTA", (255, 0, 255)),
+    ("PURE CYAN", (0, 255, 255)),
+]
+
 
 def _grow_quad(quad: list[tuple[int, int]], px: float) -> list[tuple[int, int]]:
     """Push each corner `px` outward along the ray from the quad's centroid."""
@@ -442,18 +456,31 @@ def _perspective_coeffs(src: list[tuple[int, int]], dst: list[tuple[int, int]]):
     return np.linalg.solve(A, B).tolist()
 
 
-def composite() -> dict:
-    raw = OUT / "raw.png"
-    if not raw.exists():
-        print(f"[!] {raw} missing — run --render first", file=sys.stderr)
-        return {}
-    im = Image.open(raw).convert("RGB")
+def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
+    """Write each slot's exact digit string onto its blank chroma plate.
+
+    This is the reusable entry point the plate pipeline calls. `composite()`
+    below is the standalone demo that fixed the geometry; it now just forwards
+    here so the two cannot drift apart.
+
+    `slots` mirrors SLOTS: each needs `chroma`, `paint`, `tag`, and optionally
+    `plate_color` / `ink`. Writes over `src_png` unless `out_png` is given, and
+    always runs the scrub pass — a chroma rectangle that ships unpainted is
+    worse than no plate at all, which is exactly what the first chapter-28
+    render did.
+    """
+    src = Path(src_png)
+    if not src.exists():
+        return {"error": f"missing {src}"}
+    im = Image.open(src).convert("RGB")
     arr = np.asarray(im)
     W, H = im.size
     report = {"image": f"{W}x{H}", "slots": []}
     out = im.copy()
 
-    for slot in SLOTS:
+    for slot in slots:
+        slot = {**_SLOT_DEFAULTS, **slot}
+        slot["id"] = slot["id"] or slot.get("paint", "?")
         mask = _mask_for(arr, slot["chroma"])
         px = int(mask.sum())
         quad, diag = _quad_from_mask(mask)
@@ -513,13 +540,41 @@ def composite() -> dict:
     if leftover:
         print(f"[scrub] neutralised {leftover} leftover chroma px")
 
-    OUT.mkdir(parents=True, exist_ok=True)
-    out.save(OUT / "final.png")
-    (OUT / "report.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
-
-    done = sum(1 for s in report["slots"] if s.get("status") == "COMPOSITED")
-    print(f"\n{done}/{len(SLOTS)} plates composited -> {OUT/'final.png'}")
+    dst = Path(out_png) if out_png else src
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    out.save(dst)
+    report["composited"] = sum(1 for s in report["slots"]
+                               if s.get("status") == "COMPOSITED")
+    report["requested"] = len(slots)
+    print(f"[i] composited {report['composited']}/{len(slots)} number plates "
+          f"-> {dst.name}")
     return report
+
+
+def count_chroma_plates(src_png, wanted: int) -> int:
+    """How many of the first `wanted` blank chroma plates are actually usable.
+
+    Used as the render gate in composite mode: at that point the plates carry no
+    digits, so an OCR probe has nothing to read. What we can check is that the
+    model drew the blank plates at all and that each is a clean quad the warp
+    can land on — the same test the compositor itself applies.
+    """
+    src = Path(src_png)
+    if not src.exists():
+        return 0
+    arr = np.asarray(Image.open(src).convert("RGB"))
+    found = 0
+    for _, rgb in CHROMA_KEYS_ORDER[:wanted]:
+        quad, _ = _quad_from_mask(_mask_for(arr, rgb))
+        found += quad is not None
+    return found
+
+
+def composite() -> dict:
+    """Standalone demo path: _proto/raw.png -> _proto/final.png."""
+    rep = composite_plate(OUT / "raw.png", SLOTS, OUT / "final.png")
+    (OUT / "report.json").write_text(json.dumps(rep, indent=1), encoding="utf-8")
+    return rep
 
 
 def _scrub_chroma(im: Image.Image) -> tuple[Image.Image, int]:
