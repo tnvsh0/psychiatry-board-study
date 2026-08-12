@@ -423,9 +423,13 @@ ELEMENT_TABLE_SCHEMA = {
 
 _HERO_WORDS = re.compile(r"\b(hero|protagonist|central figure|main character)\b", re.I)
 _HAS_HEBREW = re.compile(r"[֐-׿]")
-# A hook that says what the prop SHOWS is just the picture read back. The point
-# of the field is the derivation — why THIS object and not another one.
-_HOOK_DESCRIBES = re.compile(r"מציג|מראה|מתאר|נראה|יש בו|עליו כתוב|מסמל|מייצג")
+# The hook must carry BOTH halves — what is there and why that object is the
+# right one — in one flowing sentence. An earlier version banned every
+# describing verb, which was wrong: description is half the job. What stays
+# banned is the lazy connector, which asserts a link instead of showing it.
+_HOOK_ASSERTS = re.compile(r"\bמסמל|\bמייצג|\bמסמלת|\bמייצגת")
+HOOK_MIN_WORDS = 6   # below this it degrades into a label, not a sentence
+HOOK_MAX_WORDS = 25
 
 
 def validate_table(table: dict, facts: list[Fact]) -> list[str]:
@@ -479,11 +483,18 @@ def validate_table(table: dict, facts: list[Fact]) -> list[str]:
         if not _HAS_HEBREW.search(e.get("cue_he") or ""):
             errs.append(f"{eid}: cue_he must be in Hebrew — got {e.get('cue_he')!r}")
         hook = (e.get("hook") or "").strip()
+        nw = len(hook.split())
         if not _HAS_HEBREW.search(hook):
             errs.append(f"{eid}: hook must be in Hebrew — got {hook!r}")
-        elif _HOOK_DESCRIBES.search(hook):
-            errs.append(f"{eid}: hook describes instead of explaining — say WHY "
-                        f"this prop carries the fact, not what it shows: {hook!r}")
+        elif nw < HOOK_MIN_WORDS:
+            errs.append(f"{eid}: hook is a label, not a sentence ({nw} words). "
+                        f"Say what is there AND why that object fits, in one "
+                        f"flowing sentence: {hook!r}")
+        elif nw > HOOK_MAX_WORDS:
+            errs.append(f"{eid}: hook over {HOOK_MAX_WORDS} words: {hook!r}")
+        elif _HOOK_ASSERTS.search(hook):
+            errs.append(f"{eid}: hook uses מסמל/מייצג, which asserts the link "
+                        f"instead of showing why it holds: {hook!r}")
 
         der = e.get("derivation")
         if der not in DERIVATIONS:
@@ -712,10 +723,17 @@ RULES
   At most {MAX_REQUIRED_STRINGS} of them.
 - `triple` is [category, material, dominant colour] and must be unique across
   elements whose facts are unrelated.
-- `hook` is IN HEBREW, at most 12 words, saying WHY this prop carries this fact.
-  Not what it shows — why it is the right object. "לוח מתכונים מציג שיעורי
-  שכיחות" is a description and is useless; "מתכון צביעה נמדד באחוז ממשקל הבד"
-  is the reason. Never "מסמל" or "מייצג" — name the derivation.
+- `hook` is IN HEBREW, one flowing sentence of 8-25 words that says BOTH what
+  is there AND why it is the right object, woven together. Write it the way you
+  would say it out loud to someone looking at the picture.
+    GOOD: "כמו שבבית צביעה מתכון נמדד באחוז ממשקל הבד, כך שכיחות הדיכאון מופיעה
+          באחוזים על לוח המתכונים"
+    BAD (only describes): "לוח המתכונים מציג את שיעורי השכיחות"
+    BAD (only explains):  "מתכון נמדד באחוז"
+    BAD (a label):        "לוח מתכונים = שכיחות"
+  The everyday logic of the object must be visible in the sentence — that logic
+  is what makes the fact stick. Never "מסמל" or "מייצג": those assert a link
+  instead of showing why it holds.
 - `venue_he` and `zones_he` are the place, the shared activity and the zone
   names in Hebrew. The whole legend is read by a Hebrew speaker; leaving the
   header in English makes the page unreadable to them.
