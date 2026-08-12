@@ -512,8 +512,12 @@ def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
         grown = _grow_quad(quad, GROW_PX)
         fw, fh = max(64, bw * 2), max(32, bh * 2)
         face = _render_face(fw, fh, slot)
-        src = [(0, 0), (fw, 0), (fw, fh), (0, fh)]
-        coeffs = _perspective_coeffs(src, grown)
+        # NOT `src` — that name holds the source image path, and rebinding it
+        # here left `dst = src` pointing at a list of corner tuples, so the save
+        # step died on `dst.parent`. The standalone demo never hit it because it
+        # always passes an explicit out_png.
+        face_corners = [(0, 0), (fw, 0), (fw, fh), (0, fh)]
+        coeffs = _perspective_coeffs(face_corners, grown)
         warped = face.transform((W, H), Image.PERSPECTIVE, coeffs,
                                 resample=Image.BICUBIC)
 
