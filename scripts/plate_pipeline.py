@@ -172,9 +172,30 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         report["tries"] = attempt + 1
         prompt = spec.build_image_prompt(table, plate, gi.style_prefix(),
                                         chroma_plates=(numbers_mode == "composite"))
-        if attempt == 1 and best:
-            prompt += ("\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n"
-                       + "\n".join(f'  "{s}"' for s in best["missing_all"]))
+        if attempt >= 1 and best:
+            if best["missing_all"]:
+                prompt += ("\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n"
+                           + "\n".join(f'  "{s}"' for s in best["missing_all"]))
+            # A plate that was drawn but drawn tiny needs the opposite of "draw
+            # it": it needs "draw the one you already drew, four times bigger".
+            small = [r for r in best.get("plate_notes", [])
+                     if r.get("reject") == "too_small_in_frame"]
+            absent = [r for r in best.get("plate_notes", [])
+                      if r.get("reject") != "too_small_in_frame"]
+            if small:
+                prompt += (
+                    "\n\nLAST TIME THESE PLATES WERE FAR TOO SMALL. You drew "
+                    + ", ".join("the {} plate at {:.0f}% of the image "
+                                "height".format(r["name"], r["height_frac"] * 100)
+                                for r in small)
+                    + ". Each must be about 20% of the image height — four to "
+                      "eight times bigger than you drew it: a doorway-sized "
+                      "board, not a label. Move other things aside to make room.")
+            if absent:
+                prompt += ("\n\nTHESE BLANK PLATES WERE NOT USABLE LAST TIME — draw "
+                           "each one as a large, flat, unobstructed rectangle of "
+                           "exactly the named colour:\n"
+                           + "\n".join(f'  - the {r["name"]} plate' for r in absent))
         if attempt == 2:
             # fewer constraints beats four rolls of the same overloaded prompt
             drop = strings[len(strings) // 2:]
@@ -195,11 +216,15 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # after the loop. In model mode the digits are the render's job, so the
         # gate is the only thing standing between a wrong number and the learner.
         if numbers_mode == "composite":
-            found = comp_mod.count_chroma_plates(png, len(painted))
+            rows = comp_mod.measure_chroma_plates(png, len(painted))
+            found = sum(1 for r in rows if r["ok"])
+            plate_notes = [r for r in rows if not r["ok"]]
             nums = {"probed": True, "missing": [], "wrong": [], "extra": [],
-                    "blank_plates_found": found, "blank_plates_wanted": len(painted)}
+                    "blank_plates_found": found, "blank_plates_wanted": len(painted),
+                    "blank_plates": rows}
             missing_nums = [n.paint for n in painted[found:]]
         else:
+            plate_notes = []
             nums = gi.check_numbers(client, png, required)
             missing_nums = nums["missing"] + [w for w, _ in nums["wrong"]]
         probed_txt, miss_txt = gi.check_text_strings(client, png, strings)
@@ -217,6 +242,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
 
         snap = {"numbers": nums, "text_missing": miss_txt, "composition": comp,
                 "missing_all": missing_all, "score": score,
+                "plate_notes": plate_notes,
                 "stray_warning": nums["extra"],  # logged, not a rejection
                 "bytes": png.read_bytes()}
         if best is None or score < best["score"]:
@@ -229,7 +255,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
 
     if best:
         png.write_bytes(best["bytes"])
-        report["gates"] = {k: v for k, v in best.items() if k != "bytes"}
+        report["gates"] = {k: v for k, v in best.items()
+                           if k not in ("bytes", "plate_notes")}
         # anything the render never carried is still taught, just flagged
         for f in plate.facts:
             for n in f.numbers:

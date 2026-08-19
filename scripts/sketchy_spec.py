@@ -625,22 +625,48 @@ BLANK SIGN PLATES — the most important instruction in this brief.
 Each of these objects carries a BLANK rectangular sign plate filled with ONE
 flat, solid, completely uniform colour: no shading, no gradient, no texture, no
 outline crossing its face, and absolutely NO writing, lettering, numbers or
-marks of any kind on it. Each is a clean flat rectangle facing the viewer,
-large, and never overlapped.
+marks of any kind on it.
 {chr(10).join(plate_lines)}
+
+HOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH
+OF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,
+a shop shutter or a big wall-mounted noticeboard, and clearly taller than the
+head-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or
+a small hanging sign is WRONG — if the plate is smaller than a person's torso,
+the picture has to be redrawn. Three such boards in the scene is correct and
+deliberate; make room for them.
+
+HOW DRAWN — square-on to the viewer, whole and unbroken, its four corners all
+visible, standing clear of everything else. Nothing overlaps it: no person, no
+pipe, no rope, no beam, no other sign crosses its face or clips its corners.
 These colours appear NOWHERE ELSE in the picture.
 """
     else:
         number_block = ""
 
+    plate_reminder = ("; the blank colour plates are large boards, a fifth of the "
+                      "image height, unobstructed" if number_block else "")
+
     return f"""{style}
 {tier1}
 
 CAST AND DENSITY
-About 18 people at comparable scale, none taller than roughly two-fifths of the
-frame height, with visible variety of age, build, skin tone and clothing. PACK
-the frame edge to edge, with roughly as much ordinary non-mnemonic clutter as
-meaningful detail so the place reads as real. No vignette, no edge darkening.
+About 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one
+high, wide shot of a whole room seen from a distance — it is not a photograph
+with a foreground. Therefore:
+  - No person stands near the viewer. Nobody is in the front of the shot.
+  - No person is cut off by the edge of the frame, and nobody is drawn as a
+    half-body, a close-up, a face, or a pair of hands.
+  - Nobody leans, lies, reaches or falls toward the viewer.
+  - Every person is between one-sixth and one-quarter of the image height, feet
+    on the same floor, heads at roughly the same level across the picture.
+If one person in the finished picture is noticeably bigger than the others, the
+picture is WRONG and must be redrawn — that single oversized figure is the most
+common failure of this brief. Give them visible variety of age, build, skin
+tone, hair and clothing: different colours and different garments on each, never
+one shared outfit repeated across the cast. PACK the frame edge to edge, with
+roughly as much ordinary non-mnemonic clutter as meaningful detail so the place
+reads as real. No vignette, no edge darkening.
 
 THINGS IN THIS PLACE
 {chr(10).join(props)}
@@ -651,7 +677,8 @@ lines. NO numerals appear anywhere except where a blank plate is specified.
 {text_block}
 {number_block}
 REMINDER — {v['place']}; everyone is {v['activity'][:120]}; the largest thing in
-frame is {table['anchor_structure'][:120]}; no protagonist.
+frame is {table['anchor_structure'][:120]}; no protagonist — every person the
+same size, nobody near the viewer, nobody cropped by the frame{plate_reminder}.
 """
 
 

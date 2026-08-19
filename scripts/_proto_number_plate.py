@@ -233,6 +233,14 @@ MIN_SATURATION = 0.62   # a chroma plate is near-pure colour; scene colours are 
 MIN_VALUE = 90          # and not near-black
 HUE_WINDOW = 22.0       # degrees either side of the target hue
 MIN_PLATE_PIXELS = 400  # below this it is not a deliberate sign plate
+# A plate can be a clean, warpable quad and still be useless: the first chapter
+# 28 run drew plates 2.6-5.5% of the frame height, which composites to digits
+# too small to read at the size a learner actually views the plate. Absolute
+# pixel counts cannot express that -- 400 px is a 20x20 stamp on a 2752-wide
+# render -- so the render gate measures the plate against the FRAME. The
+# compositor itself stays tolerant (a small plate is still better composited
+# than left as raw chroma); only `measure_chroma_plates` enforces this.
+MIN_PLATE_HEIGHT_FRAC = 0.10
 MIN_FILL_RATIO = 0.55   # mask area / quad area — catches merged or ragged blobs
 
 
@@ -331,7 +339,8 @@ def _largest_blob(mask: np.ndarray) -> np.ndarray:
     return mask & keep
 
 
-def _quad_from_mask(mask: np.ndarray) -> tuple[list[tuple[int, int]] | None, dict]:
+def _quad_from_mask(mask: np.ndarray,
+                    min_h_frac: float = 0.0) -> tuple[list[tuple[int, int]] | None, dict]:
     """Four corners of the (possibly rotated / perspective) plate.
 
     For a convex quad, the extremes of (x+y) and (x-y) land on its corners.
@@ -362,6 +371,13 @@ def _quad_from_mask(mask: np.ndarray) -> tuple[list[tuple[int, int]] | None, dic
     diag["fill_ratio"] = round(float(xs.size / area), 3) if area else 0.0
     if area <= 0 or diag["fill_ratio"] < MIN_FILL_RATIO:
         diag["reject"] = "not_rectangular"
+        return None, diag
+
+    frame_h = float(mask.shape[0])
+    diag["height_frac"] = round(float(ys.max() - ys.min() + 1) / frame_h, 4)
+    diag["width_frac"] = round(float(xs.max() - xs.min() + 1) / mask.shape[1], 4)
+    if min_h_frac and diag["height_frac"] < min_h_frac:
+        diag["reject"] = "too_small_in_frame"
         return None, diag
     return quad, diag
 
@@ -539,7 +555,7 @@ def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
     # must never ship: an undetected plate, a stray patch the model painted
     # somewhere it was told not to, or a rim we failed to cover. Neutralise it
     # with a heavy local blur of the surrounding art so it reads as background.
-    out, leftover = _scrub_chroma(out)
+    out, leftover = _scrub_chroma(out, slots)
     report["leftover_chroma_px"] = leftover
     if leftover:
         print(f"[scrub] neutralised {leftover} leftover chroma px")
@@ -555,23 +571,37 @@ def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
     return report
 
 
-def count_chroma_plates(src_png, wanted: int) -> int:
-    """How many of the first `wanted` blank chroma plates are actually usable.
+def measure_chroma_plates(src_png, wanted: int,
+                          min_h_frac: float = MIN_PLATE_HEIGHT_FRAC) -> list[dict]:
+    """Per-key verdict on the first `wanted` blank chroma plates.
 
     Used as the render gate in composite mode: at that point the plates carry no
     digits, so an OCR probe has nothing to read. What we can check is that the
-    model drew the blank plates at all and that each is a clean quad the warp
-    can land on — the same test the compositor itself applies.
+    model drew the blank plates at all, that each is a clean quad the warp can
+    land on, and that it is BIG ENOUGH IN THE FRAME to be worth compositing.
+
+    Each row is {name, ok, height_frac, reject}. `reject` names which of the
+    three tests failed, which is what the retry prompt needs: "you did not draw
+    it" and "you drew it the size of a postage stamp" call for different words.
     """
     src = Path(src_png)
+    rows: list[dict] = []
     if not src.exists():
-        return 0
+        return rows
     arr = np.asarray(Image.open(src).convert("RGB"))
-    found = 0
-    for _, rgb in CHROMA_KEYS_ORDER[:wanted]:
-        quad, _ = _quad_from_mask(_mask_for(arr, rgb))
-        found += quad is not None
-    return found
+    for name, rgb in CHROMA_KEYS_ORDER[:wanted]:
+        quad, diag = _quad_from_mask(_mask_for(arr, rgb), min_h_frac=min_h_frac)
+        rows.append({"name": name, "ok": quad is not None,
+                     "height_frac": diag.get("height_frac", 0.0),
+                     "reject": diag.get("reject")})
+    return rows
+
+
+def count_chroma_plates(src_png, wanted: int,
+                        min_h_frac: float = MIN_PLATE_HEIGHT_FRAC) -> int:
+    """How many of the first `wanted` blank chroma plates are usable. See above."""
+    return sum(1 for r in measure_chroma_plates(src_png, wanted, min_h_frac)
+               if r["ok"])
 
 
 def composite() -> dict:
@@ -581,12 +611,20 @@ def composite() -> dict:
     return rep
 
 
-def _scrub_chroma(im: Image.Image) -> tuple[Image.Image, int]:
-    """Replace any remaining chroma-key pixels with blurred surrounding art."""
+def _scrub_chroma(im: Image.Image, slots: list[dict] | None = None
+                  ) -> tuple[Image.Image, int]:
+    """Replace any remaining chroma-key pixels with blurred surrounding art.
+
+    Scrubs the CALLER's keys, not the demo's. Today both lists hold the same
+    three colours so the difference is invisible, but a fourth key added to
+    CHROMA_KEYS would ship unscrubbed if this kept reading the demo SLOTS.
+    """
     arr = np.asarray(im.convert("RGB"))
     any_mask = np.zeros(arr.shape[:2], bool)
-    for slot in SLOTS:
-        any_mask |= _mask_for(arr, slot["chroma"])
+    keys = {tuple(s["chroma"]) for s in (slots or SLOTS)}
+    keys |= {tuple(rgb) for _, rgb in CHROMA_KEYS_ORDER}
+    for chroma in keys:
+        any_mask |= _mask_for(arr, chroma)
     n = int(any_mask.sum())
     if not n:
         return im, 0
@@ -597,8 +635,51 @@ def _scrub_chroma(im: Image.Image) -> tuple[Image.Image, int]:
     return patched, n
 
 
+def selftest() -> int:
+    """Synthetic frames, no API: does the size gate fire where it should?
+
+    The gate is frame-relative on purpose (see MIN_PLATE_HEIGHT_FRAC), and a
+    frame-relative rule is exactly the kind that silently stops firing when
+    someone edits the detection path. It also pins the other half of the
+    contract: the COMPOSITOR must still paint a plate the gate rejected, or a
+    rejected render ships raw chroma to the learner.
+    """
+    import tempfile
+    bad = 0
+    tmp = Path(tempfile.mkdtemp(prefix="plate_selftest_"))
+    H, W = 1000, 1600
+
+    def frame(h_frac, rgb=(0, 177, 64)):
+        a = np.full((H, W, 3), 200, np.uint8)
+        h = int(H * h_frac)
+        a[100:100 + h, 100:100 + int(h * 1.6)] = rgb
+        f = tmp / f"h{h_frac}.png"
+        Image.fromarray(a).save(f)
+        return f
+
+    for frac, want_ok in ((0.04, False), (0.09, False), (0.11, True), (0.25, True)):
+        row = measure_chroma_plates(frame(frac), 1)[0]
+        ok = row["ok"] == want_ok and abs(row["height_frac"] - frac) < 0.01
+        bad += not ok
+        print(f"  [{'OK' if ok else 'FAIL'}] plate at {frac:.0%} of frame: "
+              f"ok={row['ok']} (wanted {want_ok}), measured "
+              f"{row['height_frac']:.0%}, reject={row['reject']}")
+
+    rep = composite_plate(frame(0.04),
+                          [{"id": "t", "chroma": (0, 177, 64), "paint": "70%",
+                            "tag": "AGAIN"}], tmp / "out.png")
+    ok = rep.get("composited") == 1 and rep.get("leftover_chroma_px") == 0
+    bad += not ok
+    print(f"  [{'OK' if ok else 'FAIL'}] a gate-rejected plate is still "
+          f"composited, not shipped as chroma")
+    print("selftest:", "PASS" if not bad else f"{bad} FAILURE(S)")
+    return 1 if bad else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--selftest", action="store_true",
+                    help="synthetic size-gate checks, no API key needed")
     ap.add_argument("--render", action="store_true")
     ap.add_argument("--composite", action="store_true")
     ap.add_argument("--both", action="store_true")
@@ -606,6 +687,9 @@ def main() -> int:
                     help="also render the naive model-writes-the-text version")
     ap.add_argument("--size", default="2K", choices=["1K", "2K", "4K"])
     a = ap.parse_args()
+
+    if a.selftest:
+        return selftest()
 
     if not (a.render or a.composite or a.both or a.control):
         ap.print_help()
