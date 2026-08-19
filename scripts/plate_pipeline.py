@@ -150,9 +150,18 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                   f"director returned keys {sorted(raw)[:8] if raw else '(nothing)'}",
                   file=sys.stderr)
             continue
-        errs = spec.validate_table(cand, plate.facts)
+        # Fix mechanically first, then judge. Otherwise the ladder spends its
+        # whole budget re-asking for string lengths.
+        fixed = spec.normalize_table(cand)
+        soft: list[str] = []
+        errs = spec.validate_table(cand, plate.facts, soft=soft)
         if not errs:
             table = cand
+            for note in fixed:
+                print(f"[i] normalized {note}", file=sys.stderr)
+            for note in soft:
+                print(f"[i] accepted with warning: {note}", file=sys.stderr)
+            report["table_warnings"] = fixed + soft
             break
         print(f"[i] element table attempt {attempt+1}/3: {len(errs)} error(s); "
               f"first: {errs[0]}", file=sys.stderr)

@@ -429,12 +429,74 @@ _HAS_HEBREW = re.compile(r"[֐-׿]")
 # banned is the lazy connector, which asserts a link instead of showing it.
 _HOOK_ASSERTS = re.compile(r"\bמסמל|\bמייצג|\bמסמלת|\bמייצגת")
 HOOK_MIN_WORDS = 6   # below this it degrades into a label, not a sentence
-HOOK_MAX_WORDS = 25
+# 25 was too tight for the shape the hook is now REQUIRED to have. Since the
+# legend hook must describe AND explain in one sentence, the everyday half and
+# the clinical half both have to fit; the chapter 28 director produced 30-word
+# hooks that were correct, readable and single-sentence, and every one of them
+# was rejected. The cap is there to forbid a paragraph, and 32 still does.
+HOOK_MAX_WORDS = 32
 
 
-def validate_table(table: dict, facts: list[Fact]) -> list[str]:
-    """Hard errors that must send the director back. Empty list == accept."""
+def _trim_cue(cue: str) -> str:
+    """A cue names ONE prop. Cut the description the director hung off it.
+
+    "Tally slate showing '70%' re-dyeing and '20-40%' to 'Bipolar Weaving'" is
+    not a nine-word cue and never will be: it is a two-word cue with a caption
+    attached. Cut at the first joint where the naming stops and the describing
+    starts, then hard-trim what is left.
+    """
+    for joint in (",", " showing", " displaying", " reading", " marked",
+                  " with ", " that ", " which ", " holding", " labelled",
+                  " labeled", " bearing", " (", " — ", " - "):
+        i = cue.find(joint)
+        if i > 0:
+            cue = cue[:i]
+    words = cue.split()[:MAX_CUE_WORDS]
+    # a hard cut lands mid-phrase ("...the deeper terrace where"); a cue ending
+    # on a function word reads as a sentence someone forgot to finish
+    tail = {"where", "the", "a", "an", "of", "in", "on", "at", "to", "with",
+            "that", "which", "and", "by", "for", "from", "as", "into", "over"}
+    while len(words) > 1 and words[-1].lower().strip(",;:") in tail:
+        words.pop()
+    return " ".join(words).strip(" ,;:-")
+
+
+def normalize_table(table: dict) -> list[str]:
+    """Fix in code what a re-ask does not reliably fix. Returns what it changed.
+
+    Same medicine as the relation synonyms and the banned narration phrases:
+    when the director's answer is right in substance and wrong in a mechanical
+    way, normalizing is 100% reliable and re-asking is not. Three attempts at
+    "your cue is one word too long" is three renders' worth of budget spent on
+    a string operation.
+    """
+    notes: list[str] = []
+    els = table.get("elements") or []
+    taken = {(e.get("cue") or "").strip().lower() for e in els}
+    for e in els:
+        cue = (e.get("cue") or "").strip()
+        if cue and len(cue.split()) > MAX_CUE_WORDS:
+            short = _trim_cue(cue)
+            # a trim that collides with another element's cue is worse than a
+            # long cue: the legend would name two different props identically
+            if short and short.lower() not in taken - {cue.lower()}:
+                e["cue"] = short
+                taken.add(short.lower())
+                notes.append(f"{e.get('id', '?')}: cue trimmed to {short!r}")
+    return notes
+
+
+def validate_table(table: dict, facts: list[Fact],
+                   soft: list[str] | None = None) -> list[str]:
+    """Hard errors that must send the director back. Empty list == accept.
+
+    `soft`, when given, collects the violations that are NOT worth another
+    round trip — today, an over-long hook. A hook of 34 words is a worse legend
+    row than a hook of 30; a chapter with no plate at all because its director
+    was bounced three times over word counts is very much worse than either.
+    """
     errs: list[str] = []
+    soft_out = errs if soft is None else soft
     els = table.get("elements") or []
     if not els:
         return ["no elements"]
@@ -491,7 +553,8 @@ def validate_table(table: dict, facts: list[Fact]) -> list[str]:
                         f"Say what is there AND why that object fits, in one "
                         f"flowing sentence: {hook!r}")
         elif nw > HOOK_MAX_WORDS:
-            errs.append(f"{eid}: hook over {HOOK_MAX_WORDS} words: {hook!r}")
+            soft_out.append(f"{eid}: hook over {HOOK_MAX_WORDS} words "
+                            f"({nw}): {hook!r}")
         elif _HOOK_ASSERTS.search(hook):
             errs.append(f"{eid}: hook uses מסמל/מייצג, which asserts the link "
                         f"instead of showing why it holds: {hook!r}")
@@ -883,6 +946,42 @@ def render_quiz(legend: str) -> str:
 
 
 # ── self-test ──────────────────────────────────────────────────────────────
+def _test_table_normalization() -> None:
+    """Over-long cues are trimmed, not bounced; over-long hooks are accepted.
+
+    Both rules exist because the chapter 28 director burned all three of its
+    attempts on word counts and the chapter produced no plate at all.
+    """
+    long_cue = "Tally slate showing '70%' re-dyeing and '20-40%' to 'Bipolar Weaving'"
+    t = {"elements": [{"id": "e6", "cue": long_cue}]}
+    notes = normalize_table(t)
+    ok = t["elements"][0]["cue"] == "Tally slate" and len(notes) == 1
+    print(f"  [{'OK' if ok else 'FAIL'}] over-long cue trimmed to its prop name "
+          f"-> {t['elements'][0]['cue']!r}")
+
+    # a trim that would name two props the same must not happen
+    t = {"elements": [{"id": "e6", "cue": long_cue}, {"id": "e7", "cue": "Tally slate"}]}
+    normalize_table(t)
+    ok = t["elements"][0]["cue"] == long_cue
+    print(f"  [{'OK' if ok else 'FAIL'}] a trim that would collide is refused")
+
+    # no dangling function word at the cut
+    cut = _trim_cue("Depth marker plate bolted to the deeper terrace where the "
+                    "teenagers stand")
+    ok = not cut.split()[-1].lower() in ("where", "the", "to")
+    print(f"  [{'OK' if ok else 'FAIL'}] hard cut does not end on a function "
+          f"word -> {cut!r}")
+
+    # an over-long hook is a warning, not a rejection
+    hook = "מילה " * 40
+    el = {"id": "e1", "cue": "Slate", "cue_he": "לוח", "hook": hook,
+          "prop": "a slate", "fact_ids": [], "derivation": "PRINTED_NUMBER"}
+    soft: list[str] = []
+    errs = validate_table({"elements": [el]}, [], soft=soft)
+    ok = not any("hook over" in e for e in errs) and any("hook over" in x for x in soft)
+    print(f"  [{'OK' if ok else 'FAIL'}] over-long hook is soft, not a rejection")
+
+
 def _test_relation_normalization() -> None:
     """Verify that director synonyms are normalized rather than rejected."""
     # a minimal table with one element using a synonym the director naturally reaches for
@@ -940,6 +1039,7 @@ if __name__ == "__main__":
     import sys
     print("── unit tests ──")
     _test_relation_normalization()
+    _test_table_normalization()
     print()
 
     p = Path(sys.argv[1] if len(sys.argv) > 1 else "_view/facts.json")

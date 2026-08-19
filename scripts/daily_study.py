@@ -1576,59 +1576,83 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # images don't bleed. A criteria aspect with 2+ symptom clusters is split
     # into one image per cluster (e.g. ADHD: inattention image + hyperactivity
     # image) so each criterion gets room to be a distinct detail.
-    gemini_images = []  # list of (label, png_path, txt_path)
+    # ── Sketchy v2 plates ──────────────────────────────────────────────────
+    # ONE PLATE PER TRACK, not one image per aspect. v1 drew a separate scene
+    # for each aspect of the chapter, which is why nothing linked: the reader
+    # got four unrelated pictures of the same topic and no single place to
+    # remember. v2 draws the chapter's main plate and, separately, its DSM
+    # criteria plate, both inside the chapter's fixed venue.
+    #
+    # plate_pipeline owns everything structural — the director contract, the
+    # element table, the degradation ladder, the render gates, the number
+    # compositing, the legend, the quiz and the narration. This loop only
+    # decides that plates are wanted and collects what came back.
+    gemini_images = []    # [(label, png, txt)] — the release's image assets
+    plate_extras = []     # quiz + narration, which ship with their plate
+    plate_reports = []
     if HAS_GEMINI:
-        phase = day.get("phase")
-        # World override from schedule (curated) takes priority; else auto-propose.
-        if day.get("anchor_world"):
-            anchor_world = day["anchor_world"]
-            zones = day.get("anchor_zones", {})
-            print(f"  Anchor world (curated): {anchor_world}")
-        else:
-            anchor = propose_anchor_theme(day.get("title_he", title_en), infographic_aspects)
-            anchor_world = anchor.get("world") if anchor else None
-            zones = anchor.get("zones", {}) if anchor else {}
-            if anchor_world:
-                print(f"  Anchor world (auto): {anchor_world}")
+        try:
+            import plate_pipeline as pp
+            import sketchy_spec as spec
+        except ImportError as exc:
+            pp, spec = None, None
+            print(f"[!] Sketchy v2 unavailable ({exc}); no plates this run.")
 
-        image_jobs = build_image_jobs(infographic_aspects, facts)
-        print(f"\nGenerating {len(image_jobs)} Sketchy scene(s) via Gemini (phase {phase})...")
-        for label, aspect, job_facts in image_jobs:
-            png_path = day_dir / f"sketchy_{label}.png"
-            txt_path = day_dir / f"sketchy_{label}.txt"
-            director = build_director_instruction(
-                day, symbols, aspect, job_facts,
-                anchor_world=anchor_world, anchor_zone=zones.get(aspect),
-            )
-            # For CRITERIA images, completeness is mandatory: pass the cluster's
-            # criterion items so generate_sketchy_directed runs the coverage-
-            # guaranteed retry loop until every criterion has a distinct visual.
-            required_items, max_tries = None, 1
-            if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(job_facts, dict):
-                crit = job_facts.get("criteria")
-                items = crit.get("items") if isinstance(crit, dict) else None
-                if items:
-                    required_items = [str(it) for it in items]
-                    max_tries = 3
-            print(f"  sketchy_{label}: directing scene + generating"
-                  f"{f' (criteria: {len(required_items)} items, <=3 tries)' if required_items else ''}...")
-            ok, caption = generate_sketchy_directed(
-                director_instruction=director,
-                output_path=png_path,
-                caption_path=txt_path,
-                phase=phase,
-                required_items=required_items,
-                max_image_tries=max_tries,
-            )
-            if ok:
-                size_mb = png_path.stat().st_size / (1024 * 1024)
-                cap_kb = (txt_path.stat().st_size / 1024) if txt_path.exists() else 0
-                print(f"    [OK] {png_path.name} ({size_mb:.1f} MB) + caption ({cap_kb:.1f} KB)")
-                gemini_images.append((label, png_path, txt_path if txt_path.exists() else None))
+        venue = None
+        if pp is not None:
+            try:
+                venue = pp.load_venue(day_index)
+            except SystemExit as exc:
+                # A missing venue is a HARD stop for the day's images, never a
+                # quiet fall back to the v1 per-aspect path: the whole point of
+                # v2 is that a chapter is always drawn in its own fixed place,
+                # and a chapter drawn somewhere else is worse than none.
+                print(f"[!] {exc} — the chapter cannot be drawn without its venue.")
+
+        if venue is not None:
+            tokens = pp.load_tokens(day)
+            plates = spec.plan_plates(spec.atomize(facts)) if facts else []
+            if not plates:
+                print("[!] no facts to draw; skipping plates.")
             else:
-                print(f"    [FAIL] Gemini generation failed for sketchy_{label}")
+                sign = venue.get('sign_text', '?')
+                print("")
+                print(f"Generating {len(plates)} Sketchy v2 plate(s) in {sign!r}...")
+            for plate in plates:
+                print(f"  sketchy_{plate.name}: {len(plate.facts)} facts, directing...")
+                try:
+                    rep = pp.run_plate(day, plate, venue, tokens, day_dir)
+                except Exception as exc:   # one bad plate must not lose the day
+                    print(f"    [FAIL] sketchy_{plate.name}: {exc}")
+                    plate_reports.append({"plate": plate.name, "error": str(exc)})
+                    continue
+                plate_reports.append(rep)
+                png = day_dir / f"sketchy_{plate.name}.png"
+                txt = day_dir / f"sketchy_{plate.name}.txt"
+                if rep.get("error") or not png.exists():
+                    print(f"    [FAIL] {rep.get('error', 'no render produced')}")
+                    continue
+                gates = rep.get("gates", {})
+                print(f"    [OK] {png.name} "
+                      f"({png.stat().st_size / (1024 * 1024):.1f} MB), "
+                      f"{rep.get('tries')} tries, score {gates.get('score')}, "
+                      f"composited {rep.get('compositing', {}).get('composited', 0)}"
+                      f"/{rep.get('compositing', {}).get('requested', 0)} numbers")
+                gemini_images.append((plate.name, png, txt if txt.exists() else None))
+                # A plate without its legend is not a study asset, and the quiz
+                # and the narration are generated from that same legend.
+                for extra in (day_dir / f"sketchy_{plate.name}.quiz.md",
+                              day_dir / f"narration_{plate.name}.txt",
+                              day_dir / f"narration_{plate.name}.wav"):
+                    if extra.exists():
+                        plate_extras.append(extra)
+            if plate_reports:
+                (day_dir / "plates_report.json").write_text(
+                    json.dumps(plate_reports, ensure_ascii=False, indent=1),
+                    encoding="utf-8")
+                plate_extras.append(day_dir / "plates_report.json")
     else:
-        print("[!] gemini_image module unavailable; skipping Sketchy scenes.")
+        print("[!] gemini_image module unavailable; skipping Sketchy plates.")
 
     task_ids = {k: v for k, v in task_ids.items() if v}
     print(f"\n{len(task_ids)} NotebookLM artifacts launched. Waiting...\n")
@@ -1654,11 +1678,14 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         else:
             print(f"  [X] download failed: {kind}")
 
-    # Include Gemini Sketchy scenes (image + caption .txt — both go to Release)
+    # Include the Sketchy v2 plates: the render, its legend, and everything
+    # generated from that legend (quiz, narration script, narration audio).
+    # The legend is what makes the picture teachable, so it is not optional.
     for label, png_path, txt_path in gemini_images:
         assets.append(png_path)
         if txt_path:
             assets.append(txt_path)
+    assets.extend(plate_extras)
 
     # Include the focused study guide (from ask, not generate report)
     if study_guide_path and study_guide_path.exists():
