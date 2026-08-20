@@ -232,8 +232,9 @@ _NUM = re.compile(
     r"(?P<op>>=|<=|[<>≤≥~≈]|\bעד\b)?\s*"
     r"(?P<a>\d+(?:[.,]\d+)?)"
     r"(?:\s*(?P<sep>[-–—:/]|\s+to\s+)\s*(?P<b>\d+(?:[.,]\d+)?))?"
-    r"\s*(?P<unit>%|שנים|שנה|שבועות|שבוע|חודשים|חודש|ימים|mg|g/day|mEq/L|"
-    r"years?|weeks?|months?|days?|hours?)?",
+    r"\s*(?:ה)?(?P<unit>%|שנים|שנה|שבועות|שבוע|חודשים|חודש|ימים|יום|שעות|שעה|"
+    r"דקות|דקה|mg|g/day|mEq/L|"
+    r"years?|weeks?|months?|days?|hours?|hrs?|mins?|minutes?)?",
     re.I,
 )
 
@@ -241,8 +242,20 @@ _UNIT_CANON = {
     "שנים": "yr", "שנה": "yr", "years": "yr", "year": "yr",
     "שבועות": "wk", "שבוע": "wk", "weeks": "wk", "week": "wk",
     "חודשים": "mo", "חודש": "mo", "months": "mo", "month": "mo",
-    "ימים": "d", "days": "d", "day": "d",
+    "ימים": "d", "יום": "d", "days": "d", "day": "d",
+    # Hours were in the regex but not in this table, so "t½ של 26 שעות" painted
+    # a bare "26" tagged N. The spec is explicit that a figure without its
+    # referent recovers nothing: a reader who encodes "26" has encoded a digit.
+    "שעות": "h", "שעה": "h", "hours": "h", "hour": "h", "hrs": "h", "hr": "h",
+    "דקות": "min", "דקה": "min", "minutes": "min", "minute": "min",
+    "mins": "min", "min": "min",
 }
+
+# A publication or approval year is not a quantity. "אזהרת ה-FDA ב-2004" painted
+# "2004" on a carrier, tagged N, competing for space with the doses and
+# thresholds the plate exists to teach. Same family as the page-number leak: a
+# number that is really a reference, dressed as data.
+_YEAR_LO, _YEAR_HI = 1900, 2100
 
 
 def _is_identifier(text: str, m: re.Match) -> bool:
@@ -302,6 +315,10 @@ def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
         if _is_identifier(text, m):
             continue
         a, b, sep = m.group("a"), m.group("b"), m.group("sep")
+        # a bare four-digit year, with no unit and no range partner
+        if (not b and not (m.group("unit") or "").strip()
+                and a.isdigit() and _YEAR_LO <= int(a) <= _YEAR_HI):
+            continue
         op = (m.group("op") or "").strip()
         raw_unit = (m.group("unit") or "").strip().lower()
         unit = _UNIT_CANON.get(raw_unit, raw_unit)
@@ -313,7 +330,7 @@ def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
             kind, paint = "RANGE", f"{a}-{b}"
         else:
             kind, paint = "SCALAR", a
-        if unit in ("yr", "wk", "mo", "d") and kind in ("SCALAR", "RANGE"):
+        if unit in ("yr", "wk", "mo", "d", "h", "min") and kind in ("SCALAR", "RANGE"):
             kind = "DURATION"
 
         # Carry the unit into the picture. A bare "2" painted for "2 weeks"
@@ -324,10 +341,16 @@ def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
             paint += "%"
         elif kind == "DURATION":
             paint += unit
+        elif unit in ("mg", "meq/l", "g/day"):
+            # A dose without its unit is not a dose. These are short enough to
+            # letter on a carrier; anything longer stays in the legend. Compared
+            # lowercase because raw_unit is folded before the lookup.
+            paint += {"meq/l": "mEq/L"}.get(unit, unit)
 
         tag = _tag_for(fid, unit)
         if kind == "DURATION":
-            tag = {"yr": "YRS", "wk": "WKS", "mo": "MOS", "d": "DAYS"}.get(unit, tag)
+            tag = {"yr": "YRS", "wk": "WKS", "mo": "MOS", "d": "DAYS",
+                   "h": "HRS", "min": "MIN"}.get(unit, tag)
 
         out.append(NumberSpec(
             kind=kind, paint=paint, tag=tag, unit=unit, op=op, priority=prio,
