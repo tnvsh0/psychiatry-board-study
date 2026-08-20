@@ -357,6 +357,15 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
               f"composition {comp}", file=sys.stderr)
         if score == 0:
             break
+        # Nothing measurable is wrong; the only complaint is that the probes
+        # could not confirm it. Another render cannot fix a probe outage, it
+        # just costs another 2K image - and rung 3 of the ladder DROPS required
+        # strings, so retrying here actively makes the plate worse. Keep this
+        # one, stop, and let the report carry verified=false.
+        if not verified and not missing_all and not comp_fails:
+            print("[i] gates unavailable and nothing found wrong — keeping this "
+                  "render, marked unverified", file=sys.stderr)
+            break
 
     if best:
         png.write_bytes(best["bytes"])
