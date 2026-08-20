@@ -159,7 +159,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         fixed = spec.normalize_table(cand, aggressive=(attempt >= 1),
                                      known_facts={f.id for f in plate.facts})
         soft: list[str] = []
-        errs = spec.validate_table(cand, plate.facts, soft=soft)
+        errs = spec.validate_table(cand, plate.facts, soft=soft,
+                                   last_rung=(attempt == 2))
         if not errs:
             table = cand
             for note in fixed:

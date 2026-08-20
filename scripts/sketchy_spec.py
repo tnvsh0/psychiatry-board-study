@@ -86,6 +86,10 @@ RELATION_SYNONYMS = {
     "DROPS_FROM": "FALLS_FROM", "DESCENDS_FROM": "FALLS_FROM",
     "PRODUCES": "ACTS_ON", "MAKES": "ACTS_ON", "DRIVES": "ACTS_ON",
     "COMBINED_WITH": "ADJACENT_TO", "PAIRED_WITH": "ADJACENT_TO",
+    "ACCOMPANIES": "ADJACENT_TO", "ACCOMPANIED_BY": "ADJACENT_TO",
+    "OCCURS_WITH": "ADJACENT_TO", "CO_OCCURS_WITH": "ADJACENT_TO",
+    "SIMILAR_TO": "ADJACENT_TO", "CONTRASTS_WITH": "ADJACENT_TO",
+    "FOLLOWS": "ADJACENT_TO", "REPLACES": "ADJACENT_TO",
     "TOGETHER_WITH": "ADJACENT_TO", "COMPARED_TO": "ADJACENT_TO",
     # PASSIVE verbs name the same relation from the other end. Mapping them to
     # ACTS_ON would silently reverse who does what to whom, which the picture
@@ -646,7 +650,8 @@ def normalize_table(table: dict, aggressive: bool = False,
 
 
 def validate_table(table: dict, facts: list[Fact],
-                   soft: list[str] | None = None) -> list[str]:
+                   soft: list[str] | None = None,
+                   last_rung: bool = False) -> list[str]:
     """Hard errors that must send the director back. Empty list == accept.
 
     `soft`, when given, collects the violations that are NOT worth another
@@ -749,9 +754,16 @@ def validate_table(table: dict, facts: list[Fact],
 
     n_metaphor = sum(1 for e in els if e.get("derivation") == "FREE_METAPHOR")
     if els and n_metaphor / len(els) > FREE_METAPHOR_CAP:
-        errs.append(f"{n_metaphor}/{len(els)} free metaphors — cap is "
-                    f"{FREE_METAPHOR_CAP:.0%}; use a person exhibiting the state "
-                    f"or a fixed lexicon token")
+        # A real quality rule: a free metaphor is the least memorable device in
+        # the corpus, so the director is sent back for it — twice. But the
+        # derivation is the director's own admission about its own element, and
+        # demoting the label would only hide the count. On the last rung the
+        # over-cap plate ships with the count recorded, because a plate with
+        # four soft elements teaches more than a chapter with no plate.
+        (soft_out if last_rung else errs).append(
+            f"{n_metaphor}/{len(els)} free metaphors — cap is "
+            f"{FREE_METAPHOR_CAP:.0%}; use a person exhibiting the state "
+            f"or a fixed lexicon token")
 
     anchor = table.get("anchor_structure", "")
     if _HERO_WORDS.search(anchor):
