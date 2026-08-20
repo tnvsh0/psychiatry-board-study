@@ -941,6 +941,15 @@ def nb_run(args, timeout=120, retries=2):
             print(f"    [!] notebooklm {args[0]}: write unconfirmed, NOT retrying "
                   f"(would duplicate)", file=sys.stderr)
             return r
+        # A quota is not a blip. Audio generation is capped per day, and
+        # hammering the cap three times in two seconds spends the budget on
+        # nothing and can push the limiter further out. Fail immediately and
+        # let the caller record that this chapter still owes an artifact.
+        blob = r.stdout + r.stderr
+        if "RateLimit" in blob or "RESOURCE_EXHAUSTED" in blob or "quota" in blob.lower():
+            print(f"    [!] notebooklm {args[0]}: rate limited, NOT retrying",
+                  file=sys.stderr)
+            return r
         if attempt < retries:
             print(f"    [!] notebooklm {args[0]} returned rc={r.returncode} with "
                   f"{len(r.stdout)} bytes; retrying "
