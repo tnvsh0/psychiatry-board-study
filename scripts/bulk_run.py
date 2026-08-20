@@ -185,7 +185,24 @@ def main() -> int:
     if not ok:
         print(f"\n[STOP] {why}", file=sys.stderr)
         return 2
-    print("auth OK\n")
+    print("auth OK")
+
+    # Chapter 29 walked into a Gemini 503 storm and spent forty minutes on a
+    # plate whose gates never answered, narration that never generated and a
+    # director that returned nothing - all of it billable. Wait for the weather
+    # rather than paying to work through it.
+    try:
+        import gemini_health
+        n, asked, note = gemini_health.check()
+        if n < gemini_health.HEALTHY_AT:
+            print(f"\n[STOP] Gemini answered {n}/{asked} probes"
+                  + (f" ({note})" if note else "")
+                  + ".\n  Wait for it to recover:  "
+                  "python scripts/gemini_health.py --wait 60", file=sys.stderr)
+            return 3
+        print(f"gemini OK ({n}/{asked} probes)\n")
+    except Exception as e:
+        print(f"[!] could not check Gemini health: {e}", file=sys.stderr)
 
     n, consecutive = 0, 0
     for idx in queue:
