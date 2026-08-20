@@ -1044,15 +1044,23 @@ def load_drive_books():
         return json.load(fh)
 
 
-def add_textbook_pdfs_to_day_notebook(nb_id):
+def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
     """Attach all six textbooks to the per-day notebook by Drive reference.
 
-    Returns the count attached. The caller MUST treat a short count as fatal: a
-    book named in the prompt but missing from the notebook does not error, it
-    makes NotebookLM invent page numbers.
+    Returns {source_id: label} for the books that attached as genuine Drive
+    PDFs. The caller MUST treat a short map as fatal: a book named in the
+    prompt but missing from the notebook does not error, it makes NotebookLM
+    invent page numbers.
+
+    The id map is what lets a failed index be repaired without guessing. Two of
+    the six books are Stahl titles, so matching a NotebookLM source title back
+    to a Drive file by name can pick the wrong one, and re-attaching the wrong
+    book is worse than not repairing at all.
     """
     books = load_drive_books()
-    added = 0
+    if only is not None:
+        books = {k: v for k, v in books.items() if k in only}
+    attached = {}
     for label, meta in books.items():
         r = nb_run(["source", "add-drive", meta["drive_file_id"], label,
                     "-n", nb_id, "--mime-type", "pdf", "--json"], timeout=300)
@@ -1073,38 +1081,112 @@ def add_textbook_pdfs_to_day_notebook(nb_id):
             print(f"    [!!] {label}: rc={r.returncode} {(r.stderr or '')[:120]}")
         if ok:
             print(f"    [OK] {label}")
-        added += ok
-    return added
+            attached[src.get("id")] = label
+    return attached
 
 
-def wait_for_sources_indexed(nb_id, timeout=420):
+def _list_sources(nb_id):
+    r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
+    try:
+        return json.loads(r.stdout).get("sources", [])
+    except Exception:
+        return None
+
+
+def wait_for_sources_indexed(nb_id, attached=None, timeout=900,
+                             interval=15, repair=True):
     """Block until every source in the notebook has finished processing.
 
     A freshly attached Drive PDF is not queryable for a while. Extracting
-    before indexing completes does not error — it returns a near-empty answer,
+    before indexing completes does not error - it returns a near-empty answer,
     which is how chapter 29 produced 845 characters of "source material" from
     six textbooks and would have built its whole plate set on nothing.
+
+    Polls the notebook as a WHOLE rather than waiting on each source in turn.
+    The per-source wait was serial, so six books cost up to six timeouts back
+    to back, and it could not see the one status that matters: `error` is
+    terminal, and the first run spent its entire 420s budget waiting for a
+    Kaplan & Sadock that had already failed. A failed source is retried once by
+    detaching and re-attaching it, because a big PDF losing its first indexing
+    attempt is a thing that will happen across 141 chapters and is not a reason
+    to lose the chapter.
     """
-    r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
-    try:
-        sources = json.loads(r.stdout).get("sources", [])
-    except Exception:
-        print("  [!] could not list sources to wait on", file=sys.stderr)
-        return False
-    ok = True
-    for src in sources:
-        sid = src.get("id")
-        if not sid:
+    deadline = time.time() + timeout
+    retried = set()
+    while True:
+        sources = _list_sources(nb_id)
+        if sources is None:
+            print("  [!] could not list sources to wait on", file=sys.stderr)
+            return False
+
+        pending = [s for s in sources if (s.get("status") or "").lower()
+                   not in ("ready", "error", "failed")]
+        broken = [s for s in sources if (s.get("status") or "").lower()
+                  in ("error", "failed")]
+
+        for src in broken:
+            sid, title = src.get("id"), (src.get("title") or "?")
+            book = _book_for_source(sid, title, attached)
+            if not repair or sid in retried or not book:
+                continue
+            retried.add(sid)
+            print(f"    RETRY    {title[:44]} (indexing failed, re-attaching)")
+            nb_run(["source", "delete", sid, "-n", nb_id], timeout=90)
+            nb_run(["source", "add-drive", book["drive_file_id"], book["label"],
+                    "-n", nb_id, "--mime-type", "pdf"], timeout=300)
+            pending.append(src)  # give the fresh copy a chance this round
+
+        if not pending:
+            still = [(s.get("title") or "?")[:44] for s in sources
+                     if (s.get("status") or "").lower() != "ready"]
+            for s in sources:
+                print(f"    {(s.get('status') or '?'):8} {(s.get('title') or '?')[:44]}")
+            if still:
+                print(f"  [!] {len(still)} source(s) never indexed: {', '.join(still)}",
+                      file=sys.stderr)
+                return False
+            return True
+
+        if time.time() >= deadline:
+            for s in sources:
+                print(f"    {(s.get('status') or '?'):8} {(s.get('title') or '?')[:44]}")
+            print(f"  [!] indexing timed out after {timeout}s with "
+                  f"{len(pending)} source(s) still processing", file=sys.stderr)
+            return False
+        time.sleep(interval)
+
+
+def _norm(t):
+    return re.sub(r"[^a-z0-9]+", "", (t or "").lower())
+
+
+def _book_for_source(sid, title, attached=None):
+    """Resolve a notebook source back to its drive_books entry.
+
+    Prefers the id map recorded when the book was attached. Falls back to an
+    exact drive_title prefix comparison, never a label guess: "Stahl Pediatric"
+    and "Stahl Essential" share every word a loose match would key on.
+    """
+    books = load_drive_books()
+    if attached and sid in attached:
+        label = attached[sid]
+        if label in books:
+            return {**books[label], "label": label}
+    t = _norm(title)
+    if len(t) < 10:
+        return None
+    # Compare as much of the title as both sides have. The two Stahl titles
+    # agree for 32 characters and only then diverge, so a short window matches
+    # both and the ambiguity guard below throws the repair away.
+    hits = []
+    for lbl, b in books.items():
+        d = _norm(b.get("drive_title"))
+        if not d:
             continue
-        w = nb_run(["source", "wait", sid, "-n", nb_id,
-                    "--timeout", str(timeout), "--interval", "5"],
-                   timeout=timeout + 60)
-        # exit 0 = ready, 1 = failed, 2 = timeout
-        state = {0: "ready", 1: "FAILED", 2: "TIMEOUT"}.get(w.returncode, "?")
-        title = (src.get("title") or sid)[:44]
-        print(f"    {state:8} {title}")
-        ok &= (w.returncode == 0)
-    return ok
+        n = min(len(d), len(t), 40)
+        if n >= 10 and d[:n] == t[:n]:
+            hits.append({**b, "label": lbl})
+    return hits[0] if len(hits) == 1 else None
 
 
 def count_notebook_sources(nb_id):
@@ -1552,30 +1634,41 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     day_nb_id, day_nb_title = find_day_notebook(day_index, day.get("title_he", title_en))
     if day_nb_id:
         print(f"Found existing per-day notebook: {day_nb_id} ('{day_nb_title}')")
-        # Retrofit: if the notebook predates the PDF-wiring change, it only has
-        # the extracted .md as its single source. Upload PDFs now so the study
-        # guide can cite real page numbers.
-        n_sources = count_notebook_sources(day_nb_id)
-        # Books now arrive by Drive reference, so the old count of local PDF
-        # files on disk is meaningless — expect one source per Drive query.
-        min_expected = 1 + len(load_drive_books())
-        if 0 < n_sources < min_expected:
-            print(f"  Notebook has only {n_sources} source(s) (expected {min_expected}). Retrofitting with textbook PDFs...")
-            added = add_textbook_pdfs_to_day_notebook(day_nb_id)
-            if added > 0:
-                wait_s = 180  # PDFs take longer to index than text
-                print(f"  Added {added} PDF source(s). Waiting {wait_s}s for indexing...")
-                time.sleep(wait_s)
-        elif n_sources >= min_expected:
-            print(f"  Notebook already has {n_sources} sources — skipping PDF retrofit.")
-        else:
+        # Which books are actually present, by identity rather than by count.
+        # Counting was wrong on exactly the case that matters: a notebook left
+        # with 6 of an expected 7 sources after a failed extraction would be
+        # "short", and the retrofit re-attached all six books on top of the six
+        # already there.
+        sources = _list_sources(day_nb_id)
+        if sources is None:
             # "Could not determine" used to shrug and continue. It then
             # generated audio, video and a study guide against a notebook with
             # NO SOURCES: every artifact would have been invented whole. If we
             # cannot confirm the books are attached, stop.
             raise RuntimeError(
-                f"could not count sources in notebook {day_nb_id}; refusing to "
+                f"could not list sources in notebook {day_nb_id}; refusing to "
                 f"generate against a notebook whose contents are unknown")
+        present, attached = set(), {}
+        for src in sources:
+            book = _book_for_source(src.get("id"), src.get("title"))
+            if book:
+                present.add(book["label"])
+                attached[src.get("id")] = book["label"]
+        missing = [lbl for lbl in load_drive_books() if lbl not in present]
+        if missing:
+            print(f"  Notebook is missing {len(missing)} book(s): "
+                  f"{', '.join(missing)}. Attaching...")
+            attached.update(
+                add_textbook_pdfs_to_day_notebook(day_nb_id, only=missing))
+        else:
+            print(f"  All {len(present)} textbooks already attached.")
+        # Always re-check indexing, even when nothing was added: a source can
+        # sit in `error` from a previous run, and that is repairable here.
+        print("  Waiting for textbooks to index...")
+        if not wait_for_sources_indexed(day_nb_id, attached=attached):
+            raise RuntimeError(
+                f"not every source in {day_nb_id} finished indexing; refusing "
+                f"to extract from a notebook that cannot answer yet")
     else:
         # 2. Create the per-day notebook FIRST, then attach the books, then
         #    extract from it.
@@ -1595,7 +1688,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         # 3. Attach the textbooks by Drive reference so the study guide can
         #    cite real pages.
         print("  Attaching textbooks from Drive...")
-        n_pdfs = add_textbook_pdfs_to_day_notebook(day_nb_id)
+        attached = add_textbook_pdfs_to_day_notebook(day_nb_id)
+        n_pdfs = len(attached)
         # A book named in the prompt but absent from the notebook does not
         # raise — NotebookLM quietly invents plausible page numbers for it.
         # That already shipped once (a day-16 study guide cited "Stahl
@@ -1613,7 +1707,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         #    silently destructive once it came from a notebook whose sources
         #    were attached seconds earlier.
         print("  Waiting for textbooks to index...")
-        if not wait_for_sources_indexed(day_nb_id):
+        if not wait_for_sources_indexed(day_nb_id, attached=attached):
             raise RuntimeError(
                 f"not every source in {day_nb_id} finished indexing; refusing "
                 f"to extract from a notebook that cannot answer yet")
