@@ -69,16 +69,34 @@ falling back to v1 — a chapter drawn in the wrong place is worse than none.
 
 ### What the verified run actually produced
 
-Chapter 28, main plate, **score 0**: no missing strings, all three composition
-checks passing, 3/3 number plates composited at 22.8%, 15.0% and 10.0% of frame
-height. That is the whole chain green for the first time.
+Chapter 28, **both plates score 0** — the whole chain green for the first time.
+The run bundle is `_proto/v2/plate28_v2.tgz` (PNGs, legends, quizzes, narration
+scripts and audio, both reports).
+
+| | main | criteria |
+|---|---|---|
+| facts | 26 | 17 |
+| render tries | 2 | 1 |
+| score | 0 | 0 |
+| missing strings | none | none |
+| numbers composited | 3/3 | 2/2 |
+| plate heights | 22.9%, 15.2%, 10.1% | 27.1%, 16.1% |
+| narration | 824 words + wav | 565 words + wav |
+
+The criteria plate is the better of the two and shows what the target looks
+like: packed edge to edge, every figure the same size, and both number plates
+mounted on visible wooden frames so they belong to the room instead of floating
+in front of it. No numeral is lettered by hand anywhere in it.
+
+Against the baseline:
 
 | | before | after |
 |---|---|---|
-| blank plate height | 2.6-5.5% of frame | 10.0-22.8% |
-| `figures_even` | failed every try | passed on 4 tries of 4, then again next run |
+| blank plate height | 2.6-5.5% of frame | 10.1-27.1% |
+| `figures_even` | failed every try | passed every try |
 | required strings missing | 6-9 | 0 |
-| numbers composited | 0 (shipped raw chroma) | 3/3, no residual chroma |
+| numbers composited | 0 (shipped raw chroma) | 5/5, no residual chroma |
+| chapter reached a render | no (director bounced 3/3) | yes, on the first or second try |
 
 ### Still open, seen in the verified render
 
@@ -91,14 +109,17 @@ height. That is the whole chain green for the first time.
    currently sees them. The cheap fix is one probe per try: "are there any
    numerals anywhere except on the coloured plates?", scored like the others.
 
-2. **The frame got emptier.** Asking for three doorway-sized boards and for
+2. **The frame got emptier — on the main plate only.** Asking for three doorway-sized boards and for
    nobody near the viewer bought large stretches of bare floor. `frame_filled`
    still answers YES, which means that probe is measuring margins and vignette,
    not density — it cannot see this. Packing needs its own check, or the cast
    and clutter instruction needs to grow to match the space the boards take.
 
-3. The plates BELONG now — the "2% RATE" board sits in a wooden frame on legs —
-   but only sometimes; the other two still read as flat panels on a wall.
+3. **The scrub is doing more work than it should.** The compositor neutralised
+   3,575 leftover chroma pixels on the main plate and 21,116 on the criteria
+   plate. Nothing bad ships — that is what the scrub is for — but 21k pixels is
+   a second chroma region the model painted somewhere it was not asked to, and
+   nobody is looking at where.
 
 ## 2026-07-28 — five defects fixed (cloud session)
 
