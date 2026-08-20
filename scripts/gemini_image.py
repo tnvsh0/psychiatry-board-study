@@ -54,6 +54,22 @@ PHASE_PALETTE_PATH = REPO_ROOT / "schedule" / "phase_palette.json"
 #                                                          ~500 imgs/day FREE tier)
 # Default is Pro (highest quality, which helps most with labels + criteria completeness).
 IMAGE_MODEL = os.environ.get("SKETCHY_IMAGE_MODEL", "gemini-3-pro-image-preview")
+
+# Optional cheaper model for the DRAFT rungs of the retry ladder. Most renders
+# in a chapter are thrown away: chapter 29's first plate took four tries to go
+# from score 4 to score 1, so three Pro images at ~$0.134 were paid for and
+# discarded. With this set, every try except the last uses the cheap model to
+# find the composition and the last uses IMAGE_MODEL for the frame that ships.
+# Unset by default — this changes what the learner sees, so it is the owner's
+# call, not a silent optimisation.
+LADDER_MODEL = os.environ.get("SKETCHY_LADDER_MODEL", "").strip()
+
+
+def model_for_try(attempt: int, max_tries: int) -> str:
+    """Which image model this rung of the ladder should use."""
+    if LADDER_MODEL and attempt < max_tries - 1:
+        return LADDER_MODEL
+    return IMAGE_MODEL
 CAPTION_MODEL = "gemini-2.5-flash"  # text-only (director/caption/coverage) — cheap, leave as is
 
 # Render size. v1 never set this and silently took the default 1376x768, where a

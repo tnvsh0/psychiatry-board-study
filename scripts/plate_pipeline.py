@@ -288,7 +288,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             print(f"[i] dropping {len(drop)} lower-priority string(s) and retrying",
                   file=sys.stderr)
 
-        if not gi.generate_image(prompt, png):
+        if not gi.generate_image(prompt, png,
+                                 model=gi.model_for_try(attempt, MAX_TRIES)):
             continue
 
         # In composite mode the model was asked for BLANK plates, so there are
