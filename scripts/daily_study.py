@@ -1325,6 +1325,82 @@ def _strip_code_fence(text):
     return t.strip()
 
 
+# The fact schema used to be one fixed disorder-shaped template - criteria,
+# epidemiology, etiology, treatment - handed to every chapter with a line
+# asking the model to "omit sections that don't apply". It does not omit them.
+# Chapter 29 is "SSRIs, in depth", with eight declared aspects and none of them
+# diagnostic; it came back with the DSM criteria for major depression and the
+# epidemiology of depression, because those are what the template asked for.
+# The mnemonic plates are built from these keys, so that chapter's criteria
+# plate would have taught MDD criteria in a venue punning on SSRIs.
+#
+# Only 61 of the 144 chapters are disorder-shaped. The other 83 - 28 drug and
+# pharmacology chapters, 55 on development, examination, ethics and the rest -
+# were all being asked the same four disorder questions.
+#
+# So the schema is now BUILT FROM the chapter's own declared aspects, in code,
+# rather than chosen by the model. The curriculum already says what each
+# chapter covers; this makes the extraction ask for exactly that. 161 distinct
+# aspects appear across the course, so the well-known ones get a rich shape and
+# everything else gets a generic one rather than being left out.
+_RICH_SECTIONS = {
+    "criteria": ('"criteria": {"clusters": [{"name": "<cluster>", "items": '
+                 '["<symptom>", "..."]}], "thresholds": "<e.g. >=5/9 symptoms, '
+                 '>=2 weeks>", "subtypes": ["<presentation>", "..."]}'),
+    "epidemiology": ('"epidemiology": {"prevalence": "<e.g. ~5% children>", '
+                     '"sex_ratio": "<e.g. 2:1 M:F>", "onset_age_typical": '
+                     '"<peak onset>", "heritability": "<e.g. ~74%>", '
+                     '"comorbidities": ["<e.g. ODD ~50%>"], "prognosis": '
+                     '"<e.g. ~60% persist>"}'),
+    "etiology": ('"etiology": {"genetic": "<short>", "neurobiology": "<short - '
+                 'receptors, regions, circuits>", "environmental": "<short>"}'),
+    "treatment": ('"treatment": {"first_line": ["<drug or therapy + key '
+                  'detail>"], "second_line": ["<...>"], "key_side_effects": '
+                  '["<...>"], "monitoring": "<short>"}'),
+    "drug_class": ('"drug_class": {"members": ["<drug + the one detail that '
+                   'separates it>"], "mechanism": "<receptor/transporter '
+                   'level>", "kinetics": ["<half-life, CYP, linearity>"], '
+                   '"onset_of_effect": "<short>"}'),
+}
+
+# Which rich section each well-known aspect asks for. Anything not here gets
+# the generic shape keyed by the aspect's own name.
+_ASPECT_SECTION = {
+    "dsm_criteria": "criteria", "diagnostic_criteria": "criteria",
+    "dsm_general_criteria": "criteria", "criterion_A": "criteria",
+    "epidemiology": "epidemiology",
+    "etiology": "etiology", "etiology_genetic": "etiology",
+    "genetic_basis": "etiology", "genetics": "etiology",
+    "treatment_overview": "treatment", "treatment_first_line": "treatment",
+    "treatment_second_line": "treatment", "management": "treatment",
+    "drug_class_overview": "drug_class", "drug_mechanism": "drug_class",
+}
+
+
+def build_facts_schema(aspects):
+    """(schema_text, allowed_keys) for this chapter's declared aspects."""
+    parts, allowed, seen = [], [], set()
+    for a in aspects:
+        sec = _ASPECT_SECTION.get(a)
+        if sec:
+            if sec in seen:
+                continue
+            seen.add(sec)
+            parts.append("  " + _RICH_SECTIONS[sec])
+            allowed.append(sec)
+        else:
+            if a in seen:
+                continue
+            seen.add(a)
+            parts.append(f'  "{a}": {{"items": ["<concrete fact, with the '
+                         f'number if the sources give one>", "..."], '
+                         f'"key_numbers": ["<value + what it counts>", "..."]}}')
+            allowed.append(a)
+    parts.append('  "high_yield": ["<exam pearl>", "<exam pearl>", "..."]')
+    allowed.append("high_yield")
+    return "{\n" + ",\n".join(parts) + "\n}", allowed
+
+
 def extract_facts(day, notebook_id):
     """Extract STRUCTURED facts (the source of truth for the Sketchy images)
     from the per-day notebook as JSON. Each aspect's image is later built ONLY
@@ -1333,44 +1409,20 @@ def extract_facts(day, notebook_id):
     title_he = day.get("title_he", day.get("title_en", ""))
     aspects = day.get("aspects", [])
 
+    shape, allowed = build_facts_schema(aspects)
     schema_prompt = f"""Based ONLY on the sources in this notebook, extract the high-yield facts about: {title_he}
 
 {books_directive()}
 
 Return STRICT JSON (no prose, no markdown fences) with this exact shape. Fill every field from the sources; if a field is genuinely not in the sources, use the string "לא צוין". Keep values SHORT and concrete (numbers, names) — this drives mnemonic image generation.
 
-{{
-  "criteria": {{
-    "clusters": [
-      {{"name": "<cluster name e.g. Inattention>", "items": ["<symptom 1>", "<symptom 2>", "..."]}},
-      {{"name": "<cluster name e.g. Hyperactivity/Impulsivity>", "items": ["..."]}}
-    ],
-    "thresholds": "<e.g. >=6/9 symptoms, <12yo onset, >=2 settings, >=6 months>",
-    "subtypes": ["<presentation 1>", "..."]
-  }},
-  "epidemiology": {{
-    "prevalence": "<e.g. ~5% children, ~2.5% adults>",
-    "sex_ratio": "<e.g. 2:1 male:female>",
-    "onset_age_typical": "<epidemiological peak onset, or לא צוין>",
-    "heritability": "<e.g. ~74%, one of the most heritable>",
-    "comorbidities": ["<e.g. ODD ~50%>", "<e.g. anxiety>", "..."],
-    "prognosis": "<e.g. ~60% persist into adulthood>"
-  }},
-  "etiology": {{
-    "genetic": "<short>",
-    "neurobiology": "<short — receptors, regions, circuits>",
-    "environmental": "<short>"
-  }},
-  "treatment": {{
-    "first_line": ["<drug or therapy + key detail>"],
-    "second_line": ["<...>"],
-    "key_side_effects": ["<...>"],
-    "monitoring": "<short>"
-  }},
-  "high_yield": ["<exam pearl 1>", "<exam pearl 2>", "..."]
-}}
+Every key below is about **{title_he}** itself. Do not substitute facts about a
+disorder that this chapter's subject happens to treat, or about a broader topic
+it belongs to. Use exactly these keys and no others.
 
-Only include the keys relevant to today's aspects ({', '.join(aspects)}); omit sections that don't apply (e.g., omit 'treatment' for a pure anatomy chapter). Output ONLY the JSON object."""
+{shape}
+
+Output ONLY the JSON object."""
 
     use_notebook(notebook_id)
     print("  Extracting structured facts.json (this may take 1-2 min)...")
@@ -1385,11 +1437,23 @@ Only include the keys relevant to today's aspects ({', '.join(aspects)}); omit s
         return {}
     try:
         facts = json.loads(_strip_code_fence(answer))
-        if isinstance(facts, dict):
-            return facts
     except Exception as e:
         print(f"  [!] facts JSON parse failed: {e}. Raw head: {answer[:160]}")
-    return {}
+        return {}
+    if not isinstance(facts, dict):
+        return {}
+    # Keep only what this chapter asked for. The old prompt asked the model to
+    # omit irrelevant sections and it simply did not - chapter 29 returned the
+    # DSM criteria for major depression under a schema that never requested
+    # them. Every unrequested key becomes legend rows and a mnemonic plate, so
+    # dropping them here is the difference between a chapter about SSRIs and a
+    # chapter about depression wearing an SSRI venue.
+    extra = [k for k in facts if k not in allowed]
+    if extra:
+        print(f"  [!] dropping {len(extra)} section(s) this chapter did not ask "
+              f"for: {', '.join(extra)}", file=sys.stderr)
+        facts = {k: v for k, v in facts.items() if k in allowed}
+    return facts
 
 
 def facts_for_aspect(aspect, facts):
