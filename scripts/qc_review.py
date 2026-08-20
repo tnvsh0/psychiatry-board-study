@@ -41,6 +41,7 @@ except Exception:
     pass
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gemini_image import _gc  # noqa: E402  shared transient-retry wrapper
 
 ROOT = Path(__file__).resolve().parent.parent
 QC_MODEL = os.environ.get("QC_MODEL", "gemini-2.5-flash")
@@ -156,7 +157,7 @@ def judge_chapter(day_dir: Path, day: dict) -> dict | None:
         + "\n\n" + VERDICT_SHAPE
     )
     try:
-        resp = client.models.generate_content(
+        resp = _gc(client, 
             model=QC_MODEL, contents=prompt,
             config=types.GenerateContentConfig(
                 system_instruction=JUDGE_SYSTEM,

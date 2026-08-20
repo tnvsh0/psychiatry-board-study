@@ -25,6 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gemini_image import _gc  # noqa: E402  shared transient-retry wrapper
 
 import gemini_image as gi  # noqa: E402
 
@@ -118,7 +119,7 @@ def render_one(v: dict, size: str) -> bool:
     print(f"--- ch{v['index']:>3} \"{v['sign_text']}\" ({len(prompt)} chars) ---")
     for attempt in range(3):
         try:
-            resp = client.models.generate_content(
+            resp = _gc(client, 
                 model=gi.IMAGE_MODEL, contents=prompt, config=cfg
             )
             if gi._save_image_from_response(resp, out):

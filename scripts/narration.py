@@ -33,6 +33,7 @@ import wave
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gemini_image import _gc  # noqa: E402  shared transient-retry wrapper
 
 import sketchy_spec as spec  # noqa: E402
 
@@ -142,7 +143,7 @@ Return the script text only. No preamble, no title, no stage directions."""
 # ── stage 2: write it ──────────────────────────────────────────────────────
 def _text_call(client, prompt: str, model: str = TEXT_MODEL) -> str:
     try:
-        resp = client.models.generate_content(model=model, contents=prompt)
+        resp = _gc(client, model=model, contents=prompt)
         return "".join(
             p.text
             for c in getattr(resp, "candidates", []) or []
@@ -274,7 +275,7 @@ def speak(client, script: str, out_path: str | Path,
         ),
     )
     try:
-        resp = client.models.generate_content(
+        resp = _gc(client, 
             model=TTS_MODEL, contents=script, config=cfg
         )
         for c in getattr(resp, "candidates", []) or []:

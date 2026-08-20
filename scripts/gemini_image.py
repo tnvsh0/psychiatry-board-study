@@ -219,6 +219,37 @@ def _save_image_from_response(response, output_path: Path) -> bool:
     return False
 
 
+
+# Gemini answers 503 UNAVAILABLE ("this model is currently experiencing high
+# demand") in bursts. During chapter 29 it took out the narration, the element
+# table director and several render probes inside a few minutes. Only
+# generate_image retried; everything else treated a transient outage as a
+# permanent failure and carried on with the content missing. Over 141 chapters
+# that is a lot of quietly degraded material, so every call goes through here.
+_TRANSIENT = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500",
+              "INTERNAL", "deadline", "timeout", "Timeout")
+
+
+def _gc(client, **kw):
+    """client.models.generate_content with backoff on transient failures."""
+    import time as _t
+    last = None
+    for attempt in range(4):
+        try:
+            return client.models.generate_content(**kw)
+        except Exception as e:
+            last = e
+            if not any(t in str(e) for t in _TRANSIENT):
+                raise
+            if attempt == 3:
+                break
+            wait = 5 * (2 ** attempt)      # 5s, 10s, 20s
+            print(f"[i] gemini transient ({str(e)[:60]}); retrying in {wait}s "
+                  f"({attempt + 2}/4)", file=sys.stderr)
+            _t.sleep(wait)
+    raise last
+
+
 def generate_image(
     prompt: str,
     output_path: str | Path,
@@ -243,8 +274,7 @@ def generate_image(
     import time as _time
     for attempt in range(3):
         try:
-            response = client.models.generate_content(
-                model=model, contents=full_prompt, config=cfg
+            response = _gc(client, model=model, contents=full_prompt, config=cfg
             )
             if _save_image_from_response(response, Path(output_path)):
                 return True
@@ -276,7 +306,7 @@ def _visual_inventory(client, image_path: str | Path, model: str = CAPTION_MODEL
             "something is there, leave it out."
         )
         contents = [probe, types.Part.from_bytes(data=img.read_bytes(), mime_type="image/png")]
-        resp = client.models.generate_content(model=model, contents=contents)
+        resp = _gc(client, model=model, contents=contents)
         text = ""
         for cand in getattr(resp, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -329,7 +359,7 @@ def generate_caption(
             print(f"[!] Image attachment for caption failed: {e}", file=sys.stderr)
 
     try:
-        response = client.models.generate_content(model=model, contents=contents)
+        response = _gc(client, model=model, contents=contents)
     except Exception as e:
         print(f"[!] Caption generation failed: {e}", file=sys.stderr)
         return ""
@@ -411,7 +441,7 @@ Zones should differ in dominant colour/objects so they're never confused.
 Return STRICT JSON only:
 {{"world": "<the one world + (if used) the name-pun it came from>", "zones": {{{', '.join(f'"{a}": "<a zone where {a} facts naturally happen>"' for a in aspects)}}}}}"""
     try:
-        response = client.models.generate_content(model=model, contents=instruction)
+        response = _gc(client, model=model, contents=instruction)
         text = ""
         for cand in getattr(response, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -436,7 +466,7 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     if client is None:
         return {}
     try:
-        resp = client.models.generate_content(model=model, contents=director_instruction)
+        resp = _gc(client, model=model, contents=director_instruction)
         text = ""
         for cand in getattr(resp, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -463,7 +493,7 @@ def run_json_director(instruction: str, api_key: Optional[str] = None,
     if client is None:
         return {}
     try:
-        resp = client.models.generate_content(model=model, contents=instruction)
+        resp = _gc(client, model=model, contents=instruction)
         text = "".join(
             p.text
             for c in getattr(resp, "candidates", []) or []
@@ -493,7 +523,7 @@ def _probe(client, image_path, prompt: str, model: str = CAPTION_MODEL):
             return None
         contents = [prompt, types.Part.from_bytes(data=img.read_bytes(),
                                                   mime_type="image/png")]
-        resp = client.models.generate_content(model=model, contents=contents)
+        resp = _gc(client, model=model, contents=contents)
         return "".join(
             part.text
             for cand in getattr(resp, "candidates", []) or []
@@ -674,7 +704,7 @@ def check_coverage(client, image_path: str | Path, required_items: list,
             "\n\nITEMS:\n" + numbered
         )
         contents = [probe, types.Part.from_bytes(data=img.read_bytes(), mime_type="image/png")]
-        resp = client.models.generate_content(model=model, contents=contents)
+        resp = _gc(client, model=model, contents=contents)
         text = ""
         for cand in getattr(resp, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
