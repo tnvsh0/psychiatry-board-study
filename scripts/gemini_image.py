@@ -573,6 +573,34 @@ def check_text_strings(client, image_path, required: list[str]) -> tuple[bool, l
                   if r not in found and r.casefold() not in folded]
 
 
+def check_stray_numerals(client, image_path) -> tuple[bool, list]:
+    """Digits painted anywhere other than the coloured plates. (probed, strays)
+
+    Composite mode asks for BLANK chroma plates and letters the numbers itself,
+    so check_numbers does not run — and nothing was left watching for numerals
+    the illustrator painted anyway. It does: the verified chapter-28 render has
+    two people holding placards reading "70%" and "40-60%", each a duplicate of
+    a number the compositor was about to place properly. A reader cannot tell
+    which of the two to trust.
+
+    Returns ([], probed=True) when the frame is clean.
+    """
+    ans = _probe(client, image_path,
+                 "Ignore any solid bright green, magenta or cyan rectangles in "
+                 "this image. Apart from those, list every NUMBER visible "
+                 "anywhere in the picture — on signs, boards, labels, placards, "
+                 "clothing, anywhere — one per line, verbatim. Include "
+                 "percentages, ranges and fractions. If there are none, reply "
+                 "exactly NONE.")
+    if ans is None:
+        return False, []
+    body = ans.strip()
+    if body.upper().startswith("NONE"):
+        return True, []
+    return True, [ln.strip().strip('"').strip("-• ")
+                  for ln in body.splitlines() if ln.strip()][:12]
+
+
 def check_composition(client, image_path) -> dict:
     """Three coarse structural questions that answer the 'no linkage' complaint.
 

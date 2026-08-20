@@ -311,10 +311,16 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             # fact as undrawn.
             missing_nums = [n.paint for i, n in enumerate(painted)
                             if i >= len(rows) or not rows[i]["ok"]]
+            # check_numbers does not run in this mode, so this is the only
+            # thing watching for numerals the illustrator painted by hand.
+            # They are duplicates of numbers the compositor is about to place,
+            # and the reader has no way to know which one is authoritative.
+            stray_probed, nums["extra"] = gi.check_stray_numerals(client, png)
         else:
             plate_notes = []
             nums = gi.check_numbers(client, png, required)
             missing_nums = nums["missing"] + [w for w, _ in nums["wrong"]]
+            stray_probed = nums.get("probed", True)
         probed_txt, miss_txt = gi.check_text_strings(client, png, strings)
         comp = gi.check_composition(client, png)
         missing_all = missing_nums + miss_txt
@@ -334,7 +340,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # "score 0" a genuinely clean render wears. The penalty keeps an
         # unverified frame from short-circuiting the retry loop and from
         # out-ranking a verified one that merely had a flaw.
-        verified = probed_txt and comp.get("_probed", 0) == comp.get("_asked", 0)
+        verified = (probed_txt and stray_probed
+                    and comp.get("_probed", 0) == comp.get("_asked", 0))
         score = len(missing_all) + comp_fails + (0 if verified else UNVERIFIED_PENALTY)
 
         snap = {"numbers": nums, "text_missing": miss_txt, "composition": comp,

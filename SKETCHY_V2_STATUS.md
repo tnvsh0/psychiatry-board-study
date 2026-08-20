@@ -100,14 +100,19 @@ Against the baseline:
 
 ### Still open, seen in the verified render
 
-1. **Numerals are still painted by hand, in a new place.** Dropping the
-   digit-bearing required strings stopped the director from ASKING for them, and
-   the illustrator drew two people holding placards lettered "70%" and "40-60%"
-   anyway. In composite mode this is a duplicate of a number that is about to be
-   composited, so it matters more than it did when strays were downgraded to a
-   warning — and `check_numbers` does not even run in composite mode, so nothing
-   currently sees them. The cheap fix is one probe per try: "are there any
-   numerals anywhere except on the coloured plates?", scored like the others.
+1. ~~**Numerals are still painted by hand, in a new place.**~~ **Now watched.**
+   `check_stray_numerals` runs once per try in composite mode and asks exactly
+   the question this entry proposed: ignore the coloured rectangles, list every
+   other number in the frame. Strays stay a WARNING rather than a rejection —
+   the first full run measured the stray count going 15 → 0 → 1 → 30 across
+   four tries, so rejecting on them means the build never converges — but they
+   are now recorded per try instead of being invisible.
+
+   A related defect turned up while wiring it: in composite mode the RETRY
+   prompt was built from `missing_all`, numbers included, so a number whose
+   blank plate went missing came back as "letter '70%' clearly" — the pipeline
+   was ASKING for the hand-painted duplicate it was trying to eliminate. A
+   missing number is now chased as a missing PLATE.
 
 2. **The frame got emptier — on the main plate only.** Asking for three doorway-sized boards and for
    nobody near the viewer bought large stretches of bare floor. `frame_filled`
