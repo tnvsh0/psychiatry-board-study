@@ -80,7 +80,12 @@ def build_narration_brief(table: dict, plate, topic: str) -> str:
                 continue
             hook = (e.get("hook") or "").strip()
             painted = f'  painted "{e["text"]}"' if e.get("text") else ""
-            lines.append(f"    - {e['cue']}{painted} :: {f.text}"
+            # Strip the source citation. The legend KEEPS it - it is a study
+            # reference and the reader wants the page - but the narrator would
+            # read "DSM p.183" aloud, and a spoken page number is noise a
+            # listener cannot use and cannot skip.
+            said = spec.strip_citations(f.text)
+            lines.append(f"    - {e['cue']}{painted} :: {said}"
                          + (f"  [why: {hook}]" if hook else ""))
 
     figures = [f"{n.op}{n.paint}".strip()
