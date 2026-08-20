@@ -152,7 +152,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             continue
         # Fix mechanically first, then judge. Otherwise the ladder spends its
         # whole budget re-asking for string lengths.
-        fixed = spec.normalize_table(cand)
+        # last rung: rewrite what the director would not stop writing
+        fixed = spec.normalize_table(cand, aggressive=(attempt == 2))
         soft: list[str] = []
         errs = spec.validate_table(cand, plate.facts, soft=soft)
         if not errs:
@@ -163,8 +164,13 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                 print(f"[i] accepted with warning: {note}", file=sys.stderr)
             report["table_warnings"] = fixed + soft
             break
-        print(f"[i] element table attempt {attempt+1}/3: {len(errs)} error(s); "
-              f"first: {errs[0]}", file=sys.stderr)
+        # print them ALL. Printing only errs[0] cost a whole render cycle:
+        # the first error looked like one the normalizer already handles, so
+        # the real blockers behind it were invisible.
+        print(f"[i] element table attempt {attempt+1}/3: {len(errs)} error(s):",
+              file=sys.stderr)
+        for e in errs[:20]:
+            print(f"      - {e}", file=sys.stderr)
     if table is None:
         report["error"] = f"director never produced a valid table: {errs[:3]}"
         return report

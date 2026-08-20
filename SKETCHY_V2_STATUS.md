@@ -3,6 +3,54 @@
 Written 2026-07-28. Companion to `SKETCHY_SPEC_V2.md`, which is the design; this
 is the build log and the list of what is still broken.
 
+## 2026-08-20 — the render was finally looked at
+
+The chapter 28 render existed since 2026-07-28 but nothing in the loop had ever
+VIEWED it, so two defects sat open on "cannot tell whether the prompt or the
+probe is wrong". Both are now settled by looking.
+
+**`figures_even`: the probe was right, the prompt was wrong.** In
+`sketchy_criteria.png` the sleeping man at bottom left is drawn in the
+foreground at roughly twice everyone else's height and is cut off by the frame
+edge. The old rule ("comparable scale, none taller than two-fifths of the
+frame") is a CEILING, and a ceiling permits a foreground — so the model kept
+composing a photograph with a near subject. Replaced with the ban that names the
+actual failure: nobody near the viewer, nobody cropped by the frame, no
+half-bodies or close-ups, everyone between one-sixth and one-quarter of frame
+height on one floor.
+
+**Blank plates were 2.6-5.5% of frame height.** "Large" is not a size. The brief
+now says one fifth of the image height, doorway-sized, taller than a person's
+torso, and names what is wrong (a tag, a ticket, a badge). Prompts are not
+guarantees, so the size is enforced too: `measure_chroma_plates()` measures each
+plate against the FRAME (`MIN_PLATE_HEIGHT_FRAC = 0.10`) and the retry ladder
+re-renders below that, with a retry note that says "the one you drew at 4% must
+be four to eight times bigger" rather than "draw a plate". The COMPOSITOR stays
+tolerant on purpose: it still letters a plate the gate rejected, because on the
+last rung a small composited number beats shipping a raw magenta rectangle.
+`--selftest` covers both halves on synthetic frames, no API key needed.
+
+**The chapter never reached a render at all.** The first re-run showed the
+director bounced three times on word counts (hook over 25 words, cue over 9),
+each answer substantively fine. Fixed the way the relation enum and the banned
+narration phrases were fixed — in code:
+
+  - `normalize_table()` trims a long cue back to the prop it names, refuses a
+    trim that would collide with another cue, and does not leave the cut
+    dangling on a function word.
+  - an over-long hook is now SOFT: kept, reported as `table_warnings`, never a
+    re-ask. `HOOK_MAX_WORDS` 25 -> 32, because the hook was recently required to
+    describe AND explain in one sentence and the cap never moved with it.
+
+**`plan_plates` is wired into `daily_study.py`.** The production loop no longer
+builds one image per aspect through `build_image_jobs ->
+generate_sketchy_directed`; it calls `plan_plates` and runs
+`plate_pipeline.run_plate` per plate in the chapter's fixed venue, shipping the
+legend, quiz, narration script and audio with each render, plus a
+`plates_report.json`. A missing venue stops the day's images instead of quietly
+falling back to v1 — a chapter drawn in the wrong place is worse than none.
+`regen_image.py` still uses the v1 helpers, so they stay.
+
 ## 2026-07-28 — five defects fixed (cloud session)
 
 All five defects from the first full run have been addressed with pure code

@@ -461,7 +461,38 @@ def _trim_cue(cue: str) -> str:
     return " ".join(words).strip(" ,;:-")
 
 
-def normalize_table(table: dict) -> list[str]:
+def _cue_candidates(cue: str) -> list[str]:
+    """Short names for this prop, shortest first, none over the cap.
+
+    The joint-cut is the best name ("Weighing scale"), but it is also the name
+    most likely to be taken already, since a director that writes one long cue
+    usually wrote the short version of the same prop somewhere else. So offer
+    the joint-cut first and then progressively longer prefixes, which is how a
+    person disambiguates too: "Weighing scale", "Weighing scale with brass".
+    """
+    words = cue.split()
+    out, seen = [], set()
+    for cand in [_trim_cue(cue)] + [" ".join(words[:n])
+                                    for n in range(2, MAX_CUE_WORDS + 1)]:
+        cand = cand.strip(" ,;:-")
+        if cand and cand.lower() not in seen and len(cand.split()) <= MAX_CUE_WORDS:
+            seen.add(cand.lower())
+            out.append(cand)
+    return out
+
+
+# "X מסמל את Y" asserts the link instead of showing it, which is the one thing
+# the hook may not do. On the last rung of the ladder the assertion is rewritten
+# as an apposition — the everyday half, a dash, the clinical half — which is the
+# shape the owner asked for, minus the connective that was doing the asserting.
+_ASSERT_VERB = re.compile(r"\s*(מסמלים|מייצגים|מסמלת|מייצגת|מסמל|מייצג)\s+(את\s+)?")
+
+
+def _deassert_hook(hook: str) -> str:
+    return re.sub(r"\s{2,}", " ", _ASSERT_VERB.sub(" — ", hook, count=1)).strip()
+
+
+def normalize_table(table: dict, aggressive: bool = False) -> list[str]:
     """Fix in code what a re-ask does not reliably fix. Returns what it changed.
 
     Same medicine as the relation synonyms and the banned narration phrases:
@@ -476,13 +507,25 @@ def normalize_table(table: dict) -> list[str]:
     for e in els:
         cue = (e.get("cue") or "").strip()
         if cue and len(cue.split()) > MAX_CUE_WORDS:
-            short = _trim_cue(cue)
-            # a trim that collides with another element's cue is worse than a
-            # long cue: the legend would name two different props identically
-            if short and short.lower() not in taken - {cue.lower()}:
+            # A trim that collides with another element's cue must not be taken
+            # -- the legend would name two different props identically -- so
+            # walk out to a longer name until one is free.
+            others = taken - {cue.lower()}
+            short = next((c for c in _cue_candidates(cue)
+                          if c.lower() not in others), None)
+            if short:
                 e["cue"] = short
                 taken.add(short.lower())
                 notes.append(f"{e.get('id', '?')}: cue trimmed to {short!r}")
+
+        # Only on the last rung. The director gets two honest chances to write
+        # a hook that shows the link rather than asserting it, because the
+        # rewrite keeps both halves but cannot supply a reason that was never
+        # written. Losing the chapter over it is still worse.
+        hook = (e.get("hook") or "").strip()
+        if aggressive and hook and _HOOK_ASSERTS.search(hook):
+            e["hook"] = _deassert_hook(hook)
+            notes.append(f"{e.get('id', '?')}: hook de-asserted -> {e['hook']!r}")
     return notes
 
 
@@ -521,7 +564,9 @@ def validate_table(table: dict, facts: list[Fact],
         if not cue:
             errs.append(f"{eid}: empty cue")
         elif len(cue.split()) > MAX_CUE_WORDS:
-            errs.append(f"{eid}: cue over {MAX_CUE_WORDS} words — {cue!r}")
+            # normalize_table() shortens these first; one that survives it is
+            # one whose every short form is already another element's name.
+            soft_out.append(f"{eid}: cue over {MAX_CUE_WORDS} words — {cue!r}")
         elif cue.lower() in cues:
             errs.append(f"{eid}: cue collides with {cues[cue.lower()]} — {cue!r}")
         else:
@@ -959,11 +1004,15 @@ def _test_table_normalization() -> None:
     print(f"  [{'OK' if ok else 'FAIL'}] over-long cue trimmed to its prop name "
           f"-> {t['elements'][0]['cue']!r}")
 
-    # a trim that would name two props the same must not happen
-    t = {"elements": [{"id": "e6", "cue": long_cue}, {"id": "e7", "cue": "Tally slate"}]}
+    # a trim that would collide walks out to a longer free name instead
+    t = {"elements": [{"id": "e6", "cue": long_cue},
+                      {"id": "e7", "cue": "Tally slate"}]}
     normalize_table(t)
-    ok = t["elements"][0]["cue"] == long_cue
-    print(f"  [{'OK' if ok else 'FAIL'}] a trim that would collide is refused")
+    got = t["elements"][0]["cue"]
+    ok = (got.lower() != "tally slate" and got != long_cue
+          and len(got.split()) <= MAX_CUE_WORDS)
+    print(f"  [{'OK' if ok else 'FAIL'}] a colliding trim walks out to a free "
+          f"name -> {got!r}")
 
     # no dangling function word at the cut
     cut = _trim_cue("Depth marker plate bolted to the deeper terrace where the "
@@ -971,6 +1020,16 @@ def _test_table_normalization() -> None:
     ok = not cut.split()[-1].lower() in ("where", "the", "to")
     print(f"  [{'OK' if ok else 'FAIL'}] hard cut does not end on a function "
           f"word -> {cut!r}")
+
+    # the asserting verb is rewritten only on the last rung, and only then
+    asserted = "הלוח — " + "מילה " * 8 + "מסמל את המצב"
+    t = {"elements": [{"id": "e1", "hook": asserted}]}
+    normalize_table(t)                    # not aggressive
+    kept = t["elements"][0]["hook"] == asserted
+    normalize_table(t, aggressive=True)
+    gone = not _HOOK_ASSERTS.search(t["elements"][0]["hook"])
+    print(f"  [{'OK' if kept and gone else 'FAIL'}] מסמל survives two rounds, "
+          f"then is rewritten as an apposition")
 
     # an over-long hook is a warning, not a rejection
     hook = "מילה " * 40
