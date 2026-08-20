@@ -727,17 +727,23 @@ def validate_table(table: dict, facts: list[Fact],
 
         der = e.get("derivation")
         if der not in DERIVATIONS:
-            canon = DERIVATION_SYNONYMS.get(str(der).upper().replace(" ", "_"))
+            key = str(der).upper().replace(" ", "_").replace("-", "_")
+            canon = key if key in DERIVATIONS else DERIVATION_SYNONYMS.get(key)
             if canon:
                 e["derivation"] = der = canon
         if der not in DERIVATIONS:
             errs.append(f"{eid}: derivation {der!r} is not one of {', '.join(DERIVATIONS)}")
         rel = e.get("relation")
         if rel and rel not in RELATIONS:
+            # CASE FIRST. The synonym table holds only the non-canonical verbs,
+            # so a director that wrote 'blocks' in lower case fell straight
+            # through it and was rejected for using a relation that is on the
+            # list — which is how chapter 28 lost an attempt to the word BLOCKS.
+            key = rel.upper().replace(" ", "_").replace("-", "_")
             # accept synonyms — the director shouldn't have to learn our vocabulary
-            canonical = RELATION_SYNONYMS.get(rel.upper().replace(" ", "_"))
+            canonical = key if key in RELATIONS else RELATION_SYNONYMS.get(key)
             if canonical:
-                e["relation"] = canonical  # mutate in place so the prompt sees the right one
+                e["relation"] = rel = canonical  # so the prompt sees the right one
             else:
                 errs.append(f"{eid}: relation {rel!r} is not one of {', '.join(RELATIONS)} "
                             f"and has no known synonym")
@@ -1161,6 +1167,17 @@ def _test_table_normalization() -> None:
     ok = not cut.split()[-1].lower() in ("where", "the", "to")
     print(f"  [{'OK' if ok else 'FAIL'}] hard cut does not end on a function "
           f"word -> {cut!r}")
+
+    # a canonical name in the wrong case is the same name
+    t = {"elements": [{"id": "e1", "cue": "x", "cue_he": "א", "prop": "p",
+                       "hook": "מילה " * 8, "derivation": "printed-number",
+                       "relation": "blocks", "relates_to": "e1"}]}
+    errs = validate_table(t, [])
+    el = t["elements"][0]
+    ok = (el["relation"] == "BLOCKS" and el["derivation"] == "PRINTED_NUMBER"
+          and not any("is not one of" in e for e in errs))
+    print(f"  [{'OK' if ok else 'FAIL'}] 'blocks' and 'printed-number' are "
+          f"accepted as BLOCKS and PRINTED_NUMBER")
 
     # the leftovers a director leaves behind are cleared, not bounced
     t = {"zones": ["a"], "elements": [
