@@ -86,6 +86,31 @@ RELATION_SYNONYMS = {
     "DROPS_FROM": "FALLS_FROM", "DESCENDS_FROM": "FALLS_FROM",
 }
 
+# The same medicine for the derivation enum. The director reaches for the word
+# that describes what it did, not for the token in our list, and a whole table
+# was never worth losing over the difference.
+DERIVATION_SYNONYMS = {
+    "LITERAL": "LITERAL_DEPICTION", "DEPICTION": "LITERAL_DEPICTION",
+    "LITERAL_DEPICTION_OF_ACTION": "LITERAL_DEPICTION",
+    "PUN": "PHONETIC_PUN", "SOUND_PUN": "PHONETIC_PUN",
+    "HOMOPHONE": "PHONETIC_PUN", "WORDPLAY": "PHONETIC_PUN",
+    "LEXICON": "LEXICON_TOKEN", "FIXED_SYMBOL": "LEXICON_TOKEN",
+    "COURSE_TOKEN": "LEXICON_TOKEN",
+    "MORPHEME": "MORPHEME_SPLIT", "WORD_SPLIT": "MORPHEME_SPLIT",
+    "TEXT": "PRINTED_TEXT", "LABEL": "PRINTED_TEXT", "SIGN": "PRINTED_TEXT",
+    "NUMBER": "PRINTED_NUMBER", "NUMERAL": "PRINTED_NUMBER",
+    "PRINTED_DIGITS": "PRINTED_NUMBER",
+    "COUNT": "COUNTED_SET", "COUNTING": "COUNTED_SET", "SET": "COUNTED_SET",
+    "ARTWORK": "BORROWED_ARTWORK", "PAINTING": "BORROWED_ARTWORK",
+    "ACRONYM": "ACRONYM_EMBED", "MNEMONIC": "ACRONYM_EMBED",
+    "RULE": "RULE_ON_A_SIGN", "NOTICE": "RULE_ON_A_SIGN",
+    "CONTRAST": "CONTRAST_PAIR", "COMPARISON": "CONTRAST_PAIR",
+    "OPPOSITE": "CONTRAST_PAIR", "NEGATIVE": "NEGATION",
+    "GRAPH": "GRAPH_AS_OBJECT", "CHART": "GRAPH_AS_OBJECT",
+    "GRAPH_OBJECT": "GRAPH_AS_OBJECT",
+    "METAPHOR": "FREE_METAPHOR", "ANALOGY": "FREE_METAPHOR",
+}
+
 # Objects whose real-world job is to bear digits (§3 stage 3).
 CARRIERS = (
     "JERSEY_OR_BIB", "GATE_OR_PLATFORM_NUMBER", "PRICE_OR_MENU_BOARD",
@@ -492,7 +517,8 @@ def _deassert_hook(hook: str) -> str:
     return re.sub(r"\s{2,}", " ", _ASSERT_VERB.sub(" — ", hook, count=1)).strip()
 
 
-def normalize_table(table: dict, aggressive: bool = False) -> list[str]:
+def normalize_table(table: dict, aggressive: bool = False,
+                    known_facts: set | None = None) -> list[str]:
     """Fix in code what a re-ask does not reliably fix. Returns what it changed.
 
     Same medicine as the relation synonyms and the banned narration phrases:
@@ -528,6 +554,60 @@ def normalize_table(table: dict, aggressive: bool = False) -> list[str]:
             known.add(z.casefold())
             notes.append(f"{e.get('id', '?')}: zone {z!r} added to the list")
     table["zones"] = zones
+
+    # A fact id the plate does not have is usually a lexicon token the director
+    # filed in the wrong column (RAPHE_TAPESTRY is a fixed SYMBOL, not a fact).
+    # Strip it and keep the element: the fact-coverage check below is what
+    # actually guards the chapter, and it is untouched by this.
+    if known_facts is not None:
+        for e in els:
+            cited = e.get("fact_ids") or []
+            good = [f for f in cited if f in known_facts]
+            if len(good) != len(cited):
+                e["fact_ids"] = good
+                notes.append(f"{e.get('id', '?')}: dropped unknown fact id(s) "
+                             f"{[f for f in cited if f not in known_facts]}")
+
+    # A relation that points nowhere is not a claim about the picture, it is a
+    # leftover. Dropping it costs one adjacency; keeping it costs the table.
+    ids = {e.get("id") for e in els}
+    for e in els:
+        if e.get("relation") and not e.get("relates_to"):
+            e.pop("relation", None)
+            notes.append(f"{e.get('id', '?')}: dropped a relation with no target")
+        elif e.get("relates_to") and e["relates_to"] not in ids:
+            notes.append(f"{e.get('id', '?')}: dropped relation to unknown "
+                         f"element {e['relates_to']!r}")
+            e.pop("relation", None)
+            e.pop("relates_to", None)
+
+    # Over the relation cap, keep the first MAX_RELATIONS and flatten the rest
+    # to plain adjacency. The cap exists so the plate does not become a plot,
+    # and the plate is no more of a plot with six relations than with nine.
+    related = [e for e in els if e.get("relates_to")]
+    for e in related[MAX_RELATIONS:]:
+        e.pop("relation", None)
+        e.pop("relates_to", None)
+    if len(related) > MAX_RELATIONS:
+        notes.append(f"dropped {len(related) - MAX_RELATIONS} relation(s) over "
+                     f"the cap of {MAX_RELATIONS}")
+
+    # Required strings: the ladder already drops them under pressure, so an
+    # over-long or over-budget one is a string to drop, not a table to reject.
+    kept = 0
+    for e in els:
+        txt = (e.get("text") or "").strip()
+        if not txt:
+            continue
+        if len(txt.split()) > 5:
+            notes.append(f"{e.get('id', '?')}: dropped text {txt!r} (over 5 words)")
+            e["text"] = ""
+        elif kept >= MAX_REQUIRED_STRINGS:
+            notes.append(f"{e.get('id', '?')}: dropped text {txt!r} (over the "
+                         f"cap of {MAX_REQUIRED_STRINGS})")
+            e["text"] = ""
+        else:
+            kept += 1
 
     taken = {(e.get("cue") or "").strip().lower() for e in els}
     for e in els:
@@ -631,6 +711,10 @@ def validate_table(table: dict, facts: list[Fact],
                         f"instead of showing why it holds: {hook!r}")
 
         der = e.get("derivation")
+        if der not in DERIVATIONS:
+            canon = DERIVATION_SYNONYMS.get(str(der).upper().replace(" ", "_"))
+            if canon:
+                e["derivation"] = der = canon
         if der not in DERIVATIONS:
             errs.append(f"{eid}: derivation {der!r} is not one of {', '.join(DERIVATIONS)}")
         rel = e.get("relation")
@@ -1046,6 +1130,29 @@ def _test_table_normalization() -> None:
     ok = not cut.split()[-1].lower() in ("where", "the", "to")
     print(f"  [{'OK' if ok else 'FAIL'}] hard cut does not end on a function "
           f"word -> {cut!r}")
+
+    # the leftovers a director leaves behind are cleared, not bounced
+    t = {"zones": ["a"], "elements": [
+        {"id": "e1", "cue": "x", "fact_ids": ["F1", "RAPHE_TAPESTRY"],
+         "text": "one two three four five six"},
+        {"id": "e2", "cue": "y", "fact_ids": ["F2"], "relation": "BLOCKS",
+         "relates_to": "e99"},
+        {"id": "e3", "cue": "z", "fact_ids": ["F1"], "relation": "BLOCKS"},
+    ]}
+    normalize_table(t, known_facts={"F1", "F2"})
+    e1, e2, e3 = t["elements"]
+    ok = (e1["fact_ids"] == ["F1"] and e1["text"] == ""
+          and "relation" not in e2 and "relates_to" not in e2
+          and "relation" not in e3)
+    print(f"  [{'OK' if ok else 'FAIL'}] unknown fact ids, dangling relations "
+          f"and over-long strings are cleared, not bounced")
+
+    # a derivation the director invented maps to the enum
+    t = {"elements": [{"id": "e1", "cue": "x", "cue_he": "א", "prop": "p",
+                       "hook": "מילה " * 8, "derivation": "PUN"}]}
+    validate_table(t, [])
+    ok = t["elements"][0]["derivation"] == "PHONETIC_PUN"
+    print(f"  [{'OK' if ok else 'FAIL'}] derivation PUN -> PHONETIC_PUN")
 
     # a Hebrew zone name is mapped back to its English twin, not rejected
     t = {"zones": ["the mixing floor", "the pit yard"],
