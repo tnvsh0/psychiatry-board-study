@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
+import os
 import subprocess
 import sys
 import time
@@ -36,6 +37,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "_bulk" / "state.json"
 GENERATED = ROOT / "_generated"
+
+# The same profile daily_study.py will use, so the preflight check and the work
+# cannot disagree about which account is being tested.
+PROFILE = os.environ.get("NOTEBOOKLM_PROFILE", "").strip()
+
+# Must be the same repo daily_study.py publishes to.
+GH_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 
 # Seconds between chapters. The generations inside one chapter are already
 # spaced by daily_study; this is the gap between chapters, which is what keeps
@@ -55,7 +63,16 @@ def save_state(st: dict) -> None:
 
 
 def released(tag: str) -> bool:
-    r = subprocess.run(["gh", "release", "view", tag, "--json", "tagName"],
+    """Does this chapter's release exist? Two things ride on the answer.
+
+    A false negative marks a chapter that actually succeeded as failed AND
+    skips its sweep, so the disk keeps filling. Without --repo, gh resolves the
+    repository from the working directory, while daily_study.py publishes to
+    GH_REPO - so an override, or a run started from elsewhere, would have the
+    two halves asking about different repositories and never agreeing.
+    """
+    r = subprocess.run(["gh", "release", "view", tag, "--repo", GH_REPO,
+                        "--json", "tagName"],
                        capture_output=True, text=True, encoding="utf-8",
                        errors="replace", timeout=60)
     return r.returncode == 0
@@ -71,6 +88,35 @@ def sweep_local(day_index: int) -> int:
     return int(mb)
 
 
+# A failure that is really "the session died" looks exactly like a chapter
+# failure from out here, and there are 141 chapters to fail.
+AUTH_MARKERS = ("Authentication expired or invalid",
+                "Run 'notebooklm login'",
+                "accounts.google.com")
+MAX_CONSECUTIVE_FAILURES = 3
+
+
+def auth_ok() -> tuple[bool, str]:
+    """One cheap read before committing to hours of work.
+
+    Google revoked this project's sessions mid-session once, server-side, while
+    the stored cookies were still valid locally for another 399 days - so
+    checking the cookie file proves nothing and only a real call does. Without
+    this the runner would spend two hours marking all 141 chapters failed at
+    45-second intervals and leave a retry list with no information in it.
+    """
+    p = subprocess.run(["notebooklm"] + (["-p", PROFILE] if PROFILE else []) + ["list"],
+                       capture_output=True, text=True, encoding="utf-8",
+                       errors="replace", timeout=180)
+    out = (p.stdout or "") + (p.stderr or "")
+    if p.returncode == 0 and not any(m in out for m in AUTH_MARKERS):
+        return True, ""
+    if any(m in out for m in AUTH_MARKERS):
+        return False, ("NotebookLM rejected the stored session. Re-authenticate:\n"
+                       f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login --fresh")
+    return False, f"notebooklm list failed rc={p.returncode}: {out.strip()[:200]}"
+
+
 def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     log_dir.mkdir(parents=True, exist_ok=True)
     log = log_dir / f"ch{day_index:03d}.log"
@@ -82,8 +128,12 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
             stdout=fh, stderr=subprocess.STDOUT, cwd=str(ROOT),
         )
     mins = (time.time() - started) / 60
-    tail = log.read_text(encoding="utf-8", errors="replace")[-400:]
-    return p.returncode == 0, f"{mins:.1f}min rc={p.returncode} :: {tail[-160:].strip()}"
+    body = log.read_text(encoding="utf-8", errors="replace")
+    tail = body[-400:]
+    note = f"{mins:.1f}min rc={p.returncode} :: {tail[-160:].strip()}"
+    if p.returncode != 0 and any(m in body for m in AUTH_MARKERS):
+        note = "AUTH :: " + note
+    return p.returncode == 0, note
 
 
 def main() -> int:
@@ -113,7 +163,13 @@ def main() -> int:
             print(f"  {i:3} {days[i]['title_he']}")
         return 0
 
-    n = 0
+    ok, why = auth_ok()
+    if not ok:
+        print(f"\n[STOP] {why}", file=sys.stderr)
+        return 2
+    print("auth OK\n")
+
+    n, consecutive = 0, 0
     for idx in queue:
         if a.limit and n >= a.limit:
             print(f"stopping: reached --limit {a.limit}")
@@ -138,14 +194,31 @@ def main() -> int:
             freed = sweep_local(idx)
             st["done"].append(idx)
             st["failed"].pop(str(idx), None)
+            consecutive = 0
             print(f"[{idx:3}] DONE  {note.split('::')[0].strip()} — freed {freed}MB")
         else:
             # Keep the local artifacts of a failed chapter: they are the only
             # evidence of what went wrong, and sweeping them would erase it.
             st["failed"][str(idx)] = note
+            consecutive += 1
             print(f"[{idx:3}] FAIL  {note}")
         save_state(st)
         n += 1
+
+        # A revoked session, an exhausted quota or a broken build fails every
+        # chapter identically. Marking 141 of them failed at 45s apart destroys
+        # the retry list and teaches nobody anything, so stop and say why.
+        if note.startswith("AUTH ::"):
+            print(f"\n[STOP] chapter {idx} failed on authentication. "
+                  f"Re-authenticate and resume:\n"
+                  f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login --fresh\n"
+                  f"    python scripts/bulk_run.py", file=sys.stderr)
+            return 2
+        if consecutive >= MAX_CONSECUTIVE_FAILURES:
+            print(f"\n[STOP] {consecutive} chapters failed in a row — this is "
+                  f"systemic, not per-chapter. Read "
+                  f"_bulk/logs/ch{idx:03d}.log before resuming.", file=sys.stderr)
+            return 2
         time.sleep(CHAPTER_GAP_S)
 
     print(f"\ndone={len(st['done'])}  failed={len(st['failed'])}")
