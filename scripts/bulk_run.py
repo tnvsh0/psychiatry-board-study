@@ -139,6 +139,13 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     # script also reconfigures its own streams; this covers anything they call.
     env = os.environ.copy()
     env["PYTHONIOENCODING"] = "utf-8:replace"
+    # Audio and infographics are the two artifacts NotebookLM caps per day. Two
+    # chapters' worth was enough to start getting RateLimitError on both while
+    # video, quiz and flashcards kept working. Leaving them on the critical
+    # path caps the whole run at three or four artifacts a day, which finishes
+    # the course well after the exam. The bulk run produces everything else;
+    # backfill_audio.py fills the audio in a few a day, earliest chapter first.
+    env.setdefault("SKIP_QUOTA_ARTIFACTS", "1")
     with log.open("w", encoding="utf-8") as fh:
         p = subprocess.run(
             [sys.executable, "-u", str(ROOT / "scripts" / "daily_study.py"),

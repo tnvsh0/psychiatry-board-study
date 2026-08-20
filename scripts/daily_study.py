@@ -62,6 +62,20 @@ NOTEBOOK_ID = os.environ.get(
 )
 GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 
+# NotebookLM caps CREATE_ARTIFACT per day, and it does not cap every type
+# equally. In one day of testing, audio and infographics both began returning
+# RateLimitError while video, quiz and flashcards kept working — two chapters'
+# worth of artifacts was enough.
+#
+# That is fatal for a 141-chapter run if those two sit on the critical path: at
+# three or four a day the course lands long after the exam. So a bulk run skips
+# them and backfill_audio fills them in afterwards, a few a day, earliest
+# chapter first. Everything else — the study guide, the facts, the Sketchy
+# plates, the narration, the quiz, the flashcards, the video — is unbounded and
+# still generated in line.
+SKIP_QUOTA_ARTIFACTS = os.environ.get(
+    "SKIP_QUOTA_ARTIFACTS", "").strip().lower() not in ("", "0", "false", "no")
+
 NOTEBOOKLM_BIN = os.environ.get("NOTEBOOKLM_BIN", "/opt/venv/bin/notebooklm")
 # Fall back to bare 'notebooklm' (in PATH) if the absolute default doesn't exist
 # — lets the script run on Windows / non-VM envs without setup.
@@ -2111,7 +2125,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # scoped to ONLY its aspect's slice so they stop repeating each other.
     task_ids = {}
     print("Starting NotebookLM artifacts...")
-    task_ids["audio"] = start_audio(prompt_audio(day, symbol_block, legend_block))
+    task_ids["audio"] = (None if SKIP_QUOTA_ARTIFACTS
+                         else start_audio(prompt_audio(day, symbol_block, legend_block)))
     print(f"  audio: {task_ids['audio']}")
     time.sleep(15)
     task_ids["video"] = start_video(prompt_video(day, symbol_block, legend_block))
@@ -2170,6 +2185,10 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             print(f"  Waiting {SCOPE_INDEX_WAIT_S}s for scope sources to index...")
             time.sleep(SCOPE_INDEX_WAIT_S)
 
+    if SKIP_QUOTA_ARTIFACTS:
+        print("Skipping per-aspect infographics (quota-bound; backfill fills them "
+              "in later).")
+        infographic_aspects = []
     print("Starting per-aspect infographics...")
     for aspect in infographic_aspects:
         time.sleep(15)
