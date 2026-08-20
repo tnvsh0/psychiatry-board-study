@@ -119,7 +119,9 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     spec.triage_numbers(plate)
     _assign_carriers(plate, venue)
 
-    director = spec.build_plate_director(plate, venue, topic, tokens)
+    director = spec.build_plate_director(
+        plate, venue, topic, tokens,
+        composited_numbers=(numbers_mode == "composite"))
     painted = [n for f in plate.facts for n in f.numbers if n.drawn]
     report = {"day": day.get("index"), "plate": plate.name,
               "facts": len(plate.facts), "tries": 0,
@@ -190,6 +192,18 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     if table is None:
         report["error"] = f"director never produced a valid table: {errs[:3]}"
         return report
+
+    # In composite mode the numerals belong to the compositor, so a required
+    # string that carries digits is a number about to be painted TWICE — once
+    # by hand where the director filed it, once on its blank plate. Drop it.
+    if numbers_mode == "composite":
+        for e in table["elements"]:
+            txt = (e.get("text") or "").strip()
+            if txt and any(c.isdigit() for c in txt):
+                print(f"[i] dropped digit-bearing string {txt!r} — the "
+                      f"compositor owns the numerals", file=sys.stderr)
+                report.setdefault("digit_strings_dropped", []).append(txt)
+                e["text"] = ""
 
     # ── render with the degradation ladder ─────────────────────────────────
     png = out_dir / f"sketchy_{plate.name}.png"

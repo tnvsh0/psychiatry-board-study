@@ -882,9 +882,15 @@ a small hanging sign is WRONG — if the plate is smaller than a person's torso,
 the picture has to be redrawn. Three such boards in the scene is correct and
 deliberate; make room for them.
 
-HOW DRAWN — square-on to the viewer, whole and unbroken, its four corners all
-visible, standing clear of everything else. Nothing overlaps it: no person, no
-pipe, no rope, no beam, no other sign crosses its face or clips its corners.
+HOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster
+floating in front of the scene. Draw the object that carries it — its frame,
+its posts, its bolts, its chains, its stand, the wall it is screwed to — so that
+a viewer can see what holds it up and why it is there. A big cream rectangle
+hanging in mid-air belongs to nothing and teaches nothing.
+Within that, keep the coloured face itself clean: square-on to the viewer,
+whole and unbroken, its four corners all visible, and nothing crossing it — no
+person, no pipe, no rope, no beam, no other sign over its face or clipping its
+corners. Frame it, mount it, bolt it; just do not cover it.
 These colours appear NOWHERE ELSE in the picture.
 """
     else:
@@ -929,7 +935,8 @@ same size, nobody near the viewer, nobody cropped by the frame{plate_reminder}.
 
 
 def build_plate_director(plate: Plate, venue: dict, topic: str,
-                         tokens: dict | None = None) -> str:
+                         tokens: dict | None = None,
+                         composited_numbers: bool = True) -> str:
     """The director prompt. Its output contract is the ELEMENT TABLE, not prose.
 
     v1 asked for a free-text scene and a loose key, which is why nothing could
@@ -945,6 +952,19 @@ def build_plate_director(plate: Plate, venue: dict, topic: str,
         f'  - "{n.paint}" tagged "{n.tag}" — carrier class {n.carrier or "choose one"}'
         for n in numbers
     ) or "  (no numbers are painted on this plate)"
+
+    # The illustrator does not letter these when they are composited, and the
+    # director does not know that — so on the first real composite run it filed
+    # all three numbers as required `text`, the illustrator duly painted them by
+    # hand, and the picture ended up carrying each number twice: once lettered,
+    # once on its blank plate. The strings are stripped in code as well; this is
+    # the half that stops them being written in the first place.
+    num_rule = ("\n\nDO NOT put any of these numbers, or their tags, in any "
+                "element's `text` field. A separate step letters them onto "
+                "blank plates after the picture is drawn, and anything you put "
+                "in `text` is painted by hand as well, so the number would "
+                "appear twice. `text` is for words only — never digits, never "
+                "a percent sign, never a ratio." if composited_numbers else "")
 
     tok_lines = ""
     if tokens:
@@ -971,7 +991,7 @@ dropped or merged away.
 {fact_lines}
 
 NUMBERS TO PAINT — these exact characters, each with its tag on the SAME object:
-{num_lines}
+{num_lines}{num_rule}
 {tok_lines}
 
 RULES
