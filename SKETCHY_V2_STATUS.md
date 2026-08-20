@@ -42,6 +42,22 @@ narration phrases were fixed — in code:
     re-ask. `HOOK_MAX_WORDS` 25 -> 32, because the hook was recently required to
     describe AND explain in one sentence and the cap never moved with it.
 
+**The chapter never reached a render, part two.** Three more re-runs, each
+finding one more rejection class the hard way — a colliding cue trim that gave
+up, מסמל/מייצג, zones named in Hebrew against an English zone list. The fix that
+actually mattered was not any of them: `plate_pipeline` now writes every
+rejected candidate to `_rejected_<plate>_<attempt>.json`. One dump showed all 19
+remaining errors in three classes at once, offline, for free — where the log had
+been showing one blocker per fifteen-minute render cycle.
+
+With the dump in hand, every rejection class in `validate_table` was sorted into
+"disagreement about the picture" (stays hard) and "bookkeeping" (normalized):
+derivation synonyms, unknown fact ids stripped, dangling and over-cap relations
+dropped, over-long and over-budget required strings dropped, Hebrew zone names
+mapped back to their English twins. Passive relation verbs (`affected_by`)
+deliberately degrade to ADJACENT_TO rather than ACTS_ON — mapping them to
+ACTS_ON reverses who acts on whom and the illustrator draws it backwards.
+
 **`plan_plates` is wired into `daily_study.py`.** The production loop no longer
 builds one image per aspect through `build_image_jobs ->
 generate_sketchy_directed`; it calls `plan_plates` and runs
