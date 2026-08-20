@@ -1,0 +1,79 @@
+=== chapter 29 | started 10:08:53 UTC ===
+
+======================================================================
+Day 29: SSRI לעומק
+Tag: study-029-ssris-deep-dive
+Aspects: ['drug_class_overview', 'drug_mechanism', 'indications', 'side_effects_class', 'monitoring', 'practical_use', 'pediatric_specifics', 'discontinuation']
+Symbols (10): ['SERT', 'Fluoxetine', 'Sertraline', 'Escitalopram', 'Citalopram']...
+Density: high
+======================================================================
+
+Exception in thread Thread-1 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1255.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9c in position 774: character maps to <undefined>
+    [!] notebooklm list returned rc=0 with 0 bytes; retrying (2/3)
+Exception in thread Thread-3 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1255.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9c in position 774: character maps to <undefined>
+    [!] notebooklm list returned rc=0 with 0 bytes; retrying (3/3)
+Exception in thread Thread-5 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1255.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x9c in position 774: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 919, in find_day_notebook
+    nbs = json.loads(r.stdout).get("notebooks", [])
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 1854, in <module>
+    main()
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 1834, in main
+    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 1506, in generate_day
+    day_nb_id, day_nb_title = find_day_notebook(day_index, day.get("title_he", title_en))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 921, in find_day_notebook
+    raise RuntimeError(f"could not parse notebook list: {e}; "
+RuntimeError: could not parse notebook list: Expecting value: line 1 column 1 (char 0); raw: 
+=== finished 10:09:25 UTC ===

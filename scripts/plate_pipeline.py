@@ -373,7 +373,7 @@ def _kill_stale_pipelines() -> None:
     try:
         result = subprocess.run(
             ["pgrep", "-f", "plate_pipeline.py"],
-            capture_output=True, text=True, timeout=5
+            capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=5
         )
         pids = [int(p) for p in result.stdout.strip().split() if p]
         pids = [p for p in pids if p != my_pid]
@@ -396,7 +396,7 @@ def _kill_stale_pipelines() -> None:
         try:
             result = subprocess.run(
                 ["pgrep", "-f", "plate_pipeline.py"],
-                capture_output=True, text=True, timeout=5
+                capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=5
             )
             remaining = [int(p) for p in result.stdout.strip().split() if p]
             remaining = [p for p in remaining if p != my_pid]

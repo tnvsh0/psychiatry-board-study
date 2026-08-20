@@ -853,8 +853,55 @@ def prompt_quiz(day, symbol_block, legend_block):
 
 
 # ── notebooklm CLI helpers ──────────────────────────────────────────────────
-def nb_run(args, timeout=120):
-    return subprocess.run([NOTEBOOKLM_BIN] + args, capture_output=True, text=True, timeout=timeout)
+# Which notebooklm profile to drive. The bulk run uses a SEPARATE Google
+# account from the shared VM so its daily generation quota is its own; the
+# profile is how that account is selected, and forgetting it silently drives the
+# other project's account instead.
+NOTEBOOKLM_PROFILE = os.environ.get("NOTEBOOKLM_PROFILE", "").strip()
+
+
+def nb_run(args, timeout=120, retries=2):
+    """Run the CLI, retrying a run that comes back empty.
+
+    The CLI occasionally exits 0 having written nothing at all — seen once on
+    `create`, where the caller then died on `r.stdout.strip()` because stdout
+    was None. Over 141 chapters an intermittent empty result is a certainty,
+    and the peer project lost whole episodes to exactly this class of silent
+    failure, so retry here rather than at every call site.
+    """
+    cmd = [NOTEBOOKLM_BIN]
+    if NOTEBOOKLM_PROFILE:
+        cmd += ["-p", NOTEBOOKLM_PROFILE]
+    last = None
+    for attempt in range(retries + 1):
+        try:
+            # encoding MUST be pinned. With text=True alone, Python decodes
+            # the child's output with the Windows locale codec (cp1255 here).
+            # Our notebook titles are Hebrew UTF-8, cp1255 cannot decode them,
+            # and the failure is invisible: the reader thread dies, stdout comes
+            # back EMPTY with returncode 0 and an empty stderr. Every "transient
+            # empty result" chased in this pipeline was this.
+            r = subprocess.run(cmd + args, capture_output=True, text=True,
+                               encoding="utf-8", errors="replace",
+                               timeout=timeout)
+        except subprocess.TimeoutExpired as e:
+            print(f"    [!] notebooklm {args[0]} timed out "
+                  f"({attempt + 1}/{retries + 1})", file=sys.stderr)
+            last = subprocess.CompletedProcess(cmd + args, 124, "", str(e))
+            continue
+        # Normalise: capture_output should give strings, but a killed child can
+        # leave None, and None is what turns a retryable blip into a crash.
+        r.stdout = r.stdout or ""
+        r.stderr = r.stderr or ""
+        last = r
+        if r.returncode == 0 and r.stdout.strip():
+            return r
+        if attempt < retries:
+            print(f"    [!] notebooklm {args[0]} returned rc={r.returncode} with "
+                  f"{len(r.stdout)} bytes; retrying "
+                  f"({attempt + 2}/{retries + 1})", file=sys.stderr)
+            time.sleep(8 * (attempt + 1))
+    return last
 
 
 def use_notebook(nb_id):
@@ -867,12 +914,19 @@ def find_day_notebook(day_index, title_he):
     """Look up existing per-day notebook by exact title match."""
     expected_title = f"[Study-{day_index:03d}] {title_he}"
     r = nb_run(["list", "--json"], timeout=60)
+    # A failed LOOKUP is not the same as "no such notebook". Returning
+    # (None, None) here conflated them: the caller read the second value as the
+    # title and went on to create a notebook literally named None. Worse, if a
+    # notebook for this day already existed, a transient list failure would
+    # silently create a duplicate. Raise instead — nb_run has already retried.
     if r.returncode != 0:
-        return None, None
+        raise RuntimeError(f"could not list notebooks: rc={r.returncode} "
+                           f"{(r.stderr or '')[:200]}")
     try:
         nbs = json.loads(r.stdout).get("notebooks", [])
-    except Exception:
-        return None, None
+    except Exception as e:
+        raise RuntimeError(f"could not parse notebook list: {e}; "
+                           f"raw: {(r.stdout or '')[:200]}")
     for nb in nbs:
         if nb.get("title", "").strip() == expected_title.strip():
             return nb.get("id"), expected_title
@@ -966,25 +1020,51 @@ def build_image_jobs(aspects, facts):
     return jobs
 
 
+# Each book is found in Drive by a SEARCH STRING, not a filename. The filenames
+# in Drive are whatever the owner's downloads were called
+# ("Emailing Dulcans Textbook of Child and Adolescent Psychiatry, 3e.pdf"), and
+# the tidy names this file used to assume ("dulcan.pdf") match nothing. Every
+# string below was verified against the real Drive on 2026-08-20.
+DRIVE_BOOK_QUERIES = [
+    ("DSM-5-TR", "DSM-5-TR"),
+    ("Dulcan", "Dulcan"),
+    ("Kaplan & Sadock Synopsis", "Kaplan Sadock Synopsis"),
+    ("Stahl Essential", "Stahl Essential Psychopharmacology"),
+    ("Stahl Pediatric", "Prescriber's Guide Children Adolescents"),
+    ("Syllabus", "syllabus"),
+]
+
+
 def add_textbook_pdfs_to_day_notebook(nb_id):
-    """Upload all configured textbook PDFs to the per-day notebook so that the
-    study-guide generation step can cite real page numbers. Returns the count
-    of successfully added sources."""
-    if not SOURCE_PDF_DIR.exists():
-        print(f"  [!] SOURCE_PDF_DIR not found ({SOURCE_PDF_DIR}); skipping textbook PDFs.")
-        return 0
+    """Attach all six textbooks to the per-day notebook BY DRIVE REFERENCE.
+
+    The books stay whole and the notebook stays fresh: a new notebook per
+    chapter (so NotebookLM cannot drift into last chapter's context) with every
+    book available to it (so it can survey the topic itself instead of being
+    handed our own page ranges back). Uploading the PDFs per chapter would have
+    been ~600MB x 141 chapters; a Drive import is a reference and costs nothing.
+
+    Returns the count of books actually attached. The caller MUST treat a short
+    count as fatal: a book named in the prompt but missing from the notebook
+    does not error, it makes NotebookLM invent page numbers.
+    """
     added = 0
-    for name in SOURCE_PDF_NAMES:
-        pdf = SOURCE_PDF_DIR / name
-        if not pdf.exists():
-            print(f"    skip (missing): {name}")
-            continue
-        size_mb = pdf.stat().st_size / (1024 * 1024)
-        print(f"    uploading {name} ({size_mb:.1f} MB)...")
-        sid = add_pdf_source(nb_id, pdf, title=pdf.stem)
-        if sid:
-            added += 1
-            print(f"      [OK] source_id={sid[:8]}")
+    for label, query in DRIVE_BOOK_QUERIES:
+        r = nb_run(["source", "add-research", query, "--from", "drive",
+                    "--import-all", "-n", nb_id, "--timeout", "180", "--json"],
+                   timeout=300)
+        ok = False
+        try:
+            data = json.loads(r.stdout[r.stdout.index("{"):])
+            got = data.get("imported_sources") or []
+            ok = bool(got)
+            if ok:
+                print(f"    [OK] {label}: {got[0]['title'][:58]}")
+        except Exception:
+            pass
+        if not ok:
+            print(f"    [!!] {label}: NOT attached (query {query!r})")
+        added += ok
     return added
 
 
@@ -1352,7 +1432,7 @@ def upload_release(tag, title, notes_md, assets):
     # Check if release exists
     r = subprocess.run(
         ["gh", "release", "view", tag, "--repo", GITHUB_REPO],
-        capture_output=True, text=True, env=env,
+        capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
     )
     if r.returncode == 0:
         # Release exists — upload each asset with --clobber
@@ -1360,7 +1440,7 @@ def upload_release(tag, title, notes_md, assets):
         for a in assets:
             ru = subprocess.run(
                 ["gh", "release", "upload", tag, str(a), "--repo", GITHUB_REPO, "--clobber"],
-                capture_output=True, text=True, env=env, timeout=300,
+                capture_output=True, text=True, encoding="utf-8", errors="replace", env=env, timeout=300,
             )
             if not _gh_ok(f"release upload {Path(a).name}", ru):
                 upload_failures += 1
@@ -1372,7 +1452,7 @@ def upload_release(tag, title, notes_md, assets):
             ["gh", "release", "create", tag] + [str(a) for a in assets] + [
                 "--title", title, "--notes", notes_md, "--repo", GITHUB_REPO,
             ],
-            capture_output=True, text=True, env=env, timeout=600,
+            capture_output=True, text=True, encoding="utf-8", errors="replace", env=env, timeout=600,
         )
         if not _gh_ok("release create", rc):
             return {"url": "", "assets": []}
@@ -1382,7 +1462,7 @@ def upload_release(tag, title, notes_md, assets):
         ["gh", "release", "view", tag, "--json", "assets,url",
          "--jq", "{url: .url, assets: [.assets[] | {name: .name, url: .url}]}",
          "--repo", GITHUB_REPO],
-        capture_output=True, text=True, env=env,
+        capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
     )
     if not _gh_ok("release view (read-back)", rv):
         return {"url": "", "assets": []}
@@ -1437,8 +1517,9 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         # the extracted .md as its single source. Upload PDFs now so the study
         # guide can cite real page numbers.
         n_sources = count_notebook_sources(day_nb_id)
-        # Minimum expected: 1 (extract.md) + len(SOURCE_PDF_NAMES) PDFs
-        min_expected = 1 + len([n for n in SOURCE_PDF_NAMES if (SOURCE_PDF_DIR / n).exists()])
+        # Books now arrive by Drive reference, so the old count of local PDF
+        # files on disk is meaningless — expect one source per Drive query.
+        min_expected = 1 + len(DRIVE_BOOK_QUERIES)
         if 0 < n_sources < min_expected:
             print(f"  Notebook has only {n_sources} source(s) (expected {min_expected}). Retrofitting with textbook PDFs...")
             added = add_textbook_pdfs_to_day_notebook(day_nb_id)
@@ -1451,22 +1532,43 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         else:
             print(f"  [!] Could not determine source count; continuing without retrofit.")
     else:
-        # 2. Extract focused content from MAIN notebook
-        extract_md = extract_day_content_from_main(day, symbol_block, NOTEBOOK_ID)
-        if not extract_md:
-            print("[!] Could not extract content from main notebook. Aborting.")
-            return None
-        print(f"  Extracted {len(extract_md)} characters of source material.")
-
-        # 3. Create per-day notebook
+        # 2. Create the per-day notebook FIRST, then attach the books, then
+        #    extract from it.
+        #
+        #    This used to extract from a single shared MAIN notebook holding
+        #    every book, and only afterwards build the day's notebook. Two
+        #    reasons that is gone: the main notebook belongs to whichever
+        #    account created it (the bulk run uses its own account and simply
+        #    cannot see it), and a notebook reused across 144 chapters
+        #    accumulates context until the model starts drifting. A fresh
+        #    notebook per chapter with all six books attached by Drive
+        #    reference costs nothing and has neither problem.
         print(f"Creating per-day notebook: {day_nb_title}")
         day_nb_id = create_day_notebook(day_nb_title)
         print(f"  Created notebook: {day_nb_id}")
 
-        # 4a. Upload the textbook PDFs so the study guide can cite real pages.
-        #     Done BEFORE the focused .md so they form the foundation.
-        print(f"  Uploading textbook PDFs from {SOURCE_PDF_DIR}...")
+        # 3. Attach the textbooks by Drive reference so the study guide can
+        #    cite real pages.
+        print("  Attaching textbooks from Drive...")
         n_pdfs = add_textbook_pdfs_to_day_notebook(day_nb_id)
+        # A book named in the prompt but absent from the notebook does not
+        # raise — NotebookLM quietly invents plausible page numbers for it.
+        # That already shipped once (a day-16 study guide cited "Stahl
+        # Pediatric pp. 600-612" in a 525-page book). Refuse to build a chapter
+        # on an incomplete notebook.
+        if n_pdfs < len(DRIVE_BOOK_QUERIES):
+            raise RuntimeError(
+                f"only {n_pdfs}/{len(DRIVE_BOOK_QUERIES)} textbooks attached to "
+                f"notebook {day_nb_id}. Refusing to generate: the prompts name "
+                f"all six books, and a missing one becomes invented citations.")
+
+        # 4. Extract this chapter's facts FROM THE DAY NOTEBOOK, which now
+        #    holds the books themselves.
+        extract_md = extract_day_content_from_main(day, symbol_block, day_nb_id)
+        if not extract_md:
+            print("[!] Could not extract content from the day notebook. Aborting.")
+            return None
+        print(f"  Extracted {len(extract_md)} characters of source material.")
         print(f"  Added {n_pdfs} textbook PDF source(s).")
 
         # 4b. Add the extracted .md as a focused-summary source.
@@ -1745,7 +1847,7 @@ def main():
                 if day_entry:
                     tag = f"study-{d:03d}-{slugify(day_entry.get('title_en', ''))}"
                     r = subprocess.run(["gh", "release", "view", tag, "--repo", GITHUB_REPO],
-                                       capture_output=True, text=True)
+                                       capture_output=True, text=True, encoding="utf-8", errors="replace")
                     if r.returncode == 0:
                         print(f"Day {d}: release already exists ({tag}), skipping.")
                         continue

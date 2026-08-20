@@ -101,7 +101,7 @@ def main():
         for asset in (png, txt):
             r = subprocess.run(
                 ["gh", "release", "upload", tag, str(asset), "--repo", GITHUB_REPO, "--clobber"],
-                capture_output=True, text=True,
+                capture_output=True, text=True, encoding="utf-8", errors="replace",
             )
             if r.returncode == 0:
                 print(f"[OK] uploaded {asset.name} to {tag}")
