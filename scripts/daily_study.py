@@ -1139,6 +1139,47 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
     return attached
 
 
+def wait_until_answerable(nb_id, books=None, tries=6, first_wait=45):
+    """Block until the notebook can actually ANSWER from its books.
+
+    `ready` is not queryable. Chapter 29's clean run attached five textbooks,
+    watched all five report `ready`, asked its extraction question immediately
+    and got 1,185 characters back. The same notebook, asked the same kind of
+    question a few minutes later, returned 7,300 characters of correctly cited
+    content. Nothing had changed but time.
+
+    So the status flag is not the thing to trust - the capability is. This asks
+    a cheap question whose answer must name several of the books, and waits
+    until it does. Without it the MIN_EXTRACT_CHARS gate turns a settle lag
+    into a dead chapter, and before that gate existed it turned into a chapter
+    built on a paragraph.
+    """
+    books = books or list(load_drive_books())
+    q = ("Name each source document in this notebook and give one specific fact "
+         "with its printed page number from each. Be brief.")
+    wait = first_wait
+    for attempt in range(tries):
+        r = nb_run(["ask", q, "--json"], timeout=300)
+        answer = ""
+        if r.returncode == 0:
+            try:
+                answer = json.loads(r.stdout).get("answer", "") or ""
+            except Exception:
+                answer = ""
+        named = sum(1 for b in books if b.split()[0].lower() in answer.lower())
+        if len(answer) >= 800 and named >= max(2, len(books) - 2):
+            print(f"    notebook is answering ({len(answer)} chars, "
+                  f"{named}/{len(books)} books named)")
+            return True
+        print(f"    not answering yet ({len(answer)} chars, {named}/{len(books)} "
+              f"books named); waiting {wait}s", flush=True)
+        if attempt == tries - 1:
+            break
+        time.sleep(wait)
+        wait = min(int(wait * 1.6), 240)
+    return False
+
+
 def _list_sources(nb_id):
     """Every source in the notebook, or None if we could not find out.
 
@@ -1955,6 +1996,12 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             raise RuntimeError(
                 f"not every source in {day_nb_id} finished indexing; refusing "
                 f"to extract from a notebook that cannot answer yet")
+        use_notebook(day_nb_id)
+        print("  Checking the notebook can answer from them...")
+        if not wait_until_answerable(day_nb_id):
+            raise RuntimeError(
+                f"{day_nb_id} reports every source ready but still cannot "
+                f"answer from them; refusing to extract")
     else:
         # 2. Create the per-day notebook FIRST, then attach the books, then
         #    extract from it.
@@ -1997,6 +2044,16 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             raise RuntimeError(
                 f"not every source in {day_nb_id} finished indexing; refusing "
                 f"to extract from a notebook that cannot answer yet")
+
+        # 4b. `ready` is not the same as queryable. Verify the notebook can
+        #     actually answer from the books before asking it anything that
+        #     matters.
+        use_notebook(day_nb_id)
+        print("  Checking the notebook can answer from them...")
+        if not wait_until_answerable(day_nb_id):
+            raise RuntimeError(
+                f"{day_nb_id} reports every source ready but still cannot "
+                f"answer from them; refusing to extract")
 
         # 5. Extract this chapter's facts FROM THE DAY NOTEBOOK, which now
         #    holds the books themselves.
