@@ -16,6 +16,15 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 
 def _load_dotenv() -> None:
     """Load KEY=value pairs from repo-root .env into os.environ (no dep)."""

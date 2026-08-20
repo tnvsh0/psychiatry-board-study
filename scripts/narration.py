@@ -36,6 +36,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import sketchy_spec as spec  # noqa: E402
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 TEXT_MODEL = "gemini-2.5-flash"
 TTS_MODEL = "gemini-2.5-flash-preview-tts"
 TTS_VOICE = "Kore"          # calm, even pace; suits a study walkthrough

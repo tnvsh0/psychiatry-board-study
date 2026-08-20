@@ -19,6 +19,15 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 REPO = Path(__file__).resolve().parents[1]
 CAL = json.loads((REPO / "schedule" / "study_calendar.json").read_text(encoding="utf-8"))
 DAYS = {d["index"]: d for d in json.loads(

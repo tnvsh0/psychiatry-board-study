@@ -14,6 +14,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from daily_study import facts_for_aspect  # noqa: E402
 from gemini_image import generate_caption  # noqa: E402
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 REPO = Path(__file__).resolve().parent.parent
 
 

@@ -34,6 +34,18 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from daily_study import slugify  # noqa: E402  one source of truth for tags
+
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "_bulk" / "state.json"
 GENERATED = ROOT / "_generated"
@@ -121,11 +133,17 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     log_dir.mkdir(parents=True, exist_ok=True)
     log = log_dir / f"ch{day_index:03d}.log"
     started = time.time()
+    # The child writes Hebrew chapter titles into this log. On Windows a
+    # redirected stdout gets the locale codec (cp1255), which cannot encode
+    # them, and the chapter dies on UnicodeEncodeError partway through. Each
+    # script also reconfigures its own streams; this covers anything they call.
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8:replace"
     with log.open("w", encoding="utf-8") as fh:
         p = subprocess.run(
             [sys.executable, "-u", str(ROOT / "scripts" / "daily_study.py"),
              "--day", str(day_index)],
-            stdout=fh, stderr=subprocess.STDOUT, cwd=str(ROOT),
+            stdout=fh, stderr=subprocess.STDOUT, cwd=str(ROOT), env=env,
         )
     mins = (time.time() - started) / 60
     body = log.read_text(encoding="utf-8", errors="replace")
@@ -175,9 +193,14 @@ def main() -> int:
             print(f"stopping: reached --limit {a.limit}")
             break
         day = days[idx]
-        tag = f"study-{idx:03d}-" + "".join(
-            c if c.isalnum() else "-" for c in day.get("title_en", "").lower()
-        ).strip("-")[:60]
+        # Import the real one rather than reimplementing it. These two had
+        # drifted apart and disagreed on 92 of the 144 chapters: slugify
+        # collapses a run of non-alphanumerics to a single dash, the copy here
+        # emitted one dash per character, so "GABA / glutamate balance" became
+        # study-007-gaba---glutamate-balance and released() looked up a tag
+        # that does not exist. Every affected chapter would have been marked
+        # FAILED after succeeding, and never swept.
+        tag = f"study-{idx:03d}-{slugify(day.get('title_en', ''))}"
 
         if released(tag):
             print(f"[{idx:3}] already released — sweeping local copy")

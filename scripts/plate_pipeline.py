@@ -32,6 +32,15 @@ import narration as narr  # noqa: E402
 import sketchy_spec as spec  # noqa: E402
 import _proto_number_plate as comp_mod  # noqa: E402
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 ROOT = Path(__file__).resolve().parent.parent
 MAX_TRIES = 4
 

@@ -32,6 +32,15 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 # Gemini-based image generation (Sketchymedical style) — replaces NotebookLM infographics
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
@@ -1131,11 +1140,38 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
 
 
 def _list_sources(nb_id):
+    """Every source in the notebook, or None if we could not find out.
+
+    The distinction is the whole point, and the first version threw it away.
+    On failure the CLI prints {"error": true, ...} to STDOUT and exits 1; that
+    parses perfectly, so `.get("sources", [])` returned an empty LIST rather
+    than None - "the notebook has no sources" instead of "I could not read the
+    notebook". Both callers test `is None`, so both were defeated at once: the
+    resume path concluded every book was missing and re-attached all six on top
+    of the six already there, and the indexing wait concluded that all zero
+    sources had finished and returned True.
+
+    `source list --json` is more fragile than it looks. It makes a second RPC
+    (GET_NOTEBOOK) purely to fill in a cosmetic title field, so it can exit 1
+    while the source listing itself succeeded - a persistent, every-chapter
+    failure rather than a blip.
+    """
     r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
+    if r.returncode != 0:
+        print(f"  [!] source list failed rc={r.returncode} for {nb_id}",
+              file=sys.stderr)
+        return None
     try:
-        return json.loads(r.stdout).get("sources", [])
+        data = json.loads(r.stdout)
     except Exception:
         return None
+    if not isinstance(data, dict) or data.get("error"):
+        print(f"  [!] source list returned an error object for {nb_id}",
+              file=sys.stderr)
+        return None
+    if "sources" not in data:
+        return None
+    return data["sources"]
 
 
 def wait_for_sources_indexed(nb_id, attached=None, timeout=900,
@@ -1163,6 +1199,12 @@ def wait_for_sources_indexed(nb_id, attached=None, timeout=900,
         if sources is None:
             print("  [!] could not list sources to wait on", file=sys.stderr)
             return False
+        if not sources:
+            # "Every source finished indexing" is vacuously true of a notebook
+            # with no sources, and returning True here would certify an empty
+            # notebook as ready to answer questions about six textbooks.
+            print(f"  [!] {nb_id} has no sources at all", file=sys.stderr)
+            return False
 
         pending = [s for s in sources if (s.get("status") or "").lower()
                    not in ("ready", "error", "failed")]
@@ -1185,8 +1227,18 @@ def wait_for_sources_indexed(nb_id, attached=None, timeout=900,
                       f"(rc={rm.returncode}); not re-attaching, it would "
                       f"duplicate", file=sys.stderr)
                 continue
-            nb_run(["source", "add-drive", book["drive_file_id"], book["label"],
-                    "-n", nb_id, "--mime-type", "pdf"], timeout=300)
+            # Go through the attach helper rather than calling the CLI raw: it
+            # is the thing that checks the source came back as a real Drive PDF
+            # rather than a web_page, which is how six Google login pages once
+            # entered a notebook reporting status "ready". Firing and forgetting
+            # here would delete a book and then not notice it never came back.
+            got = add_textbook_pdfs_to_day_notebook(nb_id, only=[book["label"]])
+            if not got:
+                print(f"    [!!] {book['label']}: re-attach failed; the book is "
+                      f"now MISSING from {nb_id}", file=sys.stderr)
+                return False
+            attached = dict(attached or {})
+            attached.update(got)
             pending.append(src)  # give the fresh copy a chance this round
 
         if not pending:
@@ -1601,6 +1653,18 @@ def _gh_ok(stage: str, r: subprocess.CompletedProcess) -> bool:
     return False
 
 
+def _fresh(path, since):
+    """Was this file written by the CURRENT run?
+
+    Existence is not enough. bulk_run keeps a failed chapter's directory on
+    purpose, so a retry pass finds the previous attempt's files still there.
+    """
+    try:
+        return path.exists() and path.stat().st_mtime >= since
+    except OSError:
+        return False
+
+
 def upload_release(tag, title, notes_md, assets):
     """Create or update a GitHub Release with all assets.
 
@@ -1651,10 +1715,25 @@ def upload_release(tag, title, notes_md, assets):
     if not _gh_ok("release view (read-back)", rv):
         return {"url": "", "assets": []}
     try:
-        return json.loads(rv.stdout)
+        out = json.loads(rv.stdout)
     except Exception as e:
         print(f"  [FAIL] could not parse gh release view output: {e}")
         return {"url": "", "assets": []}
+
+    # The read-back is the only place that can tell whether the upload actually
+    # landed, so compare it against what we asked for. Upload failures used to
+    # be counted, printed and then thrown away: a release carrying one asset
+    # out of seven still returned a success URL, bulk_run saw the release
+    # exist, marked the chapter DONE and swept the local directory. The
+    # chapter is then permanently incomplete and its only copy is gone.
+    want = {Path(a).name for a in assets}
+    have = {x.get("name") for x in out.get("assets", [])}
+    lost = sorted(want - have)
+    if lost:
+        print(f"  [FAIL] release {tag} is missing {len(lost)}/{len(want)} "
+              f"asset(s): {', '.join(lost)}")
+        return {"url": "", "assets": out.get("assets", []), "missing": lost}
+    return out
 
 
 # ── Per-day generator ───────────────────────────────────────────────────────
@@ -1670,6 +1749,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     tag = f"study-{day_index:03d}-{slug}"
     day_dir = output_dir / f"day-{day_index:03d}"
     day_dir.mkdir(parents=True, exist_ok=True)
+    # Anything older than this instant belongs to a previous attempt.
+    run_started = time.time() - 1
 
     print(f"\n{'='*70}")
     print(f"Day {day_index}: {day.get('title_he', title_en)}")
@@ -1721,8 +1802,18 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         if missing:
             print(f"  Notebook is missing {len(missing)} book(s): "
                   f"{', '.join(missing)}. Attaching...")
-            attached.update(
-                add_textbook_pdfs_to_day_notebook(day_nb_id, only=missing))
+            got = add_textbook_pdfs_to_day_notebook(day_nb_id, only=missing)
+            attached.update(got)
+            # The fresh-notebook path refuses to continue on a short attach;
+            # this path did not, and it is the one every --retry-failed re-run
+            # goes through. A book named in the prompt but absent from the
+            # notebook does not raise - NotebookLM invents page numbers for it.
+            if len(got) < len(missing):
+                raise RuntimeError(
+                    f"only {len(got)}/{len(missing)} missing textbooks attached "
+                    f"to {day_nb_id} ({', '.join(sorted(set(missing) - set(got.values())))} "
+                    f"still absent). Refusing to generate: the prompts name "
+                    f"every book, and a missing one becomes invented citations.")
         else:
             print(f"  All {len(present)} textbooks already attached.")
         # Always re-check indexing, even when nothing was added: a source can
@@ -1962,14 +2053,26 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                       f"{rep.get('tries')} tries, score {gates.get('score')}, "
                       f"composited {rep.get('compositing', {}).get('composited', 0)}"
                       f"/{rep.get('compositing', {}).get('requested', 0)} numbers")
-                gemini_images.append((plate.name, png, txt if txt.exists() else None))
+                gemini_images.append(
+                    (plate.name, png, txt if _fresh(txt, run_started) else None))
                 # A plate without its legend is not a study asset, and the quiz
                 # and the narration are generated from that same legend.
+                #
+                # Freshness, not existence. A failed chapter's directory is
+                # deliberately KEPT as evidence, so on a --retry-failed pass
+                # the previous attempt's legend, quiz and narration are still
+                # sitting there. Collecting whatever exists would ship the old
+                # run's legend beside the new run's image - a caption that
+                # describes a picture nobody is looking at, which is the exact
+                # defect this course was rebuilt to fix.
                 for extra in (day_dir / f"sketchy_{plate.name}.quiz.md",
                               day_dir / f"narration_{plate.name}.txt",
                               day_dir / f"narration_{plate.name}.wav"):
-                    if extra.exists():
+                    if _fresh(extra, run_started):
                         plate_extras.append(extra)
+                    elif extra.exists():
+                        print(f"    [!] {extra.name} is left over from an "
+                              f"earlier attempt; not shipping it")
             if plate_reports:
                 (day_dir / "plates_report.json").write_text(
                     json.dumps(plate_reports, ensure_ascii=False, indent=1),
@@ -2023,6 +2126,19 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         print("[!] No assets downloaded. Aborting release.")
         return None
 
+    # "At least one file" is not a chapter. Publishing a release is what marks
+    # this chapter permanently done: bulk_run sees the tag exist, records it in
+    # `done`, and deletes the local directory. A release carrying only, say,
+    # one PNG would retire the chapter forever with no study guide and no facts
+    # behind it, and the sweep would take the evidence with it.
+    essential = {"study_guide.md": study_guide_path, "facts.json": facts_path}
+    absent = [n for n, p in essential.items() if not (p and Path(p).exists())]
+    if absent:
+        raise RuntimeError(
+            f"chapter {day_index} is missing {', '.join(absent)}; refusing to "
+            f"publish a release that would mark it done. Its local files are "
+            f"left in place as evidence.")
+
     # Upload to GitHub Release
     title_he = day.get("title_he", title_en)
     notes = f"""# יום {day_index}: {title_he}
@@ -2037,7 +2153,16 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
 """
     print(f"\nUploading release {tag}...")
     release_info = upload_release(tag, f"📚 יום {day_index:03d}: {title_he}", notes, assets)
-    print(f"Release: {release_info.get('url', '?')}")
+    # An empty url means the release did not fully land. Returning it anyway
+    # let the process exit 0, and bulk_run then treats an existing-but-partial
+    # release as a finished chapter and sweeps the local copy.
+    if not release_info.get("url"):
+        raise RuntimeError(
+            f"release {tag} did not publish completely"
+            + (f" (missing: {', '.join(release_info['missing'])})"
+               if release_info.get("missing") else "")
+            + ". Local files kept.")
+    print(f"Release: {release_info['url']}")
 
     return release_info
 
