@@ -11,6 +11,16 @@ traditional flashcard summary covers that the curriculum did not).
 import json
 from pathlib import Path
 
+import sys
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 SCHEDULE = Path(__file__).resolve().parents[1] / "schedule" / "schedule.json"
 
 A = ["history_origin", "core_principles", "practice_method", "evidence", "indications"]

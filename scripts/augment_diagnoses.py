@@ -17,6 +17,16 @@ User review (2026-05-10) flagged these gaps:
 import json
 from pathlib import Path
 
+import sys
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 ROOT = Path(__file__).resolve().parent.parent
 DIAG_FILE = ROOT / "schedule" / "diagnoses.json"
 
