@@ -36,14 +36,36 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parent.parent
 QC_MODEL = os.environ.get("QC_MODEL", "gemini-2.5-flash")
 
-# Known page counts, so a citation past the end of a book is caught by
-# arithmetic rather than by opinion.
-BOOK_PAGES = {
-    "DSM": 1120, "DSM-5-TR": 1120,
-    "Dulcan": 1100,
-    "Stahl Essential": 550, "Stahl": 550,
-    "Stahl Pediatric": 525,
-}
+def _book_pages():
+    """Last PRINTED page of each book, measured, never guessed.
+
+    These were hardcoded from general knowledge and two were wrong. Stahl
+    Essential was recorded as 550 pages against a real last page of 623, so the
+    check would have reported a correct citation to page 600 as invented - the
+    exact failure this file exists to prevent, pointed the wrong way.
+
+    The numbers are PRINTED page numbers, the ones a reader sees on the page.
+    That is not a preference: NotebookLM indexes a flat text stream with no
+    page structure, so the only page numbers it can ever see are the folios
+    printed in the running headers, and a PDF viewer's page index is not
+    available to it even in principle. Both sides of this comparison therefore
+    speak the same numbering. See scripts/measure_folios.py.
+    """
+    try:
+        books = json.loads((ROOT / "schedule" / "drive_books.json")
+                           .read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    out = {}
+    for label, b in books.items():
+        n = b.get("max_printed_page")
+        if n:
+            out[label] = n
+            out[label.split(" &")[0].split(" (")[0]] = n
+    return out
+
+
+BOOK_PAGES = _book_pages()
 
 JUDGE_SYSTEM = (
     "You are a meticulous medical-education QC reviewer for a Hebrew psychiatry "
@@ -89,7 +111,7 @@ def check_page_citations(text: str) -> list[dict]:
         for g in (m.group(2), m.group(3)):
             if g and int(g) > limit:
                 out.append({"claim": m.group(0).strip(),
-                            "why": f"{book} has about {limit} pages",
+                            "why": f"{book}'s last printed page is {limit}",
                             "severity": "high"})
     return out
 

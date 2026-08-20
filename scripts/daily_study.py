@@ -79,23 +79,49 @@ SOURCE_PDF_NAMES = [
     # Add it manually to the main notebook if you want comprehensive coverage.
 ]
 
-# INVARIANT: SOURCE_PDF_NAMES and BOOKS_DIRECTIVE must describe the same books.
-# A book named in a prompt but missing from the notebook does not produce an
-# error — NotebookLM invents plausible page numbers for it. That is exactly what
-# happened before "stahl-pediatric.pdf" was actually added: the day-16 study
-# guide cites "Stahl Pediatric pp. 600-612" in a book that is 525 pages long.
-BOOKS_DIRECTIVE = """המקורות במחברת, לפי סדר עדיפות:
-1. **Dulcan's Textbook of Child and Adolescent Psychiatry 3e** — ספר הליבה. ברירת המחדל לכל נושא קליני בילדים ונוער.
-2. **DSM-5-TR** — קריטריונים אבחנתיים מדויקים.
-3. **Stahl's Essential Psychopharmacology 5e** — מנגנון נוירוביולוגי, קולטנים, מסלולים.
-4. **Stahl's Prescriber's Guide — Children and Adolescents** — מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה (33 תרופות, 525 עמ') — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.
-5. **הסילבוס הרשמי של המועצה המדעית** — מגדיר מה נדרש לבחינה.
-6. **Kaplan & Sadock's Synopsis** — מקור השלמה בלבד. השתמש בו אך ורק כאשר נושא שנדרש לבחינה בילדים ונוער חסר ב-Dulcan (למשל הפרעות אישיות, שאין להן פרק ב-Dulcan). אל תייבא ממנו תוכן של פסיכיאטריה של מבוגרים שאינו רלוונטי לילדים ונוער (דמנציה/אלצהיימר, פסיכיאטריה גריאטרית, תפקוד מיני של מבוגרים וכו').
+# The book list in the prompt and the books actually in the notebook must
+# describe the same set. A book named in a prompt but missing from the notebook
+# does not produce an error - NotebookLM invents plausible page numbers for it,
+# which is how a day-16 study guide came to cite "Stahl Pediatric pp. 600-612"
+# in a book whose last printed page is 502. That used to be an INVARIANT
+# comment asking a human to keep two constants in step. It is now built from
+# one source: BOOK_BLURBS is keyed by the same labels as drive_books.json, and
+# a book disabled there disappears from the prompt in the same breath.
+BOOK_BLURBS = {
+ "Dulcan": "**Dulcan's Textbook of Child and Adolescent Psychiatry 3e** — ספר הליבה. ברירת המחדל לכל נושא קליני בילדים ונוער.",
+ "DSM-5-TR": "**DSM-5-TR** — קריטריונים אבחנתיים מדויקים.",
+ "Stahl Essential": "**Stahl's Essential Psychopharmacology 5e** — מנגנון נוירוביולוגי, קולטנים, מסלולים.",
+ "Stahl Pediatric": "**Stahl's Prescriber's Guide — Children and Adolescents** — מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.",
+ "Syllabus": "**הסילבוס הרשמי של המועצה המדעית** — מגדיר מה נדרש לבחינה.",
+ "Kaplan & Sadock Synopsis": "**Kaplan & Sadock's Synopsis** — מקור השלמה בלבד. השתמש בו אך ורק כאשר נושא שנדרש לבחינה בילדים ונוער חסר ב-Dulcan (למשל הפרעות אישיות, שאין להן פרק ב-Dulcan). אל תייבא ממנו תוכן של פסיכיאטריה של מבוגרים שאינו רלוונטי לילדים ונוער (דמנציה/אלצהיימר, פסיכיאטריה גריאטרית, תפקוד מיני של מבוגרים וכו').",
+}
+
+BOOK_ORDER = ["Dulcan", "DSM-5-TR", "Stahl Essential", "Stahl Pediatric",
+              "Syllabus", "Kaplan & Sadock Synopsis"]
+
+
+def books_directive():
+    """The prompt's source list, built from the books that are actually loaded."""
+    books = load_drive_books()
+    lines = [BOOK_BLURBS[k] for k in BOOK_ORDER if k in books and k in BOOK_BLURBS]
+    numbered = "\n".join(f"{i}. {t}" for i, t in enumerate(lines, 1))
+    ranges = ", ".join(
+        f"{k} עד {books[k]['max_printed_page']}"
+        for k in BOOK_ORDER if k in books and books[k].get("max_printed_page"))
+    synopsis = ""
+    if "Kaplan & Sadock Synopsis" in books:
+        synopsis = ('\n- ל-Synopsis **אין מספרי עמודים** במהדורה שבמחברת. צטט אותו '
+                    'לפי פרק בלבד: "(Synopsis ch.19 Personality Disorders)". '
+                    'אל תמציא לו מספר עמוד.')
+    return f"""המקורות במחברת, לפי סדר עדיפות:
+{numbered}
 
 כללי ציטוט מחייבים:
 - אחרי כל טענה משמעותית ציין עמוד מקור בסוגריים: "(DSM p.68)", "(Dulcan p.173)", "(Stahl C&A p.301)".
-- ל-Synopsis **אין מספרי עמודים** במהדורה שבמחברת. צטט אותו לפי פרק בלבד: "(Synopsis ch.19 Personality Disorders)". אל תמציא לו מספר עמוד.
-- אל תמציא עמודים באף מקור. אם לא מצאת — כתוב "(מקור: הקשר רחב)"."""
+- **מספר העמוד הוא זה שמודפס על העמוד עצמו** (בכותרת העליונה או התחתונה), לא מספר הגיליון בתוכנת קריאת PDF. השניים אינם זהים: לקבצים יש שערים ותוכן עניינים לפני עמוד 1, ולכן מספר ה-PDF גדול יותר. צטט תמיד לפי המספר המודפס.
+- טווחי העמודים המודפסים בספרים שבמחברת: {ranges}. עמוד מחוץ לטווח הוא בהכרח שגוי.{synopsis}
+- אל תמציא עמודים באף מקור. אם לא מצאת — כתוב "(מקור: הקשר רחב)"
+"""
 
 
 def slugify(text: str) -> str:
@@ -239,7 +265,7 @@ def build_clinical_context(day):
 
     Deliberately omits the visual symbol legend — those are mnemonic aids
     for the IMAGES only. Clinical content must come from the textbook PDFs
-    (see BOOKS_DIRECTIVE), NOT from the cartoon symbols.
+    (see BOOK_BLURBS), NOT from the cartoon symbols.
     Mentioning the cartoon symbols here causes NotebookLM to generate
     flashcards/quiz items about the visual mnemonics ("what does the ninja
     mask represent?") instead of the clinical content ("at what age should
@@ -262,7 +288,7 @@ def build_clinical_context(day):
 - ההוראות הללו מיועדות לחומר לימודי קליני. **אל תכתוב על הסמלים החזותיים/הציורים/האיורים** (אלה נועדו אך ורק לתמונות הליווי — הם לא נושא הלמידה).
 - כל פיסת תוכן חייבת להישען על המקורות במחברת.
 
-{BOOKS_DIRECTIVE}
+{books_directive()}
 
 - מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר לקראת בחינת שלב ב' — חייב להיות תוכן בחינתי, לא מנמוניקה ויזואלית.
 - אל תמציא — אם המידע חסר במקורות, ציין זאת."""
@@ -896,6 +922,16 @@ def nb_run(args, timeout=120, retries=2):
         last = r
         if r.returncode == 0 and r.stdout.strip():
             return r
+        # The CLI tells us when a write's outcome is unknown: the RPC timed
+        # out, and its idempotency probe found the source WAS created server
+        # side. Retrying that is how the Kaplan & Sadock attach ended up with
+        # three copies in one notebook, two of them wedged in `error`. An
+        # unconfirmed write is for the caller to reconcile against the source
+        # list, never for this layer to repeat.
+        if "UNCONFIRMED_WRITE" in r.stdout or '"unconfirmed": true' in r.stdout:
+            print(f"    [!] notebooklm {args[0]}: write unconfirmed, NOT retrying "
+                  f"(would duplicate)", file=sys.stderr)
+            return r
         if attempt < retries:
             print(f"    [!] notebooklm {args[0]} returned rc={r.returncode} with "
                   f"{len(r.stdout)} bytes; retrying "
@@ -1039,9 +1075,18 @@ def build_image_jobs(aspects, facts):
 DRIVE_BOOKS_PATH = REPO_ROOT / "schedule" / "drive_books.json"
 
 
-def load_drive_books():
+def load_drive_books(include_disabled=False):
+    """The textbooks to attach. A book with enabled=false is skipped entirely.
+
+    One switch, because a book that cannot be attached must also vanish from
+    the prompt: naming a source the notebook does not have is what produces
+    invented page numbers.
+    """
     with open(DRIVE_BOOKS_PATH, encoding="utf-8") as fh:
-        return json.load(fh)
+        books = json.load(fh)
+    if include_disabled:
+        return books
+    return {k: v for k, v in books.items() if v.get("enabled", True)}
 
 
 def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
@@ -1131,7 +1176,15 @@ def wait_for_sources_indexed(nb_id, attached=None, timeout=900,
                 continue
             retried.add(sid)
             print(f"    RETRY    {title[:44]} (indexing failed, re-attaching)")
-            nb_run(["source", "delete", sid, "-n", nb_id], timeout=90)
+            # -y is not optional: without it the CLI prompts, reads EOF from a
+            # detached run and exits 2. The delete then "succeeds" silently and
+            # the re-attach below leaves a duplicate instead of a replacement.
+            rm = nb_run(["source", "delete", sid, "-n", nb_id, "-y"], timeout=90)
+            if rm.returncode != 0:
+                print(f"    [!!] could not detach the failed source "
+                      f"(rc={rm.returncode}); not re-attaching, it would "
+                      f"duplicate", file=sys.stderr)
+                continue
             nb_run(["source", "add-drive", book["drive_file_id"], book["label"],
                     "-n", nb_id, "--mime-type", "pdf"], timeout=300)
             pending.append(src)  # give the fresh copy a chance this round
@@ -1173,6 +1226,16 @@ def _book_for_source(sid, title, attached=None):
         if label in books:
             return {**books[label], "label": label}
     t = _norm(title)
+    if not t:
+        return None
+    # NotebookLM keeps the display name we pass on some sources and the Drive
+    # filename on others, so both have to be checked. Labels are exact: the
+    # Syllabus arrives titled "Syllabus" while its file is
+    # "cylabusKidsandAdolePsychiatry2022V2_0.pdf", and matching only the
+    # filename made an already-attached book look missing and attach twice.
+    for lbl, b in books.items():
+        if _norm(lbl) == t:
+            return {**b, "label": lbl}
     if len(t) < 10:
         return None
     # Compare as much of the title as both sides have. The two Stahl titles
@@ -1220,7 +1283,7 @@ def extract_facts(day, notebook_id):
 
     schema_prompt = f"""Based ONLY on the sources in this notebook, extract the high-yield facts about: {title_he}
 
-{BOOKS_DIRECTIVE}
+{books_directive()}
 
 Return STRICT JSON (no prose, no markdown fences) with this exact shape. Fill every field from the sources; if a field is genuinely not in the sources, use the string "לא צוין". Keep values SHORT and concrete (numbers, names) — this drives mnemonic image generation.
 
@@ -1313,7 +1376,7 @@ def extract_day_content_from_main(day, symbols_block, main_notebook_id):
 
     extraction_prompt = f"""Extract from the sources in this notebook ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
 
-{BOOKS_DIRECTIVE}
+{books_directive()}
 
 Topic: {title_he}
 
@@ -1424,7 +1487,7 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 - אורך: 2000-4000 מילים. ממוקד מהותית בנושא היום, לא סקירה כללית.
 - אסמכתאות: מבוסס אך ורק על המקורות במחברת.
 
-{BOOKS_DIRECTIVE}"""
+{books_directive()}"""
 
     r = nb_run(["ask", prompt, "--json"], timeout=900)
     if r.returncode != 0:
