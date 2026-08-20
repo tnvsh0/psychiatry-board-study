@@ -235,6 +235,21 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                     + ". Each must be about 20% of the image height — four to "
                       "eight times bigger than you drew it: a doorway-sized "
                       "board, not a label. Move other things aside to make room.")
+            # The composition probe already says exactly what went wrong and
+            # names the offender; saying it back is far more use than repeating
+            # the general rule the model has already read once and ignored.
+            comp_raw = (best.get("composition") or {}).get("_raw") or {}
+            comp_bad = {k: v for k, v in comp_raw.items()
+                        if not str(v).strip().upper().startswith("YES")}
+            if comp_bad:
+                said = "\n".join(f"  - {v}" for v in comp_bad.values())
+                prompt += (
+                    "\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by "
+                    "someone who looked at it:\n" + said +
+                    "\nFix exactly that. If a figure was called out as larger, "
+                    "draw that same person at the size of everyone else, "
+                    "standing further back, not near the viewer and not "
+                    "reaching toward it.")
             if absent:
                 prompt += ("\n\nTHESE BLANK PLATES WERE NOT USABLE LAST TIME — draw "
                            "each one as a large, flat, unobstructed rectangle of "
