@@ -154,7 +154,9 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # Fix mechanically first, then judge. Otherwise the ladder spends its
         # whole budget re-asking for string lengths.
         # last rung: rewrite what the director would not stop writing
-        fixed = spec.normalize_table(cand, aggressive=(attempt == 2),
+        # One honest chance at the hook rule, then fix it: at 10 of 34
+        # elements the director is not going to be argued out of it.
+        fixed = spec.normalize_table(cand, aggressive=(attempt >= 1),
                                      known_facts={f.id for f in plate.facts})
         soft: list[str] = []
         errs = spec.validate_table(cand, plate.facts, soft=soft)

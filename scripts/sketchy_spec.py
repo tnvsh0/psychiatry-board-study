@@ -84,6 +84,16 @@ RELATION_SYNONYMS = {
     "NEXT_TO": "ADJACENT_TO", "BESIDE": "ADJACENT_TO", "NEAR": "ADJACENT_TO",
     "INSIDE": "CONTAINED_IN", "WITHIN": "CONTAINED_IN", "PART_OF": "CONTAINED_IN",
     "DROPS_FROM": "FALLS_FROM", "DESCENDS_FROM": "FALLS_FROM",
+    "PRODUCES": "ACTS_ON", "MAKES": "ACTS_ON", "DRIVES": "ACTS_ON",
+    "COMBINED_WITH": "ADJACENT_TO", "PAIRED_WITH": "ADJACENT_TO",
+    "TOGETHER_WITH": "ADJACENT_TO", "COMPARED_TO": "ADJACENT_TO",
+    # PASSIVE verbs name the same relation from the other end. Mapping them to
+    # ACTS_ON would silently reverse who does what to whom, which the picture
+    # then draws backwards, so they degrade to plain adjacency instead.
+    "AFFECTED_BY": "ADJACENT_TO", "ACTED_ON_BY": "ADJACENT_TO",
+    "MODULATED_BY": "ADJACENT_TO", "BLOCKED_BY": "ADJACENT_TO",
+    "CAUSED_BY": "ADJACENT_TO", "PRODUCED_BY": "ADJACENT_TO",
+    "RECEIVES_FROM": "ADJACENT_TO", "DEPENDS_ON": "ADJACENT_TO",
 }
 
 # The same medicine for the derivation enum. The director reaches for the word
@@ -968,7 +978,7 @@ RULES
   At most {MAX_REQUIRED_STRINGS} of them.
 - `triple` is [category, material, dominant colour] and must be unique across
   elements whose facts are unrelated.
-- `hook` is IN HEBREW, one flowing sentence of 8-25 words that says BOTH what
+- `hook` is IN HEBREW, one flowing sentence of 8-32 words that says BOTH what
   is there AND why it is the right object, woven together. Write it the way you
   would say it out loud to someone looking at the picture.
     GOOD: "כמו שבבית צביעה מתכון נמדד באחוז ממשקל הבד, כך שכיחות הדיכאון מופיעה
@@ -977,8 +987,17 @@ RULES
     BAD (only explains):  "מתכון נמדד באחוז"
     BAD (a label):        "לוח מתכונים = שכיחות"
   The everyday logic of the object must be visible in the sentence — that logic
-  is what makes the fact stick. Never "מסמל" or "מייצג": those assert a link
-  instead of showing why it holds.
+  is what makes the fact stick.
+  THE WORDS "מסמל" AND "מייצג" ARE FORBIDDEN, and they are the single most
+  common reason a table is sent back. They announce that a link exists instead
+  of showing why it holds, and a reader who is told a link exists does not
+  remember it. Whenever you are about to write one, you already know the real
+  reason — write that instead:
+    BAD:  "ועדת בית קפה שמדברת בקולניות מייצגת את רשת ברירת המחדל בדיכאון"
+    GOOD: "ועדת בית קפה שממשיכה לדוש באותו נושא גם כשאין מה להוסיף, בדיוק כמו
+          רשת ברירת המחדל שנשארת פעילה בדיכאון וטוחנת את אותן מחשבות"
+  The shape that works: the everyday thing, then "כמו ש… כך …" or "בדיוק כמו",
+  then the clinical fact.
 - `venue_he` and `zones_he` are the place, the shared activity and the zone
   names in Hebrew. The whole legend is read by a Hebrew speaker; leaving the
   header in English makes the page unreadable to them.
