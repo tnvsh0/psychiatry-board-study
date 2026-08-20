@@ -67,6 +67,39 @@ legend, quiz, narration script and audio with each render, plus a
 falling back to v1 — a chapter drawn in the wrong place is worse than none.
 `regen_image.py` still uses the v1 helpers, so they stay.
 
+### What the verified run actually produced
+
+Chapter 28, main plate, **score 0**: no missing strings, all three composition
+checks passing, 3/3 number plates composited at 22.8%, 15.0% and 10.0% of frame
+height. That is the whole chain green for the first time.
+
+| | before | after |
+|---|---|---|
+| blank plate height | 2.6-5.5% of frame | 10.0-22.8% |
+| `figures_even` | failed every try | passed on 4 tries of 4, then again next run |
+| required strings missing | 6-9 | 0 |
+| numbers composited | 0 (shipped raw chroma) | 3/3, no residual chroma |
+
+### Still open, seen in the verified render
+
+1. **Numerals are still painted by hand, in a new place.** Dropping the
+   digit-bearing required strings stopped the director from ASKING for them, and
+   the illustrator drew two people holding placards lettered "70%" and "40-60%"
+   anyway. In composite mode this is a duplicate of a number that is about to be
+   composited, so it matters more than it did when strays were downgraded to a
+   warning — and `check_numbers` does not even run in composite mode, so nothing
+   currently sees them. The cheap fix is one probe per try: "are there any
+   numerals anywhere except on the coloured plates?", scored like the others.
+
+2. **The frame got emptier.** Asking for three doorway-sized boards and for
+   nobody near the viewer bought large stretches of bare floor. `frame_filled`
+   still answers YES, which means that probe is measuring margins and vignette,
+   not density — it cannot see this. Packing needs its own check, or the cast
+   and clutter instruction needs to grow to match the space the boards take.
+
+3. The plates BELONG now — the "2% RATE" board sits in a wooden frame on legs —
+   but only sometimes; the other two still read as flat panels on a wall.
+
 ## 2026-07-28 — five defects fixed (cloud session)
 
 All five defects from the first full run have been addressed with pure code
