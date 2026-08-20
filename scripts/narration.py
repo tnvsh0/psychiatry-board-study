@@ -155,9 +155,14 @@ _SCRUB_PATTERNS = [
     # "we see X" -> just "X" (the colon or prop name already introduces it)
     (re.compile(r"אנו רואים\s+"), ""),
     (re.compile(r"אנחנו רואים\s+"), ""),
-    # "X symbolizes Y" -> "X — Y" (the hook format we want)
-    (re.compile(r"\s*מסמל\s+"), " — "),
-    (re.compile(r"\s*מייצג\s+"), " — "),
+    # "X symbolizes Y" -> "X — Y" (the hook format we want).
+    # INFLECTIONS MATTER. The ban matches the bare stem "מסמל", which also
+    # matches inside "מסמלת" and "מסמלים"; the scrub required whitespace right
+    # after the stem, so every feminine and plural form slipped past the scrub
+    # and then tripped the ban. The narration could not converge on a script
+    # that the scrub was, by construction, unable to fix.
+    (re.compile(r"\s*(?:מסמלות|מסמלים|מייצגות|מייצגים|מסמלת|מייצגת|מסמל|מייצג)"
+                r"\s+(?:את\s+)?"), " — "),
     # "in the picture/scene" -> just remove (adds nothing)
     (re.compile(r"\s*בתמונה\s*"), " "),
     (re.compile(r"\s*בסצנה\s*"), " "),
@@ -304,6 +309,16 @@ def _test_scrub_banned_phrases() -> None:
     assert "מסמל" not in got, f"missed 'מסמל' in {got!r}"
     assert "תקווה" in got, f"lost the payload 'תקווה' in {got!r}"
     print("  [OK] scrub_banned_phrases handles compound bans")
+
+    # every inflection the ban can see, the scrub must be able to remove. The
+    # ban matches the bare stem, so a form the scrub misses is a script that
+    # can never pass, no matter how many times it is re-asked.
+    bad = [t for t in ("הצנצנות מסמלות את החסר", "העובדת מסמלת את המנגנון",
+                       "הקופסה מייצגת את האזהרה", "הדוור מסמל את המנגנון",
+                       "הסלים מסמלים חסר", "הם מייצגים את הרשת")
+           if _BANNED.search(scrub_banned_phrases(t))]
+    assert not bad, f"scrub left a banned stem in: {bad}"
+    print("  [OK] scrub_banned_phrases catches every inflection the ban sees")
 
 
 def _demo_table(plate) -> dict:
