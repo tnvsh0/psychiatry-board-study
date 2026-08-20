@@ -1068,6 +1068,36 @@ def add_textbook_pdfs_to_day_notebook(nb_id):
     return added
 
 
+def wait_for_sources_indexed(nb_id, timeout=420):
+    """Block until every source in the notebook has finished processing.
+
+    A freshly attached Drive PDF is not queryable for a while. Extracting
+    before indexing completes does not error — it returns a near-empty answer,
+    which is how chapter 29 produced 845 characters of "source material" from
+    six textbooks and would have built its whole plate set on nothing.
+    """
+    r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
+    try:
+        sources = json.loads(r.stdout).get("sources", [])
+    except Exception:
+        print("  [!] could not list sources to wait on", file=sys.stderr)
+        return False
+    ok = True
+    for src in sources:
+        sid = src.get("id")
+        if not sid:
+            continue
+        w = nb_run(["source", "wait", sid, "-n", nb_id,
+                    "--timeout", str(timeout), "--interval", "5"],
+                   timeout=timeout + 60)
+        # exit 0 = ready, 1 = failed, 2 = timeout
+        state = {0: "ready", 1: "FAILED", 2: "TIMEOUT"}.get(w.returncode, "?")
+        title = (src.get("title") or sid)[:44]
+        print(f"    {state:8} {title}")
+        ok &= (w.returncode == 0)
+    return ok
+
+
 def count_notebook_sources(nb_id):
     """Return number of sources currently in the given notebook (or -1 on error)."""
     r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
@@ -1530,7 +1560,13 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         elif n_sources >= min_expected:
             print(f"  Notebook already has {n_sources} sources — skipping PDF retrofit.")
         else:
-            print(f"  [!] Could not determine source count; continuing without retrofit.")
+            # "Could not determine" used to shrug and continue. It then
+            # generated audio, video and a study guide against a notebook with
+            # NO SOURCES: every artifact would have been invented whole. If we
+            # cannot confirm the books are attached, stop.
+            raise RuntimeError(
+                f"could not count sources in notebook {day_nb_id}; refusing to "
+                f"generate against a notebook whose contents are unknown")
     else:
         # 2. Create the per-day notebook FIRST, then attach the books, then
         #    extract from it.
@@ -1562,14 +1598,34 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 f"notebook {day_nb_id}. Refusing to generate: the prompts name "
                 f"all six books, and a missing one becomes invented citations.")
 
-        # 4. Extract this chapter's facts FROM THE DAY NOTEBOOK, which now
+        # 4. Wait for the books to finish indexing BEFORE asking anything of
+        #    them. This wait used to sit AFTER the extraction, which was
+        #    harmless when extraction came from a long-lived main notebook and
+        #    silently destructive once it came from a notebook whose sources
+        #    were attached seconds earlier.
+        print("  Waiting for textbooks to index...")
+        if not wait_for_sources_indexed(day_nb_id):
+            raise RuntimeError(
+                f"not every source in {day_nb_id} finished indexing; refusing "
+                f"to extract from a notebook that cannot answer yet")
+
+        # 5. Extract this chapter's facts FROM THE DAY NOTEBOOK, which now
         #    holds the books themselves.
         extract_md = extract_day_content_from_main(day, symbol_block, day_nb_id)
         if not extract_md:
             print("[!] Could not extract content from the day notebook. Aborting.")
             return None
+        # Six textbooks cannot honestly answer a chapter brief in a paragraph.
+        # A tiny extract means the notebook was not ready or the query failed,
+        # and facts.json drives every plate downstream.
+        MIN_EXTRACT_CHARS = 2000
+        if len(extract_md) < MIN_EXTRACT_CHARS:
+            raise RuntimeError(
+                f"extract is only {len(extract_md)} chars (expected at least "
+                f"{MIN_EXTRACT_CHARS}); the notebook likely was not indexed. "
+                f"Refusing to build a chapter on it.")
         print(f"  Extracted {len(extract_md)} characters of source material.")
-        print(f"  Added {n_pdfs} textbook PDF source(s).")
+        print(f"  Attached {n_pdfs} textbook(s) by reference.")
 
         # 4b. Add the extracted .md as a focused-summary source.
         source_title = f"Day {day_index} — Focused extract (from main notebook)"
