@@ -1498,6 +1498,40 @@ def start_report(prompt):
     return _extract_task_id(r, "report")
 
 
+# A study guide that DESCRIBES a study guide instead of being one. Chapter 29
+# produced this the first time the notebook held six real textbooks instead of
+# a short extract: 3,693 characters, one page citation, opening "הכנתי עבורך"
+# and announcing that the material was "available in the Studio panel under
+# ssri-study-guide.md". No such note existed - `note list` returned zero. The
+# model reported writing a file it never wrote, and every existing check
+# passed, because the answer was non-empty, in Hebrew, and even carried a
+# citation. Chapters 1 and 28, generated before the books were attached, are
+# 13,417 and 16,955 characters with 73 and 83 citations.
+_GUIDE_RECEIPT_PHRASES = (
+    "פאנל הסטודיו", "בפאנל הסטודיו", "בסטודיו", "Studio panel",
+    "הכנתי עבורך", "יצרתי עבורך", "הכנתי לך", "יצרתי לך",
+    "זמין עבורך", "זמין כעת", "זמין לך", "נמצא כעת",
+)
+MIN_GUIDE_CHARS = 6000
+MIN_GUIDE_CITATIONS = 12
+
+
+def _study_guide_defects(text: str) -> list:
+    """Reasons this answer is not a usable study guide. Empty list = fine."""
+    out = []
+    said = [p for p in _GUIDE_RECEIPT_PHRASES if p in text]
+    if said:
+        out.append("it announces a file instead of containing the guide "
+                   f"({', '.join(said[:3])})")
+    if len(text) < MIN_GUIDE_CHARS:
+        out.append(f"only {len(text)} chars, expected at least {MIN_GUIDE_CHARS}")
+    cites = re.findall(r"[\[(][^\])]{0,40}?\bp\.?\s?\d{1,4}[^\])]{0,20}[\])]", text)
+    if len(cites) < MIN_GUIDE_CITATIONS:
+        out.append(f"only {len(cites)} page citations, expected at least "
+                   f"{MIN_GUIDE_CITATIONS}")
+    return out
+
+
 def ask_study_guide(day, symbol_block, legend_block, out_path):
     """Generate a focused study guide via 'notebooklm ask' that honors the
     day's specific topic AND includes page references to source books."""
@@ -1539,19 +1573,43 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 - אורך: 2000-4000 מילים. ממוקד מהותית בנושא היום, לא סקירה כללית.
 - אסמכתאות: מבוסס אך ורק על המקורות במחברת.
 
+**קריטי — כתוב את המדריך עצמו כאן, בגוף התשובה**:
+- אל תיצור קובץ, פתק, או פריט בפאנל הסטודיו. אל תשמור שום דבר בשום מקום.
+- אל תתאר מה המדריך מכיל ואל תפרט מה "יופיע" בו. כתוב את התוכן המלא עצמו:
+  את הטבלאות המלאות, את הקריטריונים המלאים, את המספרים המלאים.
+- התשובה שלך היא המדריך. אם היא מתארת מדריך במקום להיות אחד — היא שגויה.
+- אל תפתח בפנייה אליי ("הכנתי עבורך", "המדריך זמין"). התחל ישירות בכותרת.
+
 {books_directive()}"""
 
-    r = nb_run(["ask", prompt, "--json"], timeout=900)
-    if r.returncode != 0:
-        print(f"  [!] ask study_guide failed: {r.stderr[:200]}")
-        return False
-    try:
-        resp = json.loads(r.stdout)
-        answer = resp.get("answer", "")
-    except Exception as e:
-        print(f"  [!] parse study_guide failed: {e}")
-        return False
-    if not answer:
+    answer, bad = "", []
+    for attempt in range(3):
+        ask = prompt if attempt == 0 else (
+            prompt + "\n\nהתשובה הקודמת שלך נדחתה מהסיבות הבאות:\n"
+            + "\n".join(f"- {b}" for b in bad)
+            + "\nכתוב עכשיו את המדריך המלא עצמו, בגוף התשובה, מהכותרת ועד הסוף.")
+        r = nb_run(["ask", ask, "--json"], timeout=900)
+        if r.returncode != 0:
+            print(f"  [!] ask study_guide failed: {r.stderr[:200]}")
+            return False
+        try:
+            answer = json.loads(r.stdout).get("answer", "")
+        except Exception as e:
+            print(f"  [!] parse study_guide failed: {e}")
+            return False
+        if not answer:
+            return False
+        bad = _study_guide_defects(answer)
+        if not bad:
+            break
+        print(f"  [!] study guide attempt {attempt + 1}/3 rejected: "
+              f"{'; '.join(bad)}", file=sys.stderr)
+    if bad:
+        # Do NOT write it. The caller treats a missing study guide as fatal,
+        # which is right: a receipt on disk passes every existence check
+        # downstream and ships to the learner as the chapter's study material.
+        print("  [!!] study guide never came back as a guide; not writing it",
+              file=sys.stderr)
         return False
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)

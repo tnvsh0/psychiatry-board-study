@@ -12,10 +12,10 @@
   "page_space": "printed"
  },
  "Kaplan & Sadock Synopsis": {
-  "drive_file_id": "1eClPFQNWkyjaPPPCAfVUA-3nxzTX3ORF",
-  "drive_title": "Kaplan Sadock's Synopsis of Psychiatry by Robert Boland, Marcia Verdiun, Pedro Ruiz (z-lib.org).pdf",
+  "drive_file_id": "1RwzuraeBTTwM-DvQSNWLCLORUABHKA5n",
+  "drive_title": "Kaplan Sadock's Synopsis of Psychiatry by Robert Boland, Marcia Verdiun, Pedro Ruiz (z-lib.org) (1).pdf",
   "enabled": false,
-  "note": "Drive returns no downloadable bytes for this file id, and add-drive's ADD_SOURCE RPC times out; every copy that reached the notebook wedged in `error`. The other five books load fine on the same account, so this is the file, not the permissions. Re-upload the PDF to Drive and set enabled=true."
+  "note": "Re-uploaded 2026-08-20 and the Drive problem IS fixed: add-drive now returns rc=0 with type=pdf and no transport timeout, and drive_status reads 'active', is_drive_degraded false. NotebookLM still puts it in `error` during indexing, with no reason given, so the file is now readable but not ingestible - most likely over the per-source size limit at ~1500 pages of dense two-column text, where the five books that do index run 502-1156 pages. Splitting it in two would test that. Left disabled: it is the supplementary source, used only where Dulcan has no chapter."
  },
  "Stahl Pediatric": {
   "drive_file_id": "1-AyhlgXOQkQrkjeZjh_7NMAFZsMOZn4_",
