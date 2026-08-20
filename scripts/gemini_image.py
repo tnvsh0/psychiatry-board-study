@@ -612,6 +612,13 @@ def check_composition(client, image_path) -> dict:
         print(f"[DIAG] figures_even probe returned NO: {raw['figures_even']!r}",
               file=sys.stderr)
     out["_raw"] = raw  # include raw answers for report inspection
+    # Say how many probes actually ANSWERED. The caller scores a missing key as
+    # "no failure", so a probe outage used to read as a flawless frame: every
+    # key absent, zero failures counted, score 0, ship on the first try. A
+    # render nobody could look at must not be indistinguishable from a render
+    # that passed.
+    out["_probed"] = len(raw)
+    out["_asked"] = len(ask)
     return out
 
 

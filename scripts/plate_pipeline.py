@@ -121,6 +121,11 @@ def _assign_carriers(plate: spec.Plate, venue: dict) -> None:
         n.carrier = ranked[i] if i < len(ranked) else "a hand-lettered sign panel"
 
 
+# Big enough that an unverified render never beats a verified one and never
+# reads as a clean score, small enough to stay legible in a report.
+UNVERIFIED_PENALTY = 100
+
+
 def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
               out_dir: Path, dry_run: bool = False,
               numbers_mode: str = "composite") -> dict:
@@ -226,9 +231,18 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         prompt = spec.build_image_prompt(table, plate, gi.style_prefix(),
                                         chroma_plates=(numbers_mode == "composite"))
         if attempt >= 1 and best:
-            if best["missing_all"]:
+            # In composite mode the NUMBERS are not the illustrator's job — the
+            # compositor warps them onto the blank chroma plates afterwards.
+            # Asking for them back by value ("letter '70%' clearly") is asking
+            # for a hand-painted duplicate of a number that is about to be
+            # composited, which is the stray-numeral defect this mode exists to
+            # remove. A number whose plate went missing is chased below, as a
+            # PLATE. Only text strings are lettered here.
+            relettering = (best["text_missing"] if numbers_mode == "composite"
+                           else best["missing_all"])
+            if relettering:
                 prompt += ("\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n"
-                           + "\n".join(f'  "{s}"' for s in best["missing_all"]))
+                           + "\n".join(f'  "{s}"' for s in relettering))
             # A plate that was drawn but drawn tiny needs the opposite of "draw
             # it": it needs "draw the one you already drew, four times bigger".
             small = [r for r in best.get("plate_notes", [])
@@ -290,7 +304,13 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             nums = {"probed": True, "missing": [], "wrong": [], "extra": [],
                     "blank_plates_found": found, "blank_plates_wanted": len(painted),
                     "blank_plates": rows}
-            missing_nums = [n.paint for n in painted[found:]]
+            # Which plates failed, not how many. This was `painted[found:]`,
+            # using a COUNT as an OFFSET: with plates 1 and 3 drawn and 2 lost,
+            # found==2 named plate 3 as missing and let plate 2 pass. The retry
+            # then argued for the wrong number and the legend flagged the wrong
+            # fact as undrawn.
+            missing_nums = [n.paint for i, n in enumerate(painted)
+                            if i >= len(rows) or not rows[i]["ok"]]
         else:
             plate_notes = []
             nums = gi.check_numbers(client, png, required)
@@ -304,12 +324,22 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # treating strays as a hard reject means the build never converges. They
         # are logged as a warning, reported, and annotated in the legend, but
         # they do not drive retries. (See defect #2 in SKETCHY_V2_STATUS.md.)
-        # comp now contains `_raw` with the full probe answers for diagnosis — exclude it
-        comp_fails = sum(1 for k, v in comp.items() if k != "_raw" and not v)
-        score = len(missing_all) + comp_fails
+        # comp carries `_raw`, `_probed` and `_asked` for diagnosis — not gates
+        comp_fails = sum(1 for k, v in comp.items()
+                         if not k.startswith("_") and not v)
+        # A probe that could not RUN is not a probe that passed. Every gate here
+        # reports failure as an empty result: check_text_strings returns no
+        # missing strings, check_composition returns no keys. So a vision-API
+        # outage scored 0 on try 1 and shipped immediately, wearing the same
+        # "score 0" a genuinely clean render wears. The penalty keeps an
+        # unverified frame from short-circuiting the retry loop and from
+        # out-ranking a verified one that merely had a flaw.
+        verified = probed_txt and comp.get("_probed", 0) == comp.get("_asked", 0)
+        score = len(missing_all) + comp_fails + (0 if verified else UNVERIFIED_PENALTY)
 
         snap = {"numbers": nums, "text_missing": miss_txt, "composition": comp,
                 "missing_all": missing_all, "score": score,
+                "verified": verified,
                 "plate_notes": plate_notes,
                 "stray_warning": nums["extra"],  # logged, not a rejection
                 "bytes": png.read_bytes()}
