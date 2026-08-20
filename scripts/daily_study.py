@@ -1795,9 +1795,19 @@ def upload_release(tag, title, notes_md, assets):
     """
     env = os.environ.copy()
     if not env.get("GH_TOKEN"):
-        print("  [FAIL] GH_TOKEN not set — cannot create/upload Release. "
-              "Add GH_TOKEN to .env or environment, then re-run.")
-        return {"url": "", "assets": []}
+        # Every call here is `gh`, and gh authenticates from its own keyring.
+        # Demanding GH_TOKEN threw away a whole chapter's work at the last
+        # step - 33 minutes of generation, 95MB of audio - while `gh auth
+        # status` was reporting a valid token with repo scope the entire time.
+        # Ask gh for it rather than requiring a second copy in .env.
+        t = subprocess.run(["gh", "auth", "token"], capture_output=True,
+                           text=True, encoding="utf-8", errors="replace")
+        if t.returncode == 0 and t.stdout.strip():
+            env["GH_TOKEN"] = t.stdout.strip()
+        else:
+            print("  [FAIL] no GitHub credentials — set GH_TOKEN or run "
+                  "`gh auth login`, then re-run.")
+            return {"url": "", "assets": []}
 
     # Check if release exists
     r = subprocess.run(
