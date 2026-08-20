@@ -33,6 +33,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -77,6 +79,12 @@ def base_url() -> str:
 
 
 def run(cmd, **kw):
+    # gcloud ships as gcloud.cmd on Windows, and CreateProcess will not find a
+    # bare "gcloud" the way a shell would. Resolve argv[0] to a real path so
+    # this works the same from PowerShell, Git Bash and a detached run.
+    exe = shutil.which(cmd[0])
+    if exe:
+        cmd = [exe] + list(cmd[1:])
     return subprocess.run(cmd, capture_output=True, text=True,
                           encoding="utf-8", errors="replace", **kw)
 
@@ -97,13 +105,25 @@ def load_schedule() -> list[dict]:
     return sched["days"]
 
 
-def released_chapters() -> dict[int, dict]:
+def _slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")
+
+
+def released_chapters(days: list[dict]) -> dict[int, dict]:
     """Chapters whose GitHub release carries a real audio.mp3.
 
-    Reads asset SIZE, not just its presence: a zero-byte or truncated upload is
-    exactly the kind of thing that would otherwise reach the feed as a silent
-    0-second episode.
+    Two things are checked that a naive version would not.
+
+    The tag's SLUG has to still match the chapter it claims. The curriculum was
+    renumbered - ADHD moved from 16 to 17 - and the old `study-016-adhd-core`
+    release is still sitting there. Trusting the number alone would publish
+    ADHD audio titled "יום 016: עקרונות פסיכופרמקולוגיה בילדים", which is worse
+    than not publishing it: a listener has no way to tell.
+
+    And audio is admitted by SIZE, not by presence, because a truncated or
+    zero-byte upload reaches a subscriber as a silent episode.
     """
+    by_index = {d["index"]: d for d in days}
     r = run(["gh", "release", "list", "--repo", GH_REPO, "--limit", "300",
              "--json", "tagName,createdAt"])
     if r.returncode != 0:
@@ -116,6 +136,16 @@ def released_chapters() -> dict[int, dict]:
         try:
             idx = int(tag.split("-")[1])
         except (IndexError, ValueError):
+            continue
+        day = by_index.get(idx)
+        if not day:
+            print(f"  [!] {tag}: no chapter {idx} in the schedule; skipping",
+                  file=sys.stderr)
+            continue
+        want, got = _slug(day.get("title_en", "")), tag.split("-", 2)[-1]
+        if want != got:
+            print(f"  [!] {tag}: chapter {idx} is now '{want}', not '{got}' — "
+                  f"stale release, skipping", file=sys.stderr)
             continue
         a = run(["gh", "release", "view", tag, "--repo", GH_REPO, "--json", "assets"])
         if a.returncode != 0:
@@ -245,7 +275,7 @@ def main() -> int:
         return 0
 
     days = load_schedule()
-    chapters = released_chapters()
+    chapters = released_chapters(days)
     print(f"{len(chapters)} chapter(s) have publishable audio")
     if not chapters:
         print("nothing to publish yet")
