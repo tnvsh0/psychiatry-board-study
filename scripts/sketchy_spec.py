@@ -503,6 +503,32 @@ def normalize_table(table: dict, aggressive: bool = False) -> list[str]:
     """
     notes: list[str] = []
     els = table.get("elements") or []
+
+    # The zone list is the director's OWN vocabulary, not a contract we handed
+    # it, so a zone that is not on the list is a bookkeeping slip and not a
+    # disagreement. Chapter 28 lost all three attempts to one: the director
+    # wrote `zones` in English, `zones_he` in Hebrew, and then named every
+    # element's zone in Hebrew. Map it back by index where the Hebrew list
+    # gives the answer, and otherwise take the director at its word and add it.
+    zones = list(table.get("zones") or [])
+    zones_he = list(table.get("zones_he") or [])
+    by_he = {h.strip().casefold(): en
+             for h, en in zip(zones_he, zones) if h and en}
+    known = {z.strip().casefold() for z in zones}
+    for e in els:
+        z = (e.get("zone") or "").strip()
+        if not z or z.casefold() in known:
+            continue
+        if z.casefold() in by_he:
+            e["zone"] = by_he[z.casefold()]
+            notes.append(f"{e.get('id', '?')}: zone {z!r} mapped to "
+                         f"{e['zone']!r}")
+        else:
+            zones.append(z)
+            known.add(z.casefold())
+            notes.append(f"{e.get('id', '?')}: zone {z!r} added to the list")
+    table["zones"] = zones
+
     taken = {(e.get("cue") or "").strip().lower() for e in els}
     for e in els:
         cue = (e.get("cue") or "").strip()
@@ -1020,6 +1046,17 @@ def _test_table_normalization() -> None:
     ok = not cut.split()[-1].lower() in ("where", "the", "to")
     print(f"  [{'OK' if ok else 'FAIL'}] hard cut does not end on a function "
           f"word -> {cut!r}")
+
+    # a Hebrew zone name is mapped back to its English twin, not rejected
+    t = {"zones": ["the mixing floor", "the pit yard"],
+         "zones_he": ["רצפת הערבוב", "רחבת הבורות"],
+         "elements": [{"id": "e1", "zone": "רחבת הבורות"},
+                      {"id": "e2", "zone": "the loading bay"}]}
+    normalize_table(t)
+    mapped = t["elements"][0]["zone"] == "the pit yard"
+    added = "the loading bay" in t["zones"]
+    print(f"  [{'OK' if mapped and added else 'FAIL'}] a Hebrew zone maps to "
+          f"its twin; an unknown zone joins the list")
 
     # the asserting verb is rewritten only on the last rung, and only then
     asserted = "הלוח — " + "מילה " * 8 + "מסמל את המצב"

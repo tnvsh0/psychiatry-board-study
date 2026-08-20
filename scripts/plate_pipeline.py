@@ -132,6 +132,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
               f"{sum(1 for f in plate.facts for n in f.numbers if n.drawn)} painted numbers]")
         return report
 
+    out_dir.mkdir(parents=True, exist_ok=True)
     client = gi._get_client(None)
     if client is None:
         raise SystemExit("no GEMINI_API_KEY")
@@ -171,12 +172,22 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
               file=sys.stderr)
         for e in errs[:20]:
             print(f"      - {e}", file=sys.stderr)
+        # Keep the rejected candidate. Each blocker costs a full render cycle
+        # to discover from a log line, and the log only ever shows the errors,
+        # never the answer that produced them. With the candidate on disk every
+        # remaining rejection class can be found in one pass, offline.
+        try:
+            (out_dir / f"_rejected_{plate.name}_{attempt + 1}.json").write_text(
+                json.dumps({"errors": errs, "soft": soft, "normalized": fixed,
+                            "table": cand}, ensure_ascii=False, indent=1),
+                encoding="utf-8")
+        except Exception:
+            pass  # diagnostics must never take the run down
     if table is None:
         report["error"] = f"director never produced a valid table: {errs[:3]}"
         return report
 
     # ── render with the degradation ladder ─────────────────────────────────
-    out_dir.mkdir(parents=True, exist_ok=True)
     png = out_dir / f"sketchy_{plate.name}.png"
     required = [(n.paint, n.carrier)
                 for f in plate.facts for n in f.numbers if n.drawn]
