@@ -25,3 +25,5 @@ _venue_input.json
 # authoring and review live in them, and they were only ever on one machine.
 # _venue_audit.json stays ignored: it is derived, rebuilt by _venue_audit.py.
 _venue_audit.json
+_feed/
+_bulk/ft/
