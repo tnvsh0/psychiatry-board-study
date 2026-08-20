@@ -88,7 +88,7 @@ def build_narration_brief(table: dict, plate, topic: str) -> str:
             lines.append(f"    - {e['cue']}{painted} :: {said}"
                          + (f"  [why: {hook}]" if hook else ""))
 
-    figures = [f"{n.op}{n.paint}".strip()
+    figures = [spec.figure_text(n)
                for f in plate.facts for n in f.numbers]
     figures = list(dict.fromkeys(figures))
 
@@ -379,7 +379,7 @@ def main() -> int:
 
     table = _demo_table(plate)
     brief = build_narration_brief(table, plate, a.topic)
-    figures = [f"{n.op}{n.paint}".strip() for f in plate.facts for n in f.numbers]
+    figures = [spec.figure_text(n) for f in plate.facts for n in f.numbers]
     figures = list(dict.fromkeys(figures))
 
     if a.dry_run:

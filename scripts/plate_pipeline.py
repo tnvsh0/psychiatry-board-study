@@ -390,7 +390,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             report["compositing"] = comp_mod.composite_plate(png, slots)
 
     # ── legend, quiz, narration ────────────────────────────────────────────
-    undrawn = [f"{n.op}{n.paint}".strip()
+    undrawn = [spec.figure_text(n)
                for f in plate.facts for n in f.numbers if not n.drawn]
     legend = spec.render_legend(table, plate, topic, undrawn=undrawn)
     (out_dir / f"sketchy_{plate.name}.txt").write_text(legend, encoding="utf-8")
@@ -398,7 +398,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         spec.render_quiz(legend), encoding="utf-8")
 
     brief = narr.build_narration_brief(table, plate, topic)
-    figures = list(dict.fromkeys(f"{n.op}{n.paint}".strip()
+    figures = list(dict.fromkeys(spec.figure_text(n)
                                  for f in plate.facts for n in f.numbers))
     script = narr.write_narration(client, brief, figures)
     if script:

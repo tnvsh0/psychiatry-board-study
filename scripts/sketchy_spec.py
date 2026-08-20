@@ -299,6 +299,21 @@ def strip_citations(text: str) -> str:
     return _CITE.sub(" ", text or "").strip()
 
 
+
+def figure_text(n) -> str:
+    """An operator joined to its number the way a reader expects.
+
+    ">=5/9" is right, but the Hebrew operator is a WORD - "עד 8wk", not
+    "עד8wk". The glued form reached the narration brief as a figure that then
+    could not be found in the spoken script, because no narrator says it that
+    way, and the check reported it as an unspoken figure on every plate that
+    had one.
+    """
+    op = (getattr(n, "op", "") or "").strip()
+    sep = " " if op and op[-1].isalpha() else ""
+    return f"{op}{sep}{n.paint}".strip()
+
+
 def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
     """Extract every numeric value from a fact and normalise it for painting.
 
