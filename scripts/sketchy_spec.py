@@ -268,6 +268,24 @@ def _is_identifier(text: str, m: re.Match) -> bool:
     return bool(re.match(r"-[A-Za-z]", tail))
 
 
+# Every fact carries its source, "(DSM p.183)" or "[Dulcan p.735-736]", because
+# the study guide is meant to be checkable against the books. Those page numbers
+# were then read as QUANTITIES. Chapter 29's criteria plate composited '183'
+# under the tag MIN - the tag that means "diagnostic threshold" - so the plate
+# taught that the threshold for major depression is 183, and '185' beside it as
+# a bare number. The citation has to come off before the digits are counted.
+_CITE = re.compile(
+    r"[\[(]\s*(?:DSM(?:-5(?:-TR)?)?|Dulcan|Stahl[^\])]{0,24}|Synopsis|Kaplan"
+    r"[^\])]{0,20}|סילבוס|Syllabus)[^\])]{0,30}?"
+    r"(?:p\.?|pp\.?|עמ'?|ch\.?)\s*[\dIVXivx][^\])]{0,24}[\])]",
+    re.IGNORECASE)
+
+
+def strip_citations(text: str) -> str:
+    """Drop source citations so their page numbers are not read as data."""
+    return _CITE.sub(" ", text or "").strip()
+
+
 def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
     """Extract every numeric value from a fact and normalise it for painting.
 
@@ -277,6 +295,7 @@ def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
     caption asserted 1:2. A ratio is either painted literally on one carrier
     or it stays in the legend.
     """
+    text = strip_citations(text)
     out: list[NumberSpec] = []
     prio = _priority(fid)
     for m in _NUM.finditer(text):
