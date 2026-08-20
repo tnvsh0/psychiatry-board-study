@@ -1020,50 +1020,59 @@ def build_image_jobs(aspects, facts):
     return jobs
 
 
-# Each book is found in Drive by a SEARCH STRING, not a filename. The filenames
-# in Drive are whatever the owner's downloads were called
-# ("Emailing Dulcans Textbook of Child and Adolescent Psychiatry, 3e.pdf"), and
-# the tidy names this file used to assume ("dulcan.pdf") match nothing. Every
-# string below was verified against the real Drive on 2026-08-20.
-DRIVE_BOOK_QUERIES = [
-    ("DSM-5-TR", "DSM-5-TR"),
-    ("Dulcan", "Dulcan"),
-    ("Kaplan & Sadock Synopsis", "Kaplan Sadock Synopsis"),
-    ("Stahl Essential", "Stahl Essential Psychopharmacology"),
-    ("Stahl Pediatric", "Prescriber's Guide Children Adolescents"),
-    ("Syllabus", "syllabus"),
-]
+# The six textbooks live in the owner's Drive and are attached to every
+# per-day notebook BY REFERENCE. The mapping is by Drive FILE ID, not by
+# filename and not by search string:
+#
+#   - filenames are whatever the owner's downloads were called
+#     ("Emailing Dulcans Textbook of Child and Adolescent Psychiatry, 3e.pdf"),
+#     so the tidy names this file used to assume matched nothing;
+#   - `source add-research --from drive` looked like it worked and did not. It
+#     attached the drive.google.com URL as a WEB PAGE, NotebookLM's crawler
+#     fetched it unauthenticated, and every "textbook" was 544 characters of
+#     "Sign in to continue to Google Drive". Six green [OK] lines, status
+#     "ready", and a Google login form as the source of a psychiatry course.
+#
+# `source add-drive <file-id> --mime-type pdf` attaches the real document:
+# type "pdf", drive_file_id set, and the notebook answers with correct page
+# numbers out of the book itself.
+DRIVE_BOOKS_PATH = REPO_ROOT / "schedule" / "drive_books.json"
+
+
+def load_drive_books():
+    with open(DRIVE_BOOKS_PATH, encoding="utf-8") as fh:
+        return json.load(fh)
 
 
 def add_textbook_pdfs_to_day_notebook(nb_id):
-    """Attach all six textbooks to the per-day notebook BY DRIVE REFERENCE.
+    """Attach all six textbooks to the per-day notebook by Drive reference.
 
-    The books stay whole and the notebook stays fresh: a new notebook per
-    chapter (so NotebookLM cannot drift into last chapter's context) with every
-    book available to it (so it can survey the topic itself instead of being
-    handed our own page ranges back). Uploading the PDFs per chapter would have
-    been ~600MB x 141 chapters; a Drive import is a reference and costs nothing.
-
-    Returns the count of books actually attached. The caller MUST treat a short
-    count as fatal: a book named in the prompt but missing from the notebook
-    does not error, it makes NotebookLM invent page numbers.
+    Returns the count attached. The caller MUST treat a short count as fatal: a
+    book named in the prompt but missing from the notebook does not error, it
+    makes NotebookLM invent page numbers.
     """
+    books = load_drive_books()
     added = 0
-    for label, query in DRIVE_BOOK_QUERIES:
-        r = nb_run(["source", "add-research", query, "--from", "drive",
-                    "--import-all", "-n", nb_id, "--timeout", "180", "--json"],
-                   timeout=300)
+    for label, meta in books.items():
+        r = nb_run(["source", "add-drive", meta["drive_file_id"], label,
+                    "-n", nb_id, "--mime-type", "pdf", "--json"], timeout=300)
         ok = False
-        try:
-            data = json.loads(r.stdout[r.stdout.index("{"):])
-            got = data.get("imported_sources") or []
-            ok = bool(got)
-            if ok:
-                print(f"    [OK] {label}: {got[0]['title'][:58]}")
-        except Exception:
-            pass
-        if not ok:
-            print(f"    [!!] {label}: NOT attached (query {query!r})")
+        if r.returncode == 0:
+            try:
+                data = json.loads(r.stdout[r.stdout.index("{"):])
+                src = data.get("source") or {}
+                # A real Drive PDF has type "pdf" and a drive_file_id. A source
+                # that came back as a web_page is the login-page failure above.
+                ok = src.get("type") == "pdf" and bool(src.get("drive_file_id"))
+                if not ok:
+                    print(f"    [!!] {label}: attached as {src.get('type')!r}, "
+                          f"not a Drive PDF")
+            except Exception as e:
+                print(f"    [!!] {label}: could not parse response: {e}")
+        else:
+            print(f"    [!!] {label}: rc={r.returncode} {(r.stderr or '')[:120]}")
+        if ok:
+            print(f"    [OK] {label}")
         added += ok
     return added
 
@@ -1549,7 +1558,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         n_sources = count_notebook_sources(day_nb_id)
         # Books now arrive by Drive reference, so the old count of local PDF
         # files on disk is meaningless — expect one source per Drive query.
-        min_expected = 1 + len(DRIVE_BOOK_QUERIES)
+        min_expected = 1 + len(load_drive_books())
         if 0 < n_sources < min_expected:
             print(f"  Notebook has only {n_sources} source(s) (expected {min_expected}). Retrofitting with textbook PDFs...")
             added = add_textbook_pdfs_to_day_notebook(day_nb_id)
@@ -1592,9 +1601,9 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         # That already shipped once (a day-16 study guide cited "Stahl
         # Pediatric pp. 600-612" in a 525-page book). Refuse to build a chapter
         # on an incomplete notebook.
-        if n_pdfs < len(DRIVE_BOOK_QUERIES):
+        if n_pdfs < len(load_drive_books()):
             raise RuntimeError(
-                f"only {n_pdfs}/{len(DRIVE_BOOK_QUERIES)} textbooks attached to "
+                f"only {n_pdfs}/{len(load_drive_books())} textbooks attached to "
                 f"notebook {day_nb_id}. Refusing to generate: the prompts name "
                 f"all six books, and a missing one becomes invented citations.")
 
