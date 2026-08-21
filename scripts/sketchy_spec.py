@@ -662,6 +662,31 @@ def normalize_table(table: dict, aggressive: bool = False,
             e.pop("relation", None)
             e.pop("relates_to", None)
 
+    # A relation verb outside the closed set is bookkeeping, not disagreement
+    # about the picture. Chapter 29's third plate was lost entirely because the
+    # director answered `relation: "is not directly responsible for the
+    # clinical delay caused by"` — a whole English clause where a verb belongs.
+    # Three re-asks later the plate was abandoned, taking 21 facts with it.
+    #
+    # Dropping it is also the SAFE reading. The synonyms map near-misses onto
+    # the real verbs, but an arbitrary clause can mean anything, including a
+    # negation like this one, and guessing ACTS_ON from it would have the
+    # illustrator draw the opposite of what was meant.
+    for e in els:
+        rel = (e.get("relation") or "").strip()
+        if not rel:
+            continue
+        key = rel.upper().replace(" ", "_")
+        if key in RELATIONS:
+            e["relation"] = key
+        elif RELATION_SYNONYMS.get(key):
+            e["relation"] = RELATION_SYNONYMS[key]
+        else:
+            notes.append(f"{e.get('id', '?')}: dropped an unmappable relation "
+                         f"{rel[:48]!r}")
+            e.pop("relation", None)
+            e.pop("relates_to", None)
+
     # Over the relation cap, keep the first MAX_RELATIONS and flatten the rest
     # to plain adjacency. The cap exists so the plate does not become a plot,
     # and the plate is no more of a plot with six relations than with nine.
