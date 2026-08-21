@@ -84,7 +84,13 @@ if not Path(NOTEBOOKLM_BIN).exists():
 WAIT_INDEX_S = 60
 SCOPE_INDEX_WAIT_S = 60  # wait for per-aspect scope sources to index before scoped infographic gen
 POLL_INTERVAL_S = 60
-ARTIFACT_MAX_WAIT_S = 60 * 60  # 60 min per batch (audio --length long is slower)
+# Chapter 29 spent 60 of its 109 minutes here, waiting for a video, a quiz and
+# a set of flashcards that never arrived, then published without them anyway.
+# An hour of dead time per chapter is 141 hours across the course, paid for
+# nothing. Video, quiz and flashcards normally land within a few minutes; when
+# they do not, the useful thing is to record the task ids and collect them
+# later, not to sit on the connection.
+ARTIFACT_MAX_WAIT_S = int(os.environ.get("ARTIFACT_MAX_WAIT_S", 20 * 60))
 
 # Source PDFs uploaded to each per-day notebook so NotebookLM can cite page
 # numbers in the study guide. Configurable via env var so the path differs
@@ -973,6 +979,7 @@ def nb_run(args, timeout=120, retries=2):
 
 
 def use_notebook(nb_id):
+    os.environ["_CURRENT_NB"] = str(nb_id or "")
     r = nb_run(["use", nb_id], timeout=30)
     if r.returncode != 0:
         raise RuntimeError(f"notebooklm use failed: {r.stderr[:300]}")
@@ -1778,6 +1785,7 @@ def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
     results = {}
     start = time.time()
 
+    stuck_note = None
     while pending and (time.time() - start) < max_wait:
         time.sleep(POLL_INTERVAL_S)
         elapsed = int(time.time() - start)
@@ -1801,6 +1809,25 @@ def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
 
     if pending:
         print(f"  [!] Timed out for: {list(pending.values())}")
+        # Keep the ids. A timed-out artifact is usually still being built on
+        # NotebookLM's side, so it is recoverable later — but only if we wrote
+        # down what to collect. Chapter 29 lost a video, a quiz and a set of
+        # flashcards this way and there was nothing afterwards to say they had
+        # ever been asked for.
+        try:
+            pend_file = REPO_ROOT / "_bulk" / "pending_artifacts.json"
+            pend_file.parent.mkdir(parents=True, exist_ok=True)
+            book = json.loads(pend_file.read_text(encoding="utf-8")) if pend_file.exists() else {}
+            book.update({aid: {"kind": kind,
+                               "notebook": os.environ.get("_CURRENT_NB", ""),
+                               "day": os.environ.get("_CURRENT_DAY", "")}
+                         for aid, kind in pending.items()})
+            pend_file.write_text(json.dumps(book, ensure_ascii=False, indent=1),
+                                 encoding="utf-8")
+            print(f"  [i] recorded {len(pending)} unfinished artifact(s) in "
+                  f"{pend_file.name} for later collection")
+        except Exception as e:
+            print(f"  [!] could not record pending artifacts: {e}", file=sys.stderr)
         for aid, kind in pending.items():
             results[aid] = (kind, "timeout", None)
     return results
@@ -1945,6 +1972,7 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     tag = f"study-{day_index:03d}-{slug}"
     day_dir = output_dir / f"day-{day_index:03d}"
     day_dir.mkdir(parents=True, exist_ok=True)
+    os.environ["_CURRENT_DAY"] = str(day_index)
     # Anything older than this instant belongs to a previous attempt.
     run_started = time.time() - 1
 
