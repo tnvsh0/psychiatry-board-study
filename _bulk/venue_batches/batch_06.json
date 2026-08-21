@@ -1,0 +1,197 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 76,
+   "title_en": "Bulimia Nervosa + Binge Eating Disorder",
+   "title_he": "Bulimia Nervosa + Binge Eating Disorder",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_feeding_eating": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "OX ROAD BOXING CLUB",
+    "place": "An amateur boxing club in a hired church hall on weigh-in night: a ring platform up on scaffold, a line of heavy bags hung from a beam, a beam scale on a rubber mat with a queue standing at it, kit bags along the wall bars and a trestle table of food and drink laid out for afterwards",
+    "place_category": "amateur boxing club",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Bulimia is Greek ox-hunger, bous limos, and the ox is already sitting inside the word boxing, so the club's street name carries the diagnosis's own picture without printing it, in the mid-word-capital manner of expreSS tRIps; the club's fluorescent ox mascot on the end wall is then the fixed fluoxetine glyph standing exactly where this chapter needs it. The venue is also the one ordinary place where the whole take-it-in-then-get-rid-of-it cycle is a normal evening's work — sweat tops, spit buckets, the steam-room door, a scale that judges everything, and a table of food to fall on the moment the weigh-in is over — done by people who look completely unremarkable, which is the clinical point.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 79,
+   "title_en": "Sleep development in children + adolescent shift",
+   "title_he": "התפתחות שינה בילדים + תזוזת מתבגרים",
+   "aspects": [
+    "sleep_architecture_by_age",
+    "sleep_needs",
+    "circadian_phase_delay"
+   ],
+   "required_tokens": {
+    "CONVENIENCE_STORE_7": "{'cue': '7-Eleven open 24/7', 'prop': 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty."
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PHASE HILL OBSERVATORY",
+    "place": "A small municipal observatory in a town park on a public open night: the dome with its slit rolled back over the lawn, a row of borrowed telescopes set out on the grass, the warm room with its log desk and clock board, and the park gate standing open onto the road.",
+    "place_category": "public observatory",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Phase is the same word in both trades: an observatory's whole business is phase, and a delayed phase is the chapter. The name is therefore an exact homonym planted in a place name a real observatory would carry, and it prints no clinical word at all. The choice earns its keep because the venue owns, as ordinary equipment, the two objects that make the adolescent shift explicable rather than merely stated. First, two clocks hang on the same warm-room wall reading different times — sidereal and civil — because the sky keeps a period that is not twenty-four hours; that is the internal clock against the school clock, and the discrepancy is an instrument reading, not a mood. Second, the moonrise table pinned beside them lists a rise time roughly fifty minutes later on every successive line, so the picture contains a printed, native, undeniable object whose whole content is a clock that runs later every day. Nothing else in the course supplies that. Sleep architecture by age is literal depiction inside one shared activity: the smallest visitors swing their scopes all over the sky and never settle, which is REM-heavy infant sleep; the school-age children are the ones standing guard over the hour-long exposure that must not be jogged, which is slow-wave; the adults get short broken looks between clouds. Required hours by age become the booking board of session lengths, a properly numbered carrier. The venue is also open at night in a town, which is the only reason the fixed 24-hour store can stand across the road without contrivance — and the sixth-formers drifting out of the gate towards it while everyone else is packing up is the phase delay and its consequence in one movement.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 80,
+   "title_en": "Eating disorders intensive: FBT + medical stabilization",
+   "title_he": "הפרעות אכילה: FBT + ייצוב רפואי",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications",
+    "medical_stabilization",
+    "admission_criteria"
+   ],
+   "required_tokens": {
+    "DSM_feeding_eating": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "FIRE BRIGADE TRAINING",
+    "place": "A small-town fire station at supper time: the engine backed into the open bay, the long crew table laid for the shift meal in the day room, and the drill tower in the yard behind",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "F-B-T are the initials of an entirely ordinary painted door legend, FIRE BRIGADE TRAINING, and the firehouse then donates Family-Based Treatment's whole method: the watch eats one supervised meal at one table, the officer at the head of the table decides how much goes on every plate (phase 1 - parents take charge of refeeding), the rookie is handed the ladle later (phase 2 - handing control back), and the framed notice 'PUT IT OUT FIRST - ASK WHY LATER' is FBT's agnostic stance as station-house humour. Medical stabilization is the pump panel: open the line slowly or it bursts from cold - start low, go slow - with the pressure gauge as the native number carrier and the stencilled PHOS drum on the foam shelf as the phosphate that must be watched.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 85,
+   "title_en": "Stimulant Use Disorder",
+   "title_he": "הפרעת שימוש בסטימולנטים",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_substance_addictive": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "UPPER FIELD HONEY",
+    "place": "A commercial apiary in a field on a hot afternoon: a double row of hive stacks on trestle stands, a smoker going at the end of the row, an uncapping bench and a spinning extractor under an open-sided shed, syrup feeders stacked by the gate and jars being labelled on a trestle",
+    "place_category": "beehive apiary",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Uppers is the class word, and the beekeeper's own name for the boxes stacked on top is the supers — the upper boxes — so an ordinary field name, Upper Field, carries the class without naming a single drug and without printing the disorder. The apiary then supplies the chapter's clinical picture out of standard kit rather than invention: a lit smoker at every entrance, the buzz itself, bees walking over a bare forearm for formication, an extractor that will not stop spinning, and a colony worked past what it could carry lying toppled in a heap of empty boxes with its keeper asleep on the grass beside it, which is the crash.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 89,
+   "title_en": "Hallucinogen + Caffeine + Inhalants",
+   "title_he": "הלוצינוגנים + קפאין + שאיפות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_substance_addictive": "",
+    "5-HT2A_receptor": "TAROT_2A"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "LIBERTY CAP FARM",
+    "place": "A mushroom farm's growing tunnel on the picking shift: a long dark shed with four tiers of wooden shelf-beds up both walls, low lamps strung along the picking rail, the misting line fogging along the ridge, the grading table with its scales halfway down, and the break table with the urn on it by the doors at the far end.",
+    "place_category": "mushroom farm",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "The liberty cap is the actual field name of the psilocybin mushroom, so the sign is the drug written in plain English on an entirely ordinary farm fascia — the Chateau Tyramine move — while the business under it grows nothing but button mushrooms. The venue was chosen because a growing tunnel supplies, as routine agriculture, the three things this ragbag chapter otherwise cannot get into one frame. A bed does not crop once: it comes back weeks after it was cropped out, in what the trade itself calls a flush, so perception coming back long after the substance is gone has a native noun and a native object, and the tunnel is full of beds at different stages of it. White mycelium threads run through every tray, and a tray in which those white threads have been killed off in patches is white-matter damage drawn as an ordinary spoiled crop rather than as a diagram. And the tunnels are lettered, so the dark one with the door ajar at the end is Tunnel K, a hole a worker is standing in and not answering out of — dissociation as an address rather than a mood. The inhalant inventory is native and unforced: sterilant aerosols, the compost steam line, plastic spawn bags by the hundred, and a CO2 alarm on the wall that is there because the room genuinely can put you down. Caffeine gets the break table, which on a night picking shift is a real institution — the urn, the jar, the tablet packet, one picker jittering over five cups and another holding her head because the urn ran dry — and the controlled-items list pinned by the door pointedly does not have tea or coffee on it, which is the DSM point about caffeine drawn as a posted rule. The break table also seats the fixed tarot reader without contrivance, because pickers read cards on their break.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 93,
+   "title_en": "Schizotypal Personality Disorder",
+   "title_he": "הפרעת אישיות סכיזוטיפלית",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "schizotypal_pd": "Personality Inn — Cluster A room",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "place-category collision on 'junkshop'"
+   ],
+   "current": {
+    "sign_text": "TIPI TOP BRIC-A-BRAC",
+    "place": "A second-hand bric-a-brac shop on a small-town parade on Saturday, next door but one to the bowling alley: a long deal table of unsorted boxes down the middle, rails of mismatched coats along one wall, floor-to-ceiling shelves of crockery, lamps and paperbacks behind the counter, and a child's play tipi pitched in the toy corner at the back with a lamp burning inside it.",
+    "place_category": "bric-a-brac shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Typal to tipi is the course's own fixed derivation for this disorder, and Tipi Top is the sort of cheery name a junk shop on a parade genuinely carries, so the fascia carries the phonetic hook and the actual tipi stands pitched at the back of the same room — the pun said twice, once in lettering and once in canvas. The shop was chosen over a camping venue because it is the only ordinary place on earth where every single object the fixed glyph requires is already the stock: the tarot deck under a rubber band, the crystal ball on a doily, the lava lamp, the dream catcher, the astrological chart, the occult paperbacks and the four layers of mismatched donated clothing that a rummage produces on a real customer's back. Eccentric appearance therefore needs no invention — it is what the venue does to people. The criteria that are hardest to draw are the ones the shop supplies best: a donated television, plugged in to prove it works, with its presenter apparently talking straight at the one customer who has stopped dead in front of it, is an idea of reference by literal depiction; the foxed mirror and the crackling transistor are unusual perceptual experiences that anyone can verify are simply a bad mirror and a bad radio, which is the point of the differential — nothing here is actually psychotic, everything works once you wind it. The hand-lettered labels reading nothing in particular are vague speech; the volunteer watching the door over the till is suspiciousness; and the customer hovering on the step, checking behind her and not coming in, is the social anxiety that does not settle with familiarity. The parade is a declared adjacency: the bowling alley two doors along is the schizophrenia chapter, and the spectrum relationship is drawn as which premises are on the same street.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 137,
+   "title_en": "School-based interventions and consultation",
+   "title_he": "התערבויות וייעוץ במסגרת בית הספר",
+   "aspects": [
+    "core_principles",
+    "practice_method",
+    "indications",
+    "practical_use",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "ISLAND END PITCHES",
+    "place": "A municipal playing field on a Sunday-morning youth training session: two pitches marked out on one field, portable goals, a rail and hoarding line along the touchline with parents behind it, and a low brick changing block with its street number by the door.",
+    "place_category": "municipal playing fields",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "I, E and P head the three words of a completely ordinary municipal ground name — grounds really are named for the corner of the parish they sit in — so the education plan every child psychiatrist is examined on becomes the largest lettering in the frame with no medical word on it, and the changing block's own street number carries the other plan without inventing a prop. The ground was chosen because tiered prevention is what youth coaching already does and can be seen doing: the whole squad in one colour of bib working the same grid, a small group pulled aside to a second grid in a second colour, one child working one-to-one with a coach at the far goal in a third — all three tiers visible at once, in one frame, at the same session. Accommodation is this trade's own habit too: a smaller ball, a lower goal and a longer run at it for the child who needs one, with the adaptation card pinned to the kit bag. The registration table under the awning issuing a pass that lets a child play out of his age band is the eligibility and placement committee; the welfare officer's sealed envelope of forms, opened to the coach only as far as it says what he must actually do, is confidentiality against need-to-know; the conduct board on the rail and the line the parents must stand behind are the behaviour code; the visiting coach signing the clipboard at the gate is the consultant arriving from outside the system; and the scout at the rail writing one name down is early identification and referral.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 139,
+   "title_en": "Psychodynamic: Anna Freud, Klein, Kohut, Mentalization",
+   "title_he": "פסיכודינמי: Anna Freud, Klein, Kohut, Mentalization",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {
+    "kohut_self_psychology": "(standalone)",
+    "anna_freud_defenses": "(standalone)",
+    "winnicott_holding": "(standalone)",
+    "fonagy_mentalization": "(standalone)",
+    "klein_positions": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "KLEIN PUPPET WORKS",
+    "place": "A puppet-maker's workshop on the evening shift: a long carving bench of vices and glue pots down the middle, an overhead stringing rail above it hung with marionettes on control bars, a wall of shallow parts trays to the ceiling, a full-length rehearsal mirror at the far end and wood shavings underfoot.",
+    "place_category": "puppet workshop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "KLEIN is the theorist's surname used exactly as a maker's trade name is used, and for this audience it is also simply the word small — a workshop that makes small people. The workshop then pays the rest of the chapter out of its own furniture without inventing anything. Klein's part-objects are the shallow trays sorted by part: a tray of heads, a tray of hands, a tray of glass eyes, the object existing only in pieces; the depressive position is the mending bench where a snapped puppet is clamped and glued back into one whole thing, which is Klein's own word, reparation. Anna Freud's hierarchy of defences is the three-step drying rack, rough blanks at the bottom, varnished faces on top. Kohut's three selfobject needs are three ordinary workshop pairings: a maker holding a puppet up to the mirror, an apprentice under the tall maestro marionette hung highest on the rail, and two identical twins sharing one control bar. And mentalization is the trade itself — a hand up inside a hollow head, a fixed wooden face that has no mind of its own, and a second person who must read one into it and answer it.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 140,
+   "title_en": "Object relations: Winnicott, Mahler, Kernberg",
+   "title_he": "יחסי אובייקט: ויניקוט, מאהלר, קרנברג",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "WINNICOTT LENDING LIBRARY",
+    "place": "A municipal public lending library on a wet afternoon: a long issue desk with a date-stamp block, a returns chute and its trolley, tall shelving bays running back into the room, a card-catalogue cabinet on the end wall and a low children's corner behind a half-gate.",
+    "place_category": "lending library",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A lending library is the only ordinary building whose entire trade is objects leaving their owner and coming back, which is what the chapter is about, and the sign carries the theorist's name the way every municipal library carries its donor's. The mapping is exact and free: object constancy is the card-catalogue drawer, where a card stands for a book that is not on the shelf and is not lost — the internal representation of an absent object, filed in alphabetical order. Mahler's whole sequence is the loan cycle: the toddler in the children's corner who carries one picture book out to a parent at the desk and straight back to the low shelf is practicing and refuelling; the RESERVED shelf behind the desk holds a named item until its owner comes, which is Winnicott's holding, and the taped, mended, much-borrowed picture book still in circulation is good-enough. The transitional object is that same book, refused at the desk by the child who brought it in. True and false self is the bright dust jacket over the drab cloth board underneath. Kernberg gets the returns desk: two triage trays, one to re-shelve and one to withdraw, with nothing allowed in between, and a trolley of spine-labelless books that belong to no section at all.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 141,
+   "title_en": "Later theorists: Erikson, Bion, Ogden, Lacan, Spitz, Stern, relational",
+   "title_he": "תיאורטיקנים נוספים: אריקסון, ביון, אוגדן, לאקאן, שפיץ, שטרן וההתייחסותיים",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "indications",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "BION & SONS BELLHANGERS",
+    "place": "A bellhanging works on a fitting-out day: the trial frame standing down the middle of the shed with a graded ring of eight bells bolted into it, wheels and headstocks laid out on the boards beneath, a vertical tuning lathe at one end with a bell mouth-up under the cutter, an inspection and lettering bench along the window wall, and the ropes dropping through the floor holes into the pit below.",
+    "place_category": "bellhanging works",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A bell is a hollow container whose entire job is to take a raw meaningless blow from a clapper held inside it and hand it back as a note — Bion's container-contained and alpha-function are the physical operation of the trade, so the works carries his name on its board the way the corpus lets a barbershop carry barbiturates. Everything else the chapter tests is then ordinary bellhanging stock. A ring is eight bells graded by size, numbered on their headstocks and rung strictly from treble to tenor with no bell skipped, which is Erikson's fixed epigenetic sequence; the one bell whose inscription band is still blank, with its loose letters spilled across the bench, is identity versus role confusion. A bell sounds five partials at once and none of them replaces the one below it — Stern's layered senses of self — and the tuner brings them in by striking a fork, laying his palm flat on the metal and cutting until fork and bell agree, which is affect attunement working across two senses at once; the instant two bells strike dead together is the moment of meeting, and the beat tone two mistuned bells make, belonging to neither of them, is Ogden's analytic third, while the hand run slowly over the polished soundbow feeling for a flaw is the autistic-contiguous surface. The bright band on that soundbow gives a whole curved figure back to whoever leans over it, which is Lacan's mirror stage, and one bell carries his three orders as three bands: the reflecting one, the cast inscription of raised letters, and the rough unmachined crown nobody finishes. The dull green bell standing unhung in the corner with its clapper hanging on a nail is Spitz's hospitalism; a bell puts its whole weight on the headstock it leans on, so the one lying on its side with the headstock off is the anaclitic case; and the muffle box gives protest, despair and detachment as one bell open, one half-muffled and one with its clapper tied. Every rope drops through the same floor holes into one pit, so two crossed ropes pulling two men off balance, neither of them having meant it, is the two-person field and the enactment.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 142,
+   "title_en": "Telemental health for children and adolescents",
+   "title_he": "בריאות נפש מרחוק לילדים ומתבגרים",
+   "aspects": [
+    "core_principles",
+    "practical_use",
+    "indications",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "TELESCOPE HILL MODEL FLYERS",
+    "place": "A model flying club's field on a bright Sunday morning: a mown grass strip with a white-painted flight line along it, marked pilot boxes on the grass, a row of pits bays behind with models on trestles, a timber clubhouse with a peg board by its door, and a boundary hedge with the far side of the valley beyond it.",
+    "place_category": "model flying club",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Tele- is the chapter's own first morpheme and it means at a distance, so a club whose field is called Telescope Hill reads as a genuine club name, keeps the morpheme, and says far-seeing without printing the topic. The whole hobby is the chapter's literal picture: the pilot never touches the thing he is responsible for, works entirely by watching a small figure play at a distance, and everything can go wrong at the far end of a link. Every fact then hangs on ordinary field furniture. The peg board by the hut door, where you must take your channel's peg before switching on or two sets clash and both models come down, is the shared insecure channel, and the bind plug taped inside one transmitter is the paired encrypted link. The buddy-box lead joining an instructor's set to a beginner's, so the adult can take control on the instant, is the parent in the room and the supervising clinician on the line at once. The canvas windbreak screening one pits bay is the private space the child is entitled to, and the spotter standing at a pilot's shoulder is the second pair of eyes the remote observer does not have. The laminated card wired to the gate giving the field's exact location, beside the pinned emergency plan and the first-aid box, is the rule that you establish where the patient physically is before the session starts; the owner's name-and-address label in an open fuselage hatch, the failsafe setting and the lost-model alarm beeping out in the long grass beyond the hedge are what you do once the link is already gone, and the retrieval barrow is the fetch. The thirty-pace range-check stake is the technology check before you begin. The boundary hedge and its line of posts, which no model may be flown across, is licensure and jurisdiction, and the affiliation certificate screwed up in the hut is the licence itself. The proficiency-certificate board with names and dates on it is the evidence base, the signing-in book and the clipboard of forms are consent, and the laptop running a simulator on the trestle table inside the hut is the app used between sessions and never instead of them.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 143,
+   "title_en": "Evidence-based practice in child psychiatry",
+   "title_he": "רפואה מבוססת ראיות בפסיכיאטריה של הילד",
+   "aspects": [
+    "core_principles",
+    "evidence",
+    "practice_method",
+    "practical_use"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "GOLD STANDARD ASSAY",
+    "place": "An assay office on a busy trade morning: a long testing bench down the middle with a rack of acid bottles and a row of beam balances, a black touchstone slab at the near end, a hallmark punch press at the far end, and a brass-grilled trade counter where jewellers hand in numbered trays.",
+    "place_category": "assay office",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Every idiom this chapter speaks in is already an assay-office noun, so the venue is the plain-English picture of the field's own vocabulary: the gold standard, the weight of evidence, levels and grades, the acid test, and appraisal, which is what an assayer literally does — an assay is a trial in the oldest sense of the word. The office then hands over its stock as free fact slots. The fineness chart on the wall is a ladder of grades from coarsest to purest, which is the hierarchy of evidence with the top grade at the top. The acid bottles are the test that either holds or does not. The loupe is critical appraisal, the beam balance with its fitted case of certified weights is weight of evidence, and the sealed sample envelopes with the owner's name folded out of sight are blinding. The crucible where scrapings from many separate trays are combined into one reading is pooling. The chalk tally counts items tested against items passed. The half-open reject drawer under the bench, full of unstamped pieces that never reach the window display, is publication bias, and the hallmark punch itself is the approval stamp, so an unstamped piece still being sold at the counter is off-label. The one joke the venue tells for free is the ring mandrel, where an adult ring is being cut down to fit a child's finger and re-tested.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

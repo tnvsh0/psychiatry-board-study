@@ -1,0 +1,195 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 45,
+   "title_en": "Body Dysmorphic + Hoarding",
+   "title_he": "BDD + Hoarding",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_OCD_related": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "HOARD'S END SEED BANK",
+    "place": "A seed bank's accessions hall on a stocktaking Tuesday: runs of steel racking loaded floor to ceiling with numbered glass jars, a lit grading bench down the middle of the room, a counter at the near end where donors hand over envelopes, and a side corridor of unfiled boxes narrowed to one walking width",
+    "place_category": "seed bank archive",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A seed bank is the plain-English picture of the chapter's second disorder made institutional: an establishment whose entire constitution is that nothing may ever be discarded, that duplicates are kept anyway, that the corridors fill, and that the fire door ends up held shut by crates. HOARD'S END is a genuine English place-name form and puts one morpheme of the diagnosis on the board, the p272 MINIMUM device, without printing the diagnosis. The same hall performs the first disorder on its other bench, because the grader's job is to examine a specimen under magnification and reject it for a flaw nobody else can see: the reject tray and the accepted tray are visibly identical, which is the whole of body dysmorphic disorder as a contrast pair, and the grader who wants only the plumpest grain carries the muscle-dysmorphia specifier.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 48,
+   "title_en": "PTSD treatment: Prazosin, SSRIs, trauma-focused therapies",
+   "title_he": "טיפול ב-PTSD: Prazosin, SSRI, TF-CBT, EMDR",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications",
+    "pharmacotherapy_PTSD",
+    "sleep_specific"
+   ],
+   "required_tokens": {
+    "alpha1_receptor": "ALPHA_WOLF_PACK"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PRAISE ROCK LIGHT",
+    "place": "An offshore rock lighthouse on the flat calm morning of its annual refit: a timber landing stage at the tower foot, an inclined stores tramway climbing the rock, painters on hanging stages against the tower, and the lamp room open at the top with its heavy curtains half drawn across the lens",
+    "place_category": "rock lighthouse",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PRAISE carries Prazosin, and Rock lights are genuinely named for the rock they stand on, so the board reads as a real name plate. The venue is then chosen because the light's own two behaviours are the chapter's two first-line treatments as physical objects. The beam sweeps steadily left to right and back across the whole horizon on a clockwork governor, which is bilateral alternating stimulation without inventing anything. And the standing order in every lamp room is that the curtain is drawn across the lens to put the beam out, which is exactly the fixed corpus symbol for alpha-1 blockade — the guttered flame with the smoke rising — and it is the drug's own indication, since the beam is what runs all night. Setting the plate on a bright calm refit morning keeps the register deadpan rather than stormy.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 51,
+   "title_en": "Child abuse and neglect",
+   "title_he": "התעללות והזנחה בילדים",
+   "aspects": [
+    "recognition",
+    "clinical_presentation",
+    "risk_assessment",
+    "management",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "ACE PICTURE RESTORERS",
+    "place": "A picture conservation studio on an ordinary working weekday: a long steel-topped lining table down the middle of the room, a rank of easels ranked along it under a raking-light rail, family portraits of children stacked against the skirting waiting their turn, and an x-ray viewing box glowing on the end wall",
+    "place_category": "picture conservation studio",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A conservation studio's trade is, object for object, the chapter's clinical skill, which is why the venue can carry the material without ever staging harm to a child. The conservator dates damage by how far it has aged, exactly as bruising is dated by colour; separates damage inherent to the object from damage inflicted on it, which is the whole differential of brittle panels and factory blemishes against a fresh impact; x-rays for damage the surface hides, which is the skeletal survey; and files a dated condition report whether or not anyone asked for one, which is the reporting duty. The studio takes the history from the owner without leading her, because a led account contaminates the record. The works on the easels are children's portraits, so the subject is retrievable, and ACE on the board is the adverse childhood experiences model, with the street door numbered 368D.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 52,
+   "title_en": "Reactive Attachment Disorder + Disinhibited Social Engagement",
+   "title_he": "RAD + DSED",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_trauma_stressor": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "ALL-HITCH ATTACHMENTS",
+    "place": "A roadside towbar and trailer-hitch fitting yard: a fitting bay with a hatchback up on ramps and a mechanic under the rear valance, rows of box trailers and caravans nose-down on their jockey wheels, a parts counter of pigeonholes behind a glass door",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "ATTACHMENT is drawn as the physical coupling it literally names, and the tow yard is the only mundane premises that ships both failure modes of the chapter as ordinary equipment faults. RAD is the caravan that will not couple to anything: the coupling head is jammed shut, the owner offers ball after ball, and it stays on its own jockey wheel with a chalked 'WILL NOT COUPLE'. DSED is the trailer that hitches to any car that rolls past — no lock, no owner, following a stranger out of the gate. 'SECURE BASE' is the trade phrase for a properly bolted-on towbar and doubles as the attachment-theory term, so it goes on the supporting banner rather than the main sign. The age criteria (developmental age at least 9 months, onset before 5 years) ride on the TOWING CAPACITY plate, a carrier whose real job is bearing numbers.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 54,
+   "title_en": "Somatic Symptom + Conversion + Factitious",
+   "title_he": "הפרעות סומטיות + Conversion + Factitious",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_somatic": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "SOMA EXCHANGE",
+    "place": "A telephone exchange's fault test room in the middle of a weekday shift: a two-storey iron distribution frame combed with jumper wires standing down the room, a row of test desks with cord-and-jack panels along the window wall, headsets hung on hooks, and a public enquiry counter at the street end with a bell push on it",
+    "place_category": "telephone exchange",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "SOMA is the body, and an exchange is genuinely what the building is called and what goes on its name board, so the pun sits on an ordinary place plate rather than on an invented business. The trade then supplies the chapter's central finding as a rubber stamp it already owns: NO FAULT FOUND. The frame is a whole nervous system in one inanimate object, and every jumper on it is intact end to end while the reported fault is entirely real to the caller and entirely absent on the meter — functional neurological disorder as a physical fact rather than a metaphor. The fault log where one number repeats down the column is the somatic symptom pattern; the man who asks to be tested again although his line is clear is illness anxiety; the subscriber who cut his own drop wire so an engineer would come out is the factitious presentation; and the one pair on the frame with a genuinely broken wire, tagged, is the medical mimic that must never be dropped.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 56,
+   "title_en": "Schizophrenia neurobiology: DA + NMDA + 5-HT hypotheses",
+   "title_he": "ניורוביולוגיה של סכיזופרניה",
+   "aspects": [
+    "DA_hypothesis",
+    "NMDA_hypothesis",
+    "5HT_hypothesis",
+    "neuroimaging_findings",
+    "genetics"
+   ],
+   "required_tokens": {
+    "D2_receptor": "DOPA_MINE",
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR",
+    "5-HT2A_receptor": "TAROT_2A",
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "NORMANDY AVE EXCHANGE",
+    "place": "A manual telephone exchange on the busy hour: a switch-room floor of operator positions along one long wall of brass jack fields, cord wells full of coiled patch cords, lamp panels lit in rows, the vertical trunk frame standing behind with its jumper wires, floor traps lifted over the cable voids and the glass-walled supervisor's office dark at the front of the room",
+    "place_category": "telephone exchange",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N-M-D-A sits as an ordered subsequence inside an entirely ordinary exchange name — NorManDy Avenue — the expreSS tRIps device, and it is doubly native because real exchanges were named for streets and lettered exactly this way (NOrmandy 5-…), so the mid-word capital highlighting is authentic signage rather than decoration. The trade is also the circuit: one building, several trunk routes leaving it, and the fact is which route is jammed and which is dead — the town line overloaded, every lamp lit, voices literally coming down the line (mesolimbic hyperdopaminergia, positive symptoms) against the front-office line with no lamp lit at all and one idle operator (mesocortical hypofunction, negative symptoms, hypofrontality). A patch cord is the course's rope, i.e. dopamine, and it is here in hundreds. Neuroimaging comes free off native stock: the floor traps are up and the cable voids under them gape far wider than the thinning bundles that run through them (enlarged ventricles, reduced grey matter). Heritability is the staff roster where nearly every name is the same surname.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

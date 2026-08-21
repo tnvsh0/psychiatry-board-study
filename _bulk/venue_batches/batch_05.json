@@ -1,0 +1,205 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 57,
+   "title_en": "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
+   "title_he": "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_psychotic": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "BRIEF LOAN LIBRARY",
+    "place": "A municipal lending library at the issue desk on a Saturday morning: a long counter with the date-stamp block and the borrower-card tray set into it, a wire returns trolley heaped at one end, open shelf bays behind, the seven-day short-loan rack on the wall and the reference room railed off at the back",
+    "place_category": "lending library",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A lending library is the one ordinary place whose entire structure is a ladder of durations, and the date stamp is the most literal duration carrier in ordinary life — the fact is printed on the label by an object whose real job is printing dates. The four diagnoses fall straight onto the loan classes: the seven-day rack, returned early, deposit clear and the book back on the shelf undamaged (Brief Psychotic, one day to one month, full recovery) · the standard loan still out and overdue at the counter (Schizophreniform, one to six months) · the renewal refused and the volume transferred to reference, chained, never to leave the building again (conversion to Schizophrenia over six months). Schizoaffective is one ticket carrying two items with overlapping stamps, the shorter one already returned while the longer runs on past it. Delusional Disorder is a row of perfectly well-behaved borrowers making perfectly ordinary requests for one impossible reason each — non-bizarre, and no functional decline, because every other thing they do at the counter is completely normal. Only the morpheme BRIEF is printed, never a diagnosis.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 58,
+   "title_en": "First-generation antipsychotics",
+   "title_he": "אנטיפסיכוטיים דור ראשון (FGA)",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "EPS_focus",
+    "potency_spectrum"
+   ],
+   "required_tokens": {
+    "EPS_acute_dystonia": "DOPA_MINE (nigrostriatal section)",
+    "EPS_akathisia": "DOPA_MINE (workers pacing)",
+    "EPS_parkinsonism": "DOPA_MINE (nigrostriatal blockade)",
+    "tardive_dyskinesia": "DOPA_MINE (chronic blockade aftermath)",
+    "hyperprolactinemia": "DOPA_MINE (TUBE-INFUNDIBULAR section)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "STARRY GAZING",
+    "place": "An open-air amateur art show in a suburban back garden on a hot afternoon: canvases on wooden easels ranked against the clapboard house wall, a trestle table with wine and crackers, a gazebo over the judging table, full unshaded sun over the whole lawn",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "-azine -> GAZING, the corpus's own verified venue (SketchyPharm p212), reused verbatim so the class hook stays a one-way door: chlorpromazine, fluphenazine, thioridazine, perphenazine and trifluoperazine all live in the gallery, haloperidol is the halo in the picture, and 'first generation' is carried by which artistic movement you are standing in — Van Gogh pastiche — never by a digit. The venue then cashes three more times off its own stock without invention: it is OUTDOORS in full sun, so chlorpromazine's photosensitivity and blue-grey skin land on a sunburnt painter with slate-grey hands; thioridazine's retinal pigmentation is the canvas whose varnish has browned to a muddy orange; and the high-potency versus low-potency trade-off is a CONTRAST_PAIR of two easels — the tight, rigid, cogwheel-stiff draughtsman beside the sagging, sedated, mouth-dry watercolourist asleep in a deckchair. The first-prize rosette gives the ordinal without a numeral.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 62,
+   "title_en": "Metabolic-heavy SGAs: Olanzapine, Quetiapine, Risperidone",
+   "title_he": "SGA מטבוליים: Olanzapine, Quetiapine, Risperidone",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "metabolic_monitoring",
+    "prolactin"
+   ],
+   "required_tokens": {
+    "metabolic_syndrome": "(beyond DOPA-MINE: the Olympic athlete eating)",
+    "hyperprolactinemia": "DOPA_MINE (TUBE-INFUNDIBULAR section)",
+    "H1_receptor": "H_HOUSE",
+    "5-HT2C_receptor": "TAROT_2A (kitchen annex)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "OLYMPIA WEIGHTS",
+    "place": "A back-street weights gym on a wet Tuesday evening: a long steel rack of loaded barbells and dumb-bells down one side, benches and a squat frame out on the rubber floor, a mirrored wall, the beam scales and the weigh-in chart by the door and a juice counter at the back",
+    "place_category": "weights gym",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "OLANZa collapses onto OLYMPIA, and the course lexicon already draws Olanzapine as the Olympic athlete, so the venue name and the existing token are the same joke rather than two competing ones. The gym then supplies every fact off native stock: the beam scales and the dated weigh-in chart are the metabolic monitoring schedule on the one object in ordinary life whose job is bearing weights and dates; the numbered plates are the dose, so Quetiapine's two personalities become two bars on the same rack — the one loaded with two tiny plates beside a man asleep on the pine bench, and the one loaded heavy that is actually doing the work; Risperidone's stiffness rises visibly with the plates on his bar (dose-dependent EPS) while the milk dispenser behind him runs over the counter (prolactin). Deliberately no floor mats or exercise mats anywhere in this room, so the V-MAT 2 cue stays unique to chapter 66.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 64,
+   "title_en": "Long-Acting Injectable Antipsychotics (LAIs)",
+   "title_he": "זריקות אנטיפסיכוטיות ארוכות-טווח (LAI)",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "LAI_indications",
+    "conversion_oral_to_LAI"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "CONSTANCE PERMS & SETS",
+    "place": "A high-street hairdressing salon on a Thursday afternoon: a mirrored styling bench with hydraulic chairs bolted along it, a row of hood dryers on stands down the opposite wall with their timers running, backwash basins at the back, the appointment book open on the desk by the door and a client waiting out her time in the corner with a cup of tea",
+    "place_category": "hairdressing salon",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "CONSTA sits at the head of an entirely ordinary salon proprietor's name, and PERMS on the same board is the second half of the joke: a permanent wave is the plain-English long-acting version of a hairstyle, against the blow-dry you have to do again every single morning. That contrast is the whole chapter — daily oral versus one application that covers you for weeks — and the salon runs on it commercially: the booked return date on the card, the interval, and the regrowth line at the parting that shows to the millimetre when the cover ran out, which is relapse. The trade also hands over the awkward facts free: the loading appointment twice in the first week; the temporary rinse worn for three weeks until the permanent takes hold (oral overlap); the client who has to sit out a long compulsory wait under supervision with tea before she is allowed to leave (post-injection observation); and the hood dryer, which is a literal halo lowered over the head.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 67,
+   "title_en": "Neuroleptic Malignant Syndrome",
+   "title_he": "NMS — תסמונת ממאירה ניורולפטית",
+   "aspects": [
+    "recognition",
+    "diagnostic_criteria",
+    "differential",
+    "emergency_management"
+   ],
+   "required_tokens": {
+    "neuroleptic_malignant_syndrome": "(DOPA_MINE in catastrophic mode)",
+    "serotonin_syndrome": "(serotonin scenes overload)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "NORTH MAIN STEEL",
+    "place": "A small rolling mill's casting floor on the night shift — furnace door glowing, an overhead ladle crane on a rail, a cooling bed of red-hot bars, a water quench tank at the far end",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N. M. S. = NORTH MAIN STEEL, a name that reads as a real mill on a real street, with the three letters picked out in the sign's own paint. The mill's ordinary business is the syndrome: it runs far too hot (hyperthermia, and the wall thermometer is the number carrier), and everything it makes is a rigid straight bar that will not bend — lead-pipe rigidity, which is what separates NMS from serotonin syndrome. The mill supplies the treatment from stock too: the water quench tank is external cooling, the safety shower is fluids, and the largest lettering on the page is the placard on the control post reading 'SHUT IT DOWN FIRST' — stop the offending agent before anything else.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 74,
+   "title_en": "Parasomnias + RLS",
+   "title_he": "פרסומניות + תסמונת רגליים חסרות מנוחה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_sleep_wake": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "UP & ABOUT MOBILITY",
+    "place": "A mobility and homecare showroom in a small retail unit on a weekday afternoon: a rank of rollators and sticks down the middle, a demonstration ramp with a handrail, two profiling beds made up under the window, riser-recliner chairs along the back wall and a fitter kneeling to adjust a leg",
+    "place_category": "mobility aids showroom",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Every disorder in this chapter is one plain-English picture: being up and about when the body should be lying still — walking in the night, kicking, thrashing through a dream, standing up because the legs will not settle. A mobility showroom is the one ordinary shop whose entire floor is people getting out of a bed or a chair and taking a few paces, and its stock list happens to be the chapter's own management list: bed rails and cot sides for making the bedroom safe, profiling beds, compression stockings and iron tonic, and a whole wall of aids bought for Parkinson's, which is where the dream-enacting half of this chapter ends up. The sign is the ordinary phrase a shop like this puts on its fascia and names nothing.",
+    "confidence": "workable"
+   }
+  }
+ ]
+}

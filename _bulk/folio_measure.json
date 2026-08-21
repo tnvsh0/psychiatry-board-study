@@ -1,0 +1,22 @@
+{
+ "DSM_5_TR": {
+  "max_printed_page": 1050,
+  "distinct_folios": 1050
+ },
+ "Dulcan": {
+  "max_printed_page": 2020,
+  "distinct_folios": 1132
+ },
+ "Stahl_Essential": {
+  "max_printed_page": 623,
+  "distinct_folios": 621
+ },
+ "Stahl_Pediatric": {
+  "max_printed_page": 502,
+  "distinct_folios": 486
+ },
+ "Syllabus": {
+  "max_printed_page": 59,
+  "distinct_folios": 59
+ }
+}

@@ -1,0 +1,232 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 1,
+   "title_en": "Psychiatric examination of child and adolescent",
+   "title_he": "בדיקת ילד ומתבגר",
+   "aspects": [
+    "examination_structure",
+    "developmental_history",
+    "mental_status_pediatric",
+    "parent_interview",
+    "play_observation"
+   ],
+   "required_tokens": {
+    "developmental_red_flags": "(standalone)",
+    "developmental_ladder": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "MAIN STREET EYECARE",
+    "place": "A high-street opticians on a school-holiday Wednesday: a frame-display wall and a dispensing bench down one side, two test rooms with their doors hooked open, the lit letter chart at the far end of the test lane, and a low toy table beside the waiting chairs.",
+    "place_category": "opticians practice",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "M-S-E stands as an ordered subsequence of word-initials inside an utterly ordinary optician's fascia — the expreSS tRIps device — and it is planted in the one high-street trade whose examinees are children of every age with a parent sitting beside them, which is what the vehicle-test version could not supply. The trade then pays out on all five aspects with no invention: a sight test is run in a fixed non-negotiable order, history then acuity then cover test then refraction then the light, so examination structure is the venue's own procedure; the record card carries the child's whole history back to the first visit and the parent supplies it across the desk, so developmental history and parent interview are one piece of counter business; the method changes with age — pictures for the pre-schooler, letters for the schoolchild, a moving toy for the infant who cannot answer — which is the chapter's central teaching point rendered as ordinary shop routine; the optometrist down on the floor rolling a toy for a two-year-old to fix and follow is play observation as a real clinical technique rather than a metaphor; and because every examinee in the frame is an actual child, appearance, speech, mood and behaviour are all literal depiction. The chart's shrinking graded rows are a native developmental ladder and the red recall tabs standing proud of the record drawer are the red flags.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 2,
+   "title_en": "Neuroanatomy basics for psychiatry",
+   "title_he": "יסודות נוירואנטומיה לפסיכיאטר",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "prefrontal_cortex": "(brain map)",
+    "anterior_cingulate_cortex": "(brain map)",
+    "orbitofrontal_cortex": "(brain map)",
+    "amygdala": "(brain map)",
+    "hippocampus": "(brain map)",
+    "basal_ganglia": "(brain map)",
+    "thalamus": "(brain map)",
+    "hypothalamus": "(brain map)",
+    "insula": "(brain map)",
+    "cerebellum": "(brain map)",
+    "default_mode_network": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "INSULA FERRIES",
+    "place": "A small car-ferry terminal on the mainland side at midday: two identical passenger wings either side of the vehicle marshalling lanes, an enclosed footbridge crossing above them, a glazed control tower on the quay, the linkspan ramp down onto the ship, and the island lying out across the water.",
+    "place_category": "ferry terminal",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "The terminal's ordinary layout IS the gross anatomy, and the fascia spends its lettering on the one Latin morpheme that is already a brain region: insula means island, and the island is the destination painted on every board in the building. Two identical mirror-image wings joined by a single bridge = the hemispheres and the corpus callosum. The glazed control tower that every vessel and every vehicle must be routed through and which touches nothing else = thalamus as obligatory relay. The harbourmaster's office up over the concourse, watching the whole floor and overruling the lanes = prefrontal cortex. The marshalling lanes with their hold-and-release light = basal ganglia gating, and the turn-back bay for vehicles that joined the wrong queue = anterior cingulate conflict and error monitoring. The muster klaxon and the quay foghorn = amygdala. The bank of left-luggage lockers = hippocampus. The duty-free counter where everything is sniffed, priced and compared = orbitofrontal. The boiler-house thermostat and the canteen hatch = hypothalamus. The counterweighted linkspan trimmed continuously to hold the deck level with the quay = cerebellum. The lounge of people with three hours to kill, staring at nothing = the default mode network. Per the p272 rule no business pun is spent: one morpheme sits on a surface whose real job is bearing a name.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 3,
+   "title_en": "Neurotransmitters overview",
+   "title_he": "סקירה: נוירוטרנסמיטרים",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "DOPA_MINE": "{'cue': 'DOPA-MINE Co.', 'prop': \"A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by ",
+    "RAPHE_TAPESTRY": "{'cue': 'Raphe nuclei', 'prop': 'A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin ",
+    "LOCUS_COERULEUS_BLUEPOST": "{'cue': 'Locus Coeruleus', 'prop': 'A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brains",
+    "AA_HOTEL": "{'cue': 'Aa Hotel', 'prop': \"Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on th",
+    "ASPARAGUS_VIP_DOOR": "{'cue': \"NMDA VIP-club doorway (Mr. Asparagus's domain)\", 'prop': \"Heavy iron door labeled 'NMDA'. Outside: chalk-white ",
+    "TUBEROMAMMILLARY_DAIRY": "{'cue': 'Tuberomammillary nucleus', 'prop': 'A dairy section in the hypothalamus (mammillary = mammary). Cows pump out h",
+    "MEYNERT_MYNAH": "{'cue': 'Basal nucleus of Meynert', 'prop': 'A wise old MYNAH bird perched in the basal forebrain. It mimics what it hea",
+    "Acetylcholine": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)"
+   },
+   "why_rejected": [
+    "cannot host its own tokens: DOPA_MINE, LOCUS_COERULEUS_BLUEPOST, MEYNERT_MYNAH, RAPHE_TAPESTRY"
+   ],
+   "current": {
+    "sign_text": "MESSENGER ROW",
+    "place": "A village shop row on delivery morning: one unbroken terrace of small businesses down the near side of the street, the colliery gates and winding gear closing the top of the road, delivery lorries nosed into the kerb with their tailgates down, crates stacked out on the flags outside every doorway.",
+    "place_category": "village shop row",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A neurotransmitter is a chemical messenger, and Messenger Row is an ordinary street nameplate that carries one morpheme of the everyday referent without printing the medical word — the same device the accepted transmitter reading used, and within the Lithium Lift precedent. This is the one chapter the spec says must not invent a venue: the seven course-wide premises are the content, so the plate is the street they stand on. A shop row is the only mundane container that holds a colliery, a hotel, a dairy, a club door, a weaving workshop, a seed merchant and a police box in one coherent frame at one light source. The delivery round then supplies the whole mechanism free: release is a crate carried in off the lorry, and reuptake is the same hand carrying the empties back out to be loaded again, which is a native action in the trade rather than a metaphor. Each premises signs for its own crate, so every messenger stays addressable at its own doorway instead of becoming one of seven nameplated boxes in a line-up.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 5,
+   "title_en": "Serotonin system",
+   "title_he": "מערכת הסרוטונין",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "RAPHE_TAPESTRY": "{'cue': 'Raphe nuclei', 'prop': 'A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin ",
+    "dorsal_raphe": "RAPHE_TAPESTRY",
+    "raphe_nuclei": "RAPHE_TAPESTRY",
+    "SERT": "(standalone — appears in any synapse scene)",
+    "5-HT1A_receptor": "BUS_LINE_1A",
+    "5-HT2A_receptor": "TAROT_2A",
+    "5-HT2C_receptor": "TAROT_2A (kitchen annex)",
+    "5-HT3_receptor": "TAROT_2A (water-gate room)",
+    "5-HT6_receptor": "TAROT_2A (back library)",
+    "5-HT7_receptor": "CONVENIENCE_STORE_7",
+    "BUS_LINE_1A": "{'cue': 'Bus stop', 'prop': \"Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= ",
+    "TAROT_2A": "{'cue': 'Tarot 2A', 'prop': 'Dim Victorian parlor. Round table with TWO Ace tarot cards. Tie-dye hippie reader. Walls sw",
+    "CONVENIENCE_STORE_7": "{'cue': '7-Eleven open 24/7', 'prop': 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty."
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "cannot host its own tokens: CONVENIENCE_STORE_7, RAPHE_TAPESTRY, TAROT_2A"
+   ],
+   "current": {
+    "sign_text": "5 HIGH TOWN MARKET",
+    "place": "A covered market hall in mid-morning trade: an iron-and-glass roof over one long central aisle, lock-up stalls down both sides with their shutters up, scales and price cards on every counter, produce boxes stacked in the gangway and a wash-down channel running along the floor.",
+    "place_category": "covered market hall",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "5-H-T stands as an ordered subsequence of word-initials inside an entirely ordinary market name and street address — the expreSS tRIps device, and a numeral at the front of a market name is native signage rather than an intrusion. The hall was chosen because serotonin's whole story is one narrow midline workshop that ships everywhere, and a market's central aisle is literally its seam: the weaving stall stands on it and its goods go out to every other counter in the building. The receptor family then costs nothing, because each one is an ordinary trade already found in a market hall — a curtained fortune-teller's booth in the corner, the pie stall kitchen behind it, the wash-down channels of the fish end, the second-hand book stall, and the all-night kiosk in the corner arch. The postal collection at the delivery bay gives reuptake a native worker instead of a symbol.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 6,
+   "title_en": "Norepinephrine system",
+   "title_he": "מערכת הנוראפינפרין",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "LOCUS_COERULEUS_BLUEPOST": "{'cue': 'Locus Coeruleus', 'prop': 'A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brains",
+    "locus_coeruleus": "LOCUS_COERULEUS_BLUEPOST",
+    "NET": "BEETHOVEN_ORCHESTRA (stage-door)",
+    "alpha1_receptor": "ALPHA_WOLF_PACK",
+    "alpha2_receptor": "ALPHA_WOLF_PACK",
+    "beta1_receptor": "BEETHOVEN_ORCHESTRA",
+    "beta2_receptor": "BEETHOVEN_ORCHESTRA",
+    "ALPHA_WOLF_PACK": "{'cue': 'Alpha wolf pack in a snowy forest', 'prop': 'Snowy pine forest. A wolf pack on the hunt. Some lone alphas charg",
+    "BEETHOVEN_ORCHESTRA": "{'cue': 'Beethoven conducting numbered symphonies', 'prop': 'Concert hall. Beethoven (white wig, intense face) conducts."
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "cannot host its own tokens: BEETHOVEN_ORCHESTRA, LOCUS_COERULEUS_BLUEPOST"
+   ],
+   "current": {
+    "sign_text": "NOR'EAST BROS. CIRCUS",
+    "place": "A travelling circus on pull-up morning: the big top half up on a snowy showground, canvas laced out flat on the ground and rising toward the king pole, living wagons and the ticket wagon parked in a line along the fence, a pine treeline beyond the guy-ropes at the top of the field.",
+    "place_category": "travelling circus",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Nor'east is the compass reading NE spoken aloud and it is a perfectly ordinary way to name a family show — the corpus already owns the N-compass as the fixed glyph for this transmitter, so the fascia hooks straight onto a symbol the learner already holds. The showground was picked because it is the only mundane workplace that legitimately holds all three fixed structures at once in one light: a band on its own rostrum at the ring fence, a call box at the gate through which every message for the ground passes, and a snowy pine treeline with a pack standing out on the open ground beyond the ropes. It is a morning of work, not a performance, so the register stays flat and the strangeness sits in the props. The trade also pays out on the chapter's own mechanism without invention — everything on the ground is either hauled out on a rope or hauled back in on one, and one keeper stands at the fence with a dart rifle.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 7,
+   "title_en": "GABA / Glutamate balance",
+   "title_he": "איזון GABA / גלוטמט",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "AA_HOTEL": "{'cue': 'Aa Hotel', 'prop': \"Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on th",
+    "GABA_neurotransmitter": "AA_HOTEL",
+    "GABA_A_receptor": "AA_HOTEL",
+    "GABA_A_alpha1_subunit": "AA_HOTEL",
+    "GABA_A_alpha2_alpha3_subunits": "AA_HOTEL",
+    "GABA_A_alpha5_subunit": "AA_HOTEL",
+    "GABA_B_receptor": "AA_HOTEL (adjacent)",
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR",
+    "ASPARAGUS_VIP_DOOR": "{'cue': \"NMDA VIP-club doorway (Mr. Asparagus's domain)\", 'prop': \"Heavy iron door labeled 'NMDA'. Outside: chalk-white "
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "GABBAY & GLUCK REPAIRS",
+    "place": "A shoe-repair and key bar in the ground-floor unit of an old five-storey hotel, late afternoon: a counter across the front, a long finishing bench behind it, a floor-to-ceiling rack of ticketed shoes standing in pairs, and the club's iron doorway hard against the shop window in the next unit along.",
+    "place_category": "cobbler's shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Two proprietors on one fascia, the way a family repair shop is actually lettered — GABBAY for GABA and GLUCK for glutamate, both genuine surnames spelled the way an Israeli reader already writes them — so the chapter's two halves are named in balance in the largest lettering slot without either being spelled out. The trade then supplies the mechanism off its own price list: the standard cobbler's job is called a sole and heel BALANCE, printed on every price board in the trade, so the chapter's key noun is native lettering rather than a caption; the glue pot and the open tin of contact adhesive put glutamate's morpheme on stock the shop cannot work without; and a heel bar cuts keys, so locks, blanks, master keys and a magnet jammed in a barrel are all ordinary counter business, which is the best available picture of a ligand-gated channel. The venue was chosen because it holds both fixed structures without becoming either — the shop is a ground-floor unit of the hotel, and the iron door with the queue is the very next doorway, the corpus's own barbershop-next-to-Cab-A device where which premises stands next to which IS the fact.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+[
+ {
+  "file": "_bulk/venue_batches/batch_01.json",
+  "chapters": [
+   1,
+   2,
+   3,
+   5,
+   6,
+   7
+  ],
+  "kb": 16
+ },
+ {
+  "file": "_bulk/venue_batches/batch_02.json",
+  "chapters": [
+   8,
+   11,
+   13,
+   17,
+   23,
+   27
+  ],
+  "kb": 13
+ },
+ {
+  "file": "_bulk/venue_batches/batch_03.json",
+  "chapters": [
+   32,
+   33,
+   36,
+   38,
+   39,
+   41
+  ],
+  "kb": 12
+ },
+ {
+  "file": "_bulk/venue_batches/batch_04.json",
+  "chapters": [
+   45,
+   48,
+   51,
+   52,
+   54,
+   56
+  ],
+  "kb": 11
+ },
+ {
+  "file": "_bulk/venue_batches/batch_05.json",
+  "chapters": [
+   57,
+   58,
+   62,
+   64,
+   67,
+   74
+  ],
+  "kb": 12
+ },
+ {
+  "file": "_bulk/venue_batches/batch_06.json",
+  "chapters": [
+   76,
+   79,
+   80,
+   85,
+   89,
+   93
+  ],
+  "kb": 13
+ },
+ {
+  "file": "_bulk/venue_batches/batch_07.json",
+  "chapters": [
+   95,
+   96,
+   99,
+   101,
+   103,
+   105
+  ],
+  "kb": 11
+ },
+ {
+  "file": "_bulk/venue_batches/batch_08.json",
+  "chapters": [
+   107,
+   108,
+   109,
+   111,
+   112,
+   114
+  ],
+  "kb": 9
+ },
+ {
+  "file": "_bulk/venue_batches/batch_09.json",
+  "chapters": [
+   115,
+   117,
+   118,
+   119,
+   120,
+   121
+  ],
+  "kb": 12
+ },
+ {
+  "file": "_bulk/venue_batches/batch_10.json",
+  "chapters": [
+   122,
+   123,
+   125,
+   126,
+   127,
+   128
+  ],
+  "kb": 13
+ },
+ {
+  "file": "_bulk/venue_batches/batch_11.json",
+  "chapters": [
+   129,
+   130,
+   131,
+   132,
+   133,
+   136
+  ],
+  "kb": 13
+ },
+ {
+  "file": "_bulk/venue_batches/batch_12.json",
+  "chapters": [
+   137,
+   139,
+   140,
+   141,
+   142,
+   143
+  ],
+  "kb": 15
+ }
+]
