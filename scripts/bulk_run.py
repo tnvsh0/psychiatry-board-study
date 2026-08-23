@@ -104,8 +104,17 @@ def sweep_local(day_index: int) -> int:
 # failure from out here, and there are 141 chapters to fail.
 AUTH_MARKERS = ("Authentication expired or invalid",
                 "Run 'notebooklm login'",
-                "accounts.google.com")
+                "accounts.google.com",
+                "AuthExpired",            # daily_study's fast-fail
+                "session is dead")
 MAX_CONSECUTIVE_FAILURES = 3
+
+# No chapter is ever worth this long. Chapter 2 lost its NotebookLM session
+# partway through and kept going for 566 minutes — `ask` waits 900s an attempt,
+# three attempts a call, several calls a chapter, all of them against a dead
+# session. daily_study now fails fast on that specific cause; this is the
+# backstop for every cause nobody has met yet.
+CHAPTER_TIMEOUT_S = int(os.environ.get("CHAPTER_TIMEOUT_S", 75 * 60))
 
 
 def auth_ok() -> tuple[bool, str]:
@@ -150,16 +159,24 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     # 2026-08-23: ~$85 across 141 chapters rather than ~$227, on the reasoning
     # that most renders in the ladder are discarded anyway.
     env.setdefault("SKETCHY_LADDER_MODEL", "gemini-3.1-flash-image-preview")
+    timed_out = False
     with log.open("w", encoding="utf-8") as fh:
-        p = subprocess.run(
-            [sys.executable, "-u", str(ROOT / "scripts" / "daily_study.py"),
-             "--day", str(day_index)],
-            stdout=fh, stderr=subprocess.STDOUT, cwd=str(ROOT), env=env,
-        )
+        try:
+            p = subprocess.run(
+                [sys.executable, "-u", str(ROOT / "scripts" / "daily_study.py"),
+                 "--day", str(day_index)],
+                stdout=fh, stderr=subprocess.STDOUT, cwd=str(ROOT), env=env,
+                timeout=CHAPTER_TIMEOUT_S,
+            )
+        except subprocess.TimeoutExpired:
+            timed_out = True
+            p = subprocess.CompletedProcess(args=[], returncode=124)
     mins = (time.time() - started) / 60
     body = log.read_text(encoding="utf-8", errors="replace")
     tail = body[-400:]
     note = f"{mins:.1f}min rc={p.returncode} :: {tail[-160:].strip()}"
+    if timed_out:
+        note = f"TIMEOUT after {mins:.0f}min :: " + tail[-140:].strip()
     if p.returncode != 0 and any(m in body for m in AUTH_MARKERS):
         note = "AUTH :: " + note
     return p.returncode == 0, note

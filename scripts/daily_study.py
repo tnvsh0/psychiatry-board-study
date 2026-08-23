@@ -916,6 +916,10 @@ def prompt_quiz(day, symbol_block, legend_block):
 NOTEBOOKLM_PROFILE = os.environ.get("NOTEBOOKLM_PROFILE", "").strip()
 
 
+class AuthExpired(RuntimeError):
+    """The NotebookLM session died. Nothing downstream can succeed."""
+
+
 def nb_run(args, timeout=120, retries=2):
     """Run the CLI, retrying a run that comes back empty.
 
@@ -971,6 +975,15 @@ def nb_run(args, timeout=120, retries=2):
             print(f"    [!] notebooklm {args[0]}: rate limited, NOT retrying",
                   file=sys.stderr)
             return r
+        # A dead session does not come back inside a retry loop, and retrying
+        # into it is expensive: `ask` waits 900s per attempt, three attempts per
+        # call, several calls per chapter. Chapter 2 lost its session partway
+        # through and ground on for 566 MINUTES before failing — nine and a half
+        # hours of calls that could not have succeeded. Fail immediately; the
+        # caller aborts the chapter and bulk_run stops the queue.
+        if any(m in blob for m in ("Authentication expired or invalid",
+                                   "Run 'notebooklm login'")):
+            raise AuthExpired(f"notebooklm {args[0]}: session is dead")
         if attempt < retries:
             print(f"    [!] notebooklm {args[0]} returned rc={r.returncode} with "
                   f"{len(r.stdout)} bytes; retrying "
