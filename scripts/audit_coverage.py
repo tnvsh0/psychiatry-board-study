@@ -48,9 +48,13 @@ GH_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 HEADER_ALIASES = [
     ("dsm", "DSM-5-TR"),
     ("dulcan", "Dulcan"),
-    ("stahl c&a", "Stahl C&A"),
-    ("stahl pediatric", "Stahl C&A"),
-    ("stahl essential", "Stahl Essential"),
+    # The two Stahl books were renamed to share no separable prefix, because
+    # "Stahl p. 761" named neither of them. Old spellings stay as aliases.
+    ("stahlkids", "StahlKids"),
+    ("stahl c&a", "StahlKids"),
+    ("stahl pediatric", "StahlKids"),
+    ("stahlneuro", "StahlNeuro"),
+    ("stahl essential", "StahlNeuro"),
     ("synopsis", "Synopsis"),
 ]
 

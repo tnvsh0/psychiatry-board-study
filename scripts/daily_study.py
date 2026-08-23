@@ -119,13 +119,13 @@ SOURCE_PDF_NAMES = [
 BOOK_BLURBS = {
  "Dulcan": "**Dulcan's Textbook of Child and Adolescent Psychiatry 3e** — ספר הליבה. ברירת המחדל לכל נושא קליני בילדים ונוער.",
  "DSM-5-TR": "**DSM-5-TR** — קריטריונים אבחנתיים מדויקים.",
- "Stahl Essential": "**Stahl's Essential Psychopharmacology 5e** — מנגנון נוירוביולוגי, קולטנים, מסלולים.",
- "Stahl Pediatric": "**Stahl's Prescriber's Guide — Children and Adolescents** — מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.",
+ "StahlNeuro": "**StahlNeuro** = Stahl's Essential Psychopharmacology 5e (Neuroscientific Basis) — מנגנון נוירוביולוגי, קולטנים, מסלולים. צטט אותו בשם המדויק **StahlNeuro**, לעולם לא \"Stahl\" לבדו.",
+ "StahlKids": "**StahlKids** = Stahl's Prescriber's Guide — Children and Adolescents. צטט אותו בשם המדויק **StahlKids**, לעולם לא \"Stahl\" לבדו. מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.",
  "Syllabus": "**הסילבוס הרשמי של המועצה המדעית** — מגדיר מה נדרש לבחינה.",
  "Kaplan & Sadock Synopsis": "**Kaplan & Sadock's Synopsis** — מקור השלמה בלבד. השתמש בו אך ורק כאשר נושא שנדרש לבחינה בילדים ונוער חסר ב-Dulcan (למשל הפרעות אישיות, שאין להן פרק ב-Dulcan). אל תייבא ממנו תוכן של פסיכיאטריה של מבוגרים שאינו רלוונטי לילדים ונוער (דמנציה/אלצהיימר, פסיכיאטריה גריאטרית, תפקוד מיני של מבוגרים וכו').",
 }
 
-BOOK_ORDER = ["Dulcan", "DSM-5-TR", "Stahl Essential", "Stahl Pediatric",
+BOOK_ORDER = ["Dulcan", "DSM-5-TR", "StahlNeuro", "StahlKids",
               "Syllabus", "Kaplan & Sadock Synopsis"]
 
 
@@ -146,9 +146,10 @@ def books_directive():
 {numbered}
 
 כללי ציטוט מחייבים:
-- אחרי כל טענה משמעותית ציין עמוד מקור בסוגריים: "(DSM p.68)", "(Dulcan p.173)", "(Stahl C&A p.301)".
+- אחרי כל טענה משמעותית ציין עמוד מקור בסוגריים: "(DSM p.68)", "(Dulcan p.173)", "(StahlKids p.301)", "(StahlNeuro p.147)".
 - **מספר העמוד הוא זה שמודפס על העמוד עצמו** (בכותרת העליונה או התחתונה), לא מספר הגיליון בתוכנת קריאת PDF. השניים אינם זהים: לקבצים יש שערים ותוכן עניינים לפני עמוד 1, ולכן מספר ה-PDF גדול יותר. צטט תמיד לפי המספר המודפס.
 - טווחי העמודים המודפסים בספרים שבמחברת: {ranges}. עמוד מחוץ לטווח הוא בהכרח שגוי.{synopsis}
+- **שני ספרי Stahl שונים במחברת**: StahlNeuro (מנגנון, עד עמ' 623) ו-StahlKids (מינונים לילדים, עד עמ' 502). ציטוט "Stahl" בלי הסיומת הוא שגוי — הוא לא מזהה איזה ספר, ואי אפשר לאמת אותו.
 - אל תמציא עמודים באף מקור. אם לא מצאת — כתוב "(מקור: הקשר רחב)"
 """
 
@@ -1718,11 +1719,11 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 ## 0. מפת המקורות (CRITICAL — page references)
 טבלה: לכל סעיף ב-מדריך, ציין באיזה ספר וב-איזה עמוד נמצא החומר.
 פורמט:
-| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | Stahl Essential עמ' | Stahl C&A עמ' | Synopsis פרק | סילבוס עמ' |
+| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | StahlNeuro עמ' | StahlKids עמ' | Synopsis פרק | סילבוס עמ' |
 
 עמודת Synopsis מכילה **שם/מספר פרק בלבד**, לא עמודים, ורק כשבאמת נעשה בו שימוש
 להשלמת פער ב-Dulcan. אם לא נעשה בו שימוש — סמן "—".
-עמודת Stahl C&A רלוונטית רק לנושאים שכוללים תרופה מתוך 33 המונוגרפיות שבספר.
+עמודת StahlKids רלוונטית רק לנושאים שכוללים תרופה מתוך 33 המונוגרפיות שבספר.
 
 ## 1. מבוא + הגדרה
 ## 2. {aspects[0] if len(aspects) > 0 else 'קריטריונים'}

@@ -116,22 +116,33 @@ def check_page_citations(text: str) -> list[dict]:
     """
     out = []
     pat = re.compile(
-        r"(DSM(?:-5(?:-TR)?)?|Dulcan|Stahl(?:'s)?(?:\s+(?:Essential|Pediatric|C&A))?"
+        r"(StahlNeuro|StahlKids|DSM(?:-5(?:-TR)?)?|Dulcan"
+        r"|Stahl(?:'s)?(?:\s+(?:Essential|Pediatric|C&A|Neuro|Kids))?"
         r"|Synopsis|Kaplan|Syllabus)"
         r"[^0-9\n]{0,24}?(\d{2,4})(?:\s*[-–]\s*(\d{2,4}))?", re.I)
     for m in pat.finditer(text or ""):
-        name = re.sub(r"\s+", " ", m.group(1).strip()).lower().replace("'s", "")
+        raw = re.sub(r"\s+", " ", m.group(1).strip())
+        name = raw.lower().replace("'s", "")
+        # A bare "Stahl p. N" names neither of the two Stahl books in the
+        # notebook. It cannot be checked and cannot be looked up, so it is a
+        # defect at any page number — which is why the books are labelled
+        # StahlNeuro and StahlKids, sharing no separable prefix.
+        if re.fullmatch(r"stahl", name):
+            out.append({"claim": m.group(0).strip(),
+                        "why": "there are two Stahl books here — cite StahlNeuro "
+                               "(to p.623) or StahlKids (to p.502), not 'Stahl'",
+                        "severity": "high"})
+            continue
         cands = [v for k, v in BOOK_PAGES.items()
                  if k.lower() == name or k.lower().startswith(name)
                  or name.startswith(k.lower().split()[0])]
         if not cands:
             continue
-        limit = max(cands)              # ambiguous name -> the most forgiving book
+        limit = max(cands)              # still forgiving if a name stays ambiguous
         for g in (m.group(2), m.group(3)):
             if g and int(g) > limit:
                 out.append({"claim": m.group(0).strip(),
-                            "why": f"no book called {m.group(1).strip()} here runs "
-                                   f"past page {limit}",
+                            "why": f"no book called {raw} here runs past page {limit}",
                             "severity": "high"})
     return out
 
