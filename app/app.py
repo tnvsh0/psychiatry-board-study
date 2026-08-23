@@ -287,6 +287,23 @@ def save_progress(progress: dict) -> bool:
     return False
 
 
+@st.cache_data(ttl=3600)
+def get_lectures() -> dict:
+    """Recorded academic lectures, keyed by chapter number as a string.
+
+    Written by scripts/upload_lectures.py. A lecture is filed under every
+    chapter it is relevant to, not only its main one — the Tourette/ADHD/OCD
+    talk belongs to all three — so the same URL appears under several keys.
+    """
+    f = LOCAL_ROOT / "schedule" / "lectures.json"
+    if not f.exists():
+        return {}
+    try:
+        return json.loads(f.read_text(encoding="utf-8")).get("lectures_by_chapter", {})
+    except Exception:
+        return {}
+
+
 @st.cache_data(ttl=300)
 def get_release_assets(tag: str) -> dict | None:
     """Fetch release assets for a given day tag.
@@ -736,6 +753,21 @@ def render_day_page(day, symbols, progress, palette):
         st.markdown(f"**Aspects**: {', '.join(day.get('aspects', []))}")
         st.markdown(f"**Symbols**: {', '.join(day.get('symbols_needed', [])) or '(אין סמלים ייעודיים)'}")
         st.markdown(f"**מיקוד**: {day.get('prompt_focus', '')}")
+
+    # Recorded lectures — deliberately BEFORE the "nothing generated yet" exit.
+    # A chapter can have a real lecture from the owner's academic course while
+    # its generated material is still queued, and that lecture is worth more
+    # than the "come back in an hour" notice.
+    lectures = get_lectures().get(str(day["index"]), [])
+    if lectures:
+        st.markdown("### 🎓 הרצאות מוקלטות")
+        for lec in lectures:
+            label = lec["title"]
+            if not lec.get("primary"):
+                label += "  ·  (שייכת בעיקר לפרק אחר)"
+            with st.expander(f"{label}  —  {lec['size_mb']} MB"):
+                st.video(lec["url"])
+                st.caption(lec["url"])
 
     # Artifacts
     tag = day_tag(day)
