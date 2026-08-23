@@ -996,8 +996,14 @@ def find_day_notebook(day_index, title_he):
     # notebook for this day already existed, a transient list failure would
     # silently create a duplicate. Raise instead — nb_run has already retried.
     if r.returncode != 0:
+        # BOTH streams. The CLI prints "Authentication expired or invalid" to
+        # STDOUT, so quoting stderr alone turned a dead session into a bare
+        # "rc=2": chapters 4, 5 and 6 all died of expired auth and none of
+        # their logs said so. Only the three-in-a-row circuit breaker caught
+        # it, and it could not say why it had stopped.
+        detail = ((r.stdout or "") + " " + (r.stderr or "")).strip()
         raise RuntimeError(f"could not list notebooks: rc={r.returncode} "
-                           f"{(r.stderr or '')[:200]}")
+                           f"{detail[:300]}")
     try:
         nbs = json.loads(r.stdout).get("notebooks", [])
     except Exception as e:
