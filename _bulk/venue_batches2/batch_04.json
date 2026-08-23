@@ -1,0 +1,247 @@
+{
+ "taken_categories": [
+  "cable and flex works",
+  "cable assembly workshop",
+  "canal lock",
+  "candle works",
+  "canning works",
+  "children's shoe fitters",
+  "cloth dye house",
+  "cobbler's shop",
+  "community pharmacy",
+  "creamery dairy",
+  "cut-glass works",
+  "dance hall",
+  "decorators' merchant",
+  "department store escalator",
+  "egg packing station",
+  "ferry terminal",
+  "firewood log yard",
+  "firework shop",
+  "forest bandstand",
+  "hard-case luggage shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "lubrication bay",
+  "model yacht pond",
+  "newspaper newsroom",
+  "nursery goods shop",
+  "orchard cider press",
+  "pawnbroker shop",
+  "pest-control depot",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "railway sleeping car",
+  "roller skating rink",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "tile showroom",
+  "towbar fitting yard",
+  "town square car park",
+  "turkish baths",
+  "upholstery workshop",
+  "variety theatre",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "wooden boat repair yard",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 62,
+   "title_en": "Metabolic-heavy SGAs: Olanzapine, Quetiapine, Risperidone",
+   "title_he": "SGA מטבוליים: Olanzapine, Quetiapine, Risperidone",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "metabolic_monitoring",
+    "prolactin"
+   ],
+   "required_tokens": {
+    "metabolic_syndrome": "(beyond DOPA-MINE: the Olympic athlete eating)",
+    "hyperprolactinemia": "DOPA_MINE (TUBE-INFUNDIBULAR section)",
+    "H1_receptor": "H_HOUSE",
+    "5-HT2C_receptor": "TAROT_2A (kitchen annex)"
+   },
+   "why_rejected": [
+    "Automatic reject on rule 4: the place category duplicates two live corpus venues. #49 SEAM STRESS ALTERATIONS (marked KEEP) is 'a cramped back-street alterations counter in a parade of shops... three-way fitting mirror, a carpeted fitting box, a curtained cubicle, and a rail of other people's trousers waiting on numbered claim tickets', with the activity 'standing on the fitting box being pinned, kneeling to chalk a hem'. #118 MEN IN JEANS also carries 'curtained fitting cubicles at the back, a hemming table with a tailor at it'. This proposal reproduces the fitting block, three-way mirror, curtained cubicles, chalked seam, pinned hem and labelled rail element for element. batch_05's taken_categories missed it only because #49's place_category field is null - that list is not authoritative and cannot be relied on as the uniqueness check.",
+    "H1_receptor is not hosted. H_HOUSE is a literal H-shaped four-storey house, floor 1 living room, snoozing resident on a giant couch, allergy tissues. The record gives a husband asleep against the upright of an H-frame garment rail: a letter-H cameo, not the scene - no floors, no couch, no tissues, and nothing a resident who learned H_HOUSE would retrieve from.",
+    "5-HT2C is thin. TAROT_2A's kitchen annex with two chefs guarding a cookie jar becomes two apprentices and a biscuit tin on a cutting table. The two-guards-and-a-jar arithmetic survives (and the inversion to 'looking the other way' is correct pharmacology), but the kitchen and the tarot parlour do not, so the cross-chapter link is broken.",
+    "metabolic_syndrome drops the glucose meter showing 250 and the Quiet Pine, both named in the token prop. The meter is the chapter's only number carrier for T2DM, and quetiapine's morpheme goes with the pine - the record demotes quetiapine to a 'QUIET PLEASE - FITTING' card, which carries QUIET but not the drug.",
+    "hyperprolactinemia keeps the milk but loses the pump (bottle knocked over on a tea tray). Better than ch.58's paint, still not the token.",
+    "Secondary: OLANZO and RISPER are truncated drug names presented as surnames, not real names. #60 CLOZA PINE MILL works because a pine mill is a real thing that the syllables genuinely spell; OLANZO and RISPER spell nothing."
+   ],
+   "current": {
+    "sign_text": "OLYMPIA WEIGHTS",
+    "place": "A back-street weights gym on a wet Tuesday evening: a long steel rack of loaded barbells and dumb-bells down one side, benches and a squat frame out on the rubber floor, a mirrored wall, the beam scales and the weigh-in chart by the door and a juice counter at the back",
+    "place_category": "weights gym",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "OLANZa collapses onto OLYMPIA, and the course lexicon already draws Olanzapine as the Olympic athlete, so the venue name and the existing token are the same joke rather than two competing ones. The gym then supplies every fact off native stock: the beam scales and the dated weigh-in chart are the metabolic monitoring schedule on the one object in ordinary life whose job is bearing weights and dates; the numbered plates are the dose, so Quetiapine's two personalities become two bars on the same rack — the one loaded with two tiny plates beside a man asleep on the pine bench, and the one loaded heavy that is actually doing the work; Risperidone's stiffness rises visibly with the plates on his bar (dose-dependent EPS) while the milk dispenser behind him runs over the counter (prolactin). Deliberately no floor mats or exercise mats anywhere in this room, so the V-MAT 2 cue stays unique to chapter 66."
+   }
+  },
+  {
+   "index": 67,
+   "title_en": "Neuroleptic Malignant Syndrome",
+   "title_he": "NMS — תסמונת ממאירה ניורולפטית",
+   "aspects": [
+    "recognition",
+    "diagnostic_criteria",
+    "differential",
+    "emergency_management"
+   ],
+   "required_tokens": {
+    "neuroleptic_malignant_syndrome": "(DOPA_MINE in catastrophic mode)",
+    "serotonin_syndrome": "(serotonin scenes overload)"
+   },
+   "why_rejected": [
+    "serotonin_syndrome is substituted, not hosted - rule 5, and the venue is what has to change. RAPHE_TAPESTRY in _lex_scene.json is 'a narrow Persian-rug weaving workshop running down the brainstem midline', whose declared elements are the tapestry seam down the middle (seam = raphe, which is the entire point of the glyph) and shipping crates labelled cortex/limbic/hypothalamus. The record gives a canvas stretcher-webbing loom in a rescue-station loft: no rug, no seam, no crates. A mines rescue station cannot plausibly contain a rug works, so the venue is rejected, not the token.",
+    "NMS rigidity is rendered invisible. The token is 'all workers turn into RIGID PYRAMID STATUES'; the record renders it as every tally on the check board 'hanging as a stiff upright peg' - a peg is stiff by nature, so there is no anomaly for a reader to see. Rigidity is also the discriminator between NMS and serotonin syndrome, which the chapter's differential aspect turns on, so this is a content loss as well as a compositional one. Nothing carries autonomic instability either (the token's heart monitor with wild swings), despite diagnostic_criteria being a listed aspect.",
+    "Category collision with #80 FIRE BRIGADE TRAINING (marked KEEP): 'a small-town fire station... the drill tower in the yard behind'. A mines rescue station on a drill morning with a smoke gallery, breathing sets, a spray line, a hose and a drill roster is the same kind of premises - an emergency-service station where crews drill in breathing apparatus. Invisible in batch_05's taken_categories only because #80's place_category is null.",
+    "'SHUT THE FAN OFF FIRST' is invented and backwards for the trade. In a mine, ventilation is the one thing you never shut off, so no real rescue station would paint that placard; and 'fan' maps to 'the offending antipsychotic' by assertion alone. R2/rule-1 discipline requires the largest lettering to come off native stock.",
+    "The colliery in the yard is legitimate and in fact required (NMS is DOPA_MINE in catastrophic mode, and #4 DOPA MINE No.4 is exactly that pithead), but the record does not declare it as a shared-universe adjacency, which R10 requires. Separately, the numbered brass check board duplicates #4's own lamp checks and echoes #66 TARDY GATE WORKS's numbered clock-card rack.",
+    "The rope-breaking machine's load dial as creatine kinase is the weakest mapping in the batch; it works only because the stamped test card carries a big number, not because the object means muscle."
+   ],
+   "current": {
+    "sign_text": "NORTH MAIN STEEL",
+    "place": "A small rolling mill's casting floor on the night shift — furnace door glowing, an overhead ladle crane on a rail, a cooling bed of red-hot bars, a water quench tank at the far end",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N. M. S. = NORTH MAIN STEEL, a name that reads as a real mill on a real street, with the three letters picked out in the sign's own paint. The mill's ordinary business is the syndrome: it runs far too hot (hyperthermia, and the wall thermometer is the number carrier), and everything it makes is a rigid straight bar that will not bend — lead-pipe rigidity, which is what separates NMS from serotonin syndrome. The mill supplies the treatment from stock too: the water quench tank is external cooling, the safety shower is fluids, and the largest lettering on the page is the placard on the control post reading 'SHUT IT DOWN FIRST' — stop the offending agent before anything else."
+   }
+  },
+  {
+   "index": 76,
+   "title_en": "Bulimia Nervosa + Binge Eating Disorder",
+   "title_he": "Bulimia Nervosa + Binge Eating Disorder",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_feeding_eating": ""
+   },
+   "why_rejected": [
+    "RETRIEVAL COLLISION with two shipped chapters. Ch.90 (Gambling Disorder + behavioral addictions) is CHASE'S PLEDGE OFFICE, and its place text declares the amusement arcade opposite; ch.17 (ADHD) IS that arcade, HYPERDRIVE AMUSEMENTS, with a glass change booth, prize counter, tokens and an attendant's float bag. A bingo hall is a gambling premises, and the proposal doubles down with 'bank of slot machines lit up in the foyer', a prize board of cash amounts, a pay window, a float tray and a spike of cash-out slips — i.e. ch.17's furniture restaged. 'bingo hall' is not a formal duplicate of 'pawnbroker shop' or 'amusement arcade', but rule 4 exists so that one world retrieves one chapter; this world retrieves 90 and 17 first.",
+    "THE SIGN INDEXES HALF THE CHAPTER. BINGO/BINGE is a legitimate hook (one grapheme, shared /bɪŋ/) and FULL HOUSE genuinely doubles as the hall's own call and the picture of an episode — but the chapter is 'Bulimia Nervosa + Binge Eating Disorder' and bulimia leads. Nothing in a bingo hall is the compensatory half: no purge, no weighing, no making weight, no getting-rid-of business at all. The rejected boxing club was chosen precisely for that cycle (weigh-in, spit bucket, steam room, table of food after) and the replacement throws it away without replacing it.",
+    "MEDICAL_MIMICS AND ASSESSMENT ASPECTS HAVE NO CARRIER. Parotid swelling, dental erosion, Russell's sign, hypokalaemia, the once-weekly-for-three-months frequency, fluoxetine 60 mg — a bingo hall offers the snack counter and nothing else. The number carriers listed (ninety-lamp board, ticket serials, prize numerals) are excellent as carriers but they carry nothing chapter-specific.",
+    "TOKEN HOSTED BY CONTRIVANCE. DSM_feeding_eating requires 'empty plate next to a measuring tape'. A dressmaker's tape coiled on a bingo snack counter has no reason to exist there. Compare ch.26, where FRAGILE and XL are already stamped on the stock before the illustrator arrives, or the weigh-band in proposal 80. The venue must own the carrier.",
+    "'FULL HOUSE' also collides semantically with ch.90: bingo's winning call is the most available gambling phrase in English. The pun points at the wrong chapter as readily as the right one.",
+    "confidence 'strong' is overclaimed; nothing here is stronger than 'workable'."
+   ],
+   "current": {
+    "sign_text": "OX ROAD BOXING CLUB",
+    "place": "An amateur boxing club in a hired church hall on weigh-in night: a ring platform up on scaffold, a line of heavy bags hung from a beam, a beam scale on a rubber mat with a queue standing at it, kit bags along the wall bars and a trestle table of food and drink laid out for afterwards",
+    "place_category": "amateur boxing club",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Bulimia is Greek ox-hunger, bous limos, and the ox is already sitting inside the word boxing, so the club's street name carries the diagnosis's own picture without printing it, in the mid-word-capital manner of expreSS tRIps; the club's fluorescent ox mascot on the end wall is then the fixed fluoxetine glyph standing exactly where this chapter needs it. The venue is also the one ordinary place where the whole take-it-in-then-get-rid-of-it cycle is a normal evening's work — sweat tops, spit buckets, the steam-room door, a scale that judges everything, and a table of food to fall on the moment the weigh-in is over — done by people who look completely unremarkable, which is the clinical point."
+   }
+  },
+  {
+   "index": 79,
+   "title_en": "Sleep development in children + adolescent shift",
+   "title_he": "התפתחות שינה בילדים + תזוזת מתבגרים",
+   "aspects": [
+    "sleep_architecture_by_age",
+    "sleep_needs",
+    "circadian_phase_delay"
+   ],
+   "required_tokens": {
+    "CONVENIENCE_STORE_7": ""
+   },
+   "why_rejected": [
+    "THE TOKEN IS SPENT AND NOTHING IS BOUGHT WITH IT. The plate is set on 'a bright weekday'; hosts_tokens then asks for 'its neon 7 lit in daylight and the night clerk restocking behind the glass'. Ch.5 has a daylight fudge of this token, so daylight is not per se illegal — but CONVENIENCE_STORE_7 was assigned to THIS chapter because the adolescent phase delay is drawn by who is still out when everyone else has gone in. The rejected observatory version had exactly that ('sixth-formers walking out of the gate straight over to it', at midnight, matching ch.128's midnight rendering under Spindle Court). A daytime lido with 'the last of the late session drifting across the road' is the same sentence with the fact removed.",
+    "FASCIA CLASH. BATHS is already the largest word on ch.123's fascia (ASH LEIGH BATHS, municipal Turkish baths). The categories are separable — an outdoor tidal sea-pool is not a steam-and-scrub house — but two bathing-establishment signs both ending in BATHS is the ODDS & ENDS pathology the spec names. The word is the problem, not the trade.",
+    "THE VENUE'S TWO BEST ISOMORPHISMS ARE LEFT IN THE PROP LIST. The tank has a shallow and a deep end with painted depth figures 3FT–9FT, which is the obvious native carrier for slow-wave dominance in childhood versus adult shallow sleep; and the timetable runs infants 9:30 → school 11 → juniors 4:30 → adults 6:30 → late swim 9, which is sleep need AND phase delay as one printed board. Neither appears in place, activity or pun_explanation — they are listed as decoration. As written a reader cannot tell the venue was chosen for them.",
+    "Not a problem, for the record: R-E-M as the first three word-initials with a trailing BATHS is fine — expreSS tRIps is an ordered subsequence with plenty of spare letters around it. Do not 'fix' that.",
+    "KEEP THIS VENUE — it is the right one and two edits repair it. (a) Re-set the session to the floodlit late swim / after-dark session so the 24-hour shop's neon across the road is native and the swimmers still in the water when the town has gone home ARE the phase delay; (b) take BATHS off the fascia (ROCK END MIXED LIDO, ROCK END MIXED BATHING PLACE — R-E-M survives either way); (c) promote the deep/shallow ends and the age-ordered timetable into place and pun_explanation. Keep the tide board with high water ~50 minutes later on every successive line — that is a genuinely pre-printed carrier for daily phase drift and it beats the moonrise table it replaces."
+   ],
+   "current": {
+    "sign_text": "PHASE HILL OBSERVATORY",
+    "place": "A small municipal observatory in a town park on a public open night: the dome with its slit rolled back over the lawn, a row of borrowed telescopes set out on the grass, the warm room with its log desk and clock board, and the park gate standing open onto the road.",
+    "place_category": "public observatory",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Phase is the same word in both trades: an observatory's whole business is phase, and a delayed phase is the chapter. The name is therefore an exact homonym planted in a place name a real observatory would carry, and it prints no clinical word at all. The choice earns its keep because the venue owns, as ordinary equipment, the two objects that make the adolescent shift explicable rather than merely stated. First, two clocks hang on the same warm-room wall reading different times — sidereal and civil — because the sky keeps a period that is not twenty-four hours; that is the internal clock against the school clock, and the discrepancy is an instrument reading, not a mood. Second, the moonrise table pinned beside them lists a rise time roughly fifty minutes later on every successive line, so the picture contains a printed, native, undeniable object whose whole content is a clock that runs later every day. Nothing else in the course supplies that. Sleep architecture by age is literal depiction inside one shared activity: the smallest visitors swing their scopes all over the sky and never settle, which is REM-heavy infant sleep; the school-age children are the ones standing guard over the hour-long exposure that must not be jogged, which is slow-wave; the adults get short broken looks between clouds. Required hours by age become the booking board of session lengths, a properly numbered carrier. The venue is also open at night in a town, which is the only reason the fixed 24-hour store can stand across the road without contrivance — and the sixth-formers drifting out of the gate towards it while everyone else is packing up is the phase delay and its consequence in one movement."
+   }
+  },
+  {
+   "index": 80,
+   "title_en": "Eating disorders intensive: FBT + medical stabilization",
+   "title_he": "הפרעות אכילה: FBT + ייצוב רפואי",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications",
+    "medical_stabilization",
+    "admission_criteria"
+   ],
+   "required_tokens": {
+    "DSM_feeding_eating": ""
+   },
+   "why_rejected": [
+    "HARD CATEGORY COLLISION with ch.124 (Headache + Migraine), whose sign is MY GRAIN & FEED and whose place is 'a country grain elevator and feed mill at the edge of town: trucks queued at the weighbridge, a cluster of linked steel bins, grain dust hanging in the light', with a 'truck weighbridge with a mechanical dial and a tally board'. The proposal is an agricultural feed merchant with the weighbridge and its ticket window out in the yard, a mixing-floor hopper overhead, and stencilled feed sacks. Same trade, same signature furniture, and FODDER/FEED in the largest lettering on both fascias. This is the launderette failure exactly.",
+    "THE DEDUP INPUT WAS INCOMPLETE, WHICH IS WHY THIS HAPPENED. taken_categories listed 27 items; venues.json holds ~90 non-null place_category values and ~55 more chapters whose category is null but whose place text describes a real, unmistakable trade (ch.124 grain-and-feed mill, ch.14 tattoo parlour, ch.100 lighting showroom, ch.59 discount food warehouse, ch.55 bowling alley). Dedup has to be run against the place text, not the place_category field, or this recurs every batch.",
+    "FBT'S ACTUAL TEACHABLE STRUCTURE IS MISSING. The method is phase 1, parents take charge of the plate, then phase 2, control handed back. The rejected firehouse had it as station routine (officer serves every plate; the ladle goes to the rookie later). Here the ambient activity is 'everyone is making up an order' and no handover is drawn — the ration chart gives prescribed intake, but the who-holds-the-scoop question, which is the whole chapter, is unanswered.",
+    "REGISTER RISK worth a decision before re-authoring: the chapter is refeeding a starved child, and this venue draws feeding as livestock fattening, with the DSM_feeding_eating binge plate rendered as 'a bucket heaped over the rim' and the restricted-food list as a DO NOT FEED TO SHEEP sack. No figure in the frame is equated with an animal, so it is arguable — but it is the one venue in this batch that could read as demeaning, and the deadpan register does not protect it.",
+    "Worth preserving in whatever replaces it: DICAL PHOS on the minerals shelf and the vet's 'reintroduce feed slowly, little and often' notice are the pre-printed-stock move done properly (refeeding syndrome and phosphate monitoring already painted on real stock). Look for a trade whose genuine stock prints 'start slow' and names a phosphate.",
+    "Keep F-B-T as the word-initials of a flat trade name; drop the feed trade outright (ch.124 owns it). Find a mundane place where ONE person makes up a fixed portion for others at ONE table and later hands the ladle over, with native scales and a posted little-and-often rule: a works or school canteen serving counter, a hospital or church-hall kitchen hatch, a bakery weighing room, a mobile canteen round. Check any candidate's place text — not just its category — against ch.31, 59, 83, 102, 120, 124 and against whatever replaces ch.76."
+   ],
+   "current": {
+    "sign_text": "FIRE BRIGADE TRAINING",
+    "place": "A small-town fire station at supper time: the engine backed into the open bay, the long crew table laid for the shift meal in the day room, and the drill tower in the yard behind",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "F-B-T are the initials of an entirely ordinary painted door legend, FIRE BRIGADE TRAINING, and the firehouse then donates Family-Based Treatment's whole method: the watch eats one supervised meal at one table, the officer at the head of the table decides how much goes on every plate (phase 1 - parents take charge of refeeding), the rookie is handed the ladle later (phase 2 - handing control back), and the framed notice 'PUT IT OUT FIRST - ASK WHY LATER' is FBT's agnostic stance as station-house humour. Medical stabilization is the pump panel: open the line slowly or it bursts from cold - start low, go slow - with the pressure gauge as the native number carrier and the stencilled PHOS drum on the foam shelf as the phosphate that must be watched."
+   }
+  },
+  {
+   "index": 93,
+   "title_en": "Schizotypal Personality Disorder",
+   "title_he": "הפרעת אישיות סכיזוטיפלית",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "schizotypal_pd": "Personality Inn — Cluster A room",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "THE REQUIRED TOKEN IS GUTTED. schizotypal_pd is a SYMBOL whose content is a PERSON: homemade wizard-robe, cross-legged, tarot by candlelight, mismatched layered clothing, sincerely held magical beliefs, odd vague speech, no close friends besides the cat. The proposal hosts an EMPTY display tipi 'with a lamp left on inside it to show it works' plus merchandise laid on the rug. The existing ch.93 record already hosts it correctly — 'a customer in a donated dressing gown sits cross-legged in its doorway with a tarot spread laid out on a tea tray... and the shop cat on her knee'. The person and the cat are dropped, and belief becomes shrink-wrapped stock. dsm_criteria is the chapter's first aspect and it now has no carrier.",
+    "WRONG NUMBER IN A FIXED TOKEN. DSM_personality_disorders is ten guests — 3 Cluster A, 4 Cluster B, 3 Cluster C — plus the faceless mannequin in the entrance hall. The proposal says 'the twelve guests grouped in their clusters'. In a course whose whole number policy is 'paint the digits on a carrier', a model inn populated with twelve figurines teaches a wrong count that a resident will rehearse.",
+    "INCOHERENT HOSTING OF general_PD_criteria. 'the leaning framed-print rack by the window, six prints hung in order A to F above the faceless torso mannequin' — a leaning browse-rack holds prints face-on to be flipped through; it cannot also be a lettered row hung above something. Choose: six framed exhibits in a lettered row A–F on the wall over the window display, mannequin beneath with PERSONALITY on its card.",
+    "THE VENUE'S OWN BEST ASSET IS UNUSED. A card shop's ambient activity is opening a card and reading a verse addressed directly to the reader — THIS IS YOUR DAY, SOMEONE IS THINKING OF YOU. That is idea of reference on the shop's own pre-printed stock, inside the shared activity, for free. The proposal uses the racks only as age-number carriers (18TH, 21ST, 40TH, 60TH). The bric-a-brac version did this job with the donated TV talking at a customer; nothing replaces it here.",
+    "THE DIFFERENTIAL HAS NO CARRIER. Schizotypal vs schizophrenia — odd but not psychotic, everything works once you wind it — was carried natively by the junk shop's foxed mirror and crackling transistor. The gift shop retains only the lava lamp 'plugged in to prove it works'. Nor is anything named for treatment_first_line / treatment_second_line, both of which are listed aspects.",
+    "SHARED UNIVERSE DROPPED. The prior record declared the parade adjacency to ch.55's SPLIT LANES BOWLING, drawing the spectrum relationship as which premises stand on the same street (R10). The replacement drops it without substitute."
+   ],
+   "current": {
+    "sign_text": "TIPI TOP BRIC-A-BRAC",
+    "place": "A second-hand bric-a-brac shop on a small-town parade on Saturday, next door but one to the bowling alley: a long deal table of unsorted boxes down the middle, rails of mismatched coats along one wall, floor-to-ceiling shelves of crockery, lamps and paperbacks behind the counter, and a child's play tipi pitched in the toy corner at the back with a lamp burning inside it.",
+    "place_category": "bric-a-brac shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Typal to tipi is the course's own fixed derivation for this disorder, and Tipi Top is the sort of cheery name a junk shop on a parade genuinely carries, so the fascia carries the phonetic hook and the actual tipi stands pitched at the back of the same room — the pun said twice, once in lettering and once in canvas. The shop was chosen over a camping venue because it is the only ordinary place on earth where every single object the fixed glyph requires is already the stock: the tarot deck under a rubber band, the crystal ball on a doily, the lava lamp, the dream catcher, the astrological chart, the occult paperbacks and the four layers of mismatched donated clothing that a rummage produces on a real customer's back. Eccentric appearance therefore needs no invention — it is what the venue does to people. The criteria that are hardest to draw are the ones the shop supplies best: a donated television, plugged in to prove it works, with its presenter apparently talking straight at the one customer who has stopped dead in front of it, is an idea of reference by literal depiction; the foxed mirror and the crackling transistor are unusual perceptual experiences that anyone can verify are simply a bad mirror and a bad radio, which is the point of the differential — nothing here is actually psychotic, everything works once you wind it. The hand-lettered labels reading nothing in particular are vague speech; the volunteer watching the door over the till is suspiciousness; and the customer hovering on the step, checking behind her and not coming in, is the social anxiety that does not settle with familiarity. The parade is a declared adjacency: the bowling alley two doors along is the schizophrenia chapter, and the spectrum relationship is drawn as which premises are on the same street."
+   }
+  }
+ ]
+}

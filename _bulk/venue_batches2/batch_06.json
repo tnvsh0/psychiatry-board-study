@@ -1,0 +1,218 @@
+{
+ "taken_categories": [
+  "cable and flex works",
+  "cable assembly workshop",
+  "canal lock",
+  "candle works",
+  "canning works",
+  "children's shoe fitters",
+  "cloth dye house",
+  "cobbler's shop",
+  "community pharmacy",
+  "creamery dairy",
+  "cut-glass works",
+  "dance hall",
+  "decorators' merchant",
+  "department store escalator",
+  "egg packing station",
+  "ferry terminal",
+  "firewood log yard",
+  "firework shop",
+  "forest bandstand",
+  "hard-case luggage shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "lubrication bay",
+  "model yacht pond",
+  "newspaper newsroom",
+  "nursery goods shop",
+  "orchard cider press",
+  "pawnbroker shop",
+  "pest-control depot",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "railway sleeping car",
+  "roller skating rink",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "tile showroom",
+  "towbar fitting yard",
+  "town square car park",
+  "turkish baths",
+  "upholstery workshop",
+  "variety theatre",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "wooden boat repair yard",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 112,
+   "title_en": "Perinatal psychiatry: postpartum depression + psychosis",
+   "title_he": "פסיכיאטריה פרינטלית",
+   "aspects": [
+    "PPD",
+    "postpartum_psychosis",
+    "SSRI_in_pregnancy_lactation",
+    "preeclampsia_psych"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "The anchor is a near-verbatim duplicate of index 26 (DOWNS FARM EGGS, egg packing station). 26: 'The grading line and its roller belt running from the lower left of the frame up to the packing bench at the top right, dividing the shed into the intake end, the candling booth, the sorted size lanes'. This proposal: 'The roller conveyor and the filling carousel it feeds, the belt running the whole length of the floor from the lower left of the frame to the upper right and dividing the plant into empties end, carousel, quality booth and loading bay.' Same geometry, same zone split, same inspection booth, same open loading door with a vehicle. The category string differs; the picture does not.",
+    "The genre is already carrying three: 26 (egg grading line), 83 (creamery intake and pipe run), 120 (canning works with retorts, grading bench, pallets by the loading door). A fourth small food-processing plant with pressure gauges, batch codes and pallets is the launderette failure repeating in a different trade.",
+    "Same patient-as-object problem as 107: bottle = baby, small-bottle line = lactation, the mother is nowhere. A perinatal chapter drawn with no mother and no newborn in frame teaches the resident a bottling line and asks them to carry the translation themselves.",
+    "Pipeline finding: batch_08's taken_categories lists 27 entries against ~90 real ones in venues.json. 'canning works' happens to be absent from that list, so the author had no way to see index 120.",
+    "Keep PIPER & DODD — the P-P-D subsequence is clean and 'what happens after delivery' with delivery notes on the bay doors is a genuinely good double meaning — and keep the two best number carriers (the tally ruled in sevens for 1-in-7 PPD, the pressure gauge with a red line for preeclampsia). Move both into a mundane trade whose customers are actually women with newborns and whose anchor is not a conveyor, so it escapes 26/83/120. Check any candidate against index 74 (mobility aids showroom) and index 9 (LITTLE SPROUTS NURSERY) before committing."
+   ],
+   "current": {
+    "sign_text": "PIPER & DODD SPRINGS",
+    "place": "A small spring-water bottling plant on the day shift: a filling carousel and capping head straddling the line in the middle of the floor, a roller conveyor running the length of the room to the case-taper, a glazed quality booth off to one side, a second narrower line of small bottles behind its own guard rail, and the loading bay doors standing open at the far end",
+    "place_category": "bottling plant",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "P-P-D as an ordered subsequence in an ordinary family firm name — PiPer & DoDD — for the abbreviation the chapter itself uses. The plant is then the mechanism rather than a mood: its whole job is what happens after delivery, one bottle in every seven is lifted off the belt for checking at the quality booth, a red-tagged bottle goes to the locked cage with two people at the door, and there is a separate small-bottle line whose posted rules about what may and may not go in are the lactation half of the chapter."
+   }
+  },
+  {
+   "index": 114,
+   "title_en": "Geriatric overview (delirium focus — light touch)",
+   "title_he": "גריאטריה — סקירה (delirium)",
+   "aspects": [
+    "delirium_recognition",
+    "reversible_causes",
+    "behavioral_management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "The sign prints the diagnosis with a space in it. DE LIRA is delirium minus its inflection, in the largest lettering slot, on a chapter whose subject word the resident already knows. My brief makes that an automatic reject. Stating the counter-argument plainly so the call can be overridden knowingly: the corpus does ship exactly this morpheme-split device — CLOZA PINE MILL, DOPA MINE No.4, SARA TONIN CARPETS — and the spec's own R1 licenses 'one morpheme of the diagnosis hand-lettered on a PROP inside a world that IS the term's literal picture'. Note where it says the morpheme goes: on a prop, not on the fascia. Every corpus instance of the split is a DRUG name, where the name is the fact being taught; here the name is the one thing already known.",
+    "The anchor fails the R3 'single largest object' probe. 'The long run of string and marker pegs with the first-drawn furrows lying beside it' is an ankle-height string line in an open field standing among a row of tractors. Ask the probe question of the rendered frame and the answer is a tractor, not the pegs.",
+    "The last stock_prop is not a prop: 'hurricane lamp already hung on the awning pole with the low sun and long shadows across the far half of the field' bundles an object with a lighting state, and the sundowning cue arrives as scene description rather than as a thing. R2 also wants one light source, and this prop asserts two.",
+    "place_category 'ploughing match' names an event, not a kind of place, which is what the uniqueness check is meant to compare.",
+    "Confidence 'workable' is right, and the rest is strong: LITERAL_PICTURE is correctly labelled and genuinely earned (off the furrow, attention held on one line, the waxing-and-waning course written permanently into the soil), the place is properly mundane, hosts_tokens is correctly empty, and the digit carriers are real — numbered plot pegs, ruled score sheets, a clock face, chalked bonnet numbers, a programme of classes and start times.",
+    "Move the etymology off the fascia and onto a prop, per R1's own p272 MINIMUM device: fascia becomes an ordinary family name — LIRA & SONS — with DE carried by the judges' class board or a deviation mark on a score sheet, so the resident assembles delirium from the picture instead of reading it off the sign. Restate the anchor as the mass of turned furrows crossing the frame diagonally rather than the string and pegs, split the last prop into 'hurricane lamp hung on the awning pole' and move the low sun into place, and set place_category to 'ploughing match field'. If the spec owner rules that the CLOZA PINE precedent extends from drug names to diagnosis etymologies, DE LIRA stands and only the anchor and prop fixes are needed."
+   ],
+   "current": {
+    "sign_text": "DE LIRA FARM",
+    "place": "A village ploughing match on a bright autumn morning: a stubble field pegged into numbered plots, a line of old tractors turning furrows up and down, a judges' table under an awning at the headland, and a tea urn on a trailer tailgate.",
+    "place_category": "ploughing match",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Delirium is de + lira — Latin for off the furrow, the ploughman who wanders out of his line — and DE LIRA FARM reads as an ordinary family farm name while printing the word the diagnosis is built from. A ploughing match is then the only mundane place whose entire business is holding attention on one line for an hour, and whose product is a permanent record in the soil of exactly when a man was on it and when he was not: the furrow itself is a course chart, waxing and waning, drawn in the ground. The three motor types need no invention because a match already contains them — one tearing up and down out of turn, one stalled mid-plot with the engine just idling whom the judges walk straight past, and one alternating. The reversible causes are the only things a ploughman ever checks on a tractor: the choked air filter, the boiling radiator, the flat battery and the water churn, the odd-coloured fuel can at the end of the row. The match runs into a low sun with long shadows across the far half of the field."
+   }
+  },
+  {
+   "index": 118,
+   "title_en": "CNS infections with psychiatric sequelae",
+   "title_he": "זיהומים ב-CNS עם השלכות פסיכיאטריות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "The sign indexes the specimen, not the disease. CSF is the workup's object; the chapter is CNS infection with psychiatric sequelae. Retrieval runs backwards: a resident who remembers CLEAR SPRING FISHERIES recovers 'cerebrospinal fluid', and has to already be thinking about lumbar puncture to get from there to meningitis. Rule 1 asks the name to be a pun on the topic; this is a pun on the test.",
+    "C-S-F as three word-initials is the weakest legal form of ACRONYM_EMBED. The corpus precedents work for reasons this one lacks: OUSE AMATEUR ROWING SOCIETY spells OARS, which is both a real word and the method's own four-skill acronym; OCEAN DAILY CATCH and expreSS tRIps bury the letters inside words. CSF is not a word, not fisheries vocabulary, and sits on three initials so common that almost any three-word trade name yields some acronym. The letters are asserted, not hidden.",
+    "The chapter's named second half — psychiatric sequelae — gets one prop: a day book with a repeated entry. That is the aspect that makes this a psychiatry chapter rather than an infectious-disease one, and the venue has no home for the specific syndromes the chapter must cover (HSV encephalitis and the temporal lobe, neurosyphilis, HIV, autoimmune encephalitis). Fish off the feed cannot carry any of them.",
+    "The discrimination the chapter actually turns on — bacterial vs viral, i.e. the cell count and the differential — has no carrier. 'Counting frame and grading table with the day's tallies on a clip' is generic; the venue gives clear-vs-cloudy and pressure and protein/glucose, then stops exactly where the exam question is.",
+    "Population fails R3. A trout farm on a weekday morning has three or four staff. Twelve-plus figures all lowering clarity discs into raceways is not a mundane day at this place, it is a staged one.",
+    "Fourth water/fish venue in the course after 43 (wet fish shop), 63 (LURA'S BAIT & TACKLE) and 10 (OLD SCHOOL AQUARIUM). 'Trout farm' is not a synonym of any of them and 'farm' is the fifth farm (19, 83, 85, 89), so this is not a rule breach — but the fascia also reuses SPRING, already on two signs (98 SPRING NARCISSUS SHOW, 112 PIPER & DODD SPRINGS), which is exactly the dilution rule 4 exists to prevent."
+   ],
+   "current": {
+    "sign_text": "MEN IN JEANS",
+    "place": "A high-street denim shop mid-afternoon: steel rails of jeans, a three-tier folded stack wall, curtained fitting cubicles at the back, a hemming table with a tailor at it",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "MEN IN JEANS is a perfectly ordinary denim shopfront and it says MENINGES. The shop's stock then supplies the anatomy without being asked: the folded stack wall is three tiers deep, which is dura, arachnoid and pia, and the gaps between the tiers are where things collect; the cubicle sign already reads a maximum number of items, i.e. three layers; and clothing retail natively supplies a stiff collar, a bright spotlit floor and a glass tumbler at the till for the rash test."
+   }
+  },
+  {
+   "index": 122,
+   "title_en": "Neurogenetic syndromes: Williams, Prader-Willi, Angelman, 22q11",
+   "title_he": "תסמונות נוירוגנטיות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "World collision with ch.63 LURA'S BAIT & TACKLE (status KEEP in _cats.txt), a lakeside bait-and-tackle shop — angling is already a taken world, and this record rebuilds ch.63's furniture inside its own frame: the 'tackle-and-bait hut with a serving hatch', the 'landing nets, rod rests, plumbing floats and keepnets in a rack' and the groundbait buckets. 'day-ticket fishery' only passed the uniqueness check because 55 of the 144 entries in schedule/venues.json carry a null place_category, so ch.63 is invisible in batch_10's taken_categories list.",
+    "Genomic imprinting — the chapter's central mechanism and the reason the four syndromes are one chapter — has no physical carrier. ANGEL POOL and WILLOW POOL name the two syndromes, not the two parents, so 'which side it came from decides everything' is prose assertion: nothing on the post, the ticket or the banks says maternal or paternal. The rejected draft's MOM'S SIDE / DAD'S SIDE gazebo banners did carry it and nothing here replaces them.",
+    "No carrier anywhere for 22q11's psychiatric relevance (~25% psychosis risk) — the aspect the chapter exists for on a psychiatry board — despite a record board with weights and dates, a chalked rules board and a numbered draw bag all standing free to take a number.",
+    "Angelman gets nothing clinical at all: no laughter, ataxic puppet gait, absent speech or seizure carrier. It exists as a lake name only, so a resident who remembers the fishery retrieves 22q11 and Prader-Willi and stops.",
+    "Thymic aplasia is drawn as an absence — 'the pair of small bait tins gone from the shelf with their rings left in the dust'. An object that is not in the frame cannot be numbered in a legend or retrieved from the picture.",
+    "pun_explanation is a ~450-word scene brief rather than a statement of how the name encodes the topic; the props and their assignments belong in stock_props and the lexicon pass."
+   ],
+   "current": {
+    "sign_text": "SHELTER 22Q",
+    "place": "The annual family-reunion potluck at a public park's numbered picnic shelter, midday: trestle buffet under the shelter roof, two gazebos on the grass, an ice-cream van at the kerb.",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A locus name that is already shaped like a place number: public parks letter and number their picnic shelters, so \"SHELTER 22Q\" reads as a genuine reserved-pavilion placard while printing the highest-yield string in the chapter (22q11 — 25% psychosis risk). The reunion is chosen because it hands over the chapter's hardest fact for free: genomic imprinting is the two gazebo banners \"MOM'S SIDE\" and \"DAD'S SIDE\" — same 15q11 deletion, maternal gives Angelman, paternal gives Prader-Willi, and the venue's own seating custom encodes it. The easel pedigree with four names struck through carries 'these are all deletions'; the padlocked cooler is Prader-Willi food security; the fiddle-and-guitar duo is Williams hypermusicality; the entertainer's marionette is the 'happy puppet'."
+   }
+  },
+  {
+   "index": 128,
+   "title_en": "Sleep medicine intensive",
+   "title_he": "רפואת שינה — אינטנסיבית",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "CONVENIENCE_STORE_7": ""
+   },
+   "why_rejected": [
+    "Hard rule-5 failure. CONVENIENCE_STORE_7 is a fixed course-wide token: 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty', and it is drawn that way at ch.5 and ch.79. This world is gas mantles down the alley, a knocker-up's pole and cap with a list of streets and times, a half-timer at the creel and an overlooker's round — a 24-hour convenience store cannot stand at that mill gate. The token does not change; the venue does.",
+    "Derivation is labelled SPATIAL_ISOMORPHISM but the record's own first sentence is a homonym pun on the fascia (a mill's capacity counted in spindles / the stage-2 waveform). The isomorphism is the ring-rail traverse, not the name. Label the device that is actually carrying the sign.",
+    "Twin frame with ch.127 (diagonal machine hall, rotating bobbins, numbered take-off, tally book), plus mill-and-cloth saturation: ch.60 CLOZA PINE MILL (sawmill), ch.67 rolling mill night shift, ch.124 MY GRAIN & FEED (feed mill) and ch.28 MADDER DYE HOUSE already hold that end of the corpus.",
+    "Coverage gaps for a chapter titled 'Sleep medicine intensive': nothing for parasomnias (sleepwalking, night terrors, REM sleep behaviour disorder) and no carrier for the numbers the chapter is tested on (AHI, sleep latency, SOREMPs), even though the counter head, doffing tally board and shift board are native digit carriers standing unused.",
+    "Two of the clinical facts ride on single figures rather than on props — the doffer shaking a leg for restless legs, the ages down the alley for the lifespan — which puts weight on people in a frame whose retrieval is supposed to come off the machinery.",
+    "Move the mill to the present day: a fluorescent-lit modern spinning room on nights, a clocking-in machine and shift rota in place of the knocker-up and gas mantles, and the 24-hour shop lit across the yard through the end window — that keeps the ring-rail traverse, the belt thrown off its pulley for REM atonia, the ninety-minute round, the duct damper with the two swollen fly bags and the bearing that rattles then falls silent then bangs, all of which are excellent, while letting the token exist. Relabel the derivation, and if ch.127 keeps its bobbin-and-drum machine hall this frame has to move regardless."
+   ],
+   "current": {
+    "sign_text": "SPINDLE COURT FLATS",
+    "place": "A four-storey deck-access block of council flats at midnight: an open concrete stair running up the front from a half-basement bin store to the top deck, turned spindle rails along every balcony, front doors and kitchen windows opening straight onto the decks, a bike rack and meter cupboards at street level, and the lit twenty-four-hour shop in the end unit throwing its neon across the bottom of the stair.",
+    "place_category": "deck-access flats",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "Sleep architecture is not a metaphor in this venue, it is the building. A deck-access block is a stack of numbered levels reached by one stair, and a night's sleep is a descent from the street through the lighter decks down to the deep half-basement and back up again, four or five times over — the one thing about this chapter a resident must be able to redraw from memory. The block's balcony rails are turned spindles, and the spindle is the named waveform of the second stage, so the sign is the ordinary name of an ordinary block and the chapter's own word at the same time. The caretaker who walks the whole block on a fixed round every ninety minutes is the sleep cycle at its real length; the flat at the top with the television still flickering behind a drawn curtain while nobody in it moves is the paradoxical stage. Every disorder in the chapter is ordinary midnight business for a block of flats: the rattling window and the interrupted snoring from the ground-floor bedroom, with two swollen sacks jamming the communal vent that serves it, is obstructive apnoea in a child and its adenotonsillar cause together; the man pacing the deck and shaking one leg out at the rail is restless legs; the stair light on a time switch, the photocell on the street lamp and the shop that never closes are the clock-and-light system that circadian disorders break; and the ages behind the doors, from the pram in the hall to the old man on the top deck, carry sleep architecture across the lifespan without a word being written."
+   }
+  },
+  {
+   "index": 129,
+   "title_en": "Pediatric psychiatric emergencies",
+   "title_he": "חירום פסיכיאטרי בילדים ובמתבגרים",
+   "aspects": [
+    "recognition",
+    "emergency_management",
+    "risk_assessment",
+    "differential",
+    "safety_planning"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "proposed but never reviewed by a critic"
+   ],
+   "current": {
+    "sign_text": "THE HOT LINE",
+    "place": "A twenty-four-hour emergency dispatch room in the small hours: two curved runs of desks under a gantry of screens, a wall map behind, every seat taken, headsets on, job tickets printing at the end of each row.",
+    "place_category": "emergency dispatch room",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A dispatch room is the plain picture already inside the crisis line, and it is the corpus's own run-of-desks composition rather than a third emergency station — the fire house and the hospital are both spoken for, and this is the quieter place where an emergency is actually triaged before anybody is sent. Its value is that every step of the chapter is already furniture. The flip-card box standing on each desk asks in a fixed order and cannot be skipped, which is the structured risk assessment; the three-colour job strips queued on the gantry are the risk bands; the wall notice telling the room to rule out the physical first is the medical and toxic screen before anything is attributed to psychiatry; the script card telling the caller to ask them to put it down and walk out of the room is means restriction, the single highest-yield act in the chapter and the one carried in the largest lettering after the fascia. The supervisor plugged into a trainee's call on a splitter lead and the standing rule that two go to every job are never assess alone and never restrain alone. The callback rack by the door, stamped with tomorrow's date, is the safety plan and the follow-up; the map ring drawn round one street is the disposition, home or in. Three red-edged cards on a ring hang by every screen, one asking for the temperature, one for the pupils, one for the reflexes — the three drug emergencies, and no hospital appears anywhere."
+   }
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "taken_categories": [
+  "cable and flex works",
+  "cable assembly workshop",
+  "canal lock",
+  "candle works",
+  "canning works",
+  "children's shoe fitters",
+  "cloth dye house",
+  "cobbler's shop",
+  "community pharmacy",
+  "creamery dairy",
+  "cut-glass works",
+  "dance hall",
+  "decorators' merchant",
+  "department store escalator",
+  "egg packing station",
+  "ferry terminal",
+  "firewood log yard",
+  "firework shop",
+  "forest bandstand",
+  "hard-case luggage shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "lubrication bay",
+  "model yacht pond",
+  "newspaper newsroom",
+  "nursery goods shop",
+  "orchard cider press",
+  "pawnbroker shop",
+  "pest-control depot",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "railway sleeping car",
+  "roller skating rink",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "tile showroom",
+  "towbar fitting yard",
+  "town square car park",
+  "turkish baths",
+  "upholstery workshop",
+  "variety theatre",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "wooden boat repair yard",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 23,
+   "title_en": "Communication Disorders (Language, Speech, Stuttering, Social-Pragmatic)",
+   "title_he": "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "assessment_tools",
+    "treatment_first_line",
+    "treatment_second_line",
+    "differential"
+   ],
+   "required_tokens": {
+    "communication_disorders": "Special-Ed Classroom — Communication corner (standalone scene possible)",
+    "DSM_neurodevelopmental": ""
+   },
+   "why_rejected": [
+    "place_category is a thin synonym of a taken one. Chapter 60 (CLOZA PINE MILL) is \"a working sawmill yard\" with a log deck feeding the headrig, a green-chain conveyor past a grading station, banks of stickered lumber and a weighbridge. \"Joinery mill\" is the same trade family, the same material and the same shop-floor verbs; the batch traded a delicatessen collision for a timber-mill one.",
+    "Anchor is chapter 60's anchor restated. Ch60: \"the green-chain conveyor and the headrig saw carriage running lower-left to upper-right, with banks of stickered lumber walling both sides of the run\". This proposal: \"the moulder and its long roller bed ... from the lower left of the frame to the upper right\", boards stacked along the sides. Identical composition and identical palette.",
+    "communication_disorders is not hosted, it is emptied. The shipped prop is a speech-therapy room with four children — the empty/wrong-word bubble, wabbit-for-rabbit with the therapist's mirror at the mouth, the fragmented stuttering bubble with the hand-tapping therapist, and the turn-taking child under the TAKE TURNS poster. The proposal supplies a joiner's mock-up of that room: table, chairs, mirror, picture cards and four numbered bays, with nobody in it. The furniture is not the token.",
+    "DSM_neurodevelopmental is emptied the same way — \"the classroom carcass ... six corners set out and lined\" plus a drawing pinned above. Six lined corners and a drawing are not six children. Two course-wide scene tokens reduced to flat-pack in one plate breaks the APPEND-ONLY policy in _lex.json twice.",
+    "The four subtypes are then double-encoded: once (hollowly) in the room-set bays and again on the boards (unmachined tongue, wrong profile, chatter, the man who reaches into the outfeed out of turn). The board version is the better one, but it competes with the token instead of hosting it, so a resident meets each subtype twice in two unrelated prop families.",
+    "The fascia weakens against the version it replaces: TONGUE & GROOVE carries only the tongue morpheme, whereas TONGUE & CHEEK carried the speech idiom as well as two butcher's cuts. Acceptable on its own (a barbershop carries one morpheme too), but it is a downgrade, not an upgrade."
+   ],
+   "current": {
+    "sign_text": "TONGUE & CHEEK",
+    "place": "A butcher shop at the Friday rush: a long refrigerated counter with the day's cuts laid on trays behind the glass, a hand-lettered price board on the back wall, a take-a-ticket machine and a lit number panel by the door, and the block, bandsaw and mincer working in the open behind the counter.",
+    "place_category": "butcher shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Tongue and cheek are two genuine butcher's cuts and a name real butchers actually trade under, so the fascia is invisible as a joke, and the organ of speech is sitting literally on the counter in a trade that has nothing to do with speech — the boring container the rules demand, with the anomaly in the props. The shop's own routine then delivers all four subtypes as literal depiction rather than as one subtype printed verbatim. Naming a cut across the glass is the whole transaction, so the customer handed the wrong thing after asking for it, and the customer whose word comes out with the wrong sounds, are both ordinary counter business. A take-a-ticket queue makes turn-taking the venue's own posted rule, which is what the social subtype fails at, and the shop's own machines block, judder and repeat as a matter of course. The wall mirror behind the counter is already there for the therapist's move."
+   }
+  },
+  {
+   "index": 27,
+   "title_en": "Other neurodevelopmental: Rett, Prader-Willi, 22q11",
+   "title_he": "הפרעות נוירו-התפתחותיות נוספות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "genetic_basis"
+   ],
+   "required_tokens": {
+    "DSM_neurodevelopmental": ""
+   },
+   "why_rejected": [
+    "The one required token is not hosted. DSM_neurodevelopmental is the six-corner special-ed classroom with six children (lined-up trains and ear defenders, the chaos corner, the five-piece puzzle with the helping hand, the swapping b/d/p/q letters, the sealed lips and empty bubble, the popping tic bubbles) and the teacher at the six-branch chart. The proposal substitutes six trestle place-settings — a straight row of covers, a dragged cloth, five pieces only, a scrambled place card, a blank card, a cloche. That is a re-encoding of the fact in the venue's own props, which is precisely what rule 5 and the _lex.json APPEND-ONLY policy forbid: the venue changes, never the token.",
+    "China crowding. Chapter 127 (FRAGILE GOODS CO., \"glassware warehouse\") is a glass-and-china wholesaler's packing floor and chapter 86 (HIGH STREET POTTERY) is a working pottery. A crockery hire wash-house is the third premises in the course whose stock-in-trade is plates and cups, and its props restate 127's: stencilled numbered crates against 127's stencilled crate ends, the reject bin of split and chipped rims against 127's \"shelf where the wadding has gone to dust and everything below it is in pieces\", counting in dozens against 127's stock label showing a range of counts.",
+    "Because the sole token is displaced onto the shelving, three separate disorders (Rett, Prader-Willi, 22q11) plus the classroom all compete for the same china-and-crate prop family. R7 asks for distinct cue triples across unrelated keys; here every carrier is white ceramic in a wooden crate.",
+    "Minor: the category label says hire firm but the drawn room is a scullery, so a later uniqueness check on \"crockery hire\" will not catch a future proposal set in a wash-house or dish room.",
+    "The best idea in the batch is here and worth rescuing: making hand-wringing and hand-polishing the shift's ordinary paid work turns the Rett hallmark into literal employment rather than a symbol, and the plate rack chalked ten-nine-eight-seven with the three largest pegs empty is a first-rate native carrier for head-circumference deceleration. Keep both, keep clause 22 and the LOW CALCIUM notice. Two things must change: differentiate hard from ch127 and ch86 (or move off china entirely), and put the special-ed classroom in the frame as itself — six corners, six children, the branch chart — somewhere the premises can plausibly open onto, rather than translating it into place settings."
+   ],
+   "current": {
+    "sign_text": "RETT-A-TOOL HIRE",
+    "place": "A tool and plant hire depot on a Saturday morning: a counter with a docket pad at the front, double-height racking of breakers, mixers and generators down one side, a wash-off bay with a hose reel and a mud grate, a service bench under the window, and the roller shutter half up onto the loading yard.",
+    "place_category": "tool hire depot",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "RETT-A-TOOL is the rent-a-X wrap said aloud: one eponym-morpheme carried inside an utterly ordinary hire-trade fascia, the same licence as Lithium Lift, and the diagnosis word is never printed. The trade was chosen because this chapter is a hand chapter and a hire depot is a hand business. Rett pays out with no invention: staff wring and wipe their hands on rags at the hand-cleaner drum all shift (the hallmark hand movement as literal depiction, not metaphor); the returns bench holds tools that have come back with their grips and handles stripped off, so purposeful hand use is the thing the depot has lost; and the board of hole saws mounted in ascending diameters, with the largest three sizes missing from their pegs, is a native size chart carrying head-circumference deceleration without a painted numeral competing with anything. Prader-Willi comes off the staffroom end of the counter — the padlocked consumables cabinet and the chained vending machine are the real management fact, not a symbol of it, and a slack drive belt hanging on its hook is infantile hypotonia. 22q11 rides the small print: the excess and damage-waiver catch in the framed hire agreement is the cliche of the hire trade, and CATCH-22 is its own name for itself. Deliberately no painted bay numbers anywhere — the chromosome number lives on a docket, never on the ground, so it cannot collide with the parcel depot next door."
+   }
+  },
+  {
+   "index": 32,
+   "title_en": "Persistent Depressive + DMDD + PMDD",
+   "title_he": "PDD + DMDD + PMDD",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "DMDD has no carrier at all. The chapter is three disorders; the loft pays out PDD (two-year BEST BEFORE lids) and PMDD (planner pencil marks bunched into the last days of every month, which is a genuinely good luteal carrier) and gives DMDD nothing. There are no children on the premises — DMDD is 6-18 with onset before 10 — no outburst anywhere in activity or props, and no weekly-frequency carrier for the >=3 outbursts a week / 12 months criteria. The candle-works version at least put the behaviour at the trimming bench; this rewrite dropped it and put nothing back.",
+    "The 'daily log clipboard, two months of columns' is claimed in pun_explanation as a duration carrier, but two months is not a threshold in any of the three disorders (PDD is 2 years adult / 1 year child). The jar lids already do that job honestly; the log is a wrong-unit decoy that will get painted with a number that means nothing.",
+    "pun_explanation spends its first half on why the candle works was dropped (ch88, ch28 dye pits) and never says how the venue encodes DMDD or PMDD. It is one 120-word run-on. Corpus register (ch1, ch2, ch3, ch5) is several short declarative sentences with at most one clause of that production-memo kind.",
+    "place_category 'herb drying loft' sits close to ch113 'tea merchant's tasting room' — same dried-aromatic-leaf trade, both with a beam scale, graded stock, sample jars/tins and a packing end. Survivable, because a rack of drying trays and hanging bunches does not look like a cupping bench with spittoons and sand-timers, but it is the second leaf-merchant in the course and should be declared.",
+    "Sign is right — keep THYME & AGAIN, it was accepted and 'time and again' is exactly the shared temporal shape. Fix the coverage: put the shop family's school-age children on the rack turning trays alongside the adults (same shared activity, rule 6 intact), one tray gone over and a handful scattered down the boards, and hang the weekly tally a drying loft would really keep — spoiled trays this week, chalked 3 against it — so DMDD's three-a-week lands on a native carrier. Re-rule the daily log to the year or drop it. Cut the pun_explanation to short sentences and spend them on the three disorders, not on ch88."
+   ],
+   "current": {
+    "sign_text": "THYME & AGAIN",
+    "place": "A candle works on a bright weekday: a masonry bench of sunken wax melt pots, an overhead dipping rail carrying wick frames the length of the room, a cooling and trimming bench along the window wall, a mould rack in the corner, and a small shop counter with boxed stock at the front.",
+    "place_category": "candle works",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Dysthymia gives THYME, thyme is said time, and Thyme & Again is a stock real-world shop name that also says time and again — which is the one thing all three of this chapter's disorders have in common: the same mood, sorted only by its temporal shape. The critic accepted that name; what changes is the trade, because the garden centre it stood in belongs to another chapter. A herb-scented candle works keeps the name plausible and buys a far better inventory, because every object in a candle works is a duration or a cycle stated in the trade's own printed units. Boxed stock carries burn times on the lid, which is a native duration carrier with no competing meaning. A taper only exists because the same frame was dipped again and again over hours, one thin layer at a time — persistence is the manufacturing process, not a picture of a mood. The marked calendar candle in its glass case, ringed and burning down through the rings with everything happening in the last few before it goes out, is a genuine historical object and is PMDD's luteal week drawn without a metaphor and without the corpus-luteum detour the critic struck out. The standing-order book on the counter carries monthly deliveries and a two-year run. Inter-episode mood and outbursts are carried by people visibly behaving that way at the trimming bench — literal depiction, the corpus's largest mechanism — not by anything the flames are doing."
+   }
+  },
+  {
+   "index": 33,
+   "title_en": "Bipolar I Disorder",
+   "title_he": "הפרעה דו-קוטבית I",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "mania_vs_hypomania",
+    "mixed_features",
+    "rapid_cycling"
+   ],
+   "required_tokens": {
+    "DSM_bipolar": ""
+   },
+   "why_rejected": [
+    "DSM_bipolar is not hosted as specified. The token prop is a see-saw between a sun and a storm cloud with a North-pole iceberg behind it for the lithium connection. The record deletes the iceberg and substitutes a sealed lithium cell, and pun_explanation openly says the premises 'moved off ice entirely so the frozen world stops competing with lithium's iceberg cue'. That is the venue rewriting the token, which is the one direction rule 5 forbids. The rejected POLAR ICE WORKS could host the iceberg natively; an accumulator works cannot hold ice at all.",
+    "derivation is mislabeled PHONETIC_PUN. Nothing of the sound of 'bipolar' is hidden in POLE BROS. BATTERIES — POLE is the plain word, printed plainly. The actual and better device here is LITERAL_PICTURE: a cell literally has two poles, stamped + and -.",
+    "The 'bi' is asserted, not encoded. A firm trading as Bros. is not necessarily two brothers, so 'says two poles twice over' is a claim about the fascia, not something the fascia does. What carries two-ness is the + / - stamping, which is a prop, not the sign. Against POLAR (a literal morpheme of the diagnosis), POLE is a weaker index than the sign it replaces.",
+    "15 stock_props; the cap is 14.",
+    "The see-saw substitution itself is defensible — a beam balance is a plank on a central knife-edge tipping between two extremes, and weighing lead plate is native to the trade — but the record states it as an aside inside the token clause, and it quietly drops the token's oscillation in favour of a scale 'never resting level'. If that trade is deliberate (Bipolar I as sustained mania rather than swing), say so.",
+    "Everything else in this record is strong — cycles as the battery's own life unit with the four-a-year on a counter drum, a cell gassing at the terminal while its meter reads flat for mixed features, days-on-charge chalked on a card whose only job is counting days, and the repair bench as hospitalisation. Save it by hosting the iceberg in the trade's own lettering instead of deleting it: the one sealed lithium cell on the shelf behind the scale has a printed paper label, so print a north-pole iceberg on that label and write the clause into hosts_tokens. Relabel derivation LITERAL_PICTURE, stop leaning on Bros. for the 'bi' and let the stamped terminals carry it, and drop one prop."
+   ],
+   "current": {
+    "sign_text": "POLAR ICE WORKS",
+    "place": "A block ice works at the end of a shift: rows of galvanised freezing cans set in a brine tank across the floor, an overhead travelling hoist on its rail above them, a thaw tank and tipping cradle at the end of the run, a steel chute down to the loading dock, and the compressor and its control panel through the plant-room doorway.",
+    "place_category": "block ice works",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "POLAR is one morpheme of the diagnosis on a name that reads as a real ice company, which the critic asked to keep; what moves is the premises, out of the open-air recreation stack the lido sat in and away from the ski chapter's vertical-run-as-quantity device, which this venue does not use at all. An ice plant earns the chapter three things a lido could not. Rapid cycling has a literal home: refrigeration control panels carry a rapid-cycle setting and a cycle counter as ordinary machine lettering, so the exam term appears verbatim on a faceplate and the four-a-year threshold sits on a counter dial whose native unit is cycles, not metres. Episode type is carried by which tank a can is in — the same can goes into the brine tank and comes out through the thaw tank, one object with two extremes, which is what bipolar means and is why the sign only has to spell half of it. Duration lands on a chalked tally slate of days in tank, a carrier whose whole job is counting days. Depth markers, lane numbers and any height-as-quantity axis are deliberately absent. Cans can be lettered I and II so the plant's own two runs carry Bipolar I against the hypomanic short run of the next chapter."
+   }
+  },
+  {
+   "index": 36,
+   "title_en": "Mood stabilizers: Valproate, Lamotrigine, Carbamazepine",
+   "title_he": "מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use"
+   ],
+   "required_tokens": {
+    "SJS_TEN": "(Lamb on trigger)",
+    "SIADH_hyponatremia": "(Carbamazepine maze fills with water)",
+    "hepatotoxicity": "(failing liver)"
+   },
+   "why_rejected": [
+    "hepatotoxicity is not hosted. The token is a liver dangling on the edge, labelled with the offending drug. The record supplies a sump pan of black oil and a jar of drainings 'gone liver-dark'. A colour word is not the organ — no liver appears anywhere in the frame, so the token is simply gone. R2 exists precisely so that strange objects can sit in a mundane container; this record over-naturalises and loses the thing it was required to carry.",
+    "The anchor is ch27's anchor almost word for word. RETT-A-TOOL HIRE: 'double-height steel racking run ... running from the lower left of the frame to the upper right, splitting the depot into the hire counter...'. This: 'trade counter with the bin racking rising the full height behind it, running from the lower left of the frame to the upper right, dividing the shop into the public side, the counter, the bins and the bench'. Same furniture, same diagonal, same zone split. And the corpus is already carrying three automotive worlds — ch52 towbar yard with a pigeonhole parts counter, ch77 self-service salvage with a parts-counter shed, ch84 filling station — so this is the third parts counter in the course.",
+    "'THE STABILISER BAR' spends the fascia on the drug class's plain English name rather than a morpheme buried in an ordinary firm's name, and it reads first as a pub. Corpus practice is BEN'S DINER, Z.Z.Z. MATTRESSES, STARRY GAZING. Real motor factors fascias name the firm, not one product line off the racking. Not fatal — 'stabiliser bar' is genuine trade stock — but it is the weakest sign device in the batch.",
+    "15 stock_props; the cap is 14.",
+    "The drug-by-drug work here is the best thing in the batch and should survive: VAL-PRO boxed valve sets, the stripped CARB with its flooded drillway maze, and the LAMBSWOOL bonnet on a spray-gun TRIGGER are three sibling boxed stock lines each punning on its own name, exactly the four-SSRI-posters device; MIN/MAX on a dipstick is the therapeutic window as native lettering and the quarter-turn torque sequence is titration in the trade's own lore. Two fixes. (1) Hang the liver itself off the edge of the parts bench over the sump tray, tie-on label written up with the VAL-PRO range — token kept, register kept. (2) Move the anchor off counter-plus-racking, which ch27 owns: make it the bench run under the window carrying the stripped carb, the wash tray and the jet trays on the diagonal, and push the bins to a back wall. Also declare in hosts_tokens what the other two substitutions cost: the lamb becomes lambswool (lamb + trigger + peeling in red sheets all survive, acceptable) and the bread-maze becomes a carburettor maze (carb is the trade's own word so the maze and the flooding survive; only the bread is lost)."
+   ],
+   "current": {
+    "sign_text": "STABILISER CYCLE WORKS",
+    "place": "A bicycle repair shop mid-morning: a rail of bikes hung by their front wheels the length of the room, a repair stand and a wheel-truing stand along the bench, a water tub for finding punctures, a wall of boxed tyres and stabiliser sets, a fitting area with a sizing stick, and the courtesy van at the kerb outside.",
+    "place_category": "bicycle repair shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A mood stabiliser is literally a stabiliser, and a stabiliser is a real product a cycle shop bolts to a child's bike; the fascia therefore carries exactly one class morpheme instead of the three drug morphemes the last version tried to split across one sign, and each agent comes off the stock as a sibling boxed brand on the tyre wall, which is how the corpus does four SSRIs as four travel posters. The trade then owns the chapter's whole fact set in its own vocabulary and not by metaphor. Truing a wheel is done a quarter turn of the spoke key at a time or the rim buckles — that is titration, and it is the shop's own lore, which is the single most examinable lamotrigine fact. The torque wrench and the pressure gauge are the trade's routine checks before anything is ridden, which is therapeutic monitoring on a native dial. A perished tyre cracks in a fine network all over its sidewall and a worn one is called bald, so rash and hair loss are the trade's own words for its own damaged stock. Inner tubes are called tubes, so a split tube in the water tub carries the neural tube defect with a morpheme rather than a symbol, and the child seat and trailer by the door put that fact where pregnancy already plausibly stands. Electrolyte tablets in the counter fridge carry sodium without borrowing the saltworks chapter's device, and the courtesy van at the kerb carries a plate for enzyme induction."
+   }
+  },
+  {
+   "index": 38,
+   "title_en": "Generalized Anxiety Disorder",
+   "title_he": "הפרעת חרדה מוכללת (GAD)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "BUS_LINE_1A": "",
+    "amygdala": "(brain map)"
+   },
+   "why_rejected": [
+    "The premises duplicate ch105 PARAPHERNALIA ARMY SURPLUS. That record: 'a long double-sided kit rack down the middle of the shop floor, four curtained fitting cubicles along the back wall, wooden bins of boots and webbing under the window, a glass-topped counter ... and a testing bench by the till where every second-hand item is tried before it is sold', anchored on 'the long double-sided steel kit rack ... cutting the shop from the lower-left corner to the upper right'. This record: a double-sided racking run of helmets, harnesses, boots and respirators down the middle of the floor, a trade counter, a try-on gantry and a test bench, anchored on 'the double-sided racking run down the middle of the shop ... crossing from the lower left of the frame to the upper right'. Army surplus stores sell helmets, webbing, boots and respirators; two shops selling wearable protective kit off a central rack is the six-launderettes failure at full strength.",
+    "'army surplus store' is not in the taken_categories list you were given, which holds only 27 of the ~100 categories venues.json already assigns. The uniqueness check as run was against a partial list; this collision was invisible from the brief.",
+    "The BUS_LINE_1A clause carries production commentary — 'one kerbside fixture and nothing more, so it stays a prop and never grows into a transit world'. hosts_tokens is a picture clause; strip the note.",
+    "GADD prints the diagnosis's own acronym as the first and largest word, standing alone. BORDER POST, PARA LOFT and CYCLO PARK make a standing-alone morpheme legal, so this is not a reject, but unlike expreSS tRIps nothing is actually hidden — the letters are not a subsequence inside longer words, they are the word.",
+    "Do not throw this away — the amygdala hosting is the best in the batch (almond-shaped personal panic alarms are literal stock in this trade, not a substitute), the bus-stop booth on the kerb outside the shop window with the 1A plate and the trembling rabbit now matches the accepted ch5 clause exactly and clears the prior rejection, one-hazard-to-a-bay racking really is GAD's spread across unrelated domains, and the chalked accident-free tally is a native days-without counter. Kill only the resemblance to ch105: make GADD & SONS an inspection-and-issue depot rather than a kit shop. Anchor on the instrumented run — the harness gantry with its load cell and figured dial, the detector test bench with alarms sounding, calibration stickers and dated service tags — crossing the frame on the diagonal; put the wearable stock into dated boxes on a back wall and drop boots and helmets-on-rails as the visual mass. Then state the new place_category as something no rack shop answers to, e.g. 'safety testing depot'."
+   ],
+   "current": {
+    "sign_text": "GADD & SONS SAFETY",
+    "place": "A safety equipment supplier on a weekday morning: a trade counter with an issue book at the front, a double-sided racking run of helmets, harnesses, boots and respirators down the middle, a harness try-on gantry at one end, a test bench where alarms and gas detectors are sounded, and the shop window onto the kerb.",
+    "place_category": "safety equipment supplier",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "GADD carries the acronym inside an ordinary family surname on an ordinary trade fascia — the Ben's Diner device — and nothing on the sign names the disorder. The trade is the chapter's core feature made literal rather than metaphorical: this is a disorder defined by worry that spreads across many unrelated domains at once, and a safety supplier's racking is one hazard per bay, so the shop's own stock list hands over a separate prop for each worry domain without a single invented symbol, which is the thing an office of identical desks could never do. Its paperwork is the numbers layer: an accident-free tally board is a genuine chalked counter of days and is the only carrier in the syllabus whose native unit is more days than not, and every extinguisher, harness and detector in the trade carries a dated service tag, so a duration threshold can be painted on an object whose real job is to bear a date. The try-on gantry and the test bench give restlessness, muscle tension and startle as people literally exhibiting them under load. And because the shop fronts onto a street, the bus stop stands where a bus stop actually stands, in view of the counter, so the fixed token is hosted without bending the premises around it."
+   }
+  }
+ ]
+}

@@ -1,0 +1,498 @@
+{
+ "lectures_by_chapter": {
+  "1": [
+   {
+    "title": "טיפול במשחק ובכלים השלכתיים שונים - דר מרים פסקין - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch001-play-therapy-and-projective-tools-part-a.mp4",
+    "size_mb": 244,
+    "primary": true
+   },
+   {
+    "title": "טיפול במשחק ובכלים השלכתיים שונים - דר מרים פסקין - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch001-play-therapy-and-projective-tools-part-b.mp4",
+    "size_mb": 171,
+    "primary": true
+   }
+  ],
+  "8": [
+   {
+    "title": "הטיפול הדיאדי בגיל הרך - דר מירי קרן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch138-dyadic-therapy-early-childhood.mp4",
+    "size_mb": 504,
+    "primary": false
+   }
+  ],
+  "12": [
+   {
+    "title": "ויסות רגשי, הצטרפות ואתגור, מנטליזציה, ורמת מודעות הורית",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch012-emotion-regulation-and-mentalization.mp4",
+    "size_mb": 294,
+    "primary": true
+   },
+   {
+    "title": "נורמה ופתולוגיה בטיפול בבעיות הקשורים ל Attachment - דר מירי קרן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch012-attachment-normal-and-pathological.mp4",
+    "size_mb": 486,
+    "primary": true
+   },
+   {
+    "title": "הטיפול הדיאדי בגיל הרך - דר מירי קרן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch138-dyadic-therapy-early-childhood.mp4",
+    "size_mb": 504,
+    "primary": false
+   }
+  ],
+  "17": [
+   {
+    "title": "טיפולים פסיכופרמקולוגים ב- ADHD - פרופ' איריס מנור - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch018-adhd-pharmacotherapy-part-a.mp4",
+    "size_mb": 273,
+    "primary": false
+   },
+   {
+    "title": "טיפול מערכתי בטורט, ADHD ו- OCD - דר נועה בן ארויה מילשטיין",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch024-systemic-treatment-tourette-adhd-ocd.mp4",
+    "size_mb": 648,
+    "primary": false
+   }
+  ],
+  "18": [
+   {
+    "title": "טיפולים פסיכופרמקולוגים ב- ADHD - פרופ' איריס מנור - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch018-adhd-pharmacotherapy-part-a.mp4",
+    "size_mb": 273,
+    "primary": true
+   }
+  ],
+  "19": [
+   {
+    "title": "טיפולים פסיכופרמקולוגים ב- ADHD - פרופ' איריס מנור - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch018-adhd-pharmacotherapy-part-a.mp4",
+    "size_mb": 273,
+    "primary": false
+   }
+  ],
+  "20": [
+   {
+    "title": "ניתוח ישומי התנהגותי - דר איתן אלדר ופרופ' דורון גוטהלף",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch020-applied-behavior-analysis.mp4",
+    "size_mb": 659,
+    "primary": true
+   }
+  ],
+  "21": [
+   {
+    "title": "ניתוח ישומי התנהגותי - דר איתן אלדר ופרופ' דורון גוטהלף",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch020-applied-behavior-analysis.mp4",
+    "size_mb": 659,
+    "primary": false
+   }
+  ],
+  "24": [
+   {
+    "title": "טיפול מערכתי בטורט, ADHD ו- OCD - דר נועה בן ארויה מילשטיין",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch024-systemic-treatment-tourette-adhd-ocd.mp4",
+    "size_mb": 648,
+    "primary": true
+   }
+  ],
+  "26": [
+   {
+    "title": "גנים ואינטראקציה גנים - סביבה בילדים ובני נוער - פרופ' גיל זלצמן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch122-gene-environment-interaction.mp4",
+    "size_mb": 667,
+    "primary": false
+   }
+  ],
+  "28": [
+   {
+    "title": "Depression and Anxiety - SSRIS and the multi omic prediction model - דר מיה אמיתי",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch029-ssri-multiomic-prediction.mp4",
+    "size_mb": 455,
+    "primary": false
+   }
+  ],
+  "29": [
+   {
+    "title": "Depression and Anxiety - SSRIS and the multi omic prediction model - דר מיה אמיתי",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch029-ssri-multiomic-prediction.mp4",
+    "size_mb": 455,
+    "primary": true
+   },
+   {
+    "title": "תרופות אנטי-דיכאוניות - פרופ' אבי ויצמן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch030-antidepressants.mp4",
+    "size_mb": 480,
+    "primary": false
+   }
+  ],
+  "30": [
+   {
+    "title": "תרופות אנטי-דיכאוניות - פרופ' אבי ויצמן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch030-antidepressants.mp4",
+    "size_mb": 480,
+    "primary": true
+   }
+  ],
+  "31": [
+   {
+    "title": "תרופות אנטי-דיכאוניות - פרופ' אבי ויצמן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch030-antidepressants.mp4",
+    "size_mb": 480,
+    "primary": false
+   }
+  ],
+  "35": [
+   {
+    "title": "תרופות מאזננות ECT BRAIN NEUROMODULATION IN CHILD AND ADOLESCENT PSYCHIATRY - פרופ' יובל בלוך - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch036-mood-stabilizers-ect-neuromodulation-part-a.mp4",
+    "size_mb": 428,
+    "primary": false
+   },
+   {
+    "title": "תרופות מאזננות ECT BRAIN NEUROMODULATION IN CHILD AND ADOLESCENT PSYCHIATRY - פרופ' יובל בלוך - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch036-mood-stabilizers-ect-neuromodulation-part-b.mp4",
+    "size_mb": 226,
+    "primary": false
+   }
+  ],
+  "36": [
+   {
+    "title": "תרופות מאזננות ECT BRAIN NEUROMODULATION IN CHILD AND ADOLESCENT PSYCHIATRY - פרופ' יובל בלוך - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch036-mood-stabilizers-ect-neuromodulation-part-a.mp4",
+    "size_mb": 428,
+    "primary": true
+   },
+   {
+    "title": "תרופות מאזננות ECT BRAIN NEUROMODULATION IN CHILD AND ADOLESCENT PSYCHIATRY - פרופ' יובל בלוך - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch036-mood-stabilizers-ect-neuromodulation-part-b.mp4",
+    "size_mb": 226,
+    "primary": true
+   }
+  ],
+  "43": [
+   {
+    "title": "טיפול מערכתי בטורט, ADHD ו- OCD - דר נועה בן ארויה מילשטיין",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch024-systemic-treatment-tourette-adhd-ocd.mp4",
+    "size_mb": 648,
+    "primary": false
+   }
+  ],
+  "52": [
+   {
+    "title": "נורמה ופתולוגיה בטיפול בבעיות הקשורים ל Attachment - דר מירי קרן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch012-attachment-normal-and-pathological.mp4",
+    "size_mb": 486,
+    "primary": false
+   }
+  ],
+  "58": [
+   {
+    "title": "תרופות אנטיפסיכוטיות - דר מיה אמיתי",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch059-antipsychotics.mp4",
+    "size_mb": 753,
+    "primary": false
+   }
+  ],
+  "59": [
+   {
+    "title": "תרופות אנטיפסיכוטיות - דר מיה אמיתי",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch059-antipsychotics.mp4",
+    "size_mb": 753,
+    "primary": true
+   }
+  ],
+  "62": [
+   {
+    "title": "תרופות אנטיפסיכוטיות - דר מיה אמיתי",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch059-antipsychotics.mp4",
+    "size_mb": 753,
+    "primary": false
+   }
+  ],
+  "70": [
+   {
+    "title": "תרופות מאזננות ECT BRAIN NEUROMODULATION IN CHILD AND ADOLESCENT PSYCHIATRY - פרופ' יובל בלוך - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch036-mood-stabilizers-ect-neuromodulation-part-a.mp4",
+    "size_mb": 428,
+    "primary": false
+   },
+   {
+    "title": "תרופות מאזננות ECT BRAIN NEUROMODULATION IN CHILD AND ADOLESCENT PSYCHIATRY - פרופ' יובל בלוך - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch036-mood-stabilizers-ect-neuromodulation-part-b.mp4",
+    "size_mb": 226,
+    "primary": false
+   }
+  ],
+  "94": [
+   {
+    "title": "טיפול דיאלקטי התנהגותי - דר סילביה זליקוביץ - חלק א'",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch133-dbt-part-a.mp4",
+    "size_mb": 308,
+    "primary": false
+   },
+   {
+    "title": "טיפול דיאלקטי התנהגותי - דר סילביה זליקוביץ - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch133-dbt-part-b.mp4",
+    "size_mb": 459,
+    "primary": false
+   }
+  ],
+  "95": [
+   {
+    "title": "טיפול דיאלקטי התנהגותי - דר סילביה זליקוביץ - חלק א'",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch133-dbt-part-a.mp4",
+    "size_mb": 308,
+    "primary": false
+   },
+   {
+    "title": "טיפול דיאלקטי התנהגותי - דר סילביה זליקוביץ - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch133-dbt-part-b.mp4",
+    "size_mb": 459,
+    "primary": false
+   }
+  ],
+  "96": [
+   {
+    "title": "טיפול בהפרעות החצנה - דר תומר לוי - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch106-externalizing-disorders-treatment-part-a.mp4",
+    "size_mb": 859,
+    "primary": false
+   },
+   {
+    "title": "טיפול בהפרעות החצנה - דר תומר לוי - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch106-externalizing-disorders-treatment-part-b.mp4",
+    "size_mb": 1004,
+    "primary": false
+   }
+  ],
+  "102": [
+   {
+    "title": "Forensic Psychiatry - פרופ' גיל זלצמן - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch102-forensic-psychiatry-part-a.mp4",
+    "size_mb": 458,
+    "primary": true
+   },
+   {
+    "title": "Forensic Psychiatry - פרופ' גיל זלצמן - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch102-forensic-psychiatry-part-b.mp4",
+    "size_mb": 499,
+    "primary": true
+   },
+   {
+    "title": "גישות אתיות ומוסריות בפסיכיאטריה - דר יצחק וורגפט",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch102-ethics-in-psychiatry.mp4",
+    "size_mb": 576,
+    "primary": true
+   }
+  ],
+  "103": [
+   {
+    "title": "Forensic Psychiatry - פרופ' גיל זלצמן - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch102-forensic-psychiatry-part-a.mp4",
+    "size_mb": 458,
+    "primary": false
+   },
+   {
+    "title": "Forensic Psychiatry - פרופ' גיל זלצמן - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch102-forensic-psychiatry-part-b.mp4",
+    "size_mb": 499,
+    "primary": false
+   },
+   {
+    "title": "גישות אתיות ומוסריות בפסיכיאטריה - דר יצחק וורגפט",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch102-ethics-in-psychiatry.mp4",
+    "size_mb": 576,
+    "primary": false
+   }
+  ],
+  "106": [
+   {
+    "title": "טיפול בהפרעות החצנה - דר תומר לוי - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch106-externalizing-disorders-treatment-part-a.mp4",
+    "size_mb": 859,
+    "primary": true
+   },
+   {
+    "title": "טיפול בהפרעות החצנה - דר תומר לוי - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch106-externalizing-disorders-treatment-part-b.mp4",
+    "size_mb": 1004,
+    "primary": true
+   },
+   {
+    "title": "טיפול בהורות- פרופ אסתר כהן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch138-parenting-interventions.mp4",
+    "size_mb": 346,
+    "primary": false
+   }
+  ],
+  "107": [
+   {
+    "title": "טיפול בהפרעות החצנה - דר תומר לוי - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch106-externalizing-disorders-treatment-part-a.mp4",
+    "size_mb": 859,
+    "primary": false
+   },
+   {
+    "title": "טיפול בהפרעות החצנה - דר תומר לוי - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch106-externalizing-disorders-treatment-part-b.mp4",
+    "size_mb": 1004,
+    "primary": false
+   }
+  ],
+  "122": [
+   {
+    "title": "גנים ואינטראקציה גנים - סביבה בילדים ובני נוער - פרופ' גיל זלצמן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch122-gene-environment-interaction.mp4",
+    "size_mb": 667,
+    "primary": true
+   }
+  ],
+  "123": [
+   {
+    "title": "גנים ואינטראקציה גנים - סביבה בילדים ובני נוער - פרופ' גיל זלצמן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch122-gene-environment-interaction.mp4",
+    "size_mb": 667,
+    "primary": false
+   }
+  ],
+  "129": [
+   {
+    "title": "טיפולים אינטנסיבים- מרכזי חרום, טיפול יום, אשפוז ואשפוז בית - דר אורלי לבן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch136-intensive-levels-of-care-1.mp4",
+    "size_mb": 396,
+    "primary": false
+   },
+   {
+    "title": "טיפולים אינטנסיבים- מרכזי חרום, טיפול יום, אשפוז ואשפוז בית - דר קרן פרידולד",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch136-intensive-levels-of-care-2.mp4",
+    "size_mb": 397,
+    "primary": false
+   }
+  ],
+  "131": [
+   {
+    "title": "טיפול במשחק ובכלים השלכתיים שונים - דר מרים פסקין - חלק א",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch001-play-therapy-and-projective-tools-part-a.mp4",
+    "size_mb": 244,
+    "primary": false
+   },
+   {
+    "title": "טיפול במשחק ובכלים השלכתיים שונים - דר מרים פסקין - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch001-play-therapy-and-projective-tools-part-b.mp4",
+    "size_mb": 171,
+    "primary": false
+   },
+   {
+    "title": "פיתוח חוסן וטיפול ב CBT, הדור החדש - פרופ' דני חמיאל",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch132-resilience-and-next-generation-cbt.mp4",
+    "size_mb": 669,
+    "primary": false
+   },
+   {
+    "title": "טיפול אינטרפרסונלי - פרופ' ענת קלומק-ברונשטיין",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch134-interpersonal-therapy.mp4",
+    "size_mb": 448,
+    "primary": false
+   },
+   {
+    "title": "1. תיאוריות דינמיות התפתחותיות - נורמה ופתולוגיה וגישות טיפוליות_דר מירה הורוביץ",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch139-developmental-psychodynamic-theories.mp4",
+    "size_mb": 871,
+    "primary": false
+   }
+  ],
+  "132": [
+   {
+    "title": "מיינדפולנס דר אורי יצקר",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch132-mindfulness.mp4",
+    "size_mb": 810,
+    "primary": true
+   },
+   {
+    "title": "פיתוח חוסן וטיפול ב CBT, הדור החדש - פרופ' דני חמיאל",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch132-resilience-and-next-generation-cbt.mp4",
+    "size_mb": 669,
+    "primary": true
+   }
+  ],
+  "133": [
+   {
+    "title": "מיינדפולנס דר אורי יצקר",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch132-mindfulness.mp4",
+    "size_mb": 810,
+    "primary": false
+   },
+   {
+    "title": "טיפול דיאלקטי התנהגותי - דר סילביה זליקוביץ - חלק א'",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch133-dbt-part-a.mp4",
+    "size_mb": 308,
+    "primary": true
+   },
+   {
+    "title": "טיפול דיאלקטי התנהגותי - דר סילביה זליקוביץ - חלק ב",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch133-dbt-part-b.mp4",
+    "size_mb": 459,
+    "primary": true
+   }
+  ],
+  "134": [
+   {
+    "title": "טיפול אינטרפרסונלי - פרופ' ענת קלומק-ברונשטיין",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch134-interpersonal-therapy.mp4",
+    "size_mb": 448,
+    "primary": true
+   }
+  ],
+  "136": [
+   {
+    "title": "טיפולים אינטנסיבים- מרכזי חרום, טיפול יום, אשפוז ואשפוז בית - דר אורלי לבן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch136-intensive-levels-of-care-1.mp4",
+    "size_mb": 396,
+    "primary": true
+   },
+   {
+    "title": "טיפולים אינטנסיבים- מרכזי חרום, טיפול יום, אשפוז ואשפוז בית - דר קרן פרידולד",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch136-intensive-levels-of-care-2.mp4",
+    "size_mb": 397,
+    "primary": true
+   }
+  ],
+  "138": [
+   {
+    "title": "ויסות רגשי, הצטרפות ואתגור, מנטליזציה, ורמת מודעות הורית",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch012-emotion-regulation-and-mentalization.mp4",
+    "size_mb": 294,
+    "primary": false
+   },
+   {
+    "title": "הטיפול הדיאדי בגיל הרך - דר מירי קרן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch138-dyadic-therapy-early-childhood.mp4",
+    "size_mb": 504,
+    "primary": true
+   },
+   {
+    "title": "טיפול בהורות- פרופ אסתר כהן",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch138-parenting-interventions.mp4",
+    "size_mb": 346,
+    "primary": true
+   }
+  ],
+  "139": [
+   {
+    "title": "1. תיאוריות דינמיות התפתחותיות - נורמה ופתולוגיה וגישות טיפוליות_דר מירה הורוביץ",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch139-developmental-psychodynamic-theories.mp4",
+    "size_mb": 871,
+    "primary": true
+   }
+  ],
+  "140": [
+   {
+    "title": "1. תיאוריות דינמיות התפתחותיות - נורמה ופתולוגיה וגישות טיפוליות_דר מירה הורוביץ",
+    "url": "https://storage.googleapis.com/psych-study-media/oeaGY9w6JchvS7An2q9JdC47DMsnVWfc/lectures/ch139-developmental-psychodynamic-theories.mp4",
+    "size_mb": 871,
+    "primary": false
+   }
+  ]
+ }
+}

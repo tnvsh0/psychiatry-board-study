@@ -1,0 +1,242 @@
+{
+ "taken_categories": [
+  "cable and flex works",
+  "cable assembly workshop",
+  "canal lock",
+  "candle works",
+  "canning works",
+  "children's shoe fitters",
+  "cloth dye house",
+  "cobbler's shop",
+  "community pharmacy",
+  "creamery dairy",
+  "cut-glass works",
+  "dance hall",
+  "decorators' merchant",
+  "department store escalator",
+  "egg packing station",
+  "ferry terminal",
+  "firewood log yard",
+  "firework shop",
+  "forest bandstand",
+  "hard-case luggage shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "lubrication bay",
+  "model yacht pond",
+  "newspaper newsroom",
+  "nursery goods shop",
+  "orchard cider press",
+  "pawnbroker shop",
+  "pest-control depot",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "railway sleeping car",
+  "roller skating rink",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "tile showroom",
+  "towbar fitting yard",
+  "town square car park",
+  "turkish baths",
+  "upholstery workshop",
+  "variety theatre",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "wooden boat repair yard",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 41,
+   "title_en": "Separation Anxiety + Specific Phobia",
+   "title_he": "חרדת פרידה + פוביה ספציפית",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "The sign now indexes only one of the chapter's two disorders, and the stated reason for dropping PACIFIC (~ SPECIFIC, stress-matched, pa-CIF-ic / spe-CIF-ic) is factually wrong. The school category is not spent: ch9 LITTLE SPROUTS NURSERY is a plant nursery in a polytunnel, ch10 OLD SCHOOL AQUARIUM is a municipal aquarium, ch23 TONGUE & CHEEK is a butcher shop, ch137 ISLAND END PITCHES is a municipal playing field. The school gate was free, and a strong phonetic pun was traded away for a plain-English one on a premise that does not hold.",
+    "place_category collides with ch13 pet shop. ch13: 'two-tier run of glass-fronted pens' anchoring lower-left to upper-right with a grooming table at the far end, 'a counter with scales and a bell', and a family sitting on the floor with a puppy. This: a run of kennel blocks with wire runs anchoring lower-left to upper-right, a grooming room, a weighing platform with a figured dial, and families handing dogs over at a counter. Same kind of place and the same anchor genus — a diagonal run of animal pens. 'pet shop' is also absent from the 27-entry taken_categories list you were given, which covers only about a quarter of the categories venues.json assigns.",
+    "The blood-injection-injury type has no needle and no blood on the premises. Vaccination happens at the vet before boarding, so the venue can only show a stamped card in a wire tray and a person sitting head down on a bench. The vasovagal faint is the single most examinable fact in specific phobia and here it is asserted rather than drawn.",
+    "The dogs do double duty: they are the attachment object being left behind (separation anxiety) and simultaneously the animal phobia type. The frame's central referent becomes ambiguous — a resident cannot tell whether the dog means 'the one you cannot be apart from' or 'the thing you are afraid of'.",
+    "15 stock_props; the cap is 14.",
+    "The activity is the best idea in this record and worth preserving — leading the animal up, handing the vaccination card across, unclipping the lead, watching it walked away up the run IS the separation act, done by everyone, which the school drop-off only approximated; the four-week long-stay rate on the tariff board is a native carrier for the >=4-week child duration and the six-month vaccination window is a real date carrier. Two routes. (a) Go back to the school gate, which is unoccupied, and keep KISS & RIDE where the previous record had it, on the drop-off lane sign, so PACIFIC holds the fascia and both disorders are indexed. (b) Keep the kennels but put a specific-phobia hook back on the fascia so it indexes both, break the ch13 resemblance by anchoring on something a pet shop has not got — the exercise paddock fence line with the storm coming over it, or the collection van and its crate ramp — stop the boarded dogs carrying the animal phobia (give that job to the wasp trap over the feed store, which is already in stock), and put a real injection in the frame: the visiting vet's table at the isolation pen giving the booster the boarding card demands, with someone gone white on the bench beside it."
+   ],
+   "current": {
+    "sign_text": "PACIFIC ELEMENTARY",
+    "place": "An elementary school gate at eight in the morning — the drop-off loop lane, chain-link fence, crossing guard, a yellow bus pulling away",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PACIFIC ≈ SPECIFIC — a near-perfect stress-matched phonetic pun (pa-CIF-ic / spe-CIF-ic), and 'Pacific Elementary' is an utterly ordinary American school name, so the sign reads as real signage. The drop-off lane sign then carries the other disorder with no invention at all: 'KISS & RIDE' is genuine, ubiquitous school signage and it literally means separate here. The venue supplies all five specific-phobia types from stock: animal (the wasp bin and the leashed dog at the fence), natural environment (the thunderstorm on the classroom weather chart), blood-injection-injury with its unique vasovagal faint (immunization day in the nurse's window), situational (the out-of-order lift), and the school mascot for 'other'."
+   }
+  },
+  {
+   "index": 45,
+   "title_en": "Body Dysmorphic + Hoarding",
+   "title_he": "BDD + Hoarding",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_OCD_related": ""
+   },
+   "why_rejected": [
+    "PLATE COLLISION with ch 143 GOLD STANDARD ASSAY (assay office), an unrelated fact key. 143 already owns: a long bench/counter with a brass-grilled trade counter, a jeweller's LOUPE ON A CORD, a wall chart that is a LADDER OF GRADES from coarsest to purest, numbered job trays with tickets tied on, a DOCKET SPIKE and a bound LEDGER, a chalk TALLY board, and a 'reject drawer half open under the bench, packed with unstamped pieces'. The proposal re-serves every one of those: grading card SUPERB/FINE/GOOD/SPACE FILLER, loupe on a chain, numbered drawers, tally counter, 'reject box under the counter, heaped over and never emptied'. R7 rejects on the (category, material, dominant_colour) triple across unrelated keys, and R4/uniqueness rejects the category as a thin synonym.",
+    "SECOND COLLISION: ch 90 CHASE'S PLEDGE OFFICE (pawnbroker) is already 'a long counter with a brass grille, loupe, scales and weights, numbered tickets on a spike, labelled unredeemed lots racked behind'. Three chapters would now be 'small shop, long counter, magnifier, numbered small valuables in trays'. Ch 93 TIPI TOP BRIC-A-BRAC additionally owns the hoarding cue itself — its anchor is 'a long deal table of unsorted stock down the middle of the shop, loaded end to end and heaped at the near corner'.",
+    "THE SIGN MIS-TARGETS THE MORPHEME. The discriminating morpheme of dysmorphic is DYS- (the distortion), not MORPH- (form). MORPH- is generic, and in THIS course it is already spoken for: chs 83/84 are opioids (POPPY LANE CREAMERY, DON'S ONE-STOP FUEL). A resident reading MORPHET'S is at least as likely to retrieve morphine. The pun is not an index if it points at two chapters.",
+    "HOARDING IS NOWHERE ON THE SIGN. This is a two-disorder chapter and the fascia carries a weak morpheme of one of them and nothing at all of the other; hoarding survives only in prose inside stock_props.",
+    "THE VENUE ARGUES AGAINST THE CRITERION IT MUST TEACH. A stamp dealer is the DSM's own exclusion — 'normative collecting' — and a dealer's retention of stock is commercially rational, i.e. the exact opposite of 'difficulty discarding regardless of value'. The kiloware on the stairs and the blocked fire door are doing real criterion work, but they are fighting the trade the venue chose.",
+    "STAGED BEHAVIOUR SMUGGLED INTO stock_props: 'shaving mirror by the coat hooks with a queue standing at it' is not furniture a stamp shop contains, it is an imported action, and it duplicates ch 46 TILLMAN'S PICK-YOUR-OWN, which already owns 'a mirror on the farm-stand shed door with a makeup compact left on the sill' — on the immediately adjacent OCD-spectrum chapter."
+   ],
+   "current": {
+    "sign_text": "HOARD'S END SEED BANK",
+    "place": "A seed bank's accessions hall on a stocktaking Tuesday: runs of steel racking loaded floor to ceiling with numbered glass jars, a lit grading bench down the middle of the room, a counter at the near end where donors hand over envelopes, and a side corridor of unfiled boxes narrowed to one walking width",
+    "place_category": "seed bank archive",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A seed bank is the plain-English picture of the chapter's second disorder made institutional: an establishment whose entire constitution is that nothing may ever be discarded, that duplicates are kept anyway, that the corridors fill, and that the fire door ends up held shut by crates. HOARD'S END is a genuine English place-name form and puts one morpheme of the diagnosis on the board, the p272 MINIMUM device, without printing the diagnosis. The same hall performs the first disorder on its other bench, because the grader's job is to examine a specimen under magnification and reject it for a flaw nobody else can see: the reject tray and the accepted tray are visibly identical, which is the whole of body dysmorphic disorder as a contrast pair, and the grader who wants only the plumpest grain carries the muscle-dysmorphia specifier."
+   }
+  },
+  {
+   "index": 51,
+   "title_en": "Child abuse and neglect",
+   "title_he": "התעללות והזנחה בילדים",
+   "aspects": [
+    "recognition",
+    "clinical_presentation",
+    "risk_assessment",
+    "management",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "THE SIGN DOES NOT ENCODE THE TOPIC. 'PALACE' is not a pun on child abuse and neglect; it hides A-C-E, a three-letter subsequence with almost no information — it falls out of place, race, grace, terrace, surface, palace. R1's device has to be reversible: a resident who remembers 'child abuse' cannot get back to 'palace'. Compare expreSS tRIps, where SSRI is marked and unique.",
+    "ACE IS ALREADY TAKEN IN MEDICINE. In a board course, ACE reads as angiotensin-converting enzyme before it reads as adverse childhood experiences, and nothing in the venue disambiguates. The batch's own aspect list (recognition, clinical_presentation, risk_assessment, management, medical_mimics) does not contain the ACE framework at all, so the fascia indexes something adjacent to the chapter rather than the chapter.",
+    "DERIVATION IS MISLABELLED. The previous version correctly declared SPATIAL_ISOMORPHISM, which is what is actually doing the work — the conservator's routine mapping object-for-object onto the clinical skill. Relabelling it ACRONYM_EMBED promotes the weakest element of the record to its stated basis.",
+    "THE SUBJECT HAS BEEN DELETED FROM THE FRAME. The earlier version stood children's portraits against the skirting so the chapter was retrievable. The new version says only 'a rack of waiting pictures'. Nothing in the plate now says CHILD. A portrait OF a child is not a depiction of harm, so the caution has cost the retrieval hook for nothing.",
+    "NEGLECT HAS NO CARRIER. Half the chapter title, and the commonest form, is absent: every prop encodes inflicted damage versus inherent vice. The trade owns neglect natively and it is being left on the table.",
+    "'PALACE PICTURE' mis-cues cinema — a picture palace is a cinema, so the fascia reads as film restoration, not paintings."
+   ],
+   "current": {
+    "sign_text": "ACE PICTURE RESTORERS",
+    "place": "A picture conservation studio on an ordinary working weekday: a long steel-topped lining table down the middle of the room, a rank of easels ranked along it under a raking-light rail, family portraits of children stacked against the skirting waiting their turn, and an x-ray viewing box glowing on the end wall",
+    "place_category": "picture conservation studio",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A conservation studio's trade is, object for object, the chapter's clinical skill, which is why the venue can carry the material without ever staging harm to a child. The conservator dates damage by how far it has aged, exactly as bruising is dated by colour; separates damage inherent to the object from damage inflicted on it, which is the whole differential of brittle panels and factory blemishes against a fresh impact; x-rays for damage the surface hides, which is the skeletal survey; and files a dated condition report whether or not anyone asked for one, which is the reporting duty. The studio takes the history from the owner without leading her, because a led account contaminates the record. The works on the easels are children's portraits, so the subject is retrievable, and ACE on the board is the adverse childhood experiences model, with the street door numbered 368D."
+   }
+  },
+  {
+   "index": 54,
+   "title_en": "Somatic Symptom + Conversion + Factitious",
+   "title_he": "הפרעות סומטיות + Conversion + Factitious",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_somatic": ""
+   },
+   "why_rejected": [
+    "category collision: chapter 56 already holds 'telephone exchange'"
+   ],
+   "current": {
+    "sign_text": "SOMA EXCHANGE",
+    "place": "A telephone exchange's fault test room in the middle of a weekday shift: a two-storey iron distribution frame combed with jumper wires standing down the room, a row of test desks with cord-and-jack panels along the window wall, headsets hung on hooks, and a public enquiry counter at the street end with a bell push on it",
+    "place_category": "telephone exchange",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "SOMA is the body, and an exchange is genuinely what the building is called and what goes on its name board, so the pun sits on an ordinary place plate rather than on an invented business. The trade then supplies the chapter's central finding as a rubber stamp it already owns: NO FAULT FOUND. The frame is a whole nervous system in one inanimate object, and every jumper on it is intact end to end while the reported fault is entirely real to the caller and entirely absent on the meter — functional neurological disorder as a physical fact rather than a metaphor. The fault log where one number repeats down the column is the somatic symptom pattern; the man who asks to be tested again although his line is clear is illness anxiety; the subscriber who cut his own drop wire so an engineer would come out is the factitious presentation; and the one pair on the frame with a genuinely broken wire, tagged, is the medical mimic that must never be dropped."
+   }
+  },
+  {
+   "index": 56,
+   "title_en": "Schizophrenia neurobiology: DA + NMDA + 5-HT hypotheses",
+   "title_he": "ניורוביולוגיה של סכיזופרניה",
+   "aspects": [
+    "DA_hypothesis",
+    "NMDA_hypothesis",
+    "5HT_hypothesis",
+    "neuroimaging_findings",
+    "genetics"
+   ],
+   "required_tokens": {
+    "D2_receptor": "DOPA_MINE",
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR",
+    "5-HT2A_receptor": "TAROT_2A",
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "THE SHARED AMBIENT ACTIVITY IS GAMBLING. 'Everyone is backing a horse' with bookmakers' joints, chalked and re-chalked odds boards, a tote window, punters walking the line for a better price and folding tickets away — that is the most iconic gambling imagery available in this course, and it is being spent on schizophrenia neurobiology while ch 90 CHASE'S PLEDGE OFFICE, whose actual topic is Gambling Disorder, is drawn as a pawnbroker next door to an arcade. Every odds board and betting ticket in this plate leaks to ch 90.",
+    "hosts_tokens SUBSTITUTES THE SYMBOL FOR THE REQUIRED SCENE. required_tokens gives D2_receptor -> DOPA_MINE, a SCENE_TOKEN ('a working coal mine, sign DOPA-MINE Co., inside 4 sections labelled by pathway'). The proposal hosts only the bare D2 symbol (red barrier '2', man at a lever). The corpus convention is to plant the fixed scene physically inside the venue — ch 3 puts the colliery gates, winding gear and the four labelled underground sections at the head of a shop row; chs 5 and 6 do the same for their scenes. Rule 5 is explicit: the venue changes, never the token.",
+    "WITHOUT THE MINE THE DA HYPOTHESIS LOSES ITS STRUCTURE. The fact in this chapter is WHICH TRACT — mesolimbic hyperdopaminergia against mesocortical hypofunction. The four-gallery structure is what carries that, and the racecourse replaces it with a crowd/empty-deck contrast that could mean anything.",
+    "ANCHOR CONTRADICTS ITSELF ON R3. It names the white running rail — a low fence — and then bolts the grandstand onto the description. The grandstand is unambiguously the largest inanimate thing in that frame. Declare the largest object, not the most convenient diagonal.",
+    "R7 COLLISION AT THE MEMBERS' ENCLOSURE. It is asked to carry two unrelated fact keys at once: the NMDA VIP door (iron gate, magnet in the lock, chalk-white 2+ badge queue) and the hypofrontality reading ('the members' upper deck stands empty'). The PFC already has its own carrier in the stewards' box; do not run a second, adjacent reading of the same enclosure.",
+    "TWO MOMENTS AT ONCE. 'Walking the line of boards for a better price' and 'standing up on a box at the rail holding the card up to follow the numbers' cannot be the same instant, and R4 wants one shared activity under one light."
+   ],
+   "current": {
+    "sign_text": "NORMANDY AVE EXCHANGE",
+    "place": "A manual telephone exchange on the busy hour: a switch-room floor of operator positions along one long wall of brass jack fields, cord wells full of coiled patch cords, lamp panels lit in rows, the vertical trunk frame standing behind with its jumper wires, floor traps lifted over the cable voids and the glass-walled supervisor's office dark at the front of the room",
+    "place_category": "telephone exchange",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N-M-D-A sits as an ordered subsequence inside an entirely ordinary exchange name — NorManDy Avenue — the expreSS tRIps device, and it is doubly native because real exchanges were named for streets and lettered exactly this way (NOrmandy 5-…), so the mid-word capital highlighting is authentic signage rather than decoration. The trade is also the circuit: one building, several trunk routes leaving it, and the fact is which route is jammed and which is dead — the town line overloaded, every lamp lit, voices literally coming down the line (mesolimbic hyperdopaminergia, positive symptoms) against the front-office line with no lamp lit at all and one idle operator (mesocortical hypofunction, negative symptoms, hypofrontality). A patch cord is the course's rope, i.e. dopamine, and it is here in hundreds. Neuroimaging comes free off native stock: the floor traps are up and the cable voids under them gape far wider than the thinning bundles that run through them (enlarged ventricles, reduced grey matter). Heritability is the staff roster where nearly every name is the same surname."
+   }
+  },
+  {
+   "index": 58,
+   "title_en": "First-generation antipsychotics",
+   "title_he": "אנטיפסיכוטיים דור ראשון (FGA)",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "EPS_focus",
+    "potency_spectrum"
+   ],
+   "required_tokens": {
+    "EPS_acute_dystonia": "DOPA_MINE (nigrostriatal section)",
+    "EPS_akathisia": "DOPA_MINE (workers pacing)",
+    "EPS_parkinsonism": "DOPA_MINE (nigrostriatal blockade)",
+    "tardive_dyskinesia": "DOPA_MINE (chronic blockade aftermath)",
+    "hyperprolactinemia": "DOPA_MINE (TUBE-INFUNDIBULAR section)"
+   },
+   "why_rejected": [
+    "The sign does not hide anything. Every corpus name buries the sound inside an ordinary word - STARRY GAZING, expreSS tRIps, Carpe Drive-in, Ben's Diner. 'AZINE' is printed bare as a supposed surname, but it is not a name; it is the chemical term itself. The pun-as-index is destroyed the same way rule 3 says printing the diagnosis destroys it: the largest lettering slot spends itself on the class label. The record asserts the surname reading rather than earning it.",
+    "hyperprolactinemia is substituted, not hosted - a direct R9/rule-5 breach. The token is 'The MILK PUMP at the pituitary section LEAKS UNCONTROLLED - milk everywhere', and DOPA_MINE's own element list in _lex_scene.json names the milk pump at the tuberoinfundibular section. The record gives a knocked-over tin of brilliant-white emulsion: wrong substance, no pump, and worse, spilled white paint is the single least anomalous object in a paint shop, so it reads as nothing at all. Ch.62's proposal, on the same token, at least keeps real milk.",
+    "Place category sits on top of two live colour trades. #28 MADDER DYE HOUSE is a cloth dye house whose business is weighing dyestuff to a formula and matching colour; #51 ACE PICTURE RESTORERS is a picture conservation studio of varnish, pigment and raking light. The record's own prop 'varnish sample board gone brown-orange under its glass' is #51's furniture verbatim.",
+    "Four of the five required tokens name DOPA_MINE as their scene, and the record never says where DOPA_MINE stands. Re-hosting the four worker-behaviour tokens as shop staff is legal (precedent: #66 TARDY GATE WORKS hosts tardive_dyskinesia in a time office with no mine), but the record should say so rather than leave the scene unaccounted for.",
+    "Self-rated 'workable', and it gives up a corpus-verified venue (SketchyPharm p212, the course's own -azine hook) for a weaker sign. A replacement has to beat what it replaces.",
+    "Two independent things must change. (1) Bury -azine inside a real ordinary word on an ordinary fascia the way GAZING did - a farm-chemicals counter genuinely stocks ATRAZINE and SIMAZINE by the sack, a newsagent's board says MAGAZINE, a metalworker's says BRAZING - and pick a trade that is not already a colour-matching trade, since the dye house and the conservation studio have that ground. (2) The venue must contain an actual leaking milk pump, or stand adjacent to DOPA_MINE's tuberoinfundibular section, because the token cannot be repainted white. The genuinely good material here - the tint-shots-per-litre conversion chart as the chlorpromazine-equivalent table, the sun-bleached window card, the decorator craned back on the steps for oculogyric crisis, the paint shaker that cannot stand still for akathisia - is portable to whatever venue replaces this one."
+   ],
+   "current": {
+    "sign_text": "STARRY GAZING",
+    "place": "An open-air amateur art show in a suburban back garden on a hot afternoon: canvases on wooden easels ranked against the clapboard house wall, a trestle table with wine and crackers, a gazebo over the judging table, full unshaded sun over the whole lawn",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "-azine -> GAZING, the corpus's own verified venue (SketchyPharm p212), reused verbatim so the class hook stays a one-way door: chlorpromazine, fluphenazine, thioridazine, perphenazine and trifluoperazine all live in the gallery, haloperidol is the halo in the picture, and 'first generation' is carried by which artistic movement you are standing in — Van Gogh pastiche — never by a digit. The venue then cashes three more times off its own stock without invention: it is OUTDOORS in full sun, so chlorpromazine's photosensitivity and blue-grey skin land on a sunburnt painter with slate-grey hands; thioridazine's retinal pigmentation is the canvas whose varnish has browned to a muddy orange; and the high-potency versus low-potency trade-off is a CONTRAST_PAIR of two easels — the tight, rigid, cogwheel-stiff draughtsman beside the sagging, sedated, mouth-dry watercolourist asleep in a deckchair. The first-prize rosette gives the ordinal without a numeral."
+   }
+  }
+ ]
+}

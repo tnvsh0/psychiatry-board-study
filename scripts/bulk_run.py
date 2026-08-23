@@ -146,6 +146,10 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     # the course well after the exam. The bulk run produces everything else;
     # backfill_audio.py fills the audio in a few a day, earliest chapter first.
     env.setdefault("SKIP_QUOTA_ARTIFACTS", "1")
+    # Draft rungs on Flash, the frame that ships on Pro. The owner chose this on
+    # 2026-08-23: ~$85 across 141 chapters rather than ~$227, on the reasoning
+    # that most renders in the ladder are discarded anyway.
+    env.setdefault("SKETCHY_LADDER_MODEL", "gemini-3.1-flash-image-preview")
     with log.open("w", encoding="utf-8") as fh:
         p = subprocess.run(
             [sys.executable, "-u", str(ROOT / "scripts" / "daily_study.py"),

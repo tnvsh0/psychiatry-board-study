@@ -5,6 +5,9 @@ set -u
 cd "$(dirname "$0")/.."
 export NOTEBOOKLM_PROFILE=bulk
 export SKETCHY_IMAGE_SIZE=2K
+# Draft rungs on Flash, the shipped frame on Pro. Owner's call, 2026-08-23:
+# ~$85 across 141 chapters instead of ~$227.
+export SKETCHY_LADDER_MODEL=gemini-3.1-flash-image-preview
 set -a; . ./.env; set +a
 DAY="${1:-29}"
 echo "=== chapter $DAY | started $(date -u +%H:%M:%S) UTC ==="
