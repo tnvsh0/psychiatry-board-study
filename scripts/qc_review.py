@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -103,25 +104,34 @@ VERDICT_SHAPE = (
 
 
 def check_page_citations(text: str) -> list[dict]:
-    """Arithmetic check: a cited page past a book's end is definitely invented."""
-    import re
+    """Flag a cited page that cannot exist. Arithmetic, not opinion.
+
+    Deliberately conservative about WHICH book. Chapters cite "Stahl p. 761"
+    without saying which Stahl, and the notebook holds two: the Prescriber's
+    Guide for Children and Adolescents (502 printed pages) and the
+    Neuroscientific Basis (623). Resolving a bare "Stahl" to the smaller one
+    flagged 117 of chapter 2's 134 citations. A page is only impossible if it
+    exceeds EVERY book the name could mean, so an ambiguous name is checked
+    against the largest candidate.
+    """
     out = []
     pat = re.compile(
-        r"(DSM(?:-5-TR)?|Dulcan|Stahl(?:\s+(?:Essential|Pediatric))?)"
-        r"[^0-9]{0,24}?(\d{2,4})(?:\s*[-–]\s*(\d{2,4}))?", re.I)
+        r"(DSM(?:-5(?:-TR)?)?|Dulcan|Stahl(?:'s)?(?:\s+(?:Essential|Pediatric|C&A))?"
+        r"|Synopsis|Kaplan|Syllabus)"
+        r"[^0-9\n]{0,24}?(\d{2,4})(?:\s*[-–]\s*(\d{2,4}))?", re.I)
     for m in pat.finditer(text or ""):
-        book = m.group(1).strip()
-        limit = next((v for k, v in BOOK_PAGES.items()
-                      if k.lower() == book.lower()), None)
-        if limit is None:
-            limit = next((v for k, v in BOOK_PAGES.items()
-                          if book.lower().startswith(k.lower().split()[0])), None)
-        if limit is None:
+        name = re.sub(r"\s+", " ", m.group(1).strip()).lower().replace("'s", "")
+        cands = [v for k, v in BOOK_PAGES.items()
+                 if k.lower() == name or k.lower().startswith(name)
+                 or name.startswith(k.lower().split()[0])]
+        if not cands:
             continue
+        limit = max(cands)              # ambiguous name -> the most forgiving book
         for g in (m.group(2), m.group(3)):
             if g and int(g) > limit:
                 out.append({"claim": m.group(0).strip(),
-                            "why": f"{book}'s last printed page is {limit}",
+                            "why": f"no book called {m.group(1).strip()} here runs "
+                                   f"past page {limit}",
                             "severity": "high"})
     return out
 

@@ -1519,6 +1519,11 @@ Output ONLY the JSON object."""
     # them. Every unrequested key becomes legend rows and a mnemonic plate, so
     # dropping them here is the difference between a chapter about SSRIs and a
     # chapter about depression wearing an SSRI venue.
+    bad = _impossible_citations(json.dumps(facts, ensure_ascii=False))
+    if bad:
+        eg = ", ".join(dict.fromkeys(b["claim"] for b in bad))[:120]
+        print(f"  [!] facts.json cites {len(bad)} page(s) that cannot exist "
+              f"({eg}); they will reach the legend", file=sys.stderr)
     extra = [k for k in facts if k not in allowed]
     if extra:
         print(f"  [!] dropping {len(extra)} section(s) this chapter did not ask "
@@ -1651,9 +1656,35 @@ MIN_GUIDE_CHARS = 6000
 MIN_GUIDE_CITATIONS = 12
 
 
+# A citation past the end of a book is arithmetic, not opinion, and the prompt
+# already states every book's printed range and says a page outside it is wrong.
+# Chapter 2 produced 111 of them anyway - "Stahl p. 761, 934, 1006, 1229" in a
+# book whose last printed page is 623, measured two independent ways: 620
+# distinct folios found in the indexed text, and 1,854,842 characters, which is
+# 2,977 per page across 623 pages. Told and ignored, so it is checked in code.
+# The tolerance is small rather than zero: one stray number inside a sentence
+# can look like a citation, and a chapter is not worth re-asking over that.
+MAX_IMPOSSIBLE_CITATIONS = 2
+
+
+def _impossible_citations(text: str) -> list:
+    try:
+        from qc_review import check_page_citations
+        return check_page_citations(text)
+    except Exception:
+        return []
+
+
 def _study_guide_defects(text: str) -> list:
     """Reasons this answer is not a usable study guide. Empty list = fine."""
     out = []
+    bad = _impossible_citations(text)
+    if len(bad) > MAX_IMPOSSIBLE_CITATIONS:
+        eg = ", ".join(dict.fromkeys(b["claim"] for b in bad))[:160]
+        out.append(f"{len(bad)} citations point at pages that do not exist "
+                   f"in the book they name (e.g. {eg}) — use only the printed "
+                   f"page ranges given, and write \"(מקור: הקשר רחב)\" when you "
+                   f"cannot find a page")
     said = [p for p in _GUIDE_RECEIPT_PHRASES if p in text]
     if said:
         out.append("it announces a file instead of containing the guide "
