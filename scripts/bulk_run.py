@@ -125,7 +125,7 @@ def auth_ok() -> tuple[bool, str]:
         return True, ""
     if any(m in out for m in AUTH_MARKERS):
         return False, ("NotebookLM rejected the stored session. Re-authenticate:\n"
-                       f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login --fresh")
+                       f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login")
     return False, f"notebooklm list failed rc={p.returncode}: {out.strip()[:200]}"
 
 
@@ -262,7 +262,7 @@ def main() -> int:
         if note.startswith("AUTH ::"):
             print(f"\n[STOP] chapter {idx} failed on authentication. "
                   f"Re-authenticate and resume:\n"
-                  f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login --fresh\n"
+                  f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login\n"
                   f"    python scripts/bulk_run.py", file=sys.stderr)
             return 2
         if consecutive >= MAX_CONSECUTIVE_FAILURES:
