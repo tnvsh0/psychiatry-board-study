@@ -138,6 +138,30 @@ def auth_ok() -> tuple[bool, str]:
     return False, f"notebooklm list failed rc={p.returncode}: {out.strip()[:200]}"
 
 
+def try_relogin() -> bool:
+    """Re-mint the session without a human, and say whether it worked.
+
+    The stored NotebookLM cookies expire every few hours, but the persistent
+    browser profile still holds a valid GOOGLE session, and `notebooklm login`
+    uses it to mint new ones silently — the owner ran it and was never asked to
+    sign in. That only holds while the profile survives, which is exactly why
+    --fresh is not used here: it deletes the profile, and then a person really
+    is required.
+
+    So an expired session is recoverable in-process. Before this, it cost the
+    run: the queue stopped and waited for someone to notice.
+    """
+    print("  [i] session expired — re-minting from the browser profile...",
+          flush=True)
+    subprocess.run(["notebooklm"] + (["-p", PROFILE] if PROFILE else []) + ["login"],
+                   capture_output=True, text=True, encoding="utf-8",
+                   errors="replace", timeout=300)
+    ok, _ = auth_ok()
+    print(f"  [i] re-auth {'succeeded' if ok else 'FAILED — a person is needed'}",
+          flush=True)
+    return ok
+
+
 def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     log_dir.mkdir(parents=True, exist_ok=True)
     log = log_dir / f"ch{day_index:03d}.log"
@@ -232,7 +256,7 @@ def main() -> int:
     except Exception as e:
         print(f"[!] could not check Gemini health: {e}", file=sys.stderr)
 
-    n, consecutive = 0, 0
+    n, consecutive, relogged = 0, 0, False
     for idx in queue:
         if a.limit and n >= a.limit:
             print(f"stopping: reached --limit {a.limit}")
@@ -277,8 +301,26 @@ def main() -> int:
         # chapter identically. Marking 141 of them failed at 45s apart destroys
         # the retry list and teaches nobody anything, so stop and say why.
         if note.startswith("AUTH ::"):
-            print(f"\n[STOP] chapter {idx} failed on authentication. "
-                  f"Re-authenticate and resume:\n"
+            # Recoverable without a person, as long as the browser profile is
+            # intact. Retry this chapter once rather than ending the run.
+            if not relogged and try_relogin():
+                relogged = True
+                consecutive = 0
+                st["failed"].pop(str(idx), None)
+                save_state(st)
+                print(f"[{idx:3}] retrying after re-auth", flush=True)
+                ok, note = run_chapter(idx, ROOT / "_bulk" / "logs")
+                if ok and released(tag):
+                    freed = sweep_local(idx)
+                    st["done"].append(idx)
+                    save_state(st)
+                    print(f"[{idx:3}] DONE  after re-auth — freed {freed}MB")
+                    time.sleep(CHAPTER_GAP_S)
+                    continue
+                st["failed"][str(idx)] = note
+                save_state(st)
+            print(f"\n[STOP] chapter {idx} failed on authentication and it could "
+                  f"not be re-minted. Sign in and resume:\n"
                   f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login\n"
                   f"    python scripts/bulk_run.py", file=sys.stderr)
             return 2
