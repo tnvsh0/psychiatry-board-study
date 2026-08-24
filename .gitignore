@@ -15,3 +15,7 @@ _generated/
 # Reference materials — copyrighted PDFs etc. kept locally only
 עותק של Sketchy.pdf
 *.pdf
+
+# The owner's recorded academic lectures: 28 files, 14GB, served from GCS
+# (see scripts/upload_lectures.py). Never belongs in git.
+הקלטות לימודי המשך/
