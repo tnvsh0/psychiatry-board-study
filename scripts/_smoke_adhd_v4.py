@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from daily_study import (  # noqa: E402
     load_schedule, load_symbols,
-    build_director_instruction, facts_for_aspect,
+    build_director_instruction, build_image_jobs,
 )
 from gemini_image import generate_sketchy_directed, propose_anchor_theme  # noqa: E402
 
@@ -81,15 +81,22 @@ def main():
     for a, z in zones.items():
         print(f"  {a} -> {z}")
 
-    for aspect in ASPECTS:
-        af = facts_for_aspect(aspect, ADHD_FACTS)
-        director = build_director_instruction(day, symbols, aspect, af,
+    for label, aspect, job_facts in build_image_jobs(ASPECTS, ADHD_FACTS):
+        director = build_director_instruction(day, symbols, aspect, job_facts,
                                               anchor_world=world, anchor_zone=zones.get(aspect))
-        png = OUT / f"smoke_adhd_v7_{aspect}.png"
-        txt = OUT / f"smoke_adhd_v7_{aspect}.txt"
-        print(f"[{aspect}] director {len(director)} chars -> directing + generating...")
+        # Criteria images get the coverage-guaranteed retry loop (all criteria must appear).
+        required_items, max_tries = None, 1
+        if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(job_facts, dict):
+            items = (job_facts.get("criteria") or {}).get("items")
+            if items:
+                required_items, max_tries = [str(i) for i in items], 3
+        png = OUT / f"smoke_adhd_v8_{label}.png"
+        txt = OUT / f"smoke_adhd_v8_{label}.txt"
+        tag = f" (criteria: {len(required_items)} items, <=3 tries)" if required_items else ""
+        print(f"[{label}] director {len(director)} chars -> directing + generating{tag}...")
         ok, cap = generate_sketchy_directed(
             director_instruction=director, output_path=png, caption_path=txt, phase=phase,
+            required_items=required_items, max_image_tries=max_tries,
         )
         print(f"  {'OK' if ok else 'FAIL'} {png.name}; caption {len(cap)} chars")
 

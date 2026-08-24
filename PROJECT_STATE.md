@@ -15,14 +15,14 @@ Last updated: 2026-06-04
 | **GitHub repo** (private) | https://github.com/tnvsh0/psychiatry-board-study |
 | **Releases** (one per chapter, holds all artifacts) | https://github.com/tnvsh0/psychiatry-board-study/releases |
 | → Day 1 release | https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-001-psychiatric-examination-of-child-and-adolescent |
-| → Day 16 (ADHD) release | https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-016-adhd-core |
+| → ADHD release (**stale tag**) | https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-016-adhd-core — ADHD is now chapter **17**, so the bulk run will publish `study-017-adhd-core` and this tag is orphaned. Delete it once 017 exists. |
 | **Streamlit app — LOCAL** | `streamlit run app/app.py` → http://localhost:8501 |
 | **Streamlit app — ONLINE (Cloud Run)** | NOT DEPLOYED YET (see §9). Will be a `*.run.app` URL. |
 | **Generation VM** | `weekly-review-vm`, zone `me-west1-b`, project `psych-research-agent` |
 | → SSH | `gcloud compute ssh weekly-review-vm --zone=me-west1-b --project=psych-research-agent` |
 | → repo on VM | `/opt/psychiatry-board-study` (does `git pull` to update) |
 | → venv on VM | `/opt/venv/bin/python`, `/opt/venv/bin/notebooklm` |
-| → textbook PDFs on VM | `/opt/sources/` (dsm-5-tr, dulcan, stahl-essential, kaplan-sadock-synopsis, syllabus) |
+| → textbook PDFs on VM | `/opt/sources/` (dsm-5-tr, dulcan, stahl-essential, **stahl-pediatric**, kaplan-sadock-synopsis, syllabus) |
 | **Smoke-test images (local)** | `_test_outputs/` (e.g. `smoke_adhd_v9_inattention.png`) — gitignored |
 | **Textbook PDFs (local)** | `Text BOOKS/` — gitignored |
 
@@ -36,7 +36,7 @@ Last updated: 2026-06-04
 ## 2. What This Project Is
 
 An automated study course for the Israeli psychiatry board exam (שלב ב'), child &
-adolescent focus. **126 "chapters"** (originally "days"; renamed because each is a
+adolescent focus. **144 "chapters"** (originally "days"; renamed because each is a
 learning unit of variable length), organized into **10 phases** (foundations →
 neurodevelopmental → mood/anxiety → … → psychotherapy).
 
@@ -67,12 +67,70 @@ Hebrew caption, study guide, flippable flashcards with **spaced repetition**, qu
   `sketchy_dsm_criteria_inattention.png`, `sketchy_dsm_criteria_hyperactivity-impulsivity.png`,
   `sketchy_epidemiology.png`, `sketchy_etiology.png` + audio/video/study guide/flashcards/quiz/facts.json.
 
+**EPIDEMIOLOGY IMAGE — the design theory we converged on (READ before touching it).**
+The epidemiology image was the hardest problem in the project (~15 iterations, see
+`SKETCHY_IMAGE_CHALLENGE.md` for the full log). It has ~6-8 numeric facts and no innate
+story, so it kept coming out as either a scattered symbol-board or a cluttered melee.
+The working design, now in `build_epidemiology_director()` (`daily_study.py`):
+- **SPLIT INTO TWO IMAGES** (like criteria): `sketchy_epidemiology_who.png`
+  (prevalence, sex ratio, onset, heritability) and `sketchy_epidemiology_comes_with.png`
+  (comorbidity rates + course/persistence). ~3 figures each keeps every image a single
+  composed scene while all the data is still carried. Split lives in `build_image_jobs`;
+  a `half` arg ("who"/"comes_with") threads through `build_director_instruction`.
+- **ONE DOMINANT HERO** (the personified patient) in the centre foreground; every fact
+  is a property of the hero or something reacting to them — NOT a democratic ensemble.
+- **NUMBERS = DIGIT-SHAPE OBJECTS** (an object whose *shape* looks like the digit — no
+  code to learn, the resemblance is the mnemonic). Each figure is rounded to ≤2 digits.
+  The objects must be **native to the chapter's world** (0=tyre, 1=cone, 5=tow hook,
+  7=ramp in the ADHD driving world) — never imported. So digit-shapes are consistent
+  *within* a chapter, vary *between* chapters. Exact percentages still go to the caption.
+- **THE WORLD IS IMPOSED** (from `anchor_world`) and supplies BOTH the plot event and the
+  digit-objects — this is what keeps the image tied to the disorder (a beach/carnival is
+  "orphaned"; the viewer can't tell which disorder it is).
+- **BINDING (1:1):** each figure's digit-shapes are carried by the element that
+  represents its concept (family carries heritability, each companion carries its own
+  rate) so the encoding is unambiguous; no object serves two figures.
+- **TWO TEXT REGIMES** (`gemini_image.py` `style_prefix(text_policy=...)`): epidemiology
+  uses `"environment"` — it bans labels that say what an element *represents*
+  ("DEPRESSION", "WAITING BOYS") but ALLOWS ordinary world signage a place would carry
+  anyway ("DRIVING SCHOOL" on the building, "L" plate). Test: "would this text be there
+  if nobody were being taught?" All other aspects keep `"mnemonic"` (big legible labels).
+- **ONE MOMENT** per half (`EPI_HALVES[*]["moment"]`): everything reacts to the hero in a
+  single instant (a test / a pile-up), never stations spread across the frame.
+Day 16's two epidemiology halves are the reference for "good." Etiology/criteria are
+unchanged (they already work) and still use the generic `build_director_instruction`.
+
+**Latest quality pass (image fidelity — this session):**
+- **Image model → Nano Banana Pro by default** (`gemini-3-pro-image-preview`),
+  overridable via env `SKETCHY_IMAGE_MODEL` (set `gemini-3.1-flash-image-preview`
+  for the cheap Flash model w/ ~500/day free tier). Pro = best text rendering +
+  instruction-following — directly helps labels + criteria completeness.
+- **Caption fidelity (two-stage):** caption now takes a literal VISUAL INVENTORY
+  of the rendered image first, then narrates ONLY what is actually there — no more
+  describing intended-but-undrawn elements. (`gemini_image.py`)
+- **Criteria completeness GUARANTEE:** a criteria image must contain a distinct
+  visual for EVERY criterion. Director now demands one hook per criterion (density
+  > cleanliness for criteria); `generate_sketchy_directed` runs a coverage-checked
+  retry loop (≤3×, keeps the most-complete render) via `check_coverage`, wired by
+  `required_items` for criteria jobs.
+- **Comorbidity redesign:** ONE conjoined-twin pair + the comorbid disorders as
+  worn/held/surrounding symbol-objects (NOT extra twin bodies). (`symbols.json`
+  `epi_comorbidity` + the epidemiology structure note.)
+- **Per-aspect SCOPED infographics:** each NotebookLM infographic is fed its OWN
+  facts.json slice as a dedicated source and generated with
+  `generate infographic -s <id>` — no cross-aspect bleeding/repetition.
+
 **Pending (the next big steps):**
 1. **Verify Day 16 clean set** visually (open the release assets or the Streamlit app).
-2. **Full bulk run** — regenerate ALL 126 chapters with the new quality. ~50h, ~$50-80 Gemini. On the VM via `nohup`. Open question: overwrite all vs `--resume`.
+2. **Full bulk run** — regenerate ALL 144 chapters on Nano Banana Pro (~$0.13/img,
+   ~$67 total). **STRATEGY: spread across months** via `--bulk --start-from/--end-at
+   --resume` (~12-18 chapters/month) so the Google AI Pro **$10/month Cloud credits**
+   absorb the cost (≈ free). Test ONE chapter (day 16) first. (Confirm the $10/mo
+   credits apply to the same billing account the server's `GEMINI_API_KEY` uses.)
 3. **Deploy Streamlit to Cloud Run** (online). Dockerfile + .gcloudignore are ready (§9).
 
-**Latest commit:** `97f2484`. **Branch:** `main`.
+**Latest:** image-fidelity quality pass (Pro model, two-stage caption, criteria
+completeness loop, comorbidity, scoped infographics). See `git log` on `main`.
 
 ---
 
@@ -82,7 +140,7 @@ Hebrew caption, study guide, flippable flashcards with **spaced repetition**, qu
 scripts/daily_study.py  --day N   (or --bulk)
    │  (runs on the VM; calls the notebooklm CLI + Gemini)
    ├─ 1. find/create per-day NotebookLM notebook
-   ├─ 2. upload 5 textbook PDFs to it  (so study guide can cite pages)
+   ├─ 2. upload 6 textbook PDFs to it  (so study guide can cite pages)
    ├─ 3. extract a focused .md from the MAIN notebook → add as source
    ├─ 4. start NotebookLM artifacts (async): audio, video, infographics, flashcards, quiz
    ├─ 5. ask_study_guide()  → study_guide.md (with page refs)
@@ -165,12 +223,15 @@ Real SketchyMedical reference is in `Text BOOKS/` / `_test_outputs/sketchy_ref.p
 | File | Role |
 |------|------|
 | `scripts/daily_study.py` | **The orchestrator.** Per-chapter pipeline. Builds the scene-director prompts, calls NotebookLM + Gemini, uploads the Release. Run with `--day N` or `--bulk`. |
-| `scripts/gemini_image.py` | Gemini calls: `propose_anchor_theme`, `run_scene_director`, `generate_sketchy_directed` (director→image→caption), `generate_image` (3× retry), the `SKETCHY_STYLE_PREFIX` + `CAPTION_INSTRUCTION`. Model = `gemini-3.1-flash-image-preview` (Nano Banana 2). |
+| `scripts/gemini_image.py` | Gemini calls: `propose_anchor_theme`, `run_scene_director`, `generate_sketchy_directed` (director→image→[coverage-retry]→caption), `generate_image` (3× retry), `check_coverage` (criteria completeness), two-stage caption (`_visual_inventory` + `CAPTION_INSTRUCTION`), `SKETCHY_STYLE_PREFIX`. Model = `gemini-3-pro-image-preview` (Nano Banana Pro) by default; override via env `SKETCHY_IMAGE_MODEL` (e.g. `gemini-3.1-flash-image-preview` = Flash/free-tier). |
 | `schedule/symbols.json` | The symbol codex (3 tiers above). 156 `symbols` + 60 `drugs` + 17 `scenes` + 5 `ions` + 7 `epidemiology_meta` + `number_pegs`. |
-| `schedule/schedule.json` | The 126-chapter curriculum (10 phases). Each chapter: title, aspects, symbols_needed, prompt_focus, optional `anchor_world`/`anchor_zones` (curated world override — day 16 has the driving-test world). |
+| `schedule/schedule.json` | The 144-chapter curriculum (10 phases). Each chapter: title, aspects, symbols_needed, prompt_focus, optional `anchor_world`/`anchor_zones` (curated world override — chapter 17 (ADHD) has the driving-test world). |
 | `schedule/phase_palette.json` | Per-phase color hints (UI theming + gentle image palette). |
 | `app/app.py` | **The Streamlit course site.** Reads Releases (private repo, server-side fetch with GH_TOKEN), renders each chapter. Spaced-repetition flashcards. Recommended-reading box (pages per book). |
 | `scripts/sr_engine.py` | SM-2 spaced-repetition algorithm (imported by app.py). |
+| `scripts/build_book_map.py` | **Run once.** Extracts each textbook's chapter map + PRINTED page ranges into `schedule/book_map.json` (needs the local PDFs). Scans real page folios rather than assuming a fixed front-matter offset, because Dulcan's offset is not constant. |
+| `scripts/audit_coverage.py` | **The coverage check.** Reads the "מפת המקורות" table from every generated `study_guide.md`, accumulates cited pages per book, and reports which book chapters no chapter has touched — plus any page cited *past the book's last page*, i.e. fabricated. Run after each batch. |
+| `schedule/book_map.json` | Output of `build_book_map.py`; the audit runs off this, not off the 500 MB of PDFs. |
 | `Dockerfile` (root) + `.gcloudignore` | Cloud Run deploy (bundles app.py + sr_engine.py). |
 | `scripts/daily_notify.py` | (older) ntfy notification + progress tracking. |
 | `scripts/_smoke_adhd_v4.py` | Local Gemini-only smoke test for ADHD images (hand-built facts, no NotebookLM needed). |
@@ -196,6 +257,12 @@ python scripts/_smoke_adhd_v4.py        # writes _test_outputs/smoke_adhd_*.png 
 # --- Run the Streamlit app locally ---
 export GH_TOKEN=$(gh auth token)
 streamlit run app/app.py                # http://localhost:8501
+
+# --- Coverage audit: are we actually covering the books? ---
+python scripts/build_book_map.py     # once, locally, needs "Text BOOKS/"
+python scripts/audit_coverage.py     # after each batch; add --json for CI
+#   Reports per book: which chapters no study guide has cited, and any page
+#   cited past the book's last page (= the model invented it).
 
 # --- notebooklm auth (only needed on the VM, when it expires) ---
 notebooklm login    # opens a browser; run interactively (not via nohup)
