@@ -109,6 +109,11 @@ AUTH_MARKERS = ("Authentication expired or invalid",
                 "session is dead")
 MAX_CONSECUTIVE_FAILURES = 3
 
+# NotebookLM's chat going quiet is not a chapter problem and no chapter after
+# this one will fare better. Stop the whole queue on the first sighting.
+CHAT_DOWN_MARKERS = ("ChatUnavailable", "No parseable chunks",
+                     "wire format may have changed")
+
 # No chapter is ever worth this long. Chapter 2 lost its NotebookLM session
 # partway through and kept going for 566 minutes — `ask` waits 900s an attempt,
 # three attempts a call, several calls a chapter, all of them against a dead
@@ -304,6 +309,13 @@ def main() -> int:
         # A revoked session, an exhausted quota or a broken build fails every
         # chapter identically. Marking 141 of them failed at 45s apart destroys
         # the retry list and teaches nobody anything, so stop and say why.
+        if any(m in note for m in CHAT_DOWN_MARKERS):
+            probe = f"notebooklm{' -p ' + PROFILE if PROFILE else ''} ask 'Say OK.' --json"
+            print(f"\n[STOP] chapter {idx}: NotebookLM's chat is returning empty "
+                  f"streams, on every notebook. Nothing downstream can be built "
+                  f"until it answers again.\n  Check with:  {probe}",
+                  file=sys.stderr)
+            return 3
         if note.startswith("AUTH ::"):
             # Recoverable without a person, as long as the browser profile is
             # intact. Retry this chapter once rather than ending the run.

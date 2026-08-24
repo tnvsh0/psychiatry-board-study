@@ -920,6 +920,10 @@ class AuthExpired(RuntimeError):
     """The NotebookLM session died. Nothing downstream can succeed."""
 
 
+class ChatUnavailable(RuntimeError):
+    """NotebookLM's chat is returning empty streams. Retrying will not help."""
+
+
 def nb_run(args, timeout=120, retries=2):
     """Run the CLI, retrying a run that comes back empty.
 
@@ -984,10 +988,26 @@ def nb_run(args, timeout=120, retries=2):
         if any(m in blob for m in ("Authentication expired or invalid",
                                    "Run 'notebooklm login'")):
             raise AuthExpired(f"notebooklm {args[0]}: session is dead")
+        # The chat endpoint answering with an empty stream. Seen after a heavy
+        # day: `ask` failed on every notebook on this account, including ones
+        # that had answered an hour earlier, while create, source list and
+        # source add-text all kept working. Whether that is Google throttling
+        # chat or the wire format having changed, hammering it is wrong either
+        # way — chapters 12, 13 and 14 each retried this eighteen times and
+        # spent fifteen minutes apiece doing it.
+        if "No parseable chunks" in blob or "wire format may have changed" in blob:
+            raise ChatUnavailable(
+                f"notebooklm {args[0]}: chat returned an empty stream")
         if attempt < retries:
-            print(f"    [!] notebooklm {args[0]} returned rc={r.returncode} with "
-                  f"{len(r.stdout)} bytes; retrying "
-                  f"({attempt + 2}/{retries + 1})", file=sys.stderr)
+            # Print WHAT it said, not just how long it was. Chapters 12, 13 and
+            # 14 each failed on the same 203-byte error repeated eighteen times,
+            # and because only the byte count was logged, nobody could see what
+            # it was — three chapters lost to an error that never once named
+            # itself.
+            body = " ".join((r.stdout or r.stderr or "").split())
+            print(f"    [!] notebooklm {args[0]} rc={r.returncode}: "
+                  f"{body[:200]}; retrying ({attempt + 2}/{retries + 1})",
+                  file=sys.stderr)
             time.sleep(8 * (attempt + 1))
     return last
 
