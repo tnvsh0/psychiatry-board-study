@@ -1189,6 +1189,28 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
     return attached
 
 
+def _names_book(answer: str, label: str) -> bool:
+    """Does this answer refer to that book, however it chooses to name it?
+
+    NotebookLM shows a source under its DRIVE FILENAME, not under the label we
+    attach it with, so matching on the label alone became impossible the moment
+    the two Stahl books were renamed StahlNeuro and StahlKids: nothing in the
+    notebook is called either of those. The probe then counted 2 of 5 books
+    forever and every chapter died on a notebook that was answering perfectly
+    well — 1,739 characters of it.
+
+    So a book counts as named if the answer uses our label OR any distinctive
+    word from its real filename.
+    """
+    a = (answer or "").lower()
+    book = load_drive_books().get(label, {})
+    needles = {label.lower(), label.lower().split()[0]}
+    for w in re.findall(r"[a-z]{6,}", (book.get("drive_title") or "").lower()):
+        if w not in ("essential", "psychopharmacology", "textbook", "emailing"):
+            needles.add(w)          # neuroscientific, prescribers, adolescent...
+    return any(n in a for n in needles if len(n) > 3)
+
+
 def wait_until_answerable(nb_id, books=None, tries=6, first_wait=45):
     """Block until the notebook can actually ANSWER from its books.
 
@@ -1216,7 +1238,7 @@ def wait_until_answerable(nb_id, books=None, tries=6, first_wait=45):
                 answer = json.loads(r.stdout).get("answer", "") or ""
             except Exception:
                 answer = ""
-        named = sum(1 for b in books if b.split()[0].lower() in answer.lower())
+        named = sum(1 for b in books if _names_book(answer, b))
         if len(answer) >= 800 and named >= max(2, len(books) - 2):
             print(f"    notebook is answering ({len(answer)} chars, "
                   f"{named}/{len(books)} books named)")
