@@ -291,17 +291,25 @@ def save_progress(progress: dict) -> bool:
 def get_lectures() -> dict:
     """Recorded academic lectures, keyed by chapter number as a string.
 
-    Written by scripts/upload_lectures.py. A lecture is filed under every
-    chapter it is relevant to, not only its main one — the Tourette/ADHD/OCD
-    talk belongs to all three — so the same URL appears under several keys.
+    Fetched from the repo the same way the schedule is, NOT read off local
+    disk. The Cloud Run image copies only app.py and sr_engine.py — everything
+    under schedule/ arrives live through the Contents API — so a local-only
+    read returns nothing in production and the lectures would simply never
+    appear, on a page that gave no sign anything was missing.
+
+    A lecture is filed under every chapter it is relevant to, not only its main
+    one: the Tourette/ADHD/OCD talk belongs to all three.
     """
-    f = LOCAL_ROOT / "schedule" / "lectures.json"
-    if not f.exists():
-        return {}
-    try:
-        return json.loads(f.read_text(encoding="utf-8")).get("lectures_by_chapter", {})
-    except Exception:
-        return {}
+    data = _gh_fetch_json("schedule/lectures.json", fallback=None)
+    if not data:
+        f = LOCAL_ROOT / "schedule" / "lectures.json"
+        if not f.exists():
+            return {}
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return data.get("lectures_by_chapter", {})
 
 
 @st.cache_data(ttl=300)
