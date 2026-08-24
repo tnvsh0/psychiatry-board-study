@@ -1,0 +1,691 @@
+{
+ "accepted": [
+  {
+   "index": 1,
+   "sign_text": "C.A.P. VEHICLE TESTING",
+   "place": "A vast municipal vehicle testing hall smelling of diesel exhaust and brake dust, lit by suspended high-bay mercury vapor lamps. Heavy commercial lorries stand parked in sequential bays over sunken inspection pits, while pneumatic airline hoses drop from overhead steel trusses. Yellow pedestrian walkway stripes border the reinforced concrete floor.",
+   "activity": "Every vehicle examiner is guiding lorry axles onto hydraulic shaker plates using illuminated orange marshalling wands.",
+   "anchor_structure": "A sixty-foot steel roller-brake testing bed with diagonal yellow guide rails cutting across the inspection hall floor from bottom-left to top-right.",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "'C.A.P.' directly embeds the medical acronym for Child and Adolescent Psychiatry, the specialty governing pediatric mental health examinations.",
+   "place_category": "commercial vehicle inspection station",
+   "stock_props": [
+    "hydraulic wheel play detectors set in concrete",
+    "roller brake test console with dual analog dial gauges",
+    "exhaust emission gas sampling probe with rubber hose",
+    "pneumatic airline drop reels",
+    "overhead gantry crane hook stamped 5 TONNES",
+    "digital headlight beam setter on floor rails",
+    "steel pit access stairs with yellow safety treads",
+    "clipboards holding MOT failure notices",
+    "industrial wheel chocks painted red",
+    "illuminated axle weight display board reading 8400 KG",
+    "wall rack of heavy torque wrenches"
+   ],
+   "hosts_tokens": [
+    "developmental_ladder: Erected cleanly against the solid interior brick gable wall beneath the overhead crane beam, its developmental milestone rungs climbing from the concrete floor to the upper maintenance catwalk.",
+    "developmental_red_flags: Mounted as six standardized red-bordered calibration placards at eye level along the inspector's diagnostic console on the left wall, each displaying one micro-scene (9-shaped cradle, 12:00 clock tower, chai pendant, two unjoined word cards, tricycle, reversed calendar)."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 5,
+   "sign_text": "SIR TONY'S COLD STORAGE",
+   "place": "A cavernous, sub-zero distribution warehouse where dense vapor mist hangs in the freezing air under high-bay sodium floodlights. Massive rows of galvanized pallet racking stretch to the insulated ceiling, loaded with shrink-wrapped frozen stock. Heavy automated air curtains hiss above the industrial rapid-roll freezer doors along the concrete walls.",
+   "activity": "Every warehouse operative in a thermal freezer suit is scanning frozen carton barcodes using handheld laser terminals.",
+   "anchor_structure": "A thirty-foot insulated glycol cooling evaporator unit with diagonal coolant feed pipes cutting across the ceiling from bottom-left to top-right.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'Sir Tony's' is a direct phonetic pun on 'serotonin', the monoamine neurotransmitter system governing mood, sleep, and appetite.",
+   "place_category": "cold storage warehouse",
+   "stock_props": [
+    "frost-coated galvanized pallet racks",
+    "handheld digital barcode scanners with red laser beams",
+    "pallet of shrink-wrapped frozen beef cartons stamped LOT-5",
+    "digital wall thermometer displaying -18°C",
+    "yellow electric forklift with blue spot safety light",
+    "heavy insulated rubber strip curtain",
+    "emergency defrost beacon",
+    "steel perimeter bollards with yellow hazard stripes",
+    "pallet jack with hydraulic foot pedal",
+    "digital consignment clipboard",
+    "overhead glycol coolant pressure gauge"
+   ],
+   "hosts_tokens": [
+    "RAPHE_TAPESTRY: Set up along the central concrete floor expansion seam as an imported Persian-rug tapestry loom with active weavers, stencilled crates on the loading step, and an older boxed loom bearing the '4-6 WEEKS' start-up card.",
+    "dorsal_raphe: Located at the upper crest of the RAPHE_TAPESTRY loom frame.",
+    "raphe_nuclei: Clustered yarn bobbins along the midline base of the RAPHE_TAPESTRY loom.",
+    "SERT: An automated motorized pallet-return conveyor with a green recycle intake hopper beside the loading dock bay.",
+    "5-HT1A_receptor / BUS_LINE_1A: An illuminated municipal bus stop shelter marked 'LINE 1A' by the side loading bay door, with a white rabbit seated on the bench.",
+    "5-HT2A_receptor / TAROT_2A: A partitioned glazed inspection office in the front corner where a fortune teller sits at a small table displaying two upright Ace cards.",
+    "5-HT2C_receptor: Inside the TAROT_2A kitchen annex doorway, where exactly TWO white-hatted chefs stand guard over a lidded cookie jar.",
+    "5-HT3_receptor: Inside the TAROT_2A side washroom chamber, where THREE heavy iron drain channels gush bright green sluice water through open valves.",
+    "5-HT6_receptor: Inside the TAROT_2A back record room library, where an elderly professor reads under SIX framed PhD diplomas hung in a row.",
+    "5-HT7_receptor / CONVENIENCE_STORE_7: A brightly illuminated '7' convenience store kiosk built into the far perimeter wall with 24-hour clock and sleep-mask displays."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 11,
+   "sign_text": "TANNER'S LEATHER WORKS",
+   "place": "A heavy industrial tanning shed smelling of pungent vegetable tannins and wet hide, lit by daylight through open-sided timber clerestory louvers. Rows of deep sunken concrete tanning pits are arranged in sequential stages across the flagstone floor. Stacks of salted raw cattle hides on heavy oak skids sit beneath the overhead gantry rails.",
+   "activity": "Every tanner on the floor is plunging and hauling wet cowhides through the tannin vats using long ash-wood poles.",
+   "anchor_structure": "A seventy-foot diagonal overhead timber drying beam hung with heavy russet hides that spans the upper yard from bottom-left to top-right.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'Tanner's' directly puns on the Tanner Stages (1 to 5) that categorize pubertal physical development during adolescence.",
+   "place_category": "leather tannery",
+   "stock_props": [
+    "sunken concrete tanning pits numbered 1 to 5",
+    "heavy wooden vat scraping paddles",
+    "stack of salted raw steer hides on oak pallets",
+    "digital pH testing meter displaying 8.5",
+    "pair of heavy rubber wading boots stamped SIZE 11",
+    "brass hide-thickness dial gauge",
+    "wooden beam-horse scraping bench",
+    "iron flesh-hook hanging on a leather loop",
+    "burlap sacks of ground chestnut bark",
+    "thermometer dial mounted on pit wall reading 38°C",
+    "galvanised salt bucket"
+   ],
+   "hosts_tokens": [
+    "erikson_8_stages: A compact, framed 'ERIKSON-LAND' eight-stage route-map illustration board hung on the drying loft timber post, with the Stage 5 'Identity vs Role Confusion' station brightly illuminated.",
+    "piaget_4_stages: A compact 'PIAGET'S PRE-OP HOSPITAL' first-aid kiosk stationed in the yard corner, highlighting its 4th-level Formal Operational diagnostic station.",
+    "developmental_ladder: A five-rung wooden tannery inspection ladder leaning against the central drying loft pillar, its upper rungs (ages 13-18) in active use.",
+    "nucleus_accumbens: A standalone brass-fronted mechanical 'CASINO' one-armed bandit slot machine bolted to a freestanding brick pier in the break area.",
+    "prefrontal_cortex: The raised glass-walled yard overseer's booth with an illuminated brain schematic diagram mounted in the window."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 17,
+   "sign_text": "ADDIE'S AUTO ELECTRICAL",
+   "place": "A busy commercial auto-electrical workshop smelling of rosin solder and ozone, lit by fluorescent battens suspended over steel-topped workbenches. Component test benches with spinning alternator rigs line the perimeter walls alongside battery charging racks. Vehicle wiring looms in corrugated conduit hang from overhead cable supports above the concrete floor.",
+   "activity": "Every auto-electrician is soldering copper eyelet terminals onto vehicle wiring harnesses using electric soldering irons.",
+   "anchor_structure": "A forty-five-foot heavy overhead wiring gantry and extraction duct beam cutting diagonally across the workshop ceiling from bottom-left to top-right.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'ADDie's' phonetically puns on ADD (Attention Deficit Disorder), the core foundational acronym of ADHD.",
+   "place_category": "auto electrical workshop",
+   "stock_props": [
+    "coils of 12V automotive stranded copper wire",
+    "digital multimeter displaying 12.6V",
+    "heavy 24V lead-acid truck battery on a wooden dolly",
+    "soldering iron stand with steaming sponge",
+    "rack of automotive blade fuses numbered 5A to 30A",
+    "wall-mounted alternator testing rig with spinning belt",
+    "box of heat-shrink tubing in assorted diameters",
+    "crimping tool with ratcheting jaws",
+    "blue steel bench vice with serrated jaws",
+    "wall rota chart marked SHIFT A",
+    "bottle of rosin-core solder wire"
+   ],
+   "hosts_tokens": [
+    "DOPA_MINE / D2_receptor / DAT: A heavy hydraulic press station in the far bay fitted with a brass D2 regulator valve and a DAT intake hopper chute.",
+    "NET: Mounted strictly on the rear fire-exit stage door as an isolated, labeled 'NET' return spring-latch with no orchestra props present.",
+    "prefrontal_cortex: The raised glass-fronted supervisor's test booth in the upper wall displaying an illuminated brain schematic diagram.",
+    "DSM_neurodevelopmental: An enclosed, brightly painted training classroom built into the right-hand annex of the workshop, featuring six distinct corners and a wall chart with six branching developmental disorder tracks.",
+    "adhd: Inside the ADHD corner of the enclosed classroom: a child figure driven like a motor with a trail of dropped pencils and toys, a wall clock showing twelve rapid activity shifts, three overlapping speech bubbles, a dual-panel drawing showing severe disruption across TWO settings (classroom and home kitchen), and a calendar flipped to age 5 (well before the DSM-5 age-12 onset cutoff)."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 23,
+   "sign_text": "TONGUE & GROOVE FLOORING",
+   "place": "An industrial timber machining mill smelling of freshly profiled white oak and sawdust, lit by high industrial halogen pendants. Long conveyor rollers feed raw planed timber into high-speed four-sided moulding machines along the central aisle. Bound bundles of finished tongue-and-groove hardwood boards are stacked on wooden bearers beside the extraction ducts.",
+   "activity": "Every machinist on the mill floor is feeding rough-sawn oak boards onto the motorized profiling bed against guide fences.",
+   "anchor_structure": "A fifty-foot heavy steel roller conveyor line cutting diagonally across the mill floor from bottom-left to top-right, carrying oak planks into the profiling cutter heads.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'Tongue' in 'Tongue & Groove' puns on the tongue as the primary anatomical organ and metaphor for speech, language, and communication disorders.",
+   "place_category": "hardwood flooring mill",
+   "stock_props": [
+    "stacks of tongue-and-groove white oak flooring boards",
+    "four-sided spindle moulder with digital RPM readout at 6000 RPM",
+    "dial caliper measuring tongue thickness at 6.3mm",
+    "wall-mounted sawdust extraction duct with blast gates",
+    "box of tungsten carbide profiling knives",
+    "steel push-sticks hung on machine frames",
+    "digital timber moisture meter reading 9%",
+    "bundle strapping tensioner tool",
+    "yellow acoustic earmuffs hanging on wall pegs",
+    "chalkboard showing production quota 500 SQ METRES",
+    "pallet of banding clips"
+   ],
+   "hosts_tokens": [
+    "DSM_neurodevelopmental: An enclosed, brightly painted training classroom partitioned off the rear brick wall, featuring six distinct corners and a wall chart showing the six neurodevelopmental disorder categories.",
+    "communication_disorders: Inside the communication corner of the enclosed classroom, featuring four distinct stations: a child with an empty vocabulary speech balloon (Language Disorder), a child struggling at a phonetic sound mirror (Speech Sound Disorder), a broken-rhythm metronome with repeated syllable blocks (Stuttering/Childhood-Onset Fluency Disorder), and two children facing opposite directions failing to greet or take turns (Social-Pragmatic Communication Disorder)."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 33,
+   "sign_text": "B. POLAR PLAY APPARATUS - UNIT 1",
+   "place": "A spacious timber and steel play equipment assembly workshop with concrete floors, open rear loading bays, and overhead lifting tackle. Sunlight falls across rows of partially assembled swings, spring rockers, and climbing frames undergoing mechanical safety checks. Racks of hardware bins, painted timber stanchions, and safety certification clipboards line the side walls.",
+   "activity": "Bolting galvanised steel brackets onto timber uprights with pneumatic torque wrenches.",
+   "anchor_structure": "A heavy overhead steel lifting gantry and monorail beam spanning diagonally from the high rear-left ceiling to the lower-right assembly bay.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'B. POLAR' is a direct phonetic homophone for 'bipolar', while 'UNIT 1' designates Bipolar I.",
+   "place_category": "playground equipment workshop",
+   "stock_props": [
+    "pneumatic torque wrench preset to 45 Nm",
+    "yellow safety load rating plaque reading SWL 2.5 TONNES",
+    "box of M12 galvanised pivot bolts labelled 50 PCS",
+    "enamel drop-test height gauge marked 0.5M TO 3.0M",
+    "stencilled timber crate marked ORDER NO. 14 / MANIA RIG",
+    "calibration log clipboard with 7-DAY INSPECTION CHECKLIST",
+    "roll of red-and-white barrier tape labelled DANGER - RIGID TEST",
+    "racked steel coil springs labelled 200 KG CAPACITY",
+    "pneumatic air hose reel with dial pressure gauge reading 6.5 BAR",
+    "painted steel swing crossbar with SWING SET 1 stencilled on it"
+   ],
+   "hosts_tokens": [
+    "DSM_bipolar: A heavy timber see-saw mounted on the central test rig, with its beam oscillating between a painted radiant sun board at the high end and a dark storm cloud board with raindrops at the low end, locked in a sustained upward tip toward the sun by a safety bracket; visible through the rear loading bay in the yard is a large painted scenic iceberg structure."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 36,
+   "sign_text": "VALE, CARBERY & LAMB",
+   "place": "A heavy engineering workshop where large industrial flow valves, bypass manifolds, and pressure regulators are assembled and hydrostatic-pressure tested. Machined bronze and cast-iron valve housings sit on sturdy wooden pallets between high-pressure test rigs. Overhead chain hoists and water drainage troughs run parallel to the test bays.",
+   "activity": "Checking valve seating faces for leaks with bluing paste.",
+   "anchor_structure": "A 12-inch cast-iron flanged manifold pipe run mounted on heavy floor trestles, cutting diagonally from the hydrostatic test tank at the lower left up to the overhead chain hoist at the upper right.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "The partnership surname 'Vale' encodes Valproate, 'Carbery' encodes Carbamazepine (Carb-), and 'Lamb' encodes Lamotrigine (Lam-).",
+   "place_category": "industrial valve works",
+   "stock_props": [
+    "hydrostatic test pressure gauge reading 250 PSI",
+    "cast-iron valve body stamped CARB DRILLWAY",
+    "brass dipstick scored with MIN and MAX calibration notches",
+    "machined brass valve tag reading VALE PRO - TESTED",
+    "brass instruction plaque stamped QUARTER TURN THEN LISTEN",
+    "wooden crate containing 4 REJECT SPLIT SEALS",
+    "tub of blue engineers' marking paste labelled 250G",
+    "flanged steel pipe spool marked 6 INCH DIA",
+    "bronze safety blow-off valve set to 15 BAR",
+    "racked set of 8 forged ring spanners"
+   ],
+   "hosts_tokens": [
+    "SJS_TEN: A live young lamb covered in a peeling, raw red rash with sheets of skin sloughing off, balanced directly on the trip-trigger of a high-pressure valve test rig.",
+    "SIADH_hyponatremia: An intricate, labyrinthine internal valve drillway maze labelled 'CARB' that is completely flooded and overflowing with pooling water.",
+    "hepatotoxicity: A swollen, jaundiced failing liver suspended above a floor drainage trough, tied with an inspection tag marked 'VALE PRO'."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 45,
+   "sign_text": "B. D. DREW & CO. - HOARD'S END SEED MILL",
+   "place": "A rural agricultural grain mill where harvested crop seed is cleaned, screened, and bagged for seasonal sowing. Dust motes float in the air around vibrating grading sieves and seed-dressing treaters on the ground floor. Stacks of sewn burlap sacks sit neatly arranged on pallets beside gravity chutes.",
+   "activity": "Stitching closed burlap sacks of dressed seed with handheld bag-closing machines.",
+   "anchor_structure": "A heavy timber bucket-elevator tower and galvanized grain chute running diagonally from the intake pit at the lower left to the roof-hung rotary cleaner at the upper right.",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "The proprietor initials 'B. D. D.' embed the acronym for Body Dysmorphic Disorder (BDD), while the hamlet name 'HOARD'S END' embeds Hoarding Disorder without printing the diagnosis.",
+   "place_category": "seed dressing mill",
+   "stock_props": [
+    "mechanical tally counter reading 00482",
+    "burlap sack stencilled WINTER BARLEY 50 KG",
+    "enamel moisture meter dial reading 14.2%",
+    "seed germination sample tray divided into 100 CELLS",
+    "tin of chemical seed dressing labelled DRESSING BATCH 08",
+    "platform bag-weighing scale with needle at 25 KG",
+    "metal sieve pan marked 2.5 MM MESH",
+    "galvanized grain sample scoop marked 1 PINT",
+    "chalk tally slate marked 12 / 12 / 12",
+    "brass sample divider funnel stamped RIFFLE NO. 3"
+   ],
+   "hosts_tokens": [
+    "DSM_OCD_related: A worker's bare hands vigorously scrubbing each other in a continuous, repetitive loop beneath an endlessly spiraling funnel of water from an overhead standpipe, beside a mechanical tally counter clicking steadily."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 56,
+   "sign_text": "D. A. HYMAN & N. M. DALE - 5 HIGH TERRACE",
+   "place": "A bustling commercial laundry washhouse with concrete drainage channels, steaming wash aisles, and overhead linen rails. Rows of heavy industrial washing machines and centrifugal extractors operate steadily under high clerestory windows. Baskets of sorted white bed linen and folded towels are staged along the main sorting floor.",
+   "activity": "Folding dry hotel bath towels at wooden sorting benches.",
+   "anchor_structure": "A heavy galvanized overhead laundry-bag monorail track cutting diagonally across the hall from the sorting dock at the lower left to the continuous wash tunnel at the upper right.",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "The proprietor initials 'D. A.' embed Dopamine, partner name 'N. M. DALE' embeds NMDA, and address '5 HIGH TERRACE' embeds 5-HT (5-Hydroxytryptamine).",
+   "place_category": "commercial laundry",
+   "stock_props": [
+    "wash cycle timer dial reading 45 MIN",
+    "dial water thermometer reading 60 DEGREES C",
+    "crate of laundry detergent stamped 25 KG SODA",
+    "laundry scale with needle resting at 15 KG",
+    "wire laundry hamper stencilled WARD 4A",
+    "bundle of 10 white hotel sheets with blue tie tape",
+    "steam pressure gauge dial reading 6 BAR",
+    "wooden folding board marked 60 CM X 90 CM",
+    "galvanized wash tub marked NO. 2 RINSE",
+    "brass water meter reading 18450 GALLONS"
+   ],
+   "hosts_tokens": [
+    "D2_receptor: In the rear boiler firing annex, a narrow-gauge coal cart marked 'DOPA MINE No. 4' feeds coal into the laundry's steam boiler furnace.",
+    "NMDA_receptor: At the office partition, a private VIP door roped off with a red velvet braided cordon is flanked by a crate of fresh asparagus bunches.",
+    "5-HT2A_receptor: In the staff break alcove, a round table displays TWO Ace tarot cards, with a tie-dye hippie reader seated at it beneath walls swirling with vivid psychedelic tie-dye patterns.",
+    "prefrontal_cortex: In the elevated glass supervisor's gallery, a framed cerebral cortex floor-plan map hangs over an unlit desk with a shut ledger and no manager present."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 62,
+   "sign_text": "O'LANZA, QUAYLE & RISPIN",
+   "place": "A busy commercial bakery on a production morning, with stainless steel dough troughs, cooling conveyors, and flour dust in the air. Long wooden workbenches run between proofing chambers and deck ovens where freshly baked bread is unloaded. Wheeled racks of cooling baguettes and rustic sourdough loaves line the packaging corridor.",
+   "activity": "Scoring sourdough bread loaves with razor-sharp baker's lames.",
+   "anchor_structure": "A 30-foot multi-tier spiral bread-cooling conveyor tower cutting diagonally from the dough divider at the lower left to the overhead discharge chute at the upper right.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'O'Lanza' encodes Olanzapine, 'Quayle' encodes Quetiapine, and 'Rispin' encodes Risperidone.",
+   "place_category": "industrial bakery",
+   "stock_props": [
+    "baker's peel stamped O'LANZA NO. 4",
+    "flour hopper scale with dial reading 100 KG",
+    "baking oven digital temperature display reading 230 C",
+    "dough proving tray divided into 12 COMPARTMENTS",
+    "bag of strong white flour stencilled 25 KG GRADE A",
+    "dough thermometer with probe reading 26 DEGREES C",
+    "rotary dough cutter with 6 STEEL BLADES",
+    "wooden rack holding 8 COOLING TRAYS",
+    "chalkboard marked BATCH 4 - 500 LOAVES",
+    "timer bell marked 20 MIN PROOF"
+   ],
+   "hosts_tokens": [
+    "metabolic_syndrome: Just outside the loading bay beyond the DOPA-MINE drift, an Olympic athlete wearing gold medals sits on a crate voraciously eating sugary pastries and loaves.",
+    "hyperprolactinemia: In the tuberoinfundibular section of the DOPA_MINE coal flume, a heavy steel wedge BLOCKS the dopamine brake lever, causing white milk to overflow uncontrollably from the delivery tube into the sump.",
+    "H1_receptor: Across the courtyard stands the four-level H-HOUSE block with numbered storeys: Floor 1 living room with couch, Floor 2 kitchen with two boiling H2O steam pans, Floor 3 study, and Floor 4 roof with pigeons.",
+    "5-HT2C_receptor: In the TAROT_2A kitchen annex off the yard corridor, an open pantry hatch is piled high with snacks and satiety recipe cards."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 67,
+   "sign_text": "N. M. SALTER & CO. FOUNDRY",
+   "place": "A high-bay iron casting foundry on a working Tuesday morning, lit by dusty skylights and the orange glow of the cupola furnace. Sand-casting flask boxes lie stacked in neat runs across the rammed-earth floor, while heavy iron pouring ladles rest in floor stands beside the tapping spout. Through the open loading doorway in the back wall, the rail siding runs up to the colliery coal bunker.",
+   "activity": "ramming green sand into moulding flask boxes with wooden rammers",
+   "anchor_structure": "The overhead gantry crane and its long steel runway beam cutting diagonally across the foundry from the furnace tap at upper left to the casting shakeout floor at lower right",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "The company initials N. M. S. embed Neuroleptic Malignant Syndrome (NMS).",
+   "place_category": "iron casting foundry",
+   "stock_props": [
+    "Cupola furnace pyrometer dial showing a red-line temperature spike at 41°C",
+    "Foreman's daily slate marked 'SERUM CPK: 25,000 U/L / LEUKOCYTOSIS CHECK'",
+    "Cast iron pouring ladle with an unyielding lead-pipe rigid handle held in a floor stand",
+    "Auxiliary winding lever labeled 'PIT 1 DOPAMINE DRAFT — RESTART DRIVE' on the coal bunker wall",
+    "Fifty-kilo paper sack of flux stencilled 'CALCIUM HYDRATE DANTROLENE FLUX / GRADE B'",
+    "High-pressure deluge hose coupling marked 'EMERGENCY COOLING WATER / FLOW 300 L/MIN'",
+    "Furnace fuel isolation valve with a red brass tag 'STOP NEUROLEPTIC BLAST FEED'",
+    "Galvanized quench tank with temperature gauge reading 15°C",
+    "Cast iron floor flasks stencilled with box numbers 1 to 4",
+    "Foundry shift tally board recording hourly blast pressure and tap rates"
+   ],
+   "hosts_tokens": [
+    "neuroleptic_malignant_syndrome: across the yard wall, the DOPA_MINE pithead has ground to a dead stop with its headgear jammed and fuel hoist frozen, starving the furnace until the auxiliary pit starter is pulled, while the molders along the casting floor stand locked like rigid pyramid statues holding stiff lead-pipe ladles.",
+    "serotonin_syndrome: in the electrical blower switchgear gallery off the side wall, overload warning meters chatter in rapid clonus-like oscillations, ammeters swing wildly in hyperreflexic surges, and autonomic storm sirens pulse beside shuddering copper busbars."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 79,
+   "sign_text": "CIRCA COACHWAYS TERMINAL",
+   "place": "A municipal coach departure terminal on an overcast late afternoon, smelling of diesel exhaust, hot tea, and floor polish. Under the high glass concourse roof, passengers wait along the platform barrier rail while buses reverse into their numbered bays. Outside through the glazed entrance wall, the street frontage opens onto the commercial forecourt.",
+   "activity": "punching date stamps onto card tickets at the departure barrier",
+   "anchor_structure": "The suspended concourse canopy and tubular barrier rail cutting diagonally across the terminal floor from the early-morning express bays at upper left to the late-night departure gate at lower right",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'CIRCA' phonetically encodes 'circadian', denoting the 24-hour biological rhythm and developmental shifts across childhood and adolescence.",
+   "place_category": "coach departure terminal",
+   "stock_props": [
+    "Master route timetable board listing age-graded operating hours: 'NEONATE: 16H / INFANT: 14H / TODDLER: 12H / SCHOOL: 10H / TEEN: 9H / ADULT: 7-8H'",
+    "Route structure diagram showing 50-minute ultradian loop routes transitioning to 90-minute main lines",
+    "Secondary concourse clock showing a +2 HOUR DELAY labeled 'ADOLESCENT DEPARTURE SHIFT / DLMO'",
+    "Dispatch register open to columns recording 'ACTIVE CYCLE: 50% (NEONATE) TO 20% (MATURE)'",
+    "Platform 1 slow-line sign painted 'STAGE N3 SLOW-WAVE DEEP RUN' with high-amplitude wave trace",
+    "Enamelled terminal regulations plate: 'WEEKEND RECOVERY SCHEDULE — PERMITTED EXTENSION ≤ 2H'",
+    "Dispatcher's brass master clock stamped 'SCN CENTRAL PACEMAKER'",
+    "Station safety notice reading 'MORNING SLEEP INERTIA / LIGHT SHIFT TRIGGER 07:00'",
+    "Glazed ticket kiosk with brass ticket punch and card sorting rack",
+    "Row of pressed-steel station lockers numbered 1 to 24"
+   ],
+   "hosts_tokens": [
+    "CONVENIENCE_STORE_7: through the terminal's glazed front facade, the glowing neon '7' of the 24-hour convenience store across the tarmac illuminates the late-night departure bay, anchoring the master 24-hour circadian clock."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 80,
+   "sign_text": "F. B. TRENT & SONS STRUCTURAL TIMBER",
+   "place": "A timber truss fabrication works on an ordinary working Thursday, smelling of fresh pine sawdust and machine oil. Long structural chords of Douglas fir lie laid out across steel assembly jigs while pneumatic tools hang from overhead spring balancers. Finished roof trusses are strapped into delivery bundles beside the wide sliding yard doors.",
+   "activity": "driving galvanized gang-nail plates into timber chord joints with a hydraulic press",
+   "anchor_structure": "The forty-foot steel truss jig table and its traveling hydraulic press gantry cutting diagonally across the workshop from the timber stock racks at upper left to the inspection bay at lower right",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "The initials F. B. T. embed Family-Based Treatment (FBT), the first-line Maudsley model for adolescent eating disorders.",
+   "place_category": "timber truss works",
+   "stock_props": [
+    "Statutory medical tolerance board on the press gantry: 'CRITICAL LIMITS: HR < 50 BPM (DAY) / < 45 BPM (NIGHT) / BP < 90/45 / TEMP < 35.5°C / QTc > 450 MS / %mBMI < 75%'",
+    "Orthostatic load indicator dial reading 'POSTURAL INSTABILITY: PULSE RISE > 20 BPM / BP DROP > 10 MMHG'",
+    "Refeeding monitoring chart stamped 'SERUM ELECTROLYTE WATCH: PHOSPHATE < 2.5 MG/DL / K+ < 3.5 MEQ/L'",
+    "Three-phase production schedule sign: 'PHASE 1: 100% PARENT BRACING / PHASE 2: >85% LOAD TRANSFER / PHASE 3: >95% AUTONOMY'",
+    "Forty-foot steel assembly jig with adjustable mechanical clamping stops",
+    "Box of heavy galvanized steel connector plates marked 'MAUDSLEY GRADE 1 SPECIFICATION'",
+    "Digital timber core moisture meter displaying an exact reading of '75.0%'",
+    "Foreman's quality register recording daily deflection tests and structural tolerances",
+    "Steel measuring tape graduated in centimeters and inches clamped to the jig edge",
+    "Yellow painted boundary line on the workshop floor marking the intensive stabilization zone"
+   ],
+   "hosts_tokens": [
+    "DSM_feeding_eating: clipped into a brass bracket on the foreman's quality-control desk beside the tolerance board, the standard specification manual for DSM feeding and eating disorders lies open to the anorexia and bulimia diagnostic criteria."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 105,
+   "sign_text": "PARAPHERNALIA MARINE CHANDLERY",
+   "place": "A dockside marine chandlery on a blustery weekday afternoon, smelling of Stockholm tar, brass polish, and damp canvas. Racks of galvanized shackles, rigging screws, and brass navigation fittings line the timber walls behind the serving counter. Through the harbour-facing display window, fishing smacks and motor launches ride at their pontoon moorings.",
+   "activity": "splicing three-strand hemp rope eyes around galvanized thimbles with a wooden fid",
+   "anchor_structure": "The heavy overhead timber spar and tackle hoist beam cutting diagonally across the shop ceiling from the brass fitting racks at upper left to the rope-coiling deck at lower right",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "'PARAPHERNALIA' phonetically embeds 'paraphilia', while the tested mechanical gear across the counter encodes the diagnostic roster of sexual dysfunctions.",
+   "place_category": "marine chandlery store",
+   "stock_props": [
+    "Marine navigation inspection torch with a dead dry cell and tie-on label 'NO DRIVE / SPARK' (hypoactive desire)",
+    "Brass cabin oil heater whose wick fails to ignite, tagged 'UNRESPONSIVE / NO WARMTH' (FSIAD)",
+    "Reinforced rubber bilge exhaust hose collapsed flat under suction, tagged 'LOSS OF RIGIDITY UNDER LOAD' (erectile disorder)",
+    "Emergency distress rocket casing brightly stencilled 'FIRES ON CONTACT / DISCHARGE < 1 MIN' (premature ejaculation)",
+    "Heavy signal flare canister boldly painted 'NO IGNITION AFTER 4 MIN / DELAYED DISCHARGE' (delayed ejaculation)",
+    "Compressed-air foghorn with functioning trigger that releases no acoustic sound (female orgasmic disorder)",
+    "Brass pipe union locked by tight muscular thread constriction, tagged 'TIGHT SPASM — DO NOT FORCE PENETRATION' (GPPPD)",
+    "Eight-drawer brass specialty hardware chest holding catalogued paraphilic rigging items (exhibitionistic flare, voyeuristic spotting scope, frotteur rub-rail, masochism harness, sadism gaff, fetish boot, transvestic foul-weather smock)",
+    "Apprentice dinghy sailing vest stencilled 'CHEST ≤ 13 INCHES / UNDER 13s ONLY' beside the crew register marked 'CREW MINIMUM AGE 16 / 5-YEAR GAP' (pedophilic criteria)",
+    "Chandlery customer guarantee notice posted above counter: 'DEFECT CLAIMS ACCEPTED ONLY AFTER ≥ 6 MONTHS OF PERSISTENT MALFUNCTION CAUSING MARKED OPERATIONAL DISTRESS'",
+    "Canister of contaminated marine fuel marked 'SSRI INHIBITOR — RULE OUT BEFORE ENGINE DIAGNOSIS'"
+   ],
+   "hosts_tokens": [
+    "DSM_sexual_dysfunction: lying open on the brass reading lectern beside the faulty equipment tray, the blue-bound marine standards register carries the full DSM criteria for sexual dysfunctions across desire, arousal, orgasm, and pain.",
+    "DSM_paraphilic: standing upright in the lectern's side shelf, the red-bound maritime safety classification code book displays the DSM criteria for the eight paraphilic disorders."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 107,
+   "sign_text": "A. G. GREASON MEMORIAL BOXING CLUB",
+   "place": "A municipal amateur boxing gym on an overcast weekday afternoon, smelling of floor wax, leather, and eucalyptus liniment. Along the whitewashed brick walls, rows of heavy punch bags hang beneath wire-caged lights, while sparring headgear sits neatly arranged in timber cubbies. A row of folding chairs for parents and trainers lines the perimeter under the high frosted windows.",
+   "activity": "winding cotton hand-wraps around knuckles and wrists at the bench",
+   "anchor_structure": "The raised sixteen-foot timber boxing ring and its four-strand perimeter ropes cutting diagonally across the gymnasium floor from the punch-bag wall at upper left to the weigh-in scales at lower right",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "The initials and name A. G. GREASON embed the letters of AGGRESSION, the core theme of conduct and violence in youth.",
+   "place_category": "amateur boxing gym",
+   "stock_props": [
+    "Framed SAVRY youth violence risk assessment matrix pinned beside the ring: 'HISTORICAL (PRIOR VIOLENCE #1, ONSET <10, ABUSE) / DYNAMIC (SUBSTANCES, PEER GANGS, WEAPONS) / PROTECTIVE (PARENTS, SCHOOL)'",
+    "Gym rules board bolted to the brickwork: 'DISCIPLINARY CODES: CD (VIOLATION OF RIGHTS / CALLOUS-UNEMOTIONAL) vs ODD (ARGUMENTATIVE / DEFIANT) vs DMDD (≥3 OUTBURSTS/WK, ONSET <10)'",
+    "Ring-side coach's clipboard: 'ACUTE DE-ESCALATION: CALM TONE / CLEAR BOUNDARIES / SAFE DISTANCE / PHYSICAL RESTRAINT STRICTLY LAST RESORT'",
+    "Spectator bench registration binder marked 'EVIDENCE-BASED PARENT TRAINING: PMT / MST / FFT INTAKE PROTOCOLS'",
+    "First-aid medical register in the locked steel cabinet: 'PHARMACOLOGICAL ADJUNCTS: RISPERIDONE (0.5–2 MG FOR SEVERE CD AGGRESSION), ARIPIPRAZOLE, CLONIDINE, LITHIUM/VALPROATE'",
+    "Sparring categorization slate distinguishing 'REACTIVE / IMPULSIVE TEMPER' from 'PROACTIVE / INSTRUMENTAL PREDATION (ZERO TOLERANCE)'",
+    "Balance-beam cast iron weigh-in scale with sliding brass weights",
+    "Mechanical round timer clock with red three-minute interval sweep and one-minute rest bell",
+    "Stencilled leather punch bags numbered 1 to 6 hanging on steel chains",
+    "Galvanized corner bucket holding clean cotton towels and water bottles"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 112,
+   "sign_text": "PERRY & NATAL SAIL LOFT",
+   "place": "An ordinary sailmaking loft on an overcast weekday afternoon. Wide bolts of white canvas lie spread across the wide timber floor under high north-facing skylights. Two sailmakers in canvas aprons work along the bench measuring and hand-stitching corner cringles with palm and needle.",
+   "activity": "measuring and hand-stitching canvas sails",
+   "anchor_structure": "The continuous hardwood sailmaker's bench - a low timber stitching platform raised four inches above the floor - running diagonally from the lower left to the upper right of the loft, dividing the space into the raw canvas racks, the central stitching platform, the bench tool trough, and the sail-hoist staging floor.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "\"PERRY & NATAL\" phonetically replicates \"perinatal\", the medical period spanning pregnancy, childbirth, and the postpartum year.",
+   "place_category": "sailmaking loft",
+   "stock_props": [
+    "steam-pressing iron manometer gauge mounted on the bench corner red-lined at 140 / 90",
+    "printed blue clipboard titled EDINBURGH SURVEY scored 13 OF 30",
+    "brass tension spring balance dial stamped 3 TO 14 DAYS ONSET",
+    "amber glass dropper bottle labelled SERTRALINE ORAL CONCENTRATE",
+    "galvanised magnesium sulfate bucket stencilled 4G IV LOADING DOSE",
+    "cardboard delivery tag stamped PAROXETINE RETURNED - CARDIAC RISK",
+    "cast-iron bench vise clamping a canvas bolt marked LITHIUM 0.8 MEQ",
+    "wooden yardstick ruled with black inch increments from 1 to 36",
+    "leather sailmaker's palm thimble sitting in the tool trough",
+    "spool of heavy three-ply waxed hemp twine on a wooden peg",
+    "pair of forged iron sailmaker's shears resting on the timber platform",
+    "chalkboard slate on the hoist frame listing WORK ORDERS 1 TO 10"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 118,
+   "sign_text": "MANNING'S HINGES",
+   "place": "An ordinary architectural ironmongery warehouse on a cloudy morning. Rows of brass, iron, and bronze hinges are mounted on heavy sample boards beneath industrial high-bay lamps. Two warehouse clerks in grey dust coats sort heavy gate hinges from timber crates into numbered steel bins.",
+   "activity": "sorting and stocking architectural brass hinges",
+   "anchor_structure": "The three-tier steel and timber hinge display wall - three stepped vertical layers of heavy iron plate, woven brass mesh, and thin pine veneer running from floor to ceiling - cutting the frame diagonally from the lower left to the upper right and dividing the room into the loading threshold, the customer inspection aisle, the sub-mesh drainage trough, and the rear stock bins.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "\"MANNING'S HINGES\" phonetically replicates \"meninges\", the three protective membranes (dura mater, arachnoid mater, and pia mater) surrounding the central nervous system.",
+   "place_category": "architectural ironmongery warehouse",
+   "stock_props": [
+    "brass manometer fluid column with vertical glass scale marked 250 MM H2O",
+    "wooden test-tube drying block holding three glass tubes labelled L3-L4 CLEAR FLUID",
+    "shipping crate stencilled IV ACYCLOVIR 10 MG / KG TID",
+    "pair of brass camera iris apertures tagged ARGYLL ROBERTSON / ACCOMMODATES ONLY",
+    "metal work order board stamped 24 MILLION UNITS PENICILLIN G FOR PARESIS",
+    "cardboard packing box marked ANTIRETROVIRAL cART REGIMEN / CD4 < 200",
+    "inspection certificate framed in tin marked ANTI-NMDA RECEPTOR POSITIVE",
+    "calibrated paper strip from an EEG recorder showing 2 SEC PERIODIC TEMPORAL COMPLEXES",
+    "cast-iron strap hinge with four screw holes stamped SIZE 4",
+    "steel wire brush resting on the middle mesh tier",
+    "galvanised oil can with a long brass spout sitting in the floor drain",
+    "heavy iron socket wrench lying on the timber inspection deck"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 122,
+   "sign_text": "WILL, ANGEL & PRADER IMPRINTERS",
+   "place": "An ordinary commercial die-stamping and relief printing workshop on a busy weekday morning. Thick steel dies and brass embossing plates are arranged on heavy wooden workbenches under overhead shaded lamps. Two press operators in canvas smocks ink engraved metal blocks and guide sheets of heavy rag paper into the press bed.",
+   "activity": "inking and pressing embossed metal dies onto heavy paper",
+   "anchor_structure": "The heavy cast-iron screw press bed - a massive four-poster iron stamping bed with a central overhead fly-wheel and twin lead-screw columns - running diagonally from the lower left to the upper right of the shop floor, dividing the space into the raw sheet-metal racks, the press apron, the ink mixing bench, and the proof hanging lines.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "\"WILL, ANGEL & PRADER\" phonetically encodes Williams, Angelman, and Prader-Willi syndromes, while \"IMPRINTERS\" captures genomic imprinting, the chromosome 15 epigenetic mechanism shared by the latter two.",
+   "place_category": "die-stamping workshop",
+   "stock_props": [
+    "split brass stamping die labelled CLEFT PALATE / NASAL ESCAPE",
+    "brass electrical tester dial reading CALCIUM 1.1 MMOL / SEIZURE RISK",
+    "safety warning board stencilled 25-30% ADULT PSYCHOSIS RISK",
+    "cast-iron padlock clamped around a grain bin marked HYPERPHAGIA / FOOD-SEEKING",
+    "metal template plate stamped CHROMOSOME 15Q11 PATERNAL DELETION",
+    "embossing plate stencilled UBE3A MATERNAL LOSS / ZERO SPEECH",
+    "hinged marionette joint bracket stamped ATAXIC GAIT / PAROXYSMAL LAUGHTER",
+    "canvas sack of chemical flux stamped HYPERCALCEMIA RISK 7Q11",
+    "brass pipe relief valve tagged SUPRAVALVULAR AORTIC STENOSIS",
+    "printed sheet music proof titled COCKTAIL PARTY SUITE",
+    "heavy steel ink spatula resting on the marble ink slab",
+    "leather-bound daily press log open on the workbench apron"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 128,
+   "sign_text": "SPINDLE COURT FLATS",
+   "place": "An ordinary four-storey deck-access council estate on an overcast Tuesday morning. Concrete walkways with painted wooden spindle balustrades run along the front of each tier under open skies. Two caretakers in high-visibility vests wash the concrete landings with stiff brooms and buckets.",
+   "activity": "sweeping and washing the exterior concrete deck walkways",
+   "anchor_structure": "The continuous concrete deck walkway and turned timber spindle balustrade - three open tiers linked by external concrete stairs - running diagonally from the lower left to the upper right of the housing block, dividing the frame into the ground-floor courtyard, the lower sleeping deck, the middle spindle-railed gallery, and the open sky above the roofline.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "\"SPINDLE COURT FLATS\" encodes sleep architecture through sleep spindles, the hallmark EEG waveform of Stage N2 sleep.",
+   "place_category": "deck-access flats",
+   "stock_props": [
+    "metal noise complaint log board stamped CALLS PER HOUR: 5, 15, AND 30",
+    "bicycle track pump with pressure gauge dialled to 12 CM H2O",
+    "mechanical staircase timer dial wound round to 8 MINUTES",
+    "galvanised iron supplement bucket stencilled FERRITIN TARGET 50 UG/L",
+    "paper EEG tracing strip clipped to the spindle railing showing 12-14 HZ SPINDLES AND K-COMPLEXES",
+    "cardboard parcel marked OREXIN-A / HYPOCRETIN DEFICIT",
+    "pair of heavy rubber work boots left outside door number 4",
+    "yellow plastic biohazard tub labelled MELATONIN 3 MG / CLONAZEPAM",
+    "cast-iron wall thermometer reading 18 DEGREES CELSIUS",
+    "wooden broom resting against the turned balustrade upright",
+    "galvanised milk crate holding three empty glass pint bottles on the lower landing",
+    "brass key ring with four numbered tags hanging from a railing hook"
+   ],
+   "hosts_tokens": [
+    "CONVENIENCE_STORE_7: The blue-and-white 24-hour convenience store awning is visible through the ground-floor perimeter railing on the street corner at the base of the flats."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 129,
+   "sign_text": "PED'S BREAKDOWN RECOVERY",
+   "place": "An ordinary roadside vehicle recovery depot on an overcast afternoon. Heavy yellow flatbed tow trucks and recovery vans sit on an asphalt apron beside a corrugated iron workshop. Two recovery mechanics in grease-stained overalls inspect hydraulic winches and secure heavy steel chains to the tilt-bed runners.",
+   "activity": "inspecting winches and securing tow chains on recovery flatbeds",
+   "anchor_structure": "The heavy steel flatbed tilt-tray ramp - a massive diamond-plate hydraulic slide bed raised at a thirty-degree angle - cutting the frame diagonally from the lower left to the upper right, dividing the yard into the incoming tow bay, the winch cable track, the operator's hydraulic control levers, and the secure vehicle storage compound behind.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "\"PED'S BREAKDOWN RECOVERY\" encodes pediatric psychiatric emergencies through \"PED'S\" (peds / pediatrics) and \"BREAKDOWN RECOVERY\" (acute psychiatric crisis / nervous breakdown management and stabilization).",
+   "place_category": "vehicle recovery depot",
+   "stock_props": [
+    "metal dispatch clipboard holding three red-edged triage cards listing TEMPERATURE, PUPILS, REFLEXES, AND CLONUS",
+    "triage inspection whiteboard marked ORGANIC WORKUP: GLUCOSE, TOX SCREEN, URINALYSIS, TEMPERATURE",
+    "locked steel medication box stencilled FIRST-LINE ORAL: RISPERIDONE / LORAZEPAM / DIPHENHYDRAMINE",
+    "yellow emergency protocol card pinned to the winch frame stamped VERBAL DE-ESCALATION FIRST / LOW-STIMULUS PROTOCOL",
+    "wall clock above the control levers marked RESTRAINT TIME LIMITS: 1 HR CHILD / 2 HR ADOLESCENT",
+    "observation log sheet on a magnetic clip marked 1-TO-1 CONTINUOUS EYESIGHT OBSERVATION",
+    "laminated risk assessment chart titled C-SSRS: IDEATION, INTENT, PLAN, LETHALITY",
+    "heavy steel lockbox marked STANLEY-BROWN SAFETY PLAN / LETHAL MEANS SECURED",
+    "tally counter pegged to the control lever stamped BVC SCORE > 2: RISK OF IMMINENT AGGRESSION",
+    "hydraulic pressure gauge on the tilt-tray rams reading 2000 PSI",
+    "spool of heavy steel recovery cable with forged steel tow hook",
+    "cast-iron wheel chock painted safety yellow resting against the tire ramp"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 130,
+   "sign_text": "LEE AYSON BIOMEDICAL",
+   "place": "A specialist medical equipment service workshop where returned hospital devices are inspected, repaired, and recalibrated. Fluorescent strip lights illuminate long rows of anti-static workbenches stacked with diagnostic instruments and lead-shielded storage bins. Technicians in grey anti-static coats work methodically through clipboards of cross-departmental service requests.",
+   "activity": "Testing and calibrating returned hospital monitoring equipment against manufacturer specification sheets.",
+   "anchor_structure": "A heavy slate-topped electronic calibration bench with an integrated overhead instrument rack cutting diagonally across the workshop floor.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "The firm's name 'LEE AYSON' is a phonetic pun on 'liaison' (/liːˈeɪzən/), encoding the consultation-liaison medical service.",
+   "place_category": "biomedical equipment workshop",
+   "stock_props": [
+    "triplicate consultation-liaison job tickets with red call-out hours ringed for nocturnal spikes",
+    "paediatric transport incubator with digital temperature readout set to 36.8 °C",
+    "oncology infusion pump bearing a purple cytotoxic hazard sticker and 250 ml/hr rate label",
+    "dialysis fluid warmer with a continuous 24-hour strip-chart printout",
+    "infant-sized silicone pulse oximeter clip beside a standard adult probe on the test lead",
+    "portable electrical safety analyzer with digital display showing 12.5 µA leakage current",
+    "yellow dosimeter badge log hung beside a lead-lined transport cassette",
+    "colour-coded calibration status tags stencilled 'PASSED', 'QUARANTINE', and 'ADVISORY'",
+    "wall-mounted mercury manometer column calibrated from 0 to 300 mm Hg",
+    "spiral-bound equipment service history ledger with quarterly maintenance check dates"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 131,
+   "sign_text": "THEO REES OPHTHALMIC",
+   "place": "An optical surfacing laboratory where prescription spectacle lenses are ground, polished, and checked for power tolerances. Coolant mist settles over rows of fining spindles, alloy blockers, and tray racks loaded with blank lens discs. Technicians in brown laboratory smocks verify focal centers and surface curvatures under overhead inspection lamps.",
+   "activity": "Verifying lens powers and optical centers against paper prescription dockets using focimeters.",
+   "anchor_structure": "A cast-iron optical surfacing and fining bench with dual polishing spindles cutting diagonally across the workshop.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "The trade name 'THEO REES' is a phonetic pun on 'theories' (/ˈθiːəriz/), representing the theoretical schools of psychotherapy.",
+   "place_category": "ophthalmic lens laboratory",
+   "stock_props": [
+    "printed ophthalmic prescription dockets with sphere, cylinder, and axis numbers (+2.25 D / -0.75 D / 90°)",
+    "illuminated digital focimeter displaying power readings and green crosshair alignment target",
+    "dial spherometer gauge measuring base curve radius calibrated in diopters from 0.00 to 12.00 D",
+    "lens job trays in four distinct colours (red, blue, green, yellow) holding blank discs in transit",
+    "framed optical tolerance chart referencing BS EN ISO 8980-1 standard values",
+    "progressive multifocal marking template printed with grid lines and millimeter distance scales",
+    "cast-metal blocking machine with heated alloy reservoir and temperature gauge at 48 °C",
+    "batch envelope stencilled with multi-center clinical study trial number and patient intake code",
+    "digital vernier caliper measuring lens center thickness displaying 1.85 mm",
+    "racks of round glass blank discs stamped with refractive index values '1.50', '1.60', and '1.67'",
+    "ultrasonic degreasing bath with digital countdown timer display reading '02:45'"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 133,
+   "sign_text": "DURHAM BOX & TUBE",
+   "place": "A packaging manufacturing plant where corrugated cardboard sheets are cut, creased, folded, and glued into shipping cartons. Overhead dust extractors hum above conveyor tables loaded with kraft board blanks and steel cutting formes. Operators in ear defenders and navy overalls feed sheets into the folding guides and inspect carton squareness.",
+   "activity": "Inspecting flat-packed corrugated cartons for glue-line alignment and folding score depth.",
+   "anchor_structure": "A motorized corrugated board rotary die-cutter and scoring line running diagonally across the plant floor.",
+   "derivation": "ACRONYM_EMBED",
+   "pun_explanation": "The initial letters of the business name 'DURHAM BOX & TUBE' form the acronym 'DBT' (Dialectical Behavior Therapy).",
+   "place_category": "carton manufacturing plant",
+   "stock_props": [
+    "daily production diary cards with printed 0-to-5 defect severity scale check-boxes",
+    "step-by-step chain analysis flowchart on a quality board tracing carton jamming from feed to stacker",
+    "bundle banding tension gauge reading 450 N with high and low tolerance markers",
+    "four-station modular folder-gluer control panel labelled 'MODULE 1' through 'MODULE 4'",
+    "electronic digital caliper measuring carton wall thickness displaying 3.45 mm",
+    "emergency stop pull-cord running along the line with numbered station tags '1' to '6'",
+    "shift log sheet showing 52-week incident-free record and statistical process control chart",
+    "dual-column compression tester gauge showing load in kilonewtons (12.8 kN peak)",
+    "racks of steel cutting dies with colour-coded rubber ejection strips (green, red, yellow)",
+    "pallet tracking manifests stamped with customer order codes and target delivery dates"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  },
+  {
+   "index": 139,
+   "sign_text": "M. KLEIN MARIONETTES",
+   "place": "A traditional puppet-making workshop where jointed wooden figures are carved, painted, and strung for theatrical productions. Wood shavings litter the plank floor beneath racks of chisels, drying glues, and articulated limbs hanging from ceiling joists. Craftsmen in leather aprons assemble wooden pivot joints and adjust balance strings at long timber benches.",
+   "activity": "Assembling and stringing wooden marionette joints at long timber workbenches.",
+   "anchor_structure": "A heavy dual-sided timber assembly bench with overhead stringing gantry and hanging control bars cutting diagonally across the workshop floor.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "The sign 'M. KLEIN' directly puns on psychoanalyst Melanie Klein, with 'klein' also being German for small, matching the miniature figures crafted in the workshop.",
+   "place_category": "marionette workshop",
+   "stock_props": [
+    "two painted show-cloths hung side-by-side: left split into good and bad halves, right showing a single unified whole scene",
+    "two cardboard thought-bubble cutout boards with a connecting line propped between adult and child workbenches",
+    "framed illustration of a mother holding an infant with glowing halo aura labelled 'GOOD-ENOUGH MOTHER'",
+    "worn plush teddy bear with one loose ear sitting on a wooden cradle stand",
+    "wall-mounted board displaying ten numbered carved wooden heraldic shields representing defense mechanisms",
+    "carved wooden child-and-parent figure pair positioned in front of a tilting vanity mirror",
+    "matching child-and-parent mannequin pair in identical brown smocks and twin poses",
+    "long jointed marionette control crossbars hanging from overhead brass hooks with numbered string cords",
+    "rotary parts carousels with small drawers labelled by digit codes '01' to '40'",
+    "glass-fronted drying cabinet with digital temperature readout set at 28 °C",
+    "bench-mounted wooden screw vise with a steel millimeter depth scale",
+    "cardboard order tags tied with string to puppet limbs bearing commission numbers and client names"
+   ],
+   "hosts_tokens": [
+    "klein_positions: Two painted show-cloths hung side-by-side on the rear wall, the left split into contrasting good-and-bad halves and the right depicting a reconciled whole object.",
+    "fonagy_mentalization: Two cutout thought bubbles connected by a bridge suspended between an adult puppet-maker figure and a child apprentice at the bench.",
+    "winnicott_holding: A framed illustration of a mother holding an infant within a glowing aura labelled 'GOOD-ENOUGH MOTHER', set right beside a worn plush teddy bear in a wooden cradle stand.",
+    "kohut_self_psychology: Three child-parent dyads along the bench: one child figure reflected in a mirror held by a parent, one child looking up at an elevated parent figure, and a matching child-and-parent pair in twin smocks.",
+    "anna_freud_defenses: A wall-mounted display rack of ten numbered carved wooden defense shields hanging behind the main stringing bench."
+   ],
+   "confidence": "strong"
+  },
+  {
+   "index": 142,
+   "sign_text": "RAY MOTE COMMUNICATIONS",
+   "place": "A technical workshop dedicated to assembling, testing, and calibrating commercial teleconferencing and remote audiovisual links. Banks of diagnostic video displays and acoustic monitors line the walls above ESD-safe soldering and patch benches. Technicians in antistatic wristbands test interactive screen latency and calibrate juvenile headsets.",
+   "activity": "Testing video displays, audio headsets, and link latency against remote diagnostic standards.",
+   "anchor_structure": "A tall 19-inch steel equipment rack and multi-monitor test console cutting diagonally across the room.",
+   "derivation": "PHONETIC_PUN",
+   "pun_explanation": "The name 'RAY MOTE' is a phonetic pun on 'remote' (/rɪˈmoʊt/), encoding remote telemedicine delivery in telemental health.",
+   "place_category": "audiovisual testing workshop",
+   "stock_props": [
+    "split-screen diagnostic monitor displaying simultaneous local and remote video test feeds",
+    "digital audio latency meter reading '18 ms DELAY' with green signal-lock LED",
+    "child-sized colourful padded headset next to an adult boom microphone on the rack",
+    "network bandwidth analyzer displaying 50 Mbps upstream and 0.1% packet loss",
+    "emergency protocol checklist card pinned to the desk with local crisis telephone numbers",
+    "digital lux meter measuring screen illumination calibrated at 350 lux",
+    "interactive touchscreen drawing tablet with juvenile stylus pen attached by coiled cord",
+    "framed room-acoustic compliance certificate citing ISO 2603 sound isolation standards",
+    "patch bay rack with numbered BNC video sockets '01' through '24' and colour patch cords",
+    "digital audio decibel meter displaying ambient noise floor at 28 dBA",
+    "job order docket stamped 'REMOTE CLINICAL SUITE - CHILD SPEC' with verification signature"
+   ],
+   "hosts_tokens": [],
+   "confidence": "strong"
+  }
+ ],
+ "flagged": [],
+ "not_returned": []
+}
