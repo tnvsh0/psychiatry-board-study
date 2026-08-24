@@ -1183,7 +1183,8 @@ def _ltr(s: str) -> str:
 
 
 def render_legend(table: dict, plate: Plate, topic: str,
-                  undrawn: list[str] | None = None) -> str:
+                  undrawn: list[str] | None = None,
+                  venue_why: str | None = None) -> str:
     """The .txt file: topic line, 3-sentence walkthrough, numbered rows.
 
     Never describes the picture. Every row is an exam fact with a findable
@@ -1195,15 +1196,35 @@ def render_legend(table: dict, plate: Plate, topic: str,
     zones = table.get("zones_he") or table.get("zones", [])
     by_id = {f.id: f for f in plate.facts}
 
-    head = [
-        topic,
+    # THE SIGN COMES FIRST. The venue's name is the pun, and the pun is the
+    # entire retrieval hook: remember the place, remember the chapter. It was in
+    # venues.json all along and the legend never printed it — chapter 6 is drawn
+    # in NOR'EAST PINES BANDSTAND, where Nor'east is NE is NorEpinephrine, and a
+    # reader was given the place description and the activity with no hint of
+    # why that place. The owner said the scenes felt arbitrary. They were not;
+    # the reason was simply never shown.
+    sign = (table.get("venue") or {}).get("sign_text", "").strip()
+    why = (venue_why or "").strip()
+    head = [topic]
+    if sign:
+        head.append(f'השלט: "{_ltr(sign)}"' + (f" — {why}" if why else ""))
+    head += [
         f"המקום: {v['place'].split(':')[0].strip()}. "
         f"מה כולם עושים: {v['activity'].split('.')[0].strip()}. "
         f"האזורים: {' · '.join(zones)}.",
         "",
     ]
 
-    rows, n = [], 0
+    # An element carrying several facts used to repeat its hook on every one of
+    # them. Chapter 6's legend had ten duplicated explanations across 29 rows,
+    # one of them printed three times word for word — which is both most of the
+    # length the owner complained about and the reason it is hard to follow: a
+    # reader cannot tell a new idea from one they have already read.
+    #
+    # The hook belongs to the ELEMENT, so it is printed once, on that element's
+    # first row. Its remaining facts hang under it as plain rows, and the reader
+    # can see at a glance that they share a prop.
+    rows, n, hook_shown = [], 0, set()
     for e in els:
         for fid in e.get("fact_ids", []):
             f = by_id.get(fid)
@@ -1222,6 +1243,11 @@ def render_legend(table: dict, plate: Plate, topic: str,
             if latin and latin != cue:
                 cue = f"{cue} [{_ltr(latin)}]"
             hook = (e.get("hook") or "").strip()
+            eid = e.get("id") or cue
+            if hook and eid in hook_shown:
+                hook = ""                      # already explained on the row above
+            elif hook:
+                hook_shown.add(eid)
             rows.append(f"{n}. {cue}: {f.text}" + (f" — {hook}" if hook else ""))
 
     tail = []

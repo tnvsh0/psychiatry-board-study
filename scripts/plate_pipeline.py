@@ -288,8 +288,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             print(f"[i] dropping {len(drop)} lower-priority string(s) and retrying",
                   file=sys.stderr)
 
-        if not gi.generate_image(prompt, png,
-                                 model=gi.model_for_try(attempt, MAX_TRIES)):
+        model_used = gi.model_for_try(attempt, MAX_TRIES)
+        if not gi.generate_image(prompt, png, model=model_used):
             continue
 
         # In composite mode the model was asked for BLANK plates, so there are
@@ -350,6 +350,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                 "verified": verified,
                 "plate_notes": plate_notes,
                 "stray_warning": nums["extra"],  # logged, not a rejection
+                "model": model_used,
+                "prompt": prompt,
                 "bytes": png.read_bytes()}
         if best is None or score < best["score"]:
             best = snap
@@ -368,8 +370,28 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                   "render, marked unverified", file=sys.stderr)
             break
 
+    # The ladder is allowed to use the cheap model to FIND the composition, but
+    # the frame the learner sees must be drawn by the quality model. Without
+    # this, a cheap draft that happens to score 0 on try 1 breaks the loop and
+    # ships: chapter 5 went out as a two-try Flash render while chapter 6, which
+    # needed all four tries, reached Pro and was visibly better. The owner spotted
+    # the difference without being told which was which.
+    if best and gi.LADDER_MODEL and best.get("model") != gi.IMAGE_MODEL:
+        print(f"[i] final pass on {gi.IMAGE_MODEL} (ladder settled on "
+              f"{best['model']})", file=sys.stderr)
+        final = png.with_suffix(".final.png")
+        if gi.generate_image(best["prompt"], final, model=gi.IMAGE_MODEL):
+            best = {**best, "bytes": final.read_bytes(), "model": gi.IMAGE_MODEL,
+                    "final_pass": True}
+            final.unlink(missing_ok=True)
+        else:
+            print("[i] final pass failed — keeping the ladder's render",
+                  file=sys.stderr)
+
     if best:
         png.write_bytes(best["bytes"])
+        report["model"] = best.get("model")
+        report["final_pass"] = bool(best.get("final_pass"))
         report["gates"] = {k: v for k, v in best.items()
                            if k not in ("bytes", "plate_notes")}
         # anything the render never carried is still taught, just flagged
@@ -393,7 +415,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     # ── legend, quiz, narration ────────────────────────────────────────────
     undrawn = [spec.figure_text(n)
                for f in plate.facts for n in f.numbers if not n.drawn]
-    legend = spec.render_legend(table, plate, topic, undrawn=undrawn)
+    legend = spec.render_legend(table, plate, topic, undrawn=undrawn, venue_why=venue.get('pun_explanation_he') or venue.get('pun_explanation'))
     (out_dir / f"sketchy_{plate.name}.txt").write_text(legend, encoding="utf-8")
     (out_dir / f"sketchy_{plate.name}.quiz.md").write_text(
         spec.render_quiz(legend), encoding="utf-8")
