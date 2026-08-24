@@ -114,7 +114,11 @@ MAX_CONSECUTIVE_FAILURES = 3
 # three attempts a call, several calls a chapter, all of them against a dead
 # session. daily_study now fails fast on that specific cause; this is the
 # backstop for every cause nobody has met yet.
-CHAPTER_TIMEOUT_S = int(os.environ.get("CHAPTER_TIMEOUT_S", 75 * 60))
+# Raised from 75 minutes after chapter 11 hit the cap doing honest work: three
+# plates, four render tries each, all of them legitimate. The cap exists to
+# catch a hang, not to interrupt a long chapter, and the final quality-model
+# pass added to every plate makes chapters longer still.
+CHAPTER_TIMEOUT_S = int(os.environ.get("CHAPTER_TIMEOUT_S", 130 * 60))
 
 
 def auth_ok() -> tuple[bool, str]:

@@ -343,7 +343,22 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # out-ranking a verified one that merely had a flaw.
         verified = (probed_txt and stray_probed
                     and comp.get("_probed", 0) == comp.get("_asked", 0))
-        score = len(missing_all) + comp_fails + (0 if verified else UNVERIFIED_PENALTY)
+        # Strays DO count on the draft rungs, and only there. The owner's
+        # objection is exact: chapter 6 carries a "DA" label three times over
+        # and a loose "PFC", which is noise the reader has to filter past. But
+        # the old evidence still holds — stray counts went 15 -> 0 -> 1 -> 30
+        # across four tries, so making them a hard reject everywhere means the
+        # build never converges and the last rung ships whatever it has.
+        #
+        # The resolution is the owner's: reject on strays while drafts are
+        # cheap, never on the expensive final. A draft that is clean except for
+        # stray labels is worth one more cheap roll; the Pro frame is not worth
+        # re-rolling for them, and by then the prompt has already been through
+        # the ladder's corrections.
+        drafting = bool(gi.LADDER_MODEL) and attempt < MAX_TRIES - 1
+        stray_penalty = len(nums["extra"]) if drafting else 0
+        score = (len(missing_all) + comp_fails + stray_penalty
+                 + (0 if verified else UNVERIFIED_PENALTY))
 
         snap = {"numbers": nums, "text_missing": miss_txt, "composition": comp,
                 "missing_all": missing_all, "score": score,
@@ -355,7 +370,9 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                 "bytes": png.read_bytes()}
         if best is None or score < best["score"]:
             best = snap
-        stray_note = f", {len(nums['extra'])} stray (warning)" if nums["extra"] else ""
+        stray_note = (f", {len(nums['extra'])} stray"
+                      + (" (counted)" if drafting and nums["extra"] else " (warning)")
+                      if nums["extra"] else "")
         print(f"[i] try {attempt+1}: {len(missing_all)} missing{stray_note}, "
               f"composition {comp}", file=sys.stderr)
         if score == 0:

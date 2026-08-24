@@ -2182,6 +2182,17 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         # 5. Extract this chapter's facts FROM THE DAY NOTEBOOK, which now
         #    holds the books themselves.
         extract_md = extract_day_content_from_main(day, symbol_block, day_nb_id)
+        # Chapters 12 and 13 both died on a 748- and a 1,056-character extract
+        # from a notebook that had just proved it could answer. One short answer
+        # is not a broken notebook, it is one short answer — ask again before
+        # writing the chapter off, since everything after this depends on it.
+        if extract_md and len(extract_md) < MIN_EXTRACT_CHARS:
+            print(f"  [!] extract came back at {len(extract_md)} chars; asking "
+                  f"once more", file=sys.stderr)
+            time.sleep(30)
+            retry = extract_day_content_from_main(day, symbol_block, day_nb_id)
+            if retry and len(retry) > len(extract_md):
+                extract_md = retry
         if not extract_md:
             print("[!] Could not extract content from the day notebook. Aborting.")
             return None
