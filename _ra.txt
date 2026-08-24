@@ -1,0 +1,157 @@
+{
+ "index": 1,
+ "title_en": "Psychiatric examination of child and adolescent",
+ "sign_text": "MAIN STREET EYECARE",
+ "place": "A high-street opticians on a school-holiday Wednesday: a frame-display wall and a dispensing bench down one side, two test rooms with their doors hooked open, the lit letter chart at the far end of the test lane, and a low toy table beside the waiting chairs.",
+ "activity": "Everyone is working through a sight test \u2014 reading a line off the chart with one eye covered under a paddle, following the pen-torch with their eyes, sitting up to the phoropter, trying a frame at the mirror while a parent answers the questions across the desk.",
+ "anchor_structure": "The full-length test lane \u2014 the studded carpet strip with the back-lit letter chart standing at its far end and the facing mirror above it \u2014 running from the lower-left corner of the frame to the upper right, dividing the shop into waiting chairs, dispensing bench, test lane and the glazing workshop behind.",
+ "derivation": "ACRONYM_EMBED",
+ "pun_explanation": "M-S-E stands as an ordered subsequence of word-initials inside an utterly ordinary optician's fascia \u2014 the expreSS tRIps device \u2014 and it is planted in the one high-street trade whose examinees are children of every age with a parent sitting beside them, which is what the vehicle-test version could not supply. The trade then pays out on all five aspects with no invention: a sight test is run in a fixed non-negotiable order, history then acuity then cover test then refraction then the light, so examination structure is the venue's own procedure; the record card carries the child's whole history back to the first visit and the parent supplies it across the desk, so developmental history and parent interview are one piece of counter business; the method changes with age \u2014 pictures for the pre-schooler, letters for the schoolchild, a moving toy for the infant who cannot answer \u2014 which is the chapter's central teaching point rendered as ordinary shop routine; the optometrist down on the floor rolling a toy for a two-year-old to fix and follow is play observation as a real clinical technique rather than a metaphor; and because every examinee in the frame is an actual child, appearance, speech, mood and behaviour are all literal depiction. The chart's shrinking graded rows are a native developmental ladder and the red recall tabs standing proud of the record drawer are the red flags.",
+ "place_category": "opticians practice",
+ "stock_props": [
+  "back-lit letter chart with one huge top letter and the rows shrinking down the board",
+  "picture chart set up on the second lane for children who cannot read letters",
+  "occluder paddles and cardboard eye-patches in a jar on the bench",
+  "pen-torch and a spinning toy on a stick used to make an infant fix and follow",
+  "phoropter on its swing arm over the test chair, chair pumped up on a booster cushion",
+  "record cards in a pull-out drawer with red recall tabs standing proud of the top edge",
+  "dispensing bench with a pupil rule, a heated bead pan and a bowl of loose screws",
+  "wall of children's frames on spring hooks, sorted small to large",
+  "low toy table with a shape-sorter and a box of bricks in the waiting corner",
+  "row of waiting chairs with a parent in each, one leaning across the desk answering questions",
+  "trial frame and an open case of graded lenses on the desk",
+  "queue-ticket dispenser and the appointment book open on the counter",
+  "pencilled height marks up the test-room door frame",
+  "glazing workshop behind a glass partition with the edger throwing water",
+  "pavement A-frame lettered for children's tests",
+  "wall clock and a laminated card of the questions asked in order"
+ ],
+ "confidence": "strong",
+ "adjacent_to": [],
+ "hosts_tokens": [],
+ "_reauthored": true
+}
+
+{
+ "index": 2,
+ "title_en": "Neuroanatomy basics for psychiatry",
+ "sign_text": "INSULA FERRIES",
+ "place": "A small car-ferry terminal on the mainland side at midday: two identical passenger wings either side of the vehicle marshalling lanes, an enclosed footbridge crossing above them, a glazed control tower on the quay, the linkspan ramp down onto the ship, and the island lying out across the water.",
+ "activity": "Everyone is catching the ferry \u2014 checking in at the booths, wheeling cases up the ramp, holding a boarding card out at the barrier, reading the departure board, edging cars forward in the marshalling lanes.",
+ "anchor_structure": "The enclosed steel footbridge crossing over the marshalling lanes on a diagonal from the lower-left of the frame to the upper right, joining the two identical passenger wings, with the glazed control tower standing at its midpoint.",
+ "derivation": "SPATIAL_ISOMORPHISM",
+ "pun_explanation": "The terminal's ordinary layout IS the gross anatomy, and the fascia spends its lettering on the one Latin morpheme that is already a brain region: insula means island, and the island is the destination painted on every board in the building. Two identical mirror-image wings joined by a single bridge = the hemispheres and the corpus callosum. The glazed control tower that every vessel and every vehicle must be routed through and which touches nothing else = thalamus as obligatory relay. The harbourmaster's office up over the concourse, watching the whole floor and overruling the lanes = prefrontal cortex. The marshalling lanes with their hold-and-release light = basal ganglia gating, and the turn-back bay for vehicles that joined the wrong queue = anterior cingulate conflict and error monitoring. The muster klaxon and the quay foghorn = amygdala. The bank of left-luggage lockers = hippocampus. The duty-free counter where everything is sniffed, priced and compared = orbitofrontal. The boiler-house thermostat and the canteen hatch = hypothalamus. The counterweighted linkspan trimmed continuously to hold the deck level with the quay = cerebellum. The lounge of people with three hours to kill, staring at nothing = the default mode network. Per the p272 rule no business pun is spent: one morpheme sits on a surface whose real job is bearing a name.",
+ "place_category": "ferry terminal",
+ "stock_props": [
+  "enamel operator name board bolted to the terminal wall",
+  "mechanical departure board with flipping slats, the island's name on every row",
+  "glazed control tower with a radio mast and a man at the window",
+  "check-in booths with lifting barriers and a hold-and-release traffic light",
+  "turn-back bay coned off for vehicles that joined the wrong lane",
+  "bank of left-luggage lockers with keys still in some doors",
+  "muster klaxon on a bracket and a foghorn on the quay wall",
+  "harbourmaster's glazed office overlooking the concourse",
+  "counterweighted linkspan ramp being trimmed level with the deck",
+  "duty-free counter with perfume testers and a price board",
+  "canteen hatch, a tea urn and the boiler-house thermostat on the wall",
+  "rows of moulded seats in the lounge, half of them holding people staring at nothing",
+  "porters' trolleys and a chain of baggage cages",
+  "lifebelt on a post and a tide board painted with graduations",
+  "painted quay edge and mooring bollards with ropes dropped over them",
+  "route map on a cast-iron column and a rack of timetables"
+ ],
+ "confidence": "strong",
+ "adjacent_to": [],
+ "hosts_tokens": [],
+ "_reauthored": true
+}
+
+{
+ "index": 3,
+ "title_en": "Neurotransmitters overview",
+ "sign_text": "MESSENGER ROW",
+ "place": "A village shop row on delivery morning: one unbroken terrace of small businesses down the near side of the street, the colliery gates and winding gear closing the top of the road, delivery lorries nosed into the kerb with their tailgates down, crates stacked out on the flags outside every doorway.",
+ "activity": "Everyone is taking in the morning delivery \u2014 lifting crates down off the lorries at the kerb, wheeling sack-trucks in through the doorways, signing the docket on the driver's board, and carrying the empties back out to be loaded up again.",
+ "anchor_structure": "The unbroken run of shopfront fascias with the kerb and gutter line beneath them, running from the lower left of the frame up to the colliery gates at the top right, splitting the picture into pavement, roadway, shopfronts and the upper windows above them.",
+ "derivation": "LITERAL_PICTURE",
+ "pun_explanation": "A neurotransmitter is a chemical messenger, and Messenger Row is an ordinary street nameplate that carries one morpheme of the everyday referent without printing the medical word \u2014 the same device the accepted transmitter reading used, and within the Lithium Lift precedent. This is the one chapter the spec says must not invent a venue: the seven course-wide premises are the content, so the plate is the street they stand on. A shop row is the only mundane container that holds a colliery, a hotel, a dairy, a club door, a weaving workshop, a seed merchant and a police box in one coherent frame at one light source. The delivery round then supplies the whole mechanism free: release is a crate carried in off the lorry, and reuptake is the same hand carrying the empties back out to be loaded again, which is a native action in the trade rather than a metaphor. Each premises signs for its own crate, so every messenger stays addressable at its own doorway instead of becoming one of seven nameplated boxes in a line-up.",
+ "place_category": "village shop row",
+ "stock_props": [
+  "delivery lorries at the kerb with tailgates down",
+  "sack-trucks tipped against the shopfronts",
+  "wooden crates and stacked empties on the flags",
+  "docket board with a pencil on a string",
+  "milk float backed onto the kerb, churns rolled across the pavement",
+  "coal carts running out of the pit gate to the top of the road",
+  "blue police box on the corner kerb with lines fanning to the pole",
+  "five-storey commercial hotel closing the bottom of the row",
+  "heavy iron club side-door with a rope across the pavement",
+  "narrow weaving workshop with its loom running back from the window",
+  "caged mynah hung over the corn and seed merchant's door",
+  "hand-lettered street nameplate bolted to the end gable",
+  "shop awnings wound halfway out",
+  "hotel porter's trolley and a stack of luggage on the steps",
+  "drain grating, kerb stones and a coal chute plate in the pavement",
+  "chalked delivery times on a slate by each doorway"
+ ],
+ "confidence": "strong",
+ "adjacent_to": [
+  4,
+  5,
+  6,
+  7
+ ],
+ "hosts_tokens": [
+  "DOPA_MINE \u2014 the colliery gates and winding gear close the head of the row; the lettered gate sign faces straight down the street and the coal carts run out of it to the kerb, with the four labelled underground sections opening off the gate yard.",
+  "RAPHE_TAPESTRY \u2014 the narrow rug-weaving workshop mid-terrace, its long loom running back from the shopfront down the thin room on the building's centre line, rolled rugs stacked on the pavement for the lorry.",
+  "LOCUS_COERULEUS_BLUEPOST \u2014 the blue police box standing on the kerb at the corner where the row meets the lane, phone lines fanning up to the pole above it.",
+  "AA_HOTEL \u2014 the five-storey commercial hotel that closes the bottom end of the row, its five floors stacked directly above the street and the manager on the steps with the master key.",
+  "ASPARAGUS_VIP_DOOR \u2014 the heavy iron side door of the late-licence club halfway along the terrace, rope across the pavement, a queue waiting on it in daylight and a horseshoe magnet wedged in the lock.",
+  "TUBEROMAMMILLARY_DAIRY \u2014 the dairy two doors up from the club, milk float backed onto the kerb and churns rolled across the flags to the other premises.",
+  "MEYNERT_MYNAH \u2014 the caged mynah hung over the doorway of the corn and seed merchant, repeating back what the delivery men call to each other."
+ ],
+ "_reauthored": true
+}
+
+{
+ "index": 5,
+ "title_en": "Serotonin system",
+ "sign_text": "5 HIGH TOWN MARKET",
+ "place": "A covered market hall in mid-morning trade: an iron-and-glass roof over one long central aisle, lock-up stalls down both sides with their shutters up, scales and price cards on every counter, produce boxes stacked in the gangway and a wash-down channel running along the floor.",
+ "activity": "Everyone is doing the market shop \u2014 working down the aisle with a basket, asking across the counter, being handed a wrapped parcel, paying, and moving on to the next stall.",
+ "anchor_structure": "The long central aisle with its floor seam and wash-down channel running corner to corner beneath the roof trusses, dividing the hall into the two stall runs, the aisle itself and the corner arches at either end.",
+ "derivation": "ACRONYM_EMBED",
+ "pun_explanation": "5-H-T stands as an ordered subsequence of word-initials inside an entirely ordinary market name and street address \u2014 the expreSS tRIps device, and a numeral at the front of a market name is native signage rather than an intrusion. The hall was chosen because serotonin's whole story is one narrow midline workshop that ships everywhere, and a market's central aisle is literally its seam: the weaving stall stands on it and its goods go out to every other counter in the building. The receptor family then costs nothing, because each one is an ordinary trade already found in a market hall \u2014 a curtained fortune-teller's booth in the corner, the pie stall kitchen behind it, the wash-down channels of the fish end, the second-hand book stall, and the all-night kiosk in the corner arch. The postal collection at the delivery bay gives reuptake a native worker instead of a symbol.",
+ "place_category": "covered market hall",
+ "stock_props": [
+  "lock-up stalls with roll-up shutters and hand-lettered price cards",
+  "hanging scales and brass weights on the counters",
+  "wicker baskets and wheeled shopping trolleys in the aisle",
+  "stacked produce boxes and empty crates in the gangway",
+  "wash-down channel and a coiled hose along the floor",
+  "curtained booth in the back corner with a round table",
+  "pie stall with two cooks behind a glass case",
+  "second-hand book stall with framed certificates on the back board",
+  "all-night kiosk built into the corner arch with its neon still lit",
+  "rug stall with a loom running the length of the central aisle",
+  "postman working the delivery bay with a sack of parcels",
+  "iron roof trusses, glass panels and pigeon netting overhead",
+  "bus-stop booth on the kerb outside the main arch",
+  "chalk board of the day's prices at the arch",
+  "sawdust bin, string dispenser and wrapping paper rolls",
+  "clock hung from the roof over the aisle"
+ ],
+ "confidence": "strong",
+ "adjacent_to": [
+  3,
+  28,
+  29
+ ],
+ "hosts_tokens": [
+  "CONVENIENCE_STORE_7 \u2014 the all-night kiosk built into the market's corner arch, neon sign still lit in daylight, clock face at seven and the night clerk still on the till at the end of his shift.",
+  "TAROT_2A \u2014 the curtained fortune-teller's booth in the hall's back corner: round table, two ace cards laid out, tie-dye reader, drapes swirling with colour; the pie stall kitchen, the wash-down channels and the book stall are the rooms opening off it.",
+  "RAPHE_TAPESTRY \u2014 the rug-weaving stall running the whole length of the central aisle, the loom set on the floor seam, rolled rugs going out from it to every other counter in the building.",
+  "BUS_LINE_1A \u2014 the wooden bus-stop booth on the kerb directly outside the main arch, its 1A plate facing the market doors and a trembling rabbit on the bench."
+ ],
+ "_reauthored": true
+}

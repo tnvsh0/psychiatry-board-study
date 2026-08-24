@@ -1,0 +1,9 @@
+25 chapter(s) to re-author via agy (gemini-3.7-flash-high), 74 categories taken
+  chapters [1, 5, 11, 17, 23]: 5 returned in 161s
+  chapters [33, 36, 45, 56, 62]: 5 returned in 110s
+  chapters [67, 79, 80, 105, 107]: 5 returned in 107s
+  chapters [112, 118, 122, 128, 129]: 5 returned in 110s
+  chapters [130, 131, 133, 139, 142]: 5 returned in 96s
+
+25 venue(s) authored, 0 not returned -> venue_result_agy.json
+  merge with: python scripts/merge_venue_repair.py _bulk/venue_result_agy.json --dry-run

@@ -1,0 +1,404 @@
+{
+ "found": {
+  "DOPA_MINE": {
+   "cue": "DOPA-MINE Co.",
+   "prop": "A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by pathway — Mesolimbic (heart-shaped chamber), Mesocortical (think-bubble chamber), Nigrostriatal (motor gear chamber), Tuberoinfundibular (milk-pump chamber).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Vertical elevators going UP = D1-family receptors (Gs/excitatory)",
+    "Red barriers/locks blocking flow = D2-family receptors (Gi/inhibitory)",
+    "Coal carts = vesicular dopamine release",
+    "Newspaper PYRAMID hats labeled 'EXTRA' near nigrostriatal section = EPS",
+    "Milk pump at tuberoinfundibular section = prolactin"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "LOCUS_COERULEUS_BLUEPOST": {
+   "cue": "Locus Coeruleus",
+   "prop": "A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brainstem. Every emergency call goes through it.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Blue box dispatcher = LC neurons firing in arousal",
+    "Phone lines fanning out = NE projections everywhere",
+    "Panic-button red light = hyperactive LC in panic/PTSD/withdrawal",
+    "Prazosin curtain = α1 blockade calming the dispatch noise (PTSD nightmares)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "MEYNERT_MYNAH": {
+   "cue": "Basal nucleus of Meynert",
+   "prop": "A wise old MYNAH bird perched in the basal forebrain. It mimics what it hears (cortical ACh = memory).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mynah bird = basal nucleus of Meynert (phonetic)",
+    "Bird whispers memorize cortex = cholinergic projections for memory",
+    "Bird dies = Alzheimer's pathology (skipped per user, but explains baseline)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "RAPHE_TAPESTRY": {
+   "cue": "Raphe nuclei",
+   "prop": "A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin serotonin-yarn into rugs that get shipped EVERYWHERE.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Tapestry seam down the middle = raphe (literally 'seam' in Greek)",
+    "Weavers = raphe neurons producing 5-HT",
+    "Shipping crates labeled cortex/limbic/hypothalamus = projections everywhere",
+    "Old loom that won't start for 4-6 weeks = SSRI delay-of-onset (autoreceptor downregulation)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "CONVENIENCE_STORE_7": {
+   "cue": "7-Eleven open 24/7",
+   "prop": "Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Night-clerk turning off neon = Lurasidone blocking 5-HT7"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "TAROT_2A": {
+   "cue": "Tarot 2A",
+   "prop": "Dim Victorian parlor. Round table with TWO Ace tarot cards. Tie-dye hippie reader. Walls swirl with psychedelic colors. Adjacent rooms: KITCHEN (5-HT2C), WATER-GATE ROOM (5-HT3), LIBRARY (5-HT6).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Hippie reader (tie-dye shirt) = LSD/Psilocybin agonist",
+    "Officer with flashlight = atypical antipsychotic (turns off the trip)",
+    "Officer with mirror = Pimavanserin (inverse agonist, flips cards face-down)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "BEETHOVEN_ORCHESTRA": {
+   "cue": "Beethoven conducting numbered symphonies",
+   "prop": "Concert hall. Beethoven (white wig, intense face) conducts. Different batons numbered for each symphony. Orchestra has heart-drums section (β1) and wind/brass section (β2).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Beethoven with '#1' baton + heart-drums section = β1 (heart)",
+    "Beethoven with '#2' baton + winds/brass = β2 (lungs)",
+    "A fishing NET hangs by the stage door = NET transporter; Beethoven catches stray notes (NE) and returns them"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "AA_HOTEL": {
+   "cue": "Aa Hotel",
+   "prop": "Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on the α-subunit composition.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Floor 1 (α1): Sleep Lobby — giant bed in the entrance",
+    "Floor 2 (α2): Calm Lounge — armchairs and tea",
+    "Floor 3 (α3): Group-therapy Room — circle of chairs",
+    "Floor 5 (α5): Memory Penthouse — secure vault",
+    "Hotel Manager = GABA itself (holds master key)",
+    "Green CHLORINE SOLDIERS rushing INTO neurons = Cl⁻ influx → hyperpolarization → inhibition",
+    "Barbed-wire fence around hotel = Phenobarbital",
+    "Bayit-B small synagogue next door = GABA-B (metabotropic, Baclofen prays there)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "ASPARAGUS_VIP_DOOR": {
+   "cue": "NMDA VIP-club doorway (Mr. Asparagus's domain)",
+   "prop": "Heavy iron door labeled 'NMDA'. Outside: chalk-white Ca²⁺ guests with '2+' badges wait in line. The lock has a horseshoe MAGNET (Mg²⁺) wedged in it. Above the door: a neon sign that flickers when depolarized.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mr. Asparagus (Mexican, methyl-mustache CH₃) = NMDA agonist itself (N-methyl-D-Aspartate)",
+    "G-shaped gray pebble at his feet = Glycine co-agonist",
+    "Horseshoe magnet in lock = Mg²⁺ block",
+    "Chalk-white guests with '2+' badges in line = Ca²⁺ entering",
+    "Neon sign flickering = depolarization (releases the magnet plug)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "TUBEROMAMMILLARY_DAIRY": {
+   "cue": "Tuberomammillary nucleus",
+   "prop": "A dairy section in the hypothalamus (mammillary = mammary). Cows pump out histamine to keep the brain awake.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mammary cows pumping histamine = TMN neurons → wakefulness",
+    "Histamine bottles distributed to H-House = upstream of all H1/H3 effects",
+    "Dimmer switch when blocked = sedation from H1 antagonists"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "BUS_LINE_1A": {
+   "cue": "Bus stop",
+   "prop": "Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= anxiety patient awaiting anxiolysis).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Different buses arriving = different 1A partial agonists (Buspirone bus, Vilazodone bus, etc.)",
+    "Late bus = autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "ALPHA_WOLF_PACK": {
+   "cue": "Alpha wolf pack in a snowy forest",
+   "prop": "Snowy pine forest. A wolf pack on the hunt. Some lone alphas charge forward, others stay behind on radio. Each wolf wears a numbered tag.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Lone alpha wolf (#1) = α1 receptor — true alpha hunts, post-synaptic action",
+    "Two wolves (one '#2' tag) = α2 receptor — #2 wolf pretends but is actually autoreceptor, calling pack back",
+    "Tranquilizer dart from a hunter = α1 blockade (Prazosin, antipsychotic α1 side effect)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "DSM_bipolar": {
+   "cue": "A SEE-SAW oscillating between a sun (mania) and a storm clou",
+   "prop": "A SEE-SAW oscillating between a sun (mania) and a storm cloud (depression). North-pole iceberg in the background (Lithium connection).",
+   "hook": "Bi-polar = two poles.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Bipolar and Related Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_neurodevelopmental": {
+   "cue": "SPECIAL-ED CLASSROOM",
+   "prop": "SPECIAL-ED CLASSROOM — a brightly-colored kindergarten room with 6 distinct corners, each showing a child characteristic of one ND disorder family. ASD CORNER: child sits cross-legged silently lining up toy trains in a perfectly straight row, wears large noise-cancelling headphones, eyes averted. ADHD CORNER: child bouncing on a chair surrounded by scattered toys, motion-lines and 'POW!' 'WHIZ!' speech bubbles, multiple half-finished activities. INTELLECTUAL DISABILITY (IDD) CORNER: child works slowly on a 5-piece beginner puzzle with a patient teacher's helping hand visible behind. SPECIFIC LEARNING DISORDER (SLD) CORNER: child looks confused at letters that visually swap and float ('b/d/p/q' rotating chaotically), placards mixing up reading order. COMMUNICATION DISORDER CORNER: child with sealed lips and an empty speech bubble OR with the speech bubble shown broken into stuttering fragments. TIC DISORDERS CORNER: child surrounded by comic-style action bubbles popping around their head — 'BLINK!' 'SHRUG!' 'AH!' 'TWITCH!'. At the center of the classroom: a teacher pointing at a tree-branch chart titled 'Neurodevelopmental Disorders' with 6 branches.",
+   "hook": "Each corner = a specific ND disorder family with its hallmark visual. Same children reappear individually as the symbol ",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Neurodevelopmental Disorders — establishing scene (Special-Ed Classroom) — 6 ND families",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "D2_receptor": {
+   "cue": "Massive RED BARRIER labeled '2' across mesolimbic track with",
+   "prop": "Massive RED BARRIER labeled '2' across mesolimbic track with a foreman at lever",
+   "hook": "DOWN = Gi/inhibitory. '2' = D2. Mesolimbic = psychosis track.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine D2-family (Gi, ↓cAMP) — CENTRAL antipsychotic target",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DAT": {
+   "cue": "A Jewish religious man (rabbi with payot and kippah) gatheri",
+   "prop": "A Jewish religious man (rabbi with payot and kippah) gathering scattered dopamine ore back home",
+   "hook": "DAT = דת (Hebrew: 'religion'). 'Religious man' = איש דת. Collecting ore back home = reuptake.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine transporter — reuptakes synaptic DA into the presynaptic terminal",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "NET": {
+   "cue": "Fishing NET hanging by the stage door",
+   "prop": "Fishing NET hanging by the stage door — Beethoven catches stray notes (NE) with it",
+   "hook": "NET acronym = literal net. Catching notes = re-uptake.",
+   "kind": "SYMBOL",
+   "scene": "BEETHOVEN_ORCHESTRA (stage-door)",
+   "category": "Norepinephrine transporter",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "SERT": {
+   "cue": "Postal carrier in 'SERT' uniform collecting serotonin packag",
+   "prop": "Postal carrier in 'SERT' uniform collecting serotonin packages",
+   "hook": "SERT = Service (postal). Pick-up-and-return = re-uptake.",
+   "kind": "SYMBOL",
+   "scene": "(standalone — appears in any synapse scene)",
+   "category": "Serotonin transporter — SSRI/SNRI/TCA target",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "prefrontal_cortex": {
+   "cue": "Glass-walled CEO OFFICE at the front of a skyscraper. PFC = ",
+   "prop": "Glass-walled CEO OFFICE at the front of a skyscraper. PFC = 'Pretty Fancy Corner-office'.",
+   "hook": "PreFrontal Cortex = front of brain = the CEO suite.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Prefrontal Cortex (PFC) — executive function HQ",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "adhd": {
+   "cue": "ADHD's WHIRLWIND CLASSROOM",
+   "prop": "ADHD's WHIRLWIND CLASSROOM — a child literally floats a few inches above their chair (hyperactive), legs in mid-kick, hair flying. Their desk is total chaos: pencils, papers, half-finished projects, dropped erasers, three different books open at once. THREE separate speech bubbles burst from their mouth simultaneously: 'Hey! Did you see — wait, what was I — OH! Look! — sorry — what?'. A clock shows they've changed activities 12 TIMES in one hour. Comic action-bubbles 'POW!' 'WHIZ!' 'ZIP!' surround them. A trail of dropped items winds across the floor behind them. A backpack hangs upside-down with contents spilling. The teacher in background looks exhausted, holding their head. BUT — importantly — the child is also handing a flower to another child while spinning (warmth/impulsivity, often misunderstood as 'bad'). Two scenes embedded: (a) at school + (b) at home — same chaos, demonstrating 'symptoms in 2+ settings'. A calendar showing the child has had these symptoms since age 5 (before age 12 cutoff).",
+   "hook": "ADHD = literally CAN'T SIT STILL + CAN'T STAY ON TASK. Floating above chair + chaos-trail + multiple speech bubbles + cl",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — ADHD corner (standalone scene possible)",
+   "category": "Attention-Deficit/Hyperactivity Disorder (ADHD) — DSM Ch.1 Neurodevelopmental",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "communication_disorders": {
+   "cue": "SPEECH THERAPY ROOM",
+   "prop": "SPEECH THERAPY ROOM — a colorful pediatric speech-therapy room with 4 vignettes showing the 4 communication disorder subtypes. CHILD 1 — LANGUAGE DISORDER: child at a table, struggling to find words; a thought bubble shows pictures of common objects (dog, cup, ball) but the SPEECH BUBBLE is empty or shows wrong-words (says 'cat' for 'dog'). Difficulty with vocabulary, sentence structure. CHILD 2 — SPEECH SOUND DISORDER: child says 'wabbit' for 'rabbit', 'fum' for 'thumb' — speech bubble shows the WORDS WITH WRONG SOUNDS articulated. The speech therapist holds a small mirror in front of the child's mouth to show tongue position. CHILD 3 — STUTTERING (Childhood-Onset Fluency Disorder): child says 'M-m-m-mommy I w-w-w-want' — speech bubble is BROKEN/FRAGMENTED with the same syllable repeated. A frustration expression on face. The therapist demonstrates a hand-tapping rhythm technique. CHILD 4 — SOCIAL (PRAGMATIC) COMMUNICATION DISORDER: child at a school table NOT taking turns in conversation, interrupting, missing nonverbal cues from peers. A poster of social rules on the wall ('TAKE TURNS', 'EYE CONTACT', 'WAIT YOUR TURN') with red X-marks where the child has missed. CRITICAL: this child has normal grammar/vocabulary but fails at SOCIAL USE.",
+   "hook": "Communication Disorders = LANGUAGE + SPEECH-SOUND + STUTTER + SOCIAL-PRAGMATIC. 4 children in one room with 4 different ",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — Communication corner (standalone scene possible)",
+   "category": "Communication Disorders — DSM Ch.1 Neurodevelopmental (Language, Speech Sound, Stuttering, Social-Pragmatic)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "Acetylcholine": {
+   "cue": "Wooden MATCH being struck",
+   "prop": "Wooden MATCH being struck",
+   "hook": "Acetyl = אצית (Hebrew for 'ignite'). Match = ignition.",
+   "kind": "SYMBOL",
+   "scene": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)",
+   "category": "Neurotransmitter — agonist for BOTH muscarinic AND nicotinic receptors",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "locus_coeruleus": {
+   "cue": "A Doctor-Who-style BLUE police box in the rostral pons, phon",
+   "prop": "A Doctor-Who-style BLUE police box in the rostral pons, phone wires fanning out",
+   "hook": "Locus = spot, Coeruleus = blue (Latin).",
+   "kind": "SYMBOL",
+   "scene": "LOCUS_COERULEUS_BLUEPOST",
+   "category": "Brainstem NE source — the 'blue spot' (locus coeruleus)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "dorsal_raphe": {
+   "cue": "The DORSAL (top) weaving station of the Persian-rug workshop",
+   "prop": "The DORSAL (top) weaving station of the Persian-rug workshop",
+   "hook": "Dorsal = top. Most clinically referenced raphe subnucleus.",
+   "kind": "SYMBOL",
+   "scene": "RAPHE_TAPESTRY",
+   "category": "Specific raphe nucleus — primary 5-HT source for cortex",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "raphe_nuclei": {
+   "cue": "Persian-rug weaving workshop along the brainstem seam",
+   "prop": "Persian-rug weaving workshop along the brainstem seam — weavers produce 5-HT yarn",
+   "hook": "Raphe = 'seam' in Greek. Tapestry = woven projection everywhere.",
+   "kind": "SYMBOL",
+   "scene": "RAPHE_TAPESTRY",
+   "category": "Brainstem 5-HT source — seam of midline nuclei",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "alpha1_receptor": {
+   "cue": "Single LONE ALPHA WOLF charging at full hunt",
+   "prop": "Single LONE ALPHA WOLF charging at full hunt",
+   "hook": "α1 = ONE wolf = true alpha. Hunt = post-synaptic action (vasoconstriction, alertness).",
+   "kind": "SYMBOL",
+   "scene": "ALPHA_WOLF_PACK",
+   "category": "Adrenergic α1 — post-synaptic excitatory (Gq)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "alpha2_receptor": {
+   "cue": "Two wolves; the one tagged '#2' pretends to be alpha but rad",
+   "prop": "Two wolves; the one tagged '#2' pretends to be alpha but radios pack 'come back to base'",
+   "hook": "α2 = TWO wolves. The #2 wolf isn't truly alpha → autoreceptor function (negative feedback).",
+   "kind": "SYMBOL",
+   "scene": "ALPHA_WOLF_PACK",
+   "category": "Adrenergic α2 — autoreceptor (presynaptic, Gi)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "beta1_receptor": {
+   "cue": "Beethoven holding baton '#1' conducting heart-shaped drum se",
+   "prop": "Beethoven holding baton '#1' conducting heart-shaped drum section",
+   "hook": "BETHoven = β. Symphony #1 = β1. Drums = heart pounding.",
+   "kind": "SYMBOL",
+   "scene": "BEETHOVEN_ORCHESTRA",
+   "category": "Adrenergic β1 — Gs (HEART)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "beta2_receptor": {
+   "cue": "Beethoven holding baton '#2' conducting brass/wind section",
+   "prop": "Beethoven holding baton '#2' conducting brass/wind section",
+   "hook": "Symphony #2 = β2. Winds/Brass = lungs/airways.",
+   "kind": "SYMBOL",
+   "scene": "BEETHOVEN_ORCHESTRA",
+   "category": "Adrenergic β2 — Gs (LUNGS, muscle)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT1A_receptor": {
+   "cue": "Bus-stop '1A' with anxious rabbit on bench",
+   "prop": "Bus-stop '1A' with anxious rabbit on bench",
+   "hook": "Bus line 1A. Rabbit = anxiety. Bus arriving = anxiolysis.",
+   "kind": "SYMBOL",
+   "scene": "BUS_LINE_1A",
+   "category": "Serotonin (Gi — autoreceptor + postsynaptic)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT2A_receptor": {
+   "cue": "Tarot table with 2 Ace cards, tie-dye hippie reader, swirlin",
+   "prop": "Tarot table with 2 Ace cards, tie-dye hippie reader, swirling psychedelic walls",
+   "hook": "2 Ace cards = '2A'. Tarot = hallucinations.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A",
+   "category": "Serotonin (Gq, cortical) — psychedelic + atypical antipsychotic target",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT2C_receptor": {
+   "cue": "Kitchen with TWO chefs guarding cookie jar",
+   "prop": "Kitchen with TWO chefs guarding cookie jar",
+   "hook": "2 Chefs / 2 Cookies = '2C'.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A (kitchen annex)",
+   "category": "Serotonin (Gq, hypothalamic — appetite)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT3_receptor": {
+   "cue": "Three iron CHANNELS gushing green vomit-water",
+   "prop": "Three iron CHANNELS gushing green vomit-water",
+   "hook": "3 = three gates. Iron channels emphasize ionotropic uniqueness.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A (water-gate room)",
+   "category": "Serotonin — LIGAND-GATED ION CHANNEL (unique!). CTZ + gut.",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT6_receptor": {
+   "cue": "Library with 6 framed PhD diplomas; old professor reads",
+   "prop": "Library with 6 framed PhD diplomas; old professor reads",
+   "hook": "6 = SIX diplomas. Professor = cognition.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A (back library)",
+   "category": "Serotonin (Gs, cortical/striatal — cognition)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT7_receptor": {
+   "cue": "7-Eleven open 24/7",
+   "prop": "7-Eleven open 24/7",
+   "hook": "7 = the store name and hours.",
+   "kind": "SYMBOL",
+   "scene": "CONVENIENCE_STORE_7",
+   "category": "Serotonin (Gs, suprachiasmatic + hippocampal — circadian)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  }
+ },
+ "missing": [
+  "DSM_depressive",
+  "Lithium",
+  "Valproate",
+  "Carbamazepine"
+ ]
+}

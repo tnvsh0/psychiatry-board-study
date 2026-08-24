@@ -1,0 +1,111 @@
+
+======================================================================
+Day 5: מערכת הסרוטונין
+Tag: study-005-serotonin-system
+Aspects: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance']
+Symbols (13): ['RAPHE_TAPESTRY', 'dorsal_raphe', 'raphe_nuclei', 'SERT', '5-HT1A_receptor']...
+Density: high
+======================================================================
+
+Found existing per-day notebook: 00a8150d-555b-4347-8e77-8693b267e872 ('[Study-005] מערכת הסרוטונין')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    not answering yet (1692 chars, 2/5 books named); waiting 45s
+    not answering yet (1452 chars, 2/5 books named); waiting 72s
+    not answering yet (1444 chars, 2/5 books named); waiting 115s
+    not answering yet (1642 chars, 2/5 books named); waiting 184s
+    notebook is answering (1906 chars, 3/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+  video: 8904d3a7-f489-47bd-8d1a-3e2a4b5c7f23
+  flashcards: a28a8505-9f76-415b-bb67-5d10b15beea9
+  quiz: cfd24472-8169-41b2-a2a0-b295c5e094c7
+
+Generating focused study guide (ask + page refs)...
+  [!] study guide attempt 1/3 rejected: 24 citations point at pages that do not exist in the book they name (e.g. StahlNeuro p. 761, StahlNeuro p. 760, StahlNeuro p. 1010, StahlNeuro p. 804, StahlNeuro p. 1153, StahlNeuro p. 1147, StahlNeuro p. 794, StahlNeuro p. 793, Stahl) — use only the printed page ranges given, and write "(מקור: הקשר רחב)" when you cannot find a page
+  [!] study guide attempt 2/3 rejected: 10 citations point at pages that do not exist in the book they name (e.g. StahlNeuro p. 645, StahlNeuro p. 944, StahlNeuro p. 724, StahlNeuro p. 726, StahlNeuro p. 729, StahlNeuro p. 809, StahlNeuro p. 863) — use only the printed page ranges given, and write "(מקור: הקשר רחב)" when you cannot find a page
+  [OK] study_guide.md (41.9 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (15145 bytes, keys: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[core_concept] = 711dc74f
+  scope[anatomy_or_structure] = 96a839fb
+  scope[function] = 7fece440
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in '5 HIGH TOWN MARKET'...
+  sketchy_main: 32 facts, directing...
+[i] normalized e2: dropped an unmappable relation 'stops the action of'
+[i] normalized e3: dropped an unmappable relation 'breaks down'
+[i] normalized e5: dropped an unmappable relation 'are involved in'
+[i] normalized e6: dropped an unmappable relation 'is produced by'
+[i] normalized e12: dropped an unmappable relation 'reduces'
+[i] normalized e16: dropped an unmappable relation 'increases'
+[i] normalized e2: cue trimmed to "Postal carrier in 'SERT' uniform collecting serotonin packages"
+[i] normalized e4: cue trimmed to 'Hanging scales'
+[i] normalized e6: cue trimmed to 'Raphe nuclei Persian-rug weaving workshop along the brainstem seam'
+[i] normalized e7: cue trimmed to "Bus-stop '1A'"
+[i] normalized e8: cue trimmed to 'Lock-up stall'
+[i] normalized e9: cue trimmed to 'Children struggling'
+[i] normalized e10: cue trimmed to 'Three iron channels gushing green vomit-water'
+[i] normalized e11: cue trimmed to 'Three market managers regulating the stalls: 1A bus stop'
+[i] normalized e12: cue trimmed to 'Person petting anxious rabbit at 5HT1A bus stop'
+[i] normalized e13: cue trimmed to '5HT2A Tarot reader directly energizing Glutamate customer'
+[i] normalized e14: cue trimmed to '7-Eleven store operating continuously'
+[i] normalized e15: cue trimmed to 'SSRI barrier blocking SERT postal carrier'
+[i] normalized e16: cue trimmed to 'Bustling 5HT2B stall'
+[i] normalized e17: cue trimmed to 'SARI guard blocking 5HT2A Tarot table and 5HT2C cookie'
+[i] normalized e18: cue trimmed to 'Mirtazapine/Vortioxetine blocking 5HT3 vomit channels'
+[i] normalized e19: cue trimmed to 'Vortioxetine orchestrating SERT blockade'
+[i] normalized e20: cue trimmed to "Mirtazapine cutting 'Alpha-2' brake cable"
+[i] normalized e21: cue trimmed to 'SPARI barrier blocking 50% of SERT postal carrier'
+[i] normalized e22: cue trimmed to 'Second-hand book stall'
+[i] normalized e23: cue trimmed to 'Stressed person at Raphe nuclei'
+[i] normalized e24: cue trimmed to 'Curtained booth'
+[i] normalized e25: cue trimmed to 'Lock-up stall with'
+[i] accepted with warning: e2: hook over 32 words (39): "בדיוק כמו שדוור ה-'SERT' אוסף חבילות סרוטונין מהמעבר כדי לסיים את מסירתן ועל מדיו 12 פסים המייצגים אזורי מעבר, כך נשא הסרוטונין SERT שואב חזרה את הסרוטונין ומפסיק את פעולתו במרווח הסינפטי, והוא מורכב מ-12 אזורי מעבר בקרום התא."
+[i] accepted with warning: e8: hook over 32 words (33): "כמו שדוכן נעול המסומן '1B/D' ניצב בסוף המעבר ומשמש כנקודה סופית המעכבת כניסת סחורות אחרות, כך קולטני 5HT1B/D משמשים כאוטורספטורים טרמינליים הממוקמים על קצה האקסון ומעכבים שחרור של דופמין, נוראפינפרין, היסטמין ואצטילכולין בקורטקס."
+[i] accepted with warning: e12: hook over 32 words (34): 'כמו שליטוף עדין של הארנב החרד בתחנת האוטובוס 5HT1A מרגיע אותו וגורם לו להפחית את פעימות הלב המהירות, כך גירוי של קולטני 5HT1A סומטודנדריטיים מעכב את קצב הירי של הנוירון ומפחית שחרור סרוטונין מהאקסון.'
+[i] accepted with warning: e13: hook over 32 words (46): 'כמו שקוראת הטארוט של 5HT2A מעוררת ישירות לקוח גלוטמט אך יכולה להשפיע עליו בעקיפין דרך לקוח GABA, ומווסתת שלושה מסלולי דופמין שונים, כך קולטני 5HT2A מעוררים שחרור גלוטמט באופן ישיר אך יכולים לעכבו באופן עקיף דרך אינטרנוירונים של GABA ומשפיעים על ויסות דופמין ב-3 מסלולים נפרדים.'
+[i] accepted with warning: e14: hook over 32 words (36): "כמו שחנות ה-'7-Eleven' פתוחה באופן רציף ומסמלת מחזור יממה בלתי פוסק, כך מחזור יממה של 24 שעות מבוקר בין היתר על ידי קולטני 5HT7 וסרוטונין, והקולטנים הללו משמשים מטרה לחסימה לשיפור תפקוד קוגניטיבי, שינה ומצב רוח."
+[i] accepted with warning: e16: hook over 32 words (51): 'כמו שגירוי בדוכן 5HT2B הומה גורם לקונים להתלהב ולהגביר את קצב מסירת חבילות הסרוטונין, ובכך תורם לפעילות דמוית vilazodone, כך גירוי של קולטני 5HT2B סומטודנדריטיים מגביר את קצב הירי של הנוירון הסרוטונרגי ושחרור הסרוטונין, ושילוב של חסימת SERT עם אגוניזם חלקי לקולטני 5HT1A מגביר את שחרור הסרוטונין ומפחית פגיעה בתפקוד המיני.'
+[i] accepted with warning: e17: hook over 32 words (34): 'כמו ששומר SARI חוסם את שולחן הטארוט של 5HT2A ואת צנצנת העוגיות של 5HT2C ובכך מונע תופעות לוואי, כך חסימת קולטני 5HT2A ו-5HT2C מונעת תופעות לוואי של SSRI כגון חרדה, נדודי שינה ופגיעה מינית.'
+[i] accepted with warning: e20: hook over 32 words (33): "כמו ש-Mirtazapine חותך את כבל הבלם המסומן 'אלפא-2' ובכך מגביר את זרימת הסרוטונין והנוראפינפרין, כך תרופה זו מגבירה שחרור סרוטונין ונוראפינפרין באמצעות אנטגוניזם לקולטני אלפא-2 פרסנפטיים, 'חותכת את כבל הבלם' של הבקרה העצמית."
+[i] accepted with warning: e22: hook over 32 words (46): "כמו שדוכן ספרי יד שנייה מציג שני מדורים מובהקים לספרי Stahl, האחד ל'נוירו' והשני ל'ילדים', עם שלט '24h' ודוחות מחקר כושלים, כך ספרי ה-Stahl מראים הבדלים פיזיולוגיים חשובים בין מנגנונים נוירוביולוגיים למינונים לילדים, ו-2 מחקרים של סרטרלין בילדים לא הראו יעילות מספקת לקבלת התוויה של ה-FDA."
+[i] accepted with warning: e23: hook over 32 words (41): 'כמו שאדם לחוץ בגרעיני הראפה גורם לצמחי דנדריטים לנבול ולשלט BDNF ליפול, ורק טיפול תרופתי יכול להחזיר להם חיים, כך רמת הסרוטונין והקולטנים שלו מעורבים בפתופיזיולוגיה של דיכאון, כאשר לחץ גורם לירידה ב-BDNF המביאה לאטרופיה של דנדריטים סרוטונרגיים, הניתנת לשיקום תרופתי.'
+[i] accepted with warning: e25: hook over 32 words (33): "כמו שדוכן נעול מפעיל טיימר של 15 דקות מרגע קבלת אות מיוחד להפעלת 'Immediate Early Genes', כך תוך 15 דקות מרגע הגעת אות עצבי מתרחשת הפעלת גנים מוקדמים מיידיים כמו cFos בהשפעת סרוטונין."
+[DIAG] figures_even probe returned NO: 'NO, the man in the orange shirt standing behind the purple card table is larger.'
+[i] try 1: 1 missing, 3 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the orange shirt standing behind the purple card table is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 0 missing, 4 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   N                  '12' + 'N'  quad=[(612, 848), (884, 848), (885, 1061), (652, 1056)]  plate height=13.87% of frame
+[ok]   MIN                '15min' + 'MIN'  quad=[(1742, 421), (2028, 421), (2028, 672), (1742, 673)]  plate height=16.41% of frame
+[ok]   HRS                '24h' + 'HRS'  quad=[(2286, 809), (2594, 913), (2595, 1311), (2286, 1130)]  plate height=32.68% of frame
+[scrub] neutralised 9983 leftover chroma px
+[i] composited 3/3 number plates -> sketchy_main.png
+[i] narration attempt 1/3: 1 issue(s); figure not spoken: 60h
+[i] narration attempt 2/3: 3 issue(s); figure not spoken: 15min
+[i] narration attempt 3/3: 5 issue(s); figure not spoken: 12
+    [OK] sketchy_main.png (5.3 MB), 2 tries, score 0, composited 3/3 numbers
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (8904d3a7): completed
+  [1m] quiz (cfd24472): completed
+  [1m] flashcards (a28a8505): completed
+  [OK] video.mp4 (36.0 MB)
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-005-serotonin-system...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-005-serotonin-system

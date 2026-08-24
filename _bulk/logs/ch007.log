@@ -1,0 +1,156 @@
+
+======================================================================
+Day 7: איזון GABA / גלוטמט
+Tag: study-007-gaba-glutamate-balance
+Aspects: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance']
+Symbols (14): ['AA_HOTEL', 'GABA_neurotransmitter', 'GABA_A_receptor', 'GABA_A_alpha1_subunit', 'GABA_A_alpha2_alpha3_subunits']...
+Density: high
+======================================================================
+
+Found existing per-day notebook: 4e8fb421-e587-4c4c-96e9-0f397416cf8e ('[Study-007] איזון GABA / גלוטמט')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1844 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+    [!] notebooklm generate: rate limited, NOT retrying
+  [!] start video failed (exit 1): 17:22:25 ERROR [notebooklm._rpc_executor] [req=0c6d5ba5] RPC CREATE_ARTIFACT failed after 0.732s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  video: None
+  flashcards: 04829cbd-1483-4019-b1f6-7d83bf6a5057
+  quiz: c7d18bcf-28ec-4470-a99e-8791fbb6b6db
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (29.3 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [!] facts.json cites 1 page(s) that cannot exist (StahlKids p. 775); they will reach the legend
+  [OK] facts.json (12946 bytes, keys: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[core_concept] = 6a367fd5
+  scope[anatomy_or_structure] = 742fcd15
+  scope[function] = 18932559
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in 'GABBAY & GLUCK REPAIRS'...
+  sketchy_main: 29 facts, directing...
+[i] element table attempt 1/3: 1 error(s):
+      - e31: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "סיר הדבק המסומן 'GABA-T' על הספסל מייצג את האנזים GABA-T שאחראי לפירוק GABA."
+[i] normalized e1: zone 'ספסל הגימור והתיקונים' mapped to 'Finishing Bench and Repairs'
+[i] normalized e2: zone 'דלפק הקבלה והמפתחות' mapped to 'Counter Area and Keys'
+[i] normalized e3: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e4: zone 'דלפק הקבלה והמפתחות' mapped to 'Counter Area and Keys'
+[i] normalized e5: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e6: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e7: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e8: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e9: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e10: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e11: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e12: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e13: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e14: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e15: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e16: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e17: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e18: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e19: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e20: zone 'ספסל הגימור והתיקונים' mapped to 'Finishing Bench and Repairs'
+[i] normalized e21: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e22: zone 'דלפק הקבלה והמפתחות' mapped to 'Counter Area and Keys'
+[i] normalized e23: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e24: zone 'ספסל הגימור והתיקונים' mapped to 'Finishing Bench and Repairs'
+[i] normalized e25: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e26: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e27: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e28: zone 'ספסל הגימור והתיקונים' mapped to 'Finishing Bench and Repairs'
+[i] normalized e29: zone 'דלפק הקבלה והמפתחות' mapped to 'Counter Area and Keys'
+[i] normalized e30: zone 'מתלה הנעליים והרחוב' mapped to 'Shoe Rack and Street View'
+[i] normalized e4: dropped an unmappable relation 'is produced from'
+[i] normalized e18: dropped an unmappable relation 'activates'
+[i] normalized e22: dropped an unmappable relation 'reduces release of'
+[i] normalized e29: dropped an unmappable relation 'removes'
+[i] normalized e2: hook de-asserted -> "מפתח גולמי ראשי וחשוב על הדלפק, — גלוטמט כמוליך העצבי המעורר הראשי, ה-'Master Switch' של המוח, שמפעיל את כל התהליכים."
+[i] normalized e4: cue trimmed to "key-cutting machine processing a 'Glutamate' blank into a 'GABA'"
+[i] normalized e6: cue trimmed to 'The Aa Hotel'
+[i] normalized e7: cue trimmed to 'Each floor of the Aa Hotel'
+[i] normalized e8: cue trimmed to 'Heavy iron door'
+[i] normalized e9: cue trimmed to 'Each of the 4 stylized figures at the NMDA'
+[i] normalized e11: cue trimmed to 'The 4 windows on each floor of the Aa'
+[i] normalized e13: cue trimmed to "NMDA VIP-club doorway needing 3 items: 'Glutamate' key"
+[i] normalized e14: cue trimmed to 'Floor 1'
+[i] normalized e15: cue trimmed to 'Floors 2'
+[i] normalized e16: cue trimmed to 'Wall clock'
+[i] normalized e17: cue trimmed to 'A list of 3 conditions for opening the NMDA'
+[i] normalized e18: cue trimmed to 'Two identical shoe repair tickets being handed'
+[i] normalized e19: cue trimmed to "Child's drawing"
+[i] normalized e20: cue trimmed to 'V-shaped shoe stretcher'
+[i] normalized e21: cue trimmed to "Small 'C'-shaped key"
+[i] normalized e22: cue trimmed to "Two 'G'-shaped hooks"
+[i] normalized e23: cue trimmed to "The single 'NR1' label on the stylized figure targeted"
+[i] normalized e25: cue trimmed to 'Child-like mannequin flailing dramatically near the NMDA door'
+[i] normalized e26: cue trimmed to 'Horseshoe magnet'
+[i] normalized e27: cue trimmed to 'Floor 5'
+[i] normalized e28: cue trimmed to 'V-shaped shoe'
+[i] normalized e29: cue trimmed to 'Glia repairman sweeping spilled Glutamate'
+[i] accepted with warning: e13: hook over 32 words (36): "דלת כניסת ה-VIP של מועדון ה-NMDA, עם מנעול המגנזיום המחובר במגנט פרסה, ממחישה שפתיחתה דורשת שלושה תנאים בו-זמניים: מפתח גלוטמט, כרטיס Glycine VIP ו'הלם' (דה-פולריזציה) לסילוק המגנט, בדיוק כמו שפתיחת תעלת NMDA דורשת גלוטמט, קו-אגוניסט ודה-פולריזציה."
+[i] accepted with warning: e25: hook over 32 words (34): "דמות בובה דמוית ילד המשתוללת באופן דרמטי ליד דלת ה-NMDA, עם שלט 'דחוף: NMDA', מזכירה לנו שבילד עם התייצבות פתאומית של פסיכוזה או קטטוניה המלווה בפרכוסים, האבחנה הראשונה שיש לשלול היא Anti-NMDA Receptor Encephalitis."
+[i] accepted with warning: e28: hook over 32 words (33): "מותחן הנעליים בצורת 'V' (Valproate), ועליו שלושה תגי בדיקה ('LFTs', 'CBC', 'AMMONIA') על גבי לוח שנה חצי-שנתי, מזכיר שטיפול ב-Valproate דורש ניטור חצי-שנתי חובה של תפקודי כבד, ספירת דם מלאה ורמות אמוניה בדם."
+[i] accepted with warning: e29: hook over 32 words (34): "פועל תיקונים 'גלייה', המטאטא אבקת גלוטמט שנשפכה בעזרת מטאטא 'EAAT' ואוסף אותה לפח 'Glutamine Synthetase' להפיכתה לגלוטמין לא-אקטיבי, מדגים שתאי גלייה חיוניים למניעת רעילות גלוטמטרגית על ידי ספיגה חוזרת של גלוטמט והמרתו לגלוטמין לא-אקטיבי."
+[i] dropped digit-bearing string 'NR1' — the compositor owns the numerals
+[i] dropped digit-bearing string 'α2δ Glutamate' — the compositor owns the numerals
+[i] dropped digit-bearing string 'Mg2+' — the compositor owns the numerals
+[DIAG] figures_even probe returned NO: 'NO, the white mannequin standing near the entrance on the right side of the image is clearly larger than the others.'
+[i] try 1: 4 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': False, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the white mannequin standing near the entrance on the right side of the image is clearly larger than the others.', 'frame_filled': 'NO'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the man in the red shirt at the bottom center of the image (labeled 15) is clearly larger.'
+[i] try 2: 7 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES.', 'figures_even': 'NO, the man in the red shirt at the bottom center of the image (labeled 15) is clearly larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 5 lower-priority string(s) and retrying
+[i] try 3: 2 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+    [FAIL] sketchy_main: [Errno 2] No such file or directory: 'C:\\Users\\User\\OneDrive\\Desktop\\CLAUDE\\notebooklm-py-main\\psychiatry-board-study\\.claude\\worktrees\\admiring-snyder-5e163b\\_generated\\day-007\\sketchy_main.png'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2526, in <module>
+    main()
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2506, in main
+    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2395, in generate_day
+    (day_dir / "plates_report.json").write_text(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\OneDrive\\Desktop\\CLAUDE\\notebooklm-py-main\\psychiatry-board-study\\.claude\\worktrees\\admiring-snyder-5e163b\\_generated\\day-007\\plates_report.json'
+ירוביולוגית על ידי כשל בכיוונון של קליפת המוח הקדם-מצחית עקב שחרור ירוד של דופמין ונוראפינפרין, המוביל לעלייה ב-'רעש' וירידה ב-'אות'."
+[i] accepted with warning: e23: hook over 32 words (47): "כמו שמייצב הנעליים 'ואלפרואט' המיועד לילדים מגיע עם רשימת בדיקות אזהרה מפורטת לניטור תפקודי כבד, ספירת דם ואמוניה, כך טיפול ב-Valproate בילדים מחייב ניטור תקופתי חובה של תפקודי כבד (LFTs), ספירת דם מלאה (CBC - platelet count) ורמות אמוניה בדם עקב סכנת אי-ספיקת כבד, טרומבוציטופניה ואנצפלופתיה היפראמונמית."
+[i] accepted with warning: e24: hook over 32 words (44): "בדיוק כמו שאדם מבולבל צופה בנער זורק באדישות מפתחות גלם חתוכים באופן חלש של 'גלאק' עם תוויות 'פגם גנטי', כך התיאוריה הנוירו-התפתחותית של סכיזופרניה מציעה כי פגמים גנטיים מחלישים את הסינפסות הגלוטמטרגיות (NMDA hypofunction), דבר המוביל לסילוק שגוי ועודף של סינפסות חיוניות בגיל ההתבגרות."
+[i] try 1: 2 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES, all similar.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 6 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 4 lower-priority string(s) and retrying
+[i] try 3: 2 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES, all similar.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: "NO, the large, muscular man in the black 'PCP' t-shirt is larger."
+[i] try 4: 1 missing, 10 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': "NO, the large, muscular man in the black 'PCP' t-shirt is larger.", 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   N                  '2/3' + 'N'  quad=[(969, 1132), (1272, 983), (1273, 1133), (967, 1312)]  plate height=21.42% of frame
+[scrub] neutralised 9208 leftover chroma px
+[i] composited 1/1 number plates -> sketchy_main.png
+    [OK] sketchy_main.png (3.4 MB), 4 tries, score 2, composited 1/1 numbers
+
+2 NotebookLM artifacts launched. Waiting...
+
+  [1m] quiz (3643cf29): completed
+  [1m] flashcards (d2de7e31): completed
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-007-gaba-glutamate-balance...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-007-gaba-glutamate-balance

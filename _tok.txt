@@ -1,0 +1,93 @@
+DSM_bipolar: {
+ "cue": "A SEE-SAW oscillating between a sun (mania) and a storm clou",
+ "prop": "A SEE-SAW oscillating between a sun (mania) and a storm cloud (depression). North-pole iceberg in the background (Lithium connection).",
+ "hook": "Bi-polar = two poles.",
+ "kind": "SYMBOL",
+ "scene": "",
+ "category": "Bipolar and Related Disorders",
+ "source": "symbols.json:symbols",
+ "since": 1
+}
+
+BUS_LINE_1A: {
+ "cue": "Bus stop",
+ "prop": "Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= anxiety patient awaiting anxiolysis).",
+ "hook": "course-wide fixed structure; stands inside the chapter's venue",
+ "kind": "SCENE_TOKEN",
+ "elements": [
+  "Different buses arriving = different 1A partial agonists (Buspirone bus, Vilazodone bus, etc.)",
+  "Late bus = autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
+ ],
+ "source": "symbols.json:scenes",
+ "since": 1
+}
+
+amygdala: {
+ "cue": "An ALMOND-shaped panic alarm (amygdala = Greek for 'almond')",
+ "prop": "An ALMOND-shaped panic alarm (amygdala = Greek for 'almond')",
+ "hook": "Amygdala = almond literally. Always-on threat scanner.",
+ "kind": "SYMBOL",
+ "scene": "(brain map)",
+ "category": "Amygdala \u2014 threat detector + emotional memory",
+ "source": "symbols.json:symbols",
+ "since": 1
+}
+
+locus_coeruleus: {
+ "cue": "A Doctor-Who-style BLUE police box in the rostral pons, phon",
+ "prop": "A Doctor-Who-style BLUE police box in the rostral pons, phone wires fanning out",
+ "hook": "Locus = spot, Coeruleus = blue (Latin).",
+ "kind": "SYMBOL",
+ "scene": "LOCUS_COERULEUS_BLUEPOST",
+ "category": "Brainstem NE source \u2014 the 'blue spot' (locus coeruleus)",
+ "source": "symbols.json:symbols",
+ "since": 1
+}
+
+LOCUS_COERULEUS_BLUEPOST: {
+ "cue": "Locus Coeruleus",
+ "prop": "A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brainstem. Every emergency call goes through it.",
+ "hook": "course-wide fixed structure; stands inside the chapter's venue",
+ "kind": "SCENE_TOKEN",
+ "elements": [
+  "Blue box dispatcher = LC neurons firing in arousal",
+  "Phone lines fanning out = NE projections everywhere",
+  "Panic-button red light = hyperactive LC in panic/PTSD/withdrawal",
+  "Prazosin curtain = \u03b11 blockade calming the dispatch noise (PTSD nightmares)"
+ ],
+ "source": "symbols.json:scenes",
+ "since": 1
+}
+
+SJS_TEN: {
+ "cue": "The Lamb (Lamotrigine) covered in PEELING RED RASH",
+ "prop": "The Lamb (Lamotrigine) covered in PEELING RED RASH \u2014 skin falling off in sheets",
+ "hook": "Lamb + trigger + rash.",
+ "kind": "SYMBOL",
+ "scene": "(Lamb on trigger)",
+ "category": "Stevens-Johnson Syndrome / TEN \u2014 severe skin reaction",
+ "source": "symbols.json:symbols",
+ "since": 1
+}
+
+SIADH_hyponatremia: {
+ "cue": "The bread-maze (Carbamazepine) FLOODED with water",
+ "prop": "The bread-maze (Carbamazepine) FLOODED with water \u2014 patient drowning in low sodium",
+ "hook": "Carb-A-Maze drowning in water = SIADH.",
+ "kind": "SYMBOL",
+ "scene": "(Carbamazepine maze fills with water)",
+ "category": "SIADH \u2014 drug-induced hyponatremia",
+ "source": "symbols.json:symbols",
+ "since": 1
+}
+
+hepatotoxicity: {
+ "cue": "A liver DANGLING ON THE EDGE",
+ "prop": "A liver DANGLING ON THE EDGE \u2014 labeled with offending drugs",
+ "hook": "Liver in distress.",
+ "kind": "SYMBOL",
+ "scene": "(failing liver)",
+ "category": "Drug-induced hepatotoxicity",
+ "source": "symbols.json:symbols",
+ "since": 1
+}

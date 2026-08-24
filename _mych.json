@@ -1,0 +1,209 @@
+[
+ {
+  "aspects": [
+   "core_concept",
+   "anatomy_or_structure",
+   "function",
+   "clinical_relevance"
+  ],
+  "symbols_needed": [
+   "DOPA_MINE",
+   "RAPHE_TAPESTRY",
+   "LOCUS_COERULEUS_BLUEPOST",
+   "AA_HOTEL",
+   "ASPARAGUS_VIP_DOOR",
+   "TUBEROMAMMILLARY_DAIRY",
+   "MEYNERT_MYNAH",
+   "Acetylcholine"
+  ],
+  "estimated_density": "high",
+  "index": 3,
+  "phase": 1,
+  "type": "foundation",
+  "title_en": "Neurotransmitters overview",
+  "title_he": "סקירה: נוירוטרנסמיטרים",
+  "prompt_focus": "סקירת כל מערכות הנוירוטרנסמיטר: דופמין (DOPA-MINE), סרוטונין (Raphe), נוראפינפרין (Blue Post), GABA (Aa Hotel), גלוטמט (NMDA door), היסטמין (TMN), אצטיל-כולין (Meynert + WONDERLAND + CIGARETTE THEATER)."
+ },
+ {
+  "aspects": [
+   "core_concept",
+   "anatomy_or_structure",
+   "function",
+   "clinical_relevance"
+  ],
+  "symbols_needed": [
+   "RAPHE_TAPESTRY",
+   "dorsal_raphe",
+   "raphe_nuclei",
+   "SERT",
+   "5-HT1A_receptor",
+   "5-HT2A_receptor",
+   "5-HT2C_receptor",
+   "5-HT3_receptor",
+   "5-HT6_receptor",
+   "5-HT7_receptor",
+   "BUS_LINE_1A",
+   "TAROT_2A",
+   "CONVENIENCE_STORE_7"
+  ],
+  "estimated_density": "high",
+  "index": 5,
+  "phase": 1,
+  "type": "foundation",
+  "title_en": "Serotonin system",
+  "title_he": "מערכת הסרוטונין",
+  "prompt_focus": "מערכת 5-HT: סדנת raphe → מתפרסם לכל מקום. SERT = הדוור. קולטנים: 1A (חרדה/אגד 1A), 2A (פסיכדלים/טארוט), 2C (תיאבון), 3 (בחילה/ionotropic), 6 (קוגניציה/פרופסור), 7 (24/7 מקצב יממה)."
+ },
+ {
+  "aspects": [
+   "core_concept",
+   "anatomy_or_structure",
+   "function",
+   "clinical_relevance"
+  ],
+  "symbols_needed": [
+   "LOCUS_COERULEUS_BLUEPOST",
+   "locus_coeruleus",
+   "NET",
+   "alpha1_receptor",
+   "alpha2_receptor",
+   "beta1_receptor",
+   "beta2_receptor",
+   "ALPHA_WOLF_PACK",
+   "BEETHOVEN_ORCHESTRA"
+  ],
+  "estimated_density": "medium",
+  "index": 6,
+  "phase": 1,
+  "type": "foundation",
+  "title_en": "Norepinephrine system",
+  "title_he": "מערכת הנוראפינפרין",
+  "prompt_focus": "LC = blue post → מקור כל ה-NE. קולטנים: α1 (זאב אלפא אמיתי), α2 (אוטו-רצפטור/הזאב המתחזה - מטרת clonidine/guanfacine), β1 (לב), β2 (ריאות). NET (רשת דייגים)."
+ },
+ {
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics"
+  ],
+  "symbols_needed": [
+   "DOPA_MINE",
+   "D2_receptor",
+   "DAT",
+   "NET",
+   "prefrontal_cortex",
+   "DSM_neurodevelopmental",
+   "adhd"
+  ],
+  "estimated_density": "high",
+  "index": 17,
+  "phase": 2,
+  "phase_name": "Neurodevelopmental",
+  "type": "diagnosis",
+  "title_en": "ADHD — core",
+  "title_he": "הפרעת קשב וריכוז (ADHD) — ליבה",
+  "diagnosis": "Attention-Deficit/Hyperactivity Disorder",
+  "prompt_focus": "ADHD criteria DSM-5-TR (לפחות 6 inattention או 6 hyperactivity/impulsivity, <12, ≥2 settings). 3 תת-סוגים. גיל מתבגר/מבוגר: 5 חובה. בריאות נפש, אקדמיה, חברה. ממצאי דמיה: PFC, סטריאטום.",
+  "anchor_world": "A chaotic DRIVING TEST / driving school on a busy road — theme for ADHD: constant motion, impulsive moves, hard to stay on course",
+  "anchor_zones": {
+   "dsm_criteria": "the road-test crosswalk: a reckless learner-driver and a distracted pedestrian, watched by an examiner with a clipboard; the road forks with a clear signpost to 'SCHOOL' and to 'HOME'",
+   "epidemiology": "the DMV licence office: a waiting room with a big statistics noticeboard, a wall of licence photos, and a queue of applicants",
+   "etiology": "the car-assembly garage behind the track, where the ADHD car is built — engine = brain chemistry, wiring loom = genetics, fuel = environment"
+  }
+ },
+ {
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "assessment_tools",
+   "treatment_first_line",
+   "treatment_second_line",
+   "differential"
+  ],
+  "symbols_needed": [
+   "communication_disorders",
+   "DSM_neurodevelopmental"
+  ],
+  "estimated_density": "medium",
+  "index": 23,
+  "phase": 2,
+  "phase_name": "Neurodevelopmental",
+  "type": "diagnosis",
+  "title_en": "Communication Disorders (Language, Speech, Stuttering, Social-Pragmatic)",
+  "title_he": "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
+  "diagnosis": "Communication Disorders",
+  "prompt_focus": "ארבעה תת-סוגים: Language Disorder (אוצר מילים, מבנה משפט, שיח), Speech Sound Disorder (הפקת צלילים), Childhood-Onset Fluency / Stuttering (חזרות, הארכות, חסימות), Social (Pragmatic) Communication Disorder (שימוש חברתי בתקשורת, ללא restricted/repetitive — מבדיל מ-ASD). הערכה SLP, התערבות מוקדמת."
+ },
+ {
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics",
+   "genetic_basis"
+  ],
+  "symbols_needed": [
+   "DSM_neurodevelopmental"
+  ],
+  "estimated_density": "medium",
+  "index": 27,
+  "phase": 2,
+  "type": "syndrome",
+  "title_en": "Other neurodevelopmental: Rett, Prader-Willi, 22q11",
+  "title_he": "הפרעות נוירו-התפתחותיות נוספות",
+  "prompt_focus": "Rett (MECP2, רגרסיה כלל-כלל בנקבות, hand-wringing). Prader-Willi (paternal del 15q, היפרפגיה, OCD). 22q11 (DiGeorge/velocardiofacial, פסיכוזה גבוהה, immunodef). Williams (7q deletion, hypersociable, cardiac)."
+ },
+ {
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics"
+  ],
+  "symbols_needed": [
+   "DSM_depressive"
+  ],
+  "estimated_density": "medium",
+  "index": 32,
+  "phase": 3,
+  "type": "diagnosis",
+  "title_en": "Persistent Depressive + DMDD + PMDD",
+  "title_he": "PDD + DMDD + PMDD",
+  "prompt_focus": "PDD (≥2y, ≥1y בילדים — irritability). DMDD: ילדים 6-18, גילי הופעה 6-10, התקפי זעם + irritability רקע. הוצב כדי להבדיל מ-bipolar pediatric. PMDD: שבוע לפני וסת."
+ },
+ {
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics",
+   "mania_vs_hypomania",
+   "mixed_features",
+   "rapid_cycling"
+  ],
+  "symbols_needed": [
+   "DSM_bipolar",
+   "Lithium",
+   "Valproate",
+   "Carbamazepine"
+  ],
+  "estimated_density": "high",
+  "index": 33,
+  "phase": 3,
+  "type": "diagnosis",
+  "title_en": "Bipolar I Disorder",
+  "title_he": "הפרעה דו-קוטבית I",
+  "diagnosis": "Bipolar I Disorder",
+  "prompt_focus": "Bipolar I = ≥1 mania episode. Mania: DIGFAST (Distractibility, Impulsivity, Grandiosity, Flight of ideas, Activity↑, Sleep↓, Talkativeness) — לפחות שבוע (או אשפוז). MDE optional. Mixed features specifier. Rapid cycling = ≥4 episodes/year."
+ }
+]

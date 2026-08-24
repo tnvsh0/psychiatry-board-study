@@ -1,0 +1,12 @@
+cleared one wedged copy
+cleared one wedged copy
+cleared one wedged copy
+trying the upload route (server-side download, then upload)...
+rc= 1
+STDOUT: {
+  "error": true,
+  "code": "VALIDATION_ERROR",
+  "message": "Validation error: Drive did not return downloadable bytes for 1eClPFQNWkyjaPPPCAfVUA-3nxzTX3ORF. If it's a native Google Doc/Slides/Sheet, add it with source_add(source_type='drive', mime_type='google-doc'|'google-slides'|'google-sheets') (or the `add-drive` CLI); if it's a permissions/not-found issue, confirm the file is accessible to this account."
+}
+
+STDERR: 

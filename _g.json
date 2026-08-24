@@ -1,0 +1,33 @@
+{
+ "GABA_A_receptor": {
+  "cue": "The hotel itself",
+  "prop": "The hotel itself — 5-floor building with α-floor-specific functions",
+  "hook": "Hotel name 'Aa' = α-α. 5 floors = pentameric.",
+  "kind": "SYMBOL",
+  "scene": "AA_HOTEL",
+  "category": "GABA-A — ionotropic Cl⁻ channel. Pentameric: usually 2α + 2β + 1γ.",
+  "source": "symbols.json:symbols",
+  "since": 1
+ },
+ "GABA_neurotransmitter": {
+  "cue": "Aa Hotel manager holding the master key",
+  "prop": "Aa Hotel manager holding the master key",
+  "hook": "GABA = manager who opens the Cl⁻ doors.",
+  "kind": "SYMBOL",
+  "scene": "AA_HOTEL",
+  "category": "Main inhibitory neurotransmitter",
+  "source": "symbols.json:symbols",
+  "since": 1
+ },
+ "CONVENIENCE_STORE_7": {
+  "cue": "7-Eleven open 24/7",
+  "prop": "Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Night-clerk turning off neon = Lurasidone blocking 5-HT7"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ }
+}

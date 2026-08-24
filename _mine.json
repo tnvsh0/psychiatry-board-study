@@ -1,0 +1,137 @@
+[
+ {
+  "index": 105,
+  "title_en": "Sexual Dysfunctions + Paraphilic Disorders",
+  "type": "diagnosis",
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics"
+  ],
+  "symbols_needed": [
+   "DSM_sexual_dysfunction",
+   "DSM_paraphilic"
+  ],
+  "estimated_density": "medium",
+  "prompt_focus": "Sexual Dysfunctions: 7 + substance-induced + unspecified. Paraphilic: 8 named. distress/impairment חובה. Forensic + ethical implications. Tx: CBT + anti-androgens (SSRI off-label)."
+ },
+ {
+  "index": 106,
+  "title_en": "Disruptive/Impulse: ODD, IED, Kleptomania, Pyromania",
+  "type": "diagnosis",
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics"
+  ],
+  "symbols_needed": [
+   "DSM_disruptive_impulse"
+  ],
+  "estimated_density": "low",
+  "prompt_focus": "ODD: 4+/8 ≥6 חודשים. IED: explosive aggression episodes, ≥3x in 12 months OR 2x/week × 3 months. Kleptomania: stealing for own sake. Pyromania: deliberate fire setting + pleasure."
+ },
+ {
+  "index": 113,
+  "title_en": "Brexanolone + Zuranolone (PPD-specific)",
+  "type": "medication_deep_dive",
+  "aspects": [
+   "drug_class_overview",
+   "drug_mechanism",
+   "indications",
+   "side_effects_class",
+   "monitoring",
+   "practical_use"
+  ],
+  "symbols_needed": [
+   "Brexanolone",
+   "Zuranolone",
+   "GABA_A_receptor"
+  ],
+  "estimated_density": "low",
+  "prompt_focus": "Neuroactive steroids: GABA-A positive allosteric modulators. Brexanolone (Zulresso): IV infusion 60h, in-clinic only. Zuranolone (Zurzuvae 2023): oral, 14-day course, much easier. Both for PPD specifically."
+ },
+ {
+  "index": 121,
+  "title_en": "Cerebral palsy",
+  "type": "neurology",
+  "aspects": [
+   "anatomy",
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "workup",
+   "management"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "low",
+  "prompt_focus": "CP: non-progressive motor disorder from prenatal/perinatal brain injury. Spastic (75%), dyskinetic, ataxic. Comorbidities: ID 30-50%, epilepsy, ADHD, sleep, behavior. Botox, baclofen, anti-spastics."
+ },
+ {
+  "index": 125,
+  "title_en": "Metabolic disorders with psychiatric presentation",
+  "type": "neurology",
+  "aspects": [
+   "anatomy",
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "workup",
+   "management"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "high",
+  "prompt_focus": "Hypothyroidism (apathetic, depressed, slowed). Hyperthyroidism (anxious, manic, agitation). Cushing (depression + psychosis, weight). Addison (depression, fatigue). B12 deficiency (cognitive, depression). Porphyrias (acute confusion + psychiatric)."
+ },
+ {
+  "index": 128,
+  "title_en": "Sleep medicine intensive",
+  "type": "foundation",
+  "aspects": [
+   "core_concept",
+   "anatomy_or_structure",
+   "function",
+   "clinical_relevance"
+  ],
+  "symbols_needed": [
+   "CONVENIENCE_STORE_7"
+  ],
+  "estimated_density": "medium",
+  "prompt_focus": "Stages REM/NREM. Sleep architecture by age. Sleep disorders comprehensive: obstructive sleep apnea (pediatric — adenotonsillar hypertrophy), restless legs, circadian rhythm disorders. Pediatric-specific."
+ },
+ {
+  "index": 135,
+  "title_en": "Motivational interviewing",
+  "type": "psychotherapy",
+  "phase_name": "Psychotherapy + Integration",
+  "aspects": [
+   "history_origin",
+   "core_principles",
+   "practice_method",
+   "evidence",
+   "indications"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "medium",
+  "prompt_focus": "Dulcan ch.44. Miller & Rollnick. רוח ה-MI: שותפות, קבלה, חמלה ועוררות (evocation). ארבעת התהליכים: engaging, focusing, evoking, planning. מיומנויות OARS (שאלות פתוחות, אישור, הקשבה משקפת, סיכום). change talk מול sustain talk; גלגול עם התנגדות במקום עימות. שלבי השינוי של Prochaska ו-DiClemente. יישום בהתמכרויות במתבגרים, בהיענות לטיפול ובהפרעות אכילה."
+ },
+ {
+  "index": 136,
+  "title_en": "Levels of care: inpatient, partial hospitalization, residential, systems of care",
+  "type": "psychotherapy",
+  "phase_name": "Psychotherapy + Integration",
+  "aspects": [
+   "indications",
+   "core_principles",
+   "practice_method",
+   "practical_use",
+   "evidence"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "medium",
+  "prompt_focus": "Dulcan ch.45-46. רצף המסגרות: אמבולטורי ← intensive outpatient ← אשפוז יום ← residential ← אשפוז מלא, והקריטריונים למעבר בין רמות. טיפול מילייה: מבנה יומי, קהילה טיפולית, token economy, ניהול משבר במחלקה, שימוש בבידוד והגבלה. Wraparound ו-Systems of Care: עקרונות, ניהול מקרה, שירותים בבית ובקהילה. תכנון שחרור ומניעת אשפוז חוזר. מבנה המערך בישראל."
+ }
+]

@@ -1,0 +1,145 @@
+{
+ "105": {
+  "aspects": [
+   "dsm_criteria",
+   "epidemiology",
+   "etiology",
+   "treatment_overview",
+   "assessment_tools",
+   "medical_mimics"
+  ],
+  "symbols_needed": [
+   "DSM_sexual_dysfunction",
+   "DSM_paraphilic"
+  ],
+  "estimated_density": "medium",
+  "index": 105,
+  "phase": 8,
+  "type": "diagnosis",
+  "title_en": "Sexual Dysfunctions + Paraphilic Disorders",
+  "title_he": "תפקודים מיניים + הפרעות פרפיליות",
+  "prompt_focus": "Sexual Dysfunctions: 7 + substance-induced + unspecified. Paraphilic: 8 named. distress/impairment חובה. Forensic + ethical implications. Tx: CBT + anti-androgens (SSRI off-label)."
+ },
+ "118": {
+  "aspects": [
+   "anatomy",
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "workup",
+   "management"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "medium",
+  "index": 118,
+  "phase": 9,
+  "type": "neurology",
+  "title_en": "CNS infections with psychiatric sequelae",
+  "title_he": "זיהומים ב-CNS עם השלכות פסיכיאטריות",
+  "prompt_focus": "HSV encephalitis (טמפורלי → mood, psychosis, KLBR syndrome). Neurosyphilis (general paresis, tabes). HIV encephalopathy. PANS/PANDAS (post-strep OCD/tic)."
+ },
+ "121": {
+  "aspects": [
+   "anatomy",
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "workup",
+   "management"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "low",
+  "index": 121,
+  "phase": 9,
+  "type": "neurology",
+  "title_en": "Cerebral palsy",
+  "title_he": "שיתוק מוחין (Cerebral Palsy)",
+  "prompt_focus": "CP: non-progressive motor disorder from prenatal/perinatal brain injury. Spastic (75%), dyskinetic, ataxic. Comorbidities: ID 30-50%, epilepsy, ADHD, sleep, behavior. Botox, baclofen, anti-spastics."
+ },
+ "122": {
+  "aspects": [
+   "anatomy",
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "workup",
+   "management"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "high",
+  "index": 122,
+  "phase": 9,
+  "type": "syndrome",
+  "title_en": "Neurogenetic syndromes: Williams, Prader-Willi, Angelman, 22q11",
+  "title_he": "תסמונות נוירוגנטיות",
+  "prompt_focus": "Williams (7q11 deletion): hypersociable, elfin facies, cardiac. Prader-Willi (paternal 15q11): hypotonia → hyperphagia + OCD-like, growth hormone. Angelman (maternal 15q11): laughter, ataxia, epilepsy. 22q11 DiGeorge: cardiac + immune + 25% psychosis risk."
+ },
+ "125": {
+  "aspects": [
+   "anatomy",
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "workup",
+   "management"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "high",
+  "index": 125,
+  "phase": 9,
+  "type": "neurology",
+  "title_en": "Metabolic disorders with psychiatric presentation",
+  "title_he": "מחלות מטבוליות עם ביטוי פסיכיאטרי",
+  "prompt_focus": "Hypothyroidism (apathetic, depressed, slowed). Hyperthyroidism (anxious, manic, agitation). Cushing (depression + psychosis, weight). Addison (depression, fatigue). B12 deficiency (cognitive, depression). Porphyrias (acute confusion + psychiatric)."
+ },
+ "128": {
+  "aspects": [
+   "core_concept",
+   "anatomy_or_structure",
+   "function",
+   "clinical_relevance"
+  ],
+  "symbols_needed": [
+   "CONVENIENCE_STORE_7"
+  ],
+  "estimated_density": "medium",
+  "index": 128,
+  "phase": 9,
+  "type": "foundation",
+  "title_en": "Sleep medicine intensive",
+  "title_he": "רפואת שינה — אינטנסיבית",
+  "prompt_focus": "Stages REM/NREM. Sleep architecture by age. Sleep disorders comprehensive: obstructive sleep apnea (pediatric — adenotonsillar hypertrophy), restless legs, circadian rhythm disorders. Pediatric-specific."
+ },
+ "130": {
+  "aspects": [
+   "clinical_presentation",
+   "psychiatric_relevance",
+   "differential",
+   "management",
+   "treatment_overview"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "high",
+  "phase": 9,
+  "phase_name": "Neurology + Cross-cutting",
+  "type": "foundation",
+  "title_en": "Consultation-liaison: pediatrics, oncology, chronic illness",
+  "title_he": "ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות",
+  "prompt_focus": "Dulcan ch.48-49. מודל עבודת הייעוץ במחלקת ילדים ומול רופא ילדים ראשוני. דליריום בילד מאושפז — זיהוי, אבחנה מבדלת וטיפול. היענות לטיפול במחלה כרונית (סוכרת נעורים, CF, אסתמה, מחלות מעי דלקתיות). אונקולוגיה: תגובה לאבחנה, כאב, השפעות קוגניטיביות מאוחרות של כימותרפיה והקרנות, שורדים. מחלה סופנית: שיחה על מוות עם ילד לפי גיל, ליווי המשפחה, אבל צפוי. סומטיזציה במרפאת הילדים.",
+  "index": 130
+ },
+ "136": {
+  "aspects": [
+   "indications",
+   "core_principles",
+   "practice_method",
+   "practical_use",
+   "evidence"
+  ],
+  "symbols_needed": [],
+  "estimated_density": "medium",
+  "phase": 10,
+  "phase_name": "Psychotherapy + Integration",
+  "type": "psychotherapy",
+  "title_en": "Levels of care: inpatient, partial hospitalization, residential, systems of care",
+  "title_he": "מסגרות טיפול: אשפוז, אשפוז יום, מגורים ו-Systems of Care",
+  "prompt_focus": "Dulcan ch.45-46. רצף המסגרות: אמבולטורי ← intensive outpatient ← אשפוז יום ← residential ← אשפוז מלא, והקריטריונים למעבר בין רמות. טיפול מילייה: מבנה יומי, קהילה טיפולית, token economy, ניהול משבר במחלקה, שימוש בבידוד והגבלה. Wraparound ו-Systems of Care: עקרונות, ניהול מקרה, שירותים בבית ובקהילה. תכנון שחרור ומניעת אשפוז חוזר. מבנה המערך בישראל.",
+  "index": 136
+ }
+}

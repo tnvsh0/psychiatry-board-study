@@ -1,0 +1,44 @@
+
+======================================================================
+Day 12: תורת ההתקשרות ומנטליזציה
+Tag: study-012-attachment-theory-and-mentalization
+Aspects: ['attachment_types', 'sec_insec_dis', 'mentalization_concept', 'clinical_implications']
+Symbols (3): ['fonagy_mentalization', 'attachment_4_styles', 'brazelton_still_face']...
+Density: medium
+======================================================================
+
+Found existing per-day notebook: 8b7507a8-23c2-4d2b-b305-985288161355 ('[Study-012] תורת ההתקשרות ומנטליזציה')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 45s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 72s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 115s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 184s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 240s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 240s
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2537, in <module>
+    main()
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2517, in main
+    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2126, in generate_day
+    raise RuntimeError(
+RuntimeError: 8b7507a8-23c2-4d2b-b305-985288161355 reports every source ready but still cannot answer from them; refusing to extract

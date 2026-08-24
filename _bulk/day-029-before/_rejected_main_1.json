@@ -1,0 +1,802 @@
+{
+ "errors": [
+  "e11: relation 'blocks transport by' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym",
+  "e23: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR",
+  "e24: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR",
+  "e29: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR",
+  "e34: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR",
+  "4/36 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token"
+ ],
+ "soft": [
+  "e31: hook over 32 words (35): \"כמו שמהדק Luvox מפעיל קבצי 'Sigma-1' אך חוסם גם תיקיות 'CYP', כך Fluvoxamine הוא אגוניסט חזק ל-Sigma-1 ומעכב חזק של CYP1A2 ו-CYP2C19, מה שמקנה לו השפעה נוגדת חרדה חזקה ב-OCD אך מעלה סיכון לאינטראקציות תרופתיות.\""
+ ],
+ "normalized": [
+  "e30: dropped text 'Dopamine Boost Sigma-1' (over the cap of 18)",
+  "e31: dropped text 'Luvox Sigma-1 CYP1A2 CYP2C19' (over the cap of 18)",
+  "e32: dropped text 'Citalopram R-interference QTc >40mg' (over the cap of 18)",
+  "e33: dropped text 'Escitalopram S-only No Interference' (over the cap of 18)",
+  "e34: dropped text 'FINISH Symptoms' (over the cap of 18)",
+  "e35: dropped text 'CONFUSED WITH MANIA?' (over the cap of 18)",
+  "e36: dropped text 'CYP2D6 Clomipramine Toxic' (over the cap of 18)",
+  "e2: cue trimmed to 'Queue ticket dispenser'",
+  "e3: cue trimmed to 'Wall calendar'",
+  "e5: cue trimmed to 'Laminated world map'",
+  "e6: cue trimmed to 'Pigeonhole wall'",
+  "e7: cue trimmed to 'Vending machine in the corridor'",
+  "e8: cue trimmed to 'Filing cabinet'",
+  "e9: cue trimmed to 'Water cooler leaking chronically onto important skill-building documents'",
+  "e10: cue trimmed to 'Desk phone'",
+  "e11: cue trimmed to \"A Fluoxetine 'Trip Brochure' blocking the mail slot\"",
+  "e12: cue trimmed to 'Desk tidies overflowing'",
+  "e13: cue trimmed to \"Promotional 'Prozac' travel brochure\"",
+  "e14: cue trimmed to 'Mouse pad'",
+  "e15: cue trimmed to 'Jar of pens meticulously arranged by height'",
+  "e16: cue trimmed to 'Stapler'",
+  "e17: cue trimmed to \"Framed certificates on the wall for 'CBT' and 'IPT'\"",
+  "e18: cue trimmed to 'Consultant desk'",
+  "e19: cue trimmed to 'Swivel chair'",
+  "e20: cue trimmed to 'A person looking nauseous by the water cooler'",
+  "e21: cue trimmed to 'Computer monitor'",
+  "e22: cue trimmed to 'Fax machine frantically printing'",
+  "e23: cue trimmed to 'A BLACK BOX'",
+  "e24: cue trimmed to \"A 'CLOSED' sign on the bedroom door + sad\"",
+  "e25: cue trimmed to 'Stapler dripping'",
+  "e26: cue trimmed to \"Consultant's monitor\"",
+  "e27: cue trimmed to \"The SERT postal carrier delayed at a '5-HT1A Brake'\"",
+  "e28: cue trimmed to \"Fluoxetine 'Long Trip' brochure\"",
+  "e29: cue trimmed to 'Patient suddenly OFF the SERT-postal-route'",
+  "e30: cue trimmed to 'Zoloft pen jar'",
+  "e31: cue trimmed to \"Luvox stapler strongly activating 'Sigma-1' files but also blocking\"",
+  "e32: cue trimmed to \"Photocopier making a 'faulty' Citalopram copy\"",
+  "e33: cue trimmed to \"Photocopier making a 'pure S-enantiomer' Escitalopram copy\"",
+  "e34: cue trimmed to 'Patient suddenly'",
+  "e35: cue trimmed to 'Fax machine'",
+  "e36: cue trimmed to \"Hole punch aggressively punching through a 'CYP2D6 inhibition' sign\""
+ ],
+ "table": {
+  "venue": {
+   "sign_text": "expreSS tRIps",
+   "place": "An open-plan high-street travel agency at 10am: a run of consultant desks with monitors and desk phones, a wall of pigeonholes papered in yellow smiley post-its, brochure racks by the door, a big laminated world map, a photocopier and a water cooler against the back wall.",
+   "activity": "Everyone is working the office shift — taking bookings at the desks, queueing at the counter, filing and photocopying."
+  },
+  "venue_he": {
+   "place": "סוכנות נסיעות פתוחה ברחוב ראשי בשעה 10 בבוקר: שורת דלפקי יועצים עם מסכים וטלפונים שולחניים, קיר תאים מכוסה בפתקיות פוסט-איט צהובות עם סמיילי, מדפי עלונים ליד הדלת, מפת עולם גדולה למינציה, מכונת צילום ומתקן מים צמודים לקיר האחורי.",
+   "activity": "כולם עובדים במשמרת משרד — מקבלים הזמנות בדלפקים, עומדים בתור בדלפק, מתייקים ומצלמים."
+  },
+  "anchor_structure": "The run of consultant desks crossing the frame lower-left to centre-right, backed by the full-height pigeonhole wall covered in smiley post-its.",
+  "zones": [
+   "Consultant Desks",
+   "Pigeonhole Wall & Awards",
+   "Counter and Entrance",
+   "Service Area"
+  ],
+  "zones_he": [
+   "דלפקי הייעוץ",
+   "קיר התאים והפרסים",
+   "הדלפק והכניסה",
+   "אזור השירותים"
+  ],
+  "elements": [
+   {
+    "id": "e1",
+    "fact_ids": [
+     "epidemiology.prevalence"
+    ],
+    "cue": "Luggage scales showing a '2%' weight allowance",
+    "cue_he": "מאזני מזוודות מציגים מגבלת משקל של '2%'",
+    "prop": "luggage scales by the counter",
+    "zone": "Counter and Entrance",
+    "text": "",
+    "derivation": "PRINTED_NUMBER",
+    "triple": [
+     "equipment",
+     "metal",
+     "silver"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמאזני מזוודות מודדים את משקל הכבודה באחוזים ממשקל המותר, כך שכיחות הדיכאון בקרב ילדים מוצגת באחוזים ('2%')."
+   },
+   {
+    "id": "e2",
+    "fact_ids": [
+     "epidemiology.sex_ratio"
+    ],
+    "cue": "Queue ticket dispenser",
+    "cue_he": "מתקן כרטיסי תור מציג יחס 1:1 לטיולי ילדים, ומשתנה ל-1:2 (זכר:נקבה) לטיולי נוער",
+    "prop": "queue-ticket dispenser and NOW SERVING board",
+    "zone": "Counter and Entrance",
+    "text": "",
+    "derivation": "COUNTED_SET",
+    "triple": [
+     "dispenser",
+     "plastic",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמתקן כרטיסי תור יכול להציג יחסים שונים בין תורים בגילאים שונים, כך יחס השכיחות של דיכאון משתנה מ-1:1 בילדות ל-1:2 (זכר:נקבה) לאחר גיל ההתבגרות."
+   },
+   {
+    "id": "e3",
+    "fact_ids": [
+     "epidemiology.onset_age_typical"
+    ],
+    "cue": "Wall calendar",
+    "cue_he": "לוח שנה על הקיר עם 'בגרות מינית' מסומנת, מראה קפיצה פתאומית של פי 2-4 בסיכון לנסיעה אחרי תאריך זה",
+    "prop": "wall calendar showing consecutive month sheets",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "GRAPH_AS_OBJECT",
+    "triple": [
+     "calendar",
+     "paper",
+     "multicolor"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שלוח שנה מראה נקודת זמן קריטית כמו תחילת הבגרות המינית, כך הסיכון לדיכאון עולה פי 2 עד 4 לאחר תחילתה."
+   },
+   {
+    "id": "e4",
+    "fact_ids": [
+     "epidemiology.heritability"
+    ],
+    "cue": "Photocopier making 40% identical copies, labelled 'GENES'",
+    "cue_he": "מכונת צילום יוצרת 40% עותקים זהים, מתויגת 'GENES'",
+    "prop": "photocopier with a DUAL COPIER/SCANNER label taped to it",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "PRINTED_NUMBER",
+    "triple": [
+     "equipment",
+     "plastic",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמכונת צילום משכפלת מסמכים ביעילות של כ-40%, כך הדיכאון הוא בעל מרכיב תורשתי חזק של 40%-60%."
+   },
+   {
+    "id": "e5",
+    "fact_ids": [
+     "epidemiology.comorbidities[0]"
+    ],
+    "cue": "Laminated world map",
+    "cue_he": "מפת עולם למינציה עם מסלולי נסיעה סבוכים ומלאי חרדה שלא מובילים לשום מקום ספציפי",
+    "prop": "laminated world map with a compass rose",
+    "zone": "Counter and Entrance",
+    "text": "",
+    "derivation": "FREE_METAPHOR",
+    "triple": [
+     "map",
+     "paper",
+     "blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמפת עולם עם מסלולים סבוכים יכולה לגרום לחרדה בגלל חוסר ודאות בתכנון הנסיעה, כך הפרעות חרדה הן תחלואה נלווית שכיחה לדיכאון."
+   },
+   {
+    "id": "e6",
+    "fact_ids": [
+     "epidemiology.comorbidities[1]"
+    ],
+    "cue": "Pigeonhole wall",
+    "cue_he": "קיר תאים עם פתקיות פוסט-איט צהובות ומבולגנות מתעופפות החוצה",
+    "prop": "wall of pigeonholes papered in yellow smiley post-its",
+    "zone": "Pigeonhole Wall & Awards",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "furniture",
+     "wood",
+     "brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שקיר תאים עם פתקיות מפוזרות ומבולגנות משקף חוסר סדר וקשב, כך הפרעת קשב וריכוז היא תחלואה נלווית שכיחה לדיכאון."
+   },
+   {
+    "id": "e7",
+    "fact_ids": [
+     "epidemiology.comorbidities[2]"
+    ],
+    "cue": "Vending machine in the corridor",
+    "cue_he": "מכונת ממכר אוטומטית במסדרון, בשימוש יתר עם תוויות 'חומרים'",
+    "prop": "vending machine in the corridor",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "FREE_METAPHOR",
+    "triple": [
+     "machine",
+     "metal",
+     "red"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמכונת ממכר אוטומטית יכולה למשוך שימוש יתר בחטיפים ומשקאות, כך הפרעות שימוש בחומרים הן תחלואה נלווית שכיחה לדיכאון."
+   },
+   {
+    "id": "e8",
+    "fact_ids": [
+     "epidemiology.comorbidities[3]"
+    ],
+    "cue": "Filing cabinet",
+    "cue_he": "ארון תיוק עם מגירה תקועה שמסרבת להיפתח, מתויגת 'הפרעת התנהגות'",
+    "prop": "filing cabinet with a jammed drawer",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "furniture",
+     "metal",
+     "dark grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שארון תיוק עם מגירה תקועה שמסרבת להיפתח יוצרת הפרעה בתפקוד המשרד, כך הפרעות התנהגות הן תחלואה נלווית שכיחה לדיכאון."
+   },
+   {
+    "id": "e9",
+    "fact_ids": [
+     "epidemiology.prognosis"
+    ],
+    "cue": "Water cooler leaking chronically onto important skill-building documents",
+    "cue_he": "מצנן מים נוזל באופן כרוני על מסמכים חשובים לבניית מיומנויות, עם '315' (שוב) על הבקבוק",
+    "prop": "water cooler with a labelled bottle",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "PRINTED_NUMBER",
+    "triple": [
+     "appliance",
+     "plastic",
+     "clear"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמצנן מים מטפטף ללא הרף וגורם נזק כרוני למסמכים חשובים, כך דיכאון הוא מחלה חוזרת וכרונית שפוגעת קשה ברכישת מיומנויות וקשרים בינאישיים."
+   },
+   {
+    "id": "e10",
+    "fact_ids": [
+     "etiology.genetic"
+    ],
+    "cue": "Desk phone",
+    "cue_he": "טלפון שולחני עם כבל מסולסל דמוי DNA, מתויג 'תוכנית משפחתית'",
+    "prop": "desk phones with coiled cords",
+    "zone": "Consultant Desks",
+    "text": "Family Plan",
+    "derivation": "FREE_METAPHOR",
+    "triple": [
+     "phone",
+     "plastic",
+     "light grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שלטלפון שולחני עם כבל מסולסל יש 'תוכנית משפחתית', כך לדיכאון יש נטייה משפחתית חזקה שמקורה בפולימורפיזמים גנטיים בטרנספורטרים כמו SERT."
+   },
+   {
+    "id": "e11",
+    "fact_ids": [
+     "etiology.neurobiology"
+    ],
+    "cue": "A Fluoxetine 'Trip Brochure' blocking the mail slot",
+    "cue_he": "עלון 'טיול' של Fluoxetine חוסם את פתח הדואר של דוור SERT, גורם לחבילות סרוטונין להצטבר",
+    "prop": "Postal carrier in 'SERT' uniform collecting serotonin packages",
+    "zone": "Consultant Desks",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "figure",
+     "uniform",
+     "blue"
+    ],
+    "relates_to": "e13",
+    "relation": "blocks transport by",
+    "hook": "כמו שעלון 'טיול' של Fluoxetine חוסם את פתח הדואר של דוור ה-SERT, כך SSRIs חוסמים אלוסטרית את טרנספורטר SERT, מה שמוביל לעלייה בסרוטונין סינפטי ושיפור נוירופלסטיות."
+   },
+   {
+    "id": "e12",
+    "fact_ids": [
+     "etiology.environmental"
+    ],
+    "cue": "Desk tidies overflowing",
+    "cue_he": "ארגוניות שולחן גדושות בפתקים מקומטים ומלאי ייאוש ופתקיות 'Rumination'",
+    "prop": "desk tidies",
+    "zone": "Consultant Desks",
+    "text": "Rumination",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "stationery",
+     "plastic",
+     "yellow"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שארגוניות שולחן עבודה עמוסות בניירות מקומטים ומחשבות מטרידות, כך אירועי חיים מלחיצים וטראומטיים בשילוב עם דפוסי חשיבה פגיעים תורמים להתפתחות דיכאון."
+   },
+   {
+    "id": "e13",
+    "fact_ids": [
+     "treatment.first_line[0]"
+    ],
+    "cue": "Promotional 'Prozac' travel brochure",
+    "cue_he": "חוברת נסיעות 'Prozac' מקדמת טיול מהנה עבור צעיר (בן 8)",
+    "prop": "brochure rack of destination leaflets and travel posters",
+    "zone": "Counter and Entrance",
+    "text": "Prozac",
+    "derivation": "PHONETIC_PUN",
+    "triple": [
+     "brochure",
+     "paper",
+     "green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שחוברת 'Prozac' מציגה טיול מומלץ לצעירים מגיל 8, כך פלואוקסטין (Prozac) הוא ה-SSRI היחיד המאושר לדיכאון מגיל 8, ומאושר ל-OCD מגיל 7."
+   },
+   {
+    "id": "e14",
+    "fact_ids": [
+     "treatment.first_line[1]"
+    ],
+    "cue": "Mouse pad",
+    "cue_he": "משטח עכבר עם לוגו 'Lexapro - בריחה מקצועית', מיועד לבני נוער (גיל 12+)",
+    "prop": "mouse pads",
+    "zone": "Consultant Desks",
+    "text": "Lexapro Escape Pro",
+    "derivation": "PHONETIC_PUN",
+    "triple": [
+     "stationery",
+     "rubber",
+     "blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמשטח עכבר 'Lexapro - בריחה מקצועית' מיועד למתבגרים, כך Escitalopram (Lexapro) מאושר לטיפול בדיכאון במתבגרים מגיל 12 ומעלה."
+   },
+   {
+    "id": "e15",
+    "fact_ids": [
+     "treatment.first_line[2]"
+    ],
+    "cue": "Jar of pens meticulously arranged by height",
+    "cue_he": "צנצנת עטים מסודרת בקפדנות לפי גובה, מתויגת 'Zoloft - אפס בלאגן' (ל-OCD, גיל 6+)",
+    "prop": "jar of pens",
+    "zone": "Consultant Desks",
+    "text": "Zoloft Zero Mess",
+    "derivation": "PHONETIC_PUN",
+    "triple": [
+     "container",
+     "glass",
+     "transparent"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שצנצנת עטים 'Zoloft - אפס בלאגן' מסודרת בקפדנות (כמו ב-OCD) ומוצבת בטווח הגעה של ילד בן 6, כך Sertraline (Zoloft) מאושר לטיפול ב-OCD פדיאטרי מגיל 6 ומעלה."
+   },
+   {
+    "id": "e16",
+    "fact_ids": [
+     "treatment.first_line[3]"
+    ],
+    "cue": "Stapler",
+    "cue_he": "מהדק מתויג 'Luvox - אוהב לנעול' מהדק מסמכים הקשורים ל-OCD (לגיל 8+)",
+    "prop": "stapler",
+    "zone": "Consultant Desks",
+    "text": "Luvox Love Locks",
+    "derivation": "PHONETIC_PUN",
+    "triple": [
+     "stationery",
+     "metal",
+     "silver-grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמהדק 'Luvox - אוהב לנעול' מחבר מסמכים יחד בחוזקה, כך Fluvoxamine (Luvox) מאושר לטיפול ב-OCD פדיאטרי מגיל 8 ומעלה."
+   },
+   {
+    "id": "e17",
+    "fact_ids": [
+     "treatment.first_line[4]"
+    ],
+    "cue": "Framed certificates on the wall for 'CBT' and 'IPT'",
+    "cue_he": "תעודות ממוסגרות על הקיר עבור מטפלי 'CBT' ו-'IPT'",
+    "prop": "framed certificates on the wall behind reception",
+    "zone": "Pigeonhole Wall & Awards",
+    "text": "CBT IPT",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "decoration",
+     "paper",
+     "gold"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שתעודות ממוסגרות על הקיר מעידות על הכשרה מקצועית וטיפולים מבוססי ראיות, כך טיפולים פסיכותרפויטיים כמו CBT או IPT הם קווי טיפול ראשונים מוכחים לדיכאון."
+   },
+   {
+    "id": "e18",
+    "fact_ids": [
+     "treatment.second_line[0]"
+    ],
+    "cue": "Consultant desk",
+    "cue_he": "שולחן יועץ עם שלט בולט: 'מחקר TORDIA: החלפת SSRI + מסלול CBT'",
+    "prop": "run of consultant desks with monitors and desk phones",
+    "zone": "Consultant Desks",
+    "text": "TORDIA Study",
+    "derivation": "PRINTED_TEXT",
+    "triple": [
+     "furniture",
+     "wood",
+     "light brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו ששלט על שולחן היועץ מתייחס למחקר ה-'TORDIA' כמסלול טיפול חלופי, כך החלפת נוגד דיכאון ל-SSRI אחר בשילוב CBT נחשבת לקו טיפול שני לפי מחקר זה."
+   },
+   {
+    "id": "e19",
+    "fact_ids": [
+     "treatment.second_line[1]"
+    ],
+    "cue": "Swivel chair",
+    "cue_he": "כיסא מסתובב עם משענות יד כפולות מתויגות 'סרוטונין' ו-'נוראפינפרין', מראה 'מעבר' ל-SNRI",
+    "prop": "swivel chairs",
+    "zone": "Consultant Desks",
+    "text": "Serotonin Norepinephrine",
+    "derivation": "FREE_METAPHOR",
+    "triple": [
+     "furniture",
+     "fabric",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שכיסא מסתובב מאפשר מעבר לכיוון חדש ומגיע עם תמיכה כפולה (סרוטונין ונוראפינפרין), כך מעבר לתרופה ממשפחת ה-SNRIs מהווה קו טיפול שני."
+   },
+   {
+    "id": "e20",
+    "fact_ids": [
+     "treatment.key_side_effects[0]"
+    ],
+    "cue": "A person looking nauseous by the water cooler",
+    "cue_he": "אדם נראה בחילה ליד מצנן המים, מחזיק את בטנו",
+    "prop": "water cooler with a labelled bottle",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "figure",
+     "clothing",
+     "pale green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שאדם מרגיש לא טוב בבטנו אחרי שתייה מוגזמת ממצנן המים, כך תסמינים גסטרואינטסטינליים כמו בחילות ושלשולים הם תופעות לוואי שכיחות של SSRIs."
+   },
+   {
+    "id": "e21",
+    "fact_ids": [
+     "treatment.key_side_effects[1]"
+    ],
+    "cue": "Computer monitor",
+    "cue_he": "מסך מחשב מציג מסך בהיר הגורם לכאבי ראש ליד שלט קטן 'ZZZ' (נדודי שינה/ישנוניות)",
+    "prop": "monitors",
+    "zone": "Consultant Desks",
+    "text": "ZZZ",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "electronics",
+     "plastic",
+     "black-screen"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמסך מחשב בהיר יכול לגרום לכאבי ראש, וצג קטן מראה עייפות, כך כאבי ראש ונדודי שינה או ישנוניות הם תופעות לוואי שכיחות של SSRIs."
+   },
+   {
+    "id": "e22",
+    "fact_ids": [
+     "treatment.key_side_effects[2]"
+    ],
+    "cue": "Fax machine frantically printing",
+    "cue_he": "מכונת פקס מדפיסה בטירוף, נתקעת ומזמזמת בקולניות, מציגה שגיאת 'ACTIVATION'",
+    "prop": "fax machine on the counter",
+    "zone": "Counter and Entrance",
+    "text": "ACTIVATION error",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "electronics",
+     "plastic",
+     "medium grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמכונת פקס מדפיסה בטירוף וגורמת למהומה ואי-שקט, כך תסמונת אקטיבציה המאופיינת בהיפר-עוררות ואי-שקט היא תופעת לוואי של SSRIs."
+   },
+   {
+    "id": "e23",
+    "fact_ids": [
+     "treatment.key_side_effects[3]"
+    ],
+    "cue": "A BLACK BOX",
+    "cue_he": "קופסה שחורה עם גולגולת ועצמות מוצלבות על בקבוקי כדורים נגד דיכאון, עבור <25y, על שולחן יועץ",
+    "prop": "A BLACK BOX with skull-and-crossbones on antidepressant pill bottles, specifically for <25y",
+    "zone": "Consultant Desks",
+    "text": "<25y Warning",
+    "derivation": "COURSE_WIDE_FIXED_SYMBOL",
+    "triple": [
+     "medicine",
+     "box",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שקופסה שחורה עם גולגולת ועצמות מוצלבות מזהירה מפני סיכון על שולחן היועץ, כך SSRIs נושאים אזהרה על עלייה קלה בסיכון לאובדנות בקרב מטופלים מתחת לגיל 25."
+   },
+   {
+    "id": "e24",
+    "fact_ids": [
+     "treatment.key_side_effects[4]"
+    ],
+    "cue": "A 'CLOSED' sign on the bedroom door + sad",
+    "cue_he": "שלט 'סגור' על דלת חדר שינה + מאהב עצוב, מתואר על פוסטר טיולים ל'חופשה רומנטית'",
+    "prop": "A 'CLOSED' sign on the bedroom door + sad lover",
+    "zone": "Counter and Entrance",
+    "text": "Romantic Getaway CLOSED",
+    "derivation": "COURSE_WIDE_FIXED_SYMBOL",
+    "triple": [
+     "poster",
+     "paper",
+     "pink"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו ששלט 'סגור' על דלת חדר שינה של זוג מאוכזב הורס את הרעיון של 'חופשה רומנטית', כך SSRIs עלולים לגרום לפגיעה בתפקוד המיני כמו קושי באורגזמה או שפיכה."
+   },
+   {
+    "id": "e25",
+    "fact_ids": [
+     "treatment.key_side_effects[5]"
+    ],
+    "cue": "Stapler dripping",
+    "cue_he": "מהדק מטפטף מים 'לא הולמים', גורם לגבישי מלח 'נתרן נמוך' להיווצר",
+    "prop": "stapler",
+    "zone": "Counter and Entrance",
+    "text": "Low Sodium",
+    "derivation": "MORPHEME_SPLIT",
+    "triple": [
+     "stationery",
+     "metal",
+     "light blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמהדק מטפטף 'מים לא הולמים' באופן שגורם לגבישי מלח להיווצר, כך SSRIs עלולים לגרום להיפונתרמיה משנית ל-SIADH (Syndrome of Inappropriate Antidiuretic Hormone)."
+   },
+   {
+    "id": "e26",
+    "fact_ids": [
+     "treatment.monitoring"
+    ],
+    "cue": "Consultant's monitor",
+    "cue_he": "מסך המחשב של היועץ מציג רשימות מעקב שבועיות של אובדנות/אקטיבציה וגרפי צמיחה, מתויג 'DSM-5 Level 1/2'",
+    "prop": "monitors",
+    "zone": "Consultant Desks",
+    "text": "DSM-5 Level 1/2",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "electronics",
+     "plastic",
+     "white-screen"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמסך המחשב של היועץ מציג באופן קבוע צ'קליסטים שבועיים וגרפי צמיחה, כך נדרש מעקב צמוד אחר סימני אובדנות, אקטיבציה, צמיחה ושימוש בשאלוני DSM-5 Level 1/2 בטיפול ב-SSRIs."
+   },
+   {
+    "id": "e27",
+    "fact_ids": [
+     "high_yield[0]"
+    ],
+    "cue": "The SERT postal carrier delayed at a '5-HT1A Brake'",
+    "cue_he": "דוור ה-SERT מתעכב בשלט 'בלם 5-HT1A', ממתין 2-4 שבועות לפני מסירה לקורטקס",
+    "prop": "Postal carrier in 'SERT' uniform collecting serotonin packages",
+    "zone": "Consultant Desks",
+    "text": "5-HT1A Brake",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "figure",
+     "uniform",
+     "red"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שדוור ה-SERT מתעכב בגלל 'שלט בלם 5-HT1A' שגורם לו להמתין שבועות, כך SSRIs גורמים לעלייה בסרוטונין דנדריטי המפעיל קולטני בלם 5-HT1A, ונדרשים 2-4 שבועות לדה-סנסיטיזציה לאפקט טיפולי."
+   },
+   {
+    "id": "e28",
+    "fact_ids": [
+     "high_yield[1]"
+    ],
+    "cue": "Fluoxetine 'Long Trip' brochure",
+    "cue_he": "חוברת 'טיול ארוך' של Fluoxetine עם הוראות 'גמילה עצמית', טובה למניעת תסמונת גמילה",
+    "prop": "brochure rack of destination leaflets and travel posters",
+    "zone": "Counter and Entrance",
+    "text": "Fluoxetine Self-tapering",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "brochure",
+     "paper",
+     "yellow"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שחוברת טיולים של Fluoxetine מבטיחה 'טיול ארוך' עם 'הוראות גמילה עצמית', כך לפלואוקסטין (Fluoxetine) יש זמן מחצית חיים ארוך המגן מפני תסמונת גמילה ומאפשר גמילה עצמית."
+   },
+   {
+    "id": "e29",
+    "fact_ids": [
+     "high_yield[2]"
+    ],
+    "cue": "Patient suddenly OFF the SERT-postal-route",
+    "cue_he": "מטופל יורד בפתאומיות מ'נתיב הדואר של SERT', באופן דרמטי, עם תווית 'Paroxetine', סובל מהגמילה הקשה ביותר",
+    "prop": "Patient suddenly OFF the SERT-postal-route",
+    "zone": "Consultant Desks",
+    "text": "Paroxetine",
+    "derivation": "COURSE_WIDE_FIXED_SYMBOL",
+    "triple": [
+     "figure",
+     "clothing",
+     "brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמטופל שיורד בפתאומיות מ'נתיב הדואר של SERT' חווה גמילה דרמטית במיוחד בגלל 'Paroxetine', כך ל-Paroxetine יש זמן מחצית חיים קצר וקינטיקה לא-ליניארית הגורמים לתסמונת הגמילה הקשה ביותר."
+   },
+   {
+    "id": "e30",
+    "fact_ids": [
+     "high_yield[3]"
+    ],
+    "cue": "Zoloft pen jar",
+    "cue_he": "צנצנת עטים Zoloft עם מדבקות 'דופמין בוסט' ו-'Sigma-1', נותנת אנרגיה נוספת לעטים",
+    "prop": "jar of pens",
+    "zone": "Consultant Desks",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "container",
+     "glass",
+     "amber"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שצנצנת עטים של Zoloft מקבלת 'בוסט דופמין' וחיבור ל-'Sigma-1' שנותנים אנרגיה נוספת, כך Sertraline (Zoloft) מעכב גם את DAT ונקשר לקולטני Sigma-1, מה שתורם לשיפור אנרגטי בדיכאון פסיכוטי או אטיפי."
+   },
+   {
+    "id": "e31",
+    "fact_ids": [
+     "high_yield[4]"
+    ],
+    "cue": "Luvox stapler strongly activating 'Sigma-1' files but also blocking",
+    "cue_he": "מהדק Luvox מפעיל בעוצמה קבצי 'Sigma-1' אך גם חוסם תיקיות 'CYP1A2' ו-'CYP2C19', גורם לערימת מסמכים",
+    "prop": "stapler",
+    "zone": "Consultant Desks",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "stationery",
+     "metal",
+     "dark blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמהדק Luvox מפעיל קבצי 'Sigma-1' אך חוסם גם תיקיות 'CYP', כך Fluvoxamine הוא אגוניסט חזק ל-Sigma-1 ומעכב חזק של CYP1A2 ו-CYP2C19, מה שמקנה לו השפעה נוגדת חרדה חזקה ב-OCD אך מעלה סיכון לאינטראקציות תרופתיות."
+   },
+   {
+    "id": "e32",
+    "fact_ids": [
+     "high_yield[5]"
+    ],
+    "cue": "Photocopier making a 'faulty' Citalopram copy",
+    "cue_he": "מכונת צילום עושה עותק 'פגום' של Citalopram, עם אזהרת 'הפרעת R-אננטיומר', ושלט 'הארכת QTc >40 מ\"ג'",
+    "prop": "photocopier with a DUAL COPIER/SCANNER label taped to it",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "equipment",
+     "plastic",
+     "off-white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמכונת צילום מנסה לשכפל 'Citalopram' אך האננטיומר ה-R הפסיבי מפריע ויוצר עותק 'פגום', כך Citalopram נושא אזהרת FDA מפני הארכת QTc במינונים מעל 40 מ\"ג, בין השאר בגלל האננטיומר R המפריע."
+   },
+   {
+    "id": "e33",
+    "fact_ids": [
+     "high_yield[6]"
+    ],
+    "cue": "Photocopier making a 'pure S-enantiomer' Escitalopram copy",
+    "cue_he": "מכונת צילום עושה עותק 'S-אננטיומר טהור' של Escitalopram, עם שלט 'ללא הפרעה, בטיחות משופרת'",
+    "prop": "photocopier with a DUAL COPIER/SCANNER label taped to it",
+    "zone": "Service Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "equipment",
+     "plastic",
+     "clean white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמכונת צילום מכינה עותק 'S-אננטיומר טהור' של Escitalopram, המשקף את ביטול ההפרעה ופרופיל בטיחותי משופר, כך Escitalopram מורכב מהאננטיומר הפעיל S-citalopram בלבד."
+   },
+   {
+    "id": "e34",
+    "fact_ids": [
+     "high_yield[7]"
+    ],
+    "cue": "Patient suddenly",
+    "cue_he": "מטופל יורד בפתאומיות מ'נתיב הדואר של SERT', סובל מתסמיני 'FINISH' (דמויי שפעת, נדודי שינה, בחילות, חוסר יציבות, תחושתיים, היפראקטיביות)",
+    "prop": "Patient suddenly OFF the SERT-postal-route",
+    "zone": "Consultant Desks",
+    "text": "",
+    "derivation": "COURSE_WIDE_FIXED_SYMBOL",
+    "triple": [
+     "figure",
+     "clothing",
+     "purple"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמטופל שיורד בפתאומיות מ'נתיב הדואר של SERT' סובל מתסמינים רבים שמתוארים במנמוניקת 'FINISH', כך תסמונת גמילה מ-SSRIs מתאפיינת בתסמיני דמויי שפעת, נדודי שינה, בחילות, חוסר יציבות, הפרעות תחושתיות והיפראקטיביות."
+   },
+   {
+    "id": "e35",
+    "fact_ids": [
+     "high_yield[8]"
+    ],
+    "cue": "Fax machine",
+    "cue_he": "מכונת פקס מדפיסה בטירוף, מתויגת 'ACTIVATION', עם בועת מחשבה 'עלול להתבלבל עם מאניה?' מרחפת מעליה",
+    "prop": "fax machine on the counter",
+    "zone": "Counter and Entrance",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "electronics",
+     "plastic",
+     "darker grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמכונת פקס מדפיסה בטירוף ועלולה לגרום לבלבול עם עומס עבודה, כך תסמונת אקטיבציה בילדים ומתבגרים עלולה להתבלבל עם מאניה או היפומאניה."
+   },
+   {
+    "id": "e36",
+    "fact_ids": [
+     "high_yield[9]"
+    ],
+    "cue": "Hole punch aggressively punching through a 'CYP2D6 inhibition' sign",
+    "cue_he": "מנקב חורים מנקב באגרסיביות שלט 'עיכוב CYP2D6' ומסמך 'רמת בטיחות Clomipramine', גורם לשפך רעיל",
+    "prop": "hole punch",
+    "zone": "Counter and Entrance",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "stationery",
+     "metal",
+     "bright red"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמנקב חורים שפועל באגרסיביות חותך דרך מסמכי 'CYP2D6' ו-'Clomipramine' וגורם לשפך רעיל, כך שילוב SSRIs מעכבי CYP2D6 עם Clomipramine עלול להקפיץ את רמות הטריציקלי לרמות רעילות ומסכנות חיים."
+   }
+  ]
+ }
+}

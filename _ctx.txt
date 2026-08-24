@@ -1,0 +1,28 @@
+7	GABA / Glutamate balance
+20	Autism Spectrum Disorder
+41	Separation Anxiety + Specific Phobia
+47	PTSD core
+49	Acute Stress + Adjustment Disorder
+59	Second-generation antipsychotics overview
+63	Low-metabolic SGAs: Lurasidone, Ziprasidone, Lumateperone
+65	EPS spectrum: dystonia, akathisia, parkinsonism
+71	Insomnia + CBT-I
+77	ARFID + Pica + Rumination
+80	Eating disorders intensive: FBT + medical stabilization
+84	OUD treatment: Methadone, Buprenorphine, Naltrexone, Naloxone
+91	Paranoid Personality Disorder
+102	Forensic psychiatry: competency, insanity, Tarasoff
+104	Gender Dysphoria + LGBTQ+ affirming care
+107	Aggression and violence in youth
+108	Adolescent suicidality
+116	Seizures + Epilepsy
+118	CNS infections with psychiatric sequelae
+120	Brain tumors + pseudotumor
+126	Autoimmune: NMDA-receptor encephalitis, lupus, PANDAS
+130	Consultation-liaison: pediatrics, oncology, chronic illness
+131	Psychotherapy theories overview
+137	School-based interventions and consultation
+140	Object relations: Winnicott, Mahler, Kernberg
+141	Later theorists: Erikson, Bion, Ogden, Lacan, Spitz, Stern, relational
+LEXKEYS: ['AA_HOTEL', 'GABA_A_alpha1_subunit', 'GABA_A_alpha2_alpha3_subunits', 'GABA_A_alpha5_subunit', 'GABA_A_receptor', 'GABA_B_receptor', 'GABA_neurotransmitter']
+SYMS113 in lexicon? [True]

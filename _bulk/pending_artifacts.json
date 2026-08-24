@@ -1,0 +1,57 @@
+{
+ "f7ac54ed-daa2-448e-aa0d-a12106d8214c": {
+  "kind": "video",
+  "notebook": "5fa82c2b-c64c-4f9f-84c1-c3d9c2991b26",
+  "day": "3"
+ },
+ "e37772e8-1266-4880-97d9-27d8737690f4": {
+  "kind": "flashcards",
+  "notebook": "5fa82c2b-c64c-4f9f-84c1-c3d9c2991b26",
+  "day": "3"
+ },
+ "79bef37f-30ef-4f97-8134-c7e90449800f": {
+  "kind": "quiz",
+  "notebook": "5fa82c2b-c64c-4f9f-84c1-c3d9c2991b26",
+  "day": "3"
+ },
+ "cfa2005a-1374-48ce-9cac-4d95c468ed98": {
+  "kind": "video",
+  "notebook": "8a2aae39-93bd-44ba-9fb4-a0a3c02a7a04",
+  "day": "2"
+ },
+ "7d243765-f9ef-4279-8181-52403110e496": {
+  "kind": "flashcards",
+  "notebook": "8a2aae39-93bd-44ba-9fb4-a0a3c02a7a04",
+  "day": "2"
+ },
+ "779b832a-7f6a-41fc-86a6-787e4e42ea2d": {
+  "kind": "quiz",
+  "notebook": "8a2aae39-93bd-44ba-9fb4-a0a3c02a7a04",
+  "day": "2"
+ },
+ "882e51b6-30e4-4c93-a06f-e423ff77613f": {
+  "kind": "video",
+  "notebook": "8a2aae39-93bd-44ba-9fb4-a0a3c02a7a04",
+  "day": "2"
+ },
+ "438c45a3-12c5-463e-9acf-ec0ffb87a3bf": {
+  "kind": "flashcards",
+  "notebook": "8a2aae39-93bd-44ba-9fb4-a0a3c02a7a04",
+  "day": "2"
+ },
+ "70841c1d-a513-474c-8d8e-5ce33b51eb29": {
+  "kind": "quiz",
+  "notebook": "8a2aae39-93bd-44ba-9fb4-a0a3c02a7a04",
+  "day": "2"
+ },
+ "07de361e-626c-4cc9-b371-a6bffad0e566": {
+  "kind": "flashcards",
+  "notebook": "3f5e423d-b9dc-4a59-8631-e2190c3d116c",
+  "day": "9"
+ },
+ "ac4c1cc6-5f80-443a-9fd9-386a2ef2258f": {
+  "kind": "quiz",
+  "notebook": "3f5e423d-b9dc-4a59-8631-e2190c3d116c",
+  "day": "9"
+ }
+}

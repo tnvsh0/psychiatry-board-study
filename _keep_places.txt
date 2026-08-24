@@ -1,0 +1,110 @@
+1	[opticians practice] MAIN STREET EYECARE :: A high-street opticians on a school-holiday Wednesday
+2	[ferry terminal] INSULA FERRIES :: A small car-ferry terminal on the mainland side at midday
+4	[] DOPA MINE No.4 :: The pithead of a working deep coal mine at shift change
+7	[cobbler's shop] GABBAY & GLUCK REPAIRS :: A shoe-repair and key bar in the ground-floor unit of an old five-storey hotel, late afternoon
+8	[soft play centre] CRAWL & CRUISE :: An indoor soft-play barn on a wet weekday morning
+9	[] LITTLE SPROUTS NURSERY :: A plant nursery's polytunnel on a warm spring morning
+10	[] OLD SCHOOL AQUARIUM :: The shoal gallery of a municipal aquarium during a class visit
+11	[tanning salon] TANNER'S SUN STUDIO :: A high-street tanning salon at the after-school rush
+12	[] BOWLBY & SONS ATTACHMENTS :: A cramped old ironmonger that sells vacuum, hose and power-tool attachments
+13	[pet shop] THOS. & CHESS PETS :: A high-street pet shop on a Saturday morning
+14	[] PERSONAL INK :: A small high-street tattoo parlour mid-afternoon
+15	[] EUTHYMIC FALLS WEATHER :: A municipal weather field office at the hourly observation round
+16	[] PHARM LANE KARTS :: An outdoor children's go-kart track on a bright weekday
+18	[] AMPHI BOWL :: An outdoor amphitheatre at doors-open on a summer afternoon
+20	[] THE AUTO-MAT :: A coin-operated automat cafeteria at lunchtime
+22	[] LEXI PRESS :: A jobbing letterpress print shop and stationer's with a public counter at the front
+24	[] TURRET CLOCK WORKS :: A turret-clock repair works in the bottom chamber of a town-hall clock tower
+25	[] STEREO TYPE RECORDS :: A cramped second-hand vinyl and hi-fi shop on a high street, mid-afternoon
+29	[] expreSS tRIps :: An open-plan high-street travel agency at 10am
+30	[] SuNRIse LAUNDRY :: A strip-mall launderette and dry-cleaner at midday
+31	[] MAYO'S AGED DELI :: An old-town corner delicatessen at lunchtime
+34	[] CYCLO PARK :: A council cycle track
+35	[] Lithium Lift :: A small beginner ski resort on a blue-sky family morning
+39	[] AGORA TRANSIT CENTER :: A municipal bus interchange on the town square on market day — covered bays, a ticket window, a paved plaza wi
+41	[] PACIFIC ELEMENTARY :: An elementary school gate at eight in the morning — the drop-off loop lane, chain-link fence, crossing guard, 
+42	[seaside deckchair hire] BEN'S DECKCHAIR HIRE :: A seaside deckchair and beach-hut concession on the first warm Saturday of the season
+43	[wet fish shop] OCEAN DAILY CATCH :: A wet fish shop at half past eight on market morning
+44	[photo developing lab] EXPOSURE PRINTS :: A one-hour photo developing lab two doors along the same parade of shops
+45	[seed bank archive] HOARD'S END SEED BANK :: A seed bank's accessions hall on a stocktaking Tuesday
+46	[] TILLMAN'S PICK-YOUR-OWN :: A pick-your-own berry and vegetable farm on a Sunday — planted rows on a gentle slope, a farm-stand shed, a tr
+47	[] POST TOWN SORTING DEPOT :: A suburban postal sorting depot on the night shift — a long hall of roller conveyors and wheeled cages, a load
+48	[rock lighthouse] PRAISE ROCK LIGHT :: An offshore rock lighthouse on the flat calm morning of its annual refit
+49	[] SEAM STRESS ALTERATIONS :: A cramped back-street alterations counter in a parade of shops, mid-afternoon
+50	[] REEVE & SONS MEMORIALS :: A memorial mason's display yard on a wide road at midday — gravel, an awning over a row of finished headstones
+51	[picture conservation studio] ACE PICTURE RESTORERS :: A picture conservation studio on an ordinary working weekday
+52	[] ALL-HITCH ATTACHMENTS :: A roadside towbar and trailer-hitch fitting yard
+53	[] PARTITION SELF STORAGE :: The ground-floor corridor of a self-storage facility under flat fluorescent tube light
+54	[telephone exchange] SOMA EXCHANGE :: A telephone exchange's fault test room in the middle of a weekday shift
+55	[] SPLIT LANES BOWLING :: A ten-pin bowling alley on league night under flat overhead light
+56	[telephone exchange] NORMANDY AVE EXCHANGE :: A manual telephone exchange on the busy hour
+57	[lending library] BRIEF LOAN LIBRARY :: A municipal lending library at the issue desk on a Saturday morning
+58	[] STARRY GAZING :: An open-air amateur art show in a suburban back garden on a hot afternoon
+59	[] SECONDS & IRREGULARS :: A discount factory-outlet warehouse in a converted unit
+60	[] CLOZA PINE MILL :: A working sawmill yard in daylight
+61	[piano tuning floor] PIP PIANO WORKS :: The tuning floor of a small piano factory mid-morning
+62	[weights gym] OLYMPIA WEIGHTS :: A back-street weights gym on a wet Tuesday evening
+63	[] LURA'S BAIT & TACKLE :: A lakeside bait-and-tackle shop at 5am — pegboard walls hung with lures, aerated live-bait tanks bubbling behi
+64	[hairdressing salon] CONSTANCE PERMS & SETS :: A high-street hairdressing salon on a Thursday afternoon
+65	[newspaper newsroom] THE DAILY EXTRA :: The editorial floor of a small city newspaper twenty minutes before the late edition goes
+66	[works time office] TARDY GATE WORKS :: The clocking-in lobby of a timber works at six in the morning
+67	[] NORTH MAIN STEEL :: A small rolling mill's casting floor on the night shift — furnace door glowing, an overhead ladle crane on a r
+68	[] THE CAT & TONIC :: A village pub at three in the afternoon — a long polished bar with a row of hand-pumps, mirrored back-bar, a s
+69	[department store escalator] THE DOWN ESCALATOR :: The escalator well of a four-floor department store on a Saturday afternoon
+71	[window blind shop] SHUT EYE BLINDS :: A window-blind and shutter shop in a quiet strip-mall parade, mid-morning
+72	[] Z.Z.Z. MATTRESSES :: A strip-mall mattress showroom on a slow weekday — a diagonal row of display beds under fluorescent tubes, pri
+73	[] CATAPLEX CINEMAS :: A suburban four-screen multiplex on a weekday afternoon
+74	[mobility aids showroom] UP & ABOUT MOBILITY :: A mobility and homecare showroom in a small retail unit on a weekday afternoon
+76	[amateur boxing club] OX ROAD BOXING CLUB :: An amateur boxing club in a hired church hall on weigh-in night
+77	[] PICK-A-PART SALVAGE :: A self-service auto salvage yard on a Saturday
+78	[water pumping station] URE VALLEY WATERWORKS :: A small municipal water pumping station on the morning round
+80	[] FIRE BRIGADE TRAINING :: A small-town fire station at supper time
+81	[orchard cider press] CIder WAgons :: A farm cider press house on pressing day
+82	[] CAMP ROSE :: A state-park campground on a Friday evening
+83	[creamery dairy] POPPY LANE CREAMERY :: A small country creamery at the morning intake
+84	[] DON'S ONE-STOP FUEL :: A two-island filling station on the edge of town at seven in the morning
+85	[beehive apiary] UPPER FIELD HONEY :: A commercial apiary in a field on a hot afternoon
+86	[pottery works] HIGH STREET POTTERY :: A working pottery on a high street mid-morning
+87	[window-cleaning firm] VARENICLEAN WINDOWS :: A window-cleaning firm working its morning round on an old parade of shops and the smoke-yellowed pub on the c
+91	[] PARA LOFT :: The packing loft of a small airfield drop-zone
+94	[] BORDER POST :: A small road border crossing at midday
+95	[indoor climbing centre] DAILY BELAY TRAINING :: An indoor climbing centre on a busy evening
+96	[] ASPHALT & DRIVEWAYS :: A half-finished driveway job on a suburban front garden
+97	[] HISTORIC HOUSE TOURS :: A National-Trust-style historic house on a public open day — stone entrance hall with a ticket desk, a roped-o
+98	[] SPRING NARCISSUS SHOW :: A county horticultural show in a white canvas marquee on a village playing field — trestle tables of cut daffo
+99	[pest-control depot] AVOID ANTS PEST CO. :: A pest-control contractor's depot yard at seven in the morning
+100	[] THE PENDANT SHOP :: A high-street lighting showroom — a steel ceiling grid hung solid with pendant lamps on flexes of every length
+101	[shooting gallery] O'CONNOR'S PRIZE DUCKS :: A promenade prize-shooting gallery on a grey bank-holiday afternoon
+102	[] TARA'S SOFT SERVE :: A roadside soft-serve kiosk beside a municipal car park on a hot afternoon — serving hatch under a painted awn
+103	[indoor climbing centre] NOAR CLIMBING CLUB :: An indoor climbing centre on a school-holiday morning
+104	[] CENTRAL TRANSIT HALL :: The concourse of an ordinary city transit interchange in the middle of the day — a bank of ticket validators a
+107	[boxing gym] BULL RING GYM :: A back-street amateur boxing gym at the far end of Odds Lane on a weekday club night
+108	[community pharmacy] MEANS THE CHEMIST :: A high-street chemist's shop at the end of a wet Thursday afternoon
+109	[ice rink] JOHNSON'S ICE RINK :: A municipal indoor ice rink during the public afternoon session
+110	[] FOSTER & SONS REMOVALS :: Moving day on an ordinary suburban street
+111	[tile showroom] MOSAIC TILE CO. :: A tile and stone showroom on a Sunday morning
+112	[bottling plant] PIPER & DODD SPRINGS :: A small spring-water bottling plant on the day shift
+114	[ploughing match] DE LIRA FARM :: A village ploughing match on a bright autumn morning
+115	[opticians shop] SOFT SIGNS OPTICIANS :: A high-street opticians on a school-holiday morning
+116	[] SEIZED LOTS AUCTION :: A weekday auction of impounded goods in a draughty municipal hall
+117	[barber shop] COUPE & CONTRECOUP :: A high-street barber shop on a Saturday afternoon
+118	[] MEN IN JEANS :: A high-street denim shop mid-afternoon
+119	[nail bar] HUNT & SON EXTENSIONS :: A high-street nail bar mid-afternoon
+120	[canning works] SWELL BAY CANNING CO. :: A small seaside canning works at the end of the day shift
+122	[] SHELTER 22Q :: The annual family-reunion potluck at a public park's numbered picnic shelter, midday
+123	[turkish baths] ASH LEIGH BATHS :: A municipal Turkish baths on a slow weekday afternoon
+124	[] MY GRAIN & FEED :: A country grain elevator and feed mill at the edge of town, mid-morning
+126	[dental surgery] PANDA SMILES :: A children's dental surgery on a school-holiday morning
+127	[glassware warehouse] FRAGILE GOODS CO. :: A glass-and-china wholesaler's packing floor on despatch morning
+129	[emergency dispatch room] THE HOT LINE :: A twenty-four-hour emergency dispatch room in the small hours
+130	[] HOTEL LIAISON :: A mid-range city hotel's lobby and first-floor corridor at a busy check-in
+131	[roofing supplies yard] TEAR-A-PLY ROOFING :: A roofing supplies merchant's trade counter and yard on a weekday morning
+132	[concrete block works] CEMENT BLOCK TESTING :: A concrete block works and its little testing house on a weekday morning
+133	[demolition site] DEMOLITION BY THORNE :: A demolition site on a terraced street at mid-morning
+134	[] ISLAND PARK TARGET ARCHERY :: The outdoor archery range of an ordinary summer camp on a lake shore — mown grass, straw butts on trestles, a 
+137	[municipal playing fields] ISLAND END PITCHES :: A municipal playing field on a Sunday-morning youth training session
+138	[] MINUCHIN & SONS BUILDERS :: A residential building site on a suburban plot — a house going up, scaffold on two sides, a cement mixer turni
+139	[puppet workshop] KLEIN PUPPET WORKS :: A puppet-maker's workshop on the evening shift
+140	[lending library] WINNICOTT LENDING LIBRARY :: A municipal public lending library on a wet afternoon
+143	[assay office] GOLD STANDARD ASSAY :: An assay office on a busy trade morning
+144	[] THE LAST ROUND :: The back room of an ordinary pub on quiz night — long bar, chalk scoreboard wall, teams crowded round small ta

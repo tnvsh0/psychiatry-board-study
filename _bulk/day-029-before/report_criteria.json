@@ -1,0 +1,169 @@
+{
+ "day": 29,
+ "plate": "criteria",
+ "facts": 17,
+ "tries": 4,
+ "numbers_mode": "composite",
+ "table_warnings": [
+  "e1: dropped unknown fact id(s) ['suicidality_warning']",
+  "e2: dropped unknown fact id(s) ['SERT']",
+  "e3: dropped unknown fact id(s) ['sexual_dysfunction_SSRI']",
+  "e4: dropped unknown fact id(s) ['discontinuation_syndrome_FINISH']",
+  "e2: dropped relation to unknown element 'e24'",
+  "e1: cue trimmed to 'Antidepressant pill bottles'",
+  "e2: cue trimmed to \"Postal carrier in 'SERT' uniform transporting serotonin packages\"",
+  "e3: cue trimmed to 'Miniature bedroom diorama'",
+  "e7: cue trimmed to 'Queue-ticket dispenser'",
+  "e9: cue trimmed to 'Consultant looking bored despite being surrounded by exotic travel'",
+  "e10: cue trimmed to 'Customer feeling guilty for needing to rebook their cheap'",
+  "e12: cue trimmed to 'A desk calendar'",
+  "e13: cue trimmed to 'Consultant dozing off at desk'",
+  "e14: cue trimmed to 'Consultant rapidly tapping pen'",
+  "e17: cue trimmed to 'Brochure'",
+  "e19: cue trimmed to \"Brochure for 'Atypical Adventures' featuring a person wearing\"",
+  "e20: cue trimmed to \"Brochure for 'New Parent Getaways'\"",
+  "e21: cue trimmed to \"Brochure for 'Seasonal Escapes'\"",
+  "e7: hook over 32 words (37): \"כמו מכשיר כרטיסים המראה ש'5 מתוך 9' כרטיסים נלקחו, וביניהם כרטיס עם פרצוף עצוב או משועמם, כך לאבחון דיכאון נדרשים חמישה או יותר תסמינים מתוך תשעה, כאשר לפחות אחד מהם הוא מצב רוח ירוד/עצבני או אובדן עניין/הנאה.\""
+ ],
+ "digit_strings_dropped": [
+  "5 of 9"
+ ],
+ "gates": {
+  "numbers": {
+   "probed": true,
+   "missing": [],
+   "wrong": [],
+   "extra": [
+    "10",
+    "19",
+    "19",
+    "02",
+    "19",
+    "19",
+    "14",
+    "10"
+   ],
+   "blank_plates_found": 2,
+   "blank_plates_wanted": 2,
+   "blank_plates": [
+    {
+     "name": "PURE GREEN",
+     "ok": true,
+     "height_frac": 0.1738,
+     "reject": null
+    },
+    {
+     "name": "PURE MAGENTA",
+     "ok": true,
+     "height_frac": 0.1029,
+     "reject": null
+    }
+   ]
+  },
+  "text_missing": [],
+  "composition": {
+   "figures_even": true,
+   "frame_filled": true,
+   "_raw": {
+    "figures_even": "YES all similar",
+    "frame_filled": "YES"
+   },
+   "_probed": 2,
+   "_asked": 3
+  },
+  "missing_all": [],
+  "score": 100,
+  "verified": false,
+  "stray_warning": [
+   "10",
+   "19",
+   "19",
+   "02",
+   "19",
+   "19",
+   "14",
+   "10"
+  ]
+ },
+ "compositing": {
+  "image": "2752x1536",
+  "slots": [
+   {
+    "id": "MIN",
+    "paint": "183",
+    "tag": "MIN",
+    "chroma_pixels": 54117,
+    "blob_pixels": 53582,
+    "fill_ratio": 1.062,
+    "height_frac": 0.1738,
+    "width_frac": 0.0901,
+    "quad": [
+     [
+      767,
+      888
+     ],
+     [
+      1011,
+      834
+     ],
+     [
+      1011,
+      1035
+     ],
+     [
+      766,
+      1100
+     ]
+    ],
+    "bbox": [
+     766,
+     834,
+     245,
+     266
+    ],
+    "height_pct": 17.32,
+    "status": "COMPOSITED"
+   },
+   {
+    "id": "N",
+    "paint": "185",
+    "tag": "N",
+    "chroma_pixels": 20355,
+    "blob_pixels": 20211,
+    "fill_ratio": 1.053,
+    "height_frac": 0.1029,
+    "width_frac": 0.0596,
+    "quad": [
+     [
+      2196,
+      664
+     ],
+     [
+      2359,
+      700
+     ],
+     [
+      2358,
+      821
+     ],
+     [
+      2196,
+      779
+     ]
+    ],
+    "bbox": [
+     2196,
+     664,
+     163,
+     157
+    ],
+    "height_pct": 10.22,
+    "status": "COMPOSITED"
+   }
+  ],
+  "leftover_chroma_px": 2795,
+  "composited": 2,
+  "requested": 2
+ },
+ "narration_words": 676
+}

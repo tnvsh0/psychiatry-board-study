@@ -1,0 +1,144 @@
+  1 | MAIN STREET EYECARE          | opticians practice             | Psychiatric examination of child and ado
+  2 | INSULA FERRIES               | ferry terminal                 | Neuroanatomy basics for psychiatry
+  3 | MESSENGER ROW                | village shop row               | Neurotransmitters overview
+  4 | DOPA MINE No.4               | NONE                           | Dopamine pathways
+  5 | 5 HIGH TOWN MARKET           | covered market hall            | Serotonin system
+  6 | NOR'EAST BROS. CIRCUS        | travelling circus              | Norepinephrine system
+  7 | GABBAY & GLUCK REPAIRS       | cobbler's shop                 | GABA / Glutamate balance
+  8 | CRAWL & CRUISE               | soft play centre               | Normative development 0-2 (infancy)
+  9 | LITTLE SPROUTS NURSERY       | NONE                           | Normative development 2-5 (preschool)
+ 10 | OLD SCHOOL AQUARIUM          | NONE                           | Normative development 6-12 (school age)
+ 11 | TANNER'S SUN STUDIO          | tanning salon                  | Normative development 13-18 (adolescence
+ 12 | BOWLBY & SONS ATTACHMENTS    | NONE                           | Attachment theory and mentalization
+ 13 | THOS. & CHESS PETS           | pet shop                       | Temperament
+ 14 | PERSONAL INK                 | NONE                           | General Personality Disorder criteria
+ 15 | EUTHYMIC FALLS WEATHER       | NONE                           | Mood, affect, and temperament — clinical
+ 16 | PHARM LANE KARTS             | NONE                           | Principles of pediatric psychopharmacolo
+ 17 | HYPERDRIVE AMUSEMENTS        | amusement arcade               | ADHD — core
+ 18 | AMPHI BOWL                   | NONE                           | ADHD treatment: stimulants
+ 19 | CLONMEL HILL FARM            | hill sheep farm                | ADHD treatment: non-stimulants
+ 20 | THE AUTO-MAT                 | NONE                           | Autism Spectrum Disorder
+ 21 | KIDD LADDER WORKS            | ladder works                   | Intellectual Developmental Disorder (Int
+ 22 | LEXI PRESS                   | NONE                           | Specific Learning Disorder (SLD)
+ 23 | TONGUE & CHEEK               | butcher shop                   | Communication Disorders (Language, Speec
+ 24 | TURRET CLOCK WORKS           | NONE                           | Tic disorders + Tourette's
+ 25 | STEREO TYPE RECORDS          | NONE                           | Stereotypic movement + Developmental coo
+ 26 | DOWNS FARM EGGS              | egg packing station            | ID review: Down syndrome + Fragile X
+ 27 | RETT-A-TOOL HIRE             | tool hire depot                | Other neurodevelopmental: Rett, Prader-W
+ 28 | MADDER DYE HOUSE             | cloth dye house                | Major Depressive Disorder
+ 29 | expreSS tRIps                | NONE                           | SSRIs deep dive
+ 30 | SuNRIse LAUNDRY              | NONE                           | SNRIs + atypical antidepressants
+ 31 | MAYO'S AGED DELI             | NONE                           | TCAs + MAOIs
+ 32 | THYME & AGAIN                | candle works                   | Persistent Depressive + DMDD + PMDD
+ 33 | POLAR ICE WORKS              | block ice works                | Bipolar I Disorder
+ 34 | CYCLO PARK                   | NONE                           | Bipolar II + Cyclothymia + pediatric bip
+ 35 | Lithium Lift                 | NONE                           | Lithium
+ 36 | STABILISER CYCLE WORKS       | bicycle repair shop            | Mood stabilizers: Valproate, Lamotrigine
+ 37 | DIAMOND DISPLAYS             | firework shop                  | Pediatric mood: DMDD vs pediatric bipola
+ 38 | GADD & SONS SAFETY           | safety equipment supplier      | Generalized Anxiety Disorder
+ 39 | AGORA TRANSIT CENTER         | NONE                           | Panic Disorder + Agoraphobia
+ 40 | SELECT-A-BAND RADIO          | radio repair shop              | Social Anxiety + Selective Mutism
+ 41 | PACIFIC ELEMENTARY           | NONE                           | Separation Anxiety + Specific Phobia
+ 42 | BEN'S DECKCHAIR HIRE         | seaside deckchair hire         | Benzodiazepines + Buspirone + sleep aids
+ 43 | OCEAN DAILY CATCH            | wet fish shop                  | OCD core
+ 44 | EXPOSURE PRINTS              | photo developing lab           | OCD treatment: ERP + high-dose SSRI
+ 45 | HOARD'S END SEED BANK        | seed bank archive              | Body Dysmorphic + Hoarding
+ 46 | TILLMAN'S PICK-YOUR-OWN      | NONE                           | Trichotillomania + Excoriation
+ 47 | POST TOWN SORTING DEPOT      | NONE                           | PTSD core
+ 48 | PRAISE ROCK LIGHT            | rock lighthouse                | PTSD treatment: Prazosin, SSRIs, trauma-
+ 49 | SEAM STRESS ALTERATIONS      | NONE                           | Acute Stress + Adjustment Disorder
+ 50 | REEVE & SONS MEMORIALS       | NONE                           | Grief, bereavement, and Prolonged Grief 
+ 51 | ACE PICTURE RESTORERS        | picture conservation studio    | Child abuse and neglect
+ 52 | ALL-HITCH ATTACHMENTS        | NONE                           | Reactive Attachment Disorder + Disinhibi
+ 53 | PARTITION SELF STORAGE       | NONE                           | Dissociative disorders
+ 54 | SOMA EXCHANGE                | telephone exchange             | Somatic Symptom + Conversion + Factitiou
+ 55 | SPLIT LANES BOWLING          | NONE                           | Schizophrenia core
+ 56 | NORMANDY AVE EXCHANGE        | telephone exchange             | Schizophrenia neurobiology: DA + NMDA + 
+ 57 | BRIEF LOAN LIBRARY           | lending library                | Schizoaffective + Schizophreniform + Bri
+ 58 | STARRY GAZING                | NONE                           | First-generation antipsychotics
+ 59 | SECONDS & IRREGULARS         | NONE                           | Second-generation antipsychotics overvie
+ 60 | CLOZA PINE MILL              | NONE                           | Clozapine - the gold standard for treatm
+ 61 | PIP PIANO WORKS              | piano tuning floor             | Partial agonists: Aripiprazole, Brexpipr
+ 62 | OLYMPIA WEIGHTS              | weights gym                    | Metabolic-heavy SGAs: Olanzapine, Quetia
+ 63 | LURA'S BAIT & TACKLE         | NONE                           | Low-metabolic SGAs: Lurasidone, Ziprasid
+ 64 | CONSTANCE PERMS & SETS       | hairdressing salon             | Long-Acting Injectable Antipsychotics (L
+ 65 | THE DAILY EXTRA              | newspaper newsroom             | EPS spectrum: dystonia, akathisia, parki
+ 66 | TARDY GATE WORKS             | works time office              | Tardive Dyskinesia + VMAT2 inhibitors
+ 67 | NORTH MAIN STEEL             | NONE                           | Neuroleptic Malignant Syndrome
+ 68 | THE CAT & TONIC              | NONE                           | Catatonia
+ 69 | THE DOWN ESCALATOR           | department store escalator     | Acute psychosis ED management
+ 70 | EDDY'S CUT & TACK            | welding fabrication shop       | ECT and other somatic therapies
+ 71 | SHUT EYE BLINDS              | window blind shop              | Insomnia + CBT-I
+ 72 | Z.Z.Z. MATTRESSES            | NONE                           | Sleep aids: Z-drugs, DORAs, Melatonin
+ 73 | CATAPLEX CINEMAS             | NONE                           | Narcolepsy + Pitolisant
+ 74 | UP & ABOUT MOBILITY          | mobility aids showroom         | Parasomnias + RLS
+ 75 | SHORT POUND LOCK             | canal lock                     | Anorexia Nervosa
+ 76 | OX ROAD BOXING CLUB          | amateur boxing club            | Bulimia Nervosa + Binge Eating Disorder
+ 77 | PICK-A-PART SALVAGE          | NONE                           | ARFID + Pica + Rumination
+ 78 | URE VALLEY WATERWORKS        | water pumping station          | Enuresis + Encopresis
+ 79 | PHASE HILL OBSERVATORY       | public observatory             | Sleep development in children + adolesce
+ 80 | FIRE BRIGADE TRAINING        | NONE                           | Eating disorders intensive: FBT + medica
+ 81 | CIder WAgons                 | orchard cider press            | Alcohol Use Disorder + Withdrawal
+ 82 | CAMP ROSE                    | NONE                           | Alcohol treatment: Naltrexone, Acamprosa
+ 83 | POPPY LANE CREAMERY          | creamery dairy                 | Opioid Use Disorder + Withdrawal
+ 84 | DON'S ONE-STOP FUEL          | NONE                           | OUD treatment: Methadone, Buprenorphine,
+ 85 | UPPER FIELD HONEY            | beehive apiary                 | Stimulant Use Disorder
+ 86 | HIGH STREET POTTERY          | pottery works                  | Cannabis Use Disorder + Cannabis-induced
+ 87 | VARENICLEAN WINDOWS          | window-cleaning firm           | Tobacco cessation: Varenicline, NRT, Bup
+ 88 | THE TAPER WORKS              | candle works                   | Sedative/Hypnotic/Anxiolytic Use Disorde
+ 89 | LIBERTY CAP FARM             | mushroom farm                  | Hallucinogen + Caffeine + Inhalants
+ 90 | CHASE'S PLEDGE OFFICE        | pawnbroker shop                | Gambling Disorder + behavioral addiction
+ 91 | PARA LOFT                    | NONE                           | Paranoid Personality Disorder
+ 92 | SOLO CLASS MODEL YACHTS      | model yacht pond               | Schizoid Personality Disorder
+ 93 | TIPI TOP BRIC-A-BRAC         | bric-a-brac shop               | Schizotypal Personality Disorder
+ 94 | BORDER POST                  | NONE                           | Borderline Personality Disorder
+ 95 | DAILY BELAY TRAINING         | indoor climbing centre         | BPD treatment: DBT
+ 96 | ASPHALT & DRIVEWAYS          | NONE                           | Antisocial PD + Conduct Disorder
+ 97 | HISTORIC HOUSE TOURS         | NONE                           | Histrionic Personality Disorder
+ 98 | SPRING NARCISSUS SHOW        | NONE                           | Narcissistic Personality Disorder
+ 99 | AVOID ANTS PEST CO.          | pest-control depot             | Avoidant Personality Disorder
+100 | THE PENDANT SHOP             | NONE                           | Dependent Personality Disorder
+101 | O'CONNOR'S PRIZE DUCKS       | shooting gallery               | Obsessive-Compulsive Personality Disorde
+102 | TARA'S SOFT SERVE            | NONE                           | Forensic psychiatry: competency, insanit
+103 | NOAR CLIMBING CLUB           | indoor climbing centre         | Israeli law in child and adolescent psyc
+104 | CENTRAL TRANSIT HALL         | NONE                           | Gender Dysphoria + LGBTQ+ affirming care
+105 | PARAPHERNALIA ARMY SURPLUS   | army surplus store             | Sexual Dysfunctions + Paraphilic Disorde
+106 | ODDS LANE TIP                | household waste tip            | Disruptive/Impulse: ODD, IED, Kleptomani
+107 | BULL RING GYM                | boxing gym                     | Aggression and violence in youth
+108 | MEANS THE CHEMIST            | community pharmacy             | Adolescent suicidality
+109 | JOHNSON'S ICE RINK           | ice rink                       | Self-injurious behavior (NSSI)
+110 | FOSTER & SONS REMOVALS       | NONE                           | Family transitions: divorce, adoption, f
+111 | MOSAIC TILE CO.              | tile showroom                  | Cultural and religious issues in child m
+112 | PIPER & DODD SPRINGS         | bottling plant                 | Perinatal psychiatry: postpartum depress
+113 | MALONE'S FINE INFUSIONS      | tea merchant's tasting room    | Brexanolone + Zuranolone (PPD-specific)
+114 | DE LIRA FARM                 | ploughing match                | Geriatric overview (delirium focus — lig
+115 | SOFT SIGNS OPTICIANS         | opticians shop                 | Neuroanatomy + neurological examination 
+116 | SEIZED LOTS AUCTION          | NONE                           | Seizures + Epilepsy
+117 | COUPE & CONTRECOUP           | barber shop                    | Head trauma + TBI sequelae
+118 | MEN IN JEANS                 | NONE                           | CNS infections with psychiatric sequelae
+119 | HUNT & SON EXTENSIONS        | nail bar                       | Movement disorders: Huntington, Wilson
+120 | SWELL BAY CANNING CO.        | canning works                  | Brain tumors + pseudotumor
+121 | PERMASET PLASTICS            | plastic moulding shop          | Cerebral palsy
+122 | SHELTER 22Q                  | NONE                           | Neurogenetic syndromes: Williams, Prader
+123 | ASH LEIGH BATHS              | turkish baths                  | Neurocutaneous: Tuberous Sclerosis, Neur
+124 | MY GRAIN & FEED              | NONE                           | Headache + Migraine
+125 | CUSHION & FLOCK              | upholstery workshop            | Metabolic disorders with psychiatric pre
+126 | PANDA SMILES                 | dental surgery                 | Autoimmune: NMDA-receptor encephalitis, 
+127 | FRAGILE GOODS CO.            | glassware warehouse            | Neurodegenerative basics (FXTAS, HD pedi
+128 | SPINDLE COURT FLATS          | deck-access flats              | Sleep medicine intensive
+129 | THE HOT LINE                 | emergency dispatch room        | Pediatric psychiatric emergencies
+130 | HOTEL LIAISON                | NONE                           | Consultation-liaison: pediatrics, oncolo
+131 | TEAR-A-PLY ROOFING           | roofing supplies yard          | Psychotherapy theories overview
+132 | CEMENT BLOCK TESTING         | concrete block works           | CBT: theory + practice
+133 | DEMOLITION BY THORNE         | demolition site                | DBT: theory + practice
+134 | ISLAND PARK TARGET ARCHERY   | NONE                           | IPT-A: Interpersonal psychotherapy for a
+135 | OUSE AMATEUR ROWING SOCIETY  | rowing club boathouse          | Motivational interviewing
+136 | THE STAIRCASE LOCKS          | canal lock flight              | Levels of care: inpatient, partial hospi
+137 | ISLAND END PITCHES           | municipal playing fields       | School-based interventions and consultat
+138 | MINUCHIN & SONS BUILDERS     | NONE                           | Family therapy + Parent management train
+139 | KLEIN PUPPET WORKS           | puppet workshop                | Psychodynamic: Anna Freud, Klein, Kohut,
+140 | WINNICOTT LENDING LIBRARY    | lending library                | Object relations: Winnicott, Mahler, Ker
+141 | BION & SONS BELLHANGERS      | bellhanging works              | Later theorists: Erikson, Bion, Ogden, L
+142 | TELESCOPE HILL MODEL FLYERS  | model flying club              | Telemental health for children and adole
+143 | GOLD STANDARD ASSAY          | assay office                   | Evidence-based practice in child psychia
+144 | THE LAST ROUND               | NONE                           | Integration + practice questions + weak-

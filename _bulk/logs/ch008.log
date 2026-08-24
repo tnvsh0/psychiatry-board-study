@@ -1,0 +1,108 @@
+
+======================================================================
+Day 8: התפתחות נורמטיבית: גיל הינקות (0-2)
+Tag: study-008-normative-development-0-2-infancy
+Aspects: ['motor_milestones', 'cognitive_milestones', 'social_emotional', 'language', 'red_flags']
+Symbols (3): ['brazelton_still_face', 'developmental_red_flags', 'developmental_ladder']...
+Density: medium
+======================================================================
+
+Found existing per-day notebook: 145983ba-f52b-484a-8da9-7c1cd7722b66 ('[Study-008] התפתחות נורמטיבית: גיל הינקות (0-2)')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1903 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+    [!] notebooklm generate: rate limited, NOT retrying
+  [!] start video failed (exit 1): 17:40:00 ERROR [notebooklm._rpc_executor] [req=1b5d8f57] RPC CREATE_ARTIFACT failed after 0.879s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  video: None
+  flashcards: 274dc4c4-04cd-45cb-b7b0-b218947817de
+  quiz: ad00caf8-20dc-4b56-a1d4-19af18945ae5
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (39.1 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (16586 bytes, keys: ['motor_milestones', 'cognitive_milestones', 'social_emotional', 'language', 'red_flags', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[motor_milestones] = 03960558
+  scope[cognitive_milestones] = 356cd8a4
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 2 Sketchy v2 plate(s) in 'CRAWL & CRUISE'...
+  sketchy_main: 24 facts, directing...
+[DIAG] figures_even probe returned NO: 'NO, the man in the brown hoodie standing on the left side is larger.'
+[i] try 1: 1 missing, 5 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the brown hoodie standing on the left side is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the woman in the green t-shirt and blue jeans, standing to the left of the long red mats and holding a red book, is clearly larger than the others.'
+[i] try 2: 0 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the woman in the green t-shirt and blue jeans, standing to the left of the long red mats and holding a red book, is clearly larger than the others.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 0 lower-priority string(s) and retrying
+[DIAG] figures_even probe returned NO: 'NO, the woman in the pink shirt and grey skirt, standing at the table with the scales, is larger.'
+[i] try 3: 1 missing, 6 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the woman in the pink shirt and grey skirt, standing at the table with the scales, is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 3 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   MOS                '4mo' + 'MOS'  quad=[(1202, 1074), (1367, 1055), (1457, 1255), (1252, 1279)]  plate height=14.58% of frame
+[ok]   N                  '12' + 'N'  quad=[(1883, 228), (2009, 233), (2005, 381), (1880, 365)]  plate height=9.96% of frame
+[ok]   WKS                '6wk' + 'WKS'  quad=[(2265, 741), (2460, 788), (2446, 924), (2257, 866)]  plate height=11.91% of frame
+[scrub] neutralised 5400 leftover chroma px
+[i] comp    [OK] sketchy_main.png (5.9 MB), 3 tries, score 0, composited 1/2 numbers
+  sketchy_main2: 23 facts, directing.    [OK] sketchy_main.png (5.9 MB), 4 tries, score 1, composited 3/3 numbers
+  sketchy_main2: 24 facts, directing...
+[i] element table attempt 1/3: 2 error(s):
+      - e18: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'כמו מגדל בנאים עם פיגומים המציין תהליך של בנייה והתפתחות, כך מסמל מבנה זה את התפתחות הילד בשנים הראשונות לחייו.'
+      - 4/18 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] accepted with warning: e4: hook over 32 words (41): 'בדיוק כמו שהורה מחבק ומנחם פעוט בן 18 חודש שנדחק מרעש חזק, ומדכא בכך את הופעת מולקולות הקורטיזול המסומלות בסימן עצור, כך התקשרות בטוחה משמשת כחוצץ פיזיולוגי המגן על המוח ומדכאת את פעילות ציר ה-HPA ומונעת עלייה ברמות קורטיזול במצבי פחד.'
+[i] accepted with warning: e9: hook over 32 words (35): 'הפעוט שבוכה במר נפשו כשההורה הולך להכין תה, אך מיד נרגע ושמח במפגש המחודש, מראה שהערכת בכי ומצוקה בעת פרידה אינה המדד המרכזי לאיכות ההתקשרות, אלא יכולת הדיאדה לפתור את המצוקה יחד בעת המפגש מחדש.'
+[i] accepted with warning: e11: hook over 32 words (35): "כמו ספר תיעוד אדום הפתוח על גרף, ובמקום נתוני �[DIAG] figures_even probe returned NO: 'NO, the man in the green shirt holding a baby is larger.'
+[i] try 1: 1 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the green shirt holding a baby is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the standing man in the green shirt holding a baby on the far left is larger.'
+[i] try 2: 0 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the standing man in the green shirt holding a baby on the far left is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 1 lower-priority string(s) and retrying
+[DIAG] figures_even probe returned NO: 'NO, the man walking on the bottom left, carrying a baby in a car seat, is clearly larger than the many babies and young children throughout the image.'
+[i] try 3: 0 missing, 12 stray (warning), composition {'anchor_is_object': False, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': "The single largest object in this image is the building's interior structure itself (the walls, roof, and floor, or large sections of them). Other large inanimate objects include the tall stack of blue mats, the stacks of wooden pallets, and the long rows of blue mats laid on the floor. No person in the image is larger than these structures or ob[DIAG] figures_even probe returned NO: 'NO, the man in the red shirt and blue jeans, holding a baby near the scale on the right side of the image, is larger.'
+[i] try 2: 7 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'N[DIAG] figures_even probe returned NO: 'NO, the man in a yellow raincoat pushing a stroller in the bottom left is larger.'
+[i] try 4: 3 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': Fals[DIAG] figures_even probe returned NO: 'NO, the man in the yellow jacket pushing a stroller on the bottom left is larger.'
+[i] try 3: 4 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the yellow jacket pushing a stroller on the bottom left is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the man in the blue hoodie who is building the colorful block tower is larger.'
+[i] try 4: 3 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anc    [OK] sketchy_main2.png (6.3 MB), 4 tries, score 1, composited 3/3 numbers
+
+2 NotebookLM artifacts launched. Waiting...
+
+  [1m] quiz (aaa59d91): completed
+  [1m] flashcards (7b264300): completed
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-008-normative-development-0-2-infancy...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-008-normative-development-0-2-infancy
+S                '36mo' + 'MOS'  quad=[(86, 412), (324, 405), (325, 607), (88, 642)]  plate height=15.43% of frame
+[scrub] neutralised 5085 leftover chroma px
+[i] composited 3/3 number plates -> sketchy_main2.png
+[i] narration attempt 1/3: 1 issue(s); figure not spoken: 6wk
+[i] narration attempt 2/3: 4 issue(s); figure not spoken: 3-6mo
+[i] narration attempt 3/3: 13 issue(s); figure not spoken: עד 6mo
+    [FAIL] no render produced
+
+2 NotebookLM artifacts launched. Waiting...
+
+  [1m] quiz (ad00caf8): completed
+  [1m] flashcards (274dc4c4): completed
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2526, in <module>
+    main()
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2506, in main
+    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2455, in generate_day
+    raise RuntimeError(
+RuntimeError: chapter 8 is missing study_guide.md, facts.json; refusing to publish a release that would mark it done. Its local files are left in place as evidence.

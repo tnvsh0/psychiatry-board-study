@@ -1,0 +1,144 @@
+1	opticians practice	MAIN STREET EYECARE
+2	ferry terminal	INSULA FERRIES
+3	village shop row	MESSENGER ROW
+4	None	DOPA MINE No.4
+5	covered market hall	5 HIGH TOWN MARKET
+6	travelling circus	NOR'EAST BROS. CIRCUS
+7	cobbler's shop	GABBAY & GLUCK REPAIRS
+8	soft play centre	CRAWL & CRUISE
+9	None	LITTLE SPROUTS NURSERY
+10	None	OLD SCHOOL AQUARIUM
+11	tanning salon	TANNER'S SUN STUDIO
+12	None	BOWLBY & SONS ATTACHMENTS
+13	pet shop	THOS. & CHESS PETS
+14	None	PERSONAL INK
+15	None	EUTHYMIC FALLS WEATHER
+16	None	PHARM LANE KARTS
+17	amusement arcade	HYPERDRIVE AMUSEMENTS
+18	None	AMPHI BOWL
+19	hill sheep farm	CLONMEL HILL FARM
+20	None	THE AUTO-MAT
+21	ladder works	KIDD LADDER WORKS
+22	None	LEXI PRESS
+23	butcher shop	TONGUE & CHEEK
+24	None	TURRET CLOCK WORKS
+25	None	STEREO TYPE RECORDS
+26	egg packing station	DOWNS FARM EGGS
+27	tool hire depot	RETT-A-TOOL HIRE
+28	cloth dye house	MADDER DYE HOUSE
+29	None	expreSS tRIps
+30	None	SuNRIse LAUNDRY
+31	None	MAYO'S AGED DELI
+32	candle works	THYME & AGAIN
+33	block ice works	POLAR ICE WORKS
+34	None	CYCLO PARK
+35	None	Lithium Lift
+36	bicycle repair shop	STABILISER CYCLE WORKS
+37	firework shop	DIAMOND DISPLAYS
+38	safety equipment supplier	GADD & SONS SAFETY
+39	None	AGORA TRANSIT CENTER
+40	radio repair shop	SELECT-A-BAND RADIO
+41	None	PACIFIC ELEMENTARY
+42	seaside deckchair hire	BEN'S DECKCHAIR HIRE
+43	wet fish shop	OCEAN DAILY CATCH
+44	photo developing lab	EXPOSURE PRINTS
+45	seed bank archive	HOARD'S END SEED BANK
+46	None	TILLMAN'S PICK-YOUR-OWN
+47	None	POST TOWN SORTING DEPOT
+48	rock lighthouse	PRAISE ROCK LIGHT
+49	None	SEAM STRESS ALTERATIONS
+50	None	REEVE & SONS MEMORIALS
+51	picture conservation studio	ACE PICTURE RESTORERS
+52	None	ALL-HITCH ATTACHMENTS
+53	None	PARTITION SELF STORAGE
+54	telephone exchange	SOMA EXCHANGE
+55	None	SPLIT LANES BOWLING
+56	telephone exchange	NORMANDY AVE EXCHANGE
+57	lending library	BRIEF LOAN LIBRARY
+58	None	STARRY GAZING
+59	None	SECONDS & IRREGULARS
+60	None	CLOZA PINE MILL
+61	piano tuning floor	PIP PIANO WORKS
+62	weights gym	OLYMPIA WEIGHTS
+63	None	LURA'S BAIT & TACKLE
+64	hairdressing salon	CONSTANCE PERMS & SETS
+65	newspaper newsroom	THE DAILY EXTRA
+66	works time office	TARDY GATE WORKS
+67	None	NORTH MAIN STEEL
+68	None	THE CAT & TONIC
+69	department store escalator	THE DOWN ESCALATOR
+70	welding fabrication shop	EDDY'S CUT & TACK
+71	window blind shop	SHUT EYE BLINDS
+72	None	Z.Z.Z. MATTRESSES
+73	None	CATAPLEX CINEMAS
+74	mobility aids showroom	UP & ABOUT MOBILITY
+75	canal lock	SHORT POUND LOCK
+76	amateur boxing club	OX ROAD BOXING CLUB
+77	None	PICK-A-PART SALVAGE
+78	water pumping station	URE VALLEY WATERWORKS
+79	public observatory	PHASE HILL OBSERVATORY
+80	None	FIRE BRIGADE TRAINING
+81	orchard cider press	CIder WAgons
+82	None	CAMP ROSE
+83	creamery dairy	POPPY LANE CREAMERY
+84	None	DON'S ONE-STOP FUEL
+85	beehive apiary	UPPER FIELD HONEY
+86	pottery works	HIGH STREET POTTERY
+87	window-cleaning firm	VARENICLEAN WINDOWS
+88	candle works	THE TAPER WORKS
+89	mushroom farm	LIBERTY CAP FARM
+90	pawnbroker shop	CHASE'S PLEDGE OFFICE
+91	None	PARA LOFT
+92	model yacht pond	SOLO CLASS MODEL YACHTS
+93	bric-a-brac shop	TIPI TOP BRIC-A-BRAC
+94	None	BORDER POST
+95	indoor climbing centre	DAILY BELAY TRAINING
+96	None	ASPHALT & DRIVEWAYS
+97	None	HISTORIC HOUSE TOURS
+98	None	SPRING NARCISSUS SHOW
+99	pest-control depot	AVOID ANTS PEST CO.
+100	None	THE PENDANT SHOP
+101	shooting gallery	O'CONNOR'S PRIZE DUCKS
+102	None	TARA'S SOFT SERVE
+103	indoor climbing centre	NOAR CLIMBING CLUB
+104	None	CENTRAL TRANSIT HALL
+105	army surplus store	PARAPHERNALIA ARMY SURPLUS
+106	household waste tip	ODDS LANE TIP
+107	boxing gym	BULL RING GYM
+108	community pharmacy	MEANS THE CHEMIST
+109	ice rink	JOHNSON'S ICE RINK
+110	None	FOSTER & SONS REMOVALS
+111	tile showroom	MOSAIC TILE CO.
+112	bottling plant	PIPER & DODD SPRINGS
+113	tea merchant's tasting room	MALONE'S FINE INFUSIONS
+114	ploughing match	DE LIRA FARM
+115	opticians shop	SOFT SIGNS OPTICIANS
+116	None	SEIZED LOTS AUCTION
+117	barber shop	COUPE & CONTRECOUP
+118	None	MEN IN JEANS
+119	nail bar	HUNT & SON EXTENSIONS
+120	canning works	SWELL BAY CANNING CO.
+121	plastic moulding shop	PERMASET PLASTICS
+122	None	SHELTER 22Q
+123	turkish baths	ASH LEIGH BATHS
+124	None	MY GRAIN & FEED
+125	upholstery workshop	CUSHION & FLOCK
+126	dental surgery	PANDA SMILES
+127	glassware warehouse	FRAGILE GOODS CO.
+128	deck-access flats	SPINDLE COURT FLATS
+129	emergency dispatch room	THE HOT LINE
+130	None	HOTEL LIAISON
+131	roofing supplies yard	TEAR-A-PLY ROOFING
+132	concrete block works	CEMENT BLOCK TESTING
+133	demolition site	DEMOLITION BY THORNE
+134	None	ISLAND PARK TARGET ARCHERY
+135	rowing club boathouse	OUSE AMATEUR ROWING SOCIETY
+136	canal lock flight	THE STAIRCASE LOCKS
+137	municipal playing fields	ISLAND END PITCHES
+138	None	MINUCHIN & SONS BUILDERS
+139	puppet workshop	KLEIN PUPPET WORKS
+140	lending library	WINNICOTT LENDING LIBRARY
+141	bellhanging works	BION & SONS BELLHANGERS
+142	model flying club	TELESCOPE HILL MODEL FLYERS
+143	assay office	GOLD STANDARD ASSAY
+144	None	THE LAST ROUND

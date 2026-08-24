@@ -1,0 +1,50 @@
+
+======================================================================
+Day 14: קריטריונים כלליים להפרעת אישיות
+Tag: study-014-general-personality-disorder-criteria
+Aspects: ['dsm_general_criteria', 'cluster_overview', 'stability_duration', 'differential_from_state']
+Symbols (1): ['DSM_personality_disorders']...
+Density: medium
+======================================================================
+
+Creating per-day notebook: [Study-014] קריטריונים כלליים להפרעת אישיות
+  Created notebook: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04
+  Attaching textbooks from Drive...
+    [OK] DSM-5-TR
+    [OK] Dulcan
+    [OK] StahlKids
+    [OK] StahlNeuro
+    [OK] Syllabus
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 45s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 72s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 115s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 184s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 240s
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
+    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
+    not answering yet (0 chars, 0/5 books named); waiting 240s
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2537, in <module>
+    main()
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2517, in main
+    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2178, in generate_day
+    raise RuntimeError(
+RuntimeError: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04 reports every source ready but still cannot answer from them; refusing to extract

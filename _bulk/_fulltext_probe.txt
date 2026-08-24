@@ -1,0 +1,8 @@
+{
+  "source_id": "607387e0-fb98-46c6-8434-820edb762af5",
+  "title": "American Psychiatric Association - DSM 5 TR-APA (2022).pdf",
+  "kind": "web_page",
+  "content": "Sign in\nto continue to Google Drive\nEmail or phone\nForgot email?\nNot your computer? Use a private browsing window to sign in. \nLearn more about using Guest mode\nhttps://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\nCreate account\nhttps://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\nHelp\nhttps://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\nPrivacy\nhttps://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\nTerms\nhttps://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US",
+  "url": "https://drive.google.com/open?id=1WoEmDjP3-iIm0Ti2l0cOpMTe8ssBOD5Q",
+  "char_count": 544
+}

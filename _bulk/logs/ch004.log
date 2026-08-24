@@ -1,0 +1,104 @@
+
+======================================================================
+Day 4: מסלולי דופמין
+Tag: study-004-dopamine-pathways
+Aspects: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance']
+Symbols (14): ['DOPA_MINE', 'VTA', 'substantia_nigra_pars_compacta', 'mesolimbic_pathway', 'mesocortical_pathway']...
+Density: high
+======================================================================
+
+Found existing per-day notebook: c277aecb-3f11-4932-82f8-83b7e0cd3806 ('[Study-004] מסלולי דופמין')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    not answering yet (1588 chars, 2/5 books named); waiting 45s
+    not answering yet (1865 chars, 2/5 books named); waiting 72s
+    notebook is answering (1720 chars, 3/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+  video: 32008769-211b-497d-a5e5-b908ed960807
+  flashcards: 7ef47f49-1662-411a-8691-e09f1a142c56
+  quiz: bb04a0ea-358a-46ac-a802-557a908eb6a0
+
+Generating focused study guide (ask + page refs)...
+  [!] study guide attempt 1/3 rejected: 11 citations point at pages that do not exist in the book they name (e.g. StahlNeuro p.766, StahlNeuro p.629, StahlNeuro p.640, StahlNeuro p.696, StahlNeuro p.630, StahlNeuro p.700, StahlNeuro p.728, StahlNeuro p.735) — use only the printed page ranges given, and write "(מקור: הקשר רחב)" when you cannot find a page
+  [OK] study_guide.md (34.9 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (17250 bytes, keys: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[core_concept] = 885bf615
+  scope[anatomy_or_structure] = 8c468a92
+  scope[function] = de3d7a02
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in 'DOPA MINE No.4'...
+  sketchy_main: 28 facts, directing...
+[i] normalized e21: zone 'Lamp Room' added to the list
+[i] normalized e17: dropped an unmappable relation 'enhances activity in'
+[i] normalized e18: dropped an unmappable relation 'stabilizes'
+[i] normalized e19: dropped an unmappable relation 'caused by acute blockade of'
+[i] normalized e11: dropped text 'Substantia Nigra Caudate Putamen CSTC Loop D1 D2' (over 5 words)
+[i] normalized e12: dropped text 'Hypothalamus Control Hyperprolactinemia Galactorrhea Amenorrhea Gynecomastia' (over 5 words)
+[i] normalized e15: dropped text 'NNT: Depress 10, OCD 6, Anxiety 3' (over 5 words)
+[i] normalized e2: cue trimmed to 'Single elevator'
+[i] normalized e4: cue trimmed to 'Massive RED BARRIER'
+[i] normalized e9: cue trimmed to 'Train tracks'
+[i] normalized e10: cue trimmed to 'Train tracks marked'
+[i] normalized e11: cue trimmed to "Train tracks marked 'NIGRO-STRIA'"
+[i] normalized e12: cue trimmed to 'Tubes'
+[i] normalized e20: cue trimmed to 'A Jewish religious man'
+[i] accepted with warning: e1: hook over 32 words (33): 'כמו שמתחם הכרייה מתחלק לשני אזורים עיקריים לפי משפחות קולטנים, D1-like ו-D2-like, המכילים יחד חמישה תתי-קולטנים שונים, כך קיימות 2 קבוצות פוסט-סינפטיות עיקריות של קולטני דופמין וחמישה תתי-קולטנים פרמקולוגיים מוכרים במערכת העצבים המרכזית.'
+[i] accepted with warning: e2: hook over 32 words (36): 'כמו שהמעלית המסומנת D1 פועלת על קפיצי G (Gs) כדי להעלות את ריכוז ה-cAMP ולהוביל את הכורים למעלה עם איתות מעורר, כך קולטני D1 מצומדים ל-Gs, מפעילים אדנילאט ציקלאז ומעלים ריכוז cAMP תוך-תאי ליצירת איתות מעורר.'
+[i] accepted with warning: e3: hook over 32 words (34): 'בדיוק כמו שמעלית הזכוכית המסומנת D5 עולה דרך קומות ספרייה, מופעלת על ידי קפיצי G (Gs) ומובילה לעלייה ב-cAMP, כך קולטני D5 מצומדים ל-Gs, מפעילים אדנילאט ציקלאז ומעלים ריכוז cAMP תוך-תאי ליצירת איתות מעורר.'
+[i] accepted with warning: e5: hook over 32 words (36): 'כמו שלושה מחסומים אדומים קטנים בצורת לב (לימבית) מופעלים על ידי עובדי ענק (Gi) כדי לעכב את הפעילות ולהוריד את רמת ה-cAMP, כך קולטני D3 מצומדים ל-Gi, מעכבים אדנילאט ציקלאז ומפחיתים cAMP תוך-תאי ליצירת איתות מעכב.'
+[i] accepted with warning: e6: hook over 32 words (34): 'כמו שדלת חסומה בארבעה בריחים (D4) נשמרת שקטה וסגורה על ידי עובד ענק (Gi), ובכך מונעת פעילות ומפחיתה את ה-cAMP, כך קולטני D4 מצומדים ל-Gi, מעכבים אדנילאט ציקלאז ומפחיתים cAMP תוך-תאי ליצירת איתות מעכב.'
+[i] accepted with warning: e7: hook over 32 words (52): 'כמו שהמחסומים הקטנים המסומנים D2 ו-D3 משמשים כשומרי סף לפני מנהרת הכרייה כדי לבלום כניסת עפרות דופמין נוספות, כאשר מחסום D3 הקטן רגיש יותר ומופעל על ידי זרזיף עפרות, כך קולטנים פרה-סינפטיים מסוג D2 ו-D3 פועלים כקולטנים עצמיים ורגישים לדופמין, כאשר D3 רגיש יותר מ-D2, ומשמשים כשומרי סף לבלימת שחרור דופמין נוסף.'
+[i] accepted with warning: e9: hook over 32 words (66): 'כמו שמסלול רכבת ה"מזו-לימב" מוביל ממשרד המפקח (VTA) לקזינו תוסס שבו כורים נלהבים דוחפים עגלות פרסים ומצביעים בהתלהבות על עפרות זוהרות (Salience), אך עודף דופמין גורם לכורים להזיות בקזינו, וחסימת D2 ממושכת משאירה אותם אדישים ומדוכאים, כך המסלול המסולימבי מוביל מה-VTA לגרעין האקומבנס, מנהל מוטיבציה, עונג ותגמול, וייחוס בולטות, ועודף פעילות בו גורם לתסמינים חיוביים של פסיכוזה, בעוד חסימת D2 ממושכת עלולה לגרום לתסמינים שליליים משניים.'
+[i] accepted with warning: e10: hook over 32 words (72): 'כמו שמסלול רכבת ה"מזו-קורט" מוביל ממשרד המפקח (VTA) לבית קפה אינטלקטואלי על גבי ה-PFC, המחולק לשתי פינות עבודה (DLPFC, VMPFC), שבו כורים שותים קפה ומתרכזים בעזרת רדיו בעל קליטה חדה המוגברת בנוראדרנלין, אך במקרה של תת-פעילות הם עייפים, מפוזרים ושוכחים את עבודתם, כך המסלול המסוקורטיקלי מוביל מה-VTA ל-PFC, מתפצל ל-DLPFC ו-VMPFC, מכוון את יעילות עיבוד המידע על ידי שיפור יחס אות-לרעש בשילוב עם נוראדרנלין, ותת-פעילות בו מתווכת תסמינים שליליים ראשוניים וקהות קוגניטיבית.'
+[i] accepted with warning: e11: hook over 32 words (87): 'כמו שמסלול הרכבת "ניגרו-סטריא" מוביל מפיר המכרה השחור (Substantia Nigra) אל תא גלגלי השיניים הענקי (סטריאטום), המחולק לגלגלי זנב ופוטמן, ושבו כורים שולטים על תנועה עדינה באמצעות מנגנוני D1 מעוררים ותוך כדי מעצורים D2 בולמים בתוך לולאת CSTC אחת, אך חסימת D2 גורמת לכורים לנוקשות ולתנועות בלתי רצוניות (EPS), וחסימה כרונית מביאה לשגשוג מנגנוני D2 ותנועות בלתי נשלטות (TD), כך המסלול הניגרוסטריאטלי שולט על תנועה מוטורית עדינה דרך המסלול הישיר (D1) והעקיף (D2) בלולאת CSTC, וחסימת קולטני D2 בו גורמת ל-EPS, וחסימה כרונית מתווכת תנועות טרדיב דיסקינזיה.'
+[i] accepted with warning: e12: hook over 32 words (55): 'כמו שמערכת הצינורות "טוברו-אינפונדיבולר" מה"חדר בקרה ההיפותלמי" מגיעה למשאבת חלב ענקית, ושם מעצור D2 מעכב תמיד את זרימת החלב, אך חסימתו גורמת להצפה (היפרפרולקטינמיה) עם סימנים של גלקטוריאה, אמנוריאה וגינקומסטיה בקרב הכורים, כך המסלול הטוברואינפונדיבולרי מוביל מההיפותלמוס לבלוטת יותרת המוח הקדמית, מעכב טונית את הפרשת הפרולקטין, וחסימת קולטני D2 בו גורמת להיפרפרולקטינמיה ולתסמינים קליניים נלווים.'
+[i] accepted with warning: e13: hook over 32 words (35): 'בנוסף לארבעת המסלולים הראשיים, בדיוק כמו שיש מנהרה חמישית קטנה המובילה לאזור מנוחה לכורים עייפים ששומרים על מחזור שינה ועירות, כך קיימים חמישה מסלולי דופמין מוגדרים הכוללים גם מסלול תלמי המשפיע על מנגנוני שינה וערנות.'
+[i] accepted with warning: e14: hook over 32 words (43): 'כמו שילד כורה מעל גיל 7, שמסומן בתג ה-7yr על מספר המנורה שלו, נותן אישור בראשי (Assent) ללכת לעבודה יחד עם הסכמת ההורים, כך בילדים ומתבגרים מעל גיל 7, קבלת הסכמה מוסרית (Clinical Assent) לטיפול תרופתי נחשבת ישימה ומצופה לצד הסכמה חוקית מההורים.'
+[i] accepted with warning: e15: hook over 32 words (35): 'כמו שלוח הרישום מציג יעילות של טיפולים שונים באמצעות מספר הטיפולים הנחוצים כדי למנוע מקרה אחד, כך ה-NNT של נוגדי דיכאון לטיפול בדיכאון בילדים הוא 10, לעומת 6 עבור OCD ו-3 עבור חרדה שאינה OCD.'
+[i] accepted with warning: e17: hook over 32 words (52): 'כמו שכורים עם קסדות "SGA" חוסמים מתג "5-HT2A" ובכך משחררים כמויות קטנות של עפרות דופמין בגלגלי הסטריאטום ובבית הקפה של ה-PFC, מה שמפחית תנועות קשות ומשפר ערנות, כך תרופות אנטי-פסיכוטיות לא-טיפוסיות (SGAs) מפחיתות את פוטנציאל ה-EPS ומשפרות תסמינים שליליים וקוגניטיביים על ידי חסימת קולטני 5-HT2A המביאה לשחרור דופמין מקומי במסלול הניגרוסטריאטלי וב-PFC.'
+[i] accepted with warning: e18: hook over 32 words (42): 'כמו שכורה "אריפיפרזול" פועל כ"מייצב דופמין" ומחזיק את מחסום ה-D2 במצב פתוח-למחצה ויציב, מונע ממנו להיסגר לגמרי או להיפתח יתר על המידה, כך אגוניסטים חלקיים של D2 (כגון Aripiprazole) פועלים כמייצבי דופמין ומונעים EPS והיפרפרולקטינמיה על ידי שמירה על רמת הפעלה יציבה.'
+[i] accepted with warning: e19: hook over 32 words (41): 'כמו שכורה אחד ליד מחסום D2 שנסגר בפתאומיות סובל מחום קיצוני, נוקשות שרירים ועליית CPK, מה שמצביע על מצב חירום רפואי, כך תסמונת NMS היא מצב חירום רפואי הנגרם מחסימה חריפה של קולטני D2 ומאופיין בחום קיצוני, נוקשות שרירים ועליית CPK.'
+[i] dropped digit-bearing string 'SGA 5-HT2A Block' — the compositor owns the numerals
+[i] dropped digit-bearing string 'V-MAT 2' — the compositor owns the numerals
+[i] try 1: 7 missing, 8 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the father holding the lamp next to the child miner is larger.'
+[i] try 2: 13 missing, 3 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the father holding the lamp next to the child miner is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 8 lower-priority string(s) and retrying
+[DIAG] figures_even probe returned NO: 'NO, the giant, red, block-like humanoid figure labeled "Giant Gi Blocked AC CAMP↓" on the left side of the image is clearly larger than the others.'
+[i] try 3: 7 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the giant, red, block-like humanoid figure labeled "Giant Gi Blocked AC CAMP↓" on the left side of the image is clearly larger than the others.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 8 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES, all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   YRS                '7yr' + 'YRS'  quad=[(2191, 108), (2379, 115), (2379, 266), (2190, 277)]  plate height=11.0% of frame
+[ok]   N                  '12' + 'N'  quad=[(2378, 592), (2686, 640), (2686, 832), (2378, 784)]  plate height=15.62% of frame
+[scrub] neutralised 3527 leftover chroma px
+[i] composited 2/2 number plates -> sketchy_main.png
+    [OK] sketchy_main.png (5.6 MB), 4 tries, score 7, composited 2/2 numbers
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (32008769): completed
+  [1m] quiz (bb04a0ea): completed
+  [1m] flashcards (7ef47f49): completed
+  [OK] video.mp4 (40.8 MB)
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-004-dopamine-pathways...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-004-dopamine-pathways

@@ -3,6 +3,38 @@
 Written when the weekly quota ran low, to make the state legible without
 re-deriving it. The exam is **2026-11-25**, about 96 days out.
 
+## 2026-08-25 — stopped here, waiting on NotebookLM
+
+The bulk run is HALTED and nothing is running. 11 chapters are released (1, 3-11)
+and the site is live at
+https://psychiatry-course-690391711540.me-west1.run.app
+
+**The blocker is not ours.** NotebookLM's chat endpoint returns an empty stream
+on every notebook on this account:
+
+    No parseable chunks in streaming chat response (4 lines scanned).
+    The response was empty or the API wire format may have changed.
+
+Reproduced with a live session, on notebooks that had answered an hour earlier,
+while create / source list / source add-text all kept working. Could be chat
+throttling after a heavy day, or the wire format changing — I could not tell
+apart, because the decisive test needs the second account and the standing rule
+is not to log into it. CLI is already newest (0.8.1).
+
+**To resume tomorrow:**
+
+    notebooklm -p bulk ask "Say OK." --json     # does chat answer again?
+    notebooklm -p bulk login                    # if auth expired (NEVER --fresh)
+    python scripts/bulk_run.py                  # picks up at chapter 12
+
+If chat is still dead by tomorrow, it is likely a real wire-format change and
+the decoder needs checking against live traffic — see docs/rpc-development.md.
+
+Two backfills wait on the same chat endpoint and can run once it is back:
+
+    python scripts/backfill_audio.py --limit 3
+    python scripts/backfill_infographics.py --limit 2
+
 ## The one decision waiting on the owner
 
 The plate renders run on Nano Banana Pro at 2K: **~$227 for 141 chapters**.

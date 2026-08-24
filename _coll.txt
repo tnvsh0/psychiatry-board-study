@@ -1,0 +1,77 @@
+--- 13 Temperament | cat=pet shop
+SIGN: THOS. & CHESS PETS
+PLACE: A high-street pet shop on a Saturday morning: a two-tier run of glass-fronted pens along the back and side, a counter with scales and a bell, pallets of feed sacks out in the middle of the floor, and a low meeting pen where a family is sitting on the floor with a puppy.
+ANCHOR: The two-tier run of glass-fronted pens, stepping from the lower-left corner of the frame to the upper right, with the feed pallet at its near end and the grooming table at its far end — splitting the 
+TOKENS: []
+
+--- 27 Other neurodevelopmental: Rett, Prader-W | cat=tool hire depot
+SIGN: RETT-A-TOOL HIRE
+PLACE: A tool and plant hire depot on a Saturday morning: a counter with a docket pad at the front, double-height racking of breakers, mixers and generators down one side, a wash-off bay with a hose reel and a mud grate, a service bench under the window, and the roller shutter half up onto the loading yard.
+ANCHOR: The double-height steel racking run — bays of breakers, mixers and generators stacked to the roof — running from the lower left of the frame to the upper right, splitting the depot into the hire count
+TOKENS: null
+
+--- 77 ARFID + Pica + Rumination | cat=None
+SIGN: PICK-A-PART SALVAGE
+PLACE: A self-service auto salvage yard on a Saturday: rows of stripped car hulks up on their rims, a gravel aisle between them, the parts-counter shed and a crane at the far end
+ANCHOR: The long row of stripped car bodies raised on bare rims, running lower-left to upper-right, with the painted aisle-marker posts and the crane at the far end
+TOKENS: null
+
+--- 84 OUD treatment: Methadone, Buprenorphine, | cat=None
+SIGN: DON'S ONE-STOP FUEL
+PLACE: A two-island filling station on the edge of town at seven in the morning: a canopy over four pumps, a queue of cars nose to tail for the full-serve lane, the kiosk window and the air-and-water bay
+ANCHOR: The pump-island canopy and the row of pumps and hoses running lower-left to upper-right, with the price totem at the near end
+TOKENS: null
+
+--- 104 Gender Dysphoria + LGBTQ+ affirming care | cat=None
+SIGN: CENTRAL TRANSIT HALL
+PLACE: The concourse of an ordinary city transit interchange in the middle of the day — a bank of ticket validators at the barriers, a flip departure board mid-change, a left-luggage counter, a reissue window, one escalator roped off with a cone in front of it.
+ANCHOR: The bank of ticket barriers and validator posts running from lower-left to upper-right across the concourse, the departure board hung above them, splitting the frame into street entrance / concourse /
+TOKENS: null
+
+--- 105 Sexual Dysfunctions + Paraphilic Disorde | cat=army surplus store
+SIGN: PARAPHERNALIA ARMY SURPLUS
+PLACE: An army-surplus store on a wet Saturday morning: a long double-sided kit rack down the middle of the shop floor, four curtained fitting cubicles along the back wall, wooden bins of boots and webbing under the window, a glass-topped counter with a locked cabinet beneath it, and a testing bench by the till where every second-hand item is tried before it is sold.
+ANCHOR: The long double-sided steel kit rack — a run of shelving and hanging rail loaded to the ceiling — cutting the shop from the lower-left corner to the upper right and dividing the floor into the window 
+TOKENS: null
+
+--- 131 Psychotherapy theories overview | cat=roofing supplies yard
+SIGN: TEAR-A-PLY ROOFING
+PLACE: A roofing supplies merchant's trade counter and yard on a weekday morning: a covered run of sample bays — slate, clay tile, felt, shingle, standing seam — pallets of each stacked behind, a cutaway demonstration roof standing in the middle of the yard, vans loading at the far end.
+ANCHOR: The cutaway demonstration roof on its stand in the middle of the yard, its slope and its cut-open courses of tile, batten, felt and deck running from the lower left of the frame to the upper right.
+TOKENS: []
+
+--- 34 Bipolar II + Cyclothymia + pediatric bip | cat=None
+SIGN: CYCLO PARK
+PLACE: A council cycle track: an outdoor velodrome with steeply banked timber boards, a pale blue Cote d'Azur band at the bottom of the banking, a black measurement line, a timing hut with a lap board and bell, a grass infield where a children's proficiency class is being run, and a pit area of spare wheels and track pumps.
+ANCHOR: The banked timber track itself, its curve sweeping across the frame from lower-left to upper-right, separating the high banking, the flat straight, the grass infield and the pit.
+TOKENS: null
+
+--- 35 Lithium | cat=None
+SIGN: Lithium Lift
+PLACE: A small beginner ski resort on a blue-sky family morning: a chairlift station with a pylon and enamel nameplate, the cable running up a gentle groomed slope, a lift queue maze with pictogram safety signs, a stone fountain by the ticket window, bunting over the terrace of the warming hut.
+ANCHOR: The chairlift cable and its pylon line, banding the frame lower-left to upper-right along the slope's ridge, splitting it into the base station, the mid-slope, the top station and the terrace.
+TOKENS: null
+
+--- 37 Pediatric mood: DMDD vs pediatric bipola | cat=firework shop
+SIGN: DIAMOND DISPLAYS
+PLACE: A firework shop on the Thursday before a holiday: a service counter with a stock sheet and an order pad, a floor-to-ceiling steel mesh cage with a padlocked gate behind it, shelves of boxed display sets along the public side, a wall planner by the shutter, and sealed delivery cages waiting in the back doorway.
+ANCHOR: The floor-to-ceiling steel mesh cage with its padlocked gate, running across the shop from the lower left to the upper right, splitting it into the public shelves, the service counter, the caged store
+TOKENS: null
+
+--- 42 Benzodiazepines + Buspirone + sleep aids | cat=seaside deckchair hire
+SIGN: BEN'S DECKCHAIR HIRE
+PLACE: A seaside deckchair and beach-hut concession on the first warm Saturday of the season: a shingle beach below the promenade railing, a timber hire hut with its chalked rate board out on the step, striped chairs going up in rows down the slope, and a five-storey seafront hotel standing along the top behind the huts
+ANCHOR: The row of numbered beach huts along the top of the shingle, running lower-left to upper-right, with the promenade railing above them and the incline of the beach falling away below
+TOKENS: ["AA_HOTEL: the five-storey seafront hotel standing along the top of the beach directly behind the huts, its parapet name board reading Aa. Ground-floor lounge window shows a giant bed made up in the entrance; the first-floor bay holds armchairs and a tea tray; the second-floor balcony holds a circle of chairs; the top-floor penthouse window stands open on a strongroom door. The manager is on the 
+
+--- 88 Sedative/Hypnotic/Anxiolytic Use Disorde | cat=candle works
+SIGN: THE TAPER WORKS
+PLACE: A small candle works with its dipping room open to the street on a seaside town's back parade, late afternoon: a row of heated wax vats down the middle, frames of wicks hanging over them from the overhead rail, the cooling rack along one wall, the burn-test bench beyond it and the packing counter at the sash window, with the deckchair lock-up at the end of the terrace and the five-storey hotel dir
+ANCHOR: The long dipping bench — the run of heated wax vats with the overhead wick rail above it and the cooling rack alongside — crossing the room from the lower-left corner to the upper right, dividing it i
+TOKENS: ["AA_HOTEL: directly opposite, filling the sash window over the packing counter \u2014 the five-storey Aa Hotel with its lit ground-floor lobby and the bed standing in it, the tea lounge on the second floor, a circle of chairs on the third, the shuttered strong-room window at the top, barbed wire running along its side wall, and the manager out on the steps with the master key on a hoop.", "DSM_su
+
+--- 113 Brexanolone + Zuranolone (PPD-specific) | cat=tea merchant's tasting room
+SIGN: MALONE'S FINE INFUSIONS
+PLACE: A tea merchant's tasting room on the ground floor of an old five-storey hotel, mid-morning: a long tasting bench down the room with a row of numbered brewing bowls and lidded pots, a rack of sand-timers above it, a spittoon at each place, chests and sample tins stacked along the wall, scales and a scoop at the packing end, and a great copper urn on a slow tap in the corner with a chair drawn up be
+ANCHOR: The long tasting bench — a scrubbed timber run carrying the row of numbered bowls, lidded pots and turned timers — crossing the room from the lower left to the upper right and dividing it into the pac
+TOKENS: ["GABA_A_receptor / AA_HOTEL \u2014 the tasting room is the ground-floor front unit of the Aa Hotel: the hotel's painted fascia and its five floors of windows fill the top of the frame directly above the shop's own board, and the propped-open stairwell door at the back of the room shows the hotel's numbered landings running up out of sight, with the hotel manager's key board just inside it."]

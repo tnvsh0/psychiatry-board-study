@@ -1,0 +1,6 @@
+    [!] notebooklm source returned rc=1 with 592 bytes; retrying (2/3)
+    [!] notebooklm source returned rc=1 with 592 bytes; retrying (3/3)
+add rc= 1
+  type= None drive= False
+  +  20s  kaplan=['error', 'error', 'error', 'error', 'error', 'error', 'error', 'error', 'error', 'preparing']  n=15
+FINAL: ['error', 'error', 'error', 'error', 'error', 'error', 'error', 'error', 'error', 'preparing']

@@ -1,0 +1,82 @@
+
+======================================================================
+Day 6: מערכת הנוראפינפרין
+Tag: study-006-norepinephrine-system
+Aspects: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance']
+Symbols (9): ['LOCUS_COERULEUS_BLUEPOST', 'locus_coeruleus', 'NET', 'alpha1_receptor', 'alpha2_receptor']...
+Density: medium
+======================================================================
+
+Found existing per-day notebook: 566b4133-465b-4e03-81fa-244a02ba62ad ('[Study-006] מערכת הנוראפינפרין')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1818 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+  video: 3416a206-d5de-4e5e-a8d9-f73a4c4a3c2f
+  flashcards: 52c9300f-a83f-447a-aeee-16f81f7fac73
+  quiz: 649e71a6-ba76-472e-995e-29fbdf82220b
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (35.3 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (9476 bytes, keys: ['core_concept', 'anatomy_or_structure', 'function', 'clinical_relevance', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[core_concept] = 44a0660b
+  scope[anatomy_or_structure] = 833a3ae9
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in "NOR'EAST PINES BANDSTAND"...
+  sketchy_main: 27 facts, directing...
+[i] element table attempt 1/3: 12 error(s):
+      - e7: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "כבל הטלפון היורד מה-LC אל שלט 'Pain Relief' (שיכוך כאב) מייצג את המסילה הנוראדרנרגית היורדת המקשרת בין ה-LC לחוט השדרה לוויסות כאב."
+      - e8: cue collides with e1 — 'Blue police box LC'
+      - e8: same (category, material, colour) as e1
+      - e9: cue collides with e7 — 'Descending wire to pain relief sign'
+      - e9: same (category, material, colour) as e7
+      - e10: cue collides with e2 — 'Fishing NET by the stage door'
+      - e10: same (category, material, colour) as e2
+      - e15: cue collides with e4 — 'Two wolves #2 radioing pack'
+      - e15: same (category, material, colour) as e4
+      - e17: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'המנצח המתקשה בגלל תעלות HCN דולפות ופתוחות, מייצג את החסר ב-NE ו-DA ב-PFC ב-ADHD, שמותיר את התעלות פתוחות ופוגע קשות בריכוז.'
+      - e23: cue collides with e21 — 'Atomoxetine blocking NET'
+      - e23: same (category, material, colour) as e21
+[i] normalized e8: dropped an unmappable relation 'breaks down'
+[i] normalized e14: dropped an unmappable relation 'helps'
+[i] normalized e16: dropped an unmappable relation 'side effect'
+[i] normalized e12: hook de-asserted -> "שני נגנים, אחד — נוראפינפרין (NE) והשני דופמין (DA), מכוונים את כליהם במשותף מול שלט 'PFC', כמו שני המוליכים העצביים הפועלים במשולב לכוונון אופטימלי של הקורטקס הפרה-פרונטלי."
+[i] try 1: 11 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 11 missing, composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 6 lower-priority string(s) and retrying
+[i] try 3: 5 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 2 missing, 5 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   N                  '15-20' + 'N'  quad=[(572, 964), (774, 900), (774, 1053), (571, 1125)]  plate height=14.65% of frame
+[ok]   PCT                '75%' + 'PCT'  quad=[(1607, 688), (1730, 654), (1730, 708), (1606, 750)]  plate height=6.25% of frame
+[scrub] neutralised 8755 leftover chroma px
+[i] composited 2/2 number plates -> sketchy_main.png
+    [OK] sketchy_main.png (7.3 MB), 4 tries, score 2, composited 2/2 numbers
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (3416a206): in_progress
+  [1m] quiz (649e71a6): completed
+  [1m] flashcards (52c9300f): completed
+  [2m] video (3416a206): in_progress
+  [3m] video (3416a206): completed
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+  [OK] video.mp4 (35.3 MB)
+
+Uploading release study-006-norepinephrine-system...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-006-norepinephrine-system

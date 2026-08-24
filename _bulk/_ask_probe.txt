@@ -1,0 +1,30 @@
+In the DSM-5-TR, the diagnostic criteria for a **Major Depressive Episode** are identical whether they are accessed under Bipolar I Disorder (found on **pages 141–142**) or under Major Depressive Disorder (found on **pages 183–184**) [1-5]. 
+
+The diagnostic criteria consist of the following [2, 5]:
+
+### **Criterion A**
+**Five (or more) of the following symptoms** must be present during the same **2-week period** and represent a **change from previous functioning**; at least one of the symptoms must be either **(1) depressed mood** or **(2) loss of interest or pleasure** [1, 4]. *(Note: Symptoms that are clearly attributable to another medical condition should not be included [1, 4].)*
+
+1. **Depressed mood** most of the day, nearly every day, as indicated by either subjective report (e.g., feels sad, empty, or hopeless) or observation made by others (e.g., appears tearful) [4, 6]. *(Note: In children and adolescents, this can manifest as an irritable mood [4, 6].)*
+2. **Markedly diminished interest or pleasure** in all, or almost all, activities most of the day, nearly every day (as indicated by either subjective account or observation) [6, 7].
+3. **Significant weight loss** when not dieting or **weight gain** (e.g., a change of more than 5% of body weight in a month), or a **decrease or increase in appetite** nearly every day [6, 7]. *(Note: In children, consider failure to make expected weight gain [6, 7].)*
+4. **Insomnia or hypersomnia** nearly every day [7, 8].
+5. **Psychomotor agitation or retardation** nearly every day (observable by others, not merely subjective feelings of restlessness or being slowed down) [7, 8].
+6. **Fatigue or loss of energy** nearly every day [8, 9].
+7. **Feelings of worthlessness or excessive or inappropriate guilt** (which may be delusional) nearly every day (not merely self-reproach or guilt about being sick) [8, 9].
+8. **Diminished ability to think or concentrate, or indecisiveness**, nearly every day (either by subjective account or as observed by others) [8, 9].
+9. **Recurrent thoughts of death** (not just fear of dying), recurrent **suicidal ideation** without a specific plan, or a **suicide attempt** or a specific plan for committing suicide [2, 9].
+
+---
+
+### **Criterion B**
+The symptoms cause **clinically significant distress or impairment** in social, occupational, or other important areas of functioning [2, 5].
+
+---
+
+### **Criterion C**
+The episode is **not attributable to the physiological effects of a substance** or another medical condition [2, 5].
+
+***
+
+🧩 I can also pull up the specifiers that can be applied to a Major Depressive Episode (such as anxious distress, melancholic features, atypical features, or peripartum onset) if you would like to explore how these criteria can be further designated.

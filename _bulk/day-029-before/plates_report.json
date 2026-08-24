@@ -1,0 +1,406 @@
+[
+ {
+  "day": 29,
+  "plate": "main",
+  "facts": 36,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e11: dropped relation to unknown element \"Figurine of a postal carrier in 'SERT' uniform\"",
+   "e27: dropped relation to unknown element \"Figurine of a postal carrier in 'SERT' uniform\"",
+   "e31: dropped relation to unknown element 'CYP1A2 and CYP2C19 passengers'",
+   "e32: dropped relation to unknown element 'S-enantiomer'",
+   "e36: dropped relation to unknown element 'Clomipramine beaker'",
+   "e23: dropped text 'Under 25' (over the cap of 18)",
+   "e24: dropped text 'Romantic Getaways' (over the cap of 18)",
+   "e25: dropped text 'Low Sodium SIADH' (over the cap of 18)",
+   "e26: dropped text 'Weekly Check-in' (over the cap of 18)",
+   "e27: dropped text 'Delay Cascade' (over the cap of 18)",
+   "e28: dropped text 'Fluoxetine Self-Taper' (over the cap of 18)",
+   "e29: dropped text 'Paroxetine Worst' (over the cap of 18)",
+   "e30: dropped text 'Sertraline Power-Up' (over the cap of 18)",
+   "e31: dropped text 'Fluvoxamine Sigma-1' (over the cap of 18)",
+   "e32: dropped text 'Citalopram QTc >40mg' (over the cap of 18)",
+   "e33: dropped text 'Escitalopram S-Only' (over the cap of 18)",
+   "e34: dropped text 'FINISH Symptoms' (over the cap of 18)",
+   "e35: dropped text 'Activation Zone! Not Mania' (over the cap of 18)",
+   "e36: dropped text 'Danger Drug Interaction!' (over the cap of 18)",
+   "e10: cue trimmed to 'Family tree chart'",
+   "e11: cue trimmed to \"'Rapa Travel' booth\"",
+   "e13: cue trimmed to \"'Prozac' suitcase\"",
+   "e16: cue trimmed to \"'Luvox' travel guide titled 'OCD Management: Routes for Ages\"",
+   "e18: cue trimmed to \"'TORDIA Study' sign on a desk\"",
+   "e21: cue trimmed to 'Person'",
+   "e22: cue trimmed to \"'Activation Alert' sign next to an aggressively buzzing desk\"",
+   "e24: cue trimmed to \"CLOSED sign bedroom door sad lover on 'Romantic Getaways'\"",
+   "e27: cue trimmed to 'Queue dispenser'",
+   "e35: cue trimmed to \"Children's play area\"",
+   "e11: hook over 32 words (35): \"כמו שדוור 'SERT' מנסה להיכנס לדוכן 'Rapa Travel' אך נחסם, בזמן שאדם '5-HT1A' דוחה בהתחלה חבילות אך מקבל אותן מאוחר יותר, כך חסימת SERT גורמת לדה-סנסיטיזציה של קולטני 5-HT1A ולבסוף לעלייה בסרוטונין הסינפטי ולשיפור נוירופלסטיות.\"",
+   "e26: hook over 32 words (34): \"כמו שיועץ נוסע מפקח בעזרת רשימת בדיקה של 'DSM-5 Level 1/2' וסרגל גובה, עם שלטים ל'בדיקה שבועית' ו'טיטרציה איטית', כך נדרש מעקב צמוד אחר מטופלים ב-SSRIs, כולל ניטור סימני אובדנות ואקטיבציה, גובה, ושימוש בשאלונים.\"",
+   "e27: hook over 32 words (36): \"כמו שמכונת תורים עם שלט 'כעת מטופל: השהיית אפקט' מציגה אדם ('5-HT1A') שחוסם את דוור ה'SERT' למשך שבועות לפני השחרור, כך עיכוב SERT מעלה סרוטונין בראפה, מפעיל קולטני 5-HT1A ודורש 2-4 שבועות לדה-סנסיטיזציה לפני שיפור קליני.\"",
+   "e31: hook over 32 words (35): \"כמו שמאבטח 'פלובוקסמין' חזק בשער 'סיגמא-1' חוסם נוסעים 'CYP1A2' ו-'CYP2C19' ויוצר עומס, כך פלובוקסמין הוא אגוניסט עוצמתי ל-Sigma-1 ומעכב חזק של CYP1A2 ו-CYP2C19, מה שמקנה לו השפעה נוגדת חרדה חזקה אך מעלה סיכון לאינטראקציות תרופתיות.\"",
+   "e32: hook over 32 words (35): 'כמו ששלט אזהרה \\'ציטלופרם\\' מזהיר מ\\'הארכת QTc מעל 40 מ\"ג\\', ומראה נוסע R פסיבי שמושך נוסע S אקטיבי, כך ציטלופרם נושא אזהרת FDA מפני הארכת מרווח QTc, והאננטיומר R הפסיבי מפריע לפעילות האננטיומר S האקטיבי.'"
+  ],
+  "digit_strings_dropped": [
+   "Puberty x2-x4",
+   "Prozac Kids 8+",
+   "Lexapro Teens 12+",
+   "Zoloft OCD-Free 6+",
+   "Luvox OCD 8+"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "1.3",
+     "5.4",
+     "2.4",
+     "0",
+     "177",
+     "64"
+    ],
+    "blank_plates_found": 1,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1732,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": false,
+      "height_frac": 0.0671,
+      "reject": "too_small_in_frame"
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": false,
+      "height_frac": 0.0872,
+      "reject": "too_small_in_frame"
+     }
+    ]
+   },
+   "text_missing": [
+    "Stressful Hopeless",
+    "CBT / IPT"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES, all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "40%",
+    "315",
+    "Stressful Hopeless",
+    "CBT / IPT"
+   ],
+   "score": 4,
+   "verified": true,
+   "stray_warning": [
+    "1.3",
+    "5.4",
+    "2.4",
+    "0",
+    "177",
+    "64"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "RATE",
+     "paint": "2%",
+     "tag": "RATE",
+     "chroma_pixels": 28636,
+     "blob_pixels": 26763,
+     "fill_ratio": 1.097,
+     "height_frac": 0.1732,
+     "width_frac": 0.0491,
+     "quad": [
+      [
+       1760,
+       777
+      ],
+      [
+       1894,
+       842
+      ],
+      [
+       1894,
+       1042
+      ],
+      [
+       1761,
+       943
+      ]
+     ],
+     "bbox": [
+      1760,
+      777,
+      134,
+      265
+     ],
+     "height_pct": 17.25,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "GENES",
+     "paint": "40%",
+     "tag": "GENES",
+     "chroma_pixels": 8811,
+     "blob_pixels": 8704,
+     "fill_ratio": 1.114,
+     "height_frac": 0.0671,
+     "width_frac": 0.0443,
+     "quad": [
+      [
+       2303,
+       723
+      ],
+      [
+       2423,
+       756
+      ],
+      [
+       2424,
+       825
+      ],
+      [
+       2303,
+       784
+      ]
+     ],
+     "bbox": [
+      2303,
+      723,
+      121,
+      102
+     ],
+     "height_pct": 6.64,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "AGAIN",
+     "paint": "315",
+     "tag": "AGAIN",
+     "chroma_pixels": 8772,
+     "blob_pixels": 7508,
+     "fill_ratio": 1.07,
+     "height_frac": 0.0872,
+     "width_frac": 0.024,
+     "quad": [
+      [
+       2582,
+       888
+      ],
+      [
+       2646,
+       908
+      ],
+      [
+       2647,
+       1021
+      ],
+      [
+       2582,
+       993
+      ]
+     ],
+     "bbox": [
+      2582,
+      888,
+      65,
+      133
+     ],
+     "height_pct": 8.66,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 5020,
+   "composited": 3,
+   "requested": 3
+  }
+ },
+ {
+  "day": 29,
+  "plate": "criteria",
+  "facts": 17,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e1: dropped unknown fact id(s) ['suicidality_warning']",
+   "e2: dropped unknown fact id(s) ['SERT']",
+   "e3: dropped unknown fact id(s) ['sexual_dysfunction_SSRI']",
+   "e4: dropped unknown fact id(s) ['discontinuation_syndrome_FINISH']",
+   "e2: dropped relation to unknown element 'e24'",
+   "e1: cue trimmed to 'Antidepressant pill bottles'",
+   "e2: cue trimmed to \"Postal carrier in 'SERT' uniform transporting serotonin packages\"",
+   "e3: cue trimmed to 'Miniature bedroom diorama'",
+   "e7: cue trimmed to 'Queue-ticket dispenser'",
+   "e9: cue trimmed to 'Consultant looking bored despite being surrounded by exotic travel'",
+   "e10: cue trimmed to 'Customer feeling guilty for needing to rebook their cheap'",
+   "e12: cue trimmed to 'A desk calendar'",
+   "e13: cue trimmed to 'Consultant dozing off at desk'",
+   "e14: cue trimmed to 'Consultant rapidly tapping pen'",
+   "e17: cue trimmed to 'Brochure'",
+   "e19: cue trimmed to \"Brochure for 'Atypical Adventures' featuring a person wearing\"",
+   "e20: cue trimmed to \"Brochure for 'New Parent Getaways'\"",
+   "e21: cue trimmed to \"Brochure for 'Seasonal Escapes'\"",
+   "e7: hook over 32 words (37): \"כמו מכשיר כרטיסים המראה ש'5 מתוך 9' כרטיסים נלקחו, וביניהם כרטיס עם פרצוף עצוב או משועמם, כך לאבחון דיכאון נדרשים חמישה או יותר תסמינים מתוך תשעה, כאשר לפחות אחד מהם הוא מצב רוח ירוד/עצבני או אובדן עניין/הנאה.\""
+  ],
+  "digit_strings_dropped": [
+   "5 of 9"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "10",
+     "19",
+     "19",
+     "02",
+     "19",
+     "19",
+     "14",
+     "10"
+    ],
+    "blank_plates_found": 2,
+    "blank_plates_wanted": 2,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1738,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1029,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 2,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 100,
+   "verified": false,
+   "stray_warning": [
+    "10",
+    "19",
+    "19",
+    "02",
+    "19",
+    "19",
+    "14",
+    "10"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "MIN",
+     "paint": "183",
+     "tag": "MIN",
+     "chroma_pixels": 54117,
+     "blob_pixels": 53582,
+     "fill_ratio": 1.062,
+     "height_frac": 0.1738,
+     "width_frac": 0.0901,
+     "quad": [
+      [
+       767,
+       888
+      ],
+      [
+       1011,
+       834
+      ],
+      [
+       1011,
+       1035
+      ],
+      [
+       766,
+       1100
+      ]
+     ],
+     "bbox": [
+      766,
+      834,
+      245,
+      266
+     ],
+     "height_pct": 17.32,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "185",
+     "tag": "N",
+     "chroma_pixels": 20355,
+     "blob_pixels": 20211,
+     "fill_ratio": 1.053,
+     "height_frac": 0.1029,
+     "width_frac": 0.0596,
+     "quad": [
+      [
+       2196,
+       664
+      ],
+      [
+       2359,
+       700
+      ],
+      [
+       2358,
+       821
+      ],
+      [
+       2196,
+       779
+      ]
+     ],
+     "bbox": [
+      2196,
+      664,
+      163,
+      157
+     ],
+     "height_pct": 10.22,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 2795,
+   "composited": 2,
+   "requested": 2
+  },
+  "narration_words": 676
+ }
+]

@@ -1,0 +1,238 @@
+{
+ "AA_HOTEL": {
+  "cue": "Aa Hotel",
+  "prop": "Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on the α-subunit composition.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Floor 1 (α1): Sleep Lobby — giant bed in the entrance",
+   "Floor 2 (α2): Calm Lounge — armchairs and tea",
+   "Floor 3 (α3): Group-therapy Room — circle of chairs",
+   "Floor 5 (α5): Memory Penthouse — secure vault",
+   "Hotel Manager = GABA itself (holds master key)",
+   "Green CHLORINE SOLDIERS rushing INTO neurons = Cl⁻ influx → hyperpolarization → inhibition",
+   "Barbed-wire fence around hotel = Phenobarbital",
+   "Bayit-B small synagogue next door = GABA-B (metabotropic, Baclofen prays there)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "ALPHA_WOLF_PACK": {
+  "cue": "Alpha wolf pack in a snowy forest",
+  "prop": "Snowy pine forest. A wolf pack on the hunt. Some lone alphas charge forward, others stay behind on radio. Each wolf wears a numbered tag.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Lone alpha wolf (#1) = α1 receptor — true alpha hunts, post-synaptic action",
+   "Two wolves (one '#2' tag) = α2 receptor — #2 wolf pretends but is actually autoreceptor, calling pack back",
+   "Tranquilizer dart from a hunter = α1 blockade (Prazosin, antipsychotic α1 side effect)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "ASPARAGUS_VIP_DOOR": {
+  "cue": "NMDA VIP-club doorway (Mr. Asparagus's domain)",
+  "prop": "Heavy iron door labeled 'NMDA'. Outside: chalk-white Ca²⁺ guests with '2+' badges wait in line. The lock has a horseshoe MAGNET (Mg²⁺) wedged in it. Above the door: a neon sign that flickers when depolarized.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Mr. Asparagus (Mexican, methyl-mustache CH₃) = NMDA agonist itself (N-methyl-D-Aspartate)",
+   "G-shaped gray pebble at his feet = Glycine co-agonist",
+   "Horseshoe magnet in lock = Mg²⁺ block",
+   "Chalk-white guests with '2+' badges in line = Ca²⁺ entering",
+   "Neon sign flickering = depolarization (releases the magnet plug)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "BEETHOVEN_ORCHESTRA": {
+  "cue": "Beethoven conducting numbered symphonies",
+  "prop": "Concert hall. Beethoven (white wig, intense face) conducts. Different batons numbered for each symphony. Orchestra has heart-drums section (β1) and wind/brass section (β2).",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Beethoven with '#1' baton + heart-drums section = β1 (heart)",
+   "Beethoven with '#2' baton + winds/brass = β2 (lungs)",
+   "A fishing NET hangs by the stage door = NET transporter; Beethoven catches stray notes (NE) and returns them"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "BUS_LINE_1A": {
+  "cue": "Bus stop",
+  "prop": "Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= anxiety patient awaiting anxiolysis).",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Different buses arriving = different 1A partial agonists (Buspirone bus, Vilazodone bus, etc.)",
+   "Late bus = autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "CIGARETTE_THEATER": {
+  "cue": "Cigarette Theater",
+  "prop": "Dim theater with cigarettes as branded characters on stage. Smoke curls. A wooden match (Acetylcholine = אצית) ignites scenes.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Cigarette brand '42' = nAChR α4β2 (Hitchhiker's Guide answer — 4+2)",
+   "Old wise grandpa with 'Lucky 7' cigarette = nAChR α7 (cognition + schizophrenia hypothesis)",
+   "Backstage stagehand cigarettes = NMJ-type (α1β1γδ)",
+   "Wooden match (אצית) struck = Acetylcholine the agonist",
+   "Half-smoked cigarette in a smoker's hand = Varenicline partial agonism"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "CONVENIENCE_STORE_7": {
+  "cue": "7-Eleven open 24/7",
+  "prop": "Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Night-clerk turning off neon = Lurasidone blocking 5-HT7"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "DAIRY_FARM": {
+  "cue": "Dairy Farm",
+  "prop": "A green farm on a hill. Each animal produces a different opioid-receptor effect. Hay bales, milk pails, and a Delta-Airlines plane droning overhead.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Mooing cow ('MOO') = μ-opioid receptor",
+   "Grumpy goat with 'K' tag, kicking = κ-opioid receptor (dysphoria)",
+   "Delta-Airlines plane (triangular logo) overhead = δ-opioid receptor (less clinical)",
+   "Peaceful endogenous farmer = endorphins",
+   "Pails labeled: Analgesia / Euphoria / Constipation / Resp. Depression / Miosis = the spectrum of μ-effects"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "DOPA_MINE": {
+  "cue": "DOPA-MINE Co.",
+  "prop": "A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by pathway — Mesolimbic (heart-shaped chamber), Mesocortical (think-bubble chamber), Nigrostriatal (motor gear chamber), Tuberoinfundibular (milk-pump chamber).",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Vertical elevators going UP = D1-family receptors (Gs/excitatory)",
+   "Red barriers/locks blocking flow = D2-family receptors (Gi/inhibitory)",
+   "Coal carts = vesicular dopamine release",
+   "Newspaper PYRAMID hats labeled 'EXTRA' near nigrostriatal section = EPS",
+   "Milk pump at tuberoinfundibular section = prolactin"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "ER_GUARD_POST": {
+  "cue": "Endoplasmic Reticulum guard post (σ1)",
+  "prop": "Doorway labeled 'ER'. A sentry guard with 'S-1' badge stands at attention, escorting misfolded proteins.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Guard with 'S-1' badge = sigma-1 chaperone protein",
+   "Misfolded proteins arriving in stress = clients of the chaperone",
+   "Fluvoxamine + Dextromethorphan visits = drug agonists at σ1"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "H_HOUSE": {
+  "cue": "Histamine House",
+  "prop": "A literal H-shaped house. Each floor is a different histamine receptor subtype.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Floor 1 (Living Room) — snoozing couch resident = H1 (sedation/allergy/weight)",
+   "Floor 2 (Kitchen) — leaking 'H2O' pots of stomach acid = H2 (gastric)",
+   "Floor 3 (Study) — autoreceptor professor dozing on his own desk = H3 (CNS auto, cognition)",
+   "Floor 4 (Rooftop) — immune-cell pigeons circling = H4 (immune)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "LOCUS_COERULEUS_BLUEPOST": {
+  "cue": "Locus Coeruleus",
+  "prop": "A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brainstem. Every emergency call goes through it.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Blue box dispatcher = LC neurons firing in arousal",
+   "Phone lines fanning out = NE projections everywhere",
+   "Panic-button red light = hyperactive LC in panic/PTSD/withdrawal",
+   "Prazosin curtain = α1 blockade calming the dispatch noise (PTSD nightmares)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "MEYNERT_MYNAH": {
+  "cue": "Basal nucleus of Meynert",
+  "prop": "A wise old MYNAH bird perched in the basal forebrain. It mimics what it hears (cortical ACh = memory).",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Mynah bird = basal nucleus of Meynert (phonetic)",
+   "Bird whispers memorize cortex = cholinergic projections for memory",
+   "Bird dies = Alzheimer's pathology (skipped per user, but explains baseline)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "RAPHE_TAPESTRY": {
+  "cue": "Raphe nuclei",
+  "prop": "A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin serotonin-yarn into rugs that get shipped EVERYWHERE.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Tapestry seam down the middle = raphe (literally 'seam' in Greek)",
+   "Weavers = raphe neurons producing 5-HT",
+   "Shipping crates labeled cortex/limbic/hypothalamus = projections everywhere",
+   "Old loom that won't start for 4-6 weeks = SSRI delay-of-onset (autoreceptor downregulation)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "TAROT_2A": {
+  "cue": "Tarot 2A",
+  "prop": "Dim Victorian parlor. Round table with TWO Ace tarot cards. Tie-dye hippie reader. Walls swirl with psychedelic colors. Adjacent rooms: KITCHEN (5-HT2C), WATER-GATE ROOM (5-HT3), LIBRARY (5-HT6).",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Hippie reader (tie-dye shirt) = LSD/Psilocybin agonist",
+   "Officer with flashlight = atypical antipsychotic (turns off the trip)",
+   "Officer with mirror = Pimavanserin (inverse agonist, flips cards face-down)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "TUBEROMAMMILLARY_DAIRY": {
+  "cue": "Tuberomammillary nucleus",
+  "prop": "A dairy section in the hypothalamus (mammillary = mammary). Cows pump out histamine to keep the brain awake.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "Mammary cows pumping histamine = TMN neurons → wakefulness",
+   "Histamine bottles distributed to H-House = upstream of all H1/H3 effects",
+   "Dimmer switch when blocked = sedation from H1 antagonists"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ },
+ "WONDERLAND_TEAPARTY": {
+  "cue": "Alice in Wonderland",
+  "prop": "Iconic Wonderland tea party. Each character maps to one muscarinic receptor by NUMBER + FUNCTION. The whole tableau goes haywire under anticholinergic blockade.",
+  "hook": "course-wide fixed structure; stands inside the chapter's venue",
+  "kind": "SCENE_TOKEN",
+  "elements": [
+   "White Rabbit with '1 O'Clock' pocket watch = M1 (CNS, memory of time)",
+   "Queen of Hearts holding TWO '2-of-Hearts' cards = M2 (heart)",
+   "Mad Hatter with 3 dripping teacups (saliva/tears/sweat) = M3 (glands)",
+   "Tweedledee & Tweedledum at the corners = M4 / M5 (less clinical)",
+   "Anticholinergic toxicity = whole scene gone wild: Mad Hatter mad, Red Queen flushed, March Hare hot, teacups bone-dry, Cheshire Cat invisible (pupils dilated)"
+  ],
+  "source": "symbols.json:scenes",
+  "since": 1
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "index": 36,
+ "title_en": "Mood stabilizers: Valproate, Lamotrigine, Carbamazepine",
+ "title_he": "\u05de\u05d9\u05d9\u05e6\u05d1\u05d9 \u05de\u05e6\u05d1 \u05e8\u05d5\u05d7: Valproate, Lamotrigine, Carbamazepine",
+ "aspects": [
+  "drug_class_overview",
+  "drug_mechanism",
+  "indications",
+  "side_effects_class",
+  "monitoring",
+  "practical_use"
+ ],
+ "required_tokens": {
+  "SJS_TEN": "(Lamb on trigger)",
+  "SIADH_hyponatremia": "(Carbamazepine maze fills with water)",
+  "hepatotoxicity": "(failing liver)"
+ },
+ "why_rejected": [
+  "critic rejected it"
+ ],
+ "current": {
+  "sign_text": "STABILISER CYCLE WORKS",
+  "place": "A bicycle repair shop mid-morning: a rail of bikes hung by their front wheels the length of the room, a repair stand and a wheel-truing stand along the bench, a water tub for finding punctures, a wall of boxed tyres and stabiliser sets, a fitting area with a sizing stick, and the courtesy van at the kerb outside.",
+  "place_category": "bicycle repair shop",
+  "derivation": "LITERAL_PICTURE",
+  "pun_explanation": "A mood stabiliser is literally a stabiliser, and a stabiliser is a real product a cycle shop bolts to a child's bike; the fascia therefore carries exactly one class morpheme instead of the three drug morphemes the last version tried to split across one sign, and each agent comes off the stock as a sibling boxed brand on the tyre wall, which is how the corpus does four SSRIs as four travel posters. The trade then owns the chapter's whole fact set in its own vocabulary and not by metaphor. Truing a wheel is done a quarter turn of the spoke key at a time or the rim buckles \u2014 that is titration, and it is the shop's own lore, which is the single most examinable lamotrigine fact. The torque wrench and the pressure gauge are the trade's routine checks before anything is ridden, which is therapeutic monitoring on a native dial. A perished tyre cracks in a fine network all over its sidewall and a worn one is called bald, so rash and hair loss are the trade's own words for its own damaged stock. Inner tubes are called tubes, so a split tube in the water tub carries the neural tube defect with a morpheme rather than a symbol, and the child seat and trailer by the door put that fact where pregnancy already plausibly stands. Electrolyte tablets in the counter fridge carry sodium without borrowing the saltworks chapter's device, and the courtesy van at the kerb carries a plate for enzyme induction.",
+  "confidence": "strong"
+ }
+}
+{
+ "index": 41,
+ "title_en": "Separation Anxiety + Specific Phobia",
+ "title_he": "\u05d7\u05e8\u05d3\u05ea \u05e4\u05e8\u05d9\u05d3\u05d4 + \u05e4\u05d5\u05d1\u05d9\u05d4 \u05e1\u05e4\u05e6\u05d9\u05e4\u05d9\u05ea",
+ "aspects": [
+  "dsm_criteria",
+  "epidemiology",
+  "etiology",
+  "treatment_overview",
+  "assessment_tools",
+  "medical_mimics"
+ ],
+ "required_tokens": {},
+ "why_rejected": [
+  "critic rejected it"
+ ],
+ "current": {
+  "sign_text": "PACIFIC ELEMENTARY",
+  "place": "An elementary school gate at eight in the morning \u2014 the drop-off loop lane, chain-link fence, crossing guard, a yellow bus pulling away",
+  "place_category": null,
+  "derivation": "PHONETIC_PUN",
+  "pun_explanation": "PACIFIC \u2248 SPECIFIC \u2014 a near-perfect stress-matched phonetic pun (pa-CIF-ic / spe-CIF-ic), and 'Pacific Elementary' is an utterly ordinary American school name, so the sign reads as real signage. The drop-off lane sign then carries the other disorder with no invention at all: 'KISS & RIDE' is genuine, ubiquitous school signage and it literally means separate here. The venue supplies all five specific-phobia types from stock: animal (the wasp bin and the leashed dog at the fence), natural environment (the thunderstorm on the classroom weather chart), blood-injection-injury with its unique vasovagal faint (immunization day in the nurse's window), situational (the out-of-order lift), and the school mascot for 'other'.",
+  "confidence": "strong"
+ }
+}

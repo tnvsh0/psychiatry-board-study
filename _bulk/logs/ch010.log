@@ -1,0 +1,76 @@
+
+======================================================================
+Day 10: התפתחות נורמטיבית: גיל בית ספר (6-12)
+Tag: study-010-normative-development-6-12-school-age
+Aspects: ['academic_skills', 'peer_relationships', 'moral_development', 'self_concept']
+Symbols (3): ['erikson_8_stages', 'piaget_4_stages', 'developmental_ladder']...
+Density: medium
+======================================================================
+
+Creating per-day notebook: [Study-010] התפתחות נורמטיבית: גיל בית ספר (6-12)
+  Created notebook: 78087f94-fffd-438a-be97-f6b8906db2a6
+  Attaching textbooks from Drive...
+    [OK] DSM-5-TR
+    [OK] Dulcan
+    [OK] StahlKids
+    [OK] StahlNeuro
+    [OK] Syllabus
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1825 chars, 5/5 books named)
+  Extracting comprehensive content from main notebook (this may take 3-5 min)...
+  Extracted 25127 characters of source material.
+  Attached 5 textbook(s) by reference.
+  Added focused-extract source: d3c63de2-5cc6-4221-93b4-76a4cecb5722
+  Waiting 120s for indexing...
+Starting NotebookLM artifacts...
+  audio: None
+    [!] notebooklm generate: rate limited, NOT retrying
+  [!] start video failed (exit 1): 19:11:18 ERROR [notebooklm._rpc_executor] [req=ac6c54c1] RPC CREATE_ARTIFACT failed after 0.597s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  video: None
+    [!] notebooklm generate: rate limited, NOT retrying
+  [!] start flashcards failed (exit 1): 19:11:37 ERROR [notebooklm._rpc_executor] [req=94aa810b] RPC CREATE_ARTIFACT failed after 0.674s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  flashcards: None
+    [!] notebooklm generate: rate limited, NOT retrying
+  [!] start quiz failed (exit 1): 19:11:57 ERROR [notebooklm._rpc_executor] [req=a79cc0c1] RPC CREATE_ARTIFACT failed after 0.608s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  quiz: None
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (34.5 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (10317 bytes, keys: ['academic_skills', 'peer_relationships', 'moral_development', 'self_concept', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[academic_skills] = 9124be1e
+  scope[peer_relationships] = d0d0e95f
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in 'OLD SCHOOL AQUARIUM'...
+  sketchy_main: 25 facts, directing...
+[i] element table attempt 1/3: 3 error(s):
+      - e3: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "רוזטת 'BEST IN SHOW' שעלייה רשום 0.6 מסמלת את שיעור התורשתיות הגבוה של לקויות קריאה, כאילו הן 'עוברות' בירושה כמו פרס בתחרות."
+      - e17: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "הדג השקט והכמעט רדום במיכל ה'Latent Phase', עם שלט 'ליבידו' מוסתר, מסמל את גיל בית הספר המייצג את שלב החביון, שבו האנרגיה הליבידינלית עוברת הדחקה וסובלימציה."
+      - 3/22 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 2/3: 1 error(s):
+      - 1/19 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 3/3: 1 error(s):
+      - e18_broken_adult_figure: hook must be in Hebrew — got ''
+    [FAIL] director never produced a valid table: ["e18_broken_adult_figure: hook must be in Hebrew — got ''"]
+
+0 NotebookLM artifacts launched. Waiting...
+
+
+Uploading release study-010-normative-development-6-12-school-age...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-010-normative-development-6-12-school-age
