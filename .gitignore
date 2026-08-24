@@ -27,3 +27,8 @@ _venue_input.json
 _venue_audit.json
 _feed/
 _bulk/ft/
+
+# Archived run bundles — big media, already on the releases
+_bulk/day-*/
+_bulk/audio/
+_bulk/infographics/

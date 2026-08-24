@@ -35,13 +35,16 @@ Two backfills wait on the same chat endpoint and can run once it is back:
     python scripts/backfill_audio.py --limit 3
     python scripts/backfill_infographics.py --limit 2
 
-## The one decision waiting on the owner
+## Render cost — decided 2026-08-23, no longer open
 
-The plate renders run on Nano Banana Pro at 2K: **~$227 for 141 chapters**.
-`SKETCHY_LADDER_MODEL` renders the draft rungs on Flash and only the shipped
-frame on Pro: **~$85**. It is built and switched OFF, because it changes what
-the learner actually looks at. Nothing else is blocked on this — the bulk run
-works either way.
+`SKETCHY_LADDER_MODEL` is ON: draft rungs on Flash, and the frame that ships
+re-rendered on Pro. About $85 across 141 chapters instead of about $227.
+
+The first version of this shipped whatever the ladder settled on, so a Flash
+draft that scored clean on try 1 went out as the final image — the owner spotted
+that chapter 6 looked better than chapter 5 without being told chapter 6 was the
+only one that had reached Pro. The final pass is now unconditional and
+plates_report records which model drew each frame.
 
     export SKETCHY_LADDER_MODEL=gemini-3.1-flash-image-preview   # if wanted
 
