@@ -13,3 +13,13 @@ schedule/*.log
 schedule/_*.txt
 schedule/_*.json
 schedule/_*.log
+
+# The owner's 28 recorded lectures: 14GB of MP4 sitting in the project folder.
+# Cloud Build uploads the whole context, so leaving these in meant shipping 14GB
+# to build an image that copies two Python files.
+הקלטות לימודי המשך/
+*.mp4
+*.wav
+*.png
+_bulk/
+_proto/
