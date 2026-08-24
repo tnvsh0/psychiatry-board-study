@@ -1,0 +1,180 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 122,
+   "title_en": "Neurogenetic syndromes: Williams, Prader-Willi, Angelman, 22q11",
+   "title_he": "תסמונות נוירוגנטיות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "SHELTER 22Q",
+    "place": "The annual family-reunion potluck at a public park's numbered picnic shelter, midday: trestle buffet under the shelter roof, two gazebos on the grass, an ice-cream van at the kerb.",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A locus name that is already shaped like a place number: public parks letter and number their picnic shelters, so \"SHELTER 22Q\" reads as a genuine reserved-pavilion placard while printing the highest-yield string in the chapter (22q11 — 25% psychosis risk). The reunion is chosen because it hands over the chapter's hardest fact for free: genomic imprinting is the two gazebo banners \"MOM'S SIDE\" and \"DAD'S SIDE\" — same 15q11 deletion, maternal gives Angelman, paternal gives Prader-Willi, and the venue's own seating custom encodes it. The easel pedigree with four names struck through carries 'these are all deletions'; the padlocked cooler is Prader-Willi food security; the fiddle-and-guitar duo is Williams hypermusicality; the entertainer's marionette is the 'happy puppet'.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 123,
+   "title_en": "Neurocutaneous: Tuberous Sclerosis, Neurofibromatosis",
+   "title_he": "תסמונות נוירוקוטנאיות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "ASH LEIGH BATHS",
+    "place": "A municipal Turkish baths on a slow weekday afternoon: a domed marble hall with a heated slab down the middle, scrubbing alcoves with brass taps and copper bowls round the walls, wooden clogs in pairs by the door, and a cooling room with tea glasses through the arch.",
+    "place_category": "turkish baths",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Ash Leigh is an ordinary English place name over an ordinary municipal bathhouse and says ash leaf — the pale leaf-shaped patch that is the earliest thing on the skin in this chapter and the one you need a lamp in a dim room to find. A Turkish baths is the one mundane venue where every square inch of skin on eighteen people is wet, visible and being gone over by hand, so a nerve-and-skin chapter needs nothing invented. The rough mitt in every attendant's hand is shagreen — the word is a leather word and the patch is named for exactly that texture. The pale patches show up under the blue glow of the insect lamp by the door, in the one room that is already dim. The freckles nobody normally sees are in the armpits, and an armpit is the only thing on show when you lie face down on the slab. The tea tray through the arch carries milky coffee glasses, six of them set out at once on the one tray. The knobbly grey pumice stones stacked at each basin are the potato-like lumps the first disease is named for, and the string of small brown beads looped over a tap is a ring of little brown nodules at eye height.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 125,
+   "title_en": "Metabolic disorders with psychiatric presentation",
+   "title_he": "מחלות מטבוליות עם ביטוי פסיכיאטרי",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "place-category collision on 'tailor'"
+   ],
+   "current": {
+    "sign_text": "CUSHION & FLOCK",
+    "place": "An upholstery workshop on a working weekday: a long run of trestles down the middle carrying stripped chair frames in every state of undress, bolts of cloth standing on end along one wall, a webbing stretcher and a tack hammer at every place, a wall of shallow drawers of buttons and studs at the back, and a horsehair and flock bin under the window.",
+    "place_category": "upholstery workshop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "CUSHION and Cushing are a near-homophone, and Cushion & Flock is a perfectly ordinary name for an upholstery firm; the diagnosis appears nowhere. The trade then supplies every disease on the list as an ordinary piece of work rather than as a metaphor, which is what a chapter of six endocrine mimics needs. Cushing's is the over-stuffed piece: a fat pad packed into the middle of the back while the legs stay spindly, a hump of flock built up at the top of the shoulder, and split side seams showing the purple lining through — striae, central fat and wasted limbs all on one object. Porphyria is the bolt of purple cloth standing against the wall, since porphyrin is the purple pigment the disease is named for. Addison's is the leather piece gone bronze in the sun and darkest in every crease and fold, with pale worn patches beside it. Thyroid disease is one matched pair of otherwise identical chairs: one strung so tight the springs hum and two back buttons have popped out proud, one so slack and so thickly padded that it has swollen shut and sits cold at the end of the bench — over-drive against under-drive on a pair, which is the way the pair is examined. B12 is an ordinary bin label on the numbered racking above a bin of pale worn velvet. Everything a metabolic chapter needs is stuffing, tension or dye, and this is the shop where all three are the day's work.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 126,
+   "title_en": "Autoimmune: NMDA-receptor encephalitis, lupus, PANDAS",
+   "title_he": "אוטואימוני: NMDA encephalitis, lupus, PANDAS",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "PANDA SMILES",
+    "place": "A children's dental surgery on a school-holiday morning: two chairs reclined under big jointed lamps, a bracket table of instruments beside each, a lead-lined X-ray room off the back corridor, and a waiting room with a toy box and a sticker jar.",
+    "place_category": "dental surgery",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "PANDA SMILES is a real children's-dentistry name — the animal is the black-and-white one and a dental practice sells smiles — and the acronym's letters run straight through it in order, across the word break, without the sign printing a diagnosis. The surgery hosts all three out of its own stock. Teeth are the point: the practice's specimen jar of extracted teeth with a tuft of hair caught in it, and the wide panoramic film on the light box showing a tooth grown somewhere no tooth belongs, are the growth that has to be hunted for whenever the trouble starts in the head — and the reception board's standing instruction is to look at the film before anything else. The wolf is Latin and it is already on the shelf: the cast of a wolf's jaw that children's dentists keep to show whose teeth are sharpest, beside the painless ulcers a dentist genuinely finds inside a cheek, and the big lamp swung down onto a face that has come up red across both cheeks and the bridge of the nose, with a card taped to the lamp arm telling the nurse to swing it off. Sore throats are the practice's other everyday business — the swab pot, the throat mirror, the notice taped to the reception glass telling anyone with one to wait outside, and a child in the corner who has started blinking and touching the chair arm in threes since the last one.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 127,
+   "title_en": "Neurodegenerative basics (FXTAS, HD pediatric, etc.)",
+   "title_he": "ניוון עצבי בילדים",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "FRAGILE GOODS CO.",
+    "place": "A glass-and-china wholesaler's packing floor on despatch morning: a long bench of straw crates and tissue-wrapped stemware, deep racking of white-wadded bundles behind it, the loading shutter up and a box van backed onto the dock.",
+    "place_category": "glassware warehouse",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "FRAGILE is a packer's stencil long before it is a chromosome, and the X is the packing tape crossed on every crate lid and the painted X on the dock floor where the van's wheels must stand — so the term is split between the fascia and the props and never printed whole. The venue was chosen because the rest of the chapter is already this trade's stock. White tissue and wadding is the insulation that keeps a fragile thing intact: one shelf where the wadding has gone to dust holds nothing but broken pieces, which is a leukodystrophy drawn with no metaphor at all. Picking is the warehouse's own verb, and the picker who works only the top shelves on tiptoe while the low-level tickets go untouched is the vertical gaze palsy of Niemann-Pick C. A copper-rimmed teacup held up to the light with a brown-green ring right round its rim is the Kayser-Fleischer ring, and the copperware aisle behind it is the accumulation. Carrier is the freight trade's own word for the firm, and the old man on the carrier pallet whose hands shake so the stemware rattles is FXTAS in a premutation carrier. Counts live where counts belong — the docket spike, a stock label showing a range in the fifty-to-two-hundred band marked as a pre-order, and one banded crate with an overweight sticker that is sealed and never opened, which is the full expansion methylated and silent. The despatch board chalked with this year's run beside last year's, each leaving earlier, is anticipation; the van with and-son painted after the firm name and the father at the wheel is paternal transmission in juvenile Huntington.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 128,
+   "title_en": "Sleep medicine intensive",
+   "title_he": "רפואת שינה — אינטנסיבית",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "CONVENIENCE_STORE_7": "{'cue': '7-Eleven open 24/7', 'prop': 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty."
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "SPINDLE COURT FLATS",
+    "place": "A four-storey deck-access block of council flats at midnight: an open concrete stair running up the front from a half-basement bin store to the top deck, turned spindle rails along every balcony, front doors and kitchen windows opening straight onto the decks, a bike rack and meter cupboards at street level, and the lit twenty-four-hour shop in the end unit throwing its neon across the bottom of the stair.",
+    "place_category": "deck-access flats",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "Sleep architecture is not a metaphor in this venue, it is the building. A deck-access block is a stack of numbered levels reached by one stair, and a night's sleep is a descent from the street through the lighter decks down to the deep half-basement and back up again, four or five times over — the one thing about this chapter a resident must be able to redraw from memory. The block's balcony rails are turned spindles, and the spindle is the named waveform of the second stage, so the sign is the ordinary name of an ordinary block and the chapter's own word at the same time. The caretaker who walks the whole block on a fixed round every ninety minutes is the sleep cycle at its real length; the flat at the top with the television still flickering behind a drawn curtain while nobody in it moves is the paradoxical stage. Every disorder in the chapter is ordinary midnight business for a block of flats: the rattling window and the interrupted snoring from the ground-floor bedroom, with two swollen sacks jamming the communal vent that serves it, is obstructive apnoea in a child and its adenotonsillar cause together; the man pacing the deck and shaking one leg out at the rail is restless legs; the stair light on a time switch, the photocell on the street lamp and the shop that never closes are the clock-and-light system that circadian disorders break; and the ages behind the doors, from the pram in the hall to the old man on the top deck, carry sleep architecture across the lifespan without a word being written.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

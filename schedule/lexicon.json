@@ -1,0 +1,1886 @@
+{
+ "version": 1,
+ "policy": "APPEND-ONLY. A token's cue and prop may never be changed once shipped — a resident who studied chapter 12 must find the same glyph in chapter 90. To replace one, add the new key and record the old under `retired` with `replaced_by`.",
+ "usage": "Code substitutes these into the element table; it does not suggest them to a model. SCENE_TOKEN entries are props INSIDE the chapter's venue, never the venue itself.",
+ "tokens": {
+  "5-HT1A_receptor": {
+   "cue": "Bus-stop '1A' with anxious rabbit on bench",
+   "prop": "Bus-stop '1A' with anxious rabbit on bench",
+   "hook": "Bus line 1A. Rabbit = anxiety. Bus arriving = anxiolysis.",
+   "kind": "SYMBOL",
+   "scene": "BUS_LINE_1A",
+   "category": "Serotonin (Gi — autoreceptor + postsynaptic)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT2A_receptor": {
+   "cue": "Tarot table with 2 Ace cards, tie-dye hippie reader, swirlin",
+   "prop": "Tarot table with 2 Ace cards, tie-dye hippie reader, swirling psychedelic walls",
+   "hook": "2 Ace cards = '2A'. Tarot = hallucinations.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A",
+   "category": "Serotonin (Gq, cortical) — psychedelic + atypical antipsychotic target",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT2C_receptor": {
+   "cue": "Kitchen with TWO chefs guarding cookie jar",
+   "prop": "Kitchen with TWO chefs guarding cookie jar",
+   "hook": "2 Chefs / 2 Cookies = '2C'.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A (kitchen annex)",
+   "category": "Serotonin (Gq, hypothalamic — appetite)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT3_receptor": {
+   "cue": "Three iron CHANNELS gushing green vomit-water",
+   "prop": "Three iron CHANNELS gushing green vomit-water",
+   "hook": "3 = three gates. Iron channels emphasize ionotropic uniqueness.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A (water-gate room)",
+   "category": "Serotonin — LIGAND-GATED ION CHANNEL (unique!). CTZ + gut.",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT6_receptor": {
+   "cue": "Library with 6 framed PhD diplomas; old professor reads",
+   "prop": "Library with 6 framed PhD diplomas; old professor reads",
+   "hook": "6 = SIX diplomas. Professor = cognition.",
+   "kind": "SYMBOL",
+   "scene": "TAROT_2A (back library)",
+   "category": "Serotonin (Gs, cortical/striatal — cognition)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "5-HT7_receptor": {
+   "cue": "7-Eleven open 24/7",
+   "prop": "7-Eleven open 24/7",
+   "hook": "7 = the store name and hours.",
+   "kind": "SYMBOL",
+   "scene": "CONVENIENCE_STORE_7",
+   "category": "Serotonin (Gs, suprachiasmatic + hippocampal — circadian)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "AA_HOTEL": {
+   "cue": "Aa Hotel",
+   "prop": "Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on the α-subunit composition.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Floor 1 (α1): Sleep Lobby — giant bed in the entrance",
+    "Floor 2 (α2): Calm Lounge — armchairs and tea",
+    "Floor 3 (α3): Group-therapy Room — circle of chairs",
+    "Floor 5 (α5): Memory Penthouse — secure vault",
+    "Hotel Manager = GABA itself (holds master key)",
+    "Green CHLORINE SOLDIERS rushing INTO neurons = Cl⁻ influx → hyperpolarization → inhibition",
+    "Barbed-wire fence around hotel = Phenobarbital",
+    "Bayit-B small synagogue next door = GABA-B (metabotropic, Baclofen prays there)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "ALPHA_WOLF_PACK": {
+   "cue": "Alpha wolf pack in a snowy forest",
+   "prop": "Snowy pine forest. A wolf pack on the hunt. Some lone alphas charge forward, others stay behind on radio. Each wolf wears a numbered tag.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Lone alpha wolf (#1) = α1 receptor — true alpha hunts, post-synaptic action",
+    "Two wolves (one '#2' tag) = α2 receptor — #2 wolf pretends but is actually autoreceptor, calling pack back",
+    "Tranquilizer dart from a hunter = α1 blockade (Prazosin, antipsychotic α1 side effect)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "ASPARAGUS_VIP_DOOR": {
+   "cue": "NMDA VIP-club doorway (Mr. Asparagus's domain)",
+   "prop": "Heavy iron door labeled 'NMDA'. Outside: chalk-white Ca²⁺ guests with '2+' badges wait in line. The lock has a horseshoe MAGNET (Mg²⁺) wedged in it. Above the door: a neon sign that flickers when depolarized.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mr. Asparagus (Mexican, methyl-mustache CH₃) = NMDA agonist itself (N-methyl-D-Aspartate)",
+    "G-shaped gray pebble at his feet = Glycine co-agonist",
+    "Horseshoe magnet in lock = Mg²⁺ block",
+    "Chalk-white guests with '2+' badges in line = Ca²⁺ entering",
+    "Neon sign flickering = depolarization (releases the magnet plug)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "Acetylcholine": {
+   "cue": "Wooden MATCH being struck",
+   "prop": "Wooden MATCH being struck",
+   "hook": "Acetyl = אצית (Hebrew for 'ignite'). Match = ignition.",
+   "kind": "SYMBOL",
+   "scene": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)",
+   "category": "Neurotransmitter — agonist for BOTH muscarinic AND nicotinic receptors",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "BEETHOVEN_ORCHESTRA": {
+   "cue": "Beethoven conducting numbered symphonies",
+   "prop": "Concert hall. Beethoven (white wig, intense face) conducts. Different batons numbered for each symphony. Orchestra has heart-drums section (β1) and wind/brass section (β2).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Beethoven with '#1' baton + heart-drums section = β1 (heart)",
+    "Beethoven with '#2' baton + winds/brass = β2 (lungs)",
+    "A fishing NET hangs by the stage door = NET transporter; Beethoven catches stray notes (NE) and returns them"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "BUS_LINE_1A": {
+   "cue": "Bus stop",
+   "prop": "Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= anxiety patient awaiting anxiolysis).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Different buses arriving = different 1A partial agonists (Buspirone bus, Vilazodone bus, etc.)",
+    "Late bus = autoreceptor delay-of-onset for SSRIs (4-6 weeks)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "CIGARETTE_THEATER": {
+   "cue": "Cigarette Theater",
+   "prop": "Dim theater with cigarettes as branded characters on stage. Smoke curls. A wooden match (Acetylcholine = אצית) ignites scenes.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Cigarette brand '42' = nAChR α4β2 (Hitchhiker's Guide answer — 4+2)",
+    "Old wise grandpa with 'Lucky 7' cigarette = nAChR α7 (cognition + schizophrenia hypothesis)",
+    "Backstage stagehand cigarettes = NMJ-type (α1β1γδ)",
+    "Wooden match (אצית) struck = Acetylcholine the agonist",
+    "Half-smoked cigarette in a smoker's hand = Varenicline partial agonism"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "CONVENIENCE_STORE_7": {
+   "cue": "7-Eleven open 24/7",
+   "prop": "Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Night-clerk turning off neon = Lurasidone blocking 5-HT7"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "D1_receptor": {
+   "cue": "Single elevator with '1↑' button going UP to PFC top floor",
+   "prop": "Single elevator with '1↑' button going UP to PFC top floor",
+   "hook": "UP arrow = Gs/excitatory. '1' = D1. Top floor = PFC (working memory).",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine D1-family (Gs, ↑cAMP, EXCITATORY)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "D2_blockade": {
+   "cue": "Snapping double rope",
+   "prop": "a two-strand rope snapping apart",
+   "hook": "two strands = D2; snapping = blockade",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "D2_receptor": {
+   "cue": "Massive RED BARRIER labeled '2' across mesolimbic track with",
+   "prop": "Massive RED BARRIER labeled '2' across mesolimbic track with a foreman at lever",
+   "hook": "DOWN = Gi/inhibitory. '2' = D2. Mesolimbic = psychosis track.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine D2-family (Gi, ↓cAMP) — CENTRAL antipsychotic target",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "D3_receptor": {
+   "cue": "Three small red barriers in a heart-shaped (limbic) sub-cham",
+   "prop": "Three small red barriers in a heart-shaped (limbic) sub-chamber",
+   "hook": "Red-barrier base = Gi. '3' barriers. Heart shape = limbic.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine D2-family (Gi) — limbic-restricted",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "D4_receptor": {
+   "cue": "Four-bolt locking mechanism on a SILENT chamber door",
+   "prop": "Four-bolt locking mechanism on a SILENT chamber door",
+   "hook": "Same red-locked base (Gi). 4 bolts = D4. Silence = low EPS.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine D2-family (Gi) — high clozapine affinity, low EPS",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "D5_receptor": {
+   "cue": "Glass elevator '5' ascending through 5 hippocampal library f",
+   "prop": "Glass elevator '5' ascending through 5 hippocampal library floors",
+   "hook": "Same UP/Gs visual as D1. '5' = D5. Library = hippocampus/memory.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine D1-family (Gs, ↑cAMP) — hippocampal",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DAIRY_FARM": {
+   "cue": "Dairy Farm",
+   "prop": "A green farm on a hill. Each animal produces a different opioid-receptor effect. Hay bales, milk pails, and a Delta-Airlines plane droning overhead.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mooing cow ('MOO') = μ-opioid receptor",
+    "Grumpy goat with 'K' tag, kicking = κ-opioid receptor (dysphoria)",
+    "Delta-Airlines plane (triangular logo) overhead = δ-opioid receptor (less clinical)",
+    "Peaceful endogenous farmer = endorphins",
+    "Pails labeled: Analgesia / Euphoria / Constipation / Resp. Depression / Miosis = the spectrum of μ-effects"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "DAT": {
+   "cue": "A Jewish religious man (rabbi with payot and kippah) gatheri",
+   "prop": "A Jewish religious man (rabbi with payot and kippah) gathering scattered dopamine ore back home",
+   "hook": "DAT = דת (Hebrew: 'religion'). 'Religious man' = איש דת. Collecting ore back home = reuptake.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE",
+   "category": "Dopamine transporter — reuptakes synaptic DA into the presynaptic terminal",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DOPA_MINE": {
+   "cue": "DOPA-MINE Co.",
+   "prop": "A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by pathway — Mesolimbic (heart-shaped chamber), Mesocortical (think-bubble chamber), Nigrostriatal (motor gear chamber), Tuberoinfundibular (milk-pump chamber).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Vertical elevators going UP = D1-family receptors (Gs/excitatory)",
+    "Red barriers/locks blocking flow = D2-family receptors (Gi/inhibitory)",
+    "Coal carts = vesicular dopamine release",
+    "Newspaper PYRAMID hats labeled 'EXTRA' near nigrostriatal section = EPS",
+    "Milk pump at tuberoinfundibular section = prolactin"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "DSM_OCD_related": {
+   "cue": "Hands SCRUBBING IN A LOOP",
+   "prop": "Hands SCRUBBING IN A LOOP — water spiraling endlessly, with a tally counter clicking",
+   "hook": "Looping action + counting = OCD ritual.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Obsessive-Compulsive and Related Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_bipolar": {
+   "cue": "A SEE-SAW oscillating between a sun (mania) and a storm clou",
+   "prop": "A SEE-SAW oscillating between a sun (mania) and a storm cloud (depression). North-pole iceberg in the background (Lithium connection).",
+   "hook": "Bi-polar = two poles.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Bipolar and Related Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_disruptive_impulse": {
+   "cue": "An EXPLOSION sign with broken rules",
+   "prop": "An EXPLOSION sign with broken rules — ODD (defiant child), Conduct (escalation), IED (anger explosion)",
+   "hook": "Acting out outward.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Disruptive, Impulse-Control, and Conduct Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_dissociative": {
+   "cue": "A FRAGMENTED MIRROR showing multiple selves, or a watch with",
+   "prop": "A FRAGMENTED MIRROR showing multiple selves, or a watch with the present erased",
+   "hook": "Self fragmented.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Dissociative Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_elimination": {
+   "cue": "A toilet with a question mark",
+   "prop": "A toilet with a question mark — Enuresis (wet bed) or Encopresis (soiled clothes)",
+   "hook": "Elimination = where it shouldn't go.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Elimination Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_feeding_eating": {
+   "cue": "Empty plate next to a measuring tape (Anorexia) + binge plat",
+   "prop": "Empty plate next to a measuring tape (Anorexia) + binge plate (Bulimia/BED) + restricted food list (ARFID)",
+   "hook": "Food-and-body distortions.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Feeding and Eating Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_gender_dysphoria": {
+   "cue": "A figure with two different reflections in a mirror",
+   "prop": "A figure with two different reflections in a mirror — assigned vs. experienced",
+   "hook": "Mismatch between body and identity.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Gender Dysphoria",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_medication_induced": {
+   "cue": "A pharmacy with bottles labeled 'NMS', 'Serotonin Syndrome',",
+   "prop": "A pharmacy with bottles labeled 'NMS', 'Serotonin Syndrome', 'EPS', 'Akathisia', 'TD', 'Lithium toxicity', 'Discontinuation syndrome'",
+   "hook": "Drug-caused syndromes get their own chapter.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Medication-Induced Movement Disorders & Other Adverse Effects",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_neurocognitive": {
+   "cue": "(Skipped",
+   "prop": "(Skipped — geriatric scope)",
+   "hook": "User requested skipping dementia-focused content.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Neurocognitive Disorders (skipped per user — geriatric)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_neurodevelopmental": {
+   "cue": "SPECIAL-ED CLASSROOM",
+   "prop": "SPECIAL-ED CLASSROOM — a brightly-colored kindergarten room with 6 distinct corners, each showing a child characteristic of one ND disorder family. ASD CORNER: child sits cross-legged silently lining up toy trains in a perfectly straight row, wears large noise-cancelling headphones, eyes averted. ADHD CORNER: child bouncing on a chair surrounded by scattered toys, motion-lines and 'POW!' 'WHIZ!' speech bubbles, multiple half-finished activities. INTELLECTUAL DISABILITY (IDD) CORNER: child works slowly on a 5-piece beginner puzzle with a patient teacher's helping hand visible behind. SPECIFIC LEARNING DISORDER (SLD) CORNER: child looks confused at letters that visually swap and float ('b/d/p/q' rotating chaotically), placards mixing up reading order. COMMUNICATION DISORDER CORNER: child with sealed lips and an empty speech bubble OR with the speech bubble shown broken into stuttering fragments. TIC DISORDERS CORNER: child surrounded by comic-style action bubbles popping around their head — 'BLINK!' 'SHRUG!' 'AH!' 'TWITCH!'. At the center of the classroom: a teacher pointing at a tree-branch chart titled 'Neurodevelopmental Disorders' with 6 branches.",
+   "hook": "Each corner = a specific ND disorder family with its hallmark visual. Same children reappear individually as the symbol ",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Neurodevelopmental Disorders — establishing scene (Special-Ed Classroom) — 6 ND families",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_paraphilic": {
+   "cue": "A 'CAUTION' sign",
+   "prop": "A 'CAUTION' sign — atypical sexual interest causing distress or harm",
+   "hook": "Para-philia = beside-love.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Paraphilic Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_personality_disorders": {
+   "cue": "PERSONALITY INN",
+   "prop": "PERSONALITY INN — a theatrical 3-room tavern at night. Cluster A room (dimly-lit, weird-eccentric, blue-purple shadows): PARANOID guest peers from behind a menu with dark sunglasses, suspicious of everyone; SCHIZOID guest sits alone in a cold corner, no expression, eats by himself; SCHIZOTYPAL guest wears a wizard hat reading tarot cards over dinner, talks to invisible spirits. Cluster B room (red-gold, dramatic, candlelit): ANTISOCIAL in a leather coat steals from the register without remorse; BORDERLINE has two opposing faces (loving the waiter from the left side, hating the same waiter from the right side); NARCISSISTIC stares only into a hand-mirror admiring himself, ignoring others; HISTRIONIC stands ON the table performing a dramatic monologue with arms spread wide. Cluster C room (blue-gray, anxious, fluorescent): AVOIDANT hides behind a giant menu fearing rejection; DEPENDENT clings tightly to another guest, unable to choose food alone; OCPD lines up cutlery in perfect parallel rows so obsessively that they miss the meal itself. At the inn's entrance hall: a faceless MANNEQUIN statue with a sign 'GENERAL PD CRITERIA A-F' (see general_PD_criteria entry).",
+   "hook": "Each character carries a primary visual hook for their PD pattern. Same characters reappear individually in per-PD scene",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Personality Disorders — establishing scene (Personality Inn) — 10 specific PDs + General Criteria",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_psychotic": {
+   "cue": "A CRACKED MIRROR reflecting a distorted reality",
+   "prop": "A CRACKED MIRROR reflecting a distorted reality — voices visible as colored sound-waves",
+   "hook": "Broken reality. Voices = hallucinations.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Schizophrenia Spectrum and Other Psychotic Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_sexual_dysfunction": {
+   "cue": "A 'PAUSED' relationship icon",
+   "prop": "A 'PAUSED' relationship icon — different specifics for different dysfunctions",
+   "hook": "Function pause.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Sexual Dysfunctions",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_sleep_wake": {
+   "cue": "A MOON + CLOCK + tired patient with sheep refusing to be cou",
+   "prop": "A MOON + CLOCK + tired patient with sheep refusing to be counted — different sub-scenes for each",
+   "hook": "Sleep-wake imagery.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Sleep-Wake Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_somatic": {
+   "cue": "A patient with EXAGGERATED body markings (pain arrows) but d",
+   "prop": "A patient with EXAGGERATED body markings (pain arrows) but doctor's stethoscope finds nothing",
+   "hook": "Body sensations dominate the mind.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Somatic Symptom and Related Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_substance_addictive": {
+   "cue": "A bottle + syringe + cigarette + dice",
+   "prop": "A bottle + syringe + cigarette + dice — addictive substances + behaviors converging on the DOPA-MINE CASINO",
+   "hook": "All addictions converge on mesolimbic reward.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Substance-Related and Addictive Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "DSM_trauma_stressor": {
+   "cue": "A BROKEN PHOTO frame with a shattered timeline behind it",
+   "prop": "A BROKEN PHOTO frame with a shattered timeline behind it — flashback arrows pointing backward in time",
+   "hook": "Trauma = broken timeline.",
+   "kind": "SYMBOL",
+   "scene": "",
+   "category": "Trauma- and Stressor-Related Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "EPS_acute_dystonia": {
+   "cue": "A worker FROZEN MID-STEP with neck CRANED upward (oculogyric",
+   "prop": "A worker FROZEN MID-STEP with neck CRANED upward (oculogyric crisis), tongue out",
+   "hook": "Within hours-days of antipsychotic, esp. young male.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (nigrostriatal section)",
+   "category": "Acute dystonic reaction — sudden muscle spasm from D2 block",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "EPS_akathisia": {
+   "cue": "Workers PACING back and forth, unable to sit still, even tho",
+   "prop": "Workers PACING back and forth, unable to sit still, even though they want to",
+   "hook": "A-kathisia (Greek): 'not-sitting'.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (workers pacing)",
+   "category": "Akathisia — subjective + objective restlessness",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "EPS_parkinsonism": {
+   "cue": "Workers move in SLOW MOTION, hunched posture, mask-like face",
+   "prop": "Workers move in SLOW MOTION, hunched posture, mask-like faces, tremor",
+   "hook": "Like real Parkinson's, but caused by D2 block (not cell death).",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (nigrostriatal blockade)",
+   "category": "Drug-induced parkinsonism",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "ER_GUARD_POST": {
+   "cue": "Endoplasmic Reticulum guard post (σ1)",
+   "prop": "Doorway labeled 'ER'. A sentry guard with 'S-1' badge stands at attention, escorting misfolded proteins.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Guard with 'S-1' badge = sigma-1 chaperone protein",
+    "Misfolded proteins arriving in stress = clients of the chaperone",
+    "Fluvoxamine + Dextromethorphan visits = drug agonists at σ1"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "GABA_A_alpha1_subunit": {
+   "cue": "Floor 1",
+   "prop": "Floor 1 — Sleep Lobby with giant bed",
+   "hook": "Floor 1 = ground floor = where you crash on arrival.",
+   "kind": "SYMBOL",
+   "scene": "AA_HOTEL",
+   "category": "GABA-A α1 subunit — sedation, hypnosis",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "GABA_A_alpha2_alpha3_subunits": {
+   "cue": "Floor 2 (Calm Lounge) + Floor 3 (Group-therapy circle)",
+   "prop": "Floor 2 (Calm Lounge) + Floor 3 (Group-therapy circle)",
+   "hook": "Middle floors = where you spend the calm part of your stay = anxiolysis.",
+   "kind": "SYMBOL",
+   "scene": "AA_HOTEL",
+   "category": "GABA-A α2/α3 — anxiolysis",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "GABA_A_alpha5_subunit": {
+   "cue": "Floor 5",
+   "prop": "Floor 5 — Memory Penthouse with a vault",
+   "hook": "5 = penthouse = top floor = high-value memories.",
+   "kind": "SYMBOL",
+   "scene": "AA_HOTEL",
+   "category": "GABA-A α5 — memory/learning",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "GABA_A_receptor": {
+   "cue": "The hotel itself",
+   "prop": "The hotel itself — 5-floor building with α-floor-specific functions",
+   "hook": "Hotel name 'Aa' = α-α. 5 floors = pentameric.",
+   "kind": "SYMBOL",
+   "scene": "AA_HOTEL",
+   "category": "GABA-A — ionotropic Cl⁻ channel. Pentameric: usually 2α + 2β + 1γ.",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "GABA_B_receptor": {
+   "cue": "Small synagogue 'Bayit B' next door to the hotel",
+   "prop": "Small synagogue 'Bayit B' next door to the hotel",
+   "hook": "GABA-B = 'Bayit B' (House B in Hebrew). Separate building emphasizes that GABA-B is structurally different (G-protein, n",
+   "kind": "SYMBOL",
+   "scene": "AA_HOTEL (adjacent)",
+   "category": "GABA-B — metabotropic (Gi → K⁺ channel opens). NOT a chloride channel!",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "GABA_neurotransmitter": {
+   "cue": "Aa Hotel manager holding the master key",
+   "prop": "Aa Hotel manager holding the master key",
+   "hook": "GABA = manager who opens the Cl⁻ doors.",
+   "kind": "SYMBOL",
+   "scene": "AA_HOTEL",
+   "category": "Main inhibitory neurotransmitter",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "H1_blockade": {
+   "cue": "Bee swatter",
+   "prop": "a yellow fly-swatter mid-swing at a bee",
+   "hook": "the bee is histamine; swatting it is the block",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "H1_receptor": {
+   "cue": "Floor 1 living room",
+   "prop": "Floor 1 living room — snoozing resident on a giant couch, allergy tissues nearby",
+   "hook": "Floor 1 = ground level = where you collapse = sedation.",
+   "kind": "SYMBOL",
+   "scene": "H_HOUSE",
+   "category": "Histamine H1 — Gq (sedation, allergy, weight gain)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "H2_receptor": {
+   "cue": "Floor 2 kitchen with pots labeled 'H2O' leaking stomach acid",
+   "prop": "Floor 2 kitchen with pots labeled 'H2O' leaking stomach acid",
+   "hook": "H2O = water = liquid stomach acid. '2' = H2.",
+   "kind": "SYMBOL",
+   "scene": "H_HOUSE",
+   "category": "Histamine H2 — Gs (gastric parietal cells → stomach acid)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "H3_receptor": {
+   "cue": "Floor 3 study",
+   "prop": "Floor 3 study — autoreceptor professor dozing at his desk (he's controlling his own histamine release)",
+   "hook": "H + 3 = study floor. Auto-receptor = self-feedback (professor controlling himself).",
+   "kind": "SYMBOL",
+   "scene": "H_HOUSE",
+   "category": "Histamine H3 — Gi (CNS autoreceptor for histamine; also modulates other NTs)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "H4_receptor": {
+   "cue": "Floor 4 rooftop with immune-cell pigeons circling",
+   "prop": "Floor 4 rooftop with immune-cell pigeons circling",
+   "hook": "H + 4 = highest floor. Pigeons = immune cells.",
+   "kind": "SYMBOL",
+   "scene": "H_HOUSE",
+   "category": "Histamine H4 — Gi (immune cells; minimal psychiatric relevance)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "H_HOUSE": {
+   "cue": "Histamine House",
+   "prop": "A literal H-shaped house. Each floor is a different histamine receptor subtype.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Floor 1 (Living Room) — snoozing couch resident = H1 (sedation/allergy/weight)",
+    "Floor 2 (Kitchen) — leaking 'H2O' pots of stomach acid = H2 (gastric)",
+    "Floor 3 (Study) — autoreceptor professor dozing on his own desk = H3 (CNS auto, cognition)",
+    "Floor 4 (Rooftop) — immune-cell pigeons circling = H4 (immune)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "LOCUS_COERULEUS_BLUEPOST": {
+   "cue": "Locus Coeruleus",
+   "prop": "A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brainstem. Every emergency call goes through it.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Blue box dispatcher = LC neurons firing in arousal",
+    "Phone lines fanning out = NE projections everywhere",
+    "Panic-button red light = hyperactive LC in panic/PTSD/withdrawal",
+    "Prazosin curtain = α1 blockade calming the dispatch noise (PTSD nightmares)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "M1_receptor": {
+   "cue": "White Rabbit clutching his '1 O'Clock' pocket watch, frantic",
+   "prop": "White Rabbit clutching his '1 O'Clock' pocket watch, frantic about being late",
+   "hook": "Pocket watch reads '1' = M1. Obsession with time = memory.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY",
+   "category": "Muscarinic M1 — Gq, CNS (memory, cortex)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "M2_receptor": {
+   "cue": "Queen of Hearts holding TWO '2 of Hearts' playing cards abov",
+   "prop": "Queen of Hearts holding TWO '2 of Hearts' playing cards above her chest",
+   "hook": "2 of Hearts = M2 + heart location.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY",
+   "category": "Muscarinic M2 — Gi, HEART (slows it via parasympathetic input)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "M3_receptor": {
+   "cue": "Mad Hatter's tea table with 3 teacups overflowing",
+   "prop": "Mad Hatter's tea table with 3 teacups overflowing — labeled saliva, tears, sweat",
+   "hook": "3 teacups = M3. Tea = wet = secretions.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY",
+   "category": "Muscarinic M3 — Gq, GLANDS + smooth muscle (secretions, GI, bladder, ciliary)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "M4_receptor": {
+   "cue": "Tweedledee at the corner of the party (less prominent)",
+   "prop": "Tweedledee at the corner of the party (less prominent)",
+   "hook": "One of the lookalike twins (with M5) — pair for less-clinical receptors.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY",
+   "category": "Muscarinic M4 — Gi, CNS striatum (modulates dopamine release)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "M5_receptor": {
+   "cue": "Tweedledum at the corner of the party",
+   "prop": "Tweedledum at the corner of the party",
+   "hook": "Pairs with M4.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY",
+   "category": "Muscarinic M5 — Gq, CNS reward circuits (VTA)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "MEYNERT_MYNAH": {
+   "cue": "Basal nucleus of Meynert",
+   "prop": "A wise old MYNAH bird perched in the basal forebrain. It mimics what it hears (cortical ACh = memory).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mynah bird = basal nucleus of Meynert (phonetic)",
+    "Bird whispers memorize cortex = cholinergic projections for memory",
+    "Bird dies = Alzheimer's pathology (skipped per user, but explains baseline)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "NET": {
+   "cue": "Fishing NET hanging by the stage door",
+   "prop": "Fishing NET hanging by the stage door — Beethoven catches stray notes (NE) with it",
+   "hook": "NET acronym = literal net. Catching notes = re-uptake.",
+   "kind": "SYMBOL",
+   "scene": "BEETHOVEN_ORCHESTRA (stage-door)",
+   "category": "Norepinephrine transporter",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "NMDA_receptor": {
+   "cue": "Heavy iron door labeled 'NMDA' with horseshoe magnet wedged ",
+   "prop": "Heavy iron door labeled 'NMDA' with horseshoe magnet wedged in lock",
+   "hook": "Door = channel. Mr. Asparagus (NMDA = N-methyl-D-Aspartate) is the agonist. Magnet = Mg²⁺ block. Glycine pebble at his f",
+   "kind": "SYMBOL",
+   "scene": "ASPARAGUS_VIP_DOOR",
+   "category": "Glutamate receptor — ligand-gated + voltage-gated (Mg²⁺ block). Ca²⁺ influx.",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "QT_prolongation": {
+   "cue": "An EKG strip with the QT interval STRETCHED LONG",
+   "prop": "An EKG strip with the QT interval STRETCHED LONG — like a rubber band about to snap (into torsades de pointes)",
+   "hook": "Q-T interval visibly stretched.",
+   "kind": "SYMBOL",
+   "scene": "(heart ECG strip)",
+   "category": "QT prolongation — drug-induced arrhythmia risk",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "RAPHE_TAPESTRY": {
+   "cue": "Raphe nuclei",
+   "prop": "A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin serotonin-yarn into rugs that get shipped EVERYWHERE.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Tapestry seam down the middle = raphe (literally 'seam' in Greek)",
+    "Weavers = raphe neurons producing 5-HT",
+    "Shipping crates labeled cortex/limbic/hypothalamus = projections everywhere",
+    "Old loom that won't start for 4-6 weeks = SSRI delay-of-onset (autoreceptor downregulation)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "SERT": {
+   "cue": "Postal carrier in 'SERT' uniform collecting serotonin packag",
+   "prop": "Postal carrier in 'SERT' uniform collecting serotonin packages",
+   "hook": "SERT = Service (postal). Pick-up-and-return = re-uptake.",
+   "kind": "SYMBOL",
+   "scene": "(standalone — appears in any synapse scene)",
+   "category": "Serotonin transporter — SSRI/SNRI/TCA target",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "SIADH_hyponatremia": {
+   "cue": "The bread-maze (Carbamazepine) FLOODED with water",
+   "prop": "The bread-maze (Carbamazepine) FLOODED with water — patient drowning in low sodium",
+   "hook": "Carb-A-Maze drowning in water = SIADH.",
+   "kind": "SYMBOL",
+   "scene": "(Carbamazepine maze fills with water)",
+   "category": "SIADH — drug-induced hyponatremia",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "SJS_TEN": {
+   "cue": "The Lamb (Lamotrigine) covered in PEELING RED RASH",
+   "prop": "The Lamb (Lamotrigine) covered in PEELING RED RASH — skin falling off in sheets",
+   "hook": "Lamb + trigger + rash.",
+   "kind": "SYMBOL",
+   "scene": "(Lamb on trigger)",
+   "category": "Stevens-Johnson Syndrome / TEN — severe skin reaction",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "TAROT_2A": {
+   "cue": "Tarot 2A",
+   "prop": "Dim Victorian parlor. Round table with TWO Ace tarot cards. Tie-dye hippie reader. Walls swirl with psychedelic colors. Adjacent rooms: KITCHEN (5-HT2C), WATER-GATE ROOM (5-HT3), LIBRARY (5-HT6).",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Hippie reader (tie-dye shirt) = LSD/Psilocybin agonist",
+    "Officer with flashlight = atypical antipsychotic (turns off the trip)",
+    "Officer with mirror = Pimavanserin (inverse agonist, flips cards face-down)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "TUBEROMAMMILLARY_DAIRY": {
+   "cue": "Tuberomammillary nucleus",
+   "prop": "A dairy section in the hypothalamus (mammillary = mammary). Cows pump out histamine to keep the brain awake.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "Mammary cows pumping histamine = TMN neurons → wakefulness",
+    "Histamine bottles distributed to H-House = upstream of all H1/H3 effects",
+    "Dimmer switch when blocked = sedation from H1 antagonists"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "VMAT2": {
+   "cue": "Yoga mat labeled 'V-MAT 2'",
+   "prop": "Yoga mat labeled 'V-MAT 2' — monoamines rest on it before vesicular release",
+   "hook": "VMAT = literal mat. 2 = subtype.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (rest hall)",
+   "category": "Vesicular monoamine transporter 2 — packages monoamines (DA, NE, 5-HT) into vesicles",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "VTA": {
+   "cue": "The mine SUPERVISOR'S OFFICE",
+   "prop": "The mine SUPERVISOR'S OFFICE — VTA chairman dispatches carts to two destinations",
+   "hook": "VTA = the management hub of DOPA-MINE Co.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (supervisor's office)",
+   "category": "Ventral Tegmental Area — midbrain dopamine source (mesolimbic + mesocortical)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "WONDERLAND_TEAPARTY": {
+   "cue": "Alice in Wonderland",
+   "prop": "Iconic Wonderland tea party. Each character maps to one muscarinic receptor by NUMBER + FUNCTION. The whole tableau goes haywire under anticholinergic blockade.",
+   "hook": "course-wide fixed structure; stands inside the chapter's venue",
+   "kind": "SCENE_TOKEN",
+   "elements": [
+    "White Rabbit with '1 O'Clock' pocket watch = M1 (CNS, memory of time)",
+    "Queen of Hearts holding TWO '2-of-Hearts' cards = M2 (heart)",
+    "Mad Hatter with 3 dripping teacups (saliva/tears/sweat) = M3 (glands)",
+    "Tweedledee & Tweedledum at the corners = M4 / M5 (less clinical)",
+    "Anticholinergic toxicity = whole scene gone wild: Mad Hatter mad, Red Queen flushed, March Hare hot, teacups bone-dry, Cheshire Cat invisible (pupils dilated)"
+   ],
+   "source": "symbols.json:scenes",
+   "since": 1
+  },
+  "adhd": {
+   "cue": "ADHD's WHIRLWIND CLASSROOM",
+   "prop": "ADHD's WHIRLWIND CLASSROOM — a child literally floats a few inches above their chair (hyperactive), legs in mid-kick, hair flying. Their desk is total chaos: pencils, papers, half-finished projects, dropped erasers, three different books open at once. THREE separate speech bubbles burst from their mouth simultaneously: 'Hey! Did you see — wait, what was I — OH! Look! — sorry — what?'. A clock shows they've changed activities 12 TIMES in one hour. Comic action-bubbles 'POW!' 'WHIZ!' 'ZIP!' surround them. A trail of dropped items winds across the floor behind them. A backpack hangs upside-down with contents spilling. The teacher in background looks exhausted, holding their head. BUT — importantly — the child is also handing a flower to another child while spinning (warmth/impulsivity, often misunderstood as 'bad'). Two scenes embedded: (a) at school + (b) at home — same chaos, demonstrating 'symptoms in 2+ settings'. A calendar showing the child has had these symptoms since age 5 (before age 12 cutoff).",
+   "hook": "ADHD = literally CAN'T SIT STILL + CAN'T STAY ON TASK. Floating above chair + chaos-trail + multiple speech bubbles + cl",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — ADHD corner (standalone scene possible)",
+   "category": "Attention-Deficit/Hyperactivity Disorder (ADHD) — DSM Ch.1 Neurodevelopmental",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "agranulocytosis": {
+   "cue": "Sand timer",
+   "prop": "an hourglass with the sand nearly out",
+   "hook": "counts running down — the weekly blood count",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "agranulocytosis_clozapine": {
+   "cue": "White blood cell soldiers VANISHING",
+   "prop": "White blood cell soldiers VANISHING — body without defenders. The Z-key from clozapine sits next to them.",
+   "hook": "Clozapine's notorious risk.",
+   "kind": "SYMBOL",
+   "scene": "(bone marrow ward)",
+   "category": "Agranulocytosis — neutrophil depletion (CLOZAPINE specifically)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "alpha1_blockade": {
+   "cue": "Extinguished alpha flame",
+   "prop": "a single guttered candle, smoke rising",
+   "hook": "one candle = alpha-1; blown out = antagonist",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "alpha1_receptor": {
+   "cue": "Single LONE ALPHA WOLF charging at full hunt",
+   "prop": "Single LONE ALPHA WOLF charging at full hunt",
+   "hook": "α1 = ONE wolf = true alpha. Hunt = post-synaptic action (vasoconstriction, alertness).",
+   "kind": "SYMBOL",
+   "scene": "ALPHA_WOLF_PACK",
+   "category": "Adrenergic α1 — post-synaptic excitatory (Gq)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "alpha2_receptor": {
+   "cue": "Two wolves; the one tagged '#2' pretends to be alpha but rad",
+   "prop": "Two wolves; the one tagged '#2' pretends to be alpha but radios pack 'come back to base'",
+   "hook": "α2 = TWO wolves. The #2 wolf isn't truly alpha → autoreceptor function (negative feedback).",
+   "kind": "SYMBOL",
+   "scene": "ALPHA_WOLF_PACK",
+   "category": "Adrenergic α2 — autoreceptor (presynaptic, Gi)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "amygdala": {
+   "cue": "An ALMOND-shaped panic alarm (amygdala = Greek for 'almond')",
+   "prop": "An ALMOND-shaped panic alarm (amygdala = Greek for 'almond')",
+   "hook": "Amygdala = almond literally. Always-on threat scanner.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Amygdala — threat detector + emotional memory",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "anna_freud_defenses": {
+   "cue": "A pyramid with 3 levels",
+   "prop": "A pyramid with 3 levels: PRIMITIVE (denial, projection, splitting), NEUROTIC (repression, displacement, intellectualization), MATURE (sublimation, humor, altruism)",
+   "hook": "Pyramid = hierarchy of defense maturity.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Anna Freud — defense mechanisms hierarchy",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "anterior_cingulate_cortex": {
+   "cue": "A police DETECTIVE at the front of a courthouse, watching fo",
+   "prop": "A police DETECTIVE at the front of a courthouse, watching for contradictions",
+   "hook": "Anterior CINGulate → CINGulate = detective sniffing inconsistency.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "ACC — conflict monitor + emotional regulation",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "antichol_toxidrome_emergency": {
+   "cue": "All Wonderland characters in mania",
+   "prop": "All Wonderland characters in mania — already covered in anticholinergic_toxidrome (batch 1C)",
+   "hook": "See WONDERLAND_TEAPARTY for full scene.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY (gone wild)",
+   "category": "Anticholinergic syndrome — clinical emergency (see Wonderland scene)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "anticholinergic_toxidrome": {
+   "cue": "The whole Wonderland scene running riot",
+   "prop": "The whole Wonderland scene running riot — Mad Hatter completely mad, Red Queen flushed and screaming, March Hare panting hot, teacups bone-dry, Cheshire Cat invisible (just dilated pupils glowing)",
+   "hook": "Each toxic sign = one Wonderland character. Memorable 5-character constellation.",
+   "kind": "SYMBOL",
+   "scene": "WONDERLAND_TEAPARTY (gone wild)",
+   "category": "Anticholinergic syndrome — muscarinic blockade clinical presentation",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "antisocial_pd": {
+   "cue": "ANTISOCIAL's HEIST",
+   "prop": "ANTISOCIAL's HEIST — a person in a leather jacket and dark sunglasses is hot-wiring a stolen car in a back alley at night. Behind them on a wall: a 'WANTED' poster with their own face on it, which they ignore casually. A wallet on the ground next to a passed-out victim — the character takes the cash with no expression of remorse. A calendar on a brick wall shows their conduct-disorder rap sheet beginning at age 14 (vandalism, fighting, fire-setting, cruelty to animals). Their phone shows a series of lies they've told the police, an ex-partner, and a boss — all without flinching. A speech bubble: 'rules are for suckers'.",
+   "hook": "ANTI-SOCIAL = 'against society'. Leather jacket + 'WANTED' poster + no remorse for victim = pathognomonic. The age-15-on",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster B room (red-gold dramatic)",
+   "category": "Cluster B — Antisocial Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "anxiety_state": {
+   "cue": "Anxious bystander",
+   "prop": "a person visibly tense, wringing their hands",
+   "hook": "literal depiction — the corpus's largest mechanism",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "asd": {
+   "cue": "ASD's TRAIN WORKSHOP",
+   "prop": "ASD's TRAIN WORKSHOP — a child sits cross-legged on the floor of a quiet workshop, surrounded by toy trains arranged in a perfectly straight line by color and number (TRAIN #1, TRAIN #2, TRAIN #3...). The child wears oversized noise-cancelling headphones (sensory hyperreactivity) and a comfortable hoodie with the sleeves cut off (sensory hyporeactivity to texture). Their eyes look DOWNWARD or sideways, never at the camera or the visitor at the door (lack of eye contact). When a parent calls 'Sam!' from the doorway, the child does not respond or turn (social-emotional reciprocity deficit). On the wall: a chart listing the names and numbers of all 247 train models from memory (highly restricted, fixated interest). A blanket is taped over a window (light sensitivity). Labels stick to ordinary objects ('CUP', 'PEN', 'BOOK'). A self-stim toy (spinning fidget) hangs in the corner. The child rocks gently back and forth (stereotyped repetitive movement). When their schedule is changed unexpectedly, a small thought-bubble shows a melt-down: '!!!CHANGE!!!' (insistence on sameness).",
+   "hook": "ASD = 'AUTO-mate' — child performs SAME routines automatically, mechanically. Train-lineup + noise-cancelling headphones",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — ASD corner (standalone scene possible)",
+   "category": "Autism Spectrum Disorder (ASD) — DSM Ch.1 Neurodevelopmental",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "ataxia": {
+   "cue": "Unbalanced stack",
+   "prop": "a leaning stack of crates about to go",
+   "hook": "loss of balance, drawn literally",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "attachment_4_styles": {
+   "cue": "AINSWORTH'S STRANGE SITUATION ROOM",
+   "prop": "AINSWORTH'S STRANGE SITUATION ROOM — a research observation playroom. On one wall is a large ONE-WAY MIRROR behind which Mary Ainsworth herself stands with a clipboard and a stopwatch, taking notes. The room is divided into four corners, each enacting one attachment style during the REUNION moment (the diagnostic point — after mother has briefly left and returned). CORNER 1 — SECURE attachment (~60%): toddler runs joyfully toward the returning mother, gets a quick hug, calms within seconds, then returns to exploring toys. Sign: 'SECURE = uses mother as base'. CORNER 2 — ANXIOUS-AMBIVALENT (~10%): toddler simultaneously CLINGS to mother's leg AND pushes her away with the other hand, sobbing inconsolably for many minutes — 'I want you, but I'm angry'. Sign: 'AMBIVALENT'. CORNER 3 — AVOIDANT (~20%): toddler IGNORES the returning mother, turns away pointedly, continues playing as if she were invisible. Sign: 'AVOIDANT'. CORNER 4 — DISORGANIZED (~10%, trauma-linked): toddler shows CONTRADICTORY behavior — approaches mother with head turned away, freezes mid-step, then collapses to the floor. Sign: 'DISORGANIZED'. Above each corner: a small video monitor replaying the separation moment for context. Banner: 'STRANGE SITUATION — Reunion reveals all'. In a separate panel: John Bowlby (the theorist) sketches the theory in a notebook.",
+   "hook": "STRANGE SITUATION = the actual research paradigm name. 4 corners in one room = 4 styles. The REUNION moment is the diagn",
+   "kind": "SYMBOL",
+   "scene": "(standalone — AINSWORTH'S STRANGE SITUATION ROOM)",
+   "category": "John Bowlby + Mary Ainsworth — 4 attachment styles (Strange Situation paradigm)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "avoidant_pd": {
+   "cue": "AVOIDANT's PILLOW FORT",
+   "prop": "AVOIDANT's PILLOW FORT — a person hides under a tall stack of pillows and blankets in their bedroom, only their wide-frightened eyes peer out. On the floor by the door: a party invitation slid in, which the person looks at LONGINGLY but trembles to act on (CRITICAL — they WANT to go but fear rejection). A telephone has rung 8 times and gone to voicemail. On a corkboard above the bed: 'social inept', 'they'll think I'm boring', 'better not even try'. A friend's photo is taped on the wall with a thought-bubble: 'maybe one day'. A clock shows that the person was supposed to be at a job interview an hour ago. Their journal is open — 'I should have said hello to the cashier today'.",
+   "hook": "AVOIDANT = visible avoidance of people. Pillow fort + longing look at party invite + 'I should have said hello' regret =",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster C room (blue-gray anxious)",
+   "category": "Cluster C — Avoidant Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "basal_ganglia": {
+   "cue": "A complex GEAR SYSTEM at the base of the brain",
+   "prop": "A complex GEAR SYSTEM at the base of the brain — striated stripes visible",
+   "hook": "Basal = bottom. Ganglia = clusters of gears.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Basal ganglia — motor control + habit/reward",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "basal_nucleus_meynert": {
+   "cue": "A wise old MYNAH bird in the basal forebrain whispering memo",
+   "prop": "A wise old MYNAH bird in the basal forebrain whispering memories to cortex",
+   "hook": "Meynert = Mynah (phonetic).",
+   "kind": "SYMBOL",
+   "scene": "MEYNERT_MYNAH",
+   "category": "Basal forebrain ACh source for cortex (memory)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "beta1_receptor": {
+   "cue": "Beethoven holding baton '#1' conducting heart-shaped drum se",
+   "prop": "Beethoven holding baton '#1' conducting heart-shaped drum section",
+   "hook": "BETHoven = β. Symphony #1 = β1. Drums = heart pounding.",
+   "kind": "SYMBOL",
+   "scene": "BEETHOVEN_ORCHESTRA",
+   "category": "Adrenergic β1 — Gs (HEART)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "beta2_receptor": {
+   "cue": "Beethoven holding baton '#2' conducting brass/wind section",
+   "prop": "Beethoven holding baton '#2' conducting brass/wind section",
+   "hook": "Symphony #2 = β2. Winds/Brass = lungs/airways.",
+   "kind": "SYMBOL",
+   "scene": "BEETHOVEN_ORCHESTRA",
+   "category": "Adrenergic β2 — Gs (LUNGS, muscle)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "borderline_pd": {
+   "cue": "BORDERLINE's CLIFF EDGE",
+   "prop": "BORDERLINE's CLIFF EDGE — a person stands exactly ON a literal red BORDER LINE painted on the floor, one foot on each side. They have TWO FACES: the left side beams loving adoration toward a friend, the right side blazes with rage toward the same friend (splitting). In their hand: a phone calling someone, eyes wide with TERROR they won't answer (fear of abandonment). Their other hand shows fresh razor marks (self-harm). The mirror behind them reflects FOUR different identities (who am I today?) — punk, scholar, hippie, executive — none feeling real (identity disturbance). The floor around them is cracked from emotional storms. A speech bubble: 'I HATE you / Don't leave me'. Behind: scattered impulsive purchases (shopping spree), an empty bottle (substance use), a one-night-stand silhouette.",
+   "hook": "BORDER-LINE = always on the border, never stable. The two-faced split + abandonment terror + self-harm + 4 identities = ",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster B room",
+   "category": "Cluster B — Borderline Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "brazelton_still_face": {
+   "cue": "Mother and 4-month-old baby face-to-face. Three frames",
+   "prop": "Mother and 4-month-old baby face-to-face. Three frames: (1) playful engagement, (2) mother freezes neutral 'still face', (3) baby protests, looks away, distress",
+   "hook": "The still face = withdrawal of contingent response, infant distress.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Still-Face paradigm (Tronick) — early mother-infant interaction",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "cerebellum": {
+   "cue": "A LITTLE BRAIN hanging at the back ('cerebellum' = little br",
+   "prop": "A LITTLE BRAIN hanging at the back ('cerebellum' = little brain)",
+   "hook": "Latin: cerebellum = little brain.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Cerebellum — motor coordination + cognitive timing",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "communication_disorders": {
+   "cue": "SPEECH THERAPY ROOM",
+   "prop": "SPEECH THERAPY ROOM — a colorful pediatric speech-therapy room with 4 vignettes showing the 4 communication disorder subtypes. CHILD 1 — LANGUAGE DISORDER: child at a table, struggling to find words; a thought bubble shows pictures of common objects (dog, cup, ball) but the SPEECH BUBBLE is empty or shows wrong-words (says 'cat' for 'dog'). Difficulty with vocabulary, sentence structure. CHILD 2 — SPEECH SOUND DISORDER: child says 'wabbit' for 'rabbit', 'fum' for 'thumb' — speech bubble shows the WORDS WITH WRONG SOUNDS articulated. The speech therapist holds a small mirror in front of the child's mouth to show tongue position. CHILD 3 — STUTTERING (Childhood-Onset Fluency Disorder): child says 'M-m-m-mommy I w-w-w-want' — speech bubble is BROKEN/FRAGMENTED with the same syllable repeated. A frustration expression on face. The therapist demonstrates a hand-tapping rhythm technique. CHILD 4 — SOCIAL (PRAGMATIC) COMMUNICATION DISORDER: child at a school table NOT taking turns in conversation, interrupting, missing nonverbal cues from peers. A poster of social rules on the wall ('TAKE TURNS', 'EYE CONTACT', 'WAIT YOUR TURN') with red X-marks where the child has missed. CRITICAL: this child has normal grammar/vocabulary but fails at SOCIAL USE.",
+   "hook": "Communication Disorders = LANGUAGE + SPEECH-SOUND + STUTTER + SOCIAL-PRAGMATIC. 4 children in one room with 4 different ",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — Communication corner (standalone scene possible)",
+   "category": "Communication Disorders — DSM Ch.1 Neurodevelopmental (Language, Speech Sound, Stuttering, Social-Pragmatic)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "cyp450_induction": {
+   "cue": "CYP-450 plate",
+   "prop": "a vehicle licence plate lettered CYP 450",
+   "hook": "the corpus letters the enzyme onto a plate",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "default_mode_network": {
+   "cue": "A coffee-shop COMMITTEE of brain regions chatting when nothi",
+   "prop": "A coffee-shop COMMITTEE of brain regions chatting when nothing else is going on (vmPFC, posterior cingulate, angular gyrus)",
+   "hook": "Default Mode = idle mode = daydreaming committee.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "DMN — daydreaming, self-referential thought",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "delta_opioid_receptor": {
+   "cue": "Delta-Airlines plane (triangular logo) overhead",
+   "prop": "Delta-Airlines plane (triangular logo) overhead",
+   "hook": "δ = Delta = airline triangle.",
+   "kind": "SYMBOL",
+   "scene": "DAIRY_FARM",
+   "category": "Opioid receptor δ — Gi (less clinical, mood modulation in research)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "dependent_pd": {
+   "cue": "DEPENDENT's KOALA CLING",
+   "prop": "DEPENDENT's KOALA CLING — a grown adult (age 35-ish) clings to a friend's back like a koala bear, arms wrapped around the friend's shoulders, unable to stand on their own legs. The friend is trying to walk but is weighed down. On the friend's clothing: dozens of little post-it notes asking 'what should I wear today?', 'should I order the salad?', 'is this the right job?'. A speech bubble from the dependent character: 'whatever YOU think is best!' (about every decision). In the background, a previous partner is leaving through the door — and the dependent character is already on the phone DESPERATELY texting a new potential caregiver. The character cannot bear to disagree, even when asked their opinion (visible struggle: 'do you like THIS or THAT?').",
+   "hook": "DE-PENDENT = literally HANGING / DANGLING from someone else. Koala-cling + post-it notes asking for guidance + urgent se",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster C room",
+   "category": "Cluster C — Dependent Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "depression_state": {
+   "cue": "Happy and sad masks",
+   "prop": "the paired theatre masks on a wall",
+   "hook": "the conventional mask pair — p204/205/206/207/213",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "developmental_ladder": {
+   "cue": "A 5-storey BUILDER'S TOWER under construction with scaffoldi",
+   "prop": "A 5-storey BUILDER'S TOWER under construction with scaffolding. Each floor has a young apprentice working on a punning artifact that names its developmental domain. Floor 1 (ground level — MOTOR): apprentice assembles a tiny MOTORCYCLE in a garage (Motor → motorcycle pun). Floor 2 (LANGUAGE): apprentice hangs disembodied TONGUES on a rack feeding a TRANSLATOR machine (Language → tongues pun). Floor 3 (COGNITIVE): apprentice polishes massive brass COG-WHEELS that interlock (Cognitive → cog pun). Floor 4 (SOCIAL-EMOTIONAL): apprentice calibrates an 'EMO-METER' machine while two children hug nearby (Social-Emotional → emo-meter pun). Floor 5 (ADAPTIVE — top floor): apprentice plugs an electrical ADAPTER into different outlets (Adaptive → adapter pun). Above the top floor a banner reads 'DEVELOPMENT 5'. A young master-builder climbs up the scaffolding past each completed floor.",
+   "hook": "Five puns naming the five domains in order: MOTORCYCLE-TONGUES-COGS-EMOMETER-ADAPTER. Tower height = sequential mastery.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Generic developmental milestones — 5 domains as a tiered building",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "developmental_red_flags": {
+   "cue": "A wall with 5 distinct framed scenes (plus a 6th regression ",
+   "prop": "A wall with 5 distinct framed scenes (plus a 6th regression frame). Each frame in a different setting and color, with the AGE embedded in the visual identity itself. Frame 1 (black/white dojo) — NINJA-baby in a NIN-cradle shaped like a '9', finger on silenced lips, mouth covered by ninja mask (NIN = 9 in Japanese; no babbling). Frame 2 (red town square at noon) — giant CLOCK-TOWER showing 12:00, parent points at sky-bird but baby stares at own toes (no joint attention). Frame 3 (golden Israeli souvenir shop) — toddler wearing a חי (Chai = 18 in Hebrew gematria) necklace pendant, holding above their head a comic SPEECH-BUBBLE that is empty or filled only with picture-symbols (heart, moon, ball — NO real words). Frame 4 (blue neon 24/7 convenience store) — toddler holding TWO unconnected word-cards 'JUICE' and 'PLEASE' with a visible gap between them (no 2-word phrases). Frame 5 (green spring park) — child sitting on a TRICYCLE (3 wheels = 3 years), beside them an unimagined cardboard box being used only as a stool (no symbolic play). Frame 6 (black-and-white calendar room) — wall-calendar with REVERSED time-arrow, child stepping backward from 'WORDS' to 'BABBLE' (regression at any age).",
+   "hook": "9=NIN-ja silent in 9-shaped cradle. 12=clock noon with missed joint-pointing. 18=חי gematria necklace + empty speech bub",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Cross-cutting developmental red flags — 5 missed milestones",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "discontinuation_syndrome_FINISH": {
+   "cue": "Patient suddenly OFF the SERT-postal-route",
+   "prop": "Patient suddenly OFF the SERT-postal-route — body experiences withdrawal: dizzy, flu-like, electric-shocks ('brain zaps'), GI",
+   "hook": "FINISH mnemonic: Flu-like, Insomnia, Nausea, Imbalance, Sensory disturbance, Hyperarousal.",
+   "kind": "SYMBOL",
+   "scene": "(abrupt SSRI cessation)",
+   "category": "Antidepressant discontinuation syndrome",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "dopamine": {
+   "cue": "Rope",
+   "prop": "a coiled hemp rope",
+   "hook": "rope = dopamine across the corpus; count the strands for the subtype",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "dorsal_raphe": {
+   "cue": "The DORSAL (top) weaving station of the Persian-rug workshop",
+   "prop": "The DORSAL (top) weaving station of the Persian-rug workshop",
+   "hook": "Dorsal = top. Most clinically referenced raphe subnucleus.",
+   "kind": "SYMBOL",
+   "scene": "RAPHE_TAPESTRY",
+   "category": "Specific raphe nucleus — primary 5-HT source for cortex",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "dorsolateral_prefrontal_cortex": {
+   "cue": "A LIBRARIAN organizing books at the side of the CEO office",
+   "prop": "A LIBRARIAN organizing books at the side of the CEO office",
+   "hook": "DorsoLateral = top-side of PFC. Books = working memory.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "dlPFC — working memory + cognitive control",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "drug_induced_lupus": {
+   "cue": "Lupus wolf",
+   "prop": "a grey wolf standing in the scene",
+   "hook": "lupus is Latin for wolf",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "eps": {
+   "cue": "EXTRA pyramid hat",
+   "prop": "a folded-newspaper pyramid hat",
+   "hook": "EXTRA-pyramidal, split into its two morphemes",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "erikson_8_stages": {
+   "cue": "ERIKSON-LAND",
+   "prop": "ERIKSON-LAND — a colorful luna park with 8 themed attractions arranged in a winding path. A mustached conductor 'Erik' stands at the entrance gate. Each attraction is a SPLIT-MECHANISM ride showing both the WIN and LOSE pole of one psychosocial crisis, with the AGE embedded as a count of objects. (1) 'TRUST-FALL TOWER' — a single tall slide-tower with a giant '1' on its side. WIN: baby falls back into a pillow-pit while a parent catches them giggling. LOSE: parent is absent — pillow has a label 'MISS-trust' and the baby falls onto bare floor. (2) 'BUMPER-AUTO TRACK' with exactly THREE bumper-cars (3=age). WIN: toddler in a car painted 'ME!' driving proudly (AUTO-of-mine = AUTONOMY). LOSE: another toddler with a giant red SHAME-MASK on their face, surrounded by question-mark doubts. (3) 'SIX-SHOOTER STARTING-RACE' with SIX toy pistols and six racing kids (6=age). WIN: kid in a hero cape pulls the trigger first, confetti explodes with 'IGNITE!' = INITIATE. LOSE: kid mis-fires before the gun; the judge stamps 'GUILTY' on the kid's forehead with a giant G. (4) 'DOZEN FACTORY' with TWELVE widgets on a conveyor (12=age, dozen). WIN: kid operates the INDUSTRIAL conveyor producing twelve perfect gold widgets. LOSE: a second kid sits LITERALLY UNDER the conveyor belt (INFERIOR = below) catching broken widgets falling on their head, an 'F' grade card beside them. (5) 'MIRROR MAZE — 18 MIRRORS' with eighteen mirrors (18=age). WIN: teen finds the one true mirror with a glowing 'ID' stamp on it = IDENTITY. LOSE: another teen surrounded by five distorted role-mirrors each showing a different costume (rocker / scientist / athlete / artist / rebel) with bubbles asking 'WHICH ROLE?' = Role Confusion. (6) 'TUNNEL OF 2 HEARTS' with two giant hearts at entrance. WIN: a couple in a swan-boat holding hands beneath the two hearts ('IN-TEAM!' sign). LOSE: a lone figure in a tiny boat on a sad ice-isle ('ICE-O-LATE' = ISOLATE). (7) 'GENERATOR CAROUSEL' with sixty-five lights and a retirement-clock set to 65 (65=age). WIN: middle-aged person cranks a GEN-erator handle; carousel lights blaze, children laugh on the horses. LOSE: another figure stuck on a STAG-horse (male deer, unmoving) with dust everywhere and a banner 'STAG-NATION!' (pun on STAGNATION = stuck-STAG nation). (8) 'DE-PAIR PHOTO-BOOTH' with a sign '80+'. WIN: an elder steps out with a complete life-MOSAIC photo stamped with an INTEGRAL sign ∫ = INTEGRITY. LOSE: another elder receives a photo torn into two mismatched halves ('DE-PAIR-ed!'), behind them DESCENDING STAIRS lead into darkness (DE-SCEND = DE-SPAIR = DESPAIR).",
+   "hook": "ERIKSON-LAND unifies all 8 crises in one luna park. Numbers are embedded as object-counts (1 slide, 3 bumper cars, 6 toy",
+   "kind": "SYMBOL",
+   "scene": "(standalone — ERIKSON-LAND luna park)",
+   "category": "Erik Erikson — 8 psychosocial crises across lifespan",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "fonagy_mentalization": {
+   "cue": "Two thought bubbles linked between a parent and child",
+   "prop": "Two thought bubbles linked between a parent and child — parent imagines child's mental state, child learns to imagine others' minds",
+   "hook": "Mind in mind. Linked bubbles = reflective bridge.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Fonagy — mentalization / reflective function",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "freud_5_psychosexual": {
+   "cue": "FREUD'S DREAM COUCH",
+   "prop": "FREUD'S DREAM COUCH — Sigmund Freud (white beard, round wire-rim glasses, cigar in mouth) reclines on his iconic Persian-rug-covered psychoanalytic couch. Above his head float FIVE thought-bubbles in chronological sequence, each containing a vignette of one psychosexual stage. BUBBLE 1 — ORAL (0-18mo): a happy baby sucking on a pacifier with extra pacifiers floating nearby; a small inset shows an adult chain-smoker with a pen between lips (oral fixation). BUBBLE 2 — ANAL (18mo-3y): a toddler on a potty surrounded by neatly folded toilet-paper rolls; insets show an obsessively tidy adult (anal-retentive, OCPD-like) and a sloppy disorganized adult (anal-expulsive). BUBBLE 3 — PHALLIC (3-6y): a small child notices gender differences between parents; an Oedipal vignette — a little boy hands his mother flowers while dad watches uneasily, and an Electra vignette — a little girl sits in dad's lap while mom looks on. BUBBLE 4 — LATENCY (6-12y): same-sex children play baseball/soccer together, no romantic interest, focus on skills and same-sex friendships. BUBBLE 5 — GENITAL (12+y): two adolescents at a candlelit cafe table holding hands, mature romantic interest. On Freud's side table: a CIGAR BOX with the famous quote 'Sometimes a cigar is just a cigar?'. A small sign by the couch: 'TELL ME ABOUT YOUR MOTHER'.",
+   "hook": "Freud's iconic couch holds him while he dreams the 5 stages above his head. Each bubble shows the body-zone focus of tha",
+   "kind": "SYMBOL",
+   "scene": "(standalone — FREUD'S DREAM COUCH)",
+   "category": "Sigmund Freud — 5 psychosexual stages of development",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "general_PD_criteria": {
+   "cue": "A museum-style gallery with six framed exhibits arranged in ",
+   "prop": "A museum-style gallery with six framed exhibits arranged in order A B C D E F, each visualizing one general PD criterion. At the gallery center: a FACELESS MANNEQUIN labeled 'PERSONALITY' (the empty form the criteria define). Exhibit A 'ALWAYS Pattern' — an eternal CLOCK with the same wave-pattern repeating endlessly on its face (enduring inner experience and behavior deviating from cultural expectations). Exhibit B 'BROAD Reach' — a COMPASS spreading arrows in all 360 degrees, each arrow touching a different life-domain (work, love, friendship, leisure) — pervasive across personal/social situations. Exhibit C 'CAUSES Distress' — a figure CHAINED by their own personality-strands, weeping (clinically significant distress or impairment). Exhibit D 'DECADES Stable' — a long CALENDAR-SCROLL stretching from an adolescent silhouette through to an adult, the same pattern unchanged on every page (stable, of long duration, traceable to adolescence/early adulthood). Exhibit E 'EXCLUDES Other' — a large X-sign over a list of other mental disorder names (Bipolar, MDD, Anxiety, Psychotic) — not better explained by another mental disorder. Exhibit F 'FREE of Substance' — a syringe and a pill bottle each with a circular Ø symbol over them (not attributable to substance/medical condition).",
+   "hook": "A=Always (enduring pattern), B=Broad (pervasive), C=Causes distress, D=Decades stable, E=Excluding other mental, F=Free ",
+   "kind": "SYMBOL",
+   "scene": "(standalone — Personality Permanent Marker Gallery)",
+   "category": "DSM-5-TR General Criteria for Personality Disorder (A through F)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "globus_pallidus": {
+   "cue": "PALE round bouncer at the exit of the basal ganglia gear sys",
+   "prop": "PALE round bouncer at the exit of the basal ganglia gear system",
+   "hook": "Globus = round + Pallidus = pale.",
+   "kind": "SYMBOL",
+   "scene": "(brain map, basal ganglia)",
+   "category": "Globus pallidus (GPe/GPi) — basal ganglia output",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "hepatotoxicity": {
+   "cue": "A liver DANGLING ON THE EDGE",
+   "prop": "A liver DANGLING ON THE EDGE — labeled with offending drugs",
+   "hook": "Liver in distress.",
+   "kind": "SYMBOL",
+   "scene": "(failing liver)",
+   "category": "Drug-induced hepatotoxicity",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "hippocampus": {
+   "cue": "A literal SEAHORSE (hippocampus = Greek for 'seahorse') with",
+   "prop": "A literal SEAHORSE (hippocampus = Greek for 'seahorse') with a TINY MAP",
+   "hook": "Hippocampus = seahorse (etymological).",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Hippocampus — declarative memory + spatial navigation",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "histrionic_pd": {
+   "cue": "HISTRIONIC's STAGE",
+   "prop": "HISTRIONIC's STAGE — a person stands center stage under a single dazzling SPOTLIGHT, arms thrown wide, throwing bouquets of flowers to themselves while an unseen audience cheers. They wear a flamboyant red sequined dress (or velvet suit), with theatrical makeup. They're crying dramatically — but watching themselves cry in a hand-mirror to check the effect. Costumes for FIVE different identities hang behind them (princess, pirate, doctor, ghost, gangster). A poster on the wall reads 'PLEASE LOOK AT ME' in glitter. They wave at a stranger across the room and CALL THEM by a pet name (over-intimate). Speech bubbles are theatrical and impressionistic: 'It was simply marvelous! Stunning! Out of this WORLD!' — no detail.",
+   "hook": "HIS-TRIONIC = HIS-tory + TRIO + iconic = THEATRICAL (Latin: histrio = actor). Spotlight + flamboyant outfit + dramatic c",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster B room",
+   "category": "Cluster B — Histrionic Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "hyperprolactinemia": {
+   "cue": "The MILK PUMP at the pituitary section LEAKS UNCONTROLLED",
+   "prop": "The MILK PUMP at the pituitary section LEAKS UNCONTROLLED — milk everywhere",
+   "hook": "DA tonically inhibits prolactin. Block DA → prolactin floods.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (TUBE-INFUNDIBULAR section)",
+   "category": "Hyperprolactinemia — D2 blockade of tuberoinfundibular pathway",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "hypothalamus": {
+   "cue": "A THERMOSTAT/control panel UNDER the thalamus station",
+   "prop": "A THERMOSTAT/control panel UNDER the thalamus station",
+   "hook": "Hypo-thalamus = under the relay station.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Hypothalamus — body's thermostat + neuroendocrine",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "idd": {
+   "cue": "IDD's SUPPORT ROOM",
+   "prop": "IDD's SUPPORT ROOM — a school-age child sits at a low table working slowly and carefully on a 5-piece large-piece beginner PUZZLE. A patient adult assistant's hand is visible from behind, gently guiding (collaborative support — adaptive scaffolding). The walls are covered with a VISUAL SCHEDULE — photographs (not just text) showing each daily task in order: brush teeth → eat breakfast → put on shoes → school. Adaptive aids are everywhere: a spoon with a chunky grip handle, picture-menu for choosing food, large-button toys, simple labels. A growth chart on the wall shows the child IS growing physically, but a mental-age curve runs lower. The room is warm and supportive — a family tree poster shows multiple family members involved in raising the child. The child smiles proudly when completing each puzzle piece. A doctor's note pinned to the wall: 'Adaptive functioning is the focus — not IQ alone'. Severity badges (Mild / Moderate / Severe / Profound) hang above the child but pinned at 'Mild' for this scene.",
+   "hook": "IDD = INTELLECTUAL + DEVELOPMENTAL + DEFICIT. Severity by ADAPTIVE function (not just IQ). 5-piece puzzle + visual sched",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — IDD corner (standalone scene possible)",
+   "category": "Intellectual Developmental Disorder (IDD) — DSM Ch.1 Neurodevelopmental",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "insula": {
+   "cue": "A small ISLAND tucked between the temporal and frontal lobes",
+   "prop": "A small ISLAND tucked between the temporal and frontal lobes",
+   "hook": "Insula = island (Latin).",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Insula — interoception + emotional awareness",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "kappa_opioid_receptor": {
+   "cue": "Grumpy goat with 'K' tag, kicking",
+   "prop": "Grumpy goat with 'K' tag, kicking",
+   "hook": "κ = Kappa = K tag. Goats kick (dysphoria).",
+   "kind": "SYMBOL",
+   "scene": "DAIRY_FARM",
+   "category": "Opioid receptor κ — Gi (dysphoria, sedation, diuresis)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "klein_positions": {
+   "cue": "Two paintings side-by-side. Left",
+   "prop": "Two paintings side-by-side. Left: a baby with a SPLIT good-vs-bad breast (paranoid-schizoid, ~0-6 months). Right: an older baby reconciling whole-object ambivalence (depressive position, 6+ months).",
+   "hook": "Split-world (PS) to whole-world (D).",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Melanie Klein — paranoid-schizoid + depressive positions",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "kohut_self_psychology": {
+   "cue": "Three child-parent dyads",
+   "prop": "Three child-parent dyads: (1) Mirror — parent reflects grandiosity; (2) Idealizing — child looks up to powerful parent; (3) Twinship — child and like-other engage as same-kind",
+   "hook": "Three selfobject needs.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Heinz Kohut — Self Psychology",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "lithium_hypothyroid_DI": {
+   "cue": "Battery cables wrapped around a SLOW THYROID (goiter) and a ",
+   "prop": "Battery cables wrapped around a SLOW THYROID (goiter) and a DRY/THIRSTY KIDNEY",
+   "hook": "Chronic Lithium effects.",
+   "kind": "SYMBOL",
+   "scene": "(Li-ion battery affects body systems)",
+   "category": "Lithium → hypothyroidism + nephrogenic diabetes insipidus",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "lithium_toxicity": {
+   "cue": "The Li-ion battery OVER-CHARGED, smoking, swelling",
+   "prop": "The Li-ion battery OVER-CHARGED, smoking, swelling — tremor → ataxia → confusion → seizures → coma",
+   "hook": "Battery explosion = toxicity.",
+   "kind": "SYMBOL",
+   "scene": "(Li-ion battery exploding)",
+   "category": "Lithium toxicity — narrow therapeutic window",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "locus_coeruleus": {
+   "cue": "A Doctor-Who-style BLUE police box in the rostral pons, phon",
+   "prop": "A Doctor-Who-style BLUE police box in the rostral pons, phone wires fanning out",
+   "hook": "Locus = spot, Coeruleus = blue (Latin).",
+   "kind": "SYMBOL",
+   "scene": "LOCUS_COERULEUS_BLUEPOST",
+   "category": "Brainstem NE source — the 'blue spot' (locus coeruleus)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "long_half_life": {
+   "cue": "Long tapering flag",
+   "prop": "a very long pennant narrowing to a point",
+   "hook": "the tail that takes forever to end",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "mahler_phases": {
+   "cue": "GUSTAV MAHLER SYMPHONY HALL",
+   "prop": "GUSTAV MAHLER SYMPHONY HALL — a grand concert hall (a pun on the composer Gustav Mahler) where Maestro 'Margaret Mahler' conducts a 3-movement symphony of early development. She wears a tuxedo over a pediatrician's white coat. MOVEMENT 1 — 'AUTISTIC overture' (0-2 months): a single muffled musician sits inside a soundproof glass booth playing softly to themselves, unaware of the audience (normal autistic phase — infant unaware of others). MOVEMENT 2 — 'SYMBIOTIC duet' (2-6 months): two musicians (mother + baby) play with their bow-arms physically tied together by a ribbon, perfectly synchronized; sheet music above reads 'M+I = ONE' (dual-unity / fusion). MOVEMENT 3 — 'SEPARATION-INDIVIDUATION suite' (4-36 months) is performed by 4 instrumentalists who progressively separate from the conductor: (a) DIFFERENTIATION / Hatching (4-10mo) — a string player peeks out curiously from BEHIND A CURTAIN, looking around for the first time. Subtitle: 'hatching'. (b) PRACTICING (10-15mo) — a brass-section player marches confidently toward the front of the stage, trumpet raised high, exuberant smile. Subtitle: 'love affair with the world'. (c) RAPPROCHEMENT (15-24mo) — a woodwind player RUNS BACK AND FORTH between the conductor's podium and the stage edge, alternately playing solo then rushing back for reassurance. Subtitle: 'ambivalent shadowing'. (d) OBJECT CONSTANCY (24-36mo) — a percussionist keeps a steady beat calmly even when the conductor walks OFFSTAGE; the musician holds the conductor's mental image and plays on independently. Subtitle: 'internalized mother'. Banner above the stage: 'MAHLER SYMPHONY — From One to Self'.",
+   "hook": "Composer Gustav Mahler's SYMPHONY pun = Margaret Mahler's DEVELOPMENTAL THEORY. 3 movements = 3 main phases (Autistic / ",
+   "kind": "SYMBOL",
+   "scene": "(standalone — GUSTAV MAHLER SYMPHONY HALL)",
+   "category": "Margaret Mahler — separation-individuation theory (3 main phases + 4 sub-stages)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "maoi_class": {
+   "cue": "Mousetrap",
+   "prop": "a wooden snap mousetrap",
+   "hook": "MAO ~ mouse; the trap is the irreversible inhibition",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "mesocortical_pathway": {
+   "cue": "Train tracks marked 'MESO-CORT' running from VTA office to a",
+   "prop": "Train tracks marked 'MESO-CORT' running from VTA office to a fancy intellectual COFFEE SHOP atop the PFC",
+   "hook": "Meso = middle, Cortical = thinking floor.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE → THE COFFEE SHOP (PFC)",
+   "category": "Dopamine pathway — VTA → PFC (cognition, negative symptoms when low)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "mesolimbic_pathway": {
+   "cue": "Train tracks marked 'MESO-LIMB' running from VTA supervisor'",
+   "prop": "Train tracks marked 'MESO-LIMB' running from VTA supervisor's office to a CASINO (nucleus accumbens — reward gambling)",
+   "hook": "Meso = middle, Limbic = emotional. Casino = reward.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE → THE CASINO (NAc)",
+   "category": "Dopamine pathway — VTA → Nucleus Accumbens (reward, positive symptoms)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "metabolic_syndrome": {
+   "cue": "The Olympic athlete (Olanzapine character) gorging on pizza ",
+   "prop": "The Olympic athlete (Olanzapine character) gorging on pizza + sleeping under the Quiet Pine — surrounded by olives (oil) and a glucose meter showing 250",
+   "hook": "Combined H1 (↑appetite) + 5-HT2C (↑appetite) + ? (insulin resistance) block.",
+   "kind": "SYMBOL",
+   "scene": "(beyond DOPA-MINE: the Olympic athlete eating)",
+   "category": "Metabolic syndrome — antipsychotic-induced weight gain + dyslipidemia + T2DM",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "mu_opioid_receptor": {
+   "cue": "Cow saying 'MOO', producing pails labeled Analgesia, Euphori",
+   "prop": "Cow saying 'MOO', producing pails labeled Analgesia, Euphoria, Constipation, Resp. Depression, Miosis",
+   "hook": "μ ≈ 'moo' — the sound a cow makes.",
+   "kind": "SYMBOL",
+   "scene": "DAIRY_FARM",
+   "category": "Opioid receptor μ — Gi (analgesia + euphoria + respiratory depression)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "nAChR_alpha4_beta2": {
+   "cue": "Branded cigarette labeled '42' (the answer to life, universe",
+   "prop": "Branded cigarette labeled '42' (the answer to life, universe and everything)",
+   "hook": "'42' = α4β2. (Hitchhiker's Guide reference — universally memorable.)",
+   "kind": "SYMBOL",
+   "scene": "CIGARETTE_THEATER",
+   "category": "Nicotinic ACh receptor α4β2 — ligand-gated Na⁺/Ca²⁺ channel. Brain reward.",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "nAChR_alpha7": {
+   "cue": "Old wise grandpa smoking a 'Lucky 7' cigarette",
+   "prop": "Old wise grandpa smoking a 'Lucky 7' cigarette",
+   "hook": "'Lucky 7' = α7. Wise grandpa = cognition.",
+   "kind": "SYMBOL",
+   "scene": "CIGARETTE_THEATER",
+   "category": "Nicotinic ACh receptor α7 — Ca²⁺-permeable, cognition + schizophrenia hypothesis",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "narcissistic_pd": {
+   "cue": "NARCISSUS'S THRONE ROOM",
+   "prop": "NARCISSUS'S THRONE ROOM — a person in a golden crown stamped 'ME' sits on a throne in a marble palace lined with mirrors and self-portraits. They gaze adoringly into a giant hand-mirror that reflects them as a glowing god-king. Trophies, awards, and 'World's Greatest' plaques fill every shelf. Subjects/admirers crawl on the floor offering compliments — the king accepts them as their natural due. In the corner: a friend sits crying, completely ignored. The throne-room phone shows missed calls from people in need — 'why should I help?'. Outside the window: a Greek myth — Narcissus by the pond. A speech bubble: 'Of course they're jealous of me'.",
+   "hook": "NARCISSUS = Greek youth who fell in love with own reflection. Crown 'ME' + mirror-throne + ignoring crying friend + enti",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster B room",
+   "category": "Cluster B — Narcissistic Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "neuroleptic_malignant_syndrome": {
+   "cue": "The mesolimbic D2 barrier is SLAMMED SHUT",
+   "prop": "The mesolimbic D2 barrier is SLAMMED SHUT — all workers turn into RIGID PYRAMID STATUES, the mine catches FIRE (hyperthermia), and a heart monitor shows wild swings",
+   "hook": "NMS = Neuroleptic Massive Shutdown of DA system.",
+   "kind": "SYMBOL",
+   "scene": "(DOPA_MINE in catastrophic mode)",
+   "category": "NMS — antipsychotic-induced hyperthermia + rigidity emergency",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "neuropathic_pain": {
+   "cue": "Frayed wire",
+   "prop": "an electrical cable with its strands splayed",
+   "hook": "a nerve stripped of insulation",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "nigrostriatal_pathway": {
+   "cue": "Train tracks marked 'NIGRO-STRIA' from the black mine shaft ",
+   "prop": "Train tracks marked 'NIGRO-STRIA' from the black mine shaft to a giant gear-shaped chamber (striatum)",
+   "hook": "Nigro = black source; Striatum = gear chamber (striped striatum).",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE → MOTOR GEAR CHAMBER (striatum)",
+   "category": "Dopamine pathway — substantia nigra → striatum (motor control)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "norepinephrine": {
+   "cue": "N-compass",
+   "prop": "a compass rose with the N arm marked",
+   "hook": "N for norepinephrine; same glyph on every page",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "nucleus_accumbens": {
+   "cue": "A CASINO with slot machines flashing",
+   "prop": "A CASINO with slot machines flashing — the mesolimbic train's destination",
+   "hook": "NAc = the reward jackpot.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (THE CASINO)",
+   "category": "Nucleus Accumbens (NAc) — reward center",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "ocd_state": {
+   "cue": "Obsessively neat worker",
+   "prop": "a person squaring up already-square items",
+   "hook": "literal depiction, never an invented symbol",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "ocpd": {
+   "cue": "OCPD's COLOR-CODED OFFICE",
+   "prop": "OCPD's COLOR-CODED OFFICE — a person sits at a desk in a hyper-organized office, measuring the alignment of pencils with a ruler. Every binder on the shelf is labeled in identical handwriting and color-coded by quarter. A massive flowchart on the wall details the 'optimal morning routine' down to the second. The person can't enjoy lunch because they're still 'just finishing this spreadsheet' that has been perfect for hours. Family photos on the desk show them MISSING their children's recitals because they 'had to fix the database'. They refuse to delegate ('no one else does it right'). A piggy-bank labeled 'NEVER SPEND' is full. They cannot throw away an old broken stapler because 'I might need it'. They write down ethical principles to follow. A speech bubble: 'There's a RIGHT way to do this'.",
+   "hook": "OCPD = OBSESSIVE-COMPULSIVE PERSONALITY (PERFECTIONISM trait), NOT OCD (which has true obsessions/compulsions that are E",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster C room",
+   "category": "Cluster C — Obsessive-Compulsive Personality Disorder (OCPD) — distinct from OCD",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "orbitofrontal_cortex": {
+   "cue": "A JUDGE in robes weighing scales with money on one side, eth",
+   "prop": "A JUDGE in robes weighing scales with money on one side, ethics on the other, sitting above the EYE SOCKETS (orbits)",
+   "hook": "ORBITO = orbit = eye socket. Judge weighs value/morality.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "OFC — value/reward + moral judgment",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "panic_disorder": {
+   "cue": "The Scream",
+   "prop": "Munch's The Scream on a screen or poster",
+   "hook": "an artwork that already depicts the fact",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "paranoid_pd": {
+   "cue": "PARANOID's HQ",
+   "prop": "PARANOID's HQ — a person sitting in a dim apartment that has been converted into a conspiracy bunker. Walls are covered floor-to-ceiling with red yarn connecting newspaper clippings, photographs of acquaintances marked with red circles and arrows. The person wears a tin-foil hat and dark sunglasses, peering through binoculars at the neighbor across the street. On the desk: a stack of letters labeled 'I read between the lines' (hidden meanings); a sign 'TRUST NO ONE — they're all in on it'; a photo of their spouse marked 'CHEATING?'. Pets, mail carriers, and even children outside are viewed as potential spies. The character never confides anything personal.",
+   "hook": "PARA-NOID = PAR-A-NOIA = 'beside reason'. Tin-foil hat + red-yarn conspiracy board = pathognomonic. Sunglasses + binocul",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster A room (the weird-eccentric dim room)",
+   "category": "Cluster A — Paranoid Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "parkinsonism": {
+   "cue": "Cogwheels",
+   "prop": "meshed gear teeth on a wheel rim",
+   "hook": "cogwheel rigidity, drawn as the word says",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "pedunculopontine_nucleus": {
+   "cue": "A foot-pedal organ at the pons-midbrain junction, played to ",
+   "prop": "A foot-pedal organ at the pons-midbrain junction, played to keep the brain alert",
+   "hook": "Pedunculo = foot/peduncle. Pontine = pons.",
+   "kind": "SYMBOL",
+   "scene": "(brainstem)",
+   "category": "Brainstem ACh + arousal nucleus (PPN)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "piaget_4_stages": {
+   "cue": "PIAGET'S PRE-OP HOSPITAL",
+   "prop": "PIAGET'S PRE-OP HOSPITAL — a children's hospital with 4 wards each labeled with a stage; all four are 'OP' (operation) wards, unifying the theory. 'Dr. Pia-zhay' (white coat, big round glasses, French beret) tours visitors through. WARD 1 — 'SENSORY-MOTOR ER' (Sensorimotor 0-2y): a newborn in a crib reaches for their toes and kicks a peekaboo mobile; Dr. Pia-zhay demonstrates 'object permanence' by hiding a stuffed bear under a blanket and revealing it. Sign reads 'Senses + Motor only — no symbols yet'. WARD 2 — 'PRE-OP HOLDING ROOM' (Preoperational 2-7y): toddlers in colorful operating gowns play with imaginary friends and dragons painted on the walls; one toddler insists 'I'm taller than you!' though clearly shorter (egocentric, no conservation). Sign: 'PRE-OP = before logical operation'. WARD 3 — 'CONCRETE-OP SURGERY' (Concrete-Operational 7-11y): school-age children in hardhats pour water between a tall-thin glass and a short-wide glass, correctly declaring 'same volume' (conservation experiment); they sort blocks by size and color. Sign: 'CONCRETE-OP = operation on concrete objects'. WARD 4 — 'FORMAL-OP CONFERENCE' (Formal-Operational 11+y): teenagers in suits at a conference table solve abstract algebra on a chalkboard, debating hypothetical 'what-if' scenarios. Sign: 'FORMAL-OP = abstract operation'. Glowing rooftop sign: 'PIAGET HOSPITAL'.",
+   "hook": "All 4 stages are 'OP' (operation) wards in the same hospital, in chronological order: SENSORY-MOTOR ER → PRE-OP → CONCRE",
+   "kind": "SYMBOL",
+   "scene": "(standalone — PIAGET'S PRE-OP HOSPITAL)",
+   "category": "Jean Piaget — 4 stages of cognitive development",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "prefrontal_cortex": {
+   "cue": "Glass-walled CEO OFFICE at the front of a skyscraper. PFC = ",
+   "prop": "Glass-walled CEO OFFICE at the front of a skyscraper. PFC = 'Pretty Fancy Corner-office'.",
+   "hook": "PreFrontal Cortex = front of brain = the CEO suite.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Prefrontal Cortex (PFC) — executive function HQ",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "priapism_trazodone": {
+   "cue": "A traffic 'TRACK + ZONE' sign labeled 'STAYED TOO LONG'",
+   "prop": "A traffic 'TRACK + ZONE' sign labeled 'STAYED TOO LONG' — emergency!",
+   "hook": "Trazodone's notorious risk via α1 blockade.",
+   "kind": "SYMBOL",
+   "scene": "(Trazodone's specific risk)",
+   "category": "Priapism — prolonged painful erection (α1 antagonism)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "ptsd": {
+   "cue": "PT and SD dog tags",
+   "prop": "two military dog tags",
+   "hook": "the acronym split across two tags",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "raphe_nuclei": {
+   "cue": "Persian-rug weaving workshop along the brainstem seam",
+   "prop": "Persian-rug weaving workshop along the brainstem seam — weavers produce 5-HT yarn",
+   "hook": "Raphe = 'seam' in Greek. Tapestry = woven projection everywhere.",
+   "kind": "SYMBOL",
+   "scene": "RAPHE_TAPESTRY",
+   "category": "Brainstem 5-HT source — seam of midline nuclei",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "schizoid_pd": {
+   "cue": "SCHIZOID's ISLAND",
+   "prop": "SCHIZOID's ISLAND — a person sits alone on a tiny one-tree desert island in their own private cloud, perfectly content. A 'NO VISITORS' sign at the shore. The person reads a book with a flat blank expression — no joy, no sadness. A discarded party invitation floats unopened in the water nearby. In a thought-bubble: solo activities only (chess against self, solo computer use, watching the stars alone). When ferries pass with people waving, the character does not wave back or even look up. A small inset shows an attempted romantic encounter — the character looks at the suitor with complete indifference.",
+   "hook": "SCHIZ-OID = 'shy-zone' / personal zone of solitude (not psychotic, just truly content alone). Island + 'no visitors' sig",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster A room",
+   "category": "Cluster A — Schizoid Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "schizotypal_pd": {
+   "cue": "SCHIZOTYPAL's TEPEE",
+   "prop": "SCHIZOTYPAL's TEPEE — a person in a homemade wizard-robe sits cross-legged in a colorful tepee tent in their living room, reading tarot cards by candlelight. A lava lamp glows beside them. They wear mismatched layered clothing (shawl + boots + monocle). Around them: crystal balls, dream catchers, astrological charts on the walls, a half-finished spell-book. They mutter strange ideas: 'the TV anchor was speaking directly to me' (idea of reference), 'I can feel my grandmother's ghost present', 'I have telepathic powers but only on Tuesdays'. They believe these things SINCERELY but are not floridly psychotic. Speech is odd, vague, metaphorical. They have no close friends besides their cat 'Whiskerwitch'.",
+   "hook": "SCHIZO-TYPAL = SCHIZO-TIPI (homemade tepee). 'Typal' sounds like 'tipi'. Magical thinking + odd appearance + odd speech ",
+   "kind": "SYMBOL",
+   "scene": "Personality Inn — Cluster A room",
+   "category": "Cluster A — Schizotypal Personality Disorder",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "serotonin": {
+   "cue": "Smiley post-it",
+   "prop": "a yellow smiley-face sticky note",
+   "hook": "the corpus's fixed 5-HT token — p204/205/206",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "serotonin_syndrome": {
+   "cue": "The Persian-rug Raphe workshop in FRENZY",
+   "prop": "The Persian-rug Raphe workshop in FRENZY — looms spinning out of control, weavers shaking with CLONUS (rhythmic limbs), hot from overdrive",
+   "hook": "Looms = 5-HT production. Out-of-control = excess.",
+   "kind": "SYMBOL",
+   "scene": "(serotonin scenes overload)",
+   "category": "Serotonin syndrome — excess 5-HT emergency",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "sexual_dysfunction_SSRI": {
+   "cue": "A 'CLOSED' sign on the bedroom door + sad lover",
+   "prop": "A 'CLOSED' sign on the bedroom door + sad lover — SSRI dampens libido + delays climax",
+   "hook": "↑5-HT → ↓ DA in reward + autonomic effects.",
+   "kind": "SYMBOL",
+   "scene": "(SERT routes overloaded)",
+   "category": "Sexual dysfunction — common SSRI side effect",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "siadh": {
+   "cue": "ADH jug",
+   "prop": "a large water jug being poured over someone",
+   "hook": "the acronym lettered on the jug",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "sigma1_receptor": {
+   "cue": "Sentry guard with 'S-1' badge at the door of the endoplasmic",
+   "prop": "Sentry guard with 'S-1' badge at the door of the endoplasmic reticulum",
+   "hook": "'S' = sigma + '1' = subtype. Guard = chaperone (escorts misfolded proteins).",
+   "kind": "SYMBOL",
+   "scene": "ER_GUARD_POST",
+   "category": "Sigma-1 — chaperone protein at the ER (mood, neuroprotection)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "sld": {
+   "cue": "SLD's MOVING LETTERS",
+   "prop": "SLD's MOVING LETTERS — a school-age child sits at a classroom desk with a textbook open. The letters and numbers on the page are LITERALLY moving and rotating in front of their eyes: 'b' rotates into 'd', 'p' flips into 'q', '6' inverts into '9', words appear scrambled ('REID' instead of 'RIDE'). The child stares with deep confusion, brow furrowed. Their pencil hovers over the page, frozen. A math problem on the blackboard reads '7 × 6 = ?' — the child's notebook shows random number attempts crossed out. CRITICAL DETAIL — on the same desk: a beautifully built MODEL ROCKET (the child's own work) with detailed accurate diagrams, showing intelligence is normal in OTHER domains. A clock shows they've been stuck on this page for 30 minutes while classmates have moved on. The teacher with a learning-specialist badge offers structured-literacy support. A specifier sign hangs: 'with impairment in reading' (dyslexia) — alternatives 'in math' (dyscalculia), 'in writing' (dysgraphia).",
+   "hook": "SLD = SPECIFIC Learning Disorder — academic skill below age expectation despite NORMAL intelligence elsewhere. Moving le",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — SLD corner (standalone scene possible)",
+   "category": "Specific Learning Disorder (SLD) — DSM Ch.1 Neurodevelopmental",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "social_anxiety": {
+   "cue": "Shy guy",
+   "prop": "a person half-hidden at the edge of a group",
+   "hook": "literal depiction",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "striatum_caudate_putamen": {
+   "cue": "Striped (striated) sweater worn by a worker",
+   "prop": "Striped (striated) sweater worn by a worker — caudate = 'C-shaped tail', putamen = 'shell'",
+   "hook": "Striatum = striated. Caudate = tail. Putamen = shell.",
+   "kind": "SYMBOL",
+   "scene": "(brain map, basal ganglia)",
+   "category": "Striatum (Caudate + Putamen) — input to basal ganglia",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "substantia_nigra_pars_compacta": {
+   "cue": "A literally BLACK mine shaft",
+   "prop": "A literally BLACK mine shaft — substantia NIGRA = 'black substance'",
+   "hook": "Latin: nigra = black. Compacta = densely packed neurons.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (the BLACK SHAFT)",
+   "category": "Substantia nigra pars compacta — nigrostriatal dopamine source",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "subthalamic_nucleus": {
+   "cue": "A small but mighty engine UNDER the thalamus",
+   "prop": "A small but mighty engine UNDER the thalamus",
+   "hook": "Sub-thalamic = under the thalamus.",
+   "kind": "SYMBOL",
+   "scene": "(brain map, basal ganglia)",
+   "category": "STN — basal ganglia indirect pathway hub",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "suicidality_warning": {
+   "cue": "A BLACK BOX with skull-and-crossbones on antidepressant pill",
+   "prop": "A BLACK BOX with skull-and-crossbones on antidepressant pill bottles, specifically for <25y",
+   "hook": "FDA's black-box warning is literal in this symbol.",
+   "kind": "SYMBOL",
+   "scene": "(black-box warning label)",
+   "category": "FDA suicidality warning — paradoxical risk in young patients",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "tardive_dyskinesia": {
+   "cue": "Workers with chronically TWITCHY FACES, chewing-like jaw mov",
+   "prop": "Workers with chronically TWITCHY FACES, chewing-like jaw movements, lip-smacking — appears AFTER prolonged blockade",
+   "hook": "Tardive = late.",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE (chronic blockade aftermath)",
+   "category": "TD — late-onset involuntary movements (often OROFACIAL)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "tca_class": {
+   "cue": "Red tricycle",
+   "prop": "a child's red tricycle",
+   "hook": "TRI-cyclic, drawn as a tricycle",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "teratogenic": {
+   "cue": "Tarantula",
+   "prop": "a large hairy spider on a surface",
+   "hook": "the corpus's fixed teratogen warning",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "thalamus": {
+   "cue": "A grand CENTRAL TRAIN STATION at the brain core, lines comin",
+   "prop": "A grand CENTRAL TRAIN STATION at the brain core, lines coming and going everywhere",
+   "hook": "Thalamus = inner chamber = central relay.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "Thalamus — central relay station",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "thomas_chess_temperament": {
+   "cue": "Three babies in cribs",
+   "prop": "Three babies in cribs: 'Easy' baby smiling and regular; 'Difficult' baby crying with irregular patterns; 'Slow-to-warm-up' baby curious-cautious",
+   "hook": "Three cribs = three temperaments. 9 dimensions cluster into these.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Thomas & Chess — 3 temperament types",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "tic_disorders": {
+   "cue": "TIC-LAND",
+   "prop": "TIC-LAND — a school-age child stands in the middle of their bedroom surrounded by sudden POP-UP comic-style action bubbles that burst around them involuntarily: 'BLINK!' (eye tic), 'SHRUG!' (shoulder tic), 'AH!' (vocal tic), 'TWITCH!' (neck tic), 'PFFT!' (lip pucker), 'WOOP!' (vocal). The child's body is mid-motion in multiple ways simultaneously — eye blink, shoulder shrug, neck jerk. A thermometer labeled 'PREMONITORY URGE' is positioned beside the child at a HIGH level just BEFORE each tic erupts (premonitory urge is hallmark). On a wall calendar: red marks showing the tics have been present for >1 YEAR (Tourette criterion). A timeline shows onset BEFORE age 18. The child's face shows mild embarrassment — aware of the tics but unable to fully suppress them. A speech therapist note: 'tics WAX AND WANE — better some weeks, worse others'. Pinned to wall: a chart 'Tourette = motor + vocal tics, both, for >1 year' vs 'Persistent motor OR vocal (one type only)' vs 'Provisional (<1 year)'.",
+   "hook": "TIC = sudden, recurrent, NONRHYTHMIC motor or vocal pop-up. POP-UP bubbles 'BLINK! SHRUG! AH!' + premonitory urge thermo",
+   "kind": "SYMBOL",
+   "scene": "Special-Ed Classroom — Tic corner (standalone scene possible)",
+   "category": "Tic Disorders (incl. Tourette's) — DSM Ch.1 Neurodevelopmental Motor Disorders",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "torsades": {
+   "cue": "Twisted streamer",
+   "prop": "a white streamer wound into a twist",
+   "hook": "torsades de pointes = twists",
+   "kind": "SYMBOL",
+   "source": "sketchy-corpus",
+   "since": 1
+  },
+  "tuberoinfundibular_pathway": {
+   "cue": "Tubes labeled 'TUBE-INFUNDIBULAR' running from hypothalamus ",
+   "prop": "Tubes labeled 'TUBE-INFUNDIBULAR' running from hypothalamus to a giant MILK PUMP",
+   "hook": "Tubero = the tubes. Infundibular = funnel (pituitary stalk).",
+   "kind": "SYMBOL",
+   "scene": "DOPA_MINE → MILK-PUMP SECTION (pituitary)",
+   "category": "Dopamine pathway — arcuate nucleus → pituitary (prolactin inhibition)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "tuberomammillary_nucleus": {
+   "cue": "Mammary cows pumping histamine in the posterior hypothalamus",
+   "prop": "Mammary cows pumping histamine in the posterior hypothalamus",
+   "hook": "Mammillary = mammary (cow association). Hypothalamic location.",
+   "kind": "SYMBOL",
+   "scene": "TUBEROMAMMILLARY_DAIRY",
+   "category": "Brainstem/hypothalamus histamine source (wakefulness)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "ventromedial_prefrontal_cortex": {
+   "cue": "A meditation cushion at the BOTTOM-CENTER of the PFC office",
+   "prop": "A meditation cushion at the BOTTOM-CENTER of the PFC office",
+   "hook": "VentroMedial = bottom-middle. Cushion = emotional self-care.",
+   "kind": "SYMBOL",
+   "scene": "(brain map)",
+   "category": "vmPFC — emotional regulation + self-reference",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "vygotsky_zpd": {
+   "cue": "VYGOTSKY'S ZPD BRIDGE",
+   "prop": "VYGOTSKY'S ZPD BRIDGE — a wide canyon between two cliffs. LEFT CLIFF labeled 'CAN DO ALONE' has a child confidently riding a tricycle on solid ground, surrounded by mastered objects. RIGHT CLIFF labeled 'CANNOT YET DO' is across the chasm, with desired goals visible (algebra textbook, advanced puzzle, violin). Between the cliffs stretches a ROPE-BRIDGE labeled in big letters 'ZPD = Zone of Proximal Development'. On the bridge a child crosses carefully, while a SCAFFOLDING-PERSON walks beside them — literally a kind teacher / older peer wearing a construction-scaffolding outfit (metal frame around their body). The scaffolding-person holds the bridge ropes for safety and offers verbal hints in speech-bubbles ('try this hand-hold!', 'almost there!'). As the child reaches the right cliff, the scaffolding falls away in pieces (= scaffolding fades as the skill is internalized). At the canyon edge stands Vygotsky himself (round glasses, Russian-style coat, holding a chalkboard) pointing to the bridge. A sub-sign reads: 'Learning is social and language-mediated'.",
+   "hook": "ZPD BRIDGE = literal bridge between 'can-do' and 'cannot-yet'. SCAFFOLDING-PERSON wearing construction-scaffolding outfi",
+   "kind": "SYMBOL",
+   "scene": "(standalone — VYGOTSKY'S ZPD BRIDGE)",
+   "category": "Lev Vygotsky — Zone of Proximal Development (ZPD) and scaffolding",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "winnicott_holding": {
+   "cue": "Mother holding infant in her arms with a TEDDY BEAR nearby. ",
+   "prop": "Mother holding infant in her arms with a TEDDY BEAR nearby. A glowing AURA around them = 'holding environment'. Label: 'good-enough mother'.",
+   "hook": "Teddy = transitional object. Aura = holding. Imperfect mother = good-enough.",
+   "kind": "SYMBOL",
+   "scene": "(standalone)",
+   "category": "Winnicott — holding + transitional object + good-enough mother",
+   "source": "symbols.json:symbols",
+   "since": 1
+  }
+ },
+ "retired": {
+  "DSM_anxiety": {
+   "replaced_by": "anxiety_state",
+   "why": "a frightened rabbit is an invented metaphor with no corpus precedent; draw a person who is visibly anxious",
+   "retired_in": 1
+  },
+  "DSM_depressive": {
+   "replaced_by": "depression_state",
+   "why": "a grey rain cloud is invented; the corpus uses the happy/sad theatre masks, identically, on five pages",
+   "retired_in": 1
+  },
+  "epi_prevalence": {
+   "replaced_by": "",
+   "why": "a peg character holding a giant % sign is a data-visualisation convention layered on the scene; prevalence is a painted numeral on a diegetic carrier",
+   "retired_in": 1
+  },
+  "epi_comorbidity": {
+   "replaced_by": "",
+   "why": "conjoined twins encode the RELATION abstractly; import the co-occurring entity's own glyph into the scene instead, as the corpus parks the TCA tricycle in the SSRI office",
+   "retired_in": 1
+  }
+ },
+ "pending": {}
+}

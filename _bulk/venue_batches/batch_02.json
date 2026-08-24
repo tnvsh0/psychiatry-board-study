@@ -1,0 +1,208 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 8,
+   "title_en": "Normative development 0-2 (infancy)",
+   "title_he": "התפתחות נורמטיבית: גיל הינקות (0-2)",
+   "aspects": [
+    "motor_milestones",
+    "cognitive_milestones",
+    "social_emotional",
+    "language",
+    "red_flags"
+   ],
+   "required_tokens": {
+    "brazelton_still_face": "(standalone)",
+    "developmental_red_flags": "(standalone)",
+    "developmental_ladder": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "CRAWL & CRUISE",
+    "place": "An indoor soft-play barn on a wet weekday morning: a padded under-twos pen fenced off at the front, a three-storey netted play frame behind it, a ball pit under the slide, a buggy park by the door and a café counter along one wall.",
+    "place_category": "soft play centre",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "CRAWLING and CRUISING are the two motor milestones of the second year and both are ordinary English words that read as a perfectly normal name for a children's play barn — the p272 device of putting the term's own plain-English picture on the sign without printing the topic. The venue was moved off the high street because phase 1 had already spent its shop-with-a-counter budget, and a play barn buys back everything the chapter needs as native stock: the age-band gates, the coloured wristbands and the height marker are the developmental ladder printed on the venue's own furniture; the ball that rolls out of sight under the frame and is dug back out is object permanence; the low mirror wall along the baby pen is self-recognition; a costumed mascot sitting on the bench with a moulded unmoving face while the baby on its knee stares up and slowly crumples is the still-face paradigm on stock the venue genuinely owns; and because every figure in the frame is an infant or a toddler, rolling, sitting, cruising, first steps and first words are all literal depiction rather than metaphor.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 11,
+   "title_en": "Normative development 13-18 (adolescence)",
+   "title_he": "התפתחות נורמטיבית: גיל ההתבגרות (13-18)",
+   "aspects": [
+    "pubertal_development",
+    "identity_formation",
+    "peer_vs_family",
+    "risk_taking",
+    "brain_maturation"
+   ],
+   "required_tokens": {
+    "nucleus_accumbens": "DOPA_MINE (THE CASINO)",
+    "erikson_8_stages": "(standalone — ERIKSON-LAND luna park)",
+    "developmental_ladder": "(standalone)",
+    "piaget_4_stages": "(standalone — PIAGET'S PRE-OP HOSPITAL)",
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "TANNER'S SUN STUDIO",
+    "place": "A high-street tanning salon at the after-school rush: a reception desk with a card reader, four changing cubicles with their curtains half-drawn, a row of five sunbeds with the lids raised, a mirror wall with a shelf of lotions, and a sofa of teenagers waiting by the window.",
+    "place_category": "tanning salon",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "TANNER is the exam word for pubertal staging and it is also a completely ordinary surname over a completely ordinary shop — the eponym device, on a high street any learner can picture, and bright and contemporary where the tannery version of the same pun was wet, dark and gore-adjacent. The trade carries the chapter without a single minted metaphor: the price board graded by level is the five stages as a counted set on a carrier whose real job is bearing numbers; the timer dial wound past its stop under a do-not-exceed sticker is risk-taking, and the risk is the venue's own hazard rather than a bolted-on one; the laminated proof-of-age card at the desk is the age boundary the chapter turns on; four friends crammed on one sofa while a mother waits in a car visible through the window is peers-versus-family as a bounded pair with no story attached; the mirror wall and the shelf of skin and hair products are identity formation, literal; and the wall poster about being fully developed sits late prefrontal maturation on a carrier that reads. Every figure in the frame is already an adolescent, so pubertal and behavioural facts are literal depiction.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 13,
+   "title_en": "Temperament",
+   "title_he": "טמפרמנט",
+   "aspects": [
+    "thomas_chess",
+    "easy_difficult_slow_to_warm",
+    "goodness_of_fit",
+    "temperament_to_personality"
+   ],
+   "required_tokens": {
+    "thomas_chess_temperament": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "THOS. & CHESS PETS",
+    "place": "A high-street pet shop on a Saturday morning: a two-tier run of glass-fronted pens along the back and side, a counter with scales and a bell, pallets of feed sacks out in the middle of the floor, and a low meeting pen where a family is sitting on the floor with a puppy.",
+    "place_category": "pet shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "THOS. is the standard trade abbreviation of Thomas, and 'Thos. & Chess' reads as a two-partner family shop the way half the high street is lettered — the Château Tyramine device, where the proprietors' names ARE the two authors of the chapter. The trade was chosen because TEMPERAMENT is its own working word: every pen card in a real pet shop carries a temperament line, so the topic's key term is already printed on native stock without being spent on the fascia. Goodness of fit is literally what the shop sells — matching an animal to a household, with the family interviewed across the counter and turned away when the fit is wrong. The three types are three ordinary animals in three ordinary pens: the one that bounds straight to the glass, the one that snaps and will not settle and has a red card clipped over its door, and the one that stays down its tube and comes out twenty minutes later, which makes all three literal depiction with a prop each rather than an absence. Temperament to adult personality is the pen card showing the same animal grown, standing beside the young one.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 17,
+   "title_en": "ADHD — core",
+   "title_he": "הפרעת קשב וריכוז (ADHD) — ליבה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DOPA_MINE": "{'cue': 'DOPA-MINE Co.', 'prop': \"A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by ",
+    "D2_receptor": "DOPA_MINE",
+    "DAT": "DOPA_MINE",
+    "NET": "BEETHOVEN_ORCHESTRA (stage-door)",
+    "prefrontal_cortex": "(brain map)",
+    "DSM_neurodevelopmental": "",
+    "adhd": "Special-Ed Classroom — ADHD corner (standalone scene possible)"
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "cannot host its own tokens: DOPA_MINE"
+   ],
+   "current": {
+    "sign_text": "HYPERDRIVE AMUSEMENTS",
+    "place": "A seafront amusement arcade on a wet weekday afternoon: two long banks of coin machines facing each other down a patterned carpet, a glass change booth just inside the doors, a prize counter along the back wall and a row of older glass-cased working models against the side wall.",
+    "place_category": "amusement arcade",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Hyper is one morpheme of the diagnosis and Hyperdrive is a name real arcades actually trade under, so the joke is invisible on the fascia and total as an index. The trade was chosen because the coin machine is the only ordinary object whose working parts are a paid-for reward loop, which lets the fixed colliery token stand inside the venue as a genuine period fixture — a penny-in-the-slot working model with a coin slot at the front and a payout cup underneath — instead of being pasted onto a shop that has no room for it. The room's own notices then carry the criteria on native carriers whose real-world job is exactly the thing being counted: minimum-token notices at the prize counter for the symptom thresholds, the door notice about accompanied under-twelves for the age of onset, the chain's branch board for the second setting, and the arcade's own ticket tallies for the rating scales.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 23,
+   "title_en": "Communication Disorders (Language, Speech, Stuttering, Social-Pragmatic)",
+   "title_he": "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "assessment_tools",
+    "treatment_first_line",
+    "treatment_second_line",
+    "differential"
+   ],
+   "required_tokens": {
+    "communication_disorders": "Special-Ed Classroom — Communication corner (standalone scene possible)",
+    "DSM_neurodevelopmental": ""
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "place-category collision on 'delicatessen'"
+   ],
+   "current": {
+    "sign_text": "TONGUE & CHEEK",
+    "place": "A butcher shop at the Friday rush: a long refrigerated counter with the day's cuts laid on trays behind the glass, a hand-lettered price board on the back wall, a take-a-ticket machine and a lit number panel by the door, and the block, bandsaw and mincer working in the open behind the counter.",
+    "place_category": "butcher shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Tongue and cheek are two genuine butcher's cuts and a name real butchers actually trade under, so the fascia is invisible as a joke, and the organ of speech is sitting literally on the counter in a trade that has nothing to do with speech — the boring container the rules demand, with the anomaly in the props. The shop's own routine then delivers all four subtypes as literal depiction rather than as one subtype printed verbatim. Naming a cut across the glass is the whole transaction, so the customer handed the wrong thing after asking for it, and the customer whose word comes out with the wrong sounds, are both ordinary counter business. A take-a-ticket queue makes turn-taking the venue's own posted rule, which is what the social subtype fails at, and the shop's own machines block, judder and repeat as a matter of course. The wall mirror behind the counter is already there for the therapist's move.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 27,
+   "title_en": "Other neurodevelopmental: Rett, Prader-Willi, 22q11",
+   "title_he": "הפרעות נוירו-התפתחותיות נוספות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "genetic_basis"
+   ],
+   "required_tokens": {
+    "DSM_neurodevelopmental": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "RETT-A-TOOL HIRE",
+    "place": "A tool and plant hire depot on a Saturday morning: a counter with a docket pad at the front, double-height racking of breakers, mixers and generators down one side, a wash-off bay with a hose reel and a mud grate, a service bench under the window, and the roller shutter half up onto the loading yard.",
+    "place_category": "tool hire depot",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "RETT-A-TOOL is the rent-a-X wrap said aloud: one eponym-morpheme carried inside an utterly ordinary hire-trade fascia, the same licence as Lithium Lift, and the diagnosis word is never printed. The trade was chosen because this chapter is a hand chapter and a hire depot is a hand business. Rett pays out with no invention: staff wring and wipe their hands on rags at the hand-cleaner drum all shift (the hallmark hand movement as literal depiction, not metaphor); the returns bench holds tools that have come back with their grips and handles stripped off, so purposeful hand use is the thing the depot has lost; and the board of hole saws mounted in ascending diameters, with the largest three sizes missing from their pegs, is a native size chart carrying head-circumference deceleration without a painted numeral competing with anything. Prader-Willi comes off the staffroom end of the counter — the padlocked consumables cabinet and the chained vending machine are the real management fact, not a symbol of it, and a slack drive belt hanging on its hook is infantile hypotonia. 22q11 rides the small print: the excess and damage-waiver catch in the framed hire agreement is the cliche of the hire trade, and CATCH-22 is its own name for itself. Deliberately no painted bay numbers anywhere — the chromosome number lives on a docket, never on the ground, so it cannot collide with the parcel depot next door.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

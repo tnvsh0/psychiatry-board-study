@@ -16,6 +16,15 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 
 def _load_dotenv() -> None:
     """Load KEY=value pairs from repo-root .env into os.environ (no dep)."""
@@ -45,62 +54,81 @@ PHASE_PALETTE_PATH = REPO_ROOT / "schedule" / "phase_palette.json"
 #                                                          ~500 imgs/day FREE tier)
 # Default is Pro (highest quality, which helps most with labels + criteria completeness).
 IMAGE_MODEL = os.environ.get("SKETCHY_IMAGE_MODEL", "gemini-3-pro-image-preview")
+
+# Optional cheaper model for the DRAFT rungs of the retry ladder. Most renders
+# in a chapter are thrown away: chapter 29's first plate took four tries to go
+# from score 4 to score 1, so three Pro images at ~$0.134 were paid for and
+# discarded. With this set, every try except the last uses the cheap model to
+# find the composition and the last uses IMAGE_MODEL for the frame that ships.
+# Unset by default — this changes what the learner sees, so it is the owner's
+# call, not a silent optimisation.
+LADDER_MODEL = os.environ.get("SKETCHY_LADDER_MODEL", "").strip()
+
+
+def model_for_try(attempt: int, max_tries: int) -> str:
+    """Which image model this rung of the ladder should use."""
+    if LADDER_MODEL and attempt < max_tries - 1:
+        return LADDER_MODEL
+    return IMAGE_MODEL
 CAPTION_MODEL = "gemini-2.5-flash"  # text-only (director/caption/coverage) — cheap, leave as is
 
+# Render size. v1 never set this and silently took the default 1376x768, where a
+# glyph at the corpus's own relative size lands around 24px — right at the
+# legibility floor before any model garbling, on plates that now carry 22-34
+# elements and up to 18 lettered strings. 2K doubles both axes; because the
+# hybrid split also cuts renders per chapter from five-to-seven down to two, the
+# cost per chapter still falls.
+IMAGE_SIZE = os.environ.get("SKETCHY_IMAGE_SIZE", "2K")  # 1K | 2K | 4K
+IMAGE_ASPECT = "16:9"
 
-_STYLE_BASE = """Create a single full-color hand-painted illustration in SketchyMedical / SketchyMicro style — a COMPLETE SCENE, not an infographic.
+
+def _image_config():
+    """GenerateContentConfig pinning aspect ratio and resolution, or None."""
+    try:
+        from google.genai import types
+    except ImportError:
+        return None
+    return types.GenerateContentConfig(
+        image_config=types.ImageConfig(
+            aspect_ratio=IMAGE_ASPECT, image_size=IMAGE_SIZE
+        )
+    )
+
+
+_STYLE_BASE = """Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.
 
 The image MUST be:
-- A full environment filling the entire frame (e.g. beach, kitchen, lab, forest, café, hospital ward, market, classroom, mine, opera house, courtroom — whatever fits the topic). NO blank or white background.
-- ONE CONTINUOUS SCENE — a single unified space. If the topic has multiple parts (e.g. 4 chambers of a mine, 5 floors of a hotel, 3 areas of a kitchen), render them as a single CUTAWAY / CROSS-SECTION view connected by tunnels, doorways, stairs, walkways. Different areas distinguished by contents and decoration, not by frames or borders.
-- A FEW characters (about 3-6), each doing something that matters — interacting, working, reacting. Not a crowd.
-- A specific moment in time: something is HAPPENING right now (someone cooking, performing, escaping, examining a patient, conducting an orchestra...).
-- CLEAN and UNCLUTTERED — every element must earn its place by encoding a fact. NO decorative filler, NO random extra props, NO busy background noise. Generous breathing space. (This is the opposite of a cluttered Where's-Waldo jumble — a viewer should parse the whole scene in a few seconds.)
-- Hand-painted watercolor with loose ink linework. Visible brush texture and paint bleed. Warm, saturated, slightly desaturated colors. NOT flat vector art. NOT digital corporate illustration. NOT 3D render.
-- Each concept from the legend embedded as a physical character, object, prop, or action — woven INTO the scene, NOT placed beside it like icons.
+- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.
+- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.
+- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.
+- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.
+- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.
+- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.
+- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.
+- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.
 - ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.
+- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.
 
 """
 
-# --- Text / composition policy blocks -------------------------------------------------
-# Two regimes. "mnemonic" (default) is for images whose hook IS a diegetic word or letter
-# (a goat tagged "K" for kappa) — there, labels must be big and legible. "environment" is
-# for images whose hook is the SHAPE of objects (epidemiology): there, explanatory labels
-# actively destroy the mnemonic, so only incidental world signage is allowed.
+# --- Text policy ----------------------------------------------------------------------
+# One regime. v1 shipped two mutually exclusive ones — "mnemonic" demanded big bold
+# labels while "environment" banned any word that named what an element represented —
+# and the director was meanwhile told ZERO TEXT. Three contradictory instructions
+# reached the model at once.
+#
+# The corpus settles it: hand-lettered diegetic text is its single highest-density
+# device, roughly 4-15 signs per page, and on most pages several legend items ARE the
+# painted string. So text is welcome; what is banned is the overlay.
 
-_TEXT_RULES_MNEMONIC = """Text rules — STRICT:
-- NO callout arrows. NO captions. NO legend boxes. NO floating text overlays. NO explanation text.
-- ONLY diegetic text — text that physically exists as part of the environment: signs on buildings, name tags on collars, single words painted on packages or barrels, numbers on equipment, lettering on a chef's hat.
-- BUT this diegetic text is CRITICAL — these labels are the primary mnemonic anchors the viewer must read at a glance. Render them PROMINENTLY and LEGIBLY: bold, large, clearly readable letters. A goat's name tag should have a big readable "K". A milk pail should have its single word painted BIG and BOLD. A storefront sign should fill its space confidently. Each label stays at 1-2 words / 1 letter / 1 number — but rendered LARGE enough to read instantly even at thumbnail size (about 200px wide).
-- The mnemonic hook = the diegetic label. Treat it as the most important visual element after the character/object itself.
-- LABEL VISIBILITY RULE — never let one labeled object hide another's label:
-  * When multiple labeled objects appear together (a row of pails, a set of signs, several characters with name tags) — arrange them so EVERY label faces the viewer and is fully visible.
-  * Prefer SIDE-BY-SIDE row layouts (objects standing next to each other across the frame) over depth-stacked rows (objects lined up going away from the camera, where the front one blocks the back ones).
-  * If perspective is necessary, fan the objects out (like a hand of cards) so each label remains visible at the same angle.
-  * Each label-bearing surface should face roughly toward the viewer — not turned to the side or rotated away.
-  * No label may be partially obscured by another object, by shadow, or by foreground clutter.
-
-Composition hierarchy — most prominent to least:
-1. The 3-5 labeled mnemonic anchors (characters or objects bearing diegetic labels like MOO, K, '2', Delta, EXTRA, etc.) are the LARGEST elements in the scene. Place them prominently in the foreground or middle-ground. Their labels must be clearly readable at thumbnail size.
-2. Supporting characters and props fill the surrounding scene to make the world feel alive and dense — but they do NOT compete in size with the labeled anchors. They are visibly smaller / less foreground.
-3. Background environment (barn, sky, fields, walls, equipment, distant figures) sets the scene without distracting.
-
-A viewer's eye should hit the labeled anchors first, then explore supporting details, then take in the environment. Density should never come at the cost of label legibility.
-"""
-
-_TEXT_RULES_ENVIRONMENT = """Text rules — STRICT. This image must carry its meaning by IMAGE ALONE:
-- NO callout arrows. NO captions. NO legend boxes. NO floating text. NO explanation text.
-- NEVER label an element with what it REPRESENTS, or with its role, state or category. Forbidden examples: "WAITING BOYS", "WAITING GIRLS", "RAMP", "STUCK", "DEPRESSION", "ANXIETY", "FAMILY RAFT". If a word tells the viewer what something MEANS, delete it — that word is doing the picture's job and destroys the mnemonic.
-- Ordinary ENVIRONMENTAL signage that this world would carry anyway IS allowed and welcome: a shop name over a shop in a mall, "DRIVING SCHOOL" on the school building, a street sign, a brand on a barrel, a number on a race car. THE TEST: would this text be there if nobody were being taught anything? If yes, keep it. If it exists to explain, remove it.
-- Keep any such environmental text SMALL and incidental — background texture, never the focus, never large or bold.
-- NO written numerals used as data: the figures in this image are carried by the SHAPES of objects, never by digits printed on a prop or held up.
-
-Composition hierarchy — most prominent to least:
-1. ONE hero character in the centre foreground — the LARGEST, most eye-catching thing in the frame, caught mid-action.
-2. The shaped props and companions the hero is involved with — clearly smaller, arranged around the hero, each fully visible and not overlapping another.
-3. Background environment and crowd — sets the scene without competing.
-
-A viewer's eye should hit the hero first, then read the props around them. Every figure in frame must be a participant in the ONE event that is happening — never a line-up of separate characters spread across the width.
+_TEXT_RULES = """Text rules:
+- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.
+- Full advertising sentences of 3-6 words over up to three lines are welcome ("BREAK THOSE BAD SLEEPING HABITS!"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.
+- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.
+- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.
+- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.
+- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.
+- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.
 """
 
 _STYLE_TAIL = """
@@ -109,13 +137,17 @@ Composition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Ske
 """
 
 
-def style_prefix(text_policy: str = "mnemonic") -> str:
-    """Full image-style prefix under the chosen text regime (see blocks above)."""
-    rules = _TEXT_RULES_ENVIRONMENT if text_policy == "environment" else _TEXT_RULES_MNEMONIC
-    return _STYLE_BASE + rules + _STYLE_TAIL
+def style_prefix(text_policy: str | None = None) -> str:
+    """Full image-style prefix.
+
+    `text_policy` is accepted and ignored — the two-regime split is gone (see
+    the note above). The parameter stays only so existing call sites keep
+    working while they are migrated.
+    """
+    return _STYLE_BASE + _TEXT_RULES + _STYLE_TAIL
 
 
-SKETCHY_STYLE_PREFIX = style_prefix()  # backwards-compatible default
+SKETCHY_STYLE_PREFIX = style_prefix()
 
 
 CAPTION_INSTRUCTION = """You are explaining a SketchyMedical-style educational illustration to a psychiatric resident studying for the Israeli board exam (שלב ב).
@@ -165,17 +197,17 @@ def _load_palette() -> dict:
 
 
 def _palette_directive(phase: Optional[int]) -> str:
-    """Return a prompt line injecting the phase-specific color palette, or ''."""
-    if phase is None:
-        return ""
-    palette = _load_palette()
-    entry = palette.get(str(phase)) or palette.get(phase)
-    if not isinstance(entry, dict):
-        return ""
-    desc = entry.get("prompt", "")
-    if not desc:
-        return ""
-    return f"\nOverall color palette bias for this scene: {desc}.\n"
+    """Retired on the Sketchy path — always returns ''.
+
+    phase_palette.json maps a study phase to a mood ("cool muted blues and
+    gentle greys" for Mood + Anxiety) and injecting it is the proximate cause
+    of the grey drowned-world renders: the palette came from the disease
+    instead of from the setting. The corpus derives colour from the venue only,
+    and holds one bright deadpan register however grim the pathology.
+
+    The file is still read by the Streamlit UI for theming, so it stays.
+    """
+    return ""
 
 
 def _get_client(api_key: Optional[str]):
@@ -203,6 +235,37 @@ def _save_image_from_response(response, output_path: Path) -> bool:
     return False
 
 
+
+# Gemini answers 503 UNAVAILABLE ("this model is currently experiencing high
+# demand") in bursts. During chapter 29 it took out the narration, the element
+# table director and several render probes inside a few minutes. Only
+# generate_image retried; everything else treated a transient outage as a
+# permanent failure and carried on with the content missing. Over 141 chapters
+# that is a lot of quietly degraded material, so every call goes through here.
+_TRANSIENT = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500",
+              "INTERNAL", "deadline", "timeout", "Timeout")
+
+
+def _gc(client, **kw):
+    """client.models.generate_content with backoff on transient failures."""
+    import time as _t
+    last = None
+    for attempt in range(4):
+        try:
+            return client.models.generate_content(**kw)
+        except Exception as e:
+            last = e
+            if not any(t in str(e) for t in _TRANSIENT):
+                raise
+            if attempt == 3:
+                break
+            wait = 5 * (2 ** attempt)      # 5s, 10s, 20s
+            print(f"[i] gemini transient ({str(e)[:60]}); retrying in {wait}s "
+                  f"({attempt + 2}/4)", file=sys.stderr)
+            _t.sleep(wait)
+    raise last
+
+
 def generate_image(
     prompt: str,
     output_path: str | Path,
@@ -221,12 +284,14 @@ def generate_image(
     if client is None:
         return False
 
-    full_prompt = style_prefix(text_policy) + _palette_directive(phase) + "\n\nContent to illustrate:\n" + prompt
+    full_prompt = style_prefix() + "\n\nContent to illustrate:\n" + prompt
+    cfg = _image_config()
 
     import time as _time
     for attempt in range(3):
         try:
-            response = client.models.generate_content(model=model, contents=full_prompt)
+            response = _gc(client, model=model, contents=full_prompt, config=cfg
+            )
             if _save_image_from_response(response, Path(output_path)):
                 return True
             print(f"[!] Image attempt {attempt+1}/3 returned no image data.", file=sys.stderr)
@@ -257,7 +322,7 @@ def _visual_inventory(client, image_path: str | Path, model: str = CAPTION_MODEL
             "something is there, leave it out."
         )
         contents = [probe, types.Part.from_bytes(data=img.read_bytes(), mime_type="image/png")]
-        resp = client.models.generate_content(model=model, contents=contents)
+        resp = _gc(client, model=model, contents=contents)
         text = ""
         for cand in getattr(resp, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -310,7 +375,7 @@ def generate_caption(
             print(f"[!] Image attachment for caption failed: {e}", file=sys.stderr)
 
     try:
-        response = client.models.generate_content(model=model, contents=contents)
+        response = _gc(client, model=model, contents=contents)
     except Exception as e:
         print(f"[!] Caption generation failed: {e}", file=sys.stderr)
         return ""
@@ -392,7 +457,7 @@ Zones should differ in dominant colour/objects so they're never confused.
 Return STRICT JSON only:
 {{"world": "<the one world + (if used) the name-pun it came from>", "zones": {{{', '.join(f'"{a}": "<a zone where {a} facts naturally happen>"' for a in aspects)}}}}}"""
     try:
-        response = client.models.generate_content(model=model, contents=instruction)
+        response = _gc(client, model=model, contents=instruction)
         text = ""
         for cand in getattr(response, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -417,7 +482,7 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     if client is None:
         return {}
     try:
-        resp = client.models.generate_content(model=model, contents=director_instruction)
+        resp = _gc(client, model=model, contents=director_instruction)
         text = ""
         for cand in getattr(resp, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -429,6 +494,206 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     except Exception as e:
         print(f"[!] scene director failed: {e}", file=sys.stderr)
     return {}
+
+
+def run_json_director(instruction: str, api_key: Optional[str] = None,
+                      model: str = CAPTION_MODEL) -> dict:
+    """Run a text prompt whose contract is 'return STRICT JSON', and parse it.
+
+    Separate from run_scene_director because that one enforces the v1 contract:
+    it requires a "scene" key and discards everything else, so a v2 element
+    table came back as {} and the plate pipeline reported "output was not an
+    element table" without ever having looked at what the model actually said.
+    """
+    client = _get_client(api_key)
+    if client is None:
+        return {}
+    try:
+        resp = _gc(client, model=model, contents=instruction)
+        text = "".join(
+            p.text
+            for c in getattr(resp, "candidates", []) or []
+            for p in getattr(c.content, "parts", []) or []
+            if getattr(p, "text", None)
+        )
+        data = _loads_first_json(text)
+        return data if isinstance(data, dict) else {}
+    except Exception as e:  # noqa: BLE001
+        print(f"[!] json director failed: {e}", file=sys.stderr)
+        return {}
+
+
+def _probe(client, image_path, prompt: str, model: str = CAPTION_MODEL):
+    """Ask the vision model one question about a rendered image.
+
+    Returns the answer text, or None when the probe COULD NOT RUN (no client,
+    missing file, API error). None and "" mean different things: "" is a genuine
+    empty answer, None means we learned nothing. Conflating them made a hiccup
+    look like a failed render, which over 144 chapters would burn the whole
+    retry budget re-rendering images that were fine.
+    """
+    try:
+        from google.genai import types
+        img = Path(image_path)
+        if client is None or not (img.exists() and img.stat().st_size > 0):
+            return None
+        contents = [prompt, types.Part.from_bytes(data=img.read_bytes(),
+                                                  mime_type="image/png")]
+        resp = _gc(client, model=model, contents=contents)
+        return "".join(
+            part.text
+            for cand in getattr(resp, "candidates", []) or []
+            for part in getattr(cand.content, "parts", []) or []
+            if getattr(part, "text", None)
+        )
+    except Exception as e:  # noqa: BLE001
+        print(f"[!] probe failed: {e}", file=sys.stderr)
+        return None
+
+
+def check_numbers(client, image_path, required: list[tuple[str, str]]) -> dict:
+    """Verify each painted numeral, PER CARRIER, and reject strays.
+
+    `required` is [(paint_string, carrier_description)].
+
+    Deliberately not a global "list every numeral" probe: that cannot tell the
+    milepost from a decoy clock, so a render that paints every required digit
+    onto the WRONG object scores 100% while teaching nothing. Asking per
+    carrier binds the numeral to the thing it quantifies.
+
+    Matching is EXACT. Fuzzy matching on numerals is actively harmful — a
+    render that paints '48' for '4-8' would pass, and a wrong number burned
+    into a study image out-competes the correct legend at recall.
+
+    Returns {"probed": bool, "missing": [...], "wrong": [(want, got)],
+    "extra": [...]}. When `probed` is False nothing was measured, and the
+    caller must NOT treat that as a failed render.
+    """
+    out = {"probed": False, "missing": [], "wrong": [], "extra": []}
+    for paint, carrier in required:
+        got = _probe(client, image_path,
+                     f"Look only at the {carrier} in this image. What digit-string, "
+                     f"if any, is written on it? Answer with the characters exactly "
+                     f"as they appear and nothing else, or the single word NONE.")
+        if got is None:
+            return out
+        out["probed"] = True
+        got = got.strip().strip('".\'')
+        if not got or got.upper() == "NONE":
+            out["missing"].append(paint)
+        elif got != paint:
+            out["wrong"].append((paint, got))
+
+    # Any other numeral competes with the load-bearing ones and muddies recall.
+    seen = _probe(client, image_path,
+                  "List every numeral or digit-string visible anywhere in this "
+                  "image, verbatim, one per line. If there are none, answer NONE.")
+    if seen is not None:
+        wanted = {p for p, _ in required}
+        for line in seen.splitlines():
+            tok = line.strip().strip('-•".\'')
+            if tok and tok.upper() != "NONE" and any(c.isdigit() for c in tok):
+                if tok not in wanted:
+                    out["extra"].append(tok)
+    return out
+
+
+def check_text_strings(client, image_path, required: list[str]) -> tuple[bool, list]:
+    """Which required strings are NOT legible. Returns (probed, missing).
+
+    Exact then case-folded only. No Levenshtein: a fuzzy match would let the
+    legend quote a clean string the picture does not actually contain, sending
+    the reader hunting for text that is not there.
+    """
+    if not required:
+        return True, []
+    seen = _probe(client, image_path,
+                  "List every readable string of letters in this image, verbatim, "
+                  "one per line, each in double quotes. Do not interpret or "
+                  "translate. If unsure of a string, omit it.")
+    if seen is None:
+        return False, []
+    found = {s.strip().strip('"') for s in seen.splitlines() if s.strip()}
+    folded = {s.casefold() for s in found}
+    return True, [r for r in required
+                  if r not in found and r.casefold() not in folded]
+
+
+def check_stray_numerals(client, image_path) -> tuple[bool, list]:
+    """Digits painted anywhere other than the coloured plates. (probed, strays)
+
+    Composite mode asks for BLANK chroma plates and letters the numbers itself,
+    so check_numbers does not run — and nothing was left watching for numerals
+    the illustrator painted anyway. It does: the verified chapter-28 render has
+    two people holding placards reading "70%" and "40-60%", each a duplicate of
+    a number the compositor was about to place properly. A reader cannot tell
+    which of the two to trust.
+
+    Returns ([], probed=True) when the frame is clean.
+    """
+    ans = _probe(client, image_path,
+                 "Ignore any solid bright green, magenta or cyan rectangles in "
+                 "this image. Apart from those, list every NUMBER visible "
+                 "anywhere in the picture — on signs, boards, labels, placards, "
+                 "clothing, anywhere — one per line, verbatim. Include "
+                 "percentages, ranges and fractions. If there are none, reply "
+                 "exactly NONE.")
+    if ans is None:
+        return False, []
+    body = ans.strip()
+    if body.upper().startswith("NONE"):
+        return True, []
+    return True, [ln.strip().strip('"').strip("-• ")
+                  for ln in body.splitlines() if ln.strip()][:12]
+
+
+def check_composition(client, image_path) -> dict:
+    """Three coarse structural questions that answer the 'no linkage' complaint.
+
+    Per-object presence probes read ~100% over a cluttered cartoon regardless of
+    quality; these ask about the frame as a whole, which a vision model answers
+    far more reliably. A key is absent when its probe could not run.
+
+    DIAGNOSIS NOTE for `figures_even` (defect #3 in SKETCHY_V2_STATUS.md):
+    This probe failed on every try in the chapter 28 run, consistently reporting
+    one figure dominating. Either the prompt is not holding the same-scale rule
+    OR the probe is miscalibrated. The raw answer is now logged alongside the
+    boolean so whoever can view the actual render can determine which side is
+    wrong. If the probe is miscalibrated (e.g., it interprets "dominating" as
+    visual salience rather than size), the prompt may need rewording.
+    """
+    ask = {
+        "anchor_is_object": "Is the single largest object in this image an "
+                            "inanimate structure rather than a person? Answer YES or NO.",
+        # `figures_even` uses an extended prompt to get diagnostic detail
+        "figures_even": "Look at the human figures in this image. (1) Are they all "
+                        "roughly the same size? (2) Is there one figure that is clearly "
+                        "larger than the others? If so, describe it briefly. Answer in "
+                        "the format: 'YES all similar' or 'NO, the <description> is larger'.",
+        "frame_filled": "Is this image filled with content all the way to all four "
+                        "edges, with no blank margin and no darkened vignette? "
+                        "Answer YES or NO.",
+    }
+    out = {}
+    raw = {}  # store raw answers for diagnosis
+    for k, q in ask.items():
+        ans = _probe(client, image_path, q)
+        if ans is not None:
+            raw[k] = ans.strip()
+            out[k] = ans.strip().upper().startswith("YES")
+    # log figures_even raw answer for diagnosing defect #3
+    if "figures_even" in raw and not out.get("figures_even"):
+        print(f"[DIAG] figures_even probe returned NO: {raw['figures_even']!r}",
+              file=sys.stderr)
+    out["_raw"] = raw  # include raw answers for report inspection
+    # Say how many probes actually ANSWERED. The caller scores a missing key as
+    # "no failure", so a probe outage used to read as a flawless frame: every
+    # key absent, zero failures counted, score 0, ship on the first try. A
+    # render nobody could look at must not be indistinguishable from a render
+    # that passed.
+    out["_probed"] = len(raw)
+    out["_asked"] = len(ask)
+    return out
 
 
 def check_coverage(client, image_path: str | Path, required_items: list,
@@ -455,7 +720,7 @@ def check_coverage(client, image_path: str | Path, required_items: list,
             "\n\nITEMS:\n" + numbered
         )
         contents = [probe, types.Part.from_bytes(data=img.read_bytes(), mime_type="image/png")]
-        resp = client.models.generate_content(model=model, contents=contents)
+        resp = _gc(client, model=model, contents=contents)
         text = ""
         for cand in getattr(resp, "candidates", []) or []:
             for part in getattr(cand.content, "parts", []) or []:
@@ -503,14 +768,16 @@ def generate_sketchy_directed(
     scene = directed["scene"]
     key = directed["key"]
 
-    # Image prompt = visual STYLE spec + the clean SCENE (no clinical jargon).
+    # Image prompt = visual STYLE spec + the clean SCENE.
+    # The old trailing "ABSOLUTE: no written words anywhere in the image" clause is
+    # gone: it contradicted the style block's own request for 10-18 legible signs,
+    # so the model received both instructions at once and split the difference at
+    # random. Which strings are load-bearing is now stated positively, by the
+    # scene itself and by the TEXT TO PAINT block the v2 path builds.
     base_image_prompt = (
-        style_prefix(text_policy)
+        style_prefix()
         + "\n\nSCENE TO ILLUSTRATE — draw EXACTLY this, as one cohesive scene:\n"
         + scene
-        + "\n\nABSOLUTE: no written words anywhere in the image EXCEPT the few short"
-          " diegetic words explicitly quoted in the scene above (signs, name tags,"
-          " numbers on objects). No explanatory labels, no captions, no callouts."
     )
 
     client = _get_client(api_key) if required_items else None

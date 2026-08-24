@@ -1,0 +1,42 @@
+{
+ "DSM-5-TR": {
+  "drive_file_id": "1WoEmDjP3-iIm0Ti2l0cOpMTe8ssBOD5Q",
+  "drive_title": "American Psychiatric Association - DSM 5 TR-APA (2022).pdf",
+  "max_printed_page": 1050,
+  "page_space": "printed"
+ },
+ "Dulcan": {
+  "drive_file_id": "15FsJz8ytYyTajfZzLnVrcAwFjWUrlxUT",
+  "drive_title": "Emailing Dulcans Textbook of Child and Adolescent Psychiatry, 3e.pdf",
+  "max_printed_page": 1156,
+  "page_space": "printed"
+ },
+ "Kaplan & Sadock Synopsis": {
+  "drive_file_id": "1RwzuraeBTTwM-DvQSNWLCLORUABHKA5n",
+  "drive_title": "Kaplan Sadock's Synopsis of Psychiatry by Robert Boland, Marcia Verdiun, Pedro Ruiz (z-lib.org) (1).pdf",
+  "enabled": false,
+  "note": "Re-uploaded 2026-08-20 and the Drive problem IS fixed: add-drive now returns rc=0 with type=pdf and no transport timeout, and drive_status reads 'active', is_drive_degraded false. NotebookLM still puts it in `error` during indexing, with no reason given, so the file is now readable but not ingestible - most likely over the per-source size limit at ~1500 pages of dense two-column text, where the five books that do index run 502-1156 pages. Splitting it in two would test that. Left disabled: it is the supplementary source, used only where Dulcan has no chapter."
+ },
+ "StahlKids": {
+  "drive_file_id": "1-AyhlgXOQkQrkjeZjh_7NMAFZsMOZn4_",
+  "drive_title": "Stahls Essential Psychopharmacology Prescribers Guide - Children and Adolescents (1).pdf",
+  "max_printed_page": 502,
+  "page_space": "printed",
+  "former_label": "Stahl Pediatric",
+  "why_this_name": "Both Stahl books were labelled with a shared 'Stahl ' prefix, so the model wrote bare 'Stahl p. 761' and no reader - human or code - could tell which of the two was meant. These names share no separable prefix, so 'Stahl' alone is never a valid citation label and is detectable as an error on sight."
+ },
+ "StahlNeuro": {
+  "drive_file_id": "1cKeNeV-QCpznkUzvOBWnA_pxNiFFFIIY",
+  "drive_title": "Stahls Essential Psychopharmacology. Neuroscientific basis and practical applications, 5th Ed (Stephen M. Stahl).pdf",
+  "max_printed_page": 623,
+  "page_space": "printed",
+  "former_label": "Stahl Essential",
+  "why_this_name": "Both Stahl books were labelled with a shared 'Stahl ' prefix, so the model wrote bare 'Stahl p. 761' and no reader - human or code - could tell which of the two was meant. These names share no separable prefix, so 'Stahl' alone is never a valid citation label and is detectable as an error on sight."
+ },
+ "Syllabus": {
+  "drive_file_id": "1F1y7VXdwsJeSbOBRYlYSGHJQe_lTzis6",
+  "drive_title": "cylabusKidsandAdolePsychiatry2022V2_0.pdf",
+  "max_printed_page": 59,
+  "page_space": "printed"
+ }
+}

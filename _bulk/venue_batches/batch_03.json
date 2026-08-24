@@ -1,0 +1,200 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 32,
+   "title_en": "Persistent Depressive + DMDD + PMDD",
+   "title_he": "PDD + DMDD + PMDD",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "THYME & AGAIN",
+    "place": "A candle works on a bright weekday: a masonry bench of sunken wax melt pots, an overhead dipping rail carrying wick frames the length of the room, a cooling and trimming bench along the window wall, a mould rack in the corner, and a small shop counter with boxed stock at the front.",
+    "place_category": "candle works",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Dysthymia gives THYME, thyme is said time, and Thyme & Again is a stock real-world shop name that also says time and again — which is the one thing all three of this chapter's disorders have in common: the same mood, sorted only by its temporal shape. The critic accepted that name; what changes is the trade, because the garden centre it stood in belongs to another chapter. A herb-scented candle works keeps the name plausible and buys a far better inventory, because every object in a candle works is a duration or a cycle stated in the trade's own printed units. Boxed stock carries burn times on the lid, which is a native duration carrier with no competing meaning. A taper only exists because the same frame was dipped again and again over hours, one thin layer at a time — persistence is the manufacturing process, not a picture of a mood. The marked calendar candle in its glass case, ringed and burning down through the rings with everything happening in the last few before it goes out, is a genuine historical object and is PMDD's luteal week drawn without a metaphor and without the corpus-luteum detour the critic struck out. The standing-order book on the counter carries monthly deliveries and a two-year run. Inter-episode mood and outbursts are carried by people visibly behaving that way at the trimming bench — literal depiction, the corpus's largest mechanism — not by anything the flames are doing.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 33,
+   "title_en": "Bipolar I Disorder",
+   "title_he": "הפרעה דו-קוטבית I",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "mania_vs_hypomania",
+    "mixed_features",
+    "rapid_cycling"
+   ],
+   "required_tokens": {
+    "DSM_bipolar": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "POLAR ICE WORKS",
+    "place": "A block ice works at the end of a shift: rows of galvanised freezing cans set in a brine tank across the floor, an overhead travelling hoist on its rail above them, a thaw tank and tipping cradle at the end of the run, a steel chute down to the loading dock, and the compressor and its control panel through the plant-room doorway.",
+    "place_category": "block ice works",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "POLAR is one morpheme of the diagnosis on a name that reads as a real ice company, which the critic asked to keep; what moves is the premises, out of the open-air recreation stack the lido sat in and away from the ski chapter's vertical-run-as-quantity device, which this venue does not use at all. An ice plant earns the chapter three things a lido could not. Rapid cycling has a literal home: refrigeration control panels carry a rapid-cycle setting and a cycle counter as ordinary machine lettering, so the exam term appears verbatim on a faceplate and the four-a-year threshold sits on a counter dial whose native unit is cycles, not metres. Episode type is carried by which tank a can is in — the same can goes into the brine tank and comes out through the thaw tank, one object with two extremes, which is what bipolar means and is why the sign only has to spell half of it. Duration lands on a chalked tally slate of days in tank, a carrier whose whole job is counting days. Depth markers, lane numbers and any height-as-quantity axis are deliberately absent. Cans can be lettered I and II so the plant's own two runs carry Bipolar I against the hypomanic short run of the next chapter.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 36,
+   "title_en": "Mood stabilizers: Valproate, Lamotrigine, Carbamazepine",
+   "title_he": "מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use"
+   ],
+   "required_tokens": {
+    "SJS_TEN": "(Lamb on trigger)",
+    "SIADH_hyponatremia": "(Carbamazepine maze fills with water)",
+    "hepatotoxicity": "(failing liver)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "STABILISER CYCLE WORKS",
+    "place": "A bicycle repair shop mid-morning: a rail of bikes hung by their front wheels the length of the room, a repair stand and a wheel-truing stand along the bench, a water tub for finding punctures, a wall of boxed tyres and stabiliser sets, a fitting area with a sizing stick, and the courtesy van at the kerb outside.",
+    "place_category": "bicycle repair shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A mood stabiliser is literally a stabiliser, and a stabiliser is a real product a cycle shop bolts to a child's bike; the fascia therefore carries exactly one class morpheme instead of the three drug morphemes the last version tried to split across one sign, and each agent comes off the stock as a sibling boxed brand on the tyre wall, which is how the corpus does four SSRIs as four travel posters. The trade then owns the chapter's whole fact set in its own vocabulary and not by metaphor. Truing a wheel is done a quarter turn of the spoke key at a time or the rim buckles — that is titration, and it is the shop's own lore, which is the single most examinable lamotrigine fact. The torque wrench and the pressure gauge are the trade's routine checks before anything is ridden, which is therapeutic monitoring on a native dial. A perished tyre cracks in a fine network all over its sidewall and a worn one is called bald, so rash and hair loss are the trade's own words for its own damaged stock. Inner tubes are called tubes, so a split tube in the water tub carries the neural tube defect with a morpheme rather than a symbol, and the child seat and trailer by the door put that fact where pregnancy already plausibly stands. Electrolyte tablets in the counter fridge carry sodium without borrowing the saltworks chapter's device, and the courtesy van at the kerb carries a plate for enzyme induction.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 38,
+   "title_en": "Generalized Anxiety Disorder",
+   "title_he": "הפרעת חרדה מוכללת (GAD)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "BUS_LINE_1A": "{'cue': 'Bus stop', 'prop': \"Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= ",
+    "amygdala": "(brain map)"
+   },
+   "why_rejected": [
+    "cannot host its own tokens: BUS_LINE_1A"
+   ],
+   "current": {
+    "sign_text": "GADD & SONS SAFETY",
+    "place": "A safety equipment supplier on a weekday morning: a trade counter with an issue book at the front, a double-sided racking run of helmets, harnesses, boots and respirators down the middle, a harness try-on gantry at one end, a test bench where alarms and gas detectors are sounded, and the shop window onto the kerb.",
+    "place_category": "safety equipment supplier",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "GADD carries the acronym inside an ordinary family surname on an ordinary trade fascia — the Ben's Diner device — and nothing on the sign names the disorder. The trade is the chapter's core feature made literal rather than metaphorical: this is a disorder defined by worry that spreads across many unrelated domains at once, and a safety supplier's racking is one hazard per bay, so the shop's own stock list hands over a separate prop for each worry domain without a single invented symbol, which is the thing an office of identical desks could never do. Its paperwork is the numbers layer: an accident-free tally board is a genuine chalked counter of days and is the only carrier in the syllabus whose native unit is more days than not, and every extinguisher, harness and detector in the trade carries a dated service tag, so a duration threshold can be painted on an object whose real job is to bear a date. The try-on gantry and the test bench give restlessness, muscle tension and startle as people literally exhibiting them under load. And because the shop fronts onto a street, the bus stop stands where a bus stop actually stands, in view of the counter, so the fixed token is hosted without bending the premises around it.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 39,
+   "title_en": "Panic Disorder + Agoraphobia",
+   "title_he": "הפרעת פאניקה + אגורופוביה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "panic_attack_definition",
+    "anticipatory_anxiety"
+   ],
+   "required_tokens": {
+    "amygdala": "(brain map)",
+    "locus_coeruleus": "LOCUS_COERULEUS_BLUEPOST"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "AGORA TRANSIT CENTER",
+    "place": "A municipal bus interchange on the town square on market day — covered bays, a ticket window, a paved plaza with stalls, buses idling",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Agoraphobia is named for the agora — the public market square. So the venue simply IS the agora, and the transit authority is named for it, which is how real municipal interchanges are actually named. One morpheme on the sign, never the diagnosis. The interchange then ships all five DSM agoraphobia situations as free native stock in one frame: public transport (the bus interiors), open spaces (the plaza), enclosed spaces (the locker bank and subway stair), standing in line / crowds (the ticket queue), being outside the home alone (the lone figure at the far kerb). Panic disorder rides in on supporting copy — the departure board is the number carrier for the 10-minute peak, and the fixed corpus token (The Scream) hangs in the coffee kiosk.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 41,
+   "title_en": "Separation Anxiety + Specific Phobia",
+   "title_he": "חרדת פרידה + פוביה ספציפית",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PACIFIC ELEMENTARY",
+    "place": "An elementary school gate at eight in the morning — the drop-off loop lane, chain-link fence, crossing guard, a yellow bus pulling away",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PACIFIC ≈ SPECIFIC — a near-perfect stress-matched phonetic pun (pa-CIF-ic / spe-CIF-ic), and 'Pacific Elementary' is an utterly ordinary American school name, so the sign reads as real signage. The drop-off lane sign then carries the other disorder with no invention at all: 'KISS & RIDE' is genuine, ubiquitous school signage and it literally means separate here. The venue supplies all five specific-phobia types from stock: animal (the wasp bin and the leashed dog at the fence), natural environment (the thunderstorm on the classroom weather chart), blood-injection-injury with its unique vasovagal faint (immunization day in the nurse's window), situational (the out-of-order lift), and the school mascot for 'other'.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

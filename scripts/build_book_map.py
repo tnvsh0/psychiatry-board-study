@@ -26,6 +26,15 @@ import re
 import sys
 from pathlib import Path
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 OUT_FILE = REPO_ROOT / "schedule" / "book_map.json"
 
@@ -33,8 +42,8 @@ OUT_FILE = REPO_ROOT / "schedule" / "book_map.json"
 BOOKS = {
     "DSM-5-TR": ("DSM 5 TR", 2),
     "Dulcan": ("Dulcans Textbook", 2),
-    "Stahl Essential": ("Stahls Essential Psychopharmacology. Neuroscientific", 1),
-    "Stahl C&A": ("Prescribers Guide - Children", 1),
+    "StahlNeuro": ("Stahls Essential Psychopharmacology. Neuroscientific", 1),
+    "StahlKids": ("Prescribers Guide - Children", 1),
     "Synopsis": ("Synopsis of Psychiatry", 2),
 }
 
@@ -229,8 +238,8 @@ def main() -> int:
     anchors = [
         ("DSM-5-TR", "Neurodevelopmental Disorders", 35, 3),
         ("Dulcan", "10 Attention-Deficit/Hyperactivity Disorder", 173, 4),
-        ("Stahl Essential", "11 Attention Deficit Hyperactivity Disorder", 449, 3),
-        ("Stahl C&A", "1 amphetamine-d", 1, 3),
+        ("StahlNeuro", "11 Attention Deficit Hyperactivity Disorder", 449, 3),
+        ("StahlKids", "1 amphetamine-d", 1, 3),
     ]
     failures = []
     for book_key, title_prefix, expect, tol in anchors:

@@ -26,6 +26,15 @@ from daily_study import (  # noqa: E402
 )
 from gemini_image import generate_sketchy_directed  # noqa: E402
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -81,7 +90,6 @@ def main():
         day, symbols, aspect, job_facts,
         anchor_world=day.get("anchor_world"),
         anchor_zone=day.get("anchor_zones", {}).get(aspect),
-        half=label.split("epidemiology_")[-1] if label.startswith("epidemiology_") else None,
     )
     png = day_dir / f"sketchy_{label}.png"
     txt = day_dir / f"sketchy_{label}.txt"
@@ -90,7 +98,6 @@ def main():
     ok, cap = generate_sketchy_directed(
         director_instruction=director, output_path=png, caption_path=txt,
         phase=day.get("phase"), required_items=required_items, max_image_tries=max_tries,
-        text_policy="environment" if aspect == "epidemiology" else "mnemonic",
     )
     if not ok:
         print(f"[FAIL] regeneration failed for sketchy_{label} (transient — try again).")
@@ -103,7 +110,7 @@ def main():
         for asset in (png, txt):
             r = subprocess.run(
                 ["gh", "release", "upload", tag, str(asset), "--repo", GITHUB_REPO, "--clobber"],
-                capture_output=True, text=True,
+                capture_output=True, text=True, encoding="utf-8", errors="replace",
             )
             if r.returncode == 0:
                 print(f"[OK] uploaded {asset.name} to {tag}")

@@ -1,0 +1,269 @@
+{
+ "taken_categories": [
+  "cable and flex works",
+  "cable assembly workshop",
+  "canal lock",
+  "candle works",
+  "canning works",
+  "children's shoe fitters",
+  "cloth dye house",
+  "cobbler's shop",
+  "community pharmacy",
+  "creamery dairy",
+  "cut-glass works",
+  "dance hall",
+  "decorators' merchant",
+  "department store escalator",
+  "egg packing station",
+  "ferry terminal",
+  "firewood log yard",
+  "firework shop",
+  "forest bandstand",
+  "hard-case luggage shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "lubrication bay",
+  "model yacht pond",
+  "newspaper newsroom",
+  "nursery goods shop",
+  "orchard cider press",
+  "pawnbroker shop",
+  "pest-control depot",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "railway sleeping car",
+  "roller skating rink",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "tile showroom",
+  "towbar fitting yard",
+  "town square car park",
+  "turkish baths",
+  "upholstery workshop",
+  "variety theatre",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "wooden boat repair yard",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 1,
+   "title_en": "Psychiatric examination of child and adolescent",
+   "title_he": "בדיקת ילד ומתבגר",
+   "aspects": [
+    "examination_structure",
+    "developmental_history",
+    "mental_status_pediatric",
+    "parent_interview",
+    "play_observation"
+   ],
+   "required_tokens": {
+    "developmental_red_flags": "(standalone)",
+    "developmental_ladder": "(standalone)"
+   },
+   "why_rejected": [
+    "Regression on the pun against the record it displaces. MAIN STREET EYECARE spells M-S-E as three clean word-initials (Main / Street / EyeCare). MoorSidE buries the same three letters mid-word and lands the E on a silent terminal e. It is legal by the SuNRIse LAUNDRY precedent, but it is a strictly weaker index and the lido buys nothing back to pay for it.",
+    "The chapter's core noun is EXAMINATION and a lido examines nobody. A sight test runs a fixed non-negotiable order (history, acuity, cover test, refraction, light), which IS examination_structure at no cost. The 'laminated lesson card listing the stages in their fixed order' is asserted, not a thing lidos own; a swimming lesson has stages of attainment, not steps of an examination.",
+    "parent_interview thins to one clerk at a gate table. The optician's had the parent seated beside the child across the desk supplying the history off the record card, which is the actual clinical geometry the aspect names.",
+    "R6 breach in `activity`: '...while a parent answers the questions on the record card at the table by the gate' singles out one figure doing something nobody else is doing. That is a protagonist in miniature. Everyone present must be doing the one thing (parents on the terrace all filling in the cards would fix it).",
+    "Category near-collision the record does not acknowledge: 123 ASH LEIGH BATHS is already a municipal bathing establishment ('turkish baths'). An open-air lido is not a synonym, but it is the second municipal baths in 144 and the separation rests on season and furniture alone.",
+    "The two numeric carriers disagree on units: depth figures in feet (2 FT to 9 FT) and badge distances in metres (5/10/25/50/100). On a picture whose whole job is carrying numbers, put both ladders in one unit so the coping and the badge chart read as one graded series."
+   ],
+   "current": {
+    "sign_text": "MAIN STREET EYECARE",
+    "place": "A high-street opticians on a school-holiday Wednesday: a frame-display wall and a dispensing bench down one side, two test rooms with their doors hooked open, the lit letter chart at the far end of the test lane, and a low toy table beside the waiting chairs.",
+    "place_category": "opticians practice",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "M-S-E stands as an ordered subsequence of word-initials inside an utterly ordinary optician's fascia — the expreSS tRIps device — and it is planted in the one high-street trade whose examinees are children of every age with a parent sitting beside them, which is what the vehicle-test version could not supply. The trade then pays out on all five aspects with no invention: a sight test is run in a fixed non-negotiable order, history then acuity then cover test then refraction then the light, so examination structure is the venue's own procedure; the record card carries the child's whole history back to the first visit and the parent supplies it across the desk, so developmental history and parent interview are one piece of counter business; the method changes with age — pictures for the pre-schooler, letters for the schoolchild, a moving toy for the infant who cannot answer — which is the chapter's central teaching point rendered as ordinary shop routine; the optometrist down on the floor rolling a toy for a two-year-old to fix and follow is play observation as a real clinical technique rather than a metaphor; and because every examinee in the frame is an actual child, appearance, speech, mood and behaviour are all literal depiction. The chart's shrinking graded rows are a native developmental ladder and the red recall tabs standing proud of the record drawer are the red flags."
+   }
+  },
+  {
+   "index": 3,
+   "title_en": "Neurotransmitters overview",
+   "title_he": "סקירה: נוירוטרנסמיטרים",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "DOPA_MINE": "",
+    "RAPHE_TAPESTRY": "",
+    "LOCUS_COERULEUS_BLUEPOST": "",
+    "AA_HOTEL": "",
+    "ASPARAGUS_VIP_DOOR": "",
+    "TUBEROMAMMILLARY_DAIRY": "",
+    "MEYNERT_MYNAH": "",
+    "Acetylcholine": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)"
+   },
+   "why_rejected": [
+    "This is materially the rejected record resubmitted. The existing venues.json entry for 3 already contains the unbroken terrace, the colliery gates and winding gear closing the head of the road, the blue police box on the corner, the caged mynah over the corn and seed merchant, the narrow weaving workshop with its loom running back from the window, the five-storey commercial hotel closing the bottom, and the heavy iron club side door. The rejection was 'cannot host its own tokens'; the resubmission relabels place_category from 'village shop row' to 'pit village high street' and adds a tea room and a picture house. The hosting objection is not answered.",
+    "It is weaker than the record it replaces on the exact token it was rejected for. The incumbent hosted DOPA_MINE with 'the four labelled underground sections opening off the gate yard' - the four pathways, which are the token's content. The proposal keeps only pit gates, winding gear, a spoil heap and a company board, so the mine is now a facade seen end-on with nothing inside it.",
+    "Acetylcholine is hosted on paraphrases of the fixed tokens. The lexicon specifies WONDERLAND_TEAPARTY and CIGARETTE_THEATER; 'the tea rooms at one end of the terrace and the picture house at the other' is a generic substitute. Rule 5 is explicit: the venue changes, never the token. The tea-room window needs the long crooked table, the mismatched cups and the hat with the price ticket in the band; the picture house needs the smoking auditorium and a cigarette hoarding.",
+    "ASPARAGUS_VIP_DOOR arrives without its asparagus and without its lettering. hosts_tokens gives only 'the heavy iron club door beside the hotel steps, with its queue'; stock_props carry no chalk-white bundles at the jamb and no NMDA on the door. The corpus's own working version is at 126 PANDA SMILES.",
+    "Shared-universe inconsistency on AA_HOTEL. Everywhere else the corpus draws it, that hotel stands in a seaside town: 42 has it along the top of the beach behind the huts, 88 has it directly opposite the candle works on a seaside back parade, 113 puts the tea merchant in its ground floor. A five-storey commercial hotel closing a colliery street is a different building in a different town, and nothing in the record declares the adjacency that would license it.",
+    "Where a token does not force it, the row still rhymes with other chapters' venues. MEYNERT_MYNAH only needs a caged bird over a doorway, so a 'pet-and-corn merchant's window with a birdcage' needlessly reproduces 13 THOS. & CHESS PETS; the picture house reproduces 73 CATAPLEX CINEMAS. (The dairy colliding with 83 POPPY LANE CREAMERY is forced by TUBEROMAMMILLARY_DAIRY and is not the author's fault - but it is one more reason the street cannot be left generic.)"
+   ],
+   "current": {
+    "sign_text": "MESSENGER ROW",
+    "place": "A village shop row on delivery morning: one unbroken terrace of small businesses down the near side of the street, the colliery gates and winding gear closing the top of the road, delivery lorries nosed into the kerb with their tailgates down, crates stacked out on the flags outside every doorway.",
+    "place_category": "village shop row",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A neurotransmitter is a chemical messenger, and Messenger Row is an ordinary street nameplate that carries one morpheme of the everyday referent without printing the medical word — the same device the accepted transmitter reading used, and within the Lithium Lift precedent. This is the one chapter the spec says must not invent a venue: the seven course-wide premises are the content, so the plate is the street they stand on. A shop row is the only mundane container that holds a colliery, a hotel, a dairy, a club door, a weaving workshop, a seed merchant and a police box in one coherent frame at one light source. The delivery round then supplies the whole mechanism free: release is a crate carried in off the lorry, and reuptake is the same hand carrying the empties back out to be loaded again, which is a native action in the trade rather than a metaphor. Each premises signs for its own crate, so every messenger stays addressable at its own doorway instead of becoming one of seven nameplated boxes in a line-up."
+   }
+  },
+  {
+   "index": 5,
+   "title_en": "Serotonin system",
+   "title_he": "מערכת הסרוטונין",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "RAPHE_TAPESTRY": "",
+    "dorsal_raphe": "RAPHE_TAPESTRY",
+    "raphe_nuclei": "RAPHE_TAPESTRY",
+    "SERT": "(standalone — appears in any synapse scene)",
+    "5-HT1A_receptor": "BUS_LINE_1A",
+    "5-HT2A_receptor": "TAROT_2A",
+    "5-HT2C_receptor": "TAROT_2A (kitchen annex)",
+    "5-HT3_receptor": "TAROT_2A (water-gate room)",
+    "5-HT6_receptor": "TAROT_2A (back library)",
+    "5-HT7_receptor": "CONVENIENCE_STORE_7",
+    "BUS_LINE_1A": "",
+    "TAROT_2A": "",
+    "CONVENIENCE_STORE_7": ""
+   },
+   "why_rejected": [
+    "RAPHE_TAPESTRY still cannot live here, which is the objection that killed the previous version. A pier lock-up is a smaller and less plausible tenancy than the market stall that was already refused: nobody weaves Persian rugs in a seaside hut, and rugs hung out over the rails of a pleasure pier is not an ordinary place on an ordinary day. The corpus's working host is 28 MADDER DYE HOUSE, where the weaving room off the back wall is native to the trade rather than imported.",
+    "The TAROT_2A cluster is dismantled. The lexicon hangs 2C (kitchen annex), 3 (water-gate room) and 6 (back library) off the 2A house; the proposal keeps only the kitchen annex adjacent and scatters the water gate to the pier head and the library into the cast-iron shelter. 'These all live in the same house' is the only thing that makes 2A/2C/3/6 hold together as a numbered family.",
+    "The anchor reproduces an existing chapter's drawing on the same seafront. 42 BEN'S DECKCHAIR HIRE already anchors on 'the row of numbered beach huts along the top of the shingle, running lower-left to upper-right, with the promenade railing above them'. A 'planked spine with its centre row of lock-up huts running from the lower left to the upper right' is that composition again, and the pier becomes the fourth seafront venue after 17 (seafront amusement arcade), 42 and 101 (promenade shooting gallery in a parade), built out of the other three's furniture: fortune-teller's booth, kiosk, chalked boards, lock-ups.",
+    "CONVENIENCE_STORE_7 arrives without its digit. The token is a lit sign carrying the numeral; stock_props give only 'night kiosk under the shore-end arch, lit sign and a wall clock', and the 7 exists only in the prose claim that the clock stands at seven. On a picture where every number must ride a carrier, paint it: OPEN 7 TILL 11, or a 7 on the fascia.",
+    "BUS_LINE_1A loses its identifying mark. The token is the wooden 1A booth with the trembling rabbit on the bench; hosts_tokens gives 'the bench inside that 1A stop shelter, out of the wind' and no rabbit, so 1A stops meaning anything beyond a route number.",
+    "Internal timing contradiction: the place is set 'an hour after the shops on the front have shut', but the fortune-teller's parlour, the cafe hatch and the kiosk all have to be open and lit or the receptor rooms are unreadable. As written the receptor family is behind shutters."
+   ],
+   "current": {
+    "sign_text": "5 HIGH TOWN MARKET",
+    "place": "A covered market hall in mid-morning trade: an iron-and-glass roof over one long central aisle, lock-up stalls down both sides with their shutters up, scales and price cards on every counter, produce boxes stacked in the gangway and a wash-down channel running along the floor.",
+    "place_category": "covered market hall",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "5-H-T stands as an ordered subsequence of word-initials inside an entirely ordinary market name and street address — the expreSS tRIps device, and a numeral at the front of a market name is native signage rather than an intrusion. The hall was chosen because serotonin's whole story is one narrow midline workshop that ships everywhere, and a market's central aisle is literally its seam: the weaving stall stands on it and its goods go out to every other counter in the building. The receptor family then costs nothing, because each one is an ordinary trade already found in a market hall — a curtained fortune-teller's booth in the corner, the pie stall kitchen behind it, the wash-down channels of the fish end, the second-hand book stall, and the all-night kiosk in the corner arch. The postal collection at the delivery bay gives reuptake a native worker instead of a symbol."
+   }
+  },
+  {
+   "index": 8,
+   "title_en": "Normative development 0-2 (infancy)",
+   "title_he": "התפתחות נורמטיבית: גיל הינקות (0-2)",
+   "aspects": [
+    "motor_milestones",
+    "cognitive_milestones",
+    "social_emotional",
+    "language",
+    "red_flags"
+   ],
+   "required_tokens": {
+    "brazelton_still_face": "(standalone)",
+    "developmental_red_flags": "(standalone)",
+    "developmental_ladder": "(standalone)"
+   },
+   "why_rejected": [
+    "Place-category collision: chapter 7 (GABBAY & GLUCK REPAIRS, place_category \"cobbler's shop\") is already a high-street shoe premises. \"Children's shoe fitters\" is the same KIND of place under a different trade verb (repair vs retail); the index \"the shoe shop\" now retrieves two chapters, which is exactly what rule 4 exists to prevent.",
+    "Anchor is a near-clone of chapter 7's anchor. Ch7: \"the long finishing bench ... lower-left to upper right, with the floor-to-ceiling rack of ticketed shoes standing behind it\". This proposal: \"the floor-to-ceiling run of stock boxes ... from the lower left up to the stockroom door at the upper right\". Same composition, same material, same wall-of-footwear silhouette.",
+    "R7 prop-family collision across unrelated tokens: developmental_red_flags is hung as framed pictures on the party wall AND brazelton_still_face is hung as three pinned photographs on a board above the bench. Two unrelated fact keys share the (framed picture, paper, on a wall) cue triple; a resident cannot tell which wall of pictures is which fact.",
+    "Second internal collision: the anchor's own lettered shelf headers PRE-WALKER / CRAWLER / CRUISER / FIRST WALKER are an ascending milestone ladder, and the anchor also carries a literal sliding ladder — both competing head-on with the fixed developmental_ladder token (five domains, five lifts) that the chapter is required to host. Three ladders, two meanings.",
+    "developmental_ladder is hosted outside the venue and seen through glass: \"seen full height through the window and the propped door\". A five-lift tower with five apprentices and five named artefacts cannot read at full height from inside a shop interior, and this is precisely the fault the same author uses to reject chapter 17's arcade (\"shrank a course-wide fixed structure into a glass-cased penny model\").",
+    "developmental_red_flags is altered, not hosted: the sixth frame is \"turned face to the wall\", which deletes the regression frame's content. _lex.json policy is APPEND-ONLY — \"a token's cue and prop may never be changed once shipped\". The venue changes, never the token."
+   ],
+   "current": {
+    "sign_text": "CRAWL & CRUISE",
+    "place": "An indoor soft-play barn on a wet weekday morning: a padded under-twos pen fenced off at the front, a three-storey netted play frame behind it, a ball pit under the slide, a buggy park by the door and a café counter along one wall.",
+    "place_category": "soft play centre",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "CRAWLING and CRUISING are the two motor milestones of the second year and both are ordinary English words that read as a perfectly normal name for a children's play barn — the p272 device of putting the term's own plain-English picture on the sign without printing the topic. The venue was moved off the high street because phase 1 had already spent its shop-with-a-counter budget, and a play barn buys back everything the chapter needs as native stock: the age-band gates, the coloured wristbands and the height marker are the developmental ladder printed on the venue's own furniture; the ball that rolls out of sight under the frame and is dug back out is object permanence; the low mirror wall along the baby pen is self-recognition; a costumed mascot sitting on the bench with a moulded unmoving face while the baby on its knee stares up and slowly crumples is the still-face paradigm on stock the venue genuinely owns; and because every figure in the frame is an infant or a toddler, rolling, sitting, cruising, first steps and first words are all literal depiction rather than metaphor."
+   }
+  },
+  {
+   "index": 11,
+   "title_en": "Normative development 13-18 (adolescence)",
+   "title_he": "התפתחות נורמטיבית: גיל ההתבגרות (13-18)",
+   "aspects": [
+    "pubertal_development",
+    "identity_formation",
+    "peer_vs_family",
+    "risk_taking",
+    "brain_maturation"
+   ],
+   "required_tokens": {
+    "nucleus_accumbens": "DOPA_MINE (THE CASINO)",
+    "erikson_8_stages": "(standalone — ERIKSON-LAND luna park)",
+    "developmental_ladder": "(standalone)",
+    "piaget_4_stages": "(standalone — PIAGET'S PRE-OP HOSPITAL)",
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "Seafront crowding: chapter 42 (BEN'S DECKCHAIR HIRE — shingle beach below the promenade railing, hire hut, chalked rate board) and chapter 101 (O'CONNOR'S PRIZE DUCKS — \"a promenade prize-shooting gallery ... between a rock shop and a chip shop\") already occupy the seaside promenade. A pleasure pier makes three chapters in one register, and it additionally swallows the amusement arcade and the funfair as sub-premises.",
+    "Stock props restate chapter 42's almost item for item: \"stack of folded windbreaks against the balustrade\" (42 has the five-pole windbreak), \"ice-cream kiosk price list\" (42 has the ice-cream tricycle), \"sun and tide board chalked up outside the kiosk\" (42 has the chalked rate board on the hut step), turnstile counter dial and paper tickets (42 has the roll of punched hire tickets). R7 cue-distinctiveness fails on material and colour as well as object.",
+    "The venue stops being one place. It hosts four architectural-scale premises — an eight-ride luna park at the pier head, a five-lift scaffold tower mid-deck, a four-ward children's hospital on the front, and a slot saloon on the boards. That is chapter 3's declared job (MESSENGER ROW is the one chapter licensed to be a row of course-wide premises); duplicating it here means the chapter's retrieval hook is \"the street with everything on it\", which is already taken.",
+    "Density ceiling blown before the chapter's own content is drawn. Erikson alone is 8 rides x 2 poles with counted objects (~16-24 elements), Piaget is 4 wards, the ladder is 5 floors — roughly 30 sub-elements from tokens alone, against R6's 22-34 total. The chapter's five aspects (staging, identity, peers, risk, maturation) then have nowhere legible to sit.",
+    "hosts_tokens asserts a relation that is not drawn: the casino is called \"the mesolimbic line's terminus\" but no track, cart run or DOPA_MINE is in the frame — chapter 11 does not require it. A terminus with no line is an asserted fact, and R5 requires the link to be visible or dropped.",
+    "Minor: \"TANNER'S PIER\" is genuinely strong (eponym plus the PIER/PEER homophone, two chapter facts in two words) and the ride height post banded one to five, the cast NO JUMPING notice and the pier master's glass office are all excellent native carriers. The fascia should survive whatever replaces the pier."
+   ],
+   "current": {
+    "sign_text": "TANNER'S SUN STUDIO",
+    "place": "A high-street tanning salon at the after-school rush: a reception desk with a card reader, four changing cubicles with their curtains half-drawn, a row of five sunbeds with the lids raised, a mirror wall with a shelf of lotions, and a sofa of teenagers waiting by the window.",
+    "place_category": "tanning salon",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "TANNER is the exam word for pubertal staging and it is also a completely ordinary surname over a completely ordinary shop — the eponym device, on a high street any learner can picture, and bright and contemporary where the tannery version of the same pun was wet, dark and gore-adjacent. The trade carries the chapter without a single minted metaphor: the price board graded by level is the five stages as a counted set on a carrier whose real job is bearing numbers; the timer dial wound past its stop under a do-not-exceed sticker is risk-taking, and the risk is the venue's own hazard rather than a bolted-on one; the laminated proof-of-age card at the desk is the age boundary the chapter turns on; four friends crammed on one sofa while a mother waits in a car visible through the window is peers-versus-family as a bounded pair with no story attached; the mirror wall and the shelf of skin and hair products are identity formation, literal; and the wall poster about being fully developed sits late prefrontal maturation on a carrier that reads. Every figure in the frame is already an adolescent, so pubertal and behavioural facts are literal depiction."
+   }
+  },
+  {
+   "index": 17,
+   "title_en": "ADHD — core",
+   "title_he": "הפרעת קשב וריכוז (ADHD) — ליבה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DOPA_MINE": "",
+    "D2_receptor": "DOPA_MINE",
+    "DAT": "DOPA_MINE",
+    "NET": "BEETHOVEN_ORCHESTRA (stage-door)",
+    "prefrontal_cortex": "(brain map)",
+    "DSM_neurodevelopmental": "",
+    "adhd": "Special-Ed Classroom — ADHD corner (standalone scene possible)"
+   },
+   "why_rejected": [
+    "The venue is coal, and coal is already spent twice. Chapter 4 (DOPA MINE No.4) is a working deep coal mine; chapter 3 (MESSENGER ROW) is closed at its head by \"the colliery gates and winding gear ... with the four labelled underground sections opening off the gate yard\". This proposal's DOPA_MINE clause is that sentence again — gates, winding gear, four labelled gallery mouths, carts running down the incline. Three chapters would open onto the same pit head.",
+    "R2 failure. The fixed token pops because it is an anomaly planted in a foreign world — a mine inside a kart track, inside a shop row. In a coal merchant's bagging yard the mine is the natural neighbour and stops being an anomaly at all; the whole frame is one material and one value key, so R7 and R8 lose their contrast as well.",
+    "NET token substituted, which the lexicon forbids. _lex.json binds NET to BEETHOVEN_ORCHESTRA (stage door of a concert hall, Beethoven in the white wig, numbered batons, heart-drums and winds sections). \"The miners' institute band room ... the colliery band on the stand inside\" is a different scene wearing the net. Policy is APPEND-ONLY: the venue changes, never the token.",
+    "DSM_neurodevelopmental is under-rendered and glazed off. The clause lists five corners' furniture (trains in a line, spilled kit, five-piece puzzle, floating letters, empty speech bubble) and never delivers the sixth (tic) corner, the six children themselves, or the teacher at the six-branch chart. It is also seen through school windows from across a lane — the same shrunk-behind-glass fault this rewrite claims to be fixing.",
+    "It rebuilds chapter 3's street: colliery at the head, board school across the lane, miners' institute across the lane, yard office over the weighbridge. Multi-premises containment is ch3's declared licence, not a repeatable device.",
+    "The fascia is five lettering units, at the spec's per-string cap, and the largest legible slot on the page goes to a four-word coal-grade list."
+   ],
+   "current": {
+    "sign_text": "HYPERDRIVE AMUSEMENTS",
+    "place": "A seafront amusement arcade on a wet weekday afternoon: two long banks of coin machines facing each other down a patterned carpet, a glass change booth just inside the doors, a prize counter along the back wall and a row of older glass-cased working models against the side wall.",
+    "place_category": "amusement arcade",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Hyper is one morpheme of the diagnosis and Hyperdrive is a name real arcades actually trade under, so the joke is invisible on the fascia and total as an index. The trade was chosen because the coin machine is the only ordinary object whose working parts are a paid-for reward loop, which lets the fixed colliery token stand inside the venue as a genuine period fixture — a penny-in-the-slot working model with a coin slot at the front and a payout cup underneath — instead of being pasted onto a shop that has no room for it. The room's own notices then carry the criteria on native carriers whose real-world job is exactly the thing being counted: minimum-token notices at the prize counter for the symptom thresholds, the door notice about accompanied under-twelves for the age of onset, the chain's branch board for the second setting, and the arcade's own ticket tallies for the rating scales."
+   }
+  }
+ ]
+}

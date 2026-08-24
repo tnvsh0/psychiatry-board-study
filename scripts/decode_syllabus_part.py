@@ -5,6 +5,15 @@ import re
 import sys
 from pathlib import Path
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 src = Path(sys.argv[1] if len(sys.argv) > 1 else "schedule/_syllabus_raw.json")
 dest = Path(sys.argv[2] if len(sys.argv) > 2 else "schedule/syllabus_topics_part1.json")
 

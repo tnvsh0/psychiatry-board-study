@@ -1,0 +1,236 @@
+{
+ "taken_categories": [
+  "cable and flex works",
+  "cable assembly workshop",
+  "canal lock",
+  "candle works",
+  "canning works",
+  "children's shoe fitters",
+  "cloth dye house",
+  "cobbler's shop",
+  "community pharmacy",
+  "creamery dairy",
+  "cut-glass works",
+  "dance hall",
+  "decorators' merchant",
+  "department store escalator",
+  "egg packing station",
+  "ferry terminal",
+  "firewood log yard",
+  "firework shop",
+  "forest bandstand",
+  "hard-case luggage shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "lubrication bay",
+  "model yacht pond",
+  "newspaper newsroom",
+  "nursery goods shop",
+  "orchard cider press",
+  "pawnbroker shop",
+  "pest-control depot",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "railway sleeping car",
+  "roller skating rink",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "tile showroom",
+  "towbar fitting yard",
+  "town square car park",
+  "turkish baths",
+  "upholstery workshop",
+  "variety theatre",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "wooden boat repair yard",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 95,
+   "title_en": "BPD treatment: DBT",
+   "title_he": "טיפול ב-BPD: DBT",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {
+    "DSM_personality_disorders": "",
+    "borderline_pd": "Personality Inn — Cluster B room"
+   },
+   "why_rejected": [
+    "DEVICE ALREADY SPENT: chapter 133 is DBT: theory + practice, sign 'DEMOLITION BY THORNE', and its own pun_explanation reads 'D, B and T head the three words of an ordinary contractor's board'. This proposal is the identical derivation (D-B-T as word initials of a family trade fascia) AND the identical argument — 133 builds acceptance-vs-change out of facade retention ('the front wall is kept exactly as it is... while everything behind it is taken down'), this one builds it out of dual-control pedals. Two chapters, one hook: neither retrieves uniquely, which is the whole point of the venue.",
+    "borderline_pd IS NOT HOSTED. 'The Inn's first-floor Cluster B room, red-gold curtains pulled right back, framed square in the open gateway' is a lit window across a road. The token's prop is a scene: a figure standing ON a painted red BORDER LINE, two faces (adoration left, rage right), the abandonment phone call, the mirror reflecting four identities. None of it is in this yard. Corpus practice is unambiguous — ch.92 puts schizoid_pd on the pond's own island, ch.93 puts schizotypal_pd in the play tipi with the tarot spread, and reserves the across-the-road Inn for the DSM_personality_disorders umbrella only. The rejected earlier draft at least had the red line painted along the mat; this draft deleted the chapter's central glyph and put nothing in its place.",
+    "MIS-TEACHING PROP: 'PHONE THE OFFICE BEFORE YOU CANCEL' is offered as between-session phone coaching. It reads as an attendance rule. DBT phone coaching is skills help in a crisis, not permission to cancel — the card as written will teach the wrong fact.",
+    "Minor proximity: ch.16 PHARM LANE KARTS is already vehicles running a marked tarmac course with a paddock and a start gantry. 'driving school yard' is distinct enough, but the record should stay a depot yard with bays and a cone lane and never read as a circuit.",
+    "Everything except the sign is good — mundane place, inanimate diagonal anchor, category unused, and unusually strong number carriers (1 CONTROL / 2 JUNCTIONS / 3 MANOEUVRES / 4 INDEPENDENT, the D and S columns with the printed 15 that maps cleanly onto the target hierarchy, the 62% board). But leave the D-B-T initials to ch.133 and hook this chapter on its own two nouns, Linehan and the border line. Try 'LINEHAN & DAUGHTERS ROAD MARKING', place_category 'road-marking contractor's yard' — a theorist-surname fascia is fully corpus-sanctioned (BOWLBY & SONS, KLEIN PUPPET WORKS, WINNICOTT LENDING LIBRARY, MINUCHIN & SONS, BION & SONS) and the trade's actual product is a painted border line at full size, so borderline_pd is finally hosted rather than pointed at. The yard pays out the rest natively: the thermoplastic boiler and the lining machine with its numbered hopper, the day's lining sheet as the diary card, the statutory hierarchy of markings (stop line, then hazard line, then lane line) as the target hierarchy already ranked on a printed chart, the gang's morning briefing round the job board as the consultation team, the radio in the lining cab as phone coaching, and four stencil sets in numbered trays as the four modules. Keep the Personality Inn across the road for DSM_personality_disorders."
+   ],
+   "current": {
+    "sign_text": "DAILY BELAY TRAINING",
+    "place": "An indoor climbing centre on a busy evening: a panelled leaning wall hung with colour-graded holds, ropes dropping from the ceiling anchors, crash matting across the whole floor with a red line painted along the base of the wall, a hire rack of harnesses and a sign-in desk by the door",
+    "place_category": "indoor climbing centre",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "D-B-T falls out of a board a climbing centre really does paint up, as an ordered subsequence in an ordinary posted service. The trade's mandatory safety structure is the therapy object for object with nothing imported: two people on one rope, the climber cannot be climbed for and the belayer cannot let go, which is the dyad; the shout that gets you held mid-route is a real posted call on the calls board, which is crisis coaching; the partner-check board at the door is the buddy check; four colour-graded route sets are the four skills modules; the sign-in book filled in every single session is the diary card; and the staff huddle round the shift diary at the desk is the consultation team. The red line painted along the mat at the foot of the wall is the chapter's own fixed border-line glyph standing on the floor of an ordinary gym."
+   }
+  },
+  {
+   "index": 96,
+   "title_en": "Antisocial PD + Conduct Disorder",
+   "title_he": "ASPD + Conduct Disorder",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_personality_disorders": "",
+    "DSM_disruptive_impulse": "",
+    "antisocial_pd": "Personality Inn — Cluster B room (red-gold dramatic)",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)"
+   },
+   "why_rejected": [
+    "CATEGORY IS A THIN SYNONYM, TWICE OVER. taken_categories in batch_07 lists only 27 strings but venues.json already carries 85 non-null categories plus more with null — do not treat the supplied list as complete. Chapter 55 (SPLIT LANES BOWLING) is a games hall whose anchor is 'The run of numbered lanes with their ball-return rails... driving lower-left to upper-right', with a hire counter of pigeonholes with sizes stencilled, a league standings board, and a change machine. This proposal's anchor is 'The run of six slate-bed tables... crossing from the lower left of the frame to the upper right', with a numbered cue rack, a league ladder card, sliding scoreboards and coin meters. Same picture, cues instead of balls. Chapter 17 (HYPERDRIVE AMUSEMENTS) already owns the coin-fed indoor room. Compounding it: ch.93 sites its shop 'next door but one to the bowling alley' on a small-town parade, and this club sits over a parade with the Inn opposite — a second games hall on what reads as the same street.",
+    "DSM_disruptive_impulse IS NOT HOSTED. The token's prop is 'an EXPLOSION sign with broken rules'. The record instead points out of the rear window at the council tip on Odds Lane — which is chapter 106's venue. Borrowing a neighbouring chapter's venue is not hosting a token, and the adjacency is undeclared. R10 licenses shared-universe adjacency only where the adjacency itself encodes the relationship; here it just relocates the requirement.",
+    "antisocial_pd exiled to 'the Inn's Cluster B room, red-gold, its window level with the club's own across the street' — content-free. The token carries the leather jacket, the WANTED poster ignored, the wallet taken from the passed-out victim without expression, and the wall calendar showing the rap sheet starting at 14. None of it is in the club. As with 95, the corpus puts the specific PD inside the chapter's own venue.",
+    "general_PD_criteria loses its index. The token is six framed exhibits arranged A B C D E F plus a faceless mannequin labelled PERSONALITY; ch.92 renders it 'six framed panels lettered A to F' with a faceless carved figurehead above, ch.93 as six frames lettered A to F behind a headless mannequin. 'Six framed league photographs captioned in permanent marker' keeps the frame count and drops both the A–F lettering and the faceless figure — i.e. drops the mnemonic.",
+    "WRONG NUMBER IN THE BIGGEST SLOT. 'NO PERSON UNDER 16 AFTER 7 P.M.' hand-letters 16 onto a wall. ASPD's two numbers are 18 (minimum age to diagnose) and 15 (conduct-disorder onset before 15). 'RULE 15 — CONDUCT & FORFEITS' is genuinely clever — it carries both the 15 and the word CONDUCT on one real prop — so keep it, but the byelaw plate must read 18.",
+    "Keep A-S-P-D as word initials of an ordinary fascia — that part is legal and clean, and nothing clinical is printed. Move the trade off the games hall entirely. 'ALBION SCRAP & PLANT DISPOSAL', place_category 'scrap metal yard', is unoccupied and is the rare trade whose own statutory paperwork IS identity and deceit: anchor on the weighbridge deck and the baler run cutting the yard diagonally; props that legitimately bear digits — weighbridge tickets printed GROSS / TARE / NET, the site licence plate on the office window with its number and expiry, the NO CASH PAYMENTS notice, the seller-ID register with photocopied licences and one that does not match the ticket, the price board in pounds per tonne chalked over twice, numbered skips, the CCTV notice, the age plate on the shear. Conduct Disorder's before-15 onset sits on a dated register line; RULE 15 survives as a numbered clause on the licence conditions. For DSM_disruptive_impulse give it a real explosion carrier the yard actually has: the gas-bottle burst notice with its starburst pictogram over a torn-down rules card. Keep the Inn opposite for DSM_personality_disorders, bring antisocial_pd into the yard, and letter the six gallery frames A to F with a faceless coveralls dummy standing among them."
+   ],
+   "current": {
+    "sign_text": "ASPHALT & DRIVEWAYS",
+    "place": "A half-finished driveway job on a suburban front garden: an unmarked tipper truck at the kerb, a tar kettle smoking, a roller parked on the fresh black strip",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "A-S-P-D falls out of ASPhalt & Driveways as an ordered subsequence in a trade name you could photograph on any van door this afternoon. The itinerant driveway crew is the textbook confidence trick without a word of moralising — cash only, no permit displayed, a fifteen-year guarantee that expires when the van leaves the street — so deceit, recklessness and absent remorse are all carried by ordinary job-site props rather than by anybody's expression."
+   }
+  },
+  {
+   "index": 101,
+   "title_en": "Obsessive-Compulsive Personality Disorder (OCPD)",
+   "title_he": "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "ocpd": "Personality Inn — Cluster C room",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "THE SHOP IS ALREADY TAKEN. Chapter 12 (BOWLBY & SONS ATTACHMENTS) is described in venues.json as 'a cramped old ironmonger that sells vacuum, hose and power-tool attachments: a floor-to-ceiling pegboard wall of fittings, a long wooden counter', with four sample fittings carded on the pegboard, and its pun_explanation calls the fascia 'the most ordinary ironmonger form there is'. This proposal is that shop with a different family name: old ironmonger, long wooden counter down the length of the room, a wall of sample fittings displayed one to a slot, '& Daughters' fascia. place_category 'ironmonger's shop' is absent from taken_categories only because that list is 27 of the 85+ categories already in venues.json — it is not a complete list and must not be used as one.",
+    "ocpd exiled across the road to the Inn's level blind. It is a neat glyph and it is in the wrong building; the token's content (pencils measured with a ruler, identically labelled binders, the un-eaten lunch, the refusal to delegate, the broken stapler that cannot be thrown out) belongs inside the chapter's own venue, per ch.92 and ch.93.",
+    "general_PD_criteria again without A–F lettering or the faceless mannequin. 'The same six since 1931' is a good rendering of criterion D alone and silently drops the other five.",
+    "CRITERION GAPS ON THE PROPS. Over-conscientiousness about morals, ethics and values has no carrier anywhere. And 'WE DO NOT ROUND UP' is doing perfectionism, not miserliness — the miserly-spending criterion is unrepresented, while perfectionism already has the scales, the counter book and the stocktake sheet.",
+    "Keep the fascia. 'O. C. PENFOLD & DAUGHTERS' is the cleanest derivation in the batch — an utterly ordinary family shopfront that reads O-C-P-D with no clinical word and nothing forced. Change only the trade, since ch.12 owns the ironmonger's. A decorators' merchant's colour-matching counter is unoccupied (place_category 'paint-mixing counter') and pays out every OCPD criterion from its own stock, with more digits than the drawer wall had: the shade fan of two thousand near-identical chips filed in code order, the tinting machine dosing in 1/64 fl oz with the dispense printout, the batch book written up before the money is taken, a card reading WE DO NOT MATCH BY EYE, the shelf of mis-tints labelled TOO DARK that are never thrown out (worn-out objects retained), a lid-price card marked in pence with no discount for trade (miserliness, finally carried), PROPRIETOR MIXES — PLEASE WAIT (refusal to delegate), a fourth re-match under way while the queue holds its lists (perfectionism defeating completion), and a framed trade code of practice with numbered clauses for the ethics criterion. Anchor on the mixing bench and the tinter run cutting the shop diagonally. Bring ocpd inside, keep the Inn opposite for the umbrella, and letter the six gallery frames A to F beside a faceless shop dummy."
+   ],
+   "current": {
+    "sign_text": "O'CONNOR'S PRIZE DUCKS",
+    "place": "A promenade prize-shooting gallery on a grey bank-holiday afternoon: one shop-front unit in a parade between a rock shop and a chip shop, its shutter folded back, a hinged counter with five air rifles on short chains, an endless chain of tin ducks travelling across the painted back wall, and a shelf of prizes above head height",
+    "place_category": "shooting gallery",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "O-C-P-D as an ordered subsequence in an ordinary stall name — O'Connor's Prize Ducks (highlight O'C, P, D) — exactly the expreSS tRIps device. The stall's own house rules are the disorder rather than a metaphor for it: nothing counts unless every duck falls, the ducks are squared up with a steel ruler between customers, the pellets are counted out one at a time, the proprietor will not let anyone else load, and the prizes are never actually handed over. The sign carries no morpheme of the diagnosis in plain English."
+   }
+  },
+  {
+   "index": 103,
+   "title_en": "Israeli law in child and adolescent psychiatry",
+   "title_he": "החוק הישראלי בפסיכיאטריה של הילד והמתבגר",
+   "aspects": [
+    "core_principles",
+    "practical_use",
+    "risk_assessment",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "category collision: chapter 95 already holds 'indoor climbing centre'"
+   ],
+   "current": {
+    "sign_text": "NOAR CLIMBING CLUB",
+    "place": "An indoor climbing centre on a school-holiday morning: a bolted plywood wall of coloured holds rising three storeys with an overhang at one end, ropes hanging from anchors, crash mats covering the whole floor, a reception desk with a waiver folder and a rack of numbered harnesses, and a glazed meeting room on the balcony overlooking the wall",
+    "place_category": "indoor climbing centre",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "NOAR — spelled the way a Hebrew reader reads נוער, the plural collective, not NA'AR — is the name of the law the chapter is built on (חוק הנוער) and is also simply what a youth climbing club is called. The venue then supplies the whole legal apparatus as ordinary equipment: who may go up alone, who must be roped to an adult, whose signature is on the form, who is judged competent to hold the rope, who writes the incident in the book, and a committee sitting behind glass above the floor deciding whether the climb continues."
+   }
+  },
+  {
+   "index": 105,
+   "title_en": "Sexual Dysfunctions + Paraphilic Disorders",
+   "title_he": "תפקודים מיניים + הפרעות פרפיליות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_sexual_dysfunction": "",
+    "DSM_paraphilic": ""
+   },
+   "why_rejected": [
+    "THIS IS CHAPTER 38'S PICTURE. GADD & SONS SAFETY (safety equipment supplier) anchors on 'The double-sided steel racking run... running from the lower left of the frame to the upper right and splitting the shop into the trade counter, the try-on gantry, the test bench and the shop front onto the street'; it stocks helmets, harnesses, boots and respirators; it has a test bench where detectors are sounded, an issue book and a rubber date stamp on the counter, and a shop calendar with dates ringed. This proposal's anchor is 'The double-sided kit rack running the length of the shop from the lower left of the frame to the upper right, splitting the floor into the door and bins, the two rack aisles, the front counter and the testing bench at the back', with bins of boots and webbing, a complaints book on the counter and a wall rack of date stamps. Same anchor sentence, same aisle plan, same bench, same counter business. Changing what is on the shelves does not make it a different frame.",
+    "hosts_tokens are asserted, not carried. DSM_sexual_dysfunction's prop is a PAUSED relationship icon and DSM_paraphilic's is a CAUTION sign. Neither appears anywhere in place, activity, anchor or stock_props — the record simply relabels the bench as one and the counter as the other.",
+    "NUMBER GAP: 16 on the locked cabinet is right for the age floor and 6 MONTHS on the stamp rack is right for the duration criterion, but the five-year age-gap element has no carrier at all, and it is the half of that criterion residents actually drop.",
+    "'SOLD AS SEEN — NOTHING IS A FAULT UNTIL IT IS REPORTED' is an invented notice doing the chapter's single most important discrimination. Real shop cards read SOLD AS SEEN — NO REFUNDS. The distress-or-harm criterion should ride on the complaints book, which is already a prop, already ruled into dated lines, and already means exactly 'nothing counts until someone reports it'.",
+    "The eight paraphilias now exist only as 'a page of eight numbered kit classes'. Dropping the previous draft's depicted merchandise was the right call and the numbered catalogue does supply eight lettering slots — but the record has to say so explicitly, or the element table has nowhere to land its eight names.",
+    "Keep the sign and keep the fault roster — both are the best work in the batch. PARAPHERNALIA is a real English word, a plausible fascia and carries PARAPH- unbroken with nothing clinical painted, squarely in the Carpe Drive-in register. And the dysfunctions rendered as bench faults (torch that will not light, pressure lamp whose gauge sits at zero, zip jammed half-way, strap the spring balance will not hold, flare marked FIRES ON CONTACT, flare marked NO IGNITION AFTER 4 MIN, compass card that will not settle) is a genuinely elegant, entirely non-explicit mapping — do not touch it. Rebuild only the room so it stops being ch.38: drop the double-sided racking run and the two aisles, and anchor instead on a counter-height run of stencilled ex-MOD crates going corner to corner (lot numbers, NSN codes, issue dates — better digit carriers than the racking was), with the try-out bench along the window and the glass counter at the near end. Swap helmets, harnesses and respirators for blankets in bales, greatcoats on a rail, mess tins, jerricans and pyrotechnics so the stock cannot read as safety equipment. Then hang a CAUTION triangle on the locked pyrotechnics cabinet and stencil a HOLD tray on the bench for the two tokens, move the distress criterion onto the complaints book, and add the five-year gap to the cabinet card."
+   ],
+   "current": {
+    "sign_text": "PARAPHERNALIA ARMY SURPLUS",
+    "place": "An army-surplus store on a wet Saturday morning: a long double-sided kit rack down the middle of the shop floor, four curtained fitting cubicles along the back wall, wooden bins of boots and webbing under the window, a glass-topped counter with a locked cabinet beneath it, and a testing bench by the till where every second-hand item is tried before it is sold.",
+    "place_category": "army surplus store",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PARAPHERNALIA is an entirely ordinary English word for assorted gear, an entirely plausible name for a surplus shop, and a near-homophone of paraphilia across its first six letters — the Carpe Drive-in / Starry Gazing standard, with no clinical word printed anywhere. The trade then supplies both of the chapter's rosters as ordinary merchandise rather than as invention. The eight named paraphilias are surplus stock: binoculars in a bin, a rack of folded rubber capes, a wall of paired boots, a rail of greatcoats and uniforms being tried on by whoever they fit, coils of rope and webbing, a narrow crowded aisle where everybody squeezes past everybody, a tray of single-issue collectables one man is working through, and the age-restricted notice on the locked cabinet — which lets the age rule stand as posted regulation rather than as a depicted person. The seven dysfunctions are the shop's own daily business, because every item here is second-hand and must be tested at the bench: the torch that will not light at all, the zip that jams half-way and will not be forced, the strap that will not hold tension, the flare that goes off as it is picked up, the flare that never goes off however long it is held, the compass that swings and never settles. And the criterion the chapter turns on is the counter's refund rule — nothing in a surplus shop is a fault until the customer complains about it, which is exactly what separates a preference from a disorder."
+   }
+  },
+  {
+   "index": 107,
+   "title_en": "Aggression and violence in youth",
+   "title_he": "אגרסיביות ואלימות בילדים ובמתבגרים",
+   "aspects": [
+    "clinical_presentation",
+    "differential",
+    "risk_assessment",
+    "management",
+    "treatment_overview"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "The whole venue rests on one invented metaphor — child = car battery. The chapter is aggression and violence in CHILDREN AND ADOLESCENTS across clinical_presentation, differential, risk_assessment, management, treatment_overview, and there is not one child in the frame and no interpersonal aggression at all. Every element has to be translated through 'the battery is the violent adolescent', which is precisely the mechanism the spec retires (invented affective metaphors, DSM_anxiety = frightened rabbit). Contrast venues.json index 1 (MAIN STREET EYECARE), whose pun_explanation is explicit that the optician wins because 'every examinee in the frame is an actual child'. The rejected BULL RING GYM at least had the parents' bench and children hitting each other.",
+    "derivation is mislabelled PHONETIC_PUN. Nothing about the sound of aggression or violence hides in the name; CHARGE/BATTERY is a semantic homonym on the legal term. The honest bucket is LITERAL_PICTURE — the world is the plain-English picture inside the word 'battery'.",
+    "Furniture collision with the chapter next door. Index 106 (ODDS LANE TIP, Disruptive/Impulse: ODD, IED, Kleptomania, Pyromania) already contains 'a wire cage for gas bottles and batteries at the far end'; this proposal puts an 'exchange cage out in the yard with condemned cases stacked and tagged'. Two consecutive chapters with heavily overlapping content, sited on the same street, each anchored by a caged stack of batteries — that is the exact confusability the global-dedup rule exists to prevent.",
+    "The Odds Lane adjacency to 106 is asserted in prose ('top of Odds Lane opposite the tip') with no relation declared. Per R10 adjacency must ENCODE a fact and be recorded in adjacent_to; an undeclared shared street is accidental collision, not a shared universe.",
+    "Third automotive venue after 77 (auto salvage yard) and 84 (filling station). Category string is not a reuse, but the trade genre is getting crowded.",
+    "Keep the CHARGE/BATTERY double meaning — it is genuinely good and never says aggression — but relocate it to a mundane trade whose customers are actually adolescents, so the chapter's subject has a human bearer: a phone-and-e-scooter charging/repair counter on a parade after school, sign FULL CHARGE, with a queue of teenagers, a parents' bench, a numbered charging rack, and a barred-from-the-shop notice. Relabel derivation LITERAL_PICTURE, drop the battery cage entirely so 106 keeps it, and either declare the Odds Lane adjacency with a stated relation or move the shop off that street."
+   ],
+   "current": {
+    "sign_text": "BULL RING GYM",
+    "place": "A back-street amateur boxing gym at the far end of Odds Lane on a weekday club night: a raised ring in the middle of the floor, heavy bags on chains down one wall, a skipping area under the high window, a coke stove in the corner with a kettle on it, and a parents' bench along the back wall",
+    "place_category": "boxing gym",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "BULL carries bully inside the one ordinary place where hitting another young person is licensed, timed, refereed and written down; a bull ring is also simply the arena, so the sign reads as a genuine club name and never says aggression. The venue's own machinery is the chapter's management ladder in order: the referee's palms up first, then two coaches taking an arm each, then the timekeeper entering the hold in the ruled logbook, with the ringside doctor's bag as the last step."
+   }
+  }
+ ]
+}

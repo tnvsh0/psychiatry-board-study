@@ -1,0 +1,177 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 107,
+   "title_en": "Aggression and violence in youth",
+   "title_he": "אגרסיביות ואלימות בילדים ובמתבגרים",
+   "aspects": [
+    "clinical_presentation",
+    "differential",
+    "risk_assessment",
+    "management",
+    "treatment_overview"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "BULL RING GYM",
+    "place": "A back-street amateur boxing gym at the far end of Odds Lane on a weekday club night: a raised ring in the middle of the floor, heavy bags on chains down one wall, a skipping area under the high window, a coke stove in the corner with a kettle on it, and a parents' bench along the back wall",
+    "place_category": "boxing gym",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "BULL carries bully inside the one ordinary place where hitting another young person is licensed, timed, refereed and written down; a bull ring is also simply the arena, so the sign reads as a genuine club name and never says aggression. The venue's own machinery is the chapter's management ladder in order: the referee's palms up first, then two coaches taking an arm each, then the timekeeper entering the hold in the ruled logbook, with the ringside doctor's bag as the last step.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 108,
+   "title_en": "Adolescent suicidality",
+   "title_he": "אובדנות בנער/ה",
+   "aspects": [
+    "risk_assessment",
+    "protective_factors",
+    "means_restriction",
+    "safety_planning"
+   ],
+   "required_tokens": {
+    "suicidality_warning": "(black-box warning label)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "MEANS THE CHEMIST",
+    "place": "A high-street chemist's shop at the end of a wet Thursday afternoon: a long dispensing counter with a glass screen, a wall of small numbered drawers behind it, two aisles of shelving out front, a curtained consultation room at the side, a row of chairs for waiting, and the ice rink's glass frontage visible across the road through the window",
+    "place_category": "community pharmacy",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "The chemist is called Means, which is a real surname and also the chapter's central intervention, and restricting access to means is literally what the shop does all day long: two locks and two keyholders on the poisons cupboard, tablets counted out in short rows, one pack per customer on the shelf edge, and a returns bin heaped over the rim with what people have brought back out of the house. The sign never prints the diagnosis; the shop is boring and the anomalies sit in its ordinary stock.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 109,
+   "title_en": "Self-injurious behavior (NSSI)",
+   "title_he": "פגיעה עצמית ללא כוונת אובדנות (NSSI)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_disruptive_impulse": ""
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "JOHNSON'S ICE RINK",
+    "place": "A municipal indoor ice rink during the public afternoon session: a rectangle of scuffed white ice inside blue dasher boards, a hire counter stacked with boots at one end, a warm-up room behind glass with a drinks hatch, the resurfacer waiting in its bay with the gate open, and a chemist's shop-front visible across the road through the foyer glass",
+    "place_category": "ice rink",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N-S-S-I as an ordered subsequence in an ordinary rink name — JohNSon'S Ice (highlight the two N/S pairs and the I of Ice) — the expreSS tRIps device. The rink is also the mechanism, without any metaphor for a mood: the surface is deliberately scored a hundred times an hour by people who are not trying to destroy it, the session is punched on a card so the days per year are countable, the marks are resurfaced between sessions, and the cold that everyone is standing on is the crisis skill the chapter's DBT track actually teaches.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 111,
+   "title_en": "Cultural and religious issues in child mental health",
+   "title_he": "היבטים תרבותיים ודתיים בבריאות הנפש של הילד",
+   "aspects": [
+    "core_principles",
+    "clinical_presentation",
+    "assessment_tools",
+    "practical_use"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "MOSAIC TILE CO.",
+    "place": "A tile and stone showroom on a Sunday morning: hinged sample boards standing in ranks down the middle of the floor like the pages of a book, pallets of boxed tiles along the walls, a wet cutting bench at the back with a hose coiled under it, and a trade counter with a carbon-copy order pad and a lectern holding the pattern reference book",
+    "place_category": "tile showroom",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Mosaic is the ordinary trade word painted over a real tile shop and is at the same time the word for the law of Moses — one four-character sign carrying culture and religion without printing either. The shop's own routine is the Cultural Formulation Interview: the customer arrives with a chipped piece wrapped in newspaper and their own account of what it is, the counter hand works down the same printed order form section by section every time, and the shop's proper trade translator is called through from the back instead of letting the grandson guess.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 112,
+   "title_en": "Perinatal psychiatry: postpartum depression + psychosis",
+   "title_he": "פסיכיאטריה פרינטלית",
+   "aspects": [
+    "PPD",
+    "postpartum_psychosis",
+    "SSRI_in_pregnancy_lactation",
+    "preeclampsia_psych"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "PIPER & DODD SPRINGS",
+    "place": "A small spring-water bottling plant on the day shift: a filling carousel and capping head straddling the line in the middle of the floor, a roller conveyor running the length of the room to the case-taper, a glazed quality booth off to one side, a second narrower line of small bottles behind its own guard rail, and the loading bay doors standing open at the far end",
+    "place_category": "bottling plant",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "P-P-D as an ordered subsequence in an ordinary family firm name — PiPer & DoDD — for the abbreviation the chapter itself uses. The plant is then the mechanism rather than a mood: its whole job is what happens after delivery, one bottle in every seven is lifted off the belt for checking at the quality booth, a red-tagged bottle goes to the locked cage with two people at the door, and there is a separate small-bottle line whose posted rules about what may and may not go in are the lactation half of the chapter.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 114,
+   "title_en": "Geriatric overview (delirium focus — light touch)",
+   "title_he": "גריאטריה — סקירה (delirium)",
+   "aspects": [
+    "delirium_recognition",
+    "reversible_causes",
+    "behavioral_management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "DE LIRA FARM",
+    "place": "A village ploughing match on a bright autumn morning: a stubble field pegged into numbered plots, a line of old tractors turning furrows up and down, a judges' table under an awning at the headland, and a tea urn on a trailer tailgate.",
+    "place_category": "ploughing match",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Delirium is de + lira — Latin for off the furrow, the ploughman who wanders out of his line — and DE LIRA FARM reads as an ordinary family farm name while printing the word the diagnosis is built from. A ploughing match is then the only mundane place whose entire business is holding attention on one line for an hour, and whose product is a permanent record in the soil of exactly when a man was on it and when he was not: the furrow itself is a course chart, waxing and waning, drawn in the ground. The three motor types need no invention because a match already contains them — one tearing up and down out of turn, one stalled mid-plot with the engine just idling whom the judges walk straight past, and one alternating. The reversible causes are the only things a ploughman ever checks on a tractor: the choked air filter, the boiling radiator, the flat battery and the water churn, the odd-coloured fuel can at the end of the row. The match runs into a low sun with long shadows across the far half of the field.",
+    "confidence": "workable"
+   }
+  }
+ ]
+}

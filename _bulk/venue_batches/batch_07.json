@@ -1,0 +1,199 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 95,
+   "title_en": "BPD treatment: DBT",
+   "title_he": "טיפול ב-BPD: DBT",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {
+    "DSM_personality_disorders": "",
+    "borderline_pd": "Personality Inn — Cluster B room"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "DAILY BELAY TRAINING",
+    "place": "An indoor climbing centre on a busy evening: a panelled leaning wall hung with colour-graded holds, ropes dropping from the ceiling anchors, crash matting across the whole floor with a red line painted along the base of the wall, a hire rack of harnesses and a sign-in desk by the door",
+    "place_category": "indoor climbing centre",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "D-B-T falls out of a board a climbing centre really does paint up, as an ordered subsequence in an ordinary posted service. The trade's mandatory safety structure is the therapy object for object with nothing imported: two people on one rope, the climber cannot be climbed for and the belayer cannot let go, which is the dyad; the shout that gets you held mid-route is a real posted call on the calls board, which is crisis coaching; the partner-check board at the door is the buddy check; four colour-graded route sets are the four skills modules; the sign-in book filled in every single session is the diary card; and the staff huddle round the shift diary at the desk is the consultation team. The red line painted along the mat at the foot of the wall is the chapter's own fixed border-line glyph standing on the floor of an ordinary gym.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 96,
+   "title_en": "Antisocial PD + Conduct Disorder",
+   "title_he": "ASPD + Conduct Disorder",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_personality_disorders": "",
+    "DSM_disruptive_impulse": "",
+    "antisocial_pd": "Personality Inn — Cluster B room (red-gold dramatic)",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "ASPHALT & DRIVEWAYS",
+    "place": "A half-finished driveway job on a suburban front garden: an unmarked tipper truck at the kerb, a tar kettle smoking, a roller parked on the fresh black strip",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "A-S-P-D falls out of ASPhalt & Driveways as an ordered subsequence in a trade name you could photograph on any van door this afternoon. The itinerant driveway crew is the textbook confidence trick without a word of moralising — cash only, no permit displayed, a fifteen-year guarantee that expires when the van leaves the street — so deceit, recklessness and absent remorse are all carried by ordinary job-site props rather than by anybody's expression.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 99,
+   "title_en": "Avoidant Personality Disorder",
+   "title_he": "הפרעת אישיות נמנעת",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "avoidant_pd": "Personality Inn — Cluster C room (blue-gray anxious)",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "AVOID ANTS PEST CO.",
+    "place": "A pest-control contractor's depot yard at seven in the morning: a line of liveried vans backed up to the loading bay, steel racking of bait boxes and glue boards behind the lip, the mixing shed's roller door up, and a fibreglass ant bolted to the roof of the end van",
+    "place_category": "pest-control depot",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "AvoidANT breaks exactly on the pest trade's own product, so AVOID ANTS PEST CO. is a firm name that could be signwritten on a real van and prints nothing clinical. Moving from the customer's street to the firm's own depot is what makes it usable: the depot supplies fifteen people all doing one ordinary job at the same scale and a deep inventory that belongs to the business rather than to the neighbours. The criteria then hang on counter furniture — the round list with one name never claimed, the card on the van door saying the crew will not knock, the standing rule that the firm only works empty houses — which is a person who wants the work and will not risk the doorstep, not a person who has no interest in it.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 101,
+   "title_en": "Obsessive-Compulsive Personality Disorder (OCPD)",
+   "title_he": "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "ocpd": "Personality Inn — Cluster C room",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "O'CONNOR'S PRIZE DUCKS",
+    "place": "A promenade prize-shooting gallery on a grey bank-holiday afternoon: one shop-front unit in a parade between a rock shop and a chip shop, its shutter folded back, a hinged counter with five air rifles on short chains, an endless chain of tin ducks travelling across the painted back wall, and a shelf of prizes above head height",
+    "place_category": "shooting gallery",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "O-C-P-D as an ordered subsequence in an ordinary stall name — O'Connor's Prize Ducks (highlight O'C, P, D) — exactly the expreSS tRIps device. The stall's own house rules are the disorder rather than a metaphor for it: nothing counts unless every duck falls, the ducks are squared up with a steel ruler between customers, the pellets are counted out one at a time, the proprietor will not let anyone else load, and the prizes are never actually handed over. The sign carries no morpheme of the diagnosis in plain English.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 103,
+   "title_en": "Israeli law in child and adolescent psychiatry",
+   "title_he": "החוק הישראלי בפסיכיאטריה של הילד והמתבגר",
+   "aspects": [
+    "core_principles",
+    "practical_use",
+    "risk_assessment",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "NOAR CLIMBING CLUB",
+    "place": "An indoor climbing centre on a school-holiday morning: a bolted plywood wall of coloured holds rising three storeys with an overhang at one end, ropes hanging from anchors, crash mats covering the whole floor, a reception desk with a waiver folder and a rack of numbered harnesses, and a glazed meeting room on the balcony overlooking the wall",
+    "place_category": "indoor climbing centre",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "NOAR — spelled the way a Hebrew reader reads נוער, the plural collective, not NA'AR — is the name of the law the chapter is built on (חוק הנוער) and is also simply what a youth climbing club is called. The venue then supplies the whole legal apparatus as ordinary equipment: who may go up alone, who must be roped to an adult, whose signature is on the form, who is judged competent to hold the rope, who writes the incident in the book, and a committee sitting behind glass above the floor deciding whether the climb continues.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 105,
+   "title_en": "Sexual Dysfunctions + Paraphilic Disorders",
+   "title_he": "תפקודים מיניים + הפרעות פרפיליות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_sexual_dysfunction": "",
+    "DSM_paraphilic": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PARAPHERNALIA ARMY SURPLUS",
+    "place": "An army-surplus store on a wet Saturday morning: a long double-sided kit rack down the middle of the shop floor, four curtained fitting cubicles along the back wall, wooden bins of boots and webbing under the window, a glass-topped counter with a locked cabinet beneath it, and a testing bench by the till where every second-hand item is tried before it is sold.",
+    "place_category": "army surplus store",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PARAPHERNALIA is an entirely ordinary English word for assorted gear, an entirely plausible name for a surplus shop, and a near-homophone of paraphilia across its first six letters — the Carpe Drive-in / Starry Gazing standard, with no clinical word printed anywhere. The trade then supplies both of the chapter's rosters as ordinary merchandise rather than as invention. The eight named paraphilias are surplus stock: binoculars in a bin, a rack of folded rubber capes, a wall of paired boots, a rail of greatcoats and uniforms being tried on by whoever they fit, coils of rope and webbing, a narrow crowded aisle where everybody squeezes past everybody, a tray of single-issue collectables one man is working through, and the age-restricted notice on the locked cabinet — which lets the age rule stand as posted regulation rather than as a depicted person. The seven dysfunctions are the shop's own daily business, because every item here is second-hand and must be tested at the bench: the torch that will not light at all, the zip that jams half-way and will not be forced, the strap that will not hold tension, the flare that goes off as it is picked up, the flare that never goes off however long it is held, the compass that swings and never settles. And the criterion the chapter turns on is the counter's refund rule — nothing in a surplus shop is a fault until the customer complains about it, which is exactly what separates a preference from a disorder.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

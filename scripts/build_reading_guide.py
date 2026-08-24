@@ -283,7 +283,7 @@ def ca_titles() -> dict[int, str]:
 
 
 def main() -> int:
-    dul, se, ca = num_index("Dulcan"), num_index("Stahl Essential"), num_index("Stahl C&A")
+    dul, se, ca = num_index("Dulcan"), num_index("StahlNeuro"), num_index("StahlKids")
     ca_name = ca_titles()
 
     missing = [d["index"] for d in DAYS if d["index"] not in MAP]
@@ -311,12 +311,12 @@ def main() -> int:
             rs = [se[n] for n in m["SE"] if n in se]
             chs = "+".join(str(n) for n in m["SE"])
             if rs:
-                entry["Stahl Essential"] = f"פרק {chs}, עמ' {merge_pages(rs)}"
+                entry["StahlNeuro"] = f"פרק {chs}, עמ' {merge_pages(rs)}"
         if m.get("CA"):
             drugs = ", ".join(ca_name.get(n, str(n)) for n in m["CA"])
             rs = [ca[n] for n in m["CA"] if n in ca]
             if rs:
-                entry["Stahl C&A"] = f"{drugs} (עמ' {merge_pages(rs)})"
+                entry["StahlKids"] = f"{drugs} (עמ' {merge_pages(rs)})"
         if m.get("SYN"):
             entry["Synopsis"] = "פרק " + ", ".join(str(n) for n in m["SYN"])
         if idx in FC_MAP:

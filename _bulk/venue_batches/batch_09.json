@@ -1,0 +1,185 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 115,
+   "title_en": "Neuroanatomy + neurological examination of child",
+   "title_he": "נוירואנטומיה + בדיקה נוירולוגית בילדים",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "prefrontal_cortex": "(brain map)",
+    "basal_ganglia": "(brain map)",
+    "cerebellum": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "SOFT SIGNS OPTICIANS",
+    "place": "A high-street opticians on a school-holiday morning: a wall of frames on rails, a dispensing desk with a mirror, a curtained test room with a letter chart at the far end, and a back workshop where lenses are cut and edged.",
+    "place_category": "opticians shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "An optician is the one everyday shop whose whole business is a graded examination of one system worked down a printed list, with the smallest and faintest items at the bottom — and soft signs are exactly that: the minor findings you only get if you keep going down the list. SOFT SIGNS reads as an ordinary practice name because the shop sells soft lenses and its customers spend the visit reading signs. Half the cranial-nerve examination is the shop's own routine with nothing added: reading the chart, following the pen through its H, the torch swung between the pupils, the hand brought in from the side for the fields, the cover paddle for a squint. The anatomy then arrives as shop fittings rather than posters — the glazed booth at the front where every decision is made, the striped gear train of the lens edger on the workshop bench, the small ridged polishing lap hanging at the very back, and the cable trunk down the back wall that everything in the shop passes through. The paediatric half is native to a holiday morning: a toddler barefoot on the cold tiled step of the test room with the toes fanning out, and a baby holding the display rail in a whole-fist grip.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 117,
+   "title_en": "Head trauma + TBI sequelae",
+   "title_he": "חבלת ראש + סקוואלי TBI",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "COUPE & CONTRECOUP",
+    "place": "A high-street barber shop on a Saturday afternoon: four hydraulic chairs in a row facing a long wall mirror, a second mirror on the back wall, a bench of waiting customers by the window, and a shelf of clippers, towels and bottles.",
+    "place_category": "barber shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Coupe is the ordinary word on any salon door and contrecoup is this chapter's mechanism — the damage on the far side from the blow — so the sign reads as a slightly smart French salon and prints the mechanism, never the diagnosis. A barber shop is the one everyday place whose closing ritual is front and back of the same head: the barber holds a hand mirror behind you so the back of your head appears in the mirror in front, one face struck and the opposite face showing it, demonstrated with the shop's own furniture. The chair supplies the coma scale in the shop's own units without invention — it is pumped up and down by the foot for the level, and the barber's three standing requests are open your eyes, tell me how short, and turn your head this way. The numbered clipper guards in their rack are a graded ladder that a barber genuinely counts up and down. The wall of framed photographs of the local boxing club and the shelf of small trophies is the repetitive-impact history sitting in a place that really does hang them. The glazed front corner with the till and the appointment book is the shop's own front office, and a half-cut regular who has stood up, walked out and left the cape on the floor is the personality change.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 118,
+   "title_en": "CNS infections with psychiatric sequelae",
+   "title_he": "זיהומים ב-CNS עם השלכות פסיכיאטריות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "MEN IN JEANS",
+    "place": "A high-street denim shop mid-afternoon: steel rails of jeans, a three-tier folded stack wall, curtained fitting cubicles at the back, a hemming table with a tailor at it",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "MEN IN JEANS is a perfectly ordinary denim shopfront and it says MENINGES. The shop's stock then supplies the anatomy without being asked: the folded stack wall is three tiers deep, which is dura, arachnoid and pia, and the gaps between the tiers are where things collect; the cubicle sign already reads a maximum number of items, i.e. three layers; and clothing retail natively supplies a stiff collar, a bright spotlit floor and a glass tumbler at the till for the rash test.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 119,
+   "title_en": "Movement disorders: Huntington, Wilson",
+   "title_he": "הפרעות תנועה: Huntington, Wilson",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "VMAT2": "DOPA_MINE (rest hall)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "HUNT & SON EXTENSIONS",
+    "place": "A high-street nail bar mid-afternoon: a run of manicure tables down one wall each with a lamp and a padded hand rest, two pedicure chairs with foot spas at the back, and a floor-to-ceiling rack of polish bottles beside the till.",
+    "place_category": "nail bar",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "HUNT is the eponym wrapped in an entirely ordinary family shop name, and & SON is the family firm handing itself down — the three framed handover photographs behind the till show each generation taking over younger than the last, which is anticipation drawn as a shop's own history wall. EXTENSIONS is the load-bearing word: a nail bar's whole trade is selling length, cut off a numbered gauge card, and a longer one in each successive box is the repeat that grows. The venue is also the only ordinary place whose entire job is holding a pair of hands still and flat under a lamp, so hands that will not stay still need no explanation and no metaphor. The second disease is shop stock with nothing invented: the rack sells copper and chrome powders and a zinc-grey range, the swatch ring is a loop of round discs each edged brown-green at its rim, the display hand models on the counter have blue-tinted half-moons at the base of every nail, and the two things the manicurist reaches for are the strong stripper that takes the copper off and the little pot of zinc-grey that stops it going back on.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 120,
+   "title_en": "Brain tumors + pseudotumor",
+   "title_he": "גידולי מוח + pseudotumor",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "SWELL BAY CANNING CO.",
+    "place": "A small seaside canning works at the end of the day shift: two upright retorts standing open against the wall with their round pressure gauges, a long grading bench heaped with cooled cans being tapped and sorted, and pallets stacked by the loading door.",
+    "place_category": "canning works",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A can is a skull: rigid, sealed, opaque, and the only thing that shows from outside is the round end disc, which bulges when the pressure inside rises — so the swollen disc with the lost sharp rim is drawn on the venue's core prop and is felt by hand by every worker on the bench. Swell is the canner's own trade word for a bulged can and the plain word for a mass, and Swell Bay reads as an ordinary coastal cannery. The grading bench then gives the chapter for free: cans are graded by where the bulge is and by what they sound like when tapped, so location is the whole diagnosis, and the one that bulges hard but rattles empty when you shake it — same shell, same gauge, nothing inside — goes into a bin of its own beside a bin of heavy ones, which is the contrast the chapter turns on. The plant's own gas line is the tap the foreman turns down when too many are swelling, and the vent needle he pushes into a lid to let one down slowly is the relief. Location is stock too: a bulge under the base seam, a limescale lump crusted in the neck of the steam pipe directly above the little control box in its wall niche, a blocked drain channel lining the floor, and the tray of the smallest newest cans at the low back end of the bench.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 121,
+   "title_en": "Cerebral palsy",
+   "title_he": "שיתוק מוחין (Cerebral Palsy)",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PERMASET PLASTICS",
+    "place": "A plastic moulding shop on the day shift: two moulding machines along the back wall with their tool racks beside them, a belt conveyor bringing parts down to a long inspection bench, a run of clamped jigs and heat guns along that bench, five numbered sorting bins at the end of it, and sacks of granule and a regrind hopper stacked by the roller shutter.",
+    "place_category": "plastic moulding shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PLASTIC is one phoneme from spastic, the subtype that carries three quarters of the diagnosis, and plasticity is one letter from spasticity while being the real reason early work on a young case is worth anything; PERMASET is what an ordinary moulder calls a thing that has taken its shape for good. Neither word is clinical and neither is the diagnosis. The trade then states the chapter's hardest point as its own daily problem: the tool was damaged once, before a single part was ever pressed, and it cannot be undamaged — so every part comes off the machine with the same lean, the damage itself never gets worse, and yet the larger and more demanding the part the shop is asked to make, the more that one old fault costs. That is a fixed perinatal lesion with a picture that changes as the child grows, said without a metaphor. The rest is stock in trade. Parts sort into five numbered bins by how far out of true they are, which is the five-level mobility grading as ordinary factory sorting. A part clamped into a jig and warmed until it yields, then held there until it cools, is the whole logic of stretching, casting and bracing, including the one unclamped too early that springs straight back. Three trays at the bench hold the over-cured part that is rigid and will not bend, the under-cured one that is floppy and holds nothing, and the one that came off the belt wavy — spastic, hypotonic and dyskinetic side by side and countable. Two short legs against four is diplegia against quadriplegia, one corner lifted is a hemiplegia, all of it counted rather than lettered.",
+    "confidence": "workable"
+   }
+  }
+ ]
+}

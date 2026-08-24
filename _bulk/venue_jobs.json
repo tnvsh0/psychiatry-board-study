@@ -1,0 +1,1973 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 1,
+   "title_en": "Psychiatric examination of child and adolescent",
+   "title_he": "בדיקת ילד ומתבגר",
+   "aspects": [
+    "examination_structure",
+    "developmental_history",
+    "mental_status_pediatric",
+    "parent_interview",
+    "play_observation"
+   ],
+   "required_tokens": {
+    "developmental_red_flags": "(standalone)",
+    "developmental_ladder": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "MAIN STREET EYECARE",
+    "place": "A high-street opticians on a school-holiday Wednesday: a frame-display wall and a dispensing bench down one side, two test rooms with their doors hooked open, the lit letter chart at the far end of the test lane, and a low toy table beside the waiting chairs.",
+    "place_category": "opticians practice",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "M-S-E stands as an ordered subsequence of word-initials inside an utterly ordinary optician's fascia — the expreSS tRIps device — and it is planted in the one high-street trade whose examinees are children of every age with a parent sitting beside them, which is what the vehicle-test version could not supply. The trade then pays out on all five aspects with no invention: a sight test is run in a fixed non-negotiable order, history then acuity then cover test then refraction then the light, so examination structure is the venue's own procedure; the record card carries the child's whole history back to the first visit and the parent supplies it across the desk, so developmental history and parent interview are one piece of counter business; the method changes with age — pictures for the pre-schooler, letters for the schoolchild, a moving toy for the infant who cannot answer — which is the chapter's central teaching point rendered as ordinary shop routine; the optometrist down on the floor rolling a toy for a two-year-old to fix and follow is play observation as a real clinical technique rather than a metaphor; and because every examinee in the frame is an actual child, appearance, speech, mood and behaviour are all literal depiction. The chart's shrinking graded rows are a native developmental ladder and the red recall tabs standing proud of the record drawer are the red flags.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 2,
+   "title_en": "Neuroanatomy basics for psychiatry",
+   "title_he": "יסודות נוירואנטומיה לפסיכיאטר",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "prefrontal_cortex": "(brain map)",
+    "anterior_cingulate_cortex": "(brain map)",
+    "orbitofrontal_cortex": "(brain map)",
+    "amygdala": "(brain map)",
+    "hippocampus": "(brain map)",
+    "basal_ganglia": "(brain map)",
+    "thalamus": "(brain map)",
+    "hypothalamus": "(brain map)",
+    "insula": "(brain map)",
+    "cerebellum": "(brain map)",
+    "default_mode_network": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "INSULA FERRIES",
+    "place": "A small car-ferry terminal on the mainland side at midday: two identical passenger wings either side of the vehicle marshalling lanes, an enclosed footbridge crossing above them, a glazed control tower on the quay, the linkspan ramp down onto the ship, and the island lying out across the water.",
+    "place_category": "ferry terminal",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "The terminal's ordinary layout IS the gross anatomy, and the fascia spends its lettering on the one Latin morpheme that is already a brain region: insula means island, and the island is the destination painted on every board in the building. Two identical mirror-image wings joined by a single bridge = the hemispheres and the corpus callosum. The glazed control tower that every vessel and every vehicle must be routed through and which touches nothing else = thalamus as obligatory relay. The harbourmaster's office up over the concourse, watching the whole floor and overruling the lanes = prefrontal cortex. The marshalling lanes with their hold-and-release light = basal ganglia gating, and the turn-back bay for vehicles that joined the wrong queue = anterior cingulate conflict and error monitoring. The muster klaxon and the quay foghorn = amygdala. The bank of left-luggage lockers = hippocampus. The duty-free counter where everything is sniffed, priced and compared = orbitofrontal. The boiler-house thermostat and the canteen hatch = hypothalamus. The counterweighted linkspan trimmed continuously to hold the deck level with the quay = cerebellum. The lounge of people with three hours to kill, staring at nothing = the default mode network. Per the p272 rule no business pun is spent: one morpheme sits on a surface whose real job is bearing a name.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 3,
+   "title_en": "Neurotransmitters overview",
+   "title_he": "סקירה: נוירוטרנסמיטרים",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "DOPA_MINE": "{'cue': 'DOPA-MINE Co.', 'prop': \"A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by ",
+    "RAPHE_TAPESTRY": "{'cue': 'Raphe nuclei', 'prop': 'A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin ",
+    "LOCUS_COERULEUS_BLUEPOST": "{'cue': 'Locus Coeruleus', 'prop': 'A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brains",
+    "AA_HOTEL": "{'cue': 'Aa Hotel', 'prop': \"Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on th",
+    "ASPARAGUS_VIP_DOOR": "{'cue': \"NMDA VIP-club doorway (Mr. Asparagus's domain)\", 'prop': \"Heavy iron door labeled 'NMDA'. Outside: chalk-white ",
+    "TUBEROMAMMILLARY_DAIRY": "{'cue': 'Tuberomammillary nucleus', 'prop': 'A dairy section in the hypothalamus (mammillary = mammary). Cows pump out h",
+    "MEYNERT_MYNAH": "{'cue': 'Basal nucleus of Meynert', 'prop': 'A wise old MYNAH bird perched in the basal forebrain. It mimics what it hea",
+    "Acetylcholine": "(travels between WONDERLAND_TEAPARTY and CIGARETTE_THEATER)"
+   },
+   "why_rejected": [
+    "cannot host its own tokens: DOPA_MINE, LOCUS_COERULEUS_BLUEPOST, MEYNERT_MYNAH, RAPHE_TAPESTRY"
+   ],
+   "current": {
+    "sign_text": "MESSENGER ROW",
+    "place": "A village shop row on delivery morning: one unbroken terrace of small businesses down the near side of the street, the colliery gates and winding gear closing the top of the road, delivery lorries nosed into the kerb with their tailgates down, crates stacked out on the flags outside every doorway.",
+    "place_category": "village shop row",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A neurotransmitter is a chemical messenger, and Messenger Row is an ordinary street nameplate that carries one morpheme of the everyday referent without printing the medical word — the same device the accepted transmitter reading used, and within the Lithium Lift precedent. This is the one chapter the spec says must not invent a venue: the seven course-wide premises are the content, so the plate is the street they stand on. A shop row is the only mundane container that holds a colliery, a hotel, a dairy, a club door, a weaving workshop, a seed merchant and a police box in one coherent frame at one light source. The delivery round then supplies the whole mechanism free: release is a crate carried in off the lorry, and reuptake is the same hand carrying the empties back out to be loaded again, which is a native action in the trade rather than a metaphor. Each premises signs for its own crate, so every messenger stays addressable at its own doorway instead of becoming one of seven nameplated boxes in a line-up.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 5,
+   "title_en": "Serotonin system",
+   "title_he": "מערכת הסרוטונין",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "RAPHE_TAPESTRY": "{'cue': 'Raphe nuclei', 'prop': 'A narrow Persian-rug weaving workshop running down the brainstem midline. Weavers spin ",
+    "dorsal_raphe": "RAPHE_TAPESTRY",
+    "raphe_nuclei": "RAPHE_TAPESTRY",
+    "SERT": "(standalone — appears in any synapse scene)",
+    "5-HT1A_receptor": "BUS_LINE_1A",
+    "5-HT2A_receptor": "TAROT_2A",
+    "5-HT2C_receptor": "TAROT_2A (kitchen annex)",
+    "5-HT3_receptor": "TAROT_2A (water-gate room)",
+    "5-HT6_receptor": "TAROT_2A (back library)",
+    "5-HT7_receptor": "CONVENIENCE_STORE_7",
+    "BUS_LINE_1A": "{'cue': 'Bus stop', 'prop': \"Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= ",
+    "TAROT_2A": "{'cue': 'Tarot 2A', 'prop': 'Dim Victorian parlor. Round table with TWO Ace tarot cards. Tie-dye hippie reader. Walls sw",
+    "CONVENIENCE_STORE_7": "{'cue': '7-Eleven open 24/7', 'prop': 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty."
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "cannot host its own tokens: CONVENIENCE_STORE_7, RAPHE_TAPESTRY, TAROT_2A"
+   ],
+   "current": {
+    "sign_text": "5 HIGH TOWN MARKET",
+    "place": "A covered market hall in mid-morning trade: an iron-and-glass roof over one long central aisle, lock-up stalls down both sides with their shutters up, scales and price cards on every counter, produce boxes stacked in the gangway and a wash-down channel running along the floor.",
+    "place_category": "covered market hall",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "5-H-T stands as an ordered subsequence of word-initials inside an entirely ordinary market name and street address — the expreSS tRIps device, and a numeral at the front of a market name is native signage rather than an intrusion. The hall was chosen because serotonin's whole story is one narrow midline workshop that ships everywhere, and a market's central aisle is literally its seam: the weaving stall stands on it and its goods go out to every other counter in the building. The receptor family then costs nothing, because each one is an ordinary trade already found in a market hall — a curtained fortune-teller's booth in the corner, the pie stall kitchen behind it, the wash-down channels of the fish end, the second-hand book stall, and the all-night kiosk in the corner arch. The postal collection at the delivery bay gives reuptake a native worker instead of a symbol.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 6,
+   "title_en": "Norepinephrine system",
+   "title_he": "מערכת הנוראפינפרין",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "LOCUS_COERULEUS_BLUEPOST": "{'cue': 'Locus Coeruleus', 'prop': 'A literal BLUE police box (locus = spot, coeruleus = blue) at the back of the brains",
+    "locus_coeruleus": "LOCUS_COERULEUS_BLUEPOST",
+    "NET": "BEETHOVEN_ORCHESTRA (stage-door)",
+    "alpha1_receptor": "ALPHA_WOLF_PACK",
+    "alpha2_receptor": "ALPHA_WOLF_PACK",
+    "beta1_receptor": "BEETHOVEN_ORCHESTRA",
+    "beta2_receptor": "BEETHOVEN_ORCHESTRA",
+    "ALPHA_WOLF_PACK": "{'cue': 'Alpha wolf pack in a snowy forest', 'prop': 'Snowy pine forest. A wolf pack on the hunt. Some lone alphas charg",
+    "BEETHOVEN_ORCHESTRA": "{'cue': 'Beethoven conducting numbered symphonies', 'prop': 'Concert hall. Beethoven (white wig, intense face) conducts."
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "cannot host its own tokens: BEETHOVEN_ORCHESTRA, LOCUS_COERULEUS_BLUEPOST"
+   ],
+   "current": {
+    "sign_text": "NOR'EAST BROS. CIRCUS",
+    "place": "A travelling circus on pull-up morning: the big top half up on a snowy showground, canvas laced out flat on the ground and rising toward the king pole, living wagons and the ticket wagon parked in a line along the fence, a pine treeline beyond the guy-ropes at the top of the field.",
+    "place_category": "travelling circus",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Nor'east is the compass reading NE spoken aloud and it is a perfectly ordinary way to name a family show — the corpus already owns the N-compass as the fixed glyph for this transmitter, so the fascia hooks straight onto a symbol the learner already holds. The showground was picked because it is the only mundane workplace that legitimately holds all three fixed structures at once in one light: a band on its own rostrum at the ring fence, a call box at the gate through which every message for the ground passes, and a snowy pine treeline with a pack standing out on the open ground beyond the ropes. It is a morning of work, not a performance, so the register stays flat and the strangeness sits in the props. The trade also pays out on the chapter's own mechanism without invention — everything on the ground is either hauled out on a rope or hauled back in on one, and one keeper stands at the fence with a dart rifle.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 7,
+   "title_en": "GABA / Glutamate balance",
+   "title_he": "איזון GABA / גלוטמט",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "AA_HOTEL": "{'cue': 'Aa Hotel', 'prop': \"Old hotel called 'Aa Hotel'. 5 floors. Each floor offers a different experience based on th",
+    "GABA_neurotransmitter": "AA_HOTEL",
+    "GABA_A_receptor": "AA_HOTEL",
+    "GABA_A_alpha1_subunit": "AA_HOTEL",
+    "GABA_A_alpha2_alpha3_subunits": "AA_HOTEL",
+    "GABA_A_alpha5_subunit": "AA_HOTEL",
+    "GABA_B_receptor": "AA_HOTEL (adjacent)",
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR",
+    "ASPARAGUS_VIP_DOOR": "{'cue': \"NMDA VIP-club doorway (Mr. Asparagus's domain)\", 'prop': \"Heavy iron door labeled 'NMDA'. Outside: chalk-white "
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "GABBAY & GLUCK REPAIRS",
+    "place": "A shoe-repair and key bar in the ground-floor unit of an old five-storey hotel, late afternoon: a counter across the front, a long finishing bench behind it, a floor-to-ceiling rack of ticketed shoes standing in pairs, and the club's iron doorway hard against the shop window in the next unit along.",
+    "place_category": "cobbler's shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Two proprietors on one fascia, the way a family repair shop is actually lettered — GABBAY for GABA and GLUCK for glutamate, both genuine surnames spelled the way an Israeli reader already writes them — so the chapter's two halves are named in balance in the largest lettering slot without either being spelled out. The trade then supplies the mechanism off its own price list: the standard cobbler's job is called a sole and heel BALANCE, printed on every price board in the trade, so the chapter's key noun is native lettering rather than a caption; the glue pot and the open tin of contact adhesive put glutamate's morpheme on stock the shop cannot work without; and a heel bar cuts keys, so locks, blanks, master keys and a magnet jammed in a barrel are all ordinary counter business, which is the best available picture of a ligand-gated channel. The venue was chosen because it holds both fixed structures without becoming either — the shop is a ground-floor unit of the hotel, and the iron door with the queue is the very next doorway, the corpus's own barbershop-next-to-Cab-A device where which premises stands next to which IS the fact.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 8,
+   "title_en": "Normative development 0-2 (infancy)",
+   "title_he": "התפתחות נורמטיבית: גיל הינקות (0-2)",
+   "aspects": [
+    "motor_milestones",
+    "cognitive_milestones",
+    "social_emotional",
+    "language",
+    "red_flags"
+   ],
+   "required_tokens": {
+    "brazelton_still_face": "(standalone)",
+    "developmental_red_flags": "(standalone)",
+    "developmental_ladder": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "CRAWL & CRUISE",
+    "place": "An indoor soft-play barn on a wet weekday morning: a padded under-twos pen fenced off at the front, a three-storey netted play frame behind it, a ball pit under the slide, a buggy park by the door and a café counter along one wall.",
+    "place_category": "soft play centre",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "CRAWLING and CRUISING are the two motor milestones of the second year and both are ordinary English words that read as a perfectly normal name for a children's play barn — the p272 device of putting the term's own plain-English picture on the sign without printing the topic. The venue was moved off the high street because phase 1 had already spent its shop-with-a-counter budget, and a play barn buys back everything the chapter needs as native stock: the age-band gates, the coloured wristbands and the height marker are the developmental ladder printed on the venue's own furniture; the ball that rolls out of sight under the frame and is dug back out is object permanence; the low mirror wall along the baby pen is self-recognition; a costumed mascot sitting on the bench with a moulded unmoving face while the baby on its knee stares up and slowly crumples is the still-face paradigm on stock the venue genuinely owns; and because every figure in the frame is an infant or a toddler, rolling, sitting, cruising, first steps and first words are all literal depiction rather than metaphor.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 11,
+   "title_en": "Normative development 13-18 (adolescence)",
+   "title_he": "התפתחות נורמטיבית: גיל ההתבגרות (13-18)",
+   "aspects": [
+    "pubertal_development",
+    "identity_formation",
+    "peer_vs_family",
+    "risk_taking",
+    "brain_maturation"
+   ],
+   "required_tokens": {
+    "nucleus_accumbens": "DOPA_MINE (THE CASINO)",
+    "erikson_8_stages": "(standalone — ERIKSON-LAND luna park)",
+    "developmental_ladder": "(standalone)",
+    "piaget_4_stages": "(standalone — PIAGET'S PRE-OP HOSPITAL)",
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "TANNER'S SUN STUDIO",
+    "place": "A high-street tanning salon at the after-school rush: a reception desk with a card reader, four changing cubicles with their curtains half-drawn, a row of five sunbeds with the lids raised, a mirror wall with a shelf of lotions, and a sofa of teenagers waiting by the window.",
+    "place_category": "tanning salon",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "TANNER is the exam word for pubertal staging and it is also a completely ordinary surname over a completely ordinary shop — the eponym device, on a high street any learner can picture, and bright and contemporary where the tannery version of the same pun was wet, dark and gore-adjacent. The trade carries the chapter without a single minted metaphor: the price board graded by level is the five stages as a counted set on a carrier whose real job is bearing numbers; the timer dial wound past its stop under a do-not-exceed sticker is risk-taking, and the risk is the venue's own hazard rather than a bolted-on one; the laminated proof-of-age card at the desk is the age boundary the chapter turns on; four friends crammed on one sofa while a mother waits in a car visible through the window is peers-versus-family as a bounded pair with no story attached; the mirror wall and the shelf of skin and hair products are identity formation, literal; and the wall poster about being fully developed sits late prefrontal maturation on a carrier that reads. Every figure in the frame is already an adolescent, so pubertal and behavioural facts are literal depiction.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 13,
+   "title_en": "Temperament",
+   "title_he": "טמפרמנט",
+   "aspects": [
+    "thomas_chess",
+    "easy_difficult_slow_to_warm",
+    "goodness_of_fit",
+    "temperament_to_personality"
+   ],
+   "required_tokens": {
+    "thomas_chess_temperament": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "THOS. & CHESS PETS",
+    "place": "A high-street pet shop on a Saturday morning: a two-tier run of glass-fronted pens along the back and side, a counter with scales and a bell, pallets of feed sacks out in the middle of the floor, and a low meeting pen where a family is sitting on the floor with a puppy.",
+    "place_category": "pet shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "THOS. is the standard trade abbreviation of Thomas, and 'Thos. & Chess' reads as a two-partner family shop the way half the high street is lettered — the Château Tyramine device, where the proprietors' names ARE the two authors of the chapter. The trade was chosen because TEMPERAMENT is its own working word: every pen card in a real pet shop carries a temperament line, so the topic's key term is already printed on native stock without being spent on the fascia. Goodness of fit is literally what the shop sells — matching an animal to a household, with the family interviewed across the counter and turned away when the fit is wrong. The three types are three ordinary animals in three ordinary pens: the one that bounds straight to the glass, the one that snaps and will not settle and has a red card clipped over its door, and the one that stays down its tube and comes out twenty minutes later, which makes all three literal depiction with a prop each rather than an absence. Temperament to adult personality is the pen card showing the same animal grown, standing beside the young one.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 17,
+   "title_en": "ADHD — core",
+   "title_he": "הפרעת קשב וריכוז (ADHD) — ליבה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DOPA_MINE": "{'cue': 'DOPA-MINE Co.', 'prop': \"A working coal mine. Sign at entrance: 'DOPA-MINE Co.'. Inside: 4 sections labeled by ",
+    "D2_receptor": "DOPA_MINE",
+    "DAT": "DOPA_MINE",
+    "NET": "BEETHOVEN_ORCHESTRA (stage-door)",
+    "prefrontal_cortex": "(brain map)",
+    "DSM_neurodevelopmental": "",
+    "adhd": "Special-Ed Classroom — ADHD corner (standalone scene possible)"
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "cannot host its own tokens: DOPA_MINE"
+   ],
+   "current": {
+    "sign_text": "HYPERDRIVE AMUSEMENTS",
+    "place": "A seafront amusement arcade on a wet weekday afternoon: two long banks of coin machines facing each other down a patterned carpet, a glass change booth just inside the doors, a prize counter along the back wall and a row of older glass-cased working models against the side wall.",
+    "place_category": "amusement arcade",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Hyper is one morpheme of the diagnosis and Hyperdrive is a name real arcades actually trade under, so the joke is invisible on the fascia and total as an index. The trade was chosen because the coin machine is the only ordinary object whose working parts are a paid-for reward loop, which lets the fixed colliery token stand inside the venue as a genuine period fixture — a penny-in-the-slot working model with a coin slot at the front and a payout cup underneath — instead of being pasted onto a shop that has no room for it. The room's own notices then carry the criteria on native carriers whose real-world job is exactly the thing being counted: minimum-token notices at the prize counter for the symptom thresholds, the door notice about accompanied under-twelves for the age of onset, the chain's branch board for the second setting, and the arcade's own ticket tallies for the rating scales.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 23,
+   "title_en": "Communication Disorders (Language, Speech, Stuttering, Social-Pragmatic)",
+   "title_he": "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "assessment_tools",
+    "treatment_first_line",
+    "treatment_second_line",
+    "differential"
+   ],
+   "required_tokens": {
+    "communication_disorders": "Special-Ed Classroom — Communication corner (standalone scene possible)",
+    "DSM_neurodevelopmental": ""
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "place-category collision on 'delicatessen'"
+   ],
+   "current": {
+    "sign_text": "TONGUE & CHEEK",
+    "place": "A butcher shop at the Friday rush: a long refrigerated counter with the day's cuts laid on trays behind the glass, a hand-lettered price board on the back wall, a take-a-ticket machine and a lit number panel by the door, and the block, bandsaw and mincer working in the open behind the counter.",
+    "place_category": "butcher shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Tongue and cheek are two genuine butcher's cuts and a name real butchers actually trade under, so the fascia is invisible as a joke, and the organ of speech is sitting literally on the counter in a trade that has nothing to do with speech — the boring container the rules demand, with the anomaly in the props. The shop's own routine then delivers all four subtypes as literal depiction rather than as one subtype printed verbatim. Naming a cut across the glass is the whole transaction, so the customer handed the wrong thing after asking for it, and the customer whose word comes out with the wrong sounds, are both ordinary counter business. A take-a-ticket queue makes turn-taking the venue's own posted rule, which is what the social subtype fails at, and the shop's own machines block, judder and repeat as a matter of course. The wall mirror behind the counter is already there for the therapist's move.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 27,
+   "title_en": "Other neurodevelopmental: Rett, Prader-Willi, 22q11",
+   "title_he": "הפרעות נוירו-התפתחותיות נוספות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "genetic_basis"
+   ],
+   "required_tokens": {
+    "DSM_neurodevelopmental": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "RETT-A-TOOL HIRE",
+    "place": "A tool and plant hire depot on a Saturday morning: a counter with a docket pad at the front, double-height racking of breakers, mixers and generators down one side, a wash-off bay with a hose reel and a mud grate, a service bench under the window, and the roller shutter half up onto the loading yard.",
+    "place_category": "tool hire depot",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "RETT-A-TOOL is the rent-a-X wrap said aloud: one eponym-morpheme carried inside an utterly ordinary hire-trade fascia, the same licence as Lithium Lift, and the diagnosis word is never printed. The trade was chosen because this chapter is a hand chapter and a hire depot is a hand business. Rett pays out with no invention: staff wring and wipe their hands on rags at the hand-cleaner drum all shift (the hallmark hand movement as literal depiction, not metaphor); the returns bench holds tools that have come back with their grips and handles stripped off, so purposeful hand use is the thing the depot has lost; and the board of hole saws mounted in ascending diameters, with the largest three sizes missing from their pegs, is a native size chart carrying head-circumference deceleration without a painted numeral competing with anything. Prader-Willi comes off the staffroom end of the counter — the padlocked consumables cabinet and the chained vending machine are the real management fact, not a symbol of it, and a slack drive belt hanging on its hook is infantile hypotonia. 22q11 rides the small print: the excess and damage-waiver catch in the framed hire agreement is the cliche of the hire trade, and CATCH-22 is its own name for itself. Deliberately no painted bay numbers anywhere — the chromosome number lives on a docket, never on the ground, so it cannot collide with the parcel depot next door.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 32,
+   "title_en": "Persistent Depressive + DMDD + PMDD",
+   "title_he": "PDD + DMDD + PMDD",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "THYME & AGAIN",
+    "place": "A candle works on a bright weekday: a masonry bench of sunken wax melt pots, an overhead dipping rail carrying wick frames the length of the room, a cooling and trimming bench along the window wall, a mould rack in the corner, and a small shop counter with boxed stock at the front.",
+    "place_category": "candle works",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Dysthymia gives THYME, thyme is said time, and Thyme & Again is a stock real-world shop name that also says time and again — which is the one thing all three of this chapter's disorders have in common: the same mood, sorted only by its temporal shape. The critic accepted that name; what changes is the trade, because the garden centre it stood in belongs to another chapter. A herb-scented candle works keeps the name plausible and buys a far better inventory, because every object in a candle works is a duration or a cycle stated in the trade's own printed units. Boxed stock carries burn times on the lid, which is a native duration carrier with no competing meaning. A taper only exists because the same frame was dipped again and again over hours, one thin layer at a time — persistence is the manufacturing process, not a picture of a mood. The marked calendar candle in its glass case, ringed and burning down through the rings with everything happening in the last few before it goes out, is a genuine historical object and is PMDD's luteal week drawn without a metaphor and without the corpus-luteum detour the critic struck out. The standing-order book on the counter carries monthly deliveries and a two-year run. Inter-episode mood and outbursts are carried by people visibly behaving that way at the trimming bench — literal depiction, the corpus's largest mechanism — not by anything the flames are doing.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 33,
+   "title_en": "Bipolar I Disorder",
+   "title_he": "הפרעה דו-קוטבית I",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "mania_vs_hypomania",
+    "mixed_features",
+    "rapid_cycling"
+   ],
+   "required_tokens": {
+    "DSM_bipolar": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "POLAR ICE WORKS",
+    "place": "A block ice works at the end of a shift: rows of galvanised freezing cans set in a brine tank across the floor, an overhead travelling hoist on its rail above them, a thaw tank and tipping cradle at the end of the run, a steel chute down to the loading dock, and the compressor and its control panel through the plant-room doorway.",
+    "place_category": "block ice works",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "POLAR is one morpheme of the diagnosis on a name that reads as a real ice company, which the critic asked to keep; what moves is the premises, out of the open-air recreation stack the lido sat in and away from the ski chapter's vertical-run-as-quantity device, which this venue does not use at all. An ice plant earns the chapter three things a lido could not. Rapid cycling has a literal home: refrigeration control panels carry a rapid-cycle setting and a cycle counter as ordinary machine lettering, so the exam term appears verbatim on a faceplate and the four-a-year threshold sits on a counter dial whose native unit is cycles, not metres. Episode type is carried by which tank a can is in — the same can goes into the brine tank and comes out through the thaw tank, one object with two extremes, which is what bipolar means and is why the sign only has to spell half of it. Duration lands on a chalked tally slate of days in tank, a carrier whose whole job is counting days. Depth markers, lane numbers and any height-as-quantity axis are deliberately absent. Cans can be lettered I and II so the plant's own two runs carry Bipolar I against the hypomanic short run of the next chapter.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 36,
+   "title_en": "Mood stabilizers: Valproate, Lamotrigine, Carbamazepine",
+   "title_he": "מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use"
+   ],
+   "required_tokens": {
+    "SJS_TEN": "(Lamb on trigger)",
+    "SIADH_hyponatremia": "(Carbamazepine maze fills with water)",
+    "hepatotoxicity": "(failing liver)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "STABILISER CYCLE WORKS",
+    "place": "A bicycle repair shop mid-morning: a rail of bikes hung by their front wheels the length of the room, a repair stand and a wheel-truing stand along the bench, a water tub for finding punctures, a wall of boxed tyres and stabiliser sets, a fitting area with a sizing stick, and the courtesy van at the kerb outside.",
+    "place_category": "bicycle repair shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A mood stabiliser is literally a stabiliser, and a stabiliser is a real product a cycle shop bolts to a child's bike; the fascia therefore carries exactly one class morpheme instead of the three drug morphemes the last version tried to split across one sign, and each agent comes off the stock as a sibling boxed brand on the tyre wall, which is how the corpus does four SSRIs as four travel posters. The trade then owns the chapter's whole fact set in its own vocabulary and not by metaphor. Truing a wheel is done a quarter turn of the spoke key at a time or the rim buckles — that is titration, and it is the shop's own lore, which is the single most examinable lamotrigine fact. The torque wrench and the pressure gauge are the trade's routine checks before anything is ridden, which is therapeutic monitoring on a native dial. A perished tyre cracks in a fine network all over its sidewall and a worn one is called bald, so rash and hair loss are the trade's own words for its own damaged stock. Inner tubes are called tubes, so a split tube in the water tub carries the neural tube defect with a morpheme rather than a symbol, and the child seat and trailer by the door put that fact where pregnancy already plausibly stands. Electrolyte tablets in the counter fridge carry sodium without borrowing the saltworks chapter's device, and the courtesy van at the kerb carries a plate for enzyme induction.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 38,
+   "title_en": "Generalized Anxiety Disorder",
+   "title_he": "הפרעת חרדה מוכללת (GAD)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "BUS_LINE_1A": "{'cue': 'Bus stop', 'prop': \"Old wooden bus-stop booth. Big sign: '1A'. A frantic rabbit sits trembling on the bench (= ",
+    "amygdala": "(brain map)"
+   },
+   "why_rejected": [
+    "cannot host its own tokens: BUS_LINE_1A"
+   ],
+   "current": {
+    "sign_text": "GADD & SONS SAFETY",
+    "place": "A safety equipment supplier on a weekday morning: a trade counter with an issue book at the front, a double-sided racking run of helmets, harnesses, boots and respirators down the middle, a harness try-on gantry at one end, a test bench where alarms and gas detectors are sounded, and the shop window onto the kerb.",
+    "place_category": "safety equipment supplier",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "GADD carries the acronym inside an ordinary family surname on an ordinary trade fascia — the Ben's Diner device — and nothing on the sign names the disorder. The trade is the chapter's core feature made literal rather than metaphorical: this is a disorder defined by worry that spreads across many unrelated domains at once, and a safety supplier's racking is one hazard per bay, so the shop's own stock list hands over a separate prop for each worry domain without a single invented symbol, which is the thing an office of identical desks could never do. Its paperwork is the numbers layer: an accident-free tally board is a genuine chalked counter of days and is the only carrier in the syllabus whose native unit is more days than not, and every extinguisher, harness and detector in the trade carries a dated service tag, so a duration threshold can be painted on an object whose real job is to bear a date. The try-on gantry and the test bench give restlessness, muscle tension and startle as people literally exhibiting them under load. And because the shop fronts onto a street, the bus stop stands where a bus stop actually stands, in view of the counter, so the fixed token is hosted without bending the premises around it.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 39,
+   "title_en": "Panic Disorder + Agoraphobia",
+   "title_he": "הפרעת פאניקה + אגורופוביה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics",
+    "panic_attack_definition",
+    "anticipatory_anxiety"
+   ],
+   "required_tokens": {
+    "amygdala": "(brain map)",
+    "locus_coeruleus": "LOCUS_COERULEUS_BLUEPOST"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "AGORA TRANSIT CENTER",
+    "place": "A municipal bus interchange on the town square on market day — covered bays, a ticket window, a paved plaza with stalls, buses idling",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Agoraphobia is named for the agora — the public market square. So the venue simply IS the agora, and the transit authority is named for it, which is how real municipal interchanges are actually named. One morpheme on the sign, never the diagnosis. The interchange then ships all five DSM agoraphobia situations as free native stock in one frame: public transport (the bus interiors), open spaces (the plaza), enclosed spaces (the locker bank and subway stair), standing in line / crowds (the ticket queue), being outside the home alone (the lone figure at the far kerb). Panic disorder rides in on supporting copy — the departure board is the number carrier for the 10-minute peak, and the fixed corpus token (The Scream) hangs in the coffee kiosk.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 41,
+   "title_en": "Separation Anxiety + Specific Phobia",
+   "title_he": "חרדת פרידה + פוביה ספציפית",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PACIFIC ELEMENTARY",
+    "place": "An elementary school gate at eight in the morning — the drop-off loop lane, chain-link fence, crossing guard, a yellow bus pulling away",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PACIFIC ≈ SPECIFIC — a near-perfect stress-matched phonetic pun (pa-CIF-ic / spe-CIF-ic), and 'Pacific Elementary' is an utterly ordinary American school name, so the sign reads as real signage. The drop-off lane sign then carries the other disorder with no invention at all: 'KISS & RIDE' is genuine, ubiquitous school signage and it literally means separate here. The venue supplies all five specific-phobia types from stock: animal (the wasp bin and the leashed dog at the fence), natural environment (the thunderstorm on the classroom weather chart), blood-injection-injury with its unique vasovagal faint (immunization day in the nurse's window), situational (the out-of-order lift), and the school mascot for 'other'.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 45,
+   "title_en": "Body Dysmorphic + Hoarding",
+   "title_he": "BDD + Hoarding",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_OCD_related": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "HOARD'S END SEED BANK",
+    "place": "A seed bank's accessions hall on a stocktaking Tuesday: runs of steel racking loaded floor to ceiling with numbered glass jars, a lit grading bench down the middle of the room, a counter at the near end where donors hand over envelopes, and a side corridor of unfiled boxes narrowed to one walking width",
+    "place_category": "seed bank archive",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A seed bank is the plain-English picture of the chapter's second disorder made institutional: an establishment whose entire constitution is that nothing may ever be discarded, that duplicates are kept anyway, that the corridors fill, and that the fire door ends up held shut by crates. HOARD'S END is a genuine English place-name form and puts one morpheme of the diagnosis on the board, the p272 MINIMUM device, without printing the diagnosis. The same hall performs the first disorder on its other bench, because the grader's job is to examine a specimen under magnification and reject it for a flaw nobody else can see: the reject tray and the accepted tray are visibly identical, which is the whole of body dysmorphic disorder as a contrast pair, and the grader who wants only the plumpest grain carries the muscle-dysmorphia specifier.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 48,
+   "title_en": "PTSD treatment: Prazosin, SSRIs, trauma-focused therapies",
+   "title_he": "טיפול ב-PTSD: Prazosin, SSRI, TF-CBT, EMDR",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications",
+    "pharmacotherapy_PTSD",
+    "sleep_specific"
+   ],
+   "required_tokens": {
+    "alpha1_receptor": "ALPHA_WOLF_PACK"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PRAISE ROCK LIGHT",
+    "place": "An offshore rock lighthouse on the flat calm morning of its annual refit: a timber landing stage at the tower foot, an inclined stores tramway climbing the rock, painters on hanging stages against the tower, and the lamp room open at the top with its heavy curtains half drawn across the lens",
+    "place_category": "rock lighthouse",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PRAISE carries Prazosin, and Rock lights are genuinely named for the rock they stand on, so the board reads as a real name plate. The venue is then chosen because the light's own two behaviours are the chapter's two first-line treatments as physical objects. The beam sweeps steadily left to right and back across the whole horizon on a clockwork governor, which is bilateral alternating stimulation without inventing anything. And the standing order in every lamp room is that the curtain is drawn across the lens to put the beam out, which is exactly the fixed corpus symbol for alpha-1 blockade — the guttered flame with the smoke rising — and it is the drug's own indication, since the beam is what runs all night. Setting the plate on a bright calm refit morning keeps the register deadpan rather than stormy.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 51,
+   "title_en": "Child abuse and neglect",
+   "title_he": "התעללות והזנחה בילדים",
+   "aspects": [
+    "recognition",
+    "clinical_presentation",
+    "risk_assessment",
+    "management",
+    "medical_mimics"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "ACE PICTURE RESTORERS",
+    "place": "A picture conservation studio on an ordinary working weekday: a long steel-topped lining table down the middle of the room, a rank of easels ranked along it under a raking-light rail, family portraits of children stacked against the skirting waiting their turn, and an x-ray viewing box glowing on the end wall",
+    "place_category": "picture conservation studio",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A conservation studio's trade is, object for object, the chapter's clinical skill, which is why the venue can carry the material without ever staging harm to a child. The conservator dates damage by how far it has aged, exactly as bruising is dated by colour; separates damage inherent to the object from damage inflicted on it, which is the whole differential of brittle panels and factory blemishes against a fresh impact; x-rays for damage the surface hides, which is the skeletal survey; and files a dated condition report whether or not anyone asked for one, which is the reporting duty. The studio takes the history from the owner without leading her, because a led account contaminates the record. The works on the easels are children's portraits, so the subject is retrievable, and ACE on the board is the adverse childhood experiences model, with the street door numbered 368D.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 52,
+   "title_en": "Reactive Attachment Disorder + Disinhibited Social Engagement",
+   "title_he": "RAD + DSED",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_trauma_stressor": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "ALL-HITCH ATTACHMENTS",
+    "place": "A roadside towbar and trailer-hitch fitting yard: a fitting bay with a hatchback up on ramps and a mechanic under the rear valance, rows of box trailers and caravans nose-down on their jockey wheels, a parts counter of pigeonholes behind a glass door",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "ATTACHMENT is drawn as the physical coupling it literally names, and the tow yard is the only mundane premises that ships both failure modes of the chapter as ordinary equipment faults. RAD is the caravan that will not couple to anything: the coupling head is jammed shut, the owner offers ball after ball, and it stays on its own jockey wheel with a chalked 'WILL NOT COUPLE'. DSED is the trailer that hitches to any car that rolls past — no lock, no owner, following a stranger out of the gate. 'SECURE BASE' is the trade phrase for a properly bolted-on towbar and doubles as the attachment-theory term, so it goes on the supporting banner rather than the main sign. The age criteria (developmental age at least 9 months, onset before 5 years) ride on the TOWING CAPACITY plate, a carrier whose real job is bearing numbers.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 54,
+   "title_en": "Somatic Symptom + Conversion + Factitious",
+   "title_he": "הפרעות סומטיות + Conversion + Factitious",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_somatic": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "SOMA EXCHANGE",
+    "place": "A telephone exchange's fault test room in the middle of a weekday shift: a two-storey iron distribution frame combed with jumper wires standing down the room, a row of test desks with cord-and-jack panels along the window wall, headsets hung on hooks, and a public enquiry counter at the street end with a bell push on it",
+    "place_category": "telephone exchange",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "SOMA is the body, and an exchange is genuinely what the building is called and what goes on its name board, so the pun sits on an ordinary place plate rather than on an invented business. The trade then supplies the chapter's central finding as a rubber stamp it already owns: NO FAULT FOUND. The frame is a whole nervous system in one inanimate object, and every jumper on it is intact end to end while the reported fault is entirely real to the caller and entirely absent on the meter — functional neurological disorder as a physical fact rather than a metaphor. The fault log where one number repeats down the column is the somatic symptom pattern; the man who asks to be tested again although his line is clear is illness anxiety; the subscriber who cut his own drop wire so an engineer would come out is the factitious presentation; and the one pair on the frame with a genuinely broken wire, tagged, is the medical mimic that must never be dropped.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 56,
+   "title_en": "Schizophrenia neurobiology: DA + NMDA + 5-HT hypotheses",
+   "title_he": "ניורוביולוגיה של סכיזופרניה",
+   "aspects": [
+    "DA_hypothesis",
+    "NMDA_hypothesis",
+    "5HT_hypothesis",
+    "neuroimaging_findings",
+    "genetics"
+   ],
+   "required_tokens": {
+    "D2_receptor": "DOPA_MINE",
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR",
+    "5-HT2A_receptor": "TAROT_2A",
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "NORMANDY AVE EXCHANGE",
+    "place": "A manual telephone exchange on the busy hour: a switch-room floor of operator positions along one long wall of brass jack fields, cord wells full of coiled patch cords, lamp panels lit in rows, the vertical trunk frame standing behind with its jumper wires, floor traps lifted over the cable voids and the glass-walled supervisor's office dark at the front of the room",
+    "place_category": "telephone exchange",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N-M-D-A sits as an ordered subsequence inside an entirely ordinary exchange name — NorManDy Avenue — the expreSS tRIps device, and it is doubly native because real exchanges were named for streets and lettered exactly this way (NOrmandy 5-…), so the mid-word capital highlighting is authentic signage rather than decoration. The trade is also the circuit: one building, several trunk routes leaving it, and the fact is which route is jammed and which is dead — the town line overloaded, every lamp lit, voices literally coming down the line (mesolimbic hyperdopaminergia, positive symptoms) against the front-office line with no lamp lit at all and one idle operator (mesocortical hypofunction, negative symptoms, hypofrontality). A patch cord is the course's rope, i.e. dopamine, and it is here in hundreds. Neuroimaging comes free off native stock: the floor traps are up and the cable voids under them gape far wider than the thinning bundles that run through them (enlarged ventricles, reduced grey matter). Heritability is the staff roster where nearly every name is the same surname.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 57,
+   "title_en": "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
+   "title_he": "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_psychotic": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "BRIEF LOAN LIBRARY",
+    "place": "A municipal lending library at the issue desk on a Saturday morning: a long counter with the date-stamp block and the borrower-card tray set into it, a wire returns trolley heaped at one end, open shelf bays behind, the seven-day short-loan rack on the wall and the reference room railed off at the back",
+    "place_category": "lending library",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A lending library is the one ordinary place whose entire structure is a ladder of durations, and the date stamp is the most literal duration carrier in ordinary life — the fact is printed on the label by an object whose real job is printing dates. The four diagnoses fall straight onto the loan classes: the seven-day rack, returned early, deposit clear and the book back on the shelf undamaged (Brief Psychotic, one day to one month, full recovery) · the standard loan still out and overdue at the counter (Schizophreniform, one to six months) · the renewal refused and the volume transferred to reference, chained, never to leave the building again (conversion to Schizophrenia over six months). Schizoaffective is one ticket carrying two items with overlapping stamps, the shorter one already returned while the longer runs on past it. Delusional Disorder is a row of perfectly well-behaved borrowers making perfectly ordinary requests for one impossible reason each — non-bizarre, and no functional decline, because every other thing they do at the counter is completely normal. Only the morpheme BRIEF is printed, never a diagnosis.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 58,
+   "title_en": "First-generation antipsychotics",
+   "title_he": "אנטיפסיכוטיים דור ראשון (FGA)",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "EPS_focus",
+    "potency_spectrum"
+   ],
+   "required_tokens": {
+    "EPS_acute_dystonia": "DOPA_MINE (nigrostriatal section)",
+    "EPS_akathisia": "DOPA_MINE (workers pacing)",
+    "EPS_parkinsonism": "DOPA_MINE (nigrostriatal blockade)",
+    "tardive_dyskinesia": "DOPA_MINE (chronic blockade aftermath)",
+    "hyperprolactinemia": "DOPA_MINE (TUBE-INFUNDIBULAR section)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "STARRY GAZING",
+    "place": "An open-air amateur art show in a suburban back garden on a hot afternoon: canvases on wooden easels ranked against the clapboard house wall, a trestle table with wine and crackers, a gazebo over the judging table, full unshaded sun over the whole lawn",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "-azine -> GAZING, the corpus's own verified venue (SketchyPharm p212), reused verbatim so the class hook stays a one-way door: chlorpromazine, fluphenazine, thioridazine, perphenazine and trifluoperazine all live in the gallery, haloperidol is the halo in the picture, and 'first generation' is carried by which artistic movement you are standing in — Van Gogh pastiche — never by a digit. The venue then cashes three more times off its own stock without invention: it is OUTDOORS in full sun, so chlorpromazine's photosensitivity and blue-grey skin land on a sunburnt painter with slate-grey hands; thioridazine's retinal pigmentation is the canvas whose varnish has browned to a muddy orange; and the high-potency versus low-potency trade-off is a CONTRAST_PAIR of two easels — the tight, rigid, cogwheel-stiff draughtsman beside the sagging, sedated, mouth-dry watercolourist asleep in a deckchair. The first-prize rosette gives the ordinal without a numeral.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 62,
+   "title_en": "Metabolic-heavy SGAs: Olanzapine, Quetiapine, Risperidone",
+   "title_he": "SGA מטבוליים: Olanzapine, Quetiapine, Risperidone",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "metabolic_monitoring",
+    "prolactin"
+   ],
+   "required_tokens": {
+    "metabolic_syndrome": "(beyond DOPA-MINE: the Olympic athlete eating)",
+    "hyperprolactinemia": "DOPA_MINE (TUBE-INFUNDIBULAR section)",
+    "H1_receptor": "H_HOUSE",
+    "5-HT2C_receptor": "TAROT_2A (kitchen annex)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "OLYMPIA WEIGHTS",
+    "place": "A back-street weights gym on a wet Tuesday evening: a long steel rack of loaded barbells and dumb-bells down one side, benches and a squat frame out on the rubber floor, a mirrored wall, the beam scales and the weigh-in chart by the door and a juice counter at the back",
+    "place_category": "weights gym",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "OLANZa collapses onto OLYMPIA, and the course lexicon already draws Olanzapine as the Olympic athlete, so the venue name and the existing token are the same joke rather than two competing ones. The gym then supplies every fact off native stock: the beam scales and the dated weigh-in chart are the metabolic monitoring schedule on the one object in ordinary life whose job is bearing weights and dates; the numbered plates are the dose, so Quetiapine's two personalities become two bars on the same rack — the one loaded with two tiny plates beside a man asleep on the pine bench, and the one loaded heavy that is actually doing the work; Risperidone's stiffness rises visibly with the plates on his bar (dose-dependent EPS) while the milk dispenser behind him runs over the counter (prolactin). Deliberately no floor mats or exercise mats anywhere in this room, so the V-MAT 2 cue stays unique to chapter 66.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 64,
+   "title_en": "Long-Acting Injectable Antipsychotics (LAIs)",
+   "title_he": "זריקות אנטיפסיכוטיות ארוכות-טווח (LAI)",
+   "aspects": [
+    "drug_class_overview",
+    "drug_mechanism",
+    "indications",
+    "side_effects_class",
+    "monitoring",
+    "practical_use",
+    "LAI_indications",
+    "conversion_oral_to_LAI"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "CONSTANCE PERMS & SETS",
+    "place": "A high-street hairdressing salon on a Thursday afternoon: a mirrored styling bench with hydraulic chairs bolted along it, a row of hood dryers on stands down the opposite wall with their timers running, backwash basins at the back, the appointment book open on the desk by the door and a client waiting out her time in the corner with a cup of tea",
+    "place_category": "hairdressing salon",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "CONSTA sits at the head of an entirely ordinary salon proprietor's name, and PERMS on the same board is the second half of the joke: a permanent wave is the plain-English long-acting version of a hairstyle, against the blow-dry you have to do again every single morning. That contrast is the whole chapter — daily oral versus one application that covers you for weeks — and the salon runs on it commercially: the booked return date on the card, the interval, and the regrowth line at the parting that shows to the millimetre when the cover ran out, which is relapse. The trade also hands over the awkward facts free: the loading appointment twice in the first week; the temporary rinse worn for three weeks until the permanent takes hold (oral overlap); the client who has to sit out a long compulsory wait under supervision with tea before she is allowed to leave (post-injection observation); and the hood dryer, which is a literal halo lowered over the head.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 67,
+   "title_en": "Neuroleptic Malignant Syndrome",
+   "title_he": "NMS — תסמונת ממאירה ניורולפטית",
+   "aspects": [
+    "recognition",
+    "diagnostic_criteria",
+    "differential",
+    "emergency_management"
+   ],
+   "required_tokens": {
+    "neuroleptic_malignant_syndrome": "(DOPA_MINE in catastrophic mode)",
+    "serotonin_syndrome": "(serotonin scenes overload)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "NORTH MAIN STEEL",
+    "place": "A small rolling mill's casting floor on the night shift — furnace door glowing, an overhead ladle crane on a rail, a cooling bed of red-hot bars, a water quench tank at the far end",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N. M. S. = NORTH MAIN STEEL, a name that reads as a real mill on a real street, with the three letters picked out in the sign's own paint. The mill's ordinary business is the syndrome: it runs far too hot (hyperthermia, and the wall thermometer is the number carrier), and everything it makes is a rigid straight bar that will not bend — lead-pipe rigidity, which is what separates NMS from serotonin syndrome. The mill supplies the treatment from stock too: the water quench tank is external cooling, the safety shower is fluids, and the largest lettering on the page is the placard on the control post reading 'SHUT IT DOWN FIRST' — stop the offending agent before anything else.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 74,
+   "title_en": "Parasomnias + RLS",
+   "title_he": "פרסומניות + תסמונת רגליים חסרות מנוחה",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_sleep_wake": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "UP & ABOUT MOBILITY",
+    "place": "A mobility and homecare showroom in a small retail unit on a weekday afternoon: a rank of rollators and sticks down the middle, a demonstration ramp with a handrail, two profiling beds made up under the window, riser-recliner chairs along the back wall and a fitter kneeling to adjust a leg",
+    "place_category": "mobility aids showroom",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Every disorder in this chapter is one plain-English picture: being up and about when the body should be lying still — walking in the night, kicking, thrashing through a dream, standing up because the legs will not settle. A mobility showroom is the one ordinary shop whose entire floor is people getting out of a bed or a chair and taking a few paces, and its stock list happens to be the chapter's own management list: bed rails and cot sides for making the bedroom safe, profiling beds, compression stockings and iron tonic, and a whole wall of aids bought for Parkinson's, which is where the dream-enacting half of this chapter ends up. The sign is the ordinary phrase a shop like this puts on its fascia and names nothing.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 76,
+   "title_en": "Bulimia Nervosa + Binge Eating Disorder",
+   "title_he": "Bulimia Nervosa + Binge Eating Disorder",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_feeding_eating": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "OX ROAD BOXING CLUB",
+    "place": "An amateur boxing club in a hired church hall on weigh-in night: a ring platform up on scaffold, a line of heavy bags hung from a beam, a beam scale on a rubber mat with a queue standing at it, kit bags along the wall bars and a trestle table of food and drink laid out for afterwards",
+    "place_category": "amateur boxing club",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Bulimia is Greek ox-hunger, bous limos, and the ox is already sitting inside the word boxing, so the club's street name carries the diagnosis's own picture without printing it, in the mid-word-capital manner of expreSS tRIps; the club's fluorescent ox mascot on the end wall is then the fixed fluoxetine glyph standing exactly where this chapter needs it. The venue is also the one ordinary place where the whole take-it-in-then-get-rid-of-it cycle is a normal evening's work — sweat tops, spit buckets, the steam-room door, a scale that judges everything, and a table of food to fall on the moment the weigh-in is over — done by people who look completely unremarkable, which is the clinical point.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 79,
+   "title_en": "Sleep development in children + adolescent shift",
+   "title_he": "התפתחות שינה בילדים + תזוזת מתבגרים",
+   "aspects": [
+    "sleep_architecture_by_age",
+    "sleep_needs",
+    "circadian_phase_delay"
+   ],
+   "required_tokens": {
+    "CONVENIENCE_STORE_7": "{'cue': '7-Eleven open 24/7', 'prop': 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty."
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PHASE HILL OBSERVATORY",
+    "place": "A small municipal observatory in a town park on a public open night: the dome with its slit rolled back over the lawn, a row of borrowed telescopes set out on the grass, the warm room with its log desk and clock board, and the park gate standing open onto the road.",
+    "place_category": "public observatory",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Phase is the same word in both trades: an observatory's whole business is phase, and a delayed phase is the chapter. The name is therefore an exact homonym planted in a place name a real observatory would carry, and it prints no clinical word at all. The choice earns its keep because the venue owns, as ordinary equipment, the two objects that make the adolescent shift explicable rather than merely stated. First, two clocks hang on the same warm-room wall reading different times — sidereal and civil — because the sky keeps a period that is not twenty-four hours; that is the internal clock against the school clock, and the discrepancy is an instrument reading, not a mood. Second, the moonrise table pinned beside them lists a rise time roughly fifty minutes later on every successive line, so the picture contains a printed, native, undeniable object whose whole content is a clock that runs later every day. Nothing else in the course supplies that. Sleep architecture by age is literal depiction inside one shared activity: the smallest visitors swing their scopes all over the sky and never settle, which is REM-heavy infant sleep; the school-age children are the ones standing guard over the hour-long exposure that must not be jogged, which is slow-wave; the adults get short broken looks between clouds. Required hours by age become the booking board of session lengths, a properly numbered carrier. The venue is also open at night in a town, which is the only reason the fixed 24-hour store can stand across the road without contrivance — and the sixth-formers drifting out of the gate towards it while everyone else is packing up is the phase delay and its consequence in one movement.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 80,
+   "title_en": "Eating disorders intensive: FBT + medical stabilization",
+   "title_he": "הפרעות אכילה: FBT + ייצוב רפואי",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications",
+    "medical_stabilization",
+    "admission_criteria"
+   ],
+   "required_tokens": {
+    "DSM_feeding_eating": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "FIRE BRIGADE TRAINING",
+    "place": "A small-town fire station at supper time: the engine backed into the open bay, the long crew table laid for the shift meal in the day room, and the drill tower in the yard behind",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "F-B-T are the initials of an entirely ordinary painted door legend, FIRE BRIGADE TRAINING, and the firehouse then donates Family-Based Treatment's whole method: the watch eats one supervised meal at one table, the officer at the head of the table decides how much goes on every plate (phase 1 - parents take charge of refeeding), the rookie is handed the ladle later (phase 2 - handing control back), and the framed notice 'PUT IT OUT FIRST - ASK WHY LATER' is FBT's agnostic stance as station-house humour. Medical stabilization is the pump panel: open the line slowly or it bursts from cold - start low, go slow - with the pressure gauge as the native number carrier and the stencilled PHOS drum on the foam shelf as the phosphate that must be watched.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 85,
+   "title_en": "Stimulant Use Disorder",
+   "title_he": "הפרעת שימוש בסטימולנטים",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_substance_addictive": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "UPPER FIELD HONEY",
+    "place": "A commercial apiary in a field on a hot afternoon: a double row of hive stacks on trestle stands, a smoker going at the end of the row, an uncapping bench and a spinning extractor under an open-sided shed, syrup feeders stacked by the gate and jars being labelled on a trestle",
+    "place_category": "beehive apiary",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Uppers is the class word, and the beekeeper's own name for the boxes stacked on top is the supers — the upper boxes — so an ordinary field name, Upper Field, carries the class without naming a single drug and without printing the disorder. The apiary then supplies the chapter's clinical picture out of standard kit rather than invention: a lit smoker at every entrance, the buzz itself, bees walking over a bare forearm for formication, an extractor that will not stop spinning, and a colony worked past what it could carry lying toppled in a heap of empty boxes with its keeper asleep on the grass beside it, which is the crash.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 89,
+   "title_en": "Hallucinogen + Caffeine + Inhalants",
+   "title_he": "הלוצינוגנים + קפאין + שאיפות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_substance_addictive": "",
+    "5-HT2A_receptor": "TAROT_2A"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "LIBERTY CAP FARM",
+    "place": "A mushroom farm's growing tunnel on the picking shift: a long dark shed with four tiers of wooden shelf-beds up both walls, low lamps strung along the picking rail, the misting line fogging along the ridge, the grading table with its scales halfway down, and the break table with the urn on it by the doors at the far end.",
+    "place_category": "mushroom farm",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "The liberty cap is the actual field name of the psilocybin mushroom, so the sign is the drug written in plain English on an entirely ordinary farm fascia — the Chateau Tyramine move — while the business under it grows nothing but button mushrooms. The venue was chosen because a growing tunnel supplies, as routine agriculture, the three things this ragbag chapter otherwise cannot get into one frame. A bed does not crop once: it comes back weeks after it was cropped out, in what the trade itself calls a flush, so perception coming back long after the substance is gone has a native noun and a native object, and the tunnel is full of beds at different stages of it. White mycelium threads run through every tray, and a tray in which those white threads have been killed off in patches is white-matter damage drawn as an ordinary spoiled crop rather than as a diagram. And the tunnels are lettered, so the dark one with the door ajar at the end is Tunnel K, a hole a worker is standing in and not answering out of — dissociation as an address rather than a mood. The inhalant inventory is native and unforced: sterilant aerosols, the compost steam line, plastic spawn bags by the hundred, and a CO2 alarm on the wall that is there because the room genuinely can put you down. Caffeine gets the break table, which on a night picking shift is a real institution — the urn, the jar, the tablet packet, one picker jittering over five cups and another holding her head because the urn ran dry — and the controlled-items list pinned by the door pointedly does not have tea or coffee on it, which is the DSM point about caffeine drawn as a posted rule. The break table also seats the fixed tarot reader without contrivance, because pickers read cards on their break.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 93,
+   "title_en": "Schizotypal Personality Disorder",
+   "title_he": "הפרעת אישיות סכיזוטיפלית",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "schizotypal_pd": "Personality Inn — Cluster A room",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "critic rejected it",
+    "place-category collision on 'junkshop'"
+   ],
+   "current": {
+    "sign_text": "TIPI TOP BRIC-A-BRAC",
+    "place": "A second-hand bric-a-brac shop on a small-town parade on Saturday, next door but one to the bowling alley: a long deal table of unsorted boxes down the middle, rails of mismatched coats along one wall, floor-to-ceiling shelves of crockery, lamps and paperbacks behind the counter, and a child's play tipi pitched in the toy corner at the back with a lamp burning inside it.",
+    "place_category": "bric-a-brac shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Typal to tipi is the course's own fixed derivation for this disorder, and Tipi Top is the sort of cheery name a junk shop on a parade genuinely carries, so the fascia carries the phonetic hook and the actual tipi stands pitched at the back of the same room — the pun said twice, once in lettering and once in canvas. The shop was chosen over a camping venue because it is the only ordinary place on earth where every single object the fixed glyph requires is already the stock: the tarot deck under a rubber band, the crystal ball on a doily, the lava lamp, the dream catcher, the astrological chart, the occult paperbacks and the four layers of mismatched donated clothing that a rummage produces on a real customer's back. Eccentric appearance therefore needs no invention — it is what the venue does to people. The criteria that are hardest to draw are the ones the shop supplies best: a donated television, plugged in to prove it works, with its presenter apparently talking straight at the one customer who has stopped dead in front of it, is an idea of reference by literal depiction; the foxed mirror and the crackling transistor are unusual perceptual experiences that anyone can verify are simply a bad mirror and a bad radio, which is the point of the differential — nothing here is actually psychotic, everything works once you wind it. The hand-lettered labels reading nothing in particular are vague speech; the volunteer watching the door over the till is suspiciousness; and the customer hovering on the step, checking behind her and not coming in, is the social anxiety that does not settle with familiarity. The parade is a declared adjacency: the bowling alley two doors along is the schizophrenia chapter, and the spectrum relationship is drawn as which premises are on the same street.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 95,
+   "title_en": "BPD treatment: DBT",
+   "title_he": "טיפול ב-BPD: DBT",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {
+    "DSM_personality_disorders": "",
+    "borderline_pd": "Personality Inn — Cluster B room"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "DAILY BELAY TRAINING",
+    "place": "An indoor climbing centre on a busy evening: a panelled leaning wall hung with colour-graded holds, ropes dropping from the ceiling anchors, crash matting across the whole floor with a red line painted along the base of the wall, a hire rack of harnesses and a sign-in desk by the door",
+    "place_category": "indoor climbing centre",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "D-B-T falls out of a board a climbing centre really does paint up, as an ordered subsequence in an ordinary posted service. The trade's mandatory safety structure is the therapy object for object with nothing imported: two people on one rope, the climber cannot be climbed for and the belayer cannot let go, which is the dyad; the shout that gets you held mid-route is a real posted call on the calls board, which is crisis coaching; the partner-check board at the door is the buddy check; four colour-graded route sets are the four skills modules; the sign-in book filled in every single session is the diary card; and the staff huddle round the shift diary at the desk is the consultation team. The red line painted along the mat at the foot of the wall is the chapter's own fixed border-line glyph standing on the floor of an ordinary gym.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 96,
+   "title_en": "Antisocial PD + Conduct Disorder",
+   "title_he": "ASPD + Conduct Disorder",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_personality_disorders": "",
+    "DSM_disruptive_impulse": "",
+    "antisocial_pd": "Personality Inn — Cluster B room (red-gold dramatic)",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)"
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "ASPHALT & DRIVEWAYS",
+    "place": "A half-finished driveway job on a suburban front garden: an unmarked tipper truck at the kerb, a tar kettle smoking, a roller parked on the fresh black strip",
+    "place_category": null,
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "A-S-P-D falls out of ASPhalt & Driveways as an ordered subsequence in a trade name you could photograph on any van door this afternoon. The itinerant driveway crew is the textbook confidence trick without a word of moralising — cash only, no permit displayed, a fifteen-year guarantee that expires when the van leaves the street — so deceit, recklessness and absent remorse are all carried by ordinary job-site props rather than by anybody's expression.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 99,
+   "title_en": "Avoidant Personality Disorder",
+   "title_he": "הפרעת אישיות נמנעת",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "avoidant_pd": "Personality Inn — Cluster C room (blue-gray anxious)",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "AVOID ANTS PEST CO.",
+    "place": "A pest-control contractor's depot yard at seven in the morning: a line of liveried vans backed up to the loading bay, steel racking of bait boxes and glue boards behind the lip, the mixing shed's roller door up, and a fibreglass ant bolted to the roof of the end van",
+    "place_category": "pest-control depot",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "AvoidANT breaks exactly on the pest trade's own product, so AVOID ANTS PEST CO. is a firm name that could be signwritten on a real van and prints nothing clinical. Moving from the customer's street to the firm's own depot is what makes it usable: the depot supplies fifteen people all doing one ordinary job at the same scale and a deep inventory that belongs to the business rather than to the neighbours. The criteria then hang on counter furniture — the round list with one name never claimed, the card on the van door saying the crew will not knock, the standing rule that the firm only works empty houses — which is a person who wants the work and will not risk the doorstep, not a person who has no interest in it.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 101,
+   "title_en": "Obsessive-Compulsive Personality Disorder (OCPD)",
+   "title_he": "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "differential",
+    "treatment_first_line",
+    "treatment_second_line"
+   ],
+   "required_tokens": {
+    "ocpd": "Personality Inn — Cluster C room",
+    "general_PD_criteria": "(standalone — Personality Permanent Marker Gallery)",
+    "DSM_personality_disorders": ""
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "O'CONNOR'S PRIZE DUCKS",
+    "place": "A promenade prize-shooting gallery on a grey bank-holiday afternoon: one shop-front unit in a parade between a rock shop and a chip shop, its shutter folded back, a hinged counter with five air rifles on short chains, an endless chain of tin ducks travelling across the painted back wall, and a shelf of prizes above head height",
+    "place_category": "shooting gallery",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "O-C-P-D as an ordered subsequence in an ordinary stall name — O'Connor's Prize Ducks (highlight O'C, P, D) — exactly the expreSS tRIps device. The stall's own house rules are the disorder rather than a metaphor for it: nothing counts unless every duck falls, the ducks are squared up with a steel ruler between customers, the pellets are counted out one at a time, the proprietor will not let anyone else load, and the prizes are never actually handed over. The sign carries no morpheme of the diagnosis in plain English.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 103,
+   "title_en": "Israeli law in child and adolescent psychiatry",
+   "title_he": "החוק הישראלי בפסיכיאטריה של הילד והמתבגר",
+   "aspects": [
+    "core_principles",
+    "practical_use",
+    "risk_assessment",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "NOAR CLIMBING CLUB",
+    "place": "An indoor climbing centre on a school-holiday morning: a bolted plywood wall of coloured holds rising three storeys with an overhang at one end, ropes hanging from anchors, crash mats covering the whole floor, a reception desk with a waiver folder and a rack of numbered harnesses, and a glazed meeting room on the balcony overlooking the wall",
+    "place_category": "indoor climbing centre",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "NOAR — spelled the way a Hebrew reader reads נוער, the plural collective, not NA'AR — is the name of the law the chapter is built on (חוק הנוער) and is also simply what a youth climbing club is called. The venue then supplies the whole legal apparatus as ordinary equipment: who may go up alone, who must be roped to an adult, whose signature is on the form, who is judged competent to hold the rope, who writes the incident in the book, and a committee sitting behind glass above the floor deciding whether the climb continues.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 105,
+   "title_en": "Sexual Dysfunctions + Paraphilic Disorders",
+   "title_he": "תפקודים מיניים + הפרעות פרפיליות",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_sexual_dysfunction": "",
+    "DSM_paraphilic": ""
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PARAPHERNALIA ARMY SURPLUS",
+    "place": "An army-surplus store on a wet Saturday morning: a long double-sided kit rack down the middle of the shop floor, four curtained fitting cubicles along the back wall, wooden bins of boots and webbing under the window, a glass-topped counter with a locked cabinet beneath it, and a testing bench by the till where every second-hand item is tried before it is sold.",
+    "place_category": "army surplus store",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PARAPHERNALIA is an entirely ordinary English word for assorted gear, an entirely plausible name for a surplus shop, and a near-homophone of paraphilia across its first six letters — the Carpe Drive-in / Starry Gazing standard, with no clinical word printed anywhere. The trade then supplies both of the chapter's rosters as ordinary merchandise rather than as invention. The eight named paraphilias are surplus stock: binoculars in a bin, a rack of folded rubber capes, a wall of paired boots, a rail of greatcoats and uniforms being tried on by whoever they fit, coils of rope and webbing, a narrow crowded aisle where everybody squeezes past everybody, a tray of single-issue collectables one man is working through, and the age-restricted notice on the locked cabinet — which lets the age rule stand as posted regulation rather than as a depicted person. The seven dysfunctions are the shop's own daily business, because every item here is second-hand and must be tested at the bench: the torch that will not light at all, the zip that jams half-way and will not be forced, the strap that will not hold tension, the flare that goes off as it is picked up, the flare that never goes off however long it is held, the compass that swings and never settles. And the criterion the chapter turns on is the counter's refund rule — nothing in a surplus shop is a fault until the customer complains about it, which is exactly what separates a preference from a disorder.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 107,
+   "title_en": "Aggression and violence in youth",
+   "title_he": "אגרסיביות ואלימות בילדים ובמתבגרים",
+   "aspects": [
+    "clinical_presentation",
+    "differential",
+    "risk_assessment",
+    "management",
+    "treatment_overview"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "BULL RING GYM",
+    "place": "A back-street amateur boxing gym at the far end of Odds Lane on a weekday club night: a raised ring in the middle of the floor, heavy bags on chains down one wall, a skipping area under the high window, a coke stove in the corner with a kettle on it, and a parents' bench along the back wall",
+    "place_category": "boxing gym",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "BULL carries bully inside the one ordinary place where hitting another young person is licensed, timed, refereed and written down; a bull ring is also simply the arena, so the sign reads as a genuine club name and never says aggression. The venue's own machinery is the chapter's management ladder in order: the referee's palms up first, then two coaches taking an arm each, then the timekeeper entering the hold in the ruled logbook, with the ringside doctor's bag as the last step.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 108,
+   "title_en": "Adolescent suicidality",
+   "title_he": "אובדנות בנער/ה",
+   "aspects": [
+    "risk_assessment",
+    "protective_factors",
+    "means_restriction",
+    "safety_planning"
+   ],
+   "required_tokens": {
+    "suicidality_warning": "(black-box warning label)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "MEANS THE CHEMIST",
+    "place": "A high-street chemist's shop at the end of a wet Thursday afternoon: a long dispensing counter with a glass screen, a wall of small numbered drawers behind it, two aisles of shelving out front, a curtained consultation room at the side, a row of chairs for waiting, and the ice rink's glass frontage visible across the road through the window",
+    "place_category": "community pharmacy",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "The chemist is called Means, which is a real surname and also the chapter's central intervention, and restricting access to means is literally what the shop does all day long: two locks and two keyholders on the poisons cupboard, tablets counted out in short rows, one pack per customer on the shelf edge, and a returns bin heaped over the rim with what people have brought back out of the house. The sign never prints the diagnosis; the shop is boring and the anomalies sit in its ordinary stock.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 109,
+   "title_en": "Self-injurious behavior (NSSI)",
+   "title_he": "פגיעה עצמית ללא כוונת אובדנות (NSSI)",
+   "aspects": [
+    "dsm_criteria",
+    "epidemiology",
+    "etiology",
+    "treatment_overview",
+    "assessment_tools",
+    "medical_mimics"
+   ],
+   "required_tokens": {
+    "DSM_disruptive_impulse": ""
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "JOHNSON'S ICE RINK",
+    "place": "A municipal indoor ice rink during the public afternoon session: a rectangle of scuffed white ice inside blue dasher boards, a hire counter stacked with boots at one end, a warm-up room behind glass with a drinks hatch, the resurfacer waiting in its bay with the gate open, and a chemist's shop-front visible across the road through the foyer glass",
+    "place_category": "ice rink",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "N-S-S-I as an ordered subsequence in an ordinary rink name — JohNSon'S Ice (highlight the two N/S pairs and the I of Ice) — the expreSS tRIps device. The rink is also the mechanism, without any metaphor for a mood: the surface is deliberately scored a hundred times an hour by people who are not trying to destroy it, the session is punched on a card so the days per year are countable, the marks are resurfaced between sessions, and the cold that everyone is standing on is the crisis skill the chapter's DBT track actually teaches.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 111,
+   "title_en": "Cultural and religious issues in child mental health",
+   "title_he": "היבטים תרבותיים ודתיים בבריאות הנפש של הילד",
+   "aspects": [
+    "core_principles",
+    "clinical_presentation",
+    "assessment_tools",
+    "practical_use"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "MOSAIC TILE CO.",
+    "place": "A tile and stone showroom on a Sunday morning: hinged sample boards standing in ranks down the middle of the floor like the pages of a book, pallets of boxed tiles along the walls, a wet cutting bench at the back with a hose coiled under it, and a trade counter with a carbon-copy order pad and a lectern holding the pattern reference book",
+    "place_category": "tile showroom",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Mosaic is the ordinary trade word painted over a real tile shop and is at the same time the word for the law of Moses — one four-character sign carrying culture and religion without printing either. The shop's own routine is the Cultural Formulation Interview: the customer arrives with a chipped piece wrapped in newspaper and their own account of what it is, the counter hand works down the same printed order form section by section every time, and the shop's proper trade translator is called through from the back instead of letting the grandson guess.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 112,
+   "title_en": "Perinatal psychiatry: postpartum depression + psychosis",
+   "title_he": "פסיכיאטריה פרינטלית",
+   "aspects": [
+    "PPD",
+    "postpartum_psychosis",
+    "SSRI_in_pregnancy_lactation",
+    "preeclampsia_psych"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "PIPER & DODD SPRINGS",
+    "place": "A small spring-water bottling plant on the day shift: a filling carousel and capping head straddling the line in the middle of the floor, a roller conveyor running the length of the room to the case-taper, a glazed quality booth off to one side, a second narrower line of small bottles behind its own guard rail, and the loading bay doors standing open at the far end",
+    "place_category": "bottling plant",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "P-P-D as an ordered subsequence in an ordinary family firm name — PiPer & DoDD — for the abbreviation the chapter itself uses. The plant is then the mechanism rather than a mood: its whole job is what happens after delivery, one bottle in every seven is lifted off the belt for checking at the quality booth, a red-tagged bottle goes to the locked cage with two people at the door, and there is a separate small-bottle line whose posted rules about what may and may not go in are the lactation half of the chapter.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 114,
+   "title_en": "Geriatric overview (delirium focus — light touch)",
+   "title_he": "גריאטריה — סקירה (delirium)",
+   "aspects": [
+    "delirium_recognition",
+    "reversible_causes",
+    "behavioral_management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "DE LIRA FARM",
+    "place": "A village ploughing match on a bright autumn morning: a stubble field pegged into numbered plots, a line of old tractors turning furrows up and down, a judges' table under an awning at the headland, and a tea urn on a trailer tailgate.",
+    "place_category": "ploughing match",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Delirium is de + lira — Latin for off the furrow, the ploughman who wanders out of his line — and DE LIRA FARM reads as an ordinary family farm name while printing the word the diagnosis is built from. A ploughing match is then the only mundane place whose entire business is holding attention on one line for an hour, and whose product is a permanent record in the soil of exactly when a man was on it and when he was not: the furrow itself is a course chart, waxing and waning, drawn in the ground. The three motor types need no invention because a match already contains them — one tearing up and down out of turn, one stalled mid-plot with the engine just idling whom the judges walk straight past, and one alternating. The reversible causes are the only things a ploughman ever checks on a tractor: the choked air filter, the boiling radiator, the flat battery and the water churn, the odd-coloured fuel can at the end of the row. The match runs into a low sun with long shadows across the far half of the field.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 115,
+   "title_en": "Neuroanatomy + neurological examination of child",
+   "title_he": "נוירואנטומיה + בדיקה נוירולוגית בילדים",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "prefrontal_cortex": "(brain map)",
+    "basal_ganglia": "(brain map)",
+    "cerebellum": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "SOFT SIGNS OPTICIANS",
+    "place": "A high-street opticians on a school-holiday morning: a wall of frames on rails, a dispensing desk with a mirror, a curtained test room with a letter chart at the far end, and a back workshop where lenses are cut and edged.",
+    "place_category": "opticians shop",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "An optician is the one everyday shop whose whole business is a graded examination of one system worked down a printed list, with the smallest and faintest items at the bottom — and soft signs are exactly that: the minor findings you only get if you keep going down the list. SOFT SIGNS reads as an ordinary practice name because the shop sells soft lenses and its customers spend the visit reading signs. Half the cranial-nerve examination is the shop's own routine with nothing added: reading the chart, following the pen through its H, the torch swung between the pupils, the hand brought in from the side for the fields, the cover paddle for a squint. The anatomy then arrives as shop fittings rather than posters — the glazed booth at the front where every decision is made, the striped gear train of the lens edger on the workshop bench, the small ridged polishing lap hanging at the very back, and the cable trunk down the back wall that everything in the shop passes through. The paediatric half is native to a holiday morning: a toddler barefoot on the cold tiled step of the test room with the toes fanning out, and a baby holding the display rail in a whole-fist grip.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 117,
+   "title_en": "Head trauma + TBI sequelae",
+   "title_he": "חבלת ראש + סקוואלי TBI",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "prefrontal_cortex": "(brain map)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "COUPE & CONTRECOUP",
+    "place": "A high-street barber shop on a Saturday afternoon: four hydraulic chairs in a row facing a long wall mirror, a second mirror on the back wall, a bench of waiting customers by the window, and a shelf of clippers, towels and bottles.",
+    "place_category": "barber shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Coupe is the ordinary word on any salon door and contrecoup is this chapter's mechanism — the damage on the far side from the blow — so the sign reads as a slightly smart French salon and prints the mechanism, never the diagnosis. A barber shop is the one everyday place whose closing ritual is front and back of the same head: the barber holds a hand mirror behind you so the back of your head appears in the mirror in front, one face struck and the opposite face showing it, demonstrated with the shop's own furniture. The chair supplies the coma scale in the shop's own units without invention — it is pumped up and down by the foot for the level, and the barber's three standing requests are open your eyes, tell me how short, and turn your head this way. The numbered clipper guards in their rack are a graded ladder that a barber genuinely counts up and down. The wall of framed photographs of the local boxing club and the shelf of small trophies is the repetitive-impact history sitting in a place that really does hang them. The glazed front corner with the till and the appointment book is the shop's own front office, and a half-cut regular who has stood up, walked out and left the cape on the floor is the personality change.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 118,
+   "title_en": "CNS infections with psychiatric sequelae",
+   "title_he": "זיהומים ב-CNS עם השלכות פסיכיאטריות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "MEN IN JEANS",
+    "place": "A high-street denim shop mid-afternoon: steel rails of jeans, a three-tier folded stack wall, curtained fitting cubicles at the back, a hemming table with a tailor at it",
+    "place_category": null,
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "MEN IN JEANS is a perfectly ordinary denim shopfront and it says MENINGES. The shop's stock then supplies the anatomy without being asked: the folded stack wall is three tiers deep, which is dura, arachnoid and pia, and the gaps between the tiers are where things collect; the cubicle sign already reads a maximum number of items, i.e. three layers; and clothing retail natively supplies a stiff collar, a bright spotlit floor and a glass tumbler at the till for the rash test.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 119,
+   "title_en": "Movement disorders: Huntington, Wilson",
+   "title_he": "הפרעות תנועה: Huntington, Wilson",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "VMAT2": "DOPA_MINE (rest hall)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "HUNT & SON EXTENSIONS",
+    "place": "A high-street nail bar mid-afternoon: a run of manicure tables down one wall each with a lamp and a padded hand rest, two pedicure chairs with foot spas at the back, and a floor-to-ceiling rack of polish bottles beside the till.",
+    "place_category": "nail bar",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "HUNT is the eponym wrapped in an entirely ordinary family shop name, and & SON is the family firm handing itself down — the three framed handover photographs behind the till show each generation taking over younger than the last, which is anticipation drawn as a shop's own history wall. EXTENSIONS is the load-bearing word: a nail bar's whole trade is selling length, cut off a numbered gauge card, and a longer one in each successive box is the repeat that grows. The venue is also the only ordinary place whose entire job is holding a pair of hands still and flat under a lamp, so hands that will not stay still need no explanation and no metaphor. The second disease is shop stock with nothing invented: the rack sells copper and chrome powders and a zinc-grey range, the swatch ring is a loop of round discs each edged brown-green at its rim, the display hand models on the counter have blue-tinted half-moons at the base of every nail, and the two things the manicurist reaches for are the strong stripper that takes the copper off and the little pot of zinc-grey that stops it going back on.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 120,
+   "title_en": "Brain tumors + pseudotumor",
+   "title_he": "גידולי מוח + pseudotumor",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "SWELL BAY CANNING CO.",
+    "place": "A small seaside canning works at the end of the day shift: two upright retorts standing open against the wall with their round pressure gauges, a long grading bench heaped with cooled cans being tapped and sorted, and pallets stacked by the loading door.",
+    "place_category": "canning works",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A can is a skull: rigid, sealed, opaque, and the only thing that shows from outside is the round end disc, which bulges when the pressure inside rises — so the swollen disc with the lost sharp rim is drawn on the venue's core prop and is felt by hand by every worker on the bench. Swell is the canner's own trade word for a bulged can and the plain word for a mass, and Swell Bay reads as an ordinary coastal cannery. The grading bench then gives the chapter for free: cans are graded by where the bulge is and by what they sound like when tapped, so location is the whole diagnosis, and the one that bulges hard but rattles empty when you shake it — same shell, same gauge, nothing inside — goes into a bin of its own beside a bin of heavy ones, which is the contrast the chapter turns on. The plant's own gas line is the tap the foreman turns down when too many are swelling, and the vent needle he pushes into a lid to let one down slowly is the relief. Location is stock too: a bulge under the base seam, a limescale lump crusted in the neck of the steam pipe directly above the little control box in its wall niche, a blocked drain channel lining the floor, and the tray of the smallest newest cans at the low back end of the bench.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 121,
+   "title_en": "Cerebral palsy",
+   "title_he": "שיתוק מוחין (Cerebral Palsy)",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "PERMASET PLASTICS",
+    "place": "A plastic moulding shop on the day shift: two moulding machines along the back wall with their tool racks beside them, a belt conveyor bringing parts down to a long inspection bench, a run of clamped jigs and heat guns along that bench, five numbered sorting bins at the end of it, and sacks of granule and a regrind hopper stacked by the roller shutter.",
+    "place_category": "plastic moulding shop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "PLASTIC is one phoneme from spastic, the subtype that carries three quarters of the diagnosis, and plasticity is one letter from spasticity while being the real reason early work on a young case is worth anything; PERMASET is what an ordinary moulder calls a thing that has taken its shape for good. Neither word is clinical and neither is the diagnosis. The trade then states the chapter's hardest point as its own daily problem: the tool was damaged once, before a single part was ever pressed, and it cannot be undamaged — so every part comes off the machine with the same lean, the damage itself never gets worse, and yet the larger and more demanding the part the shop is asked to make, the more that one old fault costs. That is a fixed perinatal lesion with a picture that changes as the child grows, said without a metaphor. The rest is stock in trade. Parts sort into five numbered bins by how far out of true they are, which is the five-level mobility grading as ordinary factory sorting. A part clamped into a jig and warmed until it yields, then held there until it cools, is the whole logic of stretching, casting and bracing, including the one unclamped too early that springs straight back. Three trays at the bench hold the over-cured part that is rigid and will not bend, the under-cured one that is floppy and holds nothing, and the one that came off the belt wavy — spastic, hypotonic and dyskinetic side by side and countable. Two short legs against four is diplegia against quadriplegia, one corner lifted is a hemiplegia, all of it counted rather than lettered.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 122,
+   "title_en": "Neurogenetic syndromes: Williams, Prader-Willi, Angelman, 22q11",
+   "title_he": "תסמונות נוירוגנטיות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "SHELTER 22Q",
+    "place": "The annual family-reunion potluck at a public park's numbered picnic shelter, midday: trestle buffet under the shelter roof, two gazebos on the grass, an ice-cream van at the kerb.",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A locus name that is already shaped like a place number: public parks letter and number their picnic shelters, so \"SHELTER 22Q\" reads as a genuine reserved-pavilion placard while printing the highest-yield string in the chapter (22q11 — 25% psychosis risk). The reunion is chosen because it hands over the chapter's hardest fact for free: genomic imprinting is the two gazebo banners \"MOM'S SIDE\" and \"DAD'S SIDE\" — same 15q11 deletion, maternal gives Angelman, paternal gives Prader-Willi, and the venue's own seating custom encodes it. The easel pedigree with four names struck through carries 'these are all deletions'; the padlocked cooler is Prader-Willi food security; the fiddle-and-guitar duo is Williams hypermusicality; the entertainer's marionette is the 'happy puppet'.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 123,
+   "title_en": "Neurocutaneous: Tuberous Sclerosis, Neurofibromatosis",
+   "title_he": "תסמונות נוירוקוטנאיות",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "ASH LEIGH BATHS",
+    "place": "A municipal Turkish baths on a slow weekday afternoon: a domed marble hall with a heated slab down the middle, scrubbing alcoves with brass taps and copper bowls round the walls, wooden clogs in pairs by the door, and a cooling room with tea glasses through the arch.",
+    "place_category": "turkish baths",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Ash Leigh is an ordinary English place name over an ordinary municipal bathhouse and says ash leaf — the pale leaf-shaped patch that is the earliest thing on the skin in this chapter and the one you need a lamp in a dim room to find. A Turkish baths is the one mundane venue where every square inch of skin on eighteen people is wet, visible and being gone over by hand, so a nerve-and-skin chapter needs nothing invented. The rough mitt in every attendant's hand is shagreen — the word is a leather word and the patch is named for exactly that texture. The pale patches show up under the blue glow of the insect lamp by the door, in the one room that is already dim. The freckles nobody normally sees are in the armpits, and an armpit is the only thing on show when you lie face down on the slab. The tea tray through the arch carries milky coffee glasses, six of them set out at once on the one tray. The knobbly grey pumice stones stacked at each basin are the potato-like lumps the first disease is named for, and the string of small brown beads looped over a tap is a ring of little brown nodules at eye height.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 125,
+   "title_en": "Metabolic disorders with psychiatric presentation",
+   "title_he": "מחלות מטבוליות עם ביטוי פסיכיאטרי",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "place-category collision on 'tailor'"
+   ],
+   "current": {
+    "sign_text": "CUSHION & FLOCK",
+    "place": "An upholstery workshop on a working weekday: a long run of trestles down the middle carrying stripped chair frames in every state of undress, bolts of cloth standing on end along one wall, a webbing stretcher and a tack hammer at every place, a wall of shallow drawers of buttons and studs at the back, and a horsehair and flock bin under the window.",
+    "place_category": "upholstery workshop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "CUSHION and Cushing are a near-homophone, and Cushion & Flock is a perfectly ordinary name for an upholstery firm; the diagnosis appears nowhere. The trade then supplies every disease on the list as an ordinary piece of work rather than as a metaphor, which is what a chapter of six endocrine mimics needs. Cushing's is the over-stuffed piece: a fat pad packed into the middle of the back while the legs stay spindly, a hump of flock built up at the top of the shoulder, and split side seams showing the purple lining through — striae, central fat and wasted limbs all on one object. Porphyria is the bolt of purple cloth standing against the wall, since porphyrin is the purple pigment the disease is named for. Addison's is the leather piece gone bronze in the sun and darkest in every crease and fold, with pale worn patches beside it. Thyroid disease is one matched pair of otherwise identical chairs: one strung so tight the springs hum and two back buttons have popped out proud, one so slack and so thickly padded that it has swollen shut and sits cold at the end of the bench — over-drive against under-drive on a pair, which is the way the pair is examined. B12 is an ordinary bin label on the numbered racking above a bin of pale worn velvet. Everything a metabolic chapter needs is stuffing, tension or dye, and this is the shop where all three are the day's work.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 126,
+   "title_en": "Autoimmune: NMDA-receptor encephalitis, lupus, PANDAS",
+   "title_he": "אוטואימוני: NMDA encephalitis, lupus, PANDAS",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {
+    "NMDA_receptor": "ASPARAGUS_VIP_DOOR"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "PANDA SMILES",
+    "place": "A children's dental surgery on a school-holiday morning: two chairs reclined under big jointed lamps, a bracket table of instruments beside each, a lead-lined X-ray room off the back corridor, and a waiting room with a toy box and a sticker jar.",
+    "place_category": "dental surgery",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "PANDA SMILES is a real children's-dentistry name — the animal is the black-and-white one and a dental practice sells smiles — and the acronym's letters run straight through it in order, across the word break, without the sign printing a diagnosis. The surgery hosts all three out of its own stock. Teeth are the point: the practice's specimen jar of extracted teeth with a tuft of hair caught in it, and the wide panoramic film on the light box showing a tooth grown somewhere no tooth belongs, are the growth that has to be hunted for whenever the trouble starts in the head — and the reception board's standing instruction is to look at the film before anything else. The wolf is Latin and it is already on the shelf: the cast of a wolf's jaw that children's dentists keep to show whose teeth are sharpest, beside the painless ulcers a dentist genuinely finds inside a cheek, and the big lamp swung down onto a face that has come up red across both cheeks and the bridge of the nose, with a card taped to the lamp arm telling the nurse to swing it off. Sore throats are the practice's other everyday business — the swab pot, the throat mirror, the notice taped to the reception glass telling anyone with one to wait outside, and a child in the corner who has started blinking and touching the chair arm in threes since the last one.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 127,
+   "title_en": "Neurodegenerative basics (FXTAS, HD pediatric, etc.)",
+   "title_he": "ניוון עצבי בילדים",
+   "aspects": [
+    "anatomy",
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "workup",
+    "management"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "FRAGILE GOODS CO.",
+    "place": "A glass-and-china wholesaler's packing floor on despatch morning: a long bench of straw crates and tissue-wrapped stemware, deep racking of white-wadded bundles behind it, the loading shutter up and a box van backed onto the dock.",
+    "place_category": "glassware warehouse",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "FRAGILE is a packer's stencil long before it is a chromosome, and the X is the packing tape crossed on every crate lid and the painted X on the dock floor where the van's wheels must stand — so the term is split between the fascia and the props and never printed whole. The venue was chosen because the rest of the chapter is already this trade's stock. White tissue and wadding is the insulation that keeps a fragile thing intact: one shelf where the wadding has gone to dust holds nothing but broken pieces, which is a leukodystrophy drawn with no metaphor at all. Picking is the warehouse's own verb, and the picker who works only the top shelves on tiptoe while the low-level tickets go untouched is the vertical gaze palsy of Niemann-Pick C. A copper-rimmed teacup held up to the light with a brown-green ring right round its rim is the Kayser-Fleischer ring, and the copperware aisle behind it is the accumulation. Carrier is the freight trade's own word for the firm, and the old man on the carrier pallet whose hands shake so the stemware rattles is FXTAS in a premutation carrier. Counts live where counts belong — the docket spike, a stock label showing a range in the fifty-to-two-hundred band marked as a pre-order, and one banded crate with an overweight sticker that is sealed and never opened, which is the full expansion methylated and silent. The despatch board chalked with this year's run beside last year's, each leaving earlier, is anticipation; the van with and-son painted after the firm name and the father at the wheel is paternal transmission in juvenile Huntington.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 128,
+   "title_en": "Sleep medicine intensive",
+   "title_he": "רפואת שינה — אינטנסיבית",
+   "aspects": [
+    "core_concept",
+    "anatomy_or_structure",
+    "function",
+    "clinical_relevance"
+   ],
+   "required_tokens": {
+    "CONVENIENCE_STORE_7": "{'cue': '7-Eleven open 24/7', 'prop': 'Glowing neon-sign 7-Eleven at midnight. Clock shows 7 AM/PM. Night-clerk on duty."
+   },
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "SPINDLE COURT FLATS",
+    "place": "A four-storey deck-access block of council flats at midnight: an open concrete stair running up the front from a half-basement bin store to the top deck, turned spindle rails along every balcony, front doors and kitchen windows opening straight onto the decks, a bike rack and meter cupboards at street level, and the lit twenty-four-hour shop in the end unit throwing its neon across the bottom of the stair.",
+    "place_category": "deck-access flats",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "Sleep architecture is not a metaphor in this venue, it is the building. A deck-access block is a stack of numbered levels reached by one stair, and a night's sleep is a descent from the street through the lighter decks down to the deep half-basement and back up again, four or five times over — the one thing about this chapter a resident must be able to redraw from memory. The block's balcony rails are turned spindles, and the spindle is the named waveform of the second stage, so the sign is the ordinary name of an ordinary block and the chapter's own word at the same time. The caretaker who walks the whole block on a fixed round every ninety minutes is the sleep cycle at its real length; the flat at the top with the television still flickering behind a drawn curtain while nobody in it moves is the paradoxical stage. Every disorder in the chapter is ordinary midnight business for a block of flats: the rattling window and the interrupted snoring from the ground-floor bedroom, with two swollen sacks jamming the communal vent that serves it, is obstructive apnoea in a child and its adenotonsillar cause together; the man pacing the deck and shaking one leg out at the rail is restless legs; the stair light on a time switch, the photocell on the street lamp and the shop that never closes are the clock-and-light system that circadian disorders break; and the ages behind the doors, from the pram in the hall to the old man on the top deck, carry sleep architecture across the lifespan without a word being written.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 129,
+   "title_en": "Pediatric psychiatric emergencies",
+   "title_he": "חירום פסיכיאטרי בילדים ובמתבגרים",
+   "aspects": [
+    "recognition",
+    "emergency_management",
+    "risk_assessment",
+    "differential",
+    "safety_planning"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "THE HOT LINE",
+    "place": "A twenty-four-hour emergency dispatch room in the small hours: two curved runs of desks under a gantry of screens, a wall map behind, every seat taken, headsets on, job tickets printing at the end of each row.",
+    "place_category": "emergency dispatch room",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A dispatch room is the plain picture already inside the crisis line, and it is the corpus's own run-of-desks composition rather than a third emergency station — the fire house and the hospital are both spoken for, and this is the quieter place where an emergency is actually triaged before anybody is sent. Its value is that every step of the chapter is already furniture. The flip-card box standing on each desk asks in a fixed order and cannot be skipped, which is the structured risk assessment; the three-colour job strips queued on the gantry are the risk bands; the wall notice telling the room to rule out the physical first is the medical and toxic screen before anything is attributed to psychiatry; the script card telling the caller to ask them to put it down and walk out of the room is means restriction, the single highest-yield act in the chapter and the one carried in the largest lettering after the fascia. The supervisor plugged into a trainee's call on a splitter lead and the standing rule that two go to every job are never assess alone and never restrain alone. The callback rack by the door, stamped with tomorrow's date, is the safety plan and the follow-up; the map ring drawn round one street is the disposition, home or in. Three red-edged cards on a ring hang by every screen, one asking for the temperature, one for the pupils, one for the reflexes — the three drug emergencies, and no hospital appears anywhere.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 130,
+   "title_en": "Consultation-liaison: pediatrics, oncology, chronic illness",
+   "title_he": "ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות",
+   "aspects": [
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "differential",
+    "management",
+    "treatment_overview"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "HOTEL LIAISON",
+    "place": "A mid-range city hotel's lobby and first-floor corridor at a busy check-in: reception counter, numbered key pigeonholes, lift directory, housekeeping cart parked halfway down the corridor.",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A liaison is a go-between, and the hotel's house doctor is the exact social position of the C-L psychiatrist: called to rooms he does not own, advising staff who outrank him on their own floor. \"HOTEL LIAISON\" reads as a real hotel name and prints the chapter's own word without printing a diagnosis. The single most important rule in the chapter gets the biggest lettering as a service motto behind the desk — \"WE ADVISE — THEY DECIDE\" (recommendations, not orders). The lift directory board lists the services the consultant alone visits on every floor. The rest is free stock: the \"DO NOT DISTURB\" hanger is refusal and adolescent dissent; the register's co-signature line is parental consent plus child assent; the room-service bell that rings before the dome is lifted, with a child already gagging in the doorway, is conditioned anticipatory nausea; the maintenance man's \"NO FAULT FOUND\" radiator tag beside a guest still complaining is the functional/somatic presentation; the flickering corridor light and the bathrobed guest being steered back at 3am is delirium, the commonest consult of all.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 131,
+   "title_en": "Psychotherapy theories overview",
+   "title_he": "סקירת תיאוריות פסיכותרפויטיות",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "TEAR-A-PLY ROOFING",
+    "place": "A roofing supplies merchant's trade counter and yard on a weekday morning: a covered run of sample bays — slate, clay tile, felt, shingle, standing seam — pallets of each stacked behind, a cutaway demonstration roof standing in the middle of the yard, vans loading at the far end.",
+    "place_category": "roofing supplies yard",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Tear-a-ply is exactly how this audience says therapy, and both halves are genuine trade words — a tear-off is what you do to the old covering before you can lay anything new, and a ply is one layer of felt in a built-up roof. The merchant earns a survey chapter because six competing schools need six signage slots and a sample bay is a free one: each bay is a whole system for solving the same problem a different way, with its own name board and its own guarantee card, and the years printed on those cards carry the evidence base with nothing invented. The cutaway roof in the middle of the yard is the depth model as an object — visible covering, batten, felt, deck, and the rafters nobody ever sees — and the trade's own rule, that you strip back until you reach sound deck before you decide anything, is the one thing every school in the chapter agrees on. The surveyor holding a moisture meter flat against an unopened panel to read what is going on underneath is mentalization drawn without a word. The oldest bay carries a founder's portrait and a dated plate over a thick multi-ply build-up; the slimmer bay beside it is built off the same deck, which is the family quarrel of the whole chapter, and a sample card at the counter says only that a covering is good enough for the job.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 132,
+   "title_en": "CBT: theory + practice",
+   "title_he": "CBT — תיאוריה ופרקטיקה",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "CEMENT BLOCK TESTING",
+    "place": "A concrete block works and its little testing house on a weekday morning: the mixer and block machine at one end, a long run of curing racks loaded with grey blocks, and a glazed testing room where samples go into the press one at a time.",
+    "place_category": "concrete block works",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "C, B and T head the three words of an utterly ordinary trade name — a works that makes cement blocks and tests them — and the three letters are picked out on the fascia the way the corpus picks out expreSS tRIps. The works was chosen because its trade is the method: nobody here argues about whether a block is strong, they put it in the press and wind the load on until it tells them, which is collaborative empiricism and the behavioural experiment in one machine, and the banner over the press says exactly that in the works' own words. A block is only as good as what is under it, so the demonstration slab's foundation course laid to a string line carries core beliefs under automatic thoughts, and the mix docket says what actually went in. The reject pallet holds a dozen blocks each deformed in one named way — one bowed, one twisted, one split clean in two, one short-measured — which is the distortion list as a contrast set rather than a list of words. Three mould boxes stamped in order sit on the bench and are the model everybody teaches first. The press dial is scaled nought to a hundred and is a carrier whose real job is bearing that scale; the loading rig that adds one step weight at a time up a numbered rack is graded exposure with nothing invented; and the half-blocks in the take-one-home bin by the gate are the homework.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 133,
+   "title_en": "DBT: theory + practice",
+   "title_he": "DBT — תיאוריה ופרקטיקה",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "DEMOLITION BY THORNE",
+    "place": "A demolition site on a terraced street at mid-morning: the block behind already down to clean rubble, the original front wall still standing and held upright by a steel frame of raking shores, a long-reach machine picking at the back, hoses damping the dust down.",
+    "place_category": "demolition site",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "D, B and T head the three words of an ordinary contractor's board, and this contractor's job is the dialectic itself made out of steel. Facade retention is routine, licensed, unremarkable temporary works: the front wall is kept exactly as it is, propped and unchanged, while everything behind it is taken down and rebuilt. It is the only mundane thing that holds acceptance and change true at the same time, and it is what the B on the fascia stands on. The site is not chosen for destruction and nothing here is dramatic — it is a calm, wetted-down, heavily documented morning, and the mnemonic is the propped wall, not the rubble. The rest is the site's own paperwork: the posted sequence of works, numbered and worked strictly top down, is the target hierarchy; the orange tag wired to each prop saying it is temporary and must not be removed is tolerating a load you cannot yet fix; the bowser damping down so nothing flares is regulation; the banksman and the machine driver working one agreed set of hand signals is asking for what you need in a code both sides already have; the four in hi-vis standing round a drawing on a tailgate before anyone touches anything is the consultation meeting; the twenty-four-hour number on the hoarding is the between-session call; the permit board with its slots and its pen on a string is the diary card; and the rigger walking a lifting chain link by link with a paint stick, marking the one link that let go, is a chain analysis drawn exactly.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 136,
+   "title_en": "Levels of care: inpatient, partial hospitalization, residential, systems of care",
+   "title_he": "מסגרות טיפול: אשפוז, אשפוז יום, מגורים ו-Systems of Care",
+   "aspects": [
+    "indications",
+    "core_principles",
+    "practice_method",
+    "practical_use",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "THE STAIRCASE LOCKS",
+    "place": "A canal lock staircase on a busy summer morning: five stone chambers stepping up the hillside one straight into the next, black-and-white balance beams swung out over the towpath, a lock-keeper's hut with a toll window beside the bottom gate, a line of boats waiting their turn along the bank below, and side ponds and an overflow weir running down beside the flight.",
+    "place_category": "canal lock flight",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A staircase lock is the continuum of care built in stone. A boat is lifted one level at a time, no level can be skipped, it can only be taken up when the level above is ready to receive it, and it comes back down the same way it went up — which is the step-up and step-down criteria drawn as ordinary canal work rather than as a ladder diagram. Five chambers give the five settings in order from the open pound at the bottom, through the two shallow middle chambers, to the top chamber with the deepest walls and the gates shut behind it. The keeper is the case manager: he owns no boat, and decides only who enters, in what order, and how long each lies in the pound. Every remaining item is a real fitting on a real flight. Milieu is the posted routine on the hut wall — operating hours, the order of working, the rule that no boat enters alone. The token economy is literally a token economy, because tolls on the cut were paid in numbered brass checks and the keeper's board is hung with them. Restraint is the moment this chapter is careful about, and the flight makes it ordinary, brief and bounded: while the chamber is filling and the water is at its most turbulent the boat is held short on two ropes round the bollards, by two people, for exactly as long as the level is unsettled, and let go the moment it settles. Stop planks stacked against the wall are crisis containment; the bypass channel and the weir carry all the water that never needs a chamber at all, which is the least restrictive route; the side ponds hold what the flight cannot; and a boat coming back down past the waiting line is readmission.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 137,
+   "title_en": "School-based interventions and consultation",
+   "title_he": "התערבויות וייעוץ במסגרת בית הספר",
+   "aspects": [
+    "core_principles",
+    "practice_method",
+    "indications",
+    "practical_use",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "ISLAND END PITCHES",
+    "place": "A municipal playing field on a Sunday-morning youth training session: two pitches marked out on one field, portable goals, a rail and hoarding line along the touchline with parents behind it, and a low brick changing block with its street number by the door.",
+    "place_category": "municipal playing fields",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "I, E and P head the three words of a completely ordinary municipal ground name — grounds really are named for the corner of the parish they sit in — so the education plan every child psychiatrist is examined on becomes the largest lettering in the frame with no medical word on it, and the changing block's own street number carries the other plan without inventing a prop. The ground was chosen because tiered prevention is what youth coaching already does and can be seen doing: the whole squad in one colour of bib working the same grid, a small group pulled aside to a second grid in a second colour, one child working one-to-one with a coach at the far goal in a third — all three tiers visible at once, in one frame, at the same session. Accommodation is this trade's own habit too: a smaller ball, a lower goal and a longer run at it for the child who needs one, with the adaptation card pinned to the kit bag. The registration table under the awning issuing a pass that lets a child play out of his age band is the eligibility and placement committee; the welfare officer's sealed envelope of forms, opened to the coach only as far as it says what he must actually do, is confidentiality against need-to-know; the conduct board on the rail and the line the parents must stand behind are the behaviour code; the visiting coach signing the clipboard at the gate is the consultant arriving from outside the system; and the scout at the rail writing one name down is early identification and referral.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 139,
+   "title_en": "Psychodynamic: Anna Freud, Klein, Kohut, Mentalization",
+   "title_he": "פסיכודינמי: Anna Freud, Klein, Kohut, Mentalization",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {
+    "kohut_self_psychology": "(standalone)",
+    "anna_freud_defenses": "(standalone)",
+    "winnicott_holding": "(standalone)",
+    "fonagy_mentalization": "(standalone)",
+    "klein_positions": "(standalone)"
+   },
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "KLEIN PUPPET WORKS",
+    "place": "A puppet-maker's workshop on the evening shift: a long carving bench of vices and glue pots down the middle, an overhead stringing rail above it hung with marionettes on control bars, a wall of shallow parts trays to the ceiling, a full-length rehearsal mirror at the far end and wood shavings underfoot.",
+    "place_category": "puppet workshop",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "KLEIN is the theorist's surname used exactly as a maker's trade name is used, and for this audience it is also simply the word small — a workshop that makes small people. The workshop then pays the rest of the chapter out of its own furniture without inventing anything. Klein's part-objects are the shallow trays sorted by part: a tray of heads, a tray of hands, a tray of glass eyes, the object existing only in pieces; the depressive position is the mending bench where a snapped puppet is clamped and glued back into one whole thing, which is Klein's own word, reparation. Anna Freud's hierarchy of defences is the three-step drying rack, rough blanks at the bottom, varnished faces on top. Kohut's three selfobject needs are three ordinary workshop pairings: a maker holding a puppet up to the mirror, an apprentice under the tall maestro marionette hung highest on the rail, and two identical twins sharing one control bar. And mentalization is the trade itself — a hand up inside a hollow head, a fixed wooden face that has no mind of its own, and a second person who must read one into it and answer it.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 140,
+   "title_en": "Object relations: Winnicott, Mahler, Kernberg",
+   "title_he": "יחסי אובייקט: ויניקוט, מאהלר, קרנברג",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "WINNICOTT LENDING LIBRARY",
+    "place": "A municipal public lending library on a wet afternoon: a long issue desk with a date-stamp block, a returns chute and its trolley, tall shelving bays running back into the room, a card-catalogue cabinet on the end wall and a low children's corner behind a half-gate.",
+    "place_category": "lending library",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A lending library is the only ordinary building whose entire trade is objects leaving their owner and coming back, which is what the chapter is about, and the sign carries the theorist's name the way every municipal library carries its donor's. The mapping is exact and free: object constancy is the card-catalogue drawer, where a card stands for a book that is not on the shelf and is not lost — the internal representation of an absent object, filed in alphabetical order. Mahler's whole sequence is the loan cycle: the toddler in the children's corner who carries one picture book out to a parent at the desk and straight back to the low shelf is practicing and refuelling; the RESERVED shelf behind the desk holds a named item until its owner comes, which is Winnicott's holding, and the taped, mended, much-borrowed picture book still in circulation is good-enough. The transitional object is that same book, refused at the desk by the child who brought it in. True and false self is the bright dust jacket over the drab cloth board underneath. Kernberg gets the returns desk: two triage trays, one to re-shelve and one to withdraw, with nothing allowed in between, and a trolley of spine-labelless books that belong to no section at all.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 141,
+   "title_en": "Later theorists: Erikson, Bion, Ogden, Lacan, Spitz, Stern, relational",
+   "title_he": "תיאורטיקנים נוספים: אריקסון, ביון, אוגדן, לאקאן, שפיץ, שטרן וההתייחסותיים",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "indications",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "BION & SONS BELLHANGERS",
+    "place": "A bellhanging works on a fitting-out day: the trial frame standing down the middle of the shed with a graded ring of eight bells bolted into it, wheels and headstocks laid out on the boards beneath, a vertical tuning lathe at one end with a bell mouth-up under the cutter, an inspection and lettering bench along the window wall, and the ropes dropping through the floor holes into the pit below.",
+    "place_category": "bellhanging works",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A bell is a hollow container whose entire job is to take a raw meaningless blow from a clapper held inside it and hand it back as a note — Bion's container-contained and alpha-function are the physical operation of the trade, so the works carries his name on its board the way the corpus lets a barbershop carry barbiturates. Everything else the chapter tests is then ordinary bellhanging stock. A ring is eight bells graded by size, numbered on their headstocks and rung strictly from treble to tenor with no bell skipped, which is Erikson's fixed epigenetic sequence; the one bell whose inscription band is still blank, with its loose letters spilled across the bench, is identity versus role confusion. A bell sounds five partials at once and none of them replaces the one below it — Stern's layered senses of self — and the tuner brings them in by striking a fork, laying his palm flat on the metal and cutting until fork and bell agree, which is affect attunement working across two senses at once; the instant two bells strike dead together is the moment of meeting, and the beat tone two mistuned bells make, belonging to neither of them, is Ogden's analytic third, while the hand run slowly over the polished soundbow feeling for a flaw is the autistic-contiguous surface. The bright band on that soundbow gives a whole curved figure back to whoever leans over it, which is Lacan's mirror stage, and one bell carries his three orders as three bands: the reflecting one, the cast inscription of raised letters, and the rough unmachined crown nobody finishes. The dull green bell standing unhung in the corner with its clapper hanging on a nail is Spitz's hospitalism; a bell puts its whole weight on the headstock it leans on, so the one lying on its side with the headstock off is the anaclitic case; and the muffle box gives protest, despair and detachment as one bell open, one half-muffled and one with its clapper tied. Every rope drops through the same floor holes into one pit, so two crossed ropes pulling two men off balance, neither of them having meant it, is the two-person field and the enactment.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 142,
+   "title_en": "Telemental health for children and adolescents",
+   "title_he": "בריאות נפש מרחוק לילדים ומתבגרים",
+   "aspects": [
+    "core_principles",
+    "practical_use",
+    "indications",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "TELESCOPE HILL MODEL FLYERS",
+    "place": "A model flying club's field on a bright Sunday morning: a mown grass strip with a white-painted flight line along it, marked pilot boxes on the grass, a row of pits bays behind with models on trestles, a timber clubhouse with a peg board by its door, and a boundary hedge with the far side of the valley beyond it.",
+    "place_category": "model flying club",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Tele- is the chapter's own first morpheme and it means at a distance, so a club whose field is called Telescope Hill reads as a genuine club name, keeps the morpheme, and says far-seeing without printing the topic. The whole hobby is the chapter's literal picture: the pilot never touches the thing he is responsible for, works entirely by watching a small figure play at a distance, and everything can go wrong at the far end of a link. Every fact then hangs on ordinary field furniture. The peg board by the hut door, where you must take your channel's peg before switching on or two sets clash and both models come down, is the shared insecure channel, and the bind plug taped inside one transmitter is the paired encrypted link. The buddy-box lead joining an instructor's set to a beginner's, so the adult can take control on the instant, is the parent in the room and the supervising clinician on the line at once. The canvas windbreak screening one pits bay is the private space the child is entitled to, and the spotter standing at a pilot's shoulder is the second pair of eyes the remote observer does not have. The laminated card wired to the gate giving the field's exact location, beside the pinned emergency plan and the first-aid box, is the rule that you establish where the patient physically is before the session starts; the owner's name-and-address label in an open fuselage hatch, the failsafe setting and the lost-model alarm beeping out in the long grass beyond the hedge are what you do once the link is already gone, and the retrieval barrow is the fetch. The thirty-pace range-check stake is the technology check before you begin. The boundary hedge and its line of posts, which no model may be flown across, is licensure and jurisdiction, and the affiliation certificate screwed up in the hut is the licence itself. The proficiency-certificate board with names and dates on it is the evidence base, the signing-in book and the clipboard of forms are consent, and the laptop running a simulator on the trestle table inside the hut is the app used between sessions and never instead of them.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 143,
+   "title_en": "Evidence-based practice in child psychiatry",
+   "title_he": "רפואה מבוססת ראיות בפסיכיאטריה של הילד",
+   "aspects": [
+    "core_principles",
+    "evidence",
+    "practice_method",
+    "practical_use"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "GOLD STANDARD ASSAY",
+    "place": "An assay office on a busy trade morning: a long testing bench down the middle with a rack of acid bottles and a row of beam balances, a black touchstone slab at the near end, a hallmark punch press at the far end, and a brass-grilled trade counter where jewellers hand in numbered trays.",
+    "place_category": "assay office",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "Every idiom this chapter speaks in is already an assay-office noun, so the venue is the plain-English picture of the field's own vocabulary: the gold standard, the weight of evidence, levels and grades, the acid test, and appraisal, which is what an assayer literally does — an assay is a trial in the oldest sense of the word. The office then hands over its stock as free fact slots. The fineness chart on the wall is a ladder of grades from coarsest to purest, which is the hierarchy of evidence with the top grade at the top. The acid bottles are the test that either holds or does not. The loupe is critical appraisal, the beam balance with its fitted case of certified weights is weight of evidence, and the sealed sample envelopes with the owner's name folded out of sight are blinding. The crucible where scrapings from many separate trays are combined into one reading is pooling. The chalk tally counts items tested against items passed. The half-open reject drawer under the bench, full of unstamped pieces that never reach the window display, is publication bias, and the hallmark punch itself is the approval stamp, so an unstamped piece still being sold at the counter is off-label. The one joke the venue tells for free is the ring mandrel, where an adult ring is being cut down to fit a child's finger and re-tested.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

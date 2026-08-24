@@ -1,0 +1,177 @@
+{
+ "taken_categories": [
+  "canal lock",
+  "candle works",
+  "cloth dye house",
+  "creamery dairy",
+  "department store escalator",
+  "egg packing station",
+  "firework shop",
+  "hill sheep farm",
+  "household waste tip",
+  "ladder works",
+  "model yacht pond",
+  "newspaper newsroom",
+  "orchard cider press",
+  "pawnbroker shop",
+  "photo developing lab",
+  "piano tuning floor",
+  "pottery works",
+  "radio repair shop",
+  "rowing club boathouse",
+  "seaside deckchair hire",
+  "tea merchant's tasting room",
+  "water pumping station",
+  "welding fabrication shop",
+  "wet fish shop",
+  "window blind shop",
+  "window-cleaning firm",
+  "works time office"
+ ],
+ "jobs": [
+  {
+   "index": 129,
+   "title_en": "Pediatric psychiatric emergencies",
+   "title_he": "חירום פסיכיאטרי בילדים ובמתבגרים",
+   "aspects": [
+    "recognition",
+    "emergency_management",
+    "risk_assessment",
+    "differential",
+    "safety_planning"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "THE HOT LINE",
+    "place": "A twenty-four-hour emergency dispatch room in the small hours: two curved runs of desks under a gantry of screens, a wall map behind, every seat taken, headsets on, job tickets printing at the end of each row.",
+    "place_category": "emergency dispatch room",
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A dispatch room is the plain picture already inside the crisis line, and it is the corpus's own run-of-desks composition rather than a third emergency station — the fire house and the hospital are both spoken for, and this is the quieter place where an emergency is actually triaged before anybody is sent. Its value is that every step of the chapter is already furniture. The flip-card box standing on each desk asks in a fixed order and cannot be skipped, which is the structured risk assessment; the three-colour job strips queued on the gantry are the risk bands; the wall notice telling the room to rule out the physical first is the medical and toxic screen before anything is attributed to psychiatry; the script card telling the caller to ask them to put it down and walk out of the room is means restriction, the single highest-yield act in the chapter and the one carried in the largest lettering after the fascia. The supervisor plugged into a trainee's call on a splitter lead and the standing rule that two go to every job are never assess alone and never restrain alone. The callback rack by the door, stamped with tomorrow's date, is the safety plan and the follow-up; the map ring drawn round one street is the disposition, home or in. Three red-edged cards on a ring hang by every screen, one asking for the temperature, one for the pupils, one for the reflexes — the three drug emergencies, and no hospital appears anywhere.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 130,
+   "title_en": "Consultation-liaison: pediatrics, oncology, chronic illness",
+   "title_he": "ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות",
+   "aspects": [
+    "clinical_presentation",
+    "psychiatric_relevance",
+    "differential",
+    "management",
+    "treatment_overview"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "HOTEL LIAISON",
+    "place": "A mid-range city hotel's lobby and first-floor corridor at a busy check-in: reception counter, numbered key pigeonholes, lift directory, housekeeping cart parked halfway down the corridor.",
+    "place_category": null,
+    "derivation": "LITERAL_PICTURE",
+    "pun_explanation": "A liaison is a go-between, and the hotel's house doctor is the exact social position of the C-L psychiatrist: called to rooms he does not own, advising staff who outrank him on their own floor. \"HOTEL LIAISON\" reads as a real hotel name and prints the chapter's own word without printing a diagnosis. The single most important rule in the chapter gets the biggest lettering as a service motto behind the desk — \"WE ADVISE — THEY DECIDE\" (recommendations, not orders). The lift directory board lists the services the consultant alone visits on every floor. The rest is free stock: the \"DO NOT DISTURB\" hanger is refusal and adolescent dissent; the register's co-signature line is parental consent plus child assent; the room-service bell that rings before the dome is lifted, with a child already gagging in the doorway, is conditioned anticipatory nausea; the maintenance man's \"NO FAULT FOUND\" radiator tag beside a guest still complaining is the functional/somatic presentation; the flickering corridor light and the bathrobed guest being steered back at 3am is delirium, the commonest consult of all.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 131,
+   "title_en": "Psychotherapy theories overview",
+   "title_he": "סקירת תיאוריות פסיכותרפויטיות",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "TEAR-A-PLY ROOFING",
+    "place": "A roofing supplies merchant's trade counter and yard on a weekday morning: a covered run of sample bays — slate, clay tile, felt, shingle, standing seam — pallets of each stacked behind, a cutaway demonstration roof standing in the middle of the yard, vans loading at the far end.",
+    "place_category": "roofing supplies yard",
+    "derivation": "PHONETIC_PUN",
+    "pun_explanation": "Tear-a-ply is exactly how this audience says therapy, and both halves are genuine trade words — a tear-off is what you do to the old covering before you can lay anything new, and a ply is one layer of felt in a built-up roof. The merchant earns a survey chapter because six competing schools need six signage slots and a sample bay is a free one: each bay is a whole system for solving the same problem a different way, with its own name board and its own guarantee card, and the years printed on those cards carry the evidence base with nothing invented. The cutaway roof in the middle of the yard is the depth model as an object — visible covering, batten, felt, deck, and the rafters nobody ever sees — and the trade's own rule, that you strip back until you reach sound deck before you decide anything, is the one thing every school in the chapter agrees on. The surveyor holding a moisture meter flat against an unopened panel to read what is going on underneath is mentalization drawn without a word. The oldest bay carries a founder's portrait and a dated plate over a thick multi-ply build-up; the slimmer bay beside it is built off the same deck, which is the family quarrel of the whole chapter, and a sample card at the counter says only that a covering is good enough for the job.",
+    "confidence": "workable"
+   }
+  },
+  {
+   "index": 132,
+   "title_en": "CBT: theory + practice",
+   "title_he": "CBT — תיאוריה ופרקטיקה",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "CEMENT BLOCK TESTING",
+    "place": "A concrete block works and its little testing house on a weekday morning: the mixer and block machine at one end, a long run of curing racks loaded with grey blocks, and a glazed testing room where samples go into the press one at a time.",
+    "place_category": "concrete block works",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "C, B and T head the three words of an utterly ordinary trade name — a works that makes cement blocks and tests them — and the three letters are picked out on the fascia the way the corpus picks out expreSS tRIps. The works was chosen because its trade is the method: nobody here argues about whether a block is strong, they put it in the press and wind the load on until it tells them, which is collaborative empiricism and the behavioural experiment in one machine, and the banner over the press says exactly that in the works' own words. A block is only as good as what is under it, so the demonstration slab's foundation course laid to a string line carries core beliefs under automatic thoughts, and the mix docket says what actually went in. The reject pallet holds a dozen blocks each deformed in one named way — one bowed, one twisted, one split clean in two, one short-measured — which is the distortion list as a contrast set rather than a list of words. Three mould boxes stamped in order sit on the bench and are the model everybody teaches first. The press dial is scaled nought to a hundred and is a carrier whose real job is bearing that scale; the loading rig that adds one step weight at a time up a numbered rack is graded exposure with nothing invented; and the half-blocks in the take-one-home bin by the gate are the homework.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 133,
+   "title_en": "DBT: theory + practice",
+   "title_he": "DBT — תיאוריה ופרקטיקה",
+   "aspects": [
+    "history_origin",
+    "core_principles",
+    "practice_method",
+    "evidence",
+    "indications"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "never reviewed"
+   ],
+   "current": {
+    "sign_text": "DEMOLITION BY THORNE",
+    "place": "A demolition site on a terraced street at mid-morning: the block behind already down to clean rubble, the original front wall still standing and held upright by a steel frame of raking shores, a long-reach machine picking at the back, hoses damping the dust down.",
+    "place_category": "demolition site",
+    "derivation": "ACRONYM_EMBED",
+    "pun_explanation": "D, B and T head the three words of an ordinary contractor's board, and this contractor's job is the dialectic itself made out of steel. Facade retention is routine, licensed, unremarkable temporary works: the front wall is kept exactly as it is, propped and unchanged, while everything behind it is taken down and rebuilt. It is the only mundane thing that holds acceptance and change true at the same time, and it is what the B on the fascia stands on. The site is not chosen for destruction and nothing here is dramatic — it is a calm, wetted-down, heavily documented morning, and the mnemonic is the propped wall, not the rubble. The rest is the site's own paperwork: the posted sequence of works, numbered and worked strictly top down, is the target hierarchy; the orange tag wired to each prop saying it is temporary and must not be removed is tolerating a load you cannot yet fix; the bowser damping down so nothing flares is regulation; the banksman and the machine driver working one agreed set of hand signals is asking for what you need in a code both sides already have; the four in hi-vis standing round a drawing on a tailgate before anyone touches anything is the consultation meeting; the twenty-four-hour number on the hoarding is the between-session call; the permit board with its slots and its pen on a string is the diary card; and the rigger walking a lifting chain link by link with a paint stick, marking the one link that let go, is a chain analysis drawn exactly.",
+    "confidence": "strong"
+   }
+  },
+  {
+   "index": 136,
+   "title_en": "Levels of care: inpatient, partial hospitalization, residential, systems of care",
+   "title_he": "מסגרות טיפול: אשפוז, אשפוז יום, מגורים ו-Systems of Care",
+   "aspects": [
+    "indications",
+    "core_principles",
+    "practice_method",
+    "practical_use",
+    "evidence"
+   ],
+   "required_tokens": {},
+   "why_rejected": [
+    "critic rejected it"
+   ],
+   "current": {
+    "sign_text": "THE STAIRCASE LOCKS",
+    "place": "A canal lock staircase on a busy summer morning: five stone chambers stepping up the hillside one straight into the next, black-and-white balance beams swung out over the towpath, a lock-keeper's hut with a toll window beside the bottom gate, a line of boats waiting their turn along the bank below, and side ponds and an overflow weir running down beside the flight.",
+    "place_category": "canal lock flight",
+    "derivation": "SPATIAL_ISOMORPHISM",
+    "pun_explanation": "A staircase lock is the continuum of care built in stone. A boat is lifted one level at a time, no level can be skipped, it can only be taken up when the level above is ready to receive it, and it comes back down the same way it went up — which is the step-up and step-down criteria drawn as ordinary canal work rather than as a ladder diagram. Five chambers give the five settings in order from the open pound at the bottom, through the two shallow middle chambers, to the top chamber with the deepest walls and the gates shut behind it. The keeper is the case manager: he owns no boat, and decides only who enters, in what order, and how long each lies in the pound. Every remaining item is a real fitting on a real flight. Milieu is the posted routine on the hut wall — operating hours, the order of working, the rule that no boat enters alone. The token economy is literally a token economy, because tolls on the cut were paid in numbered brass checks and the keeper's board is hung with them. Restraint is the moment this chapter is careful about, and the flight makes it ordinary, brief and bounded: while the chamber is filling and the water is at its most turbulent the boat is held short on two ropes round the bollards, by two people, for exactly as long as the level is unsettled, and let go the moment it settles. Stop planks stacked against the wall are crisis containment; the bypass channel and the weir carry all the water that never needs a chamber at all, which is the least restrictive route; the side ponds hold what the flight cannot; and a boat coming back down past the waiting line is readmission.",
+    "confidence": "strong"
+   }
+  }
+ ]
+}

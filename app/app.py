@@ -54,6 +54,47 @@ SR_PROGRESS_LOCAL = LOCAL_ROOT / "schedule" / "flashcard_progress.json"
 _DEFAULT_PALETTE_ENTRY = {"name": "Unknown", "hex": "#808080", "prompt": ""}
 
 
+# Asset stems are pipeline-internal ("epidemiology", "dsm_criteria_sigecaps",
+# "main", "criteria2"). Printing them raw put English snake_case headings in the
+# middle of a Hebrew RTL page — and stems like "dsm_criteria_" rendered with a
+# dangling underscore. Map what we know; humanise the rest.
+_ASPECT_HE = {
+    "main": "הלוח הראשי",
+    "criteria": "קריטריונים",
+    "dsm_criteria": "קריטריוני DSM",
+    "diagnostic_criteria": "קריטריונים אבחנתיים",
+    "epidemiology": "אפידמיולוגיה",
+    "etiology": "אטיולוגיה",
+    "treatment": "טיפול",
+    "treatment_overview": "סקירת טיפול",
+    "assessment_tools": "כלי הערכה",
+    "medical_mimics": "חיקויים רפואיים",
+    "suicidality_assessment": "הערכת אובדנות",
+    "mixed_features_specifier": "מאפיינים מעורבים",
+    "course": "מהלך המחלה",
+    "comorbidity": "תחלואה נלווית",
+    "sigecaps": "SIGECAPS",
+    "high_yield": "תשואה גבוהה",
+}
+
+
+def sketchy_heading(stem: str) -> str:
+    """A readable Hebrew heading for an asset stem."""
+    s = stem.strip("_")
+    if s in _ASPECT_HE:
+        return _ASPECT_HE[s]
+    # compound stems: "dsm_criteria_sigecaps" -> "קריטריוני DSM · SIGECAPS"
+    for base, he in sorted(_ASPECT_HE.items(), key=lambda kv: -len(kv[0])):
+        if s.startswith(base + "_"):
+            rest = s[len(base) + 1:]
+            return f"{he} · {_ASPECT_HE.get(rest, rest.replace('_', ' '))}"
+    if s.startswith("main") or s.startswith("criteria"):
+        n = s[-1] if s[-1].isdigit() else ""
+        base = "הלוח הראשי" if s.startswith("main") else "קריטריונים"
+        return f"{base} {n}".strip()
+    return s.replace("_", " ")
+
+
 # ── Data loading (cached) ───────────────────────────────────────────────────
 def _gh_fetch_json(path: str, fallback: dict | None = None) -> dict:
     """Fetch a JSON file from the (possibly private) repo via Contents API."""
@@ -244,6 +285,23 @@ def save_progress(progress: dict) -> bool:
         return True
     st.warning(f"GitHub commit failed: {r.status_code} {r.text[:200]}")
     return False
+
+
+@st.cache_data(ttl=3600)
+def get_lectures() -> dict:
+    """Recorded academic lectures, keyed by chapter number as a string.
+
+    Written by scripts/upload_lectures.py. A lecture is filed under every
+    chapter it is relevant to, not only its main one — the Tourette/ADHD/OCD
+    talk belongs to all three — so the same URL appears under several keys.
+    """
+    f = LOCAL_ROOT / "schedule" / "lectures.json"
+    if not f.exists():
+        return {}
+    try:
+        return json.loads(f.read_text(encoding="utf-8")).get("lectures_by_chapter", {})
+    except Exception:
+        return {}
 
 
 @st.cache_data(ttl=300)
@@ -696,6 +754,21 @@ def render_day_page(day, symbols, progress, palette):
         st.markdown(f"**Symbols**: {', '.join(day.get('symbols_needed', [])) or '(אין סמלים ייעודיים)'}")
         st.markdown(f"**מיקוד**: {day.get('prompt_focus', '')}")
 
+    # Recorded lectures — deliberately BEFORE the "nothing generated yet" exit.
+    # A chapter can have a real lecture from the owner's academic course while
+    # its generated material is still queued, and that lecture is worth more
+    # than the "come back in an hour" notice.
+    lectures = get_lectures().get(str(day["index"]), [])
+    if lectures:
+        st.markdown("### 🎓 הרצאות מוקלטות")
+        for lec in lectures:
+            label = lec["title"]
+            if not lec.get("primary"):
+                label += "  ·  (שייכת בעיקר לפרק אחר)"
+            with st.expander(f"{label}  —  {lec['size_mb']} MB"):
+                st.video(lec["url"])
+                st.caption(lec["url"])
+
     # Artifacts
     tag = day_tag(day)
     assets = get_release_assets(tag)
@@ -725,7 +798,7 @@ def render_day_page(day, symbols, progress, palette):
         else:
             st.warning("לא הצלחתי לטעון את הוידאו (בעיית הרשאה?).")
 
-    # Sketchy scenes (Gemini) — primary visual mnemonic + Hebrew narrative caption
+    # Sketchy scenes (Gemini) — primary visual mnemonic + Hebrew legend
     sketchy_images = sorted(k for k in assets if k.startswith("sketchy_") and k.endswith(".png"))
     if sketchy_images:
         st.markdown("### 🎨 סצנות Sketchy")
@@ -734,7 +807,7 @@ def render_day_page(day, symbols, progress, palette):
             caption_name = f"sketchy_{aspect}.txt"
             caption_url = assets.get(caption_name)
 
-            st.markdown(f"#### {aspect}")
+            st.markdown(f"#### {sketchy_heading(aspect)}")
             # Image — full width, centered. Limit displayed width so it doesn't
             # become huge on wide screens.
             local_img = fetch_asset_local(name, assets[name])
@@ -771,7 +844,7 @@ def render_day_page(day, symbols, progress, palette):
         for i, name in enumerate(infographics):
             with cols[i % len(cols)]:
                 aspect = name.replace("infographic_", "").replace(".png", "")
-                st.markdown(f"**{aspect}**")
+                st.markdown(f"**{sketchy_heading(aspect)}**")
                 local_img = fetch_asset_local(name, assets[name])
                 if local_img:
                     st.image(local_img)

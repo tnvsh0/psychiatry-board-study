@@ -48,9 +48,13 @@ GH_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 HEADER_ALIASES = [
     ("dsm", "DSM-5-TR"),
     ("dulcan", "Dulcan"),
-    ("stahl c&a", "Stahl C&A"),
-    ("stahl pediatric", "Stahl C&A"),
-    ("stahl essential", "Stahl Essential"),
+    # The two Stahl books were renamed to share no separable prefix, because
+    # "Stahl p. 761" named neither of them. Old spellings stay as aliases.
+    ("stahlkids", "StahlKids"),
+    ("stahl c&a", "StahlKids"),
+    ("stahl pediatric", "StahlKids"),
+    ("stahlneuro", "StahlNeuro"),
+    ("stahl essential", "StahlNeuro"),
     ("synopsis", "Synopsis"),
 ]
 
@@ -103,7 +107,7 @@ def parse_source_map(md: str) -> dict[str, set[int]]:
 def released_tags() -> set[str]:
     r = subprocess.run(
         ["gh", "release", "list", "--repo", GH_REPO, "--limit", "500", "--json", "tagName"],
-        capture_output=True, text=True,
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
     )
     if r.returncode != 0:
         print(f"[!] gh release list failed: {r.stderr.strip()[:200]}", file=sys.stderr)
@@ -114,7 +118,7 @@ def released_tags() -> set[str]:
 def fetch_guide(tag: str) -> str | None:
     r = subprocess.run(
         ["gh", "release", "view", tag, "--repo", GH_REPO, "--json", "assets"],
-        capture_output=True, text=True,
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
     )
     if r.returncode != 0:
         return None
@@ -126,7 +130,7 @@ def fetch_guide(tag: str) -> str | None:
     r = subprocess.run(
         ["gh", "release", "download", tag, "--repo", GH_REPO,
          "--pattern", asset, "--output", "-"],
-        capture_output=True, text=True,
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
     )
     return r.stdout if r.returncode == 0 else None
 

@@ -1,0 +1,288 @@
+=== chapter 29 | started 19:28:42 UTC ===
+
+======================================================================
+Day 29: SSRI לעומק
+Tag: study-029-ssris-deep-dive
+Aspects: ['drug_class_overview', 'drug_mechanism', 'indications', 'side_effects_class', 'monitoring', 'practical_use', 'pediatric_specifics', 'discontinuation']
+Symbols (10): ['SERT', 'Fluoxetine', 'Sertraline', 'Escitalopram', 'Citalopram']...
+Density: high
+======================================================================
+
+Found existing per-day notebook: 09ae1f29-acd7-4b1a-aec9-f53f33614b8a ('[Study-029] SSRI לעומק')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1846 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+    [!] notebooklm generate returned rc=1 with 120 bytes; retrying (2/3)
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (3/3)
+  [!] start audio failed (exit 1): 22:31:26 ERROR [notebooklm._rpc_executor] [req=5b6ef093] RPC CREATE_ARTIFACT failed after 0.747s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  audio: None
+  video: 6f83da8c-70aa-4a75-b4e5-6cf18e80b841
+  flashcards: b2676bbe-c624-4b67-941e-a82e79cd0311
+  quiz: d21669ce-cbd9-4251-bc76-5b2d69cb2e16
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (39.1 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (32088 bytes, keys: ['drug_class', 'indications', 'side_effects_class', 'monitoring', 'practical_use', 'pediatric_specifics', 'discontinuation', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[drug_class_overview] = aa3cf85c
+  scope[indications] = a39df20b
+  Waiting 60s for scope sources to index...
+Starting per-aspect infographics...
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (2/3)
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (3/3)
+  [!] start infographic failed (exit 1): 22:40:03 ERROR [notebooklm._rpc_executor] [req=8d5f8064] RPC CREATE_ARTIFACT failed after 1.013s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  infographic_drug_class_overview: None [scoped]
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (2/3)
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (3/3)
+  [!] start infographic failed (exit 1): 22:40:55 ERROR [notebooklm._rpc_executor] [req=4d2dd1cb] RPC CREATE_ARTIFACT failed after 0.588s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  infographic_drug_mechanism: None [whole-notebook (fallback)]
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (2/3)
+    [!] notebooklm generate returned rc=1 with 83 bytes; retrying (3/3)
+  [!] start infographic failed (exit 1): 22:41:45 ERROR [notebooklm._rpc_executor] [req=494f4bd7] RPC CREATE_ARTIFACT failed after 0.967s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  infographic_indications: None [scoped]
+
+Generating 3 Sketchy v2 plate(s) in 'expreSS tRIps'...
+  sketchy_main: 22 facts, directing...
+[i] element table attempt 1/3: 2 error(s):
+      - e19: same (category, material, colour) as e1
+      - e19: relation 'is abruptly removed from his task' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym
+[i] element table attempt 2/3: 1 error(s):
+      - e13: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "חבילות ה'סרוטונין' [serotonin] המונחות בתאי הדואר מייצגות את מולקולות הסרוטונין שבריכוזן עולים כאשר פעילות הדוור ('SERT') [SERT] נחסמת."
+[i] normalized e18: zone 'Brochure racks by the door' added to the list
+[i] normalized e1: dropped relation to unknown element 'wall of pigeonholes papered in yellow smiley post-its'
+[i] normalized e23: dropped text 'Symbyax Combo, Fluoxetine + Olanzapine, Kids >10' (over 5 words)
+[i] normalized e24: dropped text 'Off-Label Anxiety, Sertraline, Fluoxetine, Escitalopram, Fluvoxamine' (over 5 words)
+[i] normalized e25: dropped text 'Off-Label Bulimia, Fluoxetine 60mg/day' (over the cap of 18)
+[i] normalized e26: dropped text 'NNT: 10, MDD Travel' (over the cap of 18)
+[i] normalized e1: cue trimmed to "Postal carrier in 'SERT' uniform looking frustrated at pigeonholes"
+[i] normalized e2: cue trimmed to 'Energetic travel agent'
+[i] normalized e3: cue trimmed to 'Luggage scales'
+[i] normalized e4: cue trimmed to "Consultant discreetly drawing a 'sigma-1' symbol on a 'DAT'"
+[i] normalized e6: cue trimmed to "Consultant enthusiastically demonstrating a 'sigma-1' VR headset for 'fast"
+[i] normalized e7: cue trimmed to 'Fax machine'
+[i] normalized e8: cue trimmed to "Queue-ticket dispenser giving out 'R' and 'S' tickets"
+[i] normalized e9: cue trimmed to 'Wall calendar'
+[i] normalized e10: cue trimmed to "Consultant carefully selecting only 'S' branded brochures"
+[i] normalized e11: cue trimmed to 'Desk phone'
+[i] normalized e12: cue trimmed to "Travel agent strongly gripping an 'M1' branded steering wheel"
+[i] normalized e13: cue trimmed to 'Stapler'
+[i] normalized e15: cue trimmed to 'Sad lover sitting outside a bedroom door'
+[i] normalized e16: cue trimmed to 'Black box'
+[i] normalized e17: cue trimmed to "Patient abruptly stopping a postal carrier 'SERT' route"
+[i] normalized e18: cue trimmed to "Poster for 'MDD-Free Adventures for Kids >8' featuring"
+[i] normalized e19: cue trimmed to "Leaflet for 'Escitalopram Safaris for Teens >12' depicting happy"
+[i] normalized e20: cue trimmed to "Travel consultant meticulously organizing 'OCD-Free' folders"
+[i] normalized e21: cue trimmed to 'Child aged 7'
+[i] normalized e22: cue trimmed to 'An 8-year-old coloring a world map'
+[i] normalized e23: cue trimmed to "A 'Symbyax' combo meal sign at the vending machine"
+[i] normalized e24: cue trimmed to "Consultant discreetly handing 'Off-Label Anxiety' travel guides for Sertraline"
+[i] normalized e25: cue trimmed to "Adolescent girl hiding an 'Off-Label Bulimia' travel guide"
+[i] accepted with warning: e8: hook over 32 words (39): "מכשיר כרטיסי התור מוציא גם 'R' [R] וגם 'S' [S] עם לוגו 'H1' [H1], לצד אזהרת 'QTc Warning' [QTc Warning], כמו ש-Citalopram [Citalopram] הוא תערובת רסמית עם אננטיומר R בעל זיקה קלה ל-H1 [H1] ואזהרת הארכת מרווח QTc [QTc]."
+[i] accepted with warning: e12: hook over 32 words (34): "סוכנת נסיעות אוחזת בהגה 'M1' [M1], מרכיבה משקפי 'NOS' [NOS] ולידה שלט 'מסע לא ליניארי', כי Paroxetine [Paroxetine] הוא ה-SSRI [SSRI] הפוטנטי ביותר עם תכונות אנטי-כולינרגיות M1 [M1], מעכב NOS [NOS] וקינטיקה לא ליניארית."
+[i] accepted with warning: e13: hook over 32 words (36): "מהדק מסומן '21h' [21h HRS] נתקע בעצמו עם אזהרת 'Potent CYP2D6' [Potent CYP2D6], כמו ש-Paroxetine [Paroxetine] בעל זמן מחצית חיים של 21 שעות, מעכב פוטנטי של CYP2D6 [CYP2D6] ומעכב את המטבוליזם של עצמו (קינטיקה לא ליניארית)."
+[i] dropped digit-bearing string '5-HT2C' — the compositor owns the numerals
+[i] dropped digit-bearing string 'CYP2D6, CYP2C19' — the compositor owns the numerals
+[i] dropped digit-bearing string 'DAT, sigma-1' — the compositor owns the numerals
+[i] dropped digit-bearing string 'CYP2D6, CYP3A4' — the compositor owns the numerals
+[i] dropped digit-bearing string 'sigma-1 VR, Fast Anxiety Relief' — the compositor owns the numerals
+[i] dropped digit-bearing string '15h, CYP1A2, CYP2C19' — the compositor owns the numerals
+[i] dropped digit-bearing string 'R, S, H1, QTc Warning' — the compositor owns the numerals
+[i] dropped digit-bearing string '20h, CYP1A2, CYP2C19, CYP2D6' — the compositor owns the numerals
+[i] dropped digit-bearing string '27-32h, CYP2D6 Only' — the compositor owns the numerals
+[i] dropped digit-bearing string 'M1, NOS, מסע לא ליניארי' — the compositor owns the numerals
+[i] dropped digit-bearing string '21h, Potent CYP2D6' — the compositor owns the numerals
+[i] dropped digit-bearing string '<25y' — the compositor owns the numerals
+[i] dropped digit-bearing string 'MDD-Free, Kids >8, Fluoxetine' — the compositor owns the numerals
+[i] dropped digit-bearing string 'Escitalopram Safaris, Teens >12' — the compositor owns the numerals
+[i] dropped digit-bearing string 'OCD-Free, Sertraline >6y' — the compositor owns the numerals
+[i] try 1: 4 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 3 missing, 3 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 2 lower-priority string(s) and retrying
+[i] try 3: 2 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 1 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   DAYS               '4-6d' + 'DAYS'  quad=[(1628, 884), (1928, 937), (1927, 1449), (1628, 1370)]  plate height=36.78% of frame
+[ok]   HRS                '26h' + 'HRS'  quad=[(1667, 456), (1831, 472), (1833, 645), (1667, 623)]  plate height=12.3% of frame
+[ok]   WKS                '8wk' + 'WKS'  quad=[(2358, 452), (2515, 466), (2516, 708), (2358, 688)]  plate height=16.67% of frame
+[scrub] neutralised 2354 leftover chroma px
+[i] composited 3/3 number plates -> sketchy_main.png
+[i] narration attempt 1/3: 4 issue(s); figure not spoken: עד8wk
+    [OK] sketchy_main.png (5.6 MB), 4 tries, score 1, composited 3/3 numbers
+  sketchy_main2: 22 facts, directing...
+[i] element table attempt 1/3: 3 error(s):
+      - e9: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "מכשיר כרטיסי התור מציג את המספר '143', בדיוק כפי שהמספר הזה מייצג את ה-Number Needed to Harm לאירוע אובדנות תחת טיפול ב-SSRI בילדים."
+      - e14: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'ערימת חוברות הטיולים בגדלים הולכים וגדלים מסמלת את הטיטרציה ההדרגתית הקפדנית של ה-SSRI, החל ממינון נמוך ועלייה איטית כל 1-3 שבועות, בדיוק כפי שבונים תוכנית טיול צעד אחר צעד.'
+      - 2/19 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 2/3: 3 error(s):
+      - e20: relation 'CONTRAST_DOSE_REDUCTION' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym
+      - e21: relation 'INHIBITS_METABOLISM' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym
+      - e22: relation 'INHIBITS_METABOLISM' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym
+[i] normalized e23: dropped text 'המשך טיול: 6-12 חודשים' (over the cap of 18)
+[i] normalized e1: cue trimmed to "Brochure for 'OCD Tours'"
+[i] normalized e1: hook de-asserted -> "כמו שעלון תיירות לטיולי 'OCD Tours' מראה 6 אנשים המטיילים בקפדנות, כך המספר 6 — ה-Number Needed to Treat (NNT) לתגובה קלינית של SSRI ב-OCD."
+[i] normalized e2: cue trimmed to "Brochure for 'Anxiety-Free Escapes'"
+[i] normalized e2: hook de-asserted -> "כמו שעלון לטיולי 'Anxiety-Free Escapes' מראה 3 אנשים שלווים, כך המספר 3 — ה-Number Needed to Treat (NNT) לתגובה קלינית של SSRI בהפרעות חרדה."
+[i] normalized e3: cue trimmed to 'A BLACK BOX'
+[i] normalized e4: cue trimmed to 'A young child customer at a desk'
+[i] normalized e5: cue trimmed to 'A document being photocopied'
+[i] normalized e5: hook de-asserted -> 'כמו שמסמך משווה על מכונת הצילום מראה שני אחוזים שונים, כך האחוז 4% על המסך ומספרים נוספים על המסמך — שיעור אירועי ה-Suicidality תחת טיפול ב-SSRI לעומת קבוצת פלצבו.'
+[i] normalized e6: cue trimmed to "A sticky note on a consultant's desk"
+[i] normalized e6: hook de-asserted -> 'כמו פתק על שולחן יועץ נסיעות המפרט קשיי התאקלמות של מטיילים צעירים עם אחוז מסוים, כך 10% עד 20% — שכיחות תסמונת ההפעלה ההתנהגותית (activation) בקרב ילדים מטופלים.'
+[i] normalized e7: cue trimmed to 'A traveler looking visibly queasy and clutching their stomach'
+[i] normalized e8: cue trimmed to "A 'CLOSED' sign on the bedroom door + sad"
+[i] normalized e8: hook de-asserted -> "כרזת פרסום קטנה על הקיר עם שלט 'CLOSED' על דלת חדר שינה ואוהב עצוב, — בדיוק כמו תופעת לוואי של SSRI הגורמת להפרעות בתפקוד המיני כמו ירידה בליבידו ועיכוב באורגזמה עקב עודף סרוטונין והפחתת דופמין."
+[i] normalized e9: cue trimmed to "A 'Customer Feedback' form near the 'CLOSED' sign poster"
+[i] normalized e10: cue trimmed to 'A small toy HIPPO floating in a water cooler'
+[i] normalized e11: cue trimmed to "A 'DO NOT TRAVEL WITHOUT ADULT' sign for children"
+[i] normalized e11: hook de-asserted -> "כמו שלט אזהרה גדול 'DO NOT TRAVEL WITHOUT ADULT' עם המספר 143 המודגש, כך המספר 143 — ה-Number Needed to Harm (NNH) לאירוע Suicidality תחת טיפול ב-SSRI בילדים."
+[i] normalized e12: cue trimmed to 'A wall calendar'
+[i] normalized e13: cue trimmed to "A sticker on the water cooler bottle indicating 'Weekly"
+[i] normalized e14: cue trimmed to 'A child on luggage scales'
+[i] normalized e15: cue trimmed to 'Two medicine bottles'
+[i] normalized e16: cue trimmed to "A heart-shaped 'APPROVED' stamp on a travel document"
+[i] normalized e17: cue trimmed to 'A consultant slowly pouring a very small amount'
+[i] normalized e18: cue trimmed to "A 'Vacation Planner' board"
+[i] normalized e20: cue trimmed to 'Bottles of Fluoxetine and Paroxetine'
+[i] normalized e21: cue trimmed to 'A bottle of Clomipramine pills'
+[i] normalized e22: cue trimmed to 'A bottle of Fluvoxamine'
+[i] normalized e23: cue trimmed to "A customer extending their 'trip continuation' for another '6-12"
+[i] normalized e24: cue trimmed to "Postal carrier in 'SERT' uniform collecting serotonin packages"
+[i] normalized e25: cue trimmed to 'Patient suddenly off the SERT-postal-route'
+[i] accepted with warning: e8: hook over 32 words (35): "כרזת פרסום קטנה על הקיר עם שלט 'CLOSED' על דלת חדר שינה ואוהב עצוב, — בדיוק כמו תופעת לוואי של SSRI הגורמת להפרעות בתפקוד המיני כמו ירידה בליבידו ועיכוב באורגזמה עקב עודף סרוטונין והפחתת דופמין."
+[i] accepted with warning: e10: hook over 32 words (33): "כמו היפופוטם צעצוע קטן (היפו) עם הכיתוב 'SI-ADH' צף במים בבקבוק של מקרר המים שנראה ריק, כך היפונתרמיה ו-SIADH קשורות להפרשה לא תואמת של הורמון נוגד השתנה, ודורשות ניטור במצבי בלבול או חולשה."
+[i] accepted with warning: e14: hook over 32 words (34): "כמו ילד שנשקל על משקל מזוודות המציג '25' כמגבלת גיל לחבילת נוער, כך יש לנטר מדדי גדילה וצמיחה כמו גובה, משקל ו-BMI (באחוזונים מותאמים) בילדים עד גיל 25 בשל ירידה בתיאבון וחשש להאטה בצמיחה."
+[i] accepted with warning: e17: hook over 32 words (40): 'כמו יועץ המטפטף בזהירות אבקת \'Fluoxetine\' בכמות קטנה על כפית מדידה של \'Sertraline\', כך יש לבצע טיטרציה הדרגתית קפדנית, להתחלה במינון נמוך מאוד (כמו 10 מ"ג Fluoxetine או 12.5-25 מ"ג Sertraline) ולעלות באיטיות כל 1-3 שבועות למניעת תופעות לוואי חריפות.'
+[i] accepted with warning: e23: hook over 32 words (39): "כמו לקוח שממשיך את הזמנת הטיול שלו לאותו יעד חלומי למשך '6-12 חודשים' נוספים לאחר שהגיע אליו, כך חובה להמשיך את שלב הטיפול המשמר (Continuation) באותו מינון יעיל למשך 6 עד 12 חודשים לאחר השגת הפוגה מלאה למניעת הישנות."
+[i] dropped digit-bearing string 'קשיי התאקלמות: 10-20%' — the compositor owns the numerals
+[i] dropped digit-bearing string 'ציפיות שלא מומשו: 25-80%' — the compositor owns the numerals
+[i] dropped digit-bearing string 'תכנית נופש אופטימלית: 8-12 שבועות' — the compositor owns the numerals
+[i] dropped digit-bearing string 'Atomoxetine 1/2' — the compositor owns the numerals
+[i] dropped digit-bearing string 'Fluoxetine, Paroxetine, CYP2D6 Blocker' — the compositor owns the numerals
+[i] dropped digit-bearing string 'Fluvoxamine, CYP1A2 Inhibitor' — the compositor owns the numerals
+[i] try 1: 8 missing, 3 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 9 missing, 3 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 6 lower-priority string(s) and retrying
+[i] try 3: 4 missing, 7 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 8 missing, 2 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   N                  '25' + 'N'  quad=[(1856, 877), (2023, 926), (2027, 1111), (1855, 1052)]  plate height=15.23% of frame
+[ok]   PCT                '4%' + 'PCT'  quad=[(2214, 514), (2345, 541), (2345, 595), (2214, 566)]  plate height=5.27% of frame
+[ok]   WKS                '4wk' + 'WKS'  quad=[(2551, 1219), (2623, 1240), (2623, 1350), (2551, 1321)]  plate height=8.53% of frame
+[scrub] neutralised 3230 leftover chroma px
+[i] composited 3/3 number plates -> sketchy_main2.png
+[i] narration attempt 1/3: 5 issue(s); figure not spoken: עד3
+[i] narration attempt 2/3: 1 issue(s); figure not spoken: עד12mo
+[i] narration attempt 3/3: 5 issue(s); figure not spoken: עד3
+    [OK] sketchy_main2.png (6.2 MB), 4 tries, score 4, composited 3/3 numbers
+  sketchy_main3: 21 facts, directing...
+[i] element table attempt 1/3: 3 error(s):
+      - e21: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'מגרסת נייר זו מייצגת את האנזים CYP2D6 שאחראי לפירוק תרופות.'
+      - e22: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'חבילות אלו מייצגות את מולקולות הסרוטונין הנאספות ומועברות.'
+      - 5/22 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 2/3: 1 error(s):
+      - e11: same (category, material, colour) as e2
+[i] element table attempt 3/3: 1 error(s):
+      - e13: relation 'is not directly responsible for the clinical delay caused by' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym
+    [FAIL] director never produced a valid table: ["e13: relation 'is not directly responsible for the clinical delay caused by' is not one of ADJACENT_TO, BLOCKS, ACTS_ON, FALLS_FROM, CONTAINED_IN and has no known synonym"]
+
+3 NotebookLM artifacts launched. Waiting...
+
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (2/3)
+    [!] notebooklm artifact returned rc=2 with 213 bytes; retrying (3/3)
+  [!] Timed out for: ['video', 'flashcards', 'quiz']
+  [X] video skipped (timeout)
+  [X] flashcards skipped (timeout)
+  [X] quiz skipped (timeout)
+
+Uploading release study-029-ssris-deep-dive...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-029-ssris-deep-dive
+=== finished 21:17:32 UTC ===

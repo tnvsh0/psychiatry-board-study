@@ -20,6 +20,15 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = REPO_ROOT / "schedule"
 OUT_FILE = OUT_DIR / "diagnoses.json"
@@ -74,7 +83,7 @@ Be thorough. Aim for 40–80 entries."""
 
 def run_notebooklm(args, timeout=600):
     return subprocess.run(["/opt/venv/bin/notebooklm"] + args,
-                          capture_output=True, text=True, timeout=timeout)
+                          capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
 
 
 def main() -> int:

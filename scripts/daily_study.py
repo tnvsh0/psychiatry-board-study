@@ -32,6 +32,15 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+# Windows gives a redirected stdout the locale codec (cp1255 here), and a
+# single Hebrew character then raises UnicodeEncodeError. Every chapter
+# title in this course is Hebrew, and bulk_run redirects stdout to a log.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 # Gemini-based image generation (Sketchymedical style) — replaces NotebookLM infographics
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
@@ -53,6 +62,20 @@ NOTEBOOK_ID = os.environ.get(
 )
 GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 
+# NotebookLM caps CREATE_ARTIFACT per day, and it does not cap every type
+# equally. In one day of testing, audio and infographics both began returning
+# RateLimitError while video, quiz and flashcards kept working — two chapters'
+# worth of artifacts was enough.
+#
+# That is fatal for a 141-chapter run if those two sit on the critical path: at
+# three or four a day the course lands long after the exam. So a bulk run skips
+# them and backfill_audio fills them in afterwards, a few a day, earliest
+# chapter first. Everything else — the study guide, the facts, the Sketchy
+# plates, the narration, the quiz, the flashcards, the video — is unbounded and
+# still generated in line.
+SKIP_QUOTA_ARTIFACTS = os.environ.get(
+    "SKIP_QUOTA_ARTIFACTS", "").strip().lower() not in ("", "0", "false", "no")
+
 NOTEBOOKLM_BIN = os.environ.get("NOTEBOOKLM_BIN", "/opt/venv/bin/notebooklm")
 # Fall back to bare 'notebooklm' (in PATH) if the absolute default doesn't exist
 # — lets the script run on Windows / non-VM envs without setup.
@@ -61,7 +84,13 @@ if not Path(NOTEBOOKLM_BIN).exists():
 WAIT_INDEX_S = 60
 SCOPE_INDEX_WAIT_S = 60  # wait for per-aspect scope sources to index before scoped infographic gen
 POLL_INTERVAL_S = 60
-ARTIFACT_MAX_WAIT_S = 60 * 60  # 60 min per batch (audio --length long is slower)
+# Chapter 29 spent 60 of its 109 minutes here, waiting for a video, a quiz and
+# a set of flashcards that never arrived, then published without them anyway.
+# An hour of dead time per chapter is 141 hours across the course, paid for
+# nothing. Video, quiz and flashcards normally land within a few minutes; when
+# they do not, the useful thing is to record the task ids and collect them
+# later, not to sit on the connection.
+ARTIFACT_MAX_WAIT_S = int(os.environ.get("ARTIFACT_MAX_WAIT_S", 20 * 60))
 
 # Source PDFs uploaded to each per-day notebook so NotebookLM can cite page
 # numbers in the study guide. Configurable via env var so the path differs
@@ -79,23 +108,50 @@ SOURCE_PDF_NAMES = [
     # Add it manually to the main notebook if you want comprehensive coverage.
 ]
 
-# INVARIANT: SOURCE_PDF_NAMES and BOOKS_DIRECTIVE must describe the same books.
-# A book named in a prompt but missing from the notebook does not produce an
-# error — NotebookLM invents plausible page numbers for it. That is exactly what
-# happened before "stahl-pediatric.pdf" was actually added: the day-16 study
-# guide cites "Stahl Pediatric pp. 600-612" in a book that is 525 pages long.
-BOOKS_DIRECTIVE = """המקורות במחברת, לפי סדר עדיפות:
-1. **Dulcan's Textbook of Child and Adolescent Psychiatry 3e** — ספר הליבה. ברירת המחדל לכל נושא קליני בילדים ונוער.
-2. **DSM-5-TR** — קריטריונים אבחנתיים מדויקים.
-3. **Stahl's Essential Psychopharmacology 5e** — מנגנון נוירוביולוגי, קולטנים, מסלולים.
-4. **Stahl's Prescriber's Guide — Children and Adolescents** — מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה (33 תרופות, 525 עמ') — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.
-5. **הסילבוס הרשמי של המועצה המדעית** — מגדיר מה נדרש לבחינה.
-6. **Kaplan & Sadock's Synopsis** — מקור השלמה בלבד. השתמש בו אך ורק כאשר נושא שנדרש לבחינה בילדים ונוער חסר ב-Dulcan (למשל הפרעות אישיות, שאין להן פרק ב-Dulcan). אל תייבא ממנו תוכן של פסיכיאטריה של מבוגרים שאינו רלוונטי לילדים ונוער (דמנציה/אלצהיימר, פסיכיאטריה גריאטרית, תפקוד מיני של מבוגרים וכו').
+# The book list in the prompt and the books actually in the notebook must
+# describe the same set. A book named in a prompt but missing from the notebook
+# does not produce an error - NotebookLM invents plausible page numbers for it,
+# which is how a day-16 study guide came to cite "Stahl Pediatric pp. 600-612"
+# in a book whose last printed page is 502. That used to be an INVARIANT
+# comment asking a human to keep two constants in step. It is now built from
+# one source: BOOK_BLURBS is keyed by the same labels as drive_books.json, and
+# a book disabled there disappears from the prompt in the same breath.
+BOOK_BLURBS = {
+ "Dulcan": "**Dulcan's Textbook of Child and Adolescent Psychiatry 3e** — ספר הליבה. ברירת המחדל לכל נושא קליני בילדים ונוער.",
+ "DSM-5-TR": "**DSM-5-TR** — קריטריונים אבחנתיים מדויקים.",
+ "StahlNeuro": "**StahlNeuro** = Stahl's Essential Psychopharmacology 5e (Neuroscientific Basis) — מנגנון נוירוביולוגי, קולטנים, מסלולים. צטט אותו בשם המדויק **StahlNeuro**, לעולם לא \"Stahl\" לבדו.",
+ "StahlKids": "**StahlKids** = Stahl's Prescriber's Guide — Children and Adolescents. צטט אותו בשם המדויק **StahlKids**, לעולם לא \"Stahl\" לבדו. מינון, טיטרציה, תופעות לוואי וניטור ספציפיים לילדים ונוער. מונוגרפיות לפי תרופה — רלוונטי רק כשהנושא כולל תרופה שמופיעה בו.",
+ "Syllabus": "**הסילבוס הרשמי של המועצה המדעית** — מגדיר מה נדרש לבחינה.",
+ "Kaplan & Sadock Synopsis": "**Kaplan & Sadock's Synopsis** — מקור השלמה בלבד. השתמש בו אך ורק כאשר נושא שנדרש לבחינה בילדים ונוער חסר ב-Dulcan (למשל הפרעות אישיות, שאין להן פרק ב-Dulcan). אל תייבא ממנו תוכן של פסיכיאטריה של מבוגרים שאינו רלוונטי לילדים ונוער (דמנציה/אלצהיימר, פסיכיאטריה גריאטרית, תפקוד מיני של מבוגרים וכו').",
+}
+
+BOOK_ORDER = ["Dulcan", "DSM-5-TR", "StahlNeuro", "StahlKids",
+              "Syllabus", "Kaplan & Sadock Synopsis"]
+
+
+def books_directive():
+    """The prompt's source list, built from the books that are actually loaded."""
+    books = load_drive_books()
+    lines = [BOOK_BLURBS[k] for k in BOOK_ORDER if k in books and k in BOOK_BLURBS]
+    numbered = "\n".join(f"{i}. {t}" for i, t in enumerate(lines, 1))
+    ranges = ", ".join(
+        f"{k} עד {books[k]['max_printed_page']}"
+        for k in BOOK_ORDER if k in books and books[k].get("max_printed_page"))
+    synopsis = ""
+    if "Kaplan & Sadock Synopsis" in books:
+        synopsis = ('\n- ל-Synopsis **אין מספרי עמודים** במהדורה שבמחברת. צטט אותו '
+                    'לפי פרק בלבד: "(Synopsis ch.19 Personality Disorders)". '
+                    'אל תמציא לו מספר עמוד.')
+    return f"""המקורות במחברת, לפי סדר עדיפות:
+{numbered}
 
 כללי ציטוט מחייבים:
-- אחרי כל טענה משמעותית ציין עמוד מקור בסוגריים: "(DSM p.68)", "(Dulcan p.173)", "(Stahl C&A p.301)".
-- ל-Synopsis **אין מספרי עמודים** במהדורה שבמחברת. צטט אותו לפי פרק בלבד: "(Synopsis ch.19 Personality Disorders)". אל תמציא לו מספר עמוד.
-- אל תמציא עמודים באף מקור. אם לא מצאת — כתוב "(מקור: הקשר רחב)"."""
+- אחרי כל טענה משמעותית ציין עמוד מקור בסוגריים: "(DSM p.68)", "(Dulcan p.173)", "(StahlKids p.301)", "(StahlNeuro p.147)".
+- **מספר העמוד הוא זה שמודפס על העמוד עצמו** (בכותרת העליונה או התחתונה), לא מספר הגיליון בתוכנת קריאת PDF. השניים אינם זהים: לקבצים יש שערים ותוכן עניינים לפני עמוד 1, ולכן מספר ה-PDF גדול יותר. צטט תמיד לפי המספר המודפס.
+- טווחי העמודים המודפסים בספרים שבמחברת: {ranges}. עמוד מחוץ לטווח הוא בהכרח שגוי.{synopsis}
+- **שני ספרי Stahl שונים במחברת**: StahlNeuro (מנגנון, עד עמ' 623) ו-StahlKids (מינונים לילדים, עד עמ' 502). ציטוט "Stahl" בלי הסיומת הוא שגוי — הוא לא מזהה איזה ספר, ואי אפשר לאמת אותו.
+- אל תמציא עמודים באף מקור. אם לא מצאת — כתוב "(מקור: הקשר רחב)"
+"""
 
 
 def slugify(text: str) -> str:
@@ -239,7 +295,7 @@ def build_clinical_context(day):
 
     Deliberately omits the visual symbol legend — those are mnemonic aids
     for the IMAGES only. Clinical content must come from the textbook PDFs
-    (see BOOKS_DIRECTIVE), NOT from the cartoon symbols.
+    (see BOOK_BLURBS), NOT from the cartoon symbols.
     Mentioning the cartoon symbols here causes NotebookLM to generate
     flashcards/quiz items about the visual mnemonics ("what does the ninja
     mask represent?") instead of the clinical content ("at what age should
@@ -262,7 +318,7 @@ def build_clinical_context(day):
 - ההוראות הללו מיועדות לחומר לימודי קליני. **אל תכתוב על הסמלים החזותיים/הציורים/האיורים** (אלה נועדו אך ורק לתמונות הליווי — הם לא נושא הלמידה).
 - כל פיסת תוכן חייבת להישען על המקורות במחברת.
 
-{BOOKS_DIRECTIVE}
+{books_directive()}
 
 - מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר לקראת בחינת שלב ב' — חייב להיות תוכן בחינתי, לא מנמוניקה ויזואלית.
 - אל תמציא — אם המידע חסר במקורות, ציין זאת."""
@@ -417,57 +473,67 @@ def prompt_infographic_scoped(day, aspect, aspect_facts):
 איסור: ללא דמויות-קומיקס, ללא סצנות, ללא סמלי-מנמוניקה ויזואליים, וללא היבטים אחרים. זו אינפוגרפיקה רגילה וממוקדת-היבט."""
 
 
-SKETCHY_PHILOSOPHY = """The power of a SketchyMedical-style image is NOT in literally illustrating clinical content. The power is in BIZARRE, UNEXPECTED, SURPRISING METAPHOR — and in the dissonance between the setting and the medical fact.
+SKETCHY_PHILOSOPHY = """A SketchyMedical page is a MUNDANE PLACE whose NAME is a pun on the topic, packed edge to edge, indexed by a numbered legend. It is a search field, not a poster - and it is not a story.
 
-Look at how the established symbols in our symbol legend already work:
-- μ-opioid receptor → a COW with 'MOO' on her side, in a DAIRY FARM. Cows have nothing to do with opioids — that dissonance is the entire point.
-- 5-HT2A receptor → a TAROT PARLOR with two Ace cards on the table. Tarot has nothing to do with serotonin.
-- GABA-A receptor → an Aa HOTEL with 5 floors (α-subunits). A hotel for a receptor.
-- D2 receptor → a giant RED BARRIER labeled '2' on a coal-mine train track.
-- DOPA-MINE (dopamine) → a literal coal MINE called DOPA-MINE Co. Mining for dopamine ore.
-- κ-opioid → a grumpy GOAT with a 'K' tag (visual + phonetic pun on kappa).
-- δ-opioid → a DELTA AIRLINES plane (triangular logo = δ).
-- β1 receptor → BEETHOVEN conducting with a '#1' baton in front of heart-drums (β1 = heart).
+Reverse-engineered from 19 corpus pages and 113 classified legend items:
 
-PRINCIPLES that make these scenes memorable:
-1. UNEXPECTED SETTING — the scene takes place somewhere that has NOTHING to do with the medical topic (a circus, a wedding, a dairy farm, a heist, a deep-sea submarine, a medieval joust, a hot-air balloon race, an ancient temple, a Las Vegas casino, a Bollywood film set, a sushi conveyor belt, a junkyard).
-2. PHONETIC OR VISUAL PUNS — each medical fact is encoded as a character or object via wordplay (μ → MOO, δ → DELTA airline triangle, β1 → Beethoven's #1, '2' on a barrier for D2).
-3. NUMBERS ARE COUNTABLE OBJECTS — 6 symptoms = 6 of something (6 cupcakes, 6 dancers, 6 monks). Age 12 = 12 candles. 2 settings = 2 connected rooms.
-4. ABSURDITY OVER FAITHFULNESS — a wedding cake encoding antidepressant titration is BETTER than a literal dose-escalation chart. The dissonance encodes the memory.
-5. EMOTIONAL ACTIVATION — viewer should LAUGH, gasp, or say 'WHAT?' on first sight. That feeling cements the memory.
+1. THE VENUE IS THE PUN, AND THE PUN IS PAINTED ON A SIGN.
+   SSRIs -> a travel agency lettered "expreSS tRIps". The -azine antipsychotics -> an art
+   gallery lettered "STARRY GAZING". Benzodiazepines -> "Ben's Diner". Barbiturates -> a
+   BARBershop. Carbamazepine -> the "Carpe Drive-in". Nephrotic syndrome -> a castle
+   siege, because the WALL is the basement membrane.
+   Never choose a setting for being bizarre, unexpected or mood-matched. The exam cue is
+   the chapter name: if the name does not generate the world, the name retrieves nothing.
 
-EXPLICIT ANTI-PATTERNS — these RUIN Sketchy memorability and are FORBIDDEN:
-✗ A doctor's office showing patients with the disorder.
-✗ A lecture hall with charts of statistics.
-✗ Children behaving like ADHD children (literal, no symbolic substitution).
-✗ A laboratory split into zones for biopsychosocial etiology.
-✗ A pharmacy with the drug prominently displayed.
-✗ A "therapy room" showing techniques.
-✗ Anything that looks like a clinical illustration of the topic.
-✗ Floating informational labels, callout arrows, or chart-like overlays.
+2. THE SETTING IS BORING; THE OBJECTS ARE STRANGE.
+   An office, a diner, a schoolyard, a wine cellar. Nothing floats, no impossible physics.
+   A boring container is what makes the anomalies pop.
 
-The bizarre context is NOT decoration — it IS the mnemonic engine."""
+3. NO PLOT AND NO PROTAGONIST.
+   Zero causal links between figures; zero characters whose fate is followed. The dominant
+   element is an INANIMATE structure cutting the frame on a diagonal. What binds 25
+   strangers into one frame is ONE shared ambient activity - everyone works the shift,
+   views the art, besieges the castle. One verb, thirty variations.
+   Pairwise relations are allowed, and REQUIRED where the fact's verb is transitive: a man
+   barring another from the post-it drawer IS reuptake inhibition; a serpent across the
+   ramp IS VMAT blockade. What is banned is a narrative arc.
+
+4. DEPICT CLINICAL STATES LITERALLY - the single largest mechanism, about 41%.
+   An anxious coworker is GAD. A shy guy is social anxiety. Sticking out a tongue is
+   tardive dyskinesia. NEVER mint a fresh evocative metaphor for an affective state:
+   across 113 items there are ZERO. Use, in order: a person exhibiting it, a fixed lexicon
+   token, or a famous artwork that already depicts it.
+
+5. TEXT IS THE HIGHEST-DENSITY DEVICE, not a last resort.
+   4-15 hand-lettered diegetic signs per page, and on most pages several legend items ARE
+   the painted string. Signs are props, never overlays.
+
+6. NUMBERS ARE WRITTEN DIGITS ON OBJECTS WHOSE JOB IS TO BEAR DIGITS.
+   "35" branded on the meat cart; "52" and "53" on retired-jersey banners; "CYP-450" on a
+   licence plate. There is no digit-shape cipher anywhere in the corpus. Triage hard: 0-2
+   painted numbers per page is the norm, and a number with no natural numbered prop is
+   dropped, not forced. Every painted numeral carries a short referent tag on the same
+   object, or it is just a floating digit.
+
+7. ONE FACT PER FIGURE, AND PACK THE FRAME.
+   About 30 facts across 12-25 same-scale figures plus labelled props, with roughly as
+   much ordinary non-mnemonic filler as meaningful detail.
+
+8. THE LEXICON IS FIXED AND SHARED.
+   A symbol means exactly the same thing on every page it appears, so half the vocabulary
+   is already owned before the chapter opens. See schedule/lexicon.json.
+
+EXPLICIT ANTI-PATTERNS - these RUIN memorability and are FORBIDDEN:
+X A setting chosen for atmosphere or shock rather than a pun, a literal picture, or a
+  spatial mapping.
+X A hero the scene revolves around, or a plot the viewer is meant to narrate.
+X An invented metaphor for a feeling (a rain cloud for depression, a frightened rabbit
+  for anxiety).
+X Floating informational labels, callout arrows, chart-like overlays, legend boxes.
+X Generous empty space, or a scene meant to be parsed in a few seconds.
+X A digit-shape cipher, or an exact figure left out of the picture on principle."""
 
 
-NUMBER_RULES = """NUMBER ENCODING (course-wide, consistent) — and pegs MUST BELONG too:
-- PREFER COUNTING BELONGING OBJECTS for small numbers (<=4-5). The number is the
-  COUNT of things that already fit the scene — 2 settings = 2 road-signs; 6
-  months = 6 marks on the examiner's calendar. Do NOT add a floating peg-symbol
-  when a natural count works.
-- RATIOS (2:1, 3:1) → relative team sizes. The viewer SEES 2-vs-1.
-- ONLY for un-countable numbers (percentages, big numbers) use a NUMBER-PEG
-  SHAPE — but the peg MUST be a natural object of THIS scene that happens to be
-  shaped like the digit; NEVER a disembodied symbol floating in space. Shapes:
-  0=ring/wheel/donut · 1=candle/pencil/pole · 2=swan/squiggle · 3=trident/
-  pretzel · 4=sailboat/flag · 5=starfish/seahorse/hook · 6=cherry/golf-club ·
-  7=boomerang/cliff · 8=hourglass/snowman · 9=balloon/tadpole.
-- AVOID body-part pegs (a 'high-five hand' reads as a stray extra hand and
-  clutters the scene) — use starfish/seahorse/hook for 5 instead.
-- CONCENTRATE the threshold numbers on ONE belonging fixture (e.g. the examiner's
-  scoreboard/clipboard, a single road-sign) rather than scattering peg-objects
-  all over the scene. A few numbers, in one logical place.
-- RANK facts ('one of the MOST heritable') → lead with the qualitative visual
-  (huge vs tiny). Exact decimals live in the caption + study guide, NOT the image."""
 
 
 def _symbols_named_in_facts(aspect_facts, symbols_data):
@@ -648,179 +714,12 @@ _ASPECT_STRUCTURE = {
 }
 
 
-COMMON_COMORBIDITY_SYMBOLS = (
-    "FIXED comorbidity symbols — draw each comorbid disorder the SAME memorable way "
-    "every time (they recur across chapters), as a COMPANION beside the patient. Make "
-    "the companion the SAME AGE as this chapter's patient (an adult chapter gets adult "
-    "companions, a child chapter gets children) — the SYMBOL is fixed, not the age:\n"
-    "- Anxiety: a trembling, wide-eyed figure clutching a scared white RABBIT.\n"
-    "- Depression: a slumped figure under a small dark RAIN CLOUD raining on their head.\n"
-    "- Mania / Bipolar: a wild grinning figure mid-leap, arms flung out, hair on end.\n"
-    "- ODD / Conduct Disorder: a scowling figure DEFYING rules — tearing up a 'RULES' "
-    "sheet or kicking over a sign.\n"
-    "- ADHD: a restless blurred figure in mid-motion, a spinning pinwheel in hand.\n"
-    "- OCD: a figure obsessively scrubbing or re-aligning objects into a rigid row.\n"
-    "- PTSD: a flinching figure shielding their face from a looming shadow.\n"
-    "- Eating disorder: a gaunt figure fixated on a mirror or a weighing scale.\n"
-    "- Specific Learning Disorder: jumbled, scrambled letters floating around the head "
-    "/ a book held upside-down.\n"
-    "- Tic disorder: a figure caught mid-twitch (one eye scrunched, a shoulder jerking).\n"
-    "- Substance use: a slouched figure with a bottle or a vape.\n"
-    "For a comorbidity not on this list, invent ONE clear simple companion and note it "
-    "in the key. Keep them FEW — only the main comorbidities."
-)
 
 
-NUMBER_SHAPES = (
-    "DIGIT-SHAPE PRINCIPLE — a digit is drawn as an object whose SHAPE looks like the "
-    "digit. There is NO code to memorise: the resemblance IS the mnemonic. But the "
-    "object must ALSO be a native object of THIS CHAPTER'S WORLD, so the picture stays "
-    "tied to the disorder. Generic shapes to guide you (0 = ring/wheel · 1 = upright "
-    "pole/candle · 2 = swan-curve over a base · 3 = double hump · 4 = sail/flag on a "
-    "post · 5 = hook · 6 = curled stem · 7 = bent arm/ramp · 8 = figure-of-eight/"
-    "hourglass · 9 = balloon on a string) — now find the version of that shape that "
-    "already LIVES in this world. Example, in a driving-school world: 0 = a tyre or "
-    "steering wheel, 1 = a traffic cone, 3 = two speed bumps, 5 = a tow hook, 7 = a "
-    "ramp or barrier arm, 8 = a figure-of-eight practice track. NEVER import an object "
-    "that is foreign to this world (no boomerangs at a driving school) — pick a "
-    "different native object with the same silhouette."
-)
 
 
-EPI_HALVES = {
-    "who": {
-        "title": "WHO GETS IT",
-        "scope": (
-            "Cover ONLY these figures: PREVALENCE (its element = the CROWD of "
-            "look-alikes), HERITABILITY / familial risk (its element = the hero's "
-            "FAMILY), AGE OF ONSET (its element = an age marker on the hero), and the "
-            "SEX RATIO (shown as two groups of clearly different sizes — NOT digits). "
-            "Do NOT show comorbidities and do NOT show course/prognosis — they belong "
-            "to the other image."
-        ),
-        "moment": (
-            "THE ONE MOMENT: the hero is being appraised by the crowd — a test, an "
-            "audition, a weigh-in, a starting line — so the crowd (prevalence), the "
-            "cheering/doubting family (heritability) and the two unequal groups (sex "
-            "ratio) are all reacting to the SAME instant centred on the hero."
-        ),
-    },
-    "comes_with": {
-        "title": "WHAT COMES WITH IT AND WHERE IT GOES",
-        "scope": (
-            "Cover these: (1) the MAIN COMORBIDITIES — you MUST show a fixed companion "
-            "(below) for EVERY comorbidity in the facts, even one with NO percentage: a "
-            "comorbidity without a number is still shown, just qualitatively (the "
-            "companion is present but carries no digit-objects). Do NOT drop a "
-            "comorbidity just because it has no rate — that is the #1 failure here. If a "
-            "comorbidity DOES have a rate, its companion also carries that rate's digits. "
-            "(2) the COURSE / PERSISTENCE (its element = the direction the story heads / "
-            "the finish), with its digits. Do NOT show prevalence, heritability, onset "
-            "age or the sex ratio — they belong to the other image."
-        ),
-        "moment": (
-            "THE ONE MOMENT (critical — comorbidities tend to scatter into stations, do "
-            "NOT let them): all the companions must converge on the hero in a SINGLE "
-            "instant, not sit at separate points along a route. Stage ONE collision-type "
-            "event where they all pile onto the hero AT ONCE — a multi-car pile-up, a "
-            "dog-pile, a boarding scramble, everyone grabbing onto the hero's vehicle as "
-            "it lurches toward the finish. Each companion is physically ON or grabbing "
-            "the hero in that one instant; the finish/direction is the one shared thing "
-            "they are all heading to or crashing at. If a companion could be cropped out "
-            "without changing the moment, it is a station, not part of the event — fix it."
-        ),
-    },
-}
 
 
-def build_epidemiology_director(day, aspect_facts, anchor_world=None, anchor_zone=None,
-                                half=None):
-    """EPIDEMIOLOGY director — the 'SHAPES BUILD THE STORY' prototype.
-
-    Key inversion (this is the whole experiment): instead of choosing a world and then
-    forcing number-symbols into it — which always reads as arbitrary — we FIRST turn the
-    2-3 most exam-critical figures into digit-SHAPE objects, and THEN invent the one
-    situation in which those exact objects are the natural props. The mnemonic generates
-    the world, exactly the way a real Sketchy page is built out of a name-pun, so the
-    numbers can never feel pasted on. A single dominant hero (the personified patient)
-    anchors the composition; the rest of the epidemiology stays qualitative (crowd,
-    clinging companions) and every exact percentage goes to the caption.
-
-    The chapter's anchor_world IS imposed: an image set in a world unrelated to the
-    disorder (a beach, a carnival) is orphaned — the viewer cannot tell which disorder
-    it belongs to. So the world supplies both the EVENT (the plot engine) and the
-    digit-objects, which must be native to it. Shapes are therefore consistent WITHIN a
-    chapter and vary BETWEEN chapters: a scene-specific cue discriminates far better
-    than one shape reused across 126 chapters."""
-    title_he = day.get("title_he", day.get("title_en", ""))
-    facts_text = _facts_block_for_aspect("epidemiology", aspect_facts)
-    spec = EPI_HALVES.get(half or "who", EPI_HALVES["who"])
-    if anchor_world:
-        world_block = (
-            f"THIS CHAPTER'S WORLD (everything happens here — do NOT invent a different "
-            f"world):\n{anchor_world}\n"
-            "This matters more than anything: the viewer must be able to look at the "
-            "picture and know instantly WHICH DISORDER it belongs to. A beach or a "
-            "carnival with no link to this chapter leaves the image orphaned and "
-            "useless. Stay inside this world."
-        )
-    else:
-        world_block = (
-            "THIS CHAPTER'S WORLD: invent ONE bizarre, non-clinical world whose flavour "
-            "unmistakably evokes THIS disorder (its feel, its name, its hallmark), and "
-            "stay inside it — the viewer must know which disorder the picture belongs to."
-        )
-    world_block += (
-        " READABILITY: whatever the mood, the hero, the companions and the digit-objects "
-        "must stay clearly LEGIBLE — well-lit and high-contrast against the background. A "
-        "gloomy or dark world is fine as atmosphere, but never let it swallow the key "
-        "shapes; put a shaft of light or a colour pop on each shape-object so it reads."
-    )
-    return f"""You are the scene director for ONE SketchyMedical-style mnemonic image about the EPIDEMIOLOGY of: {title_he}. You do NOT draw — you write an illustrator's brief (scene) + a numbered key. NO clinical words may appear in the scene.
-
-{world_block}
-
-THIS IMAGE COVERS ONLY ONE HALF OF THE EPIDEMIOLOGY: **{spec['title']}**.
-{spec['scope']}
-Keeping to this half is what lets the picture stay a single composed scene instead of a scattered board.
-
-{spec['moment']}
-
-WORK IN THIS EXACT ORDER — THE NUMBERS BUILD THE STORY. Do not skip or reorder.
-
-STEP 1 — LIST YOUR FIGURES. From the facts below take ONLY the figures belonging to this half (about 3, never more than 4), each with its concept-element as named above. A rare, minor figure stays qualitative and goes to the caption only.
-
-STEP 2 — ROUND EACH FIGURE TO AT MOST **2 DIGITS**, then turn those digits into shape-objects that are NATIVE TO THIS CHAPTER'S WORLD (see the digit-shape principle below). E.g. in a driving-school world: 74.5% -> 75 -> a ramp (7) + a tow hook (5); 7.2% -> 7 -> a barrier arm; 60-85% -> 70 -> a curled exhaust (6) + a tyre (0). Two shape-objects per figure maximum, so each cluster stays small and readable.
-
-STEP 3 — TAKE THE EVENT FROM THIS CHAPTER'S WORLD. Do NOT invent a new world. Pick ONE natural, bizarre EVENT that this chapter's world already supplies (in a driving-school world: a chaotic driving test, a race, a pile-up, a licence ceremony) and let that event be the story. Because the digit-objects you chose in STEP 2 are native to this same world, they slot into the event as ordinary props — nothing can look pasted on, and the picture stays unmistakably tied to this disorder. Something must be HAPPENING: a viewer should narrate the event start to finish, not describe a pose.
-
-STEP 4 — BIND EVERY FIGURE TO ITS OWN ELEMENT (this is what removes ambiguity). Each figure's shape-objects must be physically CARRIED, WORN, RIDDEN or HELD by the element that represents that figure's concept, and grouped tightly together so they read as one unit:
-  - the FAMILY carries the heritability digits (they ride/hold them);
-  - EACH comorbidity companion carries ITS OWN rate's digits;
-  - the CROWD clusters around the prevalence digits;
-  - the FINISH/direction carries the persistence digits.
-STRICT 1:1 — no object may serve two different figures, and no digit-shape may float free.
-
-STEP 5 — PUT THE HERO AT THE CENTRE OF THE EVENT. ONE dominant character — the personified patient — is the LARGEST thing in the centre foreground, and the event is HAPPENING TO or AROUND them: they are the one being tested, crashing, being chased, being cheered. Every other figure must be REACTING to the hero or taking part in the same event — pushing, pulling, grabbing, watching them. FORBIDDEN: characters spread evenly across the width of the frame each doing their own separate thing; that is a line-up, not a scene. If you can describe a figure without mentioning the hero or the event, it does not belong.
-
-THE FACTS:
-{facts_text}
-
-{NUMBER_SHAPES}
-
-{COMMON_COMORBIDITY_SYMBOLS}
-
-HARD RULES:
-- **ZERO TEXT.** No words, no labels, no signs, no name-tags, no banners, no captions anywhere in the image. Do NOT label an element with the thing it represents (no "FAMILY RAFT", no "DEPRESSION", no "TREMBLING RABBIT"). If you catch yourself naming something in the scene, delete it — the picture must carry meaning by IMAGE ALONE.
-- NO written numerals. NO statistics board.
-- NO shape sitting around as decoration or floating free — every shape-object is a WORKING PROP held by its own concept-element.
-- Composition: hero largest in the centre foreground, companions midground, crowd background — readable at a glance, ONE connected scene.
-
-OUTPUT — STRICT JSON only (no markdown fence):
-{{
-  "scene": "<3-6 sentences: the bizarre situation you invented, the hero at its centre, and — element by element — who is carrying which shape-objects (the family riding these, this companion clutching those, the crowd around that). Purely visual, NO clinical terms. Quote any short diegetic words.>",
-  "key": "<numbered list, ONE LINE PER FIGURE, in the form: 'element -> objects -> digits -> figure -> meaning' (e.g. 'the family rides a boomerang and a hook = 7,5 = 75% heritability'). Then the qualitative elements. THEN a final line starting 'EXACT FIGURES (state in caption): ' listing every precise percentage from the facts.>"
-}}"""
 
 
 def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
@@ -828,31 +727,26 @@ def build_director_instruction(day, symbols_data, aspect, aspect_facts=None,
     """Build the SCENE DIRECTOR instruction (a text-model prompt).
 
     The director converts this aspect's clinical facts + the symbol vocabulary
-    + the name-pun world into (a) a PURE-VISUAL scene description with NO
-    clinical terms (so the image model has nothing to label) and (b) a numbered
-    KEY mapping each visible element to its fact (used for the caption). This
-    mirrors how a real Sketchy page is authored: scene brief + separate key.
+    + the name-pun world into (a) a scene description and (b) a numbered KEY
+    mapping each visible element to its fact. This mirrors how a real Sketchy
+    page is authored: scene brief plus a separate key.
 
-    ASPECT-SCOPED + ANCHOR-THEMED: all of a chapter's images share ONE world
-    (anchor_world) for recall as a set, but each occupies a DISTINCT zone
-    (anchor_zone) and encodes ONLY its aspect's facts — unified, no bleeding."""
-    # Epidemiology uses a CLEAN, from-scratch director prompt (no accumulated cruft):
-    # the generic path below kept dragging in the full symbol index + layered number
-    # rules, producing cluttered, number-littered epidemiology images.
-    if aspect == "epidemiology":
-        return build_epidemiology_director(
-            day, aspect_facts, anchor_world=anchor_world, anchor_zone=anchor_zone,
-            half=half)
+    `half` is accepted and ignored — the epidemiology who/comes_with split is
+    gone. It never really existed: build_image_jobs handed BOTH halves the
+    identical unsplit facts slice, so the two renders differed only by prose,
+    and the branch's own "ZERO TEXT / NO written numerals" block is what
+    stripped every figure out of the epidemiology images.
+    """
     title_he = day.get("title_he", day.get("title_en", ""))
     scoped_legend = _aspect_scoped_legend(day, aspect, symbols_data, aspect_facts)
-    full_index = _compact_symbol_index(
-        symbols_data, exclude=["number_pegs"] if aspect == "epidemiology" else None)
+    full_index = _compact_symbol_index(symbols_data)
     facts_text = _facts_block_for_aspect(aspect, aspect_facts)
     structure = _ASPECT_STRUCTURE.get(aspect, "")
-    # Epidemiology owns its number guidance (free, scene-specific representations) in its
-    # STRUCTURE block, so skip the generic 0-9 number-peg rules there — those primed the
-    # model to scatter fixed peg-shapes and build a stats board.
-    number_rules = "" if aspect == "epidemiology" else NUMBER_RULES
+    # Number handling now lives entirely in sketchy_spec.normalize_number and in
+    # the TEXT TO PAINT block. The old NUMBER_RULES shipped a 0-9 digit-shape
+    # cipher that has zero instances across the whole corpus, alongside "NEVER
+    # just write the numeral" — the precise inverse of what Sketchy does.
+    number_rules = ""
 
     if anchor_world and anchor_zone:
         setting_block = f"""SETTING — SHARED CHAPTER WORLD (a LIGHT linking thread, not heavy sameness):
@@ -1015,11 +909,91 @@ def prompt_quiz(day, symbol_block, legend_block):
 
 
 # ── notebooklm CLI helpers ──────────────────────────────────────────────────
-def nb_run(args, timeout=120):
-    return subprocess.run([NOTEBOOKLM_BIN] + args, capture_output=True, text=True, timeout=timeout)
+# Which notebooklm profile to drive. The bulk run uses a SEPARATE Google
+# account from the shared VM so its daily generation quota is its own; the
+# profile is how that account is selected, and forgetting it silently drives the
+# other project's account instead.
+NOTEBOOKLM_PROFILE = os.environ.get("NOTEBOOKLM_PROFILE", "").strip()
+
+
+class AuthExpired(RuntimeError):
+    """The NotebookLM session died. Nothing downstream can succeed."""
+
+
+def nb_run(args, timeout=120, retries=2):
+    """Run the CLI, retrying a run that comes back empty.
+
+    The CLI occasionally exits 0 having written nothing at all — seen once on
+    `create`, where the caller then died on `r.stdout.strip()` because stdout
+    was None. Over 141 chapters an intermittent empty result is a certainty,
+    and the peer project lost whole episodes to exactly this class of silent
+    failure, so retry here rather than at every call site.
+    """
+    cmd = [NOTEBOOKLM_BIN]
+    if NOTEBOOKLM_PROFILE:
+        cmd += ["-p", NOTEBOOKLM_PROFILE]
+    last = None
+    for attempt in range(retries + 1):
+        try:
+            # encoding MUST be pinned. With text=True alone, Python decodes
+            # the child's output with the Windows locale codec (cp1255 here).
+            # Our notebook titles are Hebrew UTF-8, cp1255 cannot decode them,
+            # and the failure is invisible: the reader thread dies, stdout comes
+            # back EMPTY with returncode 0 and an empty stderr. Every "transient
+            # empty result" chased in this pipeline was this.
+            r = subprocess.run(cmd + args, capture_output=True, text=True,
+                               encoding="utf-8", errors="replace",
+                               timeout=timeout)
+        except subprocess.TimeoutExpired as e:
+            print(f"    [!] notebooklm {args[0]} timed out "
+                  f"({attempt + 1}/{retries + 1})", file=sys.stderr)
+            last = subprocess.CompletedProcess(cmd + args, 124, "", str(e))
+            continue
+        # Normalise: capture_output should give strings, but a killed child can
+        # leave None, and None is what turns a retryable blip into a crash.
+        r.stdout = r.stdout or ""
+        r.stderr = r.stderr or ""
+        last = r
+        if r.returncode == 0 and r.stdout.strip():
+            return r
+        # The CLI tells us when a write's outcome is unknown: the RPC timed
+        # out, and its idempotency probe found the source WAS created server
+        # side. Retrying that is how the Kaplan & Sadock attach ended up with
+        # three copies in one notebook, two of them wedged in `error`. An
+        # unconfirmed write is for the caller to reconcile against the source
+        # list, never for this layer to repeat.
+        if "UNCONFIRMED_WRITE" in r.stdout or '"unconfirmed": true' in r.stdout:
+            print(f"    [!] notebooklm {args[0]}: write unconfirmed, NOT retrying "
+                  f"(would duplicate)", file=sys.stderr)
+            return r
+        # A quota is not a blip. Audio generation is capped per day, and
+        # hammering the cap three times in two seconds spends the budget on
+        # nothing and can push the limiter further out. Fail immediately and
+        # let the caller record that this chapter still owes an artifact.
+        blob = r.stdout + r.stderr
+        if "RateLimit" in blob or "RESOURCE_EXHAUSTED" in blob or "quota" in blob.lower():
+            print(f"    [!] notebooklm {args[0]}: rate limited, NOT retrying",
+                  file=sys.stderr)
+            return r
+        # A dead session does not come back inside a retry loop, and retrying
+        # into it is expensive: `ask` waits 900s per attempt, three attempts per
+        # call, several calls per chapter. Chapter 2 lost its session partway
+        # through and ground on for 566 MINUTES before failing — nine and a half
+        # hours of calls that could not have succeeded. Fail immediately; the
+        # caller aborts the chapter and bulk_run stops the queue.
+        if any(m in blob for m in ("Authentication expired or invalid",
+                                   "Run 'notebooklm login'")):
+            raise AuthExpired(f"notebooklm {args[0]}: session is dead")
+        if attempt < retries:
+            print(f"    [!] notebooklm {args[0]} returned rc={r.returncode} with "
+                  f"{len(r.stdout)} bytes; retrying "
+                  f"({attempt + 2}/{retries + 1})", file=sys.stderr)
+            time.sleep(8 * (attempt + 1))
+    return last
 
 
 def use_notebook(nb_id):
+    os.environ["_CURRENT_NB"] = str(nb_id or "")
     r = nb_run(["use", nb_id], timeout=30)
     if r.returncode != 0:
         raise RuntimeError(f"notebooklm use failed: {r.stderr[:300]}")
@@ -1029,12 +1003,25 @@ def find_day_notebook(day_index, title_he):
     """Look up existing per-day notebook by exact title match."""
     expected_title = f"[Study-{day_index:03d}] {title_he}"
     r = nb_run(["list", "--json"], timeout=60)
+    # A failed LOOKUP is not the same as "no such notebook". Returning
+    # (None, None) here conflated them: the caller read the second value as the
+    # title and went on to create a notebook literally named None. Worse, if a
+    # notebook for this day already existed, a transient list failure would
+    # silently create a duplicate. Raise instead — nb_run has already retried.
     if r.returncode != 0:
-        return None, None
+        # BOTH streams. The CLI prints "Authentication expired or invalid" to
+        # STDOUT, so quoting stderr alone turned a dead session into a bare
+        # "rc=2": chapters 4, 5 and 6 all died of expired auth and none of
+        # their logs said so. Only the three-in-a-row circuit breaker caught
+        # it, and it could not say why it had stopped.
+        detail = ((r.stdout or "") + " " + (r.stderr or "")).strip()
+        raise RuntimeError(f"could not list notebooks: rc={r.returncode} "
+                           f"{detail[:300]}")
     try:
         nbs = json.loads(r.stdout).get("notebooks", [])
-    except Exception:
-        return None, None
+    except Exception as e:
+        raise RuntimeError(f"could not parse notebook list: {e}; "
+                           f"raw: {(r.stdout or '')[:200]}")
     for nb in nbs:
         if nb.get("title", "").strip() == expected_title.strip():
             return nb.get("id"), expected_title
@@ -1100,26 +1087,27 @@ def build_image_jobs(aspects, facts):
     each receiving only that cluster's items + the shared thresholds, so each
     criterion has room to be its own distinct visual detail.
 
-    Epidemiology is likewise split into TWO images — 'who gets it' (prevalence, sex
-    ratio, onset, heritability) and 'what comes with it / where it goes' (comorbidity
-    rates, course). One image cannot hold 5-6 figures without fragmenting into a
-    scattered board; ~3 figures each keeps every image a single composed scene while
-    still carrying all the data."""
+    The epidemiology who/comes_with split is GONE. It only ever existed in prose:
+    both halves were handed the identical unsplit facts slice, so the two renders
+    differed by wording alone, and the branch that produced them also carried the
+    "ZERO TEXT / NO written numerals" rule that stripped every figure out of the
+    epidemiology images. Epidemiology is now one aspect of the chapter's main
+    plate — see sketchy_spec.plan_plates for the hybrid main/criteria split that
+    replaces per-aspect jobs wholesale."""
     jobs = []
     for aspect in aspects:
         slice_ = facts_for_aspect(aspect, facts)
-        if aspect == "epidemiology" and isinstance(slice_, dict):
-            for half in ("who", "comes_with"):
-                jobs.append((f"epidemiology_{half}", aspect, slice_))
-            continue
         if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(slice_, dict):
             crit = slice_.get("criteria") if isinstance(slice_.get("criteria"), dict) else None
             clusters = crit.get("clusters") if crit else None
             if isinstance(clusters, list) and len(clusters) >= 2:
                 shared = {k: v for k, v in crit.items() if k != "clusters"}
-                for c in clusters:
+                for n, c in enumerate(clusters, 1):
                     name = c.get("name", "cluster")
-                    label = f"{aspect}_{slugify(name)}"
+                    # slugify strips non-Latin characters, so a Hebrew cluster
+                    # name ("תסמיני ליבה") collapses to "" and the asset ships
+                    # as sketchy_dsm_criteria_.png. Fall back to the ordinal.
+                    label = f"{aspect}_{slugify(name) or f'cluster{n}'}"
                     cf = {"criteria": {"cluster": name, "items": c.get("items", []), **shared}}
                     jobs.append((label, aspect, cf))
                 continue
@@ -1127,26 +1115,284 @@ def build_image_jobs(aspects, facts):
     return jobs
 
 
-def add_textbook_pdfs_to_day_notebook(nb_id):
-    """Upload all configured textbook PDFs to the per-day notebook so that the
-    study-guide generation step can cite real page numbers. Returns the count
-    of successfully added sources."""
-    if not SOURCE_PDF_DIR.exists():
-        print(f"  [!] SOURCE_PDF_DIR not found ({SOURCE_PDF_DIR}); skipping textbook PDFs.")
-        return 0
-    added = 0
-    for name in SOURCE_PDF_NAMES:
-        pdf = SOURCE_PDF_DIR / name
-        if not pdf.exists():
-            print(f"    skip (missing): {name}")
+# The six textbooks live in the owner's Drive and are attached to every
+# per-day notebook BY REFERENCE. The mapping is by Drive FILE ID, not by
+# filename and not by search string:
+#
+#   - filenames are whatever the owner's downloads were called
+#     ("Emailing Dulcans Textbook of Child and Adolescent Psychiatry, 3e.pdf"),
+#     so the tidy names this file used to assume matched nothing;
+#   - `source add-research --from drive` looked like it worked and did not. It
+#     attached the drive.google.com URL as a WEB PAGE, NotebookLM's crawler
+#     fetched it unauthenticated, and every "textbook" was 544 characters of
+#     "Sign in to continue to Google Drive". Six green [OK] lines, status
+#     "ready", and a Google login form as the source of a psychiatry course.
+#
+# `source add-drive <file-id> --mime-type pdf` attaches the real document:
+# type "pdf", drive_file_id set, and the notebook answers with correct page
+# numbers out of the book itself.
+DRIVE_BOOKS_PATH = REPO_ROOT / "schedule" / "drive_books.json"
+
+
+def load_drive_books(include_disabled=False):
+    """The textbooks to attach. A book with enabled=false is skipped entirely.
+
+    One switch, because a book that cannot be attached must also vanish from
+    the prompt: naming a source the notebook does not have is what produces
+    invented page numbers.
+    """
+    with open(DRIVE_BOOKS_PATH, encoding="utf-8") as fh:
+        books = json.load(fh)
+    if include_disabled:
+        return books
+    return {k: v for k, v in books.items() if v.get("enabled", True)}
+
+
+def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
+    """Attach all six textbooks to the per-day notebook by Drive reference.
+
+    Returns {source_id: label} for the books that attached as genuine Drive
+    PDFs. The caller MUST treat a short map as fatal: a book named in the
+    prompt but missing from the notebook does not error, it makes NotebookLM
+    invent page numbers.
+
+    The id map is what lets a failed index be repaired without guessing. Two of
+    the six books are Stahl titles, so matching a NotebookLM source title back
+    to a Drive file by name can pick the wrong one, and re-attaching the wrong
+    book is worse than not repairing at all.
+    """
+    books = load_drive_books()
+    if only is not None:
+        books = {k: v for k, v in books.items() if k in only}
+    attached = {}
+    for label, meta in books.items():
+        r = nb_run(["source", "add-drive", meta["drive_file_id"], label,
+                    "-n", nb_id, "--mime-type", "pdf", "--json"], timeout=300)
+        ok = False
+        if r.returncode == 0:
+            try:
+                data = json.loads(r.stdout[r.stdout.index("{"):])
+                src = data.get("source") or {}
+                # A real Drive PDF has type "pdf" and a drive_file_id. A source
+                # that came back as a web_page is the login-page failure above.
+                ok = src.get("type") == "pdf" and bool(src.get("drive_file_id"))
+                if not ok:
+                    print(f"    [!!] {label}: attached as {src.get('type')!r}, "
+                          f"not a Drive PDF")
+            except Exception as e:
+                print(f"    [!!] {label}: could not parse response: {e}")
+        else:
+            print(f"    [!!] {label}: rc={r.returncode} {(r.stderr or '')[:120]}")
+        if ok:
+            print(f"    [OK] {label}")
+            attached[src.get("id")] = label
+    return attached
+
+
+def wait_until_answerable(nb_id, books=None, tries=6, first_wait=45):
+    """Block until the notebook can actually ANSWER from its books.
+
+    `ready` is not queryable. Chapter 29's clean run attached five textbooks,
+    watched all five report `ready`, asked its extraction question immediately
+    and got 1,185 characters back. The same notebook, asked the same kind of
+    question a few minutes later, returned 7,300 characters of correctly cited
+    content. Nothing had changed but time.
+
+    So the status flag is not the thing to trust - the capability is. This asks
+    a cheap question whose answer must name several of the books, and waits
+    until it does. Without it the MIN_EXTRACT_CHARS gate turns a settle lag
+    into a dead chapter, and before that gate existed it turned into a chapter
+    built on a paragraph.
+    """
+    books = books or list(load_drive_books())
+    q = ("Name each source document in this notebook and give one specific fact "
+         "with its printed page number from each. Be brief.")
+    wait = first_wait
+    for attempt in range(tries):
+        r = nb_run(["ask", q, "--json"], timeout=300)
+        answer = ""
+        if r.returncode == 0:
+            try:
+                answer = json.loads(r.stdout).get("answer", "") or ""
+            except Exception:
+                answer = ""
+        named = sum(1 for b in books if b.split()[0].lower() in answer.lower())
+        if len(answer) >= 800 and named >= max(2, len(books) - 2):
+            print(f"    notebook is answering ({len(answer)} chars, "
+                  f"{named}/{len(books)} books named)")
+            return True
+        print(f"    not answering yet ({len(answer)} chars, {named}/{len(books)} "
+              f"books named); waiting {wait}s", flush=True)
+        if attempt == tries - 1:
+            break
+        time.sleep(wait)
+        wait = min(int(wait * 1.6), 240)
+    return False
+
+
+def _list_sources(nb_id):
+    """Every source in the notebook, or None if we could not find out.
+
+    The distinction is the whole point, and the first version threw it away.
+    On failure the CLI prints {"error": true, ...} to STDOUT and exits 1; that
+    parses perfectly, so `.get("sources", [])` returned an empty LIST rather
+    than None - "the notebook has no sources" instead of "I could not read the
+    notebook". Both callers test `is None`, so both were defeated at once: the
+    resume path concluded every book was missing and re-attached all six on top
+    of the six already there, and the indexing wait concluded that all zero
+    sources had finished and returned True.
+
+    `source list --json` is more fragile than it looks. It makes a second RPC
+    (GET_NOTEBOOK) purely to fill in a cosmetic title field, so it can exit 1
+    while the source listing itself succeeded - a persistent, every-chapter
+    failure rather than a blip.
+    """
+    r = nb_run(["source", "list", "-n", nb_id, "--json"], timeout=60)
+    if r.returncode != 0:
+        print(f"  [!] source list failed rc={r.returncode} for {nb_id}",
+              file=sys.stderr)
+        return None
+    try:
+        data = json.loads(r.stdout)
+    except Exception:
+        return None
+    if not isinstance(data, dict) or data.get("error"):
+        print(f"  [!] source list returned an error object for {nb_id}",
+              file=sys.stderr)
+        return None
+    if "sources" not in data:
+        return None
+    return data["sources"]
+
+
+def wait_for_sources_indexed(nb_id, attached=None, timeout=900,
+                             interval=15, repair=True):
+    """Block until every source in the notebook has finished processing.
+
+    A freshly attached Drive PDF is not queryable for a while. Extracting
+    before indexing completes does not error - it returns a near-empty answer,
+    which is how chapter 29 produced 845 characters of "source material" from
+    six textbooks and would have built its whole plate set on nothing.
+
+    Polls the notebook as a WHOLE rather than waiting on each source in turn.
+    The per-source wait was serial, so six books cost up to six timeouts back
+    to back, and it could not see the one status that matters: `error` is
+    terminal, and the first run spent its entire 420s budget waiting for a
+    Kaplan & Sadock that had already failed. A failed source is retried once by
+    detaching and re-attaching it, because a big PDF losing its first indexing
+    attempt is a thing that will happen across 141 chapters and is not a reason
+    to lose the chapter.
+    """
+    deadline = time.time() + timeout
+    retried = set()
+    while True:
+        sources = _list_sources(nb_id)
+        if sources is None:
+            print("  [!] could not list sources to wait on", file=sys.stderr)
+            return False
+        if not sources:
+            # "Every source finished indexing" is vacuously true of a notebook
+            # with no sources, and returning True here would certify an empty
+            # notebook as ready to answer questions about six textbooks.
+            print(f"  [!] {nb_id} has no sources at all", file=sys.stderr)
+            return False
+
+        pending = [s for s in sources if (s.get("status") or "").lower()
+                   not in ("ready", "error", "failed")]
+        broken = [s for s in sources if (s.get("status") or "").lower()
+                  in ("error", "failed")]
+
+        for src in broken:
+            sid, title = src.get("id"), (src.get("title") or "?")
+            book = _book_for_source(sid, title, attached)
+            if not repair or sid in retried or not book:
+                continue
+            retried.add(sid)
+            print(f"    RETRY    {title[:44]} (indexing failed, re-attaching)")
+            # -y is not optional: without it the CLI prompts, reads EOF from a
+            # detached run and exits 2. The delete then "succeeds" silently and
+            # the re-attach below leaves a duplicate instead of a replacement.
+            rm = nb_run(["source", "delete", sid, "-n", nb_id, "-y"], timeout=90)
+            if rm.returncode != 0:
+                print(f"    [!!] could not detach the failed source "
+                      f"(rc={rm.returncode}); not re-attaching, it would "
+                      f"duplicate", file=sys.stderr)
+                continue
+            # Go through the attach helper rather than calling the CLI raw: it
+            # is the thing that checks the source came back as a real Drive PDF
+            # rather than a web_page, which is how six Google login pages once
+            # entered a notebook reporting status "ready". Firing and forgetting
+            # here would delete a book and then not notice it never came back.
+            got = add_textbook_pdfs_to_day_notebook(nb_id, only=[book["label"]])
+            if not got:
+                print(f"    [!!] {book['label']}: re-attach failed; the book is "
+                      f"now MISSING from {nb_id}", file=sys.stderr)
+                return False
+            attached = dict(attached or {})
+            attached.update(got)
+            pending.append(src)  # give the fresh copy a chance this round
+
+        if not pending:
+            still = [(s.get("title") or "?")[:44] for s in sources
+                     if (s.get("status") or "").lower() != "ready"]
+            for s in sources:
+                print(f"    {(s.get('status') or '?'):8} {(s.get('title') or '?')[:44]}")
+            if still:
+                print(f"  [!] {len(still)} source(s) never indexed: {', '.join(still)}",
+                      file=sys.stderr)
+                return False
+            return True
+
+        if time.time() >= deadline:
+            for s in sources:
+                print(f"    {(s.get('status') or '?'):8} {(s.get('title') or '?')[:44]}")
+            print(f"  [!] indexing timed out after {timeout}s with "
+                  f"{len(pending)} source(s) still processing", file=sys.stderr)
+            return False
+        time.sleep(interval)
+
+
+def _norm(t):
+    return re.sub(r"[^a-z0-9]+", "", (t or "").lower())
+
+
+def _book_for_source(sid, title, attached=None):
+    """Resolve a notebook source back to its drive_books entry.
+
+    Prefers the id map recorded when the book was attached. Falls back to an
+    exact drive_title prefix comparison, never a label guess: "Stahl Pediatric"
+    and "Stahl Essential" share every word a loose match would key on.
+    """
+    books = load_drive_books()
+    if attached and sid in attached:
+        label = attached[sid]
+        if label in books:
+            return {**books[label], "label": label}
+    t = _norm(title)
+    if not t:
+        return None
+    # NotebookLM keeps the display name we pass on some sources and the Drive
+    # filename on others, so both have to be checked. Labels are exact: the
+    # Syllabus arrives titled "Syllabus" while its file is
+    # "cylabusKidsandAdolePsychiatry2022V2_0.pdf", and matching only the
+    # filename made an already-attached book look missing and attach twice.
+    for lbl, b in books.items():
+        if _norm(lbl) == t:
+            return {**b, "label": lbl}
+    if len(t) < 10:
+        return None
+    # Compare as much of the title as both sides have. The two Stahl titles
+    # agree for 32 characters and only then diverge, so a short window matches
+    # both and the ambiguity guard below throws the repair away.
+    hits = []
+    for lbl, b in books.items():
+        d = _norm(b.get("drive_title"))
+        if not d:
             continue
-        size_mb = pdf.stat().st_size / (1024 * 1024)
-        print(f"    uploading {name} ({size_mb:.1f} MB)...")
-        sid = add_pdf_source(nb_id, pdf, title=pdf.stem)
-        if sid:
-            added += 1
-            print(f"      [OK] source_id={sid[:8]}")
-    return added
+        n = min(len(d), len(t), 40)
+        if n >= 10 and d[:n] == t[:n]:
+            hits.append({**b, "label": lbl})
+    return hits[0] if len(hits) == 1 else None
 
 
 def count_notebook_sources(nb_id):
@@ -1170,6 +1416,82 @@ def _strip_code_fence(text):
     return t.strip()
 
 
+# The fact schema used to be one fixed disorder-shaped template - criteria,
+# epidemiology, etiology, treatment - handed to every chapter with a line
+# asking the model to "omit sections that don't apply". It does not omit them.
+# Chapter 29 is "SSRIs, in depth", with eight declared aspects and none of them
+# diagnostic; it came back with the DSM criteria for major depression and the
+# epidemiology of depression, because those are what the template asked for.
+# The mnemonic plates are built from these keys, so that chapter's criteria
+# plate would have taught MDD criteria in a venue punning on SSRIs.
+#
+# Only 61 of the 144 chapters are disorder-shaped. The other 83 - 28 drug and
+# pharmacology chapters, 55 on development, examination, ethics and the rest -
+# were all being asked the same four disorder questions.
+#
+# So the schema is now BUILT FROM the chapter's own declared aspects, in code,
+# rather than chosen by the model. The curriculum already says what each
+# chapter covers; this makes the extraction ask for exactly that. 161 distinct
+# aspects appear across the course, so the well-known ones get a rich shape and
+# everything else gets a generic one rather than being left out.
+_RICH_SECTIONS = {
+    "criteria": ('"criteria": {"clusters": [{"name": "<cluster>", "items": '
+                 '["<symptom>", "..."]}], "thresholds": "<e.g. >=5/9 symptoms, '
+                 '>=2 weeks>", "subtypes": ["<presentation>", "..."]}'),
+    "epidemiology": ('"epidemiology": {"prevalence": "<e.g. ~5% children>", '
+                     '"sex_ratio": "<e.g. 2:1 M:F>", "onset_age_typical": '
+                     '"<peak onset>", "heritability": "<e.g. ~74%>", '
+                     '"comorbidities": ["<e.g. ODD ~50%>"], "prognosis": '
+                     '"<e.g. ~60% persist>"}'),
+    "etiology": ('"etiology": {"genetic": "<short>", "neurobiology": "<short - '
+                 'receptors, regions, circuits>", "environmental": "<short>"}'),
+    "treatment": ('"treatment": {"first_line": ["<drug or therapy + key '
+                  'detail>"], "second_line": ["<...>"], "key_side_effects": '
+                  '["<...>"], "monitoring": "<short>"}'),
+    "drug_class": ('"drug_class": {"members": ["<drug + the one detail that '
+                   'separates it>"], "mechanism": "<receptor/transporter '
+                   'level>", "kinetics": ["<half-life, CYP, linearity>"], '
+                   '"onset_of_effect": "<short>"}'),
+}
+
+# Which rich section each well-known aspect asks for. Anything not here gets
+# the generic shape keyed by the aspect's own name.
+_ASPECT_SECTION = {
+    "dsm_criteria": "criteria", "diagnostic_criteria": "criteria",
+    "dsm_general_criteria": "criteria", "criterion_A": "criteria",
+    "epidemiology": "epidemiology",
+    "etiology": "etiology", "etiology_genetic": "etiology",
+    "genetic_basis": "etiology", "genetics": "etiology",
+    "treatment_overview": "treatment", "treatment_first_line": "treatment",
+    "treatment_second_line": "treatment", "management": "treatment",
+    "drug_class_overview": "drug_class", "drug_mechanism": "drug_class",
+}
+
+
+def build_facts_schema(aspects):
+    """(schema_text, allowed_keys) for this chapter's declared aspects."""
+    parts, allowed, seen = [], [], set()
+    for a in aspects:
+        sec = _ASPECT_SECTION.get(a)
+        if sec:
+            if sec in seen:
+                continue
+            seen.add(sec)
+            parts.append("  " + _RICH_SECTIONS[sec])
+            allowed.append(sec)
+        else:
+            if a in seen:
+                continue
+            seen.add(a)
+            parts.append(f'  "{a}": {{"items": ["<concrete fact, with the '
+                         f'number if the sources give one>", "..."], '
+                         f'"key_numbers": ["<value + what it counts>", "..."]}}')
+            allowed.append(a)
+    parts.append('  "high_yield": ["<exam pearl>", "<exam pearl>", "..."]')
+    allowed.append("high_yield")
+    return "{\n" + ",\n".join(parts) + "\n}", allowed
+
+
 def extract_facts(day, notebook_id):
     """Extract STRUCTURED facts (the source of truth for the Sketchy images)
     from the per-day notebook as JSON. Each aspect's image is later built ONLY
@@ -1178,44 +1500,20 @@ def extract_facts(day, notebook_id):
     title_he = day.get("title_he", day.get("title_en", ""))
     aspects = day.get("aspects", [])
 
+    shape, allowed = build_facts_schema(aspects)
     schema_prompt = f"""Based ONLY on the sources in this notebook, extract the high-yield facts about: {title_he}
 
-{BOOKS_DIRECTIVE}
+{books_directive()}
 
 Return STRICT JSON (no prose, no markdown fences) with this exact shape. Fill every field from the sources; if a field is genuinely not in the sources, use the string "לא צוין". Keep values SHORT and concrete (numbers, names) — this drives mnemonic image generation.
 
-{{
-  "criteria": {{
-    "clusters": [
-      {{"name": "<cluster name e.g. Inattention>", "items": ["<symptom 1>", "<symptom 2>", "..."]}},
-      {{"name": "<cluster name e.g. Hyperactivity/Impulsivity>", "items": ["..."]}}
-    ],
-    "thresholds": "<e.g. >=6/9 symptoms, <12yo onset, >=2 settings, >=6 months>",
-    "subtypes": ["<presentation 1>", "..."]
-  }},
-  "epidemiology": {{
-    "prevalence": "<e.g. ~5% children, ~2.5% adults>",
-    "sex_ratio": "<e.g. 2:1 male:female>",
-    "onset_age_typical": "<epidemiological peak onset, or לא צוין>",
-    "heritability": "<e.g. ~74%, one of the most heritable>",
-    "comorbidities": ["<e.g. ODD ~50%>", "<e.g. anxiety>", "..."],
-    "prognosis": "<e.g. ~60% persist into adulthood>"
-  }},
-  "etiology": {{
-    "genetic": "<short>",
-    "neurobiology": "<short — receptors, regions, circuits>",
-    "environmental": "<short>"
-  }},
-  "treatment": {{
-    "first_line": ["<drug or therapy + key detail>"],
-    "second_line": ["<...>"],
-    "key_side_effects": ["<...>"],
-    "monitoring": "<short>"
-  }},
-  "high_yield": ["<exam pearl 1>", "<exam pearl 2>", "..."]
-}}
+Every key below is about **{title_he}** itself. Do not substitute facts about a
+disorder that this chapter's subject happens to treat, or about a broader topic
+it belongs to. Use exactly these keys and no others.
 
-Only include the keys relevant to today's aspects ({', '.join(aspects)}); omit sections that don't apply (e.g., omit 'treatment' for a pure anatomy chapter). Output ONLY the JSON object."""
+{shape}
+
+Output ONLY the JSON object."""
 
     use_notebook(notebook_id)
     print("  Extracting structured facts.json (this may take 1-2 min)...")
@@ -1230,11 +1528,28 @@ Only include the keys relevant to today's aspects ({', '.join(aspects)}); omit s
         return {}
     try:
         facts = json.loads(_strip_code_fence(answer))
-        if isinstance(facts, dict):
-            return facts
     except Exception as e:
         print(f"  [!] facts JSON parse failed: {e}. Raw head: {answer[:160]}")
-    return {}
+        return {}
+    if not isinstance(facts, dict):
+        return {}
+    # Keep only what this chapter asked for. The old prompt asked the model to
+    # omit irrelevant sections and it simply did not - chapter 29 returned the
+    # DSM criteria for major depression under a schema that never requested
+    # them. Every unrequested key becomes legend rows and a mnemonic plate, so
+    # dropping them here is the difference between a chapter about SSRIs and a
+    # chapter about depression wearing an SSRI venue.
+    bad = _impossible_citations(json.dumps(facts, ensure_ascii=False))
+    if bad:
+        eg = ", ".join(dict.fromkeys(b["claim"] for b in bad))[:120]
+        print(f"  [!] facts.json cites {len(bad)} page(s) that cannot exist "
+              f"({eg}); they will reach the legend", file=sys.stderr)
+    extra = [k for k in facts if k not in allowed]
+    if extra:
+        print(f"  [!] dropping {len(extra)} section(s) this chapter did not ask "
+              f"for: {', '.join(extra)}", file=sys.stderr)
+        facts = {k: v for k, v in facts.items() if k in allowed}
+    return facts
 
 
 def facts_for_aspect(aspect, facts):
@@ -1273,7 +1588,7 @@ def extract_day_content_from_main(day, symbols_block, main_notebook_id):
 
     extraction_prompt = f"""Extract from the sources in this notebook ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
 
-{BOOKS_DIRECTIVE}
+{books_directive()}
 
 Topic: {title_he}
 
@@ -1343,6 +1658,66 @@ def start_report(prompt):
     return _extract_task_id(r, "report")
 
 
+# A study guide that DESCRIBES a study guide instead of being one. Chapter 29
+# produced this the first time the notebook held six real textbooks instead of
+# a short extract: 3,693 characters, one page citation, opening "הכנתי עבורך"
+# and announcing that the material was "available in the Studio panel under
+# ssri-study-guide.md". No such note existed - `note list` returned zero. The
+# model reported writing a file it never wrote, and every existing check
+# passed, because the answer was non-empty, in Hebrew, and even carried a
+# citation. Chapters 1 and 28, generated before the books were attached, are
+# 13,417 and 16,955 characters with 73 and 83 citations.
+_GUIDE_RECEIPT_PHRASES = (
+    "פאנל הסטודיו", "בפאנל הסטודיו", "בסטודיו", "Studio panel",
+    "הכנתי עבורך", "יצרתי עבורך", "הכנתי לך", "יצרתי לך",
+    "זמין עבורך", "זמין כעת", "זמין לך", "נמצא כעת",
+)
+MIN_GUIDE_CHARS = 6000
+MIN_GUIDE_CITATIONS = 12
+
+
+# A citation past the end of a book is arithmetic, not opinion, and the prompt
+# already states every book's printed range and says a page outside it is wrong.
+# Chapter 2 produced 111 of them anyway - "Stahl p. 761, 934, 1006, 1229" in a
+# book whose last printed page is 623, measured two independent ways: 620
+# distinct folios found in the indexed text, and 1,854,842 characters, which is
+# 2,977 per page across 623 pages. Told and ignored, so it is checked in code.
+# The tolerance is small rather than zero: one stray number inside a sentence
+# can look like a citation, and a chapter is not worth re-asking over that.
+MAX_IMPOSSIBLE_CITATIONS = 2
+
+
+def _impossible_citations(text: str) -> list:
+    try:
+        from qc_review import check_page_citations
+        return check_page_citations(text)
+    except Exception:
+        return []
+
+
+def _study_guide_defects(text: str) -> list:
+    """Reasons this answer is not a usable study guide. Empty list = fine."""
+    out = []
+    bad = _impossible_citations(text)
+    if len(bad) > MAX_IMPOSSIBLE_CITATIONS:
+        eg = ", ".join(dict.fromkeys(b["claim"] for b in bad))[:160]
+        out.append(f"{len(bad)} citations point at pages that do not exist "
+                   f"in the book they name (e.g. {eg}) — use only the printed "
+                   f"page ranges given, and write \"(מקור: הקשר רחב)\" when you "
+                   f"cannot find a page")
+    said = [p for p in _GUIDE_RECEIPT_PHRASES if p in text]
+    if said:
+        out.append("it announces a file instead of containing the guide "
+                   f"({', '.join(said[:3])})")
+    if len(text) < MIN_GUIDE_CHARS:
+        out.append(f"only {len(text)} chars, expected at least {MIN_GUIDE_CHARS}")
+    cites = re.findall(r"[\[(][^\])]{0,40}?\bp\.?\s?\d{1,4}[^\])]{0,20}[\])]", text)
+    if len(cites) < MIN_GUIDE_CITATIONS:
+        out.append(f"only {len(cites)} page citations, expected at least "
+                   f"{MIN_GUIDE_CITATIONS}")
+    return out
+
+
 def ask_study_guide(day, symbol_block, legend_block, out_path):
     """Generate a focused study guide via 'notebooklm ask' that honors the
     day's specific topic AND includes page references to source books."""
@@ -1363,11 +1738,11 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 ## 0. מפת המקורות (CRITICAL — page references)
 טבלה: לכל סעיף ב-מדריך, ציין באיזה ספר וב-איזה עמוד נמצא החומר.
 פורמט:
-| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | Stahl Essential עמ' | Stahl C&A עמ' | Synopsis פרק | סילבוס עמ' |
+| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | StahlNeuro עמ' | StahlKids עמ' | Synopsis פרק | סילבוס עמ' |
 
 עמודת Synopsis מכילה **שם/מספר פרק בלבד**, לא עמודים, ורק כשבאמת נעשה בו שימוש
 להשלמת פער ב-Dulcan. אם לא נעשה בו שימוש — סמן "—".
-עמודת Stahl C&A רלוונטית רק לנושאים שכוללים תרופה מתוך 33 המונוגרפיות שבספר.
+עמודת StahlKids רלוונטית רק לנושאים שכוללים תרופה מתוך 33 המונוגרפיות שבספר.
 
 ## 1. מבוא + הגדרה
 ## 2. {aspects[0] if len(aspects) > 0 else 'קריטריונים'}
@@ -1384,19 +1759,43 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 - אורך: 2000-4000 מילים. ממוקד מהותית בנושא היום, לא סקירה כללית.
 - אסמכתאות: מבוסס אך ורק על המקורות במחברת.
 
-{BOOKS_DIRECTIVE}"""
+**קריטי — כתוב את המדריך עצמו כאן, בגוף התשובה**:
+- אל תיצור קובץ, פתק, או פריט בפאנל הסטודיו. אל תשמור שום דבר בשום מקום.
+- אל תתאר מה המדריך מכיל ואל תפרט מה "יופיע" בו. כתוב את התוכן המלא עצמו:
+  את הטבלאות המלאות, את הקריטריונים המלאים, את המספרים המלאים.
+- התשובה שלך היא המדריך. אם היא מתארת מדריך במקום להיות אחד — היא שגויה.
+- אל תפתח בפנייה אליי ("הכנתי עבורך", "המדריך זמין"). התחל ישירות בכותרת.
 
-    r = nb_run(["ask", prompt, "--json"], timeout=900)
-    if r.returncode != 0:
-        print(f"  [!] ask study_guide failed: {r.stderr[:200]}")
-        return False
-    try:
-        resp = json.loads(r.stdout)
-        answer = resp.get("answer", "")
-    except Exception as e:
-        print(f"  [!] parse study_guide failed: {e}")
-        return False
-    if not answer:
+{books_directive()}"""
+
+    answer, bad = "", []
+    for attempt in range(3):
+        ask = prompt if attempt == 0 else (
+            prompt + "\n\nהתשובה הקודמת שלך נדחתה מהסיבות הבאות:\n"
+            + "\n".join(f"- {b}" for b in bad)
+            + "\nכתוב עכשיו את המדריך המלא עצמו, בגוף התשובה, מהכותרת ועד הסוף.")
+        r = nb_run(["ask", ask, "--json"], timeout=900)
+        if r.returncode != 0:
+            print(f"  [!] ask study_guide failed: {r.stderr[:200]}")
+            return False
+        try:
+            answer = json.loads(r.stdout).get("answer", "")
+        except Exception as e:
+            print(f"  [!] parse study_guide failed: {e}")
+            return False
+        if not answer:
+            return False
+        bad = _study_guide_defects(answer)
+        if not bad:
+            break
+        print(f"  [!] study guide attempt {attempt + 1}/3 rejected: "
+              f"{'; '.join(bad)}", file=sys.stderr)
+    if bad:
+        # Do NOT write it. The caller treats a missing study guide as fatal,
+        # which is right: a receipt on disk passes every existence check
+        # downstream and ships to the learner as the chapter's study material.
+        print("  [!!] study guide never came back as a guide; not writing it",
+              file=sys.stderr)
         return False
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -1437,6 +1836,7 @@ def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
     results = {}
     start = time.time()
 
+    stuck_note = None
     while pending and (time.time() - start) < max_wait:
         time.sleep(POLL_INTERVAL_S)
         elapsed = int(time.time() - start)
@@ -1460,6 +1860,25 @@ def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
 
     if pending:
         print(f"  [!] Timed out for: {list(pending.values())}")
+        # Keep the ids. A timed-out artifact is usually still being built on
+        # NotebookLM's side, so it is recoverable later — but only if we wrote
+        # down what to collect. Chapter 29 lost a video, a quiz and a set of
+        # flashcards this way and there was nothing afterwards to say they had
+        # ever been asked for.
+        try:
+            pend_file = REPO_ROOT / "_bulk" / "pending_artifacts.json"
+            pend_file.parent.mkdir(parents=True, exist_ok=True)
+            book = json.loads(pend_file.read_text(encoding="utf-8")) if pend_file.exists() else {}
+            book.update({aid: {"kind": kind,
+                               "notebook": os.environ.get("_CURRENT_NB", ""),
+                               "day": os.environ.get("_CURRENT_DAY", "")}
+                         for aid, kind in pending.items()})
+            pend_file.write_text(json.dumps(book, ensure_ascii=False, indent=1),
+                                 encoding="utf-8")
+            print(f"  [i] recorded {len(pending)} unfinished artifact(s) in "
+                  f"{pend_file.name} for later collection")
+        except Exception as e:
+            print(f"  [!] could not record pending artifacts: {e}", file=sys.stderr)
         for aid, kind in pending.items():
             results[aid] = (kind, "timeout", None)
     return results
@@ -1498,6 +1917,18 @@ def _gh_ok(stage: str, r: subprocess.CompletedProcess) -> bool:
     return False
 
 
+def _fresh(path, since):
+    """Was this file written by the CURRENT run?
+
+    Existence is not enough. bulk_run keeps a failed chapter's directory on
+    purpose, so a retry pass finds the previous attempt's files still there.
+    """
+    try:
+        return path.exists() and path.stat().st_mtime >= since
+    except OSError:
+        return False
+
+
 def upload_release(tag, title, notes_md, assets):
     """Create or update a GitHub Release with all assets.
 
@@ -1506,14 +1937,24 @@ def upload_release(tag, title, notes_md, assets):
     """
     env = os.environ.copy()
     if not env.get("GH_TOKEN"):
-        print("  [FAIL] GH_TOKEN not set — cannot create/upload Release. "
-              "Add GH_TOKEN to .env or environment, then re-run.")
-        return {"url": "", "assets": []}
+        # Every call here is `gh`, and gh authenticates from its own keyring.
+        # Demanding GH_TOKEN threw away a whole chapter's work at the last
+        # step - 33 minutes of generation, 95MB of audio - while `gh auth
+        # status` was reporting a valid token with repo scope the entire time.
+        # Ask gh for it rather than requiring a second copy in .env.
+        t = subprocess.run(["gh", "auth", "token"], capture_output=True,
+                           text=True, encoding="utf-8", errors="replace")
+        if t.returncode == 0 and t.stdout.strip():
+            env["GH_TOKEN"] = t.stdout.strip()
+        else:
+            print("  [FAIL] no GitHub credentials — set GH_TOKEN or run "
+                  "`gh auth login`, then re-run.")
+            return {"url": "", "assets": []}
 
     # Check if release exists
     r = subprocess.run(
         ["gh", "release", "view", tag, "--repo", GITHUB_REPO],
-        capture_output=True, text=True, env=env,
+        capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
     )
     if r.returncode == 0:
         # Release exists — upload each asset with --clobber
@@ -1521,7 +1962,7 @@ def upload_release(tag, title, notes_md, assets):
         for a in assets:
             ru = subprocess.run(
                 ["gh", "release", "upload", tag, str(a), "--repo", GITHUB_REPO, "--clobber"],
-                capture_output=True, text=True, env=env, timeout=300,
+                capture_output=True, text=True, encoding="utf-8", errors="replace", env=env, timeout=300,
             )
             if not _gh_ok(f"release upload {Path(a).name}", ru):
                 upload_failures += 1
@@ -1533,7 +1974,7 @@ def upload_release(tag, title, notes_md, assets):
             ["gh", "release", "create", tag] + [str(a) for a in assets] + [
                 "--title", title, "--notes", notes_md, "--repo", GITHUB_REPO,
             ],
-            capture_output=True, text=True, env=env, timeout=600,
+            capture_output=True, text=True, encoding="utf-8", errors="replace", env=env, timeout=600,
         )
         if not _gh_ok("release create", rc):
             return {"url": "", "assets": []}
@@ -1543,15 +1984,30 @@ def upload_release(tag, title, notes_md, assets):
         ["gh", "release", "view", tag, "--json", "assets,url",
          "--jq", "{url: .url, assets: [.assets[] | {name: .name, url: .url}]}",
          "--repo", GITHUB_REPO],
-        capture_output=True, text=True, env=env,
+        capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
     )
     if not _gh_ok("release view (read-back)", rv):
         return {"url": "", "assets": []}
     try:
-        return json.loads(rv.stdout)
+        out = json.loads(rv.stdout)
     except Exception as e:
         print(f"  [FAIL] could not parse gh release view output: {e}")
         return {"url": "", "assets": []}
+
+    # The read-back is the only place that can tell whether the upload actually
+    # landed, so compare it against what we asked for. Upload failures used to
+    # be counted, printed and then thrown away: a release carrying one asset
+    # out of seven still returned a success URL, bulk_run saw the release
+    # exist, marked the chapter DONE and swept the local directory. The
+    # chapter is then permanently incomplete and its only copy is gone.
+    want = {Path(a).name for a in assets}
+    have = {x.get("name") for x in out.get("assets", [])}
+    lost = sorted(want - have)
+    if lost:
+        print(f"  [FAIL] release {tag} is missing {len(lost)}/{len(want)} "
+              f"asset(s): {', '.join(lost)}")
+        return {"url": "", "assets": out.get("assets", []), "missing": lost}
+    return out
 
 
 # ── Per-day generator ───────────────────────────────────────────────────────
@@ -1567,6 +2023,9 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     tag = f"study-{day_index:03d}-{slug}"
     day_dir = output_dir / f"day-{day_index:03d}"
     day_dir.mkdir(parents=True, exist_ok=True)
+    os.environ["_CURRENT_DAY"] = str(day_index)
+    # Anything older than this instant belongs to a previous attempt.
+    run_started = time.time() - 1
 
     print(f"\n{'='*70}")
     print(f"Day {day_index}: {day.get('title_he', title_en)}")
@@ -1594,41 +2053,127 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     day_nb_id, day_nb_title = find_day_notebook(day_index, day.get("title_he", title_en))
     if day_nb_id:
         print(f"Found existing per-day notebook: {day_nb_id} ('{day_nb_title}')")
-        # Retrofit: if the notebook predates the PDF-wiring change, it only has
-        # the extracted .md as its single source. Upload PDFs now so the study
-        # guide can cite real page numbers.
-        n_sources = count_notebook_sources(day_nb_id)
-        # Minimum expected: 1 (extract.md) + len(SOURCE_PDF_NAMES) PDFs
-        min_expected = 1 + len([n for n in SOURCE_PDF_NAMES if (SOURCE_PDF_DIR / n).exists()])
-        if 0 < n_sources < min_expected:
-            print(f"  Notebook has only {n_sources} source(s) (expected {min_expected}). Retrofitting with textbook PDFs...")
-            added = add_textbook_pdfs_to_day_notebook(day_nb_id)
-            if added > 0:
-                wait_s = 180  # PDFs take longer to index than text
-                print(f"  Added {added} PDF source(s). Waiting {wait_s}s for indexing...")
-                time.sleep(wait_s)
-        elif n_sources >= min_expected:
-            print(f"  Notebook already has {n_sources} sources — skipping PDF retrofit.")
+        # Which books are actually present, by identity rather than by count.
+        # Counting was wrong on exactly the case that matters: a notebook left
+        # with 6 of an expected 7 sources after a failed extraction would be
+        # "short", and the retrofit re-attached all six books on top of the six
+        # already there.
+        sources = _list_sources(day_nb_id)
+        if sources is None:
+            # "Could not determine" used to shrug and continue. It then
+            # generated audio, video and a study guide against a notebook with
+            # NO SOURCES: every artifact would have been invented whole. If we
+            # cannot confirm the books are attached, stop.
+            raise RuntimeError(
+                f"could not list sources in notebook {day_nb_id}; refusing to "
+                f"generate against a notebook whose contents are unknown")
+        present, attached = set(), {}
+        for src in sources:
+            book = _book_for_source(src.get("id"), src.get("title"))
+            if book:
+                present.add(book["label"])
+                attached[src.get("id")] = book["label"]
+        missing = [lbl for lbl in load_drive_books() if lbl not in present]
+        if missing:
+            print(f"  Notebook is missing {len(missing)} book(s): "
+                  f"{', '.join(missing)}. Attaching...")
+            got = add_textbook_pdfs_to_day_notebook(day_nb_id, only=missing)
+            attached.update(got)
+            # The fresh-notebook path refuses to continue on a short attach;
+            # this path did not, and it is the one every --retry-failed re-run
+            # goes through. A book named in the prompt but absent from the
+            # notebook does not raise - NotebookLM invents page numbers for it.
+            if len(got) < len(missing):
+                raise RuntimeError(
+                    f"only {len(got)}/{len(missing)} missing textbooks attached "
+                    f"to {day_nb_id} ({', '.join(sorted(set(missing) - set(got.values())))} "
+                    f"still absent). Refusing to generate: the prompts name "
+                    f"every book, and a missing one becomes invented citations.")
         else:
-            print(f"  [!] Could not determine source count; continuing without retrofit.")
+            print(f"  All {len(present)} textbooks already attached.")
+        # Always re-check indexing, even when nothing was added: a source can
+        # sit in `error` from a previous run, and that is repairable here.
+        print("  Waiting for textbooks to index...")
+        if not wait_for_sources_indexed(day_nb_id, attached=attached):
+            raise RuntimeError(
+                f"not every source in {day_nb_id} finished indexing; refusing "
+                f"to extract from a notebook that cannot answer yet")
+        use_notebook(day_nb_id)
+        print("  Checking the notebook can answer from them...")
+        if not wait_until_answerable(day_nb_id):
+            raise RuntimeError(
+                f"{day_nb_id} reports every source ready but still cannot "
+                f"answer from them; refusing to extract")
     else:
-        # 2. Extract focused content from MAIN notebook
-        extract_md = extract_day_content_from_main(day, symbol_block, NOTEBOOK_ID)
-        if not extract_md:
-            print("[!] Could not extract content from main notebook. Aborting.")
-            return None
-        print(f"  Extracted {len(extract_md)} characters of source material.")
-
-        # 3. Create per-day notebook
+        # 2. Create the per-day notebook FIRST, then attach the books, then
+        #    extract from it.
+        #
+        #    This used to extract from a single shared MAIN notebook holding
+        #    every book, and only afterwards build the day's notebook. Two
+        #    reasons that is gone: the main notebook belongs to whichever
+        #    account created it (the bulk run uses its own account and simply
+        #    cannot see it), and a notebook reused across 144 chapters
+        #    accumulates context until the model starts drifting. A fresh
+        #    notebook per chapter with all six books attached by Drive
+        #    reference costs nothing and has neither problem.
         print(f"Creating per-day notebook: {day_nb_title}")
         day_nb_id = create_day_notebook(day_nb_title)
         print(f"  Created notebook: {day_nb_id}")
 
-        # 4a. Upload the textbook PDFs so the study guide can cite real pages.
-        #     Done BEFORE the focused .md so they form the foundation.
-        print(f"  Uploading textbook PDFs from {SOURCE_PDF_DIR}...")
-        n_pdfs = add_textbook_pdfs_to_day_notebook(day_nb_id)
-        print(f"  Added {n_pdfs} textbook PDF source(s).")
+        # 3. Attach the textbooks by Drive reference so the study guide can
+        #    cite real pages.
+        print("  Attaching textbooks from Drive...")
+        attached = add_textbook_pdfs_to_day_notebook(day_nb_id)
+        n_pdfs = len(attached)
+        # A book named in the prompt but absent from the notebook does not
+        # raise — NotebookLM quietly invents plausible page numbers for it.
+        # That already shipped once (a day-16 study guide cited "Stahl
+        # Pediatric pp. 600-612" in a 525-page book). Refuse to build a chapter
+        # on an incomplete notebook.
+        if n_pdfs < len(load_drive_books()):
+            raise RuntimeError(
+                f"only {n_pdfs}/{len(load_drive_books())} textbooks attached to "
+                f"notebook {day_nb_id}. Refusing to generate: the prompts name "
+                f"all six books, and a missing one becomes invented citations.")
+
+        # 4. Wait for the books to finish indexing BEFORE asking anything of
+        #    them. This wait used to sit AFTER the extraction, which was
+        #    harmless when extraction came from a long-lived main notebook and
+        #    silently destructive once it came from a notebook whose sources
+        #    were attached seconds earlier.
+        print("  Waiting for textbooks to index...")
+        if not wait_for_sources_indexed(day_nb_id, attached=attached):
+            raise RuntimeError(
+                f"not every source in {day_nb_id} finished indexing; refusing "
+                f"to extract from a notebook that cannot answer yet")
+
+        # 4b. `ready` is not the same as queryable. Verify the notebook can
+        #     actually answer from the books before asking it anything that
+        #     matters.
+        use_notebook(day_nb_id)
+        print("  Checking the notebook can answer from them...")
+        if not wait_until_answerable(day_nb_id):
+            raise RuntimeError(
+                f"{day_nb_id} reports every source ready but still cannot "
+                f"answer from them; refusing to extract")
+
+        # 5. Extract this chapter's facts FROM THE DAY NOTEBOOK, which now
+        #    holds the books themselves.
+        extract_md = extract_day_content_from_main(day, symbol_block, day_nb_id)
+        if not extract_md:
+            print("[!] Could not extract content from the day notebook. Aborting.")
+            return None
+        # Six textbooks cannot honestly answer a chapter brief in a paragraph.
+        # A tiny extract means the notebook was not ready or the query failed,
+        # and facts.json drives every plate downstream.
+        MIN_EXTRACT_CHARS = 2000
+        if len(extract_md) < MIN_EXTRACT_CHARS:
+            raise RuntimeError(
+                f"extract is only {len(extract_md)} chars (expected at least "
+                f"{MIN_EXTRACT_CHARS}); the notebook likely was not indexed. "
+                f"Refusing to build a chapter on it.")
+        print(f"  Extracted {len(extract_md)} characters of source material.")
+        print(f"  Attached {n_pdfs} textbook(s) by reference.")
 
         # 4b. Add the extracted .md as a focused-summary source.
         source_title = f"Day {day_index} — Focused extract (from main notebook)"
@@ -1659,7 +2204,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # scoped to ONLY its aspect's slice so they stop repeating each other.
     task_ids = {}
     print("Starting NotebookLM artifacts...")
-    task_ids["audio"] = start_audio(prompt_audio(day, symbol_block, legend_block))
+    task_ids["audio"] = (None if SKIP_QUOTA_ARTIFACTS
+                         else start_audio(prompt_audio(day, symbol_block, legend_block)))
     print(f"  audio: {task_ids['audio']}")
     time.sleep(15)
     task_ids["video"] = start_video(prompt_video(day, symbol_block, legend_block))
@@ -1718,6 +2264,10 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             print(f"  Waiting {SCOPE_INDEX_WAIT_S}s for scope sources to index...")
             time.sleep(SCOPE_INDEX_WAIT_S)
 
+    if SKIP_QUOTA_ARTIFACTS:
+        print("Skipping per-aspect infographics (quota-bound; backfill fills them "
+              "in later).")
+        infographic_aspects = []
     print("Starting per-aspect infographics...")
     for aspect in infographic_aspects:
         time.sleep(15)
@@ -1737,64 +2287,95 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     # images don't bleed. A criteria aspect with 2+ symptom clusters is split
     # into one image per cluster (e.g. ADHD: inattention image + hyperactivity
     # image) so each criterion gets room to be a distinct detail.
-    gemini_images = []  # list of (label, png_path, txt_path)
+    # ── Sketchy v2 plates ──────────────────────────────────────────────────
+    # ONE PLATE PER TRACK, not one image per aspect. v1 drew a separate scene
+    # for each aspect of the chapter, which is why nothing linked: the reader
+    # got four unrelated pictures of the same topic and no single place to
+    # remember. v2 draws the chapter's main plate and, separately, its DSM
+    # criteria plate, both inside the chapter's fixed venue.
+    #
+    # plate_pipeline owns everything structural — the director contract, the
+    # element table, the degradation ladder, the render gates, the number
+    # compositing, the legend, the quiz and the narration. This loop only
+    # decides that plates are wanted and collects what came back.
+    gemini_images = []    # [(label, png, txt)] — the release's image assets
+    plate_extras = []     # quiz + narration, which ship with their plate
+    plate_reports = []
     if HAS_GEMINI:
-        phase = day.get("phase")
-        # World override from schedule (curated) takes priority; else auto-propose.
-        if day.get("anchor_world"):
-            anchor_world = day["anchor_world"]
-            zones = day.get("anchor_zones", {})
-            print(f"  Anchor world (curated): {anchor_world}")
-        else:
-            anchor = propose_anchor_theme(day.get("title_he", title_en), infographic_aspects)
-            anchor_world = anchor.get("world") if anchor else None
-            zones = anchor.get("zones", {}) if anchor else {}
-            if anchor_world:
-                print(f"  Anchor world (auto): {anchor_world}")
+        try:
+            import plate_pipeline as pp
+            import sketchy_spec as spec
+        except ImportError as exc:
+            pp, spec = None, None
+            print(f"[!] Sketchy v2 unavailable ({exc}); no plates this run.")
 
-        image_jobs = build_image_jobs(infographic_aspects, facts)
-        print(f"\nGenerating {len(image_jobs)} Sketchy scene(s) via Gemini (phase {phase})...")
-        for label, aspect, job_facts in image_jobs:
-            png_path = day_dir / f"sketchy_{label}.png"
-            txt_path = day_dir / f"sketchy_{label}.txt"
-            director = build_director_instruction(
-                day, symbols, aspect, job_facts,
-                anchor_world=anchor_world, anchor_zone=zones.get(aspect),
-                half=label.split("epidemiology_")[-1] if label.startswith("epidemiology_") else None,
-            )
-            # For CRITERIA images, completeness is mandatory: pass the cluster's
-            # criterion items so generate_sketchy_directed runs the coverage-
-            # guaranteed retry loop until every criterion has a distinct visual.
-            required_items, max_tries = None, 1
-            if aspect in ("dsm_criteria", "diagnostic_criteria") and isinstance(job_facts, dict):
-                crit = job_facts.get("criteria")
-                items = crit.get("items") if isinstance(crit, dict) else None
-                if items:
-                    required_items = [str(it) for it in items]
-                    max_tries = 3
-            print(f"  sketchy_{label}: directing scene + generating"
-                  f"{f' (criteria: {len(required_items)} items, <=3 tries)' if required_items else ''}...")
-            ok, caption = generate_sketchy_directed(
-                director_instruction=director,
-                output_path=png_path,
-                caption_path=txt_path,
-                phase=phase,
-                required_items=required_items,
-                max_image_tries=max_tries,
-                # Epidemiology encodes its figures as object SHAPES, so explanatory
-                # labels would do the picture's job for it — switch off the
-                # label-forward text regime for those images only.
-                text_policy="environment" if aspect == "epidemiology" else "mnemonic",
-            )
-            if ok:
-                size_mb = png_path.stat().st_size / (1024 * 1024)
-                cap_kb = (txt_path.stat().st_size / 1024) if txt_path.exists() else 0
-                print(f"    [OK] {png_path.name} ({size_mb:.1f} MB) + caption ({cap_kb:.1f} KB)")
-                gemini_images.append((label, png_path, txt_path if txt_path.exists() else None))
+        venue = None
+        if pp is not None:
+            try:
+                venue = pp.load_venue(day_index)
+            except SystemExit as exc:
+                # A missing venue is a HARD stop for the day's images, never a
+                # quiet fall back to the v1 per-aspect path: the whole point of
+                # v2 is that a chapter is always drawn in its own fixed place,
+                # and a chapter drawn somewhere else is worse than none.
+                print(f"[!] {exc} — the chapter cannot be drawn without its venue.")
+
+        if venue is not None:
+            tokens = pp.load_tokens(day)
+            plates = spec.plan_plates(spec.atomize(facts)) if facts else []
+            if not plates:
+                print("[!] no facts to draw; skipping plates.")
             else:
-                print(f"    [FAIL] Gemini generation failed for sketchy_{label}")
+                sign = venue.get('sign_text', '?')
+                print("")
+                print(f"Generating {len(plates)} Sketchy v2 plate(s) in {sign!r}...")
+            for plate in plates:
+                print(f"  sketchy_{plate.name}: {len(plate.facts)} facts, directing...")
+                try:
+                    rep = pp.run_plate(day, plate, venue, tokens, day_dir)
+                except Exception as exc:   # one bad plate must not lose the day
+                    print(f"    [FAIL] sketchy_{plate.name}: {exc}")
+                    plate_reports.append({"plate": plate.name, "error": str(exc)})
+                    continue
+                plate_reports.append(rep)
+                png = day_dir / f"sketchy_{plate.name}.png"
+                txt = day_dir / f"sketchy_{plate.name}.txt"
+                if rep.get("error") or not png.exists():
+                    print(f"    [FAIL] {rep.get('error', 'no render produced')}")
+                    continue
+                gates = rep.get("gates", {})
+                print(f"    [OK] {png.name} "
+                      f"({png.stat().st_size / (1024 * 1024):.1f} MB), "
+                      f"{rep.get('tries')} tries, score {gates.get('score')}, "
+                      f"composited {rep.get('compositing', {}).get('composited', 0)}"
+                      f"/{rep.get('compositing', {}).get('requested', 0)} numbers")
+                gemini_images.append(
+                    (plate.name, png, txt if _fresh(txt, run_started) else None))
+                # A plate without its legend is not a study asset, and the quiz
+                # and the narration are generated from that same legend.
+                #
+                # Freshness, not existence. A failed chapter's directory is
+                # deliberately KEPT as evidence, so on a --retry-failed pass
+                # the previous attempt's legend, quiz and narration are still
+                # sitting there. Collecting whatever exists would ship the old
+                # run's legend beside the new run's image - a caption that
+                # describes a picture nobody is looking at, which is the exact
+                # defect this course was rebuilt to fix.
+                for extra in (day_dir / f"sketchy_{plate.name}.quiz.md",
+                              day_dir / f"narration_{plate.name}.txt",
+                              day_dir / f"narration_{plate.name}.wav"):
+                    if _fresh(extra, run_started):
+                        plate_extras.append(extra)
+                    elif extra.exists():
+                        print(f"    [!] {extra.name} is left over from an "
+                              f"earlier attempt; not shipping it")
+            if plate_reports:
+                (day_dir / "plates_report.json").write_text(
+                    json.dumps(plate_reports, ensure_ascii=False, indent=1),
+                    encoding="utf-8")
+                plate_extras.append(day_dir / "plates_report.json")
     else:
-        print("[!] gemini_image module unavailable; skipping Sketchy scenes.")
+        print("[!] gemini_image module unavailable; skipping Sketchy plates.")
 
     task_ids = {k: v for k, v in task_ids.items() if v}
     print(f"\n{len(task_ids)} NotebookLM artifacts launched. Waiting...\n")
@@ -1820,11 +2401,14 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         else:
             print(f"  [X] download failed: {kind}")
 
-    # Include Gemini Sketchy scenes (image + caption .txt — both go to Release)
+    # Include the Sketchy v2 plates: the render, its legend, and everything
+    # generated from that legend (quiz, narration script, narration audio).
+    # The legend is what makes the picture teachable, so it is not optional.
     for label, png_path, txt_path in gemini_images:
         assets.append(png_path)
         if txt_path:
             assets.append(txt_path)
+    assets.extend(plate_extras)
 
     # Include the focused study guide (from ask, not generate report)
     if study_guide_path and study_guide_path.exists():
@@ -1837,6 +2421,19 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     if not assets:
         print("[!] No assets downloaded. Aborting release.")
         return None
+
+    # "At least one file" is not a chapter. Publishing a release is what marks
+    # this chapter permanently done: bulk_run sees the tag exist, records it in
+    # `done`, and deletes the local directory. A release carrying only, say,
+    # one PNG would retire the chapter forever with no study guide and no facts
+    # behind it, and the sweep would take the evidence with it.
+    essential = {"study_guide.md": study_guide_path, "facts.json": facts_path}
+    absent = [n for n, p in essential.items() if not (p and Path(p).exists())]
+    if absent:
+        raise RuntimeError(
+            f"chapter {day_index} is missing {', '.join(absent)}; refusing to "
+            f"publish a release that would mark it done. Its local files are "
+            f"left in place as evidence.")
 
     # Upload to GitHub Release
     title_he = day.get("title_he", title_en)
@@ -1852,7 +2449,16 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
 """
     print(f"\nUploading release {tag}...")
     release_info = upload_release(tag, f"📚 יום {day_index:03d}: {title_he}", notes, assets)
-    print(f"Release: {release_info.get('url', '?')}")
+    # An empty url means the release did not fully land. Returning it anyway
+    # let the process exit 0, and bulk_run then treats an existing-but-partial
+    # release as a finished chapter and sweeps the local copy.
+    if not release_info.get("url"):
+        raise RuntimeError(
+            f"release {tag} did not publish completely"
+            + (f" (missing: {', '.join(release_info['missing'])})"
+               if release_info.get("missing") else "")
+            + ". Local files kept.")
+    print(f"Release: {release_info['url']}")
 
     return release_info
 
@@ -1884,7 +2490,7 @@ def main():
                 if day_entry:
                     tag = f"study-{d:03d}-{slugify(day_entry.get('title_en', ''))}"
                     r = subprocess.run(["gh", "release", "view", tag, "--repo", GITHUB_REPO],
-                                       capture_output=True, text=True)
+                                       capture_output=True, text=True, encoding="utf-8", errors="replace")
                     if r.returncode == 0:
                         print(f"Day {d}: release already exists ({tag}), skipping.")
                         continue
