@@ -76,6 +76,16 @@ GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 SKIP_QUOTA_ARTIFACTS = os.environ.get(
     "SKIP_QUOTA_ARTIFACTS", "").strip().lower() not in ("", "0", "false", "no")
 
+# Six textbooks cannot honestly answer a chapter brief in a paragraph, so a
+# short extract means the notebook was not ready or the query failed.
+#
+# This lived INSIDE generate_day, which made it a local variable for the whole
+# function — and the retry added above it then read it before the assignment
+# line ran. Chapters 15, 16 and 17 all died on UnboundLocalError, and a syntax
+# check cannot see it because the name is perfectly valid until that path
+# executes. A constant belongs at module scope.
+MIN_EXTRACT_CHARS = 2000
+
 NOTEBOOKLM_BIN = os.environ.get("NOTEBOOKLM_BIN", "/opt/venv/bin/notebooklm")
 # Fall back to bare 'notebooklm' (in PATH) if the absolute default doesn't exist
 # — lets the script run on Windows / non-VM envs without setup.
@@ -2219,7 +2229,6 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         # Six textbooks cannot honestly answer a chapter brief in a paragraph.
         # A tiny extract means the notebook was not ready or the query failed,
         # and facts.json drives every plate downstream.
-        MIN_EXTRACT_CHARS = 2000
         if len(extract_md) < MIN_EXTRACT_CHARS:
             raise RuntimeError(
                 f"extract is only {len(extract_md)} chars (expected at least "
