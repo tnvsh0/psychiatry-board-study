@@ -471,6 +471,57 @@ def _render_face(w: int, h: int, slot: dict) -> Image.Image:
     return face
 
 
+def _local_light(img, quad, pad=48):
+    """Average brightness of the artwork immediately around the plate.
+
+    The face was rendered at one fixed cream-and-ink whatever it sat on, so a
+    plate in a shadowed corner arrived lighter than everything near it and read
+    as pasted on. Sampling the ring around the quad lets the plate be tinted to
+    its own patch of the picture, which is most of what makes a real sign look
+    like part of a scene.
+    """
+    xs = [p[0] for p in quad]; ys = [p[1] for p in quad]
+    x0, x1 = max(0, min(xs) - pad), min(img.width, max(xs) + pad)
+    y0, y1 = max(0, min(ys) - pad), min(img.height, max(ys) + pad)
+    if x1 <= x0 or y1 <= y0:
+        return 1.0
+    ring = img.crop((x0, y0, x1, y1)).convert("L")
+    mean = sum(ring.getdata()) / max(1, len(ring.getdata()))
+    # 168 is roughly the mid-tone these illustrations sit at; clamp so a very
+    # dark or very bright neighbourhood cannot wash the digits out.
+    return max(0.62, min(1.18, mean / 168.0))
+
+
+def _integrate_face(face, light):
+    """Tint the face to its local light, shade it, and feather the rim.
+
+    Three reasons a composited plate reads as pasted on, all of them fixable
+    without touching the digits:
+
+      1. it was rendered at one fixed brightness whatever it sat on, so a plate
+         in a shadowed corner arrived lighter than everything around it;
+      2. it was a perfectly uniform rectangle, which is the one thing that
+         never occurs in a cel-shaded illustration;
+      3. its edge was die-cut against artwork drawn with soft ink lines.
+    """
+    from PIL import ImageEnhance, ImageFilter
+    w, h = face.size
+    rgb = ImageEnhance.Brightness(face.convert("RGB")).enhance(light)
+
+    # a gentle top-to-bottom shade, the way the rest of the frame is lit
+    grad = Image.new("L", (1, h))
+    for y in range(h):
+        grad.putpixel((0, y), int(255 - 30 * (y / max(1, h - 1))))
+    shaded = ImageChops.multiply(rgb, grad.resize((w, h)).convert("RGB"))
+    rgb = Image.blend(rgb, shaded, 0.55)
+
+    out = rgb.convert("RGBA")
+    alpha = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(alpha).rectangle([2, 2, w - 3, h - 3], fill=255)
+    out.putalpha(alpha.filter(ImageFilter.GaussianBlur(1.4)))
+    return out
+
+
 def _perspective_coeffs(src: list[tuple[int, int]], dst: list[tuple[int, int]]):
     """Coefficients mapping dst -> src, as PIL's Image.PERSPECTIVE expects."""
     a = []
@@ -538,6 +589,7 @@ def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
         grown = _grow_quad(quad, GROW_PX)
         fw, fh = max(64, bw * 2), max(32, bh * 2)
         face = _render_face(fw, fh, slot)
+        face = _integrate_face(face, _local_light(out, quad))
         # NOT `src` — that name holds the source image path, and rebinding it
         # here left `dst = src` pointing at a list of corner tuples, so the save
         # step died on `dst.parent`. The standalone demo never hit it because it
