@@ -1,0 +1,112 @@
+chapter 6: מערכת הנוראפינפרין
+  venue  : "NOR'EAST PINES BANDSTAND" — forest bandstand
+  tokens : LOCUS_COERULEUS_BLUEPOST, locus_coeruleus, NET, alpha1_receptor, alpha2_receptor, beta1_receptor, beta2_receptor, ALPHA_WOLF_PACK, BEETHOVEN_ORCHESTRA
+
+=== plate main (26 facts) ===
+[i] element table attempt 1/3: 1 error(s):
+      - e1: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'כמו שעל תווית תיק הכלי מצוינת כמות הכיף שאפשר לצפות לה באחוזים, כך 2% המסומנים מייצגים את שכיחות הדיכאון בילדים.'
+[i] normalized e1: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e2: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e3: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e4: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e5: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e6: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e7: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e8: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e9: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e10: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e11: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e12: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e13: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e14: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e15: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e16: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e17: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e18: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e19: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e20: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e21: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e22: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e23: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e24: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e25: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e26: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e27: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e28: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e29: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e30: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e31: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e32: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e33: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e34: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e35: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e36: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e37: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e38: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e39: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e40: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e41: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e42: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e43: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'
+[i] normalized e44: zone 'חורשת האורנים' mapped to 'Pine Grove'
+[i] normalized e45: zone 'חורשת האורנים' mapped to 'Pine Grove'
+[i] normalized e46: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e47: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e48: zone 'במה ונגנים' mapped to 'Stage & Musicians'
+[i] normalized e49: zone 'אזור הישיבה' mapped to 'Seating Area'
+[i] normalized e28: dropped an unmappable relation 'and_combination'
+[i] normalized e3: cue trimmed to 'Two children'
+[i] normalized e4: cue trimmed to 'One boy struggling'
+[i] normalized e5: cue trimmed to "A young boy's voice cracking as he tunes his"
+[i] normalized e9: cue trimmed to 'A child refusing to help set up chairs'
+[i] normalized e10: cue trimmed to 'A person secretly drinking from a flask behind'
+[i] normalized e11: cue trimmed to 'A programme board'
+[i] normalized e13: cue trimmed to 'A group of family members carrying a very heavy'
+[i] normalized e14: cue trimmed to 'A musician constantly worrying about every detail of their'
+[i] normalized e15: cue trimmed to 'A music stand'
+[i] normalized e16: cue trimmed to 'A musician moving slowly'
+[i] normalized e17: cue trimmed to 'A stunted'
+[i] normalized e18: cue trimmed to 'A bell beside the stage door'
+[i] normalized e19: cue trimmed to 'A small'
+[i] normalized e22: cue trimmed to 'A therapist actively guiding a person to re-arrange chairs'
+[i] normalized e26: cue trimmed to 'A calm musician tuning a cello'
+[i] normalized e27: cue trimmed to "A person exchanging one 'SSRI'"
+[i] normalized e28: cue trimmed to "The person from 'SSRI exchange' now also receiving CBT"
+[i] normalized e29: cue trimmed to "A 'VAN'"
+[i] normalized e30: cue trimmed to 'A tea kettle actively boiling and whistling loudly'
+[i] normalized e31: cue trimmed to 'A black box on the call board'
+[i] normalized e33: cue trimmed to 'A musician yawning repeatedly while tuning their instrument'
+[i] normalized e34: cue trimmed to 'A schedule on the call board'
+[i] normalized e35: cue trimmed to 'A watchful guard observing a sad'
+[i] normalized e36: cue trimmed to 'A child angrily pushing a chair instead of sadly'
+[i] normalized e37: cue trimmed to 'A child'
+[i] normalized e38: cue trimmed to "Three 'TCA'"
+[i] normalized e40: cue trimmed to 'The loud whistling TEAS kettle and the hallucinating musician'
+[i] normalized e41: cue trimmed to 'A person in mourning clothes'
+[i] normalized e42: cue trimmed to 'A Doctor-Who-style BLUE police box in the rostral pons'
+[i] normalized e45: cue trimmed to "Two wolves; the one tagged '#2' pretends to be"
+[i] try 1: 6 missing, 56 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 5 missing, 25 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 5 lower-priority string(s) and retrying
+[i] try 3: 3 missing, 40 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES, all similar.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 8 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+{
+ "day": 6,
+ "plate": "main",
+ "facts": 26,
+ "tries": 4,
+ "numbers_mode": "model",
+ "table_warnings": [
+  "e1: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'",
+  "e2: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e3: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e4: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e5: zone 'במה ונגנים' mapped to 'Stage & Musicians'",
+  "e6: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'",
+  "e7: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e8: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e9: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e10: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'",
+  "e11: zone 'מאחורי הקלעים ושער האחוזה' mapped to 'Backstage & Estate Gate'",
+  "e12: zone 'אזור הישיבה' mapped to 'Seating Area'",
+  "e13: zone 'מאחורי הקלעים ושער האחוזה' mapped to '

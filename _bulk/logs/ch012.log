@@ -16,29 +16,68 @@ Found existing per-day notebook: 8b7507a8-23c2-4d2b-b305-985288161355 ('[Study-0
     ready    Stahls Essential Psychopharmacology. Neurosc
     ready    Syllabus
   Checking the notebook can answer from them...
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 45s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 72s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 115s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 184s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 240s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 240s
-Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2537, in <module>
-    main()
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2517, in main
-    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2126, in generate_day
-    raise RuntimeError(
-RuntimeError: 8b7507a8-23c2-4d2b-b305-985288161355 reports every source ready but still cannot answer from them; refusing to extract
+    notebook is answering (1678 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+  video: d85cd48e-d9b2-403b-94f0-7a8bd6173cae
+  flashcards: cd26fef7-450c-405c-a86a-4c460ab2d29a
+  quiz: a11246f8-8006-41cb-a7cb-2c94257e9cc3
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (29.0 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (12514 bytes, keys: ['attachment_types', 'sec_insec_dis', 'mentalization_concept', 'clinical_implications', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[attachment_types] = e8065488
+  scope[sec_insec_dis] = 38873de2
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in 'BOWLBY & SONS ATTACHMENTS'...
+  sketchy_main: 24 facts, directing...
+[i] element table attempt 1/3: 1 error(s):
+      - 3/22 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 2/3: 1 error(s):
+      - fact not represented: high_yield[1]
+[i] normalized e2: dropped text 'SECURE FIT, AVOIDS DUST, CLINGS ON, TANGLES, MIN. AGE:' (over 5 words)
+[i] normalized e8: hook de-asserted -> "שידת המגירות הקטנות המתוייגות — מידע מסודר ומוגבל בזמן, כאשר ה'5yr' על אחת המגירות מציין שהפרעת התקשרות תגובתית (RAD) צריכה להיות ניכרת לפני גיל 5 שנים לצורך אבחון."
+[i] normalized e13: hook de-asserted -> 'שלושת ההתקנים התקולים על המדף הגבוה — שלושת המצבים הפרה-מנטליסטיים המופיעים בעת קריסת מנטליזציה, כמו חיבורים שלא עובדים כמו שצריך ומונחים בגובה.'
+[i] normalized e15: cue trimmed to 'Three specific tools on counter: solid vacuum bag'
+[i] normalized e19: hook de-asserted -> 'הכלב הרגוע עם אוזניות המגן, הקשור ברצועה בטוחה למעקה, — כי ביטחון בהתקשרות מגן באופן ישיר מפני סטרס ביולוגי על ידי ויסות ודיכוי פעילות ציר ה-HPA והפרשת קורטיזול, כמו הגנה מפני רעש חיצוני.'
+[i] accepted with warning: e2: hook over 32 words (47): 'ארבעת ההתקנים על לוח התלייה, עם כיתובים שונים וציון גיל מינימלי, ממחישים את ארבעת סגנונות ההתקשרות העיקריים וגם את העובדה שלא ניתן לאבחן RAD או DSED לפני גיל התפתחותי של 9 חודשים, מכיוון שזהו הגיל שבו תינוק מסוגל לפתח התקשרות סלקטיבית, כמו מגבלת גיל לשימוש בחיבורים מסוימים.'
+[i] accepted with warning: e5: hook over 32 words (34): 'מדריך ה-DSM-5-TR מונח ליד קופסת החזרות של חלקים לא מתאימים, המרמז על כך שהפרעת התקשרות תגובתית (RAD) והפרעת מעורבות חברתית חסרת עכבות (DSED) מסווגות כהפרעות הקשורות לטראומה וגורמי עקה, כמו חלקים שהוחזרו בגלל פגם.'
+[i] accepted with warning: e7: hook over 32 words (33): 'קופסת ההחזרות המחולקת לתא של חלקים תקועים פנימה (RAD) ותא של חלקים נשפכים החוצה (DSED) מראה כי RAD מתבטאת כדפוס מופנם של התנהגות מעוכבת, בעוד ש-DSED מתבטאת כדפוס מוחצן של חוסר עכבות חברתיות.'
+[i] accepted with warning: e19: hook over 32 words (33): 'הכלב הרגוע עם אוזניות המגן, הקשור ברצועה בטוחה למעקה, — כי ביטחון בהתקשרות מגן באופן ישיר מפני סטרס ביולוגי על ידי ויסות ודיכוי פעילות ציר ה-HPA והפרשת קורטיזול, כמו הגנה מפני רעש חיצוני.'
+[i] accepted with warning: e20: hook over 32 words (36): 'לקוח הבוחן בהתמקדות עזה להב מסור, ממחיש את המצב הטלאולוגי, שבו מצבים מנטליים מובנים רק דרך מעשים פיזיים קונקרטיים, כגון חיתוך גופני לצורך ויסות או דרישה לחיבוק פיזי, בדומה להבנת תפקיד הלהב רק דרך פעולת החיתוך.'
+[i] accepted with warning: e21: hook over 32 words (47): "סדרת שלושת הפריימים של ניסוי 'הפנים הקפואות' (Brazelton Still Face) מראה כיצד הורה מתכוונן מחדש לילד לאחר רגע של חוסר התאמה, ובכך ממחישה כי הדרכת הורים וטיפולים דיאדיים מתמקדים בשיקום התפקוד הרפלקטיבי של ההורה כדי לסייע לו להבין את התנהגות הילד כביטוי של מצוקה, ולא כעוינות מכוונת."
+[i] accepted with warning: 5/21 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] try 1: 2 missing, 2 stray (counted), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'Yes', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the man in the dark suit on the right, looking thoughtful, is clearly larger than the children in the image.'
+[i] try 2: 3 missing, 2 stray (counted), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the dark suit on the right, looking thoughtful, is clearly larger than the children in the image.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 2 lower-priority string(s) and retrying
+[DIAG] figures_even probe returned NO: 'NO, the older man with a white beard, wearing a green apron, standing on the far right side of the image near the window, is larger than the other figures, particularly the children, and noticeably taller than most other adults.'
+[i] try 3: 0 missing, 2 stray (counted), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the older man with a white beard, wearing a green apron, standing on the far right side of the image near the window, is larger than the other figures, particularly the children, and noticeably taller than most other adults.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the elderly man in the apron is larger.'
+[i] try 4: 0 missing, 11 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the elderly man in the apron is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   YRS                '5yr' + 'YRS'  quad=[(74, 58), (426, 54), (427, 250), (72, 266)]  plate height=13.8% of frame
+[ok]   MOS                '9mo' + 'MOS'  quad=[(1260, 48), (1540, 44), (1540, 197), (1260, 207)]  plate height=10.61% of frame
+[scrub] neutralised 490 leftover chroma px
+[i] composited 2/2 number plates -> sketchy_main.png
+[i] narration attempt 1/3: 2 issue(s); figure not spoken: 4
+    [OK] sketchy_main.png (5.8 MB), 4 tries, score 1, composited 2/2 numbers
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (d85cd48e): completed
+  [1m] quiz (a11246f8): completed
+  [1m] flashcards (cd26fef7): completed
+  [OK] video.mp4 (43.5 MB)
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-012-attachment-theory-and-mentalization...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-012-attachment-theory-and-mentalization

@@ -1,0 +1,8 @@
+10 released chapter(s) have no audio yet
+[  2] יסודות נוירואנטומיה לפסיכיאטר — generating...
+    [!] notebooklm generate rc=1: { "error": true, "code": "NETWORK_ERROR", "message": "Network error: Request timed out calling CREATE_ARTIFACT" }; retrying (2/3)
+    [!] notebooklm generate rc=1: { "error": true, "code": "NETWORK_ERROR", "message": "Network error: Request timed out calling CREATE_ARTIFACT" }; retrying (3/3)
+  [!] start audio failed (exit 1): 11:29:40 WARNING [notebooklm.middleware.tracing] [req=3da0fd6a] rpc failed: RPC CREATE_ARTIFACT (TransportServerError)
+11:29:40 ERROR [notebooklm._rpc_executor] [req=3da0fd6a] RPC CREATE_ARTIFACT fail
+[  2] FAIL generation refused (likely the daily cap)
+  daily cap reached — stopping, try again tomorrow

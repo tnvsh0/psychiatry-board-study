@@ -1,0 +1,115 @@
+
+======================================================================
+Day 16: עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים
+Tag: study-016-principles-of-pediatric-psychopharmacology
+Aspects: ['core_principles', 'drug_mechanism', 'practical_use', 'monitoring', 'side_effects_class']
+Symbols (0): []...
+Density: high
+======================================================================
+
+Found existing per-day notebook: dc971c78-0cc5-489f-919e-85b7d4a1e5ab ('[Study-016] עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים')
+  All 5 textbooks already attached.
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1729 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+    [!] notebooklm generate: rate limited, NOT retrying
+  [!] start video failed (exit 1): 13:13:12 ERROR [notebooklm._rpc_executor] [req=1abba6c0] RPC CREATE_ARTIFACT failed after 0.574s: RateLimitError rpc_code=USER_DISPLAYABLE_ERROR
+
+  video: None
+  flashcards: 0480b8a5-4ef0-4a4e-9700-e02af18bc816
+  quiz: 87f13350-4764-43ac-8bbb-2f4a62dfa136
+
+Generating focused study guide (ask + page refs)...
+  [!] study guide attempt 1/3 rejected: 40 citations point at pages that do not exist in the book they name (e.g. StahlKids עמ' 504, StahlKids עמ' 1146, StahlKids עמ' 626, StahlKids עמ' 655, StahlKids עמ' 686, StahlKids עמ' 684, StahlKids עמ' 656, StahlKids עמ' 802, StahlKi) — use only the printed page ranges given, and write "(מקור: הקשר רחב)" when you cannot find a page; only 0 page citations, expected at least 12
+  [!] study guide attempt 2/3 rejected: only 2 page citations, expected at least 12
+  [!] study guide attempt 3/3 rejected: 3 citations point at pages that do not exist in the book they name (e.g. StahlKids p.584, StahlKids p.768, StahlKids p.656) — use only the printed page ranges given, and write "(מקור: הקשר רחב)" when you cannot find a page
+  [!!] study guide never came back as a guide; not writing it
+  [X] study guide generation failed
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [!] facts.json cites 1 page(s) that cannot exist (StahlKids p.vii, Dulcan p.688); they will reach the legend
+  [OK] facts.json (21725 bytes, keys: ['core_principles', 'drug_class', 'practical_use', 'monitoring', 'side_effects_class', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[core_principles] = f8c6636c
+  scope[practical_use] = fa316967
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 2 Sketchy v2 plate(s) in 'PHARM LANE KARTS'...
+  sketchy_main: 29 facts, directing...
+[i] element table attempt 1/3: 3 error(s):
+      - e11: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "קארט שעליו כתוב 'FLUOXETINE' ומעוטר בגביע 'MDD Kids & Teens', מסמל כי פלואוקסטין היא נוגדת הדיכאון היחידה עם התוויה של ה-FDA לדיכאון מז'ורי בילדים ובמתבגרים כאחד."
+      - e13: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "קארט שעליו כתוב 'SERTRALINE' ובולט במדבקה המציינת 'OCD 6+', מסמל כי סרטרלין קיבלה התוויה של ה-FDA לטיפול בהפרעה טורדנית-כפייתית (OCD) בילדים מגיל 6 ומעלה."
+      - e18: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "המספר '12wk' המסומן על לוח מדידת הגובה, מסמל כי שיפור מלא בדיכאון עשוי לקחת 8 עד 12 שבועות, בעוד שיפור בחרדה או מחשבות אובדניות יכול לקחת מספר שבועות."
+[i] element table attempt 2/3: 1 error(s):
+      - fact not represented: core_principles.items[4]
+[i] element table attempt 3/3: 2 error(s):
+      - e16: same (category, material, colour) as e11
+      - e17: same (category, material, colour) as e14
+    [FAIL] director never produced a valid table: ['e16: same (category, material, colour) as e11', 'e17: same (category, material, colour) as e14']
+  sketchy_main2: 29 facts, directing...
+[i] element table attempt 1/3: 2 error(s):
+      - fact not represented: side_effects_class.items[3]
+      - 2/19 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 2/3: 1 error(s):
+      - fact not represented: high_yield[8]
+[i] normalized e5: dropped an unmappable relation 'reduces'
+[i] normalized e7: dropped an unmappable relation 'contraindicates'
+[i] normalized e10: dropped an unmappable relation 'induces'
+[i] normalized e19: dropped an unmappable relation 'contextualizes'
+[i] normalized e6: dropped text 'MIN ANC TO START, AD VS PLACEBO' (over 5 words)
+[i] normalized e17: hook de-asserted -> "כמו שקסדה שנפלה על הרצפה וממנה עולה ענן 'זזז' — נהג שישן ולא משתתף במרוץ, כך סדציה וישנוניות קשה פוגעות בתפקוד הלימודי של הילד המטופל."
+[i] accepted with warning: e7: hook over 32 words (38): 'כמו שמגביל מצערת נלחם בילד חסר מנוחה (תסמונת אקטיבציה עם שכיחות של 10-20% בילדים), כך הוא מדגים את פעולת מעכבי CYP2D6 שמעלים את רמות האטומוקסטין פי 6-8, ושילובם עם פימוזיד הוא התוויית נגד מוחלטת מחשש להפרעות קצב קטלניות.'
+[i] accepted with warning: e8: hook over 32 words (37): 'כמו שלוח זמני הקפה מראה מתי לבצע בדיקות קבועות (כל 3, 6 או 12 חודשים) וכיצד תרופות מסוימות מאטות את הקצב, כך הוא מציג את לוחות הזמנים לניטור SGA ואת אחוזי הסדציה הגבוהים באולנזפין ובקלוזפין הפוגעים בתפקוד.'
+[i] accepted with warning: e13: hook over 32 words (36): "כמו שילד קטן בקארט עם בקבוק מים ענק ושלט 'דל שומן' מציג מאפיינים פיזיים ייחודיים, כך בילדים טרם גיל ההתבגרות אחוז המים בגוף גבוה ואחוז השומן נמוך, מה שמחייב מינון גבוה יותר לתרופות הידרופיליות כמו ליתיום."
+[i] accepted with warning: e18: hook over 32 words (33): "כמו שהמד לחץ דם בבקתת העזרה הראשונה נבדק רק כאשר יש היסטוריה משפחתית של 'עצירות לב פתאומיות' בקארטים, כך בדיקת ECG מומלצת רק כאשר יש היסטוריה לבבית אישית או משפחתית של מוות פתאומי."
+[i] accepted with warning: 2/21 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] dropped digit-bearing string 'WARNING: BELOW 25' — the compositor owns the numerals
+[i] dropped digit-bearing string 'CYP2D6 INHIBITOR' — the compositor owns the numerals
+[DIAG] figures_even probe returned NO: 'NO, the man standing by the height gauge (upper right) is larger.'
+[i] try 1: 6 missing, 10 stray (counted), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man standing by the height gauge (upper right) is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: "NO, the man in the orange shirt near the 'MONITORING, SEDATION SLOWS' sign is larger."
+[i] try 2: 3 missing, 11 stray (counted), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': "NO, the man in the orange shirt near the 'MONITORING, SEDATION SLOWS' sign is larger.", 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 8 lower-priority string(s) and retrying
+[i] try 3: 4 missing, composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the man in the orange vest holding the black flag is larger.'
+[i] try 4: 6 missing, 4 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the orange vest holding the black flag is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] final pass on gemini-3-pro-image-preview (ladder settled on gemini-3.1-flash-image-preview)
+[miss] WKS                chroma px=17 blob=3 (too_small) — no usable plate
+[miss] N                  chroma px=1 blob=1 (too_small) — no usable plate
+[ok]   PCT                '4%' + 'PCT'  quad=[(502, 458), (613, 472), (613, 624), (503, 607)]  plate height=10.81% of frame
+[scrub] neutralised 1890 leftover chroma px
+[i] composited 1/3 number plates -> sketchy_main2.png
+[!] TTS failed: Server disconnected without sending a response.
+    [OK] sketchy_main2.png (6.0 MB), 4 tries, score 4, composited 1/3 numbers
+
+2 NotebookLM artifacts launched. Waiting...
+
+    [!] notebooklm artifact rc=3221225794: ; retrying (2/3)
+    [!] notebooklm artifact rc=3221225794: ; retrying (3/3)
+    [!] notebooklm artifact rc=3221225794: ; retrying (2/3)
+    [!] notebooklm artifact rc=3221225794: ; retrying (3/3)
+    [!] notebooklm artifact rc=3221225794: ; retrying (2/3)
+    [!] notebooklm artifact rc=3221225794: ; retrying (3/3)
+  [!] Timed out for: ['flashcards', 'quiz']
+  [i] recorded 2 unfinished artifact(s) in pending_artifacts.json for later collection
+  [X] flashcards skipped (timeout)
+  [X] quiz skipped (timeout)
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2566, in <module>
+    main()
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2546, in main
+    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2495, in generate_day
+    raise RuntimeError(
+RuntimeError: chapter 16 is missing study_guide.md; refusing to publish a release that would mark it done. Its local files are left in place as evidence.

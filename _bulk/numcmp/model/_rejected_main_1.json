@@ -1,0 +1,844 @@
+{
+ "errors": [
+  "e1: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'כמו שעל תווית תיק הכלי מצוינת כמות הכיף שאפשר לצפות לה באחוזים, כך 2% המסומנים מייצגים את שכיחות הדיכאון בילדים.'"
+ ],
+ "soft": [],
+ "normalized": [
+  "e31: dropped text 'NO GAIN, WEIGHT LOSS (crossed out)' (over 5 words)",
+  "e20: cue trimmed to 'Two rows of chairs'"
+ ],
+ "table": {
+  "venue": {
+   "sign_text": "NOR'EAST PINES BANDSTAND",
+   "place": "A forestry-estate bandstand on a snowy afternoon an hour before the winter concert: a timber acoustic shell open onto a fan of numbered folding chairs, the pine plantation standing close on three sides, a gravel track running back to the estate gate, and a stage door in the boarded rear wall of the shell with the instrument cases stacked beside it. A brazier is going at the edge of the seating and the snow is being swept off the chair backs.",
+   "activity": "Everyone is setting the concert up - carrying chairs out in stacks and squaring them into rows, clipping the row numbers on, tuning, sweeping the seats, and carrying the empty cases back in through the stage door."
+  },
+  "venue_he": {
+   "place": "במת עץ לאירועים ביער מושלג שפתוחה לקהל יושב על כיסאות מתקפלים ממוספרים, מטע עצי אורן מסביב, ודלת שירות אחורית מאחורי הבמה ששם ערימת תיקי כלי נגינה, בראזייר דולק, והשלג נסחף ממושבי הכיסאות.",
+   "activity": "כולם מכינים את הקונצרט — מוציאים כיסאות בערימות ומסדרים אותם בשורות, קובעים את מספרי השורות, מכוונים כלים, מטאטאים את המושבים, ונושאים את המארזים הריקים חזרה פנימה דרך דלת הבמה."
+  },
+  "anchor_structure": "The band shell: the shingled timber acoustic hood over the platform, running from the lower left of the frame up to the treeline at the upper right and splitting it into seating fan, platform, backstage yard and pines.",
+  "zones": [
+   "Seating Area",
+   "Platform/Stage",
+   "Backstage/Behind Shell",
+   "Entrance/Gate Area"
+  ],
+  "zones_he": [
+   "אזור הישיבה",
+   "הבמה",
+   "מאחורי הקלעים",
+   "אזור הכניסה"
+  ],
+  "elements": [
+   {
+    "id": "e1",
+    "fact_ids": [
+     "epidemiology.prevalence"
+    ],
+    "cue": "Instrument cases with \"2%\" rate label",
+    "cue_he": "תיקי כלי נגינה עם תווית \"2%\" [RATE]",
+    "prop": "instrument cases with luggage labels stacked by the stage door",
+    "zone": "Backstage/Behind Shell",
+    "text": "2%",
+    "derivation": "PRINTED_NUMBER",
+    "triple": [
+     "luggage",
+     "cardboard",
+     "beige"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שעל תווית תיק הכלי מצוינת כמות הכיף שאפשר לצפות לה באחוזים, כך 2% המסומנים מייצגים את שכיחות הדיכאון בילדים."
+   },
+   {
+    "id": "e2",
+    "fact_ids": [
+     "epidemiology.sex_ratio"
+    ],
+    "cue": "Pairs of children and adults setting up chairs",
+    "cue_he": "זוגות ילדים ומבוגרים מסדרים כיסאות",
+    "prop": "carrying chairs out in stacks and squaring them into rows",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "COUNTED_SET",
+    "triple": [
+     "people",
+     "clothing",
+     "various_colors"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהילדים מסדרים כיסאות בזוגות שווים של בן ובת, ומבוגרים מסדרים אותם בזוגות של בת אחת מול שני בנים, כך יחס המינים בדיכאון משתנה בגילאים שונים."
+   },
+   {
+    "id": "e3",
+    "fact_ids": [
+     "epidemiology.onset_age_typical"
+    ],
+    "cue": "Stack of chairs growing noticeably taller around puberty age",
+    "cue_he": "ערימת כיסאות גדלה באופן ניכר סביב גיל ההתבגרות",
+    "prop": "numbered folding chairs stacked in tens",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "GRAPH_AS_OBJECT",
+    "triple": [
+     "stack",
+     "metal",
+     "grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שערימת הכיסאות גדלה באופן ניכר אחרי גיל מסוים, כך גם שכיחות הדיכאון עולה סביב גיל ההתבגרות."
+   },
+   {
+    "id": "e4",
+    "fact_ids": [
+     "epidemiology.heritability"
+    ],
+    "cue": "Call board with \"40-60% GENES\" notice",
+    "cue_he": "לוח מודעות עם הודעה \"40-60% גנים\"",
+    "prop": "call board and bell push beside the stage door in the rear wall",
+    "zone": "Backstage/Behind Shell",
+    "text": "40-60% GENES",
+    "derivation": "PRINTED_NUMBER",
+    "triple": [
+     "board",
+     "wood",
+     "brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שלוח המודעות מפרסם שיעור מסוים של 'גנים' שקשורים לקונצרט, כך 40-60% מראים את שיעור התורשתיות של דיכאון."
+   },
+   {
+    "id": "e5",
+    "fact_ids": [
+     "epidemiology.comorbidities[0]"
+    ],
+    "cue": "Fidgety person nervously setting up a chair",
+    "cue_he": "אדם חסר מנוחה מסדר כיסא בעצבנות",
+    "prop": "carrying chairs out in stacks and squaring them into rows",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "clothing",
+     "blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם הזה מסדר את הכיסא בעצבנות וחוסר מנוחה, כך הפרעות חרדה נפוצות כדיכאון נלווה."
+   },
+   {
+    "id": "e6",
+    "fact_ids": [
+     "epidemiology.comorbidities[1]"
+    ],
+    "cue": "Restless child distracted from music stand",
+    "cue_he": "ילד חסר מנוחה מוסח ממעמד התווים",
+    "prop": "music stands with numbered parts pegged against the wind",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "child",
+     "jacket",
+     "red"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "בדיוק כמו הילד שמתקשה להתרכז בסידור מעמד התווים ומוסח בקלות, כך ADHD היא תחלואה נלווית נפוצה לדיכאון."
+   },
+   {
+    "id": "e7",
+    "fact_ids": [
+     "epidemiology.comorbidities[2]"
+    ],
+    "cue": "Defiant person kicking snow onto swept area",
+    "cue_he": "אדם מתריס בועט שלג על אזור שנקי",
+    "prop": "snow is being swept off the chair backs",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "boots",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם הזה מתריס ובועט שלג חזרה על הכיסאות הנקיים, כך הפרעות התנהגות (ODD/CD) הן תחלואה נלווית לדיכאון."
+   },
+   {
+    "id": "e8",
+    "fact_ids": [
+     "epidemiology.comorbidities[3]"
+    ],
+    "cue": "Person secretly drinking from flask",
+    "cue_he": "אדם שותה בסתר מבקבוקון",
+    "prop": "instrument cases with luggage labels stacked by the stage door",
+    "zone": "Backstage/Behind Shell",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "coat",
+     "dark_green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם מתגנב ושותה בסתר מבקבוקון, כך הפרעות שימוש בחומרים (SUD) נלוות לעיתים קרובות לדיכאון."
+   },
+   {
+    "id": "e9",
+    "fact_ids": [
+     "epidemiology.prognosis"
+    ],
+    "cue": "Ticket table with \"70% AGAIN\" sign",
+    "cue_he": "שולחן כרטיסים עם שלט \"70% שוב\"",
+    "prop": "ticket table with a float tin and a roll of cloakroom tickets",
+    "zone": "Seating Area",
+    "text": "70% AGAIN",
+    "derivation": "PRINTED_NUMBER",
+    "triple": [
+     "table",
+     "wood",
+     "light_brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שעל שולחן הכרטיסים מופיע סימן של '70% שוב', כך 70% מהמטופלים חווים הישנות של דיכאון בתוך 5 שנים."
+   },
+   {
+    "id": "e10",
+    "fact_ids": [
+     "epidemiology.prognosis"
+    ],
+    "cue": "Frantic performer with \"20-40% Bipolar Risk\" music",
+    "cue_he": "מבצע נסער עם תווית \"20-40% סיכון לביפולרי\" על התווים",
+    "prop": "music stands with numbered parts pegged against the wind",
+    "zone": "Platform/Stage",
+    "text": "20-40% BIPOLAR RISK",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "performer",
+     "violin",
+     "brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהנגן על הבמה מנגן בטירוף, כשעל התווים מופיע סיכון מסוים לשינוי קיצוני, כך 20-40% מהדיכאוניים יתפתחו להפרעה דו-קוטבית (ביפולרית)."
+   },
+   {
+    "id": "e11",
+    "fact_ids": [
+     "etiology.genetic"
+    ],
+    "cue": "Anxious family setting up chairs with 'Neuroticism' text",
+    "cue_he": "משפחה חרדתית מסדרת כיסאות עם טקסט 'נוירוטיות'",
+    "prop": "carrying chairs out in stacks and squaring them into rows",
+    "zone": "Seating Area",
+    "text": "NEUROTICISM",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "family",
+     "clothing",
+     "grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "בדיוק כמו בני המשפחה שמפגינים נטייה לחרדתיות (נוירוטיות) תוך כדי סידור הכיסאות, כך עומס משפחתי חיובי ונוירוטיות הם גורמים גנטיים לדיכאון."
+   },
+   {
+    "id": "e12",
+    "fact_ids": [
+     "etiology.neurobiology"
+    ],
+    "cue": "Locus Coeruleus blue police box with broken antenna",
+    "cue_he": "תיבת משטרה כחולה [Locus Coeruleus] עם אנטנה שבורה",
+    "prop": "blue police box standing at the estate gate where the track meets the road",
+    "zone": "Entrance/Gate Area",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "police_box",
+     "metal",
+     "blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שלתיבת המשטרה הכחולה חסרה אנטנה תקינה לקליטת שיחות חירום מה'לוקוס צרואלוס', כך יש חסר בנוראפינפרין [NE] בדיכאון."
+   },
+   {
+    "id": "e13",
+    "fact_ids": [
+     "etiology.neurobiology"
+    ],
+    "cue": "Holey fishing net by the stage door",
+    "cue_he": "רשת דייגים מחוררת ליד דלת הבמה",
+    "prop": "Fishing NET hanging by the stage door",
+    "zone": "Backstage/Behind Shell",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "net",
+     "rope",
+     "green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שרשת הדייגים ליד דלת הבמה מלאה חורים, מה שמפריע לה לתפוס 'תווים' (NE), כך קיים חסר בנוראפינפרין [NE] בדיכאון, בין היתר בגלל פגיעה בטרנספורטרים שלו."
+   },
+   {
+    "id": "e14",
+    "fact_ids": [
+     "etiology.neurobiology"
+    ],
+    "cue": "Empty music stands and silent drum kit",
+    "cue_he": "מעמדי תווים ריקים וסט תופים שקט",
+    "prop": "music stands with numbered parts pegged against the wind",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "musical_equipment",
+     "metal",
+     "silver"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמעמדי התווים ריקים וסט התופים נותר שקט, כך מצביע על חסר בסרוטונין [5-HT] ודופמין [DA] בדיכאון."
+   },
+   {
+    "id": "e15",
+    "fact_ids": [
+     "etiology.neurobiology"
+    ],
+    "cue": "Wilting pine sapling near the stage",
+    "cue_he": "שתיל אורן נובל ליד הבמה",
+    "prop": "the pine plantation standing close on three sides",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "FREE_METAPHOR",
+    "triple": [
+     "plant",
+     "wood",
+     "pale_green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "בדיוק כמו שתיל האורן הנובל שאינו מצליח לגדול, כך יש ירידה בפקטור הנוירוטרופי BDNF בדיכאון."
+   },
+   {
+    "id": "e16",
+    "fact_ids": [
+     "etiology.neurobiology"
+    ],
+    "cue": "Sweating conductor frantically waving baton",
+    "cue_he": "מנצח מזיע מנופף בשרביט בטירוף",
+    "prop": "conductor's rostrum lifted out of the shell and set on the platform",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "suit",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהמנצח מזיע ומנופף בשרביט בטירוף, כך ציר ה-HPA (האחראי על תגובת הגוף למתח) נמצא בהיפראקטיביות בדיכאון."
+   },
+   {
+    "id": "e17",
+    "fact_ids": [
+     "etiology.environmental"
+    ],
+    "cue": "Scattered \"A.C.E.S.\" playing cards",
+    "cue_he": "קלפי משחק \"A.C.E.S.\" מפוזרים",
+    "prop": "gravel track running back to the estate gate",
+    "zone": "Entrance/Gate Area",
+    "text": "A.C.E.S.",
+    "derivation": "ACRONYM_EMBED",
+    "triple": [
+     "cards",
+     "paper",
+     "red"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שקלפי המשחק 'A.C.E.S.' מפוזרים ומוזנחים על הקרקע, כך חוויות ילדות שליליות (ACEs) מהוות גורם סיכון סביבתי לדיכאון."
+   },
+   {
+    "id": "e18",
+    "fact_ids": [
+     "etiology.environmental"
+    ],
+    "cue": "Person hunched under impossibly large stack of chairs",
+    "cue_he": "אדם שחוח תחת ערימת כיסאות ענקית",
+    "prop": "carrying chairs out in stacks",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "overalls",
+     "brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם נשחק תחת עומס של ערימת כיסאות גדולה מדי, כך דחק כרוני מהווה גורם סביבתי להתפתחות דיכאון."
+   },
+   {
+    "id": "e19",
+    "fact_ids": [
+     "etiology.environmental"
+    ],
+    "cue": "Discarded program with cannabis leaf motif",
+    "cue_he": "תוכנייה זרוקה עם ציור עלה קנאביס",
+    "prop": "programme board at the gate with the symphony numbers chalked on it",
+    "zone": "Entrance/Gate Area",
+    "text": "",
+    "derivation": "BORROWED_ARTWORK",
+    "triple": [
+     "program",
+     "paper",
+     "green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שעל התוכנייה הזרוקה מצויר עלה קנאביס, כך שימוש בקנאביס מהווה גורם סיכון סביבתי לדיכאון."
+   },
+   {
+    "id": "e20",
+    "fact_ids": [
+     "treatment.first_line[0]"
+    ],
+    "cue": "Two rows of chairs",
+    "cue_he": "שתי שורות כיסאות, אחת מסומנת 'CBT' והשנייה 'IPT-A'",
+    "prop": "rows squared up on the trodden snow",
+    "zone": "Seating Area",
+    "text": "CBT, IPT-A",
+    "derivation": "ACRONYM_EMBED",
+    "triple": [
+     "chairs",
+     "plastic",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שיש שתי שורות כיסאות המסומנות כדרכי טיפול ראשוניות אפשריות, כך טיפול CBT או IPT-A הם קווי טיפול ראשונים לדיכאון."
+   },
+   {
+    "id": "e21",
+    "fact_ids": [
+     "treatment.first_line[1]"
+    ],
+    "cue": "Flow meter and \"ESC\" exit sign on stage",
+    "cue_he": "מד זרימה ושלט יציאה \"ESC\" על הבמה",
+    "prop": "platform",
+    "zone": "Platform/Stage",
+    "text": "ESC",
+    "derivation": "PHONETIC_PUN",
+    "triple": [
+     "meter",
+     "metal",
+     "silver"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "בדיוק כמו מד הזרימה הזורם (פרוֹלואוקסֶטין) ושלט היציאה 'ESC' (אֶסציטָלופְּרָאם) על הבמה, כך תרופות ממשפחת ה-SSRIs כמו פלואוקסטין ואסציטלופרם הן קו טיפול ראשון בדיכאון."
+   },
+   {
+    "id": "e22",
+    "fact_ids": [
+     "treatment.second_line[0]"
+    ],
+    "cue": "Worker switching 'CBT' sign and SSRI label",
+    "cue_he": "עובד מחליף שלט 'CBT' ותווית SSRI",
+    "prop": "row-end number clips being pushed onto the aisle chairs",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "vest",
+     "yellow"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהעובד מחליף את שלט 'CBT' יחד עם התווית של ה-SSRI, כך החלפת SSRI בשילוב CBT הוא קו טיפול שני בדיכאון."
+   },
+   {
+    "id": "e23",
+    "fact_ids": [
+     "treatment.second_line[1]"
+    ],
+    "cue": "Concert van labeled \"Venlafaxine\" parked backstage",
+    "cue_he": "ואן קונצרטים עם תווית \"Venlafaxine\" חונה מאחורי הקלעים",
+    "prop": "backstage yard",
+    "zone": "Backstage/Behind Shell",
+    "text": "VENLAFAXINE",
+    "derivation": "PHONETIC_PUN",
+    "triple": [
+     "vehicle",
+     "metal",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהוואן [VAN] שמביא את הציוד נושא את השם וֶנְלָפַקְסִין, כך וֶנְלָפַקְסִין הוא קו טיפול שני לדיכאון."
+   },
+   {
+    "id": "e24",
+    "fact_ids": [
+     "treatment.key_side_effects[0]"
+    ],
+    "cue": "Restless stagehand spilling \"TEAS\" from cup",
+    "cue_he": "עובד במה חסר מנוחה שופך \"TEAS\" מכוס",
+    "prop": "backstage yard",
+    "zone": "Backstage/Behind Shell",
+    "text": "TEAS",
+    "derivation": "ACRONYM_EMBED",
+    "triple": [
+     "person",
+     "cup",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהעובד חסר המנוחה מראה אקטיבציה התנהגותית ושוֹפֶךְ תה [TEAS], כך TEAS (אקטיבציה התנהגותית) היא תופעת לוואי של טיפול בדיכאון."
+   },
+   {
+    "id": "e25",
+    "fact_ids": [
+     "treatment.key_side_effects[1]"
+    ],
+    "cue": "Black Box warning sign with falling figure",
+    "cue_he": "שלט אזהרה \"קופסה שחורה\" עם דמות נופלת",
+    "prop": "ticket table with a float tin and a roll of cloakroom tickets",
+    "zone": "Seating Area",
+    "text": "BLACK BOX",
+    "derivation": "BORROWED_ARTWORK",
+    "triple": [
+     "sign",
+     "plastic",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו ששלט אזהרה של 'קופסה שחורה' מתאר דמות נופלת אל תוך סכנה, כך קיים סיכון מוגבר להחמרת אובדנות עם תרופות מסוימות, המסומן באזהרת קופסה שחורה."
+   },
+   {
+    "id": "e26",
+    "fact_ids": [
+     "treatment.key_side_effects[2]"
+    ],
+    "cue": "Person clutching stomach near military-style tent",
+    "cue_he": "אדם אוחז בבטנו ליד אוהל בסגנון צבאי [G.I.]",
+    "prop": "backstage yard",
+    "zone": "Backstage/Behind Shell",
+    "text": "G.I. TENT",
+    "derivation": "ACRONYM_EMBED",
+    "triple": [
+     "person",
+     "tent",
+     "camouflage"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם אוחז בבטנו ליד אוהל ה-'G.I.' (ראשי תיבות צבאיים), כך תסמיני מערכת העיכול [GI] הם תופעת לוואי נפוצה לטיפול בדיכאון."
+   },
+   {
+    "id": "e27",
+    "fact_ids": [
+     "treatment.key_side_effects[3]"
+    ],
+    "cue": "Musician dozing off while tuning",
+    "cue_he": "מוזיקאי מנמנם תוך כדי כיוון כלי",
+    "prop": "tuning",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "instrument",
+     "wood"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהמוזיקאי מתקשה להישאר ערני ומנמנם תוך כדי כיוון הכלי, כך הפרעות שינה הן תופעת לוואי נפוצה לטיפול בדיכאון."
+   },
+   {
+    "id": "e28",
+    "fact_ids": [
+     "treatment.monitoring"
+    ],
+    "cue": "Calendar marking weekly check-ins for 4 weeks",
+    "cue_he": "לוח שנה מסמן בדיקות שבועיות לארבעה שבועות",
+    "prop": "call board and bell push beside the stage door in the rear wall",
+    "zone": "Backstage/Behind Shell",
+    "text": "",
+    "derivation": "GRAPH_AS_OBJECT",
+    "triple": [
+     "calendar",
+     "paper",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שלוח השנה מסמן בדיקות שבועיות קפדניות בארבעת השבועות הראשונים, כך נדרש ניטור שבועי ב-4 שבועות הראשונים של הטיפול לדיכאון."
+   },
+   {
+    "id": "e29",
+    "fact_ids": [
+     "treatment.monitoring"
+    ],
+    "cue": "Suicidality and Mania Alert signs on rostrum",
+    "cue_he": "שלטי \"ניטור אובדנות\" ו\"התראה למאניה\" על דוכן המנצח",
+    "prop": "conductor's rostrum lifted out of the shell and set on the platform",
+    "zone": "Platform/Stage",
+    "text": "SUICIDALITY WATCH, MANIA ALERT",
+    "derivation": "PRINTED_TEXT",
+    "triple": [
+     "sign",
+     "cardboard",
+     "yellow"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו ששלטי אזהרה על דוכן המנצח מתריעים מפני אובדנות ומאניה, כך יש לבצע ניטור צמוד לאובדנות ומאניה במהלך הטיפול בדיכאון."
+   },
+   {
+    "id": "e30",
+    "fact_ids": [
+     "high_yield[0]"
+    ],
+    "cue": "Irritable child throwing tantrum instead of sad",
+    "cue_he": "ילד עצבני זורק חפצים במקום להיות עצוב",
+    "prop": "carrying chairs out in stacks",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "CONTRAST_PAIR",
+    "triple": [
+     "child",
+     "clothing",
+     "green"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהילד מראה עצבנות וזורק חפצים במקום להיראות עצוב, כך בילדים, עצבנות [Irritability] מחליפה לעיתים קרובות מצב רוח דיכאוני כסימפטום של דיכאון."
+   },
+   {
+    "id": "e31",
+    "fact_ids": [
+     "high_yield[1]"
+    ],
+    "cue": "Weight scale with \"No Gain\" replacing \"Weight Loss\"",
+    "cue_he": "מאזניים עם שלט \"ללא עלייה במשקל\" במקום \"ירידה במשקל\"",
+    "prop": "backstage yard",
+    "zone": "Backstage/Behind Shell",
+    "text": "",
+    "derivation": "CONTRAST_PAIR",
+    "triple": [
+     "scale",
+     "metal",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמאזניים מציגים 'ללא עלייה במשקל' במקום 'ירידה במשקל', כך אי-עלייה במשקל יכולה להחליף ירידה במשקל בילדים ומבוגרים עם דיכאון פדיאטרי."
+   },
+   {
+    "id": "e32",
+    "fact_ids": [
+     "high_yield[2]"
+    ],
+    "cue": "Broken musical triangle \"NOT for Kids\"",
+    "cue_he": "משולש מוזיקלי שבור עם שלט \"לא לילדים\"",
+    "prop": "instrument cases with luggage labels stacked by the stage door",
+    "zone": "Backstage/Behind Shell",
+    "text": "NOT for Kids",
+    "derivation": "ACRONYM_EMBED",
+    "triple": [
+     "instrument",
+     "metal",
+     "gold"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שמשולש ה-'TCA' (Tricyclic Antidepressants) שבור ומסומן 'לא לילדים', כך תרופות מסוג TCAs אינן יעילות לטיפול בדיכאון בילדים [פדיאטרי]."
+   },
+   {
+    "id": "e33",
+    "fact_ids": [
+     "high_yield[3]"
+    ],
+    "cue": "Sad person seeing imaginary figures",
+    "cue_he": "אדם עצוב רואה דמויות דמיוניות",
+    "prop": "platform",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "clothing",
+     "dark_blue"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם עצוב אך רואה דמויות דמיוניות, כך דיכאון פסיכוטי מהווה מנבא להתפתחות הפרעה דו-קוטבית."
+   },
+   {
+    "id": "e34",
+    "fact_ids": [
+     "high_yield[3]"
+    ],
+    "cue": "Crystal ball predicting bipolar performer",
+    "cue_he": "כדור בדולח מנבא נגן דו-קוטבי",
+    "prop": "oil-drum brazier at the edge of the seating with a shovel beside it",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "FREE_METAPHOR",
+    "triple": [
+     "ball",
+     "glass",
+     "clear"
+    ],
+    "relates_to": "e10",
+    "relation": "ACTS_ON",
+    "hook": "כמו שכדור הבדולח מנבא שהנגן יהפוך להיות ביפולרי, כך תופעת ה-TEAS (אקטיבציה התנהגותית) מנבאת התפתחות הפרעה דו-קוטבית [Bipolar]."
+   },
+   {
+    "id": "e35",
+    "fact_ids": [
+     "high_yield[4]"
+    ],
+    "cue": "Mourning person actively setting up chairs",
+    "cue_he": "אדם באבל מסדר כיסאות באופן פעיל",
+    "prop": "carrying chairs out in stacks",
+    "zone": "Seating Area",
+    "text": "",
+    "derivation": "LITERAL_DEPICTION",
+    "triple": [
+     "person",
+     "armband",
+     "black"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שהאדם הנמצא באבל (מסומן בסרט שחור) עדיין מסדר כיסאות באופן פעיל, כך אבל [Bereavement] אינו פוסל אבחנה של הפרעת דיכאון קשה [MDD]."
+   },
+   {
+    "id": "e36",
+    "fact_ids": [],
+    "cue": "Alpha wolf pack in the snowy pines",
+    "cue_he": "להקת זאבי אלפא באורנים המושלגים",
+    "prop": "the pine plantation standing close on three sides",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "animals",
+     "fur",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שלהקת זאבי האלפא שוכנת ביער האורנים המושלג, כך מערכת הנוראפינפרין [NE] פועלת דרך קולטני אלפא."
+   },
+   {
+    "id": "e37",
+    "fact_ids": [],
+    "cue": "Lone alpha wolf charging from the pines",
+    "cue_he": "זאב אלפא בודד תוקף מהאורנים",
+    "prop": "the pine plantation standing close on three sides",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "animal",
+     "fur",
+     "grey"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שזאב אלפא בודד מגיח מהיער ומוביל את ההתקפה, כך קולטן אלפא 1 [α1] מופעל על ידי נוראפינפרין ומעורר תגובות."
+   },
+   {
+    "id": "e38",
+    "fact_ids": [],
+    "cue": "Two wolves, one tagged '2', signaling back",
+    "cue_he": "שני זאבים, אחד מסומן '2', מאותת חזרה",
+    "prop": "the pine plantation standing close on three sides",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "animals",
+     "fur",
+     "brown"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שזאב מסומן '2' מתנהג כמו אלפא אך מאותת לחבריו לחזור לבסיס, כך קולטן אלפא 2 [α2] פועל כרצפטור עצמי פרסינפטי ומעכב שחרור נוראפינפרין."
+   },
+   {
+    "id": "e39",
+    "fact_ids": [],
+    "cue": "Beethoven conducting the orchestra",
+    "cue_he": "בטהובן מנצח על התזמורת",
+    "prop": "conductor's rostrum lifted out of the shell and set on the platform",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "person",
+     "wig",
+     "white"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שבטהובן מנצח על התזמורת, כך מערכת הנוראפינפרין [NE] פועלת גם דרך קולטני בטא."
+   },
+   {
+    "id": "e40",
+    "fact_ids": [],
+    "cue": "Beethoven with baton #1 conducting heart drums",
+    "cue_he": "בטהובן עם שרביט #1 מנצח על תופי לב",
+    "prop": "conductor's rostrum lifted out of the shell and set on the platform",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "person",
+     "drum_set",
+     "red"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שבטהובן אוחז בשרביט מספר 1 ומנצח על קבוצת תופים בצורת לב, כך קולטני בטא 1 [β1] נמצאים בעיקר בלב ומופעלים על ידי נוראפינפרין."
+   },
+   {
+    "id": "e41",
+    "fact_ids": [],
+    "cue": "Beethoven with baton #2 conducting brass section",
+    "cue_he": "בטהובן עם שרביט #2 מנצח על כלי נשיפה",
+    "prop": "conductor's rostrum lifted out of the shell and set on the platform",
+    "zone": "Platform/Stage",
+    "text": "",
+    "derivation": "LEXICON_TOKEN",
+    "triple": [
+     "person",
+     "brass_section",
+     "gold"
+    ],
+    "relates_to": "",
+    "relation": "",
+    "hook": "כמו שבטהובן אוחז בשרביט מספר 2 ומנצח על כלי נשיפה ופליז, כך קולטני בטא 2 [β2] נמצאים בריאות ובכלי דם, ומופעלים על ידי נוראפינפרין."
+   }
+  ]
+ }
+}

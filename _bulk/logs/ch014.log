@@ -7,14 +7,8 @@ Symbols (1): ['DSM_personality_disorders']...
 Density: medium
 ======================================================================
 
-Creating per-day notebook: [Study-014] קריטריונים כלליים להפרעת אישיות
-  Created notebook: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04
-  Attaching textbooks from Drive...
-    [OK] DSM-5-TR
-    [OK] Dulcan
-    [OK] StahlKids
-    [OK] StahlNeuro
-    [OK] Syllabus
+Found existing per-day notebook: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04 ('[Study-014] קריטריונים כלליים להפרעת אישיות')
+  All 5 textbooks already attached.
   Waiting for textbooks to index...
     ready    American Psychiatric Association - DSM 5 TR-
     ready    Emailing Dulcans Textbook of Child and Adole
@@ -22,29 +16,75 @@ Creating per-day notebook: [Study-014] קריטריונים כלליים להפ�
     ready    Stahls Essential Psychopharmacology. Neurosc
     ready    Syllabus
   Checking the notebook can answer from them...
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 45s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 72s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 115s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 184s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 240s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 240s
-Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2537, in <module>
-    main()
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2517, in main
-    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2178, in generate_day
-    raise RuntimeError(
-RuntimeError: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04 reports every source ready but still cannot answer from them; refusing to extract
+    notebook is answering (1746 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+  video: 6b83d4e8-e073-4696-a001-e9acdda37df3
+  flashcards: 95218df4-bc80-4451-b92a-8799504ca6b6
+  quiz: 1e3e1a9f-f72a-4a53-b3c4-a135cfdb2dbb
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (32.7 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (11722 bytes, keys: ['criteria', 'cluster_overview', 'stability_duration', 'differential_from_state', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[dsm_general_criteria] = edab8bfe
+  scope[cluster_overview] = abccfab4
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 2 Sketchy v2 plate(s) in 'PERSONAL INK'...
+  sketchy_main: 26 facts, directing...
+[i] element table attempt 1/3: 2 error(s):
+      - fact not represented: high_yield[1]
+      - e19: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: 'זרוע האמן המקועקעת בשרוול מלא עם עיצובים מורכבים ורגשיים, מייצגת את הפתולוגיה של יחסי אובייקט ורגש המתגבשת בהתבגרות כמאפיין של הפרעת אישיות, בניגוד לתבנית הבסיסית של הטמפרמנט.'
+[i] element table attempt 2/3: 1 error(s):
+      - 4/18 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 3/3: 1 error(s):
+      - e9: same (category, material, colour) as e4
+    [FAIL] director never produced a valid table: ['e9: same (category, material, colour) as e4']
+  sketchy_criteria: 13 facts, directing...
+[i] element table attempt 1/3: 1 error(s):
+      - fact not represented: criteria.thresholds
+[i] normalized e1: dropped unknown fact id(s) ['1']
+[i] normalized e12: dropped unknown fact id(s) ['9']
+[i] normalized e14: dropped unknown fact id(s) ['10']
+[i] normalized e15: dropped unknown fact id(s) ['DSM_personality_disorders']
+[i] normalized e13: hook de-asserted -> 'האמן שזרועותיו מכוסות קעקועים מקצה לקצה, ללא עור חשוף, — הגישה הקלאסית והמלאה של קטגוריות ברורות, בדיוק כמו המודל הקטגורי הקלאסי לאבחון הפרעות אישיות.'
+[i] normalized e15: hook de-asserted -> "הפאב התיאטרלי 'PERSONALITY INN', עם חדר קלאסטר A החשוך והמוזר, — הקונספט הכללי של הפרעות אישיות כפי שמוצגות ב-DSM."
+[i] dropped digit-bearing string 'PERMANENT p.734' — the compositor owns the numerals
+[i] dropped digit-bearing string 'SCHIZOTYPAL p.745' — the compositor owns the numerals
+[i] dropped digit-bearing string 'ANTISOCIAL & AVOIDANT p.885' — the compositor owns the numerals
+[i] dropped digit-bearing string 'BORDERLINE p.886' — the compositor owns the numerals
+[i] dropped digit-bearing string 'HISTRIONIC & DEPENDENT p.757/768' — the compositor owns the numerals
+[i] dropped digit-bearing string 'NARCISSISTIC p.761' — the compositor owns the numerals
+[i] dropped digit-bearing string 'OCPD p.771' — the compositor owns the numerals
+[i] dropped digit-bearing string '2 OF 4 AREAS' — the compositor owns the numerals
+[i] dropped digit-bearing string '1 YEAR +' — the compositor owns the numerals
+[i] dropped digit-bearing string 'LEVEL 2 MODERATE' — the compositor owns the numerals
+[i] try 1: 0 missing, 1 stray (counted), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 2: 1 missing, 12 stray (counted), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 1 lower-priority string(s) and retrying
+[i] try 3: 1 missing, 12 stray (counted), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] try 4: 0 missing, 11 stray (warning), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   MIN                '18' + 'MIN'  quad=[(2383, 885), (2679, 1006), (2678, 1178), (2384, 1051)]  plate height=19.08% of frame
+[ok]   N                  '10' + 'N'  quad=[(129, 1136), (338, 1083), (337, 1229), (127, 1290)]  plate height=13.48% of frame
+[scrub] neutralised 18259 leftover chroma px
+[i] composited 2/2 number plates -> sketchy_criteria.png
+    [OK] sketchy_criteria.png (6.4 MB), 4 tries, score 0, composited 2/2 numbers
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (6b83d4e8): completed
+  [1m] quiz (1e3e1a9f): completed
+  [1m] flashcards (95218df4): completed
+  [OK] video.mp4 (34.6 MB)
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-014-general-personality-disorder-criteria...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-014-general-personality-disorder-criteria

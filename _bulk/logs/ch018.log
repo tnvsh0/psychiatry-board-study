@@ -1,0 +1,116 @@
+
+======================================================================
+Day 18: טיפול ב-ADHD: סטימולנטים
+Tag: study-018-adhd-treatment-stimulants
+Aspects: ['drug_class_overview', 'drug_mechanism', 'indications', 'side_effects_class', 'monitoring', 'practical_use']
+Symbols (6): ['Methylphenidate', 'Amphetamine', 'DAT', 'NET', 'DOPA_MINE']...
+Density: high
+======================================================================
+
+Creating per-day notebook: [Study-018] טיפול ב-ADHD: סטימולנטים
+  Created notebook: 4ee31fd6-f16b-4d74-b3f1-ab7af1ca8cbe
+  Attaching textbooks from Drive...
+    [OK] DSM-5-TR
+    [OK] Dulcan
+    [OK] StahlKids
+    [OK] StahlNeuro
+    [OK] Syllabus
+  Waiting for textbooks to index...
+    ready    American Psychiatric Association - DSM 5 TR-
+    ready    Emailing Dulcans Textbook of Child and Adole
+    ready    Stahls Essential Psychopharmacology Prescrib
+    ready    Stahls Essential Psychopharmacology. Neurosc
+    ready    Syllabus
+  Checking the notebook can answer from them...
+    notebook is answering (1704 chars, 5/5 books named)
+  Extracting comprehensive content from main notebook (this may take 3-5 min)...
+  Extracted 31699 characters of source material.
+  Attached 5 textbook(s) by reference.
+  Added focused-extract source: c3046fdf-c034-41d4-9a8c-08f2d8f69d2c
+  Waiting 120s for indexing...
+Starting NotebookLM artifacts...
+  audio: None
+  video: c8cf359e-c7f0-4032-93cc-05186229a383
+  flashcards: fc38c072-2006-4b8e-ab1b-40823059d951
+  quiz: d3cc9593-f28c-4aed-8d37-af61f0dc839b
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (40.9 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (5318 bytes, keys: ['drug_class', 'indications', 'side_effects_class', 'monitoring', 'practical_use', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[drug_class_overview] = 660f2784
+  scope[indications] = cfcf6d92
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 2 Sketchy v2 plate(s) in 'AMPHI BOWL'...
+  sketchy_main: 26 facts, directing...
+[i] element table attempt 1/3: 10 error(s):
+      - e4_new: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "טנדר הטור 'VYV' [ויוי] בחניית הטעינה מייצג את ליסדקסאמפטמין [Lisdexamfetamine], הידועה גם בשם המותג Vyvanse [ויואנס]."
+      - e5_e: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "כפתור מעוצב כ-'α2A' [אלפא 2A] על המיקסר, מייצג את קולטני אלפא-2A [alpha-2A receptors] שדרכם פועלים הסטימולנטים [stimulants] לייעול יחס האות לרעש [signal-to-noise ratio]."
+      - e5_f: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "כפתור מעוצב כ-'D1' [די 1] על המיקסר, מייצג את קולטני D1 [D1 receptors] שדרכם פועלים הסטימולנטים [stimulants] לייעול יחס האות לרעש [signal-to-noise ratio]."
+      - e9: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "נתיב ה-'EXPRESS LANE' [נתיב מהיר] בכניסה, המציין '30-45 MIN' [30-45 דקות], מסמל את תחילת ההשפעה המהירה של תכשירי שחרור מיידי [immediate-release]."
+      - e11: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "שלישיית צמידי הכניסה 'ADHD TYPES' [סוגי ADHD] בצבעים שונים, המסומנים כ-'COMBINED' [משולב], 'INATTENTIVE' [בעיקר הפרעת קשב], ו-'HYPERACTIVE' [בעיקר היפראקטיבי], מייצגים את שלושת סוגי ההצגה של ADHD [הפרעת קשב וריכוז]."
+      - e12_a: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "דמות קטנה ונמרצת עם חולצת 'DEX' [דקס], המעירה את הנער המנומנם, מייצגת את דקסמתילפנידאט [Dexmethylphenidate] כאחת מהתרופות לטיפול בנרקולפסיה [narcolepsy]."
+      - e12_b: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "דמות קטנה ואנרגטית עם חולצת 'D-AMP' [די-אמפ], מנופפת בהתלהבות ליד הנער המנומנם, מייצגת את ד-אמפטמין [D-Amphetamine] כאחת מהתרופות לטיפול בנרקולפסיה [narcolepsy]."
+      - e12_c: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "דמות קטנה ועירנית עם חולצת 'LISDEX' [ליסדקס], מציעה משקה מרענן לנער המנומנם, מייצגת את ליסדקסאמפטמין [Lisdexamfetamine] כאחת מהתרופות לטיפול בנרקולפסיה [narcolepsy]."
+      - e16: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "משאית האוכל [food truck] עם הפלנצ'ה הריקה וללא תור, ושלט 'NO APPETITE' [אין תיאבון], מסמלת את דיכוי התיאבון וירידה במשקל כתופעת לוואי של סטימולנטים [stimulants]."
+      - e21: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "פנס העקב [follow-spot] עם טבעת ה-'FOCUS' [פוקוס] על העדשה, המכוון לבמה, מסמל את שיפור המיקוד [focus] הנגזר מאופטימיזציה [optimization] של יחס אות לרעש [signal-to-noise ratio] על ידי סטימולנטים [stimulants]."
+[i] element table attempt 2/3: 26 error(s):
+      - fact not represented: drug_class.kinetics[0]
+      - fact not represented: drug_class.kinetics[1]
+      - fact not represented: drug_class.kinetics[2]
+      - fact not represented: drug_class.mechanism
+      - fact not represented: drug_class.members[0]
+      - fact not represented: drug_class.members[1]
+      - fact not represented: drug_class.members[2]
+      - fact not represented: drug_class.members[3]
+      - fact not represented: drug_class.onset_of_effect
+      - fact not represented: indications.items[0]
+      - fact not represented: indications.items[1]
+      - fact not represented: indications.items[2]
+      - fact not represented: indications.items[3]
+      - fact not represented: indications.key_numbers[0]
+      - fact not represented: indications.key_numbers[1]
+      - fact not represented: indications.key_numbers[2]
+      - fact not represented: indications.key_numbers[3]
+      - fact not represented: indications.key_numbers[4]
+      - fact not represented: side_effects_class.items[0]
+      - fact not represented: side_effects_class.items[1]
+[i] element table attempt 3/3: 2 error(s):
+      - fs_alpha_2a_receptor: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "האוזניות בצורת אלפא עם הכיתוב 2A על הדיג'יי מייצגות את קולטני אלפא-2A, דרכם משופר יחס אות-רעש."
+      - e_diagnosis_pediatric: same (category, material, colour) as e_kinetics_halflife_amphetamine
+    [FAIL] director never produced a valid table: ['fs_alpha_2a_receptor: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "האוזניות בצורת אלפא עם הכיתוב 2A על הדיג\'יי מייצגות את קולטני אלפא-2A, דרכם משופר יחס אות-רעש."', 'e_diagnosis_pediatric: same (category, material, colour) as e_kinetics_halflife_amphetamine']
+  sketchy_main2: 25 facts, directing...
+[i] element table attempt 1/3: 5 error(s):
+      - e24: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR
+      - e25: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR
+      - e26: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: "מכרה הפחם 'DOPA-MINE Co.' עם שלט בכניסה מסמל את מקור הדופמין וחלוקתו למסלולים שונים במוח, כולל המסלול המזולימבי."
+      - e26: derivation 'COURSE_WIDE_FIXED_SYMBOL' is not one of LITERAL_DEPICTION, PHONETIC_PUN, LEXICON_TOKEN, MORPHEME_SPLIT, PRINTED_TEXT, PRINTED_NUMBER, COUNTED_SET, BORROWED_ARTWORK, ACRONYM_EMBED, RULE_ON_A_SIGN, CONTRAST_PAIR, NEGATION, GRAPH_AS_OBJECT, FREE_METAPHOR
+      - 11/26 free metaphors — cap is 5%; use a person exhibiting the state or a fixed lexicon token
+[i] element table attempt 2/3: 2 error(s):
+      - e20: same (category, material, colour) as e15
+      - e29: same (category, material, colour) as e5
+[i] element table attempt 3/3: 1 error(s):
+      - fact not represented: monitoring.items[4]
+    [FAIL] director never produced a valid table: ['fact not represented: monitoring.items[4]']
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (c8cf359e): in_progress
+  [1m] quiz (d3cc9593): completed
+  [1m] flashcards (fc38c072): completed
+  [2m] video (c8cf359e): in_progress
+  [3m] video (c8cf359e): in_progress
+  [4m] video (c8cf359e): completed
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+  [OK] video.mp4 (28.5 MB)
+
+Uploading release study-018-adhd-treatment-stimulants...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-018-adhd-treatment-stimulants

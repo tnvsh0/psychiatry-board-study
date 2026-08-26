@@ -53,5 +53,15 @@
   "kind": "quiz",
   "notebook": "3f5e423d-b9dc-4a59-8631-e2190c3d116c",
   "day": "9"
+ },
+ "0480b8a5-4ef0-4a4e-9700-e02af18bc816": {
+  "kind": "flashcards",
+  "notebook": "dc971c78-0cc5-489f-919e-85b7d4a1e5ab",
+  "day": "16"
+ },
+ "87f13350-4764-43ac-8bbb-2f4a62dfa136": {
+  "kind": "quiz",
+  "notebook": "dc971c78-0cc5-489f-919e-85b7d4a1e5ab",
+  "day": "16"
  }
 }

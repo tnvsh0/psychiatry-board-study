@@ -16,29 +16,60 @@ Found existing per-day notebook: 62d0c92c-d74c-4f17-ae64-5801ce9a0056 ('[Study-0
     ready    Stahls Essential Psychopharmacology. Neurosc
     ready    Syllabus
   Checking the notebook can answer from them...
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 45s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 72s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 115s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 184s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 240s
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (2/3)
-    [!] notebooklm ask returned rc=1 with 203 bytes; retrying (3/3)
-    not answering yet (0 chars, 0/5 books named); waiting 240s
-Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2537, in <module>
-    main()
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2517, in main
-    generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
-  File "C:\Users\User\OneDrive\Desktop\CLAUDE\notebooklm-py-main\psychiatry-board-study\.claude\worktrees\admiring-snyder-5e163b\scripts\daily_study.py", line 2126, in generate_day
-    raise RuntimeError(
-RuntimeError: 62d0c92c-d74c-4f17-ae64-5801ce9a0056 reports every source ready but still cannot answer from them; refusing to extract
+    notebook is answering (1507 chars, 5/5 books named)
+Starting NotebookLM artifacts...
+  audio: None
+  video: 41297170-2e0f-481d-a986-72787147f40a
+  flashcards: 64b53a5d-a1ca-4700-86de-e5ddf161f803
+  quiz: 92ef7661-abf9-4318-8856-5caf8ee20c75
+
+Generating focused study guide (ask + page refs)...
+  [OK] study_guide.md (31.7 KB)
+
+Extracting structured facts.json...
+  Extracting structured facts.json (this may take 1-2 min)...
+  [OK] facts.json (12544 bytes, keys: ['thomas_chess', 'easy_difficult_slow_to_warm', 'goodness_of_fit', 'temperament_to_personality', 'high_yield'])
+
+Uploading per-aspect scope sources for infographics...
+  scope[thomas_chess] = 701d5efe
+  Waiting 60s for scope sources to index...
+Skipping per-aspect infographics (quota-bound; backfill fills them in later).
+Starting per-aspect infographics...
+
+Generating 1 Sketchy v2 plate(s) in 'THOS. & CHESS COTS & PRAMS'...
+  sketchy_main: 28 facts, directing...
+[i] element table attempt 1/3: 1 error(s):
+      - fact not represented: goodness_of_fit.key_numbers[0]
+[i] normalized e14: dropped an unmappable relation 'linked_to'
+[i] normalized e16: dropped an unmappable relation 'risk_factor_for'
+[i] normalized e12: cue trimmed to 'Door-width test frame'
+[i] normalized e17: cue trimmed to "Swing price ticket '12mo' on a baby bib next"
+[i] normalized e21: cue trimmed to 'Steel tape measure'
+[i] accepted with warning: e17: hook over 32 words (35): "תג מחיר '12mo' על סינר תינוק ליד לוח שנה המציין '12 שנים', הממחיש כיצד הגיל שבו מופיע לרוב הביטוי המלא של חרדה חברתית (SAD) הוא 12 שנים, גם אם '12mo' מתייחס ל-12 חודשים בתעשיית התינוקות."
+[i] dropped digit-bearing string 'DSM-5 ALTERNATIVE' — the compositor owns the numerals
+[i] try 1: 1 missing, 9 stray (counted), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the man in the red shirt near the brochure rack on the left is larger.'
+[i] try 2: 1 missing, 12 stray (counted), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the red shirt near the brochure rack on the left is larger.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[i] dropping 5 lower-priority string(s) and retrying
+[i] try 3: 2 missing, 12 stray (counted), composition {'anchor_is_object': True, 'figures_even': True, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'YES all similar', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[DIAG] figures_even probe returned NO: 'NO, the man in the green shirt pushing the pink stroller near the window on the left side of the image is clearly larger than the children and babies.'
+[i] try 4: 2 missing, 12 stray (warning), composition {'anchor_is_object': True, 'figures_even': False, 'frame_filled': True, '_raw': {'anchor_is_object': 'YES', 'figures_even': 'NO, the man in the green shirt pushing the pink stroller near the window on the left side of the image is clearly larger than the children and babies.', 'frame_filled': 'YES'}, '_probed': 3, '_asked': 3}
+[ok]   N                  '50' + 'N'  quad=[(718, 805), (923, 859), (925, 1067), (718, 1002)]  plate height=17.06% of frame
+[ok]   MOS                '12mo' + 'MOS'  quad=[(339, 1332), (452, 1296), (452, 1374), (338, 1413)]  plate height=7.62% of frame
+[ok]   PCT                '15%' + 'PCT'  quad=[(1958, 757), (2055, 772), (2056, 888), (1960, 864)]  plate height=8.53% of frame
+[scrub] neutralised 10929 leftover chroma px
+[i] composited 3/3 number plates -> sketchy_main.png
+[i] narration attempt 1/3: 1 issue(s); figure not spoken: 17.5
+    [OK] sketchy_main.png (5.6 MB), 4 tries, score 3, composited 3/3 numbers
+
+3 NotebookLM artifacts launched. Waiting...
+
+  [1m] video (41297170): completed
+  [1m] quiz (92ef7661): completed
+  [1m] flashcards (64b53a5d): completed
+  [OK] video.mp4 (22.8 MB)
+  [OK] quiz.json (0.0 MB)
+  [OK] flashcards.json (0.0 MB)
+
+Uploading release study-013-temperament...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-013-temperament

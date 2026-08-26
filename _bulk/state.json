@@ -1,6 +1,7 @@
 {
  "done": [
   1,
+  2,
   3,
   4,
   5,
@@ -9,13 +10,12 @@
   8,
   9,
   10,
-  2,
-  11
+  11,
+  12,
+  13,
+  14,
+  15
  ],
- "failed": {
-  "12": "15.8min rc=1 :: ay\n    raise RuntimeError(\nRuntimeError: 8b7507a8-23c2-4d2b-b305-985288161355 reports every source ready but still cannot answer from them; refusing to extract",
-  "13": "15.7min rc=1 :: ay\n    raise RuntimeError(\nRuntimeError: 62d0c92c-d74c-4f17-ae64-5801ce9a0056 reports every source ready but still cannot answer from them; refusing to extract",
-  "14": "18.9min rc=1 :: ay\n    raise RuntimeError(\nRuntimeError: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04 reports every source ready but still cannot answer from them; refusing to extract"
- },
+ "failed": {},
  "started_at": "2026-08-23T09:10:12.039022+00:00"
 }

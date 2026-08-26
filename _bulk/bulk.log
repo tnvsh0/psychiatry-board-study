@@ -1,21 +1,14 @@
-queue: 135 chapter(s)
+queue: 130 chapter(s)
 auth OK
 gemini OK (3/3 probes)
 
-[  2] already released — sweeping local copy
-[ 11] התפתחות נורמטיבית: גיל ההתבגרות (13-18) — generating...
-[ 11] DONE  24.7min rc=0 — freed 33MB
-[ 12] תורת ההתקשרות ומנטליזציה — generating...
-[ 12] FAIL  15.8min rc=1 :: ay
-    raise RuntimeError(
-RuntimeError: 8b7507a8-23c2-4d2b-b305-985288161355 reports every source ready but still cannot answer from them; refusing to extract
-[ 13] טמפרמנט — generating...
-[ 13] FAIL  15.7min rc=1 :: ay
-    raise RuntimeError(
-RuntimeError: 62d0c92c-d74c-4f17-ae64-5801ce9a0056 reports every source ready but still cannot answer from them; refusing to extract
-[ 14] קריטריונים כלליים להפרעת אישיות — generating...
-[ 14] FAIL  18.9min rc=1 :: ay
-    raise RuntimeError(
-RuntimeError: a2504bf2-a7f1-448e-ba2c-a61c5fb16b04 reports every source ready but still cannot answer from them; refusing to extract
+[ 15] מצב רוח, אפקט, טמפרמנט — הערכה קלינית — generating...
+[ 15] FAIL  31.7min rc=1 :: erament-clinical-assessment...
+Release: https://github.com/tnvsh0/psychiatry-board-study/releases/tag/study-015-mood-affect-and-temperament-clinical-assessment
+[ 16] עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים — generating...
+[ 16] FAIL  162.3min rc=1 :: rror(
+RuntimeError: chapter 16 is missing study_guide.md; refusing to publish a release that would mark it done. Its local files are left in place as evidence.
+[ 17] הפרעת קשב וריכוז (ADHD) — ליבה — generating...
+[ 17] FAIL  0.0min rc=3221225794 :: 
 
-[STOP] 3 chapters failed in a row — this is systemic, not per-chapter. Read _bulk/logs/ch014.log before resuming.
+[STOP] 3 chapters failed in a row — this is systemic, not per-chapter. Read _bulk/logs/ch017.log before resuming.
