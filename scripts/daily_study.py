@@ -1764,9 +1764,21 @@ def _study_guide_defects(text: str) -> list:
     if len(text) < MIN_GUIDE_CHARS:
         out.append(f"only {len(text)} chars, expected at least {MIN_GUIDE_CHARS}")
     cites = re.findall(r"[\[(][^\])]{0,40}?\bp\.?\s?\d{1,4}[^\])]{0,20}[\])]", text)
-    if len(cites) < MIN_GUIDE_CITATIONS:
-        out.append(f"only {len(cites)} page citations, expected at least "
-                   f"{MIN_GUIDE_CITATIONS}")
+    # "(מקור: הקשר רחב)" is the honest answer the prompt already offers when a
+    # claim is spread across the books rather than sitting on one page, and it
+    # counts toward the floor. Chapters 2 and 16 — neuroanatomy basics,
+    # principles of paediatric psychopharmacology — are broad overviews whose
+    # material genuinely is not on twelve findable pages, and demanding twelve
+    # citations left them one choice: invent, or fail three times and be
+    # dropped. Both invented. A gate that makes honesty impossible is not a
+    # quality gate, it is a pressure to fabricate.
+    honest = len(re.findall(r"הקשר רחב", text))
+    if len(cites) + honest < MIN_GUIDE_CITATIONS:
+        out.append(f"only {len(cites)} page citations"
+                   + (f" plus {honest} broad-context markers" if honest else "")
+                   + f", expected {MIN_GUIDE_CITATIONS} between them — cite a page "
+                   f"where you can find one and write (מקור: הקשר רחב) where you "
+                   f"honestly cannot, but never invent a page")
     return out
 
 
