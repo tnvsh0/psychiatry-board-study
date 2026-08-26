@@ -41,18 +41,46 @@ _CITE = re.compile(r"\s*,?\s*(?:DSM(?:-5-TR)?|Dulcan|StahlNeuro|StahlKids|Stahl"
                    r"|Syllabus|Synopsis)[^,)\]]{0,24}?"
                    r"(?:p\.?|pp\.?|עמ')\s*[\d,\s\-–]{1,18}")
 
-# Receptors, transporters, enzymes and loci, captured WITH their subtype. The
-# subtype is the whole fact: 5-HT2A is not 5-HT1A and D3 is not D2, and a
-# mnemonic that blurs them teaches the wrong thing with full confidence.
-RECEPTOR = re.compile(
-    r"\b(5-?HT|D|H|M|alpha|α|beta|β|NMDA|AMPA|GABA|mGlu|CB|MT|V|OX)"
-    r"[-\s]?(\d[A-Za-z]?)\b|\b(CYP\d[A-Z]\d+)\b|\b(SERT|NET|DAT|VMAT2?)\b"
-    r"|\b(\d{1,2}[pq]\d{1,2}(?:\.\d+)?)\b")
+# IDENTIFIERS: anything whose letters and digits together ARE the name. A
+# whitelist of receptor families was the first attempt and it is the wrong
+# shape — it can only ever catch what I thought of, and the one it misses is
+# the one that gets blurred. The rule is general instead: a token that mixes
+# letters with digits, or carries a Greek letter, or is an all-caps acronym, is
+# an identifier and is atomic.
+#
+# The subtype is not a detail, it is the entire fact. 5-HT2A is not 5-HT1A, D3
+# is not D2, CYP2D6 is not CYP3A4, 16p11.2 is not 16p11 — and a picture that
+# blurs any of them teaches the wrong thing with a mnemonic's authority, which
+# is worse than teaching nothing because a mnemonic is built to resist
+# unlearning.
+IDENTIFIER = re.compile(
+    r"\d{1,2}[pq]\d{1,2}(?:\.\d+)?"                     # 16p11.2, a locus
+    r"|\d+-[A-Za-z]{1,6}\d*[A-Za-z]*\d*"                 # 5-HT2A, 5-HT1A
+    r"|[A-Za-z]{2,12}\d+[A-Za-z]*\d*(?:\.\d+)?"         # TAAR1, SHANK3, CYP2D6, Cav1.2
+    r"|(?:alpha|beta|gamma|delta|sigma|kappa|mu"
+    r"|α|β|γ|δ|σ|κ|μ)-?\d[A-Za-z]?"   # alpha-2, sigma-1
+    r"|[A-Za-z]{2,8}-[A-Z0-9]"                        # MAO-B, GABA-A, ADOS-2
+    r"|[A-Z]\d+[A-Za-z]?"                           # D2, D3, H1
+    r"|[A-Z]{3,6}",                                # SERT, NMDA, COMT
+    re.I)
+
+RECEPTOR = IDENTIFIER      # the old name, kept for callers
 
 # A real quantity: a number that measures something.
-QUANTITY = re.compile(r"\d+(?:[.,]\d+)?\s*(?:%|mg|ml|mEq|שעות|שעה|ימים|יום|"
-                      r"שבועות|שבוע|חודשים|חודש|שנים|שנה|hours?|days?|weeks?|"
-                      r"months?|years?)|\d+\s*[:/]\s*\d+|\bפי\s*\d+")
+QUANTITY = re.compile(
+    r"\d+(?:[.,]\d+)?\s*(?:%|mg|ml|mEq|שעות|שעה|ימים|יום|"
+    r"שבועות|שבוע|חודשים|חודש|שנים|שנה|hours?|days?|weeks?|months?|years?)"
+    r"|\d+\s*[:/]\s*\d+|\bפי\s*\d+"
+    # A DIAGNOSTIC THRESHOLD is the most forgettable number in a chapter and
+    # the most examinable: "3 of 3 in A and at least 2 of 4 in B", "functional
+    # language by age 5", "approved from age 6". These first scored as
+    # unremarkable and went to the legend while bare percentages were drawn
+    # twice over — the exact inversion this file exists to stop.
+    r"|\d+\s*(?:מתוך|מ־|מ-)\s*\d+"
+    r"|\b\d+\s*(?:of|/)\s*\d+\b"
+    r"|(?:לפחות|לכל היותר|מעל|מתחת ל)\s*\d+"
+    r"|(?:עד|מ)\s*גיל\s*\d+"
+    r"|\bגיל\s*\d+")
 
 # An ORDINAL dressed as a number. "Severity level 1 / 2 / 3" is a list, not a
 # datum — the digits carry no information a reader could get wrong.
@@ -70,10 +98,23 @@ def strip_citation(text: str) -> str:
     return re.sub(r"\s*\(\s*\)", "", t).strip()
 
 
-def score_fact(text: str) -> tuple[int, list[str]]:
+# "Criterion A", "B2", "C" — the letter is not decoration, it is how the
+# criterion is asked about and how a resident is expected to recite it.
+CRITERION = re.compile(r"קריטריון\s*([A-Z])|criterion\s*([A-Z])", re.I)
+
+
+def score_fact(text: str, path: str = "") -> tuple[int, list[str]]:
     """How much does this fact need a picture? Higher = draw it."""
     t = _CITE.sub(" ", text or "")
     why, score = [], 0
+
+    # A diagnostic criterion is exactly what has to be memorised, letter and
+    # all — which is why criteria get their own plate rather than competing
+    # for space on the main one. The first version of this scored them as
+    # definitional filler and sent them to the legend, which was wrong.
+    if path.startswith("criteria") or CRITERION.search(t):
+        score += 6
+        why.append("a diagnostic criterion")
 
     r = RECEPTOR.search(t)
     if r:
@@ -81,7 +122,11 @@ def score_fact(text: str) -> tuple[int, list[str]]:
     if QUANTITY.search(t):
         score += 4; why.append("a measured quantity")
     if PROPER.search(t):
-        score += 2; why.append("a proper name")
+        # A drug name IS the archetypal Sketchy content — a barbershop for
+        # barbiturates, Ben's Diner for benzodiazepines. Scoring it 2 put it
+        # under the threshold, so "Methylphenidate, Atomoxetine, Guanfacine"
+        # went to the legend as plain text while a severity ladder was drawn.
+        score += 4; why.append("a proper name")
     # bare digits that are not ordinals still count, but for less
     if not QUANTITY.search(t) and re.search(r"\d", t) and not ORDINAL.search(t):
         score += 1; why.append("a bare figure")
@@ -136,7 +181,7 @@ def triage(facts: dict) -> dict:
                      if len(w) > 1])
         if words < 2:
             continue
-        s, why = score_fact(text)
+        s, why = score_fact(text, path)
         (draw if s >= DRAW_THRESHOLD else tell).append(
             {"path": path, "text": text, "score": s, "why": why})
     # facts.json states the same figure twice — once inside a sentence and once
