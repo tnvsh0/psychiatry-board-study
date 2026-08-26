@@ -162,13 +162,31 @@ def try_relogin() -> bool:
     """
     print("  [i] session expired — re-minting from the browser profile...",
           flush=True)
-    subprocess.run(["notebooklm"] + (["-p", PROFILE] if PROFILE else []) + ["login"],
-                   capture_output=True, text=True, encoding="utf-8",
-                   errors="replace", timeout=300)
-    ok, _ = auth_ok()
-    print(f"  [i] re-auth {'succeeded' if ok else 'FAILED — a person is needed'}",
-          flush=True)
-    return ok
+    for attempt in range(2):
+        try:
+            r = subprocess.run(
+                ["notebooklm"] + (["-p", PROFILE] if PROFILE else []) + ["login"],
+                capture_output=True, text=True, encoding="utf-8",
+                errors="replace", timeout=600)
+            out = " ".join(((r.stdout or "") + " " + (r.stderr or "")).split())
+        except subprocess.TimeoutExpired:
+            out = "login timed out after 600s"
+        # SAY what happened. The first version threw the output away and
+        # reported a bare "FAILED — a person is needed", so when chapter 22
+        # stopped the queue there was nothing to explain why, and a manual
+        # `notebooklm login` from a terminal then worked on the first try.
+        # Discarding the error was the same mistake nb_run had made, repeated
+        # two days after fixing it there.
+        ok, _ = auth_ok()
+        if ok:
+            print("  [i] re-auth succeeded", flush=True)
+            return True
+        print(f"  [i] re-auth attempt {attempt + 1}/2 failed: {out[:220]}",
+              flush=True)
+        if attempt == 0:
+            time.sleep(20)
+    print("  [i] re-auth FAILED — a person is needed", flush=True)
+    return False
 
 
 def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
