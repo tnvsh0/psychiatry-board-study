@@ -67,6 +67,12 @@ LADDER_MODEL = os.environ.get("SKETCHY_LADDER_MODEL", "").strip()
 
 def model_for_try(attempt: int, max_tries: int) -> str:
     """Which image model this rung of the ladder should use."""
+    if ENGINE == "agy":
+        # The agy tool exposes no model choice, so returning a Gemini model id
+        # here would write a name into the plate report that nothing actually
+        # ran — and the report is what a later question about quality gets
+        # answered from.
+        return "agy:generate_image"
     if LADDER_MODEL and attempt < max_tries - 1:
         return LADDER_MODEL
     return IMAGE_MODEL
@@ -80,6 +86,24 @@ CAPTION_MODEL = "gemini-2.5-flash"  # text-only (director/caption/coverage) — 
 # cost per chapter still falls.
 IMAGE_SIZE = os.environ.get("SKETCHY_IMAGE_SIZE", "2K")  # 1K | 2K | 4K
 IMAGE_ASPECT = "16:9"
+
+# Which engine actually draws. "api" bills every render, including the two or
+# three the degradation ladder throws away to find a composition; "agy" spends
+# the Antigravity CLI's own free allowance instead.
+#
+# The trade is resolution, and it is not negotiable: agy exposes no size
+# parameter, so 16:9 is 1376x768 and that is the ceiling on EVERY free route to
+# these models — the CLI, the 500/day flash-image tier, the Gemini app. 2K and
+# 4K are paid only.
+#
+# 1K was abandoned once because a glyph landed at ~24px on plates carrying
+# 22-34 elements. The three-way plate split is what makes it viable again: a
+# third of the elements on the same canvas is three times the glyph size.
+ENGINE = os.environ.get("SKETCHY_ENGINE", "api").strip().lower()
+if ENGINE == "agy":
+    # Anything downstream that reasons about resolution should be told the
+    # truth rather than the value someone set in the environment.
+    IMAGE_SIZE = "1K"
 
 
 def _image_config():
@@ -280,11 +304,25 @@ def generate_image(
     response / network hiccup / occasional safety refusal) — important for
     long unattended bulk runs where a single transient miss shouldn't drop
     a whole chapter's image."""
+    full_prompt = style_prefix() + "\n\nContent to illustrate:\n" + prompt
+
+    if ENGINE == "agy":
+        # The ladder's draft rungs are the whole reason this branch exists, so
+        # a quota wall must not kill a chapter mid-run: agy_image reads the
+        # reset time out of the 429 itself and waits it out.
+        import agy_image
+        try:
+            return agy_image.generate(full_prompt, output_path,
+                                      aspect=IMAGE_ASPECT,
+                                      name=Path(output_path).stem or "plate")
+        except agy_image.QuotaExhausted as e:
+            print(f"[!] {e}", file=sys.stderr)
+            return False
+
     client = _get_client(api_key)
     if client is None:
         return False
 
-    full_prompt = style_prefix() + "\n\nContent to illustrate:\n" + prompt
     cfg = _image_config()
 
     import time as _time

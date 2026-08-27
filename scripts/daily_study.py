@@ -1121,9 +1121,9 @@ def build_image_jobs(aspects, facts):
     both halves were handed the identical unsplit facts slice, so the two renders
     differed by wording alone, and the branch that produced them also carried the
     "ZERO TEXT / NO written numerals" rule that stripped every figure out of the
-    epidemiology images. Epidemiology is now one aspect of the chapter's main
-    plate — see sketchy_spec.plan_plates for the hybrid main/criteria split that
-    replaces per-aspect jobs wholesale."""
+    epidemiology images. Epidemiology is now one aspect of the chapter's
+    profile plate — see sketchy_spec.plan_plates for the criteria / profile /
+    management split that replaces per-aspect jobs wholesale."""
     jobs = []
     for aspect in aspects:
         slice_ = facts_for_aspect(aspect, facts)

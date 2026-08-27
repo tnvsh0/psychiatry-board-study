@@ -11,7 +11,8 @@ This module owns everything a model must not be trusted with:
 
   atomize()          facts.json  -> a flat list of Facts with stable ids
   normalize_number() a fact's numerals -> exact strings to paint, with tags
-  plan_plates()      Facts -> plates (main track + criteria track)
+  plan_plates()      Facts -> plates (criteria / profile / management),
+                     each carrying only the facts worth drawing
   validate_table()   the director's element table -> a list of hard errors
   build_image_prompt()  element table -> the illustrator prompt, deterministic
   render_legend()    element table -> the numbered `cue: fact — hook` legend
@@ -24,11 +25,15 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
 import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import fact_triage        # noqa: E402  — scores how forgettable a fact is
 # Windows gives a redirected stdout the locale codec (cp1255 here), and a
 # single Hebrew character then raises UnicodeEncodeError. Every chapter
 # title in this course is Hebrew, and bulk_run redirects stdout to a log.
@@ -39,10 +44,94 @@ except Exception:
     pass
 
 # ── plate geometry ─────────────────────────────────────────────────────────
-FACTS_PER_PLATE = 30       # target density; the corpus runs 15-50 per page
-PLATE_SPLIT_AT = 45        # split into a second plate only past this
+# Density follows RESOLUTION, because legibility is the product of the two and
+# nothing else. At 2K a glyph on a 30-element plate is comfortable; at 1K the
+# same plate lands it near 24px, the floor before the model has garbled
+# anything. Every FREE route to these models is 1K — the Antigravity CLI, the
+# flash-image daily tier, the Gemini app — so choosing the free engine has to
+# buy fewer elements per scene rather than smaller letters.
+#
+# More plates is not the cost it looks like. The complaint that started this
+# was plates carrying so much that nothing on them stood out.
+_TIGHT = (os.environ.get("SKETCHY_ENGINE", "api").strip().lower() == "agy"
+          or os.environ.get("SKETCHY_IMAGE_SIZE", "2K").strip().upper() == "1K")
+
+FACTS_PER_PLATE = 18 if _TIGHT else 30   # target density; corpus runs 15-50
+PLATE_SPLIT_AT = 22 if _TIGHT else 45    # split into another plate past this
+MIN_PLATE_FACTS = 6        # below this a track is folded, not given its own scene
+
+
+# ── which plate a fact belongs on ──────────────────────────────────────────
+# Three plates, per the 2026-08-27 decision: the criteria, then WHO AND WHAT
+# (who gets it, why, how it shows up) and WHAT YOU DO (treat, measure, watch).
+#
+# This is not a cosmetic reorganisation. One plate carrying 22-34 elements is
+# what forced the render up to 2K, and 2K is paid-only on every route; a third
+# of the elements on the same canvas is three times the glyph size, which is
+# what puts the free 1K quota back within reach. Density is the lever.
+#
+# The aspect vocabulary is OPEN — 161 distinct names across the 144 chapters,
+# and about a hundred of them occur exactly once ("wernicke_korsakoff",
+# "duty_to_warn", "conversion_oral_to_LAI"). A lookup table can only hold the
+# ones I thought of, and the chapter it misses is the one that lands on the
+# wrong plate without saying so. So the rule matches STEMS, and anything it
+# cannot place goes to the descriptive plate and is REPORTED — an unplaceable
+# aspect should be a line of output, not a silent default.
+
+# What a clinician DOES: choose it, give it, measure it, watch for it.
+_MANAGEMENT_STEMS = (
+    # "medic" would be the obvious stem and it is a trap: it swallows
+    # "medical_mimics", which 48 chapters carry and which is a differential —
+    # what else could look like this — not a thing anyone does.
+    "treat", "therap", "manage", "pharmac", "medicat", "dosin", "dosag",
+    "indication", "monitor", "augment", "restraint", "escalation", "protocol",
+    # "restrict" swallows "restricted_interests", which is an autism symptom.
+    # "restriction" keeps means_restriction and dietary_restrictions.
+    "hygiene", "planning", "prevent", "restriction", "admission", "stabiliz",
+    "workup", "assessment", "tool", "scale", "screen", "interview",
+    "examination", "practice", "technique", "method", "intervention",
+    "discontinu", "conversion", "refeeding", "safety", "challenge",
+    "side_effect", "toxicity", "overdose", "lethality", "commitment",
+    "habit_reversal", "means_", "fbt", "cbt", "ciwa", "y_bocs", "lai_",
+    "bush_francis", "evidence", "practical_use", "emergency",
+)
+
+# The criteria themselves — the letters and thresholds a resident recites.
+_CRITERIA_STEMS = (
+    "criteri", "sigecaps", "specifier", "symptom_cluster", "cluster_overview",
+    "4_symptom", "threshold",
+)
+
+
+# "criteria" is not always the DSM's. Admission criteria are a decision about
+# what to DO with a patient, and they have no lettered clusters to recite; on
+# the criteria plate they would sit beside Criterion A looking like one.
+_NOT_DSM_CRITERIA = ("admission", "discharge", "referral", "eligibilit")
+
+
+def track_for_aspect(aspect: str) -> str:
+    """'criteria' | 'management' | 'profile' for one facts.json key."""
+    a = (aspect or "").strip().lower()
+    if any(s in a for s in _CRITERIA_STEMS) and \
+            not any(s in a for s in _NOT_DSM_CRITERIA):
+        return "criteria"
+    if any(s in a for s in _MANAGEMENT_STEMS):
+        return "management"
+    return "profile"
+
+
+def unplaceable_aspects(aspects) -> list[str]:
+    """Aspects that fell to the default rather than matching a stem.
+
+    Not an error — 'anatomy' and 'clinical_presentation' belong on the profile
+    plate and reach it this way. It exists so a genuinely miscategorised
+    one-off is visible in the run log instead of being absorbed in silence.
+    """
+    return [a for a in aspects
+            if not any(s in (a or "").lower()
+                       for s in _CRITERIA_STEMS + _MANAGEMENT_STEMS)]
 MAX_PAINTED_NUMBERS = 3    # per plate. 0 is an explicitly legal outcome.
-MAX_REQUIRED_STRINGS = 18  # gated legible strings, <=5 words each
+MAX_REQUIRED_STRINGS = 11 if _TIGHT else 18   # gated strings, <=5 words each
 MAX_RELATIONS = 6          # bounded pairwise relations; never a plot
 # Cue length. Six was guesswork and it rejects the corpus's own grammar:
 # "Alpha1 scout w/ single candle up high" is 7 words, "Prevented from picking up
@@ -161,7 +250,7 @@ class Fact:
     aspect: str        # top-level facts.json key
     subkey: str        # second-level key
     text: str
-    track: str         # "criteria" or "main" — the hybrid split
+    track: str         # "criteria" | "profile" | "management"
     priority: int      # exam yield, drives number triage
     numbers: list = field(default_factory=list)
 
@@ -405,7 +494,7 @@ def atomize(facts: dict) -> list[Fact]:
     for path, aspect, subkey, text in leaves:
         out.append(Fact(
             id=path, aspect=aspect, subkey=subkey, text=text,
-            track="criteria" if aspect == "criteria" else "main",
+            track=track_for_aspect(aspect),
             priority=_priority(path),
             numbers=normalize_number(text, path),
         ))
@@ -415,10 +504,15 @@ def atomize(facts: dict) -> list[Fact]:
 # ── plates ─────────────────────────────────────────────────────────────────
 @dataclass
 class Plate:
-    track: str          # "main" | "criteria"
+    track: str          # "criteria" | "profile" | "management"
     index: int          # 1-based within the track
-    facts: list         # list[Fact]
+    facts: list         # list[Fact] — the ones that get drawn
     venue: dict = field(default_factory=dict)
+    # True, examinable, and nobody forgets them: "autism involves impaired
+    # social communication" IS autism. Drawn, they crowd out the arbitrary
+    # things a mnemonic exists for — the 16p11.2 CNV, epilepsy at 8.6%. They
+    # are never discarded, only moved off the picture and into the legend.
+    legend_only: list = field(default_factory=list)
 
     @property
     def name(self) -> str:
@@ -435,17 +529,55 @@ def plan_plates(facts: list[Fact]) -> list[Plate]:
     legend that overflows is reprinted against the SAME image rather than
     given a second scene.
     """
+    by_track = {t: [f for f in facts if f.track == t]
+                for t in ("criteria", "profile", "management")}
+
+    # A track too thin to fill a scene does not get one. Two facts on their own
+    # plate is a venue, an anchor and an ambient activity spent on two facts,
+    # and it reads as an error to the learner. Fold it into the other
+    # descriptive track instead — the criteria keep a lower bar, because their
+    # whole reason for a separate plate is that they are recited verbatim.
+    def fold(src: str, dst: str, floor: int) -> None:
+        if 0 < len(by_track[src]) < floor:
+            for f in by_track[src]:
+                f.track = dst
+            by_track[dst] += by_track[src]
+            by_track[src] = []
+
+    fold("management", "profile", MIN_PLATE_FACTS)
+    fold("profile", "management", MIN_PLATE_FACTS)
+    fold("criteria", "profile" if by_track["profile"] else "management", 3)
+
     plates = []
-    for track in ("main", "criteria"):
-        sel = [f for f in facts if f.track == track]
+    for track in ("criteria", "profile", "management"):
+        sel = by_track[track]
         if not sel:
             continue
-        n = 1 if len(sel) <= PLATE_SPLIT_AT else math.ceil(len(sel) / FACTS_PER_PLATE)
-        per = math.ceil(len(sel) / n)
+        # Which of these actually need a picture. A criterion is exempt: its
+        # letter and its threshold are precisely what gets recited under exam
+        # conditions, so the criteria plate draws all of its facts.
+        if track == "criteria":
+            draw, tell = sel, []
+        else:
+            scored = [(f, fact_triage.score_fact(f.text, f.id)[0]) for f in sel]
+            draw = [f for f, s in scored if s >= fact_triage.DRAW_THRESHOLD]
+            tell = [f for f, s in scored if s < fact_triage.DRAW_THRESHOLD]
+            # A plate with nothing arbitrary on it still needs to be a scene.
+            # Rather than render an empty venue, fall back to drawing the lot —
+            # the triage is there to rank, not to veto a whole aspect.
+            if len(draw) < MIN_PLATE_FACTS:
+                draw, tell = sel, []
+
+        n = 1 if len(draw) <= PLATE_SPLIT_AT else math.ceil(len(draw) / FACTS_PER_PLATE)
+        per = math.ceil(len(draw) / n)
         for i in range(n):
-            chunk = sel[i * per:(i + 1) * per]
+            chunk = draw[i * per:(i + 1) * per]
             if chunk:
-                plates.append(Plate(track=track, index=i + 1, facts=chunk))
+                plates.append(Plate(track=track, index=i + 1, facts=chunk,
+                                    # the legend-only facts ride on the first
+                                    # plate of the track, where the reader is
+                                    # already looking for that track's material
+                                    legend_only=tell if i == 0 else []))
     return plates
 
 
@@ -1182,6 +1314,17 @@ def _ltr(s: str) -> str:
     return f"{_FSI}{s}{_PDI}" if s else s
 
 
+def _short_cue(cue: str, keep: int = 5) -> str:
+    """Enough of a cue to point at the prop again, on a repeat row.
+
+    The bracketed Latin address goes — it was there so the reader could find
+    the lettering in the picture, and by the second row they have found it.
+    """
+    head = re.split(r"\s*[\[(]", cue.strip(), maxsplit=1)[0].strip(" ,.–—")
+    words = head.split()
+    return " ".join(words[:keep]) + ("…" if len(words) > keep else "")
+
+
 def render_legend(table: dict, plate: Plate, topic: str,
                   undrawn: list[str] | None = None,
                   venue_why: str | None = None) -> str:
@@ -1244,18 +1387,43 @@ def render_legend(table: dict, plate: Plate, topic: str,
                 cue = f"{cue} [{_ltr(latin)}]"
             hook = (e.get("hook") or "").strip()
             eid = e.get("id") or cue
-            if hook and eid in hook_shown:
-                hook = ""                      # already explained on the row above
-            elif hook:
+            if eid in hook_shown:
+                # Printing the hook once fixed half of this. The CUE was still
+                # reprinted in full on every fact the element carries, so an
+                # element with three facts spent three thirty-word cues saying
+                # the same thing — most of the length the owner objected to,
+                # and the reason a reader cannot tell a new row from a repeat.
+                # Later rows name the prop and stop.
+                hook = ""
+                cue = _short_cue(cue)
+            else:
                 hook_shown.add(eid)
             rows.append(f"{n}. {cue}: {f.text}" + (f" — {hook}" if hook else ""))
 
     tail = []
-    not_drawn = [n_.paint for f in plate.facts for n_ in f.numbers if not n_.drawn]
+    # Facts the triage kept off the picture. They are still the chapter's
+    # material and still examinable — what they are not is arbitrary, so they
+    # get a sentence instead of a prop. Numbering continues from the drawn rows
+    # so the reader sees one list, not a demotion.
+    if getattr(plate, "legend_only", None):
+        tail += ["", "בלי ציור (נובע מההגדרה, לא דורש מנמוני):"]
+        for f in plate.legend_only:
+            n += 1
+            # The row needs an address before the colon, and not only so it
+            # reads like the drawn rows: render_quiz blanks everything after
+            # the first "<label>: ", so a row without one is printed to the
+            # quiz with its answer still in it. These facts are undrawn, not
+            # untested.
+            label = _ltr((f.subkey or f.aspect or "").replace("_", " ").strip())
+            tail.append(f"{n}. {label}: {f.text}" if label else f"{n}. —: {f.text}")
+
     if undrawn:
         tail += ["", "לא צויר: " + " · ".join(undrawn)]
+    # Every figure in the chapter reaches this line, whether it was painted,
+    # left to the legend, or attached to a fact the triage moved off the plate.
     exam = [f"{n_.op}{n_.paint}".strip()
-            for f in plate.facts for n_ in f.numbers]
+            for f in list(plate.facts) + list(getattr(plate, "legend_only", []))
+            for n_ in f.numbers]
     if exam:
         tail += ["", "מספרים לבחינה: " + " · ".join(dict.fromkeys(exam))]
 
@@ -1375,7 +1543,7 @@ def _test_relation_normalization() -> None:
     """Verify that director synonyms are normalized rather than rejected."""
     # a minimal table with one element using a synonym the director naturally reaches for
     test_facts = [Fact(id="f1", aspect="test", subkey="x", text="test fact",
-                       track="main", priority=50)]
+                       track="profile", priority=50)]
     table = {
         "venue": {"sign_text": "TEST", "place": "a test place", "activity": "testing"},
         "anchor_structure": "a large inanimate object",

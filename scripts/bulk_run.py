@@ -210,6 +210,16 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     # 2026-08-23: ~$85 across 141 chapters rather than ~$227, on the reasoning
     # that most renders in the ladder are discarded anyway.
     env.setdefault("SKETCHY_LADDER_MODEL", "gemini-3.1-flash-image-preview")
+    # 2026-08-27: every render moves to the Antigravity CLI's own free quota.
+    # The trade the owner accepted is resolution — agy has no size parameter,
+    # so plates render at 1376x768 rather than 2K — against a bill that goes to
+    # zero. Their reasoning was that the reverse mistake is the expensive one:
+    # spending the money first and only then discovering the free route worked.
+    #
+    # 1K is only viable because the plates were split three ways the same day;
+    # sketchy_spec drops its density budget when it sees this variable, so the
+    # two changes must travel together.
+    env.setdefault("SKETCHY_ENGINE", "agy")
     timed_out = False
     with log.open("w", encoding="utf-8") as fh:
         try:

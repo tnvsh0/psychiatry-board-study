@@ -393,7 +393,11 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     # ships: chapter 5 went out as a two-try Flash render while chapter 6, which
     # needed all four tries, reached Pro and was visibly better. The owner spotted
     # the difference without being told which was which.
-    if best and gi.LADDER_MODEL and best.get("model") != gi.IMAGE_MODEL:
+    # The agy engine has ONE model — its ladder rungs and its final frame come
+    # off the same tool, so re-rendering the winner buys nothing and spends an
+    # image out of a quota that only refills every five hours.
+    if best and gi.ENGINE != "agy" and gi.LADDER_MODEL \
+            and best.get("model") != gi.IMAGE_MODEL:
         print(f"[i] final pass on {gi.IMAGE_MODEL} (ladder settled on "
               f"{best['model']})", file=sys.stderr)
         final = png.with_suffix(".final.png")
@@ -508,7 +512,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--day", type=int, required=True)
     ap.add_argument("--facts", default="_view/facts.json")
-    ap.add_argument("--plate", choices=["main", "criteria", "all"], default="all")
+    ap.add_argument("--plate", choices=["criteria", "profile", "management",
+                                        "main", "all"], default="all")
     ap.add_argument("--out", default="_proto/plate")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--numbers", choices=["composite", "model"],

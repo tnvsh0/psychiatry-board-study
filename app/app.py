@@ -88,10 +88,14 @@ def sketchy_heading(stem: str) -> str:
         if s.startswith(base + "_"):
             rest = s[len(base) + 1:]
             return f"{he} · {_ASPECT_HE.get(rest, rest.replace('_', ' '))}"
-    if s.startswith("main") or s.startswith("criteria"):
-        n = s[-1] if s[-1].isdigit() else ""
-        base = "הלוח הראשי" if s.startswith("main") else "קריטריונים"
-        return f"{base} {n}".strip()
+    # Plate tracks. "main" is the pre-2026-08-27 name and still names the
+    # plates of the chapters released under it, so it stays.
+    _TRACK_HE = {"criteria": "קריטריונים", "profile": "מי ומה",
+                 "management": "מה עושים", "main": "הלוח הראשי"}
+    for track, he in _TRACK_HE.items():
+        if s.startswith(track):
+            n = s[len(track):]
+            return f"{he} {n}".strip() if n.isdigit() else he
     return s.replace("_", " ")
 
 

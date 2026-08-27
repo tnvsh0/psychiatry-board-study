@@ -363,7 +363,8 @@ def main() -> int:
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--facts", default="_view/facts.json")
-    ap.add_argument("--plate", default="main", choices=["main", "criteria"])
+    ap.add_argument("--plate", default="profile",
+                    choices=["criteria", "profile", "management", "main"])
     ap.add_argument("--topic", default="Major Depressive Disorder — MDD")
     ap.add_argument("--dry-run", action="store_true",
                     help="print the brief; make no API calls")
