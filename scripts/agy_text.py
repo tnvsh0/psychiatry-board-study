@@ -36,6 +36,13 @@ MAX_PROMPT_CHARS = 24000
 TIMEOUT_S = int(os.environ.get("AGY_TEXT_TIMEOUT_S", 420))
 
 
+# A 429 that does not state its reset time. Most do, and the stated value is
+# always preferred — but a render that gives up because the server phrased the
+# refusal differently is a chapter lost to a wording. Long enough not to hammer
+# a wall that lasts hours, short enough to pick the work back up.
+BLIND_WAIT_S = 1200
+
+
 def ask(prompt: str, *, wait_for_quota: bool = True,
         max_wait_s: int = 6 * 3600) -> str | None:
     """One text turn. Returns the response, or None if it could not run.
@@ -68,11 +75,10 @@ def ask(prompt: str, *, wait_for_quota: bool = True,
         blob = out + "\n" + err
 
         if "429" in blob or "exhausted your capacity" in blob:
-            secs = parse_reset_seconds(blob)
-            if not (wait_for_quota and secs) or waited + secs > max_wait_s:
+            secs = parse_reset_seconds(blob) or BLIND_WAIT_S
+            if not wait_for_quota or waited + secs > max_wait_s:
                 raise QuotaExhausted(
-                    f"agy text quota exhausted; resets in {secs}s" if secs
-                    else "agy text quota exhausted", secs)
+                    f"agy text quota exhausted; resets in {secs}s", secs)
             print(f"[i] agy text quota exhausted; the server says it resets in "
                   f"{secs // 60}m — waiting.", file=sys.stderr)
             time.sleep(secs + 30)
@@ -140,11 +146,10 @@ def _ask_image_raw(image_path, question: str, *, extra: list | None = None,
         blob = out + "\n" + (proc.stderr or "")
 
         if "429" in blob or "exhausted your capacity" in blob:
-            secs = parse_reset_seconds(blob)
-            if not (wait_for_quota and secs) or waited + secs > max_wait_s:
+            secs = parse_reset_seconds(blob) or BLIND_WAIT_S
+            if not wait_for_quota or waited + secs > max_wait_s:
                 raise QuotaExhausted(
-                    f"agy vision quota exhausted; resets in {secs}s" if secs
-                    else "agy vision quota exhausted", secs)
+                    f"agy vision quota exhausted; resets in {secs}s", secs)
             print(f"[i] agy vision quota exhausted; resets in {secs // 60}m — "
                   f"waiting.", file=sys.stderr)
             time.sleep(secs + 30)

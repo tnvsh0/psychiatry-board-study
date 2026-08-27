@@ -69,6 +69,13 @@ Prompt:
 """
 
 
+# A 429 that does not state its reset time. Most do, and the stated value is
+# always preferred — but a render that gives up because the server phrased the
+# refusal differently is a chapter lost to a wording. Long enough not to hammer
+# a wall that lasts hours, short enough to pick the work back up.
+BLIND_WAIT_S = 1200
+
+
 class QuotaExhausted(RuntimeError):
     """429 from the image model. `reset_seconds` is what the server itself said."""
 
@@ -175,11 +182,10 @@ def generate(prompt: str, output_path: str | Path, *, aspect: str = "16:9",
             return False
 
         if "429" in raw or "exhausted your capacity" in raw:
-            secs = parse_reset_seconds(raw)
-            if not (wait_for_quota and secs) or deadline_used + secs > max_wait_s:
+            secs = parse_reset_seconds(raw) or BLIND_WAIT_S
+            if not wait_for_quota or deadline_used + secs > max_wait_s:
                 raise QuotaExhausted(
-                    f"agy image quota exhausted; resets in {secs}s" if secs
-                    else "agy image quota exhausted", secs)
+                    f"agy image quota exhausted; resets in {secs}s", secs)
             print(f"[i] agy quota exhausted; the server says it resets in "
                   f"{secs // 60}m — waiting.", file=sys.stderr)
             time.sleep(secs + 30)
