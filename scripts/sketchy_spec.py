@@ -306,19 +306,34 @@ def _priority(fid: str) -> int:
 # Short referent tags, so a painted numeral is not a floating digit. p207
 # letters "52" with "HT" beneath it on the same banner, and that tag is the
 # only reason the numeral survives a frame full of decorative jersey numbers.
+# Ordered: the first pattern that matches wins, so the specific ones lead.
+# "onset" alone claimed onset_of_effect and tagged an SSRI's 2-8 week lag to
+# clinical response as AGE — a plate reading "8wk / AGE", which teaches that
+# the drug is for eight-year-olds. A wrong referent is worse than none, since
+# the whole point of the tag is to say what the figure is about.
 _TAGS = [
+    (r"onset_of_effect|onset_of_action|time_to_", "LAG"),
+    (r"onset_age|age_of_onset|onset", "AGE"),
     (r"prevalence", "RATE"), (r"heritability", "GENES"),
     (r"prognosis", "AGAIN"), (r"thresholds", "MIN"),
-    (r"sex_ratio", "M:F"), (r"onset", "AGE"),
+    (r"sex_ratio", "M:F"),
     (r"monitoring", "WKS"), (r"comorbid", "WITH"),
 ]
 
 
 def _tag_for(fid: str, unit: str) -> str:
+    """The referent painted under the figure — what the number is ABOUT.
+
+    Empty when nothing in _TAGS fits. The fallback used to be the UNIT ("PCT",
+    "YRS") or the placeholder "N", which put a second line under every plate
+    restating what the figure already says: "80%" over "PCT", "18mo" over
+    "MOS". Six of eleven audited plates reported that line as an internal code
+    leaking into the artwork, and it cost a line of plate height for nothing.
+    """
     for pat, t in _TAGS:
         if re.search(pat, fid):
             return t
-    return {"%": "PCT", "yr": "YRS"}.get(unit, "N")
+    return ""
 
 
 # Numeric token grammar. Deliberately keeps the decimal point (painting "06-12"
@@ -458,10 +473,11 @@ def normalize_number(text: str, fid: str = "") -> list[NumberSpec]:
             # lowercase because raw_unit is folded before the lookup.
             paint += {"meq/l": "mEq/L"}.get(unit, unit)
 
+        # No unit-code override. This branch overwrote a MEANINGFUL tag with
+        # the unit, so a fact matching (r"onset", "AGE") lost AGE and got MOS —
+        # and the unit is already inside `paint` ("18mo", "4-6d"), so the
+        # second line was a verbatim restatement of the first.
         tag = _tag_for(fid, unit)
-        if kind == "DURATION":
-            tag = {"yr": "YRS", "wk": "WKS", "mo": "MOS", "d": "DAYS",
-                   "h": "HRS", "min": "MIN"}.get(unit, tag)
 
         out.append(NumberSpec(
             kind=kind, paint=paint, tag=tag, unit=unit, op=op, priority=prio,

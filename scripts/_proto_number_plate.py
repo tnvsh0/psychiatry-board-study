@@ -458,16 +458,31 @@ def _render_face(w: int, h: int, slot: dict) -> Image.Image:
         return _font(8)
 
     fn = _fit(slot["paint"], fn, int(w * 0.88), num_px)
-    ft = _fit(slot["tag"], ft, int(w * 0.88), tag_px)
+    nb = d.textbbox((0, 0), slot["paint"], font=fn)
+    nh = nb[3] - nb[1]
 
-    nb, tb = d.textbbox((0, 0), slot["paint"], font=fn), d.textbbox((0, 0), slot["tag"], font=ft)
-    nh, th = nb[3] - nb[1], tb[3] - tb[1]
+    # A tag is the REFERENT — what the number is about (AGE, GENES, M:F). When
+    # there is none, the figure takes the whole plate. The second line used to
+    # be drawn unconditionally, so a plate with no referent printed the unit
+    # code beneath a figure that already carried it: "4-6d" over "DAYS".
+    tag = (slot.get("tag") or "").strip()
+    if not tag:
+        fn = _fit(slot["paint"], _font(int(h * 0.72)), int(w * 0.88), int(h * 0.72))
+        nb = d.textbbox((0, 0), slot["paint"], font=fn)
+        nh = nb[3] - nb[1]
+        d.text(((w - (nb[2] - nb[0])) // 2 - nb[0], (h - nh) // 2 - nb[1]),
+               slot["paint"], font=fn, fill=ink)
+        return face
+
+    ft = _fit(tag, ft, int(w * 0.88), tag_px)
+    tb = d.textbbox((0, 0), tag, font=ft)
+    th = tb[3] - tb[1]
     gap = int(h * 0.06)
     top = (h - (nh + gap + th)) // 2
 
     d.text(((w - (nb[2] - nb[0])) // 2 - nb[0], top - nb[1]), slot["paint"], font=fn, fill=ink)
     d.text(((w - (tb[2] - tb[0])) // 2 - tb[0], top + nh + gap - tb[1]),
-           slot["tag"], font=ft, fill=ink)
+           tag, font=ft, fill=ink)
     return face
 
 
