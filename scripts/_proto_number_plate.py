@@ -632,6 +632,25 @@ def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
     # must never ship: an undetected plate, a stray patch the model painted
     # somewhere it was told not to, or a rim we failed to cover. Neutralise it
     # with a heavy local blur of the surrounding art so it reads as background.
+    # A PLATE WE ASKED FOR AND DID NOT FIND IS STILL SOMEWHERE IN THE FRAME.
+    # The model sometimes paints the plate washed out — measured at saturation
+    # 0.49 and 0.58 against the 0.62 floor — so the detector correctly refuses
+    # it as not a clean key and the scrub correctly leaves it alone, and it
+    # ships as a blank coloured rectangle in the middle of the picture. The
+    # honest count says zero leftover chroma and the picture has a magenta
+    # panel in it; both are true.
+    #
+    # The relaxed sweep runs ONLY when a requested plate is missing, so an
+    # ordinary saturated object in a scene is never at risk of being erased
+    # just for being colourful.
+    missing = [r for r in report["slots"] if r.get("status") != "COMPOSITED"]
+    if missing:
+        out, faded = _scrub_faded_plates(out, [s["chroma"] for s in slots])
+        if faded:
+            print(f"[scrub] removed {faded} px of washed-out plate the "
+                  f"detector could not key", file=sys.stderr)
+            report["faded_plate_px"] = faded
+
     out, leftover = _scrub_chroma(out, slots)
     report["leftover_chroma_px"] = leftover
     if leftover:
@@ -691,6 +710,120 @@ def composite() -> dict:
     return rep
 
 
+def _inpaint(im: Image.Image, mask: np.ndarray) -> Image.Image:
+    """Replace a masked region with colour flooded in from its rim.
+
+    Two earlier versions of this failed identically: a GaussianBlur, then a
+    MedianFilter, both of which average the blob with ITSELF, so a solid
+    rectangle comes back solid and an undetected plate shipped as a bright
+    green board. Colour has to come from pixels that are NOT masked, one ring
+    per pass, until the blob is gone.
+    """
+    a = np.asarray(im.convert("RGB")).astype(np.float32)
+    grow = np.asarray(
+        Image.fromarray((mask * 255).astype(np.uint8), mode="L")
+        .filter(ImageFilter.MaxFilter(DILATE_PX))) > 127
+    todo = grow.copy()
+    a[todo] = 0.0
+    known = (~todo).astype(np.float32)
+
+    for _ in range(max(a.shape) // 2):
+        if not todo.any():
+            break
+        acc = np.zeros_like(a)
+        cnt = np.zeros_like(known)
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            acc += np.roll(np.roll(a, dy, 0), dx, 1)
+            cnt += np.roll(np.roll(known, dy, 0), dx, 1)
+        fillable = todo & (cnt > 0)
+        if not fillable.any():
+            break
+        a[fillable] = acc[fillable] / cnt[fillable][:, None]
+        known[fillable] = 1.0
+        todo &= ~fillable
+
+    out = Image.fromarray(a.astype(np.uint8), "RGB")
+    # The fill is flat by construction; a light blur only stops it reading as
+    # a cut-out.
+    soft = Image.fromarray((grow * 255).astype(np.uint8), mode="L")
+    out.paste(out.filter(ImageFilter.GaussianBlur(6)), (0, 0), soft)
+    return out
+
+
+# A washed-out plate still sits near its key's HUE — what it loses is
+# saturation. These bounds are deliberately tight on shape: only a LARGE, FLAT
+# region qualifies, because that is what a sign panel is and what a person, a
+# poster or a pot plant is not.
+FADED_SAT = 0.40          # measured failures sat at 0.49 and 0.58
+# A pale plate drifts in HUE as well, which the first version of this missed:
+# the magenta panel measured 330 degrees against a 300 target and the green
+# 106 against 141, so both fell outside the 22-degree detection window and the
+# sweep found nothing. Wider here is safe because this runs only when a plate
+# is known missing, and only on a region that is also large and flat.
+FADED_HUE_WINDOW = 42
+FADED_MIN_FRAC = 0.004    # of the frame; a plate is asked to be ~1/5 tall
+FADED_MAX_STD = 34        # a flat panel varies little across its face
+
+
+def _scrub_faded_plates(im: Image.Image, keys: list) -> tuple[Image.Image, int]:
+    """Remove a requested plate the model painted too pale to key.
+
+    Only called when a plate is known to be missing — see the caller. The
+    region must be near a key hue, large, and flat, all three; each on its own
+    matches ordinary artwork.
+    """
+    a = np.asarray(im.convert("RGB")).astype(np.float32)
+    h, w = a.shape[:2]
+    r, g, b = a[:, :, 0], a[:, :, 1], a[:, :, 2]
+    mx, mn = a.max(axis=2), a.min(axis=2)
+    rng = np.maximum(mx - mn, 1e-6)
+    hue = np.where(mx == r, ((g - b) / rng) % 6,
+                   np.where(mx == g, (b - r) / rng + 2,
+                            (r - g) / rng + 4)) * 60.0
+    sat = (mx - mn) / np.maximum(mx, 1)
+
+    targets = {(0, 177, 64): 141.8, (0, 255, 255): 180.0, (255, 0, 255): 300.0}
+    mask = np.zeros((h, w), bool)
+    for k in keys:
+        t = targets.get(tuple(k))
+        if t is None:
+            continue
+        near = np.abs((hue - t + 180.0) % 360.0 - 180.0) <= FADED_HUE_WINDOW
+        mask |= near & (sat >= FADED_SAT) & (mx > MIN_VALUE)
+    if not mask.any():
+        return im, 0
+
+    # PER COMPONENT. The first version tested the whole mask at once, so the
+    # scattered near-hue pixels of ordinary artwork put the bounding box across
+    # the entire frame and its colour spread well past the flatness limit —
+    # 36989 px spanning x0-1369, std 65 against a limit of 34 — and a panel
+    # 210x90 px was thrown out with them. A plate is ONE flat rectangle; that
+    # is a property of a component, not of a mask.
+    lab = np.where(mask, np.arange(mask.size).reshape(mask.shape), -1)
+    for _ in range(max(h, w)):
+        prev = lab
+        nxt = lab.copy()
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nxt = np.maximum(nxt, np.roll(np.roll(lab, dy, 0), dx, 1))
+        lab = np.where(mask, nxt, -1)
+        if np.array_equal(lab, prev):
+            break
+
+    keep = np.zeros_like(mask)
+    for cid, count in zip(*np.unique(lab[mask], return_counts=True)):
+        if count < FADED_MIN_FRAC * h * w:
+            continue
+        comp = lab == cid
+        ys, xs = np.nonzero(comp)
+        box = a[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
+        if float(box.reshape(-1, 3).std(axis=0).mean()) > FADED_MAX_STD:
+            continue
+        keep |= comp
+    if not keep.any():
+        return im, 0
+    return _inpaint(im, keep), int(keep.sum())
+
+
 def _scrub_chroma(im: Image.Image, slots: list[dict] | None = None
                   ) -> tuple[Image.Image, int]:
     """Replace any remaining chroma-key pixels with blurred surrounding art.
@@ -742,37 +875,7 @@ def _scrub_chroma(im: Image.Image, slots: list[dict] | None = None
     # middle of a travel agency while the log said "neutralised". Colour has to
     # flow in from pixels that are NOT chroma, one ring per pass, until the
     # blob is gone.
-    a = np.asarray(patched.convert("RGB")).astype(np.float32)
-    grow = np.asarray(
-        Image.fromarray((mask * 255).astype(np.uint8), mode="L")
-        .filter(ImageFilter.MaxFilter(DILATE_PX))) > 127
-    todo = grow.copy()
-    a[todo] = 0.0
-    known = (~todo).astype(np.float32)
-
-    # A plate is at most a fifth of the frame, so its half-width bounds the
-    # passes needed; the cap keeps a pathological frame from spinning.
-    for _ in range(max(a.shape) // 2):
-        if not todo.any():
-            break
-        acc = np.zeros_like(a)
-        cnt = np.zeros_like(known)
-        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-            acc += np.roll(np.roll(a, dy, 0), dx, 1)
-            cnt += np.roll(np.roll(known, dy, 0), dx, 1)
-        fillable = todo & (cnt > 0)
-        if not fillable.any():
-            break
-        a[fillable] = acc[fillable] / cnt[fillable][:, None]
-        known[fillable] = 1.0
-        todo &= ~fillable
-
-    patched = Image.fromarray(a.astype(np.uint8), "RGB")
-    # The fill is flat by construction; a light blur over the patched region
-    # only stops it reading as a cut-out.
-    soft = Image.fromarray((grow * 255).astype(np.uint8), mode="L")
-    patched.paste(patched.filter(ImageFilter.GaussianBlur(6)), (0, 0), soft)
-
+    patched = _inpaint(patched, mask)
     # Report what is ACTUALLY left, not what was found. The old return value
     # was the PRE-scrub count, printed as "neutralised N px" — so the line
     # asserting success and the 2875 green pixels still in the frame were both
