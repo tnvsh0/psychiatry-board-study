@@ -34,6 +34,13 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fact_triage        # noqa: E402  — scores how forgettable a fact is
+
+# The one thing the prop scrubber must not touch. Shared with the triage on
+# purpose: a token that is examinable enough to force a fact onto the plate is
+# exactly the token that must survive the trip to the illustrator intact.
+# Ordinary capitalised words caught by the acronym branch keep their capitals
+# too, which is the right trade — the alternative is CYP2D6 arriving as "Cypd".
+RECEPTOR_TOKEN = fact_triage.IDENTIFIER
 # Windows gives a redirected stdout the locale codec (cp1255 here), and a
 # single Hebrew character then raises UnicodeEncodeError. Every chapter
 # title in this course is Hebrew, and bulk_run redirects stdout to a log.
@@ -1103,12 +1110,42 @@ _SCRUB_CAPS = re.compile(r"\b[A-Z][A-Z0-9&./+-]{2,}\b")
 _SCRUB_DIGITS = re.compile(r"\d")
 
 
+def _stash_identifiers(s: str) -> tuple[str, dict]:
+    """Hide receptor/enzyme/locus names from the scrubber, reversibly.
+
+    An identifier is letters AND digits welded together, so a scrubber that
+    case-folds capitals and deletes numerals destroys it: CYP2D6 came out as
+    "Cypd", CYP2C19 as "Cypc", 5-HT2C as "-Htc". The illustrator was painting
+    those fragments faithfully, and the owner reasonably asked how anyone is
+    supposed to remember them — they were not the facts any more.
+
+    receptors_in() promises these reach the plate character for character. This
+    is what makes that true on the only path that matters, the prompt.
+    """
+    keep: dict[str, str] = {}
+
+    def stash(m: re.Match) -> str:
+        # Lowercase letters only: the marker has to survive the caps-folding
+        # and the digit-stripping that come next.
+        key = "\x01" + "".join(chr(97 + int(c)) for c in str(len(keep))) + "\x02"
+        keep[key] = m.group(0)
+        return key
+
+    return RECEPTOR_TOKEN.sub(stash, s), keep
+
+
 def scrub_prop_text(s: str) -> str:
-    """Strip anything the illustrator might paint as a word or a numeral."""
+    """Strip anything the illustrator might paint as a word or a numeral.
+
+    Identifiers are exempt — see _stash_identifiers.
+    """
+    s, keep = _stash_identifiers(s)
     s = _SCRUB_PARENS.sub("", s)          # teaching notes live in parentheses
     s = _SCRUB_QUOTED.sub(r"\1", s)       # quotes read as "letter this"
     s = _SCRUB_CAPS.sub(lambda m: m.group(0).capitalize(), s)
     s = _SCRUB_DIGITS.sub("", s)          # stray numerals break the NUMBER gate
+    for key, val in keep.items():
+        s = s.replace(key, val)
     return re.sub(r"\s{2,}", " ", s).strip(" ,;")
 
 
@@ -1128,8 +1165,12 @@ def build_image_prompt(table: dict, plate: Plate, style: str,
     tier1 = f"""THE PLACE — {v['place']}
 
 THE ONE SHARED ACTIVITY — every person in the frame is doing this, each in
-their own way. Nobody interacts with anybody else except where a relation is
-named below; nothing causes anything else; there is no story unfolding.
+their own way. There is no story unfolding and no side plot between figures.
+But each numbered element below names a person and what they are DOING with
+that prop, and every one of those actions IS happening in the picture. This
+line used to end "nothing causes anything else", which is the opposite
+instruction, and it is why plate after plate came back as a room of props
+standing idle with their names written beside them.
 {v['activity']}
 
 THE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts
