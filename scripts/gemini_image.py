@@ -613,6 +613,18 @@ def _probe(client, image_path, prompt: str, model: str = CAPTION_MODEL):
     look like a failed render, which over 144 chapters would burn the whole
     retry budget re-rendering images that were fine.
     """
+    if ENGINE == "agy":
+        # The gates were the last thing still billed. Leaving them on the API
+        # meant every render was measured on a paid call, which is how a
+        # project that had moved its pictures to a free quota still hit a
+        # monthly spending cap.
+        import agy_text
+        try:
+            return agy_text.ask_about_image(image_path, prompt)
+        except Exception as e:  # noqa: BLE001
+            print(f"[!] agy probe failed: {str(e)[:150]}", file=sys.stderr)
+            return None
+
     try:
         from google.genai import types
         img = Path(image_path)
@@ -865,6 +877,92 @@ def check_mnemonic(client, image_path, table: dict | None = None) -> dict:
         out["out_of_place_count"] = len(items)
 
     return out
+
+
+_FRAME_SCHEMA = {
+    "type": "object",
+    "required": ["anchor_is_object", "figures_even", "frame_filled",
+                 "callouts", "out_of_place", "actions_not_drawn"],
+    "properties": {
+        "anchor_is_object": {"type": "boolean"},
+        "figures_even": {"type": "boolean"},
+        "largest_figure": {"type": "string"},
+        "frame_filled": {"type": "boolean"},
+        "callouts": {"type": "integer"},
+        "out_of_place": {"type": "array", "items": {"type": "string"}},
+        "actions_not_drawn": {"type": "array", "items": {"type": "integer"}},
+    },
+}
+
+
+def check_frame(client, image_path, table: dict | None = None) -> tuple[dict, dict]:
+    """Every question about a finished frame, in ONE model turn under agy.
+
+    Returns (composition, mnemonic) in the shapes the two separate checks
+    already return, so the caller does not care which route ran.
+
+    Batching is not an optimisation here, it is what makes the free route
+    usable at all. Measured on one plate: check_composition 185s and
+    check_mnemonic 390s as separate agy turns, because each question is a
+    whole agent round trip. That is ten minutes of gates per rung and forty
+    per plate, which across 144 chapters is not a pipeline. One turn answering
+    all six costs about a minute.
+    """
+    if ENGINE != "agy":
+        return (check_composition(client, image_path),
+                check_mnemonic(client, image_path, table))
+
+    import agy_text
+    els = [e for e in ((table or {}).get("elements") or [])
+           if (e.get("action") or "").strip()][:20]
+    acts = "\n".join(f"{i}. {(e.get('actor') or 'someone')} {e['action']}"
+                     for i, e in enumerate(els, 1))
+    place = ((table or {}).get("venue") or {}).get("place", "")
+    props = [(e.get("prop") or "").strip()
+             for e in ((table or {}).get("elements") or []) if e.get("prop")][:24]
+
+    q = f"""Answer these six questions about the picture. Return JSON only.
+
+1. anchor_is_object — is the single largest thing in the frame an inanimate
+   structure rather than a person?
+2. figures_even — are the human figures all roughly the same size? false if one
+   is clearly larger; name it in largest_figure.
+3. frame_filled — is the picture filled to all four edges, no blank margin and
+   no darkened vignette?
+4. callouts — how many ANNOTATIONS are there: a word, phrase or number joined to
+   an object by a drawn line, arrow, bracket or pointer, or floating over the
+   artwork rather than painted on a surface belonging to the scene. A shop sign,
+   a poster, a price board or lettering on a machine is NOT an annotation.
+5. out_of_place — {"this picture shows: " + place[:160] + ". " if place else ""}\
+which objects would a real version of this place not plausibly contain? Judge
+   only whether the object BELONGS; one that nobody is touching is fine if the
+   place would have one. These are deliberate and belong:
+{chr(10).join("     - " + p[:70] for p in props) if props else "     (none listed)"}
+6. actions_not_drawn — each numbered item below is supposed to be VISIBLY
+   HAPPENING, not merely present. List the numbers that are NOT happening —
+   where the objects are there but nobody is performing the action.
+{acts if acts else "     (none listed)"}
+"""
+    data = agy_text.ask_about_image_json(image_path, q, _FRAME_SCHEMA)
+    if data is None:
+        return {"_probed": 0, "_asked": 3, "_raw": {}}, {}
+
+    comp = {"anchor_is_object": bool(data.get("anchor_is_object")),
+            "figures_even": bool(data.get("figures_even")),
+            "frame_filled": bool(data.get("frame_filled")),
+            "_probed": 3, "_asked": 3,
+            "_raw": {"largest_figure": str(data.get("largest_figure") or "")}}
+
+    not_drawn = [n for n in (data.get("actions_not_drawn") or [])
+                 if isinstance(n, int)]
+    oop = [str(x)[:60] for x in (data.get("out_of_place") or [])][:12]
+    mn = {"callouts": int(data.get("callouts") or 0),
+          "out_of_place": oop, "out_of_place_count": len(oop)}
+    if els:
+        mn["actions_asked"] = len(els)
+        mn["actions_drawn"] = max(0, len(els) - len(not_drawn))
+        mn["_actions_missing"] = not_drawn
+    return comp, mn
 
 
 def check_coverage(client, image_path: str | Path, required_items: list,

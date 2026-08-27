@@ -86,6 +86,121 @@ def ask(prompt: str, *, wait_for_quota: bool = True,
         return out
 
 
+def ask_about_image(image_path, question: str, *, wait_for_quota: bool = True,
+                    max_wait_s: int = 6 * 3600) -> str | None:
+    """One vision question, on the free quota. None if it could not run.
+
+    agy's print mode takes no attachment, so the image goes in the way the
+    agent can reach it: as a file it opens with view_file. Two things make
+    that work and neither is obvious.
+
+    The directory must be added to the workspace with --add-dir. Files inside
+    the workspace root get read access automatically under the default review
+    mode; anything outside needs a permission headless cannot prompt for, and
+    the run dies with "a tool required the read_file permission ... auto-
+    denied". A render sitting in a scratchpad is outside by definition.
+
+    And the agent must be pointed at view_file explicitly. Left to itself it
+    reaches for a shell command to inspect the file, which headless denies for
+    a different reason and reports as the same wall.
+    """
+    from pathlib import Path
+    img = Path(image_path)
+    if not (img.exists() and img.stat().st_size > 0):
+        return None
+
+    return _ask_image_raw(image_path, question, wait_for_quota=wait_for_quota,
+                          max_wait_s=max_wait_s)
+
+
+def _ask_image_raw(image_path, question: str, *, extra: list | None = None,
+                   wait_for_quota: bool = True,
+                   max_wait_s: int = 6 * 3600) -> str | None:
+    from pathlib import Path
+    img = Path(image_path)
+    if not (img.exists() and img.stat().st_size > 0):
+        return None
+
+    prompt = (f"Open the image file {img.name} with the view_file tool and look "
+              f"at it. Do NOT run any shell command.\n\n{question}")
+    exe = shutil.which("agy") or "agy"
+    waited = 0
+    while True:
+        try:
+            proc = subprocess.run(
+                [exe, "--add-dir", str(img.parent), *(extra or []),
+                 f"--print={prompt}"],
+                capture_output=True, text=True, encoding="utf-8",
+                errors="replace", timeout=TIMEOUT_S, cwd=str(img.parent))
+        except subprocess.TimeoutExpired:
+            print(f"[!] agy vision: no response in {TIMEOUT_S}s", file=sys.stderr)
+            return None
+
+        out = (proc.stdout or "").strip()
+        blob = out + "\n" + (proc.stderr or "")
+
+        if "429" in blob or "exhausted your capacity" in blob:
+            secs = parse_reset_seconds(blob)
+            if not (wait_for_quota and secs) or waited + secs > max_wait_s:
+                raise QuotaExhausted(
+                    f"agy vision quota exhausted; resets in {secs}s" if secs
+                    else "agy vision quota exhausted", secs)
+            print(f"[i] agy vision quota exhausted; resets in {secs // 60}m — "
+                  f"waiting.", file=sys.stderr)
+            time.sleep(secs + 30)
+            waited += secs + 30
+            continue
+
+        if not out or "auto-denied" in blob or "no output produced" in blob:
+            print(f"[!] agy vision: {' '.join(blob.split())[:200]}", file=sys.stderr)
+            return None
+        return out
+
+
+def ask_about_image_json(image_path, question: str, schema: dict, **kw) -> dict | None:
+    """One vision turn returning validated JSON. None if it could not run.
+
+    Every question costs a whole agent turn — about a minute, against seconds
+    on the API — so asking six of them separately put ten minutes of gates on
+    each rung and forty on each plate, which does not survive 144 chapters.
+    One turn answering all six is the difference between free-and-usable and
+    free-and-abandoned. --json-schema makes the combined answer parseable
+    without guessing at prose.
+    """
+    import json as _json
+    import tempfile
+    from pathlib import Path
+
+    fd, spath = tempfile.mkstemp(suffix=".json", text=True)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            _json.dump(schema, fh)
+        ans = _ask_image_raw(image_path, question, extra=["--json-schema", spath], **kw)
+    finally:
+        try:
+            os.unlink(spath)
+        except OSError:
+            pass
+    if ans is None:
+        return None
+    t = ans.strip()
+    if t.startswith("```"):
+        t = t.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
+    try:
+        data = _json.loads(t)
+    except Exception:
+        i, j = t.find("{"), t.rfind("}")
+        if i < 0 or j <= i:
+            print(f"[!] agy vision: no JSON in {t[:160]!r}", file=sys.stderr)
+            return None
+        try:
+            data = _json.loads(t[i:j + 1])
+        except Exception:
+            print(f"[!] agy vision: unparseable JSON {t[:160]!r}", file=sys.stderr)
+            return None
+    return data if isinstance(data, dict) else None
+
+
 def main() -> int:
     import argparse
     from pathlib import Path
