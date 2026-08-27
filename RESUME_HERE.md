@@ -115,3 +115,38 @@ probe outage scoring as a clean frame. Two thirds of the course's release tags
 not matching what the publisher wrote.
 
 None of them would have failed loudly. All of them would have shipped.
+
+## A plate per drug — agreed 2026-08-27, deliberately not started
+
+SketchyMedical is pitched at medical students. The owner is a senior child-and-
+adolescent psychiatry resident and wants, for EVERY DRUG rather than every
+family: exact receptors, interactions, doses, and CYP effects in both
+directions. So each drug gets its own plate on top of the family plate, reusing
+the family scene's symbols and venue.
+
+This is not a new scene to learn. It is a ZOOM into one zone of a venue the
+reader already holds — chapter 29's PAIR-OX EXPEDITIONS ox statue is already
+standing in that travel agency — which is how the corpus works and how a memory
+palace works. One drug carries 15-20 facts, which is a well-filled plate; the
+same facts inside a family plate get crushed.
+
+Most of the machinery is already here. venues.json carries `adjacent_to` and
+`hosts_tokens`, the lexicon fixes symbols course-wide through `symbols_needed`
+(the symbol-continuity problem, already solved), and `Plate.track` became
+open-ended when the plates split three ways, so a track per drug is the same
+mechanism.
+
+The hard part is not the drawing, it is the facts. Today's schema is
+family-level (`drug_class.members`); this needs a per-drug schema and
+NotebookLM answering at book resolution. **Test it on ONE drug end to end
+before committing to the set.**
+
+There are 104 entries in schedule/medications.json. At the old $0.13 an image
+that was ~$40 before a single failed attempt, which is why it was never
+seriously considered. On the free agy engine it is about three days of quota.
+The free engine did not only cut the bill — it moved this from too expensive to
+worth doing.
+
+DEFERRED until the plate gates (check_frame: actions_drawn, callouts,
+out_of_place) are shown to agree with the owner's own judgement. That
+calibration is the batch of chapter 29 plates running now.
