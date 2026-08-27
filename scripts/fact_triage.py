@@ -59,9 +59,15 @@ IDENTIFIER = re.compile(
     r"|[A-Za-z]{2,12}\d+[A-Za-z]*\d*(?:\.\d+)?"         # TAAR1, SHANK3, CYP2D6, Cav1.2
     r"|(?:alpha|beta|gamma|delta|sigma|kappa|mu"
     r"|α|β|γ|δ|σ|κ|μ)-?\d[A-Za-z]?"   # alpha-2, sigma-1
-    r"|[A-Za-z]{2,8}-[A-Z0-9]"                        # MAO-B, GABA-A, ADOS-2
-    r"|[A-Z]\d+[A-Za-z]?"                           # D2, D3, H1
-    r"|[A-Z]{3,6}",                                # SERT, NMDA, COMT
+    # CASE-SENSITIVE, despite the re.I on the whole pattern. These three
+    # alternatives are the ones whose meaning IS the capitalisation, and under
+    # re.I "\b[A-Z]{3,6}\b" matches every ordinary Latin word of three to six
+    # letters — the triage reported "receptor/locus Major" and would have
+    # marked half the English in the corpus as an identifier that must reach
+    # the plate character for character.
+    r"|(?-i:[A-Za-z]{2,8}-[A-Z0-9]\b)"                    # MAO-B, GABA-A, ADOS-2
+    r"|(?-i:\b[A-Z]\d+[A-Za-z]?\b)"                    # D2, D3, H1
+    r"|(?-i:\b[A-Z]{3,6}\b)",                          # SERT, NMDA, COMT
     re.I)
 
 RECEPTOR = IDENTIFIER      # the old name, kept for callers
@@ -222,3 +228,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

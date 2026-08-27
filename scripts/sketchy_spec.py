@@ -672,6 +672,13 @@ ELEMENT_TABLE_SCHEMA = {
                                               "drawer by the stair rail'). This "
                                               "is what gets drawn."},
                     "text": {"type": "string"},
+                    # What familiar word the painted string lands on, and what
+                    # in the picture pays for the distortion. "CYPD reads as
+                    # NYPD; a signwriter is halfway through repainting the N
+                    # into a C." Without this a token is merely printed, which
+                    # leaves the reader memorising both the fact and where it
+                    # was standing.
+                    "text_hook": {"type": "string"},
                     "derivation": {"type": "string", "enum": list(DERIVATIONS)},
                     "triple": {"type": "array", "items": {"type": "string"},
                                "minItems": 3, "maxItems": 3},
@@ -935,6 +942,30 @@ def validate_table(table: dict, facts: list[Fact],
         if not (e.get("action") or "").strip():
             soft_out.append(f"{e.get('id', '?')}: no action — the illustrator "
                             f"will draw this prop standing idle")
+
+    # A BARE TOKEN IS NOT A MNEMONIC. "CYP2D6" painted on a monitor is the fact
+    # printed in the picture: the reader still learns it by rote, and now also
+    # has to remember where it was standing. It earns its place when it lands
+    # on a word they already hold — CYPD is one letter off NYPD — and when
+    # something in the scene pays for the letter that changed.
+    #
+    # Checked as a proportion, like the actor rule, and only on strings that
+    # are a bare identifier with no familiar word around them. A chapter may
+    # legitimately paint one naked token; a plate where most of the lettering
+    # is naked tokens means the director transported the facts instead of
+    # encoding them.
+    lettered = [e for e in els if (e.get("text") or "").strip()]
+    naked = [e for e in lettered
+             if fact_triage.IDENTIFIER.fullmatch((e.get("text") or "").strip())
+             and not (e.get("text_hook") or "").strip()]
+    if lettered and len(naked) * 2 > len(lettered):
+        errs.append(
+            f"{len(naked)} of {len(lettered)} painted strings are bare "
+            f"technical tokens with nothing to land on "
+            f"({', '.join((e.get('text') or '') for e in naked[:5])}). Bend "
+            f"each towards a word the reader already knows, keeping its "
+            f"characters exact inside it, and give `text_hook` the familiar "
+            f"word plus what in the scene pays for the letters that changed.")
 
     # every fact must be represented; an element may carry several facts
     want = {f.id for f in facts}
@@ -1345,6 +1376,32 @@ RULES
   inside it — the legend prints the English separately, in brackets.
 - `text` only where a string is genuinely painted in the world, at most 5 words.
   At most {MAX_REQUIRED_STRINGS} of them.
+
+  A PAINTED TOKEN IS NOT YET A MNEMONIC. Writing CYP2D6 on a monitor puts the
+  fact in the picture and leaves the reader exactly where they started: they
+  still have to learn it by rote, and now they have to learn where it was
+  standing too. A string earns its place only when all three of these hold:
+
+  (a) IT LANDS ON SOMETHING ALREADY IN THE READER'S HEAD. Bend the token
+      towards a word, brand or institution they know, and keep the token's own
+      characters exact inside it. CYPD is one letter off NYPD, so CYP2D6 can be
+      a precinct: a CYP2D6 PRECINCT door, officers, a squad car.
+  (b) THE DISTORTION IS PAID FOR IN THE SCENE. If C replaced N, something in
+      the picture must say why — a signwriter halfway through repainting the N
+      into a C, a cracked neon N, a stencil with the N plate missing. An
+      unexplained near-miss is remembered as the original word, and then the
+      reader recalls NYPD and has lost the fact.
+  (c) THE ELEMENT CARRIES THE FUNCTION AND THE PARTNERS, NOT ONLY THE NAME.
+      Ask what this thing DOES and what it is tied to, and put that in the
+      action. An enzyme that clears drugs is a duty officer processing them;
+      the drug that inhibits it potently is the one handcuffing him to his desk
+      so the queue backs up; a weak inhibitor barely slows him. Now the reader
+      recovers "paroxetine and fluoxetine are potent CYP2D6 inhibitors" from
+      one picture instead of memorising a list.
+
+  A bare technical token painted on a surface, with no familiar word to land
+  on, no reason for its shape and nobody doing anything with it, is the defect
+  this whole brief exists to prevent — however legible it is.
 - `triple` is [category, material, dominant colour] and must be unique across
   elements whose facts are unrelated.
 - `hook` is IN HEBREW, one flowing sentence of 8-32 words that says BOTH what
