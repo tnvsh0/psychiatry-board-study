@@ -273,9 +273,49 @@ _TRANSIENT = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500",
               "INTERNAL", "deadline", "timeout", "Timeout")
 
 
+class _AgyText:
+    """The shape google-genai returns, around an agy answer.
+
+    A shim rather than a rewrite of the six call sites: every caller already
+    walks candidates -> content -> parts -> text, and the point of routing
+    through _gc is that this stays the single choke point for model calls.
+    """
+
+    class _Part:
+        def __init__(self, text): self.text = text
+
+    class _Content:
+        def __init__(self, text): self.parts = [_AgyText._Part(text)]
+
+    class _Cand:
+        def __init__(self, text): self.content = _AgyText._Content(text)
+
+    def __init__(self, text: str):
+        self.candidates = [_AgyText._Cand(text)]
+        self.text = text
+
+
 def _gc(client, **kw):
-    """client.models.generate_content with backoff on transient failures."""
+    """client.models.generate_content with backoff on transient failures.
+
+    Under SKETCHY_ENGINE=agy a TEXT call goes to the Antigravity CLI instead.
+    Moving only the renders across left the scene director on the paid API,
+    and when that project hit its monthly spending cap no plate could be built
+    at all — the pictures were free and useless, because the element table is
+    a text call. Vision probes still need the API: agy's print mode takes no
+    image, so they degrade to "could not run", which the gates already treat
+    as "learned nothing" rather than as a failure.
+    """
     import time as _t
+
+    contents = kw.get("contents")
+    if (ENGINE == "agy" and isinstance(contents, str)
+            and kw.get("model") == CAPTION_MODEL):
+        import agy_text
+        answer = agy_text.ask(contents)
+        if answer is None:
+            raise RuntimeError("agy text returned nothing")
+        return _AgyText(answer)
     last = None
     for attempt in range(4):
         try:
@@ -464,7 +504,7 @@ def propose_anchor_theme(topic: str, aspects: list, api_key: Optional[str] = Non
     its own zone (preventing factual bleeding). Returns
     {"world": str, "zones": {aspect: str}} or {} on failure."""
     client = _get_client(api_key)
-    if client is None:
+    if client is None and ENGINE != "agy":
         return {}
     instruction = f"""You are designing a unified SketchyMedical-style mnemonic WORLD for one psychiatry chapter, so that all its images feel like parts of one memorable place.
 
@@ -520,7 +560,7 @@ def run_scene_director(director_instruction: str, api_key: Optional[str] = None,
     real Sketchy page is authored: an artist gets a scene brief, the key is
     separate text. Returns {"scene": str, "key": str} or {}."""
     client = _get_client(api_key)
-    if client is None:
+    if client is None and ENGINE != "agy":
         return {}
     try:
         resp = _gc(client, model=model, contents=director_instruction)
@@ -547,7 +587,7 @@ def run_json_director(instruction: str, api_key: Optional[str] = None,
     element table" without ever having looked at what the model actually said.
     """
     client = _get_client(api_key)
-    if client is None:
+    if client is None and ENGINE != "agy":
         return {}
     try:
         resp = _gc(client, model=model, contents=instruction)
