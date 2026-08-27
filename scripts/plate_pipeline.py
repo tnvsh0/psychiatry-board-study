@@ -229,7 +229,8 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
     for attempt in range(MAX_TRIES):
         report["tries"] = attempt + 1
         prompt = spec.build_image_prompt(table, plate, gi.style_prefix(),
-                                        chroma_plates=(numbers_mode == "composite"))
+                                        chroma_plates=(numbers_mode == "composite"),
+                                        venue=venue)
         if attempt >= 1 and best:
             # In composite mode the NUMBERS are not the illustrator's job — the
             # compositor warps them onto the blank chroma plates afterwards.

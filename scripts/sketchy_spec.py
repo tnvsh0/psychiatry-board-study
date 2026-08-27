@@ -638,7 +638,8 @@ ELEMENT_TABLE_SCHEMA = {
             "type": "array",
             "items": {
                 "type": "object",
-                "required": ["id", "fact_ids", "cue", "prop", "zone", "derivation"],
+                "required": ["id", "fact_ids", "cue", "prop", "zone",
+                             "actor", "action", "derivation"],
                 "properties": {
                     "id": {"type": "string"},
                     "fact_ids": {"type": "array", "items": {"type": "string"},
@@ -646,6 +647,30 @@ ELEMENT_TABLE_SCHEMA = {
                     "cue": {"type": "string"},
                     "prop": {"type": "string"},
                     "zone": {"type": "string"},
+                    # An audit of eleven plates across three eras of this
+                    # pipeline found ONE property that separates every praised
+                    # element from every orphan, surviving controls for venue,
+                    # prop and era: whether somebody is USING it. The same
+                    # pigeonhole wall is the centrepiece of one plate — staff
+                    # filing into it and pulling from it — and dead weight on
+                    # the next, where nobody sorts mail.
+                    #
+                    # Until now there was nowhere to say it. The illustrator
+                    # received `prop` alone, so element 1 of the SSRI plate
+                    # reached it as "Figure of a postal carrier" while the
+                    # blocking — which IS allosteric inhibition, the whole
+                    # mnemonic — stayed behind in `cue` and went to the legend.
+                    "actor": {"type": "string",
+                              "description": "who handles this prop, as one of "
+                                             "the venue's own people ('a "
+                                             "consultant', 'a queueing "
+                                             "customer'), or NOBODY"},
+                    "action": {"type": "string",
+                               "description": "what they are doing with it, as "
+                                              "a present participle phrase "
+                                              "('barred from the post-it "
+                                              "drawer by the stair rail'). This "
+                                              "is what gets drawn."},
                     "text": {"type": "string"},
                     "derivation": {"type": "string", "enum": list(DERIVATIONS)},
                     "triple": {"type": "array", "items": {"type": "string"},
@@ -889,6 +914,28 @@ def validate_table(table: dict, facts: list[Fact],
     if not els:
         return ["no elements"]
 
+    # IS ANYBODY USING IT. The one property that separated every element that
+    # worked from every element that failed, across eleven audited plates and
+    # three eras of this pipeline. It is checked as a PROPORTION, not per
+    # element: one prop standing idle is a weak row, but a table where most
+    # props stand idle means the director ignored the field, and that is a
+    # different failure needing a different answer. Bouncing the whole table
+    # over a single element is how chapter 29's third plate was abandoned with
+    # twenty-one facts still on it.
+    acted = [e for e in els
+             if (e.get("action") or "").strip()
+             and (e.get("actor") or "").strip().upper() != "NOBODY"]
+    if els and len(acted) * 2 < len(els):
+        errs.append(
+            f"only {len(acted)} of {len(els)} elements have somebody doing "
+            f"something with the prop. An unused prop gets labelled instead of "
+            f"understood — give each element an `actor` from this venue's own "
+            f"people and an `action` that IS the fact, not a pose beside it.")
+    for e in els:
+        if not (e.get("action") or "").strip():
+            soft_out.append(f"{e.get('id', '?')}: no action — the illustrator "
+                            f"will draw this prop standing idle")
+
     # every fact must be represented; an element may carry several facts
     want = {f.id for f in facts}
     got = {fid for e in els for fid in e.get("fact_ids", [])}
@@ -1035,7 +1082,8 @@ def scrub_prop_text(s: str) -> str:
 
 
 def build_image_prompt(table: dict, plate: Plate, style: str,
-                       chroma_plates: bool = True) -> str:
+                       chroma_plates: bool = True,
+                       venue: dict | None = None) -> str:
     """Assemble the illustrator prompt deterministically from the table.
 
     Tiered on purpose: under a roughly one-third silent drop rate a flat list
@@ -1062,7 +1110,22 @@ ZONES, and what belongs in each: {' · '.join(zones)}"""
 
     props = []
     for i, e in enumerate(els, 1):
-        line = f"  {i}. {scrub_prop_text(e['prop'])}"
+        # THE ACTION LEADS. This line used to be the bare noun phrase in
+        # `prop`, and the verb the director had written — the thing that IS the
+        # mnemonic — never left `cue`, which only the legend reads. So the
+        # illustrator was handed twenty isolated nouns, drew them standing
+        # around, and lettered each with its own name to fill the text quota.
+        # That is the "labels everywhere, nothing connected to the scene"
+        # complaint, and it is produced here.
+        actor = scrub_prop_text(e.get("actor") or "")
+        action = scrub_prop_text(e.get("action") or "")
+        prop = scrub_prop_text(e["prop"])
+        if action and actor and actor.upper() != "NOBODY":
+            line = f"  {i}. {actor} {action} — {prop}"
+        elif action:
+            line = f"  {i}. {prop}, {action}"
+        else:
+            line = f"  {i}. {prop}"
         if e.get("zone"):
             line += f" — in the {scrub_prop_text(e['zone'])}"
         if e.get("relates_to") and e.get("relation"):
@@ -1086,9 +1149,18 @@ ZONES, and what belongs in each: {' · '.join(zones)}"""
     if chroma_plates and numbers:
         plate_lines = []
         for (cname, rgb), n in zip(CHROMA_KEYS, numbers):
+            # NO RGB TRIPLE. The illustrator painted the words "PURE GREEN
+            # (RGB 0,177,64)" onto the plate — two lines below an instruction
+            # reading "absolutely NO writing, lettering, numbers or marks of
+            # any kind on it", which is why the answer is not more prose. A
+            # prompt that contains digits in a brief that also has a section
+            # called TEXT TO PAINT will sooner or later have those digits
+            # painted. The detector masks on HUE with tolerance and never
+            # needed the exact value.
             plate_lines.append(
-                f"  - a blank flat plate of {cname} (exactly RGB "
-                f"{rgb[0]},{rgb[1]},{rgb[2]}) on {n.carrier or 'a sign panel'}"
+                f"  - a blank flat plate of {cname.lower()}, the most "
+                f"saturated {cname.split()[-1].lower()} in the picture, "
+                f"on {scrub_prop_text(n.carrier or 'a sign panel')}"
             )
         number_block = f"""
 BLANK SIGN PLATES — the most important instruction in this brief.
@@ -1120,9 +1192,43 @@ These colours appear NOWHERE ELSE in the picture.
     else:
         number_block = ""
 
+    # ORDINARY CLUTTER, from the venue's own inventory rather than a fixed list.
+    # The style contract used to name "barrows, cable drums, stacked pallets,
+    # pigeons, coiled hose" in every one of the 144 briefs, which is why the
+    # owner asked why there were pigeons in a travel agency: we asked for them,
+    # in a greenhouse and on a beach too. venues.json has hand-written
+    # stock_props for all 144 places; what no element claimed is exactly what
+    # ordinary background should be.
+    # Scrub the stock props before offering them as clutter. venues.json was
+    # hand-authored and several entries carry lettering of their own — chapter
+    # 29's reads "photocopier with a DUAL COPIER/SCANNER label taped to it",
+    # which three separate audits condemned as painted misteaching, since SSRIs
+    # are not dual-reuptake agents. Offering that string inside a block headed
+    # "carrying no fact and no legible text" is how it kept arriving.
+    stock = [t for t in (plain_clutter(p) for p in
+                         ((venue or {}).get("stock_props") or []))
+             if len(t.split()) >= 2]
+    claimed = " ".join(scrub_prop_text(e.get("prop", "")) for e in els).lower()
+    # Match on a 6-character STEM, not the whole word: the venue writes "wall of
+    # pigeonholes" and the element claims "the pigeonhole wall", and a plural
+    # was enough to hand the illustrator the same object twice — once as the
+    # mnemonic and once as background it was told carries no fact.
+    claimed_stems = {w[:6] for w in re.findall(r"[a-z]{5,}", claimed)}
+    spare = [p for p in stock
+             if not any(w[:6] in claimed_stems
+                        for w in re.findall(r"[a-z]{5,}", p.lower())[:3])]
+    clutter_block = ""
+    if spare:
+        clutter_block = (
+            "\nORDINARY CLUTTER — this venue's own furniture, carrying no fact"
+            " and no legible text. Fill the gaps with these and nothing else:\n  "
+            + "; ".join(spare[:12]) + "\n"
+        )
+
     plate_reminder = ("; the blank colour plates are large boards, a fifth of the "
                       "image height, unobstructed" if number_block else "")
 
+    n_strings = len(strings)
     return f"""{style}
 {tier1}
 
@@ -1147,11 +1253,12 @@ reads as real. No vignette, no edge darkening.
 THINGS IN THIS PLACE
 {chr(10).join(props)}
 
-TEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece
-of paper, notice, board, poster and label in the scene is illegible squiggle-
-lines. NO numerals appear anywhere except where a blank plate is specified.
+TEXT TO PAINT — the {n_strings} string(s) below, and ONLY these, are legible. Every
+other piece of paper, notice, board, poster and label in the scene is illegible
+squiggle-lines. Do not invent further legible text to fill the picture out. NO
+numerals appear anywhere except where a blank plate is specified.
 {text_block}
-{number_block}
+{clutter_block}{number_block}
 REMINDER — {v['place']}; everyone is {v['activity'][:120]}; the largest thing in
 frame is {table['anchor_structure'][:120]}; no protagonist — every person the
 same size, nobody near the viewer, nobody cropped by the frame{plate_reminder}.
@@ -1264,6 +1371,34 @@ RULES
   names in Hebrew. The whole legend is read by a Hebrew speaker; leaving the
   header in English makes the page unreadable to them.
 
+- `actor` and `action` are THE MOST IMPORTANT FIELDS IN THE TABLE, because they
+  are the only ones the illustrator can act on. `prop` names the object;
+  `action` is what is being DONE with it, and that is what gets drawn.
+  An audit of this course's plates found exactly one property that separates
+  every element that worked from every element that failed: whether somebody is
+  USING it. The same wall of pigeonholes is the best thing on one plate — staff
+  filing into it and pulling from it — and dead weight on the next, where
+  nobody sorts mail. A prop that merely stands there gets labelled instead of
+  understood, and a labelled prop is not a mnemonic.
+    `actor`  one of THIS VENUE'S OWN people — "a consultant at the far desk",
+             "a queueing customer". Write NOBODY only when the fact genuinely
+             has no agent; at most a quarter of the plate may say NOBODY.
+    `action` a present-participle phrase, and where the fact IS a mechanism the
+             action must BE that mechanism, not stand near it:
+      BAD:   prop "a staircase", action "standing in the office"
+             — the pun is audible and nothing happens, so it arrives as a
+               flight of stairs rising to nothing with a label on it
+      GOOD:  prop "a mezzanine stair rail across the pigeonhole wall",
+             actor "the SERT postman",
+             action "barred by the rail from reaching the post-it drawer he is
+               stretching for"
+             — allosteric blockade IS the blocking; now it is drawn
+  The prop must also have a reason to be in THIS place. A stranger who knows
+  nothing about the chapter should be able to say why the object is there.
+  A pun that produces an object the venue would never contain is a failure even
+  when the pun is good: build the pun out of the furniture the venue already
+  has, or give it a job the venue would plausibly need done.
+
 Return STRICT JSON only, matching this shape:
 {{"venue": {{"sign_text": "...", "place": "...", "activity": "..."}},
  "venue_he": {{"place": "...", "activity": "..."}},
@@ -1272,7 +1407,8 @@ Return STRICT JSON only, matching this shape:
  "zones_he": ["...", "..."],
  "elements": [
    {{"id": "e1", "fact_ids": ["..."], "cue": "...", "cue_he": "...",
-     "prop": "...", "zone": "...", "text": "", "derivation": "LITERAL_DEPICTION",
+     "prop": "...", "actor": "...", "action": "...",
+     "zone": "...", "text": "", "derivation": "LITERAL_DEPICTION",
      "triple": ["...", "...", "..."], "relates_to": "", "relation": "",
      "hook": "..."}}
  ]}}"""
@@ -1312,6 +1448,37 @@ _FSI, _PDI = "⁨", "⁩"
 def _ltr(s: str) -> str:
     """Isolate a Latin run so it renders correctly inside Hebrew text."""
     return f"{_FSI}{s}{_PDI}" if s else s
+
+
+# Lettering clauses inside a hand-authored stock prop. 106 of the 144 venues
+# carry at least one — "photocopier with a DUAL COPIER/SCANNER label taped to
+# it", "gantry crane hook stamped 5 TONNES". As background they are worse than
+# useless: they spend the picture's legibility on strings that carry no fact,
+# and one of them was condemned by three separate audits for teaching that
+# SSRIs are dual-reuptake agents. scrub_prop_text only case-folds them, which
+# leaves the instruction to letter the object intact.
+# Cut from the lettering verb ONWARD only. An earlier version allowed the
+# pattern to reach backwards across the phrase, so "overhead gantry crane hook
+# stamped 5 TONNES" lost the crane hook as well as the lettering — 203 of the
+# 421 lettered props were being deleted outright rather than cleaned.
+_LETTERING_CLAUSE = re.compile(
+    r"\s*(?:,\s*)?(?:and\s+)?\b(?:stamped|stencil\w*|reading|marked|labell?ed"
+    r"|lettered|inscribed|titled)\b[^,;]*", re.I)
+_TRAILING_LABEL = re.compile(
+    r"\s*(?:,)?\s*with\s+an?\s+[^,;]*\b(?:label|sign|notice|placard|nameplate|"
+    r"decal|sticker)\b[^,;]*", re.I)
+
+
+def plain_clutter(text: str) -> str:
+    """A stock prop with its lettering removed, for use as silent background."""
+    t = _TRAILING_LABEL.sub("", text or "")
+    t = _LETTERING_CLAUSE.sub("", t)
+    t = re.sub(r"['\"“”][^'\"“”]{1,40}['\"“”]", "", t)      # quoted strings
+    t = re.sub(r"\b[A-Z][A-Z0-9/&.-]{2,}\b", "", t)          # bare caps runs
+    # "A-frame notice: NO NAKED FLAMES" must not survive as "A-frame notice: NO"
+    t = re.sub(r"\s*:\s*[^,;]{0,12}$", "", t)
+    t = re.sub(r"\s{2,}", " ", t).strip(" ,;-:")
+    return t
 
 
 def _short_cue(cue: str, keep: int = 5) -> str:
