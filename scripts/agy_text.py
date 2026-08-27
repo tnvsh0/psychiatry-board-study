@@ -175,7 +175,12 @@ def ask_about_image_json(image_path, question: str, schema: dict, **kw) -> dict 
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:
             _json.dump(schema, fh)
-        ans = _ask_image_raw(image_path, question, extra=["--json-schema", spath], **kw)
+        # --json-schema is refused unless the output format is json or
+        # stream-json, so the answer arrives inside the CLI's own envelope and
+        # has to be unwrapped before it can be parsed as our schema.
+        ans = _ask_image_raw(image_path, question,
+                             extra=["--json-schema", spath,
+                                    "--output-format", "json"], **kw)
     finally:
         try:
             os.unlink(spath)
@@ -183,22 +188,42 @@ def ask_about_image_json(image_path, question: str, schema: dict, **kw) -> dict 
             pass
     if ans is None:
         return None
-    t = ans.strip()
-    if t.startswith("```"):
-        t = t.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
-    try:
-        data = _json.loads(t)
-    except Exception:
-        i, j = t.find("{"), t.rfind("}")
-        if i < 0 or j <= i:
-            print(f"[!] agy vision: no JSON in {t[:160]!r}", file=sys.stderr)
+    want = set((schema.get("properties") or {}).keys())
+
+    def unwrap(node, depth: int = 0):
+        """The object that answers OUR schema, wherever the envelope put it."""
+        if depth > 6:
             return None
-        try:
-            data = _json.loads(t[i:j + 1])
-        except Exception:
-            print(f"[!] agy vision: unparseable JSON {t[:160]!r}", file=sys.stderr)
-            return None
-    return data if isinstance(data, dict) else None
+        if isinstance(node, str):
+            s = node.strip()
+            if s.startswith("```"):
+                s = s.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
+            i, j = s.find("{"), s.rfind("}")
+            if i < 0 or j <= i:
+                return None
+            try:
+                return unwrap(_json.loads(s[i:j + 1]), depth + 1)
+            except Exception:
+                return None
+        if isinstance(node, dict):
+            if want & set(node):
+                return node
+            for key in ("response", "result", "output", "text", "content"):
+                if key in node:
+                    got = unwrap(node[key], depth + 1)
+                    if got is not None:
+                        return got
+            for v in node.values():
+                got = unwrap(v, depth + 1)
+                if got is not None:
+                    return got
+        return None
+
+    data = unwrap(ans)
+    if data is None:
+        print(f"[!] agy vision: no schema object in {ans.strip()[:200]!r}",
+              file=sys.stderr)
+    return data
 
 
 def main() -> int:

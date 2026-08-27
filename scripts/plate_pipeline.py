@@ -150,7 +150,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
 
     out_dir.mkdir(parents=True, exist_ok=True)
     client = gi._get_client(None)
-    if client is None:
+    if client is None and gi.ENGINE != "agy":
         raise SystemExit("no GEMINI_API_KEY")
 
     # ── director -> element table, re-asked on schema failure ──────────────
@@ -324,7 +324,7 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
             missing_nums = nums["missing"] + [w for w, _ in nums["wrong"]]
             stray_probed = nums.get("probed", True)
         probed_txt, miss_txt = gi.check_text_strings(client, png, strings)
-        comp = gi.check_composition(client, png)
+        comp, mnem = gi.check_frame(client, png, table)
         missing_all = missing_nums + miss_txt
         # Strays (nums["extra"]) are NOT counted in the rejection score.
         # Evidence from the first full run: stray count went 15 -> 0 -> 1 -> 30
@@ -358,10 +358,31 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         # the ladder's corrections.
         drafting = bool(gi.LADDER_MODEL) and attempt < MAX_TRIES - 1
         stray_penalty = len(nums["extra"]) if drafting else 0
-        score = (len(missing_all) + comp_fails + stray_penalty
+        # THE MNEMONIC TERMS. Until now the score was missing-strings plus
+        # three coarse composition checks, so across four drafts the ladder
+        # chose by a measure with nothing to do with quality — which is why
+        # plate quality varied run to run with no visible cause, and why the
+        # cheapest way to raise the score was to erect a board and letter it.
+        #
+        # Weighted, not counted. An undrawn action is the defect the owner
+        # keeps finding — a prop standing idle with its name beside it — and on
+        # the frames measured so far EVERY action goes undrawn, so at weight 1
+        # it would swamp everything and every rung would look equally bad. Half
+        # a point each puts it on the same footing as a missing string while
+        # still ranking a frame that draws three of five above one that draws
+        # none. Callouts are the owner's first complaint and are rare now that
+        # the text floor is gone, so they count whole.
+        mn_penalty = 0.0
+        if mnem.get("actions_asked"):
+            mn_penalty += 0.5 * (mnem["actions_asked"] - mnem.get("actions_drawn", 0))
+        mn_penalty += float(mnem.get("callouts") or 0)
+        mn_penalty += 0.5 * float(mnem.get("out_of_place_count") or 0)
+
+        score = (len(missing_all) + comp_fails + stray_penalty + mn_penalty
                  + (0 if verified else UNVERIFIED_PENALTY))
 
         snap = {"numbers": nums, "text_missing": miss_txt, "composition": comp,
+                "mnemonic": mnem, "mn_penalty": mn_penalty,
                 "missing_all": missing_all, "score": score,
                 "verified": verified,
                 "plate_notes": plate_notes,
