@@ -1,0 +1,17 @@
+ch09-main              audit(call= 5 orph= 5 coh=3) probe(call=0 oop=2) 81s
+ch09-main2             audit(call= 2 orph= 3 coh=4) probe(call=1 oop=0) 50s
+ch09-main3             audit(call= 3 orph= 3 coh=4) probe(call=0 oop=0) 44s
+[!] agy vision: no schema object in '{"conversation_id":"","status":"ERROR","response":"","error":"Eligibility check failed: UNAVAILABLE (code 503): The service is currently unavailable.","duration_seconds":0,"num_turns":0,"usage":{"inpu'
+ch29-main              audit(call= 3 orph= 4 coh=4) probe(call=None oop=None) 2s
+ch29-main2             audit(call= 0 orph= 3 coh=4) probe(call=0 oop=0) 53s
+proto-main             audit(call= 1 orph= 4 coh=3) probe(call=1 oop=1) 70s
+proto-criteria         audit(call= 0 orph= 4 coh=4) probe(call=0 oop=5) 77s
+ch29-before-main       audit(call=11 orph= 5 coh=3) probe(call=11 oop=0) 45s
+ch29-before-criteria   audit(call= 0 orph=10 coh=3) probe(call=0 oop=1) 50s
+agy-REJECTED           audit(call=15 orph=11 coh=2) probe(call=16 oop=9) 48s
+[!] agy vision: {"conversation_id":"b5876e8d-6d8e-42c9-a10b-b1586e5fdb1a","status":"SUCCESS","response":"","duration_seconds":74.3012669,"num_turns":1,"json_schema":{"type":"object","required":["anchor_is_object","fi
+v1-epidemiology        audit(call= 0 orph= 6 coh=4) probe(call=None oop=None) 78s
+
+callouts  audit vs probe r = 0.95
+orphans   audit vs probe r = 0.63
+coherence vs probe callouts r = -0.73

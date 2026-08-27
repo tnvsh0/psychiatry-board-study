@@ -130,7 +130,7 @@ def _ask_image_raw(image_path, question: str, *, extra: list | None = None,
     prompt = (f"Open the image file {img.name} with the view_file tool and look "
               f"at it. Do NOT run any shell command.\n\n{question}")
     exe = shutil.which("agy") or "agy"
-    waited = 0
+    waited = attempts = 0
     while True:
         try:
             proc = subprocess.run(
@@ -154,6 +154,21 @@ def _ask_image_raw(image_path, question: str, *, extra: list | None = None,
                   f"waiting.", file=sys.stderr)
             time.sleep(secs + 30)
             waited += secs + 30
+            continue
+
+        # A transient miss, not a verdict. Across eleven calibration plates two
+        # came back like this — one a 503 "service is currently unavailable",
+        # one a SUCCESS carrying an empty response — and each cost that plate
+        # its whole measurement. The gates treat "could not run" as unverified
+        # rather than as a failed render, so a silent retry here is the
+        # difference between measuring nine plates and measuring eleven.
+        transient = ("503" in blob or "UNAVAILABLE" in blob
+                     or "currently unavailable" in blob or not out)
+        if transient and attempts < 2:
+            attempts += 1
+            print(f"[i] agy vision: transient miss, retry {attempts}/2",
+                  file=sys.stderr)
+            time.sleep(8 * attempts)
             continue
 
         if not out or "auto-denied" in blob or "no output produced" in blob:
