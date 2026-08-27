@@ -714,6 +714,27 @@ def _scrub_chroma(im: Image.Image, slots: list[dict] | None = None
     if not mask.any():
         return patched, 0
 
+    # GROW THE MASK THROUGH THE WHOLE UNNATURAL BLOB. The keys are exact hues,
+    # but a model asked for a flat plate often paints a gradient across it, so
+    # only bands of it key — and scrubbing bands out of a gradient leaves a
+    # rainbow smear, which is what shipped on a suitcase. Reconstruct from the
+    # keyed pixels into a LOOSE mask of anything that saturated, so the plate
+    # comes out whole.
+    a0 = np.asarray(patched.convert("RGB")).astype(np.float32)
+    mx, mn = a0.max(axis=2), a0.min(axis=2)
+    loose = ((mx - mn) / np.maximum(mx, 1) >= 0.45) & (mx > 70)
+    seed = mask & loose
+    if seed.any():
+        for _ in range(120):
+            grown = seed.copy()
+            for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                grown |= np.roll(np.roll(seed, dy, 0), dx, 1)
+            grown &= loose
+            if grown.sum() == seed.sum():
+                break
+            seed = grown
+        mask = mask | seed
+
     # INPAINT FROM OUTSIDE. Two earlier versions of this failed the same way,
     # for the same reason: a GaussianBlur and then a MedianFilter, both of
     # which average the blob with ITSELF. A solid rectangle stays solid under
