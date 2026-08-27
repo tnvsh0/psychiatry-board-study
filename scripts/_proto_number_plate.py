@@ -620,7 +620,10 @@ def composite_plate(src_png, slots: list[dict], out_png=None) -> dict:
     out, leftover = _scrub_chroma(out, slots)
     report["leftover_chroma_px"] = leftover
     if leftover:
-        print(f"[scrub] neutralised {leftover} leftover chroma px")
+        # Not a warning. A raw chroma patch in a shipped plate looks like a
+        # rendering fault to the learner, which is worse than a missing figure,
+        # so the caller must treat this as a failed render rather than a note.
+        print(f"[scrub] FAILED — {leftover} chroma px still in the frame")
 
     dst = Path(out_png) if out_png else src
     dst.parent.mkdir(parents=True, exist_ok=True)
@@ -681,20 +684,64 @@ def _scrub_chroma(im: Image.Image, slots: list[dict] | None = None
     three colours so the difference is invisible, but a fourth key added to
     CHROMA_KEYS would ship unscrubbed if this kept reading the demo SLOTS.
     """
-    arr = np.asarray(im.convert("RGB"))
-    any_mask = np.zeros(arr.shape[:2], bool)
     keys = {tuple(s["chroma"]) for s in (slots or SLOTS)}
     keys |= {tuple(rgb) for _, rgb in CHROMA_KEYS_ORDER}
-    for chroma in keys:
-        any_mask |= _mask_for(arr, chroma)
-    n = int(any_mask.sum())
-    if not n:
-        return im, 0
-    alpha = Image.fromarray((any_mask * 255).astype(np.uint8), mode="L")
-    alpha = alpha.filter(ImageFilter.MaxFilter(DILATE_PX))
+
+    def chroma_mask(image: Image.Image) -> np.ndarray:
+        a = np.asarray(image.convert("RGB"))
+        m = np.zeros(a.shape[:2], bool)
+        for chroma in keys:
+            m |= _mask_for(a, chroma)
+        return m
+
     patched = im.copy()
-    patched.paste(im.filter(ImageFilter.GaussianBlur(28)), (0, 0), alpha)
-    return patched, n
+    mask = chroma_mask(patched)
+    if not mask.any():
+        return patched, 0
+
+    # INPAINT FROM OUTSIDE. Two earlier versions of this failed the same way,
+    # for the same reason: a GaussianBlur and then a MedianFilter, both of
+    # which average the blob with ITSELF. A solid rectangle stays solid under
+    # either, so an undetected plate shipped as a bright green board in the
+    # middle of a travel agency while the log said "neutralised". Colour has to
+    # flow in from pixels that are NOT chroma, one ring per pass, until the
+    # blob is gone.
+    a = np.asarray(patched.convert("RGB")).astype(np.float32)
+    grow = np.asarray(
+        Image.fromarray((mask * 255).astype(np.uint8), mode="L")
+        .filter(ImageFilter.MaxFilter(DILATE_PX))) > 127
+    todo = grow.copy()
+    a[todo] = 0.0
+    known = (~todo).astype(np.float32)
+
+    # A plate is at most a fifth of the frame, so its half-width bounds the
+    # passes needed; the cap keeps a pathological frame from spinning.
+    for _ in range(max(a.shape) // 2):
+        if not todo.any():
+            break
+        acc = np.zeros_like(a)
+        cnt = np.zeros_like(known)
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            acc += np.roll(np.roll(a, dy, 0), dx, 1)
+            cnt += np.roll(np.roll(known, dy, 0), dx, 1)
+        fillable = todo & (cnt > 0)
+        if not fillable.any():
+            break
+        a[fillable] = acc[fillable] / cnt[fillable][:, None]
+        known[fillable] = 1.0
+        todo &= ~fillable
+
+    patched = Image.fromarray(a.astype(np.uint8), "RGB")
+    # The fill is flat by construction; a light blur over the patched region
+    # only stops it reading as a cut-out.
+    soft = Image.fromarray((grow * 255).astype(np.uint8), mode="L")
+    patched.paste(patched.filter(ImageFilter.GaussianBlur(6)), (0, 0), soft)
+
+    # Report what is ACTUALLY left, not what was found. The old return value
+    # was the PRE-scrub count, printed as "neutralised N px" — so the line
+    # asserting success and the 2875 green pixels still in the frame were both
+    # true at once.
+    return patched, int(chroma_mask(patched).sum())
 
 
 def selftest() -> int:
