@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Optional
@@ -733,6 +734,96 @@ def check_composition(client, image_path) -> dict:
     # that passed.
     out["_probed"] = len(raw)
     out["_asked"] = len(ask)
+    return out
+
+
+def check_mnemonic(client, image_path, table: dict | None = None) -> dict:
+    """The four questions the owner actually judges on, and the score never asked.
+
+    The retry score is `missing strings + composition failures`. Nothing in it
+    can tell a scene from a diagram, so across four drafts the ladder picks by
+    a measure unrelated to quality — which is why plate quality has varied run
+    to run with no visible cause.
+
+    Every one of these is a defect the owner named, in his words:
+      - "the rail does not block the postman, he is standing behind it putting
+        the mail in without any trouble" — the ACTION was specified in the
+        prompt and simply not drawn, and nothing checked
+      - "so many labels went into the picture, this was supposed to be banned"
+      - "why are there pigeons racing and empty stairs inside an office?"
+      - a photocopier lettered DUAL COPIER/SCANNER on an SSRI plate, which
+        teaches that SSRIs are dual-reuptake agents
+
+    Deliberately NOT folded into the retry score yet. The stray-numeral count
+    went 15 -> 0 -> 1 -> 30 across four tries when it was scored, and a noisy
+    probe driving retries burns the budget re-rendering good frames. Calibrate
+    against the eleven audited plates first; report until then.
+    """
+    els = [e for e in ((table or {}).get("elements") or [])
+           if (e.get("action") or "").strip()]
+    out: dict = {}
+
+    if els:
+        # Batched: one question listing the actions, rather than one probe per
+        # element. Per-object presence probes read ~100% over a cluttered
+        # cartoon, and thirty round trips per rung is not affordable.
+        lines = "\n".join(
+            f"{i}. {(e.get('actor') or 'someone')} {e['action']}"
+            for i, e in enumerate(els[:20], 1))
+        ans = _probe(client, image_path,
+                     "Below is a list of things that are each supposed to be "
+                     "VISIBLY HAPPENING in this picture — not merely present, "
+                     "but actually taking place, with the person doing it.\n\n"
+                     f"{lines}\n\n"
+                     "For each number answer on its own line, exactly: "
+                     "'<n>: HAPPENING' or '<n>: NOT'. Answer NOT when the "
+                     "objects are there but the action is not being performed.")
+        if ans is not None:
+            done = len(re.findall(r"^\s*\d+\s*:\s*HAPPENING", ans, re.M | re.I))
+            out["actions_drawn"] = done
+            out["actions_asked"] = min(len(els), 20)
+            out["_actions_raw"] = ans.strip()[:800]
+
+    ans = _probe(client, image_path,
+                 "Count the ANNOTATIONS in this picture: any word, phrase or "
+                 "number joined to an object by a drawn line, arrow, bracket or "
+                 "pointer, or floating over the artwork rather than painted on "
+                 "a surface that belongs to the scene. A shop sign, a poster, a "
+                 "price board or lettering on a machine is NOT an annotation. "
+                 "Answer with a single number and nothing else.")
+    if ans is not None:
+        m = re.search(r"\d+", ans)
+        out["callouts"] = int(m.group(0)) if m else 0
+        out["_callouts_raw"] = ans.strip()[:200]
+
+    # BELONGING, NOT USE. An early version asked for objects "nobody is using
+    # and that this place would not contain", and the owner caught the flaw:
+    # the photocopier is untouched and is still one of the most important
+    # things on an SSRI plate. Whether a prop is being USED is a different
+    # question, already answered by actions_drawn above; this one asks only
+    # whether the object has a REASON to be in the frame — either the venue
+    # would hold it anyway, or it carries a fact. Both lists are in hand, so
+    # the probe is told them rather than left to guess.
+    place = ((table or {}).get("venue") or {}).get("place", "this place")
+    carries = [scrub for scrub in
+               ((e.get("prop") or "").strip() for e in
+                ((table or {}).get("elements") or [])) if scrub][:24]
+    known = "\n".join(f"- {c[:70]}" for c in carries)
+    ans = _probe(client, image_path,
+                 f"This picture shows: {place[:200]}\n\n"
+                 + (f"These objects are deliberate and belong, whether or not "
+                    f"anyone is touching them:\n{known}\n\n" if known else "")
+                 + "List every OTHER object in the picture that a real version "
+                   "of this place would not plausibly contain. Judge only "
+                   "whether it belongs here — an object nobody is touching is "
+                   "fine if the place would have one. One short name per line, "
+                   "nothing else. Write NONE if there are none.")
+    if ans is not None:
+        items = [ln.strip(" -•\t") for ln in ans.splitlines() if ln.strip()]
+        items = [i for i in items if i.upper() != "NONE" and len(i) < 60]
+        out["out_of_place"] = items[:12]
+        out["out_of_place_count"] = len(items)
+
     return out
 
 
