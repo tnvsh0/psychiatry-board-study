@@ -150,3 +150,47 @@ worth doing.
 DEFERRED until the plate gates (check_frame: actions_drawn, callouts,
 out_of_place) are shown to agree with the owner's own judgement. That
 calibration is the batch of chapter 29 plates running now.
+
+## 2026-08-28 — the pipeline is free, and the quota is the constraint
+
+Everything now runs on the Antigravity CLI: the scene director, the renders and
+the vision gates. No paid call remains in a chapter. The Gemini project is
+sitting on its monthly spending cap, which no longer blocks anything except
+narration audio (TTS).
+
+**The gates were calibrated and the owner confirmed their ranking.** Against
+eleven audited plates: callouts r=0.95 with the human audit, and r=-0.73
+against the human coherence score, meaning the callout count PREDICTS the
+judgement rather than merely correlating. out-of-place is weaker at r=0.63.
+The owner reviewed chapter 29's four plates ordered by gate score and agreed
+with the order. That was the condition for trusting automation, and for
+starting the per-drug plates.
+
+**The real constraint is the image quota, and it is much tighter than first
+measured.** Consumption over four days: 2, 13, 35, 11 images, then a 103-hour
+lockout. So there is a long-horizon cap above the ~14-per-5-hour rolling
+window, and the sustained rate is about 15 images a day — not the ~67 inferred
+from one window. At roughly 430 plates and ~2 renders each, the course is about
+two months of quota against 89 days to the exam. Feasible, with no margin.
+
+**What changed today because of that.** The ladder used to exit only on
+`score == 0`, and the mnemonic terms added to the score made zero unreachable
+(actions_drawn tops out near 70%), so every plate burned all four rungs. It now
+stops at good enough, with each threshold set by what the engine delivers and
+by how far each gate has earned trust — see ACTION_TARGET, MISSING_TOLERANCE,
+OOP_TOLERANCE in plate_pipeline.py.
+
+**Chapter 26 is released** and is the first chapter built end to end on the free
+engine. Two of its four plates scored 1.0 — the best yet, one drawing 13 of 13
+actions — and two produced no image because the quota ran out mid-chapter.
+Those two need re-rendering.
+
+**The account trap.** `~/.notebooklm/config.json` still says
+`default_profile: default`, and `default` holds the personal Google account while the
+project's account, the project Google account, lives in the `bulk` profile. Every
+command needs `-p bulk`, and every script run needs `NOTEBOOKLM_PROFILE=bulk`,
+or it silently uses the wrong account. A login without `-p bulk` also
+overwrites the peer projects' session.
+
+**Open decision for the owner:** stay free-only and accept ~2 months, or raise
+the spend cap so chapters can fall through to the paid API while agy is locked.
