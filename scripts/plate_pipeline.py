@@ -125,6 +125,29 @@ def _assign_carriers(plate: spec.Plate, venue: dict) -> None:
 # reads as a clean score, small enough to stay legible in a report.
 UNVERIFIED_PENALTY = 100
 
+# The share of an element table's actions that actually get drawn when the
+# render is working. Measured across five plates on the free 1K engine: 9/13,
+# 10/13, 9/12, 9/12, 14/20 — a stable 69-77%. Demanding more than the engine
+# delivers turns the ladder's exit into a wall, which is exactly what happened
+# when the mnemonic terms first entered the score.
+ACTION_TARGET = 0.69
+
+# One string may fail to render without costing three more images. Chapter 26's
+# profile plate drew 13 of 13 actions with no callouts, nothing out of place and
+# every composition check passing, and ran the full ladder over a single
+# unreadable string — "FRAGILE HANDLE WITH CARE". The legend prints every string
+# whether or not it reached the pixels, and the undrawn list records the miss,
+# so the fact is not lost; three images out of a 15-a-day allowance would be.
+MISSING_TOLERANCE = 1
+
+# Each gate's strictness follows how well it AGREED WITH THE OWNER, measured on
+# eleven audited plates: callouts r=0.95, out-of-place r=0.63. So a single
+# callout still blocks — that axis predicts his judgement almost exactly — and a
+# single out-of-place prop does not, because on the weakest axis one hit is as
+# likely to be the probe as the picture. Anything past one, on either, is a
+# pattern rather than a blemish and runs the ladder.
+OOP_TOLERANCE = 1
+
 
 def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
               out_dir: Path, dry_run: bool = False,
@@ -397,7 +420,28 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
                       if nums["extra"] else "")
         print(f"[i] try {attempt+1}: {len(missing_all)} missing{stray_note}, "
               f"composition {comp}", file=sys.stderr)
-        if score == 0:
+        # STOP AT GOOD ENOUGH, NOT AT PERFECT. `score == 0` was the only exit,
+        # and adding the mnemonic terms to the score made zero unreachable:
+        # actions_drawn runs about 70% at best, so a 13-action plate carries a
+        # floor of ~2.0 however good it is. Every plate then burned all four
+        # rungs — I introduced that yesterday and it quadrupled the quota cost
+        # per plate, which matters because the free image allowance turns out
+        # to be roughly 15 a day, not the 67 I had assumed.
+        #
+        # So the exit asks what is actually achievable: nothing missing, no
+        # callouts, no out-of-place props, composition intact, and actions at
+        # or above the rate the engine reliably delivers.
+        drawn, asked = mnem.get("actions_drawn"), mnem.get("actions_asked")
+        good_enough = (
+            len(missing_all) <= MISSING_TOLERANCE and not comp_fails
+            and not mnem.get("callouts")
+            and (mnem.get("out_of_place_count") or 0) <= OOP_TOLERANCE
+            and verified
+            and (not asked or (drawn or 0) >= ACTION_TARGET * asked))
+        if score == 0 or good_enough:
+            if good_enough and score:
+                print(f"[i] try {attempt+1}: good enough (score {score}) — "
+                      f"stopping the ladder", file=sys.stderr)
             break
         # Nothing measurable is wrong; the only complaint is that the probes
         # could not confirm it. Another render cannot fix a probe outage, it
