@@ -76,6 +76,21 @@ GITHUB_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 SKIP_QUOTA_ARTIFACTS = os.environ.get(
     "SKIP_QUOTA_ARTIFACTS", "").strip().lower() not in ("", "0", "false", "no")
 
+# Build a chapter with no pictures. The free image allowance runs out well
+# before the day does, and a chapter is mostly not pictures: chapter 26 shipped
+# 22 artifacts — the study guide, the quiz, the flashcards, the video, and a
+# full legend for every plate — beside 2 PNGs. The slow, serial, separately
+# limited part is pulling the facts out of NotebookLM, and that has nothing to
+# do with the image quota, so a multi-day image lockout is exactly when to do
+# it. Plates are then rendered in a later pass from the saved facts.json.
+#
+# Skipping is better than letting them fail: the director costs a text call per
+# plate, and a table built now is discarded anyway, because the later pass
+# regenerates the table and the legend together with the image so the two
+# cannot drift apart.
+SKIP_PLATES = os.environ.get(
+    "SKIP_PLATES", "").strip().lower() not in ("", "0", "false", "no")
+
 # Six textbooks cannot honestly answer a chapter brief in a paragraph, so a
 # short extract means the notebook was not ready or the query failed.
 #
@@ -2394,7 +2409,11 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 # and a chapter drawn somewhere else is worse than none.
                 print(f"[!] {exc} — the chapter cannot be drawn without its venue.")
 
-        if venue is not None:
+        if venue is not None and SKIP_PLATES:
+            print("")
+            print("[i] SKIP_PLATES: the plates are deferred to a later render "
+                  "pass; everything else in this chapter is still built.")
+        elif venue is not None:
             tokens = pp.load_tokens(day)
             plates = spec.plan_plates(spec.atomize(facts)) if facts else []
             if not plates:
