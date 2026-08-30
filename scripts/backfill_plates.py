@@ -56,9 +56,38 @@ def missing_plates(day_dir: Path) -> tuple[dict, list]:
                  if not (day_dir / f"sketchy_{p.name}.png").exists()]
 
 
+# Everything a plate leaves behind, so a stale one can be named in full.
+_PLATE_FILES = ("sketchy_{n}.png", "sketchy_{n}.txt", "sketchy_{n}.quiz.md",
+                "report_{n}.json", "narration_{n}.txt", "narration_{n}.wav")
+
+
+def stale_plates(day_dir: Path, current: list) -> list[str]:
+    """Plates on disk that the current split no longer produces.
+
+    The tracks were renamed when the plates split three ways: what used to be
+    `main` and `main2` is now profile / management / criteria. The site picks
+    images with a glob over `sketchy_*.png`, so a chapter rendered under both
+    schemes shows BOTH sets — chapter 29 would display six plates, two of them
+    drawn from the old prompt, before the pigeons and the mangled identifiers
+    were fixed. The learner has no way to tell which two are the wrong ones.
+
+    Reported, not deleted, unless --prune says otherwise: these are the only
+    copies, and every released chapter before the split is in this state.
+    """
+    live = {p.name for p in current}
+    found = set()
+    for png in day_dir.glob("sketchy_*.png"):
+        name = png.stem[len("sketchy_"):]
+        if name not in live:
+            found.add(name)
+    return sorted(found)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--day", type=int, help="one chapter, by index")
+    ap.add_argument("--prune", action="store_true",
+                    help="delete plates the current split no longer produces")
     ap.add_argument("--limit", type=int, default=0,
                     help="stop after this many plates (0 = no limit)")
     ap.add_argument("--dry-run", action="store_true")
@@ -68,11 +97,34 @@ def main() -> int:
     if a.day:
         dirs = [d for d in dirs if d.name == f"day-{a.day:03d}"]
 
-    todo = []
+    todo, stale = [], []
     for d in dirs:
         day, plates = missing_plates(d)
         for p in plates:
             todo.append((d, day, p))
+        facts_file = d / "facts.json"
+        if facts_file.exists():
+            current = spec.plan_plates(spec.atomize(
+                json.loads(facts_file.read_text(encoding="utf-8"))))
+            for name in stale_plates(d, current):
+                stale.append((d, name))
+
+    if stale:
+        print(f"\n{len(stale)} plate(s) left over from the old split. The site "
+              f"globs sketchy_*.png, so these would be shown ALONGSIDE the new "
+              f"ones:")
+        for d, name in stale:
+            print(f"  {d.name}  sketchy_{name}.png")
+        if a.prune:
+            for d, name in stale:
+                for pat in _PLATE_FILES:
+                    f = d / pat.format(n=name)
+                    if f.exists():
+                        f.unlink()
+                        print(f"  removed {d.name}/{f.name}")
+        else:
+            print("  (left in place — pass --prune to remove them)")
+        print("")
 
     if not todo:
         print("every built chapter has all of its plates.")
