@@ -1229,7 +1229,24 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
         else:
             print(f"    [!!] {label}: rc={r.returncode} {(r.stderr or '')[:120]}")
         if ok:
-            print(f"    [OK] {label}")
+            # RENAME IT TO OUR LABEL. NotebookLM titles a Drive source with the
+            # Drive FILENAME, overwriting the title we attach it with once
+            # indexing finishes — which is the whole reason _names_book below
+            # has to guess a book from distinctive words in its filename, and
+            # why "2 of 5 books" was reported forever on a notebook that was
+            # answering perfectly well.
+            #
+            # The rename sticks, so the mismatch can be removed at its source
+            # rather than compensated for downstream. It is best-effort: a
+            # source that keeps its Drive name still works, because
+            # _names_book still accepts the filename.
+            try:
+                rn = nb_run(["source", "rename", src.get("id"), label,
+                             "-n", nb_id], timeout=120)
+                renamed = rn.returncode == 0
+            except Exception:       # noqa: BLE001 — cosmetic, never fatal
+                renamed = False
+            print(f"    [OK] {label}" + ("" if renamed else "  (kept its Drive name)"))
             attached[src.get("id")] = label
     return attached
 
