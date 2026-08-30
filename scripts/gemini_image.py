@@ -100,7 +100,12 @@ IMAGE_ASPECT = "16:9"
 # 1K was abandoned once because a glyph landed at ~24px on plates carrying
 # 22-34 elements. The three-way plate split is what makes it viable again: a
 # third of the elements on the same canvas is three times the glyph size.
-ENGINE = os.environ.get("SKETCHY_ENGINE", "api").strip().lower()
+# DEFAULT IS agy. It was "api", which is how the renders moved to the free
+# quota while the director, the gates and the narration quietly stayed billed —
+# and how a project whose pictures cost nothing still hit a monthly spending
+# cap. The owner asked for agy and got half of it; the default is the half that
+# was missing. Reaching the paid API is now a deliberate act, not an omission.
+ENGINE = os.environ.get("SKETCHY_ENGINE", "agy").strip().lower()
 if ENGINE == "agy":
     # Anything downstream that reasons about resolution should be told the
     # truth rather than the value someone set in the environment.
@@ -237,7 +242,25 @@ def _palette_directive(phase: Optional[int]) -> str:
     return ""
 
 
+class PaidCallBlocked(RuntimeError):
+    """Something tried to reach the billed API while the engine is agy.
+
+    Every path that matters has been moved, but "every path I found" is not
+    the same as "every path". This turns the one I missed into an error that
+    names itself, instead of a charge discovered on a bill.
+    """
+
+
+def _guard_paid(what: str) -> None:
+    if ENGINE == "agy":
+        raise PaidCallBlocked(
+            f"{what} tried to use the paid Gemini API, but SKETCHY_ENGINE=agy. "
+            f"Route it through agy_text/agy_image, or set SKETCHY_ENGINE=api "
+            f"deliberately if this call is meant to be billed.")
+
+
 def _get_client(api_key: Optional[str]):
+    _guard_paid("_get_client")
     key = api_key or os.environ.get("GEMINI_API_KEY", "")
     if not key:
         print("[!] GEMINI_API_KEY not set; cannot generate image.", file=sys.stderr)
@@ -319,6 +342,7 @@ def _gc(client, **kw):
     last = None
     for attempt in range(4):
         try:
+            _guard_paid(f"generate_content(model={kw.get('model')})")
             return client.models.generate_content(**kw)
         except Exception as e:
             last = e
