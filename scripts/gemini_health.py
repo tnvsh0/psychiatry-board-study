@@ -36,7 +36,27 @@ HEALTHY_AT = 2      # this many of PROBES must answer
 
 
 def check(model: str | None = None) -> tuple[int, int, str]:
-    """(answered, asked, note) for the text model the gates and director use."""
+    """(answered, asked, note) for the text model the gates and director use.
+
+    Under SKETCHY_ENGINE=agy this asks agy, because that is what the director
+    and the gates actually run on. Left pointing at the paid API it reported on
+    a service the pipeline no longer uses — and it ran at the head of EVERY
+    chapter, which is how a run that costs nothing still opened with a billed
+    call. The paid-call guard is what surfaced it.
+    """
+    if gi.ENGINE == "agy":
+        import agy_text
+        ok, note = 0, ""
+        for i in range(PROBES):
+            try:
+                if (agy_text.ask(f"Reply with the single word OK ({i}).",
+                                 wait_for_quota=False) or "").strip():
+                    ok += 1
+            except Exception as e:  # noqa: BLE001
+                note = str(e)[:90]
+            time.sleep(1)
+        return ok, PROBES, note
+
     model = model or gi.CAPTION_MODEL
     client = gi._get_client(None)
     if client is None:
