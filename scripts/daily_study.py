@@ -154,9 +154,24 @@ BOOK_ORDER = ["Dulcan", "DSM-5-TR", "StahlNeuro", "StahlKids",
               "Syllabus", "Kaplan & Sadock Synopsis"]
 
 
-def books_directive():
-    """The prompt's source list, built from the books that are actually loaded."""
+def books_directive(day_index=None):
+    """The prompt's source list, built from the books actually in the notebook.
+
+    `day_index` matters for the Synopsis. It is no longer attached as a book —
+    only the required-literature slices for THIS chapter go in — so naming it
+    for a chapter that has no slice would tell the model it has a source it
+    does not have, which does not raise: it makes NotebookLM invent citations.
+    That is the failure this module already carries a comment about, and
+    listing an unattached Synopsis would have reintroduced it for the hundred
+    chapters outside the examiners' 39.
+
+    Called without a day it keeps the old behaviour, which is what the
+    non-chapter prompts want.
+    """
     books = load_drive_books()
+    if day_index is not None:
+        books = {k: v for k, v in books.items()
+                 if not (v.get("slices_only") and not synopsis_slices_for(day_index))}
     lines = [BOOK_BLURBS[k] for k in BOOK_ORDER if k in books and k in BOOK_BLURBS]
     numbered = "\n".join(f"{i}. {t}" for i, t in enumerate(lines, 1))
     ranges = ", ".join(
@@ -343,7 +358,7 @@ def build_clinical_context(day):
 - ההוראות הללו מיועדות לחומר לימודי קליני. **אל תכתוב על הסמלים החזותיים/הציורים/האיורים** (אלה נועדו אך ורק לתמונות הליווי — הם לא נושא הלמידה).
 - כל פיסת תוכן חייבת להישען על המקורות במחברת.
 
-{books_directive()}
+{books_directive(day["index"])}
 
 - מטרת הלימוד: מתמחה בפסיכיאטריה של הילד והמתבגר לקראת בחינת שלב ב' — חייב להיות תוכן בחינתי, לא מנמוניקה ויזואלית.
 - אל תמציא — אם המידע חסר במקורות, ציין זאת."""
@@ -1193,6 +1208,70 @@ def load_drive_books(include_disabled=False):
     return {k: v for k, v in books.items() if v.get("enabled", True)}
 
 
+SYNOPSIS_SLICES = REPO_ROOT / "schedule" / "synopsis_slices"
+
+
+def synopsis_slices_for(day_index):
+    """The Synopsis extracts this chapter is required to be taught from.
+
+    The examiners' own list (P024-2026) names 14 Synopsis chapters that Dulcan
+    under-covers, and a peer session cut each into its own PDF and mapped them
+    to curriculum chapters. That map is authoritative, and it is wider than the
+    one I inferred from the reading guide: I had chapters 12-14 needing the
+    Synopsis, the official list has eleven already-built chapters needing it.
+
+    Attaching the exact slice beats attaching the book. Each is 31-257 pages
+    and under 4MB, so it uploads from disk in seconds — the objection to local
+    attachment was the whole book's 42MB per notebook, which does not apply
+    here — and the notebook holds only the material the chapter is meant to
+    cite, instead of 3,768 pages of mostly adult psychiatry.
+    """
+    man = SYNOPSIS_SLICES / "manifest.json"
+    if not man.exists():
+        return []
+    try:
+        slices = json.loads(man.read_text(encoding="utf-8")).get("slices", [])
+    except Exception:                # noqa: BLE001
+        return []
+    out = []
+    for sl in slices:
+        if day_index in (sl.get("curriculum") or []):
+            f = SYNOPSIS_SLICES / sl["file"]
+            if f.exists():
+                out.append((f, sl.get("ref", "?"), sl.get("pages")))
+            else:
+                print(f"    [!!] Synopsis slice missing on disk: {sl['file']} "
+                      f"(regenerate with scripts/build_synopsis_slices.py)")
+    return out
+
+
+def attach_synopsis_slices(nb_id, day_index, attached):
+    """Attach this chapter's Synopsis extracts, if it has any."""
+    wanted = synopsis_slices_for(day_index)
+    if not wanted:
+        return 0
+    got = 0
+    for path, ref, pages in wanted:
+        title = f"Synopsis ch.{ref}"
+        r = nb_run(["source", "add", str(path), "--title", title,
+                    "--mime-type", "application/pdf", "-n", nb_id, "--json"],
+                   timeout=600)
+        sid = None
+        if r.returncode == 0:
+            try:
+                sid = (json.loads(r.stdout[r.stdout.index("{"):])
+                       .get("source") or {}).get("id")
+            except Exception:        # noqa: BLE001
+                pass
+        if sid:
+            attached[sid] = title
+            got += 1
+            print(f"    [OK] {title} ({pages}pp)")
+        else:
+            print(f"    [!!] {title}: not attached")
+    return got
+
+
 def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
     """Attach all six textbooks to the per-day notebook by Drive reference.
 
@@ -1211,6 +1290,11 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
         books = {k: v for k, v in books.items() if k in only}
     attached = {}
     for label, meta in books.items():
+        # Listed in the prompt, attached as per-chapter slices instead — see
+        # attach_synopsis_slices. It stays in the book list so the citation
+        # rules still name it; it must not be attached whole.
+        if meta.get("slices_only"):
+            continue
         # A book may live on disk instead of in Drive. The Synopsis has to:
         # at 3,768 pages NotebookLM refuses to index it, silently, with no
         # reason given — and the largest book that DOES index is Dulcan at
@@ -1713,7 +1797,7 @@ def extract_facts(day, notebook_id):
     shape, allowed = build_facts_schema(aspects)
     schema_prompt = f"""Based ONLY on the sources in this notebook, extract the high-yield facts about: {title_he}
 
-{books_directive()}
+{books_directive(day["index"])}
 
 Return STRICT JSON (no prose, no markdown fences) with this exact shape. Fill every field from the sources; if a field is genuinely not in the sources, use the string "לא צוין". Keep values SHORT and concrete (numbers, names) — this drives mnemonic image generation.
 
@@ -1798,7 +1882,7 @@ def extract_day_content_from_main(day, symbols_block, main_notebook_id):
 
     extraction_prompt = f"""Extract from the sources in this notebook ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
 
-{books_directive()}
+{books_directive(day["index"])}
 
 Topic: {title_he}
 
@@ -1988,7 +2072,7 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 - התשובה שלך היא המדריך. אם היא מתארת מדריך במקום להיות אחד — היא שגויה.
 - אל תפתח בפנייה אליי ("הכנתי עבורך", "המדריך זמין"). התחל ישירות בכותרת.
 
-{books_directive()}"""
+{books_directive(day["index"])}"""
 
     answer, bad = "", []
     for attempt in range(3):
@@ -2349,18 +2433,24 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         #    cite real pages.
         print("  Attaching textbooks from Drive...")
         attached = add_textbook_pdfs_to_day_notebook(day_nb_id)
+        attach_synopsis_slices(day_nb_id, day["index"], attached)
         # COUNT BOOKS, NOT SOURCES. The Synopsis is attached as three parts, so
         # source count stopped being a proxy for book count the moment it went
         # in: five books plus one surviving Synopsis part is six sources and
         # six books required, and this check would have waved it through with
         # two thirds of a textbook missing and the prompt still naming it.
         n_pdfs = len(set(attached.values()))
+        # Books that arrive as per-chapter slices are not expected here: a
+        # chapter with no required Synopsis extract attaches none, and demanding
+        # one would fail every chapter outside the examiners' 39.
+        need = len([b for b in load_drive_books().values()
+                    if not b.get("slices_only")])
         # A book named in the prompt but absent from the notebook does not
         # raise — NotebookLM quietly invents plausible page numbers for it.
         # That already shipped once (a day-16 study guide cited "Stahl
         # Pediatric pp. 600-612" in a 525-page book). Refuse to build a chapter
         # on an incomplete notebook.
-        if n_pdfs < len(load_drive_books()):
+        if n_pdfs < need:
             raise RuntimeError(
                 f"only {n_pdfs}/{len(load_drive_books())} textbooks attached to "
                 f"notebook {day_nb_id}. Refusing to generate: the prompts name "
