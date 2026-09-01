@@ -19,6 +19,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import sys
 import tempfile
 from collections import defaultdict
@@ -295,17 +296,25 @@ def save_progress(progress: dict) -> bool:
 def get_lectures() -> dict:
     """Recorded academic lectures, keyed by chapter number as a string.
 
-    Written by scripts/upload_lectures.py. A lecture is filed under every
-    chapter it is relevant to, not only its main one — the Tourette/ADHD/OCD
-    talk belongs to all three — so the same URL appears under several keys.
+    Fetched from the repo the same way the schedule is, NOT read off local
+    disk. The Cloud Run image copies only app.py and sr_engine.py — everything
+    under schedule/ arrives live through the Contents API — so a local-only
+    read returns nothing in production and the lectures would simply never
+    appear, on a page that gave no sign anything was missing.
+
+    A lecture is filed under every chapter it is relevant to, not only its main
+    one: the Tourette/ADHD/OCD talk belongs to all three.
     """
-    f = LOCAL_ROOT / "schedule" / "lectures.json"
-    if not f.exists():
-        return {}
-    try:
-        return json.loads(f.read_text(encoding="utf-8")).get("lectures_by_chapter", {})
-    except Exception:
-        return {}
+    data = _gh_fetch_json("schedule/lectures.json", fallback=None)
+    if not data:
+        f = LOCAL_ROOT / "schedule" / "lectures.json"
+        if not f.exists():
+            return {}
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return data.get("lectures_by_chapter", {})
 
 
 @st.cache_data(ttl=300)
@@ -716,6 +725,84 @@ def _render_recommended_reading(day: dict, idx: int) -> None:
             )
 
 
+def parse_legend(text: str) -> dict:
+    """Split a Sketchy legend into its parts.
+
+    The .txt has real structure — a sign line, a place line, numbered rows and
+    two summary lines — and the page was injecting the whole file into one HTML
+    block. HTML collapses newlines, so twenty-nine numbered rows arrived as a
+    single unbroken paragraph. That is the wall of text: a rendering bug, not
+    too much writing.
+    """
+    out = {"sign": "", "place": "", "rows": [], "undrawn": "", "figures": ""}
+    for raw in (text or "").splitlines():
+        line = raw.strip().replace("⁨", "").replace("⁩", "")
+        if not line:
+            continue
+        if line.startswith("השלט:"):
+            out["sign"] = line[len("השלט:"):].strip()
+        elif line.startswith("המקום:"):
+            out["place"] = line[len("המקום:"):].strip()
+        elif line.startswith("לא צויר:"):
+            out["undrawn"] = line[len("לא צויר:"):].strip()
+        elif line.startswith("מספרים לבחינה:"):
+            out["figures"] = line[len("מספרים לבחינה:"):].strip()
+        elif re.match(r"^\d+[.)]\s", line):
+            body = re.sub(r"^\d+[.)]\s*", "", line)
+            cue, _, rest = body.partition(":")
+            fact, _, hook = rest.partition("—")
+            out["rows"].append({"cue": cue.strip(), "fact": fact.strip(),
+                                "hook": hook.strip()})
+    return out
+
+
+def render_legend_block(text: str) -> None:
+    """The legend as a readable card: the pun first, the rows behind a click."""
+    lg = parse_legend(text)
+    if not lg["rows"]:
+        st.markdown(f'<div dir="rtl" style="text-align:right">{text}</div>',
+                    unsafe_allow_html=True)
+        return
+
+    if lg["sign"]:
+        st.markdown(
+            f'<div dir="rtl" style="text-align:right;background:rgba(240,180,41,.12);'
+            f'border-right:4px solid #f0b429;padding:10px 16px;margin:6px 0;'
+            f'border-radius:4px"><b>🔑 {lg["sign"]}</b></div>',
+            unsafe_allow_html=True)
+    if lg["place"]:
+        st.markdown(f'<div dir="rtl" style="text-align:right;opacity:.72;'
+                    f'font-size:.9em;padding:2px 16px 6px">{lg["place"]}</div>',
+                    unsafe_allow_html=True)
+    if lg["figures"]:
+        chips = "".join(
+            f'<span style="display:inline-block;background:rgba(0,120,255,.13);'
+            f'border-radius:12px;padding:2px 10px;margin:3px 4px 0 0;'
+            f'font-weight:600;direction:ltr">{c.strip()}</span>'
+            for c in lg["figures"].split("·") if c.strip())
+        st.markdown(f'<div dir="rtl" style="text-align:right;padding:4px 16px 8px">'
+                    f'<span style="opacity:.7;font-size:.88em">מספרים לבחינה:</span>'
+                    f'<br>{chips}</div>', unsafe_allow_html=True)
+
+    with st.expander(f"מקרא הסצנה — {len(lg['rows'])} פריטים", expanded=False):
+        # The FACT reads first and the explanation is muted under it. A row
+        # whose element was already explained above carries no hook at all,
+        # which is what makes a shared prop visible at a glance.
+        html = ['<div dir="rtl" style="text-align:right">']
+        for i, r in enumerate(lg["rows"], 1):
+            hook = (f'<div style="opacity:.6;font-size:.87em">{r["hook"]}</div>'
+                    if r["hook"] else "")
+            html.append(
+                f'<div style="padding:7px 0;border-bottom:1px solid '
+                f'rgba(128,128,128,.14)">'
+                f'<span style="opacity:.45;font-size:.85em">{i}.</span> '
+                f'<b>{r["cue"]}</b> — {r["fact"]}{hook}</div>')
+        html.append("</div>")
+        st.markdown("".join(html), unsafe_allow_html=True)
+        if lg["undrawn"]:
+            st.caption(f"לא צויר: {lg['undrawn']}")
+
+
 def render_day_page(day, symbols, progress, palette):
     """The main per-day content page."""
     idx = day["index"]
@@ -764,14 +851,16 @@ def render_day_page(day, symbols, progress, palette):
     # than the "come back in an hour" notice.
     lectures = get_lectures().get(str(day["index"]), [])
     if lectures:
-        st.markdown("### 🎓 הרצאות מוקלטות")
-        for lec in lectures:
-            label = lec["title"]
-            if not lec.get("primary"):
-                label += "  ·  (שייכת בעיקר לפרק אחר)"
-            with st.expander(f"{label}  —  {lec['size_mb']} MB"):
+        with st.expander(f"🎓 הרצאות מוקלטות ({len(lectures)})", expanded=False):
+            for lec in lectures:
+                label = lec["title"]
+                if not lec.get("primary"):
+                    label += "  ·  (שייכת בעיקר לפרק אחר)"
+                st.markdown(f'<div dir="rtl" style="text-align:right;'
+                            f'padding-top:8px"><b>{label}</b>'
+                            f'<span style="opacity:.5"> · {lec["size_mb"]} MB</span>'
+                            f'</div>', unsafe_allow_html=True)
                 st.video(lec["url"])
-                st.caption(lec["url"])
 
     # Artifacts
     tag = day_tag(day)
@@ -785,7 +874,7 @@ def render_day_page(day, symbols, progress, palette):
     # Audio
     audio_url = assets.get("audio.mp3")
     if audio_url:
-        st.markdown("### 🎙 פודקאסט")
+        st.markdown("#### 🎙 פודקאסט")
         local = fetch_asset_local("audio.mp3", audio_url)
         if local:
             st.audio(local)
@@ -795,7 +884,7 @@ def render_day_page(day, symbols, progress, palette):
     # Video
     video_url = assets.get("video.mp4")
     if video_url:
-        st.markdown("### 🎬 וידאו")
+        st.markdown("#### 🎬 וידאו")
         local = fetch_asset_local("video.mp4", video_url)
         if local:
             st.video(local)
@@ -826,24 +915,17 @@ def render_day_page(day, symbols, progress, palette):
             if caption_url:
                 caption_text = fetch_text(caption_url)
                 if caption_text:
-                    st.markdown(
-                        f'<div dir="rtl" style="text-align: right; '
-                        f'font-size: 1.05em; line-height: 1.75; padding: 12px 20px; '
-                        f'background: rgba(0,0,0,0.02); border-right: 3px solid #ccc; '
-                        f'margin: 8px 0;">'
-                        f'{caption_text}</div>',
-                        unsafe_allow_html=True,
-                    )
+                    render_legend_block(caption_text)
                 else:
-                    st.caption("(לא הצלחתי לטעון את הקפסולה)")
+                    st.caption("(לא הצלחתי לטעון את המקרא)")
             else:
-                st.caption("(אין קפסולת הסבר לתמונה זו)")
+                st.caption("(אין מקרא לתמונה זו)")
             st.divider()
 
     # Standard infographics (NotebookLM) — structured reference
     infographics = sorted(k for k in assets if k.startswith("infographic_") and k.endswith(".png"))
     if infographics:
-        st.markdown("### 🖼 אינפוגרפיקות (NotebookLM)")
+        st.markdown("#### 🖼 אינפוגרפיקות")
         cols = st.columns(min(len(infographics), 3))
         for i, name in enumerate(infographics):
             with cols[i % len(cols)]:

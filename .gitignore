@@ -15,7 +15,12 @@ _generated/
 # Reference materials — copyrighted PDFs etc. kept locally only
 עותק של Sketchy.pdf
 *.pdf
+# ...but our own generated study materials are original content — keep them
+!schedule/question_booklet.pdf
 
+# The owner's recorded academic lectures: 28 files, 14GB, served from GCS
+# (see scripts/upload_lectures.py). Never belongs in git.
+הקלטות לימודי המשך/
 # Prototype scratch output (renders, composites)
 _proto/
 _view/

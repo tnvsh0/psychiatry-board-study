@@ -1,0 +1,301 @@
+{
+  "_note": "Per-chapter Synopsis slices for the required-literature supplements. The PDFs are gitignored (copyrighted extracts); regenerate locally with scripts/build_synopsis_slices.py. 'by_curriculum' maps a curriculum chapter index to the slice file(s) to attach to its NotebookLM notebook.",
+  "source_pdf": "Kaplan  Sadock’s Synopsis of Psychiatry by Robert Boland, Marcia Verdiun, Pedro Ruiz (z-lib.org).pdf",
+  "slices": [
+    {
+      "file": "synopsis-1_1-adult-patient.pdf",
+      "ref": "1.1",
+      "synopsis_ch": 1,
+      "topic_he": "המטופל המבוגר (ראיון ובדיקה)",
+      "pages": 215,
+      "curriculum": [
+        1
+      ]
+    },
+    {
+      "file": "synopsis-3_4-neurocognitive-gmc.pdf",
+      "ref": "3.4",
+      "synopsis_ch": 3,
+      "topic_he": "הפרעות נוירוקוגניטיביות ופסיכיאטריות עקב מצב רפואי כללי",
+      "pages": 41,
+      "curriculum": [
+        114
+      ]
+    },
+    {
+      "file": "synopsis-5-schizophrenia.pdf",
+      "ref": "5",
+      "synopsis_ch": 5,
+      "topic_he": "ספקטרום הסכיזופרניה והפרעות פסיכוטיות",
+      "pages": 83,
+      "curriculum": [
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "file": "synopsis-7-depressive.pdf",
+      "ref": "7",
+      "synopsis_ch": 7,
+      "topic_he": "הפרעות דיכאון",
+      "pages": 70,
+      "curriculum": [
+        28,
+        32
+      ]
+    },
+    {
+      "file": "synopsis-9-ocd.pdf",
+      "ref": "9",
+      "synopsis_ch": 9,
+      "topic_he": "OCD והפרעות קשורות",
+      "pages": 45,
+      "curriculum": [
+        43
+      ]
+    },
+    {
+      "file": "synopsis-10-trauma.pdf",
+      "ref": "10",
+      "synopsis_ch": 10,
+      "topic_he": "טראומה והפרעות דחק",
+      "pages": 31,
+      "curriculum": [
+        47,
+        49,
+        50
+      ]
+    },
+    {
+      "file": "synopsis-11-dissociative.pdf",
+      "ref": "11",
+      "synopsis_ch": 11,
+      "topic_he": "הפרעות דיסוציאטיביות",
+      "pages": 40,
+      "curriculum": [
+        53
+      ]
+    },
+    {
+      "file": "synopsis-12-somatic.pdf",
+      "ref": "12",
+      "synopsis_ch": 12,
+      "topic_he": "הפרעות סומטיות וקשורות",
+      "pages": 55,
+      "curriculum": [
+        54
+      ]
+    },
+    {
+      "file": "synopsis-19-personality.pdf",
+      "ref": "19",
+      "synopsis_ch": 19,
+      "topic_he": "הפרעות אישיות",
+      "pages": 62,
+      "curriculum": [
+        14,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ]
+    },
+    {
+      "file": "synopsis-20-somatic-therapies.pdf",
+      "ref": "20",
+      "synopsis_ch": 22,
+      "topic_he": "טיפולים סומטיים אחרים (ECT ועוד)",
+      "pages": 49,
+      "curriculum": [
+        70
+      ]
+    },
+    {
+      "file": "synopsis-23-psychotherapy.pdf",
+      "ref": "23",
+      "synopsis_ch": 23,
+      "topic_he": "פסיכותרפיה",
+      "pages": 149,
+      "curriculum": [
+        131,
+        132,
+        133,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "file": "synopsis-32_1-development.pdf",
+      "ref": "32.1",
+      "synopsis_ch": 32,
+      "topic_he": "התפתחות תינוק, ילד ומתבגר",
+      "pages": 71,
+      "curriculum": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "file": "synopsis-33-neuroscience.pdf",
+      "ref": "33",
+      "synopsis_ch": 33,
+      "topic_he": "תרומות מדעי המוח (נוירוסיינס)",
+      "pages": 257,
+      "curriculum": [
+        3,
+        56
+      ]
+    },
+    {
+      "file": "synopsis-34_1_34_4-psychosocial-personality-theory.pdf",
+      "ref": "34.1/34.4",
+      "synopsis_ch": 34,
+      "topic_he": "מדעי ההתנהגות ותיאוריות אישיות ופסיכופתולוגיה",
+      "pages": 216,
+      "curriculum": [
+        14,
+        139,
+        140,
+        141
+      ]
+    }
+  ],
+  "by_curriculum": {
+    "1": [
+      "synopsis-1_1-adult-patient.pdf"
+    ],
+    "114": [
+      "synopsis-3_4-neurocognitive-gmc.pdf"
+    ],
+    "55": [
+      "synopsis-5-schizophrenia.pdf"
+    ],
+    "56": [
+      "synopsis-5-schizophrenia.pdf",
+      "synopsis-33-neuroscience.pdf"
+    ],
+    "57": [
+      "synopsis-5-schizophrenia.pdf"
+    ],
+    "28": [
+      "synopsis-7-depressive.pdf"
+    ],
+    "32": [
+      "synopsis-7-depressive.pdf"
+    ],
+    "43": [
+      "synopsis-9-ocd.pdf"
+    ],
+    "47": [
+      "synopsis-10-trauma.pdf"
+    ],
+    "49": [
+      "synopsis-10-trauma.pdf"
+    ],
+    "50": [
+      "synopsis-10-trauma.pdf"
+    ],
+    "53": [
+      "synopsis-11-dissociative.pdf"
+    ],
+    "54": [
+      "synopsis-12-somatic.pdf"
+    ],
+    "14": [
+      "synopsis-19-personality.pdf",
+      "synopsis-34_1_34_4-psychosocial-personality-theory.pdf"
+    ],
+    "91": [
+      "synopsis-19-personality.pdf"
+    ],
+    "92": [
+      "synopsis-19-personality.pdf"
+    ],
+    "93": [
+      "synopsis-19-personality.pdf"
+    ],
+    "94": [
+      "synopsis-19-personality.pdf"
+    ],
+    "95": [
+      "synopsis-19-personality.pdf"
+    ],
+    "96": [
+      "synopsis-19-personality.pdf"
+    ],
+    "97": [
+      "synopsis-19-personality.pdf"
+    ],
+    "98": [
+      "synopsis-19-personality.pdf"
+    ],
+    "99": [
+      "synopsis-19-personality.pdf"
+    ],
+    "100": [
+      "synopsis-19-personality.pdf"
+    ],
+    "101": [
+      "synopsis-19-personality.pdf"
+    ],
+    "70": [
+      "synopsis-20-somatic-therapies.pdf"
+    ],
+    "131": [
+      "synopsis-23-psychotherapy.pdf"
+    ],
+    "132": [
+      "synopsis-23-psychotherapy.pdf"
+    ],
+    "133": [
+      "synopsis-23-psychotherapy.pdf"
+    ],
+    "139": [
+      "synopsis-23-psychotherapy.pdf",
+      "synopsis-34_1_34_4-psychosocial-personality-theory.pdf"
+    ],
+    "140": [
+      "synopsis-23-psychotherapy.pdf",
+      "synopsis-34_1_34_4-psychosocial-personality-theory.pdf"
+    ],
+    "141": [
+      "synopsis-23-psychotherapy.pdf",
+      "synopsis-34_1_34_4-psychosocial-personality-theory.pdf"
+    ],
+    "8": [
+      "synopsis-32_1-development.pdf"
+    ],
+    "9": [
+      "synopsis-32_1-development.pdf"
+    ],
+    "10": [
+      "synopsis-32_1-development.pdf"
+    ],
+    "11": [
+      "synopsis-32_1-development.pdf"
+    ],
+    "12": [
+      "synopsis-32_1-development.pdf"
+    ],
+    "13": [
+      "synopsis-32_1-development.pdf"
+    ],
+    "3": [
+      "synopsis-33-neuroscience.pdf"
+    ]
+  },
+  "combined": "synopsis-required-all.pdf"
+}

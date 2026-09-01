@@ -35,6 +35,9 @@ DAYS = {d["index"]: d for d in json.loads(
 _rg_path = REPO / "schedule" / "reading_guide.json"
 READING = (json.loads(_rg_path.read_text(encoding="utf-8"))["chapters"]
            if _rg_path.exists() else {})
+_wq_path = REPO / "schedule" / "weekly_questions.json"
+QUESTIONS = (json.loads(_wq_path.read_text(encoding="utf-8"))["weeks"]
+             if _wq_path.exists() else [])
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else REPO / "schedule" / "study_calendar.xlsx"
 
 FONT = "Arial"
@@ -185,14 +188,48 @@ def build_chapters(ws):
     dv.add(f"{done_col}{first}:{done_col}{last}")
 
 
+def build_questions(ws):
+    ws.sheet_view.rightToLeft = True
+    kind_he = {"vignette": "וינייטה", "discussion": "דיון"}
+    headers = ["שבוע", "#", "סוג", "שאלה", "תת-שאלות", "נקודות מפתח לתשובה", "מקור"]
+    ws.append(headers)
+    style_header(ws, 1, len(headers))
+
+    top = Alignment(horizontal="right", vertical="top", wrap_text=True)
+    for wk in QUESTIONS:
+        for i, it in enumerate(wk["items"], start=1):
+            sub = "\n".join(f"• {s}" for s in it.get("sub", []))
+            pts = "\n".join(f"◾ {p}" for p in it.get("points", []))
+            ws.append([wk["week"], i, kind_he.get(it["type"], it["type"]),
+                       it["stem"], sub, pts, it.get("source", "")])
+            r = ws.max_row
+            fill = LEARN if wk["week"] % 2 else "FFFFFF"
+            for c in range(1, len(headers) + 1):
+                cell = ws.cell(row=r, column=c)
+                cell.font = CFONT
+                cell.border = BORDER
+                cell.alignment = CENTER if c in (1, 2, 3) else top
+                if c in (1, 2, 3):
+                    cell.fill = PatternFill("solid", fgColor=fill)
+                if c == 6:  # model-answer points
+                    cell.font = Font(name=FONT, size=10, color="1F4E3D")
+
+    widths = [6, 4, 10, 46, 40, 56, 22]
+    for i, w in enumerate(widths, start=1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    ws.freeze_panes = "A2"
+
+
 def main() -> int:
     wb = Workbook()
     ws1 = wb.active
     ws1.title = "לוח שבועי"
     build_weekly(ws1)
     build_chapters(wb.create_sheet("פירוט פרקים"))
+    if QUESTIONS:
+        build_questions(wb.create_sheet("שאלות תרגול"))
     wb.save(OUT)
-    print(f"Wrote {OUT}")
+    print(f"Wrote {OUT}  ({sum(len(w['items']) for w in QUESTIONS)} exam-style items)")
     return 0
 
 
