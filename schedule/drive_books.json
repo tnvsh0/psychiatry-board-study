@@ -37,7 +37,7 @@
     "drive_title": "KaplanSynopsis_part",
     "enabled": true,
     "page_space": "none",
-    "note": "Attached as thirds of a 3,768-page book. NotebookLM refuses the whole file — `error` during indexing, no reason given, on two accounts and two uploads — and the largest book that DOES index is Dulcan at 1,677 pages. At 1,256 each the parts go through, verified. `source add` takes the local file, so nothing needs to reach Drive. The edition carries NO printed folios (0 of 7 sampled pages), which is why it is cited by chapter and why splitting cannot shift a page number.",
+    "note": "Three Drive parts of a 3,768-page book. NotebookLM refuses the whole file — `error` during indexing, no reason given, reproduced on two accounts and two uploads — and the largest book that DOES index is Dulcan at 1,677 pages. At ~1,256 each the parts index, verified. THE SPLIT IS BY PAGE COUNT, NOT BY TOPIC: the seams fall at pages 1256 and 2512 and both cut mid-sentence, one of them 235 pages from the nearest chapter start. That is tolerable only because every notebook gets ALL THREE parts, so no content is ever absent — do not add per-chapter part selection without re-cutting on the 48 chapter bookmarks first. The edition has NO printed folios (0 of 7 sampled pages), so it is cited by chapter and splitting cannot shift a page number.",
     "drive_parts": [
       "1oiAlJ-yUSwWiKOrNtXyicBpu6pMMPBtR",
       "1W2WhBnlSrHBD0bI7HztI4LK7lnKe0zM7",
