@@ -1,11 +1,12 @@
 {
-  "_note": "Chapter-level reading pointers derived from book_map.json via a hand-built curriculum->book-chapter map. Not the per-subtopic page refs that NotebookLM produces per generated chapter — those supersede these once a chapter's study guide exists. DSM cited by diagnostic class; Synopsis by chapter (unpaginated edition).",
+  "_note": "Chapter-level reading pointers derived from book_map.json via a hand-built curriculum->book-chapter map. Not the per-subtopic page refs that NotebookLM produces per generated chapter — those supersede these once a chapter's study guide exists. DSM cited by diagnostic class; Synopsis by chapter (unpaginated edition). Synopsis refs marked '(ספרות מחייבת)' and the 'חוקים' entry come from the official Stage-A required-literature list (P024-2026), see schedule/required_literature.json.",
   "chapters": {
     "1": {
       "title_he": "בדיקת ילד ומתבגר",
       "phase": 1,
       "reading": {
-        "Dulcan": "פרק 1+4+5, עמ' 3-16, 59-90"
+        "Dulcan": "פרק 1+4+5, עמ' 3-16, 59-90",
+        "Synopsis": "פרק 1 (ספרות מחייבת)"
       }
     },
     "2": {
@@ -22,6 +23,7 @@
       "phase": 1,
       "reading": {
         "Stahl Essential": "פרק 1+2, עמ' 1-50",
+        "Synopsis": "פרק 33 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 281-282"
       }
     },
@@ -62,6 +64,7 @@
       "phase": 1,
       "reading": {
         "Dulcan": "פרק 2, עמ' 17-38",
+        "Synopsis": "פרק 32 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 300, 304-307"
       }
     },
@@ -70,6 +73,7 @@
       "phase": 1,
       "reading": {
         "Dulcan": "פרק 3, עמ' 39-58",
+        "Synopsis": "פרק 32 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 302-307"
       }
     },
@@ -78,6 +82,7 @@
       "phase": 1,
       "reading": {
         "Dulcan": "פרק 4, עמ' 59-74",
+        "Synopsis": "פרק 32 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 302-303"
       }
     },
@@ -85,7 +90,8 @@
       "title_he": "התפתחות נורמטיבית: גיל ההתבגרות (13-18)",
       "phase": 1,
       "reading": {
-        "Dulcan": "פרק 5, עמ' 75-90"
+        "Dulcan": "פרק 5, עמ' 75-90",
+        "Synopsis": "פרק 32 (ספרות מחייבת)"
       }
     },
     "12": {
@@ -93,7 +99,7 @@
       "phase": 1,
       "reading": {
         "Dulcan": "פרק 2, עמ' 17-38",
-        "Synopsis": "פרק 32",
+        "Synopsis": "פרק 32 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 275-277, 304-307",
         "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
       }
@@ -102,7 +108,7 @@
       "title_he": "טמפרמנט",
       "phase": 1,
       "reading": {
-        "Synopsis": "פרק 32",
+        "Synopsis": "פרק 32 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 301",
         "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
       }
@@ -112,7 +118,7 @@
       "phase": 1,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19, 34 (ספרות מחייבת)"
       }
     },
     "15": {
@@ -237,6 +243,7 @@
         "Dulcan": "פרק 13, עמ' 245-278",
         "DSM-5-TR": "Depressive, עמ' 177-214",
         "Stahl Essential": "פרק 6+7, עמ' 244-358",
+        "Synopsis": "פרק 7 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 4-15"
       }
     },
@@ -276,6 +283,7 @@
       "reading": {
         "Dulcan": "פרק 13, עמ' 245-278",
         "DSM-5-TR": "Depressive, עמ' 177-214",
+        "Synopsis": "פרק 7 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 4-15, 21-22"
       }
     },
@@ -379,6 +387,7 @@
         "Dulcan": "פרק 17, עמ' 365-388",
         "DSM-5-TR": "Obsessive-Compulsive, עמ' 263-294",
         "Stahl Essential": "פרק 13, עמ' 538-578",
+        "Synopsis": "פרק 9 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 84-89"
       }
     },
@@ -416,6 +425,7 @@
         "Dulcan": "פרק 16, עמ' 345-364",
         "DSM-5-TR": "Trauma, עמ' 295-328",
         "Stahl Essential": "פרק 8, עמ' 359-378",
+        "Synopsis": "פרק 10 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 100-108"
       }
     },
@@ -434,6 +444,7 @@
       "reading": {
         "Dulcan": "פרק 16, עמ' 345-364",
         "DSM-5-TR": "Trauma, עמ' 295-328",
+        "Synopsis": "פרק 10 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 95-99"
       }
     },
@@ -443,6 +454,7 @@
       "reading": {
         "Dulcan": "פרק 16, עמ' 345-364",
         "DSM-5-TR": "Trauma, עמ' 295-328",
+        "Synopsis": "פרק 10 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 95-96"
       }
     },
@@ -467,7 +479,7 @@
       "phase": 4,
       "reading": {
         "DSM-5-TR": "Dissociative, עמ' 329-348",
-        "Synopsis": "פרק 11",
+        "Synopsis": "פרק 11 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 217-221"
       }
     },
@@ -476,7 +488,7 @@
       "phase": 4,
       "reading": {
         "DSM-5-TR": "Somatic Symptom, עמ' 349-370",
-        "Synopsis": "פרק 12"
+        "Synopsis": "פרק 12 (ספרות מחייבת)"
       }
     },
     "55": {
@@ -486,6 +498,7 @@
         "Dulcan": "פרק 18, עמ' 389-410",
         "DSM-5-TR": "Schizophrenia Spectrum, עמ' 101-138",
         "Stahl Essential": "פרק 4, עמ' 77-158",
+        "Synopsis": "פרק 5 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 65-71"
       }
     },
@@ -495,6 +508,7 @@
       "reading": {
         "Dulcan": "פרק 18, עמ' 389-410",
         "Stahl Essential": "פרק 4, עמ' 77-158",
+        "Synopsis": "פרק 5, 33 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 65-71, 283-285"
       }
     },
@@ -504,6 +518,7 @@
       "reading": {
         "Dulcan": "פרק 18, עמ' 389-410",
         "DSM-5-TR": "Schizophrenia Spectrum, עמ' 101-138",
+        "Synopsis": "פרק 5 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 72-75"
       }
     },
@@ -625,7 +640,7 @@
       "title_he": "ECT וטיפולים סומטיים אחרים",
       "phase": 5,
       "reading": {
-        "Synopsis": "פרק 22",
+        "Synopsis": "פרק 22 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 35-36",
         "note": "ECT — Synopsis פרק 22; אין פרק ייעודי ב-Dulcan"
       }
@@ -817,7 +832,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "92": {
@@ -825,7 +840,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "93": {
@@ -833,7 +848,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "94": {
@@ -841,7 +856,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19",
+        "Synopsis": "פרק 19 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 203-207"
       }
     },
@@ -849,7 +864,7 @@
       "title_he": "טיפול ב-BPD: DBT",
       "phase": 8,
       "reading": {
-        "Synopsis": "פרק 19, 23",
+        "Synopsis": "פרק 19, 23 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 203-207",
         "note": "טיפול DBT ב-BPD — Synopsis; אין פרק ייעודי ב-Dulcan"
       }
@@ -860,7 +875,7 @@
       "reading": {
         "Dulcan": "פרק 11, עמ' 197-220",
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19",
+        "Synopsis": "פרק 19 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 42-44"
       }
     },
@@ -869,7 +884,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "98": {
@@ -877,7 +892,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "99": {
@@ -885,7 +900,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "100": {
@@ -893,7 +908,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "101": {
@@ -901,7 +916,7 @@
       "phase": 8,
       "reading": {
         "DSM-5-TR": "Personality Disorders, עמ' 733-778",
-        "Synopsis": "פרק 19"
+        "Synopsis": "פרק 19 (ספרות מחייבת)"
       }
     },
     "102": {
@@ -919,6 +934,7 @@
       "reading": {
         "Dulcan": "פרק 31, עמ' 637-652",
         "כרטיסיות": "עמ' 222-224",
+        "חוקים": "חוק זכויות החולה התשנ\"ו-1996 · חוק טיפול בחולי נפש התשנ\"א-1991 · חוק הנוער (טיפול והשגחה) התש\"ך-1960 · חוק הכשרות המשפטית והאפוטרופסות התשכ\"ב-1962 · חוק העונשין — סימן ו'1: פגיעה בקטינים ובחסרי ישע (\"תיקון 26\", 1989) התשל\"ז-1977",
         "note": "הדין הישראלי — חקיקה מקומית; לא מכוסה בספרי הלימוד"
       }
     },
@@ -1008,7 +1024,7 @@
       "reading": {
         "DSM-5-TR": "Neurocognitive, עמ' 667-732",
         "Stahl Essential": "פרק 12, עמ' 486-537",
-        "Synopsis": "פרק 3"
+        "Synopsis": "פרק 3 (ספרות מחייבת)"
       }
     },
     "115": {
@@ -1147,7 +1163,7 @@
       "phase": 9,
       "reading": {
         "Dulcan": "פרק 38, עמ' 847-872",
-        "Synopsis": "פרק 23",
+        "Synopsis": "פרק 23 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 225-236"
       }
     },
@@ -1156,7 +1172,7 @@
       "phase": 10,
       "reading": {
         "Dulcan": "פרק 43, עמ' 967-984",
-        "Synopsis": "פרק 23",
+        "Synopsis": "פרק 23 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 278-280"
       }
     },
@@ -1164,7 +1180,7 @@
       "title_he": "DBT — תיאוריה ופרקטיקה",
       "phase": 10,
       "reading": {
-        "Synopsis": "פרק 23",
+        "Synopsis": "פרק 23 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 203-207, 225-236",
         "note": "DBT — Synopsis פרק 23; אין פרק ייעודי ב-Dulcan"
       }
@@ -1212,7 +1228,7 @@
       "phase": 10,
       "reading": {
         "Dulcan": "פרק 38, עמ' 847-872",
-        "Synopsis": "פרק 23",
+        "Synopsis": "פרק 23, 34 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 243-265"
       }
     },
@@ -1221,7 +1237,7 @@
       "phase": 10,
       "reading": {
         "Dulcan": "פרק 38, עמ' 847-872",
-        "Synopsis": "פרק 23",
+        "Synopsis": "פרק 23, 34 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 253-261",
         "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
       }
@@ -1230,7 +1246,7 @@
       "title_he": "תיאורטיקנים נוספים: אריקסון, ביון, אוגדן, לאקאן, שפיץ, שטרן וההתייחסותיים",
       "phase": 10,
       "reading": {
-        "Synopsis": "פרק 23",
+        "Synopsis": "פרק 23, 34 (ספרות מחייבת)",
         "כרטיסיות": "עמ' 266-277",
         "note": "תיאוריה — מהכרטיסיות ומ-Synopsis; אין פרק ייעודי ב-Dulcan"
       }

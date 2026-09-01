@@ -36,6 +36,28 @@ BOOK_MAP = json.loads((REPO / "schedule" / "book_map.json").read_text(encoding="
 DAYS = json.loads((REPO / "schedule" / "schedule.json").read_text(encoding="utf-8"))["days"]
 OUT = REPO / "schedule" / "reading_guide.json"
 
+# The two Stahl books were renamed to StahlNeuro/StahlKids in the map builders so
+# the pipeline can never write bare "Stahl", but book_map.json may still carry
+# the older "Stahl Essential"/"Stahl C&A" keys until it is rebuilt. Resolve to
+# whichever the map actually holds, and keep the learner-facing label readable.
+SE_KEY = "StahlNeuro" if "StahlNeuro" in BOOK_MAP else "Stahl Essential"
+CA_KEY = "StahlKids" if "StahlKids" in BOOK_MAP else "Stahl C&A"
+SE_LABEL, CA_LABEL = "Stahl Essential", "Stahl C&A"
+
+# The official Stage-A required-literature list (P024-2026). It is authoritative
+# about which topics the examiners consider under-covered by Dulcan and want
+# supplemented from Synopsis, and about the exact statutes to study. Its Synopsis
+# assignments are merged into each chapter's refs and marked "(ספרות מחייבת)";
+# its law list is attached to the law chapter. See schedule/required_literature.json.
+_REQ_PATH = REPO / "schedule" / "required_literature.json"
+_REQ = json.loads(_REQ_PATH.read_text(encoding="utf-8")) if _REQ_PATH.exists() else {}
+REQ_SYN: dict[int, set[int]] = {}
+for _s in _REQ.get("synopsis_supplements", []):
+    for _c in _s["curriculum"]:
+        REQ_SYN.setdefault(_c, set()).add(_s["synopsis_ch"])
+REQ_LAWS = _REQ.get("laws", [])
+LAW_CHAPTER = _REQ.get("law_curriculum_chapter")
+
 # ── correspondence: curriculum index -> book chapters ────────────────────────
 # D  = Dulcan chapter numbers        SE = Stahl Essential chapter numbers
 # CA = Stahl C&A monograph numbers   DSM = DSM-5-TR class-title prefixes
@@ -275,7 +297,7 @@ def dsm_pages(prefix: str):
 
 def ca_titles() -> dict[int, str]:
     out = {}
-    for c in BOOK_MAP["Stahl C&A"]["chapters"]:
+    for c in BOOK_MAP[CA_KEY]["chapters"]:
         n = leading_num(c["title"])
         if n is not None:
             out[n] = c["title"].split(None, 1)[1] if " " in c["title"] else c["title"]
@@ -283,7 +305,7 @@ def ca_titles() -> dict[int, str]:
 
 
 def main() -> int:
-    dul, se, ca = num_index("Dulcan"), num_index("StahlNeuro"), num_index("StahlKids")
+    dul, se, ca = num_index("Dulcan"), num_index(SE_KEY), num_index(CA_KEY)
     ca_name = ca_titles()
 
     missing = [d["index"] for d in DAYS if d["index"] not in MAP]
@@ -311,16 +333,25 @@ def main() -> int:
             rs = [se[n] for n in m["SE"] if n in se]
             chs = "+".join(str(n) for n in m["SE"])
             if rs:
-                entry["StahlNeuro"] = f"פרק {chs}, עמ' {merge_pages(rs)}"
+                entry[SE_LABEL] = f"פרק {chs}, עמ' {merge_pages(rs)}"
         if m.get("CA"):
             drugs = ", ".join(ca_name.get(n, str(n)) for n in m["CA"])
             rs = [ca[n] for n in m["CA"] if n in ca]
             if rs:
-                entry["StahlKids"] = f"{drugs} (עמ' {merge_pages(rs)})"
-        if m.get("SYN"):
-            entry["Synopsis"] = "פרק " + ", ".join(str(n) for n in m["SYN"])
+                entry[CA_LABEL] = f"{drugs} (עמ' {merge_pages(rs)})"
+        # Union the derived Synopsis refs with the official required-literature
+        # ones; when a chapter carries a required ref, say so, since that reading
+        # is mandated by the examiners rather than merely suggested by us.
+        syn = set(m.get("SYN", [])) | REQ_SYN.get(idx, set())
+        if syn:
+            line = "פרק " + ", ".join(str(n) for n in sorted(syn))
+            if REQ_SYN.get(idx):
+                line += " (ספרות מחייבת)"
+            entry["Synopsis"] = line
         if idx in FC_MAP:
             entry["כרטיסיות"] = "עמ' " + merge_pages(FC_MAP[idx])
+        if idx == LAW_CHAPTER and REQ_LAWS:
+            entry["חוקים"] = " · ".join(f"{law['name_he']} {law['year']}" for law in REQ_LAWS)
         if m.get("note"):
             entry["note"] = m["note"]
 
@@ -335,11 +366,14 @@ def main() -> int:
                   "hand-built curriculum->book-chapter map. Not the per-subtopic page "
                   "refs that NotebookLM produces per generated chapter — those "
                   "supersede these once a chapter's study guide exists. DSM cited by "
-                  "diagnostic class; Synopsis by chapter (unpaginated edition)."),
+                  "diagnostic class; Synopsis by chapter (unpaginated edition). "
+                  "Synopsis refs marked '(ספרות מחייבת)' and the 'חוקים' entry come "
+                  "from the official Stage-A required-literature list (P024-2026), "
+                  "see schedule/required_literature.json."),
         "chapters": guide,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    BOOKS = {"Dulcan", "DSM-5-TR", "Stahl Essential", "Stahl C&A", "Synopsis"}
+    BOOKS = {"Dulcan", "DSM-5-TR", SE_LABEL, CA_LABEL, "Synopsis"}
     textbook = sum(1 for g in guide.values() if BOOKS & set(g["reading"]))
     fc_only = sum(1 for g in guide.values()
                   if not (BOOKS & set(g["reading"])) and "כרטיסיות" in g["reading"])

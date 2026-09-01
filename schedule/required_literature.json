@@ -1,0 +1,33 @@
+{
+  "_note": "רשימת הספרות המחייבת לבחינת ההתמחות שלב א' (מסמך P024-2026) בפסיכיאטריה של הילד והמתבגר, בתוקף מ-2027. אמנם זו בחינת שלב א', אך היא האינדיקציה הרשמית לנושאים שהבוחנים רואים כלא-מכוסים דיים ב-Dulcan ומצריכים השלמה מ-Synopsis (Kaplan & Sadock, מהדורה 12), ולרשימת החוקים המחייבים. מוזרק ל-reading_guide.json ע\"י build_reading_guide.py ומסומן שם כ'ספרות מחייבת'.",
+  "source": "P024-2026 — ספרות מחייבת לבחינת התמחות שלב א', פסיכיאטריה של הילד והמתבגר",
+  "textbooks": [
+    "Dulcan's Textbook of Child and Adolescent Psychiatry, 3rd ed.",
+    "DSM-5, ICD-11, DC:0-5",
+    "Kaplan & Sadock's Synopsis of Psychiatry, 12th ed. (פרקים נבחרים בלבד — ראה להלן)"
+  ],
+  "synopsis_supplements": [
+    {"synopsis_ch": 1,  "ref": "1.1",  "topic_he": "המטופל המבוגר (ראיון ובדיקה)", "curriculum": [1]},
+    {"synopsis_ch": 3,  "ref": "3.4",  "topic_he": "הפרעות נוירוקוגניטיביות ופסיכיאטריות עקב מצב רפואי כללי", "curriculum": [114]},
+    {"synopsis_ch": 5,  "ref": "5",    "topic_he": "ספקטרום הסכיזופרניה והפרעות פסיכוטיות", "curriculum": [55, 56, 57]},
+    {"synopsis_ch": 7,  "ref": "7",    "topic_he": "הפרעות דיכאון", "curriculum": [28, 32]},
+    {"synopsis_ch": 9,  "ref": "9",    "topic_he": "OCD והפרעות קשורות", "curriculum": [43]},
+    {"synopsis_ch": 10, "ref": "10",   "topic_he": "טראומה והפרעות דחק", "curriculum": [47, 49, 50]},
+    {"synopsis_ch": 11, "ref": "11",   "topic_he": "הפרעות דיסוציאטיביות", "curriculum": [53]},
+    {"synopsis_ch": 12, "ref": "12",   "topic_he": "הפרעות סומטיות וקשורות", "curriculum": [54]},
+    {"synopsis_ch": 19, "ref": "19",   "topic_he": "הפרעות אישיות", "curriculum": [14, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101]},
+    {"synopsis_ch": 22, "ref": "20",   "topic_he": "טיפולים סומטיים אחרים (ECT ועוד)", "curriculum": [70]},
+    {"synopsis_ch": 23, "ref": "23",   "topic_he": "פסיכותרפיה", "curriculum": [131, 132, 133, 139, 140, 141]},
+    {"synopsis_ch": 32, "ref": "32.1", "topic_he": "התפתחות תינוק, ילד ומתבגר", "curriculum": [8, 9, 10, 11, 12, 13]},
+    {"synopsis_ch": 33, "ref": "33",   "topic_he": "תרומות מדעי המוח (נוירוסיינס)", "curriculum": [3, 56]},
+    {"synopsis_ch": 34, "ref": "34.1/34.4", "topic_he": "מדעי ההתנהגות ותיאוריות אישיות ופסיכופתולוגיה", "curriculum": [14, 139, 140, 141]}
+  ],
+  "law_curriculum_chapter": 103,
+  "laws": [
+    {"name_he": "חוק זכויות החולה", "year": "התשנ\"ו-1996", "url": "https://www.nevo.co.il/law_html/law00/71833.htm"},
+    {"name_he": "חוק טיפול בחולי נפש", "year": "התשנ\"א-1991", "url": "https://www.nevo.co.il/law_html/law00/70314.htm"},
+    {"name_he": "חוק הנוער (טיפול והשגחה)", "year": "התש\"ך-1960", "url": "https://www.nevo.co.il/law_html/law00/70347.htm"},
+    {"name_he": "חוק הכשרות המשפטית והאפוטרופסות", "year": "התשכ\"ב-1962", "url": "https://www.nevo.co.il/law_html/law00/70325.htm"},
+    {"name_he": "חוק העונשין — סימן ו'1: פגיעה בקטינים ובחסרי ישע (\"תיקון 26\", 1989)", "year": "התשל\"ז-1977", "url": "https://www.nevo.co.il/law_html/law00/70301.htm"}
+  ]
+}
