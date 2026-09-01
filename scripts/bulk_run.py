@@ -83,11 +83,20 @@ def released(tag: str) -> bool:
     GH_REPO - so an override, or a run started from elsewhere, would have the
     two halves asking about different repositories and never agreeing.
     """
+    # A DRAFT counts as existing to `gh release view`, which returns 0 for it.
+    # A peer project had five QC-rejected episodes sit unpublished since July
+    # because its sweep asked whether the release existed rather than whether
+    # it was published, and walked past them every week. Ask for the state.
     r = subprocess.run(["gh", "release", "view", tag, "--repo", GH_REPO,
-                        "--json", "tagName"],
+                        "--json", "tagName,isDraft"],
                        capture_output=True, text=True, encoding="utf-8",
                        errors="replace", timeout=60)
-    return r.returncode == 0
+    if r.returncode != 0:
+        return False
+    try:
+        return not json.loads(r.stdout).get("isDraft", False)
+    except Exception:               # noqa: BLE001 — unparseable is not proof
+        return False
 
 
 def sweep_local(day_index: int) -> int:

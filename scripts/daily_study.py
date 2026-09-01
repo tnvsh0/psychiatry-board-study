@@ -1211,6 +1211,89 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
         books = {k: v for k, v in books.items() if k in only}
     attached = {}
     for label, meta in books.items():
+        # A book may live on disk instead of in Drive. The Synopsis has to:
+        # at 3,768 pages NotebookLM refuses to index it, silently, with no
+        # reason given — and the largest book that DOES index is Dulcan at
+        # 1,677. Split into three parts of 1,256 it goes through, and
+        # `source add` takes the local file directly, so nothing needs
+        # uploading to Drive at all.
+        # A book may be several files. The Synopsis has to be: at 3,768 pages
+        # NotebookLM refuses to index it — `error`, no reason given, on two
+        # accounts and two uploads — while the largest book that DOES index is
+        # Dulcan at 1,677. In thirds it goes through.
+        drive_parts = meta.get("drive_parts") or []
+        if drive_parts:
+            ids = []
+            for i, fid in enumerate(drive_parts, 1):
+                title = f"{label} ({i}/{len(drive_parts)})"
+                rp = nb_run(["source", "add-drive", fid, title, "-n", nb_id,
+                             "--mime-type", "pdf", "--json"], timeout=300)
+                sid = None
+                if rp.returncode == 0:
+                    try:
+                        sp = (json.loads(rp.stdout[rp.stdout.index("{"):])
+                              .get("source") or {})
+                        if sp.get("type") == "pdf" and sp.get("drive_file_id"):
+                            sid = sp.get("id")
+                    except Exception:
+                        pass
+                if sid:
+                    ids.append(sid)
+                else:
+                    print(f"    [!!] {label} part {i}: not attached")
+            got = len(ids)
+            # ALL OR NOTHING. Registering the parts that did land would let a
+            # two-thirds-missing Synopsis count as the book being present —
+            # the caller only checks that every book is represented, and the
+            # prompt would go on naming a source the notebook mostly lacks,
+            # which is the arrangement that makes NotebookLM invent citations.
+            if got == len(drive_parts):
+                for sid in ids:
+                    attached[sid] = label
+            # Every part, or the book does not count. A half-attached textbook
+            # is the worst case: the prompt names it, the notebook holds some
+            # of it, and the gap is invisible to every check downstream.
+            print(f"    [{'OK' if got == len(drive_parts) else '!!'}] {label} "
+                  f"({got}/{len(drive_parts)} parts)")
+            continue
+
+        parts = meta.get("local_parts") or ([meta["local_path"]]
+                                            if meta.get("local_path") else [])
+        if parts:
+            # ONE BOOK, SEVERAL FILES. The Synopsis is 3,768 pages and
+            # NotebookLM will not index it — `error`, no reason given, on two
+            # accounts and two uploads — while the largest book that does index
+            # is Dulcan at 1,677. In thirds it goes through. `source add` takes
+            # the local file, so none of this has to reach Drive.
+            got = 0
+            for i, rel in enumerate(parts, 1):
+                path = rel if os.path.isabs(rel) else str(REPO_ROOT / rel)
+                if not os.path.exists(path):
+                    print(f"    [!!] {label} part {i}: missing at {path}")
+                    continue
+                title = label if len(parts) == 1 else f"{label} ({i}/{len(parts)})"
+                rp = nb_run(["source", "add", path, "--title", title,
+                             "--mime-type", "application/pdf",
+                             "-n", nb_id, "--json"], timeout=900)
+                sid = None
+                if rp.returncode == 0:
+                    try:
+                        sid = (json.loads(rp.stdout[rp.stdout.index("{"):])
+                               .get("source") or {}).get("id")
+                    except Exception:
+                        pass
+                if sid:
+                    attached[sid] = label
+                    got += 1
+                else:
+                    print(f"    [!!] {label} part {i}: not attached")
+            # A part-attached book counts as present only if EVERY part landed.
+            # A half-attached textbook is the worst case: the prompt names it,
+            # the notebook has some of it, and the gap is invisible.
+            print(f"    [{'OK' if got == len(parts) else '!!'}] {label} "
+                  f"({got}/{len(parts)} parts)")
+            continue
+
         r = nb_run(["source", "add-drive", meta["drive_file_id"], label,
                     "-n", nb_id, "--mime-type", "pdf", "--json"], timeout=300)
         ok = False
@@ -1220,6 +1303,11 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
                 src = data.get("source") or {}
                 # A real Drive PDF has type "pdf" and a drive_file_id. A source
                 # that came back as a web_page is the login-page failure above.
+                # A local upload has no drive_file_id, and demanding one
+                # would reject the very books that can only be attached that
+                # way. The failure this check exists to catch — a Drive URL
+                # ingested as a web page of "Sign in to continue" — cannot
+                # happen on an upload, so type alone is the right test there.
                 ok = src.get("type") == "pdf" and bool(src.get("drive_file_id"))
                 if not ok:
                     print(f"    [!!] {label}: attached as {src.get('type')!r}, "
@@ -1240,15 +1328,53 @@ def add_textbook_pdfs_to_day_notebook(nb_id, only=None):
             # rather than compensated for downstream. It is best-effort: a
             # source that keeps its Drive name still works, because
             # _names_book still accepts the filename.
-            try:
-                rn = nb_run(["source", "rename", src.get("id"), label,
-                             "-n", nb_id], timeout=120)
-                renamed = rn.returncode == 0
-            except Exception:       # noqa: BLE001 — cosmetic, never fatal
-                renamed = False
-            print(f"    [OK] {label}" + ("" if renamed else "  (kept its Drive name)"))
+            print(f"    [OK] {label}")
             attached[src.get("id")] = label
     return attached
+
+
+def rename_sources_to_labels(nb_id, attached):
+    """Retitle each source to our label — AFTER indexing, not before.
+
+    Renaming right after attaching looks like it works and does not: the title
+    survives until indexing finishes, and NotebookLM then overwrites it with
+    the Drive FILENAME. My first version did exactly that, and the test that
+    passed was run against a source that was already `ready`, so it measured
+    the one condition under which the bug cannot appear.
+
+    Why bother: _names_book below has to recognise a book from distinctive
+    words in its filename, behind a hardcoded stopword list, purely because the
+    notebook does not call the books what we call them. Getting the titles
+    right removes the reason that function exists.
+
+    Best-effort — a source that keeps its Drive name still works.
+    """
+    done, bad = 0, []
+    for sid, label in (attached or {}).items():
+        try:
+            # ASSERT ON THE STATE, NOT THE ATTACH. `source wait` exits 0=ready,
+            # 1=failed, 2=timeout, and the first version of this threw that
+            # away — which is precisely the Kaplan failure it was written after:
+            # add-drive returns rc=0 with type=pdf while indexing goes to
+            # `error`, so a book can be attached, absent, and reported as fine.
+            # A peer project lost a 30-minute episode to the same shape, from
+            # sources that were empty, and its QC judge passed it because a
+            # judge cannot see that there was nothing there.
+            w = nb_run(["source", "wait", sid, "-n", nb_id], timeout=900)
+            if w.returncode != 0:
+                bad.append(label)
+                continue
+            r = nb_run(["source", "rename", sid, label, "-n", nb_id], timeout=120)
+            done += (r.returncode == 0)
+        except Exception as e:      # noqa: BLE001
+            bad.append(f"{label} ({str(e)[:40]})")
+    if done:
+        print(f"    [i] retitled {done}/{len(attached)} sources to our labels")
+    if bad:
+        raise RuntimeError(
+            "these sources never reached a usable state, so the notebook does "
+            "not hold the books the prompt will name: " + ", ".join(sorted(set(bad))))
+    return done
 
 
 def _names_book(answer: str, label: str) -> bool:
@@ -2195,6 +2321,9 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                 f"not every source in {day_nb_id} finished indexing; refusing "
                 f"to extract from a notebook that cannot answer yet")
         use_notebook(day_nb_id)
+        # Retitle now, not at attach time: indexing overwrites the title with
+        # the Drive filename, so a rename issued earlier is silently undone.
+        rename_sources_to_labels(day_nb_id, attached)
         print("  Checking the notebook can answer from them...")
         if not wait_until_answerable(day_nb_id):
             raise RuntimeError(
@@ -2220,7 +2349,12 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         #    cite real pages.
         print("  Attaching textbooks from Drive...")
         attached = add_textbook_pdfs_to_day_notebook(day_nb_id)
-        n_pdfs = len(attached)
+        # COUNT BOOKS, NOT SOURCES. The Synopsis is attached as three parts, so
+        # source count stopped being a proxy for book count the moment it went
+        # in: five books plus one surviving Synopsis part is six sources and
+        # six books required, and this check would have waved it through with
+        # two thirds of a textbook missing and the prompt still naming it.
+        n_pdfs = len(set(attached.values()))
         # A book named in the prompt but absent from the notebook does not
         # raise — NotebookLM quietly invents plausible page numbers for it.
         # That already shipped once (a day-16 study guide cited "Stahl
