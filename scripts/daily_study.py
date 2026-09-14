@@ -1254,14 +1254,27 @@ def synopsis_slices_for(day_index):
     return out
 
 
-def attach_synopsis_slices(nb_id, day_index, attached):
-    """Attach this chapter's Synopsis extracts, if it has any."""
+def attach_synopsis_slices(nb_id, day_index, attached, existing=None):
+    """Attach this chapter's Synopsis extracts, if it has any.
+
+    `existing` maps a slice title to a source id already in the notebook. A
+    resumed chapter must not re-upload what is already there — that is how the
+    Kaplan attach ended up with three copies in one notebook — but it must
+    still register them in `attached`, or the index wait and the rename walk
+    straight past sources the chapter is about to cite.
+    """
     wanted = synopsis_slices_for(day_index)
     if not wanted:
         return 0
+    existing = existing or {}
     got = 0
     for path, ref, pages in wanted:
         title = f"Synopsis ch.{ref}"
+        if title in existing:
+            attached[existing[title]] = title
+            got += 1
+            print(f"    [=] {title} already attached")
+            continue
         r = nb_run(["source", "add", str(path), "--title", title,
                     "--mime-type", "application/pdf", "-n", nb_id, "--json"],
                    timeout=600)
@@ -2388,7 +2401,18 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
             if book:
                 present.add(book["label"])
                 attached[src.get("id")] = book["label"]
-        missing = [lbl for lbl in load_drive_books() if lbl not in present]
+        # A slices_only book is never attached whole — attach_synopsis_slices
+        # puts in the chapter's own extracts further down, and the label stays
+        # in the book list only so the citation rules keep naming it. Counting
+        # it as missing here asked add_textbook_pdfs_to_day_notebook for a book
+        # it is built to skip, so it returned 0 of 1 and the short-attach guard
+        # below killed the chapter. This is the path EVERY existing notebook
+        # takes, which is every resumed and every --retry-failed chapter: 23
+        # died here after its first attempt had already spent 132 minutes.
+        # The fresh-notebook check at the end of this function excludes them
+        # correctly; this one was left behind when the Synopsis moved to slices.
+        missing = [lbl for lbl, meta in load_drive_books().items()
+                   if lbl not in present and not meta.get("slices_only")]
         if missing:
             print(f"  Notebook is missing {len(missing)} book(s): "
                   f"{', '.join(missing)}. Attaching...")
@@ -2406,6 +2430,16 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
                     f"every book, and a missing one becomes invented citations.")
         else:
             print(f"  All {len(present)} textbooks already attached.")
+        # The fresh-notebook path attaches this chapter's Synopsis extracts;
+        # this one did not, so a chapter resumed against an existing notebook
+        # had the Synopsis named in its prompt and absent from its sources —
+        # the exact shape that makes NotebookLM invent page numbers. 39 of the
+        # 144 chapters require a slice. Pass what is already there so a resume
+        # registers those sources instead of uploading a second copy.
+        have_slices = {src.get("title"): src.get("id") for src in sources
+                       if (src.get("title") or "").startswith("Synopsis ch.")}
+        attach_synopsis_slices(day_nb_id, day["index"], attached,
+                               existing=have_slices)
         # Always re-check indexing, even when nothing was added: a source can
         # sit in `error` from a previous run, and that is repairable here.
         print("  Waiting for textbooks to index...")
