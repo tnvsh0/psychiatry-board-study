@@ -42,6 +42,15 @@ TIMEOUT_S = int(os.environ.get("AGY_TEXT_TIMEOUT_S", 420))
 # a wall that lasts hours, short enough to pick the work back up.
 BLIND_WAIT_S = 1200
 
+# Which model answers questions ABOUT AN IMAGE. Empty means agy's own default,
+# which is a Flash tier — and a Flash model paired with an attachment and a
+# long instruction does not fail, it returns status SUCCESS with an empty
+# response. Measured here on the chapter-33 criteria plate: the batched gate
+# came back {"response": ""} after 46.8s, while a one-line question about the
+# same image on the same default model answered correctly. A peer project saw
+# the identical split across six chapters with audio attachments.
+VISION_MODEL = os.environ.get("AGY_VISION_MODEL", "gemini-3.1-pro-high").strip()
+
 
 def ask(prompt: str, *, wait_for_quota: bool = True,
         max_wait_s: int = 6 * 3600) -> str | None:
@@ -130,11 +139,17 @@ def _ask_image_raw(image_path, question: str, *, extra: list | None = None,
     prompt = (f"Open the image file {img.name} with the view_file tool and look "
               f"at it. Do NOT run any shell command.\n\n{question}")
     exe = shutil.which("agy") or "agy"
+    # An ABSOLUTE directory. agy's shell runs in a scratch directory of its
+    # own, so a relative --add-dir names somewhere else entirely — and it does
+    # not fail, it goes looking, which a peer project watched end in a
+    # recursive scan of the whole drive that headless then auto-denied.
+    add_dir = str(img.parent.resolve())
+    model = [] if not VISION_MODEL else ["--model", VISION_MODEL]
     waited = attempts = 0
     while True:
         try:
             proc = subprocess.run(
-                [exe, "--add-dir", str(img.parent), *(extra or []),
+                [exe, "--add-dir", add_dir, *model, *(extra or []),
                  f"--print={prompt}"],
                 capture_output=True, text=True, encoding="utf-8",
                 errors="replace", timeout=TIMEOUT_S, cwd=str(img.parent))
