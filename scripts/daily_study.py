@@ -973,9 +973,18 @@ def nb_run(args, timeout=120, retries=2):
     and the peer project lost whole episodes to exactly this class of silent
     failure, so retry here rather than at every call site.
     """
-    cmd = [NOTEBOOKLM_BIN]
-    if NOTEBOOKLM_PROFILE:
-        cmd += ["-p", NOTEBOOKLM_PROFILE]
+    # The comment above this module's NOTEBOOKLM_PROFILE has warned about the
+    # empty default since it was written, and a background run dropped the
+    # variable anyway and aimed the whole queue at `default`. A warning in a
+    # comment is not a guard, so refuse here — this is the one funnel every
+    # NotebookLM call passes through, and the scripts that only render plates
+    # import this module without ever reaching it.
+    if not NOTEBOOKLM_PROFILE:
+        raise RuntimeError(
+            "NOTEBOOKLM_PROFILE is not set; an empty profile drives the "
+            "`default` account, which belongs to another project. "
+            "Set NOTEBOOKLM_PROFILE=bulk before any notebooklm call.")
+    cmd = [NOTEBOOKLM_BIN, "-p", NOTEBOOKLM_PROFILE]
     last = None
     for attempt in range(retries + 1):
         try:

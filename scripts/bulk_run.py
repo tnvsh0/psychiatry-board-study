@@ -52,7 +52,19 @@ GENERATED = ROOT / "_generated"
 
 # The same profile daily_study.py will use, so the preflight check and the work
 # cannot disagree about which account is being tested.
+#
+# Defaulting this to "" was a live hazard, not a convenience. An empty profile
+# sends every notebooklm call — including `login` — at the `default` profile,
+# which belongs to another account running other projects on this machine; a
+# login there overwrites their session. It cost nothing to notice the first
+# time only because auth_ok() stopped the run before try_relogin() fired.
+# There is no correct anonymous default, so demand one.
 PROFILE = os.environ.get("NOTEBOOKLM_PROFILE", "").strip()
+if not PROFILE:
+    raise SystemExit(
+        "NOTEBOOKLM_PROFILE is not set. Refusing to run: an empty profile\n"
+        "targets `default`, which is another account's session.\n"
+        "    NOTEBOOKLM_PROFILE=bulk python scripts/bulk_run.py")
 
 # Must be the same repo daily_study.py publishes to.
 GH_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
@@ -99,13 +111,33 @@ def released(tag: str) -> bool:
         return False
 
 
+# Kept when a chapter's artifacts are swept. facts.json is the ONLY input a
+# plate render needs, and deleting it is what stripped chapters 27-41 of the
+# ability to be drawn later: they were built with SKIP_PLATES during an image
+# lockout, released, swept, and their facts went with them. It is ~5KB against
+# a video.mp4 of 34MB, so it was never what filled the disk.
+SWEEP_KEEP = ("facts.json",)
+
+
 def sweep_local(day_index: int) -> int:
-    """Delete this chapter's local artifacts once its release exists."""
+    """Delete this chapter's local artifacts once its release exists.
+
+    Everything here also exists in the GitHub release, so the local copy is a
+    duplicate — except that a duplicate is what a later pass reads. Keep the
+    small file that makes a chapter re-renderable and delete the rest.
+    """
     d = GENERATED / f"day-{day_index:03d}"
     if not d.exists():
         return 0
-    mb = sum(f.stat().st_size for f in d.rglob("*") if f.is_file()) / (1024 * 1024)
-    shutil.rmtree(d, ignore_errors=True)
+    mb = 0.0
+    for f in sorted(d.rglob("*"), key=lambda x: -len(x.parts)):
+        if f.is_file():
+            if f.name in SWEEP_KEEP:
+                continue
+            mb += f.stat().st_size / (1024 * 1024)
+            f.unlink(missing_ok=True)
+        elif f.is_dir() and not any(f.iterdir()):
+            f.rmdir()
     return int(mb)
 
 
@@ -144,7 +176,7 @@ def auth_ok() -> tuple[bool, str]:
     this the runner would spend two hours marking all 141 chapters failed at
     45-second intervals and leave a retry list with no information in it.
     """
-    p = subprocess.run(["notebooklm"] + (["-p", PROFILE] if PROFILE else []) + ["list"],
+    p = subprocess.run(["notebooklm", "-p", PROFILE, "list"],
                        capture_output=True, text=True, encoding="utf-8",
                        errors="replace", timeout=180)
     out = (p.stdout or "") + (p.stderr or "")
@@ -152,7 +184,7 @@ def auth_ok() -> tuple[bool, str]:
         return True, ""
     if any(m in out for m in AUTH_MARKERS):
         return False, ("NotebookLM rejected the stored session. Re-authenticate:\n"
-                       f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login")
+                       f"    notebooklm -p {PROFILE} login")
     return False, f"notebooklm list failed rc={p.returncode}: {out.strip()[:200]}"
 
 
@@ -174,7 +206,7 @@ def try_relogin() -> bool:
     for attempt in range(2):
         try:
             r = subprocess.run(
-                ["notebooklm"] + (["-p", PROFILE] if PROFILE else []) + ["login"],
+                ["notebooklm", "-p", PROFILE, "login"],
                 capture_output=True, text=True, encoding="utf-8",
                 errors="replace", timeout=600)
             out = " ".join(((r.stdout or "") + " " + (r.stderr or "")).split())
