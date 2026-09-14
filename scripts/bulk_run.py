@@ -74,6 +74,11 @@ GH_REPO = os.environ.get("GH_REPO", "tnvsh0/psychiatry-board-study")
 # the hourly generation count under the ceiling the podcast project hit.
 CHAPTER_GAP_S = 45
 
+# How long a freshly minted session must survive before another re-mint is
+# allowed. Shorter than a session's real life (hours), longer than the few
+# minutes a chapter takes to die on a profile that is actually gone.
+RELOGIN_COOLDOWN_S = 20 * 60
+
 
 def load_state() -> dict:
     if STATE.exists():
@@ -334,7 +339,7 @@ def main() -> int:
     except Exception as e:
         print(f"[!] could not check Gemini health: {e}", file=sys.stderr)
 
-    n, consecutive, relogged = 0, 0, False
+    n, consecutive, last_relogin = 0, 0, 0.0
     for idx in queue:
         if a.limit and n >= a.limit:
             print(f"stopping: reached --limit {a.limit}")
@@ -388,8 +393,16 @@ def main() -> int:
         if note.startswith("AUTH ::"):
             # Recoverable without a person, as long as the browser profile is
             # intact. Retry this chapter once rather than ending the run.
-            if not relogged and try_relogin():
-                relogged = True
+            # A once-per-run latch was wrong. NotebookLM sessions expire every
+            # few hours and a full queue runs for days, so the second expiry
+            # always found the latch spent: chapter 53 died 1.5 hours after
+            # chapter 48 had used it, and the run stopped saying the session
+            # "could not be re-minted" — which was never tried. The latch was
+            # really guarding against a re-login LOOP, so guard against that
+            # instead: re-minting twice inside the cooldown means the fresh
+            # session died immediately, and that is a dead profile.
+            if time.time() - last_relogin > RELOGIN_COOLDOWN_S and try_relogin():
+                last_relogin = time.time()
                 consecutive = 0
                 st["failed"].pop(str(idx), None)
                 save_state(st)
@@ -404,9 +417,16 @@ def main() -> int:
                     continue
                 st["failed"][str(idx)] = note
                 save_state(st)
-            print(f"\n[STOP] chapter {idx} failed on authentication and it could "
-                  f"not be re-minted. Sign in and resume:\n"
-                  f"    notebooklm{' -p ' + PROFILE if PROFILE else ''} login\n"
+            # Say WHICH it was. "could not be re-minted" was printed for a
+            # chapter where the re-mint was never attempted, which sent the
+            # owner to re-authenticate a session that was already fine.
+            why = ("the re-mint did not take"
+                   if time.time() - last_relogin > RELOGIN_COOLDOWN_S
+                   else f"it was re-minted under "
+                        f"{RELOGIN_COOLDOWN_S // 60}m ago and died again")
+            print(f"\n[STOP] chapter {idx} failed on authentication and {why}. "
+                  f"Sign in and resume:\n"
+                  f"    notebooklm -p {PROFILE} login\n"
                   f"    python scripts/bulk_run.py", file=sys.stderr)
             return 2
         if consecutive >= MAX_CONSECUTIVE_FAILURES:
