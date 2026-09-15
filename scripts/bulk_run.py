@@ -417,18 +417,35 @@ def main() -> int:
                     continue
                 st["failed"][str(idx)] = note
                 save_state(st)
-            # Say WHICH it was. "could not be re-minted" was printed for a
-            # chapter where the re-mint was never attempted, which sent the
-            # owner to re-authenticate a session that was already fine.
-            why = ("the re-mint did not take"
-                   if time.time() - last_relogin > RELOGIN_COOLDOWN_S
-                   else f"it was re-minted under "
-                        f"{RELOGIN_COOLDOWN_S // 60}m ago and died again")
-            print(f"\n[STOP] chapter {idx} failed on authentication and {why}. "
-                  f"Sign in and resume:\n"
-                  f"    notebooklm -p {PROFILE} login\n"
-                  f"    python scripts/bulk_run.py", file=sys.stderr)
-            return 2
+            # Before ending the run on "the session is dead", ASK whether it
+            # is. Chapter 56 stopped a queue with 88 chapters left while a
+            # plain `list` on the same profile answered fine: the machine had
+            # slept for nine hours mid-chapter, the session expired under it,
+            # the re-mint worked, and the retry — started while the network was
+            # still coming back — failed too. Two auth failures inside the
+            # cooldown is the shape of a dead profile, but it is not proof, and
+            # the cheap read that settles it already exists.
+            alive, _ = auth_ok()
+            if not alive:
+                # Say WHICH it was. "could not be re-minted" was printed for a
+                # chapter where the re-mint was never attempted, which sent the
+                # owner to re-authenticate a session that was already fine.
+                why = ("the re-mint did not take"
+                       if time.time() - last_relogin > RELOGIN_COOLDOWN_S
+                       else f"it was re-minted under "
+                            f"{RELOGIN_COOLDOWN_S // 60}m ago and died again")
+                print(f"\n[STOP] chapter {idx} failed on authentication and "
+                      f"{why}. Sign in and resume:\n"
+                      f"    notebooklm -p {PROFILE} login\n"
+                      f"    python scripts/bulk_run.py", file=sys.stderr)
+                return 2
+            st["failed"][str(idx)] = note
+            save_state(st)
+            consecutive += 1
+            print(f"[{idx:3}] auth failed twice, but the session answers now "
+                  f"— left failed, moving on", flush=True)
+            # Falls through to the consecutive-failure guard below: if this is
+            # really systemic it will still stop the run, three chapters in.
         if consecutive >= MAX_CONSECUTIVE_FAILURES:
             print(f"\n[STOP] {consecutive} chapters failed in a row — this is "
                   f"systemic, not per-chapter. Read "
