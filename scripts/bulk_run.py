@@ -155,6 +155,22 @@ AUTH_MARKERS = ("Authentication expired or invalid",
                 "session is dead")
 MAX_CONSECUTIVE_FAILURES = 3
 
+# The machine's connection failing, as opposed to NotebookLM refusing. Seen on
+# 2026-09-15: chapters 57, 58 and 59 each died on "certificate verify failed:
+# Hostname mismatch" — something on the network path answering for Google —
+# and the three-in-a-row guard stopped a queue with 88 chapters left. By the
+# next morning both hosts verified cleanly on Google Trust Services certs and
+# the only thing needed was to start again. These wait instead of stopping.
+NETWORK_MARKERS = ("CERTIFICATE_VERIFY_FAILED",
+                   "getaddrinfo failed",
+                   "Temporary failure in name resolution",
+                   "ConnectError",
+                   "ConnectTimeout",
+                   "Network is unreachable",
+                   "No route to host")
+NETWORK_POLL_S = 10 * 60
+NETWORK_MAX_WAIT_S = 12 * 3600
+
 # NotebookLM's chat going quiet is not a chapter problem and no chapter after
 # this one will fare better. Stop the whole queue on the first sighting.
 CHAT_DOWN_MARKERS = ("ChatUnavailable", "No parseable chunks",
@@ -284,9 +300,37 @@ def run_chapter(day_index: int, log_dir: Path) -> tuple[bool, str]:
     note = f"{mins:.1f}min rc={p.returncode} :: {tail[-160:].strip()}"
     if timed_out:
         note = f"TIMEOUT after {mins:.0f}min :: " + tail[-140:].strip()
-    if p.returncode != 0 and any(m in body for m in AUTH_MARKERS):
+    if p.returncode != 0 and any(m in body for m in NETWORK_MARKERS):
+        note = "NETWORK :: " + note
+    elif p.returncode != 0 and any(m in body for m in AUTH_MARKERS):
         note = "AUTH :: " + note
     return p.returncode == 0, note
+
+
+def wait_for_network(max_wait_s: int = NETWORK_MAX_WAIT_S) -> bool:
+    """Block until NotebookLM answers again. True if it did in time.
+
+    A network fault is not a chapter fault and not an account fault: nothing
+    about the chapter needs changing, and no human needs to sign in. What it
+    needs is time. auth_ok() is the test because it is a real call on the real
+    profile — it passes only once DNS, TLS and the session all work together.
+    """
+    deadline = time.time() + max_wait_s
+    while time.time() < deadline:
+        ok, _ = auth_ok()
+        if ok:
+            return True
+        # An outage can end with the session expired under it, and auth_ok()
+        # cannot tell that apart from a network that is still down. Re-minting
+        # is silent and harmless when the network is back, and fails fast
+        # when it is not.
+        try_relogin()
+        if auth_ok()[0]:
+            return True
+        print(f"  [i] network still down; next check in "
+              f"{NETWORK_POLL_S // 60}m", flush=True)
+        time.sleep(NETWORK_POLL_S)
+    return False
 
 
 def main() -> int:
@@ -365,6 +409,23 @@ def main() -> int:
 
         print(f"[{idx:3}] {day['title_he'][:40]} — generating...", flush=True)
         ok, note = run_chapter(idx, ROOT / "_bulk" / "logs")
+        # Wait out a network outage and give the chapter its turn again,
+        # instead of letting the outage fail three chapters and stop the run.
+        # Once per chapter: a chapter that keeps dying on the network after
+        # the connection has demonstrably come back is a chapter problem.
+        if not ok and note.startswith("NETWORK ::"):
+            print(f"[{idx:3}] network failure — waiting for NotebookLM to "
+                  f"answer again", flush=True)
+            if not wait_for_network():
+                st["failed"][str(idx)] = note
+                save_state(st)
+                print(f"\n[STOP] chapter {idx}: the network did not come back "
+                      f"within {NETWORK_MAX_WAIT_S // 3600}h. Check the "
+                      f"connection, then resume:\n"
+                      f"    python scripts/bulk_run.py", file=sys.stderr)
+                return 2
+            print(f"[{idx:3}] network is back — retrying", flush=True)
+            ok, note = run_chapter(idx, ROOT / "_bulk" / "logs")
         if ok and released(tag):
             freed = sweep_local(idx)
             st["done"].append(idx)
