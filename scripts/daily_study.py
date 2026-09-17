@@ -956,6 +956,15 @@ def prompt_quiz(day, symbol_block, legend_block):
 NOTEBOOKLM_PROFILE = os.environ.get("NOTEBOOKLM_PROFILE", "").strip()
 
 
+# NotebookLM streams a chat answer as cumulative frames: every frame carries the
+# whole answer so far plus its citations, so bytes on the wire grow with the
+# SQUARE of the answer. A 3,000-6,000-word extract with "lots" of citations
+# fits for most chapters and overflows the client's 256MB buffer on
+# drug-dense ones — FGA, SGA and Clozapine (58-60) failed in a row on it, and
+# 42, 46 and 49 had failed on it before passing on a retry near the edge.
+RESPONSE_TOO_LARGE = ("RPCResponseTooLargeError", "RPC response exceeded")
+
+
 class AuthExpired(RuntimeError):
     """The NotebookLM session died. Nothing downstream can succeed."""
 
@@ -1024,6 +1033,15 @@ def nb_run(args, timeout=120, retries=2):
         # nothing and can push the limiter further out. Fail immediately and
         # let the caller record that this chapter still owes an artifact.
         blob = r.stdout + r.stderr
+        # An answer too large to buffer is a property of the QUESTION, not a
+        # blip. Chapter 58 asked three times and each attempt streamed the full
+        # 256MB before the guard fired — minutes apiece, identical outcome.
+        # The caller has to ask a smaller question; see RESPONSE_TOO_LARGE.
+        if any(m in blob for m in RESPONSE_TOO_LARGE):
+            print(f"    [!] notebooklm {args[0]}: response over the size cap, "
+                  f"NOT retrying (the same question overflows again)",
+                  file=sys.stderr)
+            return r
         if "RateLimit" in blob or "RESOURCE_EXHAUSTED" in blob or "quota" in blob.lower():
             print(f"    [!] notebooklm {args[0]}: rate limited, NOT retrying",
                   file=sys.stderr)
@@ -1902,7 +1920,12 @@ def extract_day_content_from_main(day, symbols_block, main_notebook_id):
     aspects = day.get("aspects", [])
     focus = day.get("prompt_focus", "")
 
-    extraction_prompt = f"""Extract from the sources in this notebook ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.
+    def prompt_for(group, words):
+        part = ("" if group == aspects else
+                "\n\nThis is ONE PART of a larger extract; other parts cover the "
+                "remaining aspects. Cover ONLY the aspects listed here, and do "
+                "not open with an overview of the whole topic.")
+        return f"""Extract from the sources in this notebook ALL the comprehensive material relevant to today's study topic. Be thorough — this extract will be the SOLE source for a focused study notebook.{part}
 
 {books_directive(day["index"])}
 
@@ -1911,7 +1934,7 @@ Topic: {title_he}
 Focus: {focus}
 
 Aspects to cover comprehensively:
-{', '.join(aspects)}
+{', '.join(group)}
 
 Output as a long, well-structured Markdown document in Hebrew (with English drug/receptor/concept names as they appear in source). Include:
 - Page references from each source (DSM p.NNN, Dulcan p.NNN, Stahl p.NNN); Synopsis by chapter only
@@ -1919,21 +1942,65 @@ Output as a long, well-structured Markdown document in Hebrew (with English drug
 - All clinically relevant detail (criteria, epidemiology, etiology, treatment, monitoring, special considerations for pediatric population)
 - Cross-references between sources where they agree/disagree
 
-Length: long and thorough — 3000-6000 words. This is study material, not a summary."""
+Length: long and thorough — {words}. This is study material, not a summary."""
+
+    def ask(group, words):
+        """(answer, overflowed). answer is None on any failure."""
+        r = nb_run(["ask", prompt_for(group, words), "--json"], timeout=600)
+        if r.returncode != 0:
+            blob = (r.stdout or "") + (r.stderr or "")
+            if any(m in blob for m in RESPONSE_TOO_LARGE):
+                return None, True
+            print(f"  [!] extraction ask failed: {r.stderr[:200]}")
+            return None, False
+        try:
+            return json.loads(r.stdout).get("answer", ""), False
+        except Exception as e:
+            print(f"  [!] extraction parse failed: {e}")
+            return None, False
+
+    def ask_split(group):
+        """Halve the group until each part's answer fits under the cap.
+
+        Halving the length of an answer roughly quarters the bytes streamed
+        for it, so one split is almost always enough; recursion only covers
+        the aspect that is dense on its own. A single aspect that still
+        overflows has nothing left to split and fails the extract.
+        """
+        words = "1500-3000 words" if len(group) > 1 else "1000-2000 words"
+        ans, over = ask(group, words)
+        if ans is not None:
+            return [ans]
+        if not over or len(group) < 2:
+            return None
+        mid = (len(group) + 1) // 2
+        print(f"    [i] part of {len(group)} aspects still over the cap; "
+              f"splitting {mid}+{len(group) - mid}", file=sys.stderr)
+        left = ask_split(group[:mid])
+        right = ask_split(group[mid:]) if left is not None else None
+        return None if right is None else left + right
 
     # Switch to main notebook
     use_notebook(main_notebook_id)
     print("  Extracting comprehensive content from main notebook (this may take 3-5 min)...")
-    r = nb_run(["ask", extraction_prompt, "--json"], timeout=600)
-    if r.returncode != 0:
-        print(f"  [!] extraction ask failed: {r.stderr[:200]}")
+    ans, over = ask(aspects, "3000-6000 words")
+    if ans is not None or not over or len(aspects) < 2:
+        return ans
+    # The whole-chapter answer is too large to receive. The content is not the
+    # problem — its size on the wire is — so ask for the same material in
+    # parts and join them. Only chapters that overflow pay for this.
+    mid = (len(aspects) + 1) // 2
+    print(f"  [i] extract over the response cap; asking in parts "
+          f"({mid}+{len(aspects) - mid} aspects)")
+    left = ask_split(aspects[:mid])
+    right = ask_split(aspects[mid:]) if left is not None else None
+    if right is None:
+        print("  [!] extraction failed even in parts")
         return None
-    try:
-        resp = json.loads(r.stdout)
-        return resp.get("answer", "")
-    except Exception as e:
-        print(f"  [!] extraction parse failed: {e}")
-        return None
+    parts = left + right
+    print(f"  [i] extract assembled from {len(parts)} parts "
+          f"({sum(len(p) for p in parts)} chars)")
+    return "\n\n---\n\n".join(parts)
 
 
 def start_audio(prompt):
