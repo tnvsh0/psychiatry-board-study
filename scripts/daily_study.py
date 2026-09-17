@@ -2163,21 +2163,129 @@ def ask_study_guide(day, symbol_block, legend_block, out_path):
 
 {books_directive(day["index"])}"""
 
-    answer, bad = "", []
-    for attempt in range(3):
-        ask = prompt if attempt == 0 else (
-            prompt + "\n\nהתשובה הקודמת שלך נדחתה מהסיבות הבאות:\n"
-            + "\n".join(f"- {b}" for b in bad)
-            + "\nכתוב עכשיו את המדריך המלא עצמו, בגוף התשובה, מהכותרת ועד הסוף.")
-        r = nb_run(["ask", ask, "--json"], timeout=900)
+    def asked(text):
+        """(answer, overflowed). answer is None when the ask failed."""
+        r = nb_run(["ask", text, "--json"], timeout=900)
         if r.returncode != 0:
+            if any(m in (r.stdout or "") + (r.stderr or "")
+                   for m in RESPONSE_TOO_LARGE):
+                return None, True
             print(f"  [!] ask study_guide failed: {r.stderr[:200]}")
-            return False
+            return None, False
         try:
-            answer = json.loads(r.stdout).get("answer", "")
+            return json.loads(r.stdout).get("answer", ""), False
         except Exception as e:
             print(f"  [!] parse study_guide failed: {e}")
-            return False
+            return None, False
+
+    # Chapter 58 (FGA) lost its study guide — and with it the release — to
+    # RPCResponseTooLargeError: NotebookLM streams an answer as cumulative
+    # frames, so a 2,000-4,000-word guide cited on every line crosses the
+    # 256MB buffer on a drug-dense chapter. The guide is already organized as
+    # one section per aspect, so it can be asked for in contiguous runs of
+    # sections and joined without changing what the learner reads. Chapters
+    # that fit never take this path, and still get the prompt above verbatim.
+    def part_prompt(lo, hi, extra):
+        first, last = lo == 0, hi == len(aspects)
+        outline = []
+        if first:
+            outline += [f"# מדריך לימוד יום זה: {title_he}", "",
+                        "## 0. מפת המקורות (CRITICAL — page references)",
+                        "טבלה: לכל אחד מהסעיפים של הנושא כולו — "
+                        + ", ".join(aspects)
+                        + " — ציין באיזה ספר ובאיזה עמוד נמצא החומר.",
+                        "| נושא משנה | DSM-5-TR עמ' | Dulcan עמ' | StahlNeuro עמ' "
+                        "| StahlKids עמ' | Synopsis פרק | סילבוס עמ' |",
+                        "", "## 1. מבוא + הגדרה"]
+        outline += [f"## {2 + lo + i}. {a}" for i, a in enumerate(aspects[lo:hi])]
+        if last:
+            outline += ["## נקודות high-yield לבחינה", "## סיכום מבני"]
+        role = ("זה החלק הראשון. אל תכתוב נקודות high-yield או סיכום — "
+                "הם בחלק האחרון." if first and not last else
+                "זה החלק האחרון. אל תכתוב כותרת ראשית, מבוא או מפת מקורות — "
+                "הם כבר נכתבו בחלק הראשון." if last and not first else
+                "זה חלק אמצעי. אל תכתוב כותרת ראשית, מבוא, מפת מקורות, "
+                "נקודות high-yield או סיכום.")
+        return f"""כתוב חלק אחד ממדריך לימוד מקיף בעברית, שנכתב בכמה חלקים כי הוא ארוך מכדי להישלח בתשובה אחת.
+
+נושא היום: {title_he}
+
+מיקוד: {focus}
+
+**{role}** כתוב רק את הסעיפים שבמבנה הזה, במלואם, באותה מספור:
+
+{chr(10).join(outline)}
+
+**הוראות מחייבות**:
+- שפה: עברית לכל הסבר. אנגלית רק לשמות תרופות גנריים, קולטנים (D2, 5-HT2A...), מונחים קליניים (EPS, NMS, SSRI), וקיצורי DSM/ICD.
+- **לכל פיסת מידע ציין עמוד מקור בסוגריים**: "(DSM p.347)" או "(Dulcan ch.7 p.412)".
+- אורך: 1200-2500 מילים לחלק הזה. ממוקד מהותית בסעיפים שלו.
+- אסמכתאות: מבוסס אך ורק על המקורות במחברת.
+
+**קריטי — כתוב את התוכן עצמו כאן, בגוף התשובה**:
+- אל תיצור קובץ, פתק, או פריט בפאנל הסטודיו.
+- אל תתאר מה הסעיפים מכילים. כתוב את התוכן המלא: טבלאות, קריטריונים, מספרים.
+- אל תפתח בפנייה אליי ("הכנתי עבורך"). התחל ישירות בסעיף הראשון של החלק.
+
+{books_directive(day["index"])}{extra}"""
+
+    # The runs that fit, learned on the first attempt and reused on a retry.
+    # Every overflow streams the full 256MB before it is known to be one, so
+    # rediscovering the split on each of three attempts would spend minutes
+    # re-asking ranges already proven too large.
+    runs_that_fit = []
+
+    def ask_parts(lo, hi, extra):
+        """Sections for aspects[lo:hi], halving a run that still overflows."""
+        ans, over = asked(part_prompt(lo, hi, extra))
+        if ans:
+            runs_that_fit.append((lo, hi))
+            return [ans]
+        if not over or hi - lo < 2:
+            return None
+        mid = (lo + hi + 1) // 2
+        print(f"    [i] guide sections {lo + 2}-{hi + 1} still over the cap; "
+              f"halving", file=sys.stderr)
+        left = ask_parts(lo, mid, extra)
+        right = ask_parts(mid, hi, extra) if left is not None else None
+        return None if right is None else left + right
+
+    answer, bad, in_parts = "", [], False
+    for attempt in range(3):
+        reasons = ("" if attempt == 0 else
+                   "\n\nהתשובה הקודמת שלך נדחתה מהסיבות הבאות:\n"
+                   + "\n".join(f"- {b}" for b in bad))
+        if not in_parts:
+            answer, over = asked(prompt + (reasons and reasons
+                + "\nכתוב עכשיו את המדריך המלא עצמו, בגוף התשובה, מהכותרת ועד הסוף."))
+            if answer is None and over and len(aspects) >= 2:
+                in_parts = True
+                print("  [i] study guide over the response cap; writing it "
+                      "in parts", flush=True)
+            elif answer is None:
+                return False
+        if in_parts:
+            known = sorted(runs_that_fit)
+            runs_that_fit.clear()
+            if known:
+                parts = []
+                for lo, hi in known:
+                    got = ask_parts(lo, hi, reasons)
+                    if not got:
+                        parts = None
+                        break
+                    parts += got
+            else:
+                mid = (len(aspects) + 1) // 2
+                left = ask_parts(0, mid, reasons)
+                right = ask_parts(mid, len(aspects), reasons) if left else None
+                parts = left + right if right else None
+            if not parts:
+                print("  [!] study guide failed even in parts")
+                return False
+            answer = "\n\n".join(parts)
+            print(f"  [i] study guide assembled from {len(parts)} parts "
+                  f"({len(answer)} chars)", flush=True)
         if not answer:
             return False
         bad = _study_guide_defects(answer)
