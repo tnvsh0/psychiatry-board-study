@@ -361,6 +361,12 @@ def main() -> int:
         return 0
 
     ok, why = auth_ok()
+    # The same silent re-mint the loop uses mid-run. On 2026-09-17 a restart
+    # stopped here, before chapter one, on a session that `notebooklm login`
+    # then renewed without anyone signing in — the run asked a person for
+    # something it could have done itself.
+    if not ok and why.startswith("NotebookLM rejected"):
+        ok = try_relogin()
     if not ok:
         print(f"\n[STOP] {why}", file=sys.stderr)
         return 2
