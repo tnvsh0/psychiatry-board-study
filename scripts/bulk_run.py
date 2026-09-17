@@ -188,6 +188,10 @@ CHAT_DOWN_MARKERS = ("ChatUnavailable", "No parseable chunks",
 CHAPTER_TIMEOUT_S = int(os.environ.get("CHAPTER_TIMEOUT_S", 130 * 60))
 
 
+class _SkipHealth(Exception):
+    """The Gemini health check does not apply to this run."""
+
+
 def auth_ok() -> tuple[bool, str]:
     """One cheap read before committing to hours of work.
 
@@ -376,7 +380,15 @@ def main() -> int:
     # plate whose gates never answered, narration that never generated and a
     # director that returned nothing - all of it billable. Wait for the weather
     # rather than paying to work through it.
+    # With plates deferred, no chapter step reaches agy: the plate loop is the
+    # only caller, and it stops at the SKIP_PLATES gate before the director.
+    # On 2026-09-17 this check stopped a text-only queue with 87 chapters left
+    # because agy answered 0/3 — for a service not one of those chapters used.
+    skip_plates = os.environ.get("SKIP_PLATES", "").strip().lower() not in (
+        "", "0", "false", "no")
     try:
+        if skip_plates:
+            raise _SkipHealth
         import gemini_health
         n, asked, note = gemini_health.check()
         if n < gemini_health.HEALTHY_AT:
@@ -386,6 +398,8 @@ def main() -> int:
                   "python scripts/gemini_health.py --wait 60", file=sys.stderr)
             return 3
         print(f"gemini OK ({n}/{asked} probes)\n")
+    except _SkipHealth:
+        print("gemini check skipped (SKIP_PLATES: no chapter step uses agy)\n")
     except Exception as e:
         print(f"[!] could not check Gemini health: {e}", file=sys.stderr)
 
