@@ -37,3 +37,8 @@ _bulk/ft/
 _bulk/day-*/
 _bulk/audio/
 _bulk/infographics/
+
+# QC: textbook text and per-call work files never go in git
+_qc/cache/
+_qc/work/
+_qc/src/
