@@ -38,7 +38,34 @@ _bulk/day-*/
 _bulk/audio/
 _bulk/infographics/
 
-# QC: textbook text and per-call work files never go in git
-_qc/cache/
-_qc/work/
-_qc/src/
+# QC: textbook text and per-call work files never go in git.
+#
+# Inverted on purpose. Spec §5.10 commits exactly five things by explicit path
+# and everything else under _qc/ is either the books' own text or per-call
+# scratch: _qc/cache/ is the reflowed text of six copyrighted textbooks,
+# _qc/src/ and _qc/work/ hold the bundles built out of them, _qc/<tag>/
+# judgments/ stores the judge's answer as it arrived — and §5.8's schema makes
+# every coverage row carry "source_quote: <verbatim from that page>", one per
+# unit, ~40-60 units a chapter, three calls a chapter, 68 chapters —
+# and _qc/<tag>/lint.json names the book and page of every unsourced value.
+# Listing those by hand is how the first three came to be covered and the rest
+# did not; a tree worked with `git add -A` and 60+ untracked files only has to
+# lose that race once, and a commit of the books' text cannot be taken back.
+# So: ignore _qc/ wholesale, then re-admit §5.10's list and nothing else.
+# _qc/<tag>/journal.json is deliberately NOT re-admitted — it is not on §5.10's
+# list, it holds no book text, and it is rebuilt by the next run.
+_qc/*
+!_qc/REPORT.md
+!_qc/state.json
+# the per-chapter directories, so git descends into them at all…
+!_qc/*/
+# …but inside one, only the verdict and the fixes it applied
+_qc/*/*
+!_qc/*/verdict.json
+!_qc/*/fixes.json
+# the pristine release bytes, whole: this is what qc_revert rebuilds from and
+# what §2.5 ("never lose an asset") is about
+!_qc/orig/**
+
+# Printed→PDF page maps of the books (§5.10, "any pages.json")
+**/pages.json

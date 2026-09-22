@@ -1,0 +1,239 @@
+{
+  "title": "ADHD Quiz",
+  "questions": [
+    {
+      "question": "A 9-year-old boy is diagnosed with ADHD, combined presentation. His medical history is unremarkable, and a physical exam reveals no cardiac abnormalities. His family history is negative for sudden death or arrhythmias. According to the American Academy of Pediatrics (AAP) and clinical guidelines, what is the most appropriate step regarding cardiovascular screening before initiating a stimulant?",
+      "answerOptions": [
+        {
+          "text": "An electrocardiogram (ECG) is mandatory for all children before starting any stimulant medication.",
+          "isCorrect": false,
+          "rationale": "While the AHA suggests it is reasonable, the AAP does not recommend a routine ECG for healthy children without risk factors or symptoms (StahlKids p.1, Dulcan p.201)."
+        },
+        {
+          "text": "Routine ECG is not recommended for healthy children without specific cardiac symptoms or a concerning family history.",
+          "isCorrect": true,
+          "rationale": "Clinical consensus from the AAP and StahlKids indicates that in the absence of risk factors, a physical exam and history are sufficient (StahlKids p.1, Dulcan p.201)."
+        },
+        {
+          "text": "The patient must undergo a formal consultation with a pediatric cardiologist regardless of his negative history.",
+          "isCorrect": false,
+          "rationale": "Specialist consultation is typically reserved for those with identified risk factors like syncope, chest pain, or a family history of sudden death (Dulcan p.183)."
+        },
+        {
+          "text": "Stimulants should be avoided entirely in children under 12 due to unknown long-term cardiac risks.",
+          "isCorrect": false,
+          "rationale": "Stimulants are FDA-approved and extensively studied for use in children aged 6 and older, and in some cases 3 and older (StahlKids p.19, p.330)."
+        }
+      ],
+      "hint": "Consider the difference between a 'mandatory' requirement and a 'reasonable' precaution in a healthy child."
+    },
+    {
+      "question": "In the prefrontal cortex (PFC), how does the mechanism of action of Methylphenidate differ fundamentally from that of Amphetamine at therapeutic doses?",
+      "answerOptions": [
+        {
+          "text": "Methylphenidate acts as a competitive inhibitor of DAT, whereas Amphetamine binds allosterically.",
+          "isCorrect": false,
+          "rationale": "It is actually Methylphenidate that binds allosterically to the transporters, while Amphetamine is a competitive inhibitor (StahlNeuro p.469, p.472)."
+        },
+        {
+          "text": "Methylphenidate blocks DAT and NET allosterically, while Amphetamine is a competitive inhibitor and pseudosubstrate for these transporters.",
+          "isCorrect": true,
+          "rationale": "Methylphenidate stops reuptake without being transported into the neuron, while Amphetamine hitch-hikes into the terminal and can trigger dopamine release (StahlNeuro p.469, p.472)."
+        },
+        {
+          "text": "Methylphenidate directly inhibits VMAT2 in the synaptic vesicles, while Amphetamine only affects the reuptake pump.",
+          "isCorrect": false,
+          "rationale": "Methylphenidate has no action on VMAT2; Amphetamine is the agent that acts as a competitive inhibitor of VMAT2 (StahlNeuro p.469, p.472)."
+        },
+        {
+          "text": "Only Methylphenidate increases dopamine levels in the PFC because it lacks DAT, whereas Amphetamine only affects the striatum.",
+          "isCorrect": false,
+          "rationale": "Both increase DA in the PFC because NET transports dopamine in that region, though their binding mechanics differ (StahlNeuro p.441)."
+        }
+      ],
+      "hint": "Focus on which drug acts like a 'hitch-hiker' entering the presynaptic terminal."
+    },
+    {
+      "question": "A 10-year-old girl has been taking a stable dose of Methylphenidate for two years. Her parents are concerned about her growth. Based on the Multimodal Treatment Study of ADHD (MTA), what should the clinician advise the parents regarding long-term height outcomes?",
+      "answerOptions": [
+        {
+          "text": "Stimulant treatment leads to a permanent and significant reduction in final adult height.",
+          "isCorrect": false,
+          "rationale": "The MTA study and subsequent follow-ups suggest that while growth may slow initially, children generally reach their expected height (StahlKids p.331)."
+        },
+        {
+          "text": "Children may grow more slowly during treatment, but they eventually reach their expected adult height, often with a delay.",
+          "isCorrect": true,
+          "rationale": "Research indicates the effect is a temporary slowing of the growth rate rather than a reduction in final height potential (StahlKids p.3, p.331)."
+        },
+        {
+          "text": "Growth suppression is only seen with Amphetamine and does not occur with Methylphenidate.",
+          "isCorrect": false,
+          "rationale": "Growth concerns are considered a class effect for all stimulants, though clinical management is similar for both (StahlKids p.7)."
+        },
+        {
+          "text": "The use of 'drug holidays' over the summer has been definitively proven to increase final adult height by 5 cm.",
+          "isCorrect": false,
+          "rationale": "Drug holidays are controversial and used to reassess utility or allow catch-up, but final height is primarily determined by parental height (StahlKids p.7, p.319)."
+        }
+      ],
+      "hint": "Look for the concept of 'delay' versus 'permanent loss'."
+    },
+    {
+      "question": "A 14-year-old patient with ADHD and a history of esophageal stricture requires an extended-release stimulant. Why is the OROS delivery system (e.g., Concerta) contraindicated in this specific patient?",
+      "answerOptions": [
+        {
+          "text": "The OROS technology requires a high-fat meal to activate, which the patient cannot tolerate.",
+          "isCorrect": false,
+          "rationale": "The OROS system is activated by osmotic pressure, not fat content; food actually has little impact on its total bioavailability (Dulcan p.702)."
+        },
+        {
+          "text": "The OROS tablet is non-deformable and does not change shape in the GI tract, posing a risk of intestinal obstruction.",
+          "isCorrect": true,
+          "rationale": "Because the shell does not dissolve or deform, it is contraindicated in patients with known GI narrowing or strictures (StahlKids p.339, Dulcan p.707)."
+        },
+        {
+          "text": "The OROS system releases 100% of the medication immediately upon contact with the esophagus.",
+          "isCorrect": false,
+          "rationale": "OROS provides a controlled release, with only 22% released initially from the overcoat (Dulcan p.722)."
+        },
+        {
+          "text": "The OROS system is only FDA-approved for children under the age of 12.",
+          "isCorrect": false,
+          "rationale": "Concerta is approved for children, adolescents, and adults (StahlKids p.330)."
+        }
+      ],
+      "hint": "Consider the physical properties of the tablet shell as it travels through the digestive system."
+    },
+    {
+      "question": "A child presents with severe, non-episodic irritability, chronic temper outbursts, and persistent inattention. If the clinician diagnoses both Disruptive Mood Dysregulation Disorder (DMDD) and ADHD, how should stimulants be utilized according to current clinical guidance?",
+      "answerOptions": [
+        {
+          "text": "Stimulants are the primary treatment for the core symptoms of irritability and temper outbursts in DMDD.",
+          "isCorrect": false,
+          "rationale": "Stimulants are used for the comorbid ADHD symptoms, not as the primary treatment for the mood dysregulation of DMDD (StahlKids p.35)."
+        },
+        {
+          "text": "Stimulants can be considered for the comorbid ADHD symptoms, but they may not be tolerated or effective for the primary symptoms of DMDD.",
+          "isCorrect": true,
+          "rationale": "Clinical experience suggests that while stimulants treat ADHD, DMDD symptoms require separate management, and some children with DMDD tolerate stimulants poorly (StahlKids p.35, Dulcan p.177)."
+        },
+        {
+          "text": "The presence of DMDD is a consolidated contraindication for any dopamine-modulating agent.",
+          "isCorrect": false,
+          "rationale": "DMDD is not a contraindication; however, clinicians must carefully monitor for worsening irritability or agitation (Dulcan p.177)."
+        },
+        {
+          "text": "Stimulants should only be started after a 4-day manic episode is observed to confirm the diagnosis.",
+          "isCorrect": false,
+          "rationale": "DMDD is characterized by a lack of episodes; requiring a manic episode would lead to a diagnosis of Bipolar Disorder instead (DSM p.179)."
+        }
+      ],
+      "hint": "Recall that DMDD was added to DSM-5 specifically to distinguish chronic irritability from episodic mania."
+    },
+    {
+      "question": "A 7-year-old child starting Methylphenidate IR (2.5 mg bid) experiences significant appetite suppression and weight loss during the first month. Which clinical management strategy is most appropriate?",
+      "answerOptions": [
+        {
+          "text": "Switching to an immediate-release Amphetamine at twice the current dose.",
+          "isCorrect": false,
+          "rationale": "Amphetamine is generally more potent than Methylphenidate and would likely worsen appetite suppression at a higher dose (Dulcan p.702)."
+        },
+        {
+          "text": "Administering the medication before breakfast to ensure peak focus during the first meal of the day.",
+          "isCorrect": false,
+          "rationale": "Giving medication before meals typically increases appetite suppression; it should be given after the meal (Dulcan p.703, StahlKids p.4)."
+        },
+        {
+          "text": "Encouraging high-calorie 'liquid calories' like smoothies and administering the dose after a large breakfast.",
+          "isCorrect": true,
+          "rationale": "Meal management and caloric supplementation are first-line strategies for managing stimulant-induced weight loss (StahlKids p.4, Dulcan p.703)."
+        },
+        {
+          "text": "Adding a low-dose SNRI to stimulate the appetite center in the hypothalamus.",
+          "isCorrect": false,
+          "rationale": "SNRIs are not typically used to stimulate appetite; agents like cyproheptadine or mirtazapine are occasionally used if behavioral changes fail (StahlKids p.4)."
+        }
+      ],
+      "hint": "Think about the timing of the dose relative to food intake and the density of the calories provided."
+    },
+    {
+      "question": "Regarding the metabolism of Lisdexamfetamine, which of the following statements correctly describes its conversion to an active form?",
+      "answerOptions": [
+        {
+          "text": "It is a prodrug that is hydrolyzed by CYP2D6 enzymes in the liver.",
+          "isCorrect": false,
+          "rationale": "Lisdexamfetamine is not primarily dependent on hepatic CYP enzymes for its initial activation (Dulcan p.703)."
+        },
+        {
+          "text": "It is an inactive prodrug that is rapidly absorbed and then hydrolyzed in red blood cells to liberate active d-Amphetamine.",
+          "isCorrect": true,
+          "rationale": "The conversion occurs through enzymatic hydrolysis in the blood, which contributes to its long duration and lower abuse potential (Dulcan p.703, StahlNeuro p.473)."
+        },
+        {
+          "text": "It is cleaved into L-lysine and Methylphenidate by stomach acid immediately upon ingestion.",
+          "isCorrect": false,
+          "rationale": "Lisdexamfetamine is a prodrug of Amphetamine, not Methylphenidate (StahlNeuro p.268)."
+        },
+        {
+          "text": "Its absorption is highly dependent on urinary pH, which determines the rate of lysine cleavage.",
+          "isCorrect": false,
+          "rationale": "While urinary pH affects the excretion of the active Amphetamine, it does not determine the rate of the prodrug's initial hydrolysis (Dulcan p.703)."
+        }
+      ],
+      "hint": "Identify the specific biological component (found in the blood) responsible for the enzymatic cleavage."
+    },
+    {
+      "question": "A clinician is titrating an adolescent on Methylphenidate ER. The patient reports mild palpitations. Baseline vitals were BP 110/70, HR 72. Current vitals are BP 116/74, HR 80. How should the clinician interpret these changes based on standard safety data?",
+      "answerOptions": [
+        {
+          "text": "These changes are significantly higher than the expected average and require immediate cessation of the drug.",
+          "isCorrect": false,
+          "rationale": "Expected changes are typically 3\u20136 mmHg in systolic BP and 6\u20138 bpm in HR, which matches this patient's data (Dulcan p.704)."
+        },
+        {
+          "text": "These are typical, modest increases in blood pressure and pulse rate observed with long-term stimulant use and are generally not clinically significant.",
+          "isCorrect": true,
+          "rationale": "Modest increases are common and expected; unless the patient develops severe symptoms or hypertensive values, treatment usually continues with monitoring (Dulcan p.704, StahlKids p.3)."
+        },
+        {
+          "text": "Any increase in heart rate above 5% from baseline is diagnostic of Wolff-Parkinson-White syndrome.",
+          "isCorrect": false,
+          "rationale": "Heart rate increases are a known pharmacological effect and do not diagnostic specific structural or electrical abnormalities (Dulcan p.703)."
+        },
+        {
+          "text": "The patient likely has an untreated anxiety disorder that is being masked by the stimulant's sedative effects.",
+          "isCorrect": false,
+          "rationale": "Stimulants are not sedatives; the physiological changes are direct sympathomimetic effects (StahlNeuro p.441)."
+        }
+      ],
+      "hint": "Compare the patient's actual numerical increase to the average expected ranges ($3-6$ mmHg / $6-8$ bpm)."
+    },
+    {
+      "question": "Which Methylphenidate formulation is specifically designed to be taken in the evening to address 'morning chaos' by delaying release for 10 hours?",
+      "answerOptions": [
+        {
+          "text": "Daytrana (transdermal patch)",
+          "isCorrect": false,
+          "rationale": "Daytrana is applied in the morning and has a 2-hour lag before effect (Dulcan p.708)."
+        },
+        {
+          "text": "Jornay PM",
+          "isCorrect": true,
+          "rationale": "Jornay PM is unique in its evening administration, using a DR/ER system to provide therapeutic levels upon waking (Dulcan p.708, StahlNeuro p.470)."
+        },
+        {
+          "text": "Concerta",
+          "isCorrect": false,
+          "rationale": "Concerta is taken in the morning to provide 10-12 hours of coverage throughout the day (StahlNeuro p.470)."
+        },
+        {
+          "text": "Adhansia XR",
+          "isCorrect": false,
+          "rationale": "Adhansia XR is taken in the morning and has the longest duration (up to 16 hours) but is not an evening-dosed drug (Dulcan p.707)."
+        }
+      ],
+      "hint": "Look for the formulation whose name implies a nighttime ('PM') administration."
+    }
+  ]
+}

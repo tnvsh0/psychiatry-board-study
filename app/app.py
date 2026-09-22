@@ -17,6 +17,7 @@ Data sources:
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 import os
 import re
@@ -34,6 +35,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 from sr_engine import (  # noqa: E402
     card_id, new_card_state, update_card, is_due, collect_due_cards, stats,
     GRADE_AGAIN, GRADE_HARD, GRADE_GOOD, GRADE_EASY, GRADE_LABELS,
+)
+
+# Grading, QC marks and errata (QC_REVIEW_SPEC §5.11). Everything decidable
+# lives in quiz_logic so it can be unit-tested without Streamlit; this file only
+# draws. quiz_logic.py sits beside app.py, so the bare import resolves both
+# locally and in the Cloud Run image — provided the image COPYs it the way it
+# copies sr_engine.py. Deliberately NOT wrapped in a try/except: falling back to
+# the old single-radio grader would look exactly like a healthy deploy while
+# scoring multiple_select wrong again, which is the failure this spec exists to
+# end.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from quiz_logic import (  # noqa: E402
+    normalize_item, grade, qc_mark, card_due_override, parse_qc_json,
+    badge_text, asset_lines, errata_for_asset,
+    MULTIPLE_CHOICE, MULTIPLE_SELECT, FILL_IN_THE_BLANK, SHORT_ANSWER,
 )
 
 # ── Configuration ───────────────────────────────────────────────────────────
@@ -335,6 +351,66 @@ def get_release_assets(tag: str) -> dict | None:
     return {a["name"]: a["url"] for a in data.get("assets", [])}
 
 
+@st.cache_data(ttl=300)
+def load_release_qc(tag: str) -> dict | None:
+    """The chapter's `qc.json` release asset (QC_REVIEW_SPEC §5.10), parsed.
+
+    None means "this chapter has not been through the QC run" — the normal state
+    for every chapter released before it, and the reason nothing downstream may
+    treat the absence as an error. An unparseable file is treated the same way:
+    the chapter renders exactly as it did before QC existed.
+    """
+    assets = get_release_assets(tag)
+    url = (assets or {}).get("qc.json")
+    if not url:
+        return None
+    raw = fetch_text(url)
+    if not raw:
+        return None
+    try:
+        return parse_qc_json(json.loads(raw))
+    except Exception:
+        return None
+
+
+@st.cache_data(ttl=300)
+def load_errata_index() -> dict | None:
+    """Course-wide errata, read from `_qc/errata.json` on `main`.
+
+    The תיקונים page needs every chapter's errata at once. Reading them from the
+    releases costs one GitHub API call per chapter — 144 of them on a cold load,
+    minutes of spinner — so the page prefers one aggregate file committed by
+    qc_run and falls back to an explicit, user-triggered scan. Returns
+    {chapter index: parsed qc doc}, or None when the aggregate does not exist
+    (it does not yet: qc_run has not run).
+    """
+    data = None
+    local = LOCAL_ROOT / "_qc" / "errata.json"
+    if local.exists():
+        try:
+            data = json.loads(local.read_text(encoding="utf-8"))
+        except Exception:
+            data = None
+    if data is None:
+        data = _gh_fetch_json("_qc/errata.json", fallback={}) or None
+    if not isinstance(data, dict):
+        return None
+    rows = data.get("chapters", data)
+    entries = rows.values() if isinstance(rows, dict) else rows
+    out = {}
+    for entry in entries or []:
+        qc = parse_qc_json(entry)
+        if not qc:
+            continue
+        idx = qc.get("chapter")
+        if idx is None and qc.get("tag"):
+            m = re.match(r"study-(\d+)-", qc["tag"])
+            idx = int(m.group(1)) if m else None
+        if idx is not None:
+            out[int(idx)] = qc
+    return out or None
+
+
 # Cache directory for downloaded assets — keep them between page reloads
 ASSET_CACHE_DIR = Path(tempfile.gettempdir()) / "psychiatry_streamlit_assets"
 ASSET_CACHE_DIR.mkdir(exist_ok=True)
@@ -382,6 +458,83 @@ def day_tag(day: dict) -> str:
     return f"study-{day['index']:03d}-{slugify(day.get('title_en', ''))}"
 
 
+# ── QC marks and errata (QC_REVIEW_SPEC §5.11) ──────────────────────────────
+# Policy, owner decision 2026-09-18: "note first, rewrite later" and "mark,
+# never hide". A verified error is shown next to the material it is in, with the
+# textbook quote and the printed page, and the material itself stays visible.
+def _esc(v) -> str:
+    """Escape a value that goes inside one of this file's raw-HTML blocks.
+
+    The strings here are verbatim textbook quotes. One '<' in a quote (or in a
+    stem full of '<50 mg') silently eats the rest of the card in unsafe_allow_html.
+    """
+    return html.escape("" if v is None else str(v), quote=False)
+
+
+def _qc_mark_html(mark: dict, *, compact: bool = False) -> str:
+    """One correction, as the learner sees it: what was written, what the book
+    says, which book and which printed page, and the quote that proves it.
+
+    A source_conflict shows BOTH quotes and resolves nothing — the books
+    disagree, and the owner decided (2026-09-18, policy 3) that the app shows
+    the disagreement rather than picking a winner.
+    """
+    tail = []
+    if mark.get("severity_he"):
+        tail.append(_esc(mark["severity_he"]))
+    if mark.get("date"):
+        tail.append(_esc(mark["date"]))
+    meta = f'<span style="opacity:.6;font-size:.85em"> · {" · ".join(tail)}</span>' if tail else ""
+    rows = [f'<div><b>⚠ {_esc(mark["headline"])}</b>{meta}</div>']
+    if mark.get("was"):
+        rows.append(f'<div style="margin-top:4px">נכתב כאן: <b>{_esc(mark["was"])}</b></div>')
+    if mark.get("now"):
+        rows.append(f'<div>לפי הספר: <b>{_esc(mark["now"])}</b></div>')
+    for src in mark.get("sources", []):
+        page = f' עמ\' {_esc(src["page"])}' if src.get("page") not in (None, "") else ""
+        quote = f'<div style="opacity:.85;font-size:.93em">«{_esc(src["quote"])}»</div>' \
+            if src.get("quote") else ""
+        rows.append(f'<div style="margin-top:6px">📖 <b>{_esc(src["book_he"])}</b>{page}{quote}</div>')
+    pad = "8px 12px" if compact else "12px 16px"
+    return (f'<div dir="rtl" style="text-align:right;background:rgba(217,119,6,.12);'
+            f'border-right:4px solid #d97706;border-radius:6px;padding:{pad};'
+            f'margin:8px 0;font-size:.97em">{"".join(rows)}</div>')
+
+
+def render_qc_mark(mark: dict | None, *, compact: bool = False) -> None:
+    if mark:
+        st.markdown(_qc_mark_html(mark, compact=compact), unsafe_allow_html=True)
+
+
+def render_qc_badge(day: dict) -> None:
+    """The chapter badge: judged-against-the-books date, how many corrections,
+    and one line per asset. Draws nothing at all for a chapter with no qc.json,
+    so every chapter released before the QC run looks untouched."""
+    qc = load_release_qc(day_tag(day))
+    if not qc:
+        return
+    lines = "".join(f'<div style="opacity:.75;font-size:.88em">{_esc(ln)}</div>'
+                    for ln in asset_lines(qc))
+    color = "#2e7d32" if qc.get("status") in ("approved", "fixed") else "#d97706"
+    st.markdown(
+        f'<div dir="rtl" style="text-align:right;background:rgba(46,125,50,.08);'
+        f'border-right:4px solid {color};border-radius:6px;padding:10px 14px;'
+        f'margin:6px 0 12px 0;">'
+        f'<b>✔ {_esc(badge_text(qc))}</b>{lines}</div>',
+        unsafe_allow_html=True)
+
+
+def render_erratum_card(e: dict, *, title: str = "") -> None:
+    """One row of the תיקונים page. Same renderer as the in-item mark, so the
+    page and the item can never tell the learner two different stories."""
+    head = " · ".join(x for x in (title, e.get("asset_he", ""), e.get("unit", "")) if x)
+    if head:
+        st.markdown(f'<div dir="rtl" style="text-align:right;opacity:.7;'
+                    f'font-size:.85em;margin-top:10px">{_esc(head)}</div>',
+                    unsafe_allow_html=True)
+    render_qc_mark(e, compact=True)
+
+
 # ── Flashcard SR rendering ─────────────────────────────────────────────────
 def _extract_qa(card_raw: dict) -> tuple[str, str]:
     """Pull (question, answer) from a flashcard JSON record."""
@@ -396,6 +549,14 @@ def render_chapter_flashcards_sr(chapter_idx: int, cards_raw: list) -> None:
     On entry, computes the review queue = cards from this chapter that are
     DUE today (including new cards never seen). User reveals + grades each.
     Grades update flashcard_progress.json and recompute the queue.
+
+    A card QC corrected since its last review is pulled back into the queue
+    whatever its interval says (card_due_override, spec §5.11): a mature card is
+    scheduled months out, and until then the wrong back is what the learner
+    holds. The override is recomputed from the release's own card on every load
+    and written nowhere — the app PUTs the whole progress snapshot on each grade
+    and the last writer wins, so QC state in that file would be lost or would
+    overwrite a review.
     """
     sr_state = load_sr_progress()
     if not isinstance(sr_state, dict):
@@ -412,12 +573,25 @@ def render_chapter_flashcards_sr(chapter_idx: int, cards_raw: list) -> None:
         if cid not in sr_state:
             sr_state[cid] = new_card_state(chapter_idx, q)
 
-    # Build the review queue: cards from THIS chapter that are due today
+    if not chapter_card_index:
+        # Every card in the file is missing its front. Without this the "all
+        # done" branch below calls min() on an empty mapping and the expander
+        # renders a traceback instead of the chapter.
+        st.caption("(אין כרטיסיות תקינות בקובץ של הפרק הזה)")
+        return
+
+    # Build the review queue: cards from THIS chapter that are due today, plus
+    # any card whose back was corrected after the learner last saw it.
     today = date.today()
-    queue = [cid for cid in chapter_card_index if is_due(sr_state[cid], today)]
-    # Order: new first, then by overdueness
+    forced = {cid for cid, raw in chapter_card_index.items()
+              if card_due_override(raw, sr_state.get(cid))}
+    queue = [cid for cid in chapter_card_index
+             if cid in forced or is_due(sr_state[cid], today)]
+    # Order: corrections first (they unlearn something wrong), then new, then by
+    # overdueness.
     queue.sort(key=lambda cid: (
-        int(sr_state[cid].get("review_count", 0)) > 0,   # new first
+        cid not in forced,                                # corrected first
+        int(sr_state[cid].get("review_count", 0)) > 0,   # new next
         sr_state[cid].get("due_date", ""),                # then by due-date asc
     ))
 
@@ -455,7 +629,9 @@ def render_chapter_flashcards_sr(chapter_idx: int, cards_raw: list) -> None:
     ease = float(card.get("ease", 2.5))
     interval = int(card.get("interval_days", 0))
     new_flag = " · 🆕 כרטיסיה חדשה" if rc == 0 else f" · interval {interval}d · ease {ease:.1f}"
-    st.caption(f"כרטיסיה {pos+1} / {len(queue)} בתור היום{new_flag}")
+    mark = qc_mark(chapter_card_index[cid])
+    qc_flag = " · ⚠ תוקנה מול הספר" if (mark and cid in forced) else ""
+    st.caption(f"כרטיסיה {pos+1} / {len(queue)} בתור היום{new_flag}{qc_flag}")
 
     # Card body — show question always; answer only when revealed
     st.markdown(
@@ -479,6 +655,10 @@ def render_chapter_flashcards_sr(chapter_idx: int, cards_raw: list) -> None:
             f'</div>',
             unsafe_allow_html=True,
         )
+        # The correction goes UNDER the back, not instead of it: the learner has
+        # to see the version they memorised next to the version the book gives,
+        # or they cannot tell what changed.
+        render_qc_mark(mark, compact=True)
 
     # Controls
     if not revealed:
@@ -756,12 +936,20 @@ def parse_legend(text: str) -> dict:
     return out
 
 
-def render_legend_block(text: str) -> None:
-    """The legend as a readable card: the pun first, the rows behind a click."""
+def render_legend_block(text: str, errata: list | None = None) -> None:
+    """The legend as a readable card: the pun first, the rows behind a click.
+
+    `errata` are this legend file's entries from the chapter's qc.json. They are
+    drawn OUTSIDE the expander: the legend's "מספרים לבחינה" chips are exactly
+    the numbers the spec judges (§5.4), and a corrected number behind a click is
+    a number the learner re-memorises wrong.
+    """
     lg = parse_legend(text)
     if not lg["rows"]:
         st.markdown(f'<div dir="rtl" style="text-align:right">{text}</div>',
                     unsafe_allow_html=True)
+        for e in errata or []:
+            render_qc_mark(e, compact=True)
         return
 
     if lg["sign"]:
@@ -784,6 +972,9 @@ def render_legend_block(text: str) -> None:
                     f'<span style="opacity:.7;font-size:.88em">מספרים לבחינה:</span>'
                     f'<br>{chips}</div>', unsafe_allow_html=True)
 
+    for e in errata or []:
+        render_qc_mark(e, compact=True)
+
     with st.expander(f"מקרא הסצנה — {len(lg['rows'])} פריטים", expanded=False):
         # The FACT reads first and the explanation is muted under it. A row
         # whose element was already explained above carries no hook at all,
@@ -803,6 +994,140 @@ def render_legend_block(text: str) -> None:
             st.caption(f"לא צויר: {lg['undrawn']}")
 
 
+def _render_grade_result(item: dict, res: dict) -> None:
+    """Draw one graded answer. `correct is None` is its own outcome, not a
+    failure: a short_answer is self-graded (no runtime LLM — spec §5.11) and an
+    unanswered item must not be called wrong."""
+    if res["correct"] is True:
+        st.success("✅ נכון!" if not res.get("source_backed")
+                   else "✅ מתקבל — הבחירה שלך תואמת את הספר")
+    elif res["correct"] is False:
+        st.error("❌ לא נכון")
+    else:
+        st.info("📝 בדיקה עצמית" if item["type"] == SHORT_ANSWER else "ℹ️")
+
+    for line in str(res.get("feedback") or "").split("\n"):
+        if line.strip():
+            st.markdown(f'<div dir="rtl" style="text-align:right">{_esc(line)}</div>',
+                        unsafe_allow_html=True)
+
+    if item["type"] == SHORT_ANSWER:
+        if res["expected"]:
+            st.markdown(f'<div dir="rtl" style="text-align:right;margin-top:8px">'
+                        f'<b>תשובת המודל:</b> {_esc(res["expected"])}</div>',
+                        unsafe_allow_html=True)
+        if res.get("required_attributes"):
+            st.markdown('<div dir="rtl" style="text-align:right;margin-top:8px">'
+                        '<b>מה חייב להופיע בתשובה:</b></div>', unsafe_allow_html=True)
+            for a in res["required_attributes"]:
+                st.markdown(f'<div dir="rtl" style="text-align:right">☐ {_esc(a)}</div>',
+                            unsafe_allow_html=True)
+        for m in res.get("misconceptions", []) + res.get("bluffs", []):
+            st.caption(f"✗ טעות נפוצה: {m}")
+        if res.get("rationale"):
+            st.info(f"💡 {res['rationale']}")
+        return
+
+    if item["type"] == FILL_IN_THE_BLANK:
+        if res.get("near") and res["correct"] is False:
+            st.warning("כמעט — כתבת את התשובה בתוך משפט. השווה בעצמך.")
+        acc = [a for a in res.get("acceptable", []) if a != res["expected"]]
+        if acc:
+            st.caption("תשובות נוספות שמתקבלות: " + " · ".join(acc))
+        if res.get("rationale"):
+            st.info(f"💡 {res['rationale']}")
+        return
+
+    if item["type"] == MULTIPLE_SELECT:
+        with st.expander("הסבר לכל אפשרות"):
+            for text, why in res.get("rationales", []):
+                if why:
+                    st.markdown(f'<div dir="rtl" style="text-align:right;margin:6px 0">'
+                                f'<b>{_esc(text)}</b><br>{_esc(why)}</div>',
+                                unsafe_allow_html=True)
+        return
+
+    # multiple_choice
+    if res.get("chosen_rationale"):
+        if res.get("source_backed"):
+            # The released rationale explains why this option is WRONG — it is
+            # the disputed text itself. Showing it as the explanation of an
+            # accepted answer would tell the learner the opposite of the book.
+            st.caption("מה שכתוב בחומר המקורי (התוכן שסומן כשגוי): "
+                       + res["chosen_rationale"])
+        elif res["correct"] is True:
+            st.info(f"💡 {res['chosen_rationale']}")
+        else:
+            st.caption(f"למה הבחירה שלך לא נכונה: {res['chosen_rationale']}")
+    if res["correct"] is not True and res.get("expected_rationale"):
+        st.info(f"💡 למה זה הנכון: {res['expected_rationale']}")
+
+
+def render_quiz_item(day_idx: int, i: int, raw_item: dict) -> None:
+    """One quiz question, with the widget its type actually needs.
+
+    Until now every item was a single radio button over `answerOptions`. For the
+    six multiple_select items in the sample that meant a learner could pick one
+    of three keys and be told they were wrong; for the eleven fill-in and
+    short-answer items it meant no input at all (spec §1: 17 of 42 items
+    released since 2026-09-14).
+    """
+    item = normalize_item(raw_item)
+    key = f"quiz_d{day_idx}_q{i}_{item['id']}"
+
+    st.markdown(
+        f'<div dir="rtl" style="text-align:right; font-size:1.05em; '
+        f'margin: 14px 0 6px 0;"><b>שאלה {i+1}:</b> {item["question"]}</div>',
+        unsafe_allow_html=True,
+    )
+    # The mark goes ABOVE the answer widget: a learner who has already answered
+    # a disputed item and moved on has not been helped.
+    render_qc_mark(item["qc"])
+
+    response = None
+    if item["type"] in (MULTIPLE_CHOICE, MULTIPLE_SELECT) and item["options"]:
+        labels = [o["text"] for o in item["options"]]
+        if item["type"] == MULTIPLE_SELECT:
+            st.caption("יותר מתשובה אחת נכונה — סמן את כולן (הניקוד הוא הכל או כלום).")
+            response = [j for j in range(len(labels))
+                        if st.checkbox(labels[j], key=f"{key}_o{j}")]
+        else:
+            # Options are indices, not label strings: two options with the same
+            # text are legal in the data and would collide as radio values.
+            response = st.radio(
+                "תשובה", list(range(len(labels))),
+                format_func=lambda j: labels[j],
+                key=key, label_visibility="collapsed", index=None,
+            )
+    elif item["type"] == FILL_IN_THE_BLANK:
+        response = st.text_input("תשובה", key=key, label_visibility="collapsed",
+                                 placeholder="הקלד את המילה החסרה")
+    elif item["type"] == SHORT_ANSWER:
+        response = st.text_area(
+            "תשובה", key=key, label_visibility="collapsed", height=120,
+            placeholder="כתוב את תשובתך, ואז לחץ 'בדוק' כדי להשוות לתשובת המודל")
+    else:
+        st.caption("(אין אפשרויות תשובה — בדוק את מבנה ה-JSON)")
+        st.divider()
+        return
+
+    if item["hint"]:
+        with st.expander("רמז"):
+            st.markdown(f'<div dir="rtl" style="text-align:right">{_esc(item["hint"])}</div>',
+                        unsafe_allow_html=True)
+
+    label = "הצג תשובה" if item["type"] == SHORT_ANSWER else "בדוק"
+    if st.button(label, key=f"check_{key}"):
+        res = grade(item, response)
+        # A None verdict on a gradable type means nothing was answered (the one
+        # self-graded type is short_answer, which always returns None).
+        if res["correct"] is None and item["type"] != SHORT_ANSWER:
+            st.warning(res["feedback"] or "בחר או כתוב תשובה לפני שלוחצים.")
+        else:
+            _render_grade_result(item, res)
+    st.divider()
+
+
 def render_day_page(day, symbols, progress, palette):
     """The main per-day content page."""
     idx = day["index"]
@@ -820,6 +1145,10 @@ def render_day_page(day, symbols, progress, palette):
     # Recommended reading (source pages) — pulled from the study guide's
     # source-map section so the user knows exactly what to read in the books.
     _render_recommended_reading(day, idx)
+
+    # "נבדק מול ספרי הלימוד ב-…" — nothing at all for a chapter the QC run has
+    # not reached, which is every chapter until it has.
+    render_qc_badge(day)
 
     if is_done:
         st.success("✅ סומן כהושלם")
@@ -865,6 +1194,7 @@ def render_day_page(day, symbols, progress, palette):
     # Artifacts
     tag = day_tag(day)
     assets = get_release_assets(tag)
+    qc_doc = load_release_qc(tag)
 
     if not assets:
         st.warning(f"⏳ התוכן עדיין לא נוצר עבור יום זה. (tag={tag})")
@@ -915,7 +1245,8 @@ def render_day_page(day, symbols, progress, palette):
             if caption_url:
                 caption_text = fetch_text(caption_url)
                 if caption_text:
-                    render_legend_block(caption_text)
+                    render_legend_block(caption_text,
+                                        errata=errata_for_asset(qc_doc, caption_name))
                 else:
                     st.caption("(לא הצלחתי לטעון את המקרא)")
             else:
@@ -949,6 +1280,12 @@ def render_day_page(day, symbols, progress, palette):
                     f'<div dir="rtl" style="text-align: right; font-size: 1.05em; line-height: 1.7;">\n\n{sg_text}\n\n</div>',
                     unsafe_allow_html=True,
                 )
+                # qc_fix writes a footnote next to the span it corrected inside
+                # the guide itself; these are the chapter-level entries that
+                # belong to the guide as a whole.
+                for e in (errata_for_asset(qc_doc, "study_guide.md")
+                          + errata_for_asset(qc_doc, "report.md")):
+                    render_qc_mark(e, compact=True)
             else:
                 st.warning("לא הצלחתי לטעון את מדריך הלימוד.")
 
@@ -991,63 +1328,7 @@ def render_day_page(day, symbols, progress, palette):
                 if isinstance(quiz, list) and quiz:
                     st.write(f"**{len(quiz)} שאלות**")
                     for i, q in enumerate(quiz):
-                        qtext = q.get("question") or q.get("q", "")
-                        # NotebookLM format: answerOptions: [{text, isCorrect, rationale}]
-                        ao = q.get("answerOptions") or q.get("options") or q.get("choices") or []
-                        # Build a uniform [(text, is_correct, rationale)] list
-                        opts = []
-                        if ao and isinstance(ao[0], dict):
-                            for o in ao:
-                                opts.append((
-                                    o.get("text") or o.get("label", ""),
-                                    bool(o.get("isCorrect")),
-                                    o.get("rationale") or o.get("explanation", ""),
-                                ))
-                        elif ao and isinstance(ao[0], str):
-                            # Plain string list — separate 'correct' field
-                            correct = q.get("correct") or q.get("answer", "")
-                            for j, txt in enumerate(ao):
-                                is_corr = (txt == correct) or (isinstance(correct, int) and j == correct)
-                                opts.append((txt, is_corr, ""))
-
-                        st.markdown(
-                            f'<div dir="rtl" style="text-align:right; font-size:1.05em; '
-                            f'margin: 14px 0 6px 0;"><b>שאלה {i+1}:</b> {qtext}</div>',
-                            unsafe_allow_html=True,
-                        )
-
-                        if not opts:
-                            st.caption("(אין אפשרויות תשובה — בדוק את מבנה ה-JSON)")
-                            st.divider()
-                            continue
-
-                        labels = [o[0] for o in opts]
-                        user_pick = st.radio(
-                            "תשובה",
-                            labels,
-                            key=f"quiz_d{idx}_q{i}",
-                            label_visibility="collapsed",
-                            index=None,
-                        )
-                        if st.button("בדוק", key=f"check_d{idx}_q{i}"):
-                            if user_pick is None:
-                                st.warning("בחר תשובה לפני שלוחצים 'בדוק'.")
-                            else:
-                                chosen_idx = labels.index(user_pick)
-                                chosen_text, is_correct, chosen_rationale = opts[chosen_idx]
-                                # Find the correct option (for showing if user was wrong)
-                                correct_tuple = next((o for o in opts if o[1]), None)
-                                if is_correct:
-                                    st.success("✅ נכון!")
-                                    if chosen_rationale:
-                                        st.info(f"💡 {chosen_rationale}")
-                                else:
-                                    st.error(f"❌ שגיאה. התשובה הנכונה: **{correct_tuple[0] if correct_tuple else '?'}**")
-                                    if chosen_rationale:
-                                        st.caption(f"למה הבחירה שלך לא נכונה: {chosen_rationale}")
-                                    if correct_tuple and correct_tuple[2]:
-                                        st.info(f"💡 למה זה הנכון: {correct_tuple[2]}")
-                        st.divider()
+                        render_quiz_item(idx, i, q)
                 elif quiz is not None:
                     st.json(quiz)
 
@@ -1055,6 +1336,70 @@ def render_day_page(day, symbols, progress, palette):
     st.divider()
     release_url = f"https://github.com/{GITHUB_REPO}/releases/tag/{tag}"
     st.caption(f"🔗 [GitHub Release: {tag}]({release_url})")
+
+
+# ── תיקונים page (QC_REVIEW_SPEC §5.11) ─────────────────────────────────────
+PAGE_CHAPTERS = "📚 פרקים"
+PAGE_ERRATA = "🛠 תיקונים"
+
+
+def render_errata_page(schedule: dict) -> None:
+    """Every verified correction, by chapter: what the released material said,
+    what the book says, the book, the printed page, the quote, severity, date.
+
+    Where the data comes from matters. Each chapter's errata live in its own
+    release (`qc.json`), so building this page from the releases costs one
+    GitHub API call per chapter — 144 on a cold load. It therefore reads one
+    aggregate committed by qc_run, and when that does not exist it says so and
+    offers the slow scan behind a button rather than spending two minutes of
+    spinner without being asked.
+    """
+    st.markdown("# 🛠 תיקונים")
+    st.markdown(
+        '<div dir="rtl" style="text-align:right;opacity:.8">'
+        'כל תיקון כאן אומת מול טקסט הספר בקוד: ציטוט מהחומר וציטוט מהמקור. '
+        'החומר המקורי נשאר גלוי — תיקון מסומן, לא מוסתר.</div>',
+        unsafe_allow_html=True)
+
+    by_chapter = load_errata_index() or st.session_state.get("qc_scan")
+    if by_chapter is None:
+        st.info("אין עדיין קובץ ריכוז (`_qc/errata.json`). אפשר לסרוק את ה-Releases ישירות.")
+        if st.button("סרוק את כל הפרקים (איטי — פנייה אחת לכל פרק)"):
+            days = schedule.get("days", [])
+            found, bar = {}, st.progress(0.0, text="סורק…")
+            for k, d in enumerate(days, 1):
+                qc = load_release_qc(day_tag(d))
+                if qc:
+                    found[d["index"]] = qc
+                bar.progress(k / max(len(days), 1), text=f"{k}/{len(days)}")
+            st.session_state["qc_scan"] = found
+            st.rerun()
+        return
+
+    titles = {d["index"]: d.get("title_he", d.get("title_en", ""))
+              for d in schedule.get("days", [])}
+    total = sum(qc.get("n_errata", 0) for qc in by_chapter.values())
+    st.caption(f"{total} תיקונים ב-{len(by_chapter)} פרקים שנבדקו")
+    if not total:
+        st.success("אף תיקון פעיל בפרקים שנבדקו.")
+
+    for idx in sorted(by_chapter):
+        qc = by_chapter[idx]
+        if not qc.get("errata"):
+            continue
+        with st.expander(f"פרק {idx} — {titles.get(idx, '')} · {qc['n_errata']} תיקונים",
+                         expanded=False):
+            st.caption(badge_text(qc) + (" · " + " · ".join(asset_lines(qc))
+                                         if asset_lines(qc) else ""))
+            for e in qc["errata"]:
+                render_erratum_card(e)
+            # A plain <a href="?day=N"> would set the query parameter and leave
+            # the sidebar on this page, so the learner would land back here.
+            # Move both: the day AND the page selector.
+            if st.button("↩ פתח את הפרק", key=f"errata_goto_{idx}"):
+                st.query_params["day"] = str(idx)
+                st.session_state["nav_page"] = PAGE_CHAPTERS
+                st.rerun()
 
 
 # ── Main app ────────────────────────────────────────────────────────────────
@@ -1077,16 +1422,35 @@ def main():
         st.error(f"שגיאת טעינה: {e}")
         return
 
+    # Answer widgets hold Hebrew and English side by side. `plaintext` picks the
+    # direction from each label's own first strong character, so a Hebrew option
+    # reads right-to-left and an English drug name is not reversed — which is
+    # what a blanket direction:rtl would do to them.
+    st.markdown(
+        "<style>"
+        '[data-testid="stRadio"] label p, [data-testid="stCheckbox"] label p,'
+        '[data-testid="stTextInput"] input, [data-testid="stTextArea"] textarea'
+        "{unicode-bidi:plaintext;text-align:start;}"
+        "</style>", unsafe_allow_html=True)
+
     # Header
     st.title("📚 קורס שלב ב' — פסיכיאטריית ילד ומתבגר")
     st.caption("מבוסס על: DSM-5-TR · Dulcan's Textbook · Stahl's Essential + Pediatric · הסילבוס הרשמי")
     render_daily_review_banner(sr_progress)
 
-    # Sidebar: overall progress + phase navigation
+    # Sidebar: page choice, overall progress, phase navigation
     with st.sidebar:
+        page = st.radio("תצוגה", [PAGE_CHAPTERS, PAGE_ERRATA],
+                        key="nav_page", label_visibility="collapsed")
         st.markdown("### התקדמות")
         render_progress_overall(schedule, progress)
         st.divider()
+
+    if page == PAGE_ERRATA:
+        render_errata_page(schedule)
+        return
+
+    with st.sidebar:
         st.markdown("### ניווט")
 
     # Determine which day to show

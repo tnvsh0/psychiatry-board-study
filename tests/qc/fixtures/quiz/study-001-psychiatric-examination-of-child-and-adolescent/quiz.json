@@ -1,0 +1,213 @@
+{
+  "title": "Developmental Quiz",
+  "questions": [
+    {
+      "question": "A 3-year-old child is observed in a 'green spring park' (Frame 5 of `developmental_red_flags`). While sitting on a tricycle (3 wheels = 3 years), the child ignores a large cardboard box, using it only as a physical stool rather than a 'spaceship' or 'house.' The clinician notes the 'COGNITIVE floor' (apprentice polishing interlocking cog-wheels) of the `developmental_ladder` appears intact. This specific 'red flag' regarding the box is most indicative of a deficit in which area?",
+      "answerOptions": [
+        {
+          "text": "Symbolic or representational play",
+          "isCorrect": true,
+          "rationale": "By age 3, a child is expected to engage in symbolic play where one object represents another; its absence is a key marker for neurodevelopmental delays or autism spectrum disorder."
+        },
+        {
+          "text": "Sensorimotor play II",
+          "isCorrect": false,
+          "rationale": "Sensorimotor play II involves combining actions to explore object characteristics and is typical for children aged 6 to 12 months, whereas this child's deficit is in the more advanced symbolic stage."
+        },
+        {
+          "text": "Functional play",
+          "isCorrect": false,
+          "rationale": "Functional play involves using objects for their intended purpose (e.g., pushing a car), which the child is essentially doing by using the box as a stool, failing only the higher-level imaginative leap."
+        },
+        {
+          "text": "Gross motor coordination",
+          "isCorrect": false,
+          "rationale": "The child is successfully sitting on and potentially operating a tricycle, suggesting the 'ground level MOTOR floor' is likely functional for his age."
+        }
+      ],
+      "hint": "Consider the transition from using objects based on physical properties to using them as mental representations."
+    },
+    {
+      "question": "A 15-year-old adolescent presents for an outpatient evaluation. The clinician seeks to assess the 'top floor ADAPTIVE' (apprentice with an electrical adapter) of the `developmental_ladder`. According to the source material, which informant is generally considered most accurate for reporting internalizing symptoms, such as suicidal ideation or hopelessness, in this age group?",
+      "answerOptions": [
+        {
+          "text": "The Adolescent",
+          "isCorrect": true,
+          "rationale": "Research indicates that adolescents are the most reliable source for their own internalizing symptoms, while parents tend to be more accurate regarding externalizing behaviors."
+        },
+        {
+          "text": "The Mother",
+          "isCorrect": false,
+          "rationale": "While mothers are essential informants, they often underreport or are unaware of the depth of an adolescent's internal emotional state compared to the adolescent themselves."
+        },
+        {
+          "text": "The Father",
+          "isCorrect": false,
+          "rationale": "Fathers often have divergent views from mothers, but like other caregivers, they typically provide better data on observable externalizing behaviors than internal feelings."
+        },
+        {
+          "text": "The School Counselor",
+          "isCorrect": false,
+          "rationale": "School staff provide vital collateral information on social and academic functioning but cannot replace the adolescent's self-report for subjective internal distress."
+        }
+      ],
+      "hint": "Think about who has the most direct access to the 'inner world' of a 15-year-old."
+    },
+    {
+      "question": "A 9-month-old 'NINJA-baby' is observed in a 'NIN-cradle' (Frame 1 of `developmental_red_flags`). The baby does not babble (finger on silenced lips). The clinician attempts to observe the 'EMO-METER' (Floor 4 of `developmental_ladder`). If the baby also shows a lack of 'joint attention' (not following a point toward the 'red town square clock tower' at 12:00), which neurodevelopmental disorder is the priority for screening?",
+      "answerOptions": [
+        {
+          "text": "Autism Spectrum Disorder (ASD)",
+          "isCorrect": true,
+          "rationale": "Early deficits in social communication, such as lack of babbling and failure to engage in joint attention, are significant markers that necessitate immediate ASD screening."
+        },
+        {
+          "text": "Developmental Coordination Disorder",
+          "isCorrect": false,
+          "rationale": "This disorder focuses on motor milestones and clumsiness, which are not the primary concern presented by these social communication red flags."
+        },
+        {
+          "text": "Selective Mutism",
+          "isCorrect": false,
+          "rationale": "Selective mutism is rarely diagnosed at this age and involves a consistent failure to speak in specific social situations despite speaking in others, unlike a total lack of babbling."
+        },
+        {
+          "text": "Major Depressive Disorder",
+          "isCorrect": false,
+          "rationale": "While infants can show apathy or withdrawal, the specific combination of social communication deficits and joint attention issues points more strongly toward a neurodevelopmental etiology like ASD."
+        }
+      ],
+      "hint": "Focus on the combination of social reciprocity and communication milestones."
+    },
+    {
+      "question": "During a semistructured play session (Crowell procedure), a 2-year-old child and his mother are observed. The clinician focuses on the 'reunion' after a brief separation. This specific observation is primarily intended to assess which component of the `developmental_ladder`?",
+      "answerOptions": [
+        {
+          "text": "Social-Emotional / Attachment",
+          "isCorrect": true,
+          "rationale": "The reunion phase activates the child's attachment system, revealing whether the child has a strategy for using the parent to resolve distress."
+        },
+        {
+          "text": "MOTOR floor",
+          "isCorrect": false,
+          "rationale": "While the child moves during the reunion, the primary clinical utility of the Crowell procedure is relational assessment, not motor skill analysis."
+        },
+        {
+          "text": "COGNITIVE floor",
+          "isCorrect": false,
+          "rationale": "The focus is on the emotional quality of the dyad's connection rather than the child's problem-solving or intellectual capacity."
+        },
+        {
+          "text": "LANGUAGE floor",
+          "isCorrect": false,
+          "rationale": "Although vocalizations may occur, the separation/reunion test is designed to measure the security of the attachment relationship."
+        }
+      ],
+      "hint": "Consider how a child uses a 'secure base' when stressed."
+    },
+    {
+      "question": "When interviewing parents of a preschooler, the clinician notes the child has a 'reversed time-arrow' (regression frame of `developmental_red_flags`), moving from 'WORDS' back to 'BABBLE.' In the Washington University assessment paradigm, which session is specifically reserved for obtaining this comprehensive history from parents *without* the child present?",
+      "answerOptions": [
+        {
+          "text": "Session 1",
+          "isCorrect": true,
+          "rationale": "The first session in this paradigm is dedicated to obtaining a full developmental and psychiatric history from caregivers alone to allow for efficient data collection."
+        },
+        {
+          "text": "Session 2",
+          "isCorrect": false,
+          "rationale": "Session 2 is typically used for a free-play observation with a secondary caregiver, observing interaction rather than taking a historical record."
+        },
+        {
+          "text": "Session 3",
+          "isCorrect": false,
+          "rationale": "Session 3 involves semistructured observations with the primary caregiver, including tasks like a shared snack or mild cognitive stressors."
+        },
+        {
+          "text": "Session 4",
+          "isCorrect": false,
+          "rationale": "The final session is reserved for the feedback session, where the clinician reviews findings and the treatment plan with the caregivers."
+        }
+      ],
+      "hint": "This session occurs earliest in the four-week outpatient evaluation sequence."
+    },
+    {
+      "question": "A 7-year-old child is asked 'What happened to make you hit your brother?' instead of 'Why did you hit him?'. This technique is used because the 'COGNITIVE floor' (cog-wheels) at this age typically lacks which ability?",
+      "answerOptions": [
+        {
+          "text": "Analytical/Abstract reasoning for 'why' questions",
+          "isCorrect": true,
+          "rationale": "School-age children often struggle with the analytical thinking required to answer 'why' and respond better to 'what' or 'how' questions that focus on the sequence of events."
+        },
+        {
+          "text": "Receptive language for complex syntax",
+          "isCorrect": false,
+          "rationale": "The child likely understands the word 'why,' but the difficulty lies in the cognitive process of self-analysis rather than simple word comprehension."
+        },
+        {
+          "text": "Social referencing",
+          "isCorrect": false,
+          "rationale": "Social referencing is an earlier developmental skill (checking in with a caregiver); it does not explain the inability to articulate motives for aggression."
+        },
+        {
+          "text": "Object constancy",
+          "isCorrect": false,
+          "rationale": "Object constancy is an infancy milestone; it is unrelated to a 7-year-old's ability to explain the reasons behind their behavior."
+        }
+      ],
+      "hint": "Consider the difference between describing an event and explaining a cause."
+    },
+    {
+      "question": "A child exhibits 'contralateral overflow movements' and 'asymmetry of gait' during a motor exam. While these are part of the 'ground level MOTOR floor' (motorcycle apprentice) of the `developmental_ladder`, what is their clinical significance according to the DSM-5 and Kaplan-Sadock texts?",
+      "answerOptions": [
+        {
+          "text": "They are 'soft signs' that are non-specific but suggest neurological immaturity.",
+          "isCorrect": true,
+          "rationale": "Neurological soft signs like overflow movements are not diagnostic of specific psychiatric disorders but indicate delays in central nervous system maturation."
+        },
+        {
+          "text": "They are pathognomonic for ADHD, hyperactive type.",
+          "isCorrect": false,
+          "rationale": "While common in children with ADHD, these signs are non-specific and found in many neurodevelopmental conditions and even in some typical development."
+        },
+        {
+          "text": "They indicate a progressive degenerative CNS lesion.",
+          "isCorrect": false,
+          "rationale": "Progressive lesions usually present with an objective loss of previously well-developed skills, whereas 'soft signs' often reflect a static delay in maturation."
+        },
+        {
+          "text": "They are sufficient for a diagnosis of Developmental Coordination Disorder.",
+          "isCorrect": false,
+          "rationale": "A diagnosis of Developmental Coordination Disorder requires that the motor impairment significantly interferes with activities of daily living, which 'soft signs' alone do not establish."
+        }
+      ],
+      "hint": "Determine if these findings are diagnostic or merely suggestive of a developmental pattern."
+    },
+    {
+      "question": "An adolescent is suspected of having a Substance Use Disorder (SUD). The clinician seeks to assess the 'top floor ADAPTIVE' (apprentice with an electrical adapter) regarding school and occupational functioning. According to the source material, what is an essential component of the physical examination for this patient?",
+      "answerOptions": [
+        {
+          "text": "Searching for infections, wounds, or possible liver disease",
+          "isCorrect": true,
+          "rationale": "The physical exam in a suspected SUD must screen for medical consequences of use, such as infections, trauma, or organ damage like liver disease."
+        },
+        {
+          "text": "Routine MRI to rule out structural brain abnormalities",
+          "isCorrect": false,
+          "rationale": "Neuroimaging is not supported by clinical data for diagnosing primary pediatric psychiatric disorders or SUDs unless neurological symptoms are present."
+        },
+        {
+          "text": "Immediate ECG to screen for cardiac pathology",
+          "isCorrect": false,
+          "rationale": "While an ECG might be needed if certain medications (like stimulants) are started, it is not listed as a primary diagnostic component for SUD itself."
+        },
+        {
+          "text": "Testing for the persistence of infantile reflexes",
+          "isCorrect": false,
+          "rationale": "Infantile reflexes are evaluated in infants or younger children with suspected neurological delays, not as a standard part of an adolescent SUD workup."
+        }
+      ],
+      "hint": "Focus on the medical comorbidities and physical sequelae associated with substance abuse."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "title": "ADHD Quiz",
+  "questions": [
+    {
+      "question": "ילד בן 9 עם ADHD (predominantly inattentive presentation) מתחיל טיפול ב-Atomoxetine לאחר שהוריו הביעו חשש משימוש ב-Stimulants. מה עליך לציין בפני ההורים לגבי תחילת ההשפעה הטיפולית וסיכונים אפשריים? (StahlKids p. 74, Dulcan p. 716)",
+      "answerOptions": [
+        {
+          "text": "השפעה מלאה עשויה להימשך 2-8 שבועות ויש לנטר הופעת מחשבות אובדניות.",
+          "isCorrect": true,
+          "rationale": "Atomoxetine דורשת זמן להשגת אפקט מלא ונושאת אזהרת Black Box לגבי suicidality בילדים ומתבגרים (StahlKids p. 74, Dulcan p. 716)."
+        },
+        {
+          "text": "התרופה פועלת באופן מיידי בדומה ל-Methylphenidate ואין צורך בניטור התנהגותי מיוחד.",
+          "isCorrect": false,
+          "rationale": "בניגוד ל-Stimulants, ל-Atomoxetine לוקח שבועות להשפיע וניטור אובדנות הוא חובה (StahlKids p. 74)."
+        },
+        {
+          "text": "תופעת הלוואי השכיחה ביותר היא עלייה משמעותית במשקל ותיאבון מוגבר.",
+          "isCorrect": false,
+          "rationale": "Atomoxetine לרוב גורמת לירידה בתיאבון ובמשקל, בדומה לסטימולנטים (StahlKids p. 74)."
+        },
+        {
+          "text": "התרופה פועלת כאגוניסט ישיר לקולטני Dopamine ב-Nucleus Accumbens.",
+          "isCorrect": false,
+          "rationale": "Atomoxetine היא NRI ואינה מעלה Dopamine ב-Nucleus Accumbens, מה שמסביר את היעדר פוטנציאל השימוש לרעה (StahlNeuro p. 480)."
+        }
+      ],
+      "hint": "חשבו על ההבדל בזמני התגובה בין מעכבי ספיגה חוזרת לבין ממריצים."
+    },
+    {
+      "question": "מתבגר בן 16 המטופל ב-Clonidine לטיפול ב-ADHD ו-Tic disorder שכח לקחת את התרופה במשך שלושה ימים רצופים. הוא מגיע למרפאה עם תלונות על כאבי ראש ודופק מהיר. מהו הסיבוך הסביר ביותר? (Dulcan p. 712, StahlKids p. 143)",
+      "answerOptions": [
+        {
+          "text": "Rebound hypertension כתוצאה מהפסקה חדה של $\\alpha_{2}$ agonist.",
+          "isCorrect": true,
+          "rationale": "הפסקה חדה של Clonidine עלולה להוביל לעלייה חדה בלחץ הדם ותסמינים אוטונומיים (Dulcan p. 712)."
+        },
+        {
+          "text": "הופעת Extrapyramidal symptoms (EPS) בשל חסימת D2.",
+          "isCorrect": false,
+          "rationale": "Clonidine אינה חוסמת קולטני D2 ולכן אינה גורמת ל-EPS (StahlNeuro p. 481)."
+        },
+        {
+          "text": "Serotonin syndrome בשל אינטראקציה עם מזון.",
+          "isCorrect": false,
+          "rationale": "Clonidine פועלת על מערכת ה-Norepinephrine ואינה קשורה לתסמונת סרוטונין (StahlNeuro p. 481)."
+        },
+        {
+          "text": "Acute withdrawal psychosis השכיחה במינונים נמוכים.",
+          "isCorrect": false,
+          "rationale": "הפסקה חדה של Clonidine גורמת בעיקר לתסמינים קרדיווסקולריים ולא לפסיכוזה חדה (Dulcan p. 712)."
+        }
+      ],
+      "hint": "התרופה פותחה במקור לטיפול ביתר לחץ דם."
+    }
+  ]
+}

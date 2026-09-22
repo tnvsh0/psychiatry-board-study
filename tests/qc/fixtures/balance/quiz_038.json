@@ -1,0 +1,265 @@
+{
+  "title": "Anxiety Quiz",
+  "questions": [
+    {
+      "question": "A 9-year-old boy presents with a 7-month history of excessive worry regarding his academic performance and his parents' health. He reports being easily fatigued and having difficulty concentrating in class. According to the DSM-5-TR, how many symptoms from the associated list are required to meet the diagnostic criteria for Generalized Anxiety Disorder (GAD) in this pediatric case?",
+      "answerOptions": [
+        {
+          "text": "Only one symptom.",
+          "isCorrect": true,
+          "rationale": "For children, only one item from the symptom list (e.g., fatigue, irritability, muscle tension) is required to meet Criterion C for GAD, whereas adults require three or more (DSM p. 251; Dulcan p. 312)."
+        },
+        {
+          "text": "At least three symptoms.",
+          "isCorrect": false,
+          "rationale": "While adults require three or more symptoms, the DSM-5-TR makes a developmental allowance for children to meet criteria with only one associated symptom (DSM p. 251)."
+        },
+        {
+          "text": "At least six symptoms.",
+          "isCorrect": false,
+          "rationale": "This exceeds the requirement for both children and adults; Criterion C only lists six total possible symptoms to choose from (DSM p. 251)."
+        },
+        {
+          "text": "The number of symptoms is not defined for pediatric populations.",
+          "isCorrect": false,
+          "rationale": "The DSM-5-TR specifically notes that only one item is required in children, clearly defining the threshold for this population (DSM p. 251)."
+        }
+      ],
+      "hint": "Check the specific 'Note' under Criterion C for GAD in the DSM-5-TR or Dulcan's text."
+    },
+    {
+      "question": "In the neurobiological model of anxiety described in StahlNeuro, which circuit is primarily associated with the symptom of 'worry,' including apprehensive expectations and catastrophic thinking?",
+      "answerOptions": [
+        {
+          "text": "Amygdala-centered circuit.",
+          "isCorrect": false,
+          "rationale": "The amygdala-centered circuit is primarily associated with fear, panic, and phobias, rather than the cognitive symptoms of worry (StahlNeuro p. 366)."
+        },
+        {
+          "text": "Cortico-striato-thalamo-cortical (CSTC) loop.",
+          "isCorrect": true,
+          "rationale": "The CSTC 'worry loop,' specifically involving the dorsolateral prefrontal cortex (DLPFC), is the hypothetical substrate for worry and ruminations (StahlNeuro p. 367)."
+        },
+        {
+          "text": "Mesolimbic dopamine pathway.",
+          "isCorrect": false,
+          "rationale": "This pathway is more closely linked to reward and the positive symptoms of psychosis, such as hallucinations, rather than anxiety-driven worry (StahlNeuro p. 113)."
+        },
+        {
+          "text": "Hypothalamic-pituitary-adrenal (HPA) axis.",
+          "isCorrect": false,
+          "rationale": "While the HPA axis is involved in the endocrine stress response, it is not the specific circuit identified for the cognitive experience of worry (StahlNeuro p. 367)."
+        }
+      ],
+      "hint": "Consider the 'loop' originating and ending in the dorsolateral prefrontal cortex (DLPFC)."
+    },
+    {
+      "question": "An adolescent girl is being treated for Generalized Anxiety Disorder. According to StahlKids, what is a critical pharmacokinetic consideration when comparing younger children to adults for SSRI dosing?",
+      "answerOptions": [
+        {
+          "text": "Younger children have slower hepatic metabolism, requiring much lower doses.",
+          "isCorrect": false,
+          "rationale": "In fact, younger children often have faster hepatic and renal metabolism, not slower (StahlKids p. 139)."
+        },
+        {
+          "text": "Younger children may require adult-like doses due to faster hepatic and renal clearance.",
+          "isCorrect": true,
+          "rationale": "Despite their smaller size, children have proportionately larger livers and faster metabolism, which may necessitate adult-like doses to maintain therapeutic levels (StahlKids p. 139)."
+        },
+        {
+          "text": "Renal excretion is immature in adolescents, making them highly sensitive to toxicity.",
+          "isCorrect": false,
+          "rationale": "Hepatic and renal functions develop early, and drug disposition is often more efficient in children than in adults (StahlKids p. 139)."
+        },
+        {
+          "text": "Dosing should always be based strictly on mg/kg without exception.",
+          "isCorrect": false,
+          "rationale": "While weight is a factor, developmental changes in metabolism (fast hepatic clearance) mean that mg/kg dosing alone may result in subtherapeutic levels in children (StahlKids p. 139)."
+        }
+      ],
+      "hint": "Focus on the relative size and efficiency of the liver (\u05db\u05d1\u05d3) in pediatric patients."
+    },
+    {
+      "question": "A clinician is evaluating a 14-year-old for GAD and is considering laboratory testing. According to Dulcan's Textbook, what is the reported yield of universal TSH (thyroid-stimulating hormone) screening in pediatric patients hospitalized with mood or anxiety disorders?",
+      "answerOptions": [
+        {
+          "text": "Approximately $25\\%$ show clinical thyroid disease.",
+          "isCorrect": false,
+          "rationale": "This significantly overestimates the prevalence; clinical thyroid disease is actually found in fewer than $1\\%$ of these patients (Dulcan p. 330)."
+        },
+        {
+          "text": "Fewer than $1\\%$ show actual thyroid disease.",
+          "isCorrect": true,
+          "rationale": "Universal screening has a low yield; thyroid disease is present in fewer than $1\\%$ of hospitalized pediatric psychiatric cases, suggesting targeted screening is more effective (Dulcan p. 330)."
+        },
+        {
+          "text": "$10\\%$ of cases are linked to hyperthyroidism.",
+          "isCorrect": false,
+          "rationale": "While hyperthyroidism can mimic GAD, its actual prevalence in this population is very low, making universal screening inefficient (Dulcan p. 330)."
+        },
+        {
+          "text": "The yield is high only in male children before puberty.",
+          "isCorrect": false,
+          "rationale": "There is no evidence that prepubertal males have a higher yield; in fact, clinical suspicion based on weight changes or medication history is the best predictor of yield (Dulcan p. 330)."
+        }
+      ],
+      "hint": "Think about the utility of universal vs. targeted screening for endocrine mimics."
+    },
+    {
+      "question": "When initiating an SSRI in a child with GAD, what is the expected incidence of 'behavioral activation' (\u05d0\u05e7\u05d8\u05d9\u05d1\u05e6\u05d9\u05d4) compared to that seen in adolescents, according to StahlKids?",
+      "answerOptions": [
+        {
+          "text": "The incidence is approximately the same across all ages.",
+          "isCorrect": false,
+          "rationale": "Children are specifically noted to have a higher risk of behavioral side effects compared to older groups (StahlKids p. 139)."
+        },
+        {
+          "text": "Two- to threefold higher incidence in children than in adolescents.",
+          "isCorrect": true,
+          "rationale": "Children are more sensitive to these effects, showing a 2-3 times higher rate of behavioral activation and vomiting than adolescents (StahlKids p. 139)."
+        },
+        {
+          "text": "Tenfold higher incidence in adolescents due to hormonal changes.",
+          "isCorrect": false,
+          "rationale": "It is the younger children, not adolescents, who exhibit the significantly higher incidence of activation (StahlKids p. 139)."
+        },
+        {
+          "text": "Activation is only seen when SSRIs are combined with SNRIs.",
+          "isCorrect": false,
+          "rationale": "Behavioral activation is a known side effect of SSRI monotherapy, and its risk is inherently higher in the younger pediatric population (StahlKids p. 139)."
+        }
+      ],
+      "hint": "Younger children tend to be more sensitive to specific adverse effects than adolescents."
+    },
+    {
+      "question": "A 15-year-old patient with GAD is not responding to initial therapy. The clinician considers adding an $\\alpha_{2}\\delta$ ligand. According to StahlNeuro, what is the mechanism of action for medications like Pregabalin in treating worry?",
+      "answerOptions": [
+        {
+          "text": "Blocking postsynaptic $D_{2}$ receptors in the striatum.",
+          "isCorrect": false,
+          "rationale": "This is the mechanism of antipsychotics, not $\\alpha_{2}\\delta$ ligands (StahlNeuro p. 113)."
+        },
+        {
+          "text": "Binding to the $\\alpha_{2}\\delta$ subunit of presynaptic voltage-sensitive calcium channels (VSCCs).",
+          "isCorrect": true,
+          "rationale": "By binding to the $\\alpha_{2}\\delta$ subunit of VSCCs, these ligands block the excessive release of glutamate in both the amygdala (fear) and CSTC worry loops (StahlNeuro p. 366)."
+        },
+        {
+          "text": "Irreversible inhibition of Monoamine Oxidase (MAO).",
+          "isCorrect": false,
+          "rationale": "This describes the action of MAOIs, which are distinct from the calcium channel modulation seen with Pregabalin (StahlNeuro p. 366)."
+        },
+        {
+          "text": "Agonism of postsynaptic $5HT_{1A}$ receptors.",
+          "isCorrect": false,
+          "rationale": "While $5HT_{1A}$ agonism (like Buspirone) is used in GAD, it is not the mechanism of the $\\alpha_{2}\\delta$ ligands (StahlNeuro p. 367)."
+        }
+      ],
+      "hint": "The mechanism involves modulating excitatory neurotransmitter release by acting on calcium channels."
+    },
+    {
+      "question": "Regarding the epidemiology of pediatric anxiety disorders, Dulcan identifies a 'pediatric anxiety triad.' Which three disorders comprise this triad?",
+      "answerOptions": [
+        {
+          "text": "OCD, PTSD, and GAD.",
+          "isCorrect": false,
+          "rationale": "While these are all anxiety-related, OCD and PTSD are now classified in different chapters in DSM-5 (Dulcan p. 312; DSM p. v)."
+        },
+        {
+          "text": "GAD, Social Anxiety Disorder, and Separation Anxiety Disorder.",
+          "isCorrect": true,
+          "rationale": "These three disorders frequently co-occur and are referred to as the pediatric anxiety triad (Dulcan p. 312)."
+        },
+        {
+          "text": "Panic Disorder, Agoraphobia, and Specific Phobia.",
+          "isCorrect": false,
+          "rationale": "These are distinct anxiety disorders but do not constitute the primary triad identified for pediatric onset (Dulcan p. 312)."
+        },
+        {
+          "text": "Separation Anxiety, Selective Mutism, and ADHD.",
+          "isCorrect": false,
+          "rationale": "ADHD is a neurodevelopmental disorder, not part of the anxiety triad (Dulcan p. 312)."
+        }
+      ],
+      "hint": "These three disorders often overlap in presentation and treatment response in children."
+    },
+    {
+      "question": "A clinician uses the GAD-7 scale to monitor an adolescent's response to treatment. According to Dulcan's text, which cut-off score on the GAD-7 is most sensitive and specific for detecting 'severe' anxiety in adolescents?",
+      "answerOptions": [
+        {
+          "text": "A score of 5.",
+          "isCorrect": false,
+          "rationale": "A score of 5 usually represents mild anxiety, not severe (Dulcan p. 329)."
+        },
+        {
+          "text": "A score of 11.",
+          "isCorrect": false,
+          "rationale": "A score of 11 is the optimal cut-off for detecting 'moderate' anxiety, while higher scores are needed for severe cases (Dulcan p. 329)."
+        },
+        {
+          "text": "A score of 17 or greater.",
+          "isCorrect": true,
+          "rationale": "Research indicates that a GAD-7 score of 17 or higher reliably detects severe clinical anxiety in adolescents (Dulcan p. 329)."
+        },
+        {
+          "text": "A score of 25.",
+          "isCorrect": false,
+          "rationale": "The maximum score on the GAD-7 is 21; therefore, a score of 25 is impossible (Dulcan p. 329)."
+        }
+      ],
+      "hint": "Moderate anxiety is detected at 11; severe anxiety requires a significantly higher threshold."
+    },
+    {
+      "question": "According to the Child/Adolescent Anxiety Multimodal Study (CAMS) findings cited in Dulcan, how does the treatment response of SSRIs compare to SNRIs in pediatric anxiety?",
+      "answerOptions": [
+        {
+          "text": "SNRIs produce faster and more robust improvement.",
+          "isCorrect": false,
+          "rationale": "The opposite is true; SSRIs are noted for faster and more significant symptomatic reduction (Dulcan p. 331)."
+        },
+        {
+          "text": "SSRIs produce faster and greater improvement, with trajectories diverging by week 4.",
+          "isCorrect": true,
+          "rationale": "SSRIs show a clear advantage in speed and magnitude of effect, and by week 8, SNRIs only achieve $40\\%$ of the response seen with SSRIs (Dulcan p. 331)."
+        },
+        {
+          "text": "Neither class separates from placebo in pediatric GAD.",
+          "isCorrect": false,
+          "rationale": "Both classes have demonstrated efficacy compared to placebo, although their trajectories differ (Dulcan p. 331)."
+        },
+        {
+          "text": "SNRIs are preferred first-line due to lower rates of activation.",
+          "isCorrect": false,
+          "rationale": "SSRIs remain first-line despite higher activation rates because they are generally more effective and produce more rapid improvement (Dulcan p. 331; StahlKids p. 756)."
+        }
+      ],
+      "hint": "Consider the 'divergence' of improvement curves around the one-month mark."
+    },
+    {
+      "question": "How does GAD differ from 'nonpathological' (normal) anxiety in everyday life, as defined in the DSM-5-TR?",
+      "answerOptions": [
+        {
+          "text": "Normal worries are more likely to be accompanied by physical symptoms like restlessness.",
+          "isCorrect": false,
+          "rationale": "Physical symptoms are a hallmark of GAD (pathological anxiety), whereas everyday worries typically occur without them (DSM p. 251)."
+        },
+        {
+          "text": "Pathological worries are more pervasive, pronounced, and have a longer duration.",
+          "isCorrect": true,
+          "rationale": "GAD worries are excessive, interfere with functioning, and are more likely to occur without clear precipitants compared to normal life stressors (DSM p. 251)."
+        },
+        {
+          "text": "The focus of worry in GAD is strictly limited to one domain, such as finances.",
+          "isCorrect": false,
+          "rationale": "GAD is characterized by 'generalized' worry over multiple domains, and the focus of worry often shifts over time (DSM p. 251)."
+        },
+        {
+          "text": "Normal anxiety is persistent for at least 6 months, whereas GAD is transient.",
+          "isCorrect": false,
+          "rationale": "By definition, GAD must be persistent (typically $\\ge 6$ months), while normal anxiety is often transient and stress-induced (DSM p. 251)."
+        }
+      ],
+      "hint": "Think about the pervasiveness and the impact on psychosocial functioning."
+    }
+  ]
+}

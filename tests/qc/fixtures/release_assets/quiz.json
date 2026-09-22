@@ -1,0 +1,57 @@
+{
+ "title": "Serotonin Quiz",
+ "questions": [
+  {
+   "question": "נערה בת 15 המאובחנת עם Major Depressive Disorder מתחילה טיפול ב-Fluoxetine. בימים הראשונים לטיפול היא מדווחת על עלייה ב-Anxiety ובחילה. לפי **StahlNeuro**, מהו התהליך המתרחש ב-Raphe nucleus שמסביר מדוע האפקט האנטי-דפרסיבי מתעכב למרות עליית רמות הסרוטונין המיידית?",
+   "answerOptions": [
+    {
+     "text": "Desensitization של ה-$5HT_{1A}$ somatodendritic autoreceptors.",
+     "isCorrect": true,
+     "rationale": "העלייה המיידית בסרוטונין באזור ה-Raphe מגרה את ה-autoreceptors ומדכאת את ירי הנוירונים; רק לאחר שהם עוברים דה-סנסיטיזציה, הנוירון הופך ל-disinhibited ומגביר שחרור בטרמינל האקסונלי (StahlNeuro p.290)."
+    },
+    {
+     "text": "Upregulation של ה-Postsynaptic $5HT_{2A}$ receptors.",
+     "isCorrect": false,
+     "rationale": "תהליך זה מאפיין מצבי חסר כרוניים בסרוטונין ואינו המנגנון המתווך את השהיית האפקט הטיפולי של SSRIs."
+    },
+    {
+     "text": "חסימה ישירה של ה-Dopamine Transporter ($DAT$).",
+     "isCorrect": false,
+     "rationale": "Fluoxetine היא תרופה מסוג SSRI ופעולתה העיקרית היא עיכוב ה-SERT, ולא השפעה ישירה על ה-$DAT$ ב-Raphe."
+    },
+    {
+     "text": "עיכוב מיידי של האנזים Monoamine Oxidase ($MAO$).",
+     "isCorrect": false,
+     "rationale": "מנגנון זה שייך לקבוצת ה-MAOIs, בעוד ש-Fluoxetine פועלת באמצעות עיכוב הטרנספורטר SERT בלבד."
+    }
+   ],
+   "hint": "חשבו על המנגנון המעכב את ירי הנוירונים הסרוטונינרגיים עצמם בתגובה לעליית ה-5HT ב-cell body."
+  },
+  {
+   "question": "במהלך טיפול ב-Clozapine או Olanzapine, מטופלים רבים חווים עלייה משמעותית במשקל וסיכון ל-Metabolic syndrome. לפי **StahlNeuro**, שילוב של אנטגוניזם לאילו קולטנים נחשב לאחראי העיקרי לעלייה בתיאבון ובמשקל?",
+   "answerOptions": [
+    {
+     "text": "קולטני $H_{1}$ histamine וקולטני $5HT_{2C}$.",
+     "isCorrect": true,
+     "rationale": "חסימה של קולטנים אלו בהיפותלמוס מקושרת לעלייה בצריכת מזון, השמנה ועלייה ברמות הטריגליצרידים (StahlNeuro p.198)."
+    },
+    {
+     "text": "קולטני $D_{2}$ dopamine וקולטני $M_{1}$ muscarinic.",
+     "isCorrect": false,
+     "rationale": "חסימת $D_{2}$ קשורה בעיקר לאפקט אנטי-פסיכוטי ותופעות לוואי מוטוריות, וחסימה מוסקרינית גורמת לתופעות כגון יובש בפה ועצירות."
+    },
+    {
+     "text": "קולטני $\\alpha_{1}$ adrenergic וקולטני $5HT_{1A}$.",
+     "isCorrect": false,
+     "rationale": "חסימת $\\alpha_{1}$ גורמת ל-Orthostatic hypotension וסדציה, בעוד שפעילות ב-$5HT_{1A}$ לרוב מתווכת אפקט אנקסיוליטי."
+    },
+    {
+     "text": "קולטני $5HT_{3}$ וקולטני $NMDA$.",
+     "isCorrect": false,
+     "rationale": "אנטגוניזם ל-$5HT_{3}$ מסייע במניעת בחילה, וחסימת $NMDA$ קשורה להשפעות פסיכוטומימטיות או שיפור קוגניטיבי במצבי דמנציה."
+    }
+   ],
+   "hint": "התמקדו בקולטנים המצויים במרכזי השובע והתיאבון שחסימתם גורמת ל-Hyperphagia."
+  }
+ ]
+}

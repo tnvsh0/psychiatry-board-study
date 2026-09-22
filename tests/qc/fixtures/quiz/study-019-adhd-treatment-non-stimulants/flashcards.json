@@ -1,0 +1,17 @@
+{
+  "title": "ADHD Flashcards",
+  "cards": [
+    {
+      "front": "מהו מנגנון הפעולה של Atomoxetine ב-Prefrontal Cortex (PFC) המביא לעלייה בריכוז ה-Dopamine?",
+      "back": "חסימת ה-NET ב-PFC מונעת reuptake של Dopamine, מכיוון שבצבר נוירונים זה ישנו חוסר ב-DAT וצריכת ה-Dopamine מתבצעת על ידי נשאי ה-Norepinephrine (מקור: StahlNeuro p. 480)."
+    },
+    {
+      "front": "מדוע ל-Atomoxetine אין פוטנציאל ל-Abuse בהשוואה ל-Stimulants?",
+      "back": "התרופה אינה מעלה את רמות ה-Dopamine ב-Nucleus Accumbens, מכיוון שבאזור זה יש שפע של DAT ו-Atomoxetine אינו חוסם נשא זה (מקור: StahlNeuro p. 480)."
+    },
+    {
+      "front": "מהו טווח הגילאים המאושר על ידי ה-FDA לשימוש ב-Atomoxetine לטיפול ב-ADHD?",
+      "back": "ילדים ומתבגרים מגיל 6 ומעלה (מקור: StahlKids p. 68)."
+    }
+  ]
+}

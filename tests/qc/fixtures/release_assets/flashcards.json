@@ -1,0 +1,17 @@
+{
+ "title": "Serotonin Flashcards",
+ "cards": [
+  {
+   "front": "מהם גרעיני המקור (origin) העיקריים ב-brainstem מהם יוצאים ה-ascending projections של מערכת ה-Serotonin?",
+   "back": "ה-Raphe nuclei (StahlNeuro p. 278)."
+  },
+  {
+   "front": "מהו ה-Rate-limiting enzyme בתהליך ה-Synthesis של 5-HT בתוך הנוירון?",
+   "back": "האנזים Tryptophan Hydroxylase (TRY-OH) (StahlNeuro p. 115)."
+  },
+  {
+   "front": "כיצד משפיע גירוי של Somatodendritic $5-HT_{1A}$ autoreceptors ב-Raphe על ה-Impulse flow הסרוטונרגי?",
+   "back": "הגירוי גורם ל-shutdown של ה-impulse flow ולירידה בשחרור 5-HT מה-axon terminals (StahlNeuro p. 116)."
+  }
+ ]
+}

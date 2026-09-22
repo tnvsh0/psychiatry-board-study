@@ -2432,11 +2432,43 @@ def _fresh(path, since):
         return False
 
 
+def _judged_assets(tag: str) -> set[str]:
+    """The asset names a QC verdict for this chapter already covers.
+
+    QC_REVIEW_SPEC §2.5 — "never lose an asset; uploads never use --clobber" —
+    and §5.12, which closes it: "every uploader refuses unless the chapter's
+    verdict covers that asset's sha256". Until §5.12's per-sha256 gate exists,
+    this is the cheap half of it: a `--clobber` over an asset a verdict was
+    written about destroys the judged bytes with no pre-QC copy and silently
+    invalidates the sha256 the verdict (and the app's qc.json) names.
+
+    Read straight off disk, not through qc_store: this module runs on machines
+    that carry neither PyMuPDF nor the QC tree, and a missing verdict must cost
+    nothing. Anything unreadable means "no verdict" — the gate is a guard on
+    top of the old behaviour, never a new way for a release to fail.
+    """
+    try:
+        root = Path(os.environ.get("QC_DIR") or (REPO_ROOT / "_qc"))
+        verdict = json.loads(
+            (root / str(tag) / "verdict.json").read_text(encoding="utf-8"))
+        if verdict.get("status") == "unjudged":
+            return set()          # nothing was checked, so nothing is at risk
+        return {str(n) for n in
+                {**(verdict.get("inputs") or {}),
+                 **(verdict.get("outputs") or {})}}
+    except Exception:                                        # noqa: BLE001
+        return set()
+
+
 def upload_release(tag, title, notes_md, assets):
     """Create or update a GitHub Release with all assets.
 
     Returns {"url": "<release_url>", "assets": [...]} on success,
     or {"url": "", "assets": []} on failure (with errors printed).
+
+    An asset a QC verdict already covers is NOT overwritten — see
+    `_judged_assets`. It is skipped and named, and the rest of the release
+    still uploads.
     """
     env = os.environ.copy()
     if not env.get("GH_TOKEN"):
@@ -2460,9 +2492,17 @@ def upload_release(tag, title, notes_md, assets):
         capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
     )
     if r.returncode == 0:
-        # Release exists — upload each asset with --clobber
+        # Release exists — upload each asset with --clobber, except the ones a
+        # QC verdict already covers (§5.12).
+        judged = _judged_assets(tag)
         upload_failures = 0
         for a in assets:
+            if Path(a).name in judged:
+                print(f"  [SKIP] {Path(a).name}: a QC verdict covers these "
+                      f"bytes — refusing to --clobber the judged asset. "
+                      f"Re-run qc_run for {tag} after the change, or clear "
+                      f"_qc/{tag}/verdict.json if the verdict is stale.")
+                continue
             ru = subprocess.run(
                 ["gh", "release", "upload", tag, str(a), "--repo", GITHUB_REPO, "--clobber"],
                 capture_output=True, text=True, encoding="utf-8", errors="replace", env=env, timeout=300,

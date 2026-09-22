@@ -1,0 +1,84 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Inattention",
+        "items": [
+          "Careless mistakes/ignores details",
+          "Difficulty sustaining attention",
+          "Does not seem to listen",
+          "Fails to finish tasks",
+          "Difficulty organizing",
+          "Avoids sustained mental effort",
+          "Loses things",
+          "Easily distracted",
+          "Forgetful"
+        ]
+      },
+      {
+        "name": "Hyperactivity/Impulsivity",
+        "items": [
+          "Fidgets/squirms",
+          "Leaves seat",
+          "Runs/climbs (restlessness in adults)",
+          "Unable to play quietly",
+          "Driven by a motor",
+          "Talks excessively",
+          "Blurts out answers",
+          "Difficulty waiting turn",
+          "Interrupts/intrudes"
+        ]
+      }
+    ],
+    "thresholds": ">=6/9 symptoms (>=5 if 17+), onset <12yo, >=2 settings, >=6 months",
+    "subtypes": [
+      "Combined presentation",
+      "Predominantly inattentive",
+      "Predominantly hyperactive/impulsive"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "7.2% children, 2.5% adults",
+    "sex_ratio": "2:1 male:female (children), 1.6:1 (adults)",
+    "onset_age_typical": "Preschool (hyperactivity) to elementary (inattention)",
+    "heritability": "~74-75%",
+    "comorbidities": [
+      "ODD & CD (up to 50%)",
+      "Anxiety (~33%)",
+      "Specific Learning Disorders (~20%)",
+      "Depression (~11%)",
+      "DMDD (4-16%)"
+    ],
+    "prognosis": "~60-85% persist into adolescence and adulthood"
+  },
+  "etiology": {
+    "genetic": "Polygenic (FOXP2, SORCS3, DUSP6, DAT1, DRD4)",
+    "neurobiology": "Inefficient PFC info processing; DLPFC (attention), OFC (impulsivity), SMA (hyperactivity); low tonic DA (D1) & NE (Alpha-2A)",
+    "environmental": "Prematurity, low birth weight, maternal smoking/alcohol, lead, TBI"
+  },
+  "treatment": {
+    "first_line": [
+      "Stimulants (Methylphenidate, Amphetamine) - increase tonic DA/NE",
+      "Psychosocial interventions (behavioral therapy)"
+    ],
+    "second_line": [
+      "Atomoxetine (NRI)",
+      "Alpha-2A agonists (Guanfacine, Clonidine)"
+    ],
+    "key_side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Growth suppression",
+      "Cardiovascular effects",
+      "Atomoxetine: suicidal ideation (Black Box)"
+    ],
+    "monitoring": "Height, weight, blood pressure, heart rate"
+  },
+  "high_yield": [
+    "DSM-5 onset age raised to <12 years",
+    "Adults (17+) require only 5 symptoms per cluster",
+    "Tonic DA/NE release = therapeutic; Phasic DA = abuse/euphoria",
+    "Atomoxetine lacks abuse potential (no DAT in PFC, only NET)",
+    "Guanfacine is more selective for Alpha-2A than Clonidine (less sedation/hypotension)"
+  ]
+}
