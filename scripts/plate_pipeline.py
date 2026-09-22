@@ -160,9 +160,20 @@ def run_plate(day: dict, plate: spec.Plate, venue: dict, tokens: dict,
         plate, venue, topic, tokens,
         composited_numbers=(numbers_mode == "composite"))
     painted = [n for f in plate.facts for n in f.numbers if n.drawn]
+    # Record WHICH fixed symbols the director was handed, and the prompt it got.
+    # The owner asked on 2026-09-22 whether the symbol file is used at all, and
+    # the reports could not answer: they kept the illustrator's prompt and threw
+    # the director's away. Chapter 4's plate draws the word "MESO-LIMB" on a
+    # track while the lexicon holds a red barrier for D2 and an elevator for D1,
+    # and nothing on disk says whether the director ever saw them. A token that
+    # was injected and ignored is a different failure from one that never
+    # arrived, and only one of them is fixed by writing more symbols.
     report = {"day": day.get("index"), "plate": plate.name,
               "facts": len(plate.facts), "tries": 0,
-              "numbers_mode": numbers_mode}
+              "numbers_mode": numbers_mode,
+              "tokens_injected": sorted(tokens or {}),
+              "tokens_requested": sorted(day.get("symbols_needed", [])),
+              "director_prompt": director}
 
     if dry_run:
         print(director)

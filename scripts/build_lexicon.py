@@ -128,7 +128,42 @@ def main() -> int:
             "since": LEXICON_VERSION,
         }
 
-    # 3. the corpus's own vocabulary
+    # 3. the 58 drugs and 5 ions, which this builder used to drop on the floor.
+    #
+    # symbols.json has carried them since July, each with a symbol, a mnemonic
+    # link and a function_depiction — Lithium is a Li-ion battery whose narrow
+    # voltage band IS the narrow therapeutic window; Carbamazepine is a bread
+    # maze that redraws itself overnight, which is auto-induction. Only
+    # `scenes` and `symbols` were ever read, so none of it reached a prompt.
+    # Chapter 33 asked for DSM_bipolar, Lithium, Valproate and Carbamazepine
+    # and the director was handed one of the four; its three plates were drawn
+    # without the drug glyphs written for exactly those drugs. Across the
+    # schedule, 97 of the 226 requested symbols were missing for this reason.
+    #
+    # The function_depiction goes into the hook because that is the part that
+    # makes the glyph teach rather than label: it says what the drawing must
+    # show, not merely what object to draw.
+    for section, kind in (("drugs", "DRUG_SYMBOL"), ("ions", "ION_SYMBOL")):
+        for key, sym in src.get(section, {}).items():
+            if key.startswith("_") or not isinstance(sym, dict):
+                continue      # the file uses string values as section rulers
+            if not sym.get("symbol") or key in tokens:
+                continue      # a key already defined as a receptor symbol wins
+            hook = " ".join(x for x in ((sym.get("mnemonic_link") or "").strip(),
+                                        (sym.get("function_depiction") or "").strip())
+                            if x)
+            tokens[key] = {
+                "cue": sym["symbol"].split("—")[0].split(":")[0].strip()[:60],
+                "prop": sym["symbol"].strip(),
+                "hook": hook[:400],
+                "kind": kind,
+                "scene": (sym.get("appears_in_scenes") or sym.get("appears_in") or [""])[0],
+                "category": section,
+                "source": f"symbols.json:{section}",
+                "since": LEXICON_VERSION,
+            }
+
+    # 4. the corpus's own vocabulary
     for key, (cue, prop, hook) in CORPUS_TOKENS.items():
         tokens[key] = {
             "cue": cue, "prop": prop, "hook": hook,
