@@ -1280,6 +1280,83 @@ def judge_call(*, call=None, plan=None, tag: str = "qc", model: str | None = Non
 
 
 # ---------------------------------------------------------------------------
+def known_answer_probe(*, book: str = "StahlKids", printed: int = 69,
+                       expect: str = "2-8 weeks", question: str = "",
+                       model: str | None = None, root=None,
+                       ask: Callable = agy_attach.ask_with_files,
+                       workdir=None) -> dict:
+    """§4's version smoke test: one page we know, through the real path.
+
+    agy replaced its own binary three times in three days (2026-09-16/17/18),
+    and the 1.2.5 run is the one that answered from memory with an invented
+    quote. So when the version changes mid-run the mechanism has to re-earn its
+    trust before judging another chapter, and the cheapest proof that a new
+    binary still READS is to hand it a page whose sentence we hold and ask for
+    it back.
+
+    Deliberately the same path a real call takes — a stamped bundle built by
+    qc_sources, attached by agy_attach, its code and quote checked by code —
+    because a probe down a simpler path would pass while the path we use is
+    broken. It costs one call and about three pages.
+
+    Returns {ok, quote, code, detail}. qc_run decides what to do with it; §2.3
+    means a probe that cannot run is a failed probe, and raising here would
+    read as "unknown" instead.
+    """
+    import tempfile
+    import qc_sources
+
+    b = qc_books.book(qc_books.normalize_label(book) or book)
+    pages = [qc_sources._page(book, p, b.pdf_pages(p), "cited")
+             for p in (printed - 1, printed, printed + 1) if b.has_page(p)]
+    if not pages:
+        return {"ok": False, "quote": "", "code": "",
+                "detail": f"{book} p.{printed} is not in the local books"}
+
+    plan = qc_sources.CallPlan(call_id="probe", kind="A", units=[], pages=pages)
+    tmp = Path(workdir) if workdir else Path(tempfile.mkdtemp(prefix="qc-probe-"))
+    manifest = qc_sources.build_bundle(plan, tmp)
+    want = next((p for p in manifest.pages
+                 if printed in (p.get("printed_pages") or [p.get("printed")])),
+                manifest.pages[0])
+    code = str(want.get("code") or "")
+    q = question or (f"On {book} printed page {printed}, quote verbatim the "
+                     f"sentence that says how long the drug takes to reach "
+                     f"its full therapeutic effect.")
+    prompt = (
+        f"One PDF is attached: {manifest.page_count} pages, each stamped with "
+        f"its book, printed page and a code.\n\n{q}\n\n"
+        f"Return ONLY JSON: {{\"quote\": \"<the sentence, verbatim>\", "
+        f"\"code\": \"<the code stamped on the page you took it from>\"}}")
+
+    res = ask(prompt, [manifest.path], model=model or agy_attach.DEFAULT_MODEL,
+              attempts=2)
+    data = getattr(res, "data", None) or {}
+    if not data:
+        return {"ok": False, "quote": "", "code": "",
+                "detail": f"no answer: {getattr(res, 'diagnostic', '')}"}
+
+    quote = str(data.get("quote") or "")
+    got = str(data.get("code") or "").strip().upper()
+    # The code it returns must be A page OF THIS BUNDLE and the quote must be on
+    # THAT page — the same pairing every finding is held to (verify_quote), not
+    # "the code I expected". Measured 2026-09-23: the answer quoted p.69's
+    # sentence exactly and returned the stamp of the adjacent bundle page,
+    # because a reflowed printed page spans several PDF pages and the sentence
+    # sits on one of them. Demanding one particular stamp failed a probe whose
+    # evidence was perfect.
+    named = page_by_code(manifest, got)
+    found = (qc_norm.find_quote(quote, source_text(named), min_len=20)
+             if named else {"match": None})
+    ok = bool(found.get("match")) and named is not None
+    detail = (f"quote {found.get('match') or 'not found'}, "
+              f"code {got!r} {'in bundle' if named else 'not in this bundle'}, "
+              f"agy {getattr(res, 'agy_version', '?')}")
+    if ok and expect and qc_norm.norm(expect) not in qc_norm.norm(quote):
+        ok, detail = False, f"quote does not carry {expect!r}: {detail}"
+    return {"ok": ok, "quote": quote, "code": code, "detail": detail}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description="Build and check a judge call. Offline unless --run.")
