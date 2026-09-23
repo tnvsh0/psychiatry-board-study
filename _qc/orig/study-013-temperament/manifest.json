@@ -1,0 +1,64 @@
+{
+ "tag": "study-013-temperament",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-23T20:35:36+00:00",
+ "updated_at": "2026-09-23T20:35:36+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3c7752449dc539812fc5c6770aad6356413d6f13cbe40b8bd869bdde1bc7116b",
+   "asset_id": 529489470,
+   "size": 5465,
+   "fetched_at": "2026-09-23T20:35:23+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "9a431451e0abfffc9894eef00049724797787380cf85031ecb4847646d1edf5a",
+   "asset_id": 529489423,
+   "size": 10540,
+   "fetched_at": "2026-09-23T20:35:25+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "dbdbe58c320e1fb8855fa06a5f8181bf7487e51d67539b6d7de90d85ea9c49b0",
+   "asset_id": 529489437,
+   "size": 8169,
+   "fetched_at": "2026-09-23T20:35:26+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "00b20c5b4d81d8098a3c8a4f2d5391e5fc9aa410a0e208de38a657a42bbe0018",
+   "asset_id": 529489446,
+   "size": 16196,
+   "fetched_at": "2026-09-23T20:35:28+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "1c49f13877ea827d50150ca4e38d40fec00032ce989dc4e4d1330c5591fab6c6",
+   "asset_id": 529489420,
+   "size": 31648,
+   "fetched_at": "2026-09-23T20:35:30+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "817c3a478c026fb4fe20cff46ad2462d982917cd44644d4eea186c967db0d0e1",
+   "asset_id": 529489435,
+   "size": 5725,
+   "fetched_at": "2026-09-23T20:35:32+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "4cd39c4377d32a0856532752ad26740a4433d462ef1bd3e828a32c66534ddf8d",
+   "asset_id": 529489418,
+   "size": 16117,
+   "fetched_at": "2026-09-23T20:35:34+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "6c6d80145af9719a702933e3d49f7a43f13371e5278166d367c22f1830124ef9",
+   "asset_id": 529489447,
+   "size": 32486,
+   "fetched_at": "2026-09-23T20:35:36+00:00"
+  }
+ ]
+}

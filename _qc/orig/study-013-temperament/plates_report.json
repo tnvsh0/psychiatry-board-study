@@ -1,0 +1,217 @@
+[
+ {
+  "day": 13,
+  "plate": "main",
+  "facts": 28,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e14: dropped an unmappable relation 'linked_to'",
+   "e16: dropped an unmappable relation 'risk_factor_for'",
+   "e12: cue trimmed to 'Door-width test frame'",
+   "e17: cue trimmed to \"Swing price ticket '12mo' on a baby bib next\"",
+   "e21: cue trimmed to 'Steel tape measure'",
+   "e17: hook over 32 words (35): \"תג מחיר '12mo' על סינר תינוק ליד לוח שנה המציין '12 שנים', הממחיש כיצד הגיל שבו מופיע לרוב הביטוי המלא של חרדה חברתית (SAD) הוא 12 שנים, גם אם '12mo' מתייחס ל-12 חודשים בתעשיית התינוקות.\""
+  ],
+  "digit_strings_dropped": [
+   "DSM-5 ALTERNATIVE"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "MD-060",
+     "MD-815",
+     "M3-80",
+     "M3-80",
+     "MD7-612",
+     "MD-062",
+     "MD-21",
+     "0",
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "blank_plates_found": 1,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1725,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": false,
+      "height_frac": 0.0768,
+      "reject": "too_small_in_frame"
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": false,
+      "height_frac": 0.0872,
+      "reject": "too_small_in_frame"
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the man in the green shirt pushing the pink stroller near the window on the left side of the image is clearly larger than the children and babies.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "12mo",
+    "15%"
+   ],
+   "score": 3,
+   "verified": true,
+   "stray_warning": [
+    "MD-060",
+    "MD-815",
+    "M3-80",
+    "M3-80",
+    "MD7-612",
+    "MD-062",
+    "MD-21",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A nursery goods shop on a Saturday morning: a double-tier run of display cots and cot-beds down the middle of the floor with spec cards tied to every rail, a rank of prams and pushchairs along the window, a mock car boot and a door-width test frame at the back of the shop, and a counter with the order pad and the delivery diary open on it.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is trying the goods out — laying a baby down in a display cot and standing back to watch, rocking a moses basket with one foot, folding and unfolding a pushchair, wheeling one into the mock boot to see whether it goes in, and reading the spec card tied to the rail.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe double-tier run of display cots and cot-beds down the centre of the shop, running from the lower left of the frame to the upper right, dividing the floor into the pram rank at the window, the cot run, the fitting-out corner with the mock boot and test frame, and the counter.\n\nZONES, and what belongs in each: Pram Aisle · Cot Centre · Fitting Zone · Counter & Storage\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. spec cards tied to every cot rail — in the Cot Centre\n  2. brochure rack by the door, every cover showing the same cot — in the Counter & Storage\n  3. Three babies in cribs — in the Cot Centre\n  4. display cot, flat-pack boxes — in the Cot Centre\n  5. prams and pushchairs, rack of night lights and monitors — in the Pram Aisle\n  6. mattress-depth gauge standing upright in a display cot — in the Cot Centre\n  7. convertible cot-bed shown half made up as a cot and half as a bed — in the Cot Centre\n  8. mock car boot and a door-width test frame — in the Fitting Zone\n  9. rocking chair with the floor worn pale beneath its rockers — in the Cot Centre\n  10. pad of room-plan cards — in the Counter & Storage\n  11. prams and pushchairs, rack of night lights and monitors — in the Pram Aisle, acting on prams and pushchairs, rack of night lights and monitors\n  12. door-width test frame with the widths marked up its post — in the Fitting Zone\n  13. flat-pack boxes stacked with model numbers stencilled on the ends — in the Counter & Storage\n  14. rack of night lights and monitors with their channel numbers — in the Counter & Storage\n  15. display cot — in the Cot Centre\n  16. display cot — in the Cot Centre\n  17. swing price tickets — in the Pram Aisle\n  18. shop clock over the counter with a big sweep hand — in the Counter & Storage\n  19. order pad open on the counter — in the Counter & Storage\n  20. flat-pack boxes stacked with model numbers stencilled on the ends — in the Counter & Storage\n  21. steel tape measure on a hook — in the Fitting Zone\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"CD\" — lettered on display cot, flat-pack boxes\n  2. \"GOOD FIT?\" — lettered on convertible cot-bed shown half made up as a cot and half as a bed\n  3. \"WILL IT FIT?\" — lettered on mock car boot and a door-width test frame\n  4. \"SAD\" — lettered on prams and pushchairs, rack of night lights and monitors\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on spec cards tied to\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on swing price tickets and\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on mattress-depth gauge standing upright\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A nursery goods shop on a Saturday morning: a double-tier run of display cots and cot-beds down the middle of the floor with spec cards tied to every rail, a rank of prams and pushchairs along the window, a mock car boot and a door-width test frame at the back of the shop, and a counter with the order pad and the delivery diary open on it.; everyone is Everyone is trying the goods out — laying a baby down in a display cot and standing back to watch, rocking a moses baske; the largest thing in\nframe is The double-tier run of display cots and cot-beds down the centre of the shop, running from the lower left of the frame t; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"MUST-HAVE ASSESSMENT\""
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "N",
+     "paint": "50",
+     "tag": "N",
+     "chroma_pixels": 44926,
+     "blob_pixels": 44557,
+     "fill_ratio": 1.07,
+     "height_frac": 0.1725,
+     "width_frac": 0.0756,
+     "quad": [
+      [
+       718,
+       805
+      ],
+      [
+       923,
+       859
+      ],
+      [
+       925,
+       1067
+      ],
+      [
+       718,
+       1002
+      ]
+     ],
+     "bbox": [
+      718,
+      805,
+      207,
+      262
+     ],
+     "height_pct": 17.06,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MOS",
+     "paint": "12mo",
+     "tag": "MOS",
+     "chroma_pixels": 8024,
+     "blob_pixels": 7919,
+     "fill_ratio": 0.879,
+     "height_frac": 0.0768,
+     "width_frac": 0.0418,
+     "quad": [
+      [
+       339,
+       1332
+      ],
+      [
+       452,
+       1296
+      ],
+      [
+       452,
+       1374
+      ],
+      [
+       338,
+       1413
+      ]
+     ],
+     "bbox": [
+      338,
+      1296,
+      114,
+      117
+     ],
+     "height_pct": 7.62,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "15%",
+     "tag": "PCT",
+     "chroma_pixels": 19747,
+     "blob_pixels": 11192,
+     "fill_ratio": 1.043,
+     "height_frac": 0.0872,
+     "width_frac": 0.036,
+     "quad": [
+      [
+       1958,
+       757
+      ],
+      [
+       2055,
+       772
+      ],
+      [
+       2056,
+       888
+      ],
+      [
+       1960,
+       864
+      ]
+     ],
+     "bbox": [
+      1958,
+      757,
+      98,
+      131
+     ],
+     "height_pct": 8.53,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 10929,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 763
+ }
+]
