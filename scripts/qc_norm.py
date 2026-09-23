@@ -369,6 +369,33 @@ _NUM = r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?"
 _NUMEXPR = re.compile(rf"^(?P<lo>{_NUM})(?:\s*[-–—־]\s*(?P<hi>{_NUM}))?")
 _RANGE_WORDS = {"to", "through", "עד", "-", "–", "—"}
 
+# THE `between` IDIOM. Hebrew writes a range as `בין <lo> ל-<hi>`, where the
+# separator is GLUED to the high number, and English books write `between <lo>
+# and <hi>`, where the separator is a word that means a range only here.
+# Neither reached _NUMEXPR or _RANGE_WORDS, so both came back as two values:
+# 019 C5 says `בין 8 ל-12 שבועות` and was read as the number 8 plus the
+# duration 12 weeks, which matches nothing on its own StahlKids p.74
+# ("improve for 8-12 weeks") — the card disputed its own source. The books say
+# `between X and Y` in 44 sentences, so the same gap sat on the SOURCE side of
+# every comparison too.
+_BETWEEN_WORDS = frozenset({"בין", "between"})
+# The introducer may stand a word or two back: `בין הגילאים 10 ל-12 שנים`,
+# `בין גיל 3 ל-12 שנים`. Three tokens covers every form in the material.
+_BETWEEN_LOOKBACK = 3
+# Separators that mean a range ONLY after the introducer. Bare, each is
+# something else: `1 ל-54 ילדים` is a ratio, `אחת ל-4 שבועות` is a frequency,
+# and `8 and 12` with no `between` is a list. This is why the introducer is
+# required rather than simply adding `ל` and `and` to _RANGE_WORDS.
+_BETWEEN_SEPS = frozenset({"and", "ל"})
+# The glued form, `ל-12`, `ל12`, `ל-30%`.
+_HEB_TO = re.compile(rf"^ל[׳״'\"]?[-–—־]?\s*(?P<hi>{_NUM})\s*(?P<pct>%)?$")
+# `40%-60%`: the percent sign sits between the low number and the dash, so
+# _NUMEXPR stops at the low end and the high end is dropped on the floor.
+_PCT_RANGE_TAIL = re.compile(rf"^%\s*[-–—־]\s*(?P<hi>{_NUM})\s*%?$")
+# A clause ends the introducer's reach: a `בין` from the sentence before must
+# not license a range here.
+_CLAUSE_END = ".;:!?"
+
 # Unit words, Hebrew mapped onto English so `1.4 מ"ג/ק"ג/יום` and
 # `1.4 mg/kg/day` compare equal — the judge quotes the book in English and the
 # material is in Hebrew, and §5.8 drops a finding only when the two values match.
@@ -550,6 +577,79 @@ def _tok_end(tok: str, start: int, end: int) -> int:
     return start + len(stripped) if stripped else end
 
 
+def _bare(tok: str) -> str:
+    """A token without the brackets and stops around it: "(ל-12)," -> "ל-12"."""
+    return tok.lstrip(_LEAD_PUNCT).rstrip(_TRAIL_PUNCT)
+
+
+def _between_before(toks: list, i: int) -> bool:
+    """Does a `בין` / `between` introduce the number at token `i`?
+
+    The scan stops at another number and at the end of a clause, so the `בין`
+    of the previous sentence cannot license a range here, and neither can one
+    that already has its own pair of numbers.
+    """
+    for k in range(i - 1, max(-1, i - 1 - _BETWEEN_LOOKBACK), -1):
+        raw = toks[k][0]
+        word = _clean_word(raw)
+        # Only the ו of "ובין" is stripped. _heb_variants would also turn
+        # "הבין" and "מבין" into "בין", which are different words entirely.
+        if word in _BETWEEN_WORDS or (word[:1] == "ו" and word[1:] in _BETWEEN_WORDS):
+            return True
+        if any(c.isdigit() for c in word):
+            return False
+        if raw and raw[-1] in _CLAUSE_END:
+            return False
+    return False
+
+
+def _range_partner(toks: list, i: int, *, pct: bool, between: bool):
+    """The high end of a range spelled across tokens, or None.
+
+    Returns (the high end's digits, the index of the last token it consumed).
+    The DIGITS rather than the number, because `_is_year` has to know whether
+    they were four of them before the span is dropped as a publication year.
+
+    Three shapes, all measured in the released material and in the books:
+
+        "2 עד 8", "2 to 8", "10% עד 20%"   a separator word, a number each side
+        "בין 8 ל-12 שבועות"                 the separator glued to the high end
+        "between 25% and 30%"              a separator that is a range only
+                                           after the introducer
+
+    "up to 8 weeks" is a bound on one value and not a range, so a separator
+    only counts when a number stands on both sides of it; and a `%` on the
+    high end only counts when the low end carries one too, so "10 עד 20%" is
+    left exactly as it was rather than guessed at.
+    """
+    if between and i + 1 < len(toks):
+        m = _HEB_TO.match(_bare(toks[i + 1][0]))
+        if m and (not m.group("pct") or pct):
+            return m.group("hi"), i + 1
+    if i + 2 < len(toks):
+        sep = _clean_word(toks[i + 1][0])
+        if sep in _RANGE_WORDS or (between and sep in _BETWEEN_SEPS):
+            nxt = _bare(toks[i + 2][0])
+            hi_pct = nxt.endswith("%")
+            if hi_pct:
+                nxt = nxt[:-1].rstrip()
+            m2 = _NUMEXPR.fullmatch(nxt)
+            if m2 and not m2.group("hi") and (not hi_pct or pct):
+                return m2.group("lo"), i + 2
+    return None
+
+
+def _is_year(raw: str | None, value) -> bool:
+    """Four digits in the publication-year window, e.g. "DSM-5-TR (2022)".
+
+    Sample sizes in this material are outside the window, and a year is never
+    something anyone claimed — so it is not a value a finding may dispute.
+    Both ends of "between 2007 and 2011" have to pass before the span is
+    dropped: "between 30% and 50%" is a claim, and so is "1990 to 2000 mg".
+    """
+    return bool(raw) and len(raw) == 4 and _YEAR_LO <= value <= _YEAR_HI
+
+
 def locked_values(s: str) -> list[dict]:
     """Every value a finding is allowed to dispute: [{kind, raw, value}].
 
@@ -558,6 +658,11 @@ def locked_values(s: str) -> list[dict]:
     duration — where amount may itself be (lo, hi), so "2-8 weeks" stays one
     value and cannot be read as either endpoint alone. `raw` is the slice of the
     string as it was passed in, LaTeX and all.
+
+    A range is written six ways here and all six are one value: `2-8`, `2–8`,
+    `2 to 8`, `2 עד 8`, the Hebrew `בין 2 ל-8` whose separator is glued to the
+    high end, and the English `between 2 and 8`. The last two need their
+    introducer — `1 ל-54 ילדים` is a ratio and `אחת ל-4 שבועות` is a frequency.
 
     What is deliberately NOT a value, all of it measured in released chapters:
     page and chapter numbers (`StahlNeuro p. 289, 902` — including the second
@@ -636,8 +741,9 @@ def locked_values(s: str) -> list[dict]:
             i += 1
             continue
 
-        lo = _number(m.group("lo"))
-        hi = _number(m.group("hi")) if m.group("hi") else None
+        lo_raw, hi_raw = m.group("lo"), m.group("hi")
+        lo = _number(lo_raw)
+        hi = _number(hi_raw) if hi_raw else None
         tail = core[m.end():]
         num_a = ta + off
         num_b = ta + off + m.end()
@@ -654,16 +760,23 @@ def locked_values(s: str) -> list[dict]:
         if tail:
             num_b = ta + off + len(core)
 
-        # --- "2 to 8", "2 עד 8": a range spelled across tokens --------------
-        if hi is None and not tail and i + 2 < len(toks):
-            sep = _clean_word(toks[i + 1][0])
-            nxt = toks[i + 2][0].rstrip(_TRAIL_PUNCT).lstrip(_LEAD_PUNCT)
-            m2 = _NUMEXPR.fullmatch(nxt)
-            # "up to 8 weeks" is a bound on one value, not a range, so a
-            # separator only counts when a number stands on both sides of it.
-            if sep in _RANGE_WORDS and m2 and not m2.group("hi"):
-                hi = _number(m2.group("lo"))
-                last = i + 2
+        # --- "40%-60%": both ends in one token, split by the percent sign ---
+        if pct and hi is None and tail != "%":
+            mt = _PCT_RANGE_TAIL.fullmatch(tail)
+            if mt:
+                hi_raw = mt.group("hi")
+                hi = _number(hi_raw)
+
+        # --- a range spelled across tokens ----------------------------------
+        # "2 to 8", "2 עד 8", and the `between` idiom of both languages (see
+        # _range_partner). A percent carries its sign in `tail`, so the low end
+        # of "בין 20% ל-30%" reaches here with a tail and still has a partner.
+        if hi is None and (not tail or pct):
+            found = _range_partner(toks, i, pct=pct,
+                                   between=_between_before(toks, i))
+            if found:
+                hi_raw, last = found[0], found[1]
+                hi = _number(hi_raw)
                 num_b = _tok_end(*toks[last])
 
         # --- a unit or a counted noun in the next token --------------------
@@ -710,8 +823,8 @@ def locked_values(s: str) -> list[dict]:
             emit("percent", amount, num_a, num_b)
         elif unit:
             emit(unit[0], (amount, unit[1]), num_a, num_b)
-        elif hi is None and _YEAR_LO <= lo <= _YEAR_HI and len(m.group("lo")) == 4:
-            pass                      # a publication year, never a value
+        elif _is_year(lo_raw, lo) and (hi is None or _is_year(hi_raw, hi)):
+            pass                      # a publication year or a span of them
         elif hi is not None:
             emit("range", amount, num_a, num_b)
         else:

@@ -660,6 +660,69 @@ def _distribute(calls: list[CallPlan], context: dict[tuple, dict],
         c.pages = _sorted_pages(c.pages)
 
 
+def _absorb_pageless(calls: list[CallPlan], need: dict[str, dict],
+                     notes: list) -> list[CallPlan]:
+    """No call reaches the judge without a source, and no unit is dropped.
+
+    A call ends up with nothing when every unit in it cites no printed page and
+    the full-text search found none either — and the chapter's context pages,
+    which are what such a call would otherwise live on, all landed elsewhere.
+    That is not a coincidence: `_distribute` spends a context page where it
+    costs no extra PDF page, and a call holding nothing can never be that call.
+
+    070 is the case §6 names. It is Synopsis-heavy, so 77 of its 89 units go to
+    the S calls with the slices; what is left in call B is `G:_intro`, the study
+    guide's title line, which cites nothing. Its two Kartisiot context pages go
+    to a call that already carries them, B1 ends up empty, and `build_bundle`
+    refuses the whole chapter with "B1: no pages" — so 070 could not be planned
+    at all. §5.7 splits a chapter across calls; it never drops one.
+
+    So those units move into a call that does have pages, and the empty call
+    goes away. It costs nothing — a unit with no pages of its own adds no PDF
+    page to its host — and it loses nothing: §5.7's promise is that "a unit is
+    judged in the call that holds its cited pages and its search hits", and a
+    unit with neither has nothing to be separated from. That is asserted here
+    rather than assumed, because the one way this could go wrong is a unit
+    arriving with evidence the call does not carry.
+
+    The host is a call of the same kind if the chapter has one, then the
+    Synopsis call — for a chapter whose only textbook is the Synopsis (013,
+    070, §5.8) the slices ARE the source such a unit would be read against —
+    then the smallest call. The judge's checklists key off the unit id, not the
+    call kind (§5.8), so a guide section keeps being judged as a guide section
+    wherever it is read.
+    """
+    empty = [c for c in calls if not c.pages]
+    if not empty:
+        return calls
+    hosts = [c for c in calls if c.pages]
+    if not hosts:
+        # Nothing in this chapter has a source at all. build_bundle raises on
+        # that, and it is right to: there is nothing to judge against, and a
+        # judge with no bundle answers anyway (module docstring).
+        return calls
+    for c in empty:
+        for uid in c.units:
+            if need.get(uid):
+                raise PlanError(
+                    f"{c.call_id}: unit {uid} has {len(need[uid])} pages of "
+                    f"its own evidence and the call carries none. The plan and "
+                    f"the pages disagree, so the split is wrong — stop rather "
+                    f"than judge {uid} against pages it never cited.")
+        host = min(hosts, key=lambda h: (h.kind != c.kind,
+                                         h.kind != KIND_SYNOPSIS,
+                                         h.pdf_page_count, h.call_id))
+        host.units.extend(c.units)
+        shown = ", ".join(c.units[:3]) + ("..." if len(c.units) > 3 else "")
+        host.notes.append(
+            f"{len(c.units)} unit(s) from {c.call_id} ({shown}) are judged "
+            f"here: they cite no page and the search found none, and "
+            f"{c.call_id} would have gone to the judge with an empty bundle")
+        notes.append(f"{c.call_id}: {len(c.units)} unit(s) with no source of "
+                     f"their own moved into {host.call_id}")
+    return [c for c in calls if c.pages]
+
+
 def _synopsis_heavy(cites_by_unit: dict) -> bool:
     books, synopsis = 0, 0
     for rows in (cites_by_unit or {}).values():
@@ -808,8 +871,27 @@ def plan(tag: str, day: int, units, cites, *, page_limit: int = DEFAULT_PAGE_LIM
         budget = nxt
         calls = assemble(budget)
 
+    calls = _absorb_pageless(calls, need, notes)
+
     for c in calls:
         c.notes = list(dict.fromkeys(c.notes))
+
+    # §5.7, fail closed: a chapter is split across calls, never dropped. The
+    # squeeze loop and the absorb pass both move units between calls, and a
+    # unit that fell out of the plan is a unit that is never judged and never
+    # reported as unjudged either — the one failure nothing downstream can see.
+    planned = [u for c in calls for u in c.units]
+    want = {u.uid for u in units}
+    if len(planned) != len(set(planned)):
+        dupes = sorted({u for u in planned if planned.count(u) > 1})
+        raise PlanError(f"{tag}: {dupes[:6]} planned into more than one call; "
+                        f"the judge would rule on them twice.")
+    if set(planned) != want:
+        missing = sorted(want - set(planned))
+        unknown = sorted(set(planned) - want)
+        raise PlanError(
+            f"{tag}: the plan covers {len(set(planned))} of {len(want)} units. "
+            f"missing={missing[:6]} unknown={unknown[:6]}")
     return calls
 
 

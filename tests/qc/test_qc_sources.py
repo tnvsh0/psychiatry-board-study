@@ -365,6 +365,121 @@ class SynopsisCallTest(FakeBooksMixin, unittest.TestCase):
         self.assertTrue(any(p["book"] == "Dulcan" for p in kinds["A"].pages))
 
 
+class PagelessCallTest(FakeBooksMixin, unittest.TestCase):
+    """No call goes to the judge with an empty bundle, and no unit is dropped.
+
+    Measured on chapter 070, one of the three §6 names: it is Synopsis-heavy,
+    77 of its 89 units move to the S calls, and what is left in call B is the
+    study guide's title line `G:_intro`, which cites nothing. build_bundle then
+    refused the whole chapter with "B1: no pages" and 070 could not be planned
+    at all — while §5.7 splits a chapter across calls and never drops one.
+    """
+
+    def setUp(self):
+        self.fake_books()
+        self.guide = self.fake_guide({}, day=70)
+        self.real_synopsis = qc_sources.synopsis_pages
+        self.addCleanup(
+            lambda: setattr(qc_sources, "synopsis_pages", self.real_synopsis))
+
+    def slices(self, pages):
+        rows = {("Synopsis", n): qc_sources._page(
+            "Synopsis", n, [n - 1], "synopsis", slice_ref="22",
+            slice_file="synopsis-22-ect.pdf", slice_path="x.pdf")
+            for n in range(1, pages + 1)}
+        qc_sources.synopsis_pages = lambda day, notes=None: dict(rows)
+
+    def plan(self, units, limit=200, day=70):
+        return qc_sources.plan("study-070-ect", day, units,
+                               qc_cite.cites_by_unit(units), page_limit=limit,
+                               reading_guide=self.guide, search=False)
+
+    def test_the_070_shape_plans_with_every_unit_in_a_call(self):
+        self.slices(5)
+        units = [unit("G:_intro", "study_guide.md",
+                      "# מדריך לימוד יום זה: ECT וטיפולים סומטיים אחרים"),
+                 unit("G:1", "study_guide.md", "רקע (Synopsis ch.22)"),
+                 unit("Q1", "quiz.json", "שאלה (Synopsis ch.22)"),
+                 unit("Q2", "quiz.json", "שאלה (Dulcan p.400)")]
+        calls = self.plan(units)
+        for c in calls:
+            self.assertTrue(c.pages, f"{c.call_id} would reach the judge with "
+                                     f"an empty bundle")
+        placed = [u for c in calls for u in c.units]
+        self.assertEqual(sorted(placed), sorted(u.uid for u in units))
+        self.assertEqual(len(placed), len(set(placed)))
+
+    def test_the_sourceless_unit_is_read_against_the_synopsis(self):
+        # For a chapter whose textbook is the Synopsis (§5.8: 013, 070) the
+        # slices are the source a unit with no citations belongs to.
+        self.slices(5)
+        units = [unit("G:_intro", "study_guide.md", "# כותרת"),
+                 unit("G:1", "study_guide.md", "רקע (Synopsis ch.22)"),
+                 unit("Q1", "quiz.json", "שאלה (Synopsis ch.22)"),
+                 unit("Q2", "quiz.json", "שאלה (Dulcan p.400)")]
+        calls = self.plan(units)
+        host = next(c for c in calls if "G:_intro" in c.units)
+        self.assertEqual(host.kind, "S")
+        self.assertTrue(any(p["book"] == "Synopsis" for p in host.pages))
+        self.assertTrue(any("empty bundle" in n for n in host.notes), host.notes)
+
+    def test_a_sourceless_unit_stays_with_its_own_kind_when_it_can(self):
+        # Nothing to absorb here: the other B unit cites a page, so the B call
+        # has one and the guide section is judged in it, as §5.8 lays out.
+        self.slices(5)
+        units = [unit("G:_intro", "study_guide.md", "# כותרת"),
+                 unit("G:1", "study_guide.md", "רקע (Dulcan p.400)"),
+                 unit("Q1", "quiz.json", "שאלה (Synopsis ch.22)")]
+        calls = self.plan(units)
+        host = next(c for c in calls if "G:_intro" in c.units)
+        self.assertEqual(host.kind, "B")
+        self.assertIn("G:1", host.units)
+
+    def test_with_no_synopsis_it_joins_the_smallest_call_that_has_pages(self):
+        self.no_synopsis()
+        units = [unit("G:_intro", "study_guide.md", "# כותרת"),
+                 unit("Q1", "quiz.json", "שאלה (Dulcan p.400)")]
+        calls = self.plan(units)
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(sorted(calls[0].units), ["G:_intro", "Q1"])
+        self.assertTrue(calls[0].pages)
+
+    def test_a_chapter_with_no_source_at_all_still_stops(self):
+        # Nothing to merge into: §5.7's guard in build_bundle is the right
+        # answer, and the units are not quietly dropped on the way to it.
+        self.no_synopsis()
+        units = [unit("G:_intro", "study_guide.md", "# כותרת"),
+                 unit("Q1", "quiz.json", "שאלה ללא מקור")]
+        calls = self.plan(units)
+        self.assertEqual(sorted(u for c in calls for u in c.units),
+                         ["G:_intro", "Q1"])
+        for c in calls:
+            with self.assertRaises(qc_sources.PlanError):
+                qc_sources.build_bundle(c, tempfile.mkdtemp())
+
+    def test_a_unit_is_never_moved_away_from_evidence_it_has(self):
+        # The one way absorbing could go wrong. If a call arrives empty while
+        # one of its units does have pages, the split is wrong and the plan
+        # stops rather than judging that unit against pages it never cited.
+        page = qc_sources._page("Dulcan", 400, [798, 799], "cited")
+        empty = qc_sources.CallPlan(call_id="B1", kind="B", units=["G:1"])
+        host = qc_sources.CallPlan(call_id="A1", kind="A", units=["Q1"],
+                                   pages=[page])
+        with self.assertRaises(qc_sources.PlanError):
+            qc_sources._absorb_pageless([empty, host],
+                                        {"G:1": {("Dulcan", 400): page}}, [])
+
+    def test_the_chapter_note_names_where_the_units_went(self):
+        self.slices(5)
+        units = [unit("G:_intro", "study_guide.md", "# כותרת"),
+                 unit("Q1", "quiz.json", "שאלה (Synopsis ch.22)")]
+        notes: list = []
+        qc_sources.plan("study-070-ect", 70, units,
+                        qc_cite.cites_by_unit(units), page_limit=200,
+                        reading_guide=self.guide, search=False, notes=notes)
+        self.assertTrue(any("moved into" in n for n in notes), notes)
+
+
 # ---------------------------------------------------------------------------
 # artifacts.md
 

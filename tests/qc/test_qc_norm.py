@@ -528,6 +528,129 @@ class TestLockedValues(unittest.TestCase):
                             vals[0]["value"])
 
 
+class TestTheBetweenIdiom(unittest.TestCase):
+    """`בין 8 ל-12 שבועות` and `between 8 and 12 weeks` are ONE value.
+
+    Read as two, 019 C5 ("בין 8 ל-12 שבועות (מקור: StahlKids p. 74)") states
+    the duration 12 weeks, its own cited page states 8-12 weeks, and the card
+    disputes the source it was written from. The books say `between X and Y`
+    in 44 sentences, so the same gap sat on the SOURCE side of §5.8's
+    comparison as well.
+
+    Every string here is from the released chapters or from the cached book
+    text, except where a line says otherwise.
+    """
+
+    HEBREW = [
+        # 019 C5, the case that started this
+        ("בין 8 ל-12 שבועות (מקור: StahlKids p. 74).",
+         [("duration", ((8, 12), "weeks"))]),
+        ("יש להמתין בין 2 ל-8 שבועות לפחות (Dulcan p. 715; StahlKids p. 69)",
+         [("duration", ((2, 8), "weeks"))]),
+        # the introducer a word or two back
+        ("הופעה בין הגילים 12 ל-24 חודשים (DSM p.63)",
+         [("duration", ((12, 24), "months"))]),
+        ("בין גיל 3 ל-12 שנים, או טאנר I-II.",
+         [("duration", ((3, 12), "years"))]),
+        ("בין הגילאים **10 ל-12 שנים** (DSM p.95)",
+         [("duration", ((10, 12), "years"))]),
+        # percentages, with the sign on both ends
+        ("שיעור של בין **20% ל-30%** `(DSM p.815)`.", [("percent", (20, 30))]),
+        ("השכיחות נעה בין 0.3% ל-0.7%", [("percent", (0.3, 0.7))]),
+        # no unit at all: the YGTSS score range
+        ("ציון הנע בין 0 ל-50 (Dulcan p.445).", [("range", (0, 50))]),
+        # the separator spelled as its own token
+        ("בין 8 ל 12 שבועות", [("duration", ((8, 12), "weeks"))]),
+        # `%-` glued: _NUMEXPR stops at the low end, the sign is in the way
+        ("לקות שכלית (ID) בשיעור של 40%-55% (Dulcan p.140, 460)",
+         [("percent", (40, 55))]),
+        ("תורמות collectively כ-8%-9% מהסיכון (Dulcan p.142).",
+         [("percent", (8, 9))]),
+    ]
+
+    ENGLISH = [
+        ("recurrence with each subsequent delivery is between 30% and 50%.",
+         [("percent", (30, 50))]),
+        ("Between 60% and 80% of adolescents reported", [("percent", (60, 80))]),
+        ("childhood onset between ages 6.5 and 12.5 years.",
+         [("duration", ((6.5, 12.5), "years"))]),
+        ("a dose between 750 and 3000 mg", [("dose", ((750, 3000), "mg"))]),
+        ("14%-17% of caffeine users endorsed", [("percent", (14, 17))]),
+    ]
+
+    # What must stay exactly as it was. Every one of these is a `ל` or an
+    # `and` that is NOT a range, and each is from the released material.
+    NOT_A_RANGE = [
+        # a ratio: 1 in 54 children
+        ("1 ל-54 ילדים (Dulcan p.139)", [("number", 1), ("number", 54)]),
+        # a frequency: once every 4 weeks
+        ("אחת ל-4 שבועות", [("duration", (4, "weeks"))]),
+        # two different units are two values, never one range
+        ("בין **3 ימים ל-1 חודש** לאחר החשיפה",
+         [("duration", (3, "days")), ("duration", (1, "months"))]),
+        # no introducer, so `ל-` keeps meaning "to"
+        ("מינון של 8 ל-12 מ\"ג", [("number", 8), ("dose", (12, "mg"))]),
+        # ratios and clock times are identifiers to locked_values, as before
+        ("יחס של בין **2:1 ל-4:1** (DSM p.95)", []),
+        ("(בין 18:30 ל-21:30) (Dulcan p.708)", []),
+        # a bound on one value, not a range (the existing rule, unchanged)
+        ("בין היתר עד 8 שבועות", [("duration", (8, "weeks"))]),
+        # publication years, singly and as a span
+        ("reports published between 1974 and 2004 on psychosocial intervention",
+         []),
+        ("DSM-5-TR (2022) החליף את DSM-5 משנת 2013.", []),
+    ]
+
+    def _check(self, cases):
+        for text, expect in cases:
+            with self.subTest(text=text[:56]):
+                got = [(v["kind"], v["value"]) for v in Q.locked_values(text)]
+                self.assertEqual(got, expect)
+
+    def test_hebrew_between_is_one_value(self):
+        self._check(self.HEBREW)
+
+    def test_english_between_is_one_value(self):
+        self._check(self.ENGLISH)
+
+    def test_what_is_not_a_range_stays_what_it_was(self):
+        self._check(self.NOT_A_RANGE)
+
+    def test_raw_is_still_a_slice_of_the_input(self):
+        for text, _ in self.HEBREW + self.ENGLISH + self.NOT_A_RANGE:
+            for v in Q.locked_values(text):
+                with self.subTest(raw=v["raw"]):
+                    self.assertIn(v["raw"], text)
+
+    def test_the_two_spellings_land_on_the_same_value(self):
+        # the whole point: the card is Hebrew, the book is English, and §5.8
+        # drops a finding only when the two values compare equal
+        for heb, eng in [("בין 8 ל-12 שבועות", "8-12 weeks"),
+                         ("בין 8 ל-12 שבועות", "between 8 and 12 weeks"),
+                         ("בין 4 ל-6 שנים", "between 4 and 6 years"),
+                         ("בין 20% ל-30%", "between 20% and 30%")]:
+            with self.subTest(heb=heb):
+                self.assertEqual(Q.locked_values(heb)[0]["value"],
+                                 Q.locked_values(eng)[0]["value"])
+
+    def test_019_c5_no_longer_disputes_its_own_page(self):
+        card = "בין 8 ל-12 שבועות (מקור: StahlKids p. 74)."
+        page = "continue to improve for 8–12 weeks"
+        r = Q.values_dispute(card, page)
+        self.assertTrue(r["same"])
+        self.assertFalse(r["disputed"])
+        # ...and a real disagreement is still one
+        self.assertTrue(Q.values_dispute(card, "may take 2–8 weeks")["disputed"])
+
+    def test_a_between_from_the_previous_clause_does_not_reach(self):
+        # inline, not from the material: the introducer's reach has to stop
+        # somewhere, and a clause end is where.
+        self.assertEqual(
+            [(v["kind"], v["value"]) for v in Q.locked_values(
+                "ההבדל בין הקבוצות. 1 ל-54 ילדים")],
+            [("number", 1), ("number", 54)])
+
+
 class TestValuesDispute(unittest.TestCase):
     def test_the_019_atomoxetine_conflict(self):
         r = Q.values_dispute("האפקט המלא מושג תוך 2–8 שבועות",
