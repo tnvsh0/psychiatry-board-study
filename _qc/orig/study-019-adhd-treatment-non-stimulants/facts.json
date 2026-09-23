@@ -1,0 +1,84 @@
+{
+  "drug_class": {
+    "members": [
+      "Atomoxetine - Selective NRI, non-controlled substance without abuse potential (Dulcan p. 714; StahlKids p. 78)",
+      "Guanfacine ER - Highly selective alpha 2A agonist offering cognitive tuning with less sedation than Clonidine (Dulcan p. 711; StahlNeuro p. 481-482)",
+      "Clonidine ER - Non-selective alpha 2A, 2B, 2C agonist causing strong peripheral sympatholytic effects and sedation (Dulcan p. 711; StahlNeuro p. 481-482)",
+      "Bupropion - Weak dopamine and norepinephrine reuptake inhibitor (NDRI) used off-label (Dulcan p. 717; StahlKids p. 83)"
+    ],
+    "mechanism": "Atomoxetine blocks presynaptic NET, increasing NE and DA in the PFC (Dulcan p. 715; StahlNeuro p. 480). Alpha 2 agonists directly stimulate postsynaptic alpha 2A receptors in the PFC, closing HCN channels and strengthening network connectivity (StahlNeuro p. 456-458). Bupropion blocks DAT and NET (Dulcan p. 717).",
+    "kinetics": [
+      "Atomoxetine: Metabolized by CYP2D6; half-life is ~5 hours but extends 8-10 fold in CYP2D6 Poor Metabolizers (Dulcan p. 715; StahlKids p. 73)",
+      "Guanfacine: Metabolized by CYP3A4; half-life is ~18 hours (Dulcan p. 712; StahlKids p. 243)",
+      "Clonidine: Eliminated renally and hepatically; clinical duration of Kapvay ER is 12 hours (Dulcan p. 713; StahlKids p. 143)",
+      "Bupropion: Cleared by CYP2B6 to active metabolites; half-life is ~21 hours (Dulcan p. 717)"
+    ],
+    "onset_of_effect": "Gradual; 2-8 weeks for Atomoxetine (Dulcan p. 715; StahlKids p. 69), and several weeks for alpha 2 agonists (StahlKids p. 144, 246)"
+  },
+  "indications": {
+    "items": [
+      "FDA-approved for ADHD in pediatric patients aged 6 and older (Dulcan p. 714; StahlKids p. 69, 141, 243)",
+      "ADHD comorbid with Tic Disorders or Tourette's Syndrome (alpha 2 agonists) (Dulcan p. 186, 712; StahlKids p. 149, 250)",
+      "ADHD comorbid with severe aggression, oppositional behavior, or Conduct/ODD (alpha 2 agonists) (Dulcan p. 712, 719-720; StahlKids p. 149, 250)",
+      "ADHD comorbid with significant Anxiety Disorders (Atomoxetine) (Dulcan p. 187, 331; StahlKids p. 74)",
+      "Off-label management of stimulant-induced sleep-onset insomnia (Clonidine IR at bedtime) (Dulcan p. 482, 486; StahlKids p. 149)"
+    ],
+    "key_numbers": [
+      "-0.56: Effect size of Atomoxetine over placebo (Dulcan p. 185)",
+      "-0.67: Effect size of Guanfacine over placebo (Dulcan p. 185)",
+      "24: Number of subjects in a trial showing superior behavioral benefits of combining stimulants and alpha 2 agonists (Dulcan p. 719)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Black box warning for increased risk of suicidal ideation in youth (Atomoxetine) (Dulcan p. 716; StahlKids p. 70)",
+      "Severe idiosyncratic liver injury and clinical jaundice (Atomoxetine) (Dulcan p. 715-716; StahlKids p. 70, 72)",
+      "Hemodynamic effects including sedation, orthostatic hypotension, bradycardia, and dry mouth (alpha 2 agonists) (Dulcan p. 712; StahlKids p. 142, 244)",
+      "Catastrophic rebound hypertension and sympathetic storm upon abrupt cessation (alpha 2 agonists) (Dulcan p. 712; StahlKids p. 143, 245)",
+      "Dose-dependent risk of seizures (Bupropion) (Dulcan p. 717-718; StahlKids p. 84, 87)"
+    ],
+    "key_numbers": [
+      "0.4%: Incidence of treatment-emergent suicidal ideation in Atomoxetine pediatric trials vs 0% in placebo (Dulcan p. 716; StahlKids p. 70)",
+      "75%: Increase in Guanfacine ER peak plasma concentration (Cmax) when taken with a high-fat meal (Dulcan p. 712; StahlKids p. 246)",
+      "0.1%: Seizure risk with Bupropion at or below doses of 300 mg/day (Dulcan p. 717-718)",
+      "0.4%: Seizure risk with Bupropion at a dose of 400 mg/day (Dulcan p. 717-718)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Baseline and serial measurements of sitting and standing blood pressure and pulse (Dulcan p. 715; StahlKids p. 69, 141, 243)",
+      "Regular assessment of pediatric height and weight on growth charts to monitor growth suppression (Dulcan p. 715; StahlKids p. 69, 72)",
+      "Obtaining LFTs immediately if hepatic symptoms (jaundice, dark urine, right upper quadrant pain) emerge, followed by permanent drug discontinuation (Atomoxetine) (Dulcan p. 715; StahlKids p. 72)",
+      "Pre-treatment cardiovascular history screen for sudden death or conduction abnormalities, and ECG if indicated (Dulcan p. 57, 712, 715; StahlKids p. 71, 143)",
+      "Clinical vigilance for suicidal thoughts, agitation, panic, or behavioral activation (Atomoxetine) (Dulcan p. 716; StahlKids p. 71-72)"
+    ],
+    "key_numbers": [
+      "2-4 mmHg: Average systolic blood pressure elevation under Atomoxetine treatment (Dulcan p. 715)",
+      "6-9 bpm: Average heart rate elevation under Atomoxetine treatment (Dulcan p. 715)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Atomoxetine titration (<70 kg): Start at 0.5 mg/kg/day, increase after 7 days to target of 1.2 mg/kg/day (Dulcan p. 713-714; StahlKids p. 72)",
+      "Food warning: Guanfacine ER must never be administered with high-fat meals due to toxicity risk (Dulcan p. 712; StahlKids p. 246)",
+      "Tapering schedule: Discontinue alpha 2 agonists gradually to avoid rebound; taper Clonidine by max 0.1 mg every 3-7 days and Guanfacine by max 1 mg every 3-7 days (StahlKids p. 145, 248)",
+      "Beta-blocker co-administration: When stopping combined therapy, always discontinue the beta-blocker first, wait several days, then taper the alpha 2 agonist (StahlKids p. 145)",
+      "CYP2D6 drug interactions: Reduce Atomoxetine target dose by 50% when co-administered with strong inhibitors like Fluoxetine or Paroxetine (Dulcan p. 722; StahlKids p. 73)",
+      "Hepatic impairment dosing: Reduce Atomoxetine dose by 50% in Class B impairment, and by 75% in Class C (StahlKids p. 75)"
+    ],
+    "key_numbers": [
+      "0.5 mg/kg/day: Initial starting weight-based dose of Atomoxetine in pediatric patients under 70 kg (Dulcan p. 713; StahlKids p. 72)",
+      "1.2 mg/kg/day: Standard therapeutic target maintenance dose of Atomoxetine (Dulcan p. 713; StahlKids p. 72)",
+      "1 mg: Starting daily dose for Guanfacine ER (Dulcan p. 713; StahlKids p. 245)",
+      "0.1 mg: Starting bedtime dose for Clonidine ER (Dulcan p. 713; StahlKids p. 143)",
+      "50%: Dose reduction required for Atomoxetine in CYP2D6 Poor Metabolizers or under CYP2D6 inhibitors (Dulcan p. 722; StahlKids p. 73)"
+    ]
+  },
+  "high_yield": [
+    "In pediatric clinical trials of Atomoxetine, there was a statistically significant increase in suicidal ideation (0.4% vs 0% in placebo), but there were exactly zero (0) completed suicides across the entire database (Dulcan p. 716; StahlKids p. 70, 77).",
+    "Guanfacine ER taken with a high-fat meal dramatically increases absorption, spiking peak plasma concentration (Cmax) by 75% and risking severe bradycardia, hypotension, and syncope (Dulcan p. 712; StahlKids p. 246).",
+    "Stopping Clonidine or Guanfacine abruptly while on concomitant beta-blockers (e.g., Propranolol) causes severe unopposed alpha-1 vasoconstriction and catastrophic rebound hypertension; always discontinue the beta-blocker first (StahlKids p. 145).",
+    "Bupropion is strictly contraindicated in patients with a current or past diagnosis of Anorexia or Bulimia Nervosa due to a highly elevated risk of triggering grand mal seizures (Dulcan p. 718; StahlKids p. 91).",
+    "Alpha-2 adrenergic receptor agonists (Guanfacine, Clonidine) are the first-line pharmacotherapy of choice for patients with ADHD and comorbid Tic Disorders or Tourette's Syndrome (Dulcan p. 186, 712; StahlKids p. 149, 250)."
+  ]
+}

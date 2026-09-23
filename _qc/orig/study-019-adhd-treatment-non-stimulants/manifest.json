@@ -1,0 +1,85 @@
+{
+ "tag": "study-019-adhd-treatment-non-stimulants",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-23T18:44:44+00:00",
+ "updated_at": "2026-09-23T18:44:44+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "13a7966416d3551d15f392423280bb8b315c621fbff2e80e5e50078b047c91c4",
+   "asset_id": 530985234,
+   "size": 7780,
+   "fetched_at": "2026-09-23T18:44:26+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5ca26c2de63f051d760cefc63e98577486e5e93f77ad50c3e049fa00dd93df8c",
+   "asset_id": 530985201,
+   "size": 14218,
+   "fetched_at": "2026-09-23T18:44:28+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "4c5e7f413c8658811d45e1b6ed294acaf2dc0b69b258b68d7205b31330d91566",
+   "asset_id": 530985210,
+   "size": 10919,
+   "fetched_at": "2026-09-23T18:44:30+00:00"
+  },
+  {
+   "name": "narration_main2.txt",
+   "sha256": "f3e0fe3a7c14cff9951c0433d2a67b3a84d14180e85db3fda9da64bea7985cca",
+   "asset_id": 530985218,
+   "size": 7721,
+   "fetched_at": "2026-09-23T18:44:32+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "1fd8195a6918b0cf635dc74736a2fb423b95bcb90b17fe64441ca33d404c4fa3",
+   "asset_id": 530985222,
+   "size": 37001,
+   "fetched_at": "2026-09-23T18:44:34+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "2a192eaaf73faa6c886797f143675b9c44ba2c983c0a5a4e04f92b960a698ffc",
+   "asset_id": 530985202,
+   "size": 27495,
+   "fetched_at": "2026-09-23T18:44:36+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "f5e6441d9478dc147f8868ffb0f9ef11922aa2645bae1688bb617a493997d458",
+   "asset_id": 530985208,
+   "size": 6261,
+   "fetched_at": "2026-09-23T18:44:38+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "45c7f115186508119b2f7388c2bc4a2ee09fe90e494ff2d703057f93e917f6c0",
+   "asset_id": 530985199,
+   "size": 22061,
+   "fetched_at": "2026-09-23T18:44:39+00:00"
+  },
+  {
+   "name": "sketchy_main2.quiz.md",
+   "sha256": "07badf068e8df79d714a136f4ab522c0dcedb60950588a1fde392ef82ddea34f",
+   "asset_id": 530985219,
+   "size": 6016,
+   "fetched_at": "2026-09-23T18:44:41+00:00"
+  },
+  {
+   "name": "sketchy_main2.txt",
+   "sha256": "37ea98413eb47e22509594bf355df0a4ee96631fbfd86a9eebefd4cdc644f29e",
+   "asset_id": 530985209,
+   "size": 13769,
+   "fetched_at": "2026-09-23T18:44:43+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b446a405a93557cfb1cd2da43014ea65381ff72eb6d46c2eb8b66d6062ff6ccf",
+   "asset_id": 530985233,
+   "size": 46115,
+   "fetched_at": "2026-09-23T18:44:44+00:00"
+  }
+ ]
+}

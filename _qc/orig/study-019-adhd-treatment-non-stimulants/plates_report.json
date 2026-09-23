@@ -1,0 +1,427 @@
+[
+ {
+  "day": 19,
+  "plate": "main",
+  "facts": 25,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e1: dropped an unmappable relation 'activates'",
+   "e12: dropped an unmappable relation 'activates'",
+   "e6: cue trimmed to \"Two wolves; the one tagged '#2' pretends to be\"",
+   "e20: hook de-asserted -> \"כפתור גדול וקצת רופף עם הכיתוב 'Bupropion' על שק מזון, — בופרופיון, מעכב חלש של ספיגה חוזרת של דופמין ונוראדרנלין המשמש מחוץ לתווית, והוא עלול לחסום את ה-NET וה-DAT ולגרום לפרכוסים תלויי מינון.\"",
+   "e31: hook de-asserted -> \"חותמת התאריך 'DAT' על שק המזון — טרנספורטר הדופמין (DAT) שבופרופיון חוסם, ובכך הוא משפיע על רמות הדופמין במוח.\"",
+   "e1: hook over 32 words (40): 'להקת הזאבים הפרושה רחב ביער האורנים, צדה ללא סלקטיביות, בדיוק כמו קלונידין שהוא אגוניסט לא סלקטיבי לקולטני אלפא 2A, 2B, 2C, המסייע ב-ADHD עם טיקים או אגרסיביות, אך עלול לגרום לתופעות לוואי המודינמיות קשות וסערה סימפתטית אם מפסיקים אותו בפתאומיות.'",
+   "e6: hook over 32 words (33): 'שני זאבים, כשהאחד עם תג מספר 2 מתיימר להיות אלפא אך רק משדר פקודות בווירטואליות, בדיוק כמו קולטן אלפא 2A, שאגוניסטים כמו גואנפאצין מפעילים ישירות בקליפת המוח הקדם-מצחית כדי לשפר את התפקוד הקוגניטיבי.'",
+   "e15: hook over 32 words (42): 'אווזה בעלת עין אחת פקוחה ועין אחת חצי עצומה (כדי להראות פחות סדציה), אשר אוכלת ארוחה עשירה בשומן מתוך שק המזון, בדיוק כמו גואנפאצין ER ששומר על ערנות גבוהה יותר מקלונידין, וריכוז השיא שלו בדם עולה ב-75% כשלוקחים אותו עם ארוחה כזו.'",
+   "e19: hook over 32 words (34): \"הרועה שלובש גלימה עם הכיתוב '12h' (12 שעות) ונע ליד נחל וסלע בצורת כבד, מראה את משך הפעולה הקליני של קפוויי ER (קלונידין) העומד על 12 שעות, ואת דרכי הפינוי שלו דרך הכליות והכבד.\"",
+   "e20: hook over 32 words (33): \"כפתור גדול וקצת רופף עם הכיתוב 'Bupropion' על שק מזון, — בופרופיון, מעכב חלש של ספיגה חוזרת של דופמין ונוראדרנלין המשמש מחוץ לתווית, והוא עלול לחסום את ה-NET וה-DAT ולגרום לפרכוסים תלויי מינון.\"",
+   "e25: hook over 32 words (35): 'קבוצה של 24 כבשים נמרצות במיוחד לאחר ששתו קפה והונחו על ידי להקת הזאבים (alpha 2 agonists), מראה את היתרונות ההתנהגותיים העדיפים שנצפו בניסוי שכלל 24 נבדקים שקיבלו טיפול משולב של סטימולנטים ואגוניסטים לאלפא 2.'"
+  ],
+  "digit_strings_dropped": [
+   "CYP3A4",
+   "12h",
+   "CYP2B6"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1452,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1243,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.1289,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A hill sheep farm on gathering day: a stone-walled fank of pens and races on the slope below the yard, hurdles and netting run out across the grass to funnel the flock in, a quad and a trailer parked at the gate, and a pine plantation edge on the skyline above the top pen.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is gathering the flock in — walking the hill behind the sheep, whistling the dogs out and calling them back off, closing hurdles behind each batch and pushing the sheep down the race into the pens.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe stone-walled race and its run of hurdles and netting cutting from the bottom left of the frame up to the plantation gate at the top right, dividing the ground into open hill, the funnel, the fank of pens and the yard.\n\nZONES, and what belongs in each: Open Hill · The Funnel · The Fank Pens · The Yard\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. Snowy pine forest. A wolf pack suddenly standing still under gathering thunderclouds, representing abrupt cessation and sympathetic storm. — in the Open Hill\n  2. A young sheep looking over the edge of the pine plantation cliff, contemplating the drop. — in the Open Hill\n  3. Fishing Net hanging by the fank gate, ready to catch anything that tries to pass. — in the The Funnel\n  4. A shepherd named Tom with his sturdy, unhaltered ox calmly guiding sheep into the funnel, performing better than a wooden decoy ox. — in the The Funnel, physically blocking Fishing Net hanging by the fank gate, ready to catch anything that tries to pass.\n  5. A sheep at the edge of the funnel, trembling and huddled, looking very anxious. — in the The Funnel\n  6. Two wolves; the one tagged # pretends to be alpha but radios pack come back to base. — in the The Funnel\n  7. A shepherd expertly closing a wooden hurdle behind a batch of sheep, preventing escape. — in the The Funnel\n  8. Multiple shepherds and their dogs working in coordinated harmony to tighten the flock's movement into the pens. — in the The Funnel\n  9. A shepherd whistling to his dogs, but with a noticeable, repetitive facial tic. — in the The Funnel\n  10. A large, aggressive ram bucking against the hurdles, refusing to be driven into the pens. — in the The Funnel\n  11. A focused child actively helping gather sheep into the funnel. — in the The Funnel\n  12. A large, elegant white goose wearing ER earmuffs, intently tuning an old radio with a clear signal, looking less sleepy than a nearby clone. — in the The Funnel\n  13. A tally slate and a chalk stub by the drafting gate. — in the The Fank Pens\n  14. Marking sprays, ear tags, and a tag pliers hanging on the wall board. — in the The Fank Pens\n  15. A goose with one eye wide open and the other closed , eating a greasy high-fat meal from a feed bag. — in the The Fank Pens\n  16. A sheep dip container with Cypa written on its side. — in the The Fank Pens\n  17. A large clock face on the fank wall, with the hands indicating hours . — in the The Fank Pens\n  18. A dozing, somewhat weak-looking clone figure of farmer Dean, propped against a wall, with dry mouth indicated by his parched lips. — in the The Fank Pens\n  19. A shepherd figure, resembling Dean, wearing a cape with h embroidered, moving past a small river and a liver-shaped rock. — in the The Fank Pens\n  20. A large, slightly loose button labelled Bupropion on a feed bag. — in the The Fank Pens, physically blocking Fishing Net hanging by the fank gate, ready to catch anything that tries to pass.\n  21. A sheep near the Bupropion feed bag, exhibiting convulsive movements as if having a seizure. — in the The Fank Pens\n  22. A sheep dip container with Cypb written on its side. — in the The Fank Pens\n  23. A shepherd collapsed asleep near the fank wall, looking like he's been working for hours straight. — in the The Fank Pens\n  24. A piece of sheep liver from the stack of fleece, looking unusually yellow and jaundiced. — in the The Fank Pens\n  25. A group of sheep, some of which appear more alert and active after drinking from a trough , and being guided by the wolf pack . — in the The Fank Pens\n  26. A hazard notice board bolted to the gatepost, with a black box warning symbol prominently displayed. — in the The Yard\n  27. A shepherd wide awake and restless at night, sitting outside his small hut, unable to sleep, while a clock nearby shows bedtime. — in the The Yard\n  28. A water trough with ice broken at the edge, suggesting sluggish movement or circulatory issues. — in the The Yard\n  29. A shepherd moving extremely slowly, taking - times longer than others to perform a simple task like closing a gate, representing a poor metabolizer. — in the The Yard\n  30. A small graphic near the hazard board showing tiny black sheep among white sheep, illustrating .% incidence. — in the The Yard\n  31. A date stamp device on the Bupropion feed bag, indicating Dat. — in the The Fank Pens\n  32. A small metal plaque near the fine goose, inscribed with the number -.. — in the The Funnel\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"Bupropion\" — lettered on A large, slightly loose button labelled Bupropion on a feed bag.\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on hazard notice board\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on tally slate and a\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on marking sprays, ear tags\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A hill sheep farm on gathering day: a stone-walled fank of pens and races on the slope below the yard, hurdles and netting run out across the grass to funnel the flock in, a quad and a trailer parked at the gate, and a pine plantation edge on the skyline above the top pen.; everyone is Everyone is gathering the flock in — walking the hill behind the sheep, whistling the dogs out and calling them back off; the largest thing in\nframe is The stone-walled race and its run of hurdles and netting cutting from the bottom left of the frame up to the plantation ; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n"
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "HRS",
+     "paint": "5h",
+     "tag": "HRS",
+     "chroma_pixels": 40913,
+     "blob_pixels": 39731,
+     "fill_ratio": 1.252,
+     "height_frac": 0.1452,
+     "width_frac": 0.0952,
+     "quad": [
+      [
+       651,
+       1120
+      ],
+      [
+       906,
+       1086
+      ],
+      [
+       910,
+       1268
+      ],
+      [
+       652,
+       1186
+      ]
+     ],
+     "bbox": [
+      651,
+      1086,
+      259,
+      182
+     ],
+     "height_pct": 11.85,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "WKS",
+     "paint": "2-8wk",
+     "tag": "WKS",
+     "chroma_pixels": 42721,
+     "blob_pixels": 42620,
+     "fill_ratio": 1.018,
+     "height_frac": 0.1243,
+     "width_frac": 0.0839,
+     "quad": [
+      [
+       414,
+       433
+      ],
+      [
+       643,
+       428
+      ],
+      [
+       643,
+       608
+      ],
+      [
+       413,
+       618
+      ]
+     ],
+     "bbox": [
+      413,
+      428,
+      230,
+      190
+     ],
+     "height_pct": 12.37,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "0.56",
+     "tag": "N",
+     "chroma_pixels": 45339,
+     "blob_pixels": 45214,
+     "fill_ratio": 0.823,
+     "height_frac": 0.1289,
+     "width_frac": 0.1101,
+     "quad": [
+      [
+       715,
+       481
+      ],
+      [
+       1016,
+       472
+      ],
+      [
+       1015,
+       649
+      ],
+      [
+       714,
+       669
+      ]
+     ],
+     "bbox": [
+      714,
+      472,
+      302,
+      197
+     ],
+     "height_pct": 12.83,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 10037,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 1036
+ },
+ {
+  "day": 19,
+  "plate": "main2",
+  "facts": 25,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e12: dropped relation to unknown element 'atom-ox sheep'",
+   "e1: cue trimmed to 'Hazard notice board'",
+   "e2: cue trimmed to 'Tally slate by the drafting gate'",
+   "e4: cue trimmed to 'Footbath'",
+   "e5: cue trimmed to 'Lamb being measured against a growth chart'",
+   "e6: cue trimmed to 'Jaundiced atom-ox sheep removed from the dip bath'",
+   "e7: cue trimmed to \"Shepherd using a stethoscope on a sheep's chest\"",
+   "e9: cue trimmed to 'Sheep'",
+   "e10: cue trimmed to \"Two wolves; the one tagged '#2' pretends to be\"",
+   "e11: cue trimmed to 'Two wolves'",
+   "e12: cue trimmed to 'Atom-ox sheep drinking 50% from a cup'",
+   "e13: cue trimmed to 'Two wolves; the'",
+   "e1: hook over 32 words (36): 'לוח האזהרה התלוי על עמוד השער, עם ציור של מצוף (Bupropion) מחובר לברק (פרכוסים) ושל אטום-שור (Atomoxetine) מבוהל, מציג את אחוז הסיכון (0.4%) לפרכוסים ולמחשבות אובדניות הקשורות לתרופות אלו, בדיוק כמו לוח שמפרט סכנות פוטנציאליות בחווה.'",
+   "e4: hook over 32 words (34): 'אמבט הרגליים המשמש לבדיקת בסיסית, כשרועה בודק את הדופק ולחץ הדם של כבשה עומדת, עם סימון העלייה הממוצעת (2-4 mmHg לחץ דם סיסטולי, 6-9 bpm דופק) הקשורה לטיפול ב-Atomoxetine, בדיוק כמו בדיקות מעקב שוטפות.'",
+   "e8: hook over 32 words (34): 'בקבוקי ספריי סימון ותגי אוזניים שחרוט עליהם \\'7d\\' (7 ימים), לצד כבש אטום-שור (Atomoxetine) שמוצגות לידו שתי כוסות מדידה בנפחים \\'0.5\\' ו-\\'1.2\\', כמו התחלה במינון של 0.5 מ\"ג/ק\"ג/יום והעלאה ל-1.2 מ\"ג/ק\"ג/יום לאחר 7 ימים.'",
+   "e10: hook over 32 words (38): 'זוג זאבים (קולטני אלפא 2) עומדים ליד כבש \\'משובט\\' (Clonidine) וכבש \\'בעל פנים אחת\\' (Guanfacine) היורדים בהדרגה (טייפר) במדרון, כששלטים קטנים מציגים את מינוני ההתחלה (0.1 מ\"ג Clonidine, 1 מ\"ג Guanfacine), כמו הצורך להפסיק Alpha 2 Agonists בהדרגה.'"
+  ],
+  "digit_strings_dropped": [
+   "2-4mmHg, 6-9bpm",
+   "LFT, 50%, 75%",
+   "0.5, 1.2",
+   "0.1mg, 1mg",
+   "CYP2D6, 50%"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "0000",
+     "1"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.112,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1113,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.1107,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "0000",
+    "1"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A hill sheep farm on gathering day: a stone-walled fank of pens and races on the slope below the yard, hurdles and netting run out across the grass to funnel the flock in, a quad and a trailer parked at the gate, and a pine plantation edge on the skyline above the top pen.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is gathering the flock in — walking the hill behind the sheep, whistling the dogs out and calling them back off, closing hurdles behind each batch and pushing the sheep down the race into the pens.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe stone-walled race and its run of hurdles and netting cutting from the bottom left of the frame up to the plantation gate at the top right, dividing the ground into open hill, the funnel, the fank of pens and the yard.\n\nZONES, and what belongs in each: Open Hill · The Funnel · The Fank of Pens · The Yard\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. hazard notice board bolted to the gatepost, buoy, toy atom on an ox — in the The Yard\n  2. tally slate and a chalk stub by the drafting gate — in the The Fank of Pens\n  3. sheep, buoy — in the The Yard\n  4. footbath at the pen mouth, sheep, shepherd — in the The Fank of Pens\n  5. lamb, growth chart on wall of fank — in the The Fank of Pens\n  6. dip bath, jaundiced sheep, atom-ox toy, Lft sign, two buckets — in the The Fank of Pens\n  7. shepherd, sheep, stethoscope, drawing of Ecg line on wall board — in the The Fank of Pens\n  8. marking sprays, ear tags and a tag pliers on the wall board, atom-ox sheep, two measuring cups — in the The Yard\n  9. sheep with one face, pile of greasy food — in the The Fank of Pens\n  10. Two wolves; the one tagged # pretends to be alpha but radios pack come back to base , clone sheep, one-face sheep, ramp, dose signs — in the The Fank of Pens\n  11. Two wolves; the one tagged # pretends to be alpha but radios pack come back to base , large block with β symbol — in the The Fank of Pens\n  12. atom-ox sheep, cup labeled Cypd , flu-ox sheep, parrot-ox sheep — in the The Fank of Pens\n  13. Two wolves; the one tagged # pretends to be alpha but radios pack come back to base , ticking sheep, clone sheep, one-face sheep — in the The Fank of Pens\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  (none)\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on tally slate and a\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on marking sprays, ear tags\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on hazard notice board\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A hill sheep farm on gathering day: a stone-walled fank of pens and races on the slope below the yard, hurdles and netting run out across the grass to funnel the flock in, a quad and a trailer parked at the gate, and a pine plantation edge on the skyline above the top pen.; everyone is Everyone is gathering the flock in — walking the hill behind the sheep, whistling the dogs out and calling them back off; the largest thing in\nframe is The stone-walled race and its run of hurdles and netting cutting from the bottom left of the frame up to the plantation ; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n"
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "N",
+     "paint": "300mg",
+     "tag": "N",
+     "chroma_pixels": 37013,
+     "blob_pixels": 36337,
+     "fill_ratio": 1.038,
+     "height_frac": 0.112,
+     "width_frac": 0.0872,
+     "quad": [
+      [
+       1674,
+       494
+      ],
+      [
+       1913,
+       516
+      ],
+      [
+       1913,
+       665
+      ],
+      [
+       1674,
+       638
+      ]
+     ],
+     "bbox": [
+      1674,
+      494,
+      239,
+      171
+     ],
+     "height_pct": 11.13,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "DAYS",
+     "paint": "7d",
+     "tag": "DAYS",
+     "chroma_pixels": 45224,
+     "blob_pixels": 44596,
+     "fill_ratio": 1.021,
+     "height_frac": 0.1113,
+     "width_frac": 0.0988,
+     "quad": [
+      [
+       2399,
+       90
+      ],
+      [
+       2667,
+       94
+      ],
+      [
+       2667,
+       260
+      ],
+      [
+       2396,
+       248
+      ]
+     ],
+     "bbox": [
+      2396,
+      90,
+      271,
+      170
+     ],
+     "height_pct": 11.07,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "0.4%",
+     "tag": "PCT",
+     "chroma_pixels": 41003,
+     "blob_pixels": 39860,
+     "fill_ratio": 0.995,
+     "height_frac": 0.1107,
+     "width_frac": 0.0948,
+     "quad": [
+      [
+       1896,
+       278
+      ],
+      [
+       2154,
+       288
+      ],
+      [
+       2153,
+       446
+      ],
+      [
+       1896,
+       431
+      ]
+     ],
+     "bbox": [
+      1896,
+      278,
+      258,
+      168
+     ],
+     "height_pct": 10.94,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 3855,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 757
+ }
+]
