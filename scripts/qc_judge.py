@@ -100,6 +100,16 @@ MAX_UNCHECKED = 0
 # 330 and 331 and is verbatim on neither alone.
 QUOTE_RADIUS = 1
 
+# How much of a unit the judge must echo back to prove it read that unit.
+# qc_norm's 30 is calibrated on SOURCE quotes, which are English prose; an echo
+# is Hebrew, and norm() deletes the spaces, so the same content is about a
+# third shorter. Measured on the study-005 calibration call, where the judge
+# answered well and was rejected anyway: "קולטני H1 histamine וקולטני 5HT2C"
+# — a complete, unambiguous clause naming two receptors — normalizes to 28
+# characters. The echo's job is to be unmistakably FROM that unit, and 24
+# Hebrew characters cannot be produced by a judge that did not read it.
+ECHO_MIN_CHARS = 24
+
 DEFAULT_MODEL = agy_attach.DEFAULT_MODEL
 
 # A quote that is not in the material at all. §2.2 wants a quote from BOTH
@@ -590,9 +600,24 @@ def canary_problems(data: dict, request: Sequence[tuple],
                 str(row.get("page") or ""))
         else:                              # a bare list of codes, seen in the wild
             by_code.setdefault(_token(row), []).append("")
+    # A printed page is not one sheet. Dulcan p.738 occupies bundle pages 5, 6,
+    # 7 and 8 of the study-005 call, each stamped with its own code, because the
+    # book is reflowed (§5.1). Asking for "the code on Dulcan p.738" and
+    # demanding the one row we happened to pick failed three calibration calls
+    # on 2026-09-24 — the judge had answered with a different code for the same
+    # printed page, which is a correct answer to the question we asked. Any
+    # stamp of the requested page counts; a stamp of some OTHER page does not.
+    def _equivalent(code_wanted: str, book: str, printed: int) -> set[str]:
+        out = {_token(code_wanted)}
+        for row in manifest_pages(manifest) if manifest is not None else []:
+            if str(row.get("book")) == str(book) and printed in _printed_list(row):
+                out.add(_token(row.get("code")))
+        return out
+
     problems = []
     for book, printed, code in request or []:
-        labels = by_code.get(_token(code))
+        accepted = _equivalent(code, book, printed)
+        labels = next((by_code[c] for c in accepted if c in by_code), None)
         if labels is None:
             problems.append(f"canary: code for {book} p.{printed} not returned")
             continue
@@ -626,8 +651,9 @@ def _echo_ok(echo: str, text: str) -> dict:
     threshold — a fact leaf, a legend row — where "quote 30 characters" is not
     a thing the judge can do (integration note from qc_norm).
     """
-    whole = len(qc_norm.norm(text)) < qc_norm.MIN_QUOTE_CHARS
-    return qc_norm.find_quote(echo or "", text, whole_unit=whole)
+    whole = len(qc_norm.norm(text)) < ECHO_MIN_CHARS
+    return qc_norm.find_quote(echo or "", text, min_len=ECHO_MIN_CHARS,
+                              whole_unit=whole)
 
 
 def coverage_problems(data: dict, texts: dict[str, str]) -> list[str]:
