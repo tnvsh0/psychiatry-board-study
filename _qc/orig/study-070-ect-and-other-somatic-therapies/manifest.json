@@ -1,0 +1,36 @@
+{
+ "tag": "study-070-ect-and-other-somatic-therapies",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-23T20:16:36+00:00",
+ "updated_at": "2026-09-23T20:16:36+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "18517ad81cecc50d6c5a96acf9ac69ab4a723f2705269222c0ad902c59efdfc8",
+   "asset_id": 571467828,
+   "size": 12131,
+   "fetched_at": "2026-09-23T20:16:30+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "14219795fd28a7a87b973728e9d9ab05dcfa12558210d60e72724f40b4fbdfbc",
+   "asset_id": 571467823,
+   "size": 32549,
+   "fetched_at": "2026-09-23T20:16:32+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "313446a8cda3b900fd5f473c248a4936de3efb05390c142dba1e2fe335617e38",
+   "asset_id": 571467827,
+   "size": 29097,
+   "fetched_at": "2026-09-23T20:16:34+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "a9b475d3f9dd94deef8678530d660810b3746e2e71e93f627f9bf108c5807bc3",
+   "asset_id": 571467835,
+   "size": 74782,
+   "fetched_at": "2026-09-23T20:16:36+00:00"
+  }
+ ]
+}
