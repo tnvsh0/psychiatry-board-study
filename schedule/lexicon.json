@@ -1,7 +1,7 @@
 {
  "version": 1,
  "policy": "APPEND-ONLY. A token's cue and prop may never be changed once shipped — a resident who studied chapter 12 must find the same glyph in chapter 90. To replace one, add the new key and record the old under `retired` with `replaced_by`.",
- "usage": "Code substitutes these into the element table; it does not suggest them to a model. SCENE_TOKEN entries are props INSIDE the chapter's venue, never the venue itself.",
+ "usage": "Code substitutes these into the element table; it does not suggest them to a model. SCENE_TOKEN entries are props INSIDE the chapter's venue, never the venue itself.\nONE MEANING PER TOKEN, and the rule covers TOKENS ONLY. A token that stands for a fact in one chapter may not stand for a different fact in another — the owner spotted the same pneumatic hose reel carrying two meanings across plates (2026-09-23), and a glyph that means two things teaches neither. Ordinary scenery is not covered: a window, a bench, a crate may appear in every chapter, because they carry no meaning to collide.\nA token's MEANING is fixed; its costume follows the venue. psychosis_state is antennae on the head, and the headgear they sprout from is whatever that scene already puts on the person.",
  "tokens": {
   "5-HT1A_receptor": {
    "cue": "Bus-stop '1A' with anxious rabbit on bench",
@@ -2230,6 +2230,16 @@
    "kind": "SYMBOL",
    "scene": "(Trazodone's specific risk)",
    "category": "Priapism — prolonged painful erection (α1 antagonism)",
+   "source": "symbols.json:symbols",
+   "since": 1
+  },
+  "psychosis_state": {
+   "cue": "ANTENNAE on the head",
+   "prop": "ANTENNAE on the head — two wire aerials with little knobs, sprouting from whatever headgear the scene already puts on that person (a hard hat on a site, a chef's toque in a kitchen, a cap in a yard). The antennae are the symbol; the hat is the scene's.",
+   "hook": "Receiving transmissions nobody else receives — hallucinations and delusions, on the person who has them. Owner-approved ",
+   "kind": "SYMBOL",
+   "scene": "any — the headgear follows the venue",
+   "category": "Clinical states — a person exhibiting it",
    "source": "symbols.json:symbols",
    "since": 1
   },

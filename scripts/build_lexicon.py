@@ -188,7 +188,17 @@ def main() -> int:
         "usage": (
             "Code substitutes these into the element table; it does not suggest "
             "them to a model. SCENE_TOKEN entries are props INSIDE the "
-            "chapter's venue, never the venue itself."
+            "chapter's venue, never the venue itself.\n"
+            "ONE MEANING PER TOKEN, and the rule covers TOKENS ONLY. A token "
+            "that stands for a fact in one chapter may not stand for a "
+            "different fact in another — the owner spotted the same pneumatic "
+            "hose reel carrying two meanings across plates (2026-09-23), and a "
+            "glyph that means two things teaches neither. Ordinary scenery is "
+            "not covered: a window, a bench, a crate may appear in every "
+            "chapter, because they carry no meaning to collide.\n"
+            "A token's MEANING is fixed; its costume follows the venue. "
+            "psychosis_state is antennae on the head, and the headgear they "
+            "sprout from is whatever that scene already puts on the person."
         ),
         "tokens": dict(sorted(tokens.items())),
         "retired": retired,
