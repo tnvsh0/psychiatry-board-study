@@ -321,11 +321,25 @@ class RunCase(unittest.TestCase):
         self.tier1 = FakeTier1()
         self.notify = Recorder()
         self.cleaned = []
+        self.probes = []
+        self.probe = self._probe
+
+    def _probe(self, **kw):
+        """The §4 known-answer probe, faked. Set self.probe_ok False to fail it."""
+        self.probes.append(kw)
+        ok = getattr(self, "probe_ok", True)
+        return {"ok": ok, "quote": "2-8 weeks" if ok else "",
+                "detail": "faked probe"}
 
     # -- wiring ------------------------------------------------------------
     def deps(self, judge=None, **over):
         kw = dict(
             gh=self.gh, sources=self.sources, judge=judge or FakeJudge(),
+            # §4's probe is a REAL agy call when it is not faked: it binds
+            # lazily to qc_judge, so a test that changes the agy version
+            # mid-run spends the owner's quota. Default to one that passes;
+            # a test about the guard passes its own.
+            probe=self.probe,
             hygiene=self.hygiene, tier1=self.tier1,
             tier2=Forbidden("tier 2"), revert=Forbidden("tier 2 revert"),
             notify=self.notify, wait_for_network=lambda **k: True,

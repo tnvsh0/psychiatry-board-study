@@ -109,10 +109,18 @@ class AgyVersionChangeIsNeverProbed(RunCase):
             return out
 
     def test_two_chapters_judged_by_two_binaries_stop_the_run(self):
+        # Written when qc_judge exposed no probe at all, so §4's guard could
+        # only ever resolve to "no probe is wired" — a failed probe, and a STOP.
+        # The probe exists now (qc_judge.known_answer_probe, measured against
+        # StahlKids p.69 on agy 1.2.8), so the contract has two halves and this
+        # test pins the one it was written for: a version change that cannot be
+        # cleared stops the run. The other half — a probe that passes lets the
+        # run continue, with the seam recorded — is the test below.
         tags = ["study-005-serotonin-system", "study-035-lithium"]
         for t in tags:
             self.gh.add_release(t, release_assets())
         self.books_available()
+        self.probe_ok = False
         judge = self.VersionedJudge({tags[0]: "1.2.6", tags[1]: "1.3.0"})
         code, out = self.run_qc(self.opts(tags=tags), self.deps(judge=judge))
 
@@ -130,6 +138,28 @@ class AgyVersionChangeIsNeverProbed(RunCase):
             f"into each verdict (qc_run.py:1464) and never reads two of them "
             f"back, so a 24-51 hour backlog can silently be judged by two "
             f"models and the report cannot say where the seam is")
+
+    def test_a_probe_that_passes_lets_the_run_go_on_and_records_the_seam(self):
+        """§4 stops "if it fails" — a probe that passes is evidence, not noise.
+
+        The run continues, and the chapter that straddles two binaries is still
+        held so the report can say where the seam is (qc_run.status_holds).
+        """
+        tags = ["study-005-serotonin-system", "study-035-lithium"]
+        for t in tags:
+            self.gh.add_release(t, release_assets())
+        self.books_available()
+        self.probe_ok = True
+        judge = self.VersionedJudge({tags[0]: "1.2.6", tags[1]: "1.3.0"})
+        code, _ = self.run_qc(self.opts(tags=tags), self.deps(judge=judge))
+
+        self.assertNotEqual(code, qc_run.EXIT_STOP,
+                            "a probe that passed still stopped the run")
+        self.assertTrue(self.probes, "the version changed and nothing probed")
+        versions = {t: (qc_store.read_json(self.root / t / "verdict.json")
+                        or {}).get("agy", {}).get("version") for t in tags}
+        self.assertEqual(versions, {tags[0]: "1.2.6", tags[1]: "1.3.0"},
+                         "the verdicts do not record which binary judged them")
 
     def test_a_known_answer_probe_exists_to_be_run(self):
         names = []

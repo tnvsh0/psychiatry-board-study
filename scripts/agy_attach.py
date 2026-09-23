@@ -938,6 +938,21 @@ def ask_with_files(prompt: str, files, *, model: str | None = None,
     the lockout measured on this account was 13h33m, and the orchestrator's job
     is to journal `paused_quota{resume_after}`, send one ntfy and exit.
     """
+    # QC_NO_AGY is set by tests/qc/__init__.py. Every agy call in this
+    # mechanism is injected so tests can fake it, and one still got through:
+    # the §4 probe binds lazily, so a test that changed the agy version mid-run
+    # spent the owner's quota and showed up only as the suite taking 273
+    # seconds instead of 35. A missed double is now an error, not an invoice.
+    # `exe` given means the caller injected its own binary — that is what the
+    # agy_attach tests do, and a fake exe costs nothing. The guard is about the
+    # REAL one, resolved from PATH.
+    if (not exe
+            and os.environ.get("QC_NO_AGY", "").strip()
+            not in ("", "0", "false", "no")):
+        raise RuntimeError(
+            "QC_NO_AGY is set: a real agy call was attempted from a context "
+            "that must not make one (probably a test with an unfaked "
+            f"dependency). prompt={prompt[:80]!r} files={[str(f) for f in files]}")
     files = [Path(f) for f in files]
     missing = [str(f) for f in files if not f.exists()]
     if missing:
