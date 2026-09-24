@@ -2239,12 +2239,51 @@ class RunJournal:
             rec.setdefault("set_id", prior)
         self.save()
 
+    def bind_limit(self, limit: int) -> None:
+        """Record the per-call page limit this run judges at.
+
+        The limit decides how the chapter is CUT INTO CALLS, so a chapter
+        judged at 180 and a chapter judged at 250 were read in different
+        bundles. Measured on the six chapters judged before the limit moved,
+        every one of them replans: 4->3, 5->4, 8->5, 6->4, 4->3, 6->3 calls.
+        A recall of "61%" over both halves describes neither, and the number
+        it would license is Tier 2 rewriting the owner's exam material.
+
+        So the limit is stamped like the set id, and a chapter measured at
+        another one stops being done: the run comes back to it.
+        """
+        limit = int(limit or 0)
+        if not limit:
+            return False
+        prior = int(self.data.get("page_limit") or 0)
+        had = bool(self.data.get("calls") or self.data.get("chapters"))
+        changed = prior != limit and (bool(prior) or had)
+        if changed:
+            # The evidence stays in the file; it just stops being added up
+            # with the new regime's. Same move `calls_of_set` documents for a
+            # superseded set, one level down.
+            self.data.setdefault("superseded_calls", []).extend(
+                self.data.get("calls") or [])
+            self.data["calls"] = []
+            self.data["previous_page_limit"] = prior or None
+        self.data["page_limit"] = limit
+        self.save()
+        return changed
+
     def done(self, tag: str) -> bool:
         rec = self.data["chapters"].get(tag) or {}
         if not rec.get("finished_at"):
             return False
         sid = str(self.data.get("set_id") or "")
-        return not sid or str(rec.get("set_id") or sid) == sid
+        if sid and str(rec.get("set_id") or sid) != sid:
+            return False
+        limit = int(self.data.get("page_limit") or 0)
+        if not limit:
+            return True
+        # Fail-closed (§2.3): a chapter finished before the stamping existed
+        # carries no limit, and "it was probably the same one" is the guess
+        # this whole mechanism exists not to make.
+        return int(rec.get("page_limit") or 0) == limit
 
     def start(self, tag: str) -> None:
         self.data["chapters"].setdefault(tag, {})["started_at"] = _now_iso()
@@ -2256,6 +2295,7 @@ class RunJournal:
             **(self.data["chapters"].get(tag) or {}),
             "finished_at": _now_iso(),
             "set_id": self.data.get("set_id"),
+            "page_limit": self.data.get("page_limit"),
             "status": verdict.get("status"),
             "duration_s": verdict.get("duration_s"),
             "judgments": verdict.get("judgments") or []}
@@ -2291,19 +2331,28 @@ class RunJournal:
         # first-attempt bar while the set being reported on scored 0 of 3. A
         # rate is about one experiment or it is about nothing.
         rec.setdefault("set_id", str(self.data.get("set_id") or ""))
+        rec.setdefault("page_limit", int(self.data.get("page_limit") or 0))
         self.data["calls"].append(rec)
         self.save()
 
     def calls_of_set(self) -> list[dict]:
-        """This set's calls. A call with no stamp predates the stamping and is
-        counted only when the journal itself has never been re-bound."""
+        """This set's calls, at this run's page limit.
+
+        A call with no stamp predates the stamping and is counted only when
+        the journal itself has never been re-bound — to another set, or to
+        another page limit.
+        """
         sid = str(self.data.get("set_id") or "")
         prior = str(self.data.get("previous_set_id") or "")
+        limit = int(self.data.get("page_limit") or 0)
         out = []
         for rec in self.data.get("calls") or []:
             got = str(rec.get("set_id") or "")
-            if got == sid or (not got and not prior):
-                out.append(rec)
+            if not (got == sid or (not got and not prior)):
+                continue
+            if limit and int(rec.get("page_limit") or 0) != limit:
+                continue
+            out.append(rec)
         return out
 
 
@@ -2371,6 +2420,15 @@ def run_prepared(*, root=None, tags: Sequence[str] | None = None,
     chapters = list(tags or doc.get("chapters") or [])
     journal = RunJournal(root)
     journal.bind(str(doc.get("set_id") or ""))
+    if journal.bind_limit(int(page_limit or qc_sources.DEFAULT_PAGE_LIMIT)):
+        # A cached judgment was produced by a call whose bundle no longer
+        # exists at this limit. qc_run reuses it by call id, so leaving it in
+        # place would let a 180-page measurement answer for a 250-page one.
+        moved = supersede_judgments(root)
+        _print(f"  תקרת העמודים השתנתה ל-"
+               f"{int(page_limit or qc_sources.DEFAULT_PAGE_LIMIT)} — "
+               f"פסקי הדין של {len(moved)} פרקים הועברו ל-judgments.superseded-*"
+               f" והם יישפטו מחדש")
     items_by_tag: dict[str, list[str]] = {}
     for m in doc.get("mutants") or []:
         items_by_tag.setdefault(m["tag"], []).append(m["mid"])
@@ -2937,6 +2995,15 @@ def _call_metrics(doc: dict, *, root=None) -> dict:
             (journal.data.get("set_id") and doc.get("set_id")
              and journal.data.get("set_id") != doc.get("set_id"))
             or (len(journal.data.get("calls") or []) > len(calls))),
+        "page_limit": int(journal.data.get("page_limit") or 0),
+        # Same reasoning one limit down: the rates above count only the calls
+        # made at this run's page limit, and the owner has to be told when the
+        # file also holds calls made at another — otherwise a set that was
+        # half-judged at 180 and half at 250 reports one number for two
+        # experiments.
+        "limit_mismatch": bool(
+            len({int(c.get("page_limit") or 0)
+                 for c in (journal.data.get("calls") or [])}) > 1),
     }
 
 
@@ -3053,6 +3120,9 @@ def verdict_line(doc: dict, s: dict) -> tuple[bool, list[str]]:
     if s.get("set_mismatch"):
         why.append("יומן ההרצה נכתב מול סט אחר (set_id שונה) — המספרים "
                    "מתארים שני ניסויים")
+    if s.get("limit_mismatch"):
+        why.append(f"היומן מערבב שתי תקרות עמודים (כעת {s.get('page_limit')}) "
+                   f"— הפרק נחתך אחרת לכל קריאה, אז המספרים מתארים שני ניסויים")
     return (not why), why
 
 
