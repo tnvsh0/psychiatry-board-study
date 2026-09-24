@@ -71,6 +71,8 @@ to travel to agy on every retry; at 180 pages it is 2-4MB.
 
     python scripts/qc_sources.py <chapter dir> --day 19          plan only
     python scripts/qc_sources.py <chapter dir> --day 19 --build  bundles too
+    python scripts/qc_sources.py --chapter 19 --measure-limit 250   §6, no agy
+    python scripts/qc_sources.py --check-answer reply.json --out <that dir>
 """
 from __future__ import annotations
 
@@ -201,6 +203,22 @@ KIND_SYNOPSIS = "S"
 # §5.8: "Synopsis-heavy chapters (>= 20% of book citations, or Synopsis as the
 # only textbook — 013, 070) judge the Synopsis in its own call(s)."
 SYNOPSIS_HEAVY_SHARE = 0.20
+
+
+# §5.7's split is the only thing allowed to move a unit between calls;
+# nothing is allowed to drop one, and no unit is exempt from being judged.
+# An earlier version of this module could leave the guide's source-map
+# table out of the judge calls, on the premise that it states no clinical
+# fact and that qc_cite and qc_lint already check every page reference in
+# it. That was refuted by the first chapter judged end to end: 9 of
+# chapter 019's 20 active errata are on that one unit and 8 of them are
+# severity high — pages that exist, are mappable and are in the right
+# book, cited for the wrong topic — while qc_cite marks none of its 136
+# citations impossible and qc_lint leaves the unit with zero flags, so
+# nothing deterministic can see them. The switch, the classifier behind it
+# and every path that could exclude a unit from judging were removed; the
+# per-call page limit (measure_limit below) is where the call count is
+# bought instead. Do not rebuild it.
 
 
 class PlanError(ValueError):
@@ -1325,6 +1343,235 @@ def build_calls(*, tag: str, units, cites=None, work_dir, day: int | None = None
 
 
 # ---------------------------------------------------------------------------
+# §6's page-limit measurement: everything up to the agy call, and nothing more
+#
+# "The largest bundle whose last-10% canary passes", trying 120, 180 and 250
+# (§6). The limit decides how many calls the backlog costs — measured on six
+# released chapters, 250 instead of 180 takes 013 from 4 calls to 3, 019 from 8
+# to 5, 029 from 6 to 3, 042 from 3 to 2, 047 from 4 to 3 and 070 from 7 to 5 —
+# so it is worth an experiment, and it must not be worth a GUESS: a limit set too
+# high means a judge that stopped reading a third of the way in and answered
+# anyway, which is the 2026-09-18 failure with a bigger bundle.
+#
+# The experiment is one agy call per candidate limit, and the owner makes it.
+# What is here is everything that costs nothing: the bundle at that size, three
+# canary pages at 5%, 50% and 95% of it, the codes to expect, and the exact
+# prompt that would be sent. `--check-answer` then takes the reply and says
+# which of the three codes came back. The 95% one is the measurement; the other
+# two are the control that tells "it did not read the tail" apart from "it did
+# not read the bundle at all".
+MEASURE_FRACTIONS = (0.05, 0.50, 0.95)
+MEASURE_FILE = "measurement.json"
+
+
+def _first_printed(page: dict) -> int:
+    printed = page.get("printed")
+    if isinstance(printed, (list, tuple)):
+        return int(printed[0])
+    return int(printed)
+
+
+def measure_canary(manifest, *, fractions=MEASURE_FRACTIONS) -> list[dict]:
+    """One page at each fraction of the way through the bundle, with its code.
+
+    Distinct pages where the bundle has them: two fractions that round onto the
+    same page would make a three-code canary a two-code one and the tail result
+    would rest on a page the front canary had already proved.
+
+    A fraction that has to move moves TOWARDS the middle — forward from the
+    front, backward from the tail — so the 95% code can never end up on a page
+    at the front of the bundle. That is the one direction that would turn this
+    measurement into a lie: the whole question is whether the judge read the
+    END of a bundle this size.
+    """
+    # `row`, not `p`: scripts/_check_scope.py walks a function together with the
+    # lambdas inside it, and a lambda parameter that shadows a local assigned
+    # further down reads there as the read-before-assignment bug it hunts.
+    pages = sorted(_manifest_pages(manifest), key=lambda row: row["bundle_page"])
+    if not pages:
+        raise PlanError("measurement canary on a bundle with no pages")
+    out: list[dict] = []
+    used: set[int] = set()
+    for frac in fractions:
+        target = min(len(pages) - 1, max(0, round(frac * (len(pages) - 1))))
+        step = 1 if frac < 0.5 else -1
+        i = target
+        while i in used and 0 <= i + step < len(pages):
+            i += step
+        if i in used:
+            # A bundle with fewer pages than fractions. Keep the page the
+            # fraction asked for rather than answer about a different position.
+            i = target
+        used.add(i)
+        page = pages[i]
+        out.append({"fraction": frac, "book": page["book"],
+                    "printed": _first_printed(page), "code": page["code"],
+                    "bundle_page": page["bundle_page"],
+                    "position": round((i + 1) / len(pages), 3)})
+    return out
+
+
+def canary_tuples(rows) -> list[tuple]:
+    """The (book, printed, code) shape qc_judge.prompt_for and
+    qc_judge.canary_problems both take."""
+    return [(r["book"], r["printed"], r["code"]) for r in rows]
+
+
+def _topup(call: CallPlan, calls, target: int) -> int:
+    """Grow one call's bundle to about `target` PDF pages from the chapter's own
+    other pages, and say how many it added.
+
+    §6 wants to measure a bundle OF a given size, and the biggest call a chapter
+    happens to produce at that limit is usually smaller — 019 at 250 splits into
+    five calls of 144-241. The pages come from the chapter's other calls, so
+    every page is a real page of a real book this chapter cites; nothing is
+    invented and no page is duplicated inside the bundle.
+    """
+    have = {_key(p) for p in call.pages}
+    spare = [p for c in calls if c is not call for p in c.pages
+             if _key(p) not in have]
+    added = 0
+    for page in _sorted_pages(spare):
+        if call.pdf_page_count >= target:
+            break
+        if _key(page) in have:
+            continue
+        have.add(_key(page))
+        call.pages.append({**page, "reasons": list(page["reasons"])})
+        added += 1
+    call.pages = _sorted_pages(call.pages)
+    return added
+
+
+def measure_limit(*, tag: str, day: int, units, cites=None, target: int,
+                  work_dir, search: bool = True, rng=None,
+                  reading_guide: Path | None = None) -> dict:
+    """Build one ~`target`-page bundle and the prompt for it. No agy call.
+
+    Returns the measurement record, which is also written to
+    `<work_dir>/measurement.json` so that `check_answer` can be run later, from
+    another process, against the reply the owner gets back.
+    """
+    import qc_judge          # lazy: plan() and the tests must not need it
+
+    units = list(units)
+    cites = cites if cites is not None else qc_cite.cites_by_unit(units)
+    by_uid = {u.uid: u for u in units}
+    notes: list[str] = []
+    calls = plan(tag, day, units, cites, page_limit=target, search=search,
+                 notes=notes, reading_guide=reading_guide)
+    if not calls:
+        raise PlanError(f"{tag}: nothing to measure — the plan has no calls")
+    call = max(calls, key=lambda c: (c.pdf_page_count, c.call_id))
+    before = call.pdf_page_count
+    added = _topup(call, calls, target)
+
+    here = Path(work_dir)
+    here.mkdir(parents=True, exist_ok=True)
+    artifacts, nonce = build_artifacts_md([by_uid[u] for u in call.units], here,
+                                          rng=rng)
+    manifest = build_bundle(call, here, rng=rng)
+    manifest.nonce = nonce
+    rows = measure_canary(manifest)
+    prompt = qc_judge.prompt_for(call, canary_tuples(rows), call.units,
+                                 call.kind)
+    rec = {
+        "tag": tag, "day": int(day), "target_pages": int(target),
+        "call_id": call.call_id, "kind": call.kind,
+        "units": list(call.units),
+        "pdf_pages": call.pdf_page_count,
+        "pages_from_the_plan": before, "pages_added_to_reach_target": added,
+        "bundle_pages": manifest.page_count, "index_pages": manifest.index_pages,
+        "bundle_bytes": manifest.bytes, "bundle": manifest.path,
+        "bundle_sha256": manifest.sha256,
+        "artifacts": str(artifacts), "nonce": nonce,
+        "canary": rows,
+        "prompt": prompt, "prompt_sha256": qc_judge.prompt_sha256(prompt),
+        "manifest": manifest.as_dict(),
+        "notes": list(notes) + list(call.notes),
+        "how_to_run": (
+            "the agy call is the owner's to make: attach bundle.pdf and "
+            "artifacts.md from this directory, send `prompt` with "
+            "gemini-3.1-pro-high, then\n"
+            "    python scripts/qc_sources.py --check-answer <reply.json> "
+            f"--out {here}"),
+    }
+    # The answer key does NOT go in the workspace. `rec` holds the three codes,
+    # the nonce and the prompt, and the workspace is the directory whose files
+    # are attached to the judge: agy is an agent that has been observed opening
+    # files beside the ones it was handed, so a measurement.json sitting next to
+    # bundle.pdf is a canary the judge can read instead of the pages. It goes to
+    # a sibling directory, and the workspace keeps only what a real call has.
+    key_dir = here.parent / f"{here.name}.key"
+    key_dir.mkdir(parents=True, exist_ok=True)
+    rec["measurement_file"] = str(key_dir / MEASURE_FILE)
+    rec["how_to_run"] = rec["how_to_run"].replace(f"--out {here}",
+                                                 f"--out {key_dir}")
+    (key_dir / MEASURE_FILE).write_bytes(
+        json.dumps(rec, ensure_ascii=False, indent=1).encode("utf-8"))
+    return rec
+
+
+def check_answer(measurement: dict, reply) -> dict:
+    """Which of the three codes verified, and whether the tail one did.
+
+    `reply` is the judge's JSON object (or the text of it). The tail code is the
+    measurement: §6's rule is "the largest bundle whose last-10% canary passes",
+    and a front code that verifies while the tail one does not is precisely a
+    bundle that is too big — which is why all three are reported, never just a
+    pass/fail.
+    """
+    import qc_judge          # lazy, as in measure_limit
+
+    if isinstance(reply, (str, bytes)):
+        reply = json.loads(reply)
+    if not isinstance(reply, dict):
+        raise PlanError("the reply is not a JSON object")
+    rows = list(measurement.get("canary") or [])
+    if not rows:
+        raise PlanError("this measurement carries no canary to check")
+    manifest = measurement.get("manifest") or {}
+    returned: dict[str, list] = {}
+    for row in (reply.get("canary") or []):
+        if isinstance(row, dict):
+            returned.setdefault(_code_token(row.get("code")), []).append(
+                str(row.get("page") or ""))
+        else:
+            returned.setdefault(_code_token(row), []).append("")
+    # The label cross-check and the reflowed-page equivalence (a printed page is
+    # several stamped sheets) live in qc_judge; running the real validator here
+    # is the point — a measurement scored by a second, friendlier rule would
+    # pick a limit the real run then fails.
+    problems = qc_judge.canary_problems(reply, canary_tuples(rows), manifest)
+    nonce = qc_judge.nonce_problem(reply, measurement.get("nonce") or "")
+    out = []
+    for row in rows:
+        token = _code_token(row["code"])
+        ok = token in returned
+        out.append({**{k: row[k] for k in ("fraction", "book", "printed",
+                                           "position", "bundle_page")},
+                    "code": row["code"], "verified": ok,
+                    "returned_on": returned.get(token, [])})
+    tail = max(out, key=lambda r: r["fraction"])
+    return {"tag": measurement.get("tag"), "target_pages":
+            measurement.get("target_pages"),
+            "pdf_pages": measurement.get("pdf_pages"),
+            "codes": out,
+            "verified": sum(1 for r in out if r["verified"]),
+            "of": len(out),
+            "tail_verified": bool(tail["verified"]),
+            "tail_fraction": tail["fraction"],
+            "nonce_ok": nonce is None, "nonce_problem": nonce,
+            "problems": problems,
+            "passes": bool(tail["verified"] and not problems and nonce is None)}
+
+
+def _code_token(s) -> str:
+    """The same comparison qc_judge makes: alphanumerics, upper case."""
+    return "".join(ch for ch in str(s or "").upper() if ch.isalnum())
+
+
+# ---------------------------------------------------------------------------
 
 
 def _read_chapter(d: Path) -> dict:
@@ -1333,23 +1580,160 @@ def _read_chapter(d: Path) -> dict:
             if p.is_file() and qc_units.is_judged_asset(p.name)}
 
 
+# Where a chapter's released text sits on this machine, best first: the
+# snapshot §5.5 takes before any change, then what a previous run downloaded,
+# then the calibration cache. `--measure-limit` needs a REAL chapter and must
+# not need the network to find one.
+CHAPTER_DIRS = (
+    ("_qc", "orig", "{tag}"),
+    ("_qc", "work", "{tag}", "release"),
+    ("_qc", "cache", "calibration", "{tag}"),
+)
+
+
+def find_chapter(which: str) -> tuple[Path, str, int]:
+    """(directory, tag, day) for `19`, `study-019-…` or a path."""
+    raw = str(which).strip()
+    direct = Path(raw)
+    if direct.is_dir():
+        tag = direct.name if direct.name != "release" else direct.parent.name
+        return direct, tag, day_of_tag(tag)
+    if raw.isdigit():
+        day = int(raw)
+        globbed = sorted(REPO_ROOT.glob(f"_qc/orig/study-{day:03d}-*")) \
+            + sorted(REPO_ROOT.glob(f"_qc/work/study-{day:03d}-*")) \
+            + sorted(REPO_ROOT.glob(f"_qc/cache/calibration/study-{day:03d}-*"))
+        tags = [p.name for p in globbed if p.is_dir()]
+        if not tags:
+            raise PlanError(
+                f"no local copy of chapter {day}. Pass a directory of released "
+                f"assets instead, or fetch it first "
+                f"(python scripts/qc_run.py --dry-run --chapters {day}).")
+        tag = tags[0]
+    else:
+        tag = raw
+        day = day_of_tag(tag)
+    for parts in CHAPTER_DIRS:
+        d = REPO_ROOT.joinpath(*(p.format(tag=tag) for p in parts))
+        if d.is_dir() and (d / "study_guide.md").exists():
+            return d, tag, day_of_tag(tag)
+    raise PlanError(f"{tag}: no directory with a study_guide.md under "
+                    f"{', '.join('/'.join(p) for p in CHAPTER_DIRS)}")
+
+
+def _print_measurement(rec: dict) -> None:
+    print(f"\n=== {rec['tag']} — one bundle at a {rec['target_pages']}-page "
+          f"limit")
+    print(f"  call {rec['call_id']} [{rec['kind']}] · {len(rec['units'])} units "
+          f"· {rec['pdf_pages']} pdf pages "
+          f"({rec['pages_from_the_plan']} from the plan + "
+          f"{rec['pages_added_to_reach_target']} to reach the target) · "
+          f"{rec['bundle_pages']} bundle pages · "
+          f"{rec['bundle_bytes'] / 1e6:.1f}MB")
+    print(f"  bundle:    {rec['bundle']}")
+    print(f"  artifacts: {rec['artifacts']}")
+    print(f"  nonce:     {rec['nonce']}")
+    print("  codes to expect back:")
+    for row in rec["canary"]:
+        print(f"    {row['fraction']:>5.0%} through the bundle "
+              f"(bundle page {row['bundle_page']}, at {row['position']:.0%}): "
+              f"{row['book']} p.{row['printed']} -> {row['code']}")
+    for note in rec.get("notes") or []:
+        print(f"  [i] {note}")
+    print(f"\n--- the prompt that would be sent "
+          f"(sha256 {rec['prompt_sha256'][:12]}, {len(rec['prompt'])} chars) "
+          f"---")
+    print(rec["prompt"])
+    print("--- end of prompt ---")
+    print("\nNO agy call was made. " + rec["how_to_run"])
+
+
+def _print_check(res: dict) -> None:
+    print(f"\n=== {res['tag']} — {res['pdf_pages']} pdf pages "
+          f"(target {res['target_pages']})")
+    for row in res["codes"]:
+        mark = "OK  " if row["verified"] else "MISS"
+        print(f"  {mark} {row['fraction']:>5.0%} {row['book']} "
+              f"p.{row['printed']} {row['code']}"
+              + (f"  returned on {row['returned_on']}" if row["verified"]
+                 else ""))
+    print(f"  {res['verified']}/{res['of']} codes verified; "
+          f"nonce {'ok' if res['nonce_ok'] else res['nonce_problem']}")
+    for p in res["problems"]:
+        print(f"  [!] {p}")
+    # §6's words are "the last-10% canary"; the page it rests on is the one at
+    # 95% of the bundle, which is inside that last tenth.
+    print(f"  §6's last-10% canary (the page at "
+          f"{res['tail_fraction']:.0%} of the bundle): "
+          + ("PASSED" if res["tail_verified"] else "FAILED"))
+    print(f"  => a {res['target_pages']}-page limit "
+          + ("passes" if res["passes"] else "does NOT pass")
+          + " on this chapter")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("chapter", help="a directory of released assets")
+    ap.add_argument("chapter", nargs="?", default=None,
+                    help="a directory of released assets")
+    ap.add_argument("--chapter", dest="chapter_ref", default=None,
+                    help="chapter number, tag or directory, found locally "
+                         "(_qc/orig, _qc/work/<tag>/release, the calibration "
+                         "cache)")
     ap.add_argument("--day", type=int, default=None)
     ap.add_argument("--tag", default=None)
     ap.add_argument("--page-limit", type=int, default=DEFAULT_PAGE_LIMIT)
     ap.add_argument("--no-search", action="store_true",
                     help="skip the full-text hits (fast, for plan shape only)")
     ap.add_argument("--build", action="store_true", help="write the bundles too")
+    ap.add_argument("--measure-limit", type=int, default=None, metavar="PAGES",
+                    help="§6: build ONE bundle of about this many pages, pick "
+                         "three canary pages at 5%%/50%%/95%% of it, print the "
+                         "codes and the prompt that would be sent, and stop. "
+                         "No agy call.")
+    ap.add_argument("--check-answer", default=None, metavar="REPLY.JSON",
+                    help="score a judge's reply against the measurement in "
+                         "--out ('-' reads the reply from stdin)")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
 
-    d = Path(a.chapter)
-    tag = a.tag or d.name
-    day = a.day if a.day is not None else day_of_tag(tag)
+    if a.check_answer:
+        out = Path(a.out or (REPO_ROOT / "_qc" / "work" / "measure"))
+        path = out / MEASURE_FILE if out.is_dir() else Path(out)
+        if not path.exists():
+            print(f"no measurement at {path}; run --measure-limit first")
+            return 2
+        rec = json.loads(path.read_bytes().decode("utf-8"))
+        raw = (sys.stdin.read() if a.check_answer == "-"
+               else Path(a.check_answer).read_bytes().decode("utf-8"))
+        res = check_answer(rec, raw)
+        _print_check(res)
+        (path.parent / "check.json").write_bytes(
+            json.dumps(res, ensure_ascii=False, indent=1).encode("utf-8"))
+        return 0 if res["passes"] else 1
+
+    which = a.chapter_ref or a.chapter
+    if not which:
+        ap.error("give a chapter directory, or --chapter <number|tag>")
+    if a.chapter_ref or not Path(which).is_dir():
+        d, tag, day = find_chapter(which)
+    else:
+        d = Path(which)
+        tag, day = d.name, None
+    tag = a.tag or tag
+    day = a.day if a.day is not None else (day if day is not None
+                                           else day_of_tag(tag))
     units = qc_units.units(_read_chapter(d))
     cites = qc_cite.cites_by_unit(units)
+
+    if a.measure_limit:
+        out = Path(a.out or (REPO_ROOT / "_qc" / "work" / tag / "measure"
+                             / str(a.measure_limit)))
+        rec = measure_limit(tag=tag, day=day, units=units, cites=cites,
+                            target=a.measure_limit, work_dir=out,
+                            search=not a.no_search)
+        _print_measurement(rec)
+        return 0
+
     if a.build:
         # build_calls plans and builds in one pass; planning twice would print
         # one plan and build a different one, since every call gets fresh codes.
@@ -1369,6 +1753,8 @@ def main() -> int:
             print(f"    [!] {note}")
     for note in notes:
         print(f"  [i] {note}")
+    print(f"-- {len(calls)} calls, "
+          f"{sum(len(c.units) for c in calls)} units")
     return 0 if calls else 1
 
 

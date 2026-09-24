@@ -31,6 +31,15 @@ WHY faults RAISE INSTEAD OF RETURNING NOTHING
 Fail closed (spec §2.3). A quiz.json that does not parse must not look like a
 chapter with no quiz items — that would let an unjudged asset be approved.
 
+WHY NO UNIT IS EXEMPT FROM JUDGING
+
+A classifier here once marked the guide's opening "מפת המקורות" table as holding
+no clinical claim, so qc_sources could leave it out of the judge calls. It was
+refuted by the first chapter judged end to end: 8 of chapter 019's high-severity
+errata are in that very unit — real, mappable pages, in the right book, cited
+for the wrong topic, which qc_cite and qc_lint cannot see. The classifier and
+every path that could exempt a unit have been removed. Every unit is judged.
+
     python scripts/qc_units.py <dir>            one line per unit
     python scripts/qc_units.py <dir> --uid Q3   that unit's text, as judged
 """

@@ -32,6 +32,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 import qc_books  # noqa: E402
 import qc_cite  # noqa: E402
+import qc_lint  # noqa: E402  its number index is cached across the process
 import qc_sources  # noqa: E402
 import qc_units  # noqa: E402
 
@@ -110,6 +111,16 @@ class FakeBooksMixin:
 
         qc_books.book = fake
         self.addCleanup(lambda: setattr(qc_books, "book", real))
+        # qc_lint._book_numbers is lru_cached across the whole process and reads
+        # its pages through qc_books.book, so a plan built on FakeBook (whose
+        # page_text is "") leaves an EMPTY number index behind under a real
+        # book's key. Every later test that needs a real page then finds
+        # nothing, and which tests those are depends on the alphabet: adding a
+        # module that sorts before test_qc_lint.py broke four tests that had
+        # never been touched. Cleared on the way in and on the way out, so the
+        # fake cannot be inherited in either direction.
+        qc_lint._book_numbers.cache_clear()
+        self.addCleanup(qc_lint._book_numbers.cache_clear)
         return books
 
     def fake_guide(self, reading: dict, day: int = 1) -> Path:
