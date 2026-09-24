@@ -122,8 +122,20 @@ READING_GUIDE = REPO_ROOT / "schedule" / "reading_guide.json"
 # At 25 minutes a call, 120 would cost the 68-chapter backlog roughly twice
 # what 180 does, and a limit that is too HIGH fails closed — a missed canary
 # discards the verdict and retries — while one that is too low silently costs
-# the whole run. Calibration lowers it if the tail canary says so.
-DEFAULT_PAGE_LIMIT = 180
+# the whole run.
+#
+# MEASURED 2026-09-24 (scripts/qc_measure_limits.py, chapter 019, agy 1.2.10,
+# one call per size, three stamped codes each at 5%, 50% and 95% of the
+# bundle): 250 -> a 253-page bundle, all three codes returned, including the
+# one on bundle page 241 of 253. The judge reads to the end of a bundle that
+# size. 120 and 180 both fill to the same 197 pages on this chapter — its
+# source map alone pulls 195 — and both passed too, which is the other half of
+# the answer: the limit was never what those chapters obeyed.
+#
+# So the limit is 250, and that is what §6 asked for: "the largest bundle
+# whose last-10% canary passes". It is one chapter and one call per size; a
+# later tail miss lowers it again, and costs nothing but a retry when it does.
+DEFAULT_PAGE_LIMIT = 250
 
 # The Dulcan p.330/331 reason, same radius as qc_norm.source_window: a quote
 # verified across a page break has to be in the bundle across that break too.
@@ -1545,13 +1557,27 @@ def check_answer(measurement: dict, reply) -> dict:
     problems = qc_judge.canary_problems(reply, canary_tuples(rows), manifest)
     nonce = qc_judge.nonce_problem(reply, measurement.get("nonce") or "")
     out = []
+    # Per row, the SAME equivalence canary_problems uses: a printed page in a
+    # reflowed book is several stamped sheets, and any of them is a correct
+    # answer to "the code on Dulcan p.720". Measured 2026-09-24: p.720 sits on
+    # bundle pages 98, 99 and 100, the judge answered with one of the other
+    # two, and this row printed MISS while `problems` — the authoritative check
+    # — was empty and the run passed. A report that cries wolf next to a pass
+    # is how a real miss gets waved through later.
     for row in rows:
-        token = _code_token(row["code"])
-        ok = token in returned
+        sheets = {_code_token(row["code"])}
+        for page in (manifest.get("pages") or []):
+            if (str(page.get("book")) == str(row["book"])
+                    and int(row["printed"]) in [int(n) for n in
+                                                (page.get("printed") or [])]):
+                sheets.add(_code_token(page.get("code")))
+        hit = next((c for c in sheets if c in returned), None)
         out.append({**{k: row[k] for k in ("fraction", "book", "printed",
                                            "position", "bundle_page")},
-                    "code": row["code"], "verified": ok,
-                    "returned_on": returned.get(token, [])})
+                    "code": row["code"], "verified": hit is not None,
+                    "verified_on_code": hit,
+                    "sheets_of_this_page": sorted(sheets),
+                    "returned_on": returned.get(hit or "", [])})
     tail = max(out, key=lambda r: r["fraction"])
     return {"tag": measurement.get("tag"), "target_pages":
             measurement.get("target_pages"),
