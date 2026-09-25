@@ -1,0 +1,118 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Obsessions (DSM p.265, Dulcan p.366)",
+        "items": [
+          "Intrusive unwanted thoughts, urges, or images causing anxiety/distress (DSM p.265)",
+          "Attempts to ignore, suppress, or neutralize with another thought or action (DSM p.265)"
+        ]
+      },
+      {
+        "name": "Compulsions (DSM p.265, Dulcan p.366)",
+        "items": [
+          "Repetitive behaviors or mental acts in response to obsession or rigid rules (DSM p.265)",
+          "Aimed at reducing distress/preventing dreaded event, but excessive or unrealistic (DSM p.265)"
+        ]
+      }
+    ],
+    "thresholds": "Time-consuming (>1 hour/day) or clinically significant distress/impairment (DSM p.265, Dulcan p.366)",
+    "subtypes": [
+      "With good/fair insight (DSM p.266)",
+      "With poor insight (DSM p.266)",
+      "With absent insight/delusional beliefs (DSM p.266)",
+      "Tic-related specifier (DSM p.266, Dulcan p.368)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1-2% in children (Dulcan p.368); 2-3% adult lifetime (DSM p.267, Synopsis ch.9)",
+    "sex_ratio": "Male preponderance in childhood (Dulcan p.368, DSM p.268); 1:1 in adulthood (DSM p.268)",
+    "onset_age_typical": "Mean 9-10 years in children (Dulcan p.367-368); bimodal peaks (childhood and young adulthood) (Dulcan p.368)",
+    "heritability": "25-28% GWAS to 40-58% twin studies (DSM p.268, Dulcan p.370)",
+    "comorbidities": [
+      "Anxiety disorders 76% (DSM p.271)",
+      "Depressive disorders 63% (DSM p.271)",
+      "Tic disorders up to 30% (DSM p.271, Dulcan p.368)",
+      "ADHD (Dulcan p.368)"
+    ],
+    "prognosis": "Chronic waxing-waning course; 40-60% persist into adulthood (Dulcan p.368, DSM p.267)"
+  },
+  "etiology": {
+    "genetic": "Polygenic; 10-fold increased risk in 1st-degree relatives for pediatric-onset (DSM p.268, Dulcan p.370)",
+    "neurobiology": "CSTC loop dysfunction; OFC, ACC, Caudate, Thalamus; migration from ventral to dorsal habit circuit; 5-HT, Glutamate, DA (StahlNeuro p.539-540, p.575, Dulcan p.369)",
+    "environmental": "Perinatal factors (maternal smoking, delivery complications, low birth weight), trauma, streptococcal infections (DSM p.268, Dulcan p.371-372)"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT with Exposure and Response Prevention (ERP) for mild-moderate (Dulcan p.376, StahlNeuro p.576)",
+      "Combined CBT + SSRI (Sertraline, Fluoxetine, Fluvoxamine) for severe (CY-BOCS>=24) (Dulcan p.379-381, StahlKids p.129, p.201, p.227, p.415)"
+    ],
+    "second_line": [
+      "Clomipramine (TCA, age 10+) (StahlKids p.129, Dulcan p.380)",
+      "Augmentation with atypical antipsychotics (Aripiprazole, Risperidone) (Dulcan p.382, Synopsis ch.9)",
+      "Fluvoxamine + Clomipramine combination (StahlKids p.235, p.402)"
+    ],
+    "key_side_effects": [
+      "SSRI: GI distress, activation, insomnia, sexual dysfunction, suicidal ideation risk (StahlKids p.202, p.417)",
+      "Clomipramine: QTc prolongation, sedation, anticholinergic effects, seizure risk (StahlKids p.129-130)"
+    ],
+    "monitoring": "Baseline and titration ECG for Clomipramine (StahlKids p.129); CY-BOCS score, activation, and suicidality every 4-8 weeks (Dulcan p.374, p.379)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CY-BOCS clinician-administered gold standard scale (Dulcan p.374)",
+      "CY-BOCS II includes avoidance rating (Dulcan p.374)",
+      "COIS assesses child OCD functional impact (Dulcan p.375)",
+      "FAS-IR measures family accommodation (Dulcan p.373, p.375)"
+    ],
+    "key_numbers": [
+      "10 clinician-rated items on CY-BOCS (Dulcan p.374)",
+      "0-40 total score range on CY-BOCS (Dulcan p.374)",
+      "35% score reduction defines clinical response (Dulcan p.374)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "PANDAS: Post-streptococcal autoimmune basal ganglia inflammation (Dulcan p.369-370)",
+      "PANS: Acute onset OCD or ARFID with neuropsychiatric symptoms (Dulcan p.370)",
+      "Sydenham Chorea (DSM p.292)",
+      "Basal ganglia infarction, tumors, or Huntington disease (DSM p.292)"
+    ],
+    "key_numbers": [
+      "5 diagnostic criteria for PANDAS (Dulcan p.370)",
+      "2 distinct GABHS infections linked temporally to exacerbations for PANDAS (Dulcan p.370)",
+      "3-12 years age range for pre-pubertal PANDAS onset (Dulcan p.370)"
+    ]
+  },
+  "insight_specifier": {
+    "items": [
+      "With good/fair insight: recognizes OCD beliefs are likely false (DSM p.266)",
+      "With poor insight: thinks OCD beliefs are probably true (DSM p.266)",
+      "With absent insight/delusional beliefs: completely convinced beliefs are true (DSM p.266)",
+      "Absent insight does not require separate psychosis diagnosis if thoughts are OCD-restricted (DSM p.108, p.266)"
+    ],
+    "key_numbers": [
+      "3 insight levels in DSM-5-TR (DSM p.266)"
+    ]
+  },
+  "Y_BOCS": {
+    "items": [
+      "5 items evaluate obsessions (time, interference, distress, resistance, control) (Dulcan p.374)",
+      "5 items evaluate compulsions (time, interference, distress, resistance, control) (Dulcan p.374)",
+      "Checklist covers contamination, harm, symmetry, taboo thoughts, and rituals (Dulcan p.374)"
+    ],
+    "key_numbers": [
+      "8-15 points = mild severity (Dulcan p.374)",
+      "16-23 points = moderate severity (Dulcan p.374)",
+      "24+ points = severe OCD (Dulcan p.374)"
+    ]
+  },
+  "high_yield": [
+    "Pediatric onset OCD has a 10-fold increase in 1st-degree relative risk vs 2-fold in adults (DSM p.268, Dulcan p.370)",
+    "Children with OCD and comorbid tics DO NOT respond to SSRI monotherapy; they require CBT or combined therapy (Dulcan p.368, p.381)",
+    "FDA approval ages: Sertraline (age 6+), Fluoxetine (age 7+), Fluvoxamine (age 8+), Clomipramine (age 10+) (StahlKids p.129, p.201, p.227, p.415)",
+    "Clomipramine requires mandatory ECG monitoring due to QTc prolongation and arrhythmia risk (StahlKids p.129-130, Dulcan p.380)",
+    "CSTC habit loops migrate from ventral (impulsive/VMPFC-accumbens) to dorsal (compulsive/OFC-caudate) (StahlNeuro p.539-540, p.575)",
+    "Absent insight specifier does not mean schizophrenia unless delusional content extends beyond OCD themes (DSM p.108, p.266)"
+  ]
+}
