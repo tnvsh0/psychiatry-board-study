@@ -1,0 +1,36 @@
+{
+ "tag": "study-085-stimulant-use-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:34:17+00:00",
+ "updated_at": "2026-09-25T15:34:17+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "f363260a8eecae293e9b647cd9eff84fce200c005961f42abeb7f51c0808c996",
+   "asset_id": 584990335,
+   "size": 7259,
+   "fetched_at": "2026-09-25T15:34:11+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "614ed669824513c4acb7d03eef81f64776752acf793edaf048a67de216e2d3e2",
+   "asset_id": 584990338,
+   "size": 12032,
+   "fetched_at": "2026-09-25T15:34:13+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "fec99b80e85d9707f30b4d6ce8254de40227cc28fccf62a905db91c85b0c46f6",
+   "asset_id": 584990334,
+   "size": 35692,
+   "fetched_at": "2026-09-25T15:34:15+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "9431cc482a5f21ee240ff784fd53c431002978547cc69540de437bd4314f8138",
+   "asset_id": 584990336,
+   "size": 33986,
+   "fetched_at": "2026-09-25T15:34:17+00:00"
+  }
+ ]
+}
