@@ -1,0 +1,108 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "DMDD: התפרצויות זעם ומצב רוח",
+        "items": [
+          "התפרצויות זעם קשות (temper outbursts) מילוליות או התנהגותיות שאינן פרופורציונליות (DSM p.178; Dulcan p.267)",
+          "חוסר התאמה לשלב ההתפתחותי של הילד (DSM p.178; Dulcan p.267)",
+          "מצב רוח עצבני/כועס עקבי (persistently irritable/angry mood) רוב היום בין ההתקפים (DSM p.178; Dulcan p.267)"
+        ]
+      },
+      {
+        "name": "PDD: מצב רוח דיכאוני וסימפטומים נלווים",
+        "items": [
+          "מצב רוח דיכאוני רוב היום, במשך רוב הימים (בילדים: עצבני/רגזני) (DSM p.193; Dulcan p.250)",
+          "נוכחות של לפחות שניים מתוך: שינויי תיאבון, הפרעות שינה, עייפות, דימוי עצמי נמוך, ריכוז לקוי, ייאוש (DSM p.193; Dulcan p.250)"
+        ]
+      },
+      {
+        "name": "PMDD: תסמינים אפקטיביים ופיזיים",
+        "items": [
+          "לביליות רגשית בולטת (affective lability), רגזנות/כעס, מצב רוח דיכאוני, חרדה/מתח (DSM p.197)",
+          "עניין ירוד בפעילויות, קושי בריכוז, לתרגיה, שינויי תיאבון/שינה, הצפה, תסמינים פיזיים (רגישות בשדיים, כאבי פרקים, נפיחות) (DSM p.197-198)"
+        ]
+      }
+    ],
+    "thresholds": "DMDD: >=3 פעמים בשבוע, נמשך >=12 חודשים ב-2 סביבות לפחות (DSM p.178). PDD: >=2 תסמינים נלווים, נמשך >=שנתיים במבוגרים (שנה בילדים/מתבגרים) (DSM p.193). PMDD: >=5 תסמינים לפחות בשבוע שלפני הווסת (luteal phase), המשתפרים בימי הווסת וחולפים בשבוע שלאחריה (DSM p.197).",
+    "subtypes": [
+      "PDD: With anxious distress (DSM p.193)",
+      "PDD: With atypical features (DSM p.193)",
+      "PDD: Early onset (before 21) / Late onset (21+) (DSM p.193)",
+      "PDD: Pure dysthymic syndrome / Persistent major depressive episode (DSM p.193)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "DMDD: 2.5% בקהילה (ברזיל), 8.2% בגיל 6 (ארה\"ב) (DSM p.179). PDD: 0.5% dysthymia ו-1.5% chronic MDD (DSM p.194); 0.6%-1.7% בילדים ו-1.6%-8.0% במתבגרים (Dulcan p.246). PMDD: 1.3% בנשים פוריות בארה\"ב על בסיס רישום פרוספקטיבי (DSM p.198).",
+    "sex_ratio": "DMDD: שווה בקהילה; בקליניקה ישנו ייצוג יתר מובהק לבנים של עד 80% (DSM p.179). PDD: נקבות פי 1.5-2 מזכרים (DSM p.194). PMDD: 100% נקבות (DSM p.197).",
+    "onset_age_typical": "DMDD: גיל פריצת הסימפטומים הוא לפני גיל 10 שנים (לא מאובחן לפני גיל 6 או אחרי 18) (DSM p.178). PDD: התחלה מוקדמת וזוחלת בילדות או בהתבגרות (DSM p.194). PMDD: כל שלב לאחר menarche (קבלת המחזור הראשונה) (DSM p.198).",
+    "heritability": "DMDD: מרכיב גנטי חזק המתווך את הקשר לעצבנות ודיכאון בבגרות (DSM p.180). PDD: תורשתיות כללית של דיכאון מוערכת ב-40%-60% (Dulcan p.249). PMDD: תורשתיות גבוהה של תסמינים קדם-וסתיים הנעה בין 30% ל-80% (DSM p.199).",
+    "comorbidities": [
+      "DMDD: ODD (~100%), ADHD, הפרעות חרדה, MDD (DSM p.179-180; Dulcan p.268)",
+      "PDD: הפרעות חרדה, שימוש בחומרים, הפרעות אישיות Cluster B ו-C (DSM p.196)",
+      "PMDD: אפיזודת דיכאון מג'ורי (MDD) בעבר (comorbidity שכיחה ביותר) (DSM p.201)"
+    ],
+    "prognosis": "DMDD: שיעור מעבר נמוך ביותר ל-Bipolar; סיכון גבוה ל-Unipolar depression וחרדה בבגרות (DSM p.179). PDD: אפיזודה פדיאטרית ממוצעת נמשכת 3-4 שנים (Dulcan p.254); סיכון גבוה ל-MDD (\"double depression\") (Dulcan p.251, 254). PMDD: נעלם לחלוטין עם המעבר לגיל המעבר (menopause) (DSM p.198)."
+  },
+  "etiology": {
+    "genetic": "DMDD: היסטוריית דיכאון משפחתית (DSM p.180). PDD: שכיחות גבוהה של דיכאון ו-PDD בקרובי משפחה מדרגה ראשונה (DSM p.195). PMDD: מרכיב גנטי חזק במחקרי תאומים (DSM p.199).",
+    "neurobiology": "DMDD: ליקויים בזיהוי הבעות פנים רגשיות ושינויים מיקרוסטרוקטורליים ספציפיים בחומר הלבן (fractional anisotropy) (DSM p.180; Dulcan p.290). PDD: מעורבות PFC, anterior cingulate, אמיגדלה, היפוקמפוס (DSM p.195) ו-upregulation של קולטני מונואמינים (StahlNeuro p.264). PMDD: תנודות הורמונליות (הורמוני המין השחלתיים) המשפיעות על ויסות נוירוטרנסמיטורים בשילוב עם דיסרגולציה של ציר ה-HPA (StahlNeuro p.250).",
+    "environmental": "DMDD: סביבה משפחתית לא יציבה, התעללות פסיכולוגית או הזנחה, הורים חד-הוריים, טראומה מוקדמת, תת-תזונה (DSM p.180). PDD: אובדן הורה, פרידה מוקדמת, אדוורסיות בילדות (DSM p.195). PMDD: רמות מתח גבוהות וטראומה בינאישית (interpersonal trauma) (DSM p.199)."
+  },
+  "treatment": {
+    "first_line": [
+      "DMDD: פסיכותרפיה - Parent training (הדרכת הורים) ו-child skills training (אימון במיומנויות לילד) (Dulcan p.216, 594)",
+      "PDD: פסיכותרפיה - CBT ו-IPT-A (Dulcan p.257-258, 955); טיפול תרופתי - Fluoxetine (מגיל 8) או Escitalopram (מגיל 12) (StahlKids p.184, 208)",
+      "PMDD: SSRIs (Sertraline) - טיפול ממוקד luteal-phase-only או טיפול רציף (StahlKids p.452, 455)"
+    ],
+    "second_line": [
+      "DMDD: Atypical Antipsychotics (Aripiprazole, Risperidone) להפחתת תוקפנות אימפולסיבית ועצבנות (Dulcan p.597; StahlKids p.33, 423); Stimulants ל-ADHD קו-מורבידי (StahlKids p.79)",
+      "PDD: SSRIs אחרים off-label (Sertraline, Citalopram, Fluvoxamine) (StahlKids p.236, 452)",
+      "PMDD: טיפול הורמונלי או מעבר לטיפול SSRI רציף (continuous) במקום לוטאלי (StahlKids p.452)"
+    ],
+    "key_side_effects": [
+      "SSRIs: אזהרת קופסה שחורה (Black box warning) לסיכון אובדני (emergent suicidality) בצעירים (StahlKids p.90, 194)",
+      "SSRIs: תסמונת אקטיבציה (Activation Syndrome) - אגיטציה ואי-שקט ב-10%-20% מהילדים (StahlKids p.90, 194; Dulcan p.302)",
+      "Antipsychotics: עלייה במשקל, סדציה, EPS, hyperprolactinemia (StahlKids p.33, 423; Syllabus p.39)",
+      "SSRIs: תופעות לוואי מיניות ושינויים במערכת העיכול (GI upset) (StahlKids p.452)"
+    ],
+    "monitoring": "SSRIs: הערכה קלינית שבועית ב-4 השבועות הראשונים, דו-שבועיים לאחר מכן (StahlKids p.1184; Dulcan p.263); מעקב גדילה (גובה, משקל, BMI) (StahlKids p.v); מעקב דופק ולחץ דם (StahlKids p.152)."
+  },
+  "assessment_tools": {
+    "items": [
+      "Level 1 Cross-Cutting Symptom Measure: סקר מערכות כללי המעריך 12 דומיינים בילדים ו-13 במבוגרים (DSM p.842, 845)",
+      "Affective Reactivity Index (ARI): Level 2 measure ייעודי להערכת חומרת עצבנות (irritability) (DSM p.846)",
+      "Daily Rating of Severity of Problems (DRSP): יומן מעקב יומי פרוספקטיבי לאישור PMDD (DSM p.199)",
+      "Children's Depression Rating Scale-Revised (CDRS-R): הערכה קלינית של חומרת דיכאון (Dulcan p.256, 295)",
+      "Mood and Feelings Questionnaire (MFQ): שאלון סקר עצמי והורה לדיכאון (Dulcan p.256)"
+    ],
+    "key_numbers": [
+      "ציון Level 1 של 2 (Mild) ומעלה דורש העמקה ב-Level 2, למעט קשב ופסיכוזה הדורשים סף 1 (Slight) (DSM p.846)",
+      "ציון CDRS-R מעל 40 מעיד על דיכאון בדרגת חומרה בינונית ומעלה (Dulcan p.295)",
+      "אישור אבחנת PMDD מחייב רישום פרוספקטיבי יומי ב-DRSP לאורך לפחות 2 מחזורי וסת (DSM p.198)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Hypothyroidism (תת-פעילות בלוטת התריס) גורמת לעצבנות ודיכאון ומדמה PDD (DSM p.196; Dulcan p.254)",
+      "Anemia (אנמיה קשה) גורמת לעייפות ולתרגיה ומדמה PDD או PMDD (DSM p.196, 200)",
+      "Seizure disorders (הפרעות פרכוסים) ו-TBI (חבלות ראש) עלולים לגרום להתקפי זעם ומדמים DMDD (Syllabus p.30; DSM p.182)",
+      "Dysmenorrhea (מחזור כואב) גורמת לכאב פיזי עם הופעת הדימום מול תבנית רגשית קדם-וסתית ב-PMDD (DSM p.199)"
+    ],
+    "key_numbers": [
+      "רמת ferritin מתחת ל-50 ng/mL דורשת תיקון בברזל לשלילת restless legs (Dulcan p.483)",
+      "משך של לפחות שנה אחת ב-PDD פדיאטרי שולל adjustment disorder (DSM p.193)",
+      "חבלת ראש (TBI) גורמת לשינוי אישיות אורגני עם עצבנות כרונית קשה (DSM p.775)"
+    ]
+  },
+  "high_yield": [
+    "DMDD אינו יכול להתקיים במקביל ל-ODD, IED או Bipolar Disorder; במקרה של חפיפה תינתן אבחנת DMDD בלבד (DSM p.178).",
+    "ההבדל המכריע בין DMDD ל-Bipolar Disorder הוא אופיו הכרוני והלא-אפיזודי של ה-irritability ב-DMDD, לעומת אפיזודות מובחנות ב-Bipolar (DSM p.181).",
+    "רק כ-15% מילדי ODD עונים לקריטריונים של DMDD, אך רוב ילדי DMDD עונים ל-ODD (DSM p.181; Dulcan p.268).",
+    "ב-PDD בילדים ומתבגרים מצב הרוח יכול להיות עצבני/רגזני (irritable) ומשך הזמן הנדרש לאבחון הוא שנה אחת בלבד (לעומת שנתיים במבוגרים) (DSM p.193).",
+    "PMDD מחייב תקופה נקייה לחלוטין מסימפטומים (symptom-free period) במהלך הפאזה הפוליקולרית (לאחר הווסת) כדי לשלול premenstrual exacerbation של דיכאון (DSM p.198, 201).",
+    "Sertraline יעילה ב-PMDD גם במתן ממוקד בפאזה הלוטאלית בלבד (luteal-phase-only) ונושאת פחות תופעות לוואי מטיפול רציף (StahlKids p.452, 455).",
+    "ICD-11 אינו מכיר ב-DMDD כאבחנה עצמאית אלא כמפרט עצבנות (irritability modifier) עבור ODD (Dulcan p.268).",
+    "תסמונת אקטיבציה (Activation Syndrome) מתרחשת ב-10%-20% מהילדים המטופלים ב-SSRIs ומחייבת מעקב צמוד לאובדנות (StahlKids p.90, 194; Dulcan p.302)."
+  ]
+}

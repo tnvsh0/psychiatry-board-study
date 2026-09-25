@@ -1,0 +1,36 @@
+{
+ "tag": "study-032-persistent-depressive-dmdd-pmdd",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:58:29+00:00",
+ "updated_at": "2026-09-25T13:58:29+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a405b3ca3a47cdcfd5a891ef3d30597775f13f7b5952a814e76d4f9a37804404",
+   "asset_id": 536626381,
+   "size": 11538,
+   "fetched_at": "2026-09-25T13:58:22+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "a9d7913c5d4c099f710581d3dbf84864c8b49c9aece395ccf5bc0091d1290cd9",
+   "asset_id": 536626382,
+   "size": 13547,
+   "fetched_at": "2026-09-25T13:58:24+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "8aab8fb6288adb8b0a2912872e0dfc4f71b4b3541bf07e16889306fe98bc0abd",
+   "asset_id": 536626378,
+   "size": 32329,
+   "fetched_at": "2026-09-25T13:58:27+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b62da6a566108b11462eca184d3105e2232c7a6834a697554e5c50b9011a8491",
+   "asset_id": 536626386,
+   "size": 37429,
+   "fetched_at": "2026-09-25T13:58:29+00:00"
+  }
+ ]
+}
