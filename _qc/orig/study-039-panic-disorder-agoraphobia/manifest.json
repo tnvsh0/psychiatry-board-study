@@ -1,0 +1,36 @@
+{
+ "tag": "study-039-panic-disorder-agoraphobia",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:09:30+00:00",
+ "updated_at": "2026-09-25T14:09:30+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "981102e88193b795d47e7b23f10ab324f4b230eb515328daeacea22269aecb7e",
+   "asset_id": 536948986,
+   "size": 12093,
+   "fetched_at": "2026-09-25T14:09:23+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "0f5ac6f05b077d391f870df249600ac882a76bca3f62488c6a7581c9d0a1d375",
+   "asset_id": 536948983,
+   "size": 12826,
+   "fetched_at": "2026-09-25T14:09:26+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "8aebfb6e0fa77b28c17b2bdea7fefb1c2a04d3355bf73f551e62356bfd6d2435",
+   "asset_id": 536948981,
+   "size": 41466,
+   "fetched_at": "2026-09-25T14:09:28+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ffe830e1436816afe03c4ac77ba2cd537122eb30ef57d01c8822dd6a604ae382",
+   "asset_id": 536948980,
+   "size": 51270,
+   "fetched_at": "2026-09-25T14:09:30+00:00"
+  }
+ ]
+}
