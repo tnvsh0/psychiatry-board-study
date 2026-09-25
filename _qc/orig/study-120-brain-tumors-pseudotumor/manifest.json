@@ -1,0 +1,36 @@
+{
+ "tag": "study-120-brain-tumors-pseudotumor",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:47:18+00:00",
+ "updated_at": "2026-09-25T16:47:18+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "01734c60beb4e79fcadca1e693a10403e690e4629bdeb6cc61f026520828251c",
+   "asset_id": 587277508,
+   "size": 7297,
+   "fetched_at": "2026-09-25T16:47:12+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "0fb8496cabc38622e0b7dd7a5de2c60d9d2f4ed2c2494e996c5933f02b6487cd",
+   "asset_id": 587277514,
+   "size": 15211,
+   "fetched_at": "2026-09-25T16:47:14+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "ae5f307d2ddf5975d03e00920a5086435de6bc6fb459f638771d7697c62da414",
+   "asset_id": 587277535,
+   "size": 36461,
+   "fetched_at": "2026-09-25T16:47:16+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "6ccf5568b7575fd9c8ca8c2bed42d88838ec739cc2390ce16af61c1b73b42de1",
+   "asset_id": 587277500,
+   "size": 43747,
+   "fetched_at": "2026-09-25T16:47:18+00:00"
+  }
+ ]
+}

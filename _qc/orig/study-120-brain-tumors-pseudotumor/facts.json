@@ -1,0 +1,94 @@
+{
+  "anatomy": {
+    "items": [
+      "50-70% of pediatric brain tumors under age 10-12 are infratentorial / posterior fossa (Syllabus p.54, 57)",
+      "Medulloblastoma arises in cerebellar vermis and 4th ventricle (Syllabus p.54, 57)",
+      "Pilocytic astrocytoma occurs in cerebellum, optic pathway, and hypothalamus (Dulcan p.94; Syllabus p.54, 57)",
+      "Ependymoma originates from ependymal cells in the 4th ventricle floor (Syllabus p.54)",
+      "Craniopharyngioma arises from Rathke's pouch in the suprasellar region (Dulcan p.100; Syllabus p.54)",
+      "Pituitary adenomas originate in sella turcica (Dulcan p.100; StahlNeuro p.85)",
+      "Pseudotumor cerebri involves impaired CSF absorption in arachnoid granulations and transverse sinus stenosis (Dulcan p.98, 613)"
+    ],
+    "key_numbers": [
+      "50-70% - infratentorial brain tumors in children <12 years (Syllabus p.54)",
+      "Grade IV - WHO rating for Medulloblastoma (Syllabus p.54)",
+      "Grade I - WHO rating for Pilocytic Astrocytoma & Craniopharyngioma (Syllabus p.54)",
+      "70% - ependymomas located in infratentorial posterior fossa (Syllabus p.54)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "Increased ICP triad: morning headaches, projectile vomiting, papilledema (Dulcan p.93, 94, 98)",
+      "Medulloblastoma: truncal ataxia, broad-based gait, head tilt (Dulcan p.92, 94, 121)",
+      "DIPG: cranial nerve VI & VII palsies, hemiparesis, ataxia (Dulcan p.93; Syllabus p.54)",
+      "Craniopharyngioma: bitemporal hemianopsia, hypopituitarism, diabetes insipidus (Dulcan p.100, 325)",
+      "Prolactinoma: amenorrhea, galactorrhea, gynecomastia, erectile dysfunction (StahlNeuro p.85, 164; Dulcan p.825)",
+      "Cushing's disease: truncal obesity, moon facies, buffalo hump, purple striae, growth failure (DSM p.167; Dulcan p.325, 330)",
+      "Pseudotumor cerebri: daily morning headache, papilledema, pulsatile tinnitus, CN VI diplopia in overweight teen girls (Dulcan p.93, 94, 613; DSM p.50, 598)"
+    ],
+    "key_numbers": [
+      "90% - prevalence of headaches in IIH/Pseudotumor (Dulcan p.93)",
+      ">98th percentile - macrocephaly head circumference threshold in infants (Dulcan p.94)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "Cerebellar Mutism Syndrome (CMS): mutism, severe lability, rage, apathy 1-3 days post-surgery in 15-25% (Dulcan p.121)",
+      "Craniopharyngioma: VMH destruction causes hypothalamic obesity & hyperphagia; LH destruction causes secondary narcolepsy (DSM p.282, 424; Dulcan p.118; StahlNeuro p.406-407)",
+      "Cushing's disease: major depression in 50-70%, organic mania, hippocampal atrophy from chronic hypercortisolemia (DSM p.167, 203-205; StahlNeuro p.269-270)",
+      "Prolactinoma vs Antipsychotics: D2 blockade increases prolactin; level >100-200 ng/mL requires pituitary MRI (Dulcan p.825, 831; StahlKids p.367; StahlNeuro p.164)",
+      "Radiation decline: 2-4 IQ point loss per year post-craniospinal irradiation (Dulcan p.102; Syllabus p.54)",
+      "DSM-5-TR secondary categories: Psychotic, Depressive, Bipolar, Personality Change, Delirium due to medical condition (DSM p.131, 166, 203, 672, 776)"
+    ],
+    "key_numbers": [
+      "15-25% - incidence of Cerebellar Mutism Syndrome post-posterior fossa surgery (Dulcan p.121)",
+      "50-70% - major depression rate in Cushing's disease (DSM p.203-205)",
+      "2-4 points - annual IQ drop post-craniospinal irradiation (Dulcan p.102)",
+      "100-200 ng/mL - serum prolactin threshold triggering pituitary MRI (Dulcan p.831; StahlKids p.367)"
+    ]
+  },
+  "workup": {
+    "items": [
+      "MRI brain/spine with gadolinium is the first-line gold standard (Dulcan p.98)",
+      "LP opening pressure >25 cm H2O with normal CSF composition diagnoses IIH (Dulcan p.98, 613)",
+      "Rule out intracranial mass effect via MRI/CT before LP to prevent fatal tonsillar herniation (Dulcan p.98)",
+      "MRV required in IIH to rule out cerebral venous sinus thrombosis (Dulcan p.98, 613)",
+      "Endocrine panel: 24-hr urinary cortisol, dexamethasone suppression, prolactin, TSH, GH, LH/FSH, water deprivation test (DSM p.204; Dulcan p.100, 325, 330)"
+    ],
+    "key_numbers": [
+      ">25 cm H2O - LP opening pressure threshold for IIH diagnosis in children (Dulcan p.98, 613)",
+      "24 hours - urinary free cortisol collection duration for Cushing's (DSM p.204)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Surgical maximal safe resection for medulloblastoma, pilocytic astrocytoma, ependymoma (Syllabus p.54)",
+      "Acetazolamide (Diamox) for Pseudotumor cerebri / IIH (Dulcan p.613)",
+      "Cabergoline or Bromocriptine (Dopamine D2 agonists) for Prolactinoma (StahlNeuro p.85, 187; StahlKids p.367, 435)",
+      "Transsphenoidal resection for Cushing's disease (DSM p.204)"
+    ],
+    "second_line": [
+      "Topiramate, Furosemide, 5-10% weight loss, Optic Nerve Sheath Fenestration / VP Shunt for IIH (Dulcan p.98, 118, 613; StahlKids p.487)",
+      "Craniospinal radiation (CSI) and cisplatin/vincristine chemotherapy for medulloblastoma (Syllabus p.54)",
+      "Lifelong hormone replacement: Hydrocortisone, Levothyroxine, Desmopressin (DDAVP), GH (Dulcan p.100, 325, 463-464)"
+    ],
+    "key_side_effects": [
+      "Craniospinal radiation leukoencephalopathy and IQ decline (Dulcan p.102)",
+      "Steroid-induced mania/psychosis and withdrawal depression (DSM p.165, 204; Dulcan p.356, 1093)",
+      "SGA metabolic syndrome, QTc prolongation, EPS, hyperprolactinemia (Dulcan p.829-834; StahlKids p.301)"
+    ],
+    "monitoring": "ECG (QTc <500ms), metabolic panel, fundoscopy/visual field testing, annual neuropsychological testing, serum prolactin (Dulcan p.93, 102, 829-832; StahlKids p.301)"
+  },
+  "high_yield": [
+    "Infratentorial tumors (50-70%) predominate in children <12; supratentorial tumors predominate in teens (Syllabus p.54, 57)",
+    "Cerebellar Mutism Syndrome occurs 1-3 days post-posterior fossa surgery: mutism, severe emotional lability, rage, apathy (Dulcan p.121)",
+    "Craniopharyngioma VMH destruction causes hypothalamic obesity & food hoarding; LH destruction causes secondary narcolepsy/cataplexy (DSM p.282, 424; Dulcan p.118; StahlNeuro p.406-407)",
+    "Prolactin >100-200 ng/mL requires pituitary MRI to rule out prolactinoma vs antipsychotic D2 blockade (Dulcan p.831; StahlKids p.367; StahlNeuro p.164)",
+    "Cushing's disease hypercortisolemia causes hippocampal atrophy and 50-70% major depression rate (DSM p.203-205; StahlNeuro p.269-270)",
+    "IIH profile: overweight teen girl, daily morning headache, papilledema, CN VI palsy, LP opening pressure >25 cm H2O (Dulcan p.98, 613; DSM p.50, 598)",
+    "Objective loss of previously acquired skills (regression) is an absolute red flag for urgent brain MRI (Dulcan p.102, 253)",
+    "Always rule out mass effect on MRI/CT before lumbar puncture to prevent fatal tonsillar herniation (Dulcan p.98)",
+    "Avoid cranial radiation in children <3-5 years due to severe permanent cognitive decline (Dulcan p.102; Syllabus p.54)",
+    "First-line IIH treatment is Acetazolamide (Diamox) + Topiramate + 5-10% weight loss (Dulcan p.118, 613; StahlKids p.487)"
+  ]
+}
