@@ -1,0 +1,94 @@
+{
+  "drug_class": {
+    "members": [
+      "Zolpidem (GABA-A α1-selective PAM)",
+      "Eszopiclone (GABA-A non-selective α1,α2,α3,α5 PAM)",
+      "Suvorexant / Lemborexant / Daridorexant (Dual Orexin OX1R/OX2R Antagonists - DORA)",
+      "Melatonin / Ramelteon (MT1/MT2 Melatonin Agonists)",
+      "Trazodone (low-dose 25-100mg: 5-HT2A, H1, α1 Antagonist)",
+      "Mirtazapine (low-dose 7.5-15mg: NaSSA, central α2 and H1 Antagonist)",
+      "Doxepin (low-dose 1-6mg: selective H1 Antagonist)"
+    ],
+    "mechanism": "GABA-A PAM (Z-drugs), Orexin OX1R/OX2R antagonism (DORAs), MT1/MT2 agonism (Melatonin), H1/5-HT2A/α1 antagonism (Trazodone, Mirtazapine, Doxepin)",
+    "kinetics": [
+      "Zolpidem IR t1/2 ~2h, CR 6-8h duration",
+      "Eszopiclone t1/2 ~6h",
+      "Ramelteon MT1/MT2 binding 3-16x higher than melatonin",
+      "Trazodone biphasic t1/2 3-6h / 5-9h, CYP3A4 metabolized",
+      "Mirtazapine t1/2 20-40h, CYP1A2/2D6/3A4",
+      "Low-dose Doxepin selective H1 binding at 1-6mg"
+    ],
+    "onset_of_effect": "Rapid (15-60 min)"
+  },
+  "indications": {
+    "items": [
+      "Zero FDA-approved hypnotics for pediatric insomnia; all pediatric use is off-label (Dulcan p.480)",
+      "Melatonin reduces sleep latency by 34 min and increases total sleep time by 50 min in ID (Dulcan p.172, p.482)",
+      "Melatonin effective for insomnia in ASD, ADHD, and Delayed Sleep Phase Disorder (Dulcan p.482, p.492)",
+      "Zolpidem and Eszopiclone failed pediatric RCTs in ADHD-associated insomnia (Dulcan p.483)",
+      "DORAs approved in adults for sleep onset and maintenance insomnia (DSM p.472, StahlNeuro p.423)",
+      "Low-dose Trazodone and Mirtazapine off-label for insomnia with comorbid depression/anxiety (Dulcan p.482)"
+    ],
+    "key_numbers": [
+      "0 FDA-approved hypnotics for pediatric insomnia (Dulcan p.480)",
+      "34 minutes reduction in sleep latency with Melatonin in ID (Dulcan p.172)",
+      "50 minutes increase in total sleep time with Melatonin in ID (Dulcan p.172)",
+      "65% orexin receptor occupancy threshold required for DORA hypnotic effect (StahlNeuro p.426)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Z-drugs: Complex Sleep Behaviors (sleepwalking, sleep-eating, sleep-driving) Black Box warning and amnesia (DSM p.453, p.472, Dulcan p.483)",
+      "Trazodone: Priapism (α1 blockade) emergency if erection > 4 hours, orthostatic hypotension, carryover sedation (Dulcan p.482, p.751)",
+      "Trazodone + SSRI interaction in youth: 6x lower response, 3x higher self-harm risk (Dulcan p.751)",
+      "Mirtazapine: Weight gain, increased appetite, sedation (Dulcan p.482)",
+      "Clonidine: Rebound hypertension on abrupt stop, bradycardia, hypotension (Dulcan p.482, StahlKids p.143)",
+      "Diphenhydramine: Anticholinergic toxicity (M1 blockade), paradoxical excitation, rapid tolerance (Dulcan p.482, StahlNeuro p.425)",
+      "DORAs: Daytime somnolence, abnormal dreams, contraindicated in Narcolepsy (StahlNeuro p.429, p.434)"
+    ],
+    "key_numbers": [
+      "4 hours: Priapism emergency cutoff time for Trazodone (Dulcan p.751)",
+      "6x lower SSRI response when adding Trazodone in resistant depression (Dulcan p.751)",
+      "3x higher self-harm risk when adding Trazodone to SSRI (Dulcan p.751)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Clonidine: Baseline and post-titration blood pressure and heart rate monitoring; avoid abrupt stop (StahlKids p.142-143)",
+      "Trazodone: Mandatory patient/parent education on priapism risk and ER emergency protocol for erections > 4h (Dulcan p.751, StahlKids p.453)",
+      "Mirtazapine: Baseline and monthly weight, BMI, and metabolic profile monitoring (Dulcan p.482, StahlKids p.2)",
+      "Z-drugs: Active screening for complex sleep behaviors; immediate discontinuation if present (DSM p.472, Dulcan p.483)",
+      "General: Re-evaluate sleep hygiene and behavioral interventions at every follow-up (Dulcan p.480, p.494)"
+    ],
+    "key_numbers": [
+      "4 hours: ER emergency threshold for priapism on Trazodone (Dulcan p.751)",
+      "3-4 months: Serum ferritin monitoring interval for RLS iron therapy (Dulcan p.484)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Melatonin: 0.3-6.0 mg (up to 10 mg in adolescents) given 30-60 min before bedtime, or 0.5 mg 3-5 hours before DLMO for phase shift (Dulcan p.482, p.491, StahlKids p.2)",
+      "Low-dose Trazodone: 12.5-100 mg in children, 50-150 mg in adolescents at bedtime (StahlKids p.455)",
+      "Mirtazapine: 7.5-15 mg at bedtime for insomnia with decreased appetite (Dulcan p.482, StahlKids p.127)",
+      "Clonidine IR: 0.025-0.05 mg initial, max 0.1-0.3 mg at bedtime for ADHD insomnia (Dulcan p.482, StahlKids p.141)",
+      "Zolpidem: 5-10 mg in adults (5 mg in women/elderly); 0.25 mg/kg failed in pediatric ADHD trials (Dulcan p.483, StahlNeuro p.422)",
+      "Low-dose Doxepin: 1-6 mg at bedtime for WASO/sleep maintenance in adults (DSM p.472, StahlNeuro p.425)"
+    ],
+    "key_numbers": [
+      "0.3-6.0 mg: Pediatric melatonin dose range (Dulcan p.482)",
+      "3-5 hours: Timing before DLMO for melatonin phase-advance in Delayed Sleep Phase (Dulcan p.491)",
+      "12.5-100 mg: Pediatric trazodone hypnotic dose range (StahlKids p.455)",
+      "7.5-15 mg: Mirtazapine hypnotic dose range (Dulcan p.482)"
+    ]
+  },
+  "high_yield": [
+    "Zero FDA-approved hypnotics exist for pediatric insomnia; all pediatric sleep prescriptions are off-label (Dulcan p.480, StahlKids p.319)",
+    "Zolpidem and Eszopiclone failed randomized controlled trials in pediatric ADHD insomnia (Blumer 2009, Zammit 2012) (Dulcan p.483)",
+    "Zolpidem selectively binds GABA-A α1 subunit (sedation only), unlike Benzodiazepines and Eszopiclone which bind α1, α2, α3, α5 (StahlNeuro p.422-423, Syllabus p.50)",
+    "Z-drugs carry a Black Box Warning for Complex Sleep Behaviors (sleepwalking, sleep-eating, sleep-driving) with complete amnesia (DSM p.453, p.472, Dulcan p.483)",
+    "DORAs block orexin OX1R/OX2R receptors to reduce arousal without GABAergic dependence, rebound, or tolerance, but are contraindicated in Narcolepsy (DSM p.472, StahlNeuro p.423, p.429)",
+    "Melatonin is first-line evidence-based therapy in pediatric ID (34 min SOL reduction, 50 min TST increase) and ASD (Dulcan p.172, p.482, p.493)",
+    "Low-dose Trazodone (25-100 mg) increases Slow-Wave Sleep via 5-HT2A antagonism, but carries α1-mediated Priapism emergency risk (>4h) (Dulcan p.482, p.751, StahlKids p.453)",
+    "Low-dose Doxepin (1-6 mg) is a selective H1 antagonist for sleep maintenance without M1 anticholinergic side effects or weight gain (DSM p.472, StahlNeuro p.425-426)"
+  ]
+}

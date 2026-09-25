@@ -1,0 +1,36 @@
+{
+ "tag": "study-072-sleep-aids-z-drugs-doras-melatonin",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:09:22+00:00",
+ "updated_at": "2026-09-25T15:09:22+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "f5534ea196f1bbb5869fa22f5ef5ceccf2084c70cd5816b41a834d6431053d41",
+   "asset_id": 584492304,
+   "size": 6780,
+   "fetched_at": "2026-09-25T15:09:16+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "b13a4a208b5ce6180e89d905fc0717622954e6b029f31f2cd98dea1a0cad21ef",
+   "asset_id": 584492309,
+   "size": 14295,
+   "fetched_at": "2026-09-25T15:09:18+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "a96cbe124afac5529105b013459887bb0bcda149ec69f643688f4a9cf433278a",
+   "asset_id": 584492305,
+   "size": 34614,
+   "fetched_at": "2026-09-25T15:09:20+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "96f172230fd4b314072f0e4596a2b4428d1a7f837fb9669e3f25d7c59db3fd78",
+   "asset_id": 584492311,
+   "size": 50643,
+   "fetched_at": "2026-09-25T15:09:22+00:00"
+  }
+ ]
+}
