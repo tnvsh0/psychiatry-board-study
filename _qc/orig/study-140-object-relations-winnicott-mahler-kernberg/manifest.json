@@ -1,0 +1,36 @@
+{
+ "tag": "study-140-object-relations-winnicott-mahler-kernberg",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:23:01+00:00",
+ "updated_at": "2026-09-25T17:23:01+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "ee24a4eee5106469a8c82bceeaa07d08d9cf3e05df11744749cc86459ffb6c7d",
+   "asset_id": 588050172,
+   "size": 9593,
+   "fetched_at": "2026-09-25T17:22:55+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "c31be9952bdc0e86bf5bdecbb0522b8798304625e65fca1de82829e5ea151b1a",
+   "asset_id": 588050178,
+   "size": 12962,
+   "fetched_at": "2026-09-25T17:22:57+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "fde4d83dbd8809e5d8f2946b168400a152d82962acbed3c4448d79585407ad8c",
+   "asset_id": 588050179,
+   "size": 40511,
+   "fetched_at": "2026-09-25T17:22:59+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "d9c52129eb97223e0fe75f36a20a10c4182e66b54422d473e7ee35c8d1b88ed9",
+   "asset_id": 588050174,
+   "size": 42516,
+   "fetched_at": "2026-09-25T17:23:01+00:00"
+  }
+ ]
+}
