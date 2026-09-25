@@ -1,0 +1,65 @@
+{
+  "drug_class": {
+    "members": [
+      "Brexanolone (Zulresso): IV infusion 60h, cyclodextrin formulation of natural allopregnanolone (StahlNeuro p.320)",
+      "Zuranolone (Zurzuvae): Oral synthetic analogue of allopregnanolone, 14-day course (StahlNeuro p.322)"
+    ],
+    "mechanism": "Positive allosteric modulators (PAMs) at synaptic and extrasynaptic GABA-A receptors containing delta (δ) subunits (StahlNeuro p.260-262, p.320-322)",
+    "kinetics": [
+      "Brexanolone requires cyclodextrin solubilization for 60h continuous IV (StahlNeuro p.320)",
+      "Zuranolone oral absorption requires fat-containing meal (StahlNeuro p.322)"
+    ],
+    "onset_of_effect": "Rapid onset within 60 hours for Brexanolone and 3 days for Zuranolone (StahlNeuro p.320, p.322)"
+  },
+  "indications": {
+    "items": [
+      "Postpartum depression (PPD) with peripartum onset (DSM p.173; StahlNeuro p.320, p.322)",
+      "MDE onset during pregnancy or within first 4 weeks postpartum (DSM p.173, p.213)"
+    ],
+    "key_numbers": [
+      "9% - MDE prevalence during pregnancy (DSM p.173)",
+      "7% - MDE prevalence in 12 months postpartum (DSM p.173)",
+      "50% - PPD episodes beginning prior to delivery during pregnancy (DSM p.173)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Sedation, somnolence, dizziness, fatigue across NAS PAM class (StahlNeuro p.320, p.322)",
+      "Excessive sedation and sudden loss of consciousness with Brexanolone - Black Box Warning (StahlNeuro p.320)",
+      "DEA Schedule IV controlled substance classification (StahlNeuro p.320, p.322)"
+    ],
+    "key_numbers": [
+      "12 hours - mandatory driving restriction following each Zuranolone dose (StahlNeuro p.322)",
+      "Schedule IV - DEA controlled substance classification (StahlNeuro p.320, p.322)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Continuous pulse oximetry (SpO2) monitoring throughout 60h Brexanolone infusion (StahlNeuro p.320)",
+      "Clinical sedation checks every 2 hours during waking hours for Brexanolone (StahlNeuro p.320)",
+      "Monitoring for CNS depression and driving restriction enforcement for Zuranolone (StahlNeuro p.322)"
+    ],
+    "key_numbers": [
+      "2 hours - interval for sedation checks during Brexanolone infusion (StahlNeuro p.320)",
+      "12 hours - driving prohibition post-dose for Zuranolone (StahlNeuro p.322)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Brexanolone: 60-hour continuous IV infusion in-clinic/REMS program only (StahlNeuro p.320)",
+      "Zuranolone: 14-day oral course, 50 mg daily in evening with fat-containing meal (StahlNeuro p.322)"
+    ],
+    "key_numbers": [
+      "60 hours - duration of Brexanolone continuous IV infusion (StahlNeuro p.320)",
+      "14 days - duration of Zuranolone oral treatment course (StahlNeuro p.322)",
+      "50 mg - daily dose of Zuranolone (StahlNeuro p.322)"
+    ]
+  },
+  "high_yield": [
+    "Peripartum onset specifier defined as MDE onset during pregnancy or within first 4 weeks postpartum (DSM p.173, p.213).",
+    "Extrasynaptic GABA-A receptors contain delta (δ) subunits, mediate tonic inhibition, are benzodiazepine-insensitive, and are targeted by neuroactive steroids (StahlNeuro p.260-262).",
+    "Rapid antidepressant response (60 hours / 3 days) contrasts with 2-8 weeks required for traditional SSRIs/SNRIs (Dulcan p.252; StahlNeuro p.320, p.322).",
+    "Treating maternal depression directly improves psychiatric and social outcomes in offspring without child medication (Dulcan p.252; StahlKids p.91, p.201).",
+    "Zuranolone oral bioavailability strictly requires co-administration with a fat-containing meal (StahlNeuro p.322)."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+ "tag": "study-113-brexanolone-zuranolone-ppd-specific",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:34:05+00:00",
+ "updated_at": "2026-09-25T16:34:05+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "787961f8afac889cde60e679a4ca7ebdc43e32009464b36362d5a5d413cd75b2",
+   "asset_id": 586942914,
+   "size": 3739,
+   "fetched_at": "2026-09-25T16:33:41+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "a3c6561f9961f0218a7c9424bbe10e264aa503031d0b735931a75d4a547462ab",
+   "asset_id": 586942912,
+   "size": 13788,
+   "fetched_at": "2026-09-25T16:33:51+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "be4e8a741de0de2e121b4cc1a6d9a1263bc0825cb75405c95d3ff240e331784d",
+   "asset_id": 586942919,
+   "size": 32197,
+   "fetched_at": "2026-09-25T16:34:02+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2a99a298888bca6cfa711ac160cdd54a046e84b2d080341b9dfd092451f80f2a",
+   "asset_id": 586942916,
+   "size": 26576,
+   "fetched_at": "2026-09-25T16:34:05+00:00"
+  }
+ ]
+}
