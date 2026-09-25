@@ -1,0 +1,123 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Core Diagnostic Criteria (DSM-5-TR)",
+        "items": [
+          "Criterion A: Restriction of energy intake relative to requirements leading to significantly low body weight (BMI-for-age <5th percentile or fallen off growth curve) (DSM p.381, Dulcan p.412)",
+          "Criterion B: Intense fear of gaining weight or becoming fat, or persistent behavior interfering with weight gain (DSM p.381, Dulcan p.412)",
+          "Criterion C: Disturbance in body weight/shape perception, undue influence on self-evaluation, or lack of recognition of seriousness of low weight (DSM p.381, Dulcan p.412)"
+        ]
+      }
+    ],
+    "thresholds": "All 3 criteria (A, B, C) required; severity based on BMI or BMI percentile (DSM p.381)",
+    "subtypes": [
+      "Restricting type (F50.01): No binge/purge in last 3 months; weight loss via dieting, fasting, excessive exercise (DSM p.381, Dulcan p.412)",
+      "Binge-eating/purging type (F50.02): Recurrent binge eating or purging (self-induced vomiting, laxatives, diuretics, enemas) in last 3 months (DSM p.381, Dulcan p.412)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "Lifetime prevalence ~0.6%-0.8% in adults (0.9%-1.42% females, 0.12%-0.3% males); 0.3% full / 0.8% subthreshold in adolescents (DSM p.384, Dulcan p.417)",
+    "sex_ratio": "~10:1 F:M in adults (12-month 0.4%-0.9% F vs 0.03% M); narrower gap in adolescents (DSM p.384)",
+    "onset_age_typical": "12-18 years (mid-to-late adolescence); peak onset during adolescence (DSM p.385, Dulcan p.411)",
+    "heritability": "22%-76% for AN and subthreshold AN (Dulcan p.416)",
+    "comorbidities": [
+      "Anxiety disorders (GAD, Social Anxiety, OCD) (DSM p.387, Dulcan p.417)",
+      "Major Depressive Disorder / Bipolar Disorder (DSM p.387, Dulcan p.417)",
+      "Substance Use Disorders (more common in binge/purge type) (DSM p.384, Dulcan p.417)"
+    ],
+    "prognosis": "~75% full recovery in adolescents (median 5 years); ~50% full recovery in adults, 30% partial, 20% chronic (Dulcan p.421)"
+  },
+  "etiology": {
+    "genetic": "Heritability 22%-76%; GWAS identified risk loci shared with OCD, MDD, Tourette's and metabolic traits (insulin/lipids) (DSM p.385, Dulcan p.416, 437)",
+    "neurobiology": "Shift from ventral striatum (reward) to dorsal striatum/OFC (habit/compulsion); 5-HT2C receptor dysregulation (satiety/obsessions); altered DA reward processing in ventral striatum (DSM p.385, StahlNeuro p.125, 184, 538-541)",
+    "environmental": "Sociocultural thin-ideal internalization, high-risk occupations (ballet, modeling, athletics), controlling/enmeshed family environment (DSM p.384-385, Dulcan p.416, 418)"
+  },
+  "treatment": {
+    "first_line": [
+      "Family-Based Treatment (FBT / Maudsley) — Gold standard 3-phase outpatient psychotherapy for children and adolescents (Dulcan p.425-426)",
+      "Inpatient medical admission for acute refeeding and hemodynamic stabilization (Dulcan p.421, 613)"
+    ],
+    "second_line": [
+      "Adolescent-Focused Individual Therapy (AFT) or CBT-E if FBT unavailable/failed (Dulcan p.426-429)",
+      "Olanzapine (Off-label) for severe obsessionality, severe anxiety around meals, and weight gain (Dulcan p.429, StahlKids p.351, 356)"
+    ],
+    "key_side_effects": [
+      "Olanzapine: significant weight gain, sedation, metabolic dysregulation (hyperglycemia, dyslipidemia), neutropenia (StahlKids p.351, 354, 356)",
+      "Fluoxetine/SSRIs: ineffective for weight gain in acute starvation/underweight (Dulcan p.429)"
+    ],
+    "monitoring": "Olanzapine: Baseline & monthly weight/BMI z-score for 3 months then quarterly; baseline, 3-month, annual fasting glucose/lipids & BP; CBC for ANC <1000/mm3 (StahlKids p.351, Dulcan p.827)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Eating Disorder Examination (EDE) & Child EDE (ChEDE) — semi-structured gold standard diagnostic interviews (Dulcan p.424)",
+      "Parent EDE-Questionnaire (PEDE-Q) — parent-report measure of eating pathology (Dulcan p.424)",
+      "Eating Disorder Screen for Primary Care (ESP) — 5-item quick screening tool (Dulcan p.612)",
+      "CDC BMI-for-age growth charts — tracking <5th percentile or trajectory deflection (DSM p.382, Dulcan p.416, 612)"
+    ],
+    "key_numbers": [
+      "5 screening questions in the ESP tool (Dulcan p.612)",
+      "<5th BMI-for-age percentile benchmark for underweight in youth (DSM p.382, Dulcan p.416)",
+      "<17.0 kg/m2 BMI threshold for significantly low weight in adults (DSM p.382)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Gastrointestinal: Celiac disease, Inflammatory Bowel Disease (Crohn's/UC), SMA syndrome, Achalasia (DSM p.386, Dulcan p.312, 423, 613)",
+      "Endocrine: Hyperthyroidism, Addison's disease, Type 1 Diabetes Mellitus (diabulimia) (DSM p.384, 386, Dulcan p.325, 423)",
+      "Psychiatric: ARFID (lacks fat phobia/body image disturbance), MDD, OCD, Social Anxiety, BDD, PANS (DSM p.379, 383, 386-387, Dulcan p.371, 415)"
+    ],
+    "key_numbers": [
+      "3 months duration requirement for AN subtypes vs acute PANS onset (DSM p.381, Dulcan p.371)",
+      "100% absence of body image disturbance required to diagnose ARFID over AN (DSM p.379, 387, Dulcan p.415)"
+    ]
+  },
+  "refeeding_syndrome": {
+    "items": [
+      "Carbohydrate reintroduction triggers insulin surge driving phosphorus, potassium, and magnesium into cells (DSM p.385, Dulcan p.421, 613)",
+      "Severe hypophosphatemia causes ATP depletion, acute heart failure, respiratory muscle failure, rhabdomyolysis, and death (DSM p.385, Dulcan p.613)",
+      "Thiamine (Vitamin B1) supplementation required prior to carbohydrate refeeding to prevent Wernicke encephalopathy (Dulcan p.425)"
+    ],
+    "key_numbers": [
+      "3 critical electrolytes shifted intracellularly: Phosphorus, Potassium, Magnesium (DSM p.385, Dulcan p.613)",
+      "1 daily electrolyte lab panel monitoring requirement during initial refeeding phase (Dulcan p.423)"
+    ]
+  },
+  "medical_complications": {
+    "items": [
+      "Cardiovascular: Sinus bradycardia (<50 bpm), hypotension, QTc prolongation, mitral valve prolapse (MVP), cardiac atrophy (DSM p.385-386, Dulcan p.420, 613)",
+      "Endocrine/Bone: HPG axis suppression (amenorrhea/delayed menarche), Peak Bone Mass reduction (irreversible osteopenia/osteoporosis) (DSM p.383, 385, Dulcan p.420, Syllabus p.38)",
+      "Hematologic/GI: Bone marrow gelatinous transformation (leukopenia/neutropenia), gastroparesis, SMA syndrome, parotid hypertrophy, Russell's sign (DSM p.385-386, Dulcan p.420, 613)"
+    ],
+    "key_numbers": [
+      "1 irreversible skeletal complication: Peak bone mass loss during adolescent window (DSM p.383, Dulcan p.420, Syllabus p.38)",
+      "<50 bpm resting heart rate threshold defining sinus bradycardia (Dulcan p.613)",
+      ">500 ms QTc interval threshold for severe arrhythmia risk (Dulcan p.832)"
+    ]
+  },
+  "FBT": {
+    "items": [
+      "Phase 1: Parents take 100% control of refeeding and weight restoration; includes in-clinic Family Meal (Dulcan p.426)",
+      "Phase 2: Gradual handoff of eating control back to adolescent once weight reaches 87%-90% expected and compliance achieved (Dulcan p.426)",
+      "Phase 3: Focus shifts to normative adolescent development, autonomy, and healthy family relationships once weight is stable (Dulcan p.426)",
+      "Core stance: Agnostic regarding cause, externalization of illness from patient, parental empowerment (Dulcan p.425)"
+    ],
+    "key_numbers": [
+      "3 distinct treatment phases in FBT-AN (Dulcan p.426)",
+      "70% full remission rate achieved at end of treatment and maintained at 5-year follow-up (Dulcan p.425-426)",
+      "87%-90% expected body weight threshold required before transitioning from Phase 1 to Phase 2 (Dulcan p.426)"
+    ]
+  },
+  "high_yield": [
+    "Anorexia nervosa has the highest crude mortality rate (~5% per decade) of any psychiatric disorder, primarily from cardiac collapse and suicide (DSM p.384, Dulcan p.421)",
+    "Suicide is the 2nd leading cause of death in AN, with an 18-fold increased risk compared to age/sex matched controls (DSM p.386)",
+    "Peak bone mass reduction during adolescence is an irreversible complication that does not fully recover even after weight restoration (DSM p.383, Dulcan p.420, Syllabus p.38)",
+    "Refeeding syndrome hallmark is severe hypophosphatemia triggered by carbohydrate-induced insulin release pushing phosphate into cells (DSM p.385, Dulcan p.613)",
+    "Family-Based Treatment (FBT / Maudsley) is the 1st-line gold standard treatment for adolescent AN, outperforming individual therapies in RCTs (Dulcan p.425-426)",
+    "SSRIs like fluoxetine are ineffective for weight gain or AN symptoms during acute starvation/underweight state (Dulcan p.429)",
+    "Olanzapine is the 1st-line off-label psychotropic for severe AN, targeting meal-related anxiety, obsessive food thoughts, and weight restoration (Dulcan p.429, StahlKids p.351, 356)",
+    "ARFID is distinguished from AN by the complete absence of fat phobia, fear of weight gain, or body image disturbance (DSM p.379, 387, Dulcan p.415)",
+    "Purging via self-induced vomiting causes metabolic alkalosis (hypokalemia, hypochloremia), whereas laxative abuse causes metabolic acidosis (DSM p.385)",
+    "Superior Mesenteric Artery (SMA) syndrome causes acute duodenal obstruction due to severe loss of the mesenteric fat pad (Dulcan p.613)"
+  ]
+}

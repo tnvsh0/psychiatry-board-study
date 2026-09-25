@@ -1,0 +1,36 @@
+{
+ "tag": "study-075-anorexia-nervosa",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:18:06+00:00",
+ "updated_at": "2026-09-25T15:18:06+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "5f251efba2f7bb6db683664a557cfaf18a37a439b96f4a382931af759ad3e294",
+   "asset_id": 584617080,
+   "size": 9604,
+   "fetched_at": "2026-09-25T15:18:00+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "e68db9c4a45e98ee911174d4abad73ee23edafbf3c326189834acac48d1527b5",
+   "asset_id": 584617082,
+   "size": 10740,
+   "fetched_at": "2026-09-25T15:18:02+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "02551436d563ffac89aed0a9ba3a2ff3230650a72ee236554407b55ee7a2773d",
+   "asset_id": 584617085,
+   "size": 33962,
+   "fetched_at": "2026-09-25T15:18:04+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2bb1de9422c6152335259a63e9c8880f2a88ba3c4305390b73e881dc9f665d1d",
+   "asset_id": 584617086,
+   "size": 38900,
+   "fetched_at": "2026-09-25T15:18:06+00:00"
+  }
+ ]
+}
