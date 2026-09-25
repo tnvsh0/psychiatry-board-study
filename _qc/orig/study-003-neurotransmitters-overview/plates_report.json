@@ -1,0 +1,240 @@
+[
+ {
+  "day": 3,
+  "plate": "main",
+  "facts": 27,
+  "tries": 3,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e3: dropped an unmappable relation 'details'",
+   "e4: dropped an unmappable relation 'details'",
+   "e14: dropped an unmappable relation 'disrupts'",
+   "e17: dropped an unmappable relation 'no effect on'",
+   "e18: dropped an unmappable relation 'blocks transport from'",
+   "e20: dropped an unmappable relation 'trial duration'",
+   "e23: dropped an unmappable relation 'advises against'",
+   "e19: dropped text 'Antidepressant Risk' (over the cap of 18)",
+   "e20: dropped text 'OCD: 12 Weeks' (over the cap of 18)",
+   "e21: dropped text '6% TSH, 1% Thyroid' (over the cap of 18)",
+   "e22: dropped text 'Neurology First' (over the cap of 18)",
+   "e23: dropped text 'No Universal TSH' (over the cap of 18)",
+   "e24: dropped text 'Fast Metab. Special Deliv.' (over the cap of 18)",
+   "e26: dropped text 'Histamine Milk' (over the cap of 18)",
+   "e27: dropped text 'Memory Mimic' (over the cap of 18)",
+   "e28: dropped text 'ACh Ignite' (over the cap of 18)",
+   "e3: hook de-asserted -> 'כמו שארגזים ערומים מחוץ לדלת בית העסק מציגים את כמות הסחורה, כך ערימת ארגזים המצוינת ב-13 תחומים ו-23 שאלות על השלטים — גרסת השאלון העצמי של מבוגרים במדד Level 1 Cross-Cutting Symptom Measure.'",
+   "e1: hook over 32 words (33): 'כמו שהנהג חייב להכיר היטב את כל פרטי המסירה, כולל דרכי ספיגה, פינוי, קישור לחלבון וזמן מחצית חיים, כך הבנת הבסיס הנוירוביולוגי והפרמקולוגי של העברת אותות דורשת שליטה במושגי יסוד כמו פרמקוקינטיקה ופרמקודינמיקה.'",
+   "e2: hook over 32 words (37): 'כמו שהשולחן העקום בחדר התה מאפשר לסדר כוסות לא תואמות כדי למדוד דברים בצורה גמישה, כך הערכת תסמינים פסיכיאטריים רב-ממדיים נעזרת במדדים מתוקפים כמו מדד Level 1 Cross-Cutting Symptom Measure כדי לעקוב אחר חומרת התסמינים לאורך זמן.'",
+   "e3: hook over 32 words (33): 'כמו שארגזים ערומים מחוץ לדלת בית העסק מציגים את כמות הסחורה, כך ערימת ארגזים המצוינת ב-13 תחומים ו-23 שאלות על השלטים — גרסת השאלון העצמי של מבוגרים במדד Level 1 Cross-Cutting Symptom Measure.'",
+   "e4: hook over 32 words (34): 'בדיוק כמו ערימה נוספת של ארגזים ריקים המייצגת גרסה שונה של משלוח, כך ערימת ארגזים המצוינת ב-12 תחומים ו-25 שאלות על השלטים מודדת את התחומים והשאלות בגרסת ההורים לילדים ומתבגרים במדד Level 1 Cross-Cutting.'",
+   "e9: hook over 32 words (34): \"בדומה לסדרן בעל סרט זרוע 'Anti-NMDA' העומד למנוע כניסה למועדון ה-NMDA, כך אנצפליטיס נגד קולטני anti-NMDA היא מצב נוירולוגי-אורגני קשה המציג תסמינים פסיכיאטריים סוערים לצד ממצאים נוירולוגיים חמורים על ידי פגיעה בפעילות הקולטנים הללו.\"",
+   "e10: hook over 32 words (36): \"בדיוק כמו שלט רחוב המציג מדדים פריפריים קבועים, כך שלט המראה 'Low ANS, High Aggro' מעיד על קשר בין מדדים פיזיולוגיים פריפריים נמוכים של מערכת העצבים האוטונומית, כמו דופק ומוליכות עור, לבין התנהגות תוקפנית ועבריינית בילדות.\"",
+   "e15: hook over 32 words (37): \"שלט חוצות של בית הקולנוע מציג כותרות סוערות על 'אי שקט מוטורי' עם אחוזים של 10% עד 20%, בדיוק כמו שזה שיעור השכיחות הממוצע של תופעות אקטיבציה כמו אי-שקט מוטורי, אגיטציה ואינסומניה בילדים ומתבגרים המטופלים בתרופות SSRIs.\"",
+   "e16: hook over 32 words (37): 'כמו שלט גיר המציג עלייה קטנה ופתאומית בלוח הזמנים של המשלוח, כך עלייה של 0.2 לוג בטיטרציה של נוגדני antistreptolysin O או anti-DNase B מעידה על זיהום סטרפטוקוקלי לאחרונה, המהווה קריטריון תומך באבחנת PANDAS המחייבת בירור רפואי.'",
+   "e17: hook over 32 words (33): \"כמו מפתח עם הכיתוב 'Riluzole' שאינו מצליח לפתוח את דלת מועדון ה-NMDA, כך Riluzole, חומר אנטי-גלוטמטרגי הפועל על קולטני NMDA, נבדק בקרב ילדים ומתבגרים עם OCD עמיד אך לא הראה יעילות קלינית מובהקת.\"",
+   "e18: hook over 32 words (35): \"כמו עגלות פחם היוצאות מפתח המכרה שנעצרות על ידי מחסום עם הכיתוב 'VMAT2 BLOCK', כך הטרנספורטר הווליזקולרי VMAT2 נחסם באופן הפיך על ידי Tetrabenazine, המפחית הולכה דופמינרגית פרה-סינפטית ומשמש כטיפול תרופתי קליני בטיקים מוטוריים קשים.\"",
+   "e19: hook over 32 words (33): 'על שלט החוצות של בית הקולנוע מופיעה אזהרה חמורה, בדיוק כמו סיכון מוגבר להופעת מחשבות או ניסיונות אובדניים בתחילת טיפול בנוגדי דיכאון בילדים ונוער, שעשוי להיות מתווך על ידי אקטיבציה, אגיטציה, אי-שקט ודס-אינהיביציה.'",
+   "e21: hook over 32 words (46): \"על עגלת החלב יש מכלי חלב ש-6% מהם מסומנים ב'TSH' אך רק 1% מהם חולים באמת, בדיוק כמו ש-6% הוא שיעור השכיחות של רמות TSH לא תקינות בקרב ילדים המאושפזים בשל הפרעות מצב רוח או חרדה, כאשר בפועל פחות מ-1% מהם אובחנו עם מחלת בלוטת התריס.\"",
+   "e23: hook over 32 words (34): \"על עגלת החלב מונח שלט המודיע 'No Universal TSH', בדיוק כמו שבדיקת סקר אוניברסלית לתפקודי בלוטת התריס בקרב בני נוער המציגים תסמיני חרדה אינה מומלצת באופן שגרתי, אלא בדיקה ממוקדת על סמך אנמנזה רלוונטית.\"",
+   "e24: hook over 32 words (39): 'כמו משאית משלוחים מהירה במיוחד הדורשת עצירות תכופות יותר או טיפול מיוחד, כך הערכת פסיכופרמקולוגיה בילדים דורשת התייחסות לקצב מטבולי מהיר יותר הדורש לעיתים מתן מנות מחולקות או תכשירים ארוכי טווח, לצד ניטור קליני קפדני של מדדי גדילה והתפתחות.'"
+  ],
+  "digit_strings_dropped": [
+   "Level 1 Measure",
+   "Adult Level 1",
+   "Child Level 1",
+   "5-HT Disrupted",
+   "0.2 log rise",
+   "VMAT2 BLOCK"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "0",
+     "177",
+     "64",
+     "13",
+     "1",
+     "2",
+     "3",
+     "4",
+     "255",
+     "0",
+     "255",
+     "0"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.2005,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1022,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.2155,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "0",
+    "177",
+    "64",
+    "13",
+    "1",
+    "2",
+    "3",
+    "4",
+    "255",
+    "0",
+    "255",
+    "0"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "YRS",
+     "paint": "13yr",
+     "tag": "YRS",
+     "chroma_pixels": 37889,
+     "blob_pixels": 37484,
+     "fill_ratio": 0.951,
+     "height_frac": 0.2005,
+     "width_frac": 0.0712,
+     "quad": [
+      [
+       2031,
+       650
+      ],
+      [
+       2223,
+       568
+      ],
+      [
+       2225,
+       752
+      ],
+      [
+       2034,
+       875
+      ]
+     ],
+     "bbox": [
+      2031,
+      568,
+      194,
+      307
+     ],
+     "height_pct": 19.99,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "10%",
+     "tag": "PCT",
+     "chroma_pixels": 35628,
+     "blob_pixels": 35285,
+     "fill_ratio": 1.06,
+     "height_frac": 0.1022,
+     "width_frac": 0.1072,
+     "quad": [
+      [
+       1444,
+       308
+      ],
+      [
+       1737,
+       278
+      ],
+      [
+       1737,
+       379
+      ],
+      [
+       1443,
+       434
+      ]
+     ],
+     "bbox": [
+      1443,
+      278,
+      294,
+      156
+     ],
+     "height_pct": 10.16,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "91",
+     "tag": "N",
+     "chroma_pixels": 87319,
+     "blob_pixels": 86514,
+     "fill_ratio": 0.952,
+     "height_frac": 0.2155,
+     "width_frac": 0.1279,
+     "quad": [
+      [
+       1916,
+       1192
+      ],
+      [
+       2232,
+       1237
+      ],
+      [
+       2201,
+       1522
+      ],
+      [
+       1881,
+       1468
+      ]
+     ],
+     "bbox": [
+      1881,
+      1192,
+      351,
+      330
+     ],
+     "height_pct": 21.48,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 6565,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 1297
+ }
+]
