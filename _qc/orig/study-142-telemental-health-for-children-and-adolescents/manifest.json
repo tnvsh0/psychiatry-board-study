@@ -1,0 +1,36 @@
+{
+ "tag": "study-142-telemental-health-for-children-and-adolescents",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:26:42+00:00",
+ "updated_at": "2026-09-25T17:26:42+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b7da72f098555139c8b5b29f844aa9917bd51dd5d8ffb5cb6d42cf9155bf10dc",
+   "asset_id": 588130638,
+   "size": 5433,
+   "fetched_at": "2026-09-25T17:26:36+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "966651be6e71293db0641e5e176f501d40aa9e820c12a08478d92467ba32952e",
+   "asset_id": 588130642,
+   "size": 13213,
+   "fetched_at": "2026-09-25T17:26:38+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "626dbd47163f636926af6075f4733052b8f385b4cb55e3c350e9737c8be1b674",
+   "asset_id": 588130636,
+   "size": 17112,
+   "fetched_at": "2026-09-25T17:26:40+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "8d7ae59fb47c4f07179ab33a9cbb4d7fcf45382ca79b5ec2bd81f6d95aac5593",
+   "asset_id": 588130641,
+   "size": 34147,
+   "fetched_at": "2026-09-25T17:26:42+00:00"
+  }
+ ]
+}

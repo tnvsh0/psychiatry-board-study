@@ -1,0 +1,266 @@
+{
+  "title": "Telepsychiatry Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "A psychiatrist located in Washington State is conducting a home-based telemental health (TMH) session with a 15-year-old patient who is currently physically located in Oregon. According to the Federation of State Medical Boards (FSMB) model policy, what are the licensure requirements for this clinical encounter?",
+      "answerOptions": [
+        {
+          "text": "The psychiatrist must be licensed in Oregon and comply with regulations in both Washington and Oregon.",
+          "isCorrect": true,
+          "rationale": "Regulations generally require clinicians to be licensed in the state where the patient is physically located during the session and to adhere to the laws of both jurisdictions (Dulcan p.656)."
+        },
+        {
+          "text": "The psychiatrist only needs a valid license in Washington State as the site of the remote service.",
+          "isCorrect": false,
+          "rationale": "Most medical boards reject the 'site of provider' logic, insisting that the practice of medicine occurs where the patient receives the care (Dulcan p.656)."
+        },
+        {
+          "text": "A national telemedicine license is sufficient to cover any encounter within the United States.",
+          "isCorrect": false,
+          "rationale": "Efforts toward national telemedicine licensing have been unsuccessful, and licensure is still determined by individual state medical boards (Dulcan p.656)."
+        },
+        {
+          "text": "The psychiatrist only needs to be registered with the Interstate Medical Licensure Compact (IMLCC) without specific state licenses.",
+          "isCorrect": false,
+          "rationale": "The IMLCC is a mechanism to consolidate applications for multiple state licenses but is not a substitute for holding a specific license in the patient's state (Dulcan p.656)."
+        }
+      ],
+      "hint": "Consider where the 'practice of medicine' is legally defined to occur during a synchronous connection.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_select",
+      "question": "According to the evidence base for telemental health in children and adolescents, which of the following statements correctly describe the findings of major randomized controlled trials (RCTs)?",
+      "answerOptions": [
+        {
+          "text": "The Myers et al. (2015) trial demonstrated that telepharmacotherapy is effective for children with ADHD in small towns.",
+          "isCorrect": true,
+          "rationale": "This study, with $N=223$, is the largest controlled trial showing effectiveness for delivering ADHD medication management via TMH (Dulcan p.655)."
+        },
+        {
+          "text": "The Comer et al. (2017) trial found that I-PCIT delivered to the home resulted in outcomes comparable to clinic-based treatment.",
+          "isCorrect": true,
+          "rationale": "This study confirmed that remote delivery of Parent-Child Interaction Therapy (PCIT) directly to homes is a viable and effective alternative to traditional clinic settings (Dulcan p.655)."
+        },
+        {
+          "text": "Nelson et al. (2003) found that TMH-delivered CBT resulted in significantly greater depression reduction than in-person therapy.",
+          "isCorrect": false,
+          "rationale": "The study actually found comparable reductions in symptoms between the two modalities, not superiority of teletherapy (Dulcan p.655)."
+        },
+        {
+          "text": "Antipsychotic medications have been extensively studied and proven superior when managed via TMH versus in-person visits.",
+          "isCorrect": false,
+          "rationale": "Current literature notes a lack of specific focus on the use of antipsychotic medications in pediatric TMH research (Dulcan p.655)."
+        }
+      ],
+      "hint": "Focus on the concepts of 'comparability' and 'effectiveness' in the cited pediatric TMH studies.",
+      "imageUrls": [],
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "short_answer",
+      "question": "During an initial home-based telemental health session with a child, the psychiatrist must verify the patient's identity and exact location. Explain the clinical and safety rationale for requiring a precise physical address (including room or apartment number) at the start of every session.",
+      "grading": {
+        "modelAnswer": "The precise physical address is required to activate local emergency services if a crisis occurs during the session. Verification of location ensures the clinician can direct emergency responders to the exact site of the child in distress, which is a core component of the Privacy and Safety Protocol (PSP) (Dulcan p.656, p.666).",
+        "rationale": "Verification of the exact physical location is a non-negotiable safety requirement in TMH to ensure emergency interventions can be deployed to the correct address if needed (Dulcan p.656, p.666).",
+        "requiredAttributes": [
+          "Mentions the activation of emergency services.",
+          "Refers to the need to guide responders to the correct location.",
+          "Identifies this as a safety protocol/requirement."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Thinking the address is only for billing purposes.",
+            "Assuming the clinician's location is the only one that needs to be documented."
+          ],
+          "bluffs": [
+            "Vague statements about 'keeping track of the patient' without mentioning emergency response."
+          ]
+        }
+      },
+      "hint": "Think about what would happen if the child experienced a medical or psychiatric emergency while the clinician was 100 miles away.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "When setting up a room for a telemental health diagnostic evaluation of a preschool-aged child, which configuration most effectively supports a thorough mental status examination?",
+      "answerOptions": [
+        {
+          "text": "A wide camera angle that captures the child's movement in the room and the parent's interaction during a play session.",
+          "isCorrect": true,
+          "rationale": "A wide angle allows for the observation of motor activity, hyperactivity, and dyadic interactions, which are critical for developmental assessments (Dulcan p.661)."
+        },
+        {
+          "text": "A close-up shot focusing solely on the child's face to maximize the assessment of facial affect and eye contact.",
+          "isCorrect": false,
+          "rationale": "Focusing only on the face would miss essential behavioral data such as activity level, gait, and social play (Dulcan p.661)."
+        },
+        {
+          "text": "A room with strong backlighting from a window to ensure the psychiatrist can see the child's silhouettes clearly.",
+          "isCorrect": false,
+          "rationale": "Backlighting causes 'silhouetting,' where the person becomes a dark shadow, making it impossible to assess facial expressions (Dulcan p.659)."
+        },
+        {
+          "text": "A camera placed directly on the table in front of the child to allow for a direct eye-level view during the entire session.",
+          "isCorrect": false,
+          "rationale": "Placing the camera too close limits the field of view and prevents observation of the child's gross motor behavior and play (Dulcan p.661)."
+        }
+      ],
+      "hint": "Consider the variety of behavioral domains that must be observed in a standard pediatric mental status exam.",
+      "imageUrls": []
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "To comply with the Ryan Haight Online Pharmacy Consumer Protection Act of 2008, a psychiatrist must generally conduct at least one ___ before prescribing a controlled substance (such as a stimulant for ADHD) via a telemental health platform.",
+      "bestAnswer": "in-person medical evaluation",
+      "acceptableAnswers": [
+        "in-person evaluation",
+        "face-to-face visit",
+        "in-person visit",
+        "physical examination"
+      ],
+      "rationale": "The Ryan Haight Act mandates that at least one in-person medical evaluation must be performed by the prescribing practitioner before a controlled substance can be issued via the internet, unless a specific exception applies (Dulcan p.657-658).",
+      "hint": "The Act focuses on the requirement for a physical presence before initiating certain classes of medications.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A 9-year-old boy with ADHD is prescribed EndeavorRx (AKL-T01). Based on the FDA-cleared indications and research, what is the recommended protocol for this digital therapeutic?",
+      "answerOptions": [
+        {
+          "text": "25 minutes a day, 5 days a week, for a 4-week treatment course.",
+          "isCorrect": true,
+          "rationale": "This specific dosing protocol was used in the STARS-ADHD trial and is the standard for the first FDA-cleared digital game-based therapeutic (Dulcan p.168)."
+        },
+        {
+          "text": "60 minutes a day, 7 days a week, until symptoms remit.",
+          "isCorrect": false,
+          "rationale": "This intensity exceeds the studied protocol and may lead to fatigue or non-adherence (Dulcan p.168)."
+        },
+        {
+          "text": "10 minutes of play immediately before school to prime cognitive control.",
+          "isCorrect": false,
+          "rationale": "The therapeutic is designed as a structured cognitive training course, not a short-term 'priming' tool (Dulcan p.168)."
+        },
+        {
+          "text": "Weekly 50-minute sessions supervised by a telepresenter.",
+          "isCorrect": false,
+          "rationale": "Digital therapeutics like EndeavorRx are typically self-administered in a non-clinical setting (Dulcan p.168, p.668)."
+        }
+      ],
+      "hint": "This intervention follows a structured 'dosing' schedule similar to a medication trial.",
+      "imageUrls": []
+    },
+    {
+      "type": "short_answer",
+      "question": "When conducting telemental health in a school setting, how must medical records be managed to comply with both HIPAA and FERPA regulations?",
+      "grading": {
+        "modelAnswer": "The psychiatric and medical records of TMH visits must be kept separate from the student's educational records. This ensures that the healthcare information is protected under HIPAA while the school maintains its educational records under FERPA (Dulcan p.1063).",
+        "rationale": "Separation of records is essential to maintain confidentiality and comply with distinct legal frameworks governing health and education (Dulcan p.1063).",
+        "requiredAttributes": [
+          "States that medical records must be separate from educational records.",
+          "Mentions HIPAA and FERPA as the relevant regulations."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Believing that TMH records automatically become part of the student's permanent academic file.",
+            "Thinking FERPA allows any teacher to access psychiatric notes."
+          ],
+          "bluffs": [
+            "General statements about 'privacy' without mentioning the separation of files."
+          ]
+        }
+      },
+      "hint": "Consider the different legal 'owners' and 'purposes' of health data versus school data.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "During a telemental health session, a clinician notices that their own image on the screen seems to be making 'negative' head-shaking gestures, even though they are trying to show empathy. What technical or behavioral factor is most likely causing this misperception?",
+      "answerOptions": [
+        {
+          "text": "The clinician is glancing laterally at an electronic medical record (EMR) window on the side of their monitor.",
+          "isCorrect": true,
+          "rationale": "Looking side-to-side at a lateral EMR window mimics a head-shake 'no,' whereas placing the EMR window above or below the camera mimics an affirmative nod (Dulcan p.662)."
+        },
+        {
+          "text": "The bandwidth is currently below $384\\text{ kbps}$, causing a lag in motion rendering.",
+          "isCorrect": false,
+          "rationale": "Low bandwidth causes 'pixelation' or 'jitter,' but it would not consistently create a specific meaningful gesture like a head-shake (Dulcan p.661)."
+        },
+        {
+          "text": "The clinician is using a wide-angle lens which distorts micro-expressions into larger gestures.",
+          "isCorrect": false,
+          "rationale": "Wide-angle lenses can distort perspective, but they do not fundamentally change the direction of perceived movement (Dulcan p.661)."
+        },
+        {
+          "text": "The lighting in the room is creates a shadow that emphasizes lateral movement.",
+          "isCorrect": false,
+          "rationale": "Lighting affects clarity and mood, but the perception of a head-shake is primarily driven by the clinician's gaze and head orientation (Dulcan p.662)."
+        }
+      ],
+      "hint": "Consider how the placement of the doctor's eyes relative to the camera influences non-verbal cues.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_select",
+      "question": "Which of the following are recognized benefits or characteristics of 'Store-and-Forward' (asynchronous) telemental health as described in pediatric clinical practice?",
+      "answerOptions": [
+        {
+          "text": "It can be used by parents to record smartphone samples of behavior in the home for later review by an expert.",
+          "isCorrect": true,
+          "rationale": "This approach allows behavior to be captured in naturalistic settings and then reviewed to aid PCPs in diagnosis (Dulcan p.668)."
+        },
+        {
+          "text": "It has shown high accuracy and reliability for diagnosing autism spectrum disorder (ASD).",
+          "isCorrect": true,
+          "rationale": "Studies by Smith et al. (2017) confirmed that asynchronous review of protocol-driven videos is a reliable method for ASD authorization (Dulcan p.668)."
+        },
+        {
+          "text": "It requires a synchronous connection with a minimum bandwidth of $384\\text{ kbps}$.",
+          "isCorrect": false,
+          "rationale": "Asynchronous communication, by definition, does not require a real-time, synchronous high-bandwidth connection (Dulcan p.668)."
+        },
+        {
+          "text": "It is the only legal method for prescribing Schedule II stimulants in the US.",
+          "isCorrect": false,
+          "rationale": "Prescribing controlled substances generally requires a synchronous medical evaluation, not just a store-and-forward review (Dulcan p.657-658)."
+        }
+      ],
+      "hint": "Think about the difference between 'real-time' and 'recorded' clinical data.",
+      "imageUrls": [],
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "When assessing suicidal risk in a remote session, what is a mandatory environmental instruction for parents according to standard safety planning protocols?",
+      "answerOptions": [
+        {
+          "text": "Elimination of the availability of all lethal means, including firearms and medications, from the home.",
+          "isCorrect": true,
+          "rationale": "The first and most critical step in a suicide safety plan is the removal of lethal means to prevent immediate risk (Dulcan p.556)."
+        },
+        {
+          "text": "Placing the child in a room with a 'white noise' machine to ensure privacy from other siblings.",
+          "isCorrect": false,
+          "rationale": "While privacy is important, white noise machines do not address the primary safety concern of lethal means (Dulcan p.664)."
+        },
+        {
+          "text": "Ensuring the child has access to a 'bug-in-the-ear' device for continuous clinician monitoring.",
+          "isCorrect": false,
+          "rationale": "The 'bug-in-the-ear' is a technique for PCIT coaching, not a standard suicide prevention tool (Dulcan p.655)."
+        },
+        {
+          "text": "Installing a Pan-Tilt-Zoom camera in the child's bedroom for 24/7 observation.",
+          "isCorrect": false,
+          "rationale": "Clinicians generally do not conduct 24/7 surveillance; safety planning focuses on collaborative strategies and environmental control (Dulcan p.556-557)."
+        }
+      ],
+      "hint": "What is the very first step in ensuring the home environment is safe for an at-risk youth?",
+      "imageUrls": []
+    }
+  ]
+}
