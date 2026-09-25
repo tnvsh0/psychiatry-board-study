@@ -1,0 +1,79 @@
+{
+  "anatomy": {
+    "items": [
+      "HSV-1: פגיעה נמקית באונה טמפורלית מדיאלית, אמיגדלה, היפוקמפוס וקורטקס אורביטופרונטלי (DSM p.277)",
+      "Neurosyphilis: General paresis גורמת לאטרופיה מוחית קורטיקלית פרונטו-טמפורלית; Tabes dorsalis גורמת לדגנרציה בעמודות האחוריות בחוט השדרה (DSM p.731)",
+      "HIV/HAND: פגיעה סוב-קורטיקלית בגרעיני הבסיס (Caudate, Putamen), תלמוס וחומר לבן עמוק דרך זיהום מיקרוגליה ומקרופאגים (DSM p.718)",
+      "PANDAS/PANS: נוגדנים צולבים ודלקת בגנגליוני הבסיס (Caudate & Putamen) ושיבוש מעגלי CSTC (Dulcan p.368, StahlNeuro p.367)"
+    ],
+    "key_numbers": [
+      "10-30 שנים מתקופת ההדבקה הראשונית ב-Treponema pallidum עד להתפתחות נוירוסיפיליס כרוני (DSM p.731)",
+      "5 דומיינים קוגניטיביים נפגעים ב-HAND כולל מהירות עיבוד וזיכרון שליפה (DSM p.718)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "HSV: חום, כאבי ראש עזים, ירידה בהכרה, פרכוסים טמפורליים וגלי PLEDS ב-EEG (Dulcan p.96)",
+      "Klüver-Bucy syndrome ב-HSV: היפראורליות, היפרסקסואליות, אגנוזיה חזותית, היפרמטמורפוזיס ואובדן תגובת פחד (DSM p.277)",
+      "Neurosyphilis: אישון Argyll Robertson (מתכווץ באקומודציה אך לא באור), דיסארתריה, ואטקסיה סנסורית ב-Tabes (DSM p.731)",
+      "HIV/HAND: האטה פסיכומוטורית, Executive dysfunction, והפרעת שליפת זיכרון (Free recall) עם זיהוי שמור (DSM p.718)",
+      "PANDAS/PANS: התפרצות פתאומית (Overnight) של OCD, ARFID, טיקים, חרדת פרידה, נפילה בכתב יד ותדירות השתנה (Dulcan p.369, p.371)"
+    ],
+    "key_numbers": [
+      "2 תסמינים מלווים מתוך 7 תחומים נדרשים לאבחון PANS לצד OCD/ARFID (Dulcan p.371)",
+      "1 SD או יותר מתחת לנורמה בשני דומיינים קוגניטיביים נדרשים להגדרת ANI ב-HIV (DSM p.718)",
+      "3 עד 12 שנים הוא גיל ההתחלה הפרפובטלי המוגדר ב-PANDAS (Dulcan p.369)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "HSV: הזיות ריח וטעם (Uncinate fits), פסיכוזה, דליריום, מניה אורגנית, ותסמיני אגירה כפייתית משנית (DSM p.132, p.277, p.280)",
+      "Neurosyphilis: מחשבות שווא גרנדיוזיות מופלגות, שינויי אישיות עם דיסאינהיביציה, ומניה או דיכאון ניהיליסטי (DSM p.101, p.731, p.775)",
+      "HIV/HAND: תסמונת אפתיה (חוסר יוזמה ללא עצב סובייקטיבי), דיכאון מג'ורי, ומאניה המשנית ל-HIV (DSM p.167, p.718, StahlNeuro p.536)",
+      "PANDAS/PANS: מסווג ב-DSM-5-TR תחת OCD המשני למצב רפואי אחר (F06.8), עם חרדת פרידה קשה ונסיגה התנהגותית (DSM p.292, Dulcan p.371)"
+    ],
+    "key_numbers": [
+      "1/3 מהמטופלים עם HIV סובלים מ-ANI ללא ירידה בתפקוד היומיומי (DSM p.718)",
+      "24-48 שעות חלון ההופעה החריפה של התסמינים ב-PANS/PANDAS (Dulcan p.369)"
+    ]
+  },
+  "workup": {
+    "items": [
+      "HSV: ניקור מותני ל-CSF PCR ל-HSV-1 DNA (Gold Standard), MRI עם אות יתר T2/FLAIR טמפורלי, ו-EEG (Dulcan p.96)",
+      "Neurosyphilis: בדיקת CSF-VDRL (מנדטורית לאבחנה) וסרולוגיה בדם (RPR/VDRL, FTA-ABS) (DSM p.731)",
+      "HIV/HAND: הערכה נוירופסיכולוגית מקיפה, CD4 cell nadir, עומס ויראלי ב-CSF (CSF escape), ו-NfL בדם/CSF (DSM p.718)",
+      "PANDAS/PANS: משטח גרון, טיטרים סרולוגיים זוגיים (ASO, Anti-DNase B) המדגימים עלייה של פי 2, ובירור זיהומי/אימוני מורחב (Dulcan p.376)"
+    ],
+    "key_numbers": [
+      "95% רגישות וספציפיות של בדיקת CSF PCR ל-HSV-1 DNA (Dulcan p.96)",
+      "2-4 שבועות המרווח הנדרש בין שתי מדידות טיטר סרולוגי להוכחת עלייה פי 2 ב-PANDAS (Dulcan p.376)",
+      "5 תאים/מיקרוליטר או יותר ב-CSF (Pleocytosis) מעידים על נוירוסיפיליס פעיל (DSM p.731)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "HSV: Intravenous Acyclovir (10 mg/kg q8h במבוגרים/מתבגרים; 500 mg/m² q8h בילדים) במשך 14-21 ימים (Dulcan p.96)",
+      "Neurosyphilis: Aqueous Crystalline Penicillin G (18-24 מיליון יחידות ליום IV ל-10-14 ימים) (DSM p.731)",
+      "HIV/HAND: cART מותאם בעל מדד CPE (CNS Penetration Effectiveness) גבוה להשגת דיכוי ויראלי מלא ב-CSF (DSM p.718)",
+      "PANDAS/PANS: טיפול CBT-ERP + טיפול אנטיביוטי (Penicillin V / Amoxicillin) בזיהום אקוטי מוכח ב-GABHS (Dulcan p.383)"
+    ],
+    "second_line": [
+      "Neurosyphilis: Ceftriaxone 2 g/day IV ל-10-14 ימים באלרגיה לפניצילין (מקור: הקשר רחב)",
+      "PANDAS/PANS: IVIG או Plasmapheresis למקרים קיצוניים ועמידים בלבד (ניסיוני, לא מומלץ כרוטינה) (Dulcan p.383)"
+    ],
+    "key_side_effects": [
+      "PANDAS/PANS & SSRIs: תסמונת הפעלה (Treatment-Emergent Activation Syndrome - TEAS) ואי-שקט עקב רגישות יתר בילדים (StahlKids p.199, Dulcan p.383)",
+      "HIV/HAND & Antipsychotics: רגישות מופרזת לתופעות לוואי אקסטרה-פירמידליות (EPS) משנית לפגיעה בגנגליוני הבסיס (DSM p.807, StahlKids p.11)",
+      "Neurosyphilis: תגובת Jarisch-Herxheimer (חום, היפוטנשיה והחמרה חולפת של פסיכוזה תוך 2-24 שעות) (מקור: הקשר רחב)"
+    ],
+    "monitoring": "ניקור מותני חוזר ב-Neurosyphilis כעבור 6 חודשים; ניטור תפקודי כליות ב-Acyclovir; טיטרציה איטית במיוחד (1/4 עד 1/2 מינון) ב-SSRIs ב-PANDAS (DSM p.731, Dulcan p.383, StahlKids p.199)"
+  },
+  "high_yield": [
+    "בחחשד קליני לאנצפליטיס HSV מתחילים IV Acyclovir מיידית עוד בטרם ביצוע LP או קבלת תוצאות PCR (Dulcan p.96)",
+    "הזיות ריח וטעם (Uncinate fits) אופייניות מאוד להרס לימבי טמפורלי ב-HSV encephalitis (DSM p.132, StahlNeuro p.77)",
+    "תסמונת Klüver-Bucy כוללת היפראורליות, היפרסקסואליות, אגנוזיה חזותית ואובדן פחד מהרס דו-צדדי של האמיגדלה (DSM p.277)",
+    "הפגיעה הניורו-קוגניטיבית ב-HIV היא בטיפוס סוב-קורטיקלי – האטה פסיכומוטורית, Executive dysfunction, והפרעת שליפה עם זיהוי שמור (DSM p.718, StahlNeuro p.487)",
+    "תסמונת אפתיה ב-HIV נובעת מליקוי פרונטו-סטריאטלי ומתבטאת בחסר יוזמה ללא עצב סובייקטיבי או אשמה (DSM p.718, StahlNeuro p.536)",
+    "בילדים עם PANDAS/PANS יש להתחיל SSRIs ב-1/4 עד 1/2 ממינון ההתחלה הרגיל למניעת TEAS; IVIG אינו מומלץ כרוטינה (Dulcan p.383, StahlKids p.199)"
+  ]
+}
