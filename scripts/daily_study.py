@@ -2113,6 +2113,40 @@ def _study_guide_defects(text: str) -> list:
     return out
 
 
+def _guide_kept_from_earlier_attempt(path) -> bool:
+    """True when a guide an EARLIER attempt wrote is on disk and is still one.
+
+    Chapter 78 was refused a release twice while a complete 26,500-char guide
+    sat in its directory: `ask_study_guide` returning False set the caller's
+    `study_guide_path` to None, and the release guard then reported the file it
+    had just stopped looking at as missing. NotebookLM had answered with a
+    studio announcement on this run and with the real guide on an earlier one,
+    so the run that threw the work away was the run that had it.
+
+    Kept only when it passes `_study_guide_defects` — the same test this run's
+    answers failed. That is strictly stronger than the existence check the
+    guard does, so nothing a receipt could do gets easier here.
+    """
+    path = Path(path) if path else None
+    if not (path and path.exists() and path.stat().st_size):
+        return False
+    try:
+        text = path.read_text(encoding="utf-8", errors="replace")
+    except OSError as e:
+        print(f"  [!] could not read the earlier study guide: {e}")
+        return False
+    defects = _study_guide_defects(text)
+    if defects:
+        print(f"  [X] a study guide from an earlier attempt is on disk but is "
+              f"not usable either: {'; '.join(defects)[:200]}")
+        return False
+    when = datetime.fromtimestamp(path.stat().st_mtime).strftime("%d/%m %H:%M")
+    print(f"  [OK] study_guide.md ({path.stat().st_size / 1024:.1f} KB) — "
+          f"this run's answers were rejected; keeping the guide written "
+          f"{when}, which passes the same check", flush=True)
+    return True
+
+
 def ask_study_guide(day, symbol_block, legend_block, out_path):
     """Generate a focused study guide via 'notebooklm ask' that honors the
     day's specific topic AND includes page references to source books."""
@@ -2813,6 +2847,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
     if ask_study_guide(day, symbol_block, legend_block, study_guide_path):
         size_kb = study_guide_path.stat().st_size / 1024
         print(f"  [OK] study_guide.md ({size_kb:.1f} KB)")
+    elif _guide_kept_from_earlier_attempt(study_guide_path):
+        pass
     else:
         print("  [X] study guide generation failed")
         study_guide_path = None
