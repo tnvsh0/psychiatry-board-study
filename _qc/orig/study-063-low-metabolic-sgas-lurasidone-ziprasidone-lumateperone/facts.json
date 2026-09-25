@@ -1,0 +1,74 @@
+{
+  "drug_class": {
+    "members": [
+      "Lurasidone: ספיגה תלוית מזון (>350 kcal) ויעילות מובילה ב-Bipolar Depression מגיל 10 (Dulcan p.786, p.805; StahlKids p.301, p.303)",
+      "Ziprasidone: תכשיר IM לאגיטציה, BID, דרישת מזון (>500 kcal) והארכת QTc (Dulcan p.786, p.820, p.830; StahlNeuro p.223)",
+      "Lumateperone: אגוניזם חלקי D2 קדם-סינפטי, תפוסת D2 <60%, וזיקה אדירה ל-5-HT2A (StahlNeuro p.226, p.227, p.401)"
+    ],
+    "mechanism": "חסימת D2 ו-5-HT2A עם זיקה אפסית ל-H1 ו-M1 ב-Lurasidone; עיכוב SERT/NET ב-Ziprasidone (StahlNeuro p.207, p.223); אגוניזם חלקי D2 קדם-סינפטי, אנטגוניזם D2 פוסט-סינפטי (<60% occupancy), חסימת 5-HT2A ועיכוב SERT ב-Lumateperone (StahlNeuro p.226, p.227, p.401).",
+    "kinetics": [
+      "Lurasidone: t1/2 18-31 שעות, מטבוליזם ב-CYP3A4, ספיגה יורדת ב-50% ללא מזון (Dulcan p.785-786; StahlKids p.301-303)",
+      "Ziprasidone: t1/2 כ-7 שעות פומית (BID), 2/3 מטבוליזם ב-Aldehyde Oxidase ו-1/3 ב-CYP3A4 (Dulcan p.785-786; StahlNeuro p.223)",
+      "Lumateperone: t1/2 כ-18 שעות, פירוק ב-CYP3A4, 2C8, 1A2 (Dulcan p.786; StahlNeuro p.226)"
+    ],
+    "onset_of_effect": "שיפור ראשוני תוך 1-2 שבועות; מתן IM ב-Ziprasidone משפיע תוך 15-30 דקות (Dulcan p.786, p.830; StahlKids p.46, p.304)"
+  },
+  "indications": {
+    "items": [
+      "Lurasidone: מאושר FDA לסכיזופרניה מגיל 13 (Dulcan p.786; StahlKids p.298) ולדיכאון ביפולרי I במונותרפיה מגיל 10 (Dulcan p.805; StahlKids p.298)",
+      "Ziprasidone: מאושר FDA במבוגרים לסכיזופרניה ומאניה ביפולרית; Off-label פדיאטרי ב-IM לאגיטציה חריפה (Dulcan p.786, p.825, p.830)",
+      "Lumateperone: מאושר FDA במבוגרים לסכיזופרניה ולדיכאון ביפולרי I ו-II (StahlNeuro p.226, p.227, p.351)"
+    ],
+    "key_numbers": [
+      "10 - גיל מינימלי לאישור FDA ל-Lurasidone ב-Bipolar Depression (Dulcan p.805; StahlKids p.298)",
+      "13 - גיל מינימלי לאישור FDA ל-Lurasidone ב-Schizophrenia (Dulcan p.786; StahlKids p.298)",
+      "5-6 - NNT של Lurasidone ב-Bipolar Depression פדיאטרי (Dulcan p.805)",
+      "5 - NNT של Lurasidone בסכיזופרניה של מתבגרים (Dulcan p.800)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "נטרליות מטבולית: סיכון אפסי/מזערי לעלייה במשקל, סוכרת או דיסליפידמיה בשל היעדר זיקה ל-H1 ו-M1 (StahlNeuro p.196, p.226; StahlKids p.308; Dulcan p.820)",
+      "הארכת QTc: קיימת ב-Ziprasidone (Dulcan p.820, p.827), אך אפסית וללא אזהרה ב-Lurasidone (StahlKids p.308; Dulcan p.820)",
+      "EPS ואקתיזיה: מתון ב-Lurasidone ו-Ziprasidone (Dulcan p.820, p.821); ברמת פלצבו ב-Lumateperone (StahlNeuro p.226; Dulcan p.820)"
+    ],
+    "key_numbers": [
+      "0.04- ק\"ג - שינוי משקל ממוצע ב-Ziprasidone במטה-אנליזה פדיאטרית (Dulcan p.823)",
+      "60% - תפוסת D2 מרבית ב-Lumateperone המונעת EPS ואקתיזיה (StahlNeuro p.217, p.227)",
+      "0 - אזהרות QTc בעלון של Lurasidone (StahlKids p.308)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "ניטור BMI: אחוזון BMI ו-BMI z-score בקו בסיס, כל ביקור, כעבור 3 חודשים ושנתי (DSM p.377; Dulcan p.827, p.828)",
+      "בדיקות מעבדה: גלוקוז/HbA1c וליפידים בצום בבסיס, כעבור 3 חודשים וכל 6-12 חודשים (Dulcan p.826, p.827)",
+      "א.ק.ג (ECG): חובה בקו בסיס ובטיטרציה בנטילת Ziprasidone (Dulcan p.827)",
+      "תפקודי כבד (ALT/AST): ניטור בעלייה של >=7% במשקל או >=0.5 ב-BMI z-score (Dulcan p.831)"
+    ],
+    "key_numbers": [
+      "5% - עלייה במשקל תוך 3 חודשים המחייבת התערבות (Dulcan p.834)",
+      "0.5 - עלייה ב-BMI z-score המצריכה ניטור כבדי והתערבות (Dulcan p.831, p.834)",
+      "85 - אחוזון BMI המגדיר Overweight ומחייב התערבות (Dulcan p.829, p.834)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Lurasidone: חובה ליטול עם ארוחה של לפחות 350 קלוריות (350 kcal) בערב (StahlKids p.301, p.303); מינון: 20-80 מ\"ג/יום ב-Bipolar Depression, 40-80 מ\"ג/יום בסכיזופרניה (Dulcan p.786; StahlKids p.301-302)",
+      "Ziprasidone: חובה ליטול עם ארוחה (500 kcal), חלוקה ל-BID, מינון 40-160 מ\"ג/יום (Dulcan p.786; StahlNeuro p.223); הזרקת IM 10-20 מ\"ג לאגיטציה (Dulcan p.830)",
+      "Lumateperone: מינון אחיד 42 מ\"ג/יום ללא צורך בטיטרציה, עם/ללא אוכל (Dulcan p.786; StahlNeuro p.226)"
+    ],
+    "key_numbers": [
+      "350 - קלוריות מינימליות בנטילת Lurasidone למניעת ירידה של 50% בספיגה (StahlKids p.301, p.303)",
+      "500 - קלוריות מומלצות בנטילת Ziprasidone (Dulcan p.786; StahlNeuro p.223)",
+      "42 - מינון יומיומי קבוע במ\"ג של Lumateperone (Dulcan p.786; StahlNeuro p.226)"
+    ]
+  },
+  "high_yield": [
+    "ספיגת Lurasidone צונחת ב-50% בנטילה על קיבה ריקה — חובה ליטול עם ארוחה של >=350 kcal (StahlKids p.301, p.303; Dulcan p.786).",
+    "Lurasidone מאושר ל-Bipolar Depression פדיאטרי החל מגיל 10 ולסכיזופרניה מגיל 13 (Dulcan p.786, p.805; StahlKids p.298).",
+    "Ziprasidone נכשל במחקר מבוקר בסכיזופרניה פדיאטרית (Findling 2013b) ולכן אינו מאושר התוויתית לילדים (Dulcan p.796).",
+    "Lumateperone פועל כאגוניסט חלקי D2 קדם-סינפטי ואנטגוניסט פוסט-סינפטי, ומשיג אפקט אנטי-פסיכוטי בתפוסת D2 <60% עם אפס EPS/אקתיזיה (StahlNeuro p.217, p.226, p.227, p.401).",
+    "Lurasidone מציג זיקה אדירה לקולטני 5-HT7 (גבוהה מ-D2), התורמת ליעילותו הנוגדת דיכאון והפרו-קוגניטיבית (StahlNeuro p.206, p.371).",
+    "Ziprasidone זמין בתכשיר IM קצר-טווח לאגיטציה חריפה, אך מחייב מעקב ECG בגלל הארכת QTc (Dulcan p.786, p.820, p.830)."
+  ]
+}
