@@ -1,0 +1,64 @@
+{
+ "tag": "study-006-norepinephrine-system",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T12:54:00+00:00",
+ "updated_at": "2026-09-25T12:54:00+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a79a550159673e79ac7f720bac4b2b4ce08d09211174c3ccaa9b3782311e6d9b",
+   "asset_id": 527707373,
+   "size": 4598,
+   "fetched_at": "2026-09-25T12:53:45+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "86db07f5d639f120673f4e16b4c01c27829101b0d50dc8b51266ced2cc1ffc96",
+   "asset_id": 527707303,
+   "size": 10380,
+   "fetched_at": "2026-09-25T12:53:47+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "618ea90db8ca25d4519d8c06bcfc223a82fbbe43f445d49e1553cbf4df48e5ea",
+   "asset_id": 527707323,
+   "size": 7254,
+   "fetched_at": "2026-09-25T12:53:49+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "33dbbae62190d022e1210e622c847566d6491673ae8dc552835660780805aaee",
+   "asset_id": 527707351,
+   "size": 2930,
+   "fetched_at": "2026-09-25T12:53:52+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "e896954d880a753f4e694db6edbc983d30ed713567011bbb3f7ed9b55da58193",
+   "asset_id": 527707308,
+   "size": 41264,
+   "fetched_at": "2026-09-25T12:53:54+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "ee5fea00ad17bd67ebab6c7baf5a824c14b52c6c19ae5b6f4600a98cffe5cf53",
+   "asset_id": 527707322,
+   "size": 3429,
+   "fetched_at": "2026-09-25T12:53:56+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "c475a27fe706514423fbb033e01ccf606ac119f56e40fbcce18458c7166a50b2",
+   "asset_id": 527707311,
+   "size": 15869,
+   "fetched_at": "2026-09-25T12:53:58+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "99692c59c820d34b49fcce73fb82c64f8aef2c61ae32ffbac7935283a476b5e0",
+   "asset_id": 527707354,
+   "size": 36148,
+   "fetched_at": "2026-09-25T12:54:00+00:00"
+  }
+ ]
+}

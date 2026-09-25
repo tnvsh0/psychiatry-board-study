@@ -1,0 +1,154 @@
+[
+ {
+  "day": 6,
+  "plate": "main",
+  "facts": 27,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e8: dropped an unmappable relation 'breaks down'",
+   "e14: dropped an unmappable relation 'helps'",
+   "e16: dropped an unmappable relation 'side effect'",
+   "e12: hook de-asserted -> \"שני נגנים, אחד — נוראפינפרין (NE) והשני דופמין (DA), מכוונים את כליהם במשותף מול שלט 'PFC', כמו שני המוליכים העצביים הפועלים במשולב לכוונון אופטימלי של הקורטקס הפרה-פרונטלי.\""
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "255",
+     "0",
+     "255",
+     "0",
+     "10"
+    ],
+    "blank_plates_found": 1,
+    "blank_plates_wanted": 2,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1471,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": false,
+      "height_frac": 0.0638,
+      "reject": "too_small_in_frame"
+     }
+    ]
+   },
+   "text_missing": [
+    "MAO COMT"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "75%",
+    "MAO COMT"
+   ],
+   "score": 2,
+   "verified": true,
+   "stray_warning": [
+    "255",
+    "0",
+    "255",
+    "0",
+    "10"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "N",
+     "paint": "15-20",
+     "tag": "N",
+     "chroma_pixels": 34847,
+     "blob_pixels": 34526,
+     "fill_ratio": 1.087,
+     "height_frac": 0.1471,
+     "width_frac": 0.0749,
+     "quad": [
+      [
+       572,
+       964
+      ],
+      [
+       774,
+       900
+      ],
+      [
+       774,
+       1053
+      ],
+      [
+       571,
+       1125
+      ]
+     ],
+     "bbox": [
+      571,
+      900,
+      203,
+      225
+     ],
+     "height_pct": 14.65,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "75%",
+     "tag": "PCT",
+     "chroma_pixels": 14532,
+     "blob_pixels": 7793,
+     "fill_ratio": 1.091,
+     "height_frac": 0.0638,
+     "width_frac": 0.0454,
+     "quad": [
+      [
+       1607,
+       688
+      ],
+      [
+       1730,
+       654
+      ],
+      [
+       1730,
+       708
+      ],
+      [
+       1606,
+       750
+      ]
+     ],
+     "bbox": [
+      1606,
+      654,
+      124,
+      96
+     ],
+     "height_pct": 6.25,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 8755,
+   "composited": 2,
+   "requested": 2
+  },
+  "narration_words": 679
+ }
+]
