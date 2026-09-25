@@ -1,0 +1,79 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster C (Anxious/Fearful)",
+        "items": [
+          "Preoccupation with details, rules, lists, order, organization, or schedules (DSM p.771)",
+          "Perfectionism that interferes with task completion (DSM p.771)",
+          "Excessive devotion to work and productivity excluding leisure/friendships (DSM p.771)",
+          "Overconscientious, scrupulous, and inflexible about morality, ethics, or values (DSM p.771-772)",
+          "Inability to discard worn-out or worthless objects (DSM p.772)",
+          "Reluctance to delegate tasks or work with others (DSM p.772)",
+          "Miserly spending style toward self and others (DSM p.772)",
+          "Rigidity and stubbornness (DSM p.772)"
+        ]
+      }
+    ],
+    "thresholds": ">=4/8 symptoms, early adulthood onset, pervasive across contexts (DSM p.771)",
+    "subtypes": [
+      "Section II categorical (>=4/8 symptoms) (DSM p.771)",
+      "Section III alternative model (Rigid Perfectionism + >=2 other traits: Perseveration, Intimacy avoidance, Restricted affectivity) (DSM p.888)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "2.4% (NCS-R) to 7.9% (NESARC), median 4.7% (DSM p.774); 2%-8% (Synopsis ch.19)",
+    "sex_ratio": "1:1 M:F in community samples (DSM p.774); 2:1 M:F in clinical samples (Synopsis ch.19)",
+    "onset_age_typical": "Adolescence or early adulthood (DSM p.771)",
+    "heritability": "High concordance in MZ vs DZ twins (Synopsis ch.19)",
+    "comorbidities": [
+      "OCD (23%-32% of OCD patients have OCPD) (DSM p.271)",
+      "Major Depressive Disorder (DSM p.774; Synopsis ch.19)",
+      "Anxiety disorders (DSM p.774)"
+    ],
+    "prognosis": "Chronic and stable course; can lead to depression in older age or herald schizophrenia in some adolescents (Synopsis ch.19)"
+  },
+  "etiology": {
+    "genetic": "Significantly higher concordance in MZ twins compared to DZ twins (Synopsis ch.19)",
+    "neurobiology": "Impaired OFC cognitive flexibility; Ventral-to-Dorsal Striatum shift (compulsivity/habit loop) (StahlNeuro p.539, 575); DLPFC worry loop (StahlNeuro p.367)",
+    "environmental": "Anal stage fixation (control and autonomy conflicts); over-controlling parental environment (Synopsis ch.19; Syllabus p.14, 26)"
+  },
+  "differential": {
+    "items": [
+      "OCD: OCPD is ego-syntonic without intrusive obsessions/compulsions; OCD is ego-dystonic with intrusive obsessions and compulsions (DSM p.271, 774; Dulcan p.375)",
+      "Hoarding Disorder: OCPD hoarding lacks extreme living space clutter/fire hazard seen in Hoarding Disorder (DSM p.277, 774)",
+      "Narcissistic PD: Narcissists believe they achieved perfection; OCPD patients are self-critical and driven by rigid rules (DSM p.764, 775)",
+      "Schizoid PD: OCPD social detachment stems from work devotion/emotional discomfort; Schizoid lacks capacity/desire for intimacy (DSM p.775)",
+      "ASD: ASD repetitive behaviors provide apparent gratification; OCPD behaviors stem from rigid control/anxiety (Dulcan p.375)"
+    ],
+    "key_numbers": [
+      "4 out of 8 criteria required for DSM-5-TR diagnosis (DSM p.771)",
+      "23%-32% rate of comorbid OCPD in patients diagnosed with OCD (DSM p.271)",
+      "Shortened REM latency and abnormal DST results in OCPD (Synopsis ch.19)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Cognitive Behavioral Therapy (CBT) targeting perfectionism, black-and-white thinking, and work-life balance (Synopsis ch.19; Dulcan p.376)",
+      "Psychodynamic psychotherapy addressing isolation of affect and need for control (Synopsis ch.19)"
+    ],
+    "second_line": [
+      "Citalopram (SSRIs) — demonstrated superior efficacy in reducing rigidity and OCPD traits (Synopsis ch.19)",
+      "Sertraline / Fluoxetine / Fluvoxamine for comorbid OCD or depression (StahlKids p.208, 310, 452; Dulcan p.380)",
+      "Carbamazepine as adjunct for mood instability, rigidity, and hostility (Synopsis ch.19)"
+    ],
+    "key_side_effects": [
+      "SSRIs: Gastrointestinal distress, sexual dysfunction, activation/agitation in pediatric patients (StahlKids p.208, 310, 452)",
+      "Clomipramine: Sedation, anticholinergic effects, cardiac conduction delays / QTc prolongation (StahlKids p.133; Dulcan p.380)"
+    ],
+    "monitoring": "ECG/QTc and plasma concentration monitoring for Clomipramine (Dulcan p.380; Syllabus p.30); behavioral activation monitoring for pediatric SSRIs (StahlKids p.208)"
+  },
+  "high_yield": [
+    "OCPD is ego-syntonic (views rigid standards as correct), whereas OCD is ego-dystonic (suffers from intrusive obsessions) (DSM p.265, 771; Dulcan p.375)",
+    "Requires >=4 of 8 criteria including perfectionism interfering with completion, reluctance to delegate, miserly spending, and rigidity (DSM p.771-772)",
+    "Hoarding in OCPD does not result in the extreme, room-blocking clutter seen in Hoarding Disorder (DSM p.774)",
+    "Neurobiology involves shift from Ventral Striatum reward loop to Dorsal Striatum habit/compulsivity loop and OFC cognitive inflexibility (StahlNeuro p.539, 575)",
+    "CBT targeting black-and-white thinking, perfectionism, and work-life balance is first-line psychotherapy (Synopsis ch.19)",
+    "In pediatric populations, evaluate Family Accommodation (FAS-IR) and involve parents in CBT (Dulcan p.367, 374)"
+  ]
+}

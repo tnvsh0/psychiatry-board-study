@@ -1,0 +1,36 @@
+{
+ "tag": "study-101-obsessive-compulsive-personality-disorder-ocpd",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:04:19+00:00",
+ "updated_at": "2026-09-25T16:04:19+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "aaa2448ed4c9fcb9d6bd0b7d7eb09e440deed527a5043d94991e788951b271cb",
+   "asset_id": 586059636,
+   "size": 5428,
+   "fetched_at": "2026-09-25T16:04:12+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "dab7854ff8a4f15bf70c4e968f08c0f1b60cc5f29eb3be0ba796a32d60b5f3b5",
+   "asset_id": 586059635,
+   "size": 12656,
+   "fetched_at": "2026-09-25T16:04:15+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "c4994ae5f593825cc86248d3a4ef1a3735a29f3e2a1b095584c69ef5e337e718",
+   "asset_id": 586059637,
+   "size": 32818,
+   "fetched_at": "2026-09-25T16:04:17+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "8e5926e831d403a60528a90571fc70ff62c36b3f1ebce46d83d3de3b43af5d96",
+   "asset_id": 586059632,
+   "size": 33911,
+   "fetched_at": "2026-09-25T16:04:19+00:00"
+  }
+ ]
+}
