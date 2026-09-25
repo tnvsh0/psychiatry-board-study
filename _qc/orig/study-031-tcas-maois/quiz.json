@@ -1,0 +1,239 @@
+{
+  "title": "Antidepressants Quiz",
+  "questions": [
+    {
+      "question": "\u05e0\u05e2\u05e8 \u05d1\u05df 14 \u05d4\u05de\u05d0\u05d5\u05d1\u05d7\u05df \u05e2\u05dd Major Depressive Disorder (MDD) \u05d0\u05d9\u05e0\u05d5 \u05de\u05d2\u05d9\u05d1 \u05dc\u05e9\u05e0\u05d9 \u05e1\u05d1\u05d1\u05d9\u05dd \u05e9\u05dc SSRI. \u05d4\u05e8\u05d5\u05e4\u05d0 \u05e9\u05d5\u05e7\u05dc \u05de\u05e2\u05d1\u05e8 \u05dc-TCA \u05d0\u05da \u05de\u05d7\u05dc\u05d9\u05d8 \u05dc\u05d4\u05d9\u05de\u05e0\u05e2 \u05de\u05db\u05da \u05db\u05e7\u05d5 \u05e9\u05dc\u05d9\u05e9\u05d9. \u05de\u05d4\u05d9 \u05d4\u05e1\u05d9\u05d1\u05d4 \u05d4\u05de\u05d3\u05e2\u05d9\u05ea \u05d4\u05e2\u05d9\u05e7\u05e8\u05d9\u05ea \u05dc\u05d7\u05d5\u05e1\u05e8 \u05d4\u05d9\u05e2\u05d9\u05dc\u05d5\u05ea \u05d4\u05de\u05d5\u05db\u05d7 \u05e9\u05dc TCAs \u05d1\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1\u05d3\u05d9\u05db\u05d0\u05d5\u05df \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd \u05d5\u05e0\u05d5\u05e2\u05e8?",
+      "answerOptions": [
+        {
+          "text": "Immaturity of the monoaminergic neurotransmitter systems in the pediatric brain.",
+          "isCorrect": true,
+          "rationale": "TCAs show limited efficacy in youth compared to adults because the noradrenergic and serotonergic systems are not yet fully matured to respond to these agents (Dulcan p. 754)."
+        },
+        {
+          "text": "Rapid hepatic metabolism (\u05de\u05d8\u05d1\u05d5\u05dc\u05d9\u05d6\u05dd \u05db\u05d1\u05d3\u05d9 \u05de\u05d4\u05d9\u05e8) that prevents stable plasma levels.",
+          "isCorrect": false,
+          "rationale": "While children do have faster metabolism requiring adjusted dosing, this is not the primary reason for the lack of antidepressant efficacy in this age group (StahlKids p. 484)."
+        },
+        {
+          "text": "Predominance of $D_{2}$ receptor pathology in early-onset depression.",
+          "isCorrect": false,
+          "rationale": "TCA mechanisms focus on SERT and NET; $D_{2}$ receptors are more relevant to psychotic disorders, not the primary reason for TCA failure in pediatric depression (StahlNeuro p. 335)."
+        },
+        {
+          "text": "A higher density of $\\alpha_{1}$ receptors in children which antagonizes the clinical effect.",
+          "isCorrect": false,
+          "rationale": "Blockade of $\\alpha_{1}$ receptors causes side effects like orthostatic hypotension but does not explain the lack of antidepressant efficacy (StahlNeuro p. 335)."
+        }
+      ],
+      "hint": "Consider the developmental differences in neurotransmitter systems between children and adults."
+    },
+    {
+      "question": "\u05e0\u05e2\u05e8\u05d4 \u05d1\u05ea 11 \u05de\u05d5\u05e4\u05e0\u05d9\u05ea \u05dc\u05de\u05e8\u05e4\u05d0\u05d4 \u05d1\u05e9\u05dc \u05de\u05d7\u05e9\u05d1\u05d5\u05ea \u05d8\u05d5\u05e8\u05d3\u05e0\u05d9\u05d5\u05ea (Obsessions) \u05d5\u05d8\u05e7\u05e1\u05d9 \u05d1\u05d3\u05d9\u05e7\u05d4 \u05d7\u05d5\u05d6\u05e8\u05d9\u05dd \u05d4\u05d2\u05d5\u05e8\u05de\u05d9\u05dd \u05dc\u05de\u05e6\u05d5\u05e7\u05d4 \u05e7\u05e9\u05d4. \u05dc\u05d0\u05d7\u05e8 \u05db\u05d9\u05e9\u05dc\u05d5\u05df \u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Fluoxetine, \u05d4\u05e8\u05d5\u05e4\u05d0 \u05e9\u05d5\u05e7\u05dc \u05dc\u05d4\u05d5\u05e1\u05d9\u05e3 \u05d0\u05d5 \u05dc\u05d4\u05d7\u05dc\u05d9\u05e3 \u05dc-TCA. \u05d0\u05d9\u05d6\u05d5 \u05ea\u05e8\u05d5\u05e4\u05d4 \u05d4\u05d9\u05d0 \u05d4\u05d9\u05d7\u05d9\u05d3\u05d4 \u05de\u05e7\u05d1\u05d5\u05e6\u05ea \u05d4-TCA \u05d1\u05e2\u05dc\u05ea \u05d0\u05d9\u05e9\u05d5\u05e8 FDA \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-OCD \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd?",
+      "answerOptions": [
+        {
+          "text": "Amitriptyline",
+          "isCorrect": false,
+          "rationale": "Amitriptyline is commonly used off-label for various conditions but does not hold a pediatric FDA indication for OCD (StahlKids p. 131)."
+        },
+        {
+          "text": "Clomipramine",
+          "isCorrect": true,
+          "rationale": "Clomipramine is specifically approved by the FDA for the treatment of OCD in children and adolescents aged 10 and older (StahlKids p. 131)."
+        },
+        {
+          "text": "Nortriptyline",
+          "isCorrect": false,
+          "rationale": "Nortriptyline is a secondary amine often preferred for its lower side-effect profile but lacks an FDA indication for pediatric OCD (StahlNeuro p. 333)."
+        },
+        {
+          "text": "Imipramine",
+          "isCorrect": false,
+          "rationale": "Imipramine has efficacy in school phobia and enuresis but is not the specific TCA approved for pediatric OCD (Dulcan p. 754)."
+        }
+      ],
+      "hint": "This medication is known for its potent serotonin reuptake inhibition compared to other TCAs."
+    },
+    {
+      "question": "\u05de\u05ea\u05d1\u05d2\u05e8 \u05d1\u05df 16 \u05de\u05d5\u05d1\u05d0 \u05dc\u05d7\u05d3\u05e8 \u05d4\u05de\u05d9\u05d5\u05df \u05dc\u05d0\u05d7\u05e8 \u05e0\u05d8\u05d9\u05dc\u05ea \u05de\u05e0\u05ea \u05d9\u05ea\u05e8 (Overdose) \u05e9\u05dc Amitriptyline. \u05d1\u05d1\u05d3\u05d9\u05e7\u05ea \u05d0\u05e7\"\u05d2 (ECG) \u05e0\u05e6\u05e4\u05d4 Wide QRS complex (\u05de\u05e2\u05dc 100ms). \u05d7\u05e1\u05d9\u05de\u05d4 \u05e9\u05dc \u05d0\u05d9\u05d6\u05d4 \u05de\u05e0\u05d2\u05e0\u05d5\u05df \u05d4\u05d9\u05d0 \u05d4\u05d2\u05d5\u05e8\u05dd \u05d4\u05e2\u05d9\u05e7\u05e8\u05d9 \u05dc\u05e7\u05d8\u05dc\u05e0\u05d9\u05d5\u05ea (Lethality) \u05d5\u05dc\u05e1\u05d9\u05db\u05d5\u05df \u05d4\u05dc\u05d1\u05d1\u05d9 \u05d1\u05de\u05e6\u05d1 \u05d6\u05d4?",
+      "answerOptions": [
+        {
+          "text": "Muscarinic $M_{1}$ receptor blockade.",
+          "isCorrect": false,
+          "rationale": "Muscarinic blockade causes anticholinergic symptoms like dry mouth and constipation but is not the primary cause of cardiac conduction failure (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Voltage-sensitive sodium channels (VSSC).",
+          "isCorrect": true,
+          "rationale": "The blockade of sodium channels in the heart and brain is the main cause of arrhythmias, seizures, and death in TCA overdose (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Histamine $H_{1}$ receptor antagonism.",
+          "isCorrect": false,
+          "rationale": "Histamine blockade leads to sedation and weight gain but does not account for the widening of the QRS complex (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Selective Serotonin Transporter (SERT) inhibition.",
+          "isCorrect": false,
+          "rationale": "SERT inhibition is a therapeutic target; while it contributes to Serotonin Syndrome, it is not the mechanism of cardiac QRS widening (StahlNeuro p. 335)."
+        }
+      ],
+      "hint": "Think about the component of the TCA profile that acts like a 'loaded gun' in toxic concentrations."
+    },
+    {
+      "question": "\u05d1\u05de\u05e1\u05d2\u05e8\u05ea \u05d4\u05e2\u05e8\u05db\u05d4 \u05dc\u05e4\u05e0\u05d9 \u05ea\u05d7\u05d9\u05dc\u05ea \u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-TCA \u05d1\u05d9\u05dc\u05d3 \u05d1\u05df 9 \u05e2\u05dd Enuresis \u05e2\u05de\u05d9\u05d3 \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea\u05d9, \u05de\u05d4\u05d5 \u05d4\u05e0\u05d9\u05d8\u05d5\u05e8 (Monitoring) \u05d4\u05d4\u05db\u05e8\u05d7\u05d9 \u05d1\u05d9\u05d5\u05ea\u05e8 \u05e9\u05d9\u05e9 \u05dc\u05d1\u05e6\u05e2 \u05e2\u05dc \u05e4\u05d9 \u05d4\u05e0\u05d7\u05d9\u05d5\u05ea \u05d4-Dulcan \u05d5-StahlKids?",
+      "answerOptions": [
+        {
+          "text": "Baseline ECG to monitor the QTc interval.",
+          "isCorrect": true,
+          "rationale": "Because TCAs can cause QTc prolongation and arrhythmias, a baseline ECG is recommended to identify pre-existing cardiac issues (Dulcan p. 332)."
+        },
+        {
+          "text": "Weekly Absolute Neutrophil Count (ANC) for 6 months.",
+          "isCorrect": false,
+          "rationale": "ANC monitoring is a specific requirement for Clozapine due to agranulocytosis risk, not for TCAs (StahlKids p. 162)."
+        },
+        {
+          "text": "Fastung plasma glucose and lipid profile every 3 months.",
+          "isCorrect": false,
+          "rationale": "Metabolic monitoring is standard for atypical antipsychotics, whereas TCAs require more focus on cardiac and anticholinergic effects (StahlKids p. 827)."
+        },
+        {
+          "text": "Liver function tests (LFTs) every 2 weeks during titration.",
+          "isCorrect": false,
+          "rationale": "While LFTs are checked if symptoms arise, they are not a mandatory routine for TCA initiation compared to ECGs (StahlKids p. 107)."
+        }
+      ],
+      "hint": "Focus on the organ system most at risk for lethal conduction delays."
+    },
+    {
+      "question": "\u05de\u05ea\u05d1\u05d2\u05e8\u05ea \u05d4\u05de\u05d8\u05d5\u05e4\u05dc\u05ea \u05d1-Fluoxetine \u05d1\u05de\u05d9\u05e0\u05d5\u05df \u05e9\u05dc 40 \u05de\"\u05d2 \u05dc\u05d9\u05d5\u05dd \u05d0\u05d9\u05e0\u05d4 \u05de\u05d2\u05d9\u05d1\u05d4 \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc, \u05d5\u05d4\u05e8\u05d5\u05e4\u05d0 \u05de\u05d7\u05dc\u05d9\u05d8 \u05dc\u05d4\u05d7\u05dc\u05d9\u05e4\u05d5 \u05d1-MAOI \u05de\u05e1\u05d5\u05d2 Phenelzine. \u05db\u05de\u05d4 \u05d6\u05de\u05df \u05e2\u05dc\u05d9\u05d4 \u05dc\u05d4\u05de\u05ea\u05d9\u05df (Washout period) \u05de\u05e8\u05d2\u05e2 \u05d4\u05e4\u05e1\u05e7\u05ea \u05d4-Fluoxetine \u05d5\u05e2\u05d3 \u05ea\u05d7\u05d9\u05dc\u05ea \u05d4-MAOI \u05db\u05d3\u05d9 \u05dc\u05de\u05e0\u05d5\u05e2 Serotonin Syndrome?",
+      "answerOptions": [
+        {
+          "text": "2 weeks.",
+          "isCorrect": false,
+          "rationale": "Two weeks is the standard washout for most SSRIs, but Fluoxetine requires a longer period due to its long half-life (StahlKids p. 200)."
+        },
+        {
+          "text": "5 weeks.",
+          "isCorrect": true,
+          "rationale": "Fluoxetine has a long half-life and active metabolites, requiring at least 5 weeks before starting an MAOI to avoid fatal interactions (StahlKids p. 200)."
+        },
+        {
+          "text": "48 hours.",
+          "isCorrect": false,
+          "rationale": "This period is insufficient for any SSRI washout before starting an MAOI and poses a high risk for Serotonin Syndrome (StahlKids p. 200)."
+        },
+        {
+          "text": "10 days.",
+          "isCorrect": false,
+          "rationale": "A 10-day period is shorter than the minimum 14-day requirement for standard SSRIs and far shorter than the 5 weeks needed for Fluoxetine (StahlKids p. 200)."
+        }
+      ],
+      "hint": "Consider the unique pharmacokinetic properties of Fluoxetine compared to other antidepressants."
+    },
+    {
+      "question": "\u05e2\u05dc \u05e4\u05d9 \u05d4-StahlNeuro, \u05de\u05d4\u05d5 \u05d4\u05d4\u05d1\u05d3\u05dc \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05d1\u05d9\u05df 'Tertiary Amines' (\u05db\u05d2\u05d5\u05df Amitriptyline) \u05dc\u05d1\u05d9\u05df 'Secondary Amines' (\u05db\u05d2\u05d5\u05df Nortriptyline) \u05de\u05d1\u05d7\u05d9\u05e0\u05ea \u05e1\u05dc\u05e7\u05d8\u05d9\u05d1\u05d9\u05d5\u05ea \u05dc\u05de\u05d5\u05dc\u05d9\u05db\u05d9\u05dd \u05e2\u05e6\u05d1\u05d9\u05d9\u05dd?",
+      "answerOptions": [
+        {
+          "text": "Secondary amines are more selective for blocking NET than SERT.",
+          "isCorrect": true,
+          "rationale": "Secondary amines like Nortriptyline and Desipramine primarily inhibit the norepinephrine transporter (NET), making them more selective (StahlNeuro p. 333)."
+        },
+        {
+          "text": "Tertiary amines have no effect on sodium channels (VSSC).",
+          "isCorrect": false,
+          "rationale": "Both types of TCAs can block sodium channels, which contributes to their toxicity in overdose (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Secondary amines have much stronger anticholinergic ($M_{1}$) effects.",
+          "isCorrect": false,
+          "rationale": "Tertiary amines generally have more potent anticholinergic, antihistaminic, and alpha-1 blocking effects than secondary amines (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Tertiary amines are selective only for SERT inhibition.",
+          "isCorrect": false,
+          "rationale": "Tertiary amines block both SERT and NET, as well as several other receptors (StahlNeuro p. 333)."
+        }
+      ],
+      "hint": "Think about which class is a metabolite of the other and how that refinement affects transporter affinity."
+    },
+    {
+      "question": "\u05de\u05d8\u05d5\u05e4\u05dc\u05ea \u05d4\u05de\u05d8\u05d5\u05e4\u05dc\u05ea \u05d1-MAOI \u05de\u05d3\u05d5\u05d5\u05d7\u05ea \u05e2\u05dc \u05db\u05d0\u05d1 \u05e8\u05d0\u05e9 \u05de\u05ea\u05e4\u05e8\u05e5, \u05d3\u05e4\u05d9\u05e7\u05d5\u05ea \u05dc\u05d1 \u05d7\u05d6\u05e7\u05d5\u05ea \u05d5\u05e2\u05dc\u05d9\u05d9\u05d4 \u05d7\u05d3\u05d4 \u05d1\u05dc\u05d7\u05e5 \u05d4\u05d3\u05dd (Hypertensive Crisis) \u05dc\u05d0\u05d7\u05e8 \u05d0\u05db\u05d9\u05dc\u05ea \u05d2\u05d1\u05d9\u05e0\u05d5\u05ea \u05de\u05d9\u05d5\u05e9\u05e0\u05d5\u05ea. \u05de\u05d4\u05d5 \u05d4\u05de\u05e0\u05d2\u05e0\u05d5\u05df \u05d4\u05d1\u05d9\u05d5\u05dc\u05d5\u05d2\u05d9 \u05d4\u05e2\u05d5\u05de\u05d3 \u05d1\u05d1\u05e1\u05d9\u05e1 \u05d4-'Cheese Effect'?",
+      "answerOptions": [
+        {
+          "text": "Accumulation of Tyramine which causes massive release of Norepinephrine (NE).",
+          "isCorrect": true,
+          "rationale": "Tyramine in food is normally destroyed by MAO-A in the gut; when MAO-A is inhibited, tyramine enters the circulation and displaces NE from nerve terminals (StahlNeuro p. 337)."
+        },
+        {
+          "text": "Inhibition of the Tyrosine Hydroxylase (TOH) enzyme by Tyramine.",
+          "isCorrect": false,
+          "rationale": "Tyrosine Hydroxylase is the rate-limiting step in catecholamine synthesis, but tyramine's effect is through NE release, not enzyme inhibition (StahlNeuro p. 55)."
+        },
+        {
+          "text": "Direct stimulation of Dopamine $D_{2}$ receptors by dietary amines.",
+          "isCorrect": false,
+          "rationale": "The hypertensive crisis is primarily mediated by the noradrenergic system, not direct dopamine receptor stimulation (StahlNeuro p. 337)."
+        },
+        {
+          "text": "Blockade of alpha-2 autoreceptors in the Locus Coeruleus (LC).",
+          "isCorrect": false,
+          "rationale": "While alpha-2 blockade increases NE release, the tyramine interaction is specifically due to MAO-A inhibition and subsequent NE displacement (StahlNeuro p. 337)."
+        }
+      ],
+      "hint": "Consider the role of monoamine oxidase A in the gastrointestinal tract."
+    },
+    {
+      "question": "\u05d1\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-Selegiline transdermal patch \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1\u05d3\u05d9\u05db\u05d0\u05d5\u05df, \u05d1\u05d0\u05d9\u05dc\u05d5 \u05ea\u05e0\u05d0\u05d9\u05dd \u05e0\u05d9\u05ea\u05df \u05dc\u05d4\u05d9\u05de\u05e0\u05e2 \u05de\u05d4\u05d2\u05d1\u05dc\u05d5\u05ea \u05ea\u05d6\u05d5\u05e0\u05ea\u05d9\u05d5\u05ea (Tyramine-free diet)?",
+      "answerOptions": [
+        {
+          "text": "At the lowest effective dose ($6mg/24h$).",
+          "isCorrect": true,
+          "rationale": "At the 6mg dose, Selegiline selectively inhibits MAO-B in the brain without significantly affecting gut MAO-A, avoiding the cheese effect (Dulcan p. 754)."
+        },
+        {
+          "text": "Only if the patient is also taking a concurrent SSRI.",
+          "isCorrect": false,
+          "rationale": "Combining SSRIs with MAOIs is strictly contraindicated due to the high risk of fatal Serotonin Syndrome (StahlKids p. 443)."
+        },
+        {
+          "text": "At higher doses ($12mg/24h$) because the patch bypasses the liver.",
+          "isCorrect": false,
+          "rationale": "At higher doses, even with transdermal delivery, enough MAO-A is inhibited to require dietary restrictions (Dulcan p. 754)."
+        },
+        {
+          "text": "Whenever it is used in children under age 12 due to faster metabolism.",
+          "isCorrect": false,
+          "rationale": "Metabolic rate does not eliminate the risk of tyramine interactions if MAO-A is inhibited in the gut or systemic circulation (Dulcan p. 754)."
+        }
+      ],
+      "hint": "The exception applies to the dose where enzyme inhibition remains relatively selective."
+    },
+    {
+      "question": "\u05e0\u05e2\u05e8 \u05d1\u05df 13 \u05d4\u05de\u05d8\u05d5\u05e4\u05dc \u05d1-TCA \u05de\u05ea\u05dc\u05d5\u05e0\u05df \u05e2\u05dc \u05d8\u05e9\u05d8\u05d5\u05e9 \u05e8\u05d0\u05d9\u05d9\u05d4, \u05e2\u05e6\u05d9\u05e8\u05d5\u05ea \u05e7\u05e9\u05d4 \u05d5\u05d9\u05d5\u05d1\u05e9 \u05d1\u05e4\u05d4. \u05d7\u05e1\u05d9\u05de\u05d4 \u05e9\u05dc \u05d0\u05d9\u05d6\u05d4 \u05e7\u05d5\u05dc\u05d8\u05df \u05de\u05e1\u05d1\u05d9\u05e8\u05d4 \u05d0\u05ea \u05de\u05e7\u05d1\u05e5 \u05ea\u05d5\u05e4\u05e2\u05d5\u05ea \u05d4\u05dc\u05d5\u05d5\u05d0\u05d9 \u05d4\u05dc\u05dc\u05d5?",
+      "answerOptions": [
+        {
+          "text": "Alpha-1 adrenergic receptor ($\\alpha_{1}$).",
+          "isCorrect": false,
+          "rationale": "Alpha-1 blockade causes orthostatic hypotension and dizziness, not the 'dry' symptoms associated with acetylcholine (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Muscarinic $M_{1}$ receptor.",
+          "isCorrect": true,
+          "rationale": "Anticholinergic effects such as dry mouth, blurred vision, and constipation are caused by $M_{1}$ receptor antagonism (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Serotonin $5-HT_{2A}$ receptor.",
+          "isCorrect": false,
+          "rationale": "Blockade of $5-HT_{2A}$ is often associated with improved sleep and reduced anxiety, not classic anticholinergic effects (StahlNeuro p. 335)."
+        },
+        {
+          "text": "Norepinephrine transporter (NET).",
+          "isCorrect": false,
+          "rationale": "NET inhibition leads to increased norepinephrine in the synapse, which may cause tachycardia but not the muscarinic 'dryness' (StahlNeuro p. 335)."
+        }
+      ],
+      "hint": "These symptoms are characteristic of 'anticholinergic' toxicity."
+    }
+  ]
+}

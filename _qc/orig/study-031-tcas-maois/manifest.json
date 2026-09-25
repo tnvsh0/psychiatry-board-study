@@ -1,0 +1,36 @@
+{
+ "tag": "study-031-tcas-maois",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:57:00+00:00",
+ "updated_at": "2026-09-25T13:57:00+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "1320520c3d43fd6a179a1c7325620d1835055960836b55e830c02b865967a890",
+   "asset_id": 536565523,
+   "size": 6726,
+   "fetched_at": "2026-09-25T13:56:54+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "da66c4a6ed00a59d91dc95089e4b71bc6608efcd735a54311f81332a59dd0718",
+   "asset_id": 536565526,
+   "size": 9631,
+   "fetched_at": "2026-09-25T13:56:56+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "d8062b0e16aa4f2b23fed948ccb6d6d17955380a783e6a31991f69f180078002",
+   "asset_id": 536565528,
+   "size": 18568,
+   "fetched_at": "2026-09-25T13:56:58+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "c99aa829285087ababd2aaab05c560bc30a77e7e9812756decd475861133dfa0",
+   "asset_id": 536565524,
+   "size": 37051,
+   "fetched_at": "2026-09-25T13:57:00+00:00"
+  }
+ ]
+}

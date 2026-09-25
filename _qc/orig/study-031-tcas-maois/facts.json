@@ -1,0 +1,94 @@
+{
+  "drug_class": {
+    "members": [
+      "Tertiary amine TCAs include clomipramine, amitriptyline, imipramine, and doxepin; secondary amine TCAs include desipramine and nortriptyline (Dulcan p.754)",
+      "MAOIs include phenelzine, isocarboxazid, tranylcypromine, and selegiline (Dulcan p.754)"
+    ],
+    "mechanism": "TCAs inhibit SERT and NET, and block H1, M1, alpha1, and voltage-sensitive sodium channels (StahlNeuro p.335). MAOIs irreversibly inhibit MAO-A and MAO-B (StahlNeuro p.339).",
+    "kinetics": [
+      "Clomipramine is metabolized extensively to the active noradrenergic metabolite desmethyl-clomipramine (de-CMI) by CYP450 1A2 (StahlKids p.135)",
+      "CYP450 2D6 inhibitors like fluoxetine and paroxetine can significantly increase clomipramine plasma concentrations (StahlKids p.130)",
+      "MAOIs are irreversible enzyme inhibitors requiring weeks for new enzyme synthesis (StahlNeuro p.338)"
+    ],
+    "onset_of_effect": "Conventional antidepressants take weeks of oral administration to achieve a clinical response (Dulcan p.754)"
+  },
+  "indications": {
+    "items": [
+      "Clomipramine is FDA-approved for pediatric OCD (StahlKids p.125)",
+      "Imipramine is used for short-term treatment of childhood enuresis (Dulcan p.459)",
+      "Amitriptyline and imipramine can be used off-label for encopresis (Dulcan p.468)",
+      "Selegiline transdermal patch is used off-label for adolescent MDD (Dulcan p.754)"
+    ],
+    "key_numbers": [
+      "10 years: Minimum age approved by the FDA for clomipramine in pediatric OCD (StahlKids p.125)",
+      "5 years: Minimum developmental age required for a diagnosis of enuresis (DSM p.400)",
+      "2 times per week: Minimum frequency of enuresis required for diagnosis (DSM p.400)",
+      "3 months: Minimum duration of symptoms required for enuresis diagnosis (DSM p.400)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "TCA side effects include anticholinergic effects, sedation, orthostatic hypotension, and cardiotoxicity (StahlNeuro p.335)",
+      "TCAs lower the seizure threshold in susceptible patients (StahlKids p.133)",
+      "Antidepressant treatment can induce Treatment-Emergent Activation Syndrome (TEAS) in pediatric patients (StahlKids p.126)",
+      "MAOIs can cause fatal hypertensive crises or serotonin syndrome if combined with contraindicated agents (StahlNeuro p.338)"
+    ],
+    "key_numbers": [
+      "250 mg/day: Dosing limit for clomipramine above which seizure risk increases significantly (StahlKids p.135)",
+      "440 ms: QTc interval threshold in children; exceeding it increases Torsades de Pointes risk (Dulcan p.332)",
+      "12 years: Age under which children are more susceptible to TCA cardiotoxicity due to rapid metabolism to desmethyl forms (Dulcan p.754)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Baseline ECG is mandatory before starting a TCA to rule out congenitally prolonged QTc or arrhythmias, with repeat ECGs after dose titrations (Dulcan p.332)",
+      "Regular face-to-face monitoring is recommended during the first several weeks of treatment to assess for suicidal ideation (StahlKids p.442)",
+      "Correct hypokalemia or hypomagnesemia before or during treatment to prevent worsening of QTc prolongation (Dulcan p.832)",
+      "Weigh patients and track height against normal growth trajectories due to TCA-associated weight gain (StahlKids p.125, p.442)"
+    ],
+    "key_numbers": [
+      "500 ms: QTc interval threshold at which a TCA must be discontinued (Dulcan p.832)",
+      "2 weeks: Time period required to titrate clomipramine from 25 mg/day to the initial target of 100 mg/day (StahlKids p.128)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Titrate TCA doses slowly with meals to minimize GI side effects, and give at bedtime to reduce daytime sedation (StahlKids p.128)",
+      "Obtain informed consent from both legal guardians for drug therapy, regardless of custody percentages (StahlKids p.137)",
+      "Children often have shorter half-lives and duration of action due to rapid liver metabolism, requiring more frequent dosing (StahlKids p.11, p.135)"
+    ],
+    "key_numbers": [
+      "25 mg/day: Standard starting dose of clomipramine for pediatric patients (StahlKids p.128)",
+      "100 mg/day: Standard target dose of clomipramine after 2 weeks of titration (StahlKids p.128)",
+      "7 years: Minimum age for which lithium is FDA-approved to treat acute manic or mixed states (Dulcan p.764)"
+    ]
+  },
+  "overdose_lethality": {
+    "items": [
+      "TCAs have a narrow therapeutic index and represent a high risk of lethality in overdose (Dulcan p.332)",
+      "TCA overdose blocks voltage-sensitive sodium channels in the brain and heart, causing coma, seizures, arrhythmias, and death (StahlNeuro p.338)"
+    ],
+    "key_numbers": [
+      "1 in 3000: Estimated proportion of antidepressant prescriptions that are MAOIs, reflecting their rare use due to lethality and dietary restrictions (StahlNeuro p.338)"
+    ]
+  },
+  "dietary_restrictions": {
+    "items": [
+      "MAOIs require strict dietary restrictions to avoid tyramine-induced hypertensive crises (StahlNeuro p.338)",
+      "Selegiline transdermal patch was judged safe and tolerated in adolescents, although efficacy was not statistically superior to placebo (Dulcan p.754)",
+      "Washout periods of 2 weeks are mandatory when switching between MAOIs and other antidepressants to avoid serotonin syndrome (Dulcan p.744)",
+      "A 5-week washout is mandatory when switching from fluoxetine to an MAOI due to the long half-life of norfluoxetine (Dulcan p.737)"
+    ],
+    "key_numbers": [
+      "14 days: Mandatory washout period required when transitioning between MAOIs and other antidepressants (Dulcan p.744)",
+      "5 weeks: Washout period required after stopping fluoxetine before starting an MAOI (Dulcan p.737)"
+    ]
+  },
+  "high_yield": [
+    "TCAs are not more effective than placebo for major depressive disorder in children and adolescents, and are not indicated for pediatric depression (Dulcan p.754)",
+    "Clomipramine is the sole TCA approved by the FDA for pediatric OCD (StahlKids p.125)",
+    "TCA cardiotoxicity is mediated by blockade of cardiac voltage-sensitive sodium channels, causing QRS and QTc prolongation (StahlNeuro p.338)",
+    "Co-administering fluvoxamine with clomipramine blocks its CYP1A2-mediated conversion, powerfully boosting its serotonergic profile in treatment-resistant OCD (StahlKids p.135)",
+    "A 5-week washout period is mandatory when switching from fluoxetine to an MAOI to prevent fatal serotonin syndrome (Dulcan p.737)"
+  ]
+}
