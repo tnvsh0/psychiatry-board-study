@@ -1,0 +1,205 @@
+{
+  "title": "Schizophrenia Flashcards",
+  "cards": [
+    {
+      "front": "According to DSM-5-TR Criterion A, how many core symptoms must be present for at least one month?",
+      "back": "Two or more, with at least one being delusions, hallucinations, or disorganized speech. (DSM p.114)"
+    },
+    {
+      "front": "What is the minimum total duration of continuous signs of disturbance required for a Schizophrenia diagnosis in DSM-5-TR?",
+      "back": "Six months, including at least one month of active-phase symptoms. (DSM p.114)"
+    },
+    {
+      "front": "In Schizophrenia, which symptom category involves an 'excess' of normal functions, such as delusions and hallucinations?",
+      "back": "Positive symptoms. (StahlNeuro p.142)"
+    },
+    {
+      "front": "To diagnose Schizophrenia in an individual with a history of Autism Spectrum Disorder, which specific symptoms must be prominent for at least one month?",
+      "back": "Prominent delusions or hallucinations. (DSM p.114, Dulcan p.394)"
+    },
+    {
+      "front": "What is the estimated lifetime prevalence of Schizophrenia in nationally representative surveys?",
+      "back": "Approximately 0.3% to 0.7%. (DSM p.116, Dulcan p.390)"
+    },
+    {
+      "front": "The peak age of Schizophrenia onset for men typically occurs in the _____.",
+      "back": "Early- to mid-20s. (DSM p.117, Synopsis ch.5)"
+    },
+    {
+      "front": "The peak age of Schizophrenia onset for women typically occurs in the _____.",
+      "back": "Late-20s. (DSM p.117, Synopsis ch.5)"
+    },
+    {
+      "front": "What clinical phenomenon is observed in the age distribution of Schizophrenia onset in women that is absent in men?",
+      "back": "A bimodal distribution with a second peak in midlife (after age 40). (DSM p.118, Synopsis ch.5)"
+    },
+    {
+      "front": "How does the sex ratio of Schizophrenia prevalence compare between adults and early-onset (EOS/COS) populations?",
+      "back": "Nearly equal in adults, but significantly male-predominant in children and adolescents. (DSM p.117, Dulcan p.390)"
+    },
+    {
+      "front": "Childhood-onset schizophrenia (COS) is specifically defined as onset before what age?",
+      "back": "Age 13 years. (Dulcan p.389)"
+    },
+    {
+      "front": "Early-onset schizophrenia (EOS) refers to illness onset before what age?",
+      "back": "Age 18 years. (Dulcan p.389)"
+    },
+    {
+      "front": "The estimated heritability of Schizophrenia is approximately _____.",
+      "back": "60% to 80%. (Dulcan p.390, Synopsis ch.5)"
+    },
+    {
+      "front": "What paternal risk factor is associated with an increased risk of de novo mutations and Schizophrenia in offspring?",
+      "back": "Advanced paternal age (e.g., older than 60 years). (DSM p.118, Synopsis ch.5)"
+    },
+    {
+      "front": "Which seasons of birth are statistically linked to an increased incidence of Schizophrenia in the Northern Hemisphere?",
+      "back": "Late winter and early spring. (DSM p.118, Synopsis ch.5)"
+    },
+    {
+      "front": "Hyperactivity in the _____ dopamine pathway is theoretically responsible for the positive symptoms of psychosis.",
+      "back": "Mesolimbic. (StahlNeuro p.90)"
+    },
+    {
+      "front": "The negative, cognitive, and affective symptoms of Schizophrenia are linked to hypoactivity in the _____ dopamine pathway.",
+      "back": "Mesocortical. (StahlNeuro p.95)"
+    },
+    {
+      "front": "Which dopamine pathway projects from the substantia nigra to the basal ganglia and regulates motor movements?",
+      "back": "Nigrostriatal pathway. (StahlNeuro p.91)"
+    },
+    {
+      "front": "According to new neuroimaging findings, Schizophrenia involves hyperdopaminergia specifically in the _____ part of the striatum.",
+      "back": "Associative (rather than purely ventral). (StahlNeuro p.93)"
+    },
+    {
+      "front": "The 'Glutamate Hypothesis' posits that which receptor type is hypofunctional on $GABA$ interneurons in Schizophrenia?",
+      "back": "$NMDA$ receptors. (StahlNeuro p.105)"
+    },
+    {
+      "front": "What is the primary neuroanatomical finding in Childhood-Onset Schizophrenia (COS) regarding gray matter?",
+      "back": "Rapid and progressive loss/reduction of gray matter volume over time. (Dulcan p.391)"
+    },
+    {
+      "front": "Term: Alogia",
+      "back": "Definition: Poverty of speech or restrictions in the fluency and productivity of thought. (StahlNeuro p.143)"
+    },
+    {
+      "front": "Term: Avolition",
+      "back": "Definition: Reduced desire, motivation, or persistence in initiating goal-directed behavior. (StahlNeuro p.143)"
+    },
+    {
+      "front": "Term: Anhedonia",
+      "back": "Definition: Reduced ability to experience pleasure from previously enjoyed activities. (StahlNeuro p.143)"
+    },
+    {
+      "front": "Term: Affective Blunting",
+      "back": "Definition: Restrictions in the range and intensity of emotional expression. (StahlNeuro p.143)"
+    },
+    {
+      "front": "Which symptom domain is considered the strongest predictor of long-term disability and poor functional outcome in Schizophrenia?",
+      "back": "Cognitive symptoms (e.g., impaired working memory). (StahlNeuro p.146, Synopsis ch.5)"
+    },
+    {
+      "front": "What percentage of individuals with Schizophrenia die by suicide?",
+      "back": "Approximately 5% to 6%. (DSM p.119)"
+    },
+    {
+      "front": "How does the clinical course of Schizophrenia typically differ between men and women?",
+      "back": "Men tend to have an earlier onset, more negative symptoms, and a worse functional prognosis. (DSM p.117, Synopsis ch.5)"
+    },
+    {
+      "front": "Schizophrenia-like psychoses occur more frequently in patients with which type of seizure disorder?",
+      "back": "Complex partial epilepsy (especially involving the temporal lobes). (Synopsis ch.5)"
+    },
+    {
+      "front": "In the 'Serotonin Theory' of psychosis, hyperactivity at which specific receptor in the cortex is implicated?",
+      "back": "$5-HT_{2A}$ receptor. (StahlNeuro p.90)"
+    },
+    {
+      "front": "What term describes the subtle impairments in motor coordination and sensory integration often found in Schizophrenia?",
+      "back": "Neurological soft signs. (DSM p.116)"
+    },
+    {
+      "front": "In Schizophrenia, 'Referential' delusions involve the erroneous belief that _____.",
+      "back": "Random events or objects in the environment have special significance for the individual. (StahlNeuro p.142)"
+    },
+    {
+      "front": "Which specific cognitive function involving the temporary storage and manipulation of information is severely impaired in Schizophrenia?",
+      "back": "Working memory. (Synopsis ch.5)"
+    },
+    {
+      "front": "What is the concordance rate for Schizophrenia in monozygotic (identical) twins?",
+      "back": "Approximately 50%. (Synopsis ch.5)"
+    },
+    {
+      "front": "According to the neurodevelopmental model, Schizophrenia results from a disruption in which process during adolescence?",
+      "back": "Heightened or abnormal competitive synaptic elimination (pruning). (Dulcan p.391, StahlNeuro p.149)"
+    },
+    {
+      "front": "What is the required duration for a diagnosis of Schizophreniform Disorder in DSM-5-TR?",
+      "back": "At least one month but less than six months. (DSM p.111)"
+    },
+    {
+      "front": "In Brief Psychotic Disorder, symptoms must resolve and the individual must return to baseline within _____.",
+      "back": "One month. (DSM p.108)"
+    },
+    {
+      "front": "What is the primary diagnostic differentiator between Schizophrenia and Schizoaffective Disorder?",
+      "back": "In Schizoaffective Disorder, mood episodes must be present for the majority of the total duration of the illness. (DSM p.121, Synopsis ch.5)"
+    },
+    {
+      "front": "Which environmental exposure in utero is linked to a higher risk of Schizophrenia, particularly during famines?",
+      "back": "Maternal malnutrition. (Dulcan p.391, Synopsis ch.5)"
+    },
+    {
+      "front": "The risk of Schizophrenia for a first-degree relative of an affected individual is approximately _____ times higher than the general population.",
+      "back": "Eightfold to tenfold. (Dulcan p.390, Synopsis ch.5)"
+    },
+    {
+      "front": "For Schizophrenia severity specifiers, what is the time frame for the clinician's rating of symptom severity?",
+      "back": "The most severe level in the last 7 days. (DSM p.115)"
+    },
+    {
+      "front": "Which dopamine-related brain region is associated with the 'reward' and 'motivation' symptoms in Schizophrenia?",
+      "back": "The nucleus accumbens in the ventral striatum. (StahlNeuro p.91)"
+    },
+    {
+      "front": "The 'Disconnect Hypothesis' views Schizophrenia not as a localized brain disorder, but as a disorder of _____.",
+      "back": "Neural circuits and connectivity between brain regions (e.g., prefrontal-limbic). (Synopsis ch.5)"
+    },
+    {
+      "front": "What impact does pregnancy typically have on Schizophrenia symptoms in women, according to text observations?",
+      "back": "Symptoms often improve during pregnancy due to high estrogen levels. (DSM p.119)"
+    },
+    {
+      "front": "Individuals who are socially oppressed or facing discrimination show _____ rates of Schizophrenia diagnosis.",
+      "back": "Increased (potentially due to misdiagnosis or social adversity). (DSM p.118)"
+    },
+    {
+      "front": "A major risk factor for suicide attempts in younger men with Schizophrenia is _____.",
+      "back": "Comorbid substance use. (DSM p.119)"
+    },
+    {
+      "front": "In postmortem studies of Schizophrenia, which neurotransmitter receptors are notably decreased in the hippocampus and prefrontal cortex?",
+      "back": "Muscarinic and nicotinic (acetylcholine) receptors. (Synopsis ch.5)"
+    },
+    {
+      "front": "The 'Negative Symptom' of asociality is defined as _____.",
+      "back": "Reduced social drive and interaction or little interest in spending time with others. (StahlNeuro p.143)"
+    },
+    {
+      "front": "What neuroimaging finding regarding the limbic system is consistently reported in Schizophrenia?",
+      "back": "Decrease in the size of the amygdala, hippocampus, and parahippocampal gyrus. (Synopsis ch.5)"
+    },
+    {
+      "front": "The presence of 'Catatonia' in Schizophrenia is recorded using what additional ICD-10-CM code?",
+      "back": "$F06.1$. (DSM p.115)"
+    },
+    {
+      "front": "What term describes the period of subthreshold symptoms that often precedes the first psychotic episode?",
+      "back": "Prodrome. (DSM p.116, StahlNeuro p.144)"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Criterion A Active Symptoms",
+        "items": [
+          "Delusions (DSM p.113)",
+          "Hallucinations (DSM p.113)",
+          "Disorganized speech (DSM p.113)",
+          "Grossly disorganized or catatonic behavior (DSM p.113)",
+          "Negative symptoms (DSM p.114)"
+        ]
+      }
+    ],
+    "thresholds": "≥2/5 symptoms for ≥1 month active; continuous disturbance ≥6 months (DSM p.113-114)",
+    "subtypes": [
+      "Childhood-Onset Schizophrenia (COS, <13 yrs) (Dulcan p.389)",
+      "Early-Onset Schizophrenia (EOS, <18 yrs) (Dulcan p.389)",
+      "Adult-Onset Schizophrenia (AOS, ≥18 yrs) (Dulcan p.389)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "0.3%-0.7% lifetime (AOS); <0.01% (<1/10,000) for COS (<13 yrs) (DSM p.116, Dulcan p.390)",
+    "sex_ratio": "1:1 M:F in adults; Male predominance 2:1 to 5:1 in EOS/COS (DSM p.116, Dulcan p.390)",
+    "onset_age_typical": "Males 15-25 yrs; Females 20-35 yrs (DSM p.116, Dulcan p.390)",
+    "heritability": "~80% heritability (Dulcan p.390, Synopsis ch. 5)",
+    "comorbidities": [
+      "Substance use (Cannabis) (DSM p.118, Dulcan p.398)",
+      "Depression and Anxiety (DSM p.116)",
+      "Autism Spectrum Disorder (DSM p.114, Dulcan p.399)"
+    ],
+    "prognosis": "Remission ~56%, Recovery ~13.5%-30% (DSM p.117); COS/EOS poorer prognosis (Dulcan p.389)"
+  },
+  "etiology": {
+    "genetic": "Polygenic risk (PRS), 22q11.2 microdeletion (25-30% psychosis risk), rare CNVs 1q21.1, 16p11.2 (Dulcan p.390)",
+    "neurobiology": "Mesolimbic D2 hyperdopa, Mesocortical hypodopa, cortical NMDA hypofunction on GABA interneurons, gray matter loss (Dulcan p.391-392, StahlNeuro p.90, p.95, p.105)",
+    "environmental": "Winter/spring birth, urbanicity, paternal age >40, pre/perinatal hypoxia, adolescent cannabis use (DSM p.118-119, Dulcan p.398, StahlNeuro p.149)"
+  },
+  "treatment": {
+    "first_line": [
+      "Aripiprazole 10-30mg (StahlKids p.316)",
+      "Risperidone 1-3mg (StahlKids p.385)",
+      "Quetiapine 400-800mg (StahlKids p.378)",
+      "Lurasidone 40-80mg with ≥350 kcal food (StahlKids p.356)"
+    ],
+    "second_line": [
+      "Clozapine for treatment-resistant schizophrenia (TRS) (Dulcan p.796)",
+      "First-generation antipsychotics (Haloperidol, Molindone) (Dulcan p.401, p.796)"
+    ],
+    "key_side_effects": [
+      "Weight gain and metabolic syndrome (Olanzapine, Risperidone) (Dulcan p.821)",
+      "Hyperprolactinemia (Risperidone, Paliperidone) (Dulcan p.828)",
+      "EPS and Akathisia (Aripiprazole, FGAs) (Dulcan p.821)"
+    ],
+    "monitoring": "BMI percentiles and Z-scores monthly for 3 mos; Fasting glucose and lipids at 3 mos; AIMS/BARS motor rating yearly (Dulcan p.828)"
+  },
+  "assessment_tools": {
+    "items": [
+      "K-SADS-PL semi-structured interview (Dulcan p.198)",
+      "PANSS 30-item scale for positive and negative symptoms (Synopsis ch. 5)",
+      "DSM-5 Clinician-Rated Dimensions 8 domains 0-4 scale (DSM p.851)",
+      "AIMS, BARS, SAS for EPS rating (Dulcan p.828)"
+    ],
+    "key_numbers": [
+      "30 items on PANSS scale (Synopsis ch. 5)",
+      "8 domains on DSM-5 Clinician-Rated Dimensions (DSM p.851)",
+      "0-4 severity rating scale (DSM p.851)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Anti-NMDA Receptor Encephalitis (Dulcan p.241, p.397)",
+      "Temporal Lobe Epilepsy (Dulcan p.397)",
+      "Substance-induced psychosis (Cannabis, Amphetamines) (DSM p.128)",
+      "Wilson's disease (Dulcan p.397)"
+    ],
+    "key_numbers": [
+      "1 month minimum duration of persistent symptoms to rule out brief/substance states (DSM p.114)",
+      "22q11.2 microdeletion (Dulcan p.390)"
+    ]
+  },
+  "positive_symptoms": {
+    "items": [
+      "Persecutory and referential delusions (DSM p.100)",
+      "Auditory verbal hallucinations (DSM p.100)",
+      "Disorganized speech and behavior (DSM p.100)",
+      "Mesolimbic D2 hyperdopaminergia (StahlNeuro p.90)"
+    ],
+    "key_numbers": [
+      "At least 1 cardinal symptom required out of Criterion A1-A3 (DSM p.113)",
+      "1 month active phase requirement (DSM p.113)"
+    ]
+  },
+  "negative_symptoms": {
+    "items": [
+      "Diminished emotional expression / Affective flattening (DSM p.114, StahlNeuro p.141)",
+      "Avolition (DSM p.114, StahlNeuro p.141)",
+      "Alogia, Anhedonia, Asociality (StahlNeuro p.141)",
+      "Mesocortical hypodopaminergia in VMPFC (StahlNeuro p.95)"
+    ],
+    "key_numbers": [
+      "5 core negative A-symptoms (StahlNeuro p.141)",
+      "6 months total duration including residual negative signs (DSM p.114)"
+    ]
+  },
+  "cognitive_symptoms": {
+    "items": [
+      "Working memory impairment (DSM p.116, StahlNeuro p.143)",
+      "Fab Four: Attention, Executive function, Memory, Processing speed (StahlNeuro p.469)",
+      "Mesocortical hypodopaminergia in DLPFC (StahlNeuro p.95)",
+      "NMDA hypofunction on parvalbumin GABA interneurons (StahlNeuro p.105)"
+    ],
+    "key_numbers": [
+      "4 cognitive domains in Fab Four (StahlNeuro p.469)",
+      "3-4% annual cortical gray matter volume loss in COS (Dulcan p.392)"
+    ]
+  },
+  "prodrome": {
+    "items": [
+      "Attenuated Psychosis Syndrome in DSM-5 Section III (DSM p.903)",
+      "Ultra-High Risk (UHR) / Clinical High Risk (CHR) (DSM p.905)",
+      "Social withdrawal, odd beliefs, academic decline (DSM p.115, Dulcan p.395)"
+    ],
+    "key_numbers": [
+      "20-30% 3-year transition risk to full psychosis (DSM p.905)",
+      "≥1 time per week for 1 month frequency threshold (DSM p.903)"
+    ]
+  },
+  "high_yield": [
+    "DSM-5-TR Criterion A requires ≥2/5 symptoms for ≥1 month, with at least 1 being delusions, hallucinations, or disorganized speech (DSM p.113).",
+    "In children/adolescents, Criterion B manifests as failure to achieve expected developmental milestones rather than decline (DSM p.114, Dulcan p.393).",
+    "Childhood-Onset Schizophrenia (COS, <13 yrs) is rare (<0.01%), male-predominant, and associated with accelerated gray matter loss of 3-4%/year (Dulcan p.389, p.392).",
+    "Positive symptoms stem from mesolimbic D2 hyperdopaminergia; negative/cognitive symptoms stem from mesocortical hypodopaminergia and NMDA receptor hypofunction (StahlNeuro p.90, p.95, p.105).",
+    "Lurasidone must be administered with at least 350 kcal of food to ensure adequate absorption (StahlKids p.356).",
+    "TEOSS study showed equal efficacy between FGAs and SGAs in EOS, but Olanzapine and Risperidone caused significant weight gain and metabolic risk (Dulcan p.796, p.821).",
+    "Clozapine is the gold standard for treatment-resistant schizophrenia (TRS) but requires strict ANC monitoring due to agranulocytosis risk (Dulcan p.796).",
+    "Anti-NMDA Receptor Encephalitis is a critical medical mimic in adolescents presenting with acute psychosis, seizures, and orofacial dyskinesias (Dulcan p.241, p.397)."
+  ]
+}

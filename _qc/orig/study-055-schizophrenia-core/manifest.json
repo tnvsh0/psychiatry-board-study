@@ -1,0 +1,36 @@
+{
+ "tag": "study-055-schizophrenia-core",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:32:03+00:00",
+ "updated_at": "2026-09-25T14:32:03+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3d2e3c62dbaa71e9739eda21641933d5294704836a9d1ff4bb8cbabe05762c8d",
+   "asset_id": 564145903,
+   "size": 7060,
+   "fetched_at": "2026-09-25T14:31:57+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "7736895bb80b9762c94ffc6c4a03ad74de6c61b78aac82e829f09166816d3007",
+   "asset_id": 564145906,
+   "size": 10842,
+   "fetched_at": "2026-09-25T14:31:59+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "9edc99ef3eef9c3ff622f7884722af961e24a9877ef23cf3a481ba399f17072d",
+   "asset_id": 564145900,
+   "size": 31271,
+   "fetched_at": "2026-09-25T14:32:01+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "7d6506411e25b14136dd0b0069992bf2bd12586b9e96f7a459046b374262476b",
+   "asset_id": 564145909,
+   "size": 41510,
+   "fetched_at": "2026-09-25T14:32:03+00:00"
+  }
+ ]
+}
