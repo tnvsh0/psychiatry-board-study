@@ -1,0 +1,78 @@
+{
+  "drug_class": {
+    "members": [
+      "Aripiprazole: D2/5-HT1A partial agonist, 5-HT2A antagonist; Original Pip (StahlNeuro p.228)",
+      "Brexpiprazole: SDAM, lower D2 intrinsic activity, strong 5-HT1A partial / Alpha-1B/1D antagonist; Second Pip (StahlNeuro p.229, p.239)",
+      "Cariprazine: D3 > D2 selective partial agonist, active metabolite DDCAR T1/2 = 1-3 weeks; The Rip (StahlNeuro p.230, p.240)"
+    ],
+    "mechanism": "D2 dopamine system stabilizer (partial agonism / Goldilocks mechanism); D2 receptor occupancy required = 80%-85% (StahlNeuro p.43, p.189-191, p.348; Dulcan p.795)",
+    "kinetics": [
+      "Aripiprazole T1/2 = 75h (Dehydro-aripiprazole 94h), CYP2D6/3A4 (StahlKids p.42; Dulcan p.787)",
+      "Brexpiprazole T1/2 = 91h, CYP2D6/3A4 (Dulcan p.787; StahlNeuro p.239)",
+      "Cariprazine T1/2 = 2-5d (DDCAR 1-3 weeks), CYP3A4/2D6 (Dulcan p.787; StahlNeuro p.239)"
+    ],
+    "onset_of_effect": "1-2 weeks for acute symptoms; 2-4 weeks for steady state (Dulcan p.787; StahlKids p.41)"
+  },
+  "indications": {
+    "items": [
+      "Aripiprazole FDA approved: Schizophrenia (ages 13-17) (Dulcan p.787; StahlKids p.37), Bipolar I Mania/Mixed (ages 10-17) (Dulcan p.787; StahlKids p.37), Autism Irritability (ages 6-17) (Dulcan p.150, p.787; StahlKids p.37), Tourette's Disorder (ages 6-18) (Dulcan p.447, p.787; StahlKids p.37), MDD adjunct in adults (StahlKids p.37)",
+      "Brexpiprazole FDA approved: Adult Schizophrenia, MDD adjunct in adults; no pediatric approval (Dulcan p.787; StahlNeuro p.239)",
+      "Cariprazine FDA approved: Adult Schizophrenia (superior in negative symptoms), Bipolar I Mania/Mixed, Bipolar Depression (1.5-3 mg/day); no pediatric approval (Dulcan p.787; StahlNeuro p.240, p.342-344)"
+    ],
+    "key_numbers": [
+      "Aripiprazole EOS NNT = 6-8 (Dulcan p.798)",
+      "Aripiprazole Bipolar Mania NNT = 3-6 (Dulcan p.806)",
+      "Aripiprazole ASD Irritability NNT = 3-7 (Dulcan p.810)",
+      "Aripiprazole Tourette's NNT = 3-5 (Dulcan p.818)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Akathisia: most prominent class side effect; 5%-12% in youth on Aripiprazole (Dulcan p.823; StahlKids p.41). Brexpiprazole has lower akathisia (StahlNeuro p.239)",
+      "Prolactin-sparing / reducing: D2 partial agonism in pituitary lactotrophs suppresses prolactin; low-dose Aripiprazole (1.5-5 mg/day) reverses Risperidone hyperprolactinemia (StahlNeuro p.192; StahlKids p.49; Dulcan p.820, p.825)",
+      "Weight / Metabolic: low risk in adults (StahlNeuro p.198); moderate in youth (13%-33% with >=7% weight gain) (Dulcan p.810, p.820)",
+      "Tardive Dyskinesia: ~0.4%/year in pediatric populations due to lack of D2 up-regulation (Dulcan p.823; StahlNeuro p.177)",
+      "NMS: rare, CPK > 1000 U/L, hyperthermia, rigidity (DSM p.811; Dulcan p.823-824)"
+    ],
+    "key_numbers": [
+      "Aripiprazole Akathisia NNH = 14.7 (Dulcan p.823)",
+      "Pediatric >=7% weight gain rate = 13%-33% (Dulcan p.810, p.820)",
+      "Tardive Dyskinesia annual incidence = 0.4% in youth (Dulcan p.823)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "BMI & Weight: baseline, monthly for first 3 months, then quarterly (Dulcan p.820; StahlKids p.37)",
+      "Fasting Glucose & Lipids: baseline, 3 months, then annually (Dulcan p.820)",
+      "AIMS / BARS (EPS/Akathisia): baseline and every 6 months (Dulcan p.820, p.823)",
+      "Prolactin: symptom-driven only, routine monitoring not recommended (Dulcan p.820; StahlKids p.37)"
+    ],
+    "key_numbers": [
+      "BMI check interval = monthly for 3 months, then every 3 months (Dulcan p.820)",
+      "Fasting Glucose & Lipids = baseline, 3 months, then annual (Dulcan p.820)",
+      "BMI Z-score increase threshold = >=0.5 requires action (Dulcan p.820)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Aripiprazole pediatric dosing: Schizophrenia/Bipolar 10-30 mg/day; ASD 5-15 mg/day; Tourette's 5-20 mg/day. Start at 2 mg/day with slow titration to avoid nausea/activation (Dulcan p.787; StahlKids p.41)",
+      "Brexpiprazole adult dosing: Schizophrenia 2-4 mg/day; MDD adjunct 2 mg/day (Dulcan p.787; StahlNeuro p.239)",
+      "Cariprazine adult dosing: Schizophrenia/Mania 1.5-6.0 mg/day; Bipolar Depression 1.5-3.0 mg/day (Dulcan p.787; StahlNeuro p.239-240, p.342)",
+      "Pediatric pharmacokinetics: increased CYP2D6/3A4 clearance in pre-pubertal children leads to shorter half-life (35-55h for Aripiprazole vs 75h in adults) (StahlKids p.38, p.42)",
+      "Cross-titration protocol: 2-4 weeks overlap required when switching from D2 full antagonist to prevent rebound psychosis (StahlKids p.43; Dulcan p.796; StahlNeuro p.238)"
+    ],
+    "key_numbers": [
+      "Aripiprazole pediatric starting dose = 2 mg/day (Dulcan p.787; StahlKids p.41)",
+      "Cariprazine Bipolar Depression dose = 1.5-3.0 mg/day (StahlNeuro p.342)",
+      "Cross-titration duration = 2-4 weeks (StahlKids p.43; Dulcan p.796)"
+    ]
+  },
+  "high_yield": [
+    "D2 partial agonism acts as Net Antagonist in hyper-dopaminergic states and Net Agonist in hypo-dopaminergic states (Goldilocks / Stabilizer) (StahlNeuro p.43, p.189-191)",
+    "Requires 80%-85% D2 occupancy for antipsychotic efficacy compared to 60%-70% for full antagonists (StahlNeuro p.348; Dulcan p.795)",
+    "Cariprazine has extreme D3 > D2 selectivity (1000x higher affinity than dopamine), proving superior in negative symptoms and bipolar depression (StahlNeuro p.230, p.240, p.343-345)",
+    "Aripiprazole is the ONLY partial agonist with FDA pediatric approvals (EOS 13+, Bipolar 10+, ASD 6+, Tourette's 6+) (Dulcan p.787; StahlKids p.37)",
+    "Partial agonists do NOT elevate prolactin and lower baseline prolactin; low-dose Aripiprazole reverses Risperidone-induced hyperprolactinemia (StahlNeuro p.192; Dulcan p.820, p.825)",
+    "Abrupt switch from D2 full antagonist to partial agonist triggers severe rebound psychosis due to up-regulated supersensitive D2 receptors, requiring a 2-4 week cross-titration (StahlKids p.43; Dulcan p.796; StahlNeuro p.238)"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+ "tag": "study-061-partial-agonists-aripiprazole-brexpiprazole-cariprazine",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:44:37+00:00",
+ "updated_at": "2026-09-25T14:44:37+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b678df6ebfb56236636167e4048aafe459bc443aa3c31fb5db09ce8e2d375b96",
+   "asset_id": 570914597,
+   "size": 6119,
+   "fetched_at": "2026-09-25T14:44:31+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "43cbf146c0bcac3fe078367a49926a75739804b9bea88277dc43b9b2eba085c9",
+   "asset_id": 570914574,
+   "size": 12503,
+   "fetched_at": "2026-09-25T14:44:33+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "6ca73fdb3678ac596932d4ae0e3da46eb58cb3ce719cb352657b24d62002509c",
+   "asset_id": 570914577,
+   "size": 31784,
+   "fetched_at": "2026-09-25T14:44:35+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "affcdc248b6e7d3d22ebb9afd71e80e53eb352d1b5f88f19657ad1781102ec8b",
+   "asset_id": 570914578,
+   "size": 31325,
+   "fetched_at": "2026-09-25T14:44:37+00:00"
+  }
+ ]
+}
