@@ -1,0 +1,10 @@
+[
+ {
+  "day": 2,
+  "plate": "main",
+  "facts": 32,
+  "tries": 0,
+  "numbers_mode": "composite",
+  "error": "director never produced a valid table: ['fact not represented: high_yield[2]']"
+ }
+]

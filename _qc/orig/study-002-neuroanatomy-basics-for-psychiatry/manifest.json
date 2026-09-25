@@ -1,0 +1,43 @@
+{
+ "tag": "study-002-neuroanatomy-basics-for-psychiatry",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T12:45:15+00:00",
+ "updated_at": "2026-09-25T12:45:15+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "1ea68b899468bee7d16e1678abaa0ce74f34062f2e874983191107775777b749",
+   "asset_id": 527675062,
+   "size": 7223,
+   "fetched_at": "2026-09-25T12:45:07+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "c921a52ca5854f013618e3f89c07558a19d5f25758eb5c78546b49785641e036",
+   "asset_id": 527675041,
+   "size": 12915,
+   "fetched_at": "2026-09-25T12:45:09+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "da63049310ec5dc62e98543b9ba117c265808ed175401f39be199a86a502e24c",
+   "asset_id": 527675043,
+   "size": 201,
+   "fetched_at": "2026-09-25T12:45:11+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "6beab75d1a27e6b43119cea722319889b4d6bd3a9199e9b1a20c8fad103d0888",
+   "asset_id": 527675039,
+   "size": 28527,
+   "fetched_at": "2026-09-25T12:45:13+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "c7c00325ad8ef8bbbf2b43f67c7925c4fcb8f735b7a9fcccbc329957a0dd925f",
+   "asset_id": 527675045,
+   "size": 32737,
+   "fetched_at": "2026-09-25T12:45:15+00:00"
+  }
+ ]
+}
