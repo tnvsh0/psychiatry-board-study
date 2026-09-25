@@ -1,0 +1,36 @@
+{
+ "tag": "study-114-geriatric-overview-delirium-focus-light-touch",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:35:43+00:00",
+ "updated_at": "2026-09-25T16:35:43+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "96ce4fb3a9bcc948aa219efc33e81d39eb8cc9749269c7b4dd22d262902430e0",
+   "asset_id": 586985769,
+   "size": 4587,
+   "fetched_at": "2026-09-25T16:35:36+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "d56ebcf074723a79e763d545d260cb67e54c72621eb73636f3a368f92a82391b",
+   "asset_id": 586985770,
+   "size": 10930,
+   "fetched_at": "2026-09-25T16:35:39+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "f1d468a6f523c0bd7986e22e953026b6b5cebd0fb7d216027951448e55d4db7e",
+   "asset_id": 586985771,
+   "size": 41101,
+   "fetched_at": "2026-09-25T16:35:41+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "a0113972aeddaa87ebdf93cda8217a3838950743c6d41ace3ceb5dba4aa50869",
+   "asset_id": 586985766,
+   "size": 45114,
+   "fetched_at": "2026-09-25T16:35:43+00:00"
+  }
+ ]
+}
