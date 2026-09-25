@@ -1,0 +1,36 @@
+{
+ "tag": "study-059-second-generation-antipsychotics-overview",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:40:58+00:00",
+ "updated_at": "2026-09-25T14:40:58+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "7a22590999e4ef37fa4c7f8879a6318603903bddfdf79c50771650b86e156779",
+   "asset_id": 570824052,
+   "size": 11164,
+   "fetched_at": "2026-09-25T14:40:39+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "aed6e63dc9e2fb5b0a5c531a0c1da6bdd153af98f26a931c5ce4bfdc2b7e6e5f",
+   "asset_id": 570824051,
+   "size": 9715,
+   "fetched_at": "2026-09-25T14:40:44+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "7eb78b0282efd25a58c11b702b945fb9d3f040ff13865938cc592cd34fe98bf0",
+   "asset_id": 570824054,
+   "size": 37354,
+   "fetched_at": "2026-09-25T14:40:51+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "f6e84ba4807abc64e1749bbcc9d4dbb9485f4383fdc4ffeeb5c3ce1363ddac99",
+   "asset_id": 570824053,
+   "size": 46295,
+   "fetched_at": "2026-09-25T14:40:58+00:00"
+  }
+ ]
+}

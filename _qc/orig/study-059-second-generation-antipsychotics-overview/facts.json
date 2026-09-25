@@ -1,0 +1,115 @@
+{
+  "drug_class": {
+    "members": [
+      "Risperidone (העלאת פרולקטין בולטת ושכיחה ביותר) [StahlKids p.423]",
+      "Olanzapine (סיכון מטבולי ועלייה במשקל הגבוהים ביותר) [Dulcan p.824, StahlNeuro p.198]",
+      "Quetiapine (חלונות מינון: 50mg שינה, 300mg דיכאון, 400-800mg פסיכוזה) [StahlNeuro p.220]",
+      "Aripiprazole (אגוניסט חלקי ל-D2, מוריד פרולקטין, סיכון לאקתיזיה) [StahlKids p.37]",
+      "Lurasidone (נטרלית מטבולית, מאושרת לדיכאון ביפולרי פדיאטרי, חובה עם אוכל) [Dulcan p.805, StahlKids p.299]",
+      "Cariprazine (סלקטיבית לקולטני D3, מטבוליט DDCAR ארוך טווח) [StahlNeuro p.230]",
+      "Pimavanserin (אגוניסטית הפוכה סלקטיבית ל-5-HT2A ללא חסימת D2 כלל) [StahlNeuro p.240]",
+      "Clozapine (עדיפות בסכיזופרניה עמידה לטיפול, סיכון ל-Agranulocytosis) [Dulcan p.402, StahlKids p.155]"
+    ],
+    "mechanism": "אנטגוניזם משולב לקולטני D2 ו-5-HT2A (או אגוניזם חלקי ל-D2 ו-5-HT1A); Pimavanserin פועלת כ-Inverse Agonist סלקטיבי ל-5-HT2A ללא זיקה ל-D2 [StahlNeuro pp.183-194, p.240]",
+    "kinetics": [
+      "Aripiprazole: t1/2 = 75 hours (CYP2D6, CYP3A4) [Dulcan p.786, StahlKids p.42]",
+      "Risperidone: t1/2 = 3 hours, מטבוליט פעיל Paliperidone (CYP2D6) [Dulcan p.786, StahlKids p.423]",
+      "Olanzapine: t1/2 = 30 hours (CYP1A2, CYP2D6) [Dulcan p.786, StahlKids p.356]",
+      "Quetiapine: t1/2 = 6-7 hours (CYP3A4) [Dulcan p.786, StahlKids p.412]",
+      "Lurasidone: t1/2 = 18 hours (CYP3A4), ספיגה מעוכבת ב-50% ללא מזון [Dulcan p.787, StahlKids p.302]",
+      "Cariprazine: t1/2 מטבוליט DDCAR = 1-3 שבועות (CYP3A4) [Dulcan p.786, StahlNeuro p.230]",
+      "Ziprasidone: מטבוליזם ב-67% ע\"י Aldehyde oxidase [Dulcan p.786]",
+      "Clozapine: t1/2 = 12 hours (CYP1A2 30%, עישון משרה את האנזים) [Dulcan p.786, StahlKids p.155]"
+    ],
+    "onset_of_effect": "ימים בודדים עד 2-4 שבועות לתגובה קלינית מלאה [Dulcan p.787, StahlKids p.37]"
+  },
+  "indications": {
+    "items": [
+      "סכיזופרניה פדיאטרית (EOS גיל 13+: Risperidone, Aripiprazole, Quetiapine, Olanzapine, Lurasidone; גיל 12+: Paliperidone) [Dulcan p.402, StahlKids p.37]",
+      "סכיזופרניה עמידה לטיפול (Refractory EOS): Clozapine בלבד הראתה עדיפות במחקרים מבוקרים [Dulcan p.402, StahlKids p.155]",
+      "מאניה ביפולרית פדיאטרית (גיל 10+: Risperidone, Aripiprazole, Quetiapine, Asenapine; גיל 13+: Olanzapine) [Dulcan p.283, StahlKids p.37]",
+      "דיכאון ביפולרי פדיאטרי (גיל 10-17): Lurasidone מונותרפיה ו-OFC מאושרות; Quetiapine נכשלה [Dulcan p.283, StahlKids p.299]",
+      "אי-שקט ואגרסיביות ב-ASD: Risperidone (גיל 5-16), Aripiprazole (גיל 6-17) [Dulcan p.809, StahlKids p.37]",
+      "תסמונת טורט / טיקים: Aripiprazole מאושרת FDA (גיל 6-18) [Dulcan p.819, StahlKids p.37]",
+      "Attenuated Psychosis Syndrome: תסמין פסיכוטי מוחלש אחד לפחות בתדירות פעם בשבוע בחודש האחרון [DSM p.903]"
+    ],
+    "key_numbers": [
+      "NNT = 3-6 לתגובה קלינית במאניה פדיאטרית חריפה [Dulcan p.805]",
+      "NNT = 3-6 ל-Clozapine בסכיזופרניה עמידה לטיפול [Dulcan p.796]",
+      "ES = 0.45 ל-Lurasidone בדיכאון ביפולרי פדיאטרי [Dulcan p.283]",
+      "22% סיכון המרה מ-Attenuated Psychosis Syndrome לפסיכוזה מלאה תוך 3 שנים [DSM p.905]"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Medication-Induced Parkinsonism: נוקשות, רעד, ברדיקינזיה; תפוסת D2 > 80% [DSM p.807, StahlNeuro p.166]",
+      "Medication-Induced Acute Dystonia: כיווץ שרירים פתאומי (Oculogyric crisis, Torticollis); מתפתח תוך 24-48 שעות [DSM p.812, StahlNeuro p.169]",
+      "Medication-Induced Acute Akathisia: אי-שקט מוטורי וסובייקטיבי; שכיח ב-Aripiprazole, Cariprazine, Lurasidone [DSM p.813, Dulcan p.822]",
+      "Tardive Dyskinesia (TD): תנועות לא-רצוניות חזרתיות עקב Upregulation של D2; מעכבי VMAT2 לטיפול [DSM p.814, StahlNeuro p.177]",
+      "Neuroleptic Malignant Syndrome (NMS): חום גבוה, נוקשות Lead-pipe, אי-יציבות אוטונומית, CK > 1000 U/L [DSM p.810, Dulcan p.823]",
+      "הייפרפרולקטינמיה: חסימת D2 בנתיב הטוברואינפונדיבולרי; הכי בולט ב-Risperidone וב-Paliperidone [Dulcan p.824, StahlNeuro p.164]",
+      "הארכת מקטע QTc: Ziprasidone גורמת להארכה הגבוהה ביותר (+8.74 ms); Aripiprazole גורמת לקיצור (-1.44 ms) [Dulcan pp.824-825]"
+    ],
+    "key_numbers": [
+      "0.4% לשנה שיעור היארעות TD בילדים המטופלים ב-SGA [Dulcan p.823]",
+      "CK > 1000 U/L ב-NMS [Dulcan p.823]",
+      "+8.74 ms הארכת QTc ממוצעת ב-Ziprasidone בילדים [Dulcan p.825]",
+      "-1.44 ms קיצור QTc ממוצע ב-Aripiprazole בילדים [Dulcan p.825]"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "משקל, גובה, BMI אחוזון ו-z-score: בבסיס, מדי חודש ב-3 חודשים ראשונים, וכל 3 חודשים [Dulcan p.827]",
+      "לחץ דם, דופק והיקף מותניים: בבסיס, כעבור 3 חודשים ואחת לשנה [Dulcan p.827]",
+      "גלוקוז בצום (או HbA1c) ופרופיל ליפידים בצום: בבסיס, כעבור 3 חודשים, 6 חודשים ואחת לשנה [Dulcan p.827]",
+      "הערכה נוירומוטורית (AIMS/SAS/BARS): בבסיס, בכל טיטרציה, כעבור 3 חודשים ואחת לשנה [Dulcan p.827]",
+      "ניטור ANC ב-Clozapine: שבועי ב-6 חודשים ראשונים, דו-שבועי ב-6 חודשים שניים, וחודשי בהמשך [Dulcan p.831, StahlKids p.155]"
+    ],
+    "key_numbers": [
+      "8 שעות צום נדרשות לבדיקת גלוקוז וליפידים בצום [Dulcan p.830]",
+      "ANC > 2000/mm3 סף תקין ב-Clozapine [Dulcan p.831]",
+      "ANC < 1000/mm3 סף הפסקת טיפול ב-Clozapine במטופלי BEN [Dulcan p.831]"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "עקרון Start Low, Go Slow במינון וטיטרציה פדיאטריים [Dulcan p.683, StahlKids p.14]",
+      "פינוי כבדי/כלייתי מהיר בילדים מצריך לעיתים מינון מחושב משקל (mg/kg) גבוה יותר [Dulcan p.683, p.785]",
+      "חובת נטילת Lurasidone עם ארוחה בת 350 קלוריות לפחות להבטחת ספיגה [Dulcan p.787, StahlKids p.302]",
+      "עישון משרה CYP1A2 ומוריד רמות Clozapine ו-Olanzapine בדם ב-20-40% [Dulcan p.786]",
+      "Cross-Titration איטית נדרשת בהחלפת תרופות למניעת Cholinergic או Histamine rebound [Dulcan p.795, StahlKids p.59]"
+    ],
+    "key_numbers": [
+      "350 קלוריות מינימום בארוחה בעת נטילת Lurasidone [Dulcan p.787]",
+      "20-40% ירידה ברמות Clozapine בדם עקב השראת CYP1A2 בעישון [Dulcan p.786]",
+      "0.25-0.5 mg/day מינון התחלתי של Risperidone באוטיזם [Dulcan p.787]",
+      "12.5 mg/day מינון התחלתי של Clozapine בילדים [Dulcan p.787]"
+    ]
+  },
+  "metabolic_focus": {
+    "items": [
+      "המנגנון: חסימת H1 ו-5-HT2C בהיפותלמוס מגבירה תיאבון; תנגודת לאינסולין ישירה דרך Receptor X [StahlNeuro p.198, p.211]",
+      "מדרג סיכון לעלייה במשקל (NNH לעלייה >= 7%): Olanzapine (NNH=3) > Risperidone (NNH=6) > Quetiapine (NNH=9) > Aripiprazole (NNH=12-39) > Ziprasidone (NNH=36) [Dulcan p.823, StahlNeuro p.196]",
+      "קריטריונים להתערבות: עלייה > 5% במשקל תוך 3 חודשים, עלייה > 0.5 ב-BMI z-score, או BMI percentile >= 85 עם סיבוך [Dulcan p.834]",
+      "התערבות תרופתית: הוספת Metformin (250-1000 mg bid) הוכחה במחקר IMPACT כתרפיה יעילה להפחתת עלייה במשקל [Dulcan p.835]"
+    ],
+    "key_numbers": [
+      "NNH = 3 לעלייה במשקל >= 7% ב-Olanzapine (עלייה ממוצעת 3.45 ק\"ג) [Dulcan p.823]",
+      "NNH = 36 ב-Ziprasidone (שינוי ממוצע -0.04 ק\"ג) [Dulcan p.823]",
+      "> 5% עלייה במשקל תוך 3 חודשים כסף להתערבות [Dulcan p.834]",
+      "250-1000 mg bid מינון Metformin מומלץ בילדים [Dulcan p.835]"
+    ]
+  },
+  "high_yield": [
+    "SGAs משלבות אנטגוניזם ל-D2 ול-5-HT2A (או אגוניזם חלקי ל-D2/5-HT1A), מה שמשחרר דופמין בסטריאטום המוטורי וב-PFC ומפחית EPS ותסמינים שליליים (Dulcan p.785, StahlNeuro p.186)",
+    "Risperidone ו-Paliperidone גורמות לעליית הפרולקטין החזקה ביותר; Aripiprazole מורידה פרולקטין כאגוניסטית חלקית (Dulcan p.824, p.835, StahlKids p.37)",
+    "Lurasidone מונותרפיה ו-OFC הן היחידות המאושרות לדיכאון ביפולרי פדיאטרי (גילאי 10-17); Quetiapine נכשלה במחקרים פדיאטריים (Dulcan p.283, p.805)",
+    "חובת נטילת Lurasidone עם ארוחה בת 350 קלוריות לפחות (ספיגה יורדת ב-50% ללא מזון) (Dulcan p.787, StahlKids p.302)",
+    "מדרג NNH לעלייה במשקל בילדים: Olanzapine (NNH=3) > Risperidone (NNH=6) > Quetiapine (NNH=9) > Aripiprazole (NNH=12-39) > Ziprasidone (NNH=36) (Dulcan p.823)",
+    "הוספת Metformin (250-1000 mg bid) היא ההתערבות הנתמכת ביותר (מחקר IMPACT) להפחתת עלייה במשקל מושרית SGA בילדים (Dulcan p.835)",
+    "Pimavanserin היא Selective 5-HT2A Inverse Agonist ללא זיקה ל-D2 כלל, ומאושרת לפסיכוזה בפרקינסון (StahlNeuro p.240, p.481)",
+    "Cariprazine סלקטיבית לקולטני D3 (D3 > D2) ובעלת מטבוליט פעיל DDCAR עם זמן מחצית חיים של 1-3 שבועות (StahlNeuro p.230, p.343)",
+    "Ziprasidone גורמת להארקת QTc החזקה ביותר בילדים (+8.74 ms), בעוד Aripiprazole גורמת לקיצור (-1.44 ms) (Dulcan pp.824-825)",
+    "Clozapine היא היחידה בעלת עדיפות מוכחת בסכיזופרניה עמידה לטיפול בילדים (NNT = 3-6), אך מחייבת ניטור ANC מחמיר (Dulcan p.402, StahlKids p.155)"
+  ]
+}
