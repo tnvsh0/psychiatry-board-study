@@ -1,0 +1,36 @@
+{
+ "tag": "study-023-communication-disorders-language-speech-stuttering-social-pr",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:41:12+00:00",
+ "updated_at": "2026-09-25T13:41:12+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "cec3272cabd58e92f93c5e482df59d1ac7a16c9bec54196d40a1522416a2f456",
+   "asset_id": 563523950,
+   "size": 6678,
+   "fetched_at": "2026-09-25T13:40:53+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5217149b74ac23e387eef311b70de18cf97e482bab59174b69c2b712207a8d2a",
+   "asset_id": 563523953,
+   "size": 26550,
+   "fetched_at": "2026-09-25T13:40:59+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "273d4868ef674bf4566e308c8303970bfd126761b8da1e3eaf75049a08175573",
+   "asset_id": 563523951,
+   "size": 36697,
+   "fetched_at": "2026-09-25T13:41:06+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "715b1ef88b4431e02a6497a75f925811b7fc71aeaca63a5897b5ad7339f4541b",
+   "asset_id": 563523954,
+   "size": 34092,
+   "fetched_at": "2026-09-25T13:41:12+00:00"
+  }
+ ]
+}

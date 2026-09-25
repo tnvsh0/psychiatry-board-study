@@ -1,0 +1,120 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Language Disorder (F80.2)",
+        "items": [
+          "Reduced vocabulary (DSM p.47)",
+          "Limited sentence structure (DSM p.47)",
+          "Impairments in discourse (DSM p.47)"
+        ]
+      },
+      {
+        "name": "Speech Sound Disorder (F80.0)",
+        "items": [
+          "Persistent difficulty with speech sound production interfering with speech intelligibility (DSM p.50)"
+        ]
+      },
+      {
+        "name": "Childhood-Onset Fluency Disorder / Stuttering (F80.81)",
+        "items": [
+          "Sound and syllable repetitions (DSM p.51)",
+          "Sound prolongations of consonants and vowels (DSM p.51)",
+          "Broken words, audible or silent blocking (DSM p.52)",
+          "Circumlocutions, excess physical tension, monosyllabic whole-word repetitions (DSM p.52)"
+        ]
+      },
+      {
+        "name": "Social (Pragmatic) Communication Disorder (F80.82)",
+        "items": [
+          "Deficits in using communication for social purposes (DSM p.54)",
+          "Impairment changing communication to match context or listener (DSM p.54)",
+          "Difficulties following rules for conversation and storytelling (DSM p.54)",
+          "Difficulties understanding nonliteral/ambiguous language and inferences (DSM p.54)"
+        ]
+      }
+    ],
+    "thresholds": "Onset in early developmental period; quantifiable impairment in social, academic, or occupational functioning (DSM p.48, 50, 52, 55)",
+    "subtypes": [
+      "Language Disorder (F80.2)",
+      "Speech Sound Disorder (F80.0)",
+      "Childhood-Onset Fluency Disorder (F80.81)",
+      "Social (Pragmatic) Communication Disorder (F80.82)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "7.4% of elementary school children for Language Disorder (Dulcan p.161); ~1% for Stuttering (DSM p.52)",
+    "sex_ratio": "Language: 8% boys vs 6% girls (Dulcan p.161); Speech Sound: 1.5-1.8:1 M:F (DSM p.50); Stuttering: M > F (DSM p.52)",
+    "onset_age_typical": "2-6 years for Stuttering (DSM p.52); >=4-5 years for SPCD (DSM p.55, Dulcan p.163)",
+    "heritability": "Substantial heritability for Language Disorder and Stuttering (DSM p.49, 53)",
+    "comorbidities": [
+      "ADHD (65% boys, 57% girls with written language deficits) (Dulcan p.162)",
+      "Specific Learning Disorder (80% reading problems) (Dulcan p.161)",
+      "Social Anxiety Disorder (Dulcan p.165)"
+    ],
+    "prognosis": "65%-85% recovery rate in Stuttering (DSM p.53); Receptive Language Disorder carries poorer prognosis (DSM p.48)"
+  },
+  "etiology": {
+    "genetic": "FOXP2 mutation, 22q11.2 deletion, 4 specific stuttering genes, >3x risk in 1st degree relatives (DSM p.51, 53, Dulcan p.177)",
+    "neurobiology": "CSTC circuits, Glutamate master switch, Dopamine Go/Stop motor loops (StahlNeuro p.87, 95)",
+    "environmental": "Bilingualism does not cause or worsen disorder; stress exacerbates stuttering (DSM p.48, 52)"
+  },
+  "assessment_tools": {
+    "items": [
+      "TILLS (Test of Integrated Language and Literacy Skills) ages 6-18 (Dulcan p.162)",
+      "CASL-2 (Comprehensive Assessment of Spoken Language-2) ages 7-18 (Dulcan p.165)",
+      "CCC (Children's Communication Checklist) (Dulcan p.165)",
+      "SLDT-E:NU (Social Language Development Test-Elementary) ages 6-12 (Dulcan p.162)",
+      "CAPS (Clinical Assessment of Pragmatics) ages 7-18 (Dulcan p.162)",
+      "Language Use Inventory (Dulcan p.165)"
+    ],
+    "key_numbers": [
+      "1 in 12 children (8%) affected by communication disorders (Dulcan p.158)",
+      "50% speech intelligible at age 2, mostly intelligible at age 3, 100% by age 5 (DSM p.50-51)",
+      "8 late-acquired speech sounds ('Late Eight') normal up to age 8 (DSM p.51)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "SLP Therapy focused on Morphosyntax and vocabulary (Dulcan p.162)",
+      "Enhanced Milieu Teaching (EMT) 28 parent sessions (Dulcan p.163)",
+      "Functional Communication Training (FCT) (Dulcan p.163)",
+      "Fluency Shaping and Stuttering Modification (Dulcan p.160)",
+      "Metapragmatic Awareness Training (Dulcan p.164-165)"
+    ],
+    "second_line": [
+      "IEP under IDEA or 504 Plan accommodations (Dulcan p.158)",
+      "Methylphenidate or Amphetamine for comorbid ADHD (StahlKids p.31, 324)",
+      "Guanfacine ER for comorbid ADHD/impulsivity (StahlKids p.252)",
+      "Fluoxetine for comorbid depression/anxiety (StahlKids p.184)",
+      "Duloxetine for GAD age 7+ (StahlKids p.170)"
+    ],
+    "key_side_effects": [
+      "Nonspeech oral-motor exercises are INEFFECTIVE for Speech Sound Disorder (Dulcan p.159-160)",
+      "Insomnia and reduced appetite from stimulants (StahlKids p.31, 324)",
+      "Sedation and hypotension from Guanfacine (StahlKids p.252)"
+    ],
+    "monitoring": "Monitor speech intelligibility, reading comprehension at grade 4+, and ADHD/anxiety comorbidities (Dulcan p.161-162)"
+  },
+  "differential": {
+    "items": [
+      "Autism Spectrum Disorder (ASD): Distinguished from SPCD by presence of Restricted, Repetitive Behaviors (RRBs) (DSM p.55, 66)",
+      "Intellectual Developmental Disorder (IDD): Language deficit must exceed nonverbal cognitive level (DSM p.49, 56)",
+      "Selective Mutism: Mute in specific social settings, normal speech at home (DSM p.51, 222-223)",
+      "Social Anxiety Disorder: Normal social communication skills acquired but unexpressed due to fear (DSM p.55)",
+      "Dysarthria: Neurological motor signs and altered voice quality (DSM p.51)"
+    ],
+    "key_numbers": [
+      "0 RRBs in SPCD history or present; >=2 RRBs required for ASD (DSM p.55, 56-57)",
+      "3x risk of sexual assault in adult females with childhood language disorder (DSM p.48)",
+      "80% of children with language disorder develop reading problems (Dulcan p.161)"
+    ]
+  },
+  "high_yield": [
+    "Presence of past or present Restricted/Repetitive Behaviors (RRBs) mandates ASD diagnosis, superseding SPCD (DSM p.55, 66).",
+    "Stuttering has a 65%-85% recovery rate; severity at age 8 predicts persistence into adolescence/adulthood (DSM p.53).",
+    "Nonspeech oral-motor exercises are explicitly NOT evidence-based for Speech Sound Disorder (Dulcan p.159-160).",
+    "Receptive language impairment carries a worse prognosis and higher reading comprehension failure rate than expressive-only impairment (DSM p.48, Dulcan p.161).",
+    "Language Disorder prevalence is 7.4% in elementary children, with 80% developing reading comprehension deficits by grade 4 (Dulcan p.161)."
+  ]
+}
