@@ -1,0 +1,113 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Impaired Control",
+        "items": [
+          "Larger amounts or longer period than intended (DSM p.620)",
+          "Persistent desire or unsuccessful efforts to cut down (DSM p.620)",
+          "Great deal of time spent obtaining, using, or recovering (DSM p.620)",
+          "Craving or strong urge to use (DSM p.620)"
+        ]
+      },
+      {
+        "name": "Social Impairment",
+        "items": [
+          "Recurrent use resulting in failure to fulfill major obligations (DSM p.620)",
+          "Continued use despite persistent social/interpersonal problems (DSM p.620)",
+          "Important social, occupational, or recreational activities given up (DSM p.620)"
+        ]
+      },
+      {
+        "name": "Risky Use",
+        "items": [
+          "Recurrent use in physically hazardous situations (DSM p.620)",
+          "Continued use despite knowledge of physical/psychological problem (DSM p.620)"
+        ]
+      },
+      {
+        "name": "Pharmacological Criteria",
+        "items": [
+          "Tolerance (DSM p.620)",
+          "Withdrawal (DSM p.621)"
+        ]
+      }
+    ],
+    "thresholds": ">=2/11 criteria within a 12-month period; Tolerance/Withdrawal excluded under legitimate medical supervision (DSM p.620-621)",
+    "subtypes": [
+      "Mild (2-3 criteria) (DSM p.621)",
+      "Moderate (4-5 criteria) (DSM p.621)",
+      "Severe (>=6 criteria) (DSM p.621)",
+      "In early remission (DSM p.621)",
+      "In sustained remission (DSM p.621)",
+      "In a controlled environment (DSM p.621)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "12-month prevalence 0.3% in adolescents (12-17) and adults; 2.4% nonmedical use (DSM p.623, p.628)",
+    "sex_ratio": "Equal in US, higher female prevalence internationally (DSM p.624)",
+    "onset_age_typical": "Peak prevalence in young adults aged 18-29 (0.5%) (DSM p.623)",
+    "heritability": "Significant genetic contribution confirmed in twin studies (DSM p.624)",
+    "comorbidities": [
+      "Alcohol Use Disorder (DSM p.624)",
+      "ADHD ~28% in adolescent SUD (Dulcan p.226)",
+      "Antisocial Personality Disorder (DSM p.624)",
+      "Polysubstance Misuse (DSM p.622)"
+    ],
+    "prognosis": "Escalation from social misuse to daily dependence in youth, or prescription escalation with doctor shopping in adults (DSM p.623-624)"
+  },
+  "etiology": {
+    "genetic": "Twin studies show genetic risk increasing from adolescence to adulthood (DSM p.624)",
+    "neurobiology": "GABA-A PAMs increase Cl- opening frequency; Barbiturates increase duration & direct opening; VTA disinhibition increases Nucleus Accumbens dopamine (StahlNeuro p.257-262, p.553-556)",
+    "environmental": "High prescription availability, family/peer diversion, peer pressure, and self-medication of anxiety/insomnia (DSM p.624; Dulcan p.223; StahlKids p.6)"
+  },
+  "treatment": {
+    "first_line": [
+      "Gradual Taper with long-acting BZD (Diazepam or Clonazepam) (Dulcan p.223; StahlNeuro p.561)",
+      "CBT for underlying anxiety and insomnia (Dulcan p.482)"
+    ],
+    "second_line": [
+      "Clonidine for autonomic hyperarousal in withdrawal (StahlKids p.143-144)",
+      "Flumazenil for acute single-dose BZD intoxication reversal ONLY (StahlNeuro p.262)"
+    ],
+    "key_side_effects": [
+      "Life-threatening withdrawal seizures (20-30%) and DTs on abrupt cessation (DSM p.629-630)",
+      "Paradoxical disinhibition in children (Dulcan p.213)",
+      "Flumazenil-induced fatal seizures in chronic users (StahlNeuro p.262)"
+    ],
+    "monitoring": "Monitor BP and HR during Clonidine titration; urine drug screens; strict parental medication control in youth (StahlKids p.6, p.144)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Urine drug screens detect long-acting BZDs up to 7 days (DSM p.625)",
+      "CRAFFT screener for adolescents (Dulcan p.230)",
+      "K-SADS-PL structured interview for pediatric SUD (Dulcan p.70)",
+      "DSM-5 Level 1 Cross-Cutting Measure (DSM p.843-846)"
+    ],
+    "key_numbers": [
+      "7 days - urine detection window for long-acting BZDs like Diazepam (DSM p.625)",
+      ">=2 - CRAFFT score indicating high SUD risk (Dulcan p.230)",
+      ">=1 - Level 1 Substance Use score requiring Level 2 assessment (DSM p.844)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Alcohol Intoxication/Withdrawal - identical presentation, distinguished by breath odor and blood alcohol level (DSM p.564, p.627)",
+      "Subdural Hematoma / Head Trauma from falls - requires brain CT/MRI (DSM p.625; Dulcan p.121)",
+      "Hypoglycemia - mimics intoxication and withdrawal, requires glucometer test (DSM p.566; Dulcan p.608)",
+      "Independent Psychiatric Disorder - anxiety/depression persisting >1 month post-withdrawal (DSM p.204, p.632)"
+    ],
+    "key_numbers": [
+      "1 month - persistence duration post-withdrawal required to diagnose independent disorder (DSM p.204, p.632)",
+      "0 BAL - blood alcohol level in pure sedative intoxication (DSM p.627)"
+    ]
+  },
+  "high_yield": [
+    "Sedative/BZD withdrawal CAN be life-threatening with Grand Mal seizures (20-30%) and delirium; ALWAYS taper gradually (DSM p.629-630; Dulcan p.223)",
+    "Tolerance and withdrawal DO NOT count toward Use Disorder diagnosis if medication is taken under legitimate medical supervision (DSM p.621)",
+    "BZDs are PAMs increasing GABA-A Cl- channel opening FREQUENCY; Barbiturates increase DURATION and act as direct agonists at high doses (StahlNeuro p.260, p.556)",
+    "Alpha-1 GABA-A subunit mediates sedation/amnesia (Z-drugs target); Alpha-2/3 mediate anxiolysis (StahlNeuro p.260, p.422)",
+    "Flumazenil triggers fatal seizures in chronic BZD users or mixed TCA overdose (StahlNeuro p.262)",
+    "Avoid BZDs as first-line in youth due to lack of efficacy, addiction risk, and paradoxical disinhibition (Dulcan p.213, p.482)"
+  ]
+}
