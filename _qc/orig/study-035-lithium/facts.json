@@ -1,0 +1,103 @@
+{
+  "drug_class": {
+    "members": [
+      "Lithium carbonate / Lithium citrate - the only mood stabilizer with proven anti-suicide effect and a very narrow therapeutic window (Dulcan p.763, p.765)"
+    ],
+    "mechanism": "Inhibits IMPase (depleting PIP2, IP3, and DAG) and GSK-3 (promoting BDNF and Bcl-2 for neuroprotection) (StahlNeuro p.344-345)",
+    "kinetics": [
+      "No liver metabolism or protein binding (Dulcan p.766)",
+      "Excreted purely renally via GFR (Dulcan p.766, StahlKids p.288)",
+      "Half-life is ~18 hours in children and 18-36 hours in adults (Dulcan p.766, StahlKids p.288-289)"
+    ],
+    "onset_of_effect": "1 to 3 weeks for anti-manic effect (StahlKids p.284)"
+  },
+  "indications": {
+    "items": [
+      "FDA approved for acute manic and mixed states in pediatric patients ages 7-17 (Dulcan p.764)",
+      "FDA approved for Bipolar I maintenance in pediatric patients ages 7-17 (Dulcan p.764)",
+      "Reduction of suicidality in Bipolar I Disorder (COBY study) (Dulcan p.765, p.778)",
+      "Augmentation for treatment-resistant depression (Dulcan p.127, StahlKids p.284, p.290)",
+      "Severe physical aggression in Conduct Disorder (Campbell & Malone studies) (Dulcan p.764-765)"
+    ],
+    "key_numbers": [
+      "7 years - minimum FDA-approved age (Dulcan p.764)",
+      "10 years - duration of the COBY study showing anti-suicide effect (Dulcan p.765, p.778)",
+      "35.6% - response rate in childhood mania in the TEAM study (Dulcan p.300)",
+      "71% - relapse rate when switched to placebo vs 18% on lithium (Dulcan p.764-765)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Postural hand tremor is common and benign at therapeutic levels (DSM p.818, Dulcan p.765)",
+      "Hypothyroidism with elevated TSH (Dulcan p.766, StahlKids p.285)",
+      "Nephrogenic Diabetes Insipidus (NDI) with polyuria and polydipsia (Dulcan p.765-766, StahlKids p.285)",
+      "Severe acne flare-ups or alopecia (Dulcan p.765, StahlKids p.285)",
+      "Ebstein's anomaly (tricuspid valve malformation) if exposed in the first trimester (Dulcan p.765-766)"
+    ],
+    "key_numbers": [
+      "25% - percentage of children developing elevated TSH within 3 months (Dulcan p.766)",
+      "50% - dose reduction of lithium needed if thiazide diuretics are added (Dulcan p.1095, StahlKids p.286-287)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Baseline: Creatinine, BUN, urinalysis, TSH, free T4, electrolytes, calcium, CBC, ECG, and pregnancy test (Dulcan p.684, p.765, StahlKids p.284)",
+      "Ongoing: TSH and renal function (Creatinine/BUN) every 6 months (Dulcan p.765)",
+      "Ongoing: Serum calcium once yearly (Dulcan p.765)"
+    ],
+    "key_numbers": [
+      "6 months - frequency for ongoing renal and TSH monitoring (Dulcan p.765)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Starting dose of 150 mg at night in children, or 300 mg in adolescents/adults (StahlKids p.288)",
+      "Average maintenance dose is ~30 mg/kg/day divided into 2-3 doses (Dulcan p.766)",
+      "Single-dose at night reduces polyuria, peak-dose side effects, and can allow a 25% dose reduction (StahlKids p.285-286, p.289)"
+    ],
+    "key_numbers": [
+      "30 mg/kg/day - average pediatric maintenance dose (Dulcan p.766)",
+      "3 months - minimum duration of taper to avoid rapid relapse (StahlKids p.289)"
+    ]
+  },
+  "narrow_therapeutic_window": {
+    "items": [
+      "Extremely narrow therapeutic window; toxicity begins closely above the therapeutic range (Dulcan p.765, StahlKids p.287)"
+    ],
+    "key_numbers": [
+      "0.6 mEq/L - lower limit of therapeutic range (StahlKids p.288)",
+      "1.2 mEq/L - upper limit of maintenance range in some pediatric guidelines (Dulcan p.765, p.767)",
+      "1.5 mEq/L - blood level at which significant toxicity begins (Dulcan p.765, StahlKids p.287)"
+    ]
+  },
+  "monitoring_intensive": {
+    "items": [
+      "Blood level must be drawn exactly 12 hours after the last dose (trough level) (Dulcan p.767, StahlKids p.288)",
+      "Levels checked every 1-2 weeks during initiation or after any dose change (StahlKids p.284)",
+      "Levels checked every 2-3 months for the first half-year of stability, then every 6-12 months (StahlKids p.284)"
+    ],
+    "key_numbers": [
+      "12 hours - exact time post-dose required for blood level draws (Dulcan p.767, StahlKids p.288)",
+      "1-2 weeks - interval for blood level checks during titration (StahlKids p.284)"
+    ]
+  },
+  "toxicity": {
+    "items": [
+      "Mild-moderate toxicity: nausea, vomiting, watery diarrhea, coarse hand tremor, ataxia, dysarthria, apathy (Dulcan p.765, StahlKids p.285, p.287)",
+      "Severe toxicity: muscle fasciculations, confusion, delirium, seizures, coma, death (Dulcan p.765, StahlKids p.285, p.288)",
+      "Emergency hemodialysis is required for levels >3.0 mEq/L or severe neurological symptoms (Dulcan p.1095)",
+      "Interactions that increase levels: NSAIDs, Thiazide diuretics, ACE-I/ARBs, and dehydration (Dulcan p.766-767, StahlKids p.287-289)"
+    ],
+    "key_numbers": [
+      "1.5 mEq/L - threshold for initial toxicity symptoms (Dulcan p.765, StahlKids p.287)",
+      "3.0 mEq/L - threshold for severe toxicity and mandatory hemodialysis (Dulcan p.1095, StahlKids p.288)"
+    ]
+  },
+  "high_yield": [
+    "Ebstein's anomaly (tricuspid valve malformation) is the classic teratogenic risk of lithium in the first trimester (Dulcan p.765-766)",
+    "Dehydration from fever, heat, or vomiting decreases renal clearance, rapidly precipitating lithium toxicity (Dulcan p.766-767, StahlKids p.287)",
+    "Thiazide diuretics force proximal tubule lithium reabsorption by causing sodium depletion, leading to toxicity (StahlKids p.288, p.291)",
+    "Never prescribe lithium to children in foster care for explosive rage without a formal Bipolar I diagnosis (StahlKids p.292)",
+    "Stopping lithium too rapidly (>3 months) results in a >50% rate of manic relapse and increased suicide risk (StahlKids p.289)"
+  ]
+}

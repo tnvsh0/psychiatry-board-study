@@ -1,0 +1,36 @@
+{
+ "tag": "study-035-lithium",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:04:13+00:00",
+ "updated_at": "2026-09-25T14:04:13+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a3a6601c6497fe6a8eddc34c09380d202d763cab047683d55bce86fd698ecacd",
+   "asset_id": 536834179,
+   "size": 6104,
+   "fetched_at": "2026-09-25T14:04:06+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "3ab87d236659ccf7f6b6c942fb419d00ccc011581b996aec86b63d157720ee42",
+   "asset_id": 536834178,
+   "size": 9694,
+   "fetched_at": "2026-09-25T14:04:08+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "1ae3df070dc07aef9853042bb8cf19da9ba6b154a60fc45baddbbe53c529b8d8",
+   "asset_id": 536834175,
+   "size": 37396,
+   "fetched_at": "2026-09-25T14:04:10+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "d6eb4e72994e83fca99c829da285afb87a4174e1040672b13caaf25caab26091",
+   "asset_id": 536834177,
+   "size": 29507,
+   "fetched_at": "2026-09-25T14:04:13+00:00"
+  }
+ ]
+}
