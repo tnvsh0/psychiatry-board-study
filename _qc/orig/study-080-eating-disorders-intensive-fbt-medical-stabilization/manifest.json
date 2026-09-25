@@ -1,0 +1,36 @@
+{
+ "tag": "study-080-eating-disorders-intensive-fbt-medical-stabilization",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:27:09+00:00",
+ "updated_at": "2026-09-25T15:27:09+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "fc3b0f93a0c37b3ec980844af3204261cfbdbc690fc658e055a5cd16f409a3b6",
+   "asset_id": 584797532,
+   "size": 9144,
+   "fetched_at": "2026-09-25T15:27:03+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "a4a0ea0093dbf11851d1163cdcd59e11b415da8a692686a8004ba7101b2accd4",
+   "asset_id": 584797540,
+   "size": 13182,
+   "fetched_at": "2026-09-25T15:27:05+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "393fc87a8c78a0ac680a00d422f4a9981a3e5ed8b3bf369c1f8f4b2a6c828ca9",
+   "asset_id": 584797533,
+   "size": 34780,
+   "fetched_at": "2026-09-25T15:27:07+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "032b5e1b3d40b2aaecdfab2f1a49c1ad0d2b1f8a2bdce176b9d010bf3431d864",
+   "asset_id": 584797534,
+   "size": 42486,
+   "fetched_at": "2026-09-25T15:27:09+00:00"
+  }
+ ]
+}

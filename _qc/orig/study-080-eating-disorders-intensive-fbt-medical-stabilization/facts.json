@@ -1,0 +1,120 @@
+{
+  "history_origin": {
+    "items": [
+      "Developed at Maudsley Hospital, London in the 1980s by Russell, Eisler, Dare, and Szmukler (Dulcan p.425, p.434)",
+      "Replaced historical parentectomy and parent-blaming models with parental empowerment (Dulcan p.425)",
+      "Manualized into a standardized outpatient protocol by James Lock and Daniel Le Grange (Dulcan p.425-426)",
+      "Landmark RCT by Russell et al. (1987) demonstrated superiority of family therapy over individual therapy in adolescents (Dulcan p.425, p.434)"
+    ],
+    "key_numbers": [
+      "1980s - decade of origin at Maudsley Hospital",
+      "1987 - landmark Russell et al. RCT publication year",
+      "2 - clinicians who manualized FBT (Lock & Le Grange)"
+    ]
+  },
+  "core_principles": {
+    "items": [
+      "Agnosticism regarding etiology: no searching for family blame or psychological causes (Dulcan p.425, p.426)",
+      "Parental empowerment: parents are put in full charge of refeeding and weight restoration (Dulcan p.425, p.426)",
+      "Externalization of the illness: separating the adolescent's identity from the eating disorder (Dulcan p.425, p.426)",
+      "Consultative therapist stance: therapist acts as a supportive expert consultant, not the feeding authority (Dulcan p.425, p.430)",
+      "Pragmatic, behavior-first focus: weight restoration and symptom interruption take absolute priority over insight (Dulcan p.425-426)",
+      "Sibling support: siblings are recruited for emotional support and exempted from refeeding duties (Dulcan p.425)"
+    ],
+    "key_numbers": [
+      "5-6 core principles in FBT protocol",
+      "1st priority - behavioral weight restoration before insight therapy"
+    ]
+  },
+  "practice_method": {
+    "items": [
+      "Phase 1: Restoring weight with parents in full control of meal planning, preparation, and supervision (Dulcan p.425-426)",
+      "Family Meal Session: conducted in session 2 to observe family dynamics and empower parents to insist on one extra bite (Dulcan p.426)",
+      "Phase 2: Gradual return of control over eating to the adolescent once weight is restored (>90-95% expected) and compliance is solid (Dulcan p.426)",
+      "Phase 3: Establishing healthy adolescent identity, separation-individuation, and relapse prevention after weight stabilization (Dulcan p.426)",
+      "FBT-BN adaptation: focuses on interrupting binge-purge cycles and regularizing eating rather than weight gain (Dulcan p.426-427)"
+    ],
+    "key_numbers": [
+      "3 treatment phases in FBT",
+      "10-20 sessions total treatment duration",
+      "6-12 months total treatment timeframe",
+      "Session 2 - timing of the clinical Family Meal",
+      ">90-95% expected weight threshold to enter Phase 2"
+    ]
+  },
+  "evidence": {
+    "items": [
+      "Russell et al. (1987) & Eisler et al. (1997): ~70% remission rate at 5-year follow-up for adolescents <18 with short illness duration (Dulcan p.425)",
+      "Lock et al. (2005, 2006): 10-session short FBT proved equally effective as 20-session long FBT for uncomplicated AN (Dulcan p.425-426)",
+      "Lock et al. (2010) RCT: FBT-AN superior to Adolescent-Focused Therapy (AFT) at 12-month follow-up (49.3% vs 23.2% full remission) (Dulcan p.426)",
+      "Le Grange et al. (2015) RCT: FBT-BN superior to individual CBT for adolescent bulimia (49% vs 32% abstinence at 12-month follow-up) (Dulcan p.428)",
+      "Le Grange et al. (2016): Parent-Focused Therapy (PFT) yields equal outcomes to conjoint FBT and is indicated for high parental criticism (Dulcan p.425-426)"
+    ],
+    "key_numbers": [
+      "70% remission rate in early Maudsley trials",
+      "49.3% vs 23.2% full remission in Lock 2010 RCT (FBT vs AFT)",
+      "10 vs 20 sessions dose comparison in Lock 2005 RCT",
+      "49% vs 32% abstinence in Le Grange 2015 RCT (FBT-BN vs CBT)",
+      "<3 years illness duration for optimal FBT response"
+    ]
+  },
+  "indications": {
+    "items": [
+      "First-line evidence-based outpatient intervention for adolescents <18 with Anorexia Nervosa or Bulimia Nervosa (Dulcan p.425, p.428; Syllabus p.2)",
+      "Short illness duration (<3 years) predicts best response to outpatient FBT (Dulcan p.425)",
+      "Requires medical stability and motivated, available parents (Dulcan p.424-425)",
+      "Parent-Focused Therapy (PFT) indicated as an alternative when high parental Expressed Emotion or family conflict is present (Dulcan p.425-426)",
+      "Inpatient medical admission indicated for acute physiological instability before outpatient FBT (Dulcan p.424-425, p.613)"
+    ],
+    "key_numbers": [
+      "<18 years - target age group for FBT",
+      "<3 years - optimal illness duration window",
+      "1st line - recommendation status in international guidelines (NICE, APA)"
+    ]
+  },
+  "medical_stabilization": {
+    "items": [
+      "Refeeding syndrome: life-threatening hypophosphatemia, hypokalemia, and hypomagnesemia triggered by insulin surge upon carbohydrate reintroduction (Garber et al. 2016; Dulcan p.425)",
+      "Thiamine supplementation (100-300 mg/day) required before refeeding to prevent Wernicke's encephalopathy (Garber et al. 2016; Dulcan p.425)",
+      "SSRIs (Fluoxetine) are INEFFECTIVE for weight gain or obsessive core symptoms in severe AN starvation due to tryptophan depletion (Dulcan p.429; StahlKids p.208)",
+      "Fluoxetine is FDA-approved only for Bulimia Nervosa in adults (60 mg/day) and used off-label in adolescents (DSM p.390; Dulcan p.429; StahlKids p.199, p.208)",
+      "Low-dose Olanzapine (2.5-5 mg/day off-label) used as an adjuvant to reduce severe mealtime anxiety and obsessive rigidity in AN (Dulcan p.429; StahlKids p.351)",
+      "Mandatory metabolic monitoring for Olanzapine: fasting glucose, lipids, and weight/BMI z-score due to risk of DKA and insulin resistance (StahlKids p.351; StahlNeuro p.198-200)"
+    ],
+    "key_numbers": [
+      "100-300 mg/day Thiamine dose prior to refeeding",
+      "<1.5-2.0 mg/dL Phosphate level indicating severe hypophosphatemia",
+      "60 mg/day Fluoxetine dose for Bulimia Nervosa",
+      "2.5-5 mg/day Olanzapine dose for AN meal anxiety"
+    ]
+  },
+  "admission_criteria": {
+    "items": [
+      "Weight threshold: <75% Ideal Body Weight (IBW) or acute massive weight loss (>10-15%) (Dulcan p.424, p.613)",
+      "Heart rate threshold: severe daytime resting bradycardia <40 bpm (Dulcan p.424, p.613)",
+      "Blood pressure threshold: hypotension <90 mmHg or orthostatic systolic drop >20 mmHg / HR surge >20-30 bpm (Dulcan p.424, p.613)",
+      "Temperature threshold: core hypothermia <35.5°C (96°F) (Dulcan p.424, p.613)",
+      "Laboratory thresholds: severe hypokalemia (<3.0 mEq/L), hypophosphatemia (<2.5 mg/dL), or fasting hypoglycemia (<60 mg/dL) (Dulcan p.425, p.613)",
+      "ECG threshold: QTc interval prolongation ≥450-470 ms or cardiac arrhythmias (Dulcan p.613)",
+      "Psychiatric admission criteria: acute suicide risk, intractable purging, or severe comorbid depression/OCD in medically stable patients (Dulcan p.424-425)"
+    ],
+    "key_numbers": [
+      "<75% IBW - weight admission cutoff",
+      "<40 bpm - bradycardia admission cutoff",
+      "<90 mmHg - systolic blood pressure admission cutoff",
+      ">20 mmHg - orthostatic systolic blood pressure drop cutoff",
+      "<35.5°C - core temperature admission cutoff",
+      "<60 mg/dL - fasting glucose admission cutoff",
+      "≥450-470 ms - QTc prolongation admission cutoff"
+    ]
+  },
+  "high_yield": [
+    "FBT (Maudsley) is the first-line gold-standard treatment for adolescent AN and BN, outperforming individual therapy (AFT) in RCTs (49.3% vs 23.2% remission at 12-month follow-up) (Dulcan p.425-426).",
+    "The 3 phases of FBT are: Phase 1 (parents in full charge of refeeding), Phase 2 (gradual return of control over eating to adolescent), and Phase 3 (adolescent maturation and relapse prevention) (Dulcan p.426).",
+    "The Family Meal Session occurs in session 2 of Phase 1 to observe eating dynamics, intensify constructive anxiety, and empower parents to insist on one extra bite (Dulcan p.426).",
+    "Medical admission cutoffs for acute eating disorder stabilization: <75% IBW, resting heart rate <40 bpm, BP <90 mmHg, core temp <35.5°C, QTc ≥450-470 ms, severe hypokalemia, or fasting glucose <60 mg/dL (Dulcan p.424, p.613).",
+    "Refeeding syndrome is driven by an insulin surge shifting phosphate, potassium, and magnesium intracellularly, leading to fatal hypophosphatemia and ATP failure; give Thiamine (100-300 mg/day) before refeeding (Garber et al. 2016; Dulcan p.425).",
+    "SSRIs (Fluoxetine) are INEFFECTIVE for weight restoration in starved AN patients due to tryptophan depletion, but Fluoxetine (60 mg/day) is FDA-approved for Bulimia Nervosa (Dulcan p.429; StahlKids p.208).",
+    "Low-dose Olanzapine (2.5-5 mg/day) is used off-label in AN to reduce severe mealtime anxiety and obsessive rigidity, requiring strict metabolic monitoring for DKA and insulin resistance (Dulcan p.429; StahlKids p.351)."
+  ]
+}
