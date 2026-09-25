@@ -1,0 +1,36 @@
+{
+ "tag": "study-092-schizoid-personality-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:46:15+00:00",
+ "updated_at": "2026-09-25T15:46:15+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "844d18c30be13ea8705d9904c3e4d0fface0432a1c1232f1a214ba6e22f6b2b6",
+   "asset_id": 585749086,
+   "size": 5131,
+   "fetched_at": "2026-09-25T15:46:09+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "e08c1d5143fd0e1d3312cfe327f05f9cff972d56ca18cfbbb5b5ac19b0d341a3",
+   "asset_id": 585749082,
+   "size": 12902,
+   "fetched_at": "2026-09-25T15:46:11+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "2514722818af3cf8a8182ae073e0850be853232ceba15b2dfb5609f8b8cf052b",
+   "asset_id": 585749085,
+   "size": 33848,
+   "fetched_at": "2026-09-25T15:46:13+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b1867f1b1185a6c7b2a51205f104facfed9cd684ae5bf2647a8bea531d83b782",
+   "asset_id": 585749081,
+   "size": 39408,
+   "fetched_at": "2026-09-25T15:46:15+00:00"
+  }
+ ]
+}

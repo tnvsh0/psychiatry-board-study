@@ -1,0 +1,70 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster A (Odd/Eccentric) - Detachment & Restricted Affect (DSM p.741)",
+        "items": [
+          "אינו רוצה ואינו נהנה מקשרים קרובים, כולל משפחה (DSM p.741)",
+          "בוחר כמעט תמיד בפעילויות בודדות (DSM p.741)",
+          "חוסר עניין בחוויות מיניות עם אדם אחר (DSM p.741)",
+          "שואב הנאה ממעט מאוד פעילויות (DSM p.741)",
+          "נעדר חברים קרובים/אנשי סוד מלבד קרובים מדרגה ראשונה (DSM p.741)",
+          "אדישות לשבח או לביקורת מאחרים (DSM p.742)",
+          "קרירות רגשית, נתק או אפקט שטוח (DSM p.742)"
+        ]
+      }
+    ],
+    "thresholds": "≥4 מתוך 7 קריטריונים (DSM p.741)",
+    "subtypes": [
+      "Schizoid Personality Disorder (premorbid) (DSM p.742)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1.3%–4.9% (NCS-R 4.9%, NESARC 3.1%) (DSM p.743; Synopsis ch.19 Personality Disorders)",
+    "sex_ratio": "שכיח מעט יותר בגברים (DSM p.743; Synopsis ch.19 Personality Disorders)",
+    "onset_age_typical": "ילדות/התבגרות (כבודדים), בגרות מוקדמת (DSM p.743)",
+    "heritability": "סיכון מוגבר בקרובים מדרגה ראשונה של חולי סכיזופרניה/סכיזוטיפלית (DSM p.743; Synopsis ch.19 Personality Disorders)",
+    "comorbidities": [
+      "הפרעת אישיות סכיזוטיפלית, פרנואידית, נמנעת (DSM p.743)",
+      "דיכאון מג'ורי (Synopsis ch.19 Personality Disorders)"
+    ],
+    "prognosis": "מהלך כרוני ונמשך לכל החיים (Synopsis ch.19 Personality Disorders)"
+  },
+  "etiology": {
+    "genetic": "שכיחות מוגברת בקרובים מדרגה ראשונה של חולי סכיזופרניה או הפרעת אישיות סכיזוטיפלית (DSM p.743; Synopsis ch.19 Personality Disorders)",
+    "neurobiology": "תת-פעילות מזוקורטיקלית (PFC) ודיספונקציה של D2/NMDA, תת-פעילות מסלול הגמול המזולימבי (StahlNeuro p.141-143, p.161)",
+    "environmental": "Reward Dependence (RD) נמוך מאוד במודל קלונינגר (Synopsis ch.19 Personality Disorders)"
+  },
+  "differential": {
+    "items": [
+      "Avoidant PD: ב-Schizoid אין רצון בקשר; ב-Avoidant יש רצון עז בקשר אך פחד מדחייה (DSM p.744)",
+      "ASD: ב-ASD קיימים דפוסים ותחביבים חזרתיים/סטריאוטיפיים (Criterion B) ורגישות סנסורית (DSM p.57, p.743; Dulcan p.137)",
+      "Schizotypal PD: כולל עיוותים קוגניטיביים/תחושתיים, מחשבות יחס ואמונות מוזרות (DSM p.744, p.747)",
+      "Schizophrenia: כולל תסמינים פסיכוטיים פעילים מתמשכים (הזיות, מחשבות שווא) (DSM p.101, p.743)"
+    ],
+    "key_numbers": [
+      "≥4 קריטריונים לאבחנת Schizoid (DSM p.741)",
+      "≥2 תכונות חזרתיות/מצומצמות לקריטריון B ב-ASD (DSM p.57)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "פסיכותרפיה תומכת: כיבוד המרחק והגבולות של המטופל (Synopsis ch.19 Personality Disorders)"
+    ],
+    "second_line": [
+      "SSRIs/SNRIs לתסמיני דיכאון/אנהדוניה: Sertraline, Fluoxetine, Duloxetine (StahlKids p.208, p.321, p.446; Synopsis ch.19 Personality Disorders)",
+      "SGAs במינון נמוך למצבי דחק פסיכוטיים חולפים: Risperidone, Aripiprazole, Quetiapine (Dulcan p.264, p.785; StahlKids p.46, p.350, p.408; Synopsis ch.19 Personality Disorders)"
+    ],
+    "key_side_effects": [
+      "סדציה, עלייה במשקל ושינויים מטבוליים מ-SGAs (StahlKids p.46, p.350)",
+      "אי-נוחות גסטרואינטסטינלית מ-SSRIs (StahlKids p.208, p.446)"
+    ],
+    "monitoring": "ניטור משקל, BMI, פרופיל ליפידים וגלוקוז בדם בשימוש ב-SGAs (StahlKids p.46, p.350)"
+  },
+  "high_yield": [
+    "הבדל קריטי: Schizoid אינו רוצה קשר חברתי; Avoidant רוצה קשר אך פוחד מדחייה (DSM p.744)",
+    "הבדל מ-ASD: ב-ASD קיימות התנהגויות, רוטינות ותחביבים חזרתיים/סטריאוטיפיים (DSM Criterion B), שאינם קיימים ב-Schizoid (DSM p.57, p.743; Dulcan p.137)",
+    "בפסיכותרפיה: יש לחלוק כבוד מוחלט לצורך במרחק; בטיפול קבוצתי יש להגן עליו מפני לחץ חברתי (Synopsis ch.19 Personality Disorders)",
+    "טיפול תרופתי מיועד אך ורק לסימפטומי מטרה/תחלואה נלווית - אין תרופה ייעודית מאושרת להפרעה עצמה (Synopsis ch.19 Personality Disorders; StahlKids p.311)"
+  ]
+}
