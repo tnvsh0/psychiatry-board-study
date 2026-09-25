@@ -1,0 +1,131 @@
+{
+  "drug_class": {
+    "members": [
+      "Clozapine (DSN-RAn / SDA / SGA) (StahlKids p.153)"
+    ],
+    "mechanism": "5-HT2A, D4, 5-HT2C, H1, M1, α1, low D2 (<60%) (StahlNeuro p.216-218)",
+    "kinetics": [
+      "T1/2 = 12h (5-16h) (Dulcan p.787, StahlKids p.158)",
+      "CYP1A2 (30%), CYP2C19 (24%), CYP3A4 (22%) (Dulcan p.787)",
+      "Bioavailability 50%-60% (Dulcan p.787)"
+    ],
+    "onset_of_effect": "3 שבועות מרמת פלזמה טיפולית (StahlKids p.162)"
+  },
+  "indications": {
+    "items": [
+      "סכיזופרניה עמידה לטיפול (TRS) - כישלון ≥2 נוגדי פסיכוזה (Dulcan p.401, StahlKids p.153)",
+      "הפחתת אובדנות חוזרת בסכיזופרניה/סכיזואפקטיב (FDA) (StahlKids p.153, StahlNeuro p.222)",
+      "תוקפנות קשה ואלימות כרונית (Off-label) (StahlKids p.153, StahlNeuro p.222)",
+      "הפרעה דו-קוטבית עמידה לטיפול (Off-label) (StahlKids p.153)",
+      "דיסקינזיה מאוחרת (TD) - אינה גורמת ומשפרת (StahlKids p.166, StahlNeuro p.223)"
+    ],
+    "key_numbers": [
+      "50%-60% שיעור תגובה ב-TRS (StahlKids p.162)",
+      "3-6 NNT בסכיזופרניה מוקדמת (Dulcan p.797)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "סדציה קשה (46%-90% בילדים) (Dulcan p.826, StahlNeuro p.224)",
+      "עלייה ניכרת במשקל וסיכון מטבולי חמור (Dulcan p.820, StahlNeuro p.223)",
+      "טכיקרדיה ותת-לחץ דם תנוחתי (StahlKids p.156)",
+      "חום שפיר ספונטני בשבועות ראשונים (~20%) (StahlKids p.156)",
+      "סיכון ל-DKA ו-HHS (StahlNeuro p.201, StahlKids p.155)"
+    ],
+    "key_numbers": [
+      "46%-90% שכיחות סדציה בילדים/נוער (Dulcan p.826)",
+      "20% שכיחות חום שפיר (StahlKids p.156)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "ספירת ניוטרופילים ANC (שבועי 0-6 ח', דו-שבועי 6-12 ח', חודשי >12 ח') (Dulcan p.831, StahlKids p.159)",
+      "טרופונין ו-CRP שבועי בחודש הראשון למיוקרדיטיס (StahlKids p.154)",
+      "רמת שפל בפלזמה (Trough level) (StahlKids p.158)",
+      "משקל, BMI, סוכר וליפידים (Dulcan p.827, StahlKids p.154-155)",
+      "א.ק.ג. בבסיס (Dulcan p.827, StahlKids p.154)"
+    ],
+    "key_numbers": [
+      "≥350 ng/mL רמת שפל טיפולית בפלזמה (StahlKids p.158)",
+      "6 שבועות חלון ניטור מיוקרדיטיס (StahlKids p.154)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "מינון התחלתי בילדים: 12.5 מ\"ג בלילה (Dulcan p.786, StahlKids p.158)",
+      "טיטרציה איטית: העלאה ב-12.5-25 מ\"ג מדי 2-3 ימים (Dulcan p.786, StahlKids p.158)",
+      "טווח מינון בילדים: 50-600 מ\"ג/יום (Dulcan p.786, StahlKids p.158)",
+      "עישון סיגריות משרה CYP1A2 ומוריד רמות; הפסקת עישון מעלה רמות ודורשת הפחתת מינון ב-50% (StahlKids p.158)",
+      "מעכבי CYP1A2 (Fluvoxamine, Ciprofloxacin) דורשים הפחתת מינון ל-1/3 (StahlKids p.158)",
+      "הפסקה >48 שעות דורשת חידוש טיטרציה מ-12.5 מ\"ג עקב אובדן סבילות (StahlKids p.159)"
+    ],
+    "key_numbers": [
+      "12.5 mg מינון התחלתי (Dulcan p.786, StahlKids p.158)",
+      "50-600 mg/day טווח מינון פדיאטרי (Dulcan p.786)",
+      "48 שעות סף אובדן סבילות בהפסקה (StahlKids p.159)"
+    ]
+  },
+  "agranulocytosis": {
+    "items": [
+      "אגרנולוציטוזיס (ANC < 500/µL) דורשת הפסקה מיידית ואיסור Rechallenge (StahlKids p.160)",
+      "נויטרופניה בינונית (ANC 500-999/µL) דורשת הפסקת טיפול וניטור יומי (StahlKids p.159-160)",
+      "נויטרופניה אתנית שפירה (BEN): סף תחילת טיפול ANC ≥ 1000/µL (Dulcan p.831, StahlKids p.154, 160)",
+      "ליתיום (300-600 mg/day) מעלה ספירת נויטרופילים ומאפשר המשך טיפול (Dulcan p.834)",
+      "תוכנית Clozapine REMS מאחדת את הניטור (StahlKids p.167)"
+    ],
+    "key_numbers": [
+      "<500/µL סף אגרנולוציטוזיס (ANC) (Dulcan p.831, StahlKids p.160)",
+      "≥1500/µL סף ANC בסיסי כללי (StahlKids p.154)",
+      "≥1000/µL סף ANC בסיסי ב-BEN (Dulcan p.831, StahlKids p.154)",
+      "16% הסתברות מצטברת לאירוע המטולוגי בשנה 1 בילדים (Dulcan p.826)"
+    ]
+  },
+  "myocarditis": {
+    "items": [
+      "מיוקרדיטיס מוקדמת מתרחשת בששת השבועות הראשונים לטיפול (StahlKids p.154, 156)",
+      "בדיקת בסיס וניטור שבועי בחודש 1 של Troponin I/T ו-CRP (StahlKids p.154)",
+      "הפסקת Clozapine מיידית אם טרופונין >2×ULN או CRP >100 mg/L (StahlKids p.154)",
+      "קרדיומיופתיה היא סיבוך מאוחר (אקו-לב שנתי) (Dulcan p.1095, StahlKids p.154)"
+    ],
+    "key_numbers": [
+      "6 שבועות חלון סיכון מרכזי למיוקרדיטיס (StahlKids p.154)",
+      ">2×ULN סף טרופונין להפסקת טיפול (StahlKids p.154)",
+      ">100 mg/L סף CRP להפסקת טיפול (StahlKids p.154)"
+    ]
+  },
+  "seizures": {
+    "items": [
+      "סיכון לפרכוסים תלוי-מינון ורמת פלזמה (Dulcan p.684, StahlKids p.156, StahlNeuro p.223)",
+      "הסיכון עולה במינון >500 mg/day ורמת פלזמה >600-700 ng/mL (StahlKids p.158)",
+      "חומצה ולפרואית (Valproate) היא טיפול הבחירה למניעה וטיפול (StahlKids p.157)",
+      "איסור מוחלט על Carbamazepine (סיכון לדיכוי מוח עצם) ו-Phenytoin (StahlKids p.157)"
+    ],
+    "key_numbers": [
+      ">500 mg/day מינון קריטי לעליית סיכון לפרכוסים (StahlKids p.158)",
+      ">600-700 ng/mL רמת פלזמה קריטית לפרכוסים (StahlKids p.158)"
+    ]
+  },
+  "drooling": {
+    "items": [
+      "ריור מוגבר / סילוריאה לילית (הפרדוקס המוסקריני M1/M4) (StahlKids p.156, StahlNeuro p.224)",
+      "טיפול בריור: טיפות Atropine 1% תת-לשונית, תרסיס Ipratropium, או Glycopyrrolate/Benztropine (StahlKids p.157, StahlNeuro p.224)",
+      "עצירות קשה וסיכון לאילאוס פרליטי וחסימת מעיים (StahlKids p.156, StahlNeuro p.224)",
+      "מניעת עצירות: מתן Docusate רוטיני בבסיס; איסור מוחלט על Psyllium (StahlKids p.156, 167)"
+    ],
+    "key_numbers": [
+      "1% ריכוז טיפות Atropine תת-לשוניות לריור (StahlKids p.157)"
+    ]
+  },
+  "high_yield": [
+    "Clozapine היא ה-Gold Standard לסכיזופרניה עמידה לטיפול (TRS) עם 50%-60% תגובה קלינית לעומת 0%-9% באטיפיקליות אחרות (StahlKids p.162).",
+    "Clozapine היחידה המאושרת FDA להפחתת סיכון להתנהגות אובדנית חוזרת בסכיזופרניה (StahlKids p.153, StahlNeuro p.222).",
+    "יעילות קלינית מושגת בתפוסת D2 של פחות מ-60% בסטריאטום, ולכן אין סיכון ל-EPS, ל-TD או להיפרפרולקטינמיה (StahlNeuro p.218, 222).",
+    "סף רמת פלזמה טיפולית (Trough) הוא ≥350 ng/mL (StahlKids p.158).",
+    "ניטור ANC בתוכנית REMS: שבועי ב-6 חודשים ראשונים, דו-שבועי בחודשים 6-12, וחודשי לאחר שנה (Dulcan p.831, StahlKids p.159).",
+    "אגרנולוציטוזיס (ANC <500/µL) מחייבת הפסקה מיידית ואיסור מוחלט על Rechallenge (StahlKids p.160).",
+    "מיוקרדיטיס מוקדמת מתרחשת בששת השבועות הראשונים; חובה לבדוק Troponin ו-CRP בבסיס ומדי שבוע בחודש ראשון, ולהפסיק אם טרופונין >2×ULN או CRP >100 mg/L (StahlKids p.154).",
+    "הפסקה של מעל 48 שעות (2 ימים) גורמת לאובדן סבילות ומחייבת חידוש טיטרציה איטית מ-12.5 מ\"ג (StahlKids p.159).",
+    "עצירות מושרת Clozapine עלולה להוביל לחסימת מעיים קטלנית; חובה להתחיל Docusate בבסיס ולשרש איסור על פסיליום (Psyllium) (StahlKids p.156, 167).",
+    "עישון סיגריות משרה CYP1A2 ומוריד רמות קלוזפין; הפסקת עישון דורשת הפחתת מינון ב-50% למניעת הרעלה (StahlKids p.158)."
+  ]
+}

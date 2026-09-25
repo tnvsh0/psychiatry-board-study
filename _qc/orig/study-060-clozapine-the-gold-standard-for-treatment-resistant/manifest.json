@@ -1,0 +1,36 @@
+{
+ "tag": "study-060-clozapine-the-gold-standard-for-treatment-resistant",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:43:29+00:00",
+ "updated_at": "2026-09-25T14:43:29+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a48b3e07fd8a0705daa3c4db02f91afeba31f380e40402be5d690a0e42e73392",
+   "asset_id": 570857980,
+   "size": 9002,
+   "fetched_at": "2026-09-25T14:43:23+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "ab3e3127377617f44636bc49d04e020898b11bff6633ead2093eb78fbdd832cd",
+   "asset_id": 570857988,
+   "size": 11483,
+   "fetched_at": "2026-09-25T14:43:25+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "0d0b96590e8a3da29666a527e12183addef2feac79ca6ef80a8847d7ab1ccba3",
+   "asset_id": 570857987,
+   "size": 31698,
+   "fetched_at": "2026-09-25T14:43:27+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "f8d4c244465429af537194cb5d07ddbce8bedcbbfcc376f4bbe3f658d66b963f",
+   "asset_id": 570857986,
+   "size": 44551,
+   "fetched_at": "2026-09-25T14:43:29+00:00"
+  }
+ ]
+}
