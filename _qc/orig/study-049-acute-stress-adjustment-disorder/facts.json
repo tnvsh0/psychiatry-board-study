@@ -1,0 +1,135 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Intrusion (ASD)",
+        "items": [
+          "Involuntary distressing memories",
+          "Traumatic dreams",
+          "Dissociative reactions (Flashbacks / trauma play reenactment)",
+          "Psychological or physiological distress at cues"
+        ]
+      },
+      {
+        "name": "Negative Mood (ASD)",
+        "items": [
+          "Persistent inability to experience positive emotions"
+        ]
+      },
+      {
+        "name": "Dissociation (ASD)",
+        "items": [
+          "Altered sense of reality (depersonalization / derealization)",
+          "Dissociative amnesia for key trauma details"
+        ]
+      },
+      {
+        "name": "Avoidance (ASD)",
+        "items": [
+          "Avoidance of internal distressing memories or thoughts",
+          "Avoidance of external reminders (people, places, activities)"
+        ]
+      },
+      {
+        "name": "Arousal (ASD)",
+        "items": [
+          "Sleep disturbance",
+          "Irritable behavior and angry outbursts",
+          "Hypervigilance",
+          "Concentration problems",
+          "Exaggerated startle response"
+        ]
+      },
+      {
+        "name": "Adjustment Disorder Core",
+        "items": [
+          "Emotional or behavioral symptoms in response to an identifiable stressor",
+          "Disproportionate distress or significant functional impairment"
+        ]
+      }
+    ],
+    "thresholds": "ASD: >=9/14 symptoms across 5 categories, duration 3 days to 1 month. Adjustment: onset within 3 months of stressor, resolves within 6 months after stressor ends (unless chronic).",
+    "subtypes": [
+      "With depressed mood (F43.21)",
+      "With anxiety (F43.22)",
+      "With mixed anxiety and depressed mood (F43.23)",
+      "With disturbance of conduct (F43.24)",
+      "With mixed disturbance of emotions and conduct (F43.25)",
+      "Unspecified (F43.20)",
+      "Acute (<6 months)",
+      "Persistent / Chronic (>=6 months with ongoing stressor)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "ASD: <20% non-interpersonal trauma, 19-50% interpersonal assault. Adjustment: <1% community, 2.94% primary care, 11-50% hospital consultation-liaison.",
+    "sex_ratio": "Higher in females (F > M)",
+    "onset_age_typical": "All ages (ASD onset within 3 days post-trauma; Adjustment onset within 3 months of stressor)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Major Depressive Disorder",
+      "Substance Use Disorders",
+      "PTSD",
+      "Personality Disorders"
+    ],
+    "prognosis": "ASD: ~50% remit within 1 month, ~50% transition to PTSD. Adjustment: generally favorable, most resolve within 3-6 months."
+  },
+  "etiology": {
+    "genetic": "Elevated baseline acoustic startle reactivity and autonomic responsiveness increase risk.",
+    "neurobiology": "Amygdala hyperactivity (Fear circuit), HPA axis hyperactivation (Cortisol), Locus Coeruleus hyperresponsiveness (NE), impaired top-down PFC/hippocampal inhibition.",
+    "environmental": "Interpersonal trauma, severe acute life stressors, lack of social support, childhood adversity (ACEs)."
+  },
+  "treatment": {
+    "first_line": [
+      "TF-CBT (PRACTICE model: Psychoeducation, Relaxation, Affective regulation, Cognitive coping, Trauma narrative, In vivo exposure, Conjoint parent-child, Enhancing safety)",
+      "EMDR",
+      "Crisis Intervention and Supportive Case Management (Adjustment Disorder)"
+    ],
+    "second_line": [
+      "Prazosin (alpha-1 adrenergic antagonist for trauma nightmares and nocturnal hyperarousal)",
+      "SSRIs (Fluoxetine, Escitalopram) for persistent comorbid anxiety/depression",
+      "Morphine (acute hospital administration post-trauma to block memory consolidation)",
+      "D-Cycloserine (NMDA partial agonist to enhance fear extinction during exposure)"
+    ],
+    "key_side_effects": [
+      "Prazosin: orthostatic hypotension, dizziness, sedation",
+      "SSRIs: antidepressant-induced activation, agitation, suicidal ideation risk in pediatric population"
+    ],
+    "monitoring": "Monitor suicidal behavior, activation symptoms, blood pressure (Prazosin), and symptom duration at 1 month (ASD to PTSD transition) and 6 months (Adjustment resolution)."
+  },
+  "assessment_tools": {
+    "items": [
+      "UCLA PTSD Reaction Index for DSM-5",
+      "CPSS-5 (Child PTSD Symptom Scale for DSM-5)",
+      "PsySTART rapid triage tool (13 questions)",
+      "PAPA (Preschool Age Psychiatric Assessment)",
+      "K-SADS-PL semi-structured interview"
+    ],
+    "key_numbers": [
+      "13 items in PsySTART triage tool",
+      "9 of 14 symptoms threshold for ASD",
+      "3 months onset limit for Adjustment Disorder",
+      "1 month cutoff for ASD to PTSD transition"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Mild Traumatic Brain Injury / TBI (postconcussive headache, dizziness, light sensitivity)",
+      "Hyperthyroidism (hyperarousal, agitation, tachycardia)",
+      "Complex Partial Epilepsy (flashback and dissociative mimics)",
+      "Substance Intoxication or Withdrawal (stimulants, alcohol, cannabis)",
+      "PANS / PANDAS (acute onset behavioral dysregulation and severe anxiety)"
+    ],
+    "key_numbers": [
+      "3 days minimum symptom duration to diagnose ASD vs normal transient stress response",
+      "1 month maximum duration for ASD before re-evaluating for TBI vs PTSD"
+    ]
+  },
+  "high_yield": [
+    "ASD duration must be 3 days to 1 month post-trauma; if symptoms persist beyond 1 month, change diagnosis to PTSD.",
+    "ASD requires at least 9 of 14 symptoms from any of the 5 categories (Intrusion, Negative Mood, Dissociation, Avoidance, Arousal).",
+    "Adjustment Disorder requires symptom onset within 3 months of an identifiable stressor and resolution within 6 months after the stressor or its consequences terminate.",
+    "Adjustment Disorder with disturbance of conduct (F43.24) is common in adolescents and is strongly associated with elevated suicide risk.",
+    "Fear extinction is mediated by VMPFC/hippocampal activation of GABAergic interneurons in the Intercalated Cell Mass (ITC) of the Amygdala.",
+    "Prazosin acts as an alpha-1 adrenergic antagonist in the Amygdala to reduce traumatic nightmares and nocturnal hyperarousal."
+  ]
+}

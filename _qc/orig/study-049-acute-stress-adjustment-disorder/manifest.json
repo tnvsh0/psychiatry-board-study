@@ -1,0 +1,36 @@
+{
+ "tag": "study-049-acute-stress-adjustment-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:24:14+00:00",
+ "updated_at": "2026-09-25T14:24:14+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "328087f8d396ffc6cf3243db5d471c7707376b38eaa6300643d191639868982b",
+   "asset_id": 563949917,
+   "size": 6423,
+   "fetched_at": "2026-09-25T14:24:08+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "9d14671de0d08fc34428d184881195e32e76acf78081edd2501912bf4435952a",
+   "asset_id": 563949922,
+   "size": 11195,
+   "fetched_at": "2026-09-25T14:24:10+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "cda0374a9b6507d16f2fb92fd2c031a9a449cc0e6460cc2d80041f4bf5a19e62",
+   "asset_id": 563949921,
+   "size": 34728,
+   "fetched_at": "2026-09-25T14:24:12+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ccdeb86dd42037a858f295bdb859157c55e535afcbe94ef33582e26acb22c689",
+   "asset_id": 563949920,
+   "size": 39810,
+   "fetched_at": "2026-09-25T14:24:14+00:00"
+  }
+ ]
+}
