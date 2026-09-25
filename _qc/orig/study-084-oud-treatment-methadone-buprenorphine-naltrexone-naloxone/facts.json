@@ -1,0 +1,85 @@
+{
+  "drug_class": {
+    "members": [
+      "Methadone (Full μ-agonist, NMDA antagonist, SNRI) (StahlNeuro p.559)",
+      "Buprenorphine (Partial μ-agonist, κ-antagonist, ceiling effect) (StahlNeuro p.559)",
+      "Naltrexone (Full μ-antagonist, silent blockade) (StahlNeuro p.560)",
+      "Naloxone (Pure full μ-antagonist, rapid displacement) (StahlNeuro p.560)",
+      "Clonidine (Presynaptic α2A-adrenergic agonist) (StahlKids p.143)"
+    ],
+    "mechanism": "Gi-coupled μ-opioid receptor activation or blockade altering cAMP and VSCC channels, modulating mesolimbic dopamine release (StahlNeuro p.31, 541, 559)",
+    "kinetics": [
+      "Methadone t½ = 24–36 hours (DSM p.618, StahlNeuro p.560)",
+      "Naloxone short t½ = 30–90 minutes (DSM p.616, StahlNeuro p.560)",
+      "Sublocade SC depot lasts 30 days (StahlNeuro p.559–560)",
+      "Vivitrol IM depot lasts 30 days (StahlNeuro p.562)"
+    ],
+    "onset_of_effect": "Naloxone IN/IM acts in minutes; SL Buprenorphine acts in 15–30 min; Methadone steady state in 3–5 days (StahlNeuro p.559–560, DSM p.616)"
+  },
+  "indications": {
+    "items": [
+      "Methadone: OUD maintenance & detoxification for ages 16+ (Dulcan p.234, DSM p.610)",
+      "Buprenorphine: Office-based MAT maintenance & detoxification for ages 16+ (Dulcan p.234, StahlNeuro p.559)",
+      "Naltrexone (Vivitrol): OUD relapse prevention for ages 18+ after 7–10 days opioid-free (Dulcan p.234, StahlNeuro p.560)",
+      "Naloxone: Emergency opioid overdose reversal without age limit (DSM p.616, StahlNeuro p.560)",
+      "Clonidine/Lofexidine: Symptomatic relief of autonomic opioid withdrawal symptoms (StahlKids p.143, StahlNeuro p.560)"
+    ],
+    "key_numbers": [
+      "16 years — FDA minimum age for Methadone and Buprenorphine MAT (Dulcan p.234)",
+      "18 years — FDA minimum age for Vivitrol (XR-NTX) (Dulcan p.234)",
+      "7–10 days — Mandatory opioid-free interval before starting Naltrexone (Dulcan p.234–235)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Methadone: QTc prolongation, Torsades de Pointes, respiratory depression, constipation, diaphoresis (Dulcan p.234, 332, StahlNeuro p.559)",
+      "Buprenorphine: Precipitated withdrawal if given prematurely with full agonists, headache, nausea (DSM p.618, StahlNeuro p.559)",
+      "Naltrexone: Severe precipitated withdrawal if given early, fatal overdose risk upon relapse due to receptor up-regulation, hepatotoxicity (StahlKids p.144, StahlNeuro p.560)",
+      "Naloxone: Acute precipitated withdrawal, agitation, tachycardia, rare pulmonary edema (DSM p.616, StahlNeuro p.560)",
+      "Clonidine: Hypotension, bradycardia, sedation, rebound hypertension if stopped abruptly (StahlKids p.143–144)"
+    ],
+    "key_numbers": [
+      "440 ms — QTc upper limit threshold on ECG requiring cardiology review for Methadone (Dulcan p.1095)",
+      "3–5 times ULN — Transaminase elevation limit for stopping Naltrexone/Buprenorphine (StahlNeuro p.560)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Methadone: Baseline & follow-up ECG for QTc interval, specialized UDS (Dulcan p.234, 332, DSM p.612)",
+      "Buprenorphine: COWS score (>8–12) before induction, baseline & periodic LFTs, specialized UDS (DSM p.612, 618, StahlNeuro p.560)",
+      "Naltrexone: LFTs, verification of 7–10 days opioid-free status or Naloxone challenge test (Dulcan p.234, StahlNeuro p.560, DSM p.616)",
+      "Naloxone: Vital signs & respiratory rate monitoring for 2–4 hours post-administration (DSM p.616, StahlNeuro p.560)",
+      "Clonidine: BP and pulse before each dose (StahlKids p.143–144)"
+    ],
+    "key_numbers": [
+      "8–12 points — COWS minimum active withdrawal score required before Buprenorphine induction (DSM p.618, StahlNeuro p.559)",
+      "2–4 hours — Mandatory observation window post-Naloxone for Renarcotization risk (DSM p.616, StahlNeuro p.560)",
+      "90/60 mmHg — BP cutoff below which Clonidine doses must be held (StahlKids p.143–144)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Methadone: OTP clinic-only daily directly observed therapy (DOT); starting dose 20–30 mg/day, maintenance 60–120 mg/day (Dulcan p.234, StahlNeuro p.559)",
+      "Buprenorphine (Suboxone): Office-based SL formulation with 4:1 Naloxone ratio to deter IV abuse; maintenance 8–16 mg/day (max 24 mg/day) (Dulcan p.234–235, StahlNeuro p.559)",
+      "Naltrexone (Vivitrol): Monthly 380 mg IM gluteal injection after 7–10 days opioid-free; produces pharmacological extinction (Dulcan p.234–235, StahlNeuro p.560, 562)",
+      "Naloxone: IN spray 4 mg (Narcan) or IM 0.4–2 mg; repeat every 2–3 min if needed; call emergency transport immediately (DSM p.616, StahlNeuro p.560)",
+      "Clonidine: Oral 0.1 mg tid for 4–6 days; limit outpatient supply to 3 days maximum (StahlKids p.143–144)"
+    ],
+    "key_numbers": [
+      "4:1 ratio — Buprenorphine to Naloxone in Suboxone SL tablets/films (Dulcan p.234, StahlNeuro p.559)",
+      "380 mg — Monthly IM dose of Extended-Release Naltrexone (Vivitrol) (StahlNeuro p.562, Dulcan p.235)",
+      "4 mg — Single-dose IN Naloxone spray (Narcan) for emergency overdose (StahlNeuro p.560)",
+      "3 days — Maximum outpatient Clonidine supply limit for detox (StahlKids p.144)"
+    ]
+  },
+  "high_yield": [
+    "DSM-5-TR Diagnostic Exception: Tolerance and withdrawal criteria do NOT count towards OUD when opioids are taken under proper medical supervision (DSM p.609, 610).",
+    "FDA Age Approvals: Buprenorphine (16+), Methadone (16+), Vivitrol (18+) (Dulcan p.234).",
+    "Methadone QTc Risk: Methadone prolongs QTc interval and increases Torsades de Pointes risk; requires baseline and follow-up ECGs (Dulcan p.234, 332).",
+    "Buprenorphine Precipitated Withdrawal: Administering Buprenorphine prematurely displaces full agonists and triggers severe withdrawal; requires active withdrawal (COWS > 8–12) before induction (DSM p.618, StahlNeuro p.559).",
+    "Suboxone Abuse Deterrence: Naloxone component is unabsorbed sublingually (~0% bioavailability) but causes severe withdrawal if dissolved and injected IV (Dulcan p.234–235, StahlNeuro p.559).",
+    "Naltrexone Opioid-Free Requirement: Requires 7–10 days opioid-free status (10–14 days for long-acting) before starting; relapse after stopping carries high risk of fatal overdose due to loss of tolerance and receptor up-regulation (Dulcan p.234–235, StahlNeuro p.560).",
+    "Naloxone Short Half-Life & Renarcotization: Naloxone t½ (30–90 min) is shorter than most opioids; patient can relapse into coma (Renarcotization), requiring mandatory hospital transport and potential re-dosing (DSM p.616, StahlNeuro p.560).",
+    "Toxicology Screen Limits: Routine UDS detects morphine only; Fentanyl, Methadone, Buprenorphine, and Oxycodone require specialized toxicology panels (DSM p.612)."
+  ]
+}

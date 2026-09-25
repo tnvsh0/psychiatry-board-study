@@ -1,0 +1,36 @@
+{
+ "tag": "study-084-oud-treatment-methadone-buprenorphine-naltrexone-naloxone",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:33:07+00:00",
+ "updated_at": "2026-09-25T15:33:07+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "8864d28eb513a8fa9858c500484c7ef0d1944867ee2cb0cb5fcde8e4323b060a",
+   "asset_id": 584960140,
+   "size": 6996,
+   "fetched_at": "2026-09-25T15:33:01+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "9e6a36259fd201b31d2abd561fb3fb4c97b2e29f5b880ddebfa667530b166302",
+   "asset_id": 584960136,
+   "size": 10625,
+   "fetched_at": "2026-09-25T15:33:03+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "645370312a381733612588c90e9d3c8724e0a9405f3f0217917a675cfca21557",
+   "asset_id": 584960131,
+   "size": 38287,
+   "fetched_at": "2026-09-25T15:33:05+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ec1ff458d6895f1a17f1ad088b791a8d0ca227f649b89313daaa38bc125f8e80",
+   "asset_id": 584960133,
+   "size": 55968,
+   "fetched_at": "2026-09-25T15:33:07+00:00"
+  }
+ ]
+}
