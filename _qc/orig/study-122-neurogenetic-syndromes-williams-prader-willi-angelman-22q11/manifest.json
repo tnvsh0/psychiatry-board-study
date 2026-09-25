@@ -1,0 +1,36 @@
+{
+ "tag": "study-122-neurogenetic-syndromes-williams-prader-willi-angelman-22q11",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:52:24+00:00",
+ "updated_at": "2026-09-25T16:52:24+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b0a2ebe3b2594e7fb3f5024bfcbaca071f9ee251da980ce25844f7c8eaea01bc",
+   "asset_id": 587365150,
+   "size": 10152,
+   "fetched_at": "2026-09-25T16:52:18+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "9cf36de46a7f486b63acd4acbb3c22e39a6bfd9c5fb1f489081334131b74a654",
+   "asset_id": 587365148,
+   "size": 13469,
+   "fetched_at": "2026-09-25T16:52:20+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "70af296415a325036d06af7934202e35c1e0639a8163692bb90b3acded4e8e7e",
+   "asset_id": 587365146,
+   "size": 40046,
+   "fetched_at": "2026-09-25T16:52:22+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "a8d6c8a0d271627660fec81441b0c1a7d07ee900c6fdec1d2bea640b3fa83082",
+   "asset_id": 587365151,
+   "size": 51481,
+   "fetched_at": "2026-09-25T16:52:24+00:00"
+  }
+ ]
+}
