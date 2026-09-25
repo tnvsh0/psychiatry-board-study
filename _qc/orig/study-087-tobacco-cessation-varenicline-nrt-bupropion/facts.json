@@ -1,0 +1,83 @@
+{
+  "drug_class": {
+    "members": [
+      "Varenicline: α4β2 nicotinic acetylcholine receptor partial agonist (NRPA)",
+      "Bupropion SR: NDRI (10-30% DAT/NET occupancy) + non-competitive nAChR antagonist",
+      "NRT (Patch, Gum, Lozenge, Spray, Inhaler): Full nicotinic receptor agonist with non-pulsatile absorption"
+    ],
+    "mechanism": "α4β2 partial agonism (Varenicline), DAT/NET reuptake inhibition + nAChR blockade (Bupropion), steady nicotinic receptor stimulation (NRT)",
+    "kinetics": [
+      "Bupropion: biphasic half-life 10-14h (parent), 20-27h (6-OH-bupropion metabolite), potent CYP2D6 inhibitor, metabolized by CYP2B6",
+      "Smoking cessation reduces CYP1A2 enzyme induction, increasing blood levels of Clozapine, Olanzapine, and Haloperidol",
+      "NRT Transdermal Patch: steady delivery over 16-24 hours"
+    ],
+    "onset_of_effect": "1-2 weeks for steady state and craving reduction (Varenicline & Bupropion); minutes for short-acting NRT"
+  },
+  "indications": {
+    "items": [
+      "FDA-approved for smoking cessation in adults: Varenicline, Bupropion SR, and NRT",
+      "No pharmacological agents are FDA-approved for youth under 18 years; off-label use supported by AAP",
+      "Combination NRT (patch + gum/lozenge) or NRT + Bupropion superior to monotherapy",
+      "Bupropion SR + Contingency Management (CM) significantly effective in adolescent smoking cessation"
+    ],
+    "key_numbers": [
+      "0: FDA-approved cessation medications for youth under 18 years",
+      "3-4x: Increase in 1-year quit rate with Varenicline vs placebo in adults",
+      "2x: Increase in quit rate with Bupropion SR vs placebo",
+      "4.4%: Adolescent NRT abstinence rate at 12 months (vs 6.6% placebo)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Varenicline: Dose-dependent nausea, insomnia, vivid dreams, GI discomfort; EAGLES trial confirmed no elevated neuropsychiatric risk vs placebo",
+      "Bupropion: Insomnia, dry mouth, weight loss, anorexia, tremor, hypertension, tachycardia",
+      "Bupropion Seizure Risk: Dose-dependent; contraindicated in anorexia/bulimia nervosa and epilepsy",
+      "NRT: Patch causes local erythema/pruritus; Gum/Lozenge causes mouth/throat irritation, hiccups, nausea"
+    ],
+    "key_numbers": [
+      "30%: Frequency of nausea with Varenicline",
+      "0.1%: Seizure risk with Bupropion at 300 mg/day",
+      "0.4%: Seizure risk with Bupropion at 400 mg/day",
+      "10x: Seizure risk increase with Bupropion doses >450 mg/day",
+      "20-50%: Local skin reaction rate with NRT patch"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Blood pressure and heart rate baseline and periodic monitoring (especially for Bupropion and NRT combinations)",
+      "Weight and height tracking on pediatric growth charts for youth on Bupropion",
+      "Neuropsychiatric monitoring for changes in mood, agitation, anxiety, or suicidality",
+      "Biomarkers: Exhaled carbon monoxide (CO < 6-8 ppm) and cotinine levels (half-life 16-20h)",
+      "Therapeutic drug monitoring (TDM) of CYP1A2 substrates (Clozapine, Olanzapine) 1-2 weeks post-cessation"
+    ],
+    "key_numbers": [
+      "6-8 ppm: Exhaled CO cutoff confirming smoking abstinence",
+      "16-20 hours: Cotinine half-life for verifying abstinence",
+      "14 days: Washout period between MAOIs and Bupropion",
+      "1-2 weeks: Timeframe to recheck Clozapine/Olanzapine levels after quitting"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Varenicline: Start 1-2 weeks before Target Quit Date (TQD); 0.5 mg daily x3d -> 0.5 mg bid x4d -> 1 mg bid from day 8 for 12-24 weeks",
+      "Bupropion SR: Start 1-2 weeks before TQD; 150 mg daily x3d -> 150 mg bid (at least 8 hours apart); max 300 mg/day for smoking cessation",
+      "Contraindicated to crush, split, or chew Bupropion SR/XL tablets (risk of rapid release and seizure)",
+      "NRT Gum: Chew and park method for buccal absorption; avoid acidic drinks 15 minutes before/during use",
+      "Pediatric off-label use requires parental Informed Consent and adolescent Informed Assent"
+    ],
+    "key_numbers": [
+      "1-2 weeks: Lead time to start Varenicline/Bupropion prior to Target Quit Date",
+      "8 hours: Minimum required interval between Bupropion SR doses",
+      "300 mg/day: Maximum daily dose of Bupropion SR for smoking cessation",
+      "15 minutes: Time to avoid acidic beverages before/during NRT gum or lozenge use"
+    ]
+  },
+  "high_yield": [
+    "Varenicline is an α4β2 partial agonist acting as net agonist without nicotine and net antagonist with nicotine (causing extinction).",
+    "No smoking cessation drugs are FDA-approved for under 18 years; all pediatric use is off-label.",
+    "Bupropion is strictly contraindicated in Anorexia and Bulimia Nervosa due to elevated seizure risk.",
+    "Cessation of smoking decreases CYP1A2 induction, leading to potentially toxic rises in Clozapine and Olanzapine levels.",
+    "Combination therapy (NRT patch + short-acting NRT, or NRT + Bupropion) is superior to monotherapy.",
+    "In adolescents, Bupropion SR combined with Contingency Management (CM) yields the highest abstinence rates."
+  ]
+}

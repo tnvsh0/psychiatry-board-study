@@ -1,0 +1,36 @@
+{
+ "tag": "study-087-tobacco-cessation-varenicline-nrt-bupropion",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:36:26+00:00",
+ "updated_at": "2026-09-25T15:36:26+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "d89c7872de8698b2844fef220f6bbaba5aac59735619d8f2c450effaf2bb05c9",
+   "asset_id": 585059355,
+   "size": 5249,
+   "fetched_at": "2026-09-25T15:36:20+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5d28adc1a6187bda687b6473cf7498cb6797b50db383017c222aa0ae744419eb",
+   "asset_id": 585059363,
+   "size": 13223,
+   "fetched_at": "2026-09-25T15:36:22+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "bfd245e195b4fce0d56b64e4530b71272e1238fd79edbf3fbd30c19ed3611622",
+   "asset_id": 585059354,
+   "size": 34863,
+   "fetched_at": "2026-09-25T15:36:24+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "98c4835371a49cf2293d765e21ff44008da3b5c6d413116ec7e45b07c9b4e717",
+   "asset_id": 585059356,
+   "size": 28022,
+   "fetched_at": "2026-09-25T15:36:26+00:00"
+  }
+ ]
+}
