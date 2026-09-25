@@ -1,0 +1,36 @@
+{
+ "tag": "study-110-family-transitions-divorce-adoption-foster-care",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:28:17+00:00",
+ "updated_at": "2026-09-25T16:28:17+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "2e50cff0703b32421cef000bcdd5ee3a173cd752d6356ad9e4552d0535a7e54f",
+   "asset_id": 586789109,
+   "size": 5763,
+   "fetched_at": "2026-09-25T16:28:11+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "b0971bf9c3235bf8776f54d1c40831f0cb43872cd0a6152dfbb7e0e66cc6f204",
+   "asset_id": 586789105,
+   "size": 15472,
+   "fetched_at": "2026-09-25T16:28:13+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "3be42eb9ad972d2df677580b40126eb4345e1d20540ed6a22edbb3a831102597",
+   "asset_id": 586789110,
+   "size": 46251,
+   "fetched_at": "2026-09-25T16:28:15+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "e70297b0c58690ee3d5b66e8378e542f383ebb91b55f7f7065001f4f2578760e",
+   "asset_id": 586789108,
+   "size": 48088,
+   "fetched_at": "2026-09-25T16:28:17+00:00"
+  }
+ ]
+}

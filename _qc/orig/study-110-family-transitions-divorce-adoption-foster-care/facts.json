@@ -1,0 +1,68 @@
+{
+  "clinical_presentation": {
+    "items": [
+      "Preschool children (2-5y) show developmental regression, separation anxiety, and magical thinking attributing divorce to their own behavior (Dulcan p.628, DSM p.218)",
+      "School-age children (6-11y) show overt grief, loyalty conflicts, reunification fantasies, and academic decline (Dulcan p.628)",
+      "Adolescents (12-18y) present with anger, moral condemnation, parentification, and externalizing risk behaviors (Dulcan p.625, p.628)",
+      "Adoption disclosure is recommended before age 3-5; adolescents experience dual identity integration and search for birth parents (Dulcan p.622, p.893)",
+      "RAD (F94.1) presents with emotional withdrawal, minimal comfort seeking/responding, and limited positive affect (DSM p.295-296)",
+      "DSED (F94.2) presents with disinhibited social familiarity with strangers, lack of checking back, and lack of hesitation (DSM p.298-299)"
+    ],
+    "key_numbers": [
+      "2-5 years: preschool age group showing regression and magical thinking (Dulcan p.628)",
+      "9 months: minimum developmental age required for RAD and DSED diagnosis (DSM p.296, p.299)",
+      "5 years: maximum age threshold for RAD symptom onset (DSM p.296)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "Chronic interparental conflict is the strongest predictor of child psychiatric morbidity, exceeding the impact of divorce itself (Dulcan p.628, p.631)",
+      "Parental alienation involves psychological splitting and borrowed scenarios, distinguished from realistic estrangement due to actual abuse (Dulcan p.629)",
+      "Adoptees have elevated rates of ODD, CD, ADHD, and FASD/ND-PAE due to genetic risks, prenatal toxic exposure, and institutional deprivation (Dulcan p.121, p.209, p.541-542, DSM p.918)",
+      "Foster youth experience placement instability leading to complex trauma, disorganized attachment, and dissociative symptoms (Dulcan p.520, p.632-633, DSM p.307)"
+    ],
+    "key_numbers": [
+      "50% of children in foster care have a diagnosed psychiatric disorder (StahlKids p.16, p.488)",
+      "90% of youth in residential treatment centers (RTCs) experienced complex trauma or polyvictimization (StahlKids p.16, p.489, Dulcan p.518, p.520)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Trauma-Informed Care (TIC) and environmental stabilization (StahlKids p.16, p.489)",
+      "Child-Parent Psychotherapy (CPP) for infants and young children with trauma or foster care history (Dulcan p.308, p.357)",
+      "Divorce mediation and co-parenting counseling (Dulcan p.628, p.646)"
+    ],
+    "second_line": [
+      "Interpersonal Psychotherapy for Depressed Adolescents (IPT-A) targeting role transitions and disputes (Dulcan p.955-965)",
+      "Wraparound services and Intensive In-Home Child and Adolescent Psychiatric Services (IICAPS) (Dulcan p.1000-1012)",
+      "Monotherapy with 'Start Low, Go Slow' titration when medication is clinically indicated for confirmed psychiatric disorders (StahlKids p.16, p.491)"
+    ],
+    "key_side_effects": [
+      "Metabolic side effects including weight gain, dyslipidemia, and hyperglycemia from atypical antipsychotics (StahlKids p.109, p.500)",
+      "Sedation, extrapyramidal symptoms (EPS), and hyperprolactinemia (StahlKids p.109)"
+    ],
+    "monitoring": "Regular monitoring of weight, height, blood pressure, blood glucose, lipid profile, and metabolic parameters (StahlKids p.109, p.500)"
+  },
+  "core_principles": {
+    "items": [
+      "Froma Walsh's Family Resilience Framework comprises Belief Systems, Organizational Patterns, and Communication Processes (Dulcan p.623-624, p.633-634)",
+      "Best Interests of the Child standard governs forensic custody and child welfare evaluations (Dulcan p.645-646, Syllabus p.39)",
+      "Dual Agency Prohibition strictly forbids treating clinicians from performing forensic custody evaluations (Dulcan p.644, p.648)",
+      "Written informed consent from BOTH legal guardians is required for treatment in high-conflict divorce (StahlKids p.16, p.109, Dulcan p.646)",
+      "Prohibition of chemical restraints forbids using psychotropics for non-specific behavior control in foster youth (StahlKids p.16, p.292, p.491)"
+    ],
+    "key_numbers": [
+      "3 core domains in Walsh's Family Resilience Framework (Dulcan p.623-624)",
+      "7 years: minimum age for obtaining child informed assent (StahlKids p.16, p.109, Dulcan p.689)"
+    ]
+  },
+  "high_yield": [
+    "Chronic high interparental conflict is a stronger predictor of child psychiatric morbidity than divorce itself (Dulcan p.628, p.631).",
+    "Parental alienation presents with psychological splitting and borrowed scenarios, whereas realistic estrangement stems from actual abuse or neglect (Dulcan p.629).",
+    "RAD (F94.1) is an internalizing disorder that improves rapidly in a nurturing environment; DSED (F94.2) is an externalizing disorder that persists even in high-quality care (DSM p.297, p.300).",
+    "Both RAD and DSED require a minimum developmental age of 9 months and evidence of severe social neglect/insufficient care (DSM p.296, p.299).",
+    "Using antipsychotics or mood stabilizers as 'chemical restraints' for non-specific behavior control in foster youth is strictly prohibited (StahlKids p.16, p.292, p.491).",
+    "Treating clinicians are strictly prohibited from providing forensic custody evaluations due to dual agency conflict of interest (Dulcan p.644, p.648).",
+    "Psychiatric or pharmacological treatment in high-conflict divorce requires written informed consent from BOTH legal guardians regardless of physical custody ratio (StahlKids p.16, p.109, Dulcan p.646)."
+  ]
+}
