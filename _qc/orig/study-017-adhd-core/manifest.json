@@ -1,0 +1,85 @@
+{
+ "tag": "study-017-adhd-core",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:23:27+00:00",
+ "updated_at": "2026-09-25T13:23:27+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "d18e6b61d788a6f963abb0d8880510c72ced72d2202bfb7e72ff0142015cca8d",
+   "asset_id": 530961905,
+   "size": 8636,
+   "fetched_at": "2026-09-25T13:23:00+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "131a935e15b24b077d4bdfefc7d64e7e32b644e3df41ae8318f60282f3ee5449",
+   "asset_id": 530961867,
+   "size": 11509,
+   "fetched_at": "2026-09-25T13:23:02+00:00"
+  },
+  {
+   "name": "narration_criteria.txt",
+   "sha256": "9e5747486904a4b338e99005cef0fd6dcf7db832ba39ad11f17678252cf72e26",
+   "asset_id": 530961890,
+   "size": 10692,
+   "fetched_at": "2026-09-25T13:23:04+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "b84d912f319d8bd900dc28b6c1d2d576cddbd7e8d6350160964021cdca67d404",
+   "asset_id": 530961874,
+   "size": 13073,
+   "fetched_at": "2026-09-25T13:23:06+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "cf95757f2df37dc363e8add7ecce7913c305699e4a18c001671b03014ca5bf95",
+   "asset_id": 530961895,
+   "size": 41910,
+   "fetched_at": "2026-09-25T13:23:09+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "0030224045998daa7c7af21520966967a7398929cefbdfb7efc151787086fa89",
+   "asset_id": 530961861,
+   "size": 30950,
+   "fetched_at": "2026-09-25T13:23:11+00:00"
+  },
+  {
+   "name": "sketchy_criteria.quiz.md",
+   "sha256": "00cb7061c9f570c91b3859c4fb841d085d2f622b9b656f1a69ab740ff0954076",
+   "asset_id": 530961885,
+   "size": 3996,
+   "fetched_at": "2026-09-25T13:23:16+00:00"
+  },
+  {
+   "name": "sketchy_criteria.txt",
+   "sha256": "4280283b94307c5aebe21ac7194daee9d683d33a541d2927851e715407aa1847",
+   "asset_id": 530961871,
+   "size": 12455,
+   "fetched_at": "2026-09-25T13:23:18+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "e77d7dee3bb702128b9ee4538ce6f621beb65677db33772a5d61f7e49a1df24a",
+   "asset_id": 530961870,
+   "size": 8749,
+   "fetched_at": "2026-09-25T13:23:20+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "460524c63eb9091e16db28630c5061c29d6d349cfd59b79ce8d14be93b444f25",
+   "asset_id": 530961862,
+   "size": 24754,
+   "fetched_at": "2026-09-25T13:23:22+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "94a79898c943396e8f3acd36822c7e9ebf582e97975be4eab2a746e842747014",
+   "asset_id": 530961899,
+   "size": 47445,
+   "fetched_at": "2026-09-25T13:23:27+00:00"
+  }
+ ]
+}
