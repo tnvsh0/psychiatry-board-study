@@ -1,0 +1,64 @@
+{
+ "tag": "study-021-intellectual-developmental-disorder-intellectual-disability",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:37:06+00:00",
+ "updated_at": "2026-09-25T13:37:06+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "56c44bd99fa9392f76c0bdee38fe76ca1b5bdcbd7a185a9fd9add4e01abedef7",
+   "asset_id": 531118044,
+   "size": 11281,
+   "fetched_at": "2026-09-25T13:36:51+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "dd06921cd4e4e6beb9ade8adf90fd04d46876524a7228d527bc427c447e53dc1",
+   "asset_id": 531118013,
+   "size": 12796,
+   "fetched_at": "2026-09-25T13:36:53+00:00"
+  },
+  {
+   "name": "narration_criteria.txt",
+   "sha256": "e27ed83b2c1a00537e2474147d5597d5e9c5c2dd473bd79b6b909bbf1fe2970e",
+   "asset_id": 531118029,
+   "size": 5538,
+   "fetched_at": "2026-09-25T13:36:56+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "bc4a5be94117a63d5b93678c7922f6c31389de64b21c603a701c96498d4b6d11",
+   "asset_id": 531118035,
+   "size": 14492,
+   "fetched_at": "2026-09-25T13:36:58+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "ec8e2317991a12c6a743db13defeadee5ba15dc8fead2ec783f8eb40e75756b9",
+   "asset_id": 531118012,
+   "size": 36997,
+   "fetched_at": "2026-09-25T13:37:00+00:00"
+  },
+  {
+   "name": "sketchy_criteria.quiz.md",
+   "sha256": "a189aad733746a12e33c70102ace624fffe491e26feff6013f4d8702ec4f7586",
+   "asset_id": 531118017,
+   "size": 3017,
+   "fetched_at": "2026-09-25T13:37:02+00:00"
+  },
+  {
+   "name": "sketchy_criteria.txt",
+   "sha256": "d16d8253ff5273f1050bd116294bfaf389a4ae5dd602a8fa5db8d6d4133f22e7",
+   "asset_id": 531118015,
+   "size": 6277,
+   "fetched_at": "2026-09-25T13:37:04+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "66356876cd588de59f9c26743b0cd5028513c4610d76ee3b58551f8050d8f6b3",
+   "asset_id": 531118038,
+   "size": 67107,
+   "fetched_at": "2026-09-25T13:37:06+00:00"
+  }
+ ]
+}

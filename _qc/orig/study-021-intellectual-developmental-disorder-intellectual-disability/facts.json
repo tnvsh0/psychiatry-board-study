@@ -1,0 +1,122 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Deficits in intellectual functions",
+        "items": [
+          "Reasoning (DSM p.37)",
+          "Problem solving (DSM p.37)",
+          "Planning (DSM p.37)",
+          "Abstract thinking (DSM p.37)",
+          "Judgment (DSM p.37)",
+          "Academic learning (DSM p.37)",
+          "Learning from experience (DSM p.37)"
+        ]
+      },
+      {
+        "name": "Deficits in adaptive functioning",
+        "items": [
+          "Failure to meet developmental and sociocultural standards for personal independence and social responsibility (DSM p.37)",
+          "Limits functioning in one or more activities of daily life across multiple environments (DSM p.38)"
+        ]
+      }
+    ],
+    "thresholds": "Onset of intellectual and adaptive deficits during the developmental period, typically before age 18 (DSM p.38, Dulcan p.109)",
+    "subtypes": [
+      "Mild (F70) (DSM p.39)",
+      "Moderate (F71) (DSM p.39)",
+      "Severe (F72) (DSM p.39)",
+      "Profound (F73) (DSM p.39)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1% to 3% of the general population (DSM p.43, Dulcan p.116)",
+    "sex_ratio": "1.6:1 (M:F) in mild forms, 1.2:1 (M:F) in severe forms (DSM p.44, Dulcan p.116)",
+    "onset_age_typical": "Early developmental period; manifest in early childhood, GDD diagnosed under age 5 (DSM p.37, p.46, Dulcan p.108)",
+    "heritability": "שונות גבוהה בהתאם לאטיולוגיה; מוגבלות קשה נובעת לרוב מגורמים גנטיים/כרומוזומליים de novo (Dulcan p.116-117)",
+    "comorbidities": [
+      "ADHD (Dulcan p.127)",
+      "ASD (Dulcan p.111)",
+      "Anxiety disorders (Dulcan p.123, p.127)",
+      "Depression (Dulcan p.123, p.127)",
+      "Epilepsy (Dulcan p.123)"
+    ],
+    "prognosis": "מהלך כרוני לכל החיים, אך רמת התפקוד האדפטיבי יכולה להשתפר משמעותית עם תמיכה והתערבות מוקדמת (DSM p.43-44, Dulcan p.108)"
+  },
+  "etiology": {
+    "genetic": "אנאופלואידיות (תסמונת דאון) (Dulcan p.119), תסמונות מחיקה (22q11.2, 16p11.2) (Dulcan p.118), מוטציות MECP2 (תסמונת רט) (Dulcan p.120), הרחבות CGG בגן FMR1 (X שביר) (Dulcan p.120)",
+    "neurobiology": "שיבוש בנדידה נוירונלית וסינפטוגנזה עקב הפרעות במתילציה והשתקת גנים (StahlNeuro מקור: הקשר רחב); הפחתה בסף הפרכוס (StahlKids p.118)",
+    "environmental": "חשיפה טרום-לידתית לאלכוהול (FAS/FASD) (Dulcan p.121), זיהומים רחמיים (TORCH) (Dulcan p.116), פגות ומשקל לידה נמוך (Dulcan p.117), חבלות ראש וזיהומים בתר-לידתיים (DSM p.44)"
+  },
+  "treatment": {
+    "first_line": [
+      "Applied Behavioral Analysis (ABA) ו-Functional Communication Training (FCT) להתנהגות מאתגרת (Dulcan p.124-125)",
+      "Risperidone או Aripiprazole לטיפול בעצבנות, תוקפנות ופגיעה עצמית קשה (Dulcan p.126-127, StahlKids p.52, p.423)"
+    ],
+    "second_line": [
+      "Clonidine או Guanfacine לטיפול בהיפראקטיביות ואימפולסיביות נלווית (Dulcan p.127-128, StahlKids p.151, p.252)",
+      "SSRIs (Citalopram, Fluoxetine) לדיכאון, חרדה או סטריאוטיפיות (Dulcan p.127, StahlKids p.118, p.199)"
+    ],
+    "key_side_effects": [
+      "עלייה משמעותית במשקל ותופעות לוואי מטבוליות מאנטי-פסיכוטיים (Dulcan p.126-127)",
+      "אקטיבציה והתנהגות שלוחת רסן מ-SSRIs (Dulcan p.127)",
+      "סדציה, ירידת לחץ דם וברדיקרדיה מאלפא-2 אגוניסטים (Dulcan p.127)",
+      "הורדת סף פרכוס מכלל התרופות הפסיכוטרופיות (StahlKids p.118)"
+    ],
+    "monitoring": "מעקב תקופתי אחר משקל, לחץ דם, דופק, אק\"ג (במיוחד בתסמונות עם סיכון להארכת QT כגון Rett), ובדיקות מעבדה מטבוליות (StahlKids p.118, Dulcan p.120, p.124)"
+  },
+  "assessment_tools": {
+    "items": [
+      "WISC-V: מבחן אינטליגנציה לילדים בגילאי 6-16 שנים ו-11 חודשים, עם מגבלת floor effect בנכויות קשות (Dulcan p.113)",
+      "Leiter-3: מבחן אינטליגנציה לא-ורבלי לחלוטין לגילאי 3-75+, חיוני לילדים לא-מילוליים (Dulcan p.113)",
+      "Vineland-3: שאלוני תפקוד אדפטיבי מובילים המבוססים על ראיון מובנה עם ההורה (Dulcan p.115)",
+      "Diagnostic Adaptive Behavior Scale (DABS): שאלון אדפטיבי לגילאי 4-21 המתמקד ספציפית באזור ה-cutoff האבחנתי (Dulcan p.115)",
+      "CMA/Chromosomal Microarray: בירור שבב גנטי מומלץ כקו ראשון לזיהוי CNVs (Dulcan p.117, p.123)"
+    ],
+    "key_numbers": [
+      "2 סטיות תקן מתחת לממוצע האוכלוסייה - הסף הסטטיסטי לקריטריון IQ (DSM p.42)",
+      "ציון 65 עד 75 - טווח ציוני ה-IQ להגדרת מוגבלות שכלית בהתחשב בטעות המדידה (DSM p.42, Dulcan p.107)",
+      "גיל 5 שנים - גיל הסף להגדרת Global Developmental Delay (GDD) במקום ID (DSM p.46, Dulcan p.108)",
+      "15 נקודות - סטיית התקן הסטנדרטית במבחני IQ (DSM p.42)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Major Neurocognitive Disorder/Dementia: מתאפיינת בירידה (decline) מרמת תפקוד קוגניטיבית קודמת שהייתה תקינה, להבדיל מאי-רכישה התפתחותית (DSM p.45, p.83, Dulcan p.111)",
+      "Specific Learning Disorder (SLD): לקות ממוקדת בתחום אקדמי ספציפי ללא פגיעה כוללת בתפקוד אינטלקטואלי ואדפטיבי (DSM p.45, p.85, Dulcan p.111)",
+      "Communication Disorders: הפרעות כגון Language Disorder פוגעות בשפה ספציפית אך הכישורים הלא-מילוליים נותרים תקינים (DSM p.45, p.95, Dulcan p.111)",
+      "Environmental Neglect: חסך סנסורי וקיפוח קיצוני בילדות המוקדמת המדמה ID אך מראה שיפור מהיר בסביבה מיטיבה (DSM p.43-44, p.210-211)"
+    ],
+    "key_numbers": [
+      "גיל 18 שנים - גיל הגבול שמעליו פגיעה קוגניטיבית חדשה מוגדרת כדמנציה/NCD ולא כ-ID (DSM p.45, Dulcan p.111)"
+    ]
+  },
+  "adaptive_function": {
+    "items": [
+      "רמת החומרה ב-DSM-5-TR נקבעת אך ורק על סמך התפקוד האדפטיבי ולא על סמך ציוני ה-IQ (DSM p.39, Dulcan p.107)",
+      "שלושת התחומים האדפטיביים להערכה: קוגניטיבי-קונספטואלי (Conceptual), חברתי (Social), ומעשי-פרקטי (Practical) (DSM p.42, Dulcan p.109)",
+      "תחום קוגניטיבי-קונספטואלי: קושי בלמידה אקדמית, תפיסת זמן, כסף וחשיבה מופשטת (DSM p.39-41, Dulcan p.109-111)",
+      "תחום חברתי: קושי בפענוח רמזים חברתיים וויסות רגשי, נאיביות חברתית וסכנת ניצול (Gullibility) (DSM p.39-41, p.43, Dulcan p.109-111)",
+      "תחום מעשי-פרקטי: קובע ישירות את רמת העצמאות בטיפול אישי, ניהול כספים ותעסוקה (DSM p.39-41, Dulcan p.109-111)"
+    ],
+    "key_numbers": [
+      "85 אחוזים - אחוז המטופלים עם מוגבלות שכלית ברמה קלה (Mild ID) מכלל מקרי ה-ID (Dulcan p.111)",
+      "10 אחוזים - אחוז המטופלים עם מוגבלות שכלית ברמה בינונית (Moderate ID) מכלל מקרי ה-ID (Dulcan p.111)",
+      "3.5 אחוזים - אחוז המטופלים עם מוגבלות שכלית ברמה קשה (Severe ID) מכלל מקרי ה-ID (Dulcan p.111)",
+      "1.5 אחוזים - אחוז המטופלים עם מוגבלות שכלית ברמה עמוקה (Profound ID) מכלל מקרי ה-ID (Dulcan p.111)",
+      "לפחות תחום אדפטיבי 1 פגוע המצריך תמיכה - התנאי לעמידה בקריטריון B (DSM p.42)"
+    ]
+  },
+  "high_yield": [
+    "רמת החומרה של מוגבלות שכלית נקבעת ב-DSM-5-TR אך ורק על סמך התפקוד האדפטיבי של המטופל ולא על סמך ציוני ה-IQ (DSM p.39, Dulcan p.107).",
+    "במבחני IQ יש לקחת בחשבון את טעות המדידה הסטטיסטית (Standard error of measurement), ולכן סף ה-IQ האבחנתי מוגדר כטווח של 65-75 ולא כציון מוחלט (DSM p.42, Dulcan p.107).",
+    "הבירור הנוירו-גנטי הסטנדרטי קו ראשון לילד עם עיכוב התפתחותי או ID ללא סיבה ברורה כולל בדיקת שבב גנטי (CMA/aCGH) ובדיקת X שביר (FMR1 testing) (Dulcan p.117, p.123).",
+    "חוק רוזה (Rosa's Law) נחקק בארה\"ב באוקטובר 2010 והחליף רשמית את המונח Mental Retardation במונח המכבד Intellectual Disability בפוליסה הפדרלית (DSM p.38, Dulcan p.107).",
+    "בנות עם תסמונת רט (Rett Syndrome) סובלות מסיכון חמור להארכת מרווח QT והפרעות קצב קטלניות; יש לבצע בדיקות אק\"ג תקופתיות ולהימנע מתרופות המאריכות QT (Dulcan p.120).",
+    "נוגדי הפרכוסים Vigabatrin ו-Tiagabine אסורות לחלוטין לשימוש בתסמונת אנגלמן (Angelman Syndrome) עקב סכנת החמרה קשה בפרכוסים (Dulcan p.119).",
+    "טיפול ב-Topiramate הוכח כיעיל ביותר להפחתת התנהגות פציעה עצמית וקילוף עור בתסמונת פראדר-וילי (Prader-Willi) (Dulcan p.119).",
+    "תרופות סטימולנטיות (מתילפנידאט) יעילות לטיפול ב-ADHD נלווה במוגבלות שכלית, אך יעילותם פחותה (Effect size נמוך יותר) ושיעור תופעות הלוואי שלהן גבוה בהרבה בהשוואה לאוכלוסייה הכללית (Dulcan p.127).",
+    "כל התרופות הפסיכוטרופיות מפחיתות את סף הפרכוס (Reduce seizure threshold), ולכן באוכלוסיית ID (הרגישה במיוחד) יש להתחיל במינון נמוך ביותר ולבצע טיטרציה איטית במיוחד (\"Start low, go slow\") (StahlKids p.118).",
+    "הופעה פתאומית של אי-שקט, תוקפנות או פגיעה עצמית בחולה לא-מילולי מחייבת בראש ובראשונה שלילת גורמי כאב פיזיים נפוצים: עצירות, דלקת אוזניים, כאב שיניים או זיהום בדרכי השתן (Dulcan p.124)."
+  ]
+}
