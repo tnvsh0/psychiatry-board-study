@@ -1,0 +1,36 @@
+{
+ "tag": "study-102-forensic-psychiatry-competency-insanity-tarasoff",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:06:20+00:00",
+ "updated_at": "2026-09-25T16:06:20+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "6e12ea03fc1084dacacf87a180a92947fd742b6748c4b92906d1156ebe4a2f9b",
+   "asset_id": 586424499,
+   "size": 7944,
+   "fetched_at": "2026-09-25T16:05:59+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "8d323227b8ad0bc8e49ac10d327b45e008140da8e510a0ce7c9de0ea61735bf1",
+   "asset_id": 586424504,
+   "size": 13262,
+   "fetched_at": "2026-09-25T16:06:05+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "14f45516762a6dfbeb78824f9a4a3b700cb96f9d8b7965b2a91a4ea7cfe123ab",
+   "asset_id": 586424500,
+   "size": 30671,
+   "fetched_at": "2026-09-25T16:06:11+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ded39b0487dce7430e9b9a6e2af46b26ec5a3b1a426f4f75d4cef32484d35810",
+   "asset_id": 586424501,
+   "size": 116690,
+   "fetched_at": "2026-09-25T16:06:20+00:00"
+  }
+ ]
+}
