@@ -1,0 +1,455 @@
+[
+ {
+  "day": 20,
+  "plate": "main",
+  "facts": 25,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e0: dropped unknown fact id(s) ['DSM_neurodevelopmental']",
+   "e10: dropped an unmappable relation 'further describes'",
+   "e19: dropped an unmappable relation 'is affected by'",
+   "e20: dropped an unmappable relation 'is affected by'",
+   "e8: hook de-asserted -> 'כמו שצינור פלואורסנט מהבהב מעיד על חוסר יציבות חשמלית, כך הוא — האפילפסיה, המתאפיינת בפעילות חשמלית בלתי סדירה במוח ושכיחה יחסית בקרב אנשים עם ASD.'",
+   "e10: cue trimmed to 'FAN OF AUTOMAT TOKENS WITH A BENT TOKEN'",
+   "e18: hook de-asserted -> 'תא אוכל המציג שלושה פריטים מסודרים המסומנים באותיות M, A, G, — התרופות Methylphenidate, Atomoxetine, ו-Guanfacine המשמשות לניהול תסמיני ADHD קומורבידיים ב-ASD.'",
+   "e24: hook de-asserted -> \"קלינאי המראיין הורה עם טופס המסומן 'ADI-R GOLD STANDARD' המחולק לשלושה חלקים, — הראיון החצי-מובנה המעמיק להורים, תקן זהב נוסף לאבחון ASD.\"",
+   "e9: hook over 32 words (34): \"עגלת המגשים המכילה פתק המציין 'דיבור לפני גיל 5 וללא לקות שכלית' מדגישה כי רכישת שפה פונקציונלית בגיל צעיר והיעדר לקות שכלית הם הגורמים הפרוגנוסטיים הטובים ביותר לעצמאות ב-ASD, שהיא מטבעה מצב לכל החיים.\"",
+   "e11: hook over 32 words (33): 'ברזי הקפה בצורת ראש דולפין, כשאחד שופע מדי והשני בקושי מטפטף, ממחישים את חוסר האיזון בין עירור ועיכוב בסינפסות המוחיות, מאפיין נוירוביולוגי מרכזי של ASD, וכן את הקישוריות הפגומה בין אזורים שונים במוח.'"
+  ],
+  "digit_strings_dropped": [
+   "1 IN 36"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [],
+    "blank_plates_found": 2,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1185,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": false,
+      "height_frac": 0.0892,
+      "reject": "too_small_in_frame"
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.1042,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the man in the red shirt getting food from the dispenser is larger.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "80%"
+   ],
+   "score": 2,
+   "verified": true,
+   "stray_warning": [],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A coin-operated automat cafeteria at lunchtime: a chrome-and-glass wall of little compartment windows, a nickel-changer booth, dolphin-head coffee spouts, marble-topped single tables under a tiled ceiling.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is getting their own meal from the wall — feeding coins, turning knobs, lifting a hatch, carrying a tray to a single marble table and eating alone.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe chrome-and-glass wall of coin-operated compartment windows, its grid receding from lower-left to upper-right, with the marble serving rail along its base.\n\nZONES, and what belongs in each: Automat Food Wall · Dining Area · Service & Entry\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. framed picture — in the Service & Entry\n  2. menu board — in the Service & Entry\n  3. group of diners — in the Automat Food Wall\n  4. automat compartment — in the Automat Food Wall\n  5. coin telephone booth — in the Service & Entry\n  6. punch card — in the Dining Area\n  7. diner — in the Automat Food Wall\n  8. diner — in the Dining Area\n  9. fluorescent tube — in the Dining Area\n  10. bus cart — in the Service & Entry\n  11. automat tokens and card — in the Dining Area\n  12. dolphin-head coffee spouts — in the Automat Food Wall\n  13. three-step stool — in the Automat Food Wall\n  14. Asd's Train Workshop — in the Dining Area\n  15. child at table with napkin — in the Dining Area\n  16. parent and child — in the Automat Food Wall\n  17. automat compartment — in the Automat Food Wall\n  18. automat compartment — in the Automat Food Wall\n  19. automat compartment — in the Automat Food Wall\n  20. diner — in the Dining Area\n  21. diner — in the Dining Area\n  22. menu board section — in the Service & Entry\n  23. parent and questionnaire — in the Dining Area\n  24. clinician and child — in the Automat Food Wall\n  25. clinician and parent — in the Dining Area\n  26. parent and teacher — in the Dining Area\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"SPECIAL-ED CLASSROOM\" — lettered on framed picture\n  2. \"OUT OF ORDER\" — lettered on coin telephone booth\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on menu board\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on out-of-order coin telephone booth\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on punch card\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A coin-operated automat cafeteria at lunchtime: a chrome-and-glass wall of little compartment windows, a nickel-changer booth, dolphin-head coffee spouts, marble-topped single tables under a tiled ceiling.; everyone is Everyone is getting their own meal from the wall — feeding coins, turning knobs, lifting a hatch, carrying a tray to a s; the largest thing in\nframe is The chrome-and-glass wall of coin-operated compartment windows, its grid receding from lower-left to upper-right, with t; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - NO, the man seated at the bottom-left table, wearing a light blue shirt, is clearly larger.\nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it.\n\nTHESE BLANK PLATES WERE NOT USABLE LAST TIME — draw each one as a large, flat, unobstructed rectangle of exactly the named colour:\n  - the PURE MAGENTA plate"
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "RATE",
+     "paint": "1%",
+     "tag": "RATE",
+     "chroma_pixels": 40310,
+     "blob_pixels": 39738,
+     "fill_ratio": 1.091,
+     "height_frac": 0.1185,
+     "width_frac": 0.1083,
+     "quad": [
+      [
+       296,
+       286
+      ],
+      [
+       591,
+       234
+      ],
+      [
+       590,
+       352
+      ],
+      [
+       294,
+       415
+      ]
+     ],
+     "bbox": [
+      294,
+      234,
+      297,
+      181
+     ],
+     "height_pct": 11.78,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "GENES",
+     "paint": "80%",
+     "tag": "GENES",
+     "chroma_pixels": 70298,
+     "blob_pixels": 43756,
+     "fill_ratio": 1.017,
+     "height_frac": 0.0892,
+     "width_frac": 0.1166,
+     "quad": [
+      [
+       614,
+       911
+      ],
+      [
+       934,
+       911
+      ],
+      [
+       934,
+       1045
+      ],
+      [
+       614,
+       1046
+      ]
+     ],
+     "bbox": [
+      614,
+      911,
+      320,
+      135
+     ],
+     "height_pct": 8.79,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "WITH",
+     "paint": "40%",
+     "tag": "WITH",
+     "chroma_pixels": 27822,
+     "blob_pixels": 26344,
+     "fill_ratio": 1.117,
+     "height_frac": 0.1042,
+     "width_frac": 0.0836,
+     "quad": [
+      [
+       2081,
+       903
+      ],
+      [
+       2290,
+       949
+      ],
+      [
+       2269,
+       1062
+      ],
+      [
+       2062,
+       1007
+      ]
+     ],
+     "bbox": [
+      2062,
+      903,
+      228,
+      159
+     ],
+     "height_pct": 10.35,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 33178,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 888
+ },
+ {
+  "day": 20,
+  "plate": "main2",
+  "facts": 25,
+  "tries": 0,
+  "numbers_mode": "composite",
+  "error": "director never produced a valid table: ['output had no `elements` array — return the element table JSON exactly as specified, with no prose around it']"
+ },
+ {
+  "day": 20,
+  "plate": "main3",
+  "facts": 23,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e24: dropped unknown fact id(s) ['asd']",
+   "e25: dropped unknown fact id(s) ['DSM_neurodevelopmental']",
+   "e19: dropped text 'SSRI NO ENTRY - MAY CAUSE AGITATION' (over 5 words)",
+   "e22: dropped text 'Level 1 Level 2 Level 3' (over 5 words)",
+   "e16: hook over 32 words (33): \"שני ספלים לבנים זהים ומונחים בטור מושלם, האחד מסומן 'R' ו-'5' והשני 'A' ו-'6', מעין 'מנות מדודות' של ריספרידון (Risperidone) המאושר מגיל 5 ואריפיפרזול (Aripiprazole) המאושר מגיל 6 לטיפול באי-שקט ותוקפנות קשה ב-ASD.\"",
+   "e17: hook over 32 words (39): 'הדיינר המכה בעצבנות על דלת תא באוטומט, בעוד דיינר אחר מצביע על אוזנו או בטנו, ממחיש ששינוי התנהגותי פתאומי אצל ילדים לא-וורבליים, כמו התפרצות זעם, מרמז לרוב על כאב פיזי סמוי, שמחייב בירור גופני מקיף לפני שינוי טיפול תרופתי.'",
+   "e18: hook over 32 words (35): \"הורה שמנחה ילד באמצעות מדריך 'Parent Training' לפתוח בנחת דלת תא עיקשת, בניגוד להתנהגות אלימה (Risperidone), מדגים ששילוב הדרכת הורים התנהגותית עם ריספרידון מביא לתוצאות טובות יותר בהפחתת בעיות התנהגות קשות מאשר טיפול תרופתי בלבד.\"",
+   "e19: hook over 32 words (33): \"תא האוטומט המסומן 'SSRI', אך ידיתו תקועה ולידו שלט אזהרה 'NO ENTRY - MAY CAUSE AGITATION', מבהיר שאין עדות ליעילות SSRI's בהפחתת התנהגויות חזרתיות בילדים עם ASD, ויש סיכון מוגבר לאקטיבציה התנהגותית ואי-שקט.\"",
+   "e20: hook over 32 words (36): \"תא אוטומט אחד ריק ונקי לחלוטין, המסומן 'SPCD', עומד בניגוד לתאים אחרים המכילים ארוחות או פריטים חזרתיים, וממחיש שהפרעת תקשורת חברתית-פרגמטית (SPCD) נבדלת מ-ASD בהיעדר מוחלט של דפוסי התנהגות, עניין או פעילות מצומצמים וחזרתיים (קריטריון B).\"",
+   "e22: hook over 32 words (35): \"לוח התפריטים מציג מנות נפרדות עם דרגות 'Level 1', 'Level 2', 'Level 3' עבור תקשורת חברתית והתנהגויות חזרתיות, ועליו המספרים '1-3', ומדגים שרמות החומרה ב-ASD נקבעות בנפרד עבור כל תחום, ואינן משמשות לקביעת זכאות לשירותים.\""
+  ],
+  "digit_strings_dropped": [
+   "ESDM AGES 1-4"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "Ages 1-5",
+     "Ages 1-5",
+     "$29.00",
+     "$29.00",
+     "$29.00",
+     "$29.00",
+     "$299.00",
+     "$29.00",
+     "$29.00",
+     "$29.00",
+     "Level 1",
+     "Level 2"
+    ],
+    "blank_plates_found": 1,
+    "blank_plates_wanted": 2,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": false,
+      "height_frac": 0.0807,
+      "reject": "too_small_in_frame"
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1348,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [
+    "Parent Training"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the man in the brown jacket yawning at the table in the foreground is clearly larger than the other figures, particularly the children and adults further back, due to his proximity to the viewer.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "40%",
+    "Parent Training"
+   ],
+   "score": 3,
+   "verified": true,
+   "stray_warning": [
+    "Ages 1-5",
+    "Ages 1-5",
+    "$29.00",
+    "$29.00",
+    "$29.00",
+    "$29.00",
+    "$299.00",
+    "$29.00",
+    "$29.00",
+    "$29.00",
+    "Level 1",
+    "Level 2"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A coin-operated automat cafeteria at lunchtime: a chrome-and-glass wall of little compartment windows, a nickel-changer booth, dolphin-head coffee spouts, marble-topped single tables under a tiled ceiling.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is getting their own meal from the wall — feeding coins, turning knobs, lifting a hatch, carrying a tray to a single marble table and eating alone.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe chrome-and-glass wall of coin-operated compartment windows, its grid receding from lower-left to upper-right, with the marble serving rail along its base.\n\nZONES, and what belongs in each: The Automat Wall · Dining Tables · Service & Entry\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. coin being spun over and over under a diner's finger — in the Dining Tables\n  2. diner with heavy bags under eyes, yawning, clutching a coffee cup — in the Dining Tables\n  3. diner covering eyes under a flickering fluorescent tube, reacting to the light sensitivity — in the Dining Tables\n  4. diner straining at their table, looking uncomfortable, hand on stomach — in the Dining Tables\n  5. diner with a single plain item on their tray, surrounded by other untouched, varied food compartments — in the Dining Tables\n  6. diner looking nervously over their shoulder, clutching their tray tightly, avoiding eye contact — in the Dining Tables\n  7. diner aligning knife, fork and spoon in perfect parallel — in the Dining Tables\n  8. out-of-order coin telephone booth with a card over the dial, phone receiver hanging crooked — in the Service & Entry\n  9. automat token with stamped on it, next to the coin spun by the Adhd diner — in the Dining Tables\n  10. two dolphin-head coffee spouts, one dripping coffee drops, another drops, into a shared drip tray — in the The Automat Wall\n  11. nickel-changer booth with an additional coin slot labelled . — in the Service & Entry\n  12. a table number on the table of the straining diner — in the Dining Tables\n  13. menu board of prices with an item reading Combo Meal: $. — in the Service & Entry\n  14. rolling three-step stool, with a wobbly fourth step added, labeled % — in the The Automat Wall\n  15. diner holding two empty white cups to their ears like headphones, listening intently to the automat — in the Dining Tables\n  16. Two identical, perfectly aligned white cups from the stack, one with R and written on it, the other with A and — in the Dining Tables\n  17. diner violently hitting a compartment door, an angry expression, while another diner points to their ear/mouth/stomach — in the The Automat Wall\n  18. diner with a Parent Training manual using it to guide another diner to open a stubborn compartment door with less aggression — in the Dining Tables\n  19. automat compartment with Ssri sign, but the knob is stuck, and a warning sign NO Entry - May Cause Agitation — in the The Automat Wall\n  20. one automat compartment is completely empty and clean, labelled Spcd, contrasting with others that have meals or repetitive items — in the The Automat Wall\n  21. adolescent diner on the rolling three-step stool, looking depressed and isolated from others — in the Dining Tables\n  22. menu board of prices with prices for social communication and repetitive behaviors, each explicitly labelled Level , Level , Level — in the Service & Entry\n  23. a poster of a child playing with building blocks and a train, next to an Esdm sign and a Ages - label — in the The Automat Wall\n  24. Asd's Train Workshop — a child sits cross-legged on the floor of a quiet workshop, surrounded by toy trains arranged in perfect lines — in the The Automat Wall\n  25. Special-ed Classroom — a brightly-colored kindergarten room with distinct corners, each showing a child engaged in a different neurodevelopmental characteristic — in the Service & Entry\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"Parent Training\" — lettered on diner with a Parent Training manual using it to guide another diner to open a stubborn compartment door with less aggression\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on out-of-order coin telephone booth\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on menu board\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A coin-operated automat cafeteria at lunchtime: a chrome-and-glass wall of little compartment windows, a nickel-changer booth, dolphin-head coffee spouts, marble-topped single tables under a tiled ceiling.; everyone is Everyone is getting their own meal from the wall — feeding coins, turning knobs, lifting a hatch, carrying a tray to a s; the largest thing in\nframe is The chrome-and-glass wall of coin-operated compartment windows, its grid receding from lower-left to upper-right, with t; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"Parent Training\"\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - NO, the boy in the poster titled \"ASD's TRAIN WORKSHOP\" (the one with the train set around him) is clearly larger than the other human figures in the image.\nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it."
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "WITH",
+     "paint": "40%",
+     "tag": "WITH",
+     "chroma_pixels": 25772,
+     "blob_pixels": 25622,
+     "fill_ratio": 1.027,
+     "height_frac": 0.0807,
+     "width_frac": 0.0792,
+     "quad": [
+      [
+       2367,
+       540
+      ],
+      [
+       2582,
+       542
+      ],
+      [
+       2583,
+       663
+      ],
+      [
+       2366,
+       650
+      ]
+     ],
+     "bbox": [
+      2366,
+      540,
+      217,
+      123
+     ],
+     "height_pct": 8.01,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "1-3",
+     "tag": "N",
+     "chroma_pixels": 48930,
+     "blob_pixels": 48807,
+     "fill_ratio": 1.025,
+     "height_frac": 0.1348,
+     "width_frac": 0.0916,
+     "quad": [
+      [
+       2342,
+       269
+      ],
+      [
+       2591,
+       245
+      ],
+      [
+       2591,
+       444
+      ],
+      [
+       2340,
+       451
+      ]
+     ],
+     "bbox": [
+      2340,
+      245,
+      251,
+      206
+     ],
+     "height_pct": 13.41,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 719,
+   "composited": 2,
+   "requested": 2
+  },
+  "narration_words": 803
+ },
+ {
+  "day": 20,
+  "plate": "criteria",
+  "facts": 11,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e2: hook de-asserted -> 'תא טלפון ציבורי שיצא מכלל שימוש ולא מאפשר כל תקשורת, — הליקויים בהתנהגויות תקשורתיות לא-מילוליות הנחוצות לאינטראקציה חברתית באוטיזם.'",
+   "e9: hook de-asserted -> 'מניפת אסימוני האוטומט המסודרים בשורה, כאשר יש לבחור לפחות שניים מהם, — הדרישה לקיום לפחות שניים מתוך ארבעת תסמיני קריטריון B באבחנת אוטיזם.'"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1"
+    ],
+    "blank_plates_found": 0,
+    "blank_plates_wanted": 0,
+    "blank_plates": []
+   },
+   "text_missing": [
+    "SAME MEAL EVERY DAY"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "SAME MEAL EVERY DAY"
+   ],
+   "score": 1,
+   "verified": true,
+   "stray_warning": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A coin-operated automat cafeteria at lunchtime: a chrome-and-glass wall of little compartment windows, a nickel-changer booth, dolphin-head coffee spouts, marble-topped single tables under a tiled ceiling.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is getting their own meal from the wall — feeding coins, turning knobs, lifting a hatch, carrying a tray to a single marble table and eating alone.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe chrome-and-glass wall of coin-operated compartment windows, its grid receding from lower-left to upper-right, with the marble serving rail along its base.\n\nZONES, and what belongs in each: The Wall · The Tables · The Service Area · The Entrance/General Area\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. diner eating alone — in the The Tables\n  2. out-of-order coin telephone booth with a card over the dial — in the The Entrance/General Area\n  3. marble-top single tables each with one chair — in the The Tables\n  4. diner aligning knife, fork and spoon in perfect parallel — in the The Tables\n  5. punch card on a table — in the The Tables\n  6. Asd's Train Workshop — in the The Entrance/General Area\n  7. Please — Quiet enamel notice under a flickering fluorescent tube — in the The Entrance/General Area\n  8. rolling three-step stool with treads lettered · · — in the The Wall\n  9. fan of automat tokens laid out in a strict row on a table — in the The Tables\n  10. Special-ed Classroom — in the The Entrance/General Area\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"SAME MEAL EVERY DAY\" — lettered on punch card on a table\n\nREMINDER — A coin-operated automat cafeteria at lunchtime: a chrome-and-glass wall of little compartment windows, a nickel-changer booth, dolphin-head coffee spouts, marble-topped single tables under a tiled ceiling.; everyone is Everyone is getting their own meal from the wall — feeding coins, turning knobs, lifting a hatch, carrying a tray to a s; the largest thing in\nframe is The chrome-and-glass wall of coin-operated compartment windows, its grid receding from lower-left to upper-right, with t; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"PLEASE — QUIET\""
+  },
+  "narration_words": 583
+ }
+]
