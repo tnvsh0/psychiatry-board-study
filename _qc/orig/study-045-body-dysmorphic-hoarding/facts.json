@@ -1,0 +1,93 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Body Dysmorphic Disorder (BDD)",
+        "items": [
+          "Preoccupation with perceived slight or unnoticeable physical defect (DSM p.271)",
+          "Repetitive behaviors or mental acts in response to appearance concerns (DSM p.271)",
+          "Clinically significant distress or impairment (DSM p.271)",
+          "Not better explained by eating disorder concerns (DSM p.272)"
+        ]
+      },
+      {
+        "name": "Hoarding Disorder",
+        "items": [
+          "Persistent difficulty discarding or parting with possessions regardless of value (DSM p.277)",
+          "Perceived need to save items and distress associated with discarding (DSM p.277)",
+          "Accumulation cluttering active living areas (DSM p.277)",
+          "Significant distress or functional impairment / unsafe environment (DSM p.278)"
+        ]
+      }
+    ],
+    "thresholds": "BDD: Preoccupation 3–8 hours/day (DSM p.272); Hoarding: persistent accumulation (DSM p.277)",
+    "subtypes": [
+      "BDD with muscle dysmorphia (DSM p.271)",
+      "BDD insight specifiers: good/fair, poor, absent/delusional (DSM p.272)",
+      "Hoarding with excessive acquisition (DSM p.278)",
+      "Hoarding insight specifiers: good/fair, poor, absent/delusional (DSM p.278)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "BDD: 2.4% adults, 1.9-2.2% adolescents (DSM p.273-274); Hoarding: 1.5-6% (mean 2.5%) (DSM p.279)",
+    "sex_ratio": "BDD: ~1:1 overall (2.5% F vs 2.2% M) (DSM p.274); Hoarding: ~1:1 community (DSM p.279)",
+    "onset_age_typical": "BDD: peak 12-13 years, mean 16-17 (DSM p.274); Hoarding: onset 15-19 years (DSM p.279)",
+    "heritability": "BDD: 37%-49% (DSM p.274); Hoarding: ~50% (DSM p.279)",
+    "comorbidities": [
+      "BDD: MDD, SAD, SUD (DSM p.274, p.277)",
+      "Hoarding: MDD (30-50%), SAD, GAD, OCD (20%) (DSM p.281; Dulcan p.368)"
+    ],
+    "prognosis": "BDD: chronic without treatment (DSM p.274); Hoarding: chronic and progressive (DSM p.279)"
+  },
+  "etiology": {
+    "genetic": "BDD heritability 37-49% (DSM p.274); Hoarding family reports >50%, heritability ~50% (DSM p.279)",
+    "neurobiology": "CSTC loops (StahlNeuro p.539-540); BDD: OFC dysfunction, detail-processing visual bias (DSM p.273); Hoarding: vmPFC and ACC dysfunction (DSM p.280)",
+    "environmental": "BDD: child abuse/neglect, appearance teasing (DSM p.274); Hoarding: stressful/traumatic life events (DSM p.279)"
+  },
+  "treatment": {
+    "first_line": [
+      "BDD CBT with ERP (Dulcan p.377)",
+      "High-dose SSRIs: Fluoxetine 20-80mg/d, Sertraline 50-200mg/d, Fluvoxamine 50-300mg/d (StahlKids p.202, 232, 446; Dulcan p.380)",
+      "Hoarding-specific CBT (Dulcan p.377)"
+    ],
+    "second_line": [
+      "Clomipramine 25-200mg/d (max 3mg/kg/d) (StahlKids p.132; Dulcan p.380)"
+    ],
+    "key_side_effects": [
+      "SSRIs: Gastrointestinal distress, activation, insomnia, sexual dysfunction (StahlKids p.202, 232, 446)",
+      "Clomipramine: Anticholinergic, sedation, weight gain, QTc prolongation (StahlKids p.132)"
+    ],
+    "monitoring": "Clomipramine: Baseline & dose-titration ECG (QTc monitoring), BP, pulse (StahlKids p.132; Dulcan p.380); SSRIs: Suicidality, behavioral activation (StahlKids p.202)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CY-BOCS / CY-BOCS II: Clinician-administered 5-domain severity rating scale (Dulcan p.374)",
+      "FAS-IR: Family accommodation scale (Dulcan p.373)",
+      "COIS: Child OCD Impact Scale for functional impairment (Dulcan p.375)",
+      "HRS and CIR: Hoarding Rating Scale & Clutter Image Rating for environment clutter (מקור: הקשר רחב)"
+    ],
+    "key_numbers": [
+      "CY-BOCS: 5 domains rated 0-4 (time, interference, distress, resistance, control) (Dulcan p.374)",
+      "CY-BOCS II: Adds explicit avoidance assessment (Dulcan p.374)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "OCD: BDD focus limited to appearance; Hoarding in OCD driven by contamination/harm obsessions (DSM p.275, 280)",
+      "Eating Disorders: Concern limited to body fat/weight (DSM p.275)",
+      "Organic brain lesions: TBI, stroke, FTD, Prader-Willi causing hoarding (DSM p.280)",
+      "Shubo-kyofu & Koro & Olfactory Reference Disorder (DSM p.274, 276)"
+    ],
+    "key_numbers": [
+      "26%: Rate of hoarding symptoms in pediatric OCD cases (Dulcan p.368)",
+      "33%: Proportion of BDD patients with delusional/absent insight (DSM p.272)"
+    ]
+  },
+  "high_yield": [
+    "Muscle dysmorphia occurs almost exclusively in males with steroid use risk (DSM p.271-272).",
+    "Delusional appearance beliefs are diagnosed as BDD with absent insight, not Delusional Disorder (DSM p.108, p.276).",
+    "BDD has 4x higher suicidal ideation and 2.6x higher suicide attempts vs controls (DSM p.274-275).",
+    "BDD involves OFC dysfunction and detail-processing bias; Hoarding involves vmPFC and ACC dysfunction (StahlNeuro p.539-540; DSM p.273, p.280).",
+    "Clomipramine requires mandatory ECG monitoring for QTc prolongation at baseline and titration (StahlKids p.132; Dulcan p.380)."
+  ]
+}
