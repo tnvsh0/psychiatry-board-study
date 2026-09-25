@@ -1,0 +1,81 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster C (Anxious/Fearful)",
+        "items": [
+          "קושי בקבלת החלטות יומיומיות ללא ייעוץ ואישור מופרז (DSM p.768)",
+          "צורך שאחרים יקחו אחריות על רוב תחומי החיים המרכזיים (DSM p.768)",
+          "קושי בהבעת אי-הסכמה מפחד מאובדן תמיכה או אישור (DSM p.768)",
+          "קושי ביזמת פרויקטים מחוסר ביטחון עצמי ביכולת (DSM p.768)",
+          "הליכה למרחקים מופרזים/משימות בלתי נעימות להשגת טיפוח (DSM p.768)",
+          "תחושת אי-נוחות/חוסר אונים לבד מפחד שאינו מסוגל לדאוג לעצמו (DSM p.768)",
+          "חיפוש דחוף של קשר חלופי עם סיום קשר קרוב (DSM p.768)",
+          "עיסוק מופרז ולא ריאליסטי בפחד שיינטש וייאלץ לדאוג לעצמו (DSM p.768)"
+        ]
+      }
+    ],
+    "thresholds": ">=5/8 קריטריונים, תחילת בבגרות מוקדמת (משך >=1 שנה מתחת לגיל 18) (DSM p.735-736, p.768)",
+    "subtypes": [
+      "לא צוין"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "0.4%-0.6% באוכלוסייה הכללית (DSM p.769-770; Synopsis ch.19)",
+    "sex_ratio": "שכיחות גבוהה יותר בנשים בקליניקה; שכיחות שווה בקהילה (DSM p.770; Synopsis ch.19)",
+    "onset_age_typical": "בגרות מוקדמת (Early adulthood) (DSM p.768)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Major Depressive Disorder (MDD) (DSM p.771)",
+      "Persistent Depressive Disorder (DSM p.771)",
+      "Generalized Anxiety Disorder (GAD) (DSM p.771)",
+      "Panic Disorder (DSM p.771)",
+      "Avoidant Personality Disorder (DSM p.771)"
+    ],
+    "prognosis": "פרוגנוזה חיובית יחסית בטיפול פסיכותרפויטי בהשוואה להפרעות אישיות אחרות (Synopsis ch.19)"
+  },
+  "etiology": {
+    "genetic": "Reward Dependence (RD) גבוה ו-Harm Avoidance (HA) גבוה במודל הטמפרמנט של קלונינגר (Synopsis ch.19)",
+    "neurobiology": "היפראקטיביות במעגל CSTC (DLPFC) המתווך דאגות, היפראקטיביות באמיגדלה, דיסרגלציה סרוטונירגית (5-HT) ונוראדרנרגית (NE) (StahlNeuro p.33, p.281, p.365-367)",
+    "environmental": "היסטוריה של מחלה גופנית כרונית/נכות בילדות, הפרעת חרדת פרידה בילדות, הורות מגינה וחודרנית (DSM p.63, p.771; Dulcan p.237; Synopsis ch.19)"
+  },
+  "differential": {
+    "items": [
+      "Adult Separation Anxiety Disorder: החרדה ממוקדת בשלום דמות ההתקשרות הספציפית ולא בחוסר יכולת אישית לטיפול-עצמי (DSM p.221, p.770)",
+      "Borderline Personality Disorder (BPD): נטישה נענית בזעם, אימפולסיביות ו-Splitting; ב-DPD נענית בהכנעה וחיפוש קשר חלופי (DSM p.756, p.770; Synopsis ch.19)",
+      "Avoidant Personality Disorder (AVPD): הימנעות חברתית והתרחקות מקשרים מפחד מדחייה, לעומת חיפוש קרבה והיצמדות ב-DPD (DSM p.767, p.771; Synopsis ch.19)",
+      "Histrionic Personality Disorder (HPD): התנהגות דרמטית, מוחצנת וחיפוש תשומת לב פלמבוינטי, לעומת התנהגות כנועה וצנועה ב-DPD (DSM p.760, p.771; Synopsis ch.19)",
+      "Agoraphobia / Panic Disorder: תלות משנית להתקפי פאניקה גופניים, אינה דפוס אישיותי קבוע מילדות/בגרות מוקדמת (DSM p.240, p.770)"
+    ],
+    "key_numbers": [
+      "8 DSM criteria for DPD (DSM p.768)",
+      ">=5 criteria required for diagnosis (DSM p.768)",
+      ">=1 year duration if diagnosed under age 18 (DSM p.735-736)",
+      "0.4%-0.6% prevalence in general population (DSM p.770)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "פסיכותרפיה קוגניטיבית-התנהגותית (CBT) לשינוי אמונות תלות ואימון אסרטיביות (Assertiveness Training) (Dulcan p.337; Synopsis ch.19)",
+      "פסיכותרפיה דינמית ומוכוונת-תובנה להבנת מקורות התלות וחיזוק האגו (Dulcan p.848; Synopsis ch.19)"
+    ],
+    "second_line": [
+      "SSRIs (Fluoxetine, Sertraline, Escitalopram) או SNRIs (Duloxetine) ממוקדים לתחלואה נלווית של דיכאון/חרדה (Dulcan p.729, p.737; StahlNeuro p.359; StahlKids p.170, p.198, p.438)"
+    ],
+    "key_side_effects": [
+      "אזהרת קופסה שחורה לאובדנות ב-SSRIs בילדים/צעירים (Dulcan p.261; StahlKids p.201)",
+      "הפעלה התנהגותית / אי-שקט (TEAS) ב-SSRIs בילדים (Dulcan p.736; StahlKids p.290)",
+      "סיכון מוגבר לתלות פיזית ונפשית בשימוש בבנזודיאזפינים (Synopsis ch.19)"
+    ],
+    "monitoring": "מעקב קליני שבועי במשך 4 השבועות הראשונים ל-SSRI בילדים; אישור מדעת (Assent) מגיל 7+; להימנע לחלוטין ממתן כרוני של בנזודיאזפינים (Dulcan p.261; StahlKids p.51; Synopsis ch.19)"
+  },
+  "high_yield": [
+    "סף אבחנה ב-DSM-5-TR: לפחות 5 מתוך 8 קריטריונים (DSM p.768)",
+    "הבחנה מ-BPD: ב-BPD הנטישה מביאה לזעם ו-Splitting; ב-DPD הנטישה מביאה להכנעה וחיפוש דחוף של קשר חלופי (DSM p.756, p.770; Synopsis ch.19)",
+    "הבחנה מ-Adult Separation Anxiety: בחרדת פרידה הדאגה היא לשלום הדמות הספציפית; ב-DPD הדאגה היא מחוסר יכולת אישית לטיפול-עצמי (DSM p.221, p.770)",
+    "מלכודת טיפולית פסיכודינמית: דחיקת המטופל לעזוב בן זוג אלים/שתלטן בטרם עת מובילה לנשירה מיידית מהטיפול (early termination) בשל חרדה מוצפת (Synopsis ch.19)",
+    "איסור בנזודיאזפינים: אין לרשום בנזודיאזפינים לטיפול כרוני בשל סיכון לתלות פיזית/נפשית והחמרת הפסיביות (Synopsis ch.19)",
+    "אבחון בקטינים: תכונות חייבות להימשך לפחות שנה אחת רצופה מתחת לגיל 18 (DSM p.735-736, p.770)",
+    "אישור מדעת פדיאטרי (Informed Assent): חובה לקבל אישור מדעת מילדים מגיל 7 ומעלה (StahlKids p.51)"
+  ]
+}
