@@ -1,0 +1,36 @@
+{
+ "tag": "study-052-reactive-attachment-disorder-disinhibited-social-engagement",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:28:44+00:00",
+ "updated_at": "2026-09-25T14:28:44+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "9a65d2c6907dcdc2bc560ebb2325ee14cad9d46f13461405255cc8e578a15cd3",
+   "asset_id": 563898353,
+   "size": 6889,
+   "fetched_at": "2026-09-25T14:28:24+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "3863f4e9034d5fda8f35e150d65ab1294c4cb91e40a662d08efaeb8fd5e8351d",
+   "asset_id": 563898364,
+   "size": 10432,
+   "fetched_at": "2026-09-25T14:28:32+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "99a07c0acb6b64d33239efee73662fdbcc9f5e33f218650d45d981f5998bcad2",
+   "asset_id": 563898356,
+   "size": 34637,
+   "fetched_at": "2026-09-25T14:28:38+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "0ba539a5f31252dcfd8bc6be5fc8cba796f9655976fb8e1e92566280f2cd9e10",
+   "asset_id": 563898355,
+   "size": 28329,
+   "fetched_at": "2026-09-25T14:28:44+00:00"
+  }
+ ]
+}
