@@ -1,0 +1,36 @@
+{
+ "tag": "study-057-schizoaffective-schizophreniform-brief-psychotic-delusional",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:36:23+00:00",
+ "updated_at": "2026-09-25T14:36:23+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b655d45b3d245b8c920551edf749c77ced4936aeea8556de5d6939040c93a1da",
+   "asset_id": 568656412,
+   "size": 8928,
+   "fetched_at": "2026-09-25T14:36:17+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "6ee9599e8d593130e655727a82444ccf70d3ac74d1decacba5a3c360f2296774",
+   "asset_id": 568656413,
+   "size": 12034,
+   "fetched_at": "2026-09-25T14:36:19+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "1c1497531a0454dbba017352a5a792ed69ad44a3040b6cd610112af28a777638",
+   "asset_id": 568656414,
+   "size": 27551,
+   "fetched_at": "2026-09-25T14:36:21+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "6b113b70c9b3520dcecbeb647fde18c4c09de0a377354bcda1da1f78616f0ddb",
+   "asset_id": 568656407,
+   "size": 37721,
+   "fetched_at": "2026-09-25T14:36:23+00:00"
+  }
+ ]
+}

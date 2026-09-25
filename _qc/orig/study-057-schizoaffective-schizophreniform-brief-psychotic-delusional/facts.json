@@ -1,0 +1,119 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Schizoaffective Disorder",
+        "items": [
+          "Major mood episode concurrent with Criterion A of schizophrenia (DSM p.121)",
+          "≥2 weeks of delusions or hallucinations without a major mood episode during lifetime duration (DSM p.121)",
+          "Mood episode symptoms present for the majority of total active and residual illness duration (DSM p.121-122)"
+        ]
+      },
+      {
+        "name": "Schizophreniform Disorder",
+        "items": [
+          "Criterion A of schizophrenia met (≥2 of delusions, hallucinations, disorganized speech, disorganized/catatonic behavior, negative symptoms) (DSM p.111)",
+          "Illness duration between 1 month and 6 months (DSM p.111)",
+          "Impaired social/occupational functioning is NOT required (DSM p.111)"
+        ]
+      },
+      {
+        "name": "Brief Psychotic Disorder",
+        "items": [
+          "≥1 positive psychotic symptom: delusions, hallucinations, disorganized speech, disorganized/catatonic behavior (DSM p.108)",
+          "Negative symptoms are explicitly EXCLUDED from Criterion A (DSM p.108)",
+          "Duration from 1 day to less than 1 month with eventual full return to premorbid functioning (DSM p.108)"
+        ]
+      },
+      {
+        "name": "Delusional Disorder",
+        "items": [
+          "≥1 delusion persisting for 1 month or longer (DSM p.104)",
+          "Criterion A for schizophrenia has never been met (DSM p.104)",
+          "Psychosocial functioning is not markedly impaired apart from delusion impacts (DSM p.105)"
+        ]
+      }
+    ],
+    "thresholds": "Schizoaffective: ≥2 weeks isolated psychosis + mood present majority of illness; Schizophreniform: 1-6 months; Brief Psychotic: 1 day to 1 month; Delusional: ≥1 month delusions",
+    "subtypes": [
+      "Schizoaffective: Bipolar type, Depressive type (DSM p.121)",
+      "Schizophreniform: With good prognostic features, Without good prognostic features (DSM p.111)",
+      "Brief Psychotic: With marked stressor(s), Without marked stressor(s), With peripartum onset, With catatonia (DSM p.109)",
+      "Delusional: Erotomanic, Grandiose, Jealous, Persecutory, Somatic, Mixed, Unspecified, With bizarre content (DSM p.105)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "Schizoaffective ~0.3% (DSM p.124); Delusional ~0.2% (DSM p.106); Brief Psychotic ~2%-7% of first-onset psychoses (DSM p.110); Schizophreniform ~1/5 of schizophrenia incidence in high-income countries (DSM p.112)",
+    "sex_ratio": "Schizoaffective: F > M for depressive type (DSM p.124); Brief Psychotic: F > M (Synopsis ch.5); Delusional: overall F = M, Jealous type M > F (DSM p.106); Schizophreniform: M > F (Synopsis ch.5)",
+    "onset_age_typical": "Schizoaffective: early adulthood (DSM p.123); Schizophreniform: adolescents and young adults (Synopsis ch.5); Brief Psychotic: mid-30s average (DSM p.110); Delusional: middle to late adulthood (Synopsis ch.5)",
+    "heritability": "High familial polygenic risk score (PRS) overlap with schizophrenia, bipolar disorder, and major depressive disorder (DSM p.113, p.124-125)",
+    "comorbidities": [
+      "Substance use disorders (Cannabis, Alcohol, Stimulants) (DSM p.125, p.129)",
+      "Anxiety disorders (DSM p.125)",
+      "Personality disorders (Borderline, Schizotypal, Paranoid) (DSM p.111, Synopsis ch.5)"
+    ],
+    "prognosis": "Schizoaffective: 5% lifetime suicide risk, prognosis between schizophrenia and mood disorders (DSM p.124-125); Schizophreniform: 1/3 recover, 2/3 convert to schizophrenia/schizoaffective (DSM p.113); Brief Psychotic: >50% relapse (DSM p.110)"
+  },
+  "etiology": {
+    "genetic": "Elevated polygenic risk scores (PRS) across schizophrenia, bipolar disorder, and MDD loci (DSM p.124-125)",
+    "neurobiology": "Mesolimbic D2 hyperfunction (positive symptoms), Mesocortical D1/D2 hypofunction (negative/cognitive symptoms), NMDA receptor hypofunction on GABA interneurons (StahlNeuro p.141, p.147-148)",
+    "environmental": "Severe psychosocial stressors, trauma, migration, urbanicity, cannabis abuse (DSM p.109-110, p.129, Dulcan p.405)"
+  },
+  "treatment": {
+    "first_line": [
+      "Second-Generation Antipsychotics (SGAs): Risperidone (13+ yo), Aripiprazole (13+ yo), Quetiapine, Olanzapine (13+ yo), Lurasidone (13+ yo with ≥350 kcal meal) (Dulcan p.399-401, StahlKids p.40, p.301-302, p.360, p.435)",
+      "Psychosocial interventions, CBT, and family psychoeducation (Dulcan p.400-401)"
+    ],
+    "second_line": [
+      "Mood Stabilizers (Lithium 7+ yo, Valproate) for Schizoaffective Bipolar type (Dulcan p.399, StahlKids p.292, p.475)",
+      "Clozapine for treatment-resistant psychosis (Dulcan p.420, StahlKids p.151)",
+      "SSRI add-on for persistent depression in Schizoaffective Depressive type (StahlKids p.179)"
+    ],
+    "key_side_effects": [
+      "Metabolic syndrome, weight gain, dyslipidemia (highest with Olanzapine/Clozapine) (Dulcan p.418, StahlKids p.360)",
+      "Hyperprolactinemia (Risperidone) (StahlKids p.435)",
+      "Akathisia and activation (Aripiprazole, Lurasidone) (StahlKids p.40, p.301)",
+      "Agranulocytosis and seizure threshold reduction (Clozapine) (StahlKids p.151)"
+    ],
+    "monitoring": "ANC monitoring for Clozapine (weekly 0-6 mo, biweekly 6-12 mo, monthly thereafter; baseline ANC ≥1500/µL) (StahlKids p.151, p.163); Metabolic panel, BMI, prolactin, lipid/glucose (Dulcan p.418)"
+  },
+  "assessment_tools": {
+    "items": [
+      "K-SADS-PL (semi-structured interview for school-age children and adolescents 6-18 yo) (Dulcan p.228, p.278, p.300)",
+      "PAPA (Preschool Age Psychiatric Assessment for ages 2-5) (Dulcan p.228)",
+      "DSM-5 Level 1 Cross-Cutting Symptom Measure (screen threshold ≥1 Slight for psychosis) (DSM p.843-846)",
+      "Clinician-Rated Dimensions of Psychosis Symptom Severity (8 domains rated 0-4) (DSM p.851-853)",
+      "Attenuated Psychosis Syndrome (Section III research criteria: ≥1 attenuated symptom ≥1/week for 1 month, starting/worsening past year) (DSM p.903-907)"
+    ],
+    "key_numbers": [
+      "8 primary domains in Clinician-Rated Dimensions of Psychosis Severity (DSM p.852)",
+      "1/week frequency threshold for Attenuated Psychosis Syndrome (DSM p.903)",
+      "34.9% 10-year cumulative transition rate from Attenuated Psychosis to full psychosis (DSM p.906)",
+      "73% of converted Attenuated Psychosis cases develop Schizophrenia spectrum disorder (DSM p.906)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Anti-NMDA Receptor Encephalitis (acute psychosis, dysautonomia, oro-facial dyskinesia) (Dulcan p.249, p.406)",
+      "PANDAS/PANS (abrupt onset OCD, tics, psychosis following infection) (Dulcan p.379, p.428)",
+      "Cannabis-Induced Psychotic Disorder (44% conversion rate to schizophrenia/bipolar) (DSM p.129-130, Dulcan p.405)",
+      "PCP / Hallucinogen-Induced Psychosis (NMDA blockade, vertical nystagmus, catatonia) (DSM p.129, StahlNeuro p.141)",
+      "Temporal Lobe Epilepsy (TLE) and brain tumors (visual/olfactory hallucinations) (DSM p.132, Dulcan p.397)",
+      "Endocrine and metabolic disorders (Cushing's disease, Thyroid dysfunction, Wilson's disease, Porphyria) (DSM p.132)"
+    ],
+    "key_numbers": [
+      "44% conversion rate from cannabis-induced psychosis to schizophrenia or bipolar disorder (DSM p.129-130)",
+      "≥350 calories required for Lurasidone administration to ensure absorption (StahlKids p.301-302)",
+      "4 weeks onset window for 'With good prognostic features' specifier in Schizophreniform (DSM p.111)"
+    ]
+  },
+  "high_yield": [
+    "Schizoaffective disorder requires ≥2 weeks of delusions or hallucinations in the absence of a major mood episode during the lifetime course (DSM p.121).",
+    "Schizoaffective Criterion C in DSM-5-TR requires major mood episode symptoms to be present for the majority of the active and residual illness duration (DSM p.121-122).",
+    "Schizophreniform disorder lasts between 1 and 6 months; two-thirds of cases convert to Schizophrenia or Schizoaffective disorder (DSM p.111, p.113).",
+    "Brief Psychotic disorder lasts between 1 day and 1 month with eventual full return to premorbid functioning; negative symptoms are explicitly excluded from Criterion A (DSM p.108).",
+    "Delusional disorder requires ≥1 delusion for ≥1 month without meeting Criterion A for Schizophrenia or causing marked functional impairment (DSM p.104-105).",
+    "Lurasidone MUST be administered with at least 350 calories of food to ensure adequate bioavailability (StahlKids p.301-302).",
+    "Clozapine ANC monitoring protocol requires baseline ANC ≥1500/µL, weekly testing for 6 months, biweekly for months 6-12, and monthly thereafter (StahlKids p.151, p.163)."
+  ]
+}
