@@ -1,0 +1,36 @@
+{
+ "tag": "study-141-later-theorists-erikson-bion-ogden-lacan-spitz-stern-relatio",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:25:06+00:00",
+ "updated_at": "2026-09-25T17:25:06+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "4e666fe81bb6253afd93fecac6d23c84a7bbf518acc23a8ae050e6d325ee10ef",
+   "asset_id": 588088219,
+   "size": 9921,
+   "fetched_at": "2026-09-25T17:25:00+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5bb08d3ba3571ad45ef116a4492a722d779c6695aee2ad7dbeb7aff031e3eec5",
+   "asset_id": 588088221,
+   "size": 11939,
+   "fetched_at": "2026-09-25T17:25:02+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "0b3325d7046ba1143664fbd2ec00498dddb625cdb96b8e63b1a16d7585ec1e86",
+   "asset_id": 588088222,
+   "size": 31660,
+   "fetched_at": "2026-09-25T17:25:04+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "fc6f3af9b4b007cdce9e128b2205bf71ace3bdfd02cb12f50b7d1fe9aeeec1d5",
+   "asset_id": 588088223,
+   "size": 42655,
+   "fetched_at": "2026-09-25T17:25:06+00:00"
+  }
+ ]
+}
