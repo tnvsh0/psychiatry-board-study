@@ -1,0 +1,99 @@
+{
+ "tag": "study-024-tic-disorders-tourette-s",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:43:38+00:00",
+ "updated_at": "2026-09-25T13:43:38+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "229abd6296f33b806d40a30100d00cd3fd4c9e3bbaee1ab774f1cf826ba38926",
+   "asset_id": 531388835,
+   "size": 10426,
+   "fetched_at": "2026-09-25T13:43:14+00:00"
+  },
+  {
+   "name": "narration_criteria.txt",
+   "sha256": "fbd73acf4e9ed07351713cd34e5eb85ed3932f0faa94f2fa7e5e9d93465ca34c",
+   "asset_id": 531388808,
+   "size": 5068,
+   "fetched_at": "2026-09-25T13:43:16+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "89891fa0239bb3747b0b6ecd2058e82019bed93c35e6e18630f03dc2009ac8ea",
+   "asset_id": 531388775,
+   "size": 13281,
+   "fetched_at": "2026-09-25T13:43:18+00:00"
+  },
+  {
+   "name": "narration_main2.txt",
+   "sha256": "b212bb6db56ad955835f7768ed28fccb3b9f596386c4378d04abf91580cae244",
+   "asset_id": 531388797,
+   "size": 8356,
+   "fetched_at": "2026-09-25T13:43:20+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "cfd9b582d84f421f0d1ec7079572601660ebbf5cd924fd8bd3c1a6d5e667557a",
+   "asset_id": 531388818,
+   "size": 45271,
+   "fetched_at": "2026-09-25T13:43:22+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "94c15524acc190f6de15d2e1c34469a0f7e7a07faea5ab664407160039c5cef8",
+   "asset_id": 531388740,
+   "size": 37140,
+   "fetched_at": "2026-09-25T13:43:24+00:00"
+  },
+  {
+   "name": "sketchy_criteria.quiz.md",
+   "sha256": "4547e7ae678aa20ef4a92307fa3ef39e3671b462a0c0db047fc1e15f7652e521",
+   "asset_id": 531388801,
+   "size": 2721,
+   "fetched_at": "2026-09-25T13:43:26+00:00"
+  },
+  {
+   "name": "sketchy_criteria.txt",
+   "sha256": "9295184f191442105c55b50ecb3ecd00cb0a6c1f7e34debe699e1f27924c24e9",
+   "asset_id": 531388750,
+   "size": 7124,
+   "fetched_at": "2026-09-25T13:43:28+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "a698df249b8340eaae11641eaf41db9f741c4501f4e523c5643009feeec6e0f1",
+   "asset_id": 531388754,
+   "size": 5095,
+   "fetched_at": "2026-09-25T13:43:30+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "f7a84f8e6ddd567377e571f552a0929cce8f5604e857e7cb6112836b189e85dd",
+   "asset_id": 531388736,
+   "size": 14947,
+   "fetched_at": "2026-09-25T13:43:32+00:00"
+  },
+  {
+   "name": "sketchy_main2.quiz.md",
+   "sha256": "5e4c47759a60e4cacf23d8cb4b78bbf6b0a4f063328804c56816372e593fd561",
+   "asset_id": 531388792,
+   "size": 3964,
+   "fetched_at": "2026-09-25T13:43:34+00:00"
+  },
+  {
+   "name": "sketchy_main2.txt",
+   "sha256": "8f57c152f33a2bb9f99a7ef349fa7e88e793e89d251405308389f53ee124bd9c",
+   "asset_id": 531388743,
+   "size": 13442,
+   "fetched_at": "2026-09-25T13:43:36+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "298b4adbe85f37d0293c0db53b32e87c402fd1c76d969890181f1857991eff26",
+   "asset_id": 531388827,
+   "size": 50418,
+   "fetched_at": "2026-09-25T13:43:38+00:00"
+  }
+ ]
+}

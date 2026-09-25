@@ -1,0 +1,117 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "טיקים מוטוריים פשוטים ומורכבים",
+        "items": [
+          "מוטוריים פשוטים: מצמוץ עיניים, משיכת כתפיים, עיוותי פנים (DSM p.94, Dulcan p.438)",
+          "מוטוריים מורכבים: Echopraxia (חיקוי תנועות), Copropraxia (מחוות מגונות), קפיצה, רקיעה, נגיעה בחפצים (DSM p.94, Dulcan p.438)"
+        ]
+      },
+      {
+        "name": "טיקים קוליים פשוטים ומורכבים",
+        "items": [
+          "קוליים פשוטים: כחכוח בגרון, הרחה, נביחה, נחירות, ציוץ (DSM p.94, Dulcan p.438)",
+          "קוליים מורכבים: Coprolalia (קללות/גסויות), Palilalia (חזרה עצמית), Echolalia (חזרת זולת), מילים וביטויים (DSM p.94, Dulcan p.438)"
+        ]
+      }
+    ],
+    "thresholds": "תסמונת טורט: טיקים מוטוריים מרובים וטיק קולי אחד לפחות, המשך מעל שנה ברציפות, הופעה לפני גיל 18, ולא מיוחס לחומר או מצב רפואי (DSM p.93, Dulcan p.439)",
+    "subtypes": [
+      "Tourette's Disorder - תסמונת טורט (DSM p.93, Dulcan p.439)",
+      "Persistent (Chronic) Motor or Vocal Tic Disorder - הפרעת טיקים כרונית (מוטורית או קולית) (DSM p.93, Dulcan p.440)",
+      "Provisional Tic Disorder - הפרעת טיקים זמנית (DSM p.93, Dulcan p.440)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "תסמונת טורט: כ-1% מהילדים (DSM p.95, Dulcan p.440). הפרעת טיקים כרונית: כ-5% (Dulcan p.440). הפרעת טיקים זמנית: כ-20% מילדי בית הספר (Dulcan p.440).",
+    "sex_ratio": "3:1 עד 4:1 לטובת זכרים (DSM p.95, Dulcan p.440)",
+    "onset_age_typical": "גיל הופעה ממוצע 4-6 שנים, שיא החומרה בגיל 10-12 שנים (DSM p.95, Dulcan p.443)",
+    "heritability": "70%-85% (DSM p.95), במחקרים משפחתיים 0.77 (Dulcan p.442)",
+    "comorbidities": [
+      "ADHD: כ-50%-60% מהמקרים (DSM p.96, Dulcan p.441)",
+      "OCD: כ-35%-50% מהמקרים (DSM p.96, Dulcan p.441)"
+    ],
+    "prognosis": "נסיגה או הטבה משמעותית במהלך גיל ההתבגרות עבור מרבית המקרים; כ-10%-20% ימשיכו לסבול מטיקים חמורים בבגרות (DSM p.95, Dulcan p.443)"
+  },
+  "etiology": {
+    "genetic": "אדריכלות פוליגנטית מורכבת (Complex polygenic) (Dulcan p.442). גנים קנדידטים כוללים: SLITRK1, HDC (L-histidine decarboxylase), WWC1, וכן NRXN1 ו-CNTN6 (Dulcan p.442).",
+    "neurobiology": "הפרעה בתפקוד לולאות CSTC (קורטיקו-סטריאטו-תלמו-קורטיקליות) (Dulcan p.443, StahlNeuro p.540). מעורבות של הסטריאטום הדורסלי/האסוציאטיבי, מערכות דופמינרגיות (קולטני D2), גבאיות (GABA), גלוטמטרגיות והיסטמינרגיות (Dulcan p.443, StahlNeuro p.540).",
+    "environmental": "פגות, משקל לידה נמוך, חשיפה עוברית לטבק (Dose-dependent), אלכוהול וקנאביס במהלך ההיריון, וסטרס פסיכו-סוציאלי (DSM p.95, Dulcan p.441)."
+  },
+  "treatment": {
+    "first_line": [
+      "CBIT ואימון בהיפוך הרגל (HRT) (Dulcan p.446, p.450)",
+      "אגוניסטים לקולטני אלפא-2 אדרנרגיים (Off-label): Guanfacine (StahlKids p.243, Dulcan p.446) או Clonidine (StahlKids p.141, Dulcan p.447)"
+    ],
+    "second_line": [
+      "Aripiprazole - נוגד פסיכוזה אטיפי אגוניסט חלקי ל-D2 (מאושר FDA מגיל 6) (StahlKids p.37, Dulcan p.447)",
+      "Risperidone - אנטגוניסט D2 ו-5HT2A במינונים נמוכים (StahlKids p.423, Dulcan p.447)"
+    ],
+    "key_side_effects": [
+      "אלפא-2 אגוניסטים: סדציה, ירידת לחץ דם, bradycardia, וסכנת עליית לחץ דם ריבאונדית (Rebound Hypertension) בהפסקה חדה (StahlKids p.142, p.244)",
+      "Aripiprazole: אקתיזיה, ישנוניות, עלייה במשקל ו-EPS (StahlKids p.37, p.41)",
+      "Risperidone: עלייה במשקל, תסמונת מטבולית והיפרפרולקטינמיה (Dulcan p.447)",
+      "Haloperidol: EPS קשים, דיסטוניה, וירידה קוגניטיבית (StahlKids p.255, Dulcan p.448)",
+      "Pimozide: הארכת מרווח QTc, אריתמיות לבביות קטלניות (StahlKids p.397, Dulcan p.448)",
+      "Tetrabenazine: ישנוניות ודיכאון קליני (Dulcan p.448, StahlNeuro p.175)"
+    ],
+    "monitoring": "לחץ דם ודופק (למקבלי אלפא-2) (StahlKids p.243). משקל, גובה ופרופיל מטבולי (לנוגדי פסיכוזה אטיפיים) (StahlKids p.37). בדיקת אק\"ג (ECG) ורמות אשלגן בדם לפני התחלה ובמהלך טיפול ב-Pimozide (StahlKids p.397)."
+  },
+  "assessment_tools": {
+    "items": [
+      "Yale Global Tic Severity Scale (YGTSS) - מדד הזהב להערכת חומרת הטיקים על פני 5 מימדים (Dulcan p.445)",
+      "Tourette's Syndrome Severity Scale (TSSS) - סולם קליני פשוט להערכת חומרה (Dulcan p.445)",
+      "הערכת פסיכופתולוגיה כללית ותחלואה נלווית באמצעות ראיון K-SADS (Dulcan p.445, Syllabus p.30)",
+      "Hopkins Motor and Vocal Tic Scale (Dulcan p.445)"
+    ],
+    "key_numbers": [
+      "0-50: טווח ציון חומרת הטיקים הכללי (Total Tic Score) ב-YGTSS (Dulcan p.445)",
+      "5 מימדים: מספר המדדים המוערכים ב-YGTSS (מספר, תדירות, עוצמה, מורכבות, הפרעה) (Dulcan p.445)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "סטריאוטיפיות מוטוריות (Stereotypic Movement Disorder) (DSM p.91, Dulcan p.445)",
+      "כוריאה כגון Sydenham's Chorea או Huntington's (DSM p.97)",
+      "דיסטוניה (כיווץ שרירים מתמשך מוטורי או כתוצאה מנוגדי פסיכוזה) (DSM p.97, StahlNeuro p.165-166)",
+      "מיוקלונוס (Myoclonus) (Dulcan p.445)",
+      "טיקים תפקודיים פסיכוגניים (Functional Tic-Like Movements) (DSM p.92, p.98)"
+    ],
+    "key_numbers": [
+      "לפני גיל 3 שנים: גיל ההופעה האופייני של סטריאוטיפיות מוטוריות (DSM p.72, p.91)",
+      "15 דקות עד שעות: משך התקפי הטיקים התפקודיים/פסיכוגניים (Tic Attacks) (DSM p.92)"
+    ]
+  },
+  "habit_reversal": {
+    "items": [
+      "אימון מודעות (Awareness Training): זיהוי מוקדם של הדחף המקדים (Premonitory Urge) (Dulcan p.446, p.450)",
+      "תגובה מתחרה (Competing Response): הפקת תנועה פיזית הפוכה או לא מתיישבת מוטורית עם הטיק (Incompatible) (Dulcan p.446, p.450)",
+      "תמיכה חברתית (Social Support): גיוס ההורים למתן חיזוקים חיוביים (Dulcan p.446, p.450)",
+      "טיפול בחשיפה ומניעת תגובה (ERP): חשיפה לדחף ומניעה רצונית של הפקת הטיק עד לדעיכתו (Dulcan p.450)"
+    ],
+    "key_numbers": [
+      "1 דקה שלמה: משך הזמן הנדרש להחזקת התגובה המתחרה או עד שהדחף המקדים חולף (Dulcan p.446, p.450)"
+    ]
+  },
+  "comorbidity_OCD_ADHD": {
+    "items": [
+      "ADHD מופיע ב-50%-60% מהמקרים ומנבא פגיעה תפקודית קשה יותר מחומרת הטיקים עצמם (DSM p.96, Dulcan p.441)",
+      "טיפול בממריצים בטוח לרוב ואינו מחמיר טיקים בממוצע קבוצתי, אך במקרים פרטניים תיתכן החמרה (Dulcan p.441, StahlNeuro p.1007 [מקור: הקשר רחב])",
+      "Tic-related OCD מאופיין בגיל הופעה צעיר, דומיננטיות בזכרים, אובססיות סימטריה ודיוק, וקומפולסיות נגיעה, טפיחה ובדיקה (DSM p.96, p.98, Dulcan p.441)",
+      "אבחנה מבדלת: קומפולסיות מבוצעות בתגובה לאובססיה קוגניטיבית למניעת אסון; טיקים מבוצעים להקלה של מתח סומטי פיזי (DSM p.97-98, Dulcan p.438)"
+    ],
+    "key_numbers": [
+      "50% שכיחות: שיעור הקומורבידיות של ADHD בקרב ילדים עם תסמונת טורט (DSM p.96, Dulcan p.441)",
+      "35% שכיחות: שיעור הקומורבידיות של OCD בקרב ילדים עם תסמונת טורט (DSM p.96, Dulcan p.441)"
+    ]
+  },
+  "high_yield": [
+    "מטופלים עם תסמונת טורט או הפרעת טיקים כרונית נמצאים בסיכון מוגבר פי 3.86 לניסיונות אובדניים ופי 4.39 למוות בהתאבדות (Sweden Cohort Study) (DSM p.96, Dulcan p.452).",
+    "נפח גרעין זנבי (Caudate volume) קטן בילדות מהווה מנבא נוירו-אנטומי מובהק להמשכיות וחומרת הטיקים בבגרות (Dulcan p.443).",
+    "סלקטיביות Guanfacine לקולטני אלפא-2A אדרנרגיים גבוהה פי 15-20 בהשוואה לקלונידין, מה שמפחית משמעותית תופעות לוואי סדטיביות ולחץ דם נמוך (StahlKids p.243).",
+    "הפסקה פתאומית של אגוניסטים אלפא-2 מסוכנת בשל עליית לחץ דם חדה וריבאונדית (Rebound Hypertension) המלווה בטכיקרדיה וחרדה (StahlKids p.142, p.244).",
+    "Pimozide מחייב בדיקת אק\"ג (ECG) ורמות אשלגן בדם לפני התחלה ובאינטרוולים תקופתיים בשל סכנת הארכת מרווח QTc ואריתמיות קטלניות (StahlKids p.397, Dulcan p.448).",
+    "במטופלים שהם CYP2D6 Poor Metabolizers, קצב הטיטרציה של Pimozide מוגבל לעלייה אחת ל-14 ימים לפחות (StahlKids p.401)."
+  ]
+}
