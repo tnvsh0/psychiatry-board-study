@@ -1,0 +1,57 @@
+{
+ "tag": "study-001-psychiatric-examination-of-child-and-adolescent",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T12:42:09+00:00",
+ "updated_at": "2026-09-25T12:42:09+00:00",
+ "assets": [
+  {
+   "name": "flashcards.json",
+   "sha256": "cd00716eec3f9d1a2a18d0c3e3e06fb89976672f8026c0aec4c6e4295b8f55bf",
+   "asset_id": 430879785,
+   "size": 11335,
+   "fetched_at": "2026-09-25T12:41:57+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "16d7af913db8ef65b440c8ff98eb326082990c2a48f8486e8d55ca6db2f1d006",
+   "asset_id": 430944896,
+   "size": 13346,
+   "fetched_at": "2026-09-25T12:41:59+00:00"
+  },
+  {
+   "name": "report.md",
+   "sha256": "fc9a1938b05a4336edc3378000c23be9761e36d1290a3736b25ef6322534ccfb",
+   "asset_id": 424519365,
+   "size": 9806,
+   "fetched_at": "2026-09-25T12:42:01+00:00"
+  },
+  {
+   "name": "sketchy_developmental_history.txt",
+   "sha256": "73e094169a6b80195b05664cd3cd4b59168d96f5c7d4c76519f6d641445fb9a0",
+   "asset_id": 430945191,
+   "size": 2113,
+   "fetched_at": "2026-09-25T12:42:03+00:00"
+  },
+  {
+   "name": "sketchy_examination_structure.txt",
+   "sha256": "aa827e3988b9b92da0d6c9cc76c9bc2bbe820d320bbb14e1c044f753c323ea08",
+   "asset_id": 430945148,
+   "size": 2221,
+   "fetched_at": "2026-09-25T12:42:05+00:00"
+  },
+  {
+   "name": "sketchy_mental_status_pediatric.txt",
+   "sha256": "96cc91899775712841d19c88b1de2ca40cf0358d0539407201b4d0018a2a115d",
+   "asset_id": 430945218,
+   "size": 1955,
+   "fetched_at": "2026-09-25T12:42:07+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "3c7ce0ca5ef5c699fe60a37c0a9286cc16e6456beda9362289d532f0683b7a21",
+   "asset_id": 430945235,
+   "size": 20887,
+   "fetched_at": "2026-09-25T12:42:09+00:00"
+  }
+ ]
+}
