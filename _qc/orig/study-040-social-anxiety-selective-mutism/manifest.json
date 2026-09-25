@@ -1,0 +1,36 @@
+{
+ "tag": "study-040-social-anxiety-selective-mutism",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:10:54+00:00",
+ "updated_at": "2026-09-25T14:10:54+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b3c1ec02356fa6b87bc93aa83f0806c03cf76c8c5235fe34284996d121934abe",
+   "asset_id": 536974346,
+   "size": 8596,
+   "fetched_at": "2026-09-25T14:10:48+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "239eb727486924490787e544d25ba691e44e08966f273088c75fffad2e78cb22",
+   "asset_id": 536974349,
+   "size": 33064,
+   "fetched_at": "2026-09-25T14:10:50+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "7dbabb251bfb71b26897bd504e3c5cf6d27a6ef217cf7881380d7bb3dc8614da",
+   "asset_id": 536974343,
+   "size": 16251,
+   "fetched_at": "2026-09-25T14:10:52+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b4504c3c5377625bb980a4db7dc8e05a18765bb3a566db8c2b7a1c3d1d5de7c3",
+   "asset_id": 536974347,
+   "size": 44055,
+   "fetched_at": "2026-09-25T14:10:54+00:00"
+  }
+ ]
+}

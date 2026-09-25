@@ -1,0 +1,239 @@
+{
+  "title": "Anxiety Quiz",
+  "questions": [
+    {
+      "question": "A 13-year-old female presents with intense fear when asked to read aloud in class or enter the cafeteria alone. She is concerned that her classmates will notice her blushing and judge her as 'stupid.' Based on DSM-5-TR, which specific requirement must be met for a diagnosis of Social Anxiety Disorder (SAD) in this pediatric patient?",
+      "answerOptions": [
+        {
+          "text": "The anxiety must occur in peer settings and not just during interactions with adults.",
+          "isCorrect": true,
+          "rationale": "For children and adolescents, Criterion A for Social Anxiety Disorder specifies that the anxiety must manifest in peer settings, distinguishing it from general shyness around adults (DSM p.230)."
+        },
+        {
+          "text": "The patient must lack insight that her fear is excessive or out of proportion.",
+          "isCorrect": false,
+          "rationale": "While children may lack insight, it is not a requirement for diagnosis; the clinician makes the determination if the fear is out of proportion to the actual threat (DSM p.231)."
+        },
+        {
+          "text": "Symptoms must have been present since the early developmental period (before age 5).",
+          "isCorrect": false,
+          "rationale": "Early onset is common, but SAD typically has a median onset of 13 years and does not require symptoms before age 5, unlike Selective Mutism (DSM p.232)."
+        },
+        {
+          "text": "The fear must be restricted to performance situations such as public speaking.",
+          "isCorrect": false,
+          "rationale": "This describes the 'Performance only' specifier, but the general diagnosis covers a broader range of social interactions including being observed or meeting unfamiliar people (DSM p.230)."
+        }
+      ],
+      "hint": "Consider the developmental distinction in Criterion A regarding the audience of the social threat."
+    },
+    {
+      "question": "A 5-year-old boy has not spoken a word at his kindergarten since the school year began three months ago. However, his parents provide videos of him speaking fluently and laughing at home. Which of the following conditions is an explicit exclusion criterion for Selective Mutism (SM)?",
+      "answerOptions": [
+        {
+          "text": "The failure to speak is better explained by a communication disorder such as Childhood-Onset Fluency Disorder.",
+          "isCorrect": true,
+          "rationale": "Criterion E states that the disturbance must not be better explained by communication disorders or occur exclusively during the course of Autism Spectrum Disorder or Schizophrenia (DSM p.222)."
+        },
+        {
+          "text": "The presence of comorbid Social Anxiety Disorder.",
+          "isCorrect": false,
+          "rationale": "Social Anxiety Disorder and Selective Mutism are highly comorbid (up to 70%), and both diagnoses can be given simultaneously (DSM p.223)."
+        },
+        {
+          "text": "A duration of symptoms lasting only two months.",
+          "isCorrect": false,
+          "rationale": "The minimum duration required for Selective Mutism is one month, making a two-month presentation sufficient for diagnosis (DSM p.222)."
+        },
+        {
+          "text": "The use of nonverbal means (pointing or grunting) to communicate in social settings.",
+          "isCorrect": false,
+          "rationale": "Children with SM often use nonverbal means to communicate; this is an associated feature, not an exclusion (DSM p.222)."
+        }
+      ],
+      "hint": "Look for a neurodevelopmental or speech-specific condition that might provide a more parsimonious explanation for the lack of speech."
+    },
+    {
+      "question": "According to StahlNeuro, which brain circuit is hypothesized to regulate the symptom of 'Worry,' characterized by anxious misery and apprehensive expectations?",
+      "answerOptions": [
+        {
+          "text": "Cortico-striato-thalamo-cortical (CSTC) loops originating in the DLPFC.",
+          "isCorrect": true,
+          "rationale": "Worry and obsessions are linked to malfunctioning within CSTC feedback loops, while fear and panic are regulated by an amygdala-centered circuit (StahlNeuro p.362, 367)."
+        },
+        {
+          "text": "An amygdala-centered circuit projecting to the locus coeruleus.",
+          "isCorrect": false,
+          "rationale": "This circuit primarily regulates the 'Fear' phenotype and autonomic outputs like tachycardia and sweating, rather than cognitive worry (StahlNeuro p.362, 365)."
+        },
+        {
+          "text": "The hippocampal-amygdala pathway.",
+          "isCorrect": false,
+          "rationale": "This pathway is associated with re-experiencing and traumatic memories, specifically in the context of PTSD (StahlNeuro p.366)."
+        },
+        {
+          "text": "The ventral attention network involving the insula.",
+          "isCorrect": false,
+          "rationale": "While involved in anxiety, this network is more focused on detecting salient stimuli and shifts in attention rather than the core worry loop (Dulcan p.321)."
+        }
+      ],
+      "hint": "Distinguish between the anatomical locations for 'Fear' (the amygdala) and 'Worry' (the prefrontal cortex/striatum)."
+    },
+    {
+      "question": "The Child/Adolescent Anxiety Multimodal Study (CAMS) provided landmark evidence for the treatment of pediatric anxiety disorders. Which treatment arm demonstrated the highest clinical response rate after 12 weeks?",
+      "answerOptions": [
+        {
+          "text": "Combination of Sertraline and Cognitive-Behavioral Therapy (CBT).",
+          "isCorrect": true,
+          "rationale": "The CAMS trial showed an 81% response rate for combination therapy, which was significantly superior to Sertraline alone (55%) or CBT alone (60%) (Dulcan p.331)."
+        },
+        {
+          "text": "Sertraline monotherapy at flexible dosing.",
+          "isCorrect": false,
+          "rationale": "Sertraline was effective (55% response) but inferior to the combined approach in the CAMS trial (Dulcan p.331)."
+        },
+        {
+          "text": "Coping Cat (CBT) monotherapy.",
+          "isCorrect": false,
+          "rationale": "While CBT is highly effective (60% response), it did not reach the 81% success rate seen in the combination group (Dulcan p.331)."
+        },
+        {
+          "text": "Fluvoxamine monotherapy.",
+          "isCorrect": false,
+          "rationale": "Although Fluvoxamine has shown efficacy in other trials, it was not the SSRI utilized in the CAMS study (Dulcan p.330)."
+        }
+      ],
+      "hint": "The study emphasized that integrating psychopharmacology and psychotherapy yields the best outcomes."
+    },
+    {
+      "question": "A 7-year-old child presents with significant difficulty using language for social purposes, such as greeting peers appropriately and following conversation rules. The clinician notes no evidence of restricted interests or repetitive behaviors. Which diagnosis is most appropriate according to DSM-5-TR?",
+      "answerOptions": [
+        {
+          "text": "Social (Pragmatic) Communication Disorder (SPCD).",
+          "isCorrect": true,
+          "rationale": "SPCD is differentiated from Autism Spectrum Disorder (ASD) by the absence of restricted/repetitive patterns of behavior (Criterion B of ASD) (DSM p.56, Dulcan p.165)."
+        },
+        {
+          "text": "Autism Spectrum Disorder (ASD).",
+          "isCorrect": false,
+          "rationale": "ASD requires the presence of restricted, repetitive patterns of behavior, interests, or activities in addition to social communication deficits (DSM p.56)."
+        },
+        {
+          "text": "Social Anxiety Disorder (SAD).",
+          "isCorrect": false,
+          "rationale": "While SAD involves social difficulties, they are driven by fear of negative evaluation, not a primary deficit in pragmatic language rules (DSM p.230)."
+        },
+        {
+          "text": "Specific Learning Disorder with impairment in written expression.",
+          "isCorrect": false,
+          "rationale": "This disorder focuses on academic skills rather than the social use of verbal and nonverbal communication (DSM p.76)."
+        }
+      ],
+      "hint": "Consider the diagnosis introduced specifically to address social communication deficits that do not meet the full behavioral criteria for ASD."
+    },
+    {
+      "question": "A family that recently immigrated from South Korea is concerned that their 6-year-old daughter does not speak in her new US school. She speaks Korean fluently at home. How should the clinician differentiate a normative 'silent period' from Selective Mutism?",
+      "answerOptions": [
+        {
+          "text": "A diagnosis of Selective Mutism is only warranted if refusal to speak persists in both languages and in several unfamiliar settings for a prolonged period.",
+          "isCorrect": true,
+          "rationale": "DSM-5-TR explicitly states that refusal to speak a new language due to lack of knowledge is not SM. It should only be diagnosed if the refusal is consistent across both languages and contexts (DSM p.224)."
+        },
+        {
+          "text": "If the child speaks in Korean but not in English, Selective Mutism should be diagnosed immediately to ensure early intervention.",
+          "isCorrect": false,
+          "rationale": "Early diagnosis is balanced against the exclusion of language acquisition issues (Criterion D), as failure to speak English alone may be due to discomfort with the new language (DSM p.222)."
+        },
+        {
+          "text": "The 'silent period' in immigrant children typically lasts at least 12 months before a diagnosis can be considered.",
+          "isCorrect": false,
+          "rationale": "There is no set 12-month rule; however, the clinician must ensure the failure is not attributable to language proficiency (DSM p.222, 224)."
+        },
+        {
+          "text": "A diagnosis of SM cannot be made if the child was not mute in their country of origin.",
+          "isCorrect": false,
+          "rationale": "While history is important, the current persistent failure to speak in settings where it is expected (e.g., the new school) meets the criteria if other exclusions are ruled out (DSM p.222)."
+        }
+      ],
+      "hint": "Check the language proficiency requirements in Criterion D of the Selective Mutism criteria."
+    },
+    {
+      "question": "When initiating an SSRI such as Fluoxetine or Sertraline in a child with an anxiety disorder, the clinician warns the parents about 'Treatment-Emergent Activation Syndrome' (TEAS). According to StahlKids, which population is at higher risk for this phenomenon?",
+      "answerOptions": [
+        {
+          "text": "Patients who are already psychomotor agitated, angry, or irritable, or those with a family history of Bipolar Disorder.",
+          "isCorrect": true,
+          "rationale": "Activation (TEAS) is a potential disadvantage of SSRIs/SNRIs in children who already exhibit agitation or irritability or those with mixed/bipolar features (StahlKids p.147, 177)."
+        },
+        {
+          "text": "Adolescents with a primary diagnosis of Panic Disorder.",
+          "isCorrect": false,
+          "rationale": "While any youth can experience it, those with internalizing symptoms like panic are not specifically highlighted as the highest risk compared to those with pre-existing agitation (StahlKids p.147)."
+        },
+        {
+          "text": "Children with comorbid Hypothyroidism.",
+          "isCorrect": false,
+          "rationale": "Hypothyroidism is a medical mimic for depression, but it is not a primary risk factor for treatment-emergent activation (Dulcan p.330)."
+        },
+        {
+          "text": "Older adolescents (ages 17-18) compared to younger children (under 12).",
+          "isCorrect": false,
+          "rationale": "Data from the CAMS trial actually suggested that the total psychiatric adverse event burden was higher in children 12 years or younger than in adolescents (Dulcan p.330)."
+        }
+      ],
+      "hint": "Focus on patients with pre-existing 'externalizing-like' symptoms or underlying mood instability."
+    },
+    {
+      "question": "Which of the following statements regarding the epidemiology of Social Anxiety Disorder (SAD) and Selective Mutism (SM) is true according to the DSM-5-TR?",
+      "answerOptions": [
+        {
+          "text": "The median age at onset for SAD in the United States is 13 years, and onset is rare in adulthood.",
+          "isCorrect": true,
+          "rationale": "SAD typically emerges in adolescence with 75% of cases beginning between 8 and 15 years. Adult onset is rare and usually follows a stressful event (DSM p.232)."
+        },
+        {
+          "text": "Selective Mutism is a common disorder with a point prevalence of 5.5% in US community samples.",
+          "isCorrect": false,
+          "rationale": "Selective Mutism is relatively rare, with point prevalence estimates in school or clinic samples ranging from 0.03% to 1.9% (DSM p.223)."
+        },
+        {
+          "text": "In community samples, Social Anxiety Disorder is equally common in males and females.",
+          "isCorrect": false,
+          "rationale": "Higher rates of SAD are found in women than in men in the general population, with odds ratios ranging from 1.5 to 2.2 (DSM p.232)."
+        },
+        {
+          "text": "Separation Anxiety Disorder typically emerges much later than Social Anxiety Disorder.",
+          "isCorrect": false,
+          "rationale": "Separation Anxiety is often one of the earliest to emerge, with a mean onset around age 8, while SAD symptoms typically fully emerge near age 12 (Dulcan p.319)."
+        }
+      ],
+      "hint": "Review the median age and frequency of these disorders across the developmental lifespan."
+    },
+    {
+      "question": "A 9-year-old child refuses to speak to the school principal and teachers but chats freely with peers in the playground. The teacher reports the child is often defiant and breaks rules. How should the clinician distinguish between Selective Mutism and Oppositional Defiant Disorder (ODD)?",
+      "answerOptions": [
+        {
+          "text": "Refusal to speak because of opposition to authority figures should be differentiated from failure to speak because of fear of negative evaluation.",
+          "isCorrect": true,
+          "rationale": "Selective Mutism is driven by anxiety and fear of scrutiny (negative evaluation), whereas ODD involves a pattern of angry/irritable mood or argumentative/defiant behavior toward authority (DSM p.235, 522)."
+        },
+        {
+          "text": "If a child speaks to peers but not to teachers, it is always diagnosed as Selective Mutism regardless of behavior.",
+          "isCorrect": false,
+          "rationale": "Criterion A for SM requires a failure to speak in social situations where there is an *expectation* for speaking; however, the underlying motivation (fear vs. defiance) is key for differential diagnosis (DSM p.222, 235)."
+        },
+        {
+          "text": "Oppositional Defiant Disorder and Selective Mutism are mutually exclusive and cannot be diagnosed together.",
+          "isCorrect": false,
+          "rationale": "Oppositional behaviors can be observed in a substantial minority of children with Selective Mutism, and both may be diagnosed if criteria are met (DSM p.223)."
+        },
+        {
+          "text": "The duration requirement for ODD is shorter (1 month) than for Selective Mutism.",
+          "isCorrect": false,
+          "rationale": "Actually, ODD generally requires a duration of at least 6 months, while SM requires only 1 month (DSM p.222, 522)."
+        }
+      ],
+      "hint": "Analyze the 'Internalizing' vs. 'Externalizing' motivation for the lack of communication."
+    }
+  ]
+}
