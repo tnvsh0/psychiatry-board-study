@@ -1,0 +1,36 @@
+{
+ "tag": "study-125-metabolic-disorders-with-psychiatric-presentation",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:58:29+00:00",
+ "updated_at": "2026-09-25T16:58:29+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "0655cd29c6e6ecd76ad80ced6e3d0c44cf41a14cea6afca6565a28146bf141e7",
+   "asset_id": 587466457,
+   "size": 10676,
+   "fetched_at": "2026-09-25T16:58:12+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "3d332f5daaefdfbaf72e7d2d016b355aecab2c6098e25da897f9aa99c85ca35f",
+   "asset_id": 587466456,
+   "size": 12924,
+   "fetched_at": "2026-09-25T16:58:19+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "167039db2ca70a113d83d31ec264d7a5af71befd56eb8a810fe6097b06816f6b",
+   "asset_id": 587466460,
+   "size": 30751,
+   "fetched_at": "2026-09-25T16:58:24+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "5d54cd086d2f10d6b24dd7a534ca6da2d8b779abe021a19c8e6cddbc9648a86a",
+   "asset_id": 587466459,
+   "size": 36977,
+   "fetched_at": "2026-09-25T16:58:29+00:00"
+  }
+ ]
+}
