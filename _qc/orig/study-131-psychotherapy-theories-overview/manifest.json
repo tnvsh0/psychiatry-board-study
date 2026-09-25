@@ -1,0 +1,36 @@
+{
+ "tag": "study-131-psychotherapy-theories-overview",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:09:00+00:00",
+ "updated_at": "2026-09-25T17:09:00+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "36e5b87c51af61c9c517701671f60ae92488bd148a020acd2fd59f80013476de",
+   "asset_id": 587697830,
+   "size": 7358,
+   "fetched_at": "2026-09-25T17:08:54+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "4fe6ce605dcfa2634c3c7c95fd5fb8b7c0d085903a9cdb41c89be367b8c7cc7d",
+   "asset_id": 587697832,
+   "size": 37391,
+   "fetched_at": "2026-09-25T17:08:56+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "76e7cb8e72bf61a096a0ea218eea44945fffbd86f54e7ab2b0587557261c3dd0",
+   "asset_id": 587697829,
+   "size": 36220,
+   "fetched_at": "2026-09-25T17:08:58+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "8918d8f551ec2df2cf64b947cb3083b4e48dc361df6e83b300734033d8698989",
+   "asset_id": 587697833,
+   "size": 28680,
+   "fetched_at": "2026-09-25T17:09:00+00:00"
+  }
+ ]
+}
