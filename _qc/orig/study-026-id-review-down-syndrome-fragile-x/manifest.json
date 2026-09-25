@@ -1,0 +1,85 @@
+{
+ "tag": "study-026-id-review-down-syndrome-fragile-x",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:46:40+00:00",
+ "updated_at": "2026-09-25T13:46:40+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "e2070f327e44560a6a42c7aa3de7436cae24c8e35a17bc998473dd2e9fdb733b",
+   "asset_id": 533634617,
+   "size": 8900,
+   "fetched_at": "2026-09-25T13:46:20+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "bd80385a919ea848c1bd0d921558ea2c01c5d0e0e52a48a2be4e51aa427b9d60",
+   "asset_id": 533634582,
+   "size": 12064,
+   "fetched_at": "2026-09-25T13:46:22+00:00"
+  },
+  {
+   "name": "narration_criteria.txt",
+   "sha256": "8e543ddd25dc1f6e213f9a789fa63a96d3cce7eba9e4b1abd9b789a6fc5edeb0",
+   "asset_id": 533634602,
+   "size": 5370,
+   "fetched_at": "2026-09-25T13:46:24+00:00"
+  },
+  {
+   "name": "narration_profile.txt",
+   "sha256": "525c362e82842f2775f50c181e5c0ea78a0da7e2ede1861f1e605fb917ee9027",
+   "asset_id": 533634610,
+   "size": 5624,
+   "fetched_at": "2026-09-25T13:46:26+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "815a9221b7130c379dc0d5f2a58af3174af56adee622b97acc85a92f431e1490",
+   "asset_id": 533634613,
+   "size": 35305,
+   "fetched_at": "2026-09-25T13:46:28+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "1256cd445504433a1ba28251345e6c1db13846c22c8ff887a2e94a17f4de6a7b",
+   "asset_id": 533634583,
+   "size": 32193,
+   "fetched_at": "2026-09-25T13:46:30+00:00"
+  },
+  {
+   "name": "sketchy_criteria.quiz.md",
+   "sha256": "44f57bae58becf084e7ae1f8626695276e3a17e6d1e75d737985bce878077530",
+   "asset_id": 533634601,
+   "size": 2917,
+   "fetched_at": "2026-09-25T13:46:32+00:00"
+  },
+  {
+   "name": "sketchy_criteria.txt",
+   "sha256": "ec79c4d79dfcb35ba477c610e67ff0b29c4fbd17dafc9c9006b691fa0d42edf2",
+   "asset_id": 533634584,
+   "size": 6606,
+   "fetched_at": "2026-09-25T13:46:34+00:00"
+  },
+  {
+   "name": "sketchy_profile.quiz.md",
+   "sha256": "0869519b8b99e963cbfd111add17566d4358456797fefeee2f2ca09954a3c6cb",
+   "asset_id": 533634605,
+   "size": 3842,
+   "fetched_at": "2026-09-25T13:46:36+00:00"
+  },
+  {
+   "name": "sketchy_profile.txt",
+   "sha256": "7b9299897ae4cb5a8fdbb84877a6a2bf55e7e9f0a7b7bfb2f058f03d725082fe",
+   "asset_id": 533634598,
+   "size": 10439,
+   "fetched_at": "2026-09-25T13:46:38+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "272ac2557a66ca6f89bc57327fe8f8c5734c418c01c7c9f5010afe9287964d57",
+   "asset_id": 533634616,
+   "size": 55115,
+   "fetched_at": "2026-09-25T13:46:40+00:00"
+  }
+ ]
+}

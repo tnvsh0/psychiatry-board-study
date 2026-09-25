@@ -1,0 +1,278 @@
+[
+ {
+  "day": 26,
+  "plate": "criteria",
+  "facts": 12,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [],
+  "model": "agy:generate_image",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [],
+    "blank_plates_found": 0,
+    "blank_plates_wanted": 0,
+    "blank_plates": []
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_probed": 3,
+    "_asked": 3,
+    "_raw": {
+     "largest_figure": ""
+    }
+   },
+   "mnemonic": {
+    "callouts": 0,
+    "out_of_place": [],
+    "out_of_place_count": 0,
+    "actions_asked": 12,
+    "actions_drawn": 10,
+    "_actions_missing": [
+     9,
+     12
+    ]
+   },
+   "mn_penalty": 1.0,
+   "missing_all": [],
+   "score": 1.0,
+   "verified": true,
+   "stray_warning": [],
+   "model": "agy:generate_image",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. No side plot and no story between figures — but every element line in the brief names a person and what they are DOING with that prop, and that action must be visibly happening. A prop that merely sits there while its action goes undrawn is the single most common defect in this course: the same pigeonhole wall is the best thing on a plate when staff are filing into it and dead weight on the next when nobody is.\n- PACKED. Roughly one ordinary non-mnemonic prop for every meaningful one, so the place reads as a real working location rather than a diagram. Take them from the ORDINARY CLUTTER list in the brief, which holds this venue's own unclaimed furniture — never from a generic stock of filler. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- Legible text is hand-lettered and DIEGETIC — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- HOW MANY: exactly the strings listed under TEXT TO PAINT, and no others. That list is the budget, not a floor — do not invent extra legible text to fill the picture out. Asking for a fixed 10-18 strings is what produced a plate carrying 35, most of them the names of the objects they sat on.\n- A legible string rides on a surface whose REAL JOB is to display that kind of string: a price board shows a price, a scale shows a weight, a stake shows a plant name, a rack topper shows a package name. A sign whose entire content is the fact, bolted to an object that visibly already is that object, is annotation wearing a prop costume — that is the banned overlay with extra steps, however it is mounted.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\").\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — An egg packing station in the middle of the day shift: a grading line running the length of the shed with a candling lamp booth over it, filled trays coming off the belt, a stack of printed boxes at the packing end, and the roller door open onto a bright yard where the van is loading.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. There is no story unfolding and no side plot between figures.\nBut each numbered element below names a person and what they are DOING with\nthat prop, and every one of those actions IS happening in the picture. This\nline used to end \"nothing causes anything else\", which is the opposite\ninstruction, and it is why plate after plate came back as a room of props\nstanding idle with their names written beside them.\nEveryone is running the eggs through — lifting trays onto the belt, holding each egg up to the candling lamp, sorting it into the right size lane, stamping the box and carrying the packed cases out to the van.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe grading line and its roller belt running from the lower left of the frame up to the packing bench at the top right, dividing the shed into the intake end, the candling booth, the sorted size lanes and the loading bay.\n\nZONES, and what belongs in each: Intake end and candling booth · Roller belt and weighing sorting lanes · Packing bench and stacking station · Loading bay and yard door\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. a candler in the dark inspection booth staring blankly into the lighted beam, unable to reason through why the egg shows two yolk shadows or solve how to route it — a dark wooden candling booth enclosing a single bright beam over an egg showing a double shadow — in the Intake end and candling booth\n  2. an intake loader at the tray pallet piling egg trays blindly without planning their interlocking pattern or grasping the abstract balance of the stack as it tilts over — a tall interlocking column of molded pulp trays leaning at a sharp unstable angle — in the Intake end and candling booth\n  3. a trainee packer at the grading bench misinterpreting the printed egg grade standards and exercising faulty judgment by placing cracked rejects into premium cartons — an open illustrated grading textbook beside a carton containing cracked reject eggs — in the Packing bench and stacking station\n  4. an egg grader at the calibration balance repeating the exact same handling mistake and dropping an egg on the brass pan while an assessor logs standardized test scores — a brass calibration weighing balance beside a clipboard with official standardized score sheets — in the Roller belt and weighing sorting lanes\n  5. a packing line assistant at the bench standing helpless with trailing apron straps, unable to fasten the garment or pack independently without continuous coworker assistance — a heavy work apron with tangled, trailing fabric straps dangling loose on the bench floor — in the Packing bench and stacking station\n  6. a line cleaner at the wash station walking away from the flooded shared wash basin without shutting the tap, showing complete disregard for workplace safety and coworkers — a stainless-steel wash sink overflowing with foamy water and a neglected running hosepipe — in the Loading bay and yard door\n  7. a roving shift worker near the loading door wandering aimlessly between the shed, break room, and yard, failing to carry out essential daily routines across all three environments — a wooden clipboard mapping daily shift stations across the packing shed, lunchroom, and loading yard — in the Loading bay and yard door\n  8. the quality supervisor at the inspection wall stamping a three-part compliance log next to the special-ed classroom diorama to confirm criteria A, B, and C with developmental onset — Special-ed Classroom — a brightly-colored kindergarten room with distinct corners, each showing a child characteristic — in the Packing bench and stacking station\n  9. a line sorter at the first chute guiding eggs down the lane with minimal supervision, packing cartons with only occasional prompt reminders — a smooth painted metal sorting chute labeled with a hand-lettered overhead lane board — in the Roller belt and weighing sorting lanes\n  10. a senior grader guiding a junior sorter at the second chute providing continuous step-by-step coaching to the sorter placing eggs in the moderate lane to maintain basic work pacing — a yellow-painted sorting lane chute equipped with a guide bar beneath an overhead board — in the Roller belt and weighing sorting lanes\n  11. a dedicated line assistant at the third chute physically holding and directing the hands of the worker to transfer each egg safely into deep cushioned padding — a heavily padded orange sorting chute lined with thick shock-absorbing foam — in the Roller belt and weighing sorting lanes\n  12. two handling specialists at the mechanical cradle chute manually operating the entire hoisting cradle and handling every egg without any independent input from the bed-bound station — a deep mechanical cradle chute with automated hoist supports and plush foam lining — in the Roller belt and weighing sorting lanes\n\nTEXT TO PAINT — the 4 string(s) below, and ONLY these, are legible. Every\nother piece of paper, notice, board, poster and label in the scene is illegible\nsquiggle-lines. Do not invent further legible text to fill the picture out. NO\nnumerals appear anywhere except where a blank plate is specified.\n  1. \"MILD GRADE\" — lettered on a smooth painted metal sorting chute labeled with a hand-lettered overhead lane board\n  2. \"MODERATE GRADE\" — lettered on a yellow-painted sorting lane chute equipped with a guide bar beneath an overhead board\n  3. \"SEVERE GRADE\" — lettered on a heavily padded orange sorting chute lined with thick shock-absorbing foam\n  4. \"PROFOUND GRADE\" — lettered on a deep mechanical cradle chute with automated hoist supports and plush foam lining\n\nORDINARY CLUTTER — this venue's own furniture, carrying no fact and no legible text. Fill the gaps with these and nothing else:\n  printed boxes with the fragile stamp already on them; lot and date stamping head over the belt; sack barrow and stacked cases in the loading bay; kettle, mugs and a stack of egg boxes on the office ledge\n\nREMINDER — An egg packing station in the middle of the day shift: a grading line running the length of the shed with a candling lamp booth over it, filled trays coming off the belt, a stack of printed boxes at the packing end, and the roller door open onto a bright yard where the van is loading.; everyone is Everyone is running the eggs through — lifting trays onto the belt, holding each egg up to the candling lamp, sorting it; the largest thing in\nframe is The grading line and its roller belt running from the lower left of the frame up to the packing bench at the top right, ; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"MILD GRADE\"\n  \"MODERATE GRADE\"\n  \"SEVERE GRADE\"\n  \"PROFOUND GRADE\"\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - \nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it."
+  },
+  "narration_words": 542
+ },
+ {
+  "day": 26,
+  "plate": "profile",
+  "facts": 13,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e7: cue trimmed to 'candling lamp booth'"
+  ],
+  "model": "agy:generate_image",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "21"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.168,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.138,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.1719,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [
+    "FRAGILE HANDLE WITH CARE"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_probed": 3,
+    "_asked": 3,
+    "_raw": {
+     "largest_figure": ""
+    }
+   },
+   "mnemonic": {
+    "callouts": 0,
+    "out_of_place": [],
+    "out_of_place_count": 0,
+    "actions_asked": 13,
+    "actions_drawn": 13,
+    "_actions_missing": []
+   },
+   "mn_penalty": 0.0,
+   "missing_all": [
+    "FRAGILE HANDLE WITH CARE"
+   ],
+   "score": 1.0,
+   "verified": true,
+   "stray_warning": [
+    "21"
+   ],
+   "model": "agy:generate_image",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. No side plot and no story between figures — but every element line in the brief names a person and what they are DOING with that prop, and that action must be visibly happening. A prop that merely sits there while its action goes undrawn is the single most common defect in this course: the same pigeonhole wall is the best thing on a plate when staff are filing into it and dead weight on the next when nobody is.\n- PACKED. Roughly one ordinary non-mnemonic prop for every meaningful one, so the place reads as a real working location rather than a diagram. Take them from the ORDINARY CLUTTER list in the brief, which holds this venue's own unclaimed furniture — never from a generic stock of filler. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- Legible text is hand-lettered and DIEGETIC — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- HOW MANY: exactly the strings listed under TEXT TO PAINT, and no others. That list is the budget, not a floor — do not invent extra legible text to fill the picture out. Asking for a fixed 10-18 strings is what produced a plate carrying 35, most of them the names of the objects they sat on.\n- A legible string rides on a surface whose REAL JOB is to display that kind of string: a price board shows a price, a scale shows a weight, a stake shows a plant name, a rack topper shows a package name. A sign whose entire content is the fact, bolted to an object that visibly already is that object, is annotation wearing a prop costume — that is the banned overlay with extra steps, however it is mounted.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\").\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — An egg packing station in the middle of the day shift: a grading line running the length of the shed with a candling lamp booth over it, filled trays coming off the belt, a stack of printed boxes at the packing end, and the roller door open onto a bright yard where the van is loading.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. There is no story unfolding and no side plot between figures.\nBut each numbered element below names a person and what they are DOING with\nthat prop, and every one of those actions IS happening in the picture. This\nline used to end \"nothing causes anything else\", which is the opposite\ninstruction, and it is why plate after plate came back as a room of props\nstanding idle with their names written beside them.\nEveryone is running the eggs through — lifting trays onto the belt, holding each egg up to the candling lamp, sorting it into the right size lane, stamping the box and carrying the packed cases out to the van.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe grading line and its roller belt running from the lower left of the frame up to the packing bench at the top right, dividing the shed into the intake end, the candling booth, the sorted size lanes and the loading bay.\n\nZONES, and what belongs in each: Intake and candling booth · Grading belt and sorting lanes · Packing bench and cold store · Loading bay and yard\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. a shed supervisor with a pencil behind his ear ticking off the intake tally sheet on the wall clipboard to record daily batch variation rates — wall clipboard of daily intake tally sheets hanging on a nail by the belt — in the Intake and candling booth\n  2. a grading line sorter sliding eggs towards the cockerel lane board which takes twenty percent more eggs than the hen lane — hand-lettered lane boards above each size chute marked with cockerel symbols outnumbering hens — in the Grading belt and sorting lanes\n  3. a young packing apprentice studying the special-ed classroom schedule poster hanging near the belt — Special-ed Classroom — a brightly-colored kindergarten room with distinct corners, each showing a child characteristic — in the Intake and candling booth\n  4. a packing line worker stamping fragile heritage cartons passed down from previous batches while setting aside sporadic plain boxes — printed boxes with the fragile stamp stacked beside sporadic plain brown boxes — in the Packing bench and cold store\n  5. an isolated cold-store operator in heavy ear-defenders standing in repetitive rigid posture by the cold-store door while stacking chilled cartons — cold-store door with a thermometer beside it leading to the chilled egg vault — in the Packing bench and cold store\n  6. a hyperactive loading assistant rushing the sack barrow erratically across the threshold and knocking stacked cases — sack barrow rattling over threshold stones beside stacked wooden cases — in the Loading bay and yard\n  7. a candler in the dark booth holding an egg over the candling lamp to inspect an illuminated split heart pattern in the yolk — candling lamp booth with an illuminated egg showing a split heart yolk outline — in the Intake and candling booth\n  8. an elderly line operator with silver hair watching the weighing head dial tick past forty units toward full capacity — weighing head with a dial over the sorting lanes monitoring aging batches — in the Grading belt and sorting lanes\n  9. an intake unloader unpacking a pulp tray with three conjoined eggs stuck together beside a long strip of two hundred fragile grooves — moulded pulp trays with conjoined triplet egg indentations and repeating fragile cells — in the Intake and candling booth\n  10. a belt maintenance mechanic wiping sticky plaque buildup from the APP stamping head while struggling with stiff dry nylon gears — lot and date stamping head over the belt encrusted with sticky amyloid residue — in the Grading belt and sorting lanes\n  11. the veteran farm manager pointing up at the matriarch hen signboard while moving chemical solvents away from the egg line — farm sign board over the shed doors showing an aged matriarch hen illustration beside toxin warning emblems — in the Intake and candling booth\n  12. a young cleaning assistant washing and wringing her hands continuously under the running hosepipe over the floor drain — hosepipe running into the floor drain beside an active scrubbing brush — in the Packing bench and cold store\n  13. a reject line worker holding his nose dropping spoiled foul-smelling cracked eggs into the reject bin as they release pungent sulfur fumes — reject bin of cracked eggs with a crossed mark giving off pungent sulfuric fumes — in the Grading belt and sorting lanes\n\nTEXT TO PAINT — the 3 string(s) below, and ONLY these, are legible. Every\nother piece of paper, notice, board, poster and label in the scene is illegible\nsquiggle-lines. Do not invent further legible text to fill the picture out. NO\nnumerals appear anywhere except where a blank plate is specified.\n  1. \"FRAGILE HANDLE WITH CARE\" — lettered on printed boxes with the fragile stamp stacked beside sporadic plain brown boxes\n  2. \"APP BATCH\" — lettered on lot and date stamping head over the belt encrusted with sticky amyloid residue\n  3. \"DOWNS FARM EGGS\" — lettered on farm sign board over the shed doors showing an aged matriarch hen illustration beside toxin warning emblems\n\nORDINARY CLUTTER — this venue's own furniture, carrying no fact and no legible text. Fill the gaps with these and nothing else:\n  size stamps and an ink pad on the packing bench\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of pure green, the most saturated green in the picture, on wall clipboard\n  - a blank flat plate of pure magenta, the most saturated magenta in the picture, on cold-store door\n  - a blank flat plate of pure cyan, the most saturated cyan in the picture, on weighing head\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — An egg packing station in the middle of the day shift: a grading line running the length of the shed with a candling lamp booth over it, filled trays coming off the belt, a stack of printed boxes at the packing end, and the roller door open onto a bright yard where the van is loading.; everyone is Everyone is running the eggs through — lifting trays onto the belt, holding each egg up to the candling lamp, sorting it; the largest thing in\nframe is The grading line and its roller belt running from the lower left of the frame up to the packing bench at the top right, ; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"FRAGILE HANDLE WITH CARE\"\n\nLAST TIME THESE PLATES WERE FAR TOO SMALL. You drew the PURE CYAN plate at 6% of the image height. Each must be about 20% of the image height — four to eight times bigger than you drew it: a doorway-sized board, not a label. Move other things aside to make room.\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - \nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it.\n\nTHESE BLANK PLATES WERE NOT USABLE LAST TIME — draw each one as a large, flat, unobstructed rectangle of exactly the named colour:\n  - the PURE GREEN plate\n  - the PURE MAGENTA plate"
+  },
+  "compositing": {
+   "image": "1376x768",
+   "slots": [
+    {
+     "id": "RATE",
+     "paint": "1%",
+     "tag": "RATE",
+     "chroma_pixels": 10621,
+     "blob_pixels": 10539,
+     "fill_ratio": 0.892,
+     "height_frac": 0.168,
+     "width_frac": 0.0785,
+     "quad": [
+      [
+       105,
+       151
+      ],
+      [
+       212,
+       139
+      ],
+      [
+       211,
+       247
+      ],
+      [
+       105,
+       265
+      ]
+     ],
+     "bbox": [
+      105,
+      139,
+      107,
+      126
+     ],
+     "height_pct": 16.41,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "WITH",
+     "paint": "25%",
+     "tag": "WITH",
+     "chroma_pixels": 9842,
+     "blob_pixels": 9796,
+     "fill_ratio": 1.038,
+     "height_frac": 0.138,
+     "width_frac": 0.0756,
+     "quad": [
+      [
+       1194,
+       379
+      ],
+      [
+       1297,
+       390
+      ],
+      [
+       1296,
+       484
+      ],
+      [
+       1194,
+       469
+      ]
+     ],
+     "bbox": [
+      1194,
+      379,
+      103,
+      105
+     ],
+     "height_pct": 13.67,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "AGAIN",
+     "paint": "100%",
+     "tag": "AGAIN",
+     "chroma_pixels": 7680,
+     "blob_pixels": 7565,
+     "fill_ratio": 1.118,
+     "height_frac": 0.1719,
+     "width_frac": 0.0596,
+     "quad": [
+      [
+       495,
+       489
+      ],
+      [
+       575,
+       447
+      ],
+      [
+       573,
+       530
+      ],
+      [
+       494,
+       578
+      ]
+     ],
+     "bbox": [
+      494,
+      447,
+      81,
+      131
+     ],
+     "height_pct": 17.06,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 0,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 579
+ },
+ {
+  "day": 26,
+  "plate": "profile2",
+  "facts": 12,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e6: dropped an unmappable relation 'screens delay batches at'",
+   "e10: dropped an unmappable relation 'drives conveyor belt towards'",
+   "e11: dropped an unmappable relation 'calms self-injury on'"
+  ],
+  "compositing": {
+   "error": "missing C:\\Users\\User\\OneDrive\\Desktop\\CLAUDE\\notebooklm-py-main\\psychiatry-board-study\\.claude\\worktrees\\admiring-snyder-5e163b\\_generated\\day-026\\sketchy_profile2.png"
+  },
+  "narration_words": 602
+ },
+ {
+  "day": 26,
+  "plate": "management",
+  "facts": 16,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e6: dropped an unmappable relation 'induces drowsy collapse and slow pulse from over'",
+   "e7: dropped an unmappable relation 'releases toxic ammonia confusion fumes from the '",
+   "e8: dropped an unmappable relation 'triggers weeping panicky cracks from excessive c'"
+  ],
+  "compositing": {
+   "error": "missing C:\\Users\\User\\OneDrive\\Desktop\\CLAUDE\\notebooklm-py-main\\psychiatry-board-study\\.claude\\worktrees\\admiring-snyder-5e163b\\_generated\\day-026\\sketchy_management.png"
+  },
+  "narration_words": 588
+ }
+]
