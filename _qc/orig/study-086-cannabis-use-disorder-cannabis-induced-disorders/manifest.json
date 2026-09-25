@@ -1,0 +1,36 @@
+{
+ "tag": "study-086-cannabis-use-disorder-cannabis-induced-disorders",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:34:34+00:00",
+ "updated_at": "2026-09-25T15:34:34+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "21411f44239e9dfd81471012e3cd273f6e6f58d5bd9dde49589a4d491d8da908",
+   "asset_id": 585035272,
+   "size": 7854,
+   "fetched_at": "2026-09-25T15:34:28+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "443e2e4d44debf2abbe71eed3d5b78f2ece21a4c38ce49e22da446a1c61c4a85",
+   "asset_id": 585035266,
+   "size": 12547,
+   "fetched_at": "2026-09-25T15:34:30+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "4e601f978d6bdcad97fe26d76d77c721216440a8d6723aa568f8d508805ab4ef",
+   "asset_id": 585035270,
+   "size": 38462,
+   "fetched_at": "2026-09-25T15:34:32+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "093e7055e9ab7608d5328b05f8757e2d67065381cf9a175809701078af9c390f",
+   "asset_id": 585035269,
+   "size": 41074,
+   "fetched_at": "2026-09-25T15:34:34+00:00"
+  }
+ ]
+}

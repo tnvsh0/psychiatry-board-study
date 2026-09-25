@@ -1,0 +1,113 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Impaired Control",
+        "items": [
+          "שימוש בכמויות גדולות יותר או לפרק זמן ממושך מכפי שתוכנן (DSM p.575)",
+          "רצון מתמיד או מאמצים בלתי מוצלחים לצמצם או לבקר שימוש (DSM p.575)",
+          "השקעת זמן רב בהשגת קנאביס, שימוש בו או התאוששות ממנו (DSM p.575)",
+          "כמיהה (Craving) או דחף חזק להשתמש בקנאביס (DSM p.575)"
+        ]
+      },
+      {
+        "name": "Social Impairment",
+        "items": [
+          "כישלון במילוי מחויבויות מרכזיות בעבודה, בלימודים או בבית (DSM p.575)",
+          "המשך שימוש למרות בעיות חברתיות/בין-אישיות נגרמות או מוחמרות (DSM p.575)",
+          "ויתור או צמצום פעילויות חברתיות, תעסוקתיות או פנאי (DSM p.575)"
+        ]
+      },
+      {
+        "name": "Risky Use",
+        "items": [
+          "שימוש חוזר במצבים שבהם הוא מהווה סכנה פיזית (DSM p.575)",
+          "המשך שימוש למרות ידיעה על בעיה פיזית/פסיכולוגית נגרמת או מוחמרת (DSM p.576)"
+        ]
+      },
+      {
+        "name": "Pharmacological",
+        "items": [
+          "סבילות (Tolerance) - צורך בכמות מוגדלת או אפקט מופחת (DSM p.576)",
+          "תסמונת גמילה (Withdrawal) - תסמינים אופייניים או שימוש להקלה (DSM p.576)"
+        ]
+      }
+    ],
+    "thresholds": "לפחות 2/11 קריטריונים במשך 12 חודשים (DSM p.575); קלה: 2-3, בינונית: 4-5, חמורה: >=6 (DSM p.575-576)",
+    "subtypes": [
+      "In early remission (3-12 months) (DSM p.575)",
+      "In sustained remission (>=12 months) (DSM p.576)",
+      "In a controlled environment (DSM p.576)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "~2.7%-3.1% במתבגרים 12-17 (DSM p.578, Dulcan p.225); ~2.5% במבוגרים (DSM p.578); 20.4% מקרב מתבגרים משתמשים (DSM p.578)",
+    "sex_ratio": "3.4% בנים vs 2.8% בנות (12-17); 3.5% גברים vs 1.7% נשים במבוגרים (DSM p.578)",
+    "onset_age_typical": "גיל חציון התחלה: 13, התפתחות הפרעה: 14-15 (Dulcan p.225); שיא שכיחות בגילאי 18-29 (6.9%) (DSM p.578)",
+    "heritability": "~30%-80% (DSM p.580)",
+    "comorbidities": [
+      "Conduct Disorder / ODD ~64% (DSM p.582, Dulcan p.226)",
+      "ADHD ~28%-44% (Dulcan p.226)",
+      "Internalizing Disorders (Depression/Anxiety) ~50% (DSM p.582)",
+      "Tobacco Use Disorder ~64% (DSM p.582)"
+    ],
+    "prognosis": "44% מעבר מפסיכוזה מושרת קנאביס לסכיזופרניה/ביפולר (DSM p.129); סיכון מוגבר פי 3.46 לניסיונות אובדניים (Dulcan p.226, p.251)"
+  },
+  "etiology": {
+    "genetic": "תורשתיות 30%-80% (DSM p.580), פגיעות גנטית משותפת להתמכרויות (Dulcan p.227)",
+    "neurobiology": "קולטני CB1 פרה-סינפטיים ו-CB2 (DSM p.576, StahlNeuro p.563); ליגנדים Anandamide ו-2-AG במנגנון העברה רטרוגרדית (StahlNeuro p.563-564); דיסהיביציה GABAרגית ב-VTA ושחרור דופמין ב-Nucleus Accumbens (StahlNeuro p.542); THC אגוניסט חלקי, CBD אינו פסיכואקטיבי (StahlNeuro p.563)",
+    "environmental": "שימוש/התמכרות במשפחה, טראומה/התעללות בילדות, חבירה לקבוצת שווים סוטה, לגליזציה ונגישות גבוהה (DSM p.579, Dulcan p.227)"
+  },
+  "treatment": {
+    "first_line": [
+      "MET / CBT (פרוטוקול CYT) (Dulcan p.236)",
+      "טיפולים משפחתיים מנוהלים (MDFT, FFT, MST) (Dulcan p.236-237)",
+      "A-CRA ו-Contingency Management (Dulcan p.236-238)",
+      "N-acetylcysteine (NAC) 1,200 mg bid לילדים/נוער (Dulcan p.231-232)"
+    ],
+    "second_line": [
+      "12 הצעדים ו-Assertive Continuing Care (Dulcan p.237-238)",
+      "טיפול תרופתי ממוקד בתחלואה נלווית (ADHD, דיכאון) (Dulcan p.233)"
+    ],
+    "key_side_effects": [
+      "NAC: אי-נוחות גסטרואינטסטינלית קלה (Dulcan p.231)",
+      "סטימולנטים ל-ADHD: סיכון זליגה (Diversion) ושימוש לרעה (Dulcan p.233, StahlKids p.11)",
+      "Benzodiazepines: איסור מוחלט עקב פוטנציאל התמכרות ודיסהיביציה (Dulcan p.233, StahlKids p.30)"
+    ],
+    "monitoring": "בדיקות שתן ל-THCCOOH (חולץ מעל 30 יום), מעקב תפקוד אקדמי/משפחתי, ניטור אובדנות בהתחלת SSRIs (DSM p.580, Dulcan p.231-232, p.256)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CRAFFT Screening Tool (Dulcan p.229)",
+      "S2BI - Screen to Brief Intervention (Dulcan p.229-230)",
+      "Timeline Followback Calendar (Dulcan p.230)",
+      "בדיקת טוקסיקולוגיה בשתן ל-THCCOOH (DSM p.580, Dulcan p.231)",
+      "K-SADS-PL ו-DSM-5 Cross-Cutting Measures (DSM p.845, Dulcan p.58)"
+    ],
+    "key_numbers": [
+      "2 תשובות חיוביות ומעלה ב-CRAFFT מעידות על סיכון גבוה (Dulcan p.229)",
+      "מעל 30 יום חלון גילוי של THC בשתן במשתמשים כבדים (DSM p.580, Dulcan p.231)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Cannabinoid Hyperemesis Syndrome (CHS) - הקאות מחזוריות והקלה ע\"י מקלחות חמות (DSM p.582)",
+      "סכיזופרניה של גיל הנעורים (EOS) vs פסיכוזה מושרת קנאביס (DSM p.126, p.129, Dulcan p.390, p.392)",
+      "קנבינואידים סינתטיים (K2/Spice) - אגוניסטים מלאים הגורמים לפסיכוזה סוערת ופרכוסים (DSM p.577)",
+      "Anti-NMDA Receptor Encephalitis ו-Temporal Lobe Epilepsy (DSM p.134, Dulcan p.397)"
+    ],
+    "key_numbers": [
+      "44% מעבר מ-Cannabis-Induced Psychosis לסכיזופרניה/ביפולר (DSM p.129)",
+      "פי 3 סיכון לפסיכוזה בשימוש סדיר בקנאביס באדולסנס (DSM p.582)"
+    ]
+  },
+  "high_yield": [
+    "אבחנת CUD מחייבת לפחות 2/11 קריטריונים ב-12 חודשים; סבילות וגמילה משימוש רפואי מורשה אינן נספרות (DSM p.575-576).",
+    "תסמונת גמילה מקנאביס מתחילה תוך 24-48 שעות, מגיעה לשיא בתוך 2-5 ימים, וחולפת תוך 1-2 שבועות (DSM p.585).",
+    "שימוש בקנאביס בעוצמה גבוהה (>=10% THC) אחראי ל-12% עד 50% ממקרי הפסיכוזה הראשונה בערים מרכזיות (EU-GEI Study) (Dulcan p.392, StahlNeuro p.149).",
+    "44% מכלל הסובלים מפסיכוזה מושרת קנאביס יפתחו בהמשך סכיזופרניה כרונית או הפרעה ביפולרית (DSM p.129).",
+    "N-acetylcysteine (NAC) במינון 1,200 mg bid מעלה פי שניים (OR = 2.4) שתן שלילי ל-THC במתבגרים (Gray et al. 2012a) (Dulcan p.231-232).",
+    "מטבוליט השתן THCCOOH נשאר חיובי מעל 30 יום במשתמשים כבדים עקב פירוק איטי מרקמת השומן (DSM p.580, Dulcan p.231).",
+    "Cannabinoid Hyperemesis Syndrome (CHS) מתאפיינת בהקאות מחזוריות והקלה פתוגנומונית באמצעות מקלחות/אמבטיות חמות (Hot showers relief) (DSM p.582)."
+  ]
+}
