@@ -1,0 +1,36 @@
+{
+ "tag": "study-048-ptsd-treatment-prazosin-ssris-trauma-focused-therapies",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:23:03+00:00",
+ "updated_at": "2026-09-25T14:23:03+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "5df7692317a36d70916025632a31fc072fbc1d193edcd37f9f5b33e1909957d0",
+   "asset_id": 563737731,
+   "size": 7964,
+   "fetched_at": "2026-09-25T14:22:57+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "d9ea5528b09a71110a79e41e55faa5f3aafa2f77f8e95ab488b8244f16846fc0",
+   "asset_id": 563737733,
+   "size": 10844,
+   "fetched_at": "2026-09-25T14:22:59+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "00e57d22a46beace742cb260e672bddbaa238d2c31bf41872bf394ffe2cccb11",
+   "asset_id": 563737736,
+   "size": 34730,
+   "fetched_at": "2026-09-25T14:23:01+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "f9b54b4666e131974bd3db996dd6557b12d1c85e65e651d2c13a5c4f3e85595a",
+   "asset_id": 563737729,
+   "size": 37862,
+   "fetched_at": "2026-09-25T14:23:03+00:00"
+  }
+ ]
+}

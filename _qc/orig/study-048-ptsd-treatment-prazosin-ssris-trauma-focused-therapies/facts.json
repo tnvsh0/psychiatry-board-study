@@ -1,0 +1,106 @@
+{
+  "history_origin": {
+    "items": [
+      "PTSD was first introduced into psychiatric classification in DSM-III in 1980 (Dulcan p.345).",
+      "DSM-5 and DSM-5-TR moved PTSD from anxiety disorders to Trauma- and Stressor-Related Disorders (DSM p.295, Dulcan p.350).",
+      "The DSM-IV requirement A2 of responding with intense fear, helplessness, or horror was removed in DSM-5 (Dulcan p.350).",
+      "ICD-11 established Complex PTSD (C-PTSD) as a separate diagnosis featuring emotional dysregulation and negative self-concept (Dulcan p.352)."
+    ],
+    "key_numbers": [
+      "1980 - year PTSD introduced in DSM-III",
+      "1 month - minimum duration of symptoms for PTSD diagnosis",
+      "6 months - minimum onset delay for delayed expression specifier"
+    ]
+  },
+  "core_principles": {
+    "items": [
+      "Hyperactivity of the amygdala drives fear conditioning, hyperarousal, and traumatic flashbacks (StahlNeuro p.362, p.371).",
+      "Hypoactivity of vmPFC and ACC causes failure of top-down inhibition over the amygdala (StahlNeuro p.371).",
+      "Hippocampal structural and functional deficits impair contextual memory processing (StahlNeuro p.362, Dulcan p.511).",
+      "Locus Coeruleus hyperactivity releases excessive Norepinephrine, activating post-synaptic alpha-1 and beta-1 receptors (StahlNeuro p.368-370).",
+      "HPA axis dysregulation alters cortisol regulation and stress response in the developing brain (Dulcan p.511)."
+    ],
+    "key_numbers": [
+      "4 core symptom clusters in DSM-5-TR (B: Intrusion, C: Avoidance, D: Cognition/Mood, E: Arousal)",
+      "2 diagnostic specifiers (With dissociative symptoms, With delayed expression)"
+    ]
+  },
+  "practice_method": {
+    "items": [
+      "TF-CBT uses the 8-component PRACTICE model: Psychoeducation, Relaxation, Affective modulation, Cognitive processing, Trauma narrative, In vivo mastery, Conjoint sessions, Enhancing safety (Dulcan p.357).",
+      "Prolonged Exposure (PE) uses in vivo and imaginal exposure to drive fear extinction (StahlNeuro p.373, Dulcan p.357).",
+      "EMDR combines bilateral stimulation (eye movements, taps) with trauma memory reprocessing (Dulcan p.358-359).",
+      "CBITS adapts PRACTICE components for school-based group therapy without direct parent involvement (Dulcan p.358).",
+      "Child-Parent Psychotherapy (CPP) targets attachment and dyadic processing in children 0-6 years (Dulcan p.358)."
+    ],
+    "key_numbers": [
+      "8 components in the PRACTICE model of TF-CBT",
+      "3 to 18 years - age range validated in TF-CBT trials",
+      "0 to 6 years - target age range for CPP"
+    ]
+  },
+  "evidence": {
+    "items": [
+      "TF-CBT is validated by over 23 RCTs in more than 2,000 children aged 3-18 years (Dulcan p.357).",
+      "EMDR demonstrated equal efficacy to TF-CBT for core PTSD symptoms in a pilot RCT, but TF-CBT was superior for comorbid depression and behavior problems (Diehle et al. 2015, Dulcan p.358-359).",
+      "RCT by Cohen et al. (2007) proved adding Sertraline to TF-CBT provides no additional benefit over TF-CBT plus placebo (Dulcan p.359, p.530).",
+      "RCT of D-cycloserine (DCS) augmentation of CBT failed to demonstrate superiority over placebo for PTSD symptoms (Scheeringa & Weems 2014, Dulcan p.360).",
+      "Medication monotherapy (including SSRIs) has failed to demonstrate efficacy in pediatric PTSD RCTs (Dulcan p.359)."
+    ],
+    "key_numbers": [
+      "23 RCTs supporting TF-CBT in children and adolescents",
+      "2000+ children studied across TF-CBT RCTs",
+      "0 added benefit of Sertraline + TF-CBT over TF-CBT alone in Cohen 2007 RCT"
+    ]
+  },
+  "indications": {
+    "items": [
+      "Trauma-focused psychotherapy (TF-CBT, PE, EMDR) is first-line treatment for all pediatric PTSD (Dulcan p.356, p.360).",
+      "Pharmacotherapy is indicated only for severe comorbidities (MDD, ADHD), extreme dangerousness, or severe sleep impairment (Dulcan p.356, p.530).",
+      "Benzodiazepines are contraindicated in PTSD because they impair fear extinction learning and risk dependence/disinhibition (StahlNeuro p.381, Dulcan p.359).",
+      "Unproven techniques like rebirthing, binding, or nutritional restriction are strictly prohibited due to fatal risks (Dulcan p.360)."
+    ],
+    "key_numbers": [
+      "1st line - Trauma-focused psychotherapy (TF-CBT)",
+      "0 - role of Benzodiazepines in PTSD (contraindicated)"
+    ]
+  },
+  "pharmacotherapy_PTSD": {
+    "items": [
+      "Sertraline and Paroxetine are FDA-approved for PTSD in adults, but all SSRIs are off-label for pediatric PTSD (StahlKids p.315, p.380, p.437, Dulcan p.359).",
+      "SSRIs block SERT, causing desensitization of 5-HT1A receptors in amygdala and CSTC circuits (StahlNeuro p.365).",
+      "Sertraline starting dose in children: 12.5-25 mg/day, adolescents: 25-50 mg/day, target: 50-200 mg/day (Dulcan p.380, StahlKids p.437).",
+      "Paroxetine starting dose: 10 mg/day, target: 10-40 mg/day; short half-life requires slow taper to avoid discontinuation syndrome (Dulcan p.380, StahlKids p.380).",
+      "FDA Black Box Warning applies to all SSRIs for increased risk of suicidal ideation and behavior in youth (Dulcan p.563, StahlKids p.208)."
+    ],
+    "key_numbers": [
+      "2 FDA-approved SSRIs for adult PTSD (Sertraline, Paroxetine)",
+      "12.5 to 25 mg/day - initial Sertraline dose in children",
+      "50 to 200 mg/day - target Sertraline dose range"
+    ]
+  },
+  "sleep_specific": {
+    "items": [
+      "Prazosin is a competitive alpha-1 adrenergic receptor antagonist that crosses the BBB (StahlNeuro p.339, p.368-370).",
+      "Blocks postsynaptic alpha-1 receptors in amygdala to suppress Locus Coeruleus NE-driven nightmares (StahlNeuro p.368-370, Dulcan p.359).",
+      "Prazosin starting dose in youth: 0.5-1 mg at bedtime, titrated by 1 mg every 1-2 weeks to target 1-5 mg at bedtime (Dulcan p.359, StahlKids p.437).",
+      "First-dose effect / Orthostatic Hypotension requires taking Prazosin at bedtime and monitoring sitting/standing blood pressure (StahlNeuro p.339, StahlKids p.139).",
+      "Clonidine (alpha-2 agonist) is an alternative off-label option to reduce hyperarousal and sleep latency (Dulcan p.359, StahlKids p.139)."
+    ],
+    "key_numbers": [
+      "0.5 to 1 mg - starting Prazosin dose at bedtime in children",
+      "1 to 5 mg - target Prazosin bedtime dose range",
+      "1 to 2 weeks - titration interval for Prazosin"
+    ]
+  },
+  "high_yield": [
+    "TF-CBT is the undisputed first-line treatment for pediatric PTSD; pharmacotherapy should not precede trauma-focused psychotherapy (Dulcan p.356, p.360).",
+    "Sertraline added to TF-CBT showed zero efficacy advantage over TF-CBT plus placebo in pediatric RCTs (Cohen et al. 2007, Dulcan p.359, p.530).",
+    "Benzodiazepines are strictly contraindicated in PTSD because they impair fear extinction learning and increase disinhibition (StahlNeuro p.381, Dulcan p.359).",
+    "Prazosin acts as a post-synaptic alpha-1 adrenergic antagonist in the amygdala to suppress trauma nightmares driven by nocturnal Locus Coeruleus NE hyperactivation (StahlNeuro p.368-370, Dulcan p.359).",
+    "First-dose orthostatic hypotension (syncope) is the key safety concern with Prazosin; measure sitting/standing BP and administer right before bed (StahlNeuro p.339, StahlKids p.139).",
+    "In children under 6 years, PTSD diagnosis requires only 1 symptom from Avoidance/Cognitive-Mood cluster, and intrusion often presents as play reenactment (DSM p.303, Dulcan p.347).",
+    "Symptom duration must exceed 1 month for PTSD; symptoms lasting 3 days to 1 month are diagnosed as Acute Stress Disorder (DSM p.302, p.315).",
+    "DSM-5-TR includes two specifiers for PTSD: With dissociative symptoms (depersonalization/derealization) and With delayed expression (onset >= 6 months post-trauma) (DSM p.303)."
+  ]
+}
