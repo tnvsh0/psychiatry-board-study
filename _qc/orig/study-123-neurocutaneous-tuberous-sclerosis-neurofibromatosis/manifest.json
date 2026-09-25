@@ -1,0 +1,36 @@
+{
+ "tag": "study-123-neurocutaneous-tuberous-sclerosis-neurofibromatosis",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:54:28+00:00",
+ "updated_at": "2026-09-25T16:54:28+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "fd998d14dc0e7f5885173918759feef7ffc4c5f63777f892b26e6c95db1274a7",
+   "asset_id": 588262711,
+   "size": 9160,
+   "fetched_at": "2026-09-25T16:54:22+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "2a68f6866eaad746fe9ccd5f6166ec140dc19be58fb4f602bb2e9970fda01f9c",
+   "asset_id": 588262716,
+   "size": 8206,
+   "fetched_at": "2026-09-25T16:54:24+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "7544252e91e51d3710684702eb71ecf13857c179e4d1afc3199a80a0b2e182a7",
+   "asset_id": 588262713,
+   "size": 30796,
+   "fetched_at": "2026-09-25T16:54:26+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "cd5b16844b76dbab2b5830c0053535861d8118f012dde3751f0be9a17f3058cd",
+   "asset_id": 588262720,
+   "size": 37015,
+   "fetched_at": "2026-09-25T16:54:28+00:00"
+  }
+ ]
+}

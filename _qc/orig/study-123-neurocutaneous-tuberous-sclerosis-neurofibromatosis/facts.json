@@ -1,0 +1,93 @@
+{
+  "anatomy": {
+    "items": [
+      "מוצא אקטודרמלי משותף (Ectodermal origin) לעור ולמערכת העצבים (Dulcan p.94)",
+      "TSC: מוטציה ב-TSC1 (9q34, Hamartin) או ב-TSC2 (16p13.3, Tuberin) הגורמת להיפר-אקטיבציה של מסלול mTOR (Dulcan p.116, StahlNeuro p.11)",
+      "TSC: Cortical tubers (דיספלזיה קורטיקלית פוקאלית), Subependymal Nodules (SENs), ו-Subependymal Giant Cell Astrocytomas (SEGAs) ליד Foramen of Monro (Dulcan p.94-95)",
+      "NF1: מוטציה בגן NF1 בכרומוזום 17q11.2 (Neurofibromin) המשפעילה את מסלול Ras/MAPK (Dulcan p.116, StahlNeuro p.11)",
+      "NF1: UBOs/FASI ב-T2 MRI בגרעיני הבסיס ובתלמוס, Optic Pathway Gliomas, ומאקרוצפליה (Dulcan p.94, p.98, Syllabus p.58)",
+      "Sturge-Weber: מוטציה סומטית מוסאיקית בגן GNAQ (9q21) הופכת אנגיומטוזיס ליפטומנינגיאלית, איסכמיה קורטיקלית והסתיידויות Tram-track (Dulcan p.94-95, Syllabus p.55)"
+    ],
+    "key_numbers": [
+      "60%-70% מוטציות de novo ב-TSC (Dulcan p.116)",
+      "50% מוטציות de novo ב-NF1 (Dulcan p.116)",
+      "60%-70% נגעי UBOs/FASI ב-T2 MRI ב-NF1 (Dulcan p.94)",
+      "15% גליאומה של מסלול הראייה (Optic Glioma) ב-NF1 (Dulcan p.94)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "TSC: כתמים היפופיגמנטריים (Ash-leaf spots), אנגיופיברומות בפנים (Adenoma sebaceum), Shagreen patches, ו-Koenen tumors בציפורניים (Dulcan p.94-95)",
+      "TSC: אפילפסיה קשה (Infantile Spasms / תסמונת ווסט, פרכוסים מוקדיים מורכבים), אירועי בוהיה (staring spells) (Dulcan p.92, p.94-95)",
+      "NF1: 6+ כתמי קפה בחלב (Café-au-lait spots), נמשים בקפלים (Crowe sign), 2+ נוירופיברומות או נוירופיברומה פלקסיפורמית, 2+ Lisch nodules בקשתית העין (Dulcan p.94, Syllabus p.58)",
+      "Sturge-Weber: כתם יין-פורט (Port-wine stain / Nevus flammeus) בפיזור V1/V2 של העצב הטריגמינלי, אפילפסיה מוקדית, אירועים דמויי שבץ (Stroke-like), המיפרזיס וגלאוקומה (Dulcan p.94-95, Syllabus p.55)"
+    ],
+    "key_numbers": [
+      "3+ כתמים היפופיגמנטריים בגודל 5 מ\"מ ומעלה ב-TSC (Dulcan p.94)",
+      "80%-90% שכיחות אפילפסיה ב-TSC (Dulcan p.94)",
+      "6+ כתמי קפה בחלב מעל 5 מ\"מ בילדים / 15 מ\"מ במבוגרים ב-NF1 (Dulcan p.94, Syllabus p.58)",
+      "2+ Lisch nodules בקשתית העין ב-NF1 (Dulcan p.94)",
+      "75%-90% שכיחות אפילפסיה ב-Sturge-Weber (Dulcan p.94)",
+      "50% שכיחות גלאוקומה ב-Sturge-Weber (Dulcan p.94)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "TSC: מכלול TAND (TSC-Associated Neuropsychiatric Disorders) כולל ASD, מוגבלות שכלית (ID), ADHD, תוקפנות, התקפי זעם, SIB והפרעות שינה (Dulcan p.94, p.108)",
+      "TSC: הפרעה בטווח האוטיזם (ASD) עם מקודד DSM-5-TR: Associated with Tuberous Sclerosis Complex (DSM p.56, p.60)",
+      "NF1: סיכון משמעותי להפרעת למידה ספציפית (Specific Learning Disorder - SLD / דיסלקסיה), ADHD עם פגיעה בתפקודים ניהוליים, וקשיים במיומנויות חברתיות (DSM p.83, Dulcan p.118, p.177)",
+      "Sturge-Weber: מוגבלות שכלית (ID), ADHD, התקפי זעם, ותסמיני חרדה ודיכאון משניים לשבץ, המיפרזיס ופגיעה אסתטית (Dulcan p.94-95, p.116, p.177, p.245)"
+    ],
+    "key_numbers": [
+      "40%-50% שכיחות ASD ב-TSC (Dulcan p.108, p.140)",
+      "50%-60% שכיחות ID ב-TSC (Dulcan p.108, p.116)",
+      "עד 75% שכיחות הפרעת למידה ספציפית (SLD) ב-NF1 לפי DSM-5-TR (DSM p.83)",
+      "30%-50% שכיחות ADHD ב-NF1 וב-TSC (DSM p.71, Dulcan p.173, p.177)",
+      "50%-60% שכיחות ID ב-Sturge-Weber (Dulcan p.116)"
+    ]
+  },
+  "workup": {
+    "items": [
+      "בדיקה עורית יסודית במנורת Wood ב-TSC, וספירת כתמי קפה בחלב ונמשים ב-NF1 (Dulcan p.94)",
+      "בדיקת עיניים במנורת סדק לזיהוי Lisch nodules ב-NF1 וגלאוקומה ב-Sturge-Weber (Dulcan p.94)",
+      "MRI מוח בשיעור גבוה להערכת Cortical tubers, SENs, גדילת SEGA ב-TSC, UBOs ב-NF1, ואדרה ליפטומנינגיאלית ב-SWS (Dulcan p.94-95, p.112)",
+      "ניטור וידאו-EEG מקיף לאבחור היפסאריתמיה ב-Infantile Spasms או מוקדים אפילפטיפורמיים (Dulcan p.92, p.94-95)",
+      "בדיקות גנטיות (CMA / WES) לאישור מוטציות בגנים TSC1, TSC2, NF1 (Dulcan p.112, p.116)",
+      "הערכה נוירו-פסיכולוגית: IQ, ADOS-2/ADI-R ל-ASD, אבחון SLD, ותפקוד אדפטיבי Vineland-3 (DSM p.56, p.76, Dulcan p.112, p.145, p.165)"
+    ],
+    "key_numbers": [
+      "2+ קריטריונים קליניים לפחות לאבחנת NF1 (Dulcan p.94)",
+      "12 חודשים - גיל סף קריטי להופעת פרכוסים המנבא חומרת ID (Dulcan p.94-95)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Everolimus (מעכב mTOR): טיפול ממוקד ל-SEGA, אנגיומיוליפומות כליתיות ופרכוסים עמידים ב-TSC (StahlNeuro p.11-12, Dulcan p.94-95)",
+      "Vigabatrin: קו ראשון ל-Infantile Spasms ב-TSC (Dulcan p.118-119, p.253)",
+      "Methylphenidate / Psychostimulants: קו ראשון ל-ADHD (בפרט ב-NF1) (StahlKids p.312, Dulcan p.185)",
+      "Guanfacine ER: קו ראשון לא-סטימולנטי ל-ADHD, אי-שקט ותוקפנות בילדים עם תסמונות התפתחותיות/אפילפסיה (StahlKids p.242, Dulcan p.128, p.185)"
+    ],
+    "second_line": [
+      "Atomoxetine: חלופה לא-סטימולנטית ל-ADHD (StahlKids p.68, Dulcan p.185)",
+      "Aripiprazole / Risperidone: לאיריטביליות, תוקפנות ו-SIB ב-TSC/ASD/ID (StahlKids p.36, p.473, Dulcan p.128, p.146)",
+      "Topiramate / Lamotrigine / Valproate: לפרכוסים מוקדיים עמידים (Dulcan p.118, p.253)"
+    ],
+    "key_side_effects": [
+      "Everolimus: סטומטיטיס, זיהומים, דיכוי מח עצם, היפרליפידמיה (StahlNeuro p.11)",
+      "Vigabatrin: צמצום שדות ראייה היקפיים (Dulcan p.119)",
+      "Guanfacine ER: היפוטנשן, ברדיקרדיה, סדציה (StahlKids p.242, Dulcan p.444)",
+      "Aripiprazole / Risperidone: אקתזיה, עלייה במשקל, היפרפרולקטינמיה, תופעות מטבוליות (StahlKids p.36, p.478, Dulcan p.402)",
+      "Psychostimulants: אי-שקט, ירידה בתאבון, הפרעות שינה (בעיקר ב-ID/ASD) (StahlKids p.312, Dulcan p.185)"
+    ],
+    "monitoring": "ניטור מטבולי (משקל, גלוקוז, ליפידים) ואקתזיה לאנטי-פסיכוטיים; לחץ דם ודופק ל-Guanfacine; ניטור עיני ל-Vigabatrin ולגלאוקומה; מעקב MRI תקופתי ל-SEGA ב-TSC ול-Optic Glioma ב-NF1 (StahlKids p.36, p.242, Dulcan p.94-95, p.402)"
+  },
+  "high_yield": [
+    "מוצא אקטודרמלי משותף (Ectodermal origin) מסביר את הזיקה בין נגעים עוריים לפתולוגיה תוך-מוחית (Dulcan p.94)",
+    "TSC: מוטציה ב-TSC1/TSC2 -> היפר-אקטיבציה של mTOR -> Cortical tubers, SENs, SEGAs -> אפילפסיה + ID + 40%-50% שכיחות ASD (StahlNeuro p.11, Dulcan p.94-95, p.108, p.140)",
+    "Everolimus הוא מעכב mTOR ממוקד המיועד לכיווץ SEGA וטיפול בפרכוסים עמידים ב-TSC (StahlNeuro p.11, Dulcan p.94-95)",
+    "NF1: מוטציה ב-NF1 (17q11.2) -> אובדן Neurofibromin -> היפר-אקטיבציה של Ras/MAPK -> עד 75% שכיחות הפרעת למידה ספציפית (SLD) ו-30%-50% ADHD (DSM p.83, Dulcan p.94, p.173, p.177)",
+    "Sturge-Weber: מוטציה סומטית מוסאיקית בגן GNAQ -> Port-wine stain בפיזור V1/V2, אנגיומטוזיס ליפטומנינגיאלית, הסתיידויות Tram-track, אפילפסיה מוקדית, אירועים דמויי שבץ וגלאוקומה (Syllabus p.55, Dulcan p.94-95)",
+    "ממריצים ל-ADHD בטוחים לשימוש בילדים עם אפילפסיה בתנאי שהפרכוסים מאוזנים תחת טיפול נוגד פרכוסים (Dulcan p.185, p.454)",
+    "Guanfacine ER מהווה קו טיפול לא-סטימולנטי מועדף ב-ADHD עם אי-שקט/תוקפנות בילדים עם תסמונות התפתחותיות או אפילפסיה (StahlKids p.242, Dulcan p.128, p.185)"
+  ]
+}
