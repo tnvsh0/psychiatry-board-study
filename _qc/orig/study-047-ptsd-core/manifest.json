@@ -1,0 +1,36 @@
+{
+ "tag": "study-047-ptsd-core",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:21:38+00:00",
+ "updated_at": "2026-09-25T14:21:38+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a8efd2f5c032526f32a1361e7d08c552450972d312a4a42afd8057a7094a41f5",
+   "asset_id": 563130663,
+   "size": 10254,
+   "fetched_at": "2026-09-25T14:21:32+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "51b38358863f8d2a2113b8a11e81ebcbc7a1ac9e2d5e1364237e85c045c67e76",
+   "asset_id": 563130665,
+   "size": 13328,
+   "fetched_at": "2026-09-25T14:21:34+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "85c215b1b484c67dd3119cc4e92275b7f4e427c1f6613c36c42b520b3172eaed",
+   "asset_id": 563130666,
+   "size": 35561,
+   "fetched_at": "2026-09-25T14:21:36+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b8ef468d8dd45c8b4567650cc365ac0443bb27d33efb6899646d0512addf7805",
+   "asset_id": 563130664,
+   "size": 45557,
+   "fetched_at": "2026-09-25T14:21:38+00:00"
+  }
+ ]
+}

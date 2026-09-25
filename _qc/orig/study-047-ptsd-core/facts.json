@@ -1,0 +1,149 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Criterion B: Intrusion",
+        "items": [
+          "B1: Recurrent, involuntary, distressing memories (repetitive play in children) (DSM p.301)",
+          "B2: Distressing dreams/nightmares (dreams without recognizable content in children) (DSM p.302)",
+          "B3: Dissociative reactions/flashbacks (trauma reenactment in play) (DSM p.302)",
+          "B4: Intense or prolonged psychological distress at exposure to trauma cues (DSM p.302)",
+          "B5: Marked physiological reactions to trauma cues (DSM p.302)"
+        ]
+      },
+      {
+        "name": "Criterion C: Avoidance",
+        "items": [
+          "C1: Avoidance of internal distressing memories, thoughts, or feelings (DSM p.302)",
+          "C2: Avoidance of external reminders (people, places, activities, conversations) (DSM p.302)"
+        ]
+      },
+      {
+        "name": "Criterion D: Negative Cognitions and Mood",
+        "items": [
+          "D1: Dissociative amnesia regarding traumatic event (DSM p.302)",
+          "D2: Persistent exaggerated negative beliefs about self, others, or world (DSM p.302)",
+          "D3: Cognitive distortions leading to self/other blame (DSM p.302)",
+          "D4: Persistent negative emotional state (fear, horror, anger, guilt, shame) (DSM p.303)",
+          "D5: Markedly diminished interest/participation in significant activities (DSM p.303)",
+          "D6: Feelings of detachment or estrangement from others (DSM p.303)",
+          "D7: Persistent inability to experience positive emotions (DSM p.303)"
+        ]
+      },
+      {
+        "name": "Criterion E: Arousal and Reactivity",
+        "items": [
+          "E1: Irritable behavior and angry outbursts with verbal/physical aggression (DSM p.303)",
+          "E2: Reckless or self-destructive behavior (DSM p.303)",
+          "E3: Hypervigilance (DSM p.303)",
+          "E4: Exaggerated startle response (DSM p.303)",
+          "E5: Problems with concentration (DSM p.303)",
+          "E6: Sleep disturbance (difficulty falling/staying asleep) (DSM p.303)"
+        ]
+      }
+    ],
+    "thresholds": "Duration > 1 month (Criterion F); Criterion B >=1/5, Criterion C >=1/2, Criterion D >=2/7, Criterion E >=2/6 (DSM p.301-303). Preschool Subtype (<=6 years): Criterion B >=1/5, Combined Criterion C+D >=1/6, Criterion E >=2/5 (DSM p.303-304)",
+    "subtypes": [
+      "Preschool Subtype: Children 6 Years and Younger (DSM p.303-305)",
+      "With Dissociative Symptoms (Depersonalization / Derealization) (DSM p.303)",
+      "With Delayed Expression (Criteria met >= 6 months post-trauma) (DSM p.304)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "Lifetime US adults: 6.8% (DSM-IV) / 6.1%-8.3% (DSM-5); 12-month US: 4.7%; US adolescents: 5.0%-8.1% lifetime; WHO global: 3.9%; Conflict populations: 11% point prevalence (DSM p.308)",
+    "sex_ratio": "2:1 Female:Male (8.0%-11.0% females vs 4.1%-5.4% males in US DSM-5 studies) (DSM p.308, Dulcan p.345)",
+    "onset_age_typical": "Can occur at any age; peak exposure/onset in young adulthood, but high vulnerability in children/adolescents (DSM p.308, Synopsis ch.10)",
+    "heritability": "Familial risk pattern; specific genotypes moderate risk, but environmental trauma dose is primary driver (DSM p.310, Dulcan p.345)",
+    "comorbidities": [
+      "Children: Oppositional Defiant Disorder (ODD), Separation Anxiety Disorder (DSM p.311, Dulcan p.352)",
+      "Adolescents/Adults: Major Depressive Disorder (up to 60%), Substance Use Disorders, Anxiety Disorders, ADHD (DSM p.311, Dulcan p.352)"
+    ],
+    "prognosis": "Complete recovery within 3 months in ~50% of adults; chronic course in rest, persisting >12 months to decades without trauma-focused intervention (DSM p.309)"
+  },
+  "etiology": {
+    "genetic": "Genotype-environment interaction (e.g. FKBP5, CRHR1); familial vulnerability to mood/anxiety disorders increases PTSD risk (DSM p.310, Dulcan p.345)",
+    "neurobiology": "Hyperactive Amygdala (ACC/OFC affect, PAG freezing, LC autonomic, PBN breathing), HPA Axis dysregulation (elevated ACTH/cortisol leading to Hippocampal atrophy & memory/context deficits), deficient VMPFC top-down inhibition (StahlNeuro p.364-365, Dulcan p.227)",
+    "environmental": "Criterion A trauma severity, interpersonal violence (caregiver abuse/domestic violence), lack of social support, peritraumatic panic/dissociation (DSM p.301, p.310, Dulcan p.352)"
+  },
+  "treatment": {
+    "first_line": [
+      "Trauma-Focused Cognitive-Behavioral Therapy (TF-CBT) using PRACTICE model (Dulcan p.357)",
+      "Child-Parent Psychotherapy (CPP) for preschoolers 0-5 years (Dulcan p.357)"
+    ],
+    "second_line": [
+      "Prazosin for trauma nightmares and sleep disruption (Dulcan p.228, p.357, StahlNeuro p.401)",
+      "SSRIs (Sertraline, Fluoxetine) — limited efficacy in pediatric PTSD compared to adult approval (Dulcan p.228, p.357, StahlKids p.441)",
+      "Morphine in acute burn/trauma hospital settings to reduce 6-month PTSD incidence (Dulcan p.357)",
+      "Alpha-2 agonists (Clonidine/Guanfacine) off-label for hyperarousal (Dulcan p.357)"
+    ],
+    "key_side_effects": [
+      "Prazosin: orthostatic hypotension, dizziness (StahlNeuro p.401)",
+      "SSRIs: gastrointestinal distress, behavioral activation, insomnia, headache (Dulcan p.360, StahlKids p.441)"
+    ],
+    "monitoring": "Baseline BP/heart rate for Prazosin/Alpha-2 agonists; monitor for suicidal ideation, behavioral activation, and sleep parameters with SSRIs; re-evaluate symptom response with CPSS-5/UCLA Index (Dulcan p.353, p.360)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CPSS-5 (Child PTSD Symptom Scale for DSM-5): self and parent report (Dulcan p.353)",
+      "UCLA PTSD Reaction Index for DSM-5: developmentally informed youth assessment (Dulcan p.353)",
+      "PsySTART: 13-item rapid disaster triage tool measuring exposure experiences (Dulcan p.353)",
+      "YCPS (Young Child PTSD Screen) for preschool age (Dulcan p.36)",
+      "PAPA (Preschool Age Psychiatric Assessment) parent interview for ages 2-5 (Dulcan p.36)"
+    ],
+    "key_numbers": [
+      "13 items on PsySTART disaster triage screen (Dulcan p.353)",
+      "9 months post-disaster prediction window for PsySTART (Dulcan p.353)",
+      "6 years and younger cutoff for Preschool PTSD criteria (DSM p.303)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "ADHD: concentration issues and restlessness in PTSD mimic ADHD; pre-trauma vs post-trauma onset distinguishes them (DSM p.308, Dulcan p.355)",
+      "Acute Stress Disorder (ASD): symptoms last 3 days to 1 month post-trauma (DSM p.313)",
+      "Adjustment Disorder: stressor does not meet Criterion A, symptoms onset within 3 months and resolve within 6 months post-stressor (DSM p.319)",
+      "Medical Mimics: migraine, asthma, caffeinism, seizure disorder, hyperthyroidism, medication side effects, somatic complaints like abdominal pain (Dulcan p.355)"
+    ],
+    "key_numbers": [
+      "3 days to 1 month duration for Acute Stress Disorder (DSM p.313)",
+      "3 months max onset and 6 months max duration for Adjustment Disorder (DSM p.319)",
+      "12 years age cutoff for ADHD onset vs post-trauma onset for PTSD (DSM p.308)"
+    ]
+  },
+  "4_symptom_clusters": {
+    "items": [
+      "Cluster B (Intrusion): 5 items (memories, dreams, flashbacks/play reenactment, distress at cues, physiological reactivity) (DSM p.301-302)",
+      "Cluster C (Avoidance): 2 items (internal thoughts/memories, external reminders/places/people) (DSM p.302)",
+      "Cluster D (Negative Cognitions/Mood): 7 items (dissociative amnesia, negative beliefs, self-blame, negative emotion, diminished interest, detachment, no positive affect) (DSM p.302-303)",
+      "Cluster E (Arousal/Reactivity): 6 items (irritability/aggression, reckless behavior, hypervigilance, startle, concentration, sleep) (DSM p.303)"
+    ],
+    "key_numbers": [
+      "4 distinct symptom clusters in DSM-5/DSM-5-TR (DSM p.301)",
+      "1 required item for Cluster B (DSM p.301)",
+      "1 required item for Cluster C (DSM p.302)",
+      "2 required items for Cluster D (DSM p.302)",
+      "2 required items for Cluster E (DSM p.303)",
+      "1 combined item required from C+D in Preschool Subtype (DSM p.304)"
+    ]
+  },
+  "dissociative_specifier": {
+    "items": [
+      "Depersonalization: persistent/recurrent feeling of detachment from one's mental processes or body (e.g. dreamlike state, unreality of self) (DSM p.303)",
+      "Derealization: persistent/recurrent unreality of surroundings (e.g. world experienced as dreamlike, distant, or distorted) (DSM p.303)",
+      "With Delayed Expression: full diagnostic criteria not met until >= 6 months after the traumatic event (DSM p.304)"
+    ],
+    "key_numbers": [
+      "2 core dissociative symptoms (Depersonalization, Derealization) (DSM p.303)",
+      "6 months post-trauma delay for Delayed Expression specifier (DSM p.304)"
+    ]
+  },
+  "high_yield": [
+    "PTSD is classified under Trauma- and Stressor-Related Disorders in DSM-5-TR, not Anxiety Disorders (DSM p.295).",
+    "DSM-5 removed the DSM-IV A2 criterion requiring intense fear, helplessness, or horror at the time of trauma (Dulcan p.350).",
+    "Criterion A4 (occupational media exposure) explicitly excludes non-occupational television/media exposure (DSM p.301).",
+    "Preschool Subtype (children <= 6 years) combines Clusters C and D, requiring only 1 symptom from 6 combined items (DSM p.304).",
+    "First-line treatment for pediatric PTSD is psychotherapy (TF-CBT with PRACTICE acronym), NOT pharmacotherapy (Dulcan p.357).",
+    "SSRIs fail to show placebo-controlled superiority in pediatric PTSD trials (Dulcan p.228, p.357, StahlKids p.441).",
+    "Prazosin (alpha-1 adrenergic antagonist) is effective specifically for trauma-related nightmares and sleep disturbance (StahlNeuro p.401, Dulcan p.228).",
+    "Fear extinction is mediated by VMPFC/hippocampal glutamatergic activation of GABAergic interneurons in the Intercalated Cell Mass (ITC) of the amygdala (StahlNeuro p.372-373)."
+  ]
+}
