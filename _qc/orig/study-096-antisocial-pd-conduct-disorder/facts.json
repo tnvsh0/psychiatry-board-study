@@ -1,0 +1,122 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Aggression to People and Animals (7 items)",
+        "items": [
+          "Bullying/threatening",
+          "Initiating physical fights",
+          "Weapon use",
+          "Physical cruelty to people",
+          "Physical cruelty to animals",
+          "Mugging/extortion",
+          "Forced sexual activity"
+        ]
+      },
+      {
+        "name": "Destruction of Property (2 items)",
+        "items": [
+          "Deliberate fire setting",
+          "Vandalism/property destruction"
+        ]
+      },
+      {
+        "name": "Deceitfulness or Theft (3 items)",
+        "items": [
+          "Breaking and entering",
+          "Lying/conning for gain",
+          "Stealing without confrontation"
+        ]
+      },
+      {
+        "name": "Serious Violations of Rules (3 items)",
+        "items": [
+          "Staying out late <13yo",
+          "Running away overnight >=2x",
+          "School truancy <13yo"
+        ]
+      }
+    ],
+    "thresholds": "CD: >=3/15 symptoms in 12 months, >=1 in past 6 months (DSM p.530). ASPD: Age >=18, CD onset <15yo, >=3/7 criteria since age 15 (DSM p.748).",
+    "subtypes": [
+      "Childhood-onset type (>=1 symptom <10yo; male predominant, high physical aggression, poorer prognosis) (DSM p.531)",
+      "Adolescent-onset type (no symptoms <10yo; balanced sex ratio, better prognosis) (DSM p.531)",
+      "Unspecified onset (DSM p.531)",
+      "Specifier: With limited prosocial emotions / Callous-Unemotional (CU) traits (>=2/4 traits for >=12mo) (DSM p.531)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "CD: 2%-10% (median 4%) (DSM p.534). ASPD: 0.6%-3.6% (median ~3% M, ~1% F) (DSM p.750).",
+    "sex_ratio": "CD & ASPD: ~3:1 to 4:1 Male:Female (DSM p.535, p.751).",
+    "onset_age_typical": "CD: middle childhood to mid-adolescence (rare >16yo) (DSM p.534). ASPD: diagnosis >=18yo with CD <15yo (DSM p.748).",
+    "heritability": "CD/aggression heritability ~0.28-0.72 (Dulcan p.209, p.584).",
+    "comorbidities": [
+      "ADHD (~50%) (DSM p.536)",
+      "ODD (precursor) (DSM p.536)",
+      "Substance Use Disorders (DSM p.536, p.752)",
+      "Depression & Anxiety Disorders (DSM p.536)"
+    ],
+    "prognosis": "~40% of CD transition to ASPD in adulthood (Dulcan p.211). Burn-out of overt antisocial acts after age 40 (DSM p.750)."
+  },
+  "etiology": {
+    "genetic": "Low-activity MAO-A genotype + childhood maltreatment increases CD risk 2-fold (Caspi et al.) (Dulcan p.209, p.586).",
+    "neurobiology": "Low resting heart rate & low skin conductance (DSM p.535; Dulcan p.210). Impulsive violence 63% due to top-down PFC control deficit (StahlNeuro p.577). VMPFC & OFC NE/DA dysfunction (StahlNeuro p.453, p.487). Reduced amygdala reactivity in CU traits (Dulcan p.210).",
+    "environmental": "Hostile attribution bias (DSM p.534; Dulcan p.210). Patterson coercive parenting cycle (Dulcan p.587, p.900). Low verbal IQ (Dulcan p.210). Lead exposure, maternal smoking/substance use (Dulcan p.210, p.589)."
+  },
+  "treatment": {
+    "first_line": [
+      "Parent Management Training (PMT / PCIT / Incredible Years) for children <12yo (Dulcan p.204, p.215)",
+      "Multisystemic Therapy (MST) 3-5 months home-based for delinquent adolescents (Dulcan p.215, p.1011)",
+      "Problem-Solving Skills Training (PSST / CBT) for child (Dulcan p.215)"
+    ],
+    "second_line": [
+      "Risperidone 0.5-2.5 mg/day for severe physical aggression in CD/ODD (Dulcan p.135, p.214; StahlKids p.470)",
+      "Stimulants (Methylphenidate) for comorbid ADHD to reduce impulsive aggression by ~50% (Dulcan p.214, p.597)",
+      "Lithium or Valproate for severe refractory aggression (Dulcan p.214, p.597)"
+    ],
+    "key_side_effects": [
+      "Risperidone: weight gain, metabolic syndrome, hyperprolactinemia, sedation, EPS (StahlKids p.468, p.472)"
+    ],
+    "monitoring": "Risperidone: BMI monthly for 3 months then quarterly; BP, fasting glucose, lipids baseline, 3 months, then annually (StahlKids p.423, p.471)."
+  },
+  "assessment_tools": {
+    "items": [
+      "K-SADS-PL semi-structured diagnostic interview (Dulcan p.42, p.70)",
+      "CBCL (Child Behavior Checklist) Externalizing/Aggressive scales (Dulcan p.70, p.202)",
+      "OAS / OAS-M (Overt Aggression Scale - Modified) (Dulcan p.213, p.591)",
+      "APSD (Antisocial Process Screening Device) for psychopathy/callousness (Dulcan p.213-214)",
+      "ICU (Inventory of Callous-Unemotional Traits) 24-item rating scale (Dulcan p.214)"
+    ],
+    "key_numbers": [
+      "15 symptoms in CD diagnostic criteria (DSM p.530)",
+      "4 clusters of CD symptoms (DSM p.530)",
+      "2 of 4 traits required for Callous-Unemotional specifier (DSM p.531)",
+      "24 items on Inventory of Callous-Unemotional Traits (ICU) (Dulcan p.214)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "ADHD (disruptive but no intentional rule/rights violation) (DSM p.536)",
+      "ODD (defiance/irritability without physical aggression/property destruction) (DSM p.536)",
+      "DMDD (chronic irritability and temper outbursts without criminal/antisocial acts) (DSM p.179, p.536)",
+      "IED (unpremeditated impulsive aggressive outbursts without non-aggressive CD rules violations) (DSM p.527-530)",
+      "Traumatic Brain Injury / Frontal Lobe Syndrome (Dulcan p.202, p.594)",
+      "Temporal Lobe Epilepsy (ictal/interictal aggression) (Dulcan p.594, p.868)",
+      "Lead Toxicity (Dulcan p.210, p.589)"
+    ],
+    "key_numbers": [
+      "63% impulsive violence vs 20% psychotic vs 17% psychopathic violence (StahlNeuro p.577)",
+      "Age <6 years exclusion for Intermittent Explosive Disorder (DSM p.527)"
+    ]
+  },
+  "high_yield": [
+    "ASPD diagnosis requires age >=18 AND evidence of CD with onset before age 15 (DSM p.748).",
+    "CD threshold is >=3 of 15 criteria in past 12 months, with >=1 present in past 6 months (DSM p.530).",
+    "Childhood-onset CD (>=1 symptom <10yo) is predominantly male, highly aggressive, and predicts adult ASPD in ~40% of cases (DSM p.531; Dulcan p.211).",
+    "Limited prosocial emotions (CU traits) specifier requires >=2 of 4 traits for >=12 months across multiple settings and predicts instrumental aggression (DSM p.531).",
+    "Low resting heart rate is the most reliable autonomic physiological marker for CD and antisocial behavior (DSM p.535; Dulcan p.210).",
+    "Low-activity MAO-A genotype interacts with childhood abuse to double the risk of CD (Dulcan p.209).",
+    "MST (Multisystemic Therapy) is first-line home-based ecological treatment for severely delinquent adolescents (Dulcan p.215, p.1011).",
+    "Risperidone is the most evidence-supported drug for severe physical aggression in CD/ODD (Dulcan p.135, p.214; StahlKids p.425)."
+  ]
+}
