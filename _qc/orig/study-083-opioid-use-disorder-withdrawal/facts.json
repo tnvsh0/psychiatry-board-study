@@ -1,0 +1,109 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Opioid Use Disorder (OUD)",
+        "items": [
+          "Larger amounts or longer period taken than intended (DSM p.608)",
+          "Persistent desire or unsuccessful efforts to cut down (DSM p.608)",
+          "Great deal of time spent obtaining, using, or recovering (DSM p.608)",
+          "Craving or strong desire to use opioids (DSM p.608)",
+          "Failure to fulfill major role obligations (DSM p.608)",
+          "Continued use despite social or interpersonal problems (DSM p.608)",
+          "Important social, occupational, or recreational activities given up (DSM p.608)",
+          "Recurrent use in physically hazardous situations (DSM p.608)",
+          "Continued use despite physical or psychological problems (DSM p.609)",
+          "Tolerance (DSM p.609)",
+          "Withdrawal (DSM p.609)"
+        ]
+      },
+      {
+        "name": "Opioid Withdrawal",
+        "items": [
+          "Dysphoric mood (DSM p.617)",
+          "Nausea or vomiting (DSM p.617)",
+          "Muscle aches (DSM p.617)",
+          "Lacrimation or rhinorrhea (DSM p.618)",
+          "Pupillary dilation, piloerection, or sweating (DSM p.618)",
+          "Diarrhea (DSM p.618)",
+          "Yawning (DSM p.618)",
+          "Fever (DSM p.618)",
+          "Insomnia (DSM p.618)"
+        ]
+      }
+    ],
+    "thresholds": "OUD: >=2/11 criteria within 12 months (DSM p.608). Withdrawal: Criterion A (cessation/reduction or antagonist) + >=3/9 symptoms in Criterion B (DSM p.617-618).",
+    "subtypes": [
+      "Mild OUD: 2-3 symptoms (DSM p.609)",
+      "Moderate OUD: 4-5 symptoms (DSM p.610)",
+      "Severe OUD: >=6 symptoms (DSM p.610)",
+      "In early remission: >=3 to <12 months (DSM p.609)",
+      "In sustained remission: >=12 months (DSM p.609)",
+      "On maintenance therapy (DSM p.609)",
+      "In a controlled environment (DSM p.610)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "משתנה; עליה חדה במתבגרים בשל זמינות תרופות מרשם ופנטניל לא חוקי (Dulcan p.221, p.234, DSM p.610)",
+    "sex_ratio": "לא צוין",
+    "onset_age_typical": "גיל ההתבגרות ובגרות מוקדמת (Dulcan p.221, DSM p.610)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "ADHD (~28% מאובחן, ~44% בלתי מאובחן) (Dulcan p.226)",
+      "Externalizing disorders - ODD, Conduct Disorder (מעלה סיכון פי 4) (Dulcan p.226)",
+      "Internalizing disorders - Depression, Anxiety, PTSD (Dulcan p.226)"
+    ],
+    "prognosis": "סיכון גבוה למעדות (Relapse) ומנות יתר קטלניות אם מתבצעת גמילה ללא MAT (Dulcan p.234, StahlNeuro p.560)"
+  },
+  "etiology": {
+    "genetic": "לא צוין",
+    "neurobiology": "אגוניזם לקולטני mu-opioid ב-VTA מעכב אינטרנוירונים GABAארגיים, גורם לדיס-אינהיביציה של נוירונים דופמינרגיים ולשחרור דופמין ב-Nucleus Accumbens; מעבר מאימפולסיביות (Ventral Striatum) לקומפולסיביות (Dorsal Striatum) (StahlNeuro p.541-543, p.554-555)",
+    "environmental": "זמינות תרופות מרשם אופיאואידיות בארונות ביתיים וחשיפה ל-Fentanyl בשוק הבלתי חוקי (Dulcan p.221, p.234)"
+  },
+  "treatment": {
+    "first_line": [
+      "Buprenorphine (Partial mu-agonist, approved age 16+) (Dulcan p.234)",
+      "Methadone (Full mu-agonist, approved age 16+) (Dulcan p.234)",
+      "Naltrexone (Full mu-antagonist, approved age 18+, requires 7-10d opioid-free) (Dulcan p.234-235)"
+    ],
+    "second_line": [
+      "Clonidine (Alpha-2A adrenergic agonist, 0.1 mg t.i.d.) לטיפול סימפטומטי באקטיבציה אוטונומית בגמילה (Dulcan p.234, StahlKids p.139, p.143)"
+    ],
+    "key_side_effects": [
+      "Precipitated withdrawal עם Buprenorphine אם ניתן מוקדם מדי (DSM p.618)",
+      "תת-לחץ דם (Hypotension) וברדיקרדיה עם Clonidine (StahlKids p.143-144)",
+      "Rebound hypertension בהפסקה פתאומית של Clonidine (StahlKids p.143)"
+    ],
+    "monitoring": "מדידת לחץ דם ודופק בישיבה ובעמידה לפני כל מנת Clonidine - השמטת מנה אם BP < 90/60 mmHg (StahlKids p.143-144); ניטור בדיקות שתן לרעלים (UDT) (Dulcan p.235)"
+  },
+  "assessment_tools": {
+    "items": [
+      "COWS (Clinical Opiate Withdrawal Scale) מעריך 11 מדדים פיזיולוגיים והתנהגותיים (DSM p.618)",
+      "Urine Drug Testing (UDT) מזהה אופיאטים טבעיים במשך 12-36 שעות (DSM p.611)"
+    ],
+    "key_numbers": [
+      "11 - מספר המדדים בסולם COWS (DSM p.618)",
+      "8-12 - ניקוד סף COWS להתחלת Buprenorphine למניעת Precipitated Withdrawal (DSM p.618)",
+      "12-36 שעות - חלון גילוי שגרתי בשתן לאופיאטים טבעיים (DSM p.611)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Sedative/Benzodiazepine Withdrawal כולל היפראקטיביות אוטונומית אך חסר Lacrimation, Rhinorrhea ו-Piloerection (DSM p.619)",
+      "Influenza/Viral Gastroenteritis מדמה תסמינים גופניים אך ללא אישונים מורחבים או כמיהה (DSM p.618)",
+      "Panic Disorder כרוכה בעוררות אוטונומית אך ללא שלשולים, דמעת או פילואירקציה (DSM p.254, p.619)"
+    ],
+    "key_numbers": [
+      "3/9 - מספר תסמיני קריטריון B הנדרשים לאבחנת Opioid Withdrawal (DSM p.617-618)",
+      "7-10 ימים - משך הניקוי הגופני הנדרש לפני התחלת Naltrexone (DSM p.618)"
+    ]
+  },
+  "high_yield": [
+    "איסור מוחלט על דטוקסיפיקציה בלבד ללא גשר MAT בשל אובדן סבילות וסיכון גבוה למנה יתרה קטלנית (Fatal Overdose) (Dulcan p.234, StahlNeuro p.560)",
+    "סבילות ותסמונת גמילה המתפתחות תחת טיפול רפואי מורשה אינן נחשבות לקריטריונים לאבחנת OUD (DSM p.609)",
+    "גילאי אישור FDA ל-MAT: Buprenorphine ו-Methadone מגיל 16+, Naltrexone מגיל 18+ (Dulcan p.234)",
+    "קלונידין (Clonidine): חובה לעכב/להשמיט מנה אם לחץ דם BP < 90/60 mmHg, ויש להיזהר מ-Rebound Hypertension בהפסקה חדה (StahlKids p.143-144)",
+    "בדיקות שתן שגרתיות לא מזהות Fentanyl, Buprenorphine, Methadone ו-Oxycodone - נדרשת בדיקה ייעודית (DSM p.611)",
+    "תסמיני גמילה מאופיאואידים אינם מסכני חיים במבוגרים אך גורמים לסבל קשה; דמעת, נזלת וסמרור עור (Piloerection) אופייניים ומבדילים מ-Benzodiazepine Withdrawal (DSM p.618-619)"
+  ]
+}

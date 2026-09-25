@@ -1,0 +1,36 @@
+{
+ "tag": "study-083-opioid-use-disorder-withdrawal",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:31:54+00:00",
+ "updated_at": "2026-09-25T15:31:54+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "67996762ea4cbb884986b271b49986bd917ad8a843d47638a14229d17a33ae63",
+   "asset_id": 584925093,
+   "size": 7086,
+   "fetched_at": "2026-09-25T15:31:48+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "ccce903c8a965b96d10181730be360a04c5d806f494479f29d222acdd581fa0e",
+   "asset_id": 584925095,
+   "size": 11843,
+   "fetched_at": "2026-09-25T15:31:50+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "3b9cf061da9d25dda916debc0e410f0c57c8e65cee34cca032dd1accdd17f4ce",
+   "asset_id": 584925096,
+   "size": 33958,
+   "fetched_at": "2026-09-25T15:31:52+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "94a5e90d2f1562d1f88615b9ee12653dc4171574874a8797bb7325b29cbdb1ce",
+   "asset_id": 584925090,
+   "size": 34119,
+   "fetched_at": "2026-09-25T15:31:54+00:00"
+  }
+ ]
+}
