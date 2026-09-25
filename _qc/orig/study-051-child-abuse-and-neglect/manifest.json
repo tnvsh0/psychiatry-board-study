@@ -1,0 +1,36 @@
+{
+ "tag": "study-051-child-abuse-and-neglect",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:26:41+00:00",
+ "updated_at": "2026-09-25T14:26:41+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "78db62078b7ec98b54c3c63346d748f22814bfc37c33892de582f06d8c4d3f9a",
+   "asset_id": 563841711,
+   "size": 8377,
+   "fetched_at": "2026-09-25T14:26:35+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "a981d085ead809e7732061632ea359795d2462289f945d25c941158452779fd3",
+   "asset_id": 563841720,
+   "size": 15951,
+   "fetched_at": "2026-09-25T14:26:37+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "a9485196ada56a67ba16034e46005eabf37522a3651d1e09aa6b9fc1746afaa6",
+   "asset_id": 563841719,
+   "size": 35129,
+   "fetched_at": "2026-09-25T14:26:39+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "c55a6056b60415338f8b8dccb624e46c1bf99b793c8f2eb3a8487d43bb75e1f3",
+   "asset_id": 563841712,
+   "size": 29862,
+   "fetched_at": "2026-09-25T14:26:41+00:00"
+  }
+ ]
+}
