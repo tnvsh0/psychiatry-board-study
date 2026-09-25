@@ -1,0 +1,85 @@
+{
+ "tag": "study-008-normative-development-0-2-infancy",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T12:58:13+00:00",
+ "updated_at": "2026-09-25T12:58:13+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "bbbe77de3f8f04bb8949b1a6aed7d7cc1625e18e3cdfc5fe8d79c4ca01f193f4",
+   "asset_id": 527770447,
+   "size": 7535,
+   "fetched_at": "2026-09-25T12:57:43+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "ade8f30f9a1cdc69413800851c203306e4b2512e94c28ba80f3ec7ff80504c31",
+   "asset_id": 527770372,
+   "size": 10562,
+   "fetched_at": "2026-09-25T12:57:45+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "ff12349b888e3aad6f3dbc8db346052e7f3892ea0faa03ea291f168788513fbf",
+   "asset_id": 527770402,
+   "size": 5704,
+   "fetched_at": "2026-09-25T12:57:48+00:00"
+  },
+  {
+   "name": "narration_main2.txt",
+   "sha256": "167fccaf97f4191618eeec6eb3a946fe97178f37a5053bcdddb0316ed86860ad",
+   "asset_id": 527770427,
+   "size": 8829,
+   "fetched_at": "2026-09-25T12:57:50+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "60c325b87d2c1a9875e2c872cbaa385f8e705b3d3192c9a7201e74a7a13a4892",
+   "asset_id": 527770435,
+   "size": 6952,
+   "fetched_at": "2026-09-25T12:57:55+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "e13ec7b56dc9b53ff81c32cd60455c03a6a7c4f746727d82a2fda454ac485e2c",
+   "asset_id": 527770365,
+   "size": 36567,
+   "fetched_at": "2026-09-25T12:57:58+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "7c8705db73df3efc74dc6adb0f42d0fc7734dad488a652e24ddf4121b6d16539",
+   "asset_id": 527770390,
+   "size": 3769,
+   "fetched_at": "2026-09-25T12:58:02+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "f1df15624b62d2a2924335e9315a9ae99ba40839cbb5dd37bd1f2f0223599a36",
+   "asset_id": 527770373,
+   "size": 11150,
+   "fetched_at": "2026-09-25T12:58:05+00:00"
+  },
+  {
+   "name": "sketchy_main2.quiz.md",
+   "sha256": "2ec0b8772cae6b8dad0dfa0577c404325e62096a16217b0ceb7af717ae73f075",
+   "asset_id": 527770428,
+   "size": 4035,
+   "fetched_at": "2026-09-25T12:58:07+00:00"
+  },
+  {
+   "name": "sketchy_main2.txt",
+   "sha256": "0b3ee58f7a065bd978a0c38f505f4592f8b8002c13832b09ce1e7c68b416cb3f",
+   "asset_id": 527770400,
+   "size": 15654,
+   "fetched_at": "2026-09-25T12:58:10+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "5f50eb5f6e931c695bef9c5115da426316090e0943695cade458c629d759b7cf",
+   "asset_id": 527770446,
+   "size": 40011,
+   "fetched_at": "2026-09-25T12:58:13+00:00"
+  }
+ ]
+}

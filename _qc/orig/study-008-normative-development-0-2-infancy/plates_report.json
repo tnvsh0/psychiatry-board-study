@@ -1,0 +1,325 @@
+[
+ {
+  "day": 8,
+  "plate": "main",
+  "facts": 24,
+  "tries": 3,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e16: cue trimmed to 'A wall'",
+   "e12: hook over 32 words (35): 'מגדל הבנאים שמסמל את ההתפתחות, ועליו פעוט בן 30 חודשים בונה את הקוביה השמינית, בדיוק כמו שמגדל של שמונה קוביות מתפתח בגיל זה, וכמו שמשחק סמלי מורכב עם רצף לוגי מתפתח בגיל 30 חודשים ומעלה.'"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "0.5",
+     "2",
+     "2",
+     "1",
+     "1"
+    ],
+    "blank_plates_found": 2,
+    "blank_plates_wanted": 2,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1953,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.11,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "0.5",
+    "2",
+    "2",
+    "1",
+    "1"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "MOS",
+     "paint": "4mo",
+     "tag": "MOS",
+     "chroma_pixels": 112375,
+     "blob_pixels": 111434,
+     "fill_ratio": 1.052,
+     "height_frac": 0.2526,
+     "width_frac": 0.1283,
+     "quad": [
+      [
+       589,
+       987
+      ],
+      [
+       859,
+       967
+      ],
+      [
+       941,
+       1329
+      ],
+      [
+       638,
+       1354
+      ]
+     ],
+     "bbox": [
+      589,
+      967,
+      352,
+      387
+     ],
+     "height_pct": 25.2,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "12",
+     "tag": "N",
+     "chroma_pixels": 0,
+     "blob_pixels": 0,
+     "reject": "too_small",
+     "status": "NOT_FOUND"
+    }
+   ],
+   "leftover_chroma_px": 122304,
+   "composited": 1,
+   "requested": 2
+  },
+  "narration_words": 755
+ },
+ {
+  "day": 8,
+  "plate": "main2",
+  "facts": 23,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e12: hook over 32 words (42): 'כמו תינוק מעל גיל 9 חודשים שנראה במצוקה אך אינו פונה לקבלת נחמה מהמטפל העיקרי, כך היעדר אסטרטגיית פנייה זו בגיל התפתחותי מעל 9 חודשים מחשיד להפרעת התקשרות RAD, במיוחד כשיש היסטוריה של הזנחה קיצונית, וחשוב להבדיל אותה מ-ASD בהיעדר דפוסים חזרתיים.'",
+   "e13: hook over 32 words (35): \"כמו ילד שמחזיק שלט 'SPEECH' קרוע וחצי ממנו חסר, עם ציור של מכשיר EEG ושלט 'Landau-Kleffner?' לידו, כך אובדן שפה ודיבור בכל גיל הוא דגל אדום שמצריך בירור נוירולוגי כולל EEG לשלילת אפילפסיה ותסמונת לנדאו-קלפנר.\"",
+   "e16: hook over 32 words (35): 'כמו במפגש מחדש בין הורה לתינוק, שבו התינוק נרגע במהירות גם אם בכה קודם לכן, כך המדד העיקרי לקביעת סגנון התקשרות הוא יכולת הדיאדה לפתור את המצוקה במהלך המפגש מחדש, ולא רמת הבכי בזמן הפרידה.'"
+  ],
+  "digit_strings_dropped": [
+   "Almost 100% understood"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "100",
+     "95",
+     "90",
+     "85",
+     "80",
+     "75",
+     "70",
+     "65",
+     "60",
+     "55",
+     "50",
+     "45"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1458,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.125,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.1667,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the standing man in the green shirt holding a baby on the far left is larger.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 1,
+   "verified": true,
+   "stray_warning": [
+    "100",
+    "95",
+    "90",
+    "85",
+    "80",
+    "75",
+    "70",
+    "65",
+    "60",
+    "55",
+    "50",
+    "45"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "YRS",
+     "paint": "3yr",
+     "tag": "YRS",
+     "chroma_pixels": 28389,
+     "blob_pixels": 27485,
+     "fill_ratio": 1.077,
+     "height_frac": 0.1458,
+     "width_frac": 0.0552,
+     "quad": [
+      [
+       2533,
+       670
+      ],
+      [
+       2682,
+       713
+      ],
+      [
+       2681,
+       893
+      ],
+      [
+       2534,
+       835
+      ]
+     ],
+     "bbox": [
+      2533,
+      670,
+      149,
+      223
+     ],
+     "height_pct": 14.52,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "80%",
+     "tag": "PCT",
+     "chroma_pixels": 41847,
+     "blob_pixels": 40975,
+     "fill_ratio": 1.109,
+     "height_frac": 0.125,
+     "width_frac": 0.1097,
+     "quad": [
+      [
+       584,
+       1235
+      ],
+      [
+       792,
+       1262
+      ],
+      [
+       715,
+       1424
+      ],
+      [
+       491,
+       1392
+      ]
+     ],
+     "bbox": [
+      491,
+      1235,
+      301,
+      189
+     ],
+     "height_pct": 12.3,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MOS",
+     "paint": "36mo",
+     "tag": "MOS",
+     "chroma_pixels": 36244,
+     "blob_pixels": 35987,
+     "fill_ratio": 1.041,
+     "height_frac": 0.1667,
+     "width_frac": 0.0614,
+     "quad": [
+      [
+       2288,
+       343
+      ],
+      [
+       2455,
+       378
+      ],
+      [
+       2455,
+       598
+      ],
+      [
+       2288,
+       537
+      ]
+     ],
+     "bbox": [
+      2288,
+      343,
+      167,
+      255
+     ],
+     "height_pct": 16.6,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 5739,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 679
+ }
+]
