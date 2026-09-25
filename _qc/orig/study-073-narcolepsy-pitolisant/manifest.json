@@ -1,0 +1,36 @@
+{
+ "tag": "study-073-narcolepsy-pitolisant",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:14:31+00:00",
+ "updated_at": "2026-09-25T15:14:31+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "4e7f026313d2433003cc3f636ff53a0ed144a0d85d885ae32386c9d9225008ac",
+   "asset_id": 584532520,
+   "size": 6927,
+   "fetched_at": "2026-09-25T15:14:07+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "c78d16bc50cb7477266b1f862b7bf0aa6e00f07a0596072afeadfaaf1597dff7",
+   "asset_id": 584532524,
+   "size": 10144,
+   "fetched_at": "2026-09-25T15:14:16+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "63d633faea7515beaace6a7b23be73c822fa4d7c023841c7973c160933c8aa03",
+   "asset_id": 584532525,
+   "size": 35869,
+   "fetched_at": "2026-09-25T15:14:24+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "43cbad6170c8f575135f53fb19e6e3d25d26b884bfddb755a1420871011935da",
+   "asset_id": 584532523,
+   "size": 30613,
+   "fetched_at": "2026-09-25T15:14:31+00:00"
+  }
+ ]
+}

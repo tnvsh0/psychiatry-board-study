@@ -1,0 +1,118 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Criterion A (Daily Sleepiness)",
+        "items": [
+          "Recurrent irrepressible need to sleep, lapses into sleep, or napping within same day (DSM p.422)"
+        ]
+      },
+      {
+        "name": "Criterion B1 (Cataplexy)",
+        "items": [
+          "Long-standing: brief bilateral muscle tone loss with laughter/joking (DSM p.422)",
+          "Children/early: spontaneous facial grimaces, tongue thrusting, global hypotonia without emotional trigger (DSM p.422)"
+        ]
+      },
+      {
+        "name": "Criterion B2 (Biomarker)",
+        "items": [
+          "CSF Hypocretin-1 deficiency <=110 pg/mL (DSM p.422)"
+        ]
+      },
+      {
+        "name": "Criterion B3 (Sleep Lab)",
+        "items": [
+          "PSG REM latency <=15 min OR MSLT mean sleep latency <=8 min with >=2 SOREMPs (DSM p.422)"
+        ]
+      }
+    ],
+    "thresholds": "Criterion A >=3 days/week for >=3 months; Criterion B >=1 of B1, B2, or B3 (DSM p.422)",
+    "subtypes": [
+      "Narcolepsy Type 1 / NT1 (with cataplexy or CSF hypocretin <=110 pg/mL) (DSM p.422)",
+      "Narcolepsy Type 2 / NT2 (without cataplexy and normal/unmeasured hypocretin) (DSM p.422)",
+      "Secondary Narcolepsy (due to medical condition) (DSM p.422)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "0.02%-0.05% (1 in 2,000) (DSM p.425; Dulcan p.483)",
+    "sex_ratio": "1:1 M:F (DSM p.425)",
+    "onset_age_typical": "15-25 years peak onset; 62% onset <18 years (DSM p.425; Dulcan p.483)",
+    "heritability": "25%-32% monozygotic twin concordance; 10-40x risk in 1st degree relatives (1%-2%) (DSM p.425-426)",
+    "comorbidities": [
+      "Obstructive Sleep Apnea (~25%) (DSM p.425)",
+      "Rapid-onset Obesity & Precocious Puberty in prepubescent onset (DSM p.425, 428)",
+      "ADHD (Dulcan p.483)",
+      "Major Depressive Disorder (DSM p.428)"
+    ],
+    "prognosis": "Lifelong persistent chronic course (DSM p.425)"
+  },
+  "etiology": {
+    "genetic": "HLA-DQB1*06:02 in 85-95% NT1 (DSM p.425-426); TCR-alpha gene polymorphisms (DSM p.426)",
+    "neurobiology": "Autoimmune destruction of Orexin/Hypocretin neurons in lateral hypothalamus (LH); loss of OX1R/OX2R signaling to TMN (histamine) & LC (NE) (StahlNeuro p.406-407, 434)",
+    "environmental": "Group A Streptococcal infection, pandemic H1N1 2009 influenza, Pandemrix vaccine, head trauma (DSM p.426)"
+  },
+  "treatment": {
+    "first_line": [
+      "Pitolisant (presynaptic H3 inverse agonist/antagonist, non-controlled, disinhibits histamine from TMN) (StahlNeuro p.404, 444)",
+      "Modafinil / Armodafinil (DAT inhibitors, enhance tonic dopamine & downstream histamine/orexin) (StahlNeuro p.442; Dulcan p.484)",
+      "Sodium Oxybate (GHB / GABA-B agonist, restores slow-wave sleep, FDA-approved for pediatric NT1/EDS/cataplexy) (Dulcan p.484; StahlNeuro p.446)",
+      "D-Amphetamine / Adderall (DAT/NET releasers, FDA-approved for narcolepsy age >=6) (StahlKids p.1, 17)",
+      "Methylphenidate (DAT/NET inhibitor, FDA-approved for narcolepsy) (StahlKids p.329; Dulcan p.484)"
+    ],
+    "second_line": [
+      "TCAs (Clomipramine) for cataplexy (Dulcan p.484)",
+      "SNRIs (Venlafaxine) / SSRIs for cataplexy (Dulcan p.484)",
+      "Solriamfetol (NDRI) for EDS (StahlNeuro p.444)",
+      "Scheduled naps (1-2 naps of 25-30 min) (Dulcan p.484)"
+    ],
+    "key_side_effects": [
+      "Pitolisant: insomnia, anxiety, hyperactivation (StahlNeuro p.444)",
+      "Stimulants: insomnia, appetite suppression, tachycardia, hypertension (StahlKids p.1, 17)",
+      "Sodium Oxybate: enuresis, sedation, nausea (Dulcan p.484; StahlNeuro p.446)"
+    ],
+    "monitoring": "BP, HR, weight/height for stimulants (StahlKids p.6); baseline cardiac history screening (StahlKids p.1)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CSF Hypocretin-1 <=110 pg/mL diagnostic for NT1 (DSM p.422, 424)",
+      "PSG REM latency <=15 min (nSOREMP) highly specific (95-97%) (DSM p.422, 424)",
+      "MSLT mean sleep latency <=8 min + >=2 SOREMPs (DSM p.422, 424)",
+      "Actigraphy for 7-14 days required prior to MSLT (Dulcan p.476; DSM p.424)",
+      "HLA-DQB1*06:02 genotyping for screening / negative predictive value (DSM p.425-426)",
+      "BEARS, Epworth (ESS-CH), PSQ, and CSHQ pediatric sleep questionnaires (Dulcan p.475)"
+    ],
+    "key_numbers": [
+      "<=110 pg/mL - CSF Hypocretin-1 cutoff for NT1 (DSM p.422)",
+      "<=8 minutes - MSLT mean sleep latency threshold (DSM p.422)",
+      ">=2 SOREMPs - minimum sleep-onset REM periods on MSLT (DSM p.422)",
+      "<=15 minutes - PSG nocturnal REM latency threshold (nSOREMP) (DSM p.422)",
+      "2 weeks - drug washout required before MSLT (DSM p.424)",
+      "7-14 days - actigraphy duration before testing (Dulcan p.476)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Idiopathic Hypersomnia: long unrefreshing sleep >10h, no SOREMPs, normal hypocretin (DSM p.420, 427; Dulcan p.484)",
+      "Insufficient Sleep Syndrome: false-positive SOREMPs via REM rebound (DSM p.424, 427; Dulcan p.476)",
+      "Obstructive Sleep Apnea: 25% comorbid, snoring/apneas on PSG (DSM p.425, 427)",
+      "Pseudocataplexy (Conversion): preserves intact deep tendon reflexes (no areflexia) (DSM p.428)",
+      "Pediatric ADHD: sleepiness masked as hyperactivity and behavioral problems (Dulcan p.483; DSM p.428)",
+      "Atonic Seizures: drop attacks without emotional trigger, abnormal EEG (DSM p.428)"
+    ],
+    "key_numbers": [
+      ">10 hours - sleep duration in Idiopathic Hypersomnia (DSM p.420, 427)",
+      "25% - OSA comorbidity rate in narcolepsy (DSM p.425, 427)",
+      "2 weeks - sleep extension trial duration to rule out insufficient sleep (DSM p.427)"
+    ]
+  },
+  "high_yield": [
+    "Pitolisant is a presynaptic H3 inverse agonist/antagonist that disinhibits histamine release from TMN and is NOT a controlled substance (StahlNeuro p.404, 444)",
+    "CSF Hypocretin-1 <=110 pg/mL is diagnostic for NT1 and is NOT altered by psychotropic medications or sleep deprivation (DSM p.422, 426)",
+    "In children, cataplexy often presents as static facial grimacing, tongue thrusting, or global hypotonia without emotional triggers (DSM p.422)",
+    "Sodium Oxybate acts on GHB/GABA-B receptors, restores slow-wave sleep (SWS), and is FDA approved for pediatric narcolepsy and cataplexy (Dulcan p.484; StahlNeuro p.446)",
+    "MSLT requires >=2 weeks of psychotropic drug washout (especially REM suppressants) to avoid REM rebound false-positive results (DSM p.424)",
+    "Areflexia during attacks distinguishes genuine cataplexy from pseudocataplexy/conversion, where reflexes remain intact (DSM p.428)",
+    "D-Amphetamine (Dexedrine Spansule) and Adderall are FDA-approved for narcolepsy in children aged >=6 years (StahlKids p.1, 17)"
+  ]
+}
