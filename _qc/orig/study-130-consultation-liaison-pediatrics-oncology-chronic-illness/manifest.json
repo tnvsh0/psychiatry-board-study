@@ -1,0 +1,36 @@
+{
+ "tag": "study-130-consultation-liaison-pediatrics-oncology-chronic-illness",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:06:55+00:00",
+ "updated_at": "2026-09-25T17:06:55+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "7bc288bfe031496041cbdc51b228024ce6a43996bed12b468b7f476d2b098130",
+   "asset_id": 587671993,
+   "size": 8350,
+   "fetched_at": "2026-09-25T17:06:49+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "c1d5f2dfa518c017eb2f1a36f932d1c213ed7fd0911dd36442d47bbd5431a004",
+   "asset_id": 587671994,
+   "size": 14986,
+   "fetched_at": "2026-09-25T17:06:51+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "bfa154c736ba80332b4ce6090d283e8b39814638eba62a937a134f75eebb6d51",
+   "asset_id": 587671998,
+   "size": 38789,
+   "fetched_at": "2026-09-25T17:06:53+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "6e6b0355b5e051d4ad105a123f7403111363eae4176f4cd383d6b0e47c292b6d",
+   "asset_id": 587671992,
+   "size": 46008,
+   "fetched_at": "2026-09-25T17:06:55+00:00"
+  }
+ ]
+}
