@@ -1,0 +1,166 @@
+[
+ {
+  "day": 7,
+  "plate": "main",
+  "facts": 35,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e4: dropped an unmappable relation 'converts from'",
+   "e11: dropped an unmappable relation 'enables opening of'",
+   "e13: dropped an unmappable relation 'increases activity of'",
+   "e17: dropped an unmappable relation 'reduces release of'",
+   "e18: dropped an unmappable relation 'blocks entry of'",
+   "e19: dropped an unmappable relation 'reduces release of'",
+   "e5: cue trimmed to 'Aa Hotel'",
+   "e8: cue trimmed to 'Each panel of the NMDA VIP-club door'",
+   "e9: cue trimmed to 'Hotel reception'",
+   "e10: cue trimmed to 'Hotel basement reception'",
+   "e12: cue trimmed to 'Chalk-white Ca2+ guests entering the NMDA VIP-club for synaptic'",
+   "e13: cue trimmed to \"A 'BZD' key activating the 'Cl-' lift faster\"",
+   "e14: cue trimmed to 'Gamma concierge at the Hotel reception quickly'",
+   "e15: cue trimmed to 'Delta concierge continuously'",
+   "e16: cue trimmed to \"Kids drawing 'X' marks on the 'NR1' panel\"",
+   "e17: cue trimmed to \"Valproate shoe-stabilizer blocking a 'Na+' drain and stopping\"",
+   "e18: cue trimmed to 'Keta and PCP bouncers blocking chalk-white Ca2+ guests *inside*'",
+   "e19: cue trimmed to \"Gaba-Pen and Pre-Gaba-Pen binding to a 'Voltage Gate'\"",
+   "e20: cue trimmed to \"Clonazepam cleaning product calming sleepwalking kids in the Hotel's\"",
+   "e21: cue trimmed to \"Aa Hotel's floors: Floor 1\"",
+   "e22: cue trimmed to 'Distracted child failing to tune a shoe stretcher due'",
+   "e23: cue trimmed to 'Valproate shoe-stabilizer for kids'",
+   "e24: cue trimmed to 'Bewildered person watching an adolescent carelessly discard weakly cut'",
+   "e1: hook over 32 words (38): \"בדיוק כמו שמכונת שכפול המפתחות הראשית יכולה להפעיל כמעט כל מפתח חדש, כך גלוטמט הוא המוליך העצבי המעורר הראשי המכונה 'Master Switch' של המוח, שמפעיל כמעט את כל הנוירונים, והוא אחד מ-2 המוליכים העצביים המרכזיים השולטים באיזון עירור-עיכוב.\"",
+   "e2: hook over 32 words (35): 'כמו שמנהל המלון מחזיק במפתח המאסטר ומוודא שהכל מתנהל בסדר ומונע אי-סדר, כך GABA הוא המוליך העצבי המעכב הראשי במוח, הממלא תפקיד רגולטורי קריטי במניעת עירור-יתר, והוא אחד מ-2 המוליכים העצביים המרכזיים השולטים באיזון עירור-עיכוב.'",
+   "e5: hook over 32 words (38): \"כמו שמלון 'אא' הוא מבנה בן חמש קומות עם חיווי מעלית המציין 'Cl-', כך קולטני GABA-A הם פנטמריים ומורכבים מחמש תת-יחידות חלבון המקיפות תעלה יונית מרכזית החדירה ליוני כלור, כלומר 5 תת-יחידות חלבון מרכיבות את קולטן GABA-A הפנטמרי.\"",
+   "e6: hook over 32 words (35): 'בדיוק כמו שכל אחת מחמש קומות המלון מורכבת מארבעה חלונות ברורים, כך כל תת-יחידה של קומפלקס קולטן GABA-A מורכבת מארבעה מקטעים חוצי קרום מלאים (4TM), כלומר 4 מקטעים חוצי קרום בכל תת-יחידה של קולטן GABA-A.'",
+   "e7: hook over 32 words (34): \"כמו שדלת הברזל הכבדה של מועדון ה-VIP 'NMDA' מורכבת מארבעה פאנלים נפרדים, כך קולטני גלוטמט יונוטרופיים (AMPA, NMDA, Kainate) הם טטרמריים ומורכבים מארבע תת-יחידות חלבון, כלומר 4 תתי-יחידות חלבון מרכיבות את קולטני הגלוטמט היונוטרופיים.\"",
+   "e8: hook over 32 words (43): \"בדיוק כמו שכל פאנל בדלת מועדון ה-'NMDA' מורכב משלושה מוטות ברזל ישרים ומוט רביעי מפותל, כך תת-היחידות של קולטני גלוטמט מורכבות משלושה מקטעים חוצי קרום מלאים ומקטע חודר קרום רביעי בצורת לולאה, כלומר 3 מקטעים חוצי קרום מלאים בכל תת-יחידה של קולטן גלוטמט.\"",
+   "e9: hook over 32 words (38): \"כמו שקבלת המלון מאוישת בקבוצה ספציפית של 2 אנשי צוות עם תגי 'בטא', קונסיירז' אחד עם תג 'גמא', ו-2 אורחים עם תגי 'אלפא', כך קולטני GABA-A הרגישים לבנזודיאזפינים מורכבים משתי תת-יחידות בטא, תת-יחידה אחת גמא ושתי תתי-יחידות אלפא.\"",
+   "e10: hook over 32 words (39): \"בדומה לקבלת המרתף המאוכלסת בקבוצה של 2 אנשי צוות עם תגי 'בטא', קונסיירז' אחד עם תג 'דלתא' במקום 'גמא', ושני אורחים עם תגי 'אלפא4/6', כך קולטני GABA-A שאינם רגישים לבנזודיאזפינים מכילים תת-יחידה דלתא במקום גמא, בשילוב אלפא4 או אלפא6.\"",
+   "e11: hook over 32 words (48): \"בדיוק כמו שפתיחת דלת מועדון ה-VIP 'NMDA' נעשית רק אם שלושה תנאים בו-זמניים מתקיימים – מפתח גלוטמט, כרטיס גליצין, ולחצן דה-פולריזציה שמסיר את מגנט המגנזיום שחוסם אותה במצב מנוחה – כך פתיחת תעלת קולטן NMDA דורשת קישור בו-זמני של גלוטמט וקו-אגוניסט לצד דה-פולריזציה שמסלקת את יון המגנזיום החוסם.\"",
+   "e12: hook over 32 words (33): 'כמו שאורחי הסידן הלבנים כגיר נכנסים למועדון ה-VIP של NMDA ומשתתפים בפעילויות המעודדות פלסטיות ולמידה, כך כניסת יוני סידן דרך תעלת NMDA משפעלת תהליכי פלסטיות סינפטית, התפתחות קשרים סינפטיים ולמידה באמצעות מנגנון LTP.'",
+   "e13: hook over 32 words (50): \"כמו שמפתח 'BZD' מסובב מהר יותר את חיווי המעלית 'Cl-' וגורם להשפעת 'רגיעה-יתר' במלון רק בנוכחות 2 חצאי כרטיס של גבאי, כך בנזודיאזפינים פועלים כמאפננים אלוסטריים חיוביים (PAM) המגבירים את תדירות פתיחת תעלת הכלור בנוכחות GABA, המובילה להיפר-פולריזציה, וכל זאת כאשר 2 מולקולות GABA ו-1 מולקולת בנזודיאזפין נקשרות לקולטן GABA-A.\"",
+   "e14: hook over 32 words (35): \"כמו שקונסיירז' 'גמא' בקבלת המלון מגיב במהירות ובזמן קצר עם שלט 'נא לשמור על השקט' כדי למנוע רעש פאזי, כך עיכוב פאזי (Phasic) מהיר וקצר מתווך על ידי קולטני GABA-A סינפטיים המכילים את תת-היחידה גמא.\"",
+   "e15: hook over 32 words (38): \"בדומה לקונסיירז' 'דלתא' השומר על שקט טוני מתמשך באמצעות שלט קבוע המחוזק על ידי משקה אנרגיה 'נוירו-סטרואיד', כך עיכוב טוני (Tonic) מתמשך וקבוע מתווך על ידי קולטני GABA-A אקסטרה-סינפטיים המכילים את תת-היחידה דלתא המופעלים על ידי סטרואידים נוירואקטיביים.\"",
+   "e17: hook over 32 words (51): \"כמו שמייצב הנעליים 'ואלפרואט' חוסם ניקוז 'Na+' ומעכב מברשת 'GABA-T' וכתוצאה מכך מגביר את כמות פוליש הנעליים של 'גבאי', בטווח מחיר שנקבע למאניה, כך Valproate פועל כמייצב מצב רוח על ידי חסימת תעלות נתרן (להפחתת שחרור גלוטמט) ועיכוב האנזים GABA-T להגברת רמות ה-GABA, בטווח טיפולי רצוי של 85-110 מק''ג/מ''ל לטיפול במאניה.\"",
+   "e18: hook over 32 words (36): \"כמו שהסלקטורים 'קטה' ו-'PCP' חוסמים את אורחי הסידן הלבנים כגיר *בתוך* פתח הכניסה למועדון ה-VIP 'NMDA' לאחר שהתעלה כבר פתוחה, כך Ketamine ו-PCP פועלים כחוסמי תעלה פתוחה (NAM) באתר הקישור שבתוך תעלת הסידן של קולטן ה-NMDA.\"",
+   "e20: hook over 32 words (34): \"כמו שחומר הניקוי 'קלונוזפאם' מרגיע ביעילות ילדים ההולכים מתוך שינה בלובי השינה (קומה 1) של המלון, כך הבנזודיאזפין Clonazepam משמש כטיפול יעיל בפרה-סומניות (הליכה מתוך שינה וביעותי לילה) בילדים על ידי הפחתת תדירות היקיצות.\"",
+   "e21: hook over 32 words (48): \"כמו שקומות מלון 'אא' (Aa Hotel) מציעות חוויות שונות – קומה 1 לשינה, קומות 2 ו-3 לרוגע ולטיפול קבוצתי, וקומה 5 לזיכרון – כך תתי-היחידות אלפא של קולטני GABA-A קובעות את הפרופיל הקליני: אלפא1 מתווכת שינה וסדציה, אלפא2/3 מתווכת השפעה נוגדת חרדה, ואלפא5 ממוקמת בהיפוקמפוס ומתווכת זיכרון ולמידה.\"",
+   "e22: hook over 32 words (49): \"בדיוק כמו שילד מוסח מתקשה לכוונן (Tuning) מותחן נעליים בגלל מחסור בשמני 'דופה' ו'נוראפי', מה שגורם למכונת חיתוך המפתחות להרעיש ולייצר 'אות' חלש, כך הפרעת קשב וריכוז (ADHD) מוסברת נוירוביולוגית על ידי כשל בכיוונון של קליפת המוח הקדם-מצחית עקב שחרור ירוד של דופמין ונוראפינפרין, המוביל לעלייה ב-'רעש' וירידה ב-'אות'.\"",
+   "e23: hook over 32 words (47): \"כמו שמייצב הנעליים 'ואלפרואט' המיועד לילדים מגיע עם רשימת בדיקות אזהרה מפורטת לניטור תפקודי כבד, ספירת דם ואמוניה, כך טיפול ב-Valproate בילדים מחייב ניטור תקופתי חובה של תפקודי כבד (LFTs), ספירת דם מלאה (CBC - platelet count) ורמות אמוניה בדם עקב סכנת אי-ספיקת כבד, טרומבוציטופניה ואנצפלופתיה היפראמונמית.\"",
+   "e24: hook over 32 words (44): \"בדיוק כמו שאדם מבולבל צופה בנער זורק באדישות מפתחות גלם חתוכים באופן חלש של 'גלאק' עם תוויות 'פגם גנטי', כך התיאוריה הנוירו-התפתחותית של סכיזופרניה מציעה כי פגמים גנטיים מחלישים את הסינפסות הגלוטמטרגיות (NMDA hypofunction), דבר המוביל לסילוק שגוי ועודף של סינפסות חיוניות בגיל ההתבגרות.\""
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "Here are the numbers visible in the image, apart from those on the solid bright green rectangle:",
+     "6",
+     "4",
+     "21",
+     "4",
+     "20",
+     "13",
+     "23",
+     "5",
+     "11",
+     "12",
+     "10"
+    ],
+    "blank_plates_found": 1,
+    "blank_plates_wanted": 1,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.2148,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [
+    "DEPOLARIZE",
+    "GABA-B"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES, all similar.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "DEPOLARIZE",
+    "GABA-B"
+   ],
+   "score": 2,
+   "verified": true,
+   "stray_warning": [
+    "Here are the numbers visible in the image, apart from those on the solid bright green rectangle:",
+    "6",
+    "4",
+    "21",
+    "4",
+    "20",
+    "13",
+    "23",
+    "5",
+    "11",
+    "12",
+    "10"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "N",
+     "paint": "2/3",
+     "tag": "N",
+     "chroma_pixels": 58636,
+     "blob_pixels": 56922,
+     "fill_ratio": 1.135,
+     "height_frac": 0.2148,
+     "width_frac": 0.1123,
+     "quad": [
+      [
+       969,
+       1132
+      ],
+      [
+       1272,
+       983
+      ],
+      [
+       1273,
+       1133
+      ],
+      [
+       967,
+       1312
+      ]
+     ],
+     "bbox": [
+      967,
+      983,
+      306,
+      329
+     ],
+     "height_pct": 21.42,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 9208,
+   "composited": 1,
+   "requested": 1
+  },
+  "narration_words": 1341
+ }
+]
