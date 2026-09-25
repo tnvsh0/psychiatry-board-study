@@ -1,0 +1,115 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Sexual Dysfunctions (7 specific)",
+        "items": [
+          "Delayed Ejaculation (DSM p.478)",
+          "Erectile Disorder (DSM p.481)",
+          "Female Orgasmic Disorder (DSM p.485)",
+          "Female Sexual Interest/Arousal Disorder (DSM p.489)",
+          "Genito-Pelvic Pain/Penetration Disorder (DSM p.493)",
+          "Male Hypoactive Sexual Desire Disorder (DSM p.498)",
+          "Premature / Early Ejaculation (DSM p.501)"
+        ]
+      },
+      {
+        "name": "Paraphilic Disorders (8 named)",
+        "items": [
+          "Voyeuristic Disorder (DSM p.780)",
+          "Exhibitionistic Disorder (DSM p.783)",
+          "Frotteuristic Disorder (DSM p.785)",
+          "Sexual Masochism Disorder (DSM p.788)",
+          "Sexual Sadism Disorder (DSM p.790)",
+          "Pedophilic Disorder (DSM p.792)",
+          "Fetishistic Disorder (DSM p.796)",
+          "Transvestic Disorder (DSM p.798)"
+        ]
+      }
+    ],
+    "thresholds": "Sexual Dysfunctions: >=6 months duration, ~75%-100% of occasions (DSM p.478). Paraphilias: Criterion A (erotic focus >=6 months) + Criterion B (Distress/Impairment or Harm to Nonconsenting Others) (DSM p.780). Pedophilic: Age >=16 and >=5 years older than child (DSM p.793). Voyeuristic: Age >=18 (DSM p.781).",
+    "subtypes": [
+      "Lifelong vs. Acquired (DSM p.478)",
+      "Generalized vs. Situational (DSM p.478)",
+      "Mild / Moderate / Severe (DSM p.478)",
+      "In a controlled environment / In full remission (DSM p.781)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "ED: 13%-21% (40-80y), 50%-75% (>70y) (DSM p.483); PE: 1%-3% strict 1-min IELT (DSM p.503); Pedophilic Disorder: <3% men (DSM p.794)",
+    "sex_ratio": "Predominantly Male in Paraphilic Disorders (Voyeurism 2:1-3:1 M:F, Fetishism/Transvestic almost exclusively male) (DSM p.781, p.797, p.799)",
+    "onset_age_typical": "Pedophilic: Puberty onset (DSM p.794); Masochism: Mean 19.3 years (DSM p.789); ED: Peaks >50 years (DSM p.483)",
+    "heritability": "Premature Ejaculation linked to DAT and SERT gene polymorphisms (DSM p.503)",
+    "comorbidities": [
+      "Major Depressive Disorder (DSM p.477)",
+      "Antisocial Personality Disorder (DSM p.794)",
+      "Hypersexuality / Impulsivity (DSM p.782)"
+    ],
+    "prognosis": "Lifelong type persists without treatment; SSRI-induced sexual dysfunction remits in ~30% spontaneously by 6 months (DSM p.251, p.508)"
+  },
+  "etiology": {
+    "genetic": "DAT and SERT gene polymorphisms in Premature Ejaculation (DSM p.503); Low MAOA activity x childhood maltreatment (Dulcan p.208)",
+    "neurobiology": "5-HT2A/5-HT2C activation inhibits mesolimbic dopamine and spinal reflexes (StahlNeuro p.293); Paroxetine inhibits NOS (StahlNeuro p.293); D2 blockade in tuberoinfundibular path causes hyperprolactinemia & HPG suppression (StahlNeuro p.187); Paraphilias involve shift from Ventral Striatum (reward/dopamine) to Dorsal Striatum (habit/compulsivity) with OFC top-down failure (StahlNeuro p.538-540)",
+    "environmental": "Childhood sexual/physical abuse, trauma, relationship distress, cultural/religious inhibitions (DSM p.477, p.782, Dulcan p.519)"
+  },
+  "treatment": {
+    "first_line": [
+      "Sensate Focus therapy for performance anxiety/ED (DSM p.484)",
+      "Pelvic floor CBT + graduated vaginal dilators for Genito-Pelvic Pain (DSM p.496-497)",
+      "CBT-SO (Cognitive restructuring & Relapse prevention) for Paraphilic Disorders (DSM p.794, Syllabus p.26)",
+      "Switch to Bupropion/Mirtazapine for SSRI-induced sexual dysfunction (StahlKids p.83, p.199, StahlNeuro p.308)"
+    ],
+    "second_line": [
+      "Augmentation with Buspirone (up to 60mg/day) or PDE-5i (Sildenafil) (StahlKids p.199, p.439)",
+      "GnRH Agonists (Leuprolide/Triptorelin) for severe Pedophilic/Paraphilic disorder (chemical castration) (StahlNeuro p.539, Dulcan p.575)",
+      "Anti-androgens (Cyproterone Acetate / Medroxyprogesterone) (StahlNeuro p.539, Dulcan p.575)",
+      "High-dose SSRIs off-label for compulsive paraphilic urges (StahlNeuro p.539)"
+    ],
+    "key_side_effects": [
+      "Osteoporosis & metabolic syndrome from GnRH agonists/Anti-androgens (Dulcan p.640-645)",
+      "Hyperprolactinemia, galactorrhea, gynecomastia from D2 blockers (StahlKids p.367)"
+    ],
+    "monitoring": "Bone mineral density (DEXA), plasma testosterone, prolactin, lipid profile, fasting glucose (DSM p.484, Dulcan p.640-645)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Nocturnal Penile Tumescence (NPT) during REM sleep distinguishes organic vs psychogenic ED (DSM p.484-485)",
+      "Penile Plethysmography (PPG) measures penile volume changes to erotic stimuli (DSM p.795)",
+      "Viewing Time Measures assess non-conscious viewing duration of images (DSM p.795)",
+      "Cotton-Swab Test & Pelvic Floor EMG for Genito-Pelvic Pain (DSM p.497)",
+      "Berkeley Puppet Interview (BPI) for young children ages 4-8 (Dulcan p.48)",
+      "Forensic examination for CSA includes photo documentation & STD testing (Dulcan p.522)"
+    ],
+    "key_numbers": [
+      "60 seconds (1 min IELT cutoff for Premature Ejaculation) (DSM p.501)",
+      "16 years (minimum perpetrator age for Pedophilic Disorder) (DSM p.793)",
+      "5 years (minimum age difference in Pedophilic Disorder) (DSM p.793)",
+      "18 years (minimum age for Voyeuristic Disorder) (DSM p.781)",
+      "4-5 years (age gap threshold defining child sexual abuse vs peer play) (Dulcan p.518)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Coronary Artery Disease & Peripheral Vascular Disease mimicking psychogenic ED (DSM p.484)",
+      "Diabetic Neuropathy & Autonomic Dysfunction impairing erection/ejaculation (DSM p.480, p.484)",
+      "Hyperprolactinemia suppressing GnRH/HPG axis and causing low desire (DSM p.501, StahlNeuro p.187)",
+      "Multiple Sclerosis & Spinal Cord Injury causing organic anorgasmia (DSM p.487)",
+      "Vulvodynia & Endometriosis mimicking Genito-Pelvic Pain (DSM p.495)",
+      "TBI / OFC lesions causing disinhibition mimicking Paraphilic Disorder (DSM p.782)",
+      "Instrumental rape violence vs Sexual Sadism Disorder (DSM p.792)"
+    ],
+    "key_numbers": [
+      "50% of patients on antipsychotics experience sexual dysfunction (DSM p.508)",
+      "25%-80% of patients on SSRIs/SNRIs experience sexual dysfunction (DSM p.508)",
+      "2.5x increase in perpetrator prosecution rate when objective CSA physical findings are present (Dulcan p.522)"
+    ]
+  },
+  "high_yield": [
+    "Criterion B is mandatory for Paraphilic Disorder: A paraphilia alone is not a mental disorder without distress, impairment, or harm to nonconsenting others (DSM p.780).",
+    "Paroxetine causes unique erectile dysfunction due to Nitric Oxide Synthase (NOS) inhibition in addition to 5-HT2A/2C activation (StahlNeuro p.293).",
+    "D2 blockade in the tuberoinfundibular pathway causes hyperprolactinemia, suppressing GnRH and gonadal steroids (StahlNeuro p.187, Dulcan p.824).",
+    "NPT during REM sleep is normal in psychogenic ED but impaired/absent in organic vascular ED (DSM p.484-485).",
+    "GnRH agonists (Leuprolide) induce chemical castration via pituitary GnRH receptor down-regulation for high-risk pedophilic offenders (StahlNeuro p.539, Dulcan p.575).",
+    "Low MAOA activity x childhood maltreatment doubles the risk of Conduct Disorder and aggressive behavior (Dulcan p.208)."
+  ]
+}

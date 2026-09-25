@@ -1,0 +1,36 @@
+{
+ "tag": "study-105-sexual-dysfunctions-paraphilic-disorders",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:11:53+00:00",
+ "updated_at": "2026-09-25T16:11:53+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3a5a7532ff202cb6850a70e60d4eece78fd3b42fd651bd70881bd05c34f08fb0",
+   "asset_id": 586541152,
+   "size": 7560,
+   "fetched_at": "2026-09-25T16:11:22+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "cf63746203c1bf3c6c88f6b39c62fcbbb101184bccc8e52bd28ea5f97352bd06",
+   "asset_id": 586541158,
+   "size": 13610,
+   "fetched_at": "2026-09-25T16:11:33+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "f406a3a4a40be7493a103056888287c79b5ee850285ecef67dd9332da5eab657",
+   "asset_id": 586541160,
+   "size": 31461,
+   "fetched_at": "2026-09-25T16:11:43+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2320ff8a0eaa04cf6c017ad68bb1abfaa570f3cfac470ee1758b203e5b1f340f",
+   "asset_id": 586541159,
+   "size": 48200,
+   "fetched_at": "2026-09-25T16:11:53+00:00"
+  }
+ ]
+}
