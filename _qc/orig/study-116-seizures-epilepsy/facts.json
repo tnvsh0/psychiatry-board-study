@@ -1,0 +1,101 @@
+{
+  "anatomy": {
+    "items": [
+      "קורטקס מוחי: מוקד ראשוני לפריקה היפר-סינכרונית מופרזת ופרכוסים מוקדיים (Dulcan p.91, p.96)",
+      "היפוקמפוס ואמיגדלה (Limbic System): סף פרכוסי נמוך, ליבת TLE, אורה אפיגסטרית עולה ופחד איקטלי (DSM p.132, Dulcan p.95-96, StahlNeuro p.365)",
+      "תלמוס והמעגל התלמו-קורטיקלי: Pacemaker מרכזי המתווך מקצב 3Hz Spike-and-Wave (Dulcan p.95, StahlNeuro p.71)",
+      "תעלות נתרן VSSCs: אחראיות לירי נוירונלי תדיר (High-frequency firing) במוקד האפילפטי (StahlNeuro p.67-68)",
+      "תעלות סידן T-type בתלמוס: מתווכות ירי קצבי ומחוללות התקפי Absence (StahlNeuro p.71)",
+      "חלבון SV2A: מווסת אקסוציטוזה ושחרור הבועיות הגלוטמטרגיות הפרה-סינפטיות (StahlNeuro p.32)"
+    ],
+    "key_numbers": [
+      "3 Hz - תדירות פריקה תלמו-קורטיקלית בפרכוסי Absence",
+      "תעלות N & P/Q - תעלות סידן פרה-סינפטיות המצומדות לחלבוני Snares"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "Focal Aware Seizure: הכרה ותפיסה שמורות לחלוטין, תסמינים מוטוריים (צעדה ג'קסוניאנית), תחושתיים, אוטונומיים או פסיכיים (Dulcan p.96)",
+      "Focal Impaired Awareness Seizure: הפרעה/אובדן הכרה, הבעה קפואה (Staring), אוטומטיזמים אורופציאליים/ידניים, ובלבול פוסט-איקטלי (Dulcan p.95-96, DSM p.337)",
+      "Generalized Tonic-Clonic (GTCS): שלב טוני (10-20 שניות), שלב קלוני (30-90 שניות), צעקה אפילפטית, ציאנוזיס ונשיכת בלורית/לשון (Dulcan p.96, DSM p.564)",
+      "Absence Seizures: אובדן הכרה ל-5-15 שניות, ללא שלב פוסט-איקטלי, מופק במרפאה בהיפרוונטילציה 3 דקות (Dulcan p.92, p.95-96)",
+      "West Syndrome: גילאי 3-12 חודשים, Infantile Spasms במטחים, נסיגה התפתחותית (Developmental Regression), ו-Hypsarrhythmia ב-EEG (DSM p.9, Dulcan p.92, p.96)",
+      "Benign Rolandic Epilepsy (SLECTS): גילאי 3-10 שנים, פרכוסים משינה עם נימול פה/פנים, דיסארתריה ו-Centrotemporal spikes (Syllabus p.54)",
+      "Lennox-Gastaut Syndrome (LGS): גילאי 2-8 שנים, Drop attacks, Atypical absence, פיגור שכלי ו-Slow Spike-Wave <2.5Hz (Dulcan p.112, Syllabus p.54)",
+      "Juvenile Myoclonic Epilepsy (JME): גילאי 12-18 שנים, קופצנויות מיוקלוניות בשעה הראשונה לאחר התעוררות בבוקר (Dulcan p.439, Syllabus p.54)"
+    ],
+    "key_numbers": [
+      "5-15 שניות - משך התקף Absence טיפוסי",
+      "3-12 חודשים - גיל הופעה אופייני של West Syndrome",
+      "3 דקות - משך היפרוונטילציה להפקת התקף Absence",
+      "< 2.5 Hz - תדירות Slow Spike-Wave ב-Lennox-Gastaut Syndrome"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "Geschwind Syndrome (DSM-5-TR F07.0): שינוי אישיות ב-TLE - Hypergraphia, Hyperreligiosity, Interictal Viscosity, ו-Hyposexuality (DSM p.776-777)",
+      "Postictal Psychosis (PIP): מופיעה ב-2%-7.8% מחולי האפילפסיה לאחר Lucid Interval של 12-72 שעות מתום הפרכוס (DSM p.133)",
+      "PNES / Conversion Disorder (F44.5): עצימת עיניים אקטיבית, תנועות אקסיאליות אסינכרוניות, ו-Video-EEG תקין בזמן אירוע (DSM p.360-363)",
+      "20% (1 מכל 5) מהמאובחנים עם PNES סובלים במקביל מאפילפסיה אמתית מלווה (DSM p.363)",
+      "Levetiracetam (Keppra): סיכון מוגבר לאי-שקט, עצבנות יתר עזות (Irritability), אגרסיביות ותוקפנות בילדים (Dulcan p.778, StahlKids p.485)",
+      "Topiramate (Topamax): משרה האטה קוגניטיבית (Cognitive Slowing) וקשיים בשליפת מילים (Word-finding difficulties) (Dulcan p.320, p.777, StahlNeuro p.352)",
+      "Valproic Acid (Depakote): סיכון לאנצפלופתיה היפראמונמית (Hyperammonemia), PCOS, וטרטוגניות (NTD) (Dulcan p.768, StahlNeuro p.349)",
+      "Carbamazepine (Tegretol): בדיקת סקר גנטית חובה ל-HLA-B*1502 באסייתים למניעת SJS/TEN (Dulcan p.771, StahlKids p.118)",
+      "Lamotrigine (Lamictal): Black Box לסכנת SJS/TEN בילדים <16; חובה לחצות מינון ב-50% בצירוף Valproate (Dulcan p.471, p.774-775, StahlKids p.281)",
+      "Bupropion: התוויה נגדית מוחלטת באפילפסיה (Dulcan p.716)",
+      "Stimulants (Methylphenidate): בטוחים לשימוש ב-ADHD עם אפילפסיה מאוזנת (Dulcan p.1096, StahlKids p.317)"
+    ],
+    "key_numbers": [
+      "12-72 שעות - משך Lucid Interval לפני פריצת Postictal Psychosis",
+      "20% - שיעור קומורבידיות של אפילפסיה בחולי PNES",
+      "3X - סיכון מוגבר ל-SJS/TEN תחת Lamotrigine בילדים מתחת לגיל 16",
+      "50% - הפחתת מינון Lamotrigine נדרשת בשילוב עם Valproate"
+    ]
+  },
+  "workup": {
+    "items": [
+      "Routine EEG: כולל גירוי היפרוונטילציה (3 דקות - מפיק 3Hz Spike-Wave ב-CAE) וגירוי אור פוטוטי (Dulcan p.95-96)",
+      "Sleep-Deprived EEG: הימנעות משינה בלילה מעלה רגישות לזיהוי נטענים אינטראיקטליים (Dulcan p.95-96)",
+      "Video-EEG Telemetry: Gold Standard להבחנה בין פרכוסים ל-PNES וללוקליזציה טרום-ניתוחית (DSM p.361, Dulcan p.96)",
+      "MRI מוחי: כלי הבחירה הבלעדי בילדים לזיהוי Mesial Temporal Sclerosis, דיספלזיה קורטיקלית וגידולים (Dulcan p.98)",
+      "בירור מטבולי וגנטי (CMA, WES): בתינוקות עם נסיגה התפתחותית, ASD, ID או אפילפסיה עמידה (Dulcan p.160, p.165)"
+    ],
+    "key_numbers": [
+      "85% - אחוז זמן שנת גלים איטיים עם זיזים הנדרש לאבחון ESES",
+      "20-30 דקות - משך רישום EEG שגרתי"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Ethosuximide: קו ראשון ייעודי ב-Childhood Absence Epilepsy (CAE) (Dulcan p.780, StahlKids p.465)",
+      "Valproic Acid: קו ראשון בפרכוסים הכללתיים, JME, ו-LGS (Dulcan p.763-767)",
+      "Levetiracetam / Carbamazepine / Lamotrigine: קו ראשון בפרכוסים מוקדיים (Focal) (Dulcan p.770-778)",
+      "ACTH / Vigabatrin: קו ראשון ב-West Syndrome / Infantile Spasms (Dulcan p.119)",
+      "Midazolam / Lorazepam / Diazepam: קו ראשון ב-Status Epilepticus (>5 דקות) (Dulcan p.96, p.614)"
+    ],
+    "second_line": [
+      "Topiramate, Clobazam, Oxcarbazepine, דיאטה קטוגנית (Ketogenic Diet), ו-VNS (Vagus Nerve Stimulation) (Dulcan p.96, p.774-777)",
+      "IV Levetiracetam / Fosphenytoin / Valproate: קו שני ב-Status Epilepticus (דקות 20-40) (Dulcan p.96)"
+    ],
+    "key_side_effects": [
+      "Levetiracetam: Irritability, Aggression (Dulcan p.778)",
+      "Topiramate: Cognitive Slowing, Word-Finding Difficulties, Hypohidrosis, Nephrolithiasis (Dulcan p.777)",
+      "Valproate: Hyperammonemic Encephalopathy, Weight Gain, PCOS, NTD Teratogenicity (Dulcan p.768)",
+      "Carbamazepine: Autoinduction, SJS/TEN (HLA-B*1502), Hyponatremia (SIADH) (Dulcan p.770-771)",
+      "Lamotrigine: Black Box SJS/TEN (Dulcan p.774)"
+    ],
+    "monitoring": "רמות בדם (TDM) ל-VPA (50-100 mcg/mL), Carbamazepine (4-12 mcg/mL), Ethosuximide (40-100 mcg/mL). בדיקות CBC, LFTs, סריקת HLA-B*1502 באסייתים ל-Carbamazepine, וניטור אובדניות (2008 FDA Alert) (Dulcan p.768-780, StahlKids p.118, p.465)"
+  },
+  "high_yield": [
+    "Ethosuximide הוא טיפול הבחירה הייעודי ב-Childhood Absence Epilepsy (CAE) בשל חסימת תעלות T-type בתלמוס ללא השפעה על מצב הרוח (Dulcan p.780, StahlKids p.465)",
+    "Levetiracetam (Keppra) נקשר ל-SV2A וגורם לשכיחות גבוהה של אי-שקט, עצבנות (Irritability) ותוקפנות בילדים; מתן ויטמין B6 (Pyridoxine) עשוי להפחית תופעות אלו (Dulcan p.778, StahlKids p.485)",
+    "Topiramate משרה האטה קוגניטיבית ופסיכומוטורית, קשיים בשליפת מילים (Word-finding difficulties), היפואידרוזיס (סיכון להיפרתרמיה בחום בילדים) ואבנים בכליות (Dulcan p.777, StahlNeuro p.352)",
+    "Valproic Acid מציגה סיכון לאנצפלופתיה היפראמונמית (בלבול ולתרגיה עם אמוניה מוגברת בדם), PCOS, וטרטוגניות גבוהה (NTDs) (Dulcan p.768, StahlNeuro p.349)",
+    "בשילוב Lamotrigine עם Valproate, חובה להפחית את מינון ה-Lamotrigine ב-50% בשל עיכוב מטבולי המכפיל את רמתה בדם ומעלה סיכון ל-SJS/TEN (Dulcan p.471, p.775, StahlKids p.281)",
+    "בדיקת סקר גנטית ל-HLA-B*1502 היא חובה באנשים ממוצא אסייתי טרם התחלת Carbamazepine למניעת SJS/TEN קטלני (Dulcan p.771, StahlKids p.118)",
+    "20% (1 מכל 5) מהמטופלים עם PNES (Conversion Disorder F44.5) סובלים במקביל מאפילפסיה אמתית מלווה (DSM p.363)",
+    "Geschwind Syndrome ב-TLE כוללת Hypergraphia, Hyperreligiosity, Viscosity (צמיגות חברתית) ו-Hyposexuality (DSM p.776-777)",
+    "Postictal Psychosis (PIP) מופיעה ב-2%-7.8% מחולי האפילפסיה לאחר Lucid Interval של 12-72 שעות מתום הפרכוס (DSM p.133)",
+    "ממריצים (Methylphenidate) בטוחים לשימוש בילדים עם ADHD ואפילפסיה כאשר הפרכוסים מאוזנים; Bupropion עומד בהתוויה נגדית מוחלטת באפילפסיה (Dulcan p.716, p.1096, StahlKids p.317)"
+  ]
+}
