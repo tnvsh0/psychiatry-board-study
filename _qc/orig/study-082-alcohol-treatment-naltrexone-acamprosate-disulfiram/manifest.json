@@ -1,0 +1,36 @@
+{
+ "tag": "study-082-alcohol-treatment-naltrexone-acamprosate-disulfiram",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:30:13+00:00",
+ "updated_at": "2026-09-25T15:30:13+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "4091879f928c026fa703490c6f7cfb2d543311d4432d1347dacb8d5d8c80dea0",
+   "asset_id": 584892410,
+   "size": 9747,
+   "fetched_at": "2026-09-25T15:30:07+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "20831cb85e24dc249d66276f8e9d67af4a1a90f2f34ca0de4bddd7e73b636662",
+   "asset_id": 584892409,
+   "size": 13292,
+   "fetched_at": "2026-09-25T15:30:09+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "8ef7f9537f14e32b371900193eb24c53b0182eb173fce045ea8186afe415ca6e",
+   "asset_id": 584892408,
+   "size": 34515,
+   "fetched_at": "2026-09-25T15:30:11+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "49d4609217717dcaa386cc22c7e438f5e0f3795f4f699a2f9aace446b940b3e6",
+   "asset_id": 584892417,
+   "size": 47228,
+   "fetched_at": "2026-09-25T15:30:13+00:00"
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+  "drug_class": {
+    "members": [
+      "Naltrexone (PO 50mg/day או Vivitrol LAI 380mg q4w): חוסם קולטני μ-אופיואידיים ב-VTA, מונע Disinhibition דופמינרגי ב-Nucleus Accumbens ומפחית כמיהה ותגמול (DSM p.558, Dulcan p.233, StahlNeuro p.555)",
+      "Acamprosate (טבליות 333mg, 2 טבליות TID = 1,998mg/day): מודולטור של mGluR5/mGluR2 ו-NMDA ('אלכוהול מלאכותי'), מפחית יתר-עוררות גלוטמטרגית ב-Protracted Withdrawal לשמירה על הינזרות (DSM p.558, Dulcan p.233, StahlNeuro p.555)",
+      "Disulfiram (250-500mg/day): מעכב בלתי-הפיך של האנזים Aldehyde Dehydrogenase (ALDH) בכבד, גורם להצטברות אצטאלדהיד ותגובה אברסיבית קשה (DAR) בעת שתייה (DSM p.558, Dulcan p.233, StahlNeuro p.555)"
+    ],
+    "mechanism": "Naltrexone: אנטגוניזם לקולטני μ-אופיואידיים ב-VTA; Acamprosate: עיכוב mGluR5/mGluR2 והגברת GABA; Disulfiram: עיכוב ALDH; Topiramate/Gabapentin (Off-label): מודולציה גלוטמטרגית/GABAרגית ועיכוב תעלות α2δ (DSM p.558, Dulcan p.233, StahlNeuro p.395, p.555)",
+    "kinetics": [
+      "Acamprosate: פינוי כלייתי בלעדי ללא מטבוליזם כבדי ב-CYP450 (StahlNeuro p.555)",
+      "Disulfiram: עיכוב אנזימטי בלתי-הפיך הנמשך עד 14 ימים מהפסקת הנטילה (StahlNeuro p.555)",
+      "Naltrexone LAI (Vivitrol): שחרור ממושך המבטיח רמות פלזמה יציבות למשך 30 יום (StahlNeuro p.562)"
+    ],
+    "onset_of_effect": "Naltrexone: חסימה אופיואידית מיידית (Sinclair method: 50mg שעה לפני שתייה); Acamprosate: הגעה להומאוסטזיס תוך מספר ימים; Disulfiram: תגובת DAR תוך 5-10 דקות משתייה (DSM p.558, StahlNeuro p.555, p.571)"
+  },
+  "indications": {
+    "items": [
+      "Naltrexone: מותווה ל-AUD במבוגרים להפחתת ימי שתייה כבדה וכמיהה (StahlNeuro p.555, Dulcan p.233)",
+      "Acamprosate: מותווה לשמירה על הינזרות מוחלטת (Maintenance of Abstinence) במטופלים נגמלים (StahlNeuro p.555, Dulcan p.233)",
+      "Disulfiram: טיפול אברסיבי ב-AUD במטופלים בעלי מוטיבציה גבוהה להינזרות (StahlNeuro p.555, Dulcan p.233)",
+      "Topiramate ו-Gabapentin: טיפולי Off-label להפחתת כמיהה, שתייה כבדה ותסמני Protracted Withdrawal (StahlNeuro p.555, Dulcan p.295, p.309)",
+      "Ondansetron: Off-label בעל יעילות ספציפית ב-Early-Onset AUD (Type II - הופעה לפני גיל 25) (StahlNeuro p.511, Dulcan p.233)",
+      "Naltrexone בילדים: Off-label ל-AUD בבני נוער (3 RCTs) וטיפול ב-Self-Injurious Behaviors ב-ASD/ID במינון 0.5-2.0 mg/kg/day (Dulcan p.121, p.234)"
+    ],
+    "key_numbers": [
+      "0 תרופות ל-AUD מאושרות FDA לילדים ומתבגרים מתחת לגיל 18 (Dulcan p.233)",
+      "18 שנים - גיל המינימום לאישור FDA ל-Naltrexone ב-AUD/OUD (Dulcan p.234)",
+      "5 משקאות ומעלה לגבר / 4 לאישה - הגדרת יום שתייה כבדה (Heavy drinking day) (StahlNeuro p.555)",
+      "25 שנים - גיל גבול להגדרת Early-Onset Type II AUD המגיב ל-Ondansetron (StahlNeuro p.511, Dulcan p.233)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Naltrexone: בחילות, הקאות, כאבי ראש, עלייה באנזימי כבד (LFTs), ותסמונת גמילה אופיואידית מושרת (Precipitated Withdrawal) קשה (DSM p.558, p.618, StahlNeuro p.555)",
+      "Acamprosate: שלשולים (Diarrhea), בחילות, גזים, פריחה עורית; ללא רעילות כבדית (StahlNeuro p.555)",
+      "Disulfiram: טעם מתכתי/שום, דלקת כבד רעילה (Toxic Hepatitis); בעת שתיית אלכוהול תגובת DAR קשה (הסמקה, בחילות, הקאות, תת-לחץ דם, טכיקרדיה, תמותה) (DSM p.558, StahlNeuro p.555, Dulcan p.233)",
+      "Topiramate: פוג קוגניטיבי, קשיים בשליפת מילים, פראסטזיות, אבנים בכליות (1%-2%), וחומצת מטבולית (Dulcan p.309-310, StahlNeuro p.426, p.555)",
+      "Gabapentin: סדציה, אטקסיה, עלייה במשקל, בצקת היקפית; אזהרת FDA לדיכוי נשימתי קטלני בשילוב מדכאי CNS (Dulcan p.307-308, StahlNeuro p.366)",
+      "Clonidine: תת-לחץ דם, ברדיקרדיה, סדציה, ו-Rebound Hypertensive Crisis בהפסקה חדה (StahlKids p.141, p.144, Dulcan p.233)"
+    ],
+    "key_numbers": [
+      "5-10 פעמים - רמת העלייה באצטאלדהיד רעיל בדם בתגובת DAR (DSM p.558, StahlNeuro p.555)",
+      "1%-2% - שכיחות אבני כליות בנטילת Topiramate עקב עיכוב Carbonic Anhydrase (Dulcan p.310, Dulcan p.778)",
+      "33% - שכיחות קשיים בשליפת מילים (Word-finding difficulties) בנטילת Topiramate (Dulcan p.310, Dulcan p.778)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Naltrexone: LFTs בבסיס ובתקופתיות (כל 3-6 חודשים); סקירת אופיואידים בשתן לפני תחילת טיפול; ניטור אתר הזרקה ב-Vivitrol (DSM p.558, p.618, StahlNeuro p.555, p.562)",
+      "Acamprosate: תפקודי כליה (Creatinine/eGFR) בבסיס ובתקופתיות; התוויות נגד מוחלטת ב-eGFR < 30 mL/min (StahlNeuro p.555)",
+      "Disulfiram: LFTs בבסיס, ביום 10-14, חודשי ל-3 חודשים, וכל 3-6 חודשים (הפסקה אם אנזימים מעל פי 3); ECG בבסיס (StahlNeuro p.555, Dulcan p.233)",
+      "סמנים לניטור הינזרות: CDT (Carbohydrate-Deficient Transferrin) הינו הסמן הספציפי ביותר לשתייה כבדה (ערכים >= 20 יחידות); שילוב CDT + GGT מספק דיוק מירבי (DSM p.558-559)"
+    ],
+    "key_numbers": [
+      "30 mL/min - סף eGFR מתחתיו Acamprosate התוויית נגד מוחלטת (StahlNeuro p.555)",
+      "20 units - ערך סף של CDT המעיד על שתייה כבדה מתמשכת (DSM p.558-559)",
+      "35 units - ערך סף מוגבר של GGT המעיד על שתייה כבדה ב-70% מהמקרים (DSM p.558-559)",
+      "3X - פי 3 מגבול נורמה עליון ב-LFTs המחייב הפסקת Disulfiram (StahlNeuro p.555, Dulcan p.233)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Naltrexone PO: 50 mg/day פומית; מתן 25 mg/day ב-3-5 ימים ראשונים עם אוכל מפחית בחילות (StahlNeuro p.555)",
+      "Vivitrol LAI: 380 mg IM q4w הזרקה גלוטאלית עמוקה בלבד (StahlNeuro p.562)",
+      "Acamprosate: 666 mg TID (נטילת 2 טבליות של 333 mg שלוש פעמים ביום = 1,998 mg/day) עם הארוחות; התאמה ל-333 mg TID ב-eGFR 30-50 mL/min (StahlNeuro p.555, Dulcan p.233)",
+      "Disulfiram: 250-500 mg/day פומית; הינזרות מאלכוהול 12 שעות לפחות לפני מנה ראשונה; מותנה בהשגחה ישירה (Directly Observed Therapy) (DSM p.558, StahlNeuro p.555, Dulcan p.233)",
+      "Topiramate Off-label: טיטרציה איטית מ-25 mg/day בערב עד 100-300 mg/day במינון מחולק BID (StahlNeuro p.555, Dulcan p.310)",
+      "Gabapentin Off-label: טיטרציה מ-300 mg/day עד 900-1,800 mg/day מחולק TID (StahlNeuro p.555, Dulcan p.295)"
+    ],
+    "key_numbers": [
+      "12 שעות - משך הינזרות מינימלי מאלכוהול בטרם מנת Disulfiram ראשונה (DSM p.558, StahlNeuro p.555)",
+      "7-10 ימים - חלון הינזרות נדרש מאופיואידים קצרי-טווח לפני תחילת Naltrexone (DSM p.618, StahlNeuro p.560)",
+      "14 ימים - משך סיכון לתגובת DAR לאחר הפסקת Disulfiram (StahlNeuro p.555)",
+      "6 טבליות ביום - עומס הנטילה של Acamprosate (2 טבליות TID) (StahlNeuro p.555)"
+    ]
+  },
+  "high_yield": [
+    "Naltrexone חוסם קולטני μ-אופיואידיים ב-VTA, מונע Disinhibition דופמינרגי ב-Accumbens, ומביא להכחדה פרמקולוגית (Sinclair method: 50mg שעה לפני שתייה) (StahlNeuro p.554-555, p.571-572)",
+    "מתן Naltrexone ללא חלון נקי מאופיואידים (7-10 ימים לפחות) מחולל Precipitated Opioid Withdrawal חריף וסוער (DSM p.618, StahlNeuro p.560)",
+    "Acamprosate מודולטור mGluR5/mGluR2 לשמירה על הינזרות; נקי מרעילות כבדית ובטוח בשחמת כבד, אך התווית נגד מוחלטת ב-eGFR < 30 mL/min (DSM p.558, StahlNeuro p.555)",
+    "Disulfiram מעכב ALDH באופן בלתי-הפיך; יעיל קלינית אך ורק במודל השגחה ישירה (Directly Observed Therapy) (DSM p.558, StahlNeuro p.555, Dulcan p.233)",
+    "CDT (Carbohydrate-Deficient Transferrin) הינו הסמן הביולוגי הספציפי ביותר לזיהוי שתייה כבדה וניטור Relapse (DSM p.558-559)",
+    "אף תרופה ל-AUD אינה מאושרת FDA מתחת לגיל 18; טיפול בבני נוער הינו Off-label, דורש גישה מולטימודלית פסיכוסוציאלית (A-CRA, MET-CBT, MDFT), והיעד הבלעדי הינו הינזרות מוחלטת (Dulcan p.233-238)"
+  ]
+}
