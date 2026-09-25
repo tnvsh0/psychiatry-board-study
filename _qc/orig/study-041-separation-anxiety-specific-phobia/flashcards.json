@@ -1,0 +1,105 @@
+{
+  "title": "Anxiety Flashcards",
+  "cards": [
+    {
+      "front": "Under DSM-5-TR criteria, what is the minimum duration required for a diagnosis of Separation Anxiety Disorder in children and adolescents?",
+      "back": "At least 4 weeks (DSM p.217)."
+    },
+    {
+      "front": "For adults, what is the typical minimum duration of symptoms required to meet DSM-5-TR Criterion B for Separation Anxiety Disorder?",
+      "back": "6 months or more (DSM p.217)."
+    },
+    {
+      "front": "How many of the eight symptoms listed in Criterion A must a patient exhibit to be diagnosed with Separation Anxiety Disorder?",
+      "back": "At least three (DSM p.217)."
+    },
+    {
+      "front": "What is the estimated 6- to 12-month prevalence of Separation Anxiety Disorder in children?",
+      "back": "Approximately 4% (DSM p.218)."
+    },
+    {
+      "front": "In community samples of school-age children, which gender shows higher prevalence rates for Separation Anxiety Disorder?",
+      "back": "Girls (DSM p.218)."
+    },
+    {
+      "front": "What is the median age of onset for Separation Anxiety Disorder according to longitudinal studies?",
+      "back": "8 years (Dulcan p.318)."
+    },
+    {
+      "front": "Which physiological marker is notably enhanced in children with Separation Anxiety Disorder during respiratory stimulation?",
+      "back": "Sensitivity to $CO_{2}$-enriched air (DSM p.219)."
+    },
+    {
+      "front": "Which brain structure is hypothesized by StahlNeuro to be the center of the circuit regulating fear and panic symptoms?",
+      "back": "The amygdala (StahlNeuro p.8)."
+    },
+    {
+      "front": "The symptom of \"worry\" in anxiety disorders is primarily mediated by which neurobiological circuit?",
+      "back": "The cortico-striato-thalamo-cortical (CSTC) circuit (StahlNeuro p.8)."
+    },
+    {
+      "front": "What temperamental disposition, characterized by withdrawal from unfamiliar situations, is a significant risk factor for pediatric anxiety?",
+      "back": "Behavioral Inhibition (Dulcan p.319)."
+    },
+    {
+      "front": "What is the minimum duration required for the fear, anxiety, or avoidance to diagnose a Specific Phobia in any age group?",
+      "back": "Typically 6 months or more (DSM p.225)."
+    },
+    {
+      "front": "List the five primary specifiers for Specific Phobia based on the phobic stimulus.",
+      "back": "Animal, Natural environment, Blood-injection-injury, Situational, and Other (DSM p.225)."
+    },
+    {
+      "front": "Which specific phobia subtype is characterized by a biphasic heart rate response and vasovagal fainting?",
+      "back": "Blood-injection-injury (DSM p.226)."
+    },
+    {
+      "front": "What is the median age of onset for Specific Phobia?",
+      "back": "Between 7 and 11 years (DSM p.226)."
+    },
+    {
+      "front": "In the CAMS trial, which treatment modality (or combination) yielded the highest remission rates at 12 weeks for pediatric anxiety?",
+      "back": "Combination therapy of Sertraline and CBT (Dulcan p.333)."
+    },
+    {
+      "front": "What is the gold standard psychotherapeutic intervention for pediatric anxiety disorders?",
+      "back": "Cognitive-behavioral therapy (CBT) with exposure (Dulcan p.332)."
+    },
+    {
+      "front": "How does the duration threshold for Selective Mutism differ from other anxiety disorders?",
+      "back": "The disturbance must last at least 1 month, excluding the first month of school (Dulcan p.315)."
+    },
+    {
+      "front": "What is the FDA-approved age range for using Duloxetine to treat Generalized Anxiety Disorder in children?",
+      "back": "Ages 7 to 17 years (Dulcan p.331)."
+    },
+    {
+      "front": "According to StahlKids, how long may it take for a patient to experience the full therapeutic benefits of an SSRI for anxiety?",
+      "back": "2 to 8 weeks (StahlKids p.247)."
+    },
+    {
+      "front": "What term describes the SSRI side effect in children involving motor restlessness, impulsivity, or insomnia shortly after initiation?",
+      "back": "Activation (or Treatment-Emergent Activation Syndrome) (Dulcan p.331)."
+    },
+    {
+      "front": "How is the clinical \"out of proportion\" judgment for a Specific Phobia determined under DSM-5-TR?",
+      "back": "It is made by the clinician, accounting for the patient's sociocultural context (DSM p.226)."
+    },
+    {
+      "front": "Which physical symptoms are most common in younger children when separation from attachment figures is anticipated?",
+      "back": "Headaches, stomachaches, nausea, and vomiting (DSM p.218)."
+    },
+    {
+      "front": "How does the focus of concern in Separation Anxiety Disorder differ from that in Social Anxiety Disorder regarding school avoidance?",
+      "back": "SAD focuses on separation from attachment figures, whereas Social Anxiety focuses on negative evaluation by others (DSM p.221)."
+    },
+    {
+      "front": "What is the heritability estimate for Separation Anxiety Disorder in 6-year-old twins?",
+      "back": "Approximately 73% (DSM p.219)."
+    },
+    {
+      "front": "Which medication is the only antidepressant with an FDA indication for treating Major Depressive Disorder in children (ages 8+)?",
+      "back": "Fluoxetine (Dulcan p.730)."
+    }
+  ]
+}
