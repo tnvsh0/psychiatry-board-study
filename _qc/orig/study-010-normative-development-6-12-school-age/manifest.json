@@ -1,0 +1,29 @@
+{
+ "tag": "study-010-normative-development-6-12-school-age",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:05:55+00:00",
+ "updated_at": "2026-09-25T13:05:55+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3cc08c57ddbe6a31c7d629c850c1e5fe144ca04e42073cacc51b8436ecc3ea77",
+   "asset_id": 527860872,
+   "size": 4453,
+   "fetched_at": "2026-09-25T13:05:51+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "ee80e257b2f5e1fa82dc8dc5df70e54cac18dc772a83cd90e2cf36df8724a5f0",
+   "asset_id": 527860875,
+   "size": 227,
+   "fetched_at": "2026-09-25T13:05:53+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "c86958cb14efed7d6b44e4e5d5a5cd6eb4901ae5dc393ed61c54cf81abeb0c2f",
+   "asset_id": 527860871,
+   "size": 35347,
+   "fetched_at": "2026-09-25T13:05:55+00:00"
+  }
+ ]
+}

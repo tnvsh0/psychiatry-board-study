@@ -1,0 +1,10 @@
+[
+ {
+  "day": 10,
+  "plate": "main",
+  "facts": 25,
+  "tries": 0,
+  "numbers_mode": "composite",
+  "error": "director never produced a valid table: [\"e18_broken_adult_figure: hook must be in Hebrew — got ''\"]"
+ }
+]
