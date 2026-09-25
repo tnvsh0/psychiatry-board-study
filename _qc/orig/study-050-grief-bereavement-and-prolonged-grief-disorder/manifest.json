@@ -1,0 +1,36 @@
+{
+ "tag": "study-050-grief-bereavement-and-prolonged-grief-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:25:42+00:00",
+ "updated_at": "2026-09-25T14:25:42+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "f51282082cf54f8effce449ebbd33d9703141b6154e09b0d5d9fab6910368c16",
+   "asset_id": 563985994,
+   "size": 6850,
+   "fetched_at": "2026-09-25T14:25:35+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "897e4c4b0a67b798bc62de252f48dfa17b1afef21713b1ae1707731ada800dc2",
+   "asset_id": 563985996,
+   "size": 14018,
+   "fetched_at": "2026-09-25T14:25:37+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "fe9d54beddb813dc20ee7fc204d8501cbe2a699367d099cfb0309926e7d718ec",
+   "asset_id": 563986005,
+   "size": 33762,
+   "fetched_at": "2026-09-25T14:25:40+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b1addd22c14cbcd9bca2199cee6a3c86c39c63c844bee86d43956456505d83f0",
+   "asset_id": 563985998,
+   "size": 36406,
+   "fetched_at": "2026-09-25T14:25:42+00:00"
+  }
+ ]
+}

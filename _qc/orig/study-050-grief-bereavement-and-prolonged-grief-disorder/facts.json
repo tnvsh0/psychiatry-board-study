@@ -1,0 +1,96 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster B: Persistent Grief Response",
+        "items": [
+          "Intense yearning/longing for the deceased person (DSM p.322)",
+          "Preoccupation with thoughts or memories of the deceased (in children/adolescents, preoccupation may focus on circumstances of death) (DSM p.323)"
+        ]
+      },
+      {
+        "name": "Cluster C: Cognitive, Emotional, Behavioral Distress",
+        "items": [
+          "Identity disruption (feeling as though part of oneself has died) (DSM p.323)",
+          "Marked sense of disbelief about the death (DSM p.323)",
+          "Avoidance of reminders that the person is dead (DSM p.323)",
+          "Intense emotional pain (anger, bitterness, sorrow) related to death (DSM p.323)",
+          "Difficulty reintegrating into relationships and activities (DSM p.323)",
+          "Emotional numbness (DSM p.323)",
+          "Feeling that life is meaningless (DSM p.323)",
+          "Intense loneliness as a result of death (DSM p.323)"
+        ]
+      }
+    ],
+    "thresholds": "Death >=12 months ago in adults, >=6 months ago in children/adolescents; >=1 Cluster B symptom and >=3 Cluster C symptoms present most days, nearly every day for past month (DSM p.322-323)",
+    "subtypes": [
+      "With traumatic bereavement (homicide or suicide) (Dulcan p.350, p.352)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "~9.8% in bereaved adults globally (DSM p.324); ~18% PCBD among bereaved US youth in community (DSM p.324, Dulcan p.349)",
+    "sex_ratio": "Higher prevalence/severity reported in females (DSM p.325, Dulcan p.351)",
+    "onset_age_typical": "Can occur at any age after loss; higher risk in older adults and parents after death of a child (DSM p.324)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Major Depressive Disorder (MDD) (DSM p.327)",
+      "Posttraumatic Stress Disorder (PTSD) (DSM p.327)",
+      "Substance Use Disorders (DSM p.327)",
+      "Separation Anxiety Disorder (DSM p.327)"
+    ],
+    "prognosis": "Chronic course if untreated; elevated risk for cardiovascular disease, hypertension, suicidal ideation, and long-term academic/developmental impairment in youth (DSM p.326, Dulcan p.352)"
+  },
+  "differential": {
+    "items": [
+      "Normal Grief: Affect is waves of emptiness/loss (pangs of grief) with preserved self-esteem and capacity for humor (DSM p.176, p.326)",
+      "Major Depressive Disorder (MDD): Persistent depressed mood, pervasive anhedonia, worthlessness, self-loathing; bereavement exclusion removed in DSM-5-TR (DSM p.184, p.327; Dulcan p.246)",
+      "PTSD: Intrusions focus on traumatic event/threat rather than relationship; avoidance of trauma triggers rather than loss reminders; yearning is absent in PTSD (DSM p.327; Dulcan p.355)",
+      "Separation Anxiety Disorder: Distress focuses on fear of separation from living attachment figures, not deceased person (DSM p.221, p.327)"
+    ],
+    "key_numbers": [
+      "6 months: Minimum duration required for children/adolescents for PGD diagnosis (DSM p.322)",
+      "12 months: Minimum duration required for adults for PGD diagnosis (DSM p.322)",
+      "3 of 8: Minimum Criterion C symptoms required for diagnosis (DSM p.323)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "3 core components of death concept: Finality/Irreversibility, Universality, Causality/Non-functionality (Dulcan p.55, p.349)",
+      "Preschoolers (<5 years): Magical thinking, searching for deceased, play themes of physical reunion (ladder to heaven), somatic complaints, developmental regression (DSM p.325; Dulcan p.352-354)",
+      "School-age (6-11 years): Self-blame, fear for remaining caregivers, identity disruption ('feeling different' during Mother's Day cards), academic decline (DSM p.325; Dulcan p.354)",
+      "Adolescents (12-18 years): Emotional numbness, reckless behavior, feeling 'robbed' of developmental guidance, substance use, suicidal ideation (DSM p.325; Dulcan p.352)",
+      "Traumatic Bereavement: Severe PTSD intrusive symptoms block ability to access positive, comforting memories of deceased (Dulcan p.351, p.357)"
+    ],
+    "key_numbers": [
+      "3: Core cognitive components of death concept (Finality, Universality, Causality) (Dulcan p.55, p.349)",
+      "6 months: Pediatric PGD duration threshold (DSM p.322)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "TF-CBT with Grief Modules (PRACTICE + grief psychoeducation, resolving ambivalence, preserving positive memories, converting relationship from interaction to memory) (Dulcan p.357-358)",
+      "CBITS (Cognitive-Behavioral Intervention for Trauma in Schools) - group format in schools (Dulcan p.358)",
+      "TGCT-A (Trauma Grief Component Therapy for Adolescents) - 5 sequential modules (Dulcan p.358)",
+      "Child-Parent Psychotherapy (CPP) - dyadic therapy for ages 0-6 (Dulcan p.358)",
+      "IPT-A (Interpersonal Psychotherapy for Adolescents) - Grief problem area (Dulcan p.958, p.961)"
+    ],
+    "second_line": [
+      "Pharmacotherapy is NOT first-line for PGD alone; used only for comorbid MDD/PTSD or severe dysfunction (Dulcan p.356, p.361)",
+      "Fluoxetine (FDA-approved for pediatric depression from age 8) (StahlKids p.208; Dulcan p.260)"
+    ],
+    "key_side_effects": [
+      "Treatment-Emergent Activation Syndrome (TEAS) from SSRIs: motor restlessness, impulsivity, insomnia (StahlKids p.93, p.185; Dulcan p.260)",
+      "FDA Black Box Warning for suicidal ideation/behavior with SSRIs in youth (4% vs 2% placebo) (StahlKids p.92; Dulcan p.260)"
+    ],
+    "monitoring": "Weekly face-to-face monitoring for TEAS and suicidality during initial 4 weeks of SSRI treatment (StahlKids p.93; Dulcan p.261)"
+  },
+  "high_yield": [
+    "PGD duration criterion is >=6 months for children/adolescents vs >=12 months for adults (DSM p.322).",
+    "DSM-5-TR removed Bereavement Exclusion for MDD; bereavement is recognized as a severe stressor triggering MDE (DSM p.184; Dulcan p.246).",
+    "In grief, affect comes in waves of emptiness/loss with preserved self-esteem; in MDD, mood is persistently depressed with self-loathing and anhedonia (DSM p.176; Dulcan p.247).",
+    "Traumatic bereavement occurs when death is violent or accidental; PTSD symptoms interfere with processing grief (Dulcan p.351).",
+    "Grief Modules in TF-CBT emphasize converting the relationship with the deceased from interaction to memory (Dulcan p.351, p.358).",
+    "No primary pharmacotherapy for PGD alone; psychotherapies (TF-CBT, CBITS, CPP, IPT-A) are first-line (Dulcan p.356-358, p.361).",
+    "Fluoxetine is the only FDA-approved SSRI for depression in children under 12 (from age 8) (StahlKids p.208; Dulcan p.260)."
+  ]
+}
