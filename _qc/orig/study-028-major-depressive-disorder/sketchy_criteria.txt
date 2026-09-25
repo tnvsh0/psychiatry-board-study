@@ -1,0 +1,26 @@
+Major Depressive Disorder — הפרעת דיכאון מז'ורית (MDD)
+המקום: A cloth dye house on an ordinary working day. מה כולם עושים: Everyone is working the dye floor — weighing out dyestuff at the bench, lowering hanks into the pits on long poles, lifting them out dripping, feeding them through the rollers, carrying them up to the drying loft. האזורים: Weighing Bench & Goods-in · Dye Pit Floor · Drying Loft · Weaving Room.
+
+1. Slumped worker: מצב רוח דיכאוני או רגזני — Slumped posture and muted dye show depressed mood and melancholic features.
+2. Slumped worker: melancholic — Slumped posture and muted dye show depressed mood and melancholic features.
+3. Untouched celebratory cake: אנהדוניה (אובדן עניין/הנאה) — The untouched cake depicts a loss of interest and pleasure (anhedonia).
+4. Sleeping dye worker: שינויי שינה — Worker sleeping deeply, despite noise, represents hypersomnia and atypical sleep changes.
+5. Sleeping dye worker: atypical — Worker sleeping deeply, despite noise, represents hypersomnia and atypical sleep changes.
+6. Worker hiding face: תחושת אשמה/חוסר ערך — Worker hiding face depicts feelings of guilt and worthlessness.
+7. Struggling pole lifter: חוסר אנרגיה ועייפות — Struggling worker clearly shows a profound lack of energy and fatigue.
+8. Spilled dyestuff sack: פגיעה בריכוז — Spilled dyestuff due to worker's blank stare depicts impaired concentration.
+9. Worker constantly snacking: שינויי תיאבון או משקל — Worker constantly snacking depicts increased appetite and atypical features.
+10. Worker constantly snacking: atypical — Worker constantly snacking depicts increased appetite and atypical features.
+11. Slow-motion wringing worker: האטה או אי-שקט פסיכומוטורי — One worker's sluggish movement and another's pacing show psychomotor changes.
+12. Loose rope noose: אובדנות — The noose-like knot in the rope subtly represents suicidality.
+13. Recipe board minimum "5/9": >=5/9 תסמינים, >=2 שבועות. בילדים: רגזנות ואי-עלייה במשקל — The number '5/9' is chalked on the recipe board, representing the symptom threshold.
+14. Shade card wall duration: >=5/9 תסמינים, >=2 שבועות. בילדים: רגזנות ואי-עלייה במשקל — The '2wk' on the shade card wall indicates the minimum duration threshold.
+15. Fidgeting worker: anxious — The worker's constant fidgeting and unease depict anxious distress.
+16. Laughing-crying worker: mixed — Worker's conflicting emotions show features of a mixed episode.
+17. Worker seeing invisible patterns: psychotic — Worker seeing invisible patterns depicts psychotic delusions or hallucinations.
+18. Stroller by dye pit: peripartum — The forlorn stroller represents the peripartum onset subtype.
+19. Darkened window: seasonal — The dark, boarded window symbolizes the seasonal pattern of depression.
+
+לא צויר: >=2wk
+
+מספרים לבחינה: >=5/9 · >=2wk

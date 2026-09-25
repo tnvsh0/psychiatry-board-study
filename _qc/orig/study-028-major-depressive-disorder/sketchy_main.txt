@@ -1,0 +1,34 @@
+Major Depressive Disorder — הפרעת דיכאון מז'ורית (MDD)
+המקום: A cloth dye house on an ordinary working day. מה כולם עושים: Everyone is working the dye floor — weighing out dyestuff at the bench, lowering hanks into the pits on long poles, lifting them out dripping, feeding them through the rollers, carrying them up to the drying loft. האזורים: The Weighing Bench & Goods-in · The Dye Pit Floor · The Drying Loft · The Weaving Room.
+
+1. Recipe board with prevalence rates "2% / 4-8%": ~2% ילדים, 4-8% מתבגרים — Recipe board shows prevalence rates for children (2%) and adolescents (4-8%).
+2. Shade card wall displaying genetic range "40-60%": ~40-60% — Shade card wall shows the genetic heritability range (40-60%).
+3. Tally slate showing recurrence rate "70%": 70% הישנות בתוך 5 שנים, 20-40% יהפכו ל-Bipolar — Tally slate shows 70% recurrence rate within 5 years.
+4. Two pairs of rubber aprons "1:1, 1:2": 1:1 טרום-בגרות, 1:2 בנים:בנות בבגרות — Two pairs of aprons illustrate sex ratio changes: pre-puberty (1:1) to adulthood (1:2).
+5. Apprentice reaching for higher pole: עלייה ניכרת סביב Puberty — A young apprentice reaching for a higher pole depicts onset age around puberty.
+6. Anxious worker by panic alarm: Anxiety disorders — A worker looking anxious near the amygdala panic alarm for anxiety comorbidity.
+7. Distracted worker dropping hank: ADHD — Worker dropping a yarn hank due to distraction represents ADHD comorbidity.
+8. Defiant worker splashing dye: ODD/CD — A worker defiantly splashing dye, showing ODD/CD comorbidity.
+9. Worker sneaking drink from flask: SUD — Worker secretly drinking from a flask near dyestuff sacks for SUD comorbidity.
+10. Two-toned bipolar dye pole: 70% הישנות בתוך 5 שנים, 20-40% יהפכו ל-Bipolar — A dye pole with two distinct color ends represents Bipolar conversion.
+11. Worried worker with family portrait: עומס משפחתי חיובי, Neuroticism — A worried worker holding a family portrait depicts genetic load and neuroticism.
+12. Empty sacks, withered plant, open steam "5-HT/DA/NE": חסר ב-5-HT/DA/NE, ירידה ב-BDNF, היפראקטיביות ציר HPA — Empty sacks (5-HT/DA/NE), a withered plant (BDNF), and wide open steam valve (HPA).
+13. Wobbly blocks, dripping tap, cannabis: ACEs (טראומת ילדות), דחק כרוני, קנאביס — Wobbly toy blocks (ACEs), a dripping tap (chronic stress), and cannabis plant show environmental factors.
+14. CBT tongs used by adolescent worker "CBT": CBT או IPT-A — Tongs labeled CBT used by an adolescent for first-line treatment.
+15. SERT carrier blocked from collecting packages: SSRIs (Fluoxetine, Escitalopram) — SERT carrier blocked from collecting 'serotonin' packages, representing SSRI action.
+16. New SERT barrier beside CBT tongs: החלפת SSRI + CBT — A new barrier for the SERT carrier indicates switching SSRIs, next to CBT tongs.
+17. Two blocked carriers by Venlafaxine barrier: Venlafaxine — Two blocked carriers by a 'Venlafaxine' barrier shows SNRI action.
+18. Overly active worker spilling dye: TEAS (אקטיבציה התנהגותית) — An overly active worker spilling dye depicts TEAS side effect.
+19. Despairing worker by black box crate: החמרת אובדנות (Black Box) — A despairing worker near a black box crate shows suicidality warning.
+20. Nauseated worker holding stomach: תסמיני GI — Worker holding stomach, looking nauseated, depicts GI side effects.
+21. Worker sleeping standing up on pole: הפרעות שינה — Worker falling asleep on a pole shows sleep disturbance side effect.
+22. Calendar, magnifying glass, black box, pole: שבועי ב-4 שבועות ראשונים, ניטור אובדנות ומאניה — A calendar for weekly monitoring, with black box and bipolar pole for specific risks.
+23. Grumpy child worker stirring pit: Irritability בילדים במקום מצב רוח דיכאוני — A grumpy child worker shows irritability replaces depressed mood in children.
+24. Scale showing 'No Gain' for child: אי-עלייה במשקל מחליפה ירידה במשקל — Scale shows 'No Gain' for a child, replacing weight loss.
+25. Broken child's tricycle: TCAs אינם יעילים בדיכאון פדיאטרי — A broken child's tricycle symbolizes ineffective TCAs in pediatric depression.
+26. Hallucinating, agitated workers point bipolar pole: דיכאון פסיכוטי ו-TEAS מנבאים Bipolar — A hallucinating worker and an agitated worker point to the bipolar pole, predicting conversion.
+27. Somber worker with 'Still Eligible' sign: אבל (Bereavement) אינו פוסל אבחנת MDD — Somber worker with a 'Still Eligible' sign shows bereavement does not exclude MDD.
+
+לא צויר: ~2% · 4-8% · 1:1 · 1:2 · 70% · 5yr · 20-40% · 4wk
+
+מספרים לבחינה: ~2% · 4-8% · 1:1 · 1:2 · ~40-60% · 70% · 5yr · 20-40% · 4wk

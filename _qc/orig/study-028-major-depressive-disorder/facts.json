@@ -1,0 +1,77 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "תסמיני ליבה",
+        "items": [
+          "מצב רוח דיכאוני או רגזני",
+          "אנהדוניה (אובדן עניין/הנאה)"
+        ]
+      },
+      {
+        "name": "SIGECAPS",
+        "items": [
+          "שינויי שינה",
+          "תחושת אשמה/חוסר ערך",
+          "חוסר אנרגיה ועייפות",
+          "פגיעה בריכוז",
+          "שינויי תיאבון או משקל",
+          "האטה או אי-שקט פסיכומוטורי",
+          "אובדנות"
+        ]
+      }
+    ],
+    "thresholds": ">=5/9 תסמינים, >=2 שבועות. בילדים: רגזנות ואי-עלייה במשקל",
+    "subtypes": [
+      "anxious",
+      "mixed",
+      "melancholic",
+      "atypical",
+      "psychotic",
+      "peripartum",
+      "seasonal"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "~2% ילדים, 4-8% מתבגרים",
+    "sex_ratio": "1:1 טרום-בגרות, 1:2 בנים:בנות בבגרות",
+    "onset_age_typical": "עלייה ניכרת סביב Puberty",
+    "heritability": "~40-60%",
+    "comorbidities": [
+      "Anxiety disorders",
+      "ADHD",
+      "ODD/CD",
+      "SUD"
+    ],
+    "prognosis": "70% הישנות בתוך 5 שנים, 20-40% יהפכו ל-Bipolar"
+  },
+  "etiology": {
+    "genetic": "עומס משפחתי חיובי, Neuroticism",
+    "neurobiology": "חסר ב-5-HT/DA/NE, ירידה ב-BDNF, היפראקטיביות ציר HPA",
+    "environmental": "ACEs (טראומת ילדות), דחק כרוני, קנאביס"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT או IPT-A",
+      "SSRIs (Fluoxetine, Escitalopram)"
+    ],
+    "second_line": [
+      "החלפת SSRI + CBT",
+      "Venlafaxine"
+    ],
+    "key_side_effects": [
+      "TEAS (אקטיבציה התנהגותית)",
+      "החמרת אובדנות (Black Box)",
+      "תסמיני GI",
+      "הפרעות שינה"
+    ],
+    "monitoring": "שבועי ב-4 שבועות ראשונים, ניטור אובדנות ומאניה"
+  },
+  "high_yield": [
+    "Irritability בילדים במקום מצב רוח דיכאוני",
+    "אי-עלייה במשקל מחליפה ירידה במשקל",
+    "TCAs אינם יעילים בדיכאון פדיאטרי",
+    "דיכאון פסיכוטי ו-TEAS מנבאים Bipolar",
+    "אבל (Bereavement) אינו פוסל אבחנת MDD"
+  ]
+}

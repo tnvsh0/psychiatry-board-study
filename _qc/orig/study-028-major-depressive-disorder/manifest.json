@@ -1,0 +1,113 @@
+{
+ "tag": "study-028-major-depressive-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:50:20+00:00",
+ "updated_at": "2026-09-25T13:50:20+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "67328c1be87bcce198d7536f4b699955a5b2e59562573b4c3cc961fdedb49d87",
+   "asset_id": 487513934,
+   "size": 2464,
+   "fetched_at": "2026-09-25T13:49:52+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "c4a8efc795bfa4d7e3e6aa0de5f0798960c2a33f2b725fc84f0703f034bf8d17",
+   "asset_id": 487513844,
+   "size": 12983,
+   "fetched_at": "2026-09-25T13:49:54+00:00"
+  },
+  {
+   "name": "narration_criteria.txt",
+   "sha256": "351da370ad96b63f8e95f8a7f00c762d45b31c7953b3051a877a4aee6d673ca7",
+   "asset_id": 511286482,
+   "size": 5861,
+   "fetched_at": "2026-09-25T13:49:55+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "c188532d86944e19a70077659a85706a2df76aa2178189d98e71f19c4aaf7e99",
+   "asset_id": 511286479,
+   "size": 6502,
+   "fetched_at": "2026-09-25T13:49:57+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "cfe19f494c5d3234f51af852ffcc0d11e21cf5e07b3c5e17ad67335cf7457562",
+   "asset_id": 487513833,
+   "size": 42806,
+   "fetched_at": "2026-09-25T13:49:59+00:00"
+  },
+  {
+   "name": "sketchy_criteria.quiz.md",
+   "sha256": "e80b1620eeec71a9d859874cc50fe794accc64fae9d2d3a4bcddef07b4f95adf",
+   "asset_id": 511286478,
+   "size": 1171,
+   "fetched_at": "2026-09-25T13:50:01+00:00"
+  },
+  {
+   "name": "sketchy_criteria.txt",
+   "sha256": "9a8b7a0d896bcd45f96434a66b1f63247585e1ee14eab54e8709fec109a4c591",
+   "asset_id": 511286475,
+   "size": 3115,
+   "fetched_at": "2026-09-25T13:50:03+00:00"
+  },
+  {
+   "name": "sketchy_dsm_criteria_.txt",
+   "sha256": "21d5e3d52db9b1e819c652b2feeae87667793eb4ce3a8a724ec075791fd6aefb",
+   "asset_id": 487513875,
+   "size": 2184,
+   "fetched_at": "2026-09-25T13:50:05+00:00"
+  },
+  {
+   "name": "sketchy_dsm_criteria_sigecaps.txt",
+   "sha256": "b514ffc64c4f2fce857747eb85b5739148bb2e4f581a46780ad6f71292ea2e60",
+   "asset_id": 487513898,
+   "size": 2208,
+   "fetched_at": "2026-09-25T13:50:07+00:00"
+  },
+  {
+   "name": "sketchy_epidemiology_comes_with.txt",
+   "sha256": "504c7fbb7484392c97d3af93da3df1bfce70bc6157ea71e8093842cb8ad46179",
+   "asset_id": 487565446,
+   "size": 2126,
+   "fetched_at": "2026-09-25T13:50:10+00:00"
+  },
+  {
+   "name": "sketchy_epidemiology_who.txt",
+   "sha256": "5cd336baf83e2579721d80b7cd92dbd483334f3c7db9f35c4f51abe457b0f2da",
+   "asset_id": 487564393,
+   "size": 1739,
+   "fetched_at": "2026-09-25T13:50:12+00:00"
+  },
+  {
+   "name": "sketchy_etiology.txt",
+   "sha256": "cb97c1c3c866f2d1bb0fbfad175b5a32de6a0942652614830b8c19ea53801296",
+   "asset_id": 487513933,
+   "size": 2393,
+   "fetched_at": "2026-09-25T13:50:14+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "c3b91259a165d547b3cd41dc4bf64df1af7d11c9a64de1379c404fc5628dd260",
+   "asset_id": 511286474,
+   "size": 1990,
+   "fetched_at": "2026-09-25T13:50:16+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "a3615740ee6a0c87806b8c24fb5c8711946183e46744b45aa762d7ecd82490b0",
+   "asset_id": 511286471,
+   "size": 5040,
+   "fetched_at": "2026-09-25T13:50:18+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "98e1ce57f7dbba409d674e87c66a91d1dfd1d5714ed418817712faa97e6516ed",
+   "asset_id": 487513932,
+   "size": 26498,
+   "fetched_at": "2026-09-25T13:50:20+00:00"
+  }
+ ]
+}
