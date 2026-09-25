@@ -1,0 +1,72 @@
+{
+  "anatomy": {
+    "items": [
+      "אטרופיה ניוונית בסטריאטום (Striatum), בייחוד ב-Caudate Nucleus וב-Putamen ב-Huntington (DSM p. 728)",
+      "שקיעת נחושת בגרעיני הבסיס (Lenticular Nucleus: Putamen and Globus Pallidus) ובכבד ב-Wilson (DSM p. 809; Dulcan p. 108)",
+      "פגיעה במסלול העוקף (Indirect Pathway - 'Stop') מעלה פעילות דופמינרגית היפרקינטית ב-CSTC loops (StahlNeuro p. 87, 88)"
+    ],
+    "key_numbers": [
+      "4p16.3 (מיקום גן HTT בכרומוזום 4) (DSM p. 728)",
+      "13q14.3 (מיקום גן ATP7B בכרומוזום 13) (Syllabus p. 56)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "Huntington מתאפיינת ב-Chorea, ברדיקינזיה, Ataxia, דיסארתריה ודיספאגיה (DSM p. 727, 728)",
+      "Juvenile Huntington (Westphal variant) מתצגת עם נוקשות (Rigidity), ברדיקינזיה, דיסטוניה ופרכוסים (DSM p. 727)",
+      "Wilson disease מתצגת עם מעורבות כבדית (דלקת, שחמת) ותסמונת נוירולוגית (Wing-beating tremor, Dystonia, Risus sardonicus) (Dulcan p. 108; DSM p. 809)",
+      "טבעות Kayser-Fleischer (משקעי נחושת בקרנית) מופיעות כמעט ב-100% מחולי Wilson עם מעורבות נוירולוגית/פסיכיאטרית (Dulcan p. 108; DSM p. 809)"
+    ],
+    "key_numbers": [
+      "CAG ≥40 חזרות בגן HTT (פנטרנטיות מלאה ב-Huntington) (DSM p. 728)",
+      "CAG 36-39 חזרות (פנטרנטיות חלקית ב-Huntington) (DSM p. 728)",
+      "גיל 5 עד 35 (טווח גילאי הופעת תסמינים עיקרי ב-Wilson) (Dulcan p. 65, 108)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "ב-Huntington, תסמינים פסיכיאטריים וקוגניטיביים (דיכאון, אי-שקט, אימפולסיביות, אפתיה) מקדימים תכופות את התסמינים המוטוריים (DSM p. 727, 728)",
+      "סיכון אובדני מוגבר משמעותית ב-Huntington, המהווה מסיבות המוות המובילות במחלה (DSM p. 728)",
+      "ב-20%-30% מחולי Wilson, הביטויים הפסיכיאטריים (שינויי אישיות, הדרדרות בלימודים, פסיכוזה דמוית סכיזופרניה) הם תלונת הפנייה הראשונה (Dulcan p. 108; Syllabus p. 56)",
+      "פגיעה קוגניטיבית תת-קורטיקלית ניהולית (Executive Dysfunction) בשתי המחלות (DSM p. 669, 727)"
+    ],
+    "key_numbers": [
+      "10 שנים או יותר (זמן שבו תסמינים פסיכיאטריים עשויים להקדים תנועה ב-Huntington) (DSM p. 727)",
+      "20%-30% (שכיחות מצג פסיכיאטרי ראשוני ב-Wilson) (Dulcan p. 108)"
+    ]
+  },
+  "workup": {
+    "items": [
+      "Huntington: בדיקה גנטית לחזרות CAG בגן HTT; MRI מראה אטרופיה ב-Caudate והרחבת חדרים צדדיים (DSM p. 728)",
+      "Wilson: רמת צרולופלסמין נמוכה בדם (<20 mg/dL), איסוף שתן 24 שעות לנחושת מוגבר (>100 µg), בדיקת מנורת סדק לטבעות Kayser-Fleischer (Dulcan p. 108)",
+      "MRI מוח ב-Wilson: אותות היפר-אינטנסיביים ב-T2 בגרעינים בזאליים וסימן Face of the Giant Panda (Dulcan p. 98, 108)"
+    ],
+    "key_numbers": [
+      "<20 mg/dL (רמת צרולופלסמין נמוכה בנסיוב ב-Wilson) (Dulcan p. 108)",
+      ">100 µg ל-24 שעות (הפרשת נחושת מוגברת בשתן ב-Wilson) (Dulcan p. 108)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Deutetrabenazine או Tetrabenazine ל-Chorea ב-Huntington (מעכבי VMAT2) (Dulcan p. 448; StahlNeuro p. 174, 175)",
+      "Penicillamine או Trientine + מלחי אבץ (Zinc) ב-Wilson (Dulcan p. 108)"
+    ],
+    "second_line": [
+      "נוגדי פסיכוזה אטיפיקליים במינון נמוך (Quetiapine/Clozapine) לתסמינים פסיכוטיים ואי-שקט (StahlNeuro p. 184; StahlKids p. 255)",
+      "SSRIs לדיכאון וחרדה ב-Huntington ו-Wilson (DSM p. 728; Dulcan p. 108)"
+    ],
+    "key_side_effects": [
+      "Tetrabenazine: סדציה, פרקינסוניזם, אזהרת קופסה שחורה לדיכאון ואובדנות (Dulcan p. 448; StahlNeuro p. 174)",
+      "Penicillamine: החמרה נוירולוגית חריפה בתחילת טיפול בשל שחרור נחושת (Dulcan p. 108)",
+      "רגישות קיצונית ל-EPS מנוגדי פסיכוזה בשל פגיעה מובנית בגרעיני הבסיס (StahlNeuro p. 165; StahlKids p. 255)"
+    ],
+    "monitoring": "ניטור תפקודי כבד ורמות נחושת בשתן 24ש' ב-Wilson; ניטור מצב רוח וסיכון אובדני במעכבי VMAT2 ב-Huntington (Dulcan p. 108, 448; StahlKids p. 14)"
+  },
+  "high_yield": [
+    "Huntington: תורשה אוטוזומלית דומיננטית, CAG ≥40 בגן HTT בכרומוזום 4p16.3 עם תופעת Anticipation בהורשה אבית (DSM p. 728)",
+    "Juvenile HD (Westphal variant): פריצה לפני גיל 20 מתצגת עם Rigidity, Bradykinesia ופרכוסים ולא Chorea (DSM p. 727)",
+    "Deutetrabenazine עדיף על Tetrabenazine לחוראה בזכות מתן BID, מולקולת דאוטריום ופחות סדציה/תופעות שיא-מנה (Dulcan p. 448; StahlNeuro p. 175)",
+    "Wilson: תורשה אוטוזומלית רצסיבית בגן ATP7B בכרומוזום 13q14.3 עם הפרעה בהפרשת נחושת במרה (Syllabus p. 56; DSM p. 809)",
+    "טבעות Kayser-Fleischer בקרנית ומשולש קליני: מחלת כבד + Wing-beating tremor/Dystonia + שינויי אישיות/פסיכוזה (Dulcan p. 108)"
+  ]
+}

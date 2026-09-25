@@ -1,0 +1,208 @@
+{
+  "title": "Neuropsychiatry Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "A 42-year-old male presents with emerging executive dysfunction (impaired planning and organization) and mild irritability. His family history is notable for a father who developed motor coordination issues in his late 70s. Genetic testing of the patient reveals a CAG repeat expansion of 38 in the HTT gene on chromosome 4. Which of the following best describes the clinical status and prognosis for this individual based on these findings?",
+      "answerOptions": [
+        {
+          "text": "The patient possesses a partially penetrant expansion, and the diagnosis of Huntington's disease cannot be made until motor symptoms manifest.",
+          "isCorrect": true,
+          "rationale": "A CAG repeat length in the 36-39 range is considered partially penetrant, and a formal diagnosis of Huntington's disease requires the manifestation of motor symptoms, regardless of genetic status (DSM p.728)."
+        },
+        {
+          "text": "The repeat expansion of 38 is considered fully penetrant, and Huntington's disease is now the definitive diagnosis based on cognitive decline.",
+          "isCorrect": false,
+          "rationale": "Full penetrance requires a repeat length of 40 or more; lengths of 36-39 may or may not lead to the disease and are often associated with very late onset (DSM p.728)."
+        },
+        {
+          "text": "The cognitive abnormalities are insufficient for diagnosis as they must follow the onset of motor chorea by at least a decade.",
+          "isCorrect": false,
+          "rationale": "Psychiatric and cognitive abnormalities can actually predate motor abnormalities by a decade or more (DSM p.728)."
+        },
+        {
+          "text": "The repeat length indicates a juvenile-onset variant that will likely progress to major impairment within 12 months.",
+          "isCorrect": false,
+          "rationale": "Longer repeat lengths (typically much higher than 38) are associated with earlier onset, whereas 38 is associated with late-life onset if it manifests at all (DSM p.728)."
+        }
+      ],
+      "hint": "Consider the relationship between specific CAG repeat counts and the 'penetrance' of the genetic expansion.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A clinician is considering VMAT2 inhibitor therapy for a patient with Huntington's disease-related chorea. The patient's family is particularly concerned about the risk of depression and the burden of frequent daily dosing. Which pharmacological option and rationale best align with these clinical priorities?",
+      "answerOptions": [
+        {
+          "text": "Deutetrabenazine, because its deuterated structure allows for twice-daily dosing and it lacks a suicide warning for the treatment of Huntington's disease.",
+          "isCorrect": false,
+          "rationale": "While deutetrabenazine allows for lower dosing frequency than tetrabenazine, it does not lack the suicide warning for Huntington's disease; that distinction applies to its use in tardive dyskinesia (StahlNeuro p.175)."
+        },
+        {
+          "text": "Tetrabenazine, because it selectively inhibits VMAT2 over VMAT1, reducing peripheral side effects like orthostatic hypotension.",
+          "isCorrect": false,
+          "rationale": "While tetrabenazine is selective for VMAT2, it requires three-times-daily dosing and carries a specific risk of depression and suicide when used for Huntington's disease (StahlNeuro p.175)."
+        },
+        {
+          "text": "Valbenazine, because its long half-life allows for once-daily administration and it does not carry a suicide warning.",
+          "isCorrect": true,
+          "rationale": "Valbenazine is a selective VMAT2 inhibitor with once-daily dosing and, unlike tetrabenazine, it does not have a suicide warning (StahlNeuro p.176)."
+        },
+        {
+          "text": "Reserpine, because it irreversibly binds VMAT2, providing the most potent and long-lasting suppression of hyperkinetic movements.",
+          "isCorrect": false,
+          "rationale": "Reserpine inhibits both VMAT1 and VMAT2, leading to significant peripheral side effects that usually make it a less desirable choice than selective VMAT2 inhibitors (StahlNeuro p.175)."
+        }
+      ],
+      "hint": "Identify which VMAT2 inhibitor offers the longest half-life and the most favorable safety profile regarding suicidality.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "An 8-year-old child is brought to the clinic after a 'dramatic and abrupt' onset of severe obsessive-compulsive symptoms and a sudden refusal to eat certain foods. The parents also report the new onset of emotional lability, separation anxiety, and a significant deterioration in his handwriting. Based on the provided clinical criteria, which of the following is the most likely diagnosis?",
+      "answerOptions": [
+        {
+          "text": "Pediatric Acute-onset Neuropsychiatric Syndrome (PANS)",
+          "isCorrect": true,
+          "rationale": "PANS is characterized by an abrupt, dramatic onset of OCD or severely restricted food intake accompanied by at least two other neuropsychiatric symptoms like emotional lability or handwriting deterioration (Dulcan p.371)."
+        },
+        {
+          "text": "Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal Infections (PANDAS)",
+          "isCorrect": false,
+          "rationale": "While PANDAS shares symptoms, it specifically requires documented evidence of a temporal relationship with GABHS infections on two occasions (Dulcan p.370)."
+        },
+        {
+          "text": "Early-Onset Schizophrenia (EOS)",
+          "isCorrect": false,
+          "rationale": "EOS is characterized by positive and negative symptoms (like hallucinations or affective flattening) and does not typically present with the abrupt, specific OCD/eating/neurological cluster described (Dulcan p.385)."
+        },
+        {
+          "text": "Huntington's Disease (Juvenile form)",
+          "isCorrect": false,
+          "rationale": "While juvenile HD involves behavioral changes, the dramatic 'overnight' onset of OCD and specific handwriting/eating changes is a hallmark of PANS/PANDAS rather than HD (Dulcan p.371, DSM p.728)."
+        }
+      ],
+      "hint": "Look for a syndrome defined by the sudden 'abruptness' of OCD and supplementary neurological symptoms.",
+      "imageUrls": []
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "In the neurobiology of movement regulation, the indirect pathway of the Cortico-Striato-Thalamo-Cortical (CSTC) loop acts as a '___' signal; in conditions like chorea or tardive dyskinesia, this pathway is believed to be under-active or over-inhibited.",
+      "bestAnswer": "stop",
+      "acceptableAnswers": [
+        "braking",
+        "inhibitory"
+      ],
+      "rationale": "The indirect pathway (mediated via $D_{2}$ receptors) provides the 'stop' signal for motor output, whereas the direct pathway provides the 'go' signal (StahlNeuro p.87, 178).",
+      "hint": "Think of the two main signals in the CSTC loop that balance motor output like a car's pedals."
+    },
+    {
+      "type": "multiple_select",
+      "question": "Which of the following statements correctly characterize the cognitive and psychiatric features of Huntington's disease according to the clinical descriptions provided?",
+      "answerOptions": [
+        {
+          "text": "Executive function decline typically involves slowing of processing speed, organization, and planning.",
+          "isCorrect": true,
+          "rationale": "Cognitive impairment in HD is a core feature, often highlighting early changes in executive function (DSM p.728)."
+        },
+        {
+          "text": "Apathy is a progressive behavioral symptom that often increases in severity over time.",
+          "isCorrect": true,
+          "rationale": "Apathy is noted as a behavioral disturbance that becomes more progressive as the disorder advances (DSM p.728)."
+        },
+        {
+          "text": "Psychosis is the most common early psychiatric symptom, typically predating motor symptoms by 20 years.",
+          "isCorrect": false,
+          "rationale": "While psychosis can occur, it is noted as a 'more rare' association compared to irritability, anxiety, or depression (DSM p.728)."
+        },
+        {
+          "text": "Advanced motor disease can lead to speech that is difficult to understand (dysarthria) despite comparatively intact cognition.",
+          "isCorrect": true,
+          "rationale": "Motor impairment eventually affects speech production, causing distress because the individual's cognition may remain relatively preserved compared to their ability to communicate (DSM p.728)."
+        }
+      ],
+      "hint": "Focus on the specific types of cognitive deficits and the relative frequency of behavioral symptoms.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "short_answer",
+      "question": "Why is genetic testing for CYP450 2D6 status clinically relevant when managing Huntington's disease chorea with certain VMAT2 inhibitors?",
+      "grading": {
+        "modelAnswer": "Genetic testing for CYP450 2D6 is required when using tetrabenazine (but not necessarily newer variants) because the drug's active metabolites are inactivated by this enzyme. Individuals who are poor metabolizers are at risk of drug accumulation and toxicity, necessitating a lower maximum dose to avoid adverse effects like sedation or drug-induced parkinsonism.",
+        "rationale": "Tetrabenazine's active dihydro-metabolites rely on the CYP2D6 enzyme for clearance, making the user's metabolic genotype critical for safe dosing (StahlNeuro p.175).",
+        "requiredAttributes": [
+          "Mentions that tetrabenazine metabolites are cleared/inactivated by CYP450 2D6.",
+          "Explains that testing identifies 'poor metabolizers' who are at risk of toxicity.",
+          "Notes that the dose must be adjusted/lowered for these individuals."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Claiming that 2D6 testing is required for all VMAT2 inhibitors including valbenazine.",
+            "Stating that the test is to see if the drug will be effective rather than safe."
+          ],
+          "bluffs": [
+            "General statements about liver metabolism without mentioning the specific enzyme or drug (tetrabenazine)."
+          ]
+        }
+      },
+      "hint": "Think about how the body inactivates the dihydro-metabolites of the 'prodrug' tetrabenazine."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A 15-year-old adolescent with a history of intellectual disability and spastic diplegia presents with sudden, random jerking of the arms and legs while awake, without loss of consciousness. According to the guidance on neurological assessment in child psychiatry, which initial step is most critical for the diagnostic formulation?",
+      "answerOptions": [
+        {
+          "text": "Determine if the symptoms are acute vs. chronic, static vs. progressive, and focal vs. generalized.",
+          "isCorrect": true,
+          "rationale": "In clinical child psychiatry, defining the problem's temporal and spatial nature (acute/chronic, static/progressive) is the primary historical step to guide localization and differential diagnosis (Dulcan p.92)."
+        },
+        {
+          "text": "Immediately order an fMRI to assess for cortical gray matter loss associated with first-episode psychosis.",
+          "isCorrect": false,
+          "rationale": "fMRI is generally not compatible with the sedation often needed for children, and neuroimaging is not supported for diagnosing psychiatric disorders in children (Dulcan p.100)."
+        },
+        {
+          "text": "Initiate a trial of Haloperidol to rule out Tourette's disorder.",
+          "isCorrect": false,
+          "rationale": "Medication should follow diagnosis; diagnostic assessment must first distinguish between seizures, movement disorders, and other neurological signs (Dulcan p.92)."
+        },
+        {
+          "text": "Refer for genetic testing for the ATP7B mutation to assess for Wilson disease.",
+          "isCorrect": false,
+          "rationale": "While Wilson disease is a concern in movement disorders, the clinical vignette focuses on the basic history-taking steps (acute vs chronic) essential for any new neurological symptom (Dulcan p.92)."
+        }
+      ],
+      "hint": "Identify the fundamental framework used by neurologists to categorize new movement symptoms during the history-taking phase.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "According to 'StahlKids' and 'Dulcan', which of the following is an FDA-approved pharmacological treatment specifically indicated for Tourette's disorder in children and adolescents?",
+      "answerOptions": [
+        {
+          "text": "Aripiprazole",
+          "isCorrect": true,
+          "rationale": "Haloperidol, pimozide, and aripiprazole are the three medications specifically FDA approved for the treatment of Tourette's disorder (Dulcan p.448; StahlKids p.39)."
+        },
+        {
+          "text": "Valproate",
+          "isCorrect": false,
+          "rationale": "Valproate is approved for seizures and manic episodes in older children/adolescents but not for tics (StahlKids p.464)."
+        },
+        {
+          "text": "Clonidine",
+          "isCorrect": false,
+          "rationale": "While often used for ADHD and tics, alpha-2 agonists like clonidine are not listed as the primary FDA-approved antipsychotic-class treatments for Tourette's (Dulcan p.448)."
+        },
+        {
+          "text": "Methylphenidate",
+          "isCorrect": false,
+          "rationale": "Methylphenidate is used for ADHD; while it may be used in comorbid cases, it is not an approved treatment for Tourette's itself (StahlKids p.440)."
+        }
+      ],
+      "hint": "Recall the three specific dopamine-targeting medications mentioned in the source material as being FDA-approved for tics.",
+      "imageUrls": []
+    }
+  ]
+}
