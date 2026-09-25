@@ -1,0 +1,36 @@
+{
+ "tag": "study-079-sleep-development-in-children-adolescent-shift",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:25:28+00:00",
+ "updated_at": "2026-09-25T15:25:28+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "7d1e68cdc640b9e549bd195b04e9b85cb3c46292f9f955b5fe9775503865be5b",
+   "asset_id": 584763842,
+   "size": 8865,
+   "fetched_at": "2026-09-25T15:25:22+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "7bd217c65fc6bd93d6ced79631a8126d63f14c259a9f37dcfac40f88556365cf",
+   "asset_id": 584763835,
+   "size": 13092,
+   "fetched_at": "2026-09-25T15:25:24+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "b872b7f94f4f563aa41b703380bab1d89d5787a4b476216699934fb867bd2d29",
+   "asset_id": 584763841,
+   "size": 38563,
+   "fetched_at": "2026-09-25T15:25:26+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "1e2d180a458604622050d7c014409ebcb1e61b2f93af24afe15ced5d88a89174",
+   "asset_id": 584763845,
+   "size": 40508,
+   "fetched_at": "2026-09-25T15:25:28+00:00"
+  }
+ ]
+}
