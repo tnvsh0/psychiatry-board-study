@@ -1,0 +1,85 @@
+{
+  "title": "NSSI Flashcards",
+  "cards": [
+    {
+      "front": "According to DSM-5-TR, what is the minimum frequency requirement for a diagnosis of NSSI Disorder (Criterion A)?",
+      "back": "Intentional self-inflicted damage to the body surface on $\\ge 5$ days within the last 12 months (DSM p.923)."
+    },
+    {
+      "front": "What three specific expectations/goals must the individual have regarding the self-injury to meet Criterion B?",
+      "back": "1. Relief from a negative feeling/cognitive state; 2. Resolving an interpersonal difficulty; 3. Inducing a positive feeling state (DSM p.923)."
+    },
+    {
+      "front": "What is the typical age range for the onset of NSSI behavior?",
+      "back": "Early to mid-teen years (DSM p.925)."
+    },
+    {
+      "front": "How does the gender ratio for NSSI differ between community and clinical samples?",
+      "back": "It is modestly higher in girls/women overall, but this gender difference is significantly more pronounced in clinical samples (DSM p.925)."
+    },
+    {
+      "front": "NSSI is predominantly maintained by which type of reinforcement mechanism?",
+      "back": "Negative reinforcement, specifically the rapid reduction of negative emotions or aversive emotional arousal (DSM p.925)."
+    },
+    {
+      "front": "According to StahlNeuro, what neuroplastic shift occurs as repetitive NSSI transitions from an impulse to a compulsive habit?",
+      "back": "A migration of neural engagement from the ventral striatum loop (reward/relief) to the dorsal striatum habit system (StahlNeuro p.539, 571)."
+    },
+    {
+      "front": "Which endogenous system is activated by painful injury in NSSI, potentially mediating the experience of sudden calm or dissociation?",
+      "back": "The endogenous opioid system, which releases endorphins in response to physical pain (Dulcan p.525)."
+    },
+    {
+      "front": "Which psychotherapy is considered the most established and well-validated for reducing NSSI and suicidal behavior in adolescents?",
+      "back": "Dialectical Behavior Therapy for Adolescents (DBT-A) (Dulcan p.558, 609)."
+    },
+    {
+      "front": "What was the primary finding of the McCauley et al. (2018) RCT regarding DBT-A for high-risk adolescents?",
+      "back": "DBT-A showed significant advantages over supportive therapy in reducing suicide attempts, NSSI, and improving treatment adherence (Dulcan p.558)."
+    },
+    {
+      "front": "What is the primary clinical factor used to differentiate NSSI from a Suicide Attempt?",
+      "back": "The stated goal or intent: a wish to die (suicide attempt) versus a wish to experience emotional relief or self-punishment (NSSI) (DSM p.926; Dulcan p.551)."
+    },
+    {
+      "front": "Why is 'medical lethality' an unreliable indicator of suicidal intent in children and younger adolescents?",
+      "back": "Younger patients often lack accurate knowledge about the lethality of means, leading to both overestimation and underestimation of fatal risk (Dulcan p.553, 607)."
+    },
+    {
+      "front": "How does the motivation for self-injury in Autism Spectrum Disorder (ASD) typically differ from NSSI Disorder?",
+      "back": "In ASD, behavior is often due to sensory overload, changes in routine, or motor stereotypies rather than affect regulation or interpersonal influence (DSM p.60, 926)."
+    },
+    {
+      "front": "What distinguishes the self-injury seen in Lesch-Nyhan Syndrome from NSSI Disorder?",
+      "back": "Lesch-Nyhan involves severe, compulsive self-mutilation (e.g., biting lips/fingers) associated with a genetic HGPRT deficiency and intellectual disability (DSM p.91, 926)."
+    },
+    {
+      "front": "How do self-injurious behaviors in Tic Disorders/Tourette Syndrome differ phenomenologically from NSSI?",
+      "back": "They are typically preceded by a premonitory urge or a 'Not Just Right' sensation rather than negative emotional states like sadness or anger (Dulcan p.249)."
+    },
+    {
+      "front": "True or False: A diagnosis of Borderline Personality Disorder (BPD) is required to diagnose NSSI Disorder.",
+      "back": "False; although often comorbid, many individuals with NSSI Disorder do not meet the full personality pattern for BPD (DSM p.925)."
+    },
+    {
+      "front": "What specific sexual minority group has been found to be at substantially higher risk for NSSI?",
+      "back": "Individuals who identify as bisexual (DSM p.925)."
+    },
+    {
+      "front": "The SAFETY model for adolescents with recent self-harm is primarily a _____ treatment approach.",
+      "back": "Family-based treatment that incorporates both CBT and DBT components (Dulcan p.559)."
+    },
+    {
+      "front": "According to Criterion D, which socially sanctioned behaviors are excluded from an NSSI diagnosis?",
+      "back": "Body piercing, tattooing, and religious or cultural rituals (DSM p.924)."
+    },
+    {
+      "front": "What clinical instrument is widely used to assess the severity of suicidal ideation and the lethality of past behaviors during triage?",
+      "back": "The Columbia-Suicide Severity Rating Scale ($C-SSRS$) (Dulcan p.556, 607)."
+    },
+    {
+      "front": "How does the DSM-5-TR define the expected physical harm in Criterion A for NSSI?",
+      "back": "The individual expects the injury to lead to only 'minor or moderate' physical harm (DSM p.923)."
+    }
+  ]
+}

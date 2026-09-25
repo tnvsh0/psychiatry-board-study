@@ -1,0 +1,98 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Criterion A - תדירות ונזק פיזי",
+        "items": [
+          "פגיעה מכוונת ושנגרמה על ידי האדם עצמו למעטפת הגוף (DSM p.923)",
+          "ציפייה לנזק פיזי קל-בינוני בלבד (DSM p.923)",
+          "היעדר מוחלט של כוונת אובדנות (no suicidal intent) (DSM p.923)"
+        ]
+      },
+      {
+        "name": "Criterion B - ציפייה תפקודית/מטרות",
+        "items": [
+          "הקלה מרגש או מצב קוגניטיבי שלילי (DSM p.923)",
+          "פתרון קושי בין-אישי (DSM p.923)",
+          "השראת מצב רוח חיובי (DSM p.923)"
+        ]
+      },
+      {
+        "name": "Criterion C - תופעות קוגניטיביות/רגשיות",
+        "items": [
+          "קשיים בין-אישיים או מצוקה שמתרחשים טרם המעשה (DSM p.923-924)",
+          "עיסוק מחשבתי (preoccupation) שקשה לשלוט בו (DSM p.923-924)",
+          "מחשבות תכופות על פגיעה עצמית (DSM p.923-924)"
+        ]
+      }
+    ],
+    "thresholds": "ב-5 ימים או יותר במהלך 12 החודשים האחרונים (DSM p.923)",
+    "subtypes": [
+      "Current Nonsuicidal Self-Injury (R45.88) (DSM p.822)",
+      "History of Nonsuicidal Self-Injury (Z91.52) (DSM p.822)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "שכיחות גבוהה בגיל ההתבגרות (DSM p.925)",
+    "sex_ratio": "שכיחות גבוהה יותר בנשים/נערות, במיוחד במדגמים קליניים (DSM p.925)",
+    "onset_age_typical": "גילאי 12-15 (early to mid-teen years), שיא בהתבגרות מאוחרת (DSM p.925)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Borderline Personality Disorder (DSM p.925)",
+      "Depressive disorders, Anxiety, PTSD (Dulcan p.551)"
+    ],
+    "prognosis": "ירידה הדרגתית בבגרות; פריצה מוקדמת מנבאת סיכון אובדני מוגבר (DSM p.925-926)"
+  },
+  "etiology": {
+    "genetic": "לא צוין",
+    "neurobiology": "שחרור אופיואידים אנדוגניים להקלת מצוקה (Dulcan p.525); shift מסטריאטום וונטרלי (VMPFC) לדורסלי (OFC) מהרגל אימפולסיבי לקומפולסיבי (StahlNeuro p.538-539, p.571)",
+    "environmental": "התעללות רגשית/מינית בילדות (Dulcan p.525-526), מודלינג חברתי (DSM p.925), לחץ מיעוטי ב-LGBTQ+ (Dulcan p.607)"
+  },
+  "treatment": {
+    "first_line": [
+      "DBT-A - תרפיה דיאלקטית-התנהגותית לנוער (Dulcan p.558, p.609)",
+      "CBT - טיפול קוגניטיבי-התנהגותי (Slee et al., SAFETY) (Dulcan p.558-559)",
+      "MBT-A - טיפול מבוסס מנטליזציה (Dulcan p.559)"
+    ],
+    "second_line": [
+      "Naltrexone (0.5-2.0 mg/kg/day) ב-SIBs קשה במופרעי התפתחות/אוטיזם (Dulcan p.50)",
+      "טיפול תרופתי בתחלואה נלווית בלבד (Dulcan p.258)"
+    ],
+    "key_side_effects": [
+      "אזהרת קופסה שחורה ב-SSRIs בילדים/נוער - מחשבות אובדניות/אגיטציה (StahlKids p.vi, p.382)"
+    ],
+    "monitoring": "ניטור קליני שבועי בתחילת טיפול ב-SSRIs (StahlKids p.382); תכנית בטיחות (Safety Plan) להגבלת אמצעים (Dulcan p.557)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Columbia-Suicide Severity Rating Scale (C-SSRS) להפרדה בין אובדנות ל-NSSI (Dulcan p.555, p.607)",
+      "Columbia Classification Algorithm for Suicide Assessment (C-CASA) (Dulcan p.551)",
+      "תכנית בטיחות (Safety Plan) - 6 שלבים מובנים להפחתת סיכון (Dulcan p.557)"
+    ],
+    "key_numbers": [
+      "6 שלבים בתכנית בטיחות (Dulcan p.557)",
+      "1-2 שנים - פרק הזמן שבו NSSI מקדים ניסיונות אובדניים (DSM p.925-926)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Stereotypic Movement Disorder - תנועות חזרתיות כפויות מוקדמות (DSM p.91, p.926)",
+      "Lesch-Nyhan Syndrome - הרס עצמי כפייתי עקב חוסר ב-HGPRT (DSM p.91, p.926)",
+      "Trichotillomania - תלישת שיער בלבד (DSM p.281, p.926)",
+      "Excoriation Disorder - חיטוט בעור (DSM p.285, p.926)",
+      "Autism Spectrum Disorder - פגיעה עקב הצפה חושית/סטריאוטיפיות (DSM p.60, p.926)"
+    ],
+    "key_numbers": [
+      "11 תסמינים ב-SUD (Dulcan p.222)",
+      "1 תסמונת גנטית מטבולית ייחודית (Lesch-Nyhan) (DSM p.91)"
+    ]
+  },
+  "high_yield": [
+    "קריטריון תדירות A: לפחות 5 ימים בשנה האחרונה עם ציפייה לנזק קל-בינוני בלבד ללא כוונת מוות (DSM p.923).",
+    "קודי ICD-10-CM ב-Section II: R45.88 ל-NSSI נוכחי, Z91.52 להסטוריה של NSSI (DSM p.822).",
+    "NSSI מקדים ניסיונות אובדניים ב-1-2 שנים מהווה אחד המנבאים החזקים ביותר לאובדנות בעתיד (DSM p.925-926, Dulcan p.553).",
+    "DBT-A הוא הטיפול הפסיכותרפויטי המבוסס ביותר להפחתת NSSI ונסיונות אובדניים בבני נוער (Dulcan p.558, p.609).",
+    "מעבר מסלולי סטריאטום מוונטרלי (VMPFC) לדורסלי (OFC) הופך מעשה אימפולסיבי להרגל קומפולסיבי (StahlNeuro p.538-539, p.571).",
+    "אין תרופה מאושרת FDA ל-NSSI; טיפול תרופתי מיועד לתחלואה נלווית בלבד (StahlKids p.vi, Dulcan p.258)."
+  ]
+}
