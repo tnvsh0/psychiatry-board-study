@@ -1,0 +1,64 @@
+{
+ "tag": "study-015-mood-affect-and-temperament-clinical-assessment",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:13:41+00:00",
+ "updated_at": "2026-09-25T13:13:41+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "c96574c0ada39e28fc7237c8285fe7bcaa0ca2f67cad92df0bf2aadf58b1f1e8",
+   "asset_id": 530620597,
+   "size": 4866,
+   "fetched_at": "2026-09-25T13:13:27+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "854fc39ff5f4b463d901b601cc10f16657ba1dfe352808276547086442039103",
+   "asset_id": 530620551,
+   "size": 16305,
+   "fetched_at": "2026-09-25T13:13:29+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "9c038ac9f064ca44803ab02c1510f0b620a99c6759ffbfb03b592a27edd4435b",
+   "asset_id": 530620576,
+   "size": 8376,
+   "fetched_at": "2026-09-25T13:13:31+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "8443f02c89fed7dec43f9a6e1c4112908c82c68e6258f3998b15539397f61cc8",
+   "asset_id": 530620575,
+   "size": 18678,
+   "fetched_at": "2026-09-25T13:13:33+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "c7bd45e21ed4fb85694a7a92189c2f2482e9b75e25e3e6df9022b62992cd145e",
+   "asset_id": 530620554,
+   "size": 37499,
+   "fetched_at": "2026-09-25T13:13:35+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "4b44838f1a33e562e2360cc1fb352362b490742c3a458e77ac094c05e29b97a4",
+   "asset_id": 530620555,
+   "size": 4919,
+   "fetched_at": "2026-09-25T13:13:37+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "7ba2acb06145477e8cea74792d7544dab5ed55411100d6267b2529980da608e6",
+   "asset_id": 530620552,
+   "size": 13844,
+   "fetched_at": "2026-09-25T13:13:39+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "d3f5f5a38af15d1c2975b11d47f94f7a336711c20cce6b9dc0e46c3480e945a5",
+   "asset_id": 530620578,
+   "size": 43715,
+   "fetched_at": "2026-09-25T13:13:41+00:00"
+  }
+ ]
+}

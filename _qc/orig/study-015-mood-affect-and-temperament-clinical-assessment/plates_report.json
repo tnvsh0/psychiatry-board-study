@@ -1,0 +1,220 @@
+[
+ {
+  "day": 15,
+  "plate": "main",
+  "facts": 22,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e17: cue trimmed to \"enamel notice 'READINGS ON THE HOUR'\"",
+   "e4: hook over 32 words (41): 'כמו שסימני הפין על מפת מזג האוויר מצביעים על 13 אזורים נפרדים, בעוד שקווים רציפים (איזובארים) מתארים מצב כרוני לעומת אירועים נקודתיים, כך 13 דומיינים פסיכיאטריים מוערכים בשאלון Level 1 למבוגרים וההבחנה בין רגזנות כרונית (DMDD) למאניה אפיזודית דורשת הערכה ממושכת.'",
+   "e7: hook over 32 words (40): 'כמו שיומן תצפית מזג אוויר ולוח תחזית מגנטי עם סמלים עוזרים לעקוב אחר תנודות מזג האוויר בראייה ארוכת טווח, כך מומלץ להשתמש ביומן מצב רוח ובציר זמן מבוסס עוגנים משמעותיים בחיי הילד כדי לשפר את הדיוק האנמנסטי בהערכת מהלך המחלה.'",
+   "e8: hook over 32 words (35): 'בדיוק כפי ששלושה מטאורולוגים שונים קוראים נתונים באופן עצמאי ומצליבים מידע, כך הערכה פסיכיאטרית של ילדים דורשת הצלבת מידע קפדנית המשלבת את דיווח הילד, תצפית הקלינאי ודיווח של מבוגר נוסף, ומצריכה לפחות 3 מקורות מידע.'",
+   "e9: hook over 32 words (35): 'בדיוק כפי שטכנאי בודק את יציבות תורן מד הרוח, את תפקוד כבליי העוגן (גיא וירס) והתנועה החופשית של שק הרוח, כך הבדיקה הנוירולוגית דורשת הערכה של עצבים קרניאליים, רפלקסים, תחושה, תפקוד מוטורי, צרבלום וסימנים רכים.'",
+   "e10: hook over 32 words (36): \"כמו שדף יומן התצפית מורכב מ-25 שורות לרישום נתונים שונים וכולל כלי 'DSM CFI' מובנה, כך 25 שאלות מרכיבות את שאלון Level 1 המיועד להורים, והערכת השפעת התרבות על האבחנה נעשית באמצעות כלים מובנים של ה-DSM.\"",
+   "e11: hook over 32 words (43): \"בדיוק כמו שמד הלחץ מציג מצבי מזג אוויר זמניים כמו 'STORMY' או 'FAIR' לצד '10' מדדי סילבוס, ואילו בסיס הבטון נשאר קבוע, כך הבדיקה הפסיכיאטרית מעניקה תמונת מצב חתכית (States) בהשוואה לתכונות אישיות קבועות (Traits), והסילבוס דורש 10 הדרכות הורים ו-6 טיפולי CBT.\"",
+   "e16: hook over 32 words (35): \"בדיוק כמו צפירת האזעקה שמסמנת התפרצות חריפה ובלתי נשלטת של רעש בתגובה לאירוע חירום, כך תסמונת המצוקה הלטינית 'Ataque de nervios' מאופיינת בהתפרצות חריפה של בכי בלתי נשלט, צעקות ורעידות המופיעים בתגובה ישירה לאירוע דחק.\"",
+   "e17: hook over 32 words (41): \"בדיוק כמו שלט האזהרה המורה על 'RED ALERT: >0' לצד ההודעה 'READINGS ON THE HOUR' ומציין צורך בטיפול מיידי בנתונים חריגים, כך שאלוני סינון Level 1 ב-DSM דורשים המשך בירור מיידי בכל דירוג מעל 0 בדומיינים של אובדנות, פסיכוזה ושימוש בחומרים.\""
+  ],
+  "digit_strings_dropped": [
+   "RED ALERT: >0"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "2.2",
+     "2.3",
+     "2.4",
+     "2.5",
+     "2.6",
+     "2.7",
+     "2.8",
+     "2.9",
+     "3.0",
+     "3.1",
+     "3.2",
+     "3.3"
+    ],
+    "blank_plates_found": 1,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": false,
+      "height_frac": 0.0736,
+      "reject": "too_small_in_frame"
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": false,
+      "height_frac": 0.0827,
+      "reject": "too_small_in_frame"
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.2363,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "12yr",
+    "10"
+   ],
+   "score": 2,
+   "verified": true,
+   "stray_warning": [
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "3.0",
+    "3.1",
+    "3.2",
+    "3.3"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A municipal weather field office at the hourly observation round: a mown instrument enclosure behind a low picket fence, a white louvered screen on legs, a brick hut with the door propped open, bright flat noon light.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is taking the observation round — reading instruments, calling figures across, writing on clipboard log sheets, changing the recorder drum, walking the balloon out.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nthe white louvered Stevenson screen on its splayed legs with the anemometer mast and its guy-wires slicing the frame from lower-left to upper-right.\n\nZONES, and what belongs in each: Stevenson Screen Interior · Open Field Instruments · Weather Hut Operations · Hut Exterior & Roof\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. barograph with an ink pen writing on a week-long rotating drum — in the Stevenson Screen Interior, right beside max/min thermometer in its wooden case\n  2. max/min thermometer in its wooden case — in the Stevenson Screen Interior, right beside barograph with an ink pen writing on a week-long rotating drum\n  3. a person observing readings, writing on clipboard log sheets — in the Open Field Instruments\n  4. wall map with isobars and pin flags over other regions — in the Weather Hut Operations\n  5. mercury thermometer rack in a glazed case — in the Weather Hut Operations\n  6. an adult accompanying a younger person to the observation round — in the Open Field Instruments\n  7. clipboard observation log sheets and magnetic forecast board with sun, cloud and rain symbols — in the Weather Hut Operations\n  8. three meteorologists calling figures across — in the Open Field Instruments\n  9. a person checking the anemometer mast with guy-wires and a wind sock — in the Open Field Instruments\n  10. clipboard observation log sheets — in the Weather Hut Operations\n  11. aneroid barometer faceplate lettered Stormy · Change · Fair and tipping-bucket rain gauge on a concrete plinth — in the Open Field Instruments\n  12. low picket fence — in the Open Field Instruments\n  13. spare chart-recorder rolls in an open box — in the Weather Hut Operations\n  14. coffee urn and lockers in the hut doorway — in the Weather Hut Operations\n  15. magnetic forecast board with sun, cloud and rain symbols — in the Weather Hut Operations\n  16. hand-cranked siren bolted to the hut roof — in the Hut Exterior & Roof\n  17. enamel notice Readings ON The Hour — in the Weather Hut Operations\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  (none)\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on spare chart-recorder rolls\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on aneroid barometer faceplate lettered\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on max/min thermometer\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A municipal weather field office at the hourly observation round: a mown instrument enclosure behind a low picket fence, a white louvered screen on legs, a brick hut with the door propped open, bright flat noon light.; everyone is Everyone is taking the observation round — reading instruments, calling figures across, writing on clipboard log sheets,; the largest thing in\nframe is the white louvered Stevenson screen on its splayed legs with the anemometer mast and its guy-wires slicing the frame fro; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"DSM CFI\"\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - NO, the man in the green jacket and blue cap, standing next to the boy near the weather station, is larger.\nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it."
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "YRS",
+     "paint": "12yr",
+     "tag": "YRS",
+     "chroma_pixels": 10844,
+     "blob_pixels": 10634,
+     "fill_ratio": 0.991,
+     "height_frac": 0.0736,
+     "width_frac": 0.0476,
+     "quad": [
+      [
+       2143,
+       1263
+      ],
+      [
+       2269,
+       1279
+      ],
+      [
+       2272,
+       1375
+      ],
+      [
+       2143,
+       1336
+      ]
+     ],
+     "bbox": [
+      2143,
+      1263,
+      129,
+      112
+     ],
+     "height_pct": 7.29,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "10",
+     "tag": "N",
+     "chroma_pixels": 8789,
+     "blob_pixels": 8725,
+     "fill_ratio": 1.076,
+     "height_frac": 0.0827,
+     "width_frac": 0.0309,
+     "quad": [
+      [
+       868,
+       508
+      ],
+      [
+       952,
+       480
+      ],
+      [
+       952,
+       575
+      ],
+      [
+       868,
+       606
+      ]
+     ],
+     "bbox": [
+      868,
+      480,
+      84,
+      126
+     ],
+     "height_pct": 8.2,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "15%",
+     "tag": "PCT",
+     "chroma_pixels": 57967,
+     "blob_pixels": 56209,
+     "fill_ratio": 1.038,
+     "height_frac": 0.2363,
+     "width_frac": 0.0683,
+     "quad": [
+      [
+       745,
+       1036
+      ],
+      [
+       932,
+       974
+      ],
+      [
+       931,
+       1255
+      ],
+      [
+       745,
+       1336
+      ]
+     ],
+     "bbox": [
+      745,
+      974,
+      187,
+      362
+     ],
+     "height_pct": 23.57,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 3545,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 1021
+ }
+]
