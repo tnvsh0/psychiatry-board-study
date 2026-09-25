@@ -1,0 +1,224 @@
+[
+ {
+  "day": 5,
+  "plate": "main",
+  "facts": 32,
+  "tries": 2,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e2: dropped an unmappable relation 'stops the action of'",
+   "e3: dropped an unmappable relation 'breaks down'",
+   "e5: dropped an unmappable relation 'are involved in'",
+   "e6: dropped an unmappable relation 'is produced by'",
+   "e12: dropped an unmappable relation 'reduces'",
+   "e16: dropped an unmappable relation 'increases'",
+   "e2: cue trimmed to \"Postal carrier in 'SERT' uniform collecting serotonin packages\"",
+   "e4: cue trimmed to 'Hanging scales'",
+   "e6: cue trimmed to 'Raphe nuclei Persian-rug weaving workshop along the brainstem seam'",
+   "e7: cue trimmed to \"Bus-stop '1A'\"",
+   "e8: cue trimmed to 'Lock-up stall'",
+   "e9: cue trimmed to 'Children struggling'",
+   "e10: cue trimmed to 'Three iron channels gushing green vomit-water'",
+   "e11: cue trimmed to 'Three market managers regulating the stalls: 1A bus stop'",
+   "e12: cue trimmed to 'Person petting anxious rabbit at 5HT1A bus stop'",
+   "e13: cue trimmed to '5HT2A Tarot reader directly energizing Glutamate customer'",
+   "e14: cue trimmed to '7-Eleven store operating continuously'",
+   "e15: cue trimmed to 'SSRI barrier blocking SERT postal carrier'",
+   "e16: cue trimmed to 'Bustling 5HT2B stall'",
+   "e17: cue trimmed to 'SARI guard blocking 5HT2A Tarot table and 5HT2C cookie'",
+   "e18: cue trimmed to 'Mirtazapine/Vortioxetine blocking 5HT3 vomit channels'",
+   "e19: cue trimmed to 'Vortioxetine orchestrating SERT blockade'",
+   "e20: cue trimmed to \"Mirtazapine cutting 'Alpha-2' brake cable\"",
+   "e21: cue trimmed to 'SPARI barrier blocking 50% of SERT postal carrier'",
+   "e22: cue trimmed to 'Second-hand book stall'",
+   "e23: cue trimmed to 'Stressed person at Raphe nuclei'",
+   "e24: cue trimmed to 'Curtained booth'",
+   "e25: cue trimmed to 'Lock-up stall with'",
+   "e2: hook over 32 words (39): \"בדיוק כמו שדוור ה-'SERT' אוסף חבילות סרוטונין מהמעבר כדי לסיים את מסירתן ועל מדיו 12 פסים המייצגים אזורי מעבר, כך נשא הסרוטונין SERT שואב חזרה את הסרוטונין ומפסיק את פעולתו במרווח הסינפטי, והוא מורכב מ-12 אזורי מעבר בקרום התא.\"",
+   "e8: hook over 32 words (33): \"כמו שדוכן נעול המסומן '1B/D' ניצב בסוף המעבר ומשמש כנקודה סופית המעכבת כניסת סחורות אחרות, כך קולטני 5HT1B/D משמשים כאוטורספטורים טרמינליים הממוקמים על קצה האקסון ומעכבים שחרור של דופמין, נוראפינפרין, היסטמין ואצטילכולין בקורטקס.\"",
+   "e12: hook over 32 words (34): 'כמו שליטוף עדין של הארנב החרד בתחנת האוטובוס 5HT1A מרגיע אותו וגורם לו להפחית את פעימות הלב המהירות, כך גירוי של קולטני 5HT1A סומטודנדריטיים מעכב את קצב הירי של הנוירון ומפחית שחרור סרוטונין מהאקסון.'",
+   "e13: hook over 32 words (46): 'כמו שקוראת הטארוט של 5HT2A מעוררת ישירות לקוח גלוטמט אך יכולה להשפיע עליו בעקיפין דרך לקוח GABA, ומווסתת שלושה מסלולי דופמין שונים, כך קולטני 5HT2A מעוררים שחרור גלוטמט באופן ישיר אך יכולים לעכבו באופן עקיף דרך אינטרנוירונים של GABA ומשפיעים על ויסות דופמין ב-3 מסלולים נפרדים.'",
+   "e14: hook over 32 words (36): \"כמו שחנות ה-'7-Eleven' פתוחה באופן רציף ומסמלת מחזור יממה בלתי פוסק, כך מחזור יממה של 24 שעות מבוקר בין היתר על ידי קולטני 5HT7 וסרוטונין, והקולטנים הללו משמשים מטרה לחסימה לשיפור תפקוד קוגניטיבי, שינה ומצב רוח.\"",
+   "e16: hook over 32 words (51): 'כמו שגירוי בדוכן 5HT2B הומה גורם לקונים להתלהב ולהגביר את קצב מסירת חבילות הסרוטונין, ובכך תורם לפעילות דמוית vilazodone, כך גירוי של קולטני 5HT2B סומטודנדריטיים מגביר את קצב הירי של הנוירון הסרוטונרגי ושחרור הסרוטונין, ושילוב של חסימת SERT עם אגוניזם חלקי לקולטני 5HT1A מגביר את שחרור הסרוטונין ומפחית פגיעה בתפקוד המיני.'",
+   "e17: hook over 32 words (34): 'כמו ששומר SARI חוסם את שולחן הטארוט של 5HT2A ואת צנצנת העוגיות של 5HT2C ובכך מונע תופעות לוואי, כך חסימת קולטני 5HT2A ו-5HT2C מונעת תופעות לוואי של SSRI כגון חרדה, נדודי שינה ופגיעה מינית.'",
+   "e20: hook over 32 words (33): \"כמו ש-Mirtazapine חותך את כבל הבלם המסומן 'אלפא-2' ובכך מגביר את זרימת הסרוטונין והנוראפינפרין, כך תרופה זו מגבירה שחרור סרוטונין ונוראפינפרין באמצעות אנטגוניזם לקולטני אלפא-2 פרסנפטיים, 'חותכת את כבל הבלם' של הבקרה העצמית.\"",
+   "e22: hook over 32 words (46): \"כמו שדוכן ספרי יד שנייה מציג שני מדורים מובהקים לספרי Stahl, האחד ל'נוירו' והשני ל'ילדים', עם שלט '24h' ודוחות מחקר כושלים, כך ספרי ה-Stahl מראים הבדלים פיזיולוגיים חשובים בין מנגנונים נוירוביולוגיים למינונים לילדים, ו-2 מחקרים של סרטרלין בילדים לא הראו יעילות מספקת לקבלת התוויה של ה-FDA.\"",
+   "e23: hook over 32 words (41): 'כמו שאדם לחוץ בגרעיני הראפה גורם לצמחי דנדריטים לנבול ולשלט BDNF ליפול, ורק טיפול תרופתי יכול להחזיר להם חיים, כך רמת הסרוטונין והקולטנים שלו מעורבים בפתופיזיולוגיה של דיכאון, כאשר לחץ גורם לירידה ב-BDNF המביאה לאטרופיה של דנדריטים סרוטונרגיים, הניתנת לשיקום תרופתי.'",
+   "e25: hook over 32 words (33): \"כמו שדוכן נעול מפעיל טיימר של 15 דקות מרגע קבלת אות מיוחד להפעלת 'Immediate Early Genes', כך תוך 15 דקות מרגע הגעת אות עצבי מתרחשת הפעלת גנים מוקדמים מיידיים כמו cFos בהשפעת סרוטונין.\""
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "£.95",
+     "£.74",
+     "£36",
+     "£890"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1497,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1647,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.3275,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "£.95",
+    "£.74",
+    "£36",
+    "£890"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "N",
+     "paint": "12",
+     "tag": "N",
+     "chroma_pixels": 51485,
+     "blob_pixels": 51463,
+     "fill_ratio": 0.969,
+     "height_frac": 0.1497,
+     "width_frac": 0.0999,
+     "quad": [
+      [
+       612,
+       848
+      ],
+      [
+       884,
+       848
+      ],
+      [
+       885,
+       1061
+      ],
+      [
+       652,
+       1056
+      ]
+     ],
+     "bbox": [
+      612,
+      848,
+      273,
+      213
+     ],
+     "height_pct": 13.87,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MIN",
+     "paint": "15min",
+     "tag": "MIN",
+     "chroma_pixels": 72624,
+     "blob_pixels": 72610,
+     "fill_ratio": 1.009,
+     "height_frac": 0.1647,
+     "width_frac": 0.1043,
+     "quad": [
+      [
+       1742,
+       421
+      ],
+      [
+       2028,
+       421
+      ],
+      [
+       2028,
+       672
+      ],
+      [
+       1742,
+       673
+      ]
+     ],
+     "bbox": [
+      1742,
+      421,
+      286,
+      252
+     ],
+     "height_pct": 16.41,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "HRS",
+     "paint": "24h",
+     "tag": "HRS",
+     "chroma_pixels": 119243,
+     "blob_pixels": 118080,
+     "fill_ratio": 1.065,
+     "height_frac": 0.3275,
+     "width_frac": 0.1126,
+     "quad": [
+      [
+       2286,
+       809
+      ],
+      [
+       2594,
+       913
+      ],
+      [
+       2595,
+       1311
+      ],
+      [
+       2286,
+       1130
+      ]
+     ],
+     "bbox": [
+      2286,
+      809,
+      309,
+      502
+     ],
+     "height_pct": 32.68,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 9983,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 1107
+ }
+]

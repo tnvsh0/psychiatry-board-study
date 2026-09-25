@@ -1,0 +1,64 @@
+{
+ "tag": "study-005-serotonin-system",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T12:50:19+00:00",
+ "updated_at": "2026-09-25T12:50:19+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b9a738427cef4f2d3babfad47ab11206bc8c7a2f0417685015dc7d48479292ea",
+   "asset_id": 526373593,
+   "size": 6742,
+   "fetched_at": "2026-09-25T12:50:05+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "8b9831dce0ae1d17a50ad6cb04d0f11660649aa63b4dcc8dd9586b94c955b764",
+   "asset_id": 526373540,
+   "size": 10374,
+   "fetched_at": "2026-09-25T12:50:07+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "530abb506cdd10dee9d0bb3a8a5ff7b4104895adda0cc9f86322670e4cb90a1d",
+   "asset_id": 526373560,
+   "size": 12086,
+   "fetched_at": "2026-09-25T12:50:09+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "778f1382f1105b06713a36b3fd91f621f159bb736fdf36286fe410e32bcf6f02",
+   "asset_id": 526373573,
+   "size": 9853,
+   "fetched_at": "2026-09-25T12:50:11+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "6c45e3101cdf8ba073c5782411dda452a6aaade0852341855ecc08026ecd132b",
+   "asset_id": 526373546,
+   "size": 32648,
+   "fetched_at": "2026-09-25T12:50:13+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "24a5e55fdd2e4161c3f08be03396df75bf5401dfec3a39b54a9a24275c365bd0",
+   "asset_id": 526373559,
+   "size": 7602,
+   "fetched_at": "2026-09-25T12:50:15+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "bfe97e7b8b749ebfcd35f34063b163dcde02f9f3215021ae4cbf5ed3df544810",
+   "asset_id": 526373547,
+   "size": 25420,
+   "fetched_at": "2026-09-25T12:50:17+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "4c7ee0436ee4d2fb2373f138d1520c13fc80433a3c819cea464b0d226fcee973",
+   "asset_id": 526373574,
+   "size": 42858,
+   "fetched_at": "2026-09-25T12:50:19+00:00"
+  }
+ ]
+}
