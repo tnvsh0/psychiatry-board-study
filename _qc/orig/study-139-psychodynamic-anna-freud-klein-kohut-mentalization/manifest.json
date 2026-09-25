@@ -1,0 +1,36 @@
+{
+ "tag": "study-139-psychodynamic-anna-freud-klein-kohut-mentalization",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:21:17+00:00",
+ "updated_at": "2026-09-25T17:21:17+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a01ad5880c38116d1161368847fecdce5be7496351e2f71dab05e5ef152cbd68",
+   "asset_id": 587998124,
+   "size": 8223,
+   "fetched_at": "2026-09-25T17:21:11+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "40a7730385537f177cded791ccaee75703a5874bde6f4514423cc42a25471dc6",
+   "asset_id": 587998112,
+   "size": 16623,
+   "fetched_at": "2026-09-25T17:21:13+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "c1ce6d78fbe8968547658b8a8b136f4d359557a050d5bc707b550df4a5deb1cb",
+   "asset_id": 587998111,
+   "size": 38320,
+   "fetched_at": "2026-09-25T17:21:15+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "6b17a2473926d5ed433b3498b53e8281b7a50dd51fd6dc9a113afdad7bde93e6",
+   "asset_id": 587998114,
+   "size": 77196,
+   "fetched_at": "2026-09-25T17:21:17+00:00"
+  }
+ ]
+}

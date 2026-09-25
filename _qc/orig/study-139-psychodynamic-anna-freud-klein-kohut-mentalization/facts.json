@@ -1,0 +1,87 @@
+{
+  "history_origin": {
+    "items": [
+      "Sigmund Freud proposed drive theory and topographic/structural models based on Little Hans case (1909) (Dulcan p.849-850, Synopsis ch.34.4)",
+      "Anna Freud published The Ego and the Mechanisms of Defense (1936) and founded Hampstead Clinic (1947) (Dulcan p.850, Synopsis ch.34.4)",
+      "Melanie Klein developed child play analysis and object relations theory in London (Synopsis ch.34.4, Syllabus p.50)",
+      "The Controversial Discussions (1940s) split British psychoanalysis between Anna Freud, Melanie Klein, and Middle Group (Syllabus p.50, p.52)",
+      "Donald Winnicott formulated good-enough mother, holding environment, and transitional object concepts (Dulcan p.851, Synopsis ch.34.4)",
+      "Heinz Kohut introduced Self Psychology in the 1970s in Chicago (Synopsis ch.34.4, Syllabus p.51)",
+      "Peter Fonagy and Anthony Bateman developed Mentalization-Based Treatment (MBT) at Anna Freud Centre in London (Dulcan p.848, p.851, Synopsis ch.23)"
+    ],
+    "key_numbers": [
+      "1909 - Little Hans case by Freud (Dulcan p.849)",
+      "1936 - Anna Freud's Ego and Mechanisms of Defense (Synopsis ch.34.4)",
+      "1940s - Controversial Discussions in London (Syllabus p.50)",
+      "1947 - Hampstead Clinic founded by Anna Freud (Synopsis ch.34.4)",
+      "1970s - Kohut introduced Self Psychology (Synopsis ch.34.4)"
+    ]
+  },
+  "core_principles": {
+    "items": [
+      "Sigmund Freud: Id, Ego, Superego, unconscious drives (libido and aggression), pleasure/reality principles (Synopsis ch.34.4)",
+      "Anna Freud: Ego defense mechanisms (displacement, reaction formation, identification with aggressor), developmental lines, metapsychological profile (Dulcan p.850, Syllabus p.50)",
+      "Melanie Klein: Unconscious phantasy, death instinct, Paranoid-Schizoid position (0-4 months), Depressive position (4-6+ months), Projective Identification (Synopsis ch.34.4, Syllabus p.50)",
+      "Donald Winnicott: Primary maternal preoccupation, good-enough mother, holding environment, potential space, transitional object, True vs. False self (Dulcan p.851, Synopsis ch.34.4)",
+      "Heinz Kohut: Self cohesion, selfobject (mirroring, idealizing, twinship transferences), transmuting internalization (Synopsis ch.34.4, Syllabus p.51)",
+      "Peter Fonagy: Mentalization, Reflective Functioning (RF), marked/attuned mirroring, epistemic trust, 3 pre-mentalizing modes (psychic equivalence, pretend mode, teleological mode) (Synopsis ch.23, Syllabus p.50)"
+    ],
+    "key_numbers": [
+      "0-4 months - Paranoid-Schizoid position age range (Synopsis ch.34.4)",
+      "4-6+ months - Depressive position age range (Synopsis ch.34.4)",
+      "3 pre-mentalizing modes - psychic equivalence, pretend mode, teleological mode (Synopsis ch.23)",
+      "3 selfobject transferences - mirror, idealizing, twinship/alter-ego (Synopsis ch.34.4)"
+    ]
+  },
+  "practice_method": {
+    "items": [
+      "Anna Freud: Real therapist stance, educational/supportive elements, defense interpretation, active parent involvement (Dulcan p.850)",
+      "Melanie Klein: Analytic play technique with small toys, direct deep interpretation of unconscious aggressive fantasies, no parents in room (Dulcan p.850, Synopsis ch.34.4)",
+      "Donald Winnicott: Squiggle Game, play in potential space, holding, allowing controlled regression (Dulcan p.851, p.865)",
+      "Heinz Kohut: Empathic immersion (vicarious introspection), validation, repairing selfobject ruptures (Synopsis ch.34.4)",
+      "Peter Fonagy (MBT): Not-knowing stance, Pause Rewind Explore technique, structuring sessional intervention trajectory (Synopsis ch.23)",
+      "Parent & Dyadic Assessment: Working Model of the Child Interview (WMCI), Insightfulness Assessment (IA), Crowell Procedure, Still-Face Paradigm (Dulcan p.29-30, p.40-47)"
+    ],
+    "key_numbers": [
+      "10-12 sessions - MBT-Introductory psychoeducational group format (Synopsis ch.23)",
+      "4 groups - IA narrative coding (positively insightful, one-sided, disengaged, mixed) (Dulcan p.30)"
+    ]
+  },
+  "evidence": {
+    "items": [
+      "Rossouw & Fonagy (2012) RCT: MBT-A reduced self-harm to 43% vs 68% in TAU after 12 months in adolescents with self-harm and depression (Dulcan p.971, Synopsis ch.23)",
+      "Eckshtain et al. (2020) meta-analysis: Psychodynamic psychotherapy and IPT showed significant long-term effect sizes for youth depression (Dulcan p.847, p.870, p.965)",
+      "Luby et al. (2018) RCT: Dyadic parent-child psychotherapy (PCIT-ED) significantly reduced preschool depression (Dulcan p.849, p.870)",
+      "Lieberman et al. (2005) RCT: Child-Parent Psychotherapy (CPP) improved attachment and PTSD in traumatized preschoolers (Dulcan p.870, p.963)",
+      "Bateman & Fonagy (2008, 2009): 8-year follow-up showed sustained MBT benefits for BPD (Synopsis ch.23)",
+      "Griffiths 2019 & Beck 2020: Group-only MBT-A showed mixed results, emphasizing need for individual + family components (Dulcan p.971)"
+    ],
+    "key_numbers": [
+      "43% vs 68% - Self-harm rates at 12 months in MBT-A vs TAU (Rossouw & Fonagy 2012) (Dulcan p.971)",
+      "12 months - Duration of MBT-A treatment in Rossouw & Fonagy trial (Dulcan p.971)",
+      "13 years - Follow-up period covered in Eckshtain et al. (2020) meta-analysis (Dulcan p.870)",
+      "8 years - Follow-up duration in Bateman & Fonagy BPD study (Synopsis ch.23)"
+    ]
+  },
+  "indications": {
+    "items": [
+      "Ego Psychology / Classic Analysis: Neurotic disorders, anxiety, OCD, conversion, developmental line delays; requires ego strength, frustration tolerance, and psychological mindedness (Synopsis ch.23, Dulcan p.850, p.853)",
+      "Object Relations (Klein / Kernberg / Winnicott): Borderline Personality Organization (BPO), severe aggression/persecutory anxiety, False Self pathology, early environmental failure (Synopsis ch.34.4, Dulcan p.851, p.862)",
+      "Self Psychology (Kohut): Narcissistic Personality Disorder (NPD), self-cohesion deficits, self-esteem dysregulation (Synopsis ch.34.4, DSM p.761-764)",
+      "MBT / MBT-A (Fonagy): Borderline Personality Disorder (BPD), repetitive Non-Suicidal Self-Injury (NSSI), suicidal behavior, complex trauma (DSM p.752-755, Dulcan p.851, p.971, Synopsis ch.23)",
+      "Pediatric Conditions: Mild to moderate depression, anxiety, PTSD/trauma, conduct/ODD problems, medical illnesses (Dulcan p.263, p.339, p.363, p.851, p.853)",
+      "Contraindications: Active psychosis, severe antisocial personality disorder, acute life crisis needing supportive intervention (Synopsis ch.23)"
+    ],
+    "key_numbers": [
+      "Age 8 - Minimum FDA age for Fluoxetine combined with psychotherapy in pediatric depression (StahlKids p.208, Dulcan p.263)",
+      "3 sources - Triangulation required for pediatric evaluation (child, parent, school) (StahlKids p.251)"
+    ]
+  },
+  "high_yield": [
+    "אנה פרויד טענה שאין נוירוזת העברה מלאה בילדים בגלל נוכחות ההורים המציאותיים, בעוד מלאני קליין טענה שהמשחק הוא העברה מלאה הדורשת פירוש ישיר (Dulcan p.850, Syllabus p.50)",
+    "קוהוט ראה בגרנדיוזיות נרקיסיסטית עצירה התפתחותית (Developmental Arrest) הדורשת אמפתיה, בעוד קרנברג ראה בה מבנה פתולוגי הגנתי הדורש עימות מוקדם (Synopsis ch.34.4)",
+    "שלושת המצבים הטרום-מנטליסטיים ב-MBT: שקילות נפשית (פנים=חוץ), מצב כאילו (נתק רגשי), ומצב טלאולוגי (רק מעשים פיזיים נחשבים) (Synopsis ch.23)",
+    "במחקר RCT של Rossouw & Fonagy (2012), MBT-A הפחית פציעה עצמית ל-43% לעומת 68% ב-TAU, כשהשיפור בתפקוד הרפלקטיבי (RF) תיווך את התוצאה (Dulcan p.971, Synopsis ch.23)",
+    "ציטוט שמות ספרי Stahl מחייב שימוש בשמות המדויקים StahlNeuro (עד עמ' 623) ו-StahlKids (עד עמ' 502) ולא ציטוט סתמי של Stahl"
+  ]
+}
