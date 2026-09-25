@@ -1,0 +1,130 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "תלונת שינה מרכזית",
+        "items": [
+          "קושי בהתחלת השינה (Difficulty initiating sleep) (DSM p.409)",
+          "קושי בשמירה על רצף השינה (Difficulty maintaining sleep) (DSM p.409)",
+          "יקיצת בוקר מוקדמת (Early-morning awakening) (DSM p.410)"
+        ]
+      }
+    ],
+    "thresholds": "תדירות: >=3 לילות בשבוע; משך: >=3 חודשים; למרות הזדמנות הולמת לשינה (DSM p.410)",
+    "subtypes": [
+      "Episodic (1-3 חודשים) (DSM p.411)",
+      "Persistent (>=3 חודשים) (DSM p.411)",
+      "Recurrent (>=2 אפיזודות בשנה) (DSM p.411)",
+      "With mental disorder (DSM p.410)",
+      "With medical condition (DSM p.410)",
+      "With another sleep disorder (DSM p.410)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "מבוגרים: ~40 מיליון כרוני, ~20 מיליון אפיזודי בארה\"ב (StahlNeuro p.418); ילדים: ~25% בעיית שינה (Dulcan p.473); מתבגרים: ~33% תסמינים (Dulcan p.474)",
+    "sex_ratio": "1.3:1 נשים:גברים במבוגרים, עולה ל-1.7:1 מעל גיל 45 (DSM p.413); פי 2 בנערות לעומת נערים (DSM p.413)",
+    "onset_age_typical": "בגרות צעירה שכיח ביותר, אך מופיע גם בילדות ובגיל ההתבגרות (DSM p.413)",
+    "heritability": "35%-70% תורשתיות / היסטוריה משפחתית (DSM p.413-414)",
+    "comorbidities": [
+      "MDD 70%-80% (DSM p.186, Dulcan p.491)",
+      "ASD 50%-80% (Dulcan p.474)",
+      "ID 30%-80% (Dulcan p.474)",
+      "ADHD 25%-50% (Dulcan p.491)",
+      "הפרעות נפשיות במבוגרים 40%-50% (DSM p.413)"
+    ],
+    "prognosis": "45%-75% כרוניות במעקב 1-7 שנים (DSM p.413); 40%-50% ממשיך כתסמין שאריתי לאחר רמיסיה מדיכאון (DSM p.413)"
+  },
+  "etiology": {
+    "genetic": "פולימורפיזמים בגני CLOCK, GABA-A, SERT, HLA (StahlNeuro p.419); 35%-70% קרוב דרגה ראשונה (DSM p.414)",
+    "neurobiology": "עוררות-יתר (Hyperarousal) ב-ARAS (Histamine TMN, Orexin LH, NE LC, 5HT Raphe, DA VTA) וכשל עיכוב GABA ב-VLPO (StahlNeuro p.402-412, 418); עוררות קורטיקלית ב-EEG תדרי Beta/Gamma (DSM p.415)",
+    "environmental": "מודל Spielman 3P: גורמים מטרמינים, מזמנים (סטרס/מחלה), ומנציחים (התניה שלילית למיטה, זמן מופרז במיטה) (DSM p.412-414); אור כחול מסכים מדכא מלטונין (Dulcan p.479, StahlNeuro p.404)"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT-I (טיפול קוגניטיבי-התנהגותי) - קו ראשון לכרוני (Dulcan p.478, StahlNeuro p.430, Syllabus p.26)",
+      "Melatonin (0.3-6 mg, עד 10 mg במתבגרים) - קו ראשון מועדף בילדים עם ASD/ADHD/DSPS (Dulcan p.482, StahlKids p.314)"
+    ],
+    "second_line": [
+      "Clonidine (0.025-0.3 mg) / Guanfacine (0.5-2.0 mg) - מועדף ב-ADHD עם סטימולנטים (Dulcan p.482, StahlKids p.142, 250)",
+      "Trazodone (25-100 mg) - Off-label בנדודי שינה עם דיכאון/חרדה (Dulcan p.482, StahlKids p.453)",
+      "DORAs (Suvorexant, Lemborexant) - אנטגוניסטים לאורקסין במבוגרים (StahlNeuro p.423)"
+    ],
+    "key_side_effects": [
+      "Clonidine: Rebound hypertension בהפסקה פתאומית, תת-לחץ דם, ברדיקרדיה (Dulcan p.482, StahlKids p.142)",
+      "Trazodone: Priapism, תת-לחץ דם אורתוסטטי (Dulcan p.482, StahlKids p.453)",
+      "Diphenhydramine: תופעות אנטיכולינרגיות, גירוי פרדוקסלי בילדים (Dulcan p.482)",
+      "Z-drugs: נכשלו במחקרים פדיאטריים עם ADHD, סיכון לאמנזיה וסבילות (Dulcan p.483)"
+    ],
+    "monitoring": "אין תרופות מאושרות FDA בילדים (Off-label בלבד) (Dulcan p.480, StahlKids p.311); ניטור דופק/ל\"ד באגוניסטים אלפא-2 (StahlKids p.142); מעקב יומן שינה ו-Sleep Efficiency (StahlNeuro p.430)"
+  },
+  "assessment_tools": {
+    "items": [
+      "יומן שינה (Sleep Log) פרוספקטיבי ל-2 שבועות לפחות (Dulcan p.476)",
+      "מנומוניק BEARS לסקירה פדיאטורית: Bedtime, Excessive sleepiness, Awakenings, Regularity, Snoring (Dulcan p.475)",
+      "שאלונים מתוקננים: CSHQ (גילאי 4-12), PSQ (גילאי 2-18), SDIS (גילאי 2-18) (Dulcan p.475-476)",
+      "אקטיגרפיה (Actigraphy) לניטור 7-14 ימים (Dulcan p.476)",
+      "פוליסומנוגרפיה (PSG) - אינה לרוטינה, מיועדת לשלילת OSA/PLMD בלבד (DSM p.411, Dulcan p.476, StahlNeuro p.418)"
+    ],
+    "key_numbers": [
+      "2 שבועות - משך יומן שינה מינימלי (Dulcan p.476)",
+      "7-14 ימים - משך ניטור אקטיגרפיה (Dulcan p.476)",
+      "8 דקות - סף חביון שינה ממוצע ב-MSLT לאבחון נרקולפסיה (Dulcan p.477)",
+      "85% - סף יעילות שינה תקינה (Sleep Efficiency) (StahlNeuro p.420)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Delayed Sleep Phase Syndrome (DSPS) - איחור פאזה ציקדיאני ב-2+ שעות (DSM p.444, Dulcan p.488)",
+      "Obstructive Sleep Apnea (OSA) - מתבטאת בילדים בהיפראקטיביות, קשיי קשב, והרטבת לילה (DSM p.432, Dulcan p.487)",
+      "Restless Legs Syndrome (RLS) - דחף להניע רגליים במנוחה/ערב, מקושר למחסור בברזל ו-ADHD (DSM p.464, Dulcan p.485)",
+      "נדודי שינה מושרים מסטימולנטים (Methylphenidate/Amphetamines) או SSRIs (StahlKids p.2, Dulcan p.312)"
+    ],
+    "key_numbers": [
+      "2+ שעות - איחור פאזה ב-DSPS (DSM p.444)",
+      "2%-8% - שכיחות DSPS במתבגרים (Dulcan p.488)",
+      "1+ אירועים/שעה - מדד AHI אבחנתי ל-OSA בילדים ב-PSG (DSM p.429, Dulcan p.487)",
+      "50 ng/mL - סף פריטין (Serum Ferritin) נמוך המקושר ל-RLS (Dulcan p.485)"
+    ]
+  },
+  "sleep_hygiene": {
+    "items": [
+      "שעת קימה קבועה (Fixed Rise Time) 7 ימים בשבוע כ-Zeitgeber מרכזי (Dulcan p.478, StahlNeuro p.430)",
+      "הרחקת מסכים ואור כחול (Blue light ~460nm) המדכא מלטונין מבלוטת האצטרובל דרך ה-SCN (Dulcan p.479, StahlNeuro p.404)",
+      "שגרת ערב קבועה (Positive Bedtime Routine) וחפץ מעבר (Dulcan p.478)",
+      "הימנעות מקפאין (אנטגוניסט לאדנוזין) בשעות אחה\"צ/ערב (Dulcan p.479, StahlNeuro p.440)",
+      "אי-ניטור שעונים בחדר השינה למניעת חרדה מותנית (DSM p.412, StahlNeuro p.430)"
+    ],
+    "key_numbers": [
+      "7 ימים בשבוע - סדירות שעת קימה קבועה (Dulcan p.478)",
+      "460 nm - אורך גל של אור כחול מסכים המדכא מלטונין (StahlNeuro p.404)",
+      "2-3 שעות - מרווח זמנים מומלץ בין אימון גופני מאומץ לשינה (Dulcan p.485)",
+      "5 שנים - גיל גמילה מתנומות יום (Dulcan p.479)"
+    ]
+  },
+  "CBT_I_components": {
+    "items": [
+      "בקרת גירויים (Stimulus Control) - קימה מהמיטה לאחר 15-20 דקות ערנות ושבירת התניה שלילית (StahlNeuro p.430)",
+      "הגבלת שינה (Sleep Restriction / SRT) - צמצום זמן במיטה (TIB) ל-TST ממוצע להעלאת אדנוזין ו-Sleep Efficiency (StahlNeuro p.430)",
+      "טכניקות הרפיה (Relaxation Training) - PMR, נשימות סרעפתיות, דמיון מודרך, MBSR (Dulcan p.478, 493)",
+      "שינוי קוגניטיבי (Cognitive Restructuring) - אתגור אמונות מעכבות שינה (DBAS) (Dulcan p.478)",
+      "הכחדה מדורגת (Graduated Extinction) והכחדה מלאה בילדים בגיל הרך (Dulcan p.478)"
+    ],
+    "key_numbers": [
+      "15-20 דקות - סף קימה מהמיטה בבקרת גירויים (StahlNeuro p.430)",
+      "5 שעות - חלון זמן במיטה (TIB) מינימלי לבטיחות ב-SRT (StahlNeuro p.430)",
+      "85%-90% - יעילות שינה (SE) הנדרשת להרחבת חלון השינה ב-SRT (StahlNeuro p.430)",
+      "80% - יעילות שינה שמתחתיה מקצרים חלון שינה ב-SRT (StahlNeuro p.430)"
+    ]
+  },
+  "high_yield": [
+    "DSM-5-TR ביטל הבחנה בין נדודי שינה ראשוניים למשניים (Lumping / Comorbid Insomnia) (DSM p.408, StahlNeuro p.420)",
+    "נדודי שינה מאובחנים לפי דיווח סובייקטיבי בלבד; PSG אינה מיועדת לאבחון רוטיני (DSM p.411, Dulcan p.476, StahlNeuro p.418)",
+    "CBT-I והתערבויות התנהגותיות הן קו ראשון ומועדף לנדודי שינה כרוניים (Dulcan p.478, StahlNeuro p.430, Syllabus p.26)",
+    "אין אף תרופת שינה מאושרת FDA לילדים ולמתבגרים (Off-label בלבד) (Dulcan p.480, StahlKids p.311)",
+    "Z-drugs (Zolpidem, Eszopiclone) נכשלו במחקרים מבוקרים בילדים עם ADHD (Dulcan p.483)",
+    "Clonidine ו-Guanfacine נפוצים ב-ADHD עם נדודי שינה; זהירות מ-Rebound hypertension בהפסקה פתאומית (Dulcan p.482, StahlKids p.142)",
+    "Obstructive Sleep Apnea (OSA) בילדים מתבטאת בהיפראקטיביות, קשיי קשב והרטבת לילה ולא בישנוניות קלאסית (DSM p.432, Dulcan p.487)",
+    "DSPS משפיע על 2%-8% מהמתבגרים; שינה תקינה כשמתאפשרת לפי השעון הפנימי (DSM p.444, Dulcan p.488)",
+    "שעת קימה קבועה (Fixed Rise Time) היא המכוון הציקדיאני (Zeitgeber) החזק ביותר של ה-SCN (Dulcan p.478, StahlNeuro p.408, 430)"
+  ]
+}

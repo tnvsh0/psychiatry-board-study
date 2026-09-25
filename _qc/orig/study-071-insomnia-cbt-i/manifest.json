@@ -1,0 +1,36 @@
+{
+ "tag": "study-071-insomnia-cbt-i",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:07:29+00:00",
+ "updated_at": "2026-09-25T15:07:29+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "808918246fcd428caeb530dd7abe9f41a3ac981046f5b0f63a8ff3ea4e39f0cb",
+   "asset_id": 571508098,
+   "size": 10317,
+   "fetched_at": "2026-09-25T15:07:23+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "20f2275aa17993a8dbaa22e92f745ee7e2800f6fc6631cfffad4071d5ba6d2f4",
+   "asset_id": 571508104,
+   "size": 12881,
+   "fetched_at": "2026-09-25T15:07:25+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "302cabaf89c96163cb352391b3aa0b0512b52b8b1f4088aae3c9ee3a28a655c9",
+   "asset_id": 571508101,
+   "size": 33758,
+   "fetched_at": "2026-09-25T15:07:27+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ed991b09b5fdd793f24dea13cf2fe77bb2c7088bbeed7b07912e0b9469e79c76",
+   "asset_id": 571508100,
+   "size": 41123,
+   "fetched_at": "2026-09-25T15:07:29+00:00"
+  }
+ ]
+}
