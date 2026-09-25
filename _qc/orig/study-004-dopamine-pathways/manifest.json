@@ -1,0 +1,64 @@
+{
+ "tag": "study-004-dopamine-pathways",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T12:48:34+00:00",
+ "updated_at": "2026-09-25T12:48:34+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "44866585c1a4a80f92456f469e5c4904782d8c6a70c184e37ffbfbe936e9179c",
+   "asset_id": 527323635,
+   "size": 7237,
+   "fetched_at": "2026-09-25T12:48:20+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "12ac3b5ef7ba4b2703cd0587fcb9469980238c5ce355aa640744c7bd34bea796",
+   "asset_id": 527323589,
+   "size": 11123,
+   "fetched_at": "2026-09-25T12:48:22+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "72ff1a63b127c99d6646767fd34a7827a3edb6fed25d9ef4a1611f587dd93230",
+   "asset_id": 527323614,
+   "size": 11470,
+   "fetched_at": "2026-09-25T12:48:24+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "a4af794affb0148b3410f39291623cf746a1b7c4ade57ba16bebe6e8c0d1e0b5",
+   "asset_id": 527323626,
+   "size": 12667,
+   "fetched_at": "2026-09-25T12:48:26+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "7a389cfdc97700c8b4796171591df8b765bc31283b123835928f124c5f2492dd",
+   "asset_id": 527323591,
+   "size": 34569,
+   "fetched_at": "2026-09-25T12:48:28+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "4d93c58aae06d621916b5320b6de02b566c31d8e50d072444a0339e7df057a80",
+   "asset_id": 527323612,
+   "size": 5464,
+   "fetched_at": "2026-09-25T12:48:30+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "89b68300b7721dea924c229c81ef836488761f7487330bf6a8c866cdd87b2032",
+   "asset_id": 527323587,
+   "size": 31818,
+   "fetched_at": "2026-09-25T12:48:32+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "aeae08c4ea91a192150cb0f9be161c7b35efdbbba374eaa37a6be795493a963a",
+   "asset_id": 527323627,
+   "size": 35788,
+   "fetched_at": "2026-09-25T12:48:34+00:00"
+  }
+ ]
+}
