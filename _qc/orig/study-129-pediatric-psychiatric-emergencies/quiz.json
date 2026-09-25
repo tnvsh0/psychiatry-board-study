@@ -1,0 +1,259 @@
+{
+  "title": "Pedopsychiatry Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "An 8-year-old child with Autism Spectrum Disorder (ASD) and a history of intellectual developmental disorder is brought to the Emergency Department (ED) for acute, severe aggression. The clinician considers pharmacological intervention for de-escalation. Which of the following best describes the risk associated with using Lorazepam in this specific patient population?",
+      "answerOptions": [
+        {
+          "text": "There is a significant risk of paradoxical excitation and disinhibition.",
+          "isCorrect": true,
+          "rationale": "In young children and individuals with developmental delays or ASD, benzodiazepines like Lorazepam are associated with a higher risk of paradoxical reactions, which can worsen agitation rather than calming it (Dulcan p. 612; StahlKids p. 325)."
+        },
+        {
+          "text": "The drug is contraindicated due to its immediate effect on QTc interval prolongation.",
+          "isCorrect": false,
+          "rationale": "Benzodiazepines generally do not cause significant QTc prolongation; this concern is more characteristic of certain antipsychotics like Haloperidol or Ziprasidone (Dulcan p. 612; StahlKids p. 255)."
+        },
+        {
+          "text": "The patient is likely to develop acute dystonia within minutes of administration.",
+          "isCorrect": false,
+          "rationale": "Acute dystonia is an extrapyramidal symptom (EPS) associated with dopamine $D_{2}$ receptor blockade in antipsychotics, not the $GABA_{A}$ agonism of benzodiazepines (StahlKids p. 255, 426)."
+        },
+        {
+          "text": "Rapid tolerance will likely lead to acute withdrawal symptoms within 24 hours.",
+          "isCorrect": false,
+          "rationale": "While tolerance can occur with long-term use, acute withdrawal after a single emergency dose is not a standard risk in the acute ED setting (Dulcan p. 612)."
+        }
+      ],
+      "hint": "Consider the unique neurodevelopmental profile of the patient and how sedative agents might affect behavioral control."
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "A clinician in the ED is managing a highly agitated adolescent and considers using intramuscular (IM) Olanzapine. According to safety protocols, IM Olanzapine must not be administered within one hour of parenteral benzodiazepines due to the risk of potentially fatal ___.",
+      "bestAnswer": "respiratory depression",
+      "acceptableAnswers": [
+        "cardiorespiratory depression",
+        "respiratory arrest"
+      ],
+      "rationale": "The combination of parenteral Olanzapine and benzodiazepines is strictly prohibited within a short timeframe because it significantly increases the risk of severe, life-threatening respiratory depression (Dulcan p. 612; StahlKids p. 351).",
+      "hint": "Focus on the physiological system most affected by the additive sedative effects of these two drug classes when given via injection."
+    },
+    {
+      "type": "multiple_select",
+      "question": "A 16-year-old female is evaluated for a suspected catatonic episode. According to the DSM-5-TR, which of the following psychomotor features must be present in a cluster of at least three to meet the diagnostic criteria for Catatonia?",
+      "answerOptions": [
+        {
+          "text": "Catalepsy (passive induction of a posture held against gravity).",
+          "isCorrect": true,
+          "rationale": "Catalepsy is one of the 12 core psychomotor features defined by DSM-5-TR for catatonia (DSM p. 135)."
+        },
+        {
+          "text": "Stereotypy (repetitive, abnormally frequent, non-goal-directed movements).",
+          "isCorrect": true,
+          "rationale": "Stereotypy is a recognized motor behavior that contributes to the diagnosis of catatonia (DSM p. 135)."
+        },
+        {
+          "text": "Mutism (no, or very little, verbal response).",
+          "isCorrect": true,
+          "rationale": "Mutism is a key indicator of decreased engagement during examination in catatonic patients (DSM p. 135)."
+        },
+        {
+          "text": "Tardive dyskinesia (involuntary movements of the face and tongue).",
+          "isCorrect": false,
+          "rationale": "Tardive dyskinesia is a late-onset side effect of long-term antipsychotic use, not a diagnostic feature of acute catatonia (DSM p. 135; StahlKids p. 255)."
+        }
+      ],
+      "hint": "Refer to the 12 psychomotor disturbances that define the clinical picture of catatonia.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "During the evaluation of a pediatric patient who has made a suicide attempt, a clinician observes that the child ingested a non-lethal dose of vitamins believing it would be fatal. Which principle regarding risk assessment in pediatrics is most relevant here?",
+      "answerOptions": [
+        {
+          "text": "Medical lethality is not necessarily related to suicidal intent in children.",
+          "isCorrect": true,
+          "rationale": "Children often lack accurate knowledge of toxicity and may overestimate or underestimate the lethality of a method; therefore, low medical lethality does not equate to low intent (Dulcan p. 607)."
+        },
+        {
+          "text": "Suicidal intent can only be validated if the method used is objectively lethal.",
+          "isCorrect": false,
+          "rationale": "Validation of intent is based on the patient's subjective expectations and preparations, not the objective medical outcome (Dulcan p. 607)."
+        },
+        {
+          "text": "The use of vitamins indicates a 'gesture' rather than a true attempt, allowing for immediate discharge.",
+          "isCorrect": false,
+          "rationale": "Labeling an attempt as a 'gesture' based on lethality is dangerous in pediatrics, as the child's belief in the lethality of the act is what defines the risk (Dulcan p. 607)."
+        },
+        {
+          "text": "High intent is only associated with methods involving firearms or ligatures.",
+          "isCorrect": false,
+          "rationale": "While those methods are highly lethal, high intent can be present in any attempt where the child truly desires to end their life, regardless of the method's efficacy (Dulcan p. 607)."
+        }
+      ],
+      "hint": "Consider the cognitive development of children and how it affects their understanding of 'cause and effect' regarding self-harm."
+    },
+    {
+      "type": "short_answer",
+      "question": "A 10-year-old hospitalized for a severe infection suddenly develops fluctuating levels of consciousness, irritability, and visual hallucinations. Explain the primary diagnostic suspicion and the necessary first step in management based on pediatric emergency principles.",
+      "grading": {
+        "modelAnswer": "The primary suspicion is delirium due to an underlying medical condition. The first step is to perform a thorough medical workup to identify and treat the underlying cause (e.g., infection, metabolic issues, or medication side effects) rather than treating it as a primary psychiatric disorder.",
+        "rationale": "Delirium in pediatric settings is often misidentified as psychosis or behavioral issues; identifying the medical etiology is critical for safety and effective treatment (Dulcan p. 615-616).",
+        "requiredAttributes": [
+          "Identifies the condition as delirium.",
+          "Attributes the cause to a medical condition or systemic illness.",
+          "States that the first step is a medical evaluation/workup to address the underlying cause."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Treating the symptoms primarily with high-dose antipsychotics without medical evaluation.",
+            "Diagnosing the child with early-onset schizophrenia based on hallucinations alone."
+          ],
+          "bluffs": [
+            "Stating that the child needs 'psychiatric observation' without mentioning the medical nature of delirium."
+          ]
+        }
+      },
+      "hint": "Focus on the 'acute and fluctuating' nature of the symptoms and the hospital setting."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "When initiating Chlorpromazine for severe behavioral problems in a child weighing 30 kg, what is the recommended starting oral dosage according to standard pediatric psychopharmacology guidelines?",
+      "answerOptions": [
+        {
+          "text": "$0.55\\ mg/kg$ every 4\u20136 hours as needed.",
+          "isCorrect": true,
+          "rationale": "The standard starting oral dose for severe behavioral problems in children is $0.55\\ mg/kg$ (approximately 16.5 mg for this child) every 4\u20136 hours (StahlKids p. 102)."
+        },
+        {
+          "text": "$2\\ mg/kg$ as a single bedtime dose.",
+          "isCorrect": false,
+          "rationale": "This dose is excessively high for initiation and does not follow the recommended frequency for acute behavioral control (StahlKids p. 102)."
+        },
+        {
+          "text": "$10\\ mg/kg$ divided into twice-daily dosing.",
+          "isCorrect": false,
+          "rationale": "$10\\ mg/kg$ is far beyond the therapeutic range for Chlorpromazine and would likely cause severe toxicity (StahlKids p. 102)."
+        },
+        {
+          "text": "A fixed dose of 25 mg regardless of weight.",
+          "isCorrect": false,
+          "rationale": "Pediatric dosing for Chlorpromazine is weight-based ($mg/kg$) rather than fixed-dose to ensure safety and efficacy (StahlKids p. 102)."
+        }
+      ],
+      "hint": "The calculation relies on a specific weight-based multiplier ($mg/kg$) for pediatric patients."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A child being treated with Haloperidol for Tourette Syndrome is described by his parents as appearing 'zombie-like,' showing significant inattention and a decline in school performance. Which of the following best describes this phenomenon?",
+      "answerOptions": [
+        {
+          "text": "Neuroleptic-induced deficit syndrome.",
+          "isCorrect": true,
+          "rationale": "Also known as 'zombie syndrome' in children, this is a side effect of $D_{2}$ blockade leading to sedation, amotivation, and cognitive blunting (StahlKids p. 255)."
+        },
+        {
+          "text": "Acute Dystonic Reaction.",
+          "isCorrect": false,
+          "rationale": "Dystonia involves acute muscle spasms, usually of the neck or eyes, rather than chronic cognitive blunting (StahlKids p. 255)."
+        },
+        {
+          "text": "Anticholinergic Toxicity.",
+          "isCorrect": false,
+          "rationale": "Anticholinergic toxicity typically presents with 'dry' symptoms and delirium, whereas Haloperidol has low anticholinergic activity (StahlKids p. 255; Dulcan p. 612)."
+        },
+        {
+          "text": "Akathisia.",
+          "isCorrect": false,
+          "rationale": "Akathisia is a state of motor restlessness and an internal urge to move, the opposite of the 'zombie-like' sedation described (StahlKids p. 255)."
+        }
+      ],
+      "hint": "This syndrome is associated with the 'negative-symptom-like' effects of typical antipsychotics."
+    },
+    {
+      "type": "multiple_select",
+      "question": "Which of the following are clinical indicators that suggest an injury in a child may be due to physical abuse rather than an accident?",
+      "answerOptions": [
+        {
+          "text": "A vague or changing history of how the injury occurred.",
+          "isCorrect": true,
+          "rationale": "Contradictory or changing stories are hallmark signs of potential abuse (Dulcan p. 450)."
+        },
+        {
+          "text": "An inappropriate delay in seeking medical attention for a significant injury.",
+          "isCorrect": true,
+          "rationale": "Delays in care are often seen when caregivers are attempting to hide the cause of an injury (Dulcan p. 450)."
+        },
+        {
+          "text": "The parent blaming the injury on a very young sibling.",
+          "isCorrect": true,
+          "rationale": "Deflecting blame onto others, especially those unable to defend themselves, is a common indicator of abuse (Dulcan p. 450)."
+        },
+        {
+          "text": "The injury is consistent with the child's developmental age and motor skills.",
+          "isCorrect": false,
+          "rationale": "Injuries that *exceed* a child's developmental capabilities (e.g., a non-mobile infant with a fracture) are more suggestive of abuse (Dulcan p. 450)."
+        }
+      ],
+      "hint": "Look for inconsistencies between the history provided and the physical findings.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A 14-year-old male presents with new-onset auditory hallucinations and disorganized thinking. The clinician orders an MRI scan. According to pediatric guidelines, what is a primary indication for neuroimaging in this 'first-episode psychosis' scenario?",
+      "answerOptions": [
+        {
+          "text": "To rule out CNS disorders or tumors (e.g., pituitary tumor) that may contribute to psychopathology.",
+          "isCorrect": true,
+          "rationale": "Neuroimaging is indicated in first-episode psychosis and severe treatment-resistant cases to rule out structural brain lesions or systemic disorders (Dulcan p. 152)."
+        },
+        {
+          "text": "To confirm the diagnosis of Schizophrenia by identifying pathognomonic gray matter loss.",
+          "isCorrect": false,
+          "rationale": "While gray matter loss is seen in research, there are currently no pathognomonic imaging findings to diagnose schizophrenia in clinical practice (Dulcan p. 152)."
+        },
+        {
+          "text": "To assess for the presence of 'Circle of Security' markers in brain development.",
+          "isCorrect": false,
+          "rationale": "The 'Circle of Security' is a psychological treatment model for attachment, not a neuroimaging marker (Dulcan p. 30)."
+        },
+        {
+          "text": "MRI is mandatory to differentiate between Schizophrenia and Bipolar I Disorder.",
+          "isCorrect": false,
+          "rationale": "The differentiation between these disorders is clinical/longitudinal and cannot be made via MRI (DSM p. 101, 139)."
+        }
+      ],
+      "hint": "Think about the role of 'ruling out' medical mimics in a psychiatric presentation."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Diphenhydramine is often used in the ED for mild agitation. Which of the following is a potential side effect that clinicians must monitor for, especially in younger children?",
+      "answerOptions": [
+        {
+          "text": "Paradoxical excitation and delirium.",
+          "isCorrect": true,
+          "rationale": "Despite being a sedative, antihistamines can cause paradoxical worsening of agitation and delirium in pediatric patients (Dulcan p. 612)."
+        },
+        {
+          "text": "Acute hypertensive crisis.",
+          "isCorrect": false,
+          "rationale": "Antihistamines do not typically cause hypertension; $\\alpha_{2}$-agonists or stimulants are more associated with cardiovascular changes (Dulcan p. 612; StahlKids p. 148)."
+        },
+        {
+          "text": "Prolonged priapism.",
+          "isCorrect": false,
+          "rationale": "This is a rare side effect associated with drugs like Trazodone, not Diphenhydramine (StahlKids)."
+        },
+        {
+          "text": "Sudden onset of tic-like movements.",
+          "isCorrect": false,
+          "rationale": "While EPS can be caused by antipsychotics, Diphenhydramine is actually used to *treat* certain movement disorders like dystonia (StahlKids p. 76)."
+        }
+      ],
+      "hint": "The name of this effect implies a result that is the opposite of the intended pharmacological action."
+    }
+  ]
+}

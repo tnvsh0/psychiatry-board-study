@@ -1,0 +1,36 @@
+{
+ "tag": "study-129-pediatric-psychiatric-emergencies",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:04:36+00:00",
+ "updated_at": "2026-09-25T17:04:36+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b570e7f6a603771eb94e9d7c068c634a4d4628e53d0f083916488854b9af0a0c",
+   "asset_id": 587621785,
+   "size": 7725,
+   "fetched_at": "2026-09-25T17:04:30+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "93f499f72f3a90f700d31c7cf23d4ac89527c57660d2fc7fe8fbd8fd7929835e",
+   "asset_id": 587621790,
+   "size": 14336,
+   "fetched_at": "2026-09-25T17:04:32+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "975c97b3c958f3a554d4f93169a66fafea7bd34a234d12b3ebc8d66b414076f0",
+   "asset_id": 587621783,
+   "size": 16373,
+   "fetched_at": "2026-09-25T17:04:34+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "8f50d1bccf3671774325b3e1a383f7927a900ee131eb0c2c37f147523d1ba3ba",
+   "asset_id": 587621787,
+   "size": 45208,
+   "fetched_at": "2026-09-25T17:04:36+00:00"
+  }
+ ]
+}
