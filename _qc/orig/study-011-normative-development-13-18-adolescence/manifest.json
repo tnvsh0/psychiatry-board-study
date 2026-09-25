@@ -1,0 +1,50 @@
+{
+ "tag": "study-011-normative-development-13-18-adolescence",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:06:44+00:00",
+ "updated_at": "2026-09-25T13:06:44+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "415e87eb67d25024d35359e55a48fa16d3c299cab3c77e9c15f11ad933413825",
+   "asset_id": 528024719,
+   "size": 7808,
+   "fetched_at": "2026-09-25T13:06:34+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "702b12b1548902c7cdf5ef453b929ec9b361dcfccc5359f4d4b75bb186e202d4",
+   "asset_id": 528024690,
+   "size": 11891,
+   "fetched_at": "2026-09-25T13:06:36+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "f093ce4b3d4c4c48fea763eca2b5b776318466df3d482c036b3082281a4c6c1e",
+   "asset_id": 528024715,
+   "size": 17825,
+   "fetched_at": "2026-09-25T13:06:38+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "73b34e9a55f543800f9d7fb7e30a70df9e9bce5c8d373fa8c8390f76dcca052e",
+   "asset_id": 528024699,
+   "size": 12801,
+   "fetched_at": "2026-09-25T13:06:40+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "b09faa618ea3670db7068ae4245de8420fb2bc7bc355031c6b8250f97c1ff498",
+   "asset_id": 528024700,
+   "size": 27250,
+   "fetched_at": "2026-09-25T13:06:42+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "9c9422e85f70d1231b8897a1fed1456fdfeb8fbead930580413c30d39ba10e64",
+   "asset_id": 528024717,
+   "size": 49561,
+   "fetched_at": "2026-09-25T13:06:44+00:00"
+  }
+ ]
+}
