@@ -1,0 +1,134 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "ODD: Angry/Irritable Mood",
+        "items": [
+          "Loses temper (DSM p.522)",
+          "Touchy or easily annoyed (DSM p.522)",
+          "Angry and resentful (DSM p.522)"
+        ]
+      },
+      {
+        "name": "ODD: Argumentative/Defiant Behavior",
+        "items": [
+          "Argues with authority figures/adults (DSM p.522)",
+          "Actively defies requests or rules (DSM p.522)",
+          "Deliberately annoys others (DSM p.522)",
+          "Blames others for mistakes or misbehavior (DSM p.522)"
+        ]
+      },
+      {
+        "name": "ODD: Vindictiveness",
+        "items": [
+          "Spiteful or vindictive >=2x in last 6 months (DSM p.522)"
+        ]
+      },
+      {
+        "name": "IED: Explosive Aggression",
+        "items": [
+          "A1: Verbal or physical non-damaging aggression 2x/week for 3 months (DSM p.527)",
+          "A2: 3 behavioral outbursts involving property damage or physical injury in 12 months (DSM p.527)"
+        ]
+      },
+      {
+        "name": "Kleptomania: Stealing Urge",
+        "items": [
+          "Stealing unneeded objects with no monetary value (DSM p.539)",
+          "Increasing tension before stealing, pleasure/relief during (DSM p.539)"
+        ]
+      },
+      {
+        "name": "Pyromania: Fire Setting",
+        "items": [
+          "Deliberate, purposeful fire setting >1 event (DSM p.537)",
+          "Tension/arousal before, fascination with fire, gratification/relief during (DSM p.537)"
+        ]
+      }
+    ],
+    "thresholds": "ODD: >=4/8 symptoms for >=6 months (DSM p.522). IED: 2x/week x 3 months (A1) OR 3 outbursts in 12 months (A2), age >=6 (DSM p.527-528). Kleptomania/Pyromania: recurrent episodes (DSM p.537, p.539).",
+    "subtypes": [
+      "ODD Severity: Mild (1 setting), Moderate (2 settings), Severe (3+ settings) (DSM p.523)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "ODD ~3.3% (DSM p.524); IED 1-yr 2.6%, lifetime 4.0% (DSM p.528); Kleptomania 0.3-0.6% (DSM p.540); Pyromania <0.1% (DSM p.538)",
+    "sex_ratio": "ODD: 1.59:1 M:F pre-puberty, 1:1 in adolescence (DSM p.524); IED: M>=F (DSM p.528); Kleptomania: 1:3 M:F (3:1 females) (DSM p.540); Pyromania: M>>F (DSM p.538)",
+    "onset_age_typical": "ODD: ~6 years / preschool (DSM p.525, Dulcan p.202); IED: late childhood/adolescence (DSM p.528); Kleptomania: adolescence (DSM p.540); Pyromania: late adolescence (DSM p.538)",
+    "heritability": "~74% variance in disruptive behavior traits (Dulcan p.200)",
+    "comorbidities": [
+      "ODD + ADHD ~50% (DSM p.526, Dulcan p.203)",
+      "IED + PTSD (41% lifetime suicide attempt rate) (DSM p.529)",
+      "Kleptomania + Substance use disorders (DSM p.540)",
+      "Pyromania + Substance / Mood disorders (DSM p.538)"
+    ],
+    "prognosis": "ODD: Irritable mood predicts anxiety/MDD; Defiant behavior predicts CD (DSM p.525, Dulcan p.202). IED: persistent chronic course (DSM p.528)."
+  },
+  "etiology": {
+    "genetic": "Shared genetic vulnerability across ODD, CD, ADHD (~74% heritability); candidate genes DRD2, DBH, DAT1, NET1, androgen receptor (Dulcan p.200)",
+    "neurobiology": "Frontolimbic dysfunction: Amygdala hyperresponsiveness, reduced ACC/OFC gray matter & top-down inhibition (DSM p.528, StahlNeuro p.539, p.577); Guanfacine acts on alpha-2A PFC receptors (StahlNeuro p.483-484); Naltrexone blocks ventral striatum dopamine (StahlNeuro p.571)",
+    "environmental": "Patterson's coercion model (negative reinforcement of coercive loops) (Dulcan p.201); harsh/inconsistent parenting, trauma (DSM p.525, p.528)"
+  },
+  "treatment": {
+    "first_line": [
+      "ODD: Parent Management Training (PMT) + Child Problem-Solving Skills Training (PSST/CPS) (Dulcan p.203-204, p.901)",
+      "IED: CBT Anger Management (Dulcan p.597) + SSRIs (Fluoxetine 10-40 mg/d, Sertraline 25-150 mg/d) (DSM p.528, StahlKids p.208, p.467)",
+      "Kleptomania: CBT (Aversive covert sensitization, ERP) (StahlNeuro p.575-577)",
+      "Pyromania: Fire-setting prevention CBT (Dulcan p.521)"
+    ],
+    "second_line": [
+      "ODD with ADHD: Guanfacine ER (0.05-0.12 mg/kg/d) (StahlKids p.245, Dulcan p.714) / Psychostimulants (Methylphenidate) (Dulcan p.203)",
+      "IED: Lithium Carbonate (0.6-1.2 mEq/L) (Dulcan p.763, StahlKids p.296) / Valproate (50-100 mcg/mL) (Dulcan p.768) / Topiramate (Dulcan p.126)",
+      "Kleptomania: Naltrexone (50-150 mg/d off-label) (StahlNeuro p.571, Dulcan p.126)",
+      "Severe Aggression: Risperidone (0.25-3.0 mg/d) / Aripiprazole (2-15 mg/d) (Dulcan p.816, StahlKids p.36, p.465)"
+    ],
+    "key_side_effects": [
+      "Guanfacine/Clonidine: Sedation, hypotension, bradycardia, rebound hypertension on abrupt stop (StahlKids p.244, Dulcan p.712)",
+      "Lithium: Tremor, polyuria, hypothyroidism, renal toxicity (StahlKids p.296)",
+      "Risperidone: Weight gain, hyperprolactinemia, metabolic syndrome (StahlKids p.465)"
+    ],
+    "monitoring": "Guanfacine: BP & HR at baseline and titration (StahlKids p.244). Lithium: blood level (0.6-1.2 mEq/L), BUN/Cr, TSH (Dulcan p.763, StahlKids p.296). Valproate: blood level (50-100 mcg/mL), LFTs, CBC (Dulcan p.768)."
+  },
+  "assessment_tools": {
+    "items": [
+      "K-SADS-PL (Gold standard semi-structured interview for ages 6-18) (Dulcan p.68, p.88)",
+      "CBCL / ASEBA (Achenbach system, T-score >=67 indicates severe dysregulation) (Dulcan p.203, p.294)",
+      "Conners 3 / Vanderbilt scales (ADHD/ODD/CD rating scales) (Dulcan p.70, p.181)",
+      "ECBI / SESBI-R (Intensity and Problem scores for disruptive behavior) (Dulcan p.203)",
+      "OAS / MOAS / CAS (Overt aggression scales) (Dulcan p.213, p.304, p.593)",
+      "ARI (Affective Reactivity Index for irritability) (DSM p.845)"
+    ],
+    "key_numbers": [
+      "4+ out of 8 symptoms required for ODD (DSM p.522)",
+      "6 months minimum duration for ODD (DSM p.522)",
+      "2x per week for 3 months (IED criterion A1) (DSM p.527)",
+      "3 outbursts in 12 months (IED criterion A2) (DSM p.527)",
+      "T-score >=67 on CBCL Dysregulated Phenotype (Dulcan p.294)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "DMDD: Chronic daily irritability + severe outbursts >=3x/wk; DMDD hierarchy rules out ODD and IED (DSM p.178, p.526, p.528)",
+      "ADHD: Inattention/impulsivity non-compliance without hostile intent (DSM p.526)",
+      "Conduct Disorder: Proactive/predatory aggression, property destruction, theft; can be comorbid with ODD (DSM p.525, p.530)",
+      "TBI / Complex Partial Epilepsy: Organic brain injury causing personality change aggressive type (DSM p.530, Dulcan p.594)",
+      "PCP / Cocaine / Steroids: Substance-induced aggression ('Roid rage') (DSM p.25, p.530, p.596)",
+      "PANDAS / PANS: Acute onset aggression/rage following streptococcal/immune infection (Dulcan p.375, p.439)"
+    ],
+    "key_numbers": [
+      "3+ outbursts per week in DMDD (DSM p.178)",
+      "Age >=6 minimum for IED diagnosis (DSM p.528)",
+      "6 months maximum for Adjustment Disorder after stressor (DSM p.525)"
+    ]
+  },
+  "high_yield": [
+    "DMDD diagnostic hierarchy completely excludes ODD and IED if chronic daily irritability is present (DSM p.178, p.526, p.528).",
+    "ODD threshold: >=4/8 symptoms for >=6 months; <5 years old requires symptoms on most days, >=5 years requires >=1x/week (DSM p.522).",
+    "IED criteria: A1 (mild/frequent) = verbal/physical non-damaging aggression 2x/week for 3 months; A2 (severe) = 3 property damage or injury outbursts in 12 months; minimum age 6 (DSM p.527-528).",
+    "IED + PTSD comorbidity carries a 41% lifetime suicide attempt rate (DSM p.529).",
+    "Kleptomania is 3x more common in females (3:1 F:M ratio), contrasting with most impulse-control disorders (DSM p.540).",
+    "Guanfacine ER dose in peds: 0.05-0.12 mg/kg/day; alpha-2A agonist in PFC improving signal-to-noise ratio; must monitor BP/HR and NEVER stop abruptly due to rebound hypertension (Dulcan p.712, p.714, StahlKids p.242-245).",
+    "Naltrexone (50-150 mg/day) blocks endogenous opioid-mediated dopamine release in ventral striatum, reducing kleptomania urges (Dulcan p.126, StahlNeuro p.571).",
+    "Impulsive aggression (IED) involves autonomic arousal and frontolimbic deficit (54-63%), whereas predatory aggression (CD) is instrumental and planned without arousal (17-29%) (StahlNeuro p.577, p.914)."
+  ]
+}

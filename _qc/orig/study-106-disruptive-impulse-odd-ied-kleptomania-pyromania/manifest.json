@@ -1,0 +1,36 @@
+{
+ "tag": "study-106-disruptive-impulse-odd-ied-kleptomania-pyromania",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:16:05+00:00",
+ "updated_at": "2026-09-25T16:16:05+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "ef1e54305dbed490415993ddc4249668988d94dc9577d6f397bf17200d1b2e41",
+   "asset_id": 586577155,
+   "size": 8517,
+   "fetched_at": "2026-09-25T16:15:42+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "aa94ed873a34b29c4493f101386311ca13a95480196c2cb598f1b27280f2e3b7",
+   "asset_id": 586577154,
+   "size": 11094,
+   "fetched_at": "2026-09-25T16:15:46+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "6e12387fe44b1ac85f30946894eb18b204fcdbe64e34d9346d7dd4b0ab61d5f2",
+   "asset_id": 586577161,
+   "size": 33655,
+   "fetched_at": "2026-09-25T16:15:55+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "998fa40882008e317eb871639fb0928450286600c9ff5a13b7e289288516b8ab",
+   "asset_id": 586577163,
+   "size": 45638,
+   "fetched_at": "2026-09-25T16:16:05+00:00"
+  }
+ ]
+}
