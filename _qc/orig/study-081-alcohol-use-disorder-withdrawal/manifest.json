@@ -1,0 +1,36 @@
+{
+ "tag": "study-081-alcohol-use-disorder-withdrawal",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:28:26+00:00",
+ "updated_at": "2026-09-25T15:28:26+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "62a4726ea83e210dc71165b1590f106aad031fb2d61722c947b4e817ea551301",
+   "asset_id": 584841665,
+   "size": 8578,
+   "fetched_at": "2026-09-25T15:28:17+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "1b8a23e1174deef565f63a11eece9a5c25a2ed2177c1b52a77625271d0838e0c",
+   "asset_id": 584841668,
+   "size": 13243,
+   "fetched_at": "2026-09-25T15:28:21+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "3bf7ee754fccc4e713ce25c31ad3d7fabcdd4520af34601e900acd4ad186ef82",
+   "asset_id": 584841669,
+   "size": 27401,
+   "fetched_at": "2026-09-25T15:28:23+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "d4b4911a7de142c482b86f7e8fe450dbc09273e7a99d6346a6d5dfb275305504",
+   "asset_id": 584841664,
+   "size": 28040,
+   "fetched_at": "2026-09-25T15:28:26+00:00"
+  }
+ ]
+}

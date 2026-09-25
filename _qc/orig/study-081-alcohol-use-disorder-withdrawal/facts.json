@@ -1,0 +1,157 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Impaired Control",
+        "items": [
+          "Larger amounts or longer period than intended (DSM p.553)",
+          "Persistent desire or unsuccessful efforts to cut down (DSM p.553)",
+          "Great deal of time spent obtaining, using, or recovering (DSM p.554)",
+          "Craving or strong desire/urge to use (DSM p.554)"
+        ]
+      },
+      {
+        "name": "Social Impairment",
+        "items": [
+          "Recurrent use resulting in failure to fulfill major role obligations (DSM p.554)",
+          "Continued use despite persistent/recurrent social or interpersonal problems (DSM p.554)",
+          "Important activities given up or reduced (DSM p.554)"
+        ]
+      },
+      {
+        "name": "Risky Use",
+        "items": [
+          "Recurrent use in physically hazardous situations (DSM p.554)",
+          "Continued use despite knowledge of physical or psychological problem (DSM p.554)"
+        ]
+      },
+      {
+        "name": "Pharmacological Criteria",
+        "items": [
+          "Tolerance (DSM p.554)",
+          "Withdrawal (DSM p.554)"
+        ]
+      }
+    ],
+    "thresholds": "2+ of 11 criteria over 12 months; Mild: 2-3, Moderate: 4-5, Severe: 6+ (DSM p.553-555)",
+    "subtypes": [
+      "In early remission (3-12 months)",
+      "In sustained remission (12+ months)",
+      "In a controlled environment (DSM p.554-555)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "29.1% US adults lifetime, 4.6% adolescents 12-17 (DSM p.552-553; Dulcan p.225)",
+    "sex_ratio": "1.6:1 M:F (36.0% males, 22.7% females) (DSM p.553)",
+    "onset_age_typical": "Peak 18-25 years; median first drink age 13, regular use age 14 (DSM p.553; Dulcan p.225)",
+    "heritability": "40%-60% (DSM p.557)",
+    "comorbidities": [
+      "ADHD 28%-44% in clinical adolescents (Dulcan p.226)",
+      "Conduct Disorder / ODD 4x increased risk (Dulcan p.225-226)",
+      "Other Substance Use Disorders (DSM p.556)",
+      "Depressive & Anxiety Disorders (DSM p.556)"
+    ],
+    "prognosis": "Variable; drinking onset <21 increases adult dependence risk 7x (Dulcan p.226-227)"
+  },
+  "etiology": {
+    "genetic": "40%-60% heritability; ALDH2/ADH flush reaction protective, Low Level of Response (LR) increases risk (DSM p.557-558)",
+    "neurobiology": "Mesolimbic DA (VTA -> NAc) shift to Dorsal Striatum (habit circuit); GABA_A PAM, NMDA/mGluR/VSCC inhibition, mu-opioid endorphin release (StahlNeuro p.539-555)",
+    "environmental": "Top-down PFC vs Bottom-up limbic maturation imbalance in adolescents, peer influence, family SUD (Dulcan p.217, 226)"
+  },
+  "treatment": {
+    "first_line": [
+      "Naltrexone (oral/Vivitrol depot) - mu-opioid antagonist (StahlNeuro p.555)",
+      "Acamprosate - mGluR/GABA modulator, safe in liver disease (StahlNeuro p.555, 557)",
+      "Benzodiazepines for acute withdrawal: Diazepam/Chlordiazepoxide front-loading or symptom-triggered (DSM p.565; Dulcan p.611)",
+      "Family-based therapies for adolescents: MDFT, A-CRA, FFT, MST (Dulcan p.235-236)"
+    ],
+    "second_line": [
+      "Disulfiram - ALDH inhibitor (aversive therapy) (StahlNeuro p.555)",
+      "Lorazepam / Oxazepam / Temazepam (LOT) for liver impairment/cirrhosis (DSM p.556; Dulcan p.345)",
+      "Clonidine - adjunctive for autonomic symptoms (StahlKids p.150)",
+      "MET/CBT & 12-Step (AA) (Dulcan p.235-237)"
+    ],
+    "key_side_effects": [
+      "Disulfiram: severe flushing, vomiting, hypotension with alcohol (StahlNeuro p.554)",
+      "Benzodiazepines: sedation, paradoxical agitation in children/adolescents (Dulcan p.345)",
+      "Naltrexone: hepatotoxicity at high doses (StahlNeuro p.555)"
+    ],
+    "monitoring": "CIWA-Ar protocol for withdrawal severity; LFTs, CDT, GGT, BAC, urine toxicology for relapse (DSM p.558-559; Dulcan p.611)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CRAFFT screening tool for adolescents: Car, Relax, Alone, Forget, Friends, Trouble (Dulcan p.229)",
+      "Timeline Followback (TLFB) calendar method (Dulcan p.230)",
+      "S2BI electronic screening tool (Dulcan p.229-230)",
+      "CDT and GGT state markers for heavy drinking and relapse monitoring (DSM p.558-559)"
+    ],
+    "key_numbers": [
+      "6 items in CRAFFT screening tool (Dulcan p.229)",
+      "BAC >= 150 mg/dL without intoxication indicates tolerance (DSM p.559)",
+      "GGT > 35 U/L indicates heavy drinking in 70% (DSM p.559)",
+      "CDT >= 20 U/L indicates heavy drinking (DSM p.559)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Hypoglycemia causing tremor, confusion, tachycardia (DSM p.562, 566)",
+      "Benzodiazepine/Sedative withdrawal with identical clinical presentation (DSM p.561, 567)",
+      "Subdural Hematoma from trauma causing fluctuating sensorium (DSM p.565, 711)",
+      "DKA/AKA, Essential Tremor, Sepsis, Pheochromocytoma (DSM p.562, 566, 631)"
+    ],
+    "key_numbers": [
+      "1 glucometer test required immediately to rule out hypoglycemia (DSM p.562)",
+      "1 CT brain scan required for head trauma / SDH (DSM p.565)"
+    ]
+  },
+  "CIWA_protocol": {
+    "items": [
+      "CIWA-Ar 10-item scale assessing withdrawal severity (Dulcan p.611)",
+      "Symptom-triggered BZD dosing protocol reduces duration and over-sedation (Dulcan p.611-612)",
+      "LOT rule: Lorazepam, Oxazepam, Temazepam for liver impairment/cirrhosis (DSM p.556; Dulcan p.345)"
+    ],
+    "key_numbers": [
+      "10 clinical items evaluated in CIWA-Ar scale (Dulcan p.611)",
+      "Score < 8 indicates mild withdrawal (Dulcan p.611)",
+      "Score 8-14 indicates moderate withdrawal (Dulcan p.611)",
+      "Score >= 15 indicates severe withdrawal requiring aggressive BZD treatment (Dulcan p.611)",
+      "6-12 hours onset for autonomic symptoms & tremor (DSM p.564)",
+      "12-48 hours onset for withdrawal seizures & alcoholic hallucinosis (DSM p.565)"
+    ]
+  },
+  "DT": {
+    "items": [
+      "Delirium Tremens (Alcohol Withdrawal Delirium) is a life-threatening medical emergency (DSM p.565)",
+      "Autonomic storm: fever, drenching sweats, severe tachycardia >120bpm, hypertension (DSM p.565)",
+      "Fluctuating sensorium, vivid visual/tactile hallucinations (formication), coarse tremor (DSM p.565)",
+      "Requires ICU admission, IV high-dose BZDs, fluid/electrolyte correction, IV Thiamine (DSM p.565; Dulcan p.348)"
+    ],
+    "key_numbers": [
+      "48-72 hours post-cessation typical onset for DT (DSM p.565)",
+      "3%-5% prevalence among hospitalized withdrawal patients (DSM p.565)",
+      "5%-15% mortality rate even with treatment (DSM p.565)"
+    ]
+  },
+  "wernicke_korsakoff": {
+    "items": [
+      "Thiamine (Vitamin B1) deficiency due to poor nutrition, malabsorption, and impaired enzyme conversion (DSM p.556, 714-715)",
+      "Thiamine FIRST before glucose/dextrose infusion to prevent precipitating acute Wernicke Encephalopathy (DSM p.715)",
+      "Wernicke Encephalopathy acute triad: Confusion, Ataxia, Ophthalmoplegia/Nystagmus (CN VI) (DSM p.714-715)",
+      "Korsakoff Syndrome chronic stage (F10.26): severe anterograde amnesia, retrograde amnesia, confabulation (DSM p.587, 712, 714-715)"
+    ],
+    "key_numbers": [
+      "1 absolute rule: Thiamine before glucose infusion (DSM p.715)",
+      "3 classic features in Wernicke triad: confusion, ataxia, ophthalmoplegia (DSM p.714-715)",
+      "F10.26 ICD-10 code for Korsakoff Syndrome (DSM p.587)"
+    ]
+  },
+  "high_yield": [
+    "AUD diagnosis requires 2+ of 11 DSM-5-TR criteria over 12 months; medical prescription tolerance/withdrawal excluded (DSM p.553-554).",
+    "Adolescent AUD first-line treatment is evidence-based family therapy (MDFT, A-CRA); zero FDA-approved drugs for <18 (Dulcan p.234-236).",
+    "Sinclair Method: Naltrexone taken 1 hour before drinking induces pharmacological extinction of habit circuit in Dorsal Striatum (StahlNeuro p.571-572).",
+    "LOT rule in liver cirrhosis/failure: Lorazepam, Oxazepam, Temazepam undergo glucuronidation only, bypassing CYP450 (DSM p.556; Dulcan p.345).",
+    "Withdrawal timeline: 6-12h tremor/autonomic, 12-48h seizures & alcoholic hallucinosis (intact sensorium), 48-72h Delirium Tremens (DSM p.564-565).",
+    "Delirium Tremens carries 5%-15% mortality rate; managed in ICU with high-dose IV BZDs (DSM p.565).",
+    "CRITICAL: Always give Thiamine (Vitamin B1) BEFORE Glucose infusion to prevent Wernicke Encephalopathy (DSM p.715)."
+  ]
+}
