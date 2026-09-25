@@ -1,0 +1,36 @@
+{
+ "tag": "study-029-ssris-deep-dive",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:51:46+00:00",
+ "updated_at": "2026-09-25T13:51:46+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "e1c3fe55e34bffd7ca6c854299c9ffd0bd6b7d3b924a3489632b6c01588a7ec5",
+   "asset_id": 536511470,
+   "size": 12902,
+   "fetched_at": "2026-09-25T13:51:40+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "656ec7f6ff7a4f649941aef05a6356445070fc723a67a8ffdbf623254d2588b1",
+   "asset_id": 536511468,
+   "size": 10619,
+   "fetched_at": "2026-09-25T13:51:42+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "acfc896e3a1b36a9185b23cc5d39f611eae861cb9527d3de68d665c41aa0486f",
+   "asset_id": 536511471,
+   "size": 28991,
+   "fetched_at": "2026-09-25T13:51:44+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "102d3709f531fd0be9ef328ccfff4390faa7b0e0e883446ed4e189d83f66597a",
+   "asset_id": 536511469,
+   "size": 37152,
+   "fetched_at": "2026-09-25T13:51:46+00:00"
+  }
+ ]
+}
