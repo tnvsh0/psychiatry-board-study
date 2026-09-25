@@ -1,0 +1,81 @@
+{
+  "drug_class": {
+    "members": [
+      "Diazepam - long t½ (20-100h), active metabolite desmethyldiazepam (Dulcan p.687, DSM p.629)",
+      "Lorazepam - intermediate t½ (10-20h), Phase II glucuronidation, preferred in liver disease & catatonia (Dulcan p.153, p.1023)",
+      "Alprazolam - short t½ (12-15h), fast onset, high rebound/addiction risk, avoid in youth (Dulcan p.264, DSM p.624)",
+      "Midazolam - ultra-short t½ (1.5-3h), intranasal (IN) procedural sedation (Dulcan p.100)",
+      "Clonazepam - long t½ (30-40h), no active metabolites, sustained anxiolysis (Dulcan p.484)",
+      "Buspirone - non-BZD 5-HT1A partial agonist, slow onset (2-4w), no dependence (DSM p.621, StahlNeuro p.369)"
+    ],
+    "mechanism": "BZD = GABA_A positive allosteric modulators (PAMs) increasing Cl- channel opening frequency (StahlNeuro p.260); Buspirone = 5-HT1A partial agonist with presynaptic autoreceptor desensitization (StahlNeuro p.369)",
+    "kinetics": [
+      "Phase I CYP3A4/CYP2C19 oxidation (Diazepam, Alprazolam, Midazolam) (Dulcan p.687)",
+      "Phase II direct glucuronidation (Lorazepam - LOT) safe in hepatic impairment (Dulcan p.153)",
+      "Higher free fraction and faster hepatic clearance in prepubertal children (StahlKids p.182)"
+    ],
+    "onset_of_effect": "BZD = immediate (minutes to hours); Buspirone = delayed (2-4 weeks)"
+  },
+  "indications": {
+    "items": [
+      "Acute severe anxiety, panic attacks, and agitation PRN (Dulcan p.264, p.612)",
+      "Pediatric catatonia treatment and diagnostic challenge (Lorazepam) (Dulcan p.1023)",
+      "Intranasal procedural sedation in children (Midazolam) (Dulcan p.100)",
+      "Generalized Anxiety Disorder (GAD) chronic treatment (Buspirone) (Dulcan p.333)",
+      "Self-injurious behaviors (SIBs) and agitation in ASD/IDD (Buspirone) (Dulcan p.333, StahlKids p.51)"
+    ],
+    "key_numbers": [
+      "1-2 mg - Lorazepam IV/PO dose for Catatonia Challenge (Dulcan p.1023)",
+      "0.2-0.3 mg/kg - Midazolam IN dose for procedural sedation (Dulcan p.100)",
+      "2-4 weeks - Onset time for Buspirone therapeutic effect (StahlNeuro p.369)",
+      "5 mg BID - Starting pediatric dose for Buspirone (StahlKids p.51)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Sedation, drowsiness, and ataxia via alpha1 GABA_A subunit (StahlNeuro p.260)",
+      "Anterograde amnesia and cognitive impairment (StahlNeuro p.260, p.422)",
+      "Paradoxical reactions (disinhibition, aggression, hyperactivity) in young children/ASD/ADHD (Dulcan p.687)",
+      "Withdrawal seizures and delirium upon abrupt cessation (DSM p.624, p.629)",
+      "Flumazenil precipitates status epilepticus in chronic BZD users (StahlNeuro p.614, DSM p.625)"
+    ],
+    "key_numbers": [
+      "alpha1 - GABA_A subunit mediating sedation, amnesia, and tolerance (StahlNeuro p.260)",
+      "alpha2/alpha3 - GABA_A subunits mediating anxiolysis and muscle relaxation (StahlNeuro p.260)",
+      "0.4% - Baseline seizure risk threshold in psychotropic safety contexts (Dulcan p.718)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Assess baseline anxiety severity, substance use history, and liver function (Dulcan p.153, p.264)",
+      "Monitor for excessive sedation, cognitive slowing, and academic impact (StahlKids p.314)",
+      "Watch for paradoxical disinhibition or behavioral escalation in young children (Dulcan p.687)",
+      "Follow strict tapering protocol of 10%-25% dose reduction every 1-2 weeks (Dulcan p.688)",
+      "Monitor BP during alpha2-agonist or complex anxiolytic combination therapy (Dulcan p.612)"
+    ],
+    "key_numbers": [
+      "10%-25% - Weekly/biweekly dose reduction percentage during BZD taper (Dulcan p.688)",
+      "1-2 weeks - Minimum interval between BZD dose reduction steps (Dulcan p.688)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Start Low, Go Slow titration rule in pediatric prescribing (StahlKids p.33)",
+      "Avoid Alprazolam in children and adolescents due to addiction/diversion risk (Dulcan p.264)",
+      "Use Lorazepam for liver disease patients as it bypasses Phase I CYP metabolism (Dulcan p.153)",
+      "Educate families that Buspirone requires daily adherence and lacks PRN effect (StahlKids p.51)",
+      "Use intranasal atomizer device for rapid Midazolam administration in emergency/ED (Dulcan p.100)"
+    ],
+    "key_numbers": [
+      "15-30 mg/day - Target therapeutic dose range for Buspirone in youth (StahlKids p.51)",
+      "30-60 minutes - Response evaluation window after Lorazepam Catatonia Challenge (Dulcan p.1023)"
+    ]
+  },
+  "high_yield": [
+    "BZD increases GABA_A Cl- channel opening frequency (PAM), while barbiturates increase duration (StahlNeuro p.260, Syllabus p.50)",
+    "Lorazepam is the preferred BZD in liver failure and for Catatonia Challenge (1-2 mg) (Dulcan p.153, p.1023)",
+    "Avoid Alprazolam in youth due to rapid onset, short t½, inter-dose rebound, and diversion risk (Dulcan p.264, DSM p.624)",
+    "Flumazenil administration to chronic BZD users can precipitate life-threatening seizures (StahlNeuro p.614, DSM p.625)",
+    "Buspirone is a 5-HT1A partial agonist with slow onset (2-4w), zero addiction/abuse potential, effective for GAD & SIBs in ASD/IDD (DSM p.621, StahlNeuro p.369, Dulcan p.333)"
+  ]
+}

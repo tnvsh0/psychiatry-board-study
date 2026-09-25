@@ -1,0 +1,250 @@
+{
+  "title": "Psychiatry Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "A 24-year-old male with a history of severe GAD is prescribed a Benzodiazepine. According to StahlNeuro, what is the precise molecular effect when a Positive Allosteric Modulator (PAM) binds to the $GABA_{A}$ receptor complex in the presence of the endogenous neurotransmitter?",
+      "answerOptions": [
+        {
+          "text": "It causes conformational changes that open the chloride channel further and more frequently than GABA alone.",
+          "isCorrect": true,
+          "rationale": "As described in StahlNeuro p. 260, a PAM amplifies the effect of GABA by increasing chloride ion flux through greater or more frequent channel opening."
+        },
+        {
+          "text": "It binds to the GABA orthosteric site to directly initiate chloride ion influx independently of GABA.",
+          "isCorrect": false,
+          "rationale": "PAMs do not bind to the orthosteric site (which is between $\\alpha$ and $\\beta$ units) and do nothing if GABA is not present (StahlNeuro p. 260)."
+        },
+        {
+          "text": "It antagonizes the inhibitory effects of neuroactive steroids to increase neuronal excitability.",
+          "isCorrect": false,
+          "rationale": "Benzodiazepines act as agonists at the PAM site to enhance inhibition, not to increase excitability or antagonize steroids (StahlNeuro p. 260)."
+        },
+        {
+          "text": "It decreases the frequency of chloride channel opening to balance the ratio of anxiolysis and sedation.",
+          "isCorrect": false,
+          "rationale": "Decreasing the frequency would be the action of a Negative Allosteric Modulator (NAM), whereas Benzodiazepines are PAMs that increase frequency (StahlNeuro p. 260)."
+        }
+      ],
+      "hint": "Think about the definition of 'Positive' in the context of allosteric modulation and ion flux.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_select",
+      "question": "A 17-year-old adolescent is brought to the ED exhibiting 'clouded consciousness', Negativism, and Mutism. Based on DSM-5-TR and Dulcan's Textbook, which of the following features are required to satisfy the criteria for a Catatonia specifier or diagnosis?",
+      "answerOptions": [
+        {
+          "text": "Presence of at least 3 out of 12 characteristic psychomotor features.",
+          "isCorrect": true,
+          "rationale": "DSM-5-TR p. 135 states that Catatonia is defined by the presence of 3 or more of the 12 listed psychomotor features."
+        },
+        {
+          "text": "Evidence that the symptoms do not occur exclusively during the course of a delirium.",
+          "isCorrect": true,
+          "rationale": "According to DSM-5-TR p. 136, the diagnosis of Catatonic Disorder due to a medical condition is not given if it occurs exclusively during delirium."
+        },
+        {
+          "text": "Maintenance of a rigid posture against gravity (Catalepsy).",
+          "isCorrect": true,
+          "rationale": "Catalepsy is one of the 12 specific psychomotor features listed in the diagnostic criteria (DSM-5-TR p. 136)."
+        },
+        {
+          "text": "A history of at least 6 months of spontaneous grimacing and tongue thrusting.",
+          "isCorrect": false,
+          "rationale": "Spontaneous grimacing without emotional triggers is a pediatric definition of Cataplexy (associated with Narcolepsy), not the primary criteria for Catatonia (Dulcan p. 482)."
+        }
+      ],
+      "hint": "Review the psychomotor disturbances and the exclusion criteria for delirium.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A patient with chronic Obstructive Sleep Apnea (OSA) and comorbid Anxiety is seeking pharmacological treatment. According to Dulcan's Textbook, which statement correctly identifies the clinical recommendation for the use of Benzodiazepines in this population?",
+      "answerOptions": [
+        {
+          "text": "Benzodiazepines are contraindicated because they can exacerbate respiratory depression and OSA symptoms.",
+          "isCorrect": true,
+          "rationale": "Dulcan p. 801 explicitly states that for those with chronic respiratory disease and comorbid sleep apnea, Benzodiazepines are contraindicated."
+        },
+        {
+          "text": "Benzodiazepines are the first-line choice if the patient's apnea is managed with a CPAP machine.",
+          "isCorrect": false,
+          "rationale": "Even if managed, the inherent respiratory depressant effects make them unsafe compared to alternatives like Buspirone (Dulcan p. 801)."
+        },
+        {
+          "text": "Short-acting Benzodiazepines like Midazolam are preferred to avoid next-day 'hangover' effects.",
+          "isCorrect": false,
+          "rationale": "Duration of action does not eliminate the contraindication in pulmonary disease; safer alternatives are preferred (Dulcan p. 801)."
+        },
+        {
+          "text": "Benzodiazepines should be titrated to the 'Two of Hearts' (Olympic athlete level) to ensure cardiac stability.",
+          "isCorrect": false,
+          "rationale": "This refers to visual mnemonics not supported as clinical evidence for safety in OSA patients (Source: General Instruction Filter)."
+        }
+      ],
+      "hint": "Consider the impact of CNS depressants on the respiratory drive during sleep.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A patient is brought to the ED after an intentional overdose of a high-dose Benzodiazepine. The attending physician considers using Flumazenil. According to StahlNeuro, what is the primary risk of administering this neutral antagonist to a chronic Benzodiazepine user?",
+      "answerOptions": [
+        {
+          "text": "It can induce seizures by rapidly reversing the chronic enhancement of inhibitory chloride channels.",
+          "isCorrect": true,
+          "rationale": "StahlNeuro p. 262 and clinical warnings in StahlKids p. 218 highlight that reversing BZD effects in dependent patients can lower the seizure threshold."
+        },
+        {
+          "text": "It causes a permanent conformational change in the $\\alpha_{4}$ subunit, leading to treatment-refractory insomnia.",
+          "isCorrect": false,
+          "rationale": "Flumazenil is a neutral antagonist that reverses PAM effects at the BZD-sensitive site, it doesn't target the BZD-insensitive $\\alpha_{4}$ subunit (StahlNeuro p. 262)."
+        },
+        {
+          "text": "It acts as a potent PAM at the $\\delta$ subunit, causing excessive sedation and respiratory arrest.",
+          "isCorrect": false,
+          "rationale": "Flumazenil is an antagonist, not a PAM, and $\\delta$ subunits are generally Benzodiazepine-insensitive (StahlNeuro p. 262)."
+        },
+        {
+          "text": "It causes rapid metabolism of GABA, leading to a hypertensive crisis and serotonin syndrome.",
+          "isCorrect": false,
+          "rationale": "Flumazenil works at the receptor site; it does not affect the metabolism of GABA or interact with the serotonin system in this manner (StahlNeuro p. 262)."
+        }
+      ],
+      "hint": "Recall the effect of sudden withdrawal of inhibitory modulation in a brain adapted to chronic sedation.",
+      "imageUrls": []
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "In the treatment of adolescent anxiety where pharmacotherapy is necessary but abuse potential is a concern, Dulcan's Textbook suggests that the use of ___ is much preferred over Benzodiazepines.",
+      "bestAnswer": "Buspirone",
+      "acceptableAnswers": [
+        "Selective serotonin reuptake inhibitors",
+        "SSRI",
+        "buspirone"
+      ],
+      "rationale": "Dulcan p. 481 identifies Buspirone, SSRIs, and SNRIs as preferred over Benzodiazepines due to the inherent abuse potential of the latter in adolescents.",
+      "hint": "This agent is a 5-HT1A partial agonist often used as a non-habit-forming alternative for anxiety."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Based on the 'Too Hot/Too Cold' pharmacokinetic concepts in StahlNeuro, why might a patient taking a Benzodiazepine with an ultra-short half-life (e.g., Triazolam) complain of early morning awakening?",
+      "answerOptions": [
+        {
+          "text": "The drug levels fall below the relevant therapeutic threshold before the time to awaken, leading to a loss of sleep maintenance.",
+          "isCorrect": true,
+          "rationale": "StahlNeuro p. 429 explains that short half-life hypnotics (1-3 hours) wear off too quickly, causing loss of sleep maintenance."
+        },
+        {
+          "text": "The drug accumulates in the blood over 5 days, reaching a steady state that suppresses REM sleep.",
+          "isCorrect": false,
+          "rationale": "Accumulation and steady state are characteristics of long half-life drugs, not ultra-short ones (StahlNeuro p. 429)."
+        },
+        {
+          "text": "Ultra-short half-life drugs selectively bind to the $\\alpha_{2}$ subunit, which mediates wakefulness rather than sedation.",
+          "isCorrect": false,
+          "rationale": "The $\\alpha_{1}$ subunit is the primary target for sedation; morning awakening is a pharmacokinetic issue, not a subunit selectivity issue here (StahlNeuro p. 422)."
+        },
+        {
+          "text": "The drug induces CYP 3A4 enzymes, causing its own rapid metabolism within the first two hours of ingestion.",
+          "isCorrect": false,
+          "rationale": "While metabolism occurs, the 'Too Cold' effect is primarily described as a result of the pharmacokinetic half-life being shorter than the required sleep duration (StahlNeuro p. 429)."
+        }
+      ],
+      "hint": "Consider the relationship between drug concentration over time and the 'relevant threshold' for sleep.",
+      "imageUrls": []
+    },
+    {
+      "type": "short_answer",
+      "question": "Compare the clinical course of Sedative Use Disorder for an individual who misuses substances for intoxication versus one who obtains them by prescription, as described in DSM-5-TR.",
+      "grading": {
+        "modelAnswer": "The first course involves individuals using the substance primarily for intoxication. The second, less frequent course begins with a legal prescription for anxiety or insomnia, where the individual gradually increases the dose due to tolerance, eventually engaging in prominent substance-seeking behavior and 'doctor shopping' to maintain supply.",
+        "rationale": "DSM-5-TR p. 627 distinguishes between recreational misuse and the gradual escalation of prescribed use due to tolerance and physiological need.",
+        "requiredAttributes": [
+          "Identifies the first course as primarily for intoxication.",
+          "Identifies the second course as starting with a legitimate prescription.",
+          "Mentions the role of tolerance in the second clinical course.",
+          "Mentions substance-seeking behavior or multiple physicians ('doctor shopping')."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Asserting that prescribed users never develop use disorders."
+          ],
+          "bluffs": [
+            "Claiming that all sedative use leads to immediate addiction regardless of the source."
+          ]
+        }
+      },
+      "hint": "Focus on the initial reason for use and the progression of substance-seeking behavior.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A clinician is evaluating an 8-year-old child for insomnia and refers to Table 22-2 in Dulcan's Textbook. What is a specific side effect warning associated with the use of Diphenhydramine in children at usual doses?",
+      "answerOptions": [
+        {
+          "text": "It can cause paradoxical stimulation or excitation.",
+          "isCorrect": true,
+          "rationale": "Dulcan Table 22-2 p. 482 notes that at the usual dose, Diphenhydramine can cause paradoxical stimulation/excitation in children."
+        },
+        {
+          "text": "It is associated with a strong potential for diversion and abuse by peers.",
+          "isCorrect": false,
+          "rationale": "Strong abuse potential is listed for Clonazepam, not Diphenhydramine (Dulcan p. 482)."
+        },
+        {
+          "text": "It leads to hypertension following abrupt discontinuation.",
+          "isCorrect": false,
+          "rationale": "Hypertension upon discontinuation is a side effect of $\\alpha_{2}$-Adrenergic agonists like Clonidine or Guanfacine (Dulcan p. 482)."
+        },
+        {
+          "text": "It causes priapism and orthostatic hypotension.",
+          "isCorrect": false,
+          "rationale": "These are side effects associated with Trazodone, not Diphenhydramine (Dulcan p. 482)."
+        }
+      ],
+      "hint": "Look for an effect that is the opposite of the intended sedative result.",
+      "imageUrls": []
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "According to DSM-5-TR, the withdrawal syndrome for medications with short half-lives (e.g., Lorazepam) typically begins within ___ hours of decreasing blood levels.",
+      "bestAnswer": "6-8",
+      "acceptableAnswers": [
+        "6 to 8",
+        "six to eight"
+      ],
+      "rationale": "DSM-5-TR p. 630 specifies that for substances with actions lasting 10 hours or less, withdrawal symptoms appear within 6-8 hours, peaking on the second day.",
+      "hint": "This timeframe is relative to the substance's half-life of 10 hours or less."
+    },
+    {
+      "type": "multiple_select",
+      "question": "When assessing a patient for Sedative, Hypnotic, or Anxiolytic Withdrawal, which of the following autonomic and physical symptoms should a clinician monitor according to the DSM-5-TR diagnostic criteria?",
+      "answerOptions": [
+        {
+          "text": "Autonomic hyperactivity, such as sweating or a pulse rate > 100 bpm.",
+          "isCorrect": true,
+          "rationale": "Autonomic hyperactivity is Criterion B1 for withdrawal in DSM-5-TR p. 565/630."
+        },
+        {
+          "text": "Increased hand tremor.",
+          "isCorrect": true,
+          "rationale": "Hand tremor is specifically listed as Criterion B2 for sedative withdrawal (DSM-5-TR p. 565)."
+        },
+        {
+          "text": "Generalized tonic-clonic seizures.",
+          "isCorrect": true,
+          "rationale": "Seizures are a severe and recognized symptom of sedative-hypnotic withdrawal (DSM-5-TR p. 565/630)."
+        },
+        {
+          "text": "Vertical or horizontal nystagmus.",
+          "isCorrect": false,
+          "rationale": "Nystagmus is a sign of Phencyclidine (PCP) intoxication, not sedative withdrawal (DSM-5-TR p. 595)."
+        }
+      ],
+      "hint": "Focus on signs of central nervous system rebound and autonomic instability.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    }
+  ]
+}
