@@ -1,0 +1,36 @@
+{
+ "tag": "study-134-ipt-a-interpersonal-psychotherapy-for-adolescents",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:14:43+00:00",
+ "updated_at": "2026-09-25T17:14:43+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "aca00a3fb1f3502c7f1c9c2a96f0d20151776d0edb76b491ce70600f55c36097",
+   "asset_id": 587769652,
+   "size": 6962,
+   "fetched_at": "2026-09-25T17:14:37+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "e83d8b261e22bd646a6e7892ce586343f3524d82be3a0de513411d8beee92ab5",
+   "asset_id": 587769649,
+   "size": 10707,
+   "fetched_at": "2026-09-25T17:14:39+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "ad8107780d0054bb48dd15d47107cf573a1c26323788229b0040387e6dc1a1dc",
+   "asset_id": 587769651,
+   "size": 34726,
+   "fetched_at": "2026-09-25T17:14:41+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "e42361b7887818d5a647a7ca2644a9064a80e73102a3b5505ea89d6777fe498a",
+   "asset_id": 587769648,
+   "size": 23471,
+   "fetched_at": "2026-09-25T17:14:43+00:00"
+  }
+ ]
+}
