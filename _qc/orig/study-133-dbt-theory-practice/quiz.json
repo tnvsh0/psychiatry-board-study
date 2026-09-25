@@ -1,0 +1,264 @@
+{
+  "title": "DBT Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "A 17-year-old female with a history of recurrent self-harm and intense interpersonal instability is enrolled in a comprehensive Dialectical Behavior Therapy (DBT) program. She experiences a sudden crisis at night and feels an urge to cut herself. She calls her therapist to discuss using distress tolerance skills instead. This interaction represents which of the four required modes of DBT treatment?",
+      "imageUrls": [],
+      "answerOptions": [
+        {
+          "text": "Telephone consultation",
+          "isCorrect": true,
+          "rationale": "Telephone consultation is available 24 hours a day to help patients generalize skills and manage crises before engaging in injurious behavior (Synopsis ch.23)."
+        },
+        {
+          "text": "Group skills training",
+          "isCorrect": false,
+          "rationale": "Group training is a didactic mode focused on learning new behavioral, emotional, and cognitive skills, rather than real-time crisis management (Synopsis ch.23)."
+        },
+        {
+          "text": "Consultation team",
+          "isCorrect": false,
+          "rationale": "The consultation team involves meetings between therapists to support one another and review their work, not direct interaction with the patient during a crisis (Synopsis ch.23)."
+        },
+        {
+          "text": "Individual therapy",
+          "isCorrect": false,
+          "rationale": "While individual therapy addresses life events, it occurs in weekly scheduled sessions rather than as an immediate 24-hour resource for preventing self-injury (Synopsis ch.23)."
+        }
+      ],
+      "hint": "Consider the mode designed for 24-hour availability to address impending crises.",
+      "covered": [
+        "DBT Treatment Structure"
+      ]
+    },
+    {
+      "type": "multiple_select",
+      "question": "According to the biosocial theory and core principles of Dialectical Behavior Therapy (DBT), which of the following are essential assumptions or components regarding the pathology of patients with Borderline Personality Disorder (BPD)?",
+      "imageUrls": [],
+      "answerOptions": [
+        {
+          "text": "All behavior, including thoughts and feelings, is learned and reinforced.",
+          "isCorrect": true,
+          "rationale": "DBT assumes behavior is learned and that patients act in ways that reward or reinforce their patterns, even if maladaptive (Synopsis ch.23)."
+        },
+        {
+          "text": "Patients possess a biological vulnerability involving an inability to tolerate frustration or identify emotional experiences.",
+          "isCorrect": true,
+          "rationale": "Linehan's theory posits that BPD patients suffer from an inability to identify emotions and a low threshold for frustration (Synopsis ch.23)."
+        },
+        {
+          "text": "Self-destructive behaviors are primarily driven by a lack of moral willpower.",
+          "isCorrect": false,
+          "rationale": "DBT views behaviors through a lens of skills deficits and learned reinforcement rather than a moral failing (Synopsis ch.23)."
+        },
+        {
+          "text": "Patients often struggle with ambivalent feelings that are characteristic of the disorder.",
+          "isCorrect": true,
+          "rationale": "DBT techniques explicitly help patients manage the pervasive ambivalence found in BPD (Synopsis ch.23)."
+        }
+      ],
+      "hint": "Think about the 'biosocial' intersection of learned behavior and biological emotional regulation.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "In the Dialectical Behavior Therapy (DBT) consultation team agreements, therapists must discuss cases according to a specific treatment hierarchy, with the highest priority always given to ___ behavior.",
+      "imageUrls": [],
+      "bestAnswer": "life-threatening",
+      "acceptableAnswers": [
+        "self-injurious",
+        "suicidal",
+        "life threatening"
+      ],
+      "rationale": "The DBT hierarchy prioritizes self-injurious/life-threatening behavior first, followed by treatment-interfering and quality-of-life-interfering behaviors (Synopsis Table 23-7).",
+      "hint": "The priority is based on the most immediate risk to the patient's physical safety."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A patient with Borderline Personality Disorder (BPD) frequently experiences transient paranoid ideation during periods of extreme stress. According to DSM-5-TR, how are these symptoms typically differentiated from a primary psychotic disorder?",
+      "imageUrls": [],
+      "answerOptions": [
+        {
+          "text": "They are generally of insufficient severity or duration and remit with the return of nurturance.",
+          "isCorrect": true,
+          "rationale": "DSM-5-TR specifies that these symptoms are transient, lasting minutes or hours, and often resolve when the individual feels cared for (DSM p.754)."
+        },
+        {
+          "text": "They occur only in the presence of substance intoxication or withdrawal.",
+          "isCorrect": false,
+          "rationale": "While BPD can involve substances, the diagnostic criteria specify that paranoid ideation is stress-related and transient (DSM p.754)."
+        },
+        {
+          "text": "They are accompanied by organized, bizarre delusions that persist for months.",
+          "isCorrect": false,
+          "rationale": "Persistent bizarre delusions would suggest a disorder on the schizophrenia spectrum rather than the transient stress-response seen in BPD (DSM p.754)."
+        },
+        {
+          "text": "They represent a chronic, baseline personality trait rather than a reactive episode.",
+          "isCorrect": false,
+          "rationale": "The criteria specifically identify these symptoms as 'transient' and occurring during 'periods of extreme stress' (DSM p.754)."
+        }
+      ],
+      "hint": "Look for the transient and interpersonal nature of the symptom's resolution.",
+      "covered": [
+        "DSM-5-TR BPD Criteria"
+      ]
+    },
+    {
+      "type": "short_answer",
+      "question": "Explain the four skill modules typically taught in the 'Group Skills Training' mode of Dialectical Behavior Therapy (DBT) and their primary purpose.",
+      "imageUrls": [],
+      "grading": {
+        "modelAnswer": "The four modules are mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness. Their primary purpose is to help patients control emotional dysregulation and impulsive behaviors while expanding their repertoire of skillful behavioral patterns.",
+        "rationale": "The didactic approach of group training focuses on teaching specific exercises to replace maladaptive impulsive behaviors with skillful ones (Synopsis ch.23).",
+        "requiredAttributes": [
+          "Mentions Mindfulness.",
+          "Mentions Distress Tolerance.",
+          "Mentions Emotion Regulation.",
+          "Mentions Interpersonal Effectiveness.",
+          "Connects skills to the control of emotional dysregulation or impulsive behavior."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Thinking the group is for processing childhood trauma."
+          ],
+          "bluffs": [
+            "General statements about 'talking through feelings' without identifying the modules."
+          ]
+        }
+      },
+      "hint": "Refer to the specific didactic modules mentioned in the clinical focus and Synopsis text."
+    },
+    {
+      "type": "multiple_select",
+      "question": "Based on [image_reference_index:0], how does Dialectical Behavior Therapy (DBT) intervene to disrupt the cycle of emotion dysregulation and problem behavior?",
+      "imageUrls": [
+        "![A diagram showing the DBT cycle: Cue leading to Emotion Dysregulation, leading to Problem Behavior, leading to Temporary Relief which reinforces the cycle. Interventions are shown at each step.](image_reference_index:0 \"Synopsis of Psychotherapy\")"
+      ],
+      "answerOptions": [
+        {
+          "text": "Teaching skills on how to regulate emotions to reduce vulnerability to cues.",
+          "isCorrect": true,
+          "rationale": "The diagram indicates that teaching regulation skills reduces the impact of external cues on emotional state (image_reference_index:0)."
+        },
+        {
+          "text": "Blocking the reinforcement of problem behavior by stopping the behavior itself.",
+          "isCorrect": true,
+          "rationale": "Stopping the problem behavior prevents the 'Temporary Relief' that reinforces the cycle (image_reference_index:0)."
+        },
+        {
+          "text": "Encouraging the patient to use problem behavior to distract from emotion dysregulation.",
+          "isCorrect": false,
+          "rationale": "DBT teaches how to avoid or distract *without* using problem behavior (image_reference_index:0)."
+        },
+        {
+          "text": "Changing the association between a 'Cue' and 'Emotion Dysregulation' through exposure.",
+          "isCorrect": true,
+          "rationale": "The diagram shows changing this association via behavioral exposure or stimulus control (image_reference_index:0)."
+        }
+      ],
+      "hint": "Examine the arrows and text labels in the diagram describing where interventions occur.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "In the context of the DSM-5-TR, which diagnostic entity is applied when an individual engages in intentional self-inflicted damage on 5 or more days in the last year with the expectation of only minor harm and no suicidal intent?",
+      "imageUrls": [],
+      "answerOptions": [
+        {
+          "text": "Nonsuicidal Self-Injury Disorder",
+          "isCorrect": true,
+          "rationale": "The diagnosis requires at least 5 days of injury in a year with the specific intent of obtaining relief rather than death (DSM p.923)."
+        },
+        {
+          "text": "Suicidal Behavior Disorder",
+          "isCorrect": false,
+          "rationale": "This disorder requires a suicide attempt where the individual expected the actions would lead to their own death (DSM p.921)."
+        },
+        {
+          "text": "Borderline Personality Disorder",
+          "isCorrect": false,
+          "rationale": "While self-injury is a criterion for BPD, the specific time-bound 5-day criteria refers to the proposed Nonsuicidal Self-Injury Disorder (DSM p.923, 754)."
+        },
+        {
+          "text": "Adjustment Disorder with disturbance of conduct",
+          "isCorrect": false,
+          "rationale": "Adjustment disorder involves symptoms in response to a stressor but does not specifically define the 5-day intentional self-injury criteria (DSM p.319)."
+        }
+      ],
+      "hint": "Focus on the lack of suicidal intent and the specific frequency criteria.",
+      "covered": [
+        "Self-Harm Diagnosis"
+      ]
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "A core function of DBT is to ensure that new behavioral patterns ___ from the therapeutic environment to the natural environment.",
+      "imageUrls": [],
+      "bestAnswer": "generalize",
+      "acceptableAnswers": [
+        "transfer",
+        "carry over",
+        "generalisation"
+      ],
+      "rationale": "The third essential function of DBT is to ensure skills are applied in real-life settings outside of sessions (Synopsis ch.23).",
+      "hint": "This term refers to the ability to use a skill in different contexts."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A clinician is deciding between Dialectical Behavior Therapy (DBT) and Mentalization-Based Treatment (MBT) for a patient with severe BPD. Which statement accurately reflects a key emphasis of MBT as described in the sources?",
+      "imageUrls": [],
+      "answerOptions": [
+        {
+          "text": "MBT focuses on the ability to understand actions in terms of mental states within the context of attachment.",
+          "isCorrect": true,
+          "rationale": "MBT specifically targets mentalizing vulnerabilities and the attachment process (Synopsis ch.23)."
+        },
+        {
+          "text": "MBT primarily uses Zen-based mindfulness modules to treat BPD.",
+          "isCorrect": false,
+          "rationale": "While DBT uses Zen-derived elements, MBT is rooted in attachment theory and the cognitive ability to mentalize (Synopsis ch.23)."
+        },
+        {
+          "text": "MBT excludes individual therapy, relying solely on group formats.",
+          "isCorrect": false,
+          "rationale": "The text states MBT is both a group and individual treatment (Synopsis ch.23)."
+        },
+        {
+          "text": "MBT requires therapists to be available for phone consultation 24 hours a day.",
+          "isCorrect": false,
+          "rationale": "24-hour telephone consultation is a specific mode of DBT, not specified for MBT in this context (Synopsis ch.23)."
+        }
+      ],
+      "hint": "Look for the concept related to understanding thoughts and feelings as drivers of behavior.",
+      "covered": [
+        "Alternative Treatments for BPD"
+      ]
+    },
+    {
+      "type": "short_answer",
+      "question": "What is the purpose of the 'Consultation Team' for the therapist in DBT, and what is one specific agreement they must uphold?",
+      "imageUrls": [],
+      "grading": {
+        "modelAnswer": "The purpose is to provide support, maintain motivation, and compare techniques to ensure the treatment is effective. One specific agreement is that therapists are fallible and should not expect consistency with one another.",
+        "rationale": "The consultation team supports the therapist's capabilities and includes agreements like acknowledging fallibility and searching for empathic interpretations (Synopsis ch.23, Table 23-7).",
+        "requiredAttributes": [
+          "States that the team supports the therapist's motivation or effectiveness.",
+          "Mentions at least one agreement from the sources (e.g., acknowledging fallibility, no judgmental reactions, or the hierarchy of cases)."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Thinking the team is for the patient's family."
+          ],
+          "bluffs": [
+            "Vague statements about 'getting advice' without the specific structural purpose."
+          ]
+        }
+      },
+      "hint": "Consult Table 23-7 and the 'Functions of DBT' section in the Synopsis."
+    }
+  ]
+}
