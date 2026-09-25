@@ -1,0 +1,36 @@
+{
+ "tag": "study-126-autoimmune-nmda-receptor-encephalitis-lupus-pandas",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:00:33+00:00",
+ "updated_at": "2026-09-25T17:00:33+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "c1f9d1092649b15569aeea079faf8cc48e27dffb66d9e8dc5d58f29a17cea003",
+   "asset_id": 587497365,
+   "size": 6582,
+   "fetched_at": "2026-09-25T17:00:27+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "bfb6d246d99035acca71a8de981f40faabfb3a2dcb69b0f9af5b1ac9a5b5076c",
+   "asset_id": 587497368,
+   "size": 10436,
+   "fetched_at": "2026-09-25T17:00:29+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "fc23e65021967fdd8389f7a960982a145cc27ea1c869cbe137dea78dbdba674a",
+   "asset_id": 587497358,
+   "size": 33727,
+   "fetched_at": "2026-09-25T17:00:31+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "94af5e8e634e66b0063213156f840f1e756737854dcf7871199992a36f554992",
+   "asset_id": 587497357,
+   "size": 31382,
+   "fetched_at": "2026-09-25T17:00:33+00:00"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+  "anatomy": {
+    "items": [
+      "Anti-NMDA encephalitis involves autoantibodies targeting the GluN1/NR1 subunit of the NMDA receptor (Dulcan p.370, StahlNeuro p.101)",
+      "Loss of NMDA receptor activation on cortical GABAergic interneurons causes pyramidal neuron disinhibition and mesolimbic dopamine surge (StahlNeuro p.105-108, p.110)",
+      "NPSLE involves microvascular vasculopathy, Anti-ribosomal P antibodies, Anti-NR2 antibodies, and cytokine-mediated BBB disruption (DSM p.132, p.730, Dulcan p.397)",
+      "PANDAS/PANS pathology targets the Caudate nucleus and Putamen within the Basal Ganglia, disrupting CSTC loops (Dulcan p.367, DSM p.292, StahlNeuro p.538-540)"
+    ],
+    "key_numbers": [
+      "4 subunits - tetrameric NMDA receptor ion channel complex (StahlNeuro p.101)",
+      "2 striatal structures - Caudate and Putamen affected by anti-basal ganglia antibodies (Dulcan p.367)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "Anti-NMDA encephalitis progresses from psychiatric prodrome to seizures, orofacial dyskinesia, autonomic instability, central hypoventilation, and coma (DSM p.132, Dulcan p.96, p.398)",
+      "NPSLE presents with Lupus psychosis, major depression, delirium, personality changes, and cognitive decline known as Lupus Fog (DSM p.132, p.730, Dulcan p.397)",
+      "PANDAS is defined by prepubertal abrupt overnight onset of OCD/tics with a sawtooth episodic course linked to GABHS infection (Dulcan p.368)",
+      "PANS requires abrupt onset of OCD or restricted food intake (ARFID-like) plus at least 2 of 7 accompanying symptom domains (Dulcan p.371, DSM p.292)"
+    ],
+    "key_numbers": [
+      "3 to 12 years - prepubertal onset age range for PANDAS criteria (Dulcan p.368)",
+      "24 to 48 hours - timeframe to peak symptom severity in abrupt PANDAS/PANS onset (Dulcan p.368)",
+      "2 of 7 categories - minimum required accompanying symptom domains for PANS diagnosis (Dulcan p.371)",
+      "50% - prevalence of ovarian teratoma in post-pubertal females with Anti-NMDA encephalitis (DSM p.132, Dulcan p.96)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "Anti-NMDA encephalitis mimics First-Episode Psychosis, Childhood-Onset Schizophrenia, Psychotic Mania, and Catatonia (DSM p.132, p.137, Dulcan p.397-398)",
+      "Steroid-Induced Psychosis develops 1-2 weeks post high-dose Prednisone (>40-60 mg/d) with normal complement C3/C4 levels, unlike primary NPSLE flares (DSM p.121, p.142, Dulcan p.235, p.397)",
+      "PANDAS/PANS presents with explosive onset and multisystem symptoms (dysgraphia, enuresis) contrasting with gradual primary pediatric OCD (Dulcan p.365, p.368, p.371)",
+      "DSM-5-TR classifies PANDAS/PANS under Obsessive-Compulsive and Related Disorder Due to Another Medical Condition (DSM p.292, p.959)"
+    ],
+    "key_numbers": [
+      "1 to 2 weeks - onset window for steroid-induced psychosis following high-dose corticosteroid therapy (DSM p.142)",
+      ">40-60 mg/day - prednisone threshold dose associated with steroid psychosis (DSM p.142)"
+    ]
+  },
+  "workup": {
+    "items": [
+      "CSF anti-GluN1 (NR1) IgG antibody detection is the gold standard diagnostic test for Anti-NMDA receptor encephalitis (Dulcan p.96)",
+      "EEG in Anti-NMDA encephalitis shows generalized slowing and the specific Extreme Delta Brush (EDB) pattern (Dulcan p.96)",
+      "Pelvic Ultrasound/MRI is mandatory to screen for Ovarian Teratoma in females with Anti-NMDA encephalitis (DSM p.132, Dulcan p.96)",
+      "NPSLE workup requires ANA, anti-dsDNA, anti-ribosomal P, antiphospholipid antibodies, C3/C4 complement levels, and brain MRI (DSM p.730, Dulcan p.397)",
+      "PANDAS workup requires throat culture, rapid strep test, and paired ASO/Anti-DNase B titers taken 3-6 weeks apart (Dulcan p.376)"
+    ],
+    "key_numbers": [
+      "30% - prevalence of Extreme Delta Brush (EDB) pattern on EEG in Anti-NMDA encephalitis (Dulcan p.96)",
+      "50% - proportion of Anti-NMDA encephalitis cases with initial normal brain MRI (Dulcan p.96)",
+      "3 to 6 weeks - mandatory interval between paired streptococcal serology samples (Dulcan p.376)",
+      "2-fold - required titer increase in paired ASO/Anti-DNase B serology for diagnosis (Dulcan p.376)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Anti-NMDA: IV Methylprednisolone pulse (30 mg/kg/d), IVIG (2 g/kg), Plasmapheresis (PLEX), and surgical resection of teratoma (Dulcan p.96)",
+      "NPSLE: IV Methylprednisolone pulse, Cyclophosphamide, and anticoagulation if antiphospholipid antibodies positive (Dulcan p.397)",
+      "PANDAS/PANS: CBT with Exposure and Response Prevention (ERP) for OCD, and standard antibiotics (Penicillin/Amoxicillin) for active GABHS (Dulcan p.383)"
+    ],
+    "second_line": [
+      "Anti-NMDA: Rituximab (375 mg/m² weekly x 4) and Cyclophosphamide for refractory cases after 10-14 days (Dulcan p.96)"
+    ],
+    "key_side_effects": [
+      "Extreme Neuroleptic Sensitivity in Anti-NMDA encephalitis causing severe EPS, akathisia, and Neuroleptic Malignant Syndrome (NMS) (DSM p.810-811, Dulcan p.398)",
+      "Treatment-Emergent Activation Syndrome (TEAS) and akathisia from SSRIs in PANDAS/PANS requiring low starting doses (Dulcan p.150, StahlKids p.311, p.441)"
+    ],
+    "monitoring": "Monitor CPK, autonomic stability, and temperature when using low-dose atypical antipsychotics; monitor paired ASO titers at 3-6 week intervals; monitor renal and hepatic function in NPSLE (Dulcan p.376, p.680, DSM p.810-811)"
+  },
+  "high_yield": [
+    "CSF anti-GluN1 IgG antibody testing is the gold standard diagnostic test for Anti-NMDA receptor encephalitis with higher sensitivity than serum testing (Dulcan p.96)",
+    "High-dose corticosteroids (Prednisone >40-60 mg/d) can induce psychosis within 1-2 weeks; differentiate from primary NPSLE flare by normal C3/C4 complement levels (DSM p.142, Dulcan p.235)",
+    "Extreme Neuroleptic Sensitivity in Anti-NMDA encephalitis markedly increases NMS risk; high-dose Lorazepam is preferred for catatonia and agitation (DSM p.810, Dulcan p.398)",
+    "PANDAS criteria require prepubertal onset (ages 3-12), abrupt overnight OCD/tics, sawtooth course, paired streptococcal serology proof, and adventitious movements (Dulcan p.368)",
+    "A randomized sham-controlled trial by NIMH showed IVIG failed to demonstrate superiority over placebo for PANDAS; IVIG and chronic antibiotic prophylaxis are not recommended for routine use (Dulcan p.383, p.388)"
+  ]
+}
