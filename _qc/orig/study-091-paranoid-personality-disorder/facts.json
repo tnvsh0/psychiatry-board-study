@@ -1,0 +1,75 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster A (Odd/Eccentric)",
+        "items": [
+          "חשד בניצול, פגיעה או הונאה ללא בסיס מספק (DSM p.738)",
+          "ספקות בלתי מוצדקים לגבי נאמנות חברים או עמיתים (DSM p.738)",
+          "אי-רצון לחשוף סודות מחשש שמידע ישמש נגדו ברשעות (DSM p.738)",
+          "קריאת משמעויות נסתרות או מאיימות בהערות תמימות או אירועים שגרתיים (DSM p.738)",
+          "נטירת טינה מתמשכת וחוסר סלחנות על עלבונות או פגיעות (DSM p.738)",
+          "תפיסת התקפות על האופי שאינן גלויות לאחרים ותגובה מהירה בכעס (DSM p.738)",
+          "חשדות חוזרים בלתי מוצדקים לגבי נאמנות זוגית (DSM p.739)"
+        ]
+      }
+    ],
+    "thresholds": "≥4/7 קריטריונים (DSM p.738); לפחות שנה 1 ברציפות מתחת לגיל 18 (DSM p.736)",
+    "subtypes": [
+      "Paranoid Personality Disorder (Premorbid) (DSM p.739)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "2.3% (NCS-R), 4.4% (NESARC), 3.2% שכיחות חציונית (DSM p.739); 0.5%-4.4% (Synopsis ch.19 Personality Disorders)",
+    "sex_ratio": "שכיח יותר בגברים במדגמים קליניים (DSM p.740, Synopsis ch.19 Personality Disorders); שכיח יותר בנשים ב-NESARC (DSM p.740)",
+    "onset_age_typical": "בגרות מוקדמת, עם ביטויים מקדימים בילדות ובהתבגרות (DSM p.738, DSM p.739)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Schizotypal PD, Schizoid PD, Narcissistic PD, Avoidant PD, Borderline PD (DSM p.741)",
+      "MDD, Agoraphobia, OCD (DSM p.741, Synopsis ch.19 Personality Disorders)",
+      "Substance Use Disorders (DSM p.741)"
+    ],
+    "prognosis": "מהלך כרוני; סיכון להתפתחות אפיזודות פסיכוטיות חולפות, Schizophrenia או Delusional Disorder (DSM p.741)"
+  },
+  "etiology": {
+    "genetic": "שכיחות מוגברת בקרובי משפחה ביולוגיים מדרגה ראשונה של מטופלים עם Schizophrenia ו-Delusional Disorder persecutory type (DSM p.740, Synopsis ch.19 Personality Disorders)",
+    "neurobiology": "היפרדופמינרגיה בקולטני D2 במסלול המזולימבי (StahlNeuro p.87, StahlNeuro p.141), ירידה בוויסות קורטיקלי mPFC/VLPFC על האמיגדלה (StahlNeuro p.87, Dulcan p.320)",
+    "environmental": "טראומה, התעללות פיזית/מינית/רגשית בילדות (DSM p.740, Dulcan p.535), דחק סוציו-אקונומי ואפליה (DSM p.740)"
+  },
+  "differential": {
+    "items": [
+      "Schizophrenia ו-Delusional Disorder - תסמינים פסיכוטיים מתמידים/דלוזיות קבועות (DSM p.740)",
+      "Schizotypal PD - כולל חשיבה קסומה, חוויות תפיסתיות ודיבור/התנהגות מוזרים (DSM p.741)",
+      "Schizoid PD - בידוד חברתי ואפקט שטוח ללא חשדנות פרנואידית (DSM p.741)",
+      "Avoidant PD - הימנעות מתוך פחד מבושה ודחייה ולא מכוונת זדון (DSM p.741)",
+      "Borderline PD - אימפולסיביות גבוהה, התנהגות הרסנית עצמית ויחסים סוערים (DSM p.741)"
+    ],
+    "key_numbers": [
+      "4 מתוך 7 - קריטריון סף לאבחנת PPD (DSM p.738)",
+      "1 שנה - משך מינימלי של סימפטומים לאבחנה מתחת לגיל 18 (DSM p.736)",
+      "23% - שכיחות PPD במסגרות פסיכיאטריות-פורנזיות ובתי סוהר (DSM p.739)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "פסיכותרפיה פרטנית: גישה עניינית, שקופה ומקצועית; להימנע מעודף חמימות/אינטימיות (Synopsis ch.19 Personality Disorders)",
+      "התאמות בסביבה הלימודית והמשפחתית לילדים ונוער (Dulcan p.123, Dulcan p.1057)"
+    ],
+    "second_line": [
+      "SGAs במינון נמוך (Risperidone, Aripiprazole) לתסמינים פרנואידיים חמורים ומחשבות יחס (Synopsis ch.19 Personality Disorders, StahlKids p.79, StahlKids p.359)",
+      "מייצבי מצב רוח (Valproate, Carbamazepine, Lithium) לתוקפנות ורוגזנות (Synopsis ch.19 Personality Disorders, StahlNeuro p.159)"
+    ],
+    "key_side_effects": [
+      "תופעות לוואי מטבוליות, עליה במשקל וסדציה מ-SGAs בילדים (StahlKids p.359, Dulcan p.786)",
+      "Disinhibition והגברת תוקפנות מ-Benzodiazepines (Synopsis ch.19 Personality Disorders)"
+    ],
+    "monitoring": "משקל/BMI בכל מפגש, היקף מותניים, לחץ דם, סוכר בצום וליפידים בבסיס, ב-12 שבועות ושנתי ב-SGAs (StahlKids p.359, Dulcan p.786); Informed Assent מגיל 7 (StahlKids p.51)"
+  },
+  "high_yield": [
+    "סף אבחנה DSM-5-TR: נוכחות של ≥4 מתוך 7 קריטריונים של חשדנות נרחבת (DSM p.738)",
+    "כלל שנה בילדים: מתחת לגיל 18 נדרשת נוכחות רציפה של התכונות במשך שנה אחת לפחות (DSM p.736)",
+    "מנגנון הגנה מרכזי: השלכה (Projection) (Synopsis ch.19 Personality Disorders)",
+    "עמדה טיפולית בפסיכותרפיה: עניינית, שקופה ומקצועית; להימנע מחמימות יתר שמעוררת חשדנות (Synopsis ch.19 Personality Disorders)",
+    "פרמקותרפיה סימפטומטית: SGAs במינון נמוך לתסמינים פרנואידיים; להימנע מ-Benzodiazepines בשל סיכון ל-Disinhibition (Synopsis ch.19 Personality Disorders, StahlKids p.359)"
+  ]
+}
