@@ -392,8 +392,11 @@ _SIGNOFFS = qc_lint._SIGNOFFS                             # noqa: SLF001
 _LEAKED_LABELS = qc_lint._LEAKED_LABELS                   # noqa: SLF001
 _ARABIC = qc_lint._ARABIC                                 # noqa: SLF001
 
-# `[12]` only, and never the text of a markdown link (`[3](url)`).
-_MARKER_RE = re.compile(r"[ \t]?\[\d{1,2}\](?!\()")
+# Built from qc_lint's body, for the reason the block above gives: a marker the
+# lint flags and the fix does not strip is a chapter that can never pass, and a
+# marker the fix strips while the lint stays quiet is one the learner reads.
+# Never the text of a markdown link (`[3](url)`).
+_MARKER_RE = re.compile(r"[ \t]?" + qc_lint._MARKER_BODY + r"(?!\()")  # noqa: SLF001
 # The two escapes measured OUTSIDE math in released prose: `40 מ\"ג` is a JSON
 # string escape that survived into the markdown, and `\%` is LaTeX's percent.
 _LOOSE_ESCAPES = ((r"\%", "%"), (r"\"", '"'))
@@ -793,6 +796,7 @@ def rebalance_keys(quiz, tag: str, *, log: list | None = None):
         key = next(o for o in free if o.get("isCorrect"))
         rest = sorted((o for o in free if o is not key), key=_sort_key)
         pos = plan[n] % len(free)
+        was = free.index(key)
         new = rest[:pos] + [key] + rest[pos:]
         new += pinned
         if new == opts:
@@ -803,7 +807,13 @@ def rebalance_keys(quiz, tag: str, *, log: list | None = None):
                 "kind": "presentation", "asset": "quiz.json",
                 "check": "key_position", "unit": f"Q{i + 1}",
                 "id": item.get("id") or item_id(_stem(item)),
-                "position": pos, "options": len(free),
+                # Where it WAS, not only where it went. Without this the repair
+                # erases its own evidence: the lint runs after hygiene, finds a
+                # balanced quiz and reports nothing, so no run could say that the
+                # correct answer was option A in 544 of the 621 single-answer
+                # items actually published (measured 2026-09-25 over _qc/orig)
+                # — and under --dry-run or --no-upload the release keeps them.
+                "was_position": was, "position": pos, "options": len(free),
                 "note": "סדר התשובות אוזן; התוכן לא שונה", "fixed": True,
             })
     if text_in is None:

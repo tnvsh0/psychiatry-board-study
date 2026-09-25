@@ -98,6 +98,7 @@ CHECKS: dict[str, dict] = {
     "missing_asset":        {"he": "נכס חובה חסר", "blocking": True},
     "empty_asset":          {"he": "נכס חובה ריק (אין מה לשפוט)", "blocking": True},
     "backfill_asset":       {"he": "נכס להשלמה (אינו חוסם)", "blocking": False},
+    "deferred_asset":       {"he": "נכס שכובה בכוונה (מכסה)", "blocking": False},
     "duplicate_unit":       {"he": "כפילות בתוך הפרק", "blocking": False},
     "cross_duplicate":      {"he": "כפילות בין פרקים", "blocking": False},
 }
@@ -117,7 +118,15 @@ SINGLE_ANSWER_TYPES = frozenset({"multiple_choice", "untyped"})
 REQUIRED_ASSETS = ("study_guide.md", "facts.json", "quiz.json", "flashcards.json")
 # Present in a complete release, absent in many. Never blocking: "video: not
 # checked" is a badge line (§5.11), not a reason to hold the chapter.
-BACKFILL_ASSETS = {"audio.mp3": "אודיו", "video.mp4": "וידאו"}
+BACKFILL_ASSETS = {"video.mp4": "וידאו"}
+# Absent BY DECISION, not by failure: bulk_run.py sets SKIP_QUOTA_ARTIFACTS=1
+# because NotebookLM throttles audio and infographics after about two chapters a
+# day, and a purpose-built backfill script fills them in later. Counting those
+# as gaps produced 136 of the 156 backfill_asset flags in the 2026-09-25 sweep —
+# 68 of 70 chapters, which read as "the corpus is full of holes" when what it
+# says is "we turned two generators off on purpose". They get their own quiet
+# check so the real gap (a plate with no legend) is visible again.
+DEFERRED_ASSETS = {"audio.mp3": "אודיו"}
 _INFOGRAPHIC_RE = re.compile(r"^infographic(?:_.+)?\.png$", re.I)
 _PLATE_PNG_RE = re.compile(r"^(sketchy_[\w\-]*)\.png$", re.I)
 
@@ -163,10 +172,19 @@ _LATIN_WORD = re.compile(r"[A-Za-z][A-Za-z'\-]{%d,}" % (MIN_KEY_TERM_LEN - 1))
 # The three sign-offs §5.4 names, each taken verbatim from a released guide.
 _SIGNOFFS = ("האם תרצה", "אשמח ל", "מדריך זה כולל את מלוא")
 _LEAKED_LABELS = ("General Instruction Filter", "Source Summary")
-# NotebookLM's inline source markers. `[12]` only — a markdown link is
-# `[text](url)` and never matches, and facts.json's lists are dumped with
-# indent=1 so `[\n 1,` cannot look like one either.
-_MARKER_RE = re.compile(r"\[\d{1,2}\]")
+# NotebookLM's inline source markers. A marker is a LIST of source numbers and
+# not always one of them: `[2]`, `[2, 3]`, `[13-16]`. Matching `\[\d{1,2}\]`
+# alone found 311 of the 614 markers in the corpus (measured 2026-09-25 over
+# _qc/orig), so this BLOCKING check passed guides still reading
+# `(Dulcan p. 176) [2, 3]`, and qc_fix stripped half of a chapter's markers and
+# left the rest in front of the learner.
+# Newlines are excluded on purpose, not by accident: facts.json's lists are
+# dumped with indent=1, so `[\n 1,` must never look like a marker. A markdown
+# link is `[text](url)`, whose text is never digits-only; qc_fix's own pattern
+# adds `(?!\()` on top of that.
+_MARKER_BODY = (r"\[[ \t]*\d{1,3}(?:[ \t]*[,–—-][ \t]*\d{1,3})*[ \t]*\]"
+                r"(?!\()")
+_MARKER_RE = re.compile(_MARKER_BODY)
 # Escaped LaTeX as it actually appears in the corpus: `\\(` and `\\)` around
 # `\alpha_{2A}`, `$5\text{-HT}_{2C}$`, `\%`, and the stray `\"` of `40 מ\"ג`,
 # which is a JSON escape that survived into markdown. One backslash or two.
@@ -428,15 +446,11 @@ def _lint_hygiene(u: qc_units.Unit, flags: dict) -> None:
     for phrase in _SIGNOFFS:
         if phrase in text:
             _add(flags, u.uid, "hygiene_signoff", phrase)
-    m = _LATEX_RE.search(text) or _MATH_RE.search(text)
-    if m:
-        _add(flags, u.uid, "hygiene_latex", _snip(text, m.start(), m.end()))
+    _span_flag(flags, u.uid, "hygiene_latex", text, _LATEX_RE, _MATH_RE)
     for label in _LEAKED_LABELS:
         if label in text:
             _add(flags, u.uid, "hygiene_leaked_label", label)
-    m = _MARKER_RE.search(text)
-    if m:
-        _add(flags, u.uid, "hygiene_marker", _snip(text, m.start(), m.end()))
+    _span_flag(flags, u.uid, "hygiene_marker", text, _MARKER_RE)
     m = _ARABIC.search(text)
     if m:
         # The letter is fused INTO a Hebrew word (`המ\u0645ושגית`), so the flag shows
@@ -450,6 +464,27 @@ def _lint_hygiene(u: qc_units.Unit, flags: dict) -> None:
 
 def _snip(text: str, a: int, b: int, pad: int = 30) -> str:
     return " ".join(text[max(0, a - pad):b + pad].split())
+
+
+def _span_flag(flags: dict, uid: str, check: str, text: str, *patterns,
+               pad: int = 30) -> None:
+    """One flag per unit, but say how many spans are behind it.
+
+    `search` alone made the owner's report understate the work: chapter 059's
+    SGA monitoring table has 26 cells reading `\\(\\checkmark\\)` and produced a
+    single hygiene_latex flag quoting one of them. One flag per unit is the
+    right unit of work — qc_fix places a note by uid, and inflating the count
+    would also move every false-positive RATE this family is measured by — so
+    the count goes in the detail instead of into a second flag.
+    """
+    hits = [m for p in patterns for m in p.finditer(text)]
+    if not hits:
+        return
+    hits.sort(key=lambda m: m.start())
+    detail = _snip(text, hits[0].start(), hits[0].end(), pad)
+    if len(hits) > 1:
+        detail += f"  (+{len(hits) - 1} נוספים ביחידה)"
+    _add(flags, uid, check, detail)
 
 
 # ---------------------------------------------------------------------------
@@ -675,8 +710,11 @@ def _lint_completeness(assets: dict, chapter: list, units: list) -> None:
     for name, he in BACKFILL_ASSETS.items():
         if name not in names:
             chapter.append({"check": "backfill_asset", "detail": f"{name} ({he})"})
+    for name, he in DEFERRED_ASSETS.items():
+        if name not in names:
+            chapter.append({"check": "deferred_asset", "detail": f"{name} ({he})"})
     if not any(_INFOGRAPHIC_RE.match(n) for n in names):
-        chapter.append({"check": "backfill_asset", "detail": "infographic*.png"})
+        chapter.append({"check": "deferred_asset", "detail": "infographic*.png"})
     for name in sorted(names):
         m = _PLATE_PNG_RE.match(name)
         if m and f"{m.group(1)}.txt" not in names:

@@ -129,8 +129,34 @@ def write_json_atomic(path, obj) -> Path:
     tmp = path.with_name(f"{path.name}.tmp{os.getpid()}")
     tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1),
                    encoding="utf-8")
-    os.replace(tmp, path)
+    replace_with_retry(tmp, path)
     return path
+
+
+def replace_with_retry(tmp, path, *, attempts: int = 6, sleep=time.sleep) -> None:
+    """os.replace, retried — this tree lives inside a OneDrive folder.
+
+    The 144-chapter sweep of 2026-09-25 lost chapter 085 to
+    `PermissionError: [WinError 5] Access is denied` renaming
+    journal.json.tmp18292 over journal.json. Nothing was wrong with the bytes:
+    OneDrive's sync engine (an indexer or a scanner does it too) held the
+    target open for the few milliseconds the rename needed. The chapter's whole
+    run died on it and the sweep exited non-zero over one lost file.
+
+    A truncated file is still never published — the tmp is complete before the
+    first attempt, and a failure after the last one re-raises with both paths
+    in the message, so the bytes are recoverable by hand.
+    """
+    delay = 0.05
+    for attempt in range(attempts):
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            sleep(delay)
+            delay *= 2
 
 
 def read_json(path, default=None):
