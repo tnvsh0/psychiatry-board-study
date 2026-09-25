@@ -1,0 +1,64 @@
+{
+ "tag": "study-014-general-personality-disorder-criteria",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:12:01+00:00",
+ "updated_at": "2026-09-25T13:12:01+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "b33faa79e6b2842562401ccb524245b9652b75fd70dee6bd774412e29d5d7a7d",
+   "asset_id": 529522661,
+   "size": 6049,
+   "fetched_at": "2026-09-25T13:11:47+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "492b24479869c45eaaf530fef47e1d2ac2099518c6c7aa448beaabbdff3fc1bc",
+   "asset_id": 529522605,
+   "size": 29311,
+   "fetched_at": "2026-09-25T13:11:49+00:00"
+  },
+  {
+   "name": "narration_criteria.txt",
+   "sha256": "c8d39ac9d1823d4d39314ae0cb806217657d49ada8cf0e036bde71d9f81598ff",
+   "asset_id": 529522620,
+   "size": 6767,
+   "fetched_at": "2026-09-25T13:11:51+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "a04645dcba0bfb5e550d42dce5496f4f4eb8a045ab3abebec37264462c98a7b2",
+   "asset_id": 529522646,
+   "size": 14601,
+   "fetched_at": "2026-09-25T13:11:53+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "6588490688ef8dff594d2962d2d1c52027d15e265baa413ad8a4179ab8579ca3",
+   "asset_id": 529522608,
+   "size": 32755,
+   "fetched_at": "2026-09-25T13:11:55+00:00"
+  },
+  {
+   "name": "sketchy_criteria.quiz.md",
+   "sha256": "67ab920c1e2371097dbf43e4b7fd2151f600c34642e261359268e369935362f1",
+   "asset_id": 529522633,
+   "size": 3522,
+   "fetched_at": "2026-09-25T13:11:57+00:00"
+  },
+  {
+   "name": "sketchy_criteria.txt",
+   "sha256": "22566c7da3e4ad9b1e586e8fc0361e60115bc1b5cc4f9ea58c1ce5a31ee85199",
+   "asset_id": 529522604,
+   "size": 8870,
+   "fetched_at": "2026-09-25T13:11:59+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "310b9780e6792308bcd807847707a1faae856b27e98924cb4102cb935ec77eba",
+   "asset_id": 529522651,
+   "size": 33534,
+   "fetched_at": "2026-09-25T13:12:01+00:00"
+  }
+ ]
+}

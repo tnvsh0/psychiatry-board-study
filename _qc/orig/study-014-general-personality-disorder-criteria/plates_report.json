@@ -1,0 +1,187 @@
+[
+ {
+  "day": 14,
+  "plate": "main",
+  "facts": 26,
+  "tries": 0,
+  "numbers_mode": "composite",
+  "error": "director never produced a valid table: ['e9: same (category, material, colour) as e4']"
+ },
+ {
+  "day": 14,
+  "plate": "criteria",
+  "facts": 13,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e1: dropped unknown fact id(s) ['1']",
+   "e12: dropped unknown fact id(s) ['9']",
+   "e14: dropped unknown fact id(s) ['10']",
+   "e15: dropped unknown fact id(s) ['DSM_personality_disorders']",
+   "e13: hook de-asserted -> 'האמן שזרועותיו מכוסות קעקועים מקצה לקצה, ללא עור חשוף, — הגישה הקלאסית והמלאה של קטגוריות ברורות, בדיוק כמו המודל הקטגורי הקלאסי לאבחון הפרעות אישיות.'",
+   "e15: hook de-asserted -> \"הפאב התיאטרלי 'PERSONALITY INN', עם חדר קלאסטר A החשוך והמוזר, — הקונספט הכללי של הפרעות אישיות כפי שמוצגות ב-DSM.\""
+  ],
+  "digit_strings_dropped": [
+   "PERMANENT p.734",
+   "SCHIZOTYPAL p.745",
+   "ANTISOCIAL & AVOIDANT p.885",
+   "BORDERLINE p.886",
+   "HISTRIONIC & DEPENDENT p.757/768",
+   "NARCISSISTIC p.761",
+   "OCPD p.771",
+   "2 OF 4 AREAS",
+   "1 YEAR +",
+   "LEVEL 2 MODERATE"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "10%",
+     "91",
+     "1/5",
+     "1/10",
+     "0",
+     "50",
+     "100",
+     "150",
+     "200",
+     "250",
+     "000"
+    ],
+    "blank_plates_found": 2,
+    "blank_plates_wanted": 2,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1914,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1354,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "10%",
+    "91",
+    "1/5",
+    "1/10",
+    "0",
+    "50",
+    "100",
+    "150",
+    "200",
+    "250",
+    "000"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — A small high-street tattoo parlour mid-afternoon\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is getting or giving a tattoo — sitting for outlines, holding stencils against skin, wiping, wrapping in cling film, waiting on the bench with a numbered ticket.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe wall of framed flash sheets with the steel instrument-trolley rail beneath it, running lower-left to upper-right, the row of reclined chairs ranged along its base.\n\nZONES, and what belongs in each: The Counter & Waiting Area · The Flash Wall & Chairs · The Booths & Back Room\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. Permanent rubber stamp inked on the consent forms — in the The Counter & Waiting Area\n  2. flash sheet with Paranoid in a spiky font — in the The Flash Wall & Chairs\n  3. flash sheet with Schizoid in a minimalist, detached font — in the The Flash Wall & Chairs\n  4. flash sheet with Schizotypal in an eccentric font and p. — in the The Flash Wall & Chairs\n  5. flash sheet with Antisocial and Avoidant written with p. — in the The Flash Wall & Chairs\n  6. flash sheet with Borderline in a fluctuating font and p. — in the The Flash Wall & Chairs\n  7. flash sheet with Histrionic and Dependent with p./ — in the The Flash Wall & Chairs\n  8. flash sheet with Narcissistic in a bold, self-important font and p. — in the The Flash Wall & Chairs\n  9. flash sheet with Obsessive-compulsive in a rigid, ordered font and p. — in the The Flash Wall & Chairs\n  10. aftercare leaflets in a wire rack — in the The Counter & Waiting Area\n  11. Must BE + door sticker — in the The Counter & Waiting Area\n  12. laser-removal price list on a clipboard, long and dear — in the The Counter & Waiting Area\n  13. artist whose arms are covered edge to edge, no bare skin left — in the The Booths & Back Room\n  14. henna and wash-off-transfer counter by the window with a sample being rinsed off — in the The Counter & Waiting Area\n  15. Personality Inn — a theatrical -room tavern at night. Cluster A room — in the The Booths & Back Room\n  16. autoclave with a timer dial — in the The Booths & Back Room\n  17. numbered ticket dispenser and a waiting bench — in the The Counter & Waiting Area\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"PARANOID\" — lettered on flash sheet with Paranoid in a spiky font\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on autoclave\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on numbered ticket dispenser and\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — A small high-street tattoo parlour mid-afternoon; everyone is Everyone is getting or giving a tattoo — sitting for outlines, holding stencils against skin, wiping, wrapping in cling ; the largest thing in\nframe is The wall of framed flash sheets with the steel instrument-trolley rail beneath it, running lower-left to upper-right, th; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n"
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "MIN",
+     "paint": "18",
+     "tag": "MIN",
+     "chroma_pixels": 58281,
+     "blob_pixels": 56358,
+     "fill_ratio": 1.13,
+     "height_frac": 0.1914,
+     "width_frac": 0.1083,
+     "quad": [
+      [
+       2383,
+       885
+      ],
+      [
+       2679,
+       1006
+      ],
+      [
+       2678,
+       1178
+      ],
+      [
+       2384,
+       1051
+      ]
+     ],
+     "bbox": [
+      2383,
+      885,
+      296,
+      293
+     ],
+     "height_pct": 19.08,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "10",
+     "tag": "N",
+     "chroma_pixels": 43164,
+     "blob_pixels": 33550,
+     "fill_ratio": 1.071,
+     "height_frac": 0.1354,
+     "width_frac": 0.0778,
+     "quad": [
+      [
+       129,
+       1136
+      ],
+      [
+       338,
+       1083
+      ],
+      [
+       337,
+       1229
+      ],
+      [
+       127,
+       1290
+      ]
+     ],
+     "bbox": [
+      127,
+      1083,
+      211,
+      207
+     ],
+     "height_pct": 13.48,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 18259,
+   "composited": 2,
+   "requested": 2
+  },
+  "narration_words": 670
+ }
+]
