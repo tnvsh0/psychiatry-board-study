@@ -1,0 +1,36 @@
+{
+ "tag": "study-046-trichotillomania-excoriation",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:20:00+00:00",
+ "updated_at": "2026-09-25T14:20:00+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "7999de3be49395af6becd2884d0f77aacd56d7034de57e501933f157c0cd0364",
+   "asset_id": 563684901,
+   "size": 6120,
+   "fetched_at": "2026-09-25T14:19:44+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "310f3304077f8053eff0e70fc670b5c2919c0945fb4332cc1d98881618d639aa",
+   "asset_id": 563684907,
+   "size": 8747,
+   "fetched_at": "2026-09-25T14:19:47+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "19f500f7e9e3297b917cb734a959b90b9e0e49fe2664f12dcc1ddf39d8e7f074",
+   "asset_id": 563684908,
+   "size": 29817,
+   "fetched_at": "2026-09-25T14:19:54+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "1cb9b3e6fd8356a464c2ba11cde50ada3d17ead151d8a8b741fc7e7544408c43",
+   "asset_id": 563684910,
+   "size": 35434,
+   "fetched_at": "2026-09-25T14:20:00+00:00"
+  }
+ ]
+}

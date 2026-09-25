@@ -1,0 +1,103 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Trichotillomania (DSM p.281)",
+        "items": [
+          "Recurrent pulling out of one's hair resulting in hair loss",
+          "Repeated attempts to decrease or stop hair pulling",
+          "Clinical distress or impairment in social, occupational, or academic functioning",
+          "Not attributable to another medical condition (e.g., dermatological)",
+          "Not better explained by symptoms of Body Dysmorphic Disorder (BDD)"
+        ]
+      },
+      {
+        "name": "Excoriation Disorder (DSM p.284)",
+        "items": [
+          "Recurrent skin picking resulting in skin lesions",
+          "Repeated attempts to decrease or stop skin picking",
+          "Clinical distress or impairment in social, occupational, or academic functioning",
+          "Not attributable to a substance (e.g., cocaine) or medical condition (e.g., scabies)",
+          "Not better explained by BDD, psychosis, stereotypic movement disorder, or NSSI"
+        ]
+      }
+    ],
+    "thresholds": "Recurrent behavior + repeated attempts to stop + clinical distress/impairment (DSM p.281, p.284)",
+    "subtypes": [
+      "Focused pulling/picking (DSM p.282, p.285)",
+      "Automatic pulling/picking (DSM p.282, p.285)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1-2% adults/adolescents for Trichotillomania (DSM p.282); 2.1% current / 3.1% lifetime for Excoriation (DSM p.285)",
+    "sex_ratio": "10:1 F:M in clinical adults, 1:1 in prepubertal children for Trichotillomania (DSM p.283); >=75% F for Excoriation (DSM p.285)",
+    "onset_age_typical": "Around puberty (10-13 years) (DSM p.283, p.285)",
+    "heritability": "Increased rate in 1st-degree relatives of OCD and BFRB probands (DSM p.283, p.286)",
+    "comorbidities": [
+      "Major Depressive Disorder (DSM p.284, p.287)",
+      "Other BFRBs / Onychophagia (DSM p.284, p.287)",
+      "OCD and Anxiety Disorders (DSM p.284, p.287)"
+    ],
+    "prognosis": "Chronic waxing and waning course without treatment (DSM p.283, p.285)"
+  },
+  "etiology": {
+    "genetic": "Familial aggregation with OCD and OCRDs (DSM p.283, p.286)",
+    "neurobiology": "Ventral CSTC loop (Accumbens-VMPFC) impulsivity migrating to Dorsal CSTC loop (Striatum-OFC) habit circuit; striatal glutamatergic hyperactivity (StahlNeuro p.539-540, p.576; Dulcan p.190, p.369)",
+    "environmental": "Triggered by stress, anxiety, boredom, or dermatological conditions like acne excoriée (DSM p.285; Dulcan p.445)"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT Habit Reversal Training (HRT) / CBIT (Awareness training, competing response 1-2 min, stimulus control) (Dulcan p.431, p.449)"
+    ],
+    "second_line": [
+      "N-acetylcysteine (NAC) 1,200-2,400 mg/day (Dulcan p.190, p.227; StahlNeuro p.576)",
+      "Clomipramine 25-200 mg/day (Dulcan p.380; StahlKids p.125-127)",
+      "SSRIs for comorbid anxiety/depression (Fluoxetine, Sertraline, Fluvoxamine) (StahlNeuro p.576; StahlKids p.199, p.229, p.439)",
+      "Augmentation: Aripiprazole, Risperidone, Naltrexone (Dulcan p.122, p.381; StahlNeuro p.571; StahlKids p.37)"
+    ],
+    "key_side_effects": [
+      "Clomipramine: QTc prolongation, arrhythmias, anticholinergic effects, sedation (Dulcan p.332; StahlKids p.125-127)",
+      "NAC: Mild GI distress (Dulcan p.190, p.227)",
+      "SSRIs: Suicidal ideation black box warning, activation in youth (Dulcan p.261; StahlKids p.202)"
+    ],
+    "monitoring": "Baseline and post-titration ECG for Clomipramine (Dulcan p.332; StahlKids p.127); GI evaluation for Trichobezoar/Rapunzel syndrome if trichophagia present (DSM p.283; Dulcan p.417)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CY-BOCS - Children's Yale-Brown Obsessive Compulsive Scale (Dulcan p.374, p.445)",
+      "MGH-HPS - Massachusetts General Hospital Hair Pulling Scale (Dulcan p.445)",
+      "SPS - Skin Picking Scale / NIMH Skin Picking Scale (Dulcan p.445)",
+      "COIS - Child OCD Impact Scale (Dulcan p.375)",
+      "Dermoscopy / Trichoscopy showing broken hairs of varying shaft length (DSM p.283)"
+    ],
+    "key_numbers": [
+      "1-2 minutes for Competing Response holding time (Dulcan p.431)",
+      "1,200-2,400 mg/day NAC target dose (Dulcan p.190)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Alopecia Areata / Telogen Effluvium (DSM p.283-284)",
+      "Scabies / Acne excoriée / Eczema (DSM p.286-287)",
+      "Dermatitis Artefacta / Factitious Disorder (DSM p.287)",
+      "Body Dysmorphic Disorder (BDD) (DSM p.272-273, p.284, p.286)",
+      "Obsessive-Compulsive Disorder (OCD) (DSM p.264, p.284, p.286)",
+      "Stereotypic Movement Disorder (DSM p.89, p.284, p.286)",
+      "Nonsuicidal Self-Injury (NSSI) (DSM p.286, p.924)",
+      "Substance-Induced Picking (Cocaine/Amphetamines) (DSM p.287, p.289)"
+    ],
+    "key_numbers": [
+      "<3 years typical onset age for Stereotypic Movement Disorder vs puberty for BFRBs (DSM p.89, p.283)",
+      "10:1 adult F:M ratio helping differentiate BFRBs from non-gendered mimics (DSM p.283)"
+    ]
+  },
+  "high_yield": [
+    "Trichotillomania sex ratio is 1:1 in prepubertal children but 10:1 female in adults (DSM p.283).",
+    "Trichophagia can lead to Trichobezoar (Rapunzel Syndrome), causing bowel obstruction or perforation (DSM p.283; Dulcan p.417).",
+    "BFRBs lack cognitive obsessions; they are driven by sensory premonitory urges and tension/relief loops (DSM p.264).",
+    "Neurobiologically, BFRBs reflect a shift from Ventral Striatum (impulsivity) to Dorsal Striatum (habit circuit) with loss of top-down inhibition (StahlNeuro p.539-540).",
+    "Habit Reversal Training (HRT) / CBIT is the first-line evidence-based psychotherapy (Dulcan p.431, p.449).",
+    "N-acetylcysteine (NAC) 1,200-2,400 mg/day is the key evidence-supported glutamatergic agent in youth (Dulcan p.190; StahlNeuro p.576).",
+    "Clomipramine requires mandatory baseline and post-titration ECG monitoring due to QTc prolongation risk (Dulcan p.332; StahlKids p.127)."
+  ]
+}
