@@ -1,0 +1,36 @@
+{
+ "tag": "study-078-enuresis-encopresis",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:24:24+00:00",
+ "updated_at": "2026-09-25T15:24:24+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "801a81c03a189609cbb91f3f2c42cc68718a405332a26a19d428d91b000111ea",
+   "asset_id": 588333861,
+   "size": 8088,
+   "fetched_at": "2026-09-25T15:23:52+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "d21ef0215298eba95d5761d8b6983d3ec52e3a7fa71f8956de6f978dc6d5c2c2",
+   "asset_id": 588333852,
+   "size": 22669,
+   "fetched_at": "2026-09-25T15:24:01+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "91886a0f6aac8e34b78030612f28ce2e8129c2d13023c3dbd0225176c1c3d8bc",
+   "asset_id": 588333853,
+   "size": 27725,
+   "fetched_at": "2026-09-25T15:24:12+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "045c2ff03b22bdb75847e2efbe0ac5847f696cade21b7e364861c8eb3bd268f3",
+   "asset_id": 588333859,
+   "size": 38930,
+   "fetched_at": "2026-09-25T15:24:24+00:00"
+  }
+ ]
+}

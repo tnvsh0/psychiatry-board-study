@@ -1,0 +1,105 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Enuresis (F98.0)",
+        "items": [
+          "הטלת שתן חוזרת למיטה או לבגדים (בלתי-רצונית או מכוונת) (DSM p.399)",
+          "מצוקה קלינית או פגיעה בתפקוד חברתי/אקדמי (DSM p.399)"
+        ]
+      },
+      {
+        "name": "Encopresis (F98.1)",
+        "items": [
+          "הפרשת צואה חוזרת במקומות בלתי הולמים (בלתי-רצונית או מכוונת) (DSM p.402)",
+          "אירוע אחד לפחות בחודש (DSM p.402)"
+        ]
+      }
+    ],
+    "thresholds": "Enuresis: גיל >= 5y, תדירות >= 2/week במשך >= 3 חודשים (DSM p.399). Encopresis: גיל >= 4y, תדירות >= 1/month במשך >= 3 חודשים (DSM p.402).",
+    "subtypes": [
+      "Enuresis: Nocturnal only (Monosymptomatic) (DSM p.399)",
+      "Enuresis: Diurnal only (Urge / Voiding postponement) (DSM p.399-400)",
+      "Enuresis: Nocturnal and diurnal (Nonmonosymptomatic) (DSM p.399-400)",
+      "Encopresis: With constipation and overflow incontinence (Retentive) (DSM p.402)",
+      "Encopresis: Without constipation and overflow incontinence (Nonretentive) (DSM p.402-403)",
+      "Primary vs. Secondary (הפוגה של 6-12 חודשים) (DSM p.400, 404, Dulcan p.458, 465)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "Enuresis: 5%-10% בגיל 5, 3%-5% בגיל 10, ~1% מעל גיל 15 (DSM p.400). Encopresis: 1%-4% (DSM p.403), 1.5% בגילאי 7-8 (Dulcan p.466)",
+    "sex_ratio": "Enuresis: 2:1 M:F בלילה; F>M ביום (DSM p.401). Encopresis: 1:1 <5y; 2:1 עד 6:1 M:F >5y (DSM p.404)",
+    "onset_age_typical": "Enuresis: גיל 5y (ראשוני) או 5-8y (שניוני) (DSM p.400). Encopresis: גיל 4y (DSM p.403)",
+    "heritability": "סיכון פי 10.1 באב מורטיב, פי 3.6 באם (DSM p.401); כרומוזומים 12q, 13q13-13q14, 22q11 (Dulcan p.461)",
+    "comorbidities": [
+      "ADHD (DSM p.400, Dulcan p.459)",
+      "OSA ~50% בהרטבה (DSM p.402, Dulcan p.459)",
+      "ODD/CD בהתלכלכות שאינה אוגרת (DSM p.403)",
+      "UTI בהרטבת יום (DSM p.401)"
+    ],
+    "prognosis": "Enuresis נסיגה ספונטנית: 5%-10%/שנה (DSM p.400) או 12%-16%/שנה (Dulcan p.461); Encopresis חולפת עד ההתבגרות (DSM p.404)"
+  },
+  "etiology": {
+    "genetic": "Enuresis: קישור לכרומוזומים 12q, 13q, 22q; סיכון פי 10.1 באב מורטיב (DSM p.401, Dulcan p.461)",
+    "neurobiology": "חסר AVP/ADH לילי -> Nocturnal polyuria (StahlNeuro p.439, Dulcan p.460); קיבולת שלפוחית תפקודית נמוכה; סף עוררות משינה גבוה (DSM p.401)",
+    "environmental": "עיכוב באילוף לשירותים, דחק פסיכוסוציאלי, מעגל יציאה כואבת ו-Withholding המוביל ל-Megarectum ודליפת Overflow (DSM p.401, 403, Dulcan p.466)"
+  },
+  "treatment": {
+    "first_line": [
+      "Enuresis: זמזם הרטבה (Bell-and-Pad) ל-16-20 שבועות (66% תגובה, שיעור חזרה נמוך ביותר) (Dulcan p.464)",
+      "Encopresis: פרוטוקול Levine (פינוי PEG במשך 3-5 ימים, תחזוקת PEG ל-3-6 חודשים, ישיבה מתוזמנת לאחר ארוחות) (Dulcan p.468)"
+    ],
+    "second_line": [
+      "Enuresis: Desmopressin (DDAVP) טבליות 200-600 מק\"ג / MELT (Dulcan p.463-464)",
+      "Encopresis: Biofeedback (פרוטוקול Loening-Baucke) לתיקון כיווץ פרדוקסלי (Dulcan p.468-469)"
+    ],
+    "key_side_effects": [
+      "Desmopressin: היפונתרמיה, פרכוסים, מוות (אזהרת קופסה שחורה של ה-FDA על תרסיס אף) (Dulcan p.463-464)",
+      "Imipramine: הארכת QTc, רעילות לבבית, סכנת מנת יתר קטלנית (Dulcan p.462, StahlKids p.125)"
+    ],
+    "monitoring": "Imipramine: אק\"ג בבסיס + אק\"ג חוזר בעליית מינון, מקסימום 5 מ\"ג/ק\"ג/יום (Dulcan p.462, StahlKids p.125); Desmopressin: הגבלת שתייה לילית <8 אונקיות (Dulcan p.463)"
+  },
+  "assessment_tools": {
+    "items": [
+      "בדיקת שתן כללית ותרבית (Urinalysis) חובה לכל מורטיב (Dulcan p.462)",
+      "בדיקה רקטלית ידנית (DRE) בהתלכלכות (Dulcan p.466)",
+      "צילום בטן סקירה להערכת עומס צואה (Dulcan p.467)",
+      "יומן מעקב קלנדרי (Enuresis Diary) (Dulcan p.461)",
+      "בדיקת זמן מעבר במעי עם סמנים אטומים לרנטגן (Radiopaque markers) (DSM p.404)",
+      "מנומטריה אנורקטלית לשלילת הירשפרונג (RAIR) (DSM p.404, Dulcan p.468)"
+    ],
+    "key_numbers": [
+      "14 לילות יבשים רצופים = קריטריון הצלחה בזמזם הרטבה (Dulcan p.464)",
+      "16-20 שבועות = משך טיפול מומלץ בזמזם הרטבה (Dulcan p.464)",
+      "3-5 ימים = משך שלב הפינוי הטיפולי ב-Encopresis (Dulcan p.468)",
+      "5-10 דקות = משך ישיבה מתוזמנת בשירותים לאחר ארוחות (Dulcan p.468)",
+      "50% = שיעור הבראה מהרטבה לאחר כריתת שקדים/אדנואידים ב-OSA (DSM p.402, Dulcan p.459)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "זיהום בדרכי השתן (UTI - דיסוריה, תרבית חיובית) (DSM p.401, Dulcan p.459)",
+      "סוכרת נעורים (Diabetes Mellitus - פוליאוריה, גלוקוזוריה) (DSM p.401, Dulcan p.459)",
+      "סוכרת תפלה (Diabetes Insipidus - אוסמולריות שתן נמוכה) (DSM p.401, Dulcan p.459)",
+      "שופכן אקטופי (Ectopic Ureter - דליפת שתן רציפה לצד השתנה תקינה בבנות) (DSM p.400, Dulcan p.459)",
+      "שסתום שופכה אחורי (PUV בבנים) (DSM p.400, Dulcan p.459)",
+      "מחלת הירשפרונג (רקטום ריק מצואה ב-DRE, עיכוב במקוניום >48 שעות) (Dulcan p.466)",
+      "דום נשימה בשינה (OSA - ANP מוגבר) (DSM p.402, Dulcan p.459)",
+      "השפעת תרופות (משתנים, Risperidone, Clozapine, SSRIs) (DSM p.401, Dulcan p.459)"
+    ],
+    "key_numbers": [
+      "48 שעות = סף עיכוב בפליטת מקוניום בלידה החשוד להירשפרונג (Dulcan p.466)",
+      "50% = שיעור ריפוי מהרטבה לאחר כריתת שקדים ב-OSA (DSM p.402, Dulcan p.459)"
+    ]
+  },
+  "high_yield": [
+    "קריטריון Enuresis: גיל >= 5y, תדירות >= 2/week במשך 3 חודשים רצופים (DSM p.399)",
+    "קריטריון Encopresis: גיל >= 4y, תדירות >= 1/month במשך 3 חודשים רצופים (DSM p.402)",
+    "זמזם הרטבה (Bell-and-Pad) הוא קו ראשון בהרטבת לילה בעל שיעור החזרה הנמוך ביותר (~50% הפוגה) (Dulcan p.464)",
+    "אזהרת קופסה שחורה: תרסיס אף Desmopressin אסור לחלוטין לשימוש בהרטבה עקב היפונתרמיה, פרכוסים ומוות (Dulcan p.463-464)",
+    "Imipramine מחייב אק\"ג בבסיס, ניטור QTc ומינון מקסימלי 5 מ\"ג/ק\"ג/יום עקב סכנת Overdose קטלנית (Dulcan p.462, StahlKids p.125)",
+    "פרוטוקול Levine להתלכלכות מעניק פרסים וחיזוקים חיוביים על עצם הישיבה בשירותים ולא על היציאה עצמה (Dulcan p.468)",
+    "מחלת הירשפרונג מציגה רקטום ריק מצואה ב-DRE לעומת Encopresis אוגרת המציגה גוש צואה כלוא (Fecal impaction) (Dulcan p.466-467)",
+    "כריתת שקדים ואדנואידים (Adenotonsillectomy) מרפאת הרטבה ב-~50% מהילדים הסובלים מ-OSA (DSM p.402, Dulcan p.459)"
+  ]
+}
