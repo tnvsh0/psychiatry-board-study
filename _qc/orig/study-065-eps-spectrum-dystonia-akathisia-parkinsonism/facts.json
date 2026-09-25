@@ -1,0 +1,96 @@
+{
+  "recognition": {
+    "items": [
+      "Acute Dystonia: Involuntary muscular contractions, torticollis, oculogyric crisis, trismus, laryngeal spasm (DSM p.812)",
+      "Acute Akathisia: Subjective inner restlessness in legs plus observed movements like pacing, leg swinging, rocking (DSM p.813)",
+      "Parkinsonism: Bradykinesia, lead-pipe or cogwheel rigidity, 3-6 Hz resting tremor, masked facies, shuffling gait (DSM p.808)",
+      "High D2 receptor occupancy (>80%) in dorsal striatum triggers motor EPS (StahlNeuro p.165)",
+      "Children, adolescents, and young males under 40 are at highest risk for acute dystonia (DSM p.812, Dulcan p.819, StahlKids p.39)"
+    ],
+    "key_numbers": [
+      "50% of acute dystonia cases occur within 24-48 hours (DSM p.812)",
+      "90% of acute dystonia cases occur within 5 days (DSM p.812)",
+      ">80% D2 occupancy threshold in dorsal striatum for EPS (StahlNeuro p.165)",
+      "20%-75% prevalence of akathisia in patients on antipsychotics (DSM p.814)",
+      "50% of outpatients on chronic FGAs develop parkinsonism (DSM p.808)"
+    ]
+  },
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Medication-Induced Acute Dystonia (G24.02)",
+        "items": [
+          "Abnormal prolonged muscle contractions or increased muscle tone (DSM p.812)",
+          "Onset within hours to days of starting/increasing D2 blocker or reducing anticholinergic (DSM p.812)",
+          "Not better explained by catatonia, primary neurological condition, or tardive dystonia (DSM p.812)"
+        ]
+      },
+      {
+        "name": "Medication-Induced Acute Akathisia (G25.71)",
+        "items": [
+          "Subjective restlessness and compulsion to move legs (DSM p.813)",
+          "At least one observed movement: leg fidgeting/swinging, pacing, rocking from foot to foot (DSM p.813)",
+          "Onset within 4 weeks of starting/increasing drug or reducing anticholinergic (DSM p.813)"
+        ]
+      },
+      {
+        "name": "Medication-Induced Parkinsonism (G21.11 / G21.19)",
+        "items": [
+          "Presence of resting tremor, rigidity, or bradykinesia (DSM p.807-808)",
+          "Onset within weeks to months (typically 2-4 weeks to 3 months) of D2 blocker treatment (DSM p.808)",
+          "Not better explained by Parkinson's disease, depression, or catatonia (DSM p.808)"
+        ]
+      }
+    ],
+    "thresholds": "Dystonia: hours to 5 days (DSM p.812); Akathisia: within 4 weeks (DSM p.813); Parkinsonism: 2-4 weeks up to 3 months (DSM p.808)",
+    "subtypes": [
+      "Medication-Induced Acute Dystonia (G24.02) (DSM p.812)",
+      "Medication-Induced Acute Akathisia (G25.71) (DSM p.813)",
+      "Antipsychotic-Induced Parkinsonism (G21.11) (DSM p.807)",
+      "Other Medication-Induced Parkinsonism (G21.19) (DSM p.807)"
+    ]
+  },
+  "differential": {
+    "items": [
+      "Tardive Dystonia (G24.09): Onset after >=3 months exposure; anticholinergics ineffective or worsen condition (DSM p.816)",
+      "Psychomotor Agitation: Psychiatric origin, not localized to legs, worsens if antipsychotic discontinued (DSM p.814)",
+      "Restless Legs Syndrome (RLS): Onset in evening/at rest, relieved by movement, paresthesias present (DSM p.814, Dulcan p.485)",
+      "Idiopathic Parkinson's Disease: Unilateral/asymmetric onset, hyposmia, REM sleep behavior disorder present (DSM p.808)",
+      "Neuroleptic Malignant Syndrome (G21.0): Hyperthermia (>38.0°C), lead-pipe rigidity, autonomic instability, CPK >=4x ULN (DSM p.810)"
+    ],
+    "key_numbers": [
+      "3 months minimum drug exposure for Tardive Dyskinesia/Dystonia (1 month if age >=60) (DSM p.815)",
+      "3-6 Hz resting tremor frequency in parkinsonism (DSM p.808)",
+      "8-12 Hz postural tremor frequency in drug-induced postural tremor (DSM p.817)",
+      ">38.0°C (100.4°F) hyperthermia threshold for NMS on at least 2 occasions (DSM p.810)",
+      ">=4x upper limit of normal CPK elevation in NMS (DSM p.810)"
+    ]
+  },
+  "emergency_management": {
+    "items": [
+      "Acute Dystonia / Laryngeal Crisis: Benztropine 1-2mg IM/IV or Diphenhydramine 25-50mg IM/IV (StahlKids p.39, DSM p.812)",
+      "Akathisia Management: Reduce D2 blocker dose, Propranolol 30-90mg/day (0.5-1mg/kg/day in kids), Lorazepam, Mirtazapine 15mg (Dulcan p.833, StahlKids p.39)",
+      "Parkinsonism Management: Reduce dose, switch to SGA (Quetiapine/Clozapine), Oral Benztropine 1-2mg BID, or Amantadine 100mg BID (StahlNeuro p.166, Dulcan p.833)",
+      "NMS Emergency Protocol: Immediately discontinue D2 blocker, ICU supportive care, IV hydration, Dantrolene 1-2.5mg/kg IV q6h, Bromocriptine (DSM p.811, StahlNeuro p.169, Syllabus p.35)"
+    ],
+    "key_numbers": [
+      "1-2 mg Benztropine IM/IV dose for acute dystonia (StahlKids p.39)",
+      "10-20 minutes typical response time for IM/IV anticholinergic in acute dystonia (StahlNeuro p.169)",
+      "30-90 mg/day Propranolol dose for akathisia (Dulcan p.833)",
+      "15 mg/day low-dose Mirtazapine for refractory akathisia (Dulcan p.833)",
+      "1-2.5 mg/kg IV Dantrolene q6h for NMS (StahlNeuro p.169)"
+    ]
+  },
+  "high_yield": [
+    "D2 occupancy >80% in dorsal striatum triggers EPS, whereas 60%-65% provides antipsychotic efficacy (StahlNeuro p.165)",
+    "Acute dystonia peak incidence is 24-48 hours; 90% occur within 5 days of starting or increasing D2 blockers (DSM p.812)",
+    "Acute laryngeal dystonia is a life-threatening emergency requiring immediate IV Benztropine and airway security (DSM p.812)",
+    "Akathisia causes severe subjective distress and dysphoria, leading to a marked increase in suicide risk and aggression (DSM p.814)",
+    "Misinterpreting akathisia as psychotic agitation and raising antipsychotic dose causes catastrophic worsening (DSM p.814, Dulcan p.439)",
+    "Drug-induced parkinsonism presents with bilateral symmetric signs, unlike idiopathic Parkinson's disease (DSM p.808)",
+    "Anticholinergic medications relieve parkinsonism but exacerbate Tardive Dyskinesia (DSM p.816, StahlNeuro p.169)",
+    "Propranolol (30-90mg/day) is first-line pharmacotherapy for akathisia; classic anticholinergics are ineffective (Dulcan p.833, StahlKids p.39)",
+    "NMS requires immediate cessation of D2 blockers, aggressive cooling, IV hydration, and Dantrolene/Bromocriptine (DSM p.811, Syllabus p.35)",
+    "Diphenhydramine in pediatric or neurodevelopmental patients may induce paradoxical agitation (Dulcan p.611-612)"
+  ]
+}

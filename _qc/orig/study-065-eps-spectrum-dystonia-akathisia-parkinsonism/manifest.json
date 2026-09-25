@@ -1,0 +1,36 @@
+{
+ "tag": "study-065-eps-spectrum-dystonia-akathisia-parkinsonism",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:57:25+00:00",
+ "updated_at": "2026-09-25T14:57:25+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "51d3d1ef7bf9a34364df136b1a7f4074eaac2f736ea97103d9cf25eb586031d2",
+   "asset_id": 571244792,
+   "size": 6534,
+   "fetched_at": "2026-09-25T14:57:18+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "b96916291163b0a961546e19947283dc08ad375ad96c5307e0a5699206ba9cf2",
+   "asset_id": 571244841,
+   "size": 12927,
+   "fetched_at": "2026-09-25T14:57:21+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "ca213663873426324659528c114be2d5f9d145e2cf9bd0574c9d5d57170b4473",
+   "asset_id": 571244793,
+   "size": 39289,
+   "fetched_at": "2026-09-25T14:57:23+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "70a1852b2d9f7c972ce3a8598797bc18f8e8f04e1bc730c887d979096afa4322",
+   "asset_id": 571244802,
+   "size": 33034,
+   "fetched_at": "2026-09-25T14:57:25+00:00"
+  }
+ ]
+}
