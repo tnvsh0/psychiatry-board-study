@@ -1,0 +1,66 @@
+{
+  "PPD": {
+    "items": [
+      "דיכאון לאחר לידה פוגע ב-1 מתוך 7 נשים (מקור: הקשר רחב)",
+      "מפרט Peripartum onset מוגדר כהופעה במהלך ההריון או ב-4 השבועות הראשונים שלאחר הלידה (DSM p.106, p.173)",
+      "כ-50% מאפיזודות הדיכאון הפוסט-פארטום מתחילות עוד במהלך ההריון (DSM p.173)",
+      "כלי הסקר המועדף לאיתור PPD הוא שאלון אדינבורו (EPDS) (Dulcan p.34)",
+      "Brexanolone IV (עירוי 60 שעות) ו-Zuranolone PO משקמים עיכוב טוני בקולטני GABA-A אקסטרה-סינפטיים (StahlNeuro p.262, p.320-322)"
+    ],
+    "key_numbers": [
+      "1 מתוך 7 נשים (שכיחות PPD)",
+      "4 שבועות פוסט-פארטום (חלון הגדרה ב-DSM)",
+      "50% התחלה לפני הלידה",
+      "60 שעות עירוי Brexanolone"
+    ]
+  },
+  "postpartum_psychosis": {
+    "items": [
+      "שכיחות נדירה של 1-2 ל-1,000 לידות (0.1%-0.2%) (DSM p.174, p.213)",
+      "מצב חירום פסיכיאטרי מוחלט בשל סיכון לרצח תינוקות (Infanticide) ואובדנות (DSM p.173-174, Dulcan p.605)",
+      "משויך להזיות ציווי ומחשבות שווא שהתינוק מוחזק בידי דיבוק (DSM p.173-174)",
+      "זיקה חזקה להפרעה דו-קוטבית Bipolar I וסיכון הישנות של 30%-50% בלידות עוקבות (DSM p.174)",
+      "אבחנה מבדלת מ-Postpartum Delirium ומ-Perinatal OCD עם מחשבות אגו-דיסטוניות (DSM p.174, p.269)"
+    ],
+    "key_numbers": [
+      "0.1%-0.2% מהלידות (1-2 ל-1,000)",
+      "30%-50% סיכון להישנות בלידה עוקבת"
+    ]
+  },
+  "SSRI_in_pregnancy_lactation": {
+    "items": [
+      "Sertraline היא תרופת הבחירה הראשונה (Preferred) בהנקה בשל מעבר מזערי לחלב (Dulcan p.741, StahlKids p.437)",
+      "תסמונת PNAS מתרחשת ב-10%-30% מהילודים שנחשפו ל-SSRI בשליש השלישי (Dulcan p.261, p.731)",
+      "Lithium מותר בהנקה תחת ניטור רמות דם (0.8-1.2 mEq/L), כליות ו-TSH (Dulcan p.766, StahlKids p.288, p.293)",
+      "Valproate אסור לחלוטין (AVOID) בשל מומים בתעלה העצבית (Spina Bifida), ירידה ב-IQ ואוטיזם (Dulcan p.768, StahlKids p.467, StahlNeuro p.349)"
+    ],
+    "key_numbers": [
+      "10%-30% שכיחות PNAS בילודים",
+      "1 ל-1,000 סיכון למום Ebstein בליתיום",
+      "0.8-1.2 mEq/L רמת ליתיום נדרשת בדם"
+    ]
+  },
+  "preeclampsia_psych": {
+    "items": [
+      "Venlafaxine גורם לעלייה תלוית-מינון בלחץ הדם (מנגנון NET) ומצריך ניטור ברעלת הריון (Dulcan p.751, StahlKids p.483)",
+      "SSRIs/SNRIs כרוכים בסיכון ל-SIADH והיפונתרמיה המחייבים מעקב אלקטרוליטים ברעלת הריון (Dulcan p.732, p.749, StahlKids p.171)",
+      "Postpartum Thyroiditis מחקה MDE או פסיכוזה ומצריכה אבחנת Depressive disorder due to medical condition (DSM p.174, p.213)",
+      "חובת בירור מעבדתי של TSH ו-Free T4 בכל הערכה פרינטלית ראשונית (DSM p.174, Dulcan p.684)"
+    ],
+    "key_numbers": [
+      "TSH ו-Free T4 בדיקות מעבדה מחייבות"
+    ]
+  },
+  "high_yield": [
+    "מפרט Peripartum Onset ב-DSM-5-TR מוגדר כהופעה בהריון או ב-4 השבועות הראשונים שלאחר הלידה (DSM p.106, p.173)",
+    "Maternity Blues היא תופעה פיזיולוגית חולפת תוך שבוע ואינה מצריכה טיפול תרופתי (DSM p.174)",
+    "סקר PPD מבוצע באופן רוטיני באמצעות שאלון אדינבורו (EPDS) (Dulcan p.34)",
+    "Sertraline היא Preferred SSRI בהנקה בשל מעבר מזערי לחלב אם (Dulcan p.741, StahlKids p.437)",
+    "פסיכוזה פוסט-פארטום היא מצב חירום פסיכיאטרי מוחלט בשל סיכון מוגבר ל-Infanticide (DSM p.173-174, Dulcan p.605)",
+    "Brexanolone IV (60 שעות) ו-Zuranolone PO פועלים כ-PAM בקולטני GABA-A אקסטרה-סינפטיים (StahlNeuro p.262, p.320-322)",
+    "Valproate אסור לחלוטין (AVOID) בהריון ובגיל הפריון בשל טרטוגניות קשה (Neural Tube Defects, ירידה ב-IQ, ASD) (Dulcan p.768, StahlKids p.467)",
+    "Lithium מותר בהנקה תחת ניטור הדוק של רמות דם התינוק, כליות ו-TSH (Dulcan p.766, StahlKids p.288, p.293)",
+    "Venlafaxine גורם לעליית לחץ דם תלוית-מינון ומצריך ניטור ברעלת הריון (Dulcan p.751, StahlKids p.483)",
+    "חובת בדיקת TSH ו-Free T4 לשלילת Postpartum Thyroiditis לפני קביעת אבחנת דיכאון פרינטלי (DSM p.174, Dulcan p.684)"
+  ]
+}
