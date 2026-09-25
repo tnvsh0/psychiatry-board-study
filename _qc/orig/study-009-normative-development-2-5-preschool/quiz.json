@@ -1,0 +1,265 @@
+{
+  "title": "Developmental Quiz",
+  "questions": [
+    {
+      "question": "A 4-year-old boy is brought for an evaluation. During the assessment, the clinician performs a 'False Belief' task (Sally-Anne experiment). The child observes a doll hide a marble in a basket and leave the room; a second doll moves the marble to a box. When asked where the first doll will look for the marble, the child points to the box. Which of the following developmental concepts best explains this response?",
+      "answerOptions": [
+        {
+          "text": "Deficit in Theory of Mind (ToM) / Mentalizing",
+          "isCorrect": true,
+          "rationale": "By age 4\u20135, children should understand that others can hold false beliefs; pointing to the actual location indicates 'mindblindness' (Dulcan p.143)."
+        },
+        {
+          "text": "Normative Cognitive Egocentrism for age 4",
+          "isCorrect": false,
+          "rationale": "While egocentrism is a feature of the pre-operational stage, a 4-year-old is typically beginning to pass false-belief tasks (Dulcan p.47, p.143)."
+        },
+        {
+          "text": "Late-stage Sensorimotor Play pattern",
+          "isCorrect": false,
+          "rationale": "Sensorimotor play is characteristic of infancy (0\u201312 months) and does not involve the mental representations required for ToM tasks (Dulcan p.42)."
+        },
+        {
+          "text": "Physiological Synaptic Pruning of the PFC",
+          "isCorrect": false,
+          "rationale": "Pruning in the Prefrontal Cortex (PFC) peaks later in childhood and adolescence and is not the direct cause of failing a ToM task at age 4 (StahlNeuro p.463)."
+        }
+      ],
+      "hint": "Consider the ability to 'impute mental states' and differentiate one's own knowledge from that of others."
+    },
+    {
+      "question": "A mother is proud that her 10-month-old infant has already established strong hand dominance, using only the right hand to reach for objects. What is the most appropriate clinical interpretation of this observation?",
+      "answerOptions": [
+        {
+          "text": "It is a clinical 'red flag' suggesting potential weakness in the contralateral extremity.",
+          "isCorrect": true,
+          "rationale": "Hand dominance before age 1 year is atypical and often indicates a motor deficit on the opposite side (Dulcan p.93)."
+        },
+        {
+          "text": "It represents an advanced fine motor milestone in the second half of infancy.",
+          "isCorrect": false,
+          "rationale": "Typical hand dominance begins to consolidate during the second year of life, not before 12 months (Dulcan p.28)."
+        },
+        {
+          "text": "It is a normative sign of early lateralization of language in the left hemisphere.",
+          "isCorrect": false,
+          "rationale": "Hemispheric language lateralization continues into adulthood and is not determined by infant hand preference at 10 months (Dulcan p.93)."
+        },
+        {
+          "text": "It indicates a high rate of synaptogenesis in the primary motor cortex.",
+          "isCorrect": false,
+          "rationale": "While synaptogenesis is rapid (1 million/second), early hand dominance is a sign of pathology rather than accelerated healthy development (Dulcan p.18, p.93)."
+        }
+      ],
+      "hint": "Early preference for one hand over the other in infants is rarely a sign of giftedness."
+    },
+    {
+      "question": "A 3-year-old child is observed in a playroom with another toddler. They are both playing with similar trucks in the same area but do not interact, share toys, or engage in a common goal. How should the clinician document this stage of play?",
+      "answerOptions": [
+        {
+          "text": "Parallel Play",
+          "isCorrect": true,
+          "rationale": "Parallel play involves playing beside others with similar toys but without active social interaction or cooperation (Dulcan p.28, p.42)."
+        },
+        {
+          "text": "Cooperative Play",
+          "isCorrect": false,
+          "rationale": "Cooperative play involves shared goals and role-taking, which typically emerges more fully between ages 3 and 5 (Dulcan p.43)."
+        },
+        {
+          "text": "Functional Play",
+          "isCorrect": false,
+          "rationale": "Functional play describes the use of objects according to their intended function (e.g., pushing a car) rather than the social context of the play (Dulcan p.42)."
+        },
+        {
+          "text": "Complex Symbolic Play",
+          "isCorrect": false,
+          "rationale": "Complex symbolic play involves imaginative depth and logical sequences, which is a separate domain from social interaction levels (Dulcan p.42)."
+        }
+      ],
+      "hint": "Focus on the social interaction level where children play 'side-by-side'."
+    },
+    {
+      "question": "According to Stahl's neurobiological model, why is a diagnosis of ADHD often deferred until age 6 or 7?",
+      "answerOptions": [
+        {
+          "text": "The PFC is insufficiently mature to support sustained attention and cognitive inhibition before this age.",
+          "isCorrect": true,
+          "rationale": "Before synaptic pruning/competitive elimination in the PFC around ages 6\u20137, children are naturally distractible and lack stable sustained attention (StahlNeuro p.463)."
+        },
+        {
+          "text": "The rate of synaptogenesis does not reach its peak until the transition to elementary school.",
+          "isCorrect": false,
+          "rationale": "Synaptogenesis peaks much earlier; it is the subsequent pruning and elimination process that refines attention networks (StahlNeuro p.151, p.463)."
+        },
+        {
+          "text": "Environmental factors like 'clumsy child syndrome' mask the underlying dopamine (\u05d3\u05d5\u05d1\u05d9) deficits.",
+          "isCorrect": false,
+          "rationale": "Motor coordination issues (DCD) are comorbid but do not mask the neurobiological maturation of the prefrontal cortex (DSM p.86-87)."
+        },
+        {
+          "text": "Diagnostic criteria in DSM-5-TR require symptoms to be present for 12 months post-synaptogenesis.",
+          "isCorrect": false,
+          "rationale": "DSM-5-TR requires symptoms to persist for 6 months and onset before age 12, but neurobiological maturation is the reason for clinical caution in preschoolers (DSM p.68)."
+        }
+      ],
+      "hint": "Think about the timing of synaptic pruning (Competitive Elimination) in the Prefrontal Cortex."
+    },
+    {
+      "question": "During a mental status examination, a 4-year-old girl tells the clinician that her stuffed bear is 'angry because it didn't get any tea.' Which Piagetian concept is most clearly demonstrated?",
+      "answerOptions": [
+        {
+          "text": "Animism",
+          "isCorrect": true,
+          "rationale": "Animism is the tendency of children in the pre-operational stage to attribute human qualities and intentions to inanimate objects (Dulcan p.47)."
+        },
+        {
+          "text": "Egocentrism",
+          "isCorrect": false,
+          "rationale": "Egocentrism is the inability to perceive a situation from another person's perspective, whereas this example involves personifying an object (Dulcan p.47)."
+        },
+        {
+          "text": "Conservation",
+          "isCorrect": false,
+          "rationale": "Conservation is the understanding that quantity remains the same despite changes in shape, a task typically failed in the pre-operational stage (Dulcan p.65)."
+        },
+        {
+          "text": "Metapragmatic Awareness",
+          "isCorrect": false,
+          "rationale": "Metapragmatic awareness involves reflecting on social rules of language, which is far beyond the developmental level of this girl's statement (Dulcan p.164)."
+        }
+      ],
+      "hint": "Attribute this behavior to the attribution of 'life' or 'feelings' to non-living things."
+    },
+    {
+      "question": "A 2-year-old (24 months) child is being evaluated for a possible communication disorder. Which of the following findings would be considered within the 'normative' range for this age?",
+      "answerOptions": [
+        {
+          "text": "Speech that is approximately 50% intelligible to strangers.",
+          "isCorrect": true,
+          "rationale": "At age 2, only about 50% of a child's speech is expected to be understandable to someone outside the family (DSM p.50)."
+        },
+        {
+          "text": "Complete absence of social referencing or stranger wariness.",
+          "isCorrect": false,
+          "rationale": "Social referencing and stranger wariness typically develop much earlier (7\u201318 months) and their absence is a red flag (Dulcan p.28, p.29)."
+        },
+        {
+          "text": "A vocabulary consisting of at least 500 expressive words.",
+          "isCorrect": false,
+          "rationale": "Expressive language 'blossoms' between 18\u201336 months, but a 500-word vocabulary is more characteristic of older preschoolers (Dulcan p.28)."
+        },
+        {
+          "text": "The ability to perform a tandem gait (\u05e2\u05e7\u05d1-\u05d1\u05e6\u05d3-\u05d0\u05d2\u05d5\u05d3\u05dc) for four steps.",
+          "isCorrect": false,
+          "rationale": "Tandem gait is a motor milestone typically achieved around age 5 to 6 years (Dulcan p.94)."
+        }
+      ],
+      "hint": "Focus on the expected percentage of speech clarity to a non-familiar listener."
+    },
+    {
+      "question": "When distinguishing between Social (Pragmatic) Communication Disorder (SPCD) and Autism Spectrum Disorder (ASD) in a 5-year-old child, which clinical feature would be essential for a diagnosis of ASD?",
+      "answerOptions": [
+        {
+          "text": "Presence of restricted, repetitive patterns of behavior, interests, or activities.",
+          "isCorrect": true,
+          "rationale": "ASD requires both social communication deficits and repetitive/restrictive behaviors (Criteria B), whereas SPCD excludes the latter (DSM p.54, p.56)."
+        },
+        {
+          "text": "Persistent deficits in the social use of verbal and nonverbal communication.",
+          "isCorrect": false,
+          "rationale": "Deficits in the social use of communication are central to both ASD and SPCD (DSM p.54)."
+        },
+        {
+          "text": "Impairment that causes clinically significant distress in social areas.",
+          "isCorrect": false,
+          "rationale": "Functional impairment is a required criterion for almost all DSM-5-TR disorders, including both ASD and SPCD (DSM p.56, p.54)."
+        },
+        {
+          "text": "Onset of symptoms during the early developmental period.",
+          "isCorrect": false,
+          "rationale": "Both ASD and SPCD require that symptoms emerge in the early developmental period (DSM p.54, p.56)."
+        }
+      ],
+      "hint": "Look for the criterion that involves 'Criteria B' in the DSM-5-TR classification."
+    },
+    {
+      "question": "A 4.5-year-old child is being assessed for motor delays. The clinician observes that the child can pedal a tricycle and jump with both feet, but cannot yet hop on one foot or walk on a balance beam. Which statement is most accurate regarding these milestones?",
+      "answerOptions": [
+        {
+          "text": "Hopping on one foot is a milestone typically achieved at age 4, suggesting a slight delay.",
+          "isCorrect": true,
+          "rationale": "Hopping on one foot is expected by age 4, while standing on one foot begins around age 3 (Dulcan p.94)."
+        },
+        {
+          "text": "Pedaling is a complex motor skill that should not be expected until age 6.",
+          "isCorrect": false,
+          "rationale": "Pedaling a tricycle or bike is a motor skill that children learn in the preschool period, often by age 4 (DSM p.86)."
+        },
+        {
+          "text": "The child's inability to walk on a balance beam at 4.5 years is a major red flag for Cerebral Palsy.",
+          "isCorrect": false,
+          "rationale": "Balance and coordination for a balance beam (similar to tandem gait) is an older childhood milestone (age 5-6) (Dulcan p.94)."
+        },
+        {
+          "text": "Jumping with both feet is not a valid milestone for gross motor assessment.",
+          "isCorrect": false,
+          "rationale": "Jumping is an established gross motor milestone that typically develops between 30 and 36 months (Dulcan p.28)."
+        }
+      ],
+      "hint": "Recall the specific age when a child is expected to 'hop' (To hop) vs 'stand' on one foot."
+    },
+    {
+      "question": "In the assessment of a 3-year-old child, the clinician prioritizes observing the child and parent together during a free-play session. What is the fundamental developmental principle behind this approach?",
+      "answerOptions": [
+        {
+          "text": "The preschool child does not function as a psychologically autonomous individual.",
+          "isCorrect": true,
+          "rationale": "Preschoolers are inextricably tied to their primary caregiver for emotional and adaptive regulation, making the dyad the primary unit of assessment (Dulcan p.39)."
+        },
+        {
+          "text": "Self-perception scales like the 'Berkeley Puppet Interview' are invalid before age 7.",
+          "isCorrect": false,
+          "rationale": "While dyadic observation is prioritized, tools like the Berkeley Puppet Interview have been evaluated in younger children (Dulcan p.57)."
+        },
+        {
+          "text": "Individual play therapy is contraindicated for children in the pre-operational stage.",
+          "isCorrect": false,
+          "rationale": "Individual play may be necessary in some circumstances, but dyadic observation is generally the most appropriate clinical method (Dulcan p.39)."
+        },
+        {
+          "text": "The child's internal representation of the caregiver is only observable through 'Maternal Insightfulness' interviews.",
+          "isCorrect": false,
+          "rationale": "Insightfulness is a parent-based assessment; the child's behavior is observed directly in the dyadic interaction (Dulcan p.30)."
+        }
+      ],
+      "hint": "Consider the relationship between the child's autonomy and the caregiver's role in regulation."
+    },
+    {
+      "question": "A clinician is evaluating a 5-year-old child for coordination difficulties. The clinician notes 'overflow' movements (mirror movements) when the child performs tasks with one hand. These are best described as:",
+      "answerOptions": [
+        {
+          "text": "Neurodevelopmental immaturities or 'neurological soft signs'.",
+          "isCorrect": true,
+          "rationale": "Overflow movements are often seen in children with DCD and are considered signs of neurodevelopmental immaturity rather than gross abnormalities (DSM p.87)."
+        },
+        {
+          "text": "Definitive evidence of a degenerative neurological disorder.",
+          "isCorrect": false,
+          "rationale": "Degenerative disorders are an exclusion for DCD; soft signs like mirror movements are common and not necessarily indicative of degeneration (DSM p.86-87)."
+        },
+        {
+          "text": "Pathognomonic markers for Childhood Dyspraxia.",
+          "isCorrect": false,
+          "rationale": "While associated with DCD (dyspraxia), soft signs are not pathognomonic as they can appear in other conditions or normative development (DSM p.87)."
+        },
+        {
+          "text": "Lateralization deficits involving the frontostriatal circuits.",
+          "isCorrect": false,
+          "rationale": "While white matter maturation in frontostriatal circuits is important, mirror movements are clinically categorized as 'soft signs' of maturity (Dulcan p.94, DSM p.87)."
+        }
+      ],
+      "hint": "These movements are often called 'overflow' and are not necessarily signs of hard neurological damage."
+    }
+  ]
+}

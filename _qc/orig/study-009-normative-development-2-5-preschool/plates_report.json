@@ -1,0 +1,605 @@
+[
+ {
+  "day": 9,
+  "plate": "main",
+  "facts": 23,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e11: dropped an unmappable relation 'is hidden'",
+   "e6: hook over 32 words (37): 'פעוט שנראה צעיר מאוד ומשתמש רק ביד אחת באופן בולט לפעולה פשוטה של שתילה, כאשר היד השנייה כמעט אינה מעורבת, מסמן כי דומיננטיות ידנית קבועה לפני גיל 12 חודשים היא דגל אדום המצביע על חולשה בצד הנגדי.'",
+   "e10: hook over 32 words (33): 'ילד בן 3-4 המסובב ללא הרף את מתקן הזרעים המלא בתמונות צבעוניות במקום להתמקד בשתילה, ממחיש כי בגיל זה קליפת המוח הקדם-מצחית עדיין לא בשלה, מה שגורם לחוסר יכולת לשמר קשב ולהיסחף בקלות.'",
+   "e11: hook over 32 words (42): \"שני ילדים משחקים: האחד מצביע על מקום שבו האחר 'חושב' שחבילת הזרעים של סאלי-אן [Sally-Anne] נמצאת, בעוד הילד השני עם רמזים ל-ASD נראה מבולבל, ממחיש כי הבנת אמונת שווא מתפתחת בין גילאי 4 ל-5 שנים וכי כ-80% מילדי ה-ASD מתקשים במשימה זו.\""
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "DX",
+     "D5",
+     "1",
+     "2",
+     "0",
+     "177",
+     "64",
+     "3",
+     "255",
+     "0",
+     "255",
+     "255"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1029,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1361,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.1198,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [
+    "Running Vine",
+    "NO DX",
+    "DO NOT PICK",
+    "Sally-Anne Seeds"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the straw scarecrow with a hat, blue jacket, and torn brown coat, standing at the open doorway on the far right, is larger.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "Running Vine",
+    "NO DX",
+    "DO NOT PICK",
+    "Sally-Anne Seeds"
+   ],
+   "score": 5,
+   "verified": true,
+   "stray_warning": [
+    "DX",
+    "D5",
+    "1",
+    "2",
+    "0",
+    "177",
+    "64",
+    "3",
+    "255",
+    "0",
+    "255",
+    "255"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "YRS",
+     "paint": "2yr",
+     "tag": "YRS",
+     "chroma_pixels": 19874,
+     "blob_pixels": 19604,
+     "fill_ratio": 1.083,
+     "height_frac": 0.1029,
+     "width_frac": 0.0589,
+     "quad": [
+      [
+       179,
+       662
+      ],
+      [
+       314,
+       641
+      ],
+      [
+       339,
+       765
+      ],
+      [
+       205,
+       797
+      ]
+     ],
+     "bbox": [
+      179,
+      641,
+      160,
+      156
+     ],
+     "height_pct": 10.16,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MOS",
+     "paint": "18mo",
+     "tag": "MOS",
+     "chroma_pixels": 65386,
+     "blob_pixels": 45311,
+     "fill_ratio": 0.994,
+     "height_frac": 0.1361,
+     "width_frac": 0.1007,
+     "quad": [
+      [
+       989,
+       1239
+      ],
+      [
+       1237,
+       1211
+      ],
+      [
+       1264,
+       1389
+      ],
+      [
+       1009,
+       1418
+      ]
+     ],
+     "bbox": [
+      989,
+      1211,
+      275,
+      207
+     ],
+     "height_pct": 13.48,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "80%",
+     "tag": "PCT",
+     "chroma_pixels": 35556,
+     "blob_pixels": 33213,
+     "fill_ratio": 0.992,
+     "height_frac": 0.1198,
+     "width_frac": 0.085,
+     "quad": [
+      [
+       2347,
+       1184
+      ],
+      [
+       2564,
+       1213
+      ],
+      [
+       2551,
+       1367
+      ],
+      [
+       2332,
+       1333
+      ]
+     ],
+     "bbox": [
+      2332,
+      1184,
+      232,
+      183
+     ],
+     "height_pct": 11.91,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 24125,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 582
+ },
+ {
+  "day": 9,
+  "plate": "main2",
+  "facts": 23,
+  "tries": 3,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e1: hook over 32 words (34): \"כמו שלוח מחירים מציג אחוזים של הנחה או עלות, כך המספרים '80% PCT' עליו מציינים גם את נפח המוח הבוגר בגיל 36 חודשים וגם את שיעור הכשל במשימות Theory of Mind בילדים עם ASD.\""
+  ],
+  "digit_strings_dropped": [
+   "HARDENING OFF\n6 months minimum"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "21",
+     "10",
+     "1",
+     "5",
+     "6",
+     "1/2",
+     "3",
+     "8",
+     "4",
+     "12",
+     "50",
+     "10"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.2214,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1966,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.2038,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": true,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "YES all similar",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 0,
+   "verified": true,
+   "stray_warning": [
+    "21",
+    "10",
+    "1",
+    "5",
+    "6",
+    "1/2",
+    "3",
+    "8",
+    "4",
+    "12",
+    "50",
+    "10"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "PCT",
+     "paint": "80%",
+     "tag": "PCT",
+     "chroma_pixels": 95948,
+     "blob_pixels": 95482,
+     "fill_ratio": 1.032,
+     "height_frac": 0.2214,
+     "width_frac": 0.1199,
+     "quad": [
+      [
+       1854,
+       544
+      ],
+      [
+       2162,
+       577
+      ],
+      [
+       2139,
+       883
+      ],
+      [
+       1834,
+       836
+      ]
+     ],
+     "bbox": [
+      1834,
+      544,
+      328,
+      339
+     ],
+     "height_pct": 22.07,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MOS",
+     "paint": "36mo",
+     "tag": "MOS",
+     "chroma_pixels": 67869,
+     "blob_pixels": 67244,
+     "fill_ratio": 1.058,
+     "height_frac": 0.1966,
+     "width_frac": 0.1025,
+     "quad": [
+      [
+       1399,
+       366
+      ],
+      [
+       1680,
+       430
+      ],
+      [
+       1677,
+       667
+      ],
+      [
+       1399,
+       583
+      ]
+     ],
+     "bbox": [
+      1399,
+      366,
+      281,
+      301
+     ],
+     "height_pct": 19.6,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "YRS",
+     "paint": "4-5yr",
+     "tag": "YRS",
+     "chroma_pixels": 65775,
+     "blob_pixels": 65136,
+     "fill_ratio": 1.069,
+     "height_frac": 0.2038,
+     "width_frac": 0.0999,
+     "quad": [
+      [
+       2411,
+       877
+      ],
+      [
+       2677,
+       954
+      ],
+      [
+       2666,
+       1189
+      ],
+      [
+       2404,
+       1098
+      ]
+     ],
+     "bbox": [
+      2404,
+      877,
+      273,
+      312
+     ],
+     "height_pct": 20.31,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 7317,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 742
+ },
+ {
+  "day": 9,
+  "plate": "main3",
+  "facts": 22,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e18: dropped unknown fact id(s) ['piaget_4_stages']",
+   "e19: dropped unknown fact id(s) ['developmental_ladder']",
+   "e14: dropped relation to unknown element 'pruning shears and a hank of raffia'",
+   "e15: dropped relation to unknown element 'cold frame outside the door stencilled HARDENING OFF'",
+   "e7: hook de-asserted -> 'כמו שתמונת נבט קטן על חבילת הזרעים — התחלה, כך מגיל 18 חודשים ומעלה מתחיל משחק העמדת פנים סמלי או ייצוגי מוקדם.'",
+   "e8: hook de-asserted -> 'כמו שמראה דיורמה מורכבת מציורי חבילות זרעים — עומק ורצף הגיוני, כך מגיל 30 חודשים ומעלה מתחיל משחק דרמטי סמלי מורכב עם עומק דמיוני ורצפים לוגיים.'",
+   "e18: hook de-asserted -> \"דגם בית החולים 'PIAGET'S PRE-OP' (קדם ניתוחי) — שלב הקדם-אופרציונלי של פיאז'ה בהתפתחות הקוגניטיבית, שבו ילדים בגיל הגן נמצאים.\"",
+   "e19: hook de-asserted -> 'מגדל בנייה בן 5 קומות עם פיגומים — סולם ההתפתחות, המדגים את השלבים השונים והמתמשכים של גדילה והתפתחות בגיל הגן.'"
+  ],
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "55",
+     "01/01/23"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.151,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.207,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.2109,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the scarecrow wearing blue overalls and a straw hat, with a 'LATE ERRORS' sign on its chest, is clearly larger.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [],
+   "score": 1,
+   "verified": true,
+   "stray_warning": [
+    "55",
+    "01/01/23"
+   ]
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "PCT",
+     "paint": "50%",
+     "tag": "PCT",
+     "chroma_pixels": 58577,
+     "blob_pixels": 57646,
+     "fill_ratio": 1.097,
+     "height_frac": 0.151,
+     "width_frac": 0.1221,
+     "quad": [
+      [
+       202,
+       1001
+      ],
+      [
+       516,
+       938
+      ],
+      [
+       537,
+       1098
+      ],
+      [
+       227,
+       1168
+      ]
+     ],
+     "bbox": [
+      202,
+      938,
+      335,
+      230
+     ],
+     "height_pct": 14.97,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "YRS",
+     "paint": "5yr",
+     "tag": "YRS",
+     "chroma_pixels": 51792,
+     "blob_pixels": 50920,
+     "fill_ratio": 1.089,
+     "height_frac": 0.207,
+     "width_frac": 0.0799,
+     "quad": [
+      [
+       2083,
+       1122
+      ],
+      [
+       2256,
+       1177
+      ],
+      [
+       2210,
+       1438
+      ],
+      [
+       2038,
+       1371
+      ]
+     ],
+     "bbox": [
+      2038,
+      1122,
+      218,
+      316
+     ],
+     "height_pct": 20.57,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MOS",
+     "paint": "6mo",
+     "tag": "MOS",
+     "chroma_pixels": 69563,
+     "blob_pixels": 68525,
+     "fill_ratio": 1.082,
+     "height_frac": 0.2109,
+     "width_frac": 0.1043,
+     "quad": [
+      [
+       2446,
+       1060
+      ],
+      [
+       2689,
+       1125
+      ],
+      [
+       2647,
+       1381
+      ],
+      [
+       2406,
+       1303
+      ]
+     ],
+     "bbox": [
+      2406,
+      1060,
+      283,
+      321
+     ],
+     "height_pct": 20.9,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 12101,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 652
+ }
+]

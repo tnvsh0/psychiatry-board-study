@@ -1,0 +1,106 @@
+{
+ "tag": "study-009-normative-development-2-5-preschool",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:00:34+00:00",
+ "updated_at": "2026-09-25T13:00:34+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "8851105b2d85a8258fde97b2231235a028f285c2b6709f0223fa2adc847a0b78",
+   "asset_id": 527834244,
+   "size": 7853,
+   "fetched_at": "2026-09-25T13:00:04+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "0a607b495d1abaf674b3a1303e22bf0ece0ed725a6d8bc52acdc823473c51c79",
+   "asset_id": 527834140,
+   "size": 4495,
+   "fetched_at": "2026-09-25T13:00:06+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "544c5beac8c759d020ed125b64187887236be0944328b6d519a59dde09978614",
+   "asset_id": 527834187,
+   "size": 5828,
+   "fetched_at": "2026-09-25T13:00:08+00:00"
+  },
+  {
+   "name": "narration_main2.txt",
+   "sha256": "5f19edd77f2124d06ffb7d04f129dc400c52983a5c98e388df7fce0871eefaf5",
+   "asset_id": 527834208,
+   "size": 7361,
+   "fetched_at": "2026-09-25T13:00:10+00:00"
+  },
+  {
+   "name": "narration_main3.txt",
+   "sha256": "0e81d9b4732ed2f8c1747f2d28b2ce074177d297a5e777ecfaaa9ed78fe0d292",
+   "asset_id": 527834223,
+   "size": 6456,
+   "fetched_at": "2026-09-25T13:00:12+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "4647ccf73291678e5e768163a266a91412c142153c255603f5a6f49eee84e0ad",
+   "asset_id": 527834234,
+   "size": 12697,
+   "fetched_at": "2026-09-25T13:00:14+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "910c034b129af9bf7d566b753c1f951055da9ee137479a5fd8d5329a2c2c3877",
+   "asset_id": 527834141,
+   "size": 16292,
+   "fetched_at": "2026-09-25T13:00:16+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "a82b1739997796ab549b085c15e1986e57f909b563f5ed5ebf98dcb0a9e3529b",
+   "asset_id": 527834185,
+   "size": 2845,
+   "fetched_at": "2026-09-25T13:00:19+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "164a41bdf3af7f1fc6a735092f24761844a5a2d7ec086dc24bfc752180b85d6c",
+   "asset_id": 527834138,
+   "size": 11741,
+   "fetched_at": "2026-09-25T13:00:21+00:00"
+  },
+  {
+   "name": "sketchy_main2.quiz.md",
+   "sha256": "c9a6952ef56e03716e922729a12ff63a319440d6df32a219dc2e4c4d6dd2089e",
+   "asset_id": 527834204,
+   "size": 3885,
+   "fetched_at": "2026-09-25T13:00:24+00:00"
+  },
+  {
+   "name": "sketchy_main2.txt",
+   "sha256": "ba531873091f217c1ae5453b8c83ebd1722965e0281e7ee8bc8943f067cf4733",
+   "asset_id": 527834160,
+   "size": 12773,
+   "fetched_at": "2026-09-25T13:00:26+00:00"
+  },
+  {
+   "name": "sketchy_main3.quiz.md",
+   "sha256": "a6d50958b9479c122027f06e6ad349897b2355c74bcfe80bca0025fbcc8d835f",
+   "asset_id": 527834213,
+   "size": 3247,
+   "fetched_at": "2026-09-25T13:00:28+00:00"
+  },
+  {
+   "name": "sketchy_main3.txt",
+   "sha256": "21b6f653ccf149ab2a112cab3deebe99a8e77c262d5e881c569f5d81b2544170",
+   "asset_id": 527834168,
+   "size": 11052,
+   "fetched_at": "2026-09-25T13:00:31+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "8d123f0b8a4006713929504ac9799d218a0d6ef81cb0f57b13265fa2b33f8581",
+   "asset_id": 527834239,
+   "size": 44677,
+   "fetched_at": "2026-09-25T13:00:34+00:00"
+  }
+ ]
+}

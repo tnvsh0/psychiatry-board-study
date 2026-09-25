@@ -1,0 +1,97 @@
+{
+  "motor_milestones": {
+    "items": [
+      "Running typically begins between 1.5 to 2 years of age (Dulcan p.29).",
+      "Jumping typically begins between 2.5 to 3 years of age (Dulcan p.29).",
+      "Hand dominance and coordination begin to develop during toddlerhood (Dulcan p.29).",
+      "A child is able to stack two blocks at 18 months of age (Dulcan p.29).",
+      "A child is able to stack eight blocks at 30 months of age (Dulcan p.29).",
+      "Scribbling spontaneously begins around 18 months, and copying a circle is expected at 36 months of age (Dulcan p.29)."
+    ],
+    "key_numbers": [
+      "18 months to stack 2 blocks (Dulcan p.29)",
+      "30 months to stack 8 blocks (Dulcan p.29)",
+      "36 months to copy a circle (Dulcan p.29)",
+      "2 years of age for running (Dulcan p.29)"
+    ]
+  },
+  "cognitive_milestones": {
+    "items": [
+      "Brain volume reaches approximately 80% of adult size by 36 months of age (Dulcan p.18, p.29).",
+      "Synaptogenesis rates are as high as 1 million connections per second in the early years of life (Dulcan p.18).",
+      "During the preschool period, children have little ability to sustain attention on a task and are easily distracted by irrelevant stimuli (StahlNeuro p.463).",
+      "Prefrontal cortex synapses rapidly increase by age 6 years, after which up to half of them are eliminated by adolescence (StahlNeuro p.463).",
+      "Theory of mind (ToM) or understanding of false beliefs matures significantly between ages 4 and 5 years (DSM p.671, Dulcan p.143).",
+      "Approximately 80% of children with autism spectrum disorder (ASD) fail the Sally-Anne false belief task (Dulcan p.143).",
+      "Basic understanding of gender identity and labeling is achieved by age 2 to 3 years (Dulcan p.567).",
+      "Gender consistency (understanding that gender remains stable despite changes in appearance or activities) develops between age 5 and 7 years (Dulcan p.567).",
+      "Intentional masturbation as a normal self-exploratory behavior can emerge around ages 2.5 to 3 years (Dulcan p.568)."
+    ],
+    "key_numbers": [
+      "80% adult brain volume by age 36 months (Dulcan p.18, p.29)",
+      "1 million connections per second synaptogenesis rate (Dulcan p.18)",
+      "80% ToM task failure rate in ASD children (Dulcan p.143)",
+      "2 to 3 years for basic gender labeling (Dulcan p.567)",
+      "5 to 7 years for gender consistency (Dulcan p.567)",
+      "2.5 to 3 years for intentional masturbation (Dulcan p.568)"
+    ]
+  },
+  "social_emotional": {
+    "items": [
+      "Preschoolers show cognitive egocentrism, meaning they are unable to perceive or understand viewpoints different from their own (Dulcan p.47).",
+      "Preschoolers display animism, which is the tendency to attribute lifelike intentions, feelings, and thoughts to inanimate objects (Dulcan p.47).",
+      "Moral emotions including shame, guilt, and pride typically develop between 18 and 36 months of age (Dulcan p.29).",
+      "Bedtime fears of darkness and imaginary monsters are developmentally normal during the preschool period (Dulcan p.310).",
+      "Anxious attachment styles assessed at 12 months can predict the development of anxiety disorders at age 17.5 years (Dulcan p.322).",
+      "For children under 5 years of age, oppositional defiant symptoms must occur on most days for at least 6 months to meet the diagnostic criteria for ODD (DSM p.525).",
+      "Reactive Attachment Disorder (RAD) and Disinhibited Social Engagement Disorder (DSED) can only be diagnosed in children with a developmental age of at least 9 months (DSM p.296, p.299)."
+    ],
+    "key_numbers": [
+      "6 months of most-day symptoms for ODD under age 5 (DSM p.525)",
+      "9 months minimum developmental age for RAD or DSED (DSM p.296, p.299)",
+      "18 to 36 months of age for moral emotions (Dulcan p.29)",
+      "12 months of age attachment predicting anxiety at 17.5 years (Dulcan p.322)"
+    ]
+  },
+  "language": {
+    "items": [
+      "At age 2 years, only about 50% of a child's speech sound production is understandable to a stranger (DSM p.50).",
+      "By age 3 years, a child's speech should be mostly intelligible to a stranger (DSM p.50).",
+      "The gender ratio for speech sound disorder ranges from 1.5:1 to 1.8:1, being significantly more prevalent in boys than girls (DSM p.50).",
+      "Receptive language impairments carry a poorer clinical prognosis and are more treatment-resistant than expressive language deficits (DSM p.48, Dulcan p.162).",
+      "Social (pragmatic) communication disorder (SPCD) is rarely diagnosed in children younger than 4 years due to the developmental requirement for adequate structural language (DSM p.54).",
+      "Misarticulation of 'late eight' sounds (l, r, s, z, th, ch, dzh, zh) can be developmentally normal up to age 8 years (DSM p.51)."
+    ],
+    "key_numbers": [
+      "50% intelligible speech at age 2 years (DSM p.50)",
+      "3 years of age for mostly intelligible speech (DSM p.50)",
+      "4 years of age minimum for SPCD diagnosis (DSM p.54)",
+      "8 years of age limit for normal late eight errors (DSM p.51)"
+    ]
+  },
+  "play_development": {
+    "items": [
+      "Parallel play, where children play side-by-side with similar toys without active cooperation, typically occurs between 12 and 24 months of age (Dulcan p.29).",
+      "Early representational or symbolic pretend play typically begins between 24 and 36 months of age (Dulcan p.29, p.42).",
+      "Complex symbolic dramatic play, with rich imaginative themes and logical sequences of actions, begins at 30 months and older (Dulcan p.42).",
+      "Cooperative play involving shared themes and active division of roles with peers develops between ages 3 and 5 years (Dulcan p.43).",
+      "Children with autism spectrum disorder (ASD) show rigid, repetitive, parallel, and mechanical play rather than developing cooperative and symbolic play (Dulcan p.140)."
+    ],
+    "key_numbers": [
+      "12 to 24 months of age for parallel play (Dulcan p.29)",
+      "24 to 36 months of age for early representational play (Dulcan p.29)",
+      "30 months of age for complex symbolic play (Dulcan p.42)",
+      "3 to 5 years of age for cooperative play (Dulcan p.43)"
+    ]
+  },
+  "high_yield": [
+    "Global Developmental Delay (GDD) is a temporary diagnosis reserved exclusively for children under age 5 years who are too young to undergo standardized IQ testing (DSM p.42, p.113).",
+    "Developmental Coordination Disorder (DCD) is typically not diagnosed before age 5 years due to normal variation in motor skill acquisition (DSM p.86).",
+    "Encopresis cannot be diagnosed until a child reaches a chronological or mental age of at least 4 years (DSM p.403).",
+    "Enuresis cannot be diagnosed until a child reaches a chronological or mental age of at least 5 years (DSM p.400).",
+    "First-line treatment for ADHD in preschool-age children is behavioral parent training rather than stimulants, as validated by the PATS study (StahlKids p.15, Dulcan p.923).",
+    "To clinically evaluate attachment security, the quality of the caregiver-child reunion after separation is a significantly more reliable diagnostic indicator than the child's level of distress during separation (Dulcan p.28, p.49).",
+    "Preschoolers with unidentified language deficits are at highly elevated risk for developing externalizing behavioral problems like aggression and tantrums due to an inability to verbally express frustration (Dulcan p.53, p.362).",
+    "Under age 5, oppositional defiant symptoms must occur on most days for at least 6 months, whereas for older children, they must occur at least once a week, preventing the over-pathologizing of normal toddler behavior (DSM p.525-526)."
+  ]
+}
