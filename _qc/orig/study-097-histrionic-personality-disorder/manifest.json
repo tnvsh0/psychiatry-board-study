@@ -1,0 +1,36 @@
+{
+ "tag": "study-097-histrionic-personality-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:57:51+00:00",
+ "updated_at": "2026-09-25T15:57:51+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "ce33959494f7519520e60f4cfbe62a56dbf3828ba6470fb273c2f295b50307ca",
+   "asset_id": 585934330,
+   "size": 5929,
+   "fetched_at": "2026-09-25T15:57:45+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "abfc8439f3c53a1c1e98c2de7e215a7229345398ba888f93589a1dbec60d12f5",
+   "asset_id": 585934325,
+   "size": 15859,
+   "fetched_at": "2026-09-25T15:57:47+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "dcfe573bb727db878d0462e63c27a3f889da3b26aba4a969dfc2648d4f8933be",
+   "asset_id": 585934326,
+   "size": 32990,
+   "fetched_at": "2026-09-25T15:57:49+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2b3f360de8401a623674e6e9ec5132c45e970946c38300f92873941e586c3d27",
+   "asset_id": 585934328,
+   "size": 28399,
+   "fetched_at": "2026-09-25T15:57:51+00:00"
+  }
+ ]
+}

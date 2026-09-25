@@ -1,0 +1,83 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster B",
+        "items": [
+          "Uncomfortable when not center of attention (DSM p.757)",
+          "Inappropriately sexually seductive or provocative behavior (DSM p.757)",
+          "Rapidly shifting and shallow expression of emotions (DSM p.757)",
+          "Consistently uses physical appearance to draw attention (DSM p.757)",
+          "Excessively impressionistic speech lacking detail (DSM p.757)",
+          "Self-dramatization, theatricality, exaggerated emotion (DSM p.757)",
+          "Highly suggestible (DSM p.757)",
+          "Considers relationships more intimate than they actually are (DSM p.757)"
+        ]
+      }
+    ],
+    "thresholds": "≥5 out of 8 criteria, starting by early adulthood (DSM p.757); ≥1 year continuous duration if under age 18 (DSM p.736)",
+    "subtypes": [
+      "לא צוין"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "~1.8% NESARC, median ~0.9% across studies (DSM p.759)",
+    "sex_ratio": "1:1 M:F in epidemiological studies; clinically diagnosed significantly more in females (DSM p.759)",
+    "onset_age_typical": "Early adulthood (DSM p.757)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Borderline Personality Disorder (DSM p.760)",
+      "Narcissistic Personality Disorder (DSM p.760)",
+      "Antisocial Personality Disorder (DSM p.760)",
+      "Dependent Personality Disorder (DSM p.760)",
+      "Somatic Symptom Disorder (DSM p.760)",
+      "Conversion Disorder (DSM p.760)",
+      "Major Depressive Disorder (DSM p.760)",
+      "Substance Use Disorders (DSM p.760)"
+    ],
+    "prognosis": "Symptoms and dramatic outward expression tend to lessen with age (Synopsis ch.19 Personality Disorders)"
+  },
+  "etiology": {
+    "genetic": "High Novelty Seeking (NS) and High Reward Dependence (RD) temperament traits (Synopsis ch.19 Personality Disorders)",
+    "neurobiology": "Impaired Top-Down cortical inhibition (OFC, VMPFC, ACC) over hyperactive Bottom-Up limbic/ventral striatal drives; mesolimbic dopamine and serotonin dysregulation (StahlNeuro p.540, p.577)",
+    "environmental": "Psychodynamic defenses of Repression and Dissociation against underlying rejection fears (Synopsis ch.19 Personality Disorders); developmental role experimentation in adolescents (Dulcan p.200)"
+  },
+  "differential": {
+    "items": [
+      "Borderline Personality Disorder: BPD includes self-harm/NSSI, chronic emptiness, identity diffusion, and intense fears of abandonment not seen in HPD (DSM p.759)",
+      "Narcissistic Personality Disorder: NPD seeks admiration for superiority/grandiosity, whereas HPD is willing to appear weak or vulnerable to get attention (DSM p.760)",
+      "Antisocial Personality Disorder: ASPD manipulates for material gain, power, or money (with Conduct Disorder history), whereas HPD manipulates to gain nurturance and affection (DSM p.759-760)",
+      "Dependent Personality Disorder: DPD exhibits submissive, docile, and self-effacing behavior, unlike the theatrical and demandingly active HPD (DSM p.760)",
+      "Somatic Symptom / Conversion Disorder: Can be diagnosed concurrently if somatic symptoms cause significant distress/impairment (DSM p.760)"
+    ],
+    "key_numbers": [
+      "≥5/8 DSM criteria required for diagnosis (DSM p.757)",
+      "≥1 year continuous duration required if diagnosed under age 18 (DSM p.736)",
+      "1.8% NESARC community prevalence (DSM p.759)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Psychodynamic / Psychoanalytically oriented psychotherapy focused on clarification of inner feelings and processing repression/dissociation (Synopsis ch.19 Personality Disorders)"
+    ],
+    "second_line": [
+      "SSRIs/SNRIs for depressive symptoms, emotional reactivity, and somatic complaints (Synopsis ch.19 Personality Disorders, StahlKids p.208)",
+      "Low-dose SGA (e.g. Aripiprazole, Risperidone, Quetiapine) for stress-induced micro-psychosis or illusions (Synopsis ch.19 Personality Disorders, StahlNeuro p.159)"
+    ],
+    "key_side_effects": [
+      "Benzodiazepines carry high risk of dependence, abuse, and behavioral disinhibition in Cluster B disorders (Synopsis ch.19 Personality Disorders)",
+      "Activation, motor restlessness, and suicidal ideation monitoring with SSRIs in children/adolescents (StahlKids p.323)"
+    ],
+    "monitoring": "Monitor target symptoms, suicidal gestures/threats, diagnostic fluidity/morphing in adolescents, and avoid benzodiazepine misuse (StahlKids p.313, Synopsis ch.19 Personality Disorders)"
+  },
+  "high_yield": [
+    "HPD core feature: pervasive pattern of excessive emotionality and attention seeking requiring ≥5 of 8 criteria starting by early adulthood (DSM p.757)",
+    "Pediatric criteria constraint: must be present continuously for at least 1 year if diagnosing under age 18 (DSM p.736)",
+    "Differentiating HPD from BPD: HPD lacks chronic emptiness, identity diffusion, NSSI, and self-destructive behavior typical of BPD (DSM p.759)",
+    "Differentiating HPD from NPD: NPD demands admiration for superiority/grandiosity; HPD is willing to appear weak or dependent to gain attention (DSM p.760)",
+    "Differentiating HPD from ASPD: ASPD manipulates for material gain, power, or money; HPD manipulates to gain nurturance and affection (DSM p.759-760)",
+    "Speech style: Impressionistic speech style that is theatrical and dramatic but excessively lacking in detail or factual support (DSM p.757)",
+    "Psychodynamic defenses: Primary defenses are Repression and Dissociation (Synopsis ch.19 Personality Disorders)",
+    "Treatment of choice: Psychodynamic psychotherapy aiming at clarification of authentic inner feelings (Synopsis ch.19 Personality Disorders); avoid benzodiazepines due to abuse risk (Synopsis ch.19 Personality Disorders)"
+  ]
+}
