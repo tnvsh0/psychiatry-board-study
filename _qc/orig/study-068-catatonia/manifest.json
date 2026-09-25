@@ -1,0 +1,36 @@
+{
+ "tag": "study-068-catatonia",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:01:43+00:00",
+ "updated_at": "2026-09-25T15:01:43+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3004d8736192c0661b192b8c9f8e825319e02fef03e08dff8fc8952f0be848a5",
+   "asset_id": 584467648,
+   "size": 5844,
+   "fetched_at": "2026-09-25T15:01:36+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "f8fa78016f9dbcddd7c019e6917483ecf2aa0546f13de6e09b0f82b75cc23c46",
+   "asset_id": 584467652,
+   "size": 10596,
+   "fetched_at": "2026-09-25T15:01:38+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "80ad0ddaf0883b234f9678492768d12b37ee1b51f716117e4bed96c4ba2be40c",
+   "asset_id": 584467644,
+   "size": 34221,
+   "fetched_at": "2026-09-25T15:01:41+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "67cc207076b1b2dc1ec0d4519e43a85c02808192aa81d203e7acdca0691bc0ab",
+   "asset_id": 584467643,
+   "size": 47815,
+   "fetched_at": "2026-09-25T15:01:43+00:00"
+  }
+ ]
+}

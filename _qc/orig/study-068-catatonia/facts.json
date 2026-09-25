@@ -1,0 +1,119 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Psychomotor features",
+        "items": [
+          "Stupor (DSM p.135)",
+          "Catalepsy (DSM p.135)",
+          "Waxy flexibility (DSM p.135)",
+          "Mutism (DSM p.135)",
+          "Negativism (DSM p.135)",
+          "Posturing (DSM p.135)",
+          "Mannerism (DSM p.135)",
+          "Stereotypy (DSM p.135)",
+          "Agitation (DSM p.135)",
+          "Grimacing (DSM p.135)",
+          "Echolalia (DSM p.135)",
+          "Echopraxia (DSM p.135)"
+        ]
+      }
+    ],
+    "thresholds": "≥3 מתוך 12 סימפטומים פסיכומוטוריים (DSM p.135)",
+    "subtypes": [
+      "Catatonia Associated With Another Mental Disorder (DSM p.135)",
+      "Catatonic Disorder Due to Another Medical Condition (DSM p.136)",
+      "Unspecified Catatonia (DSM p.137)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "~9% מהמאושפזים הפסיכיאטריים (DSM p.136)",
+    "sex_ratio": "לא צוין",
+    "onset_age_typical": "גיל ההתבגרות ב-ASD (DSM p.57, Dulcan p.141)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "הפרעות מצב רוח (MDD, Bipolar) (DSM p.136)",
+      "סכיזופרניה ~35% (DSM p.136)",
+      "ASD (DSM p.57, Dulcan p.141)",
+      "מוגבלות שכלית ID (Dulcan p.124)"
+    ],
+    "prognosis": "תלויה באבחנת היסוד ובתגובה לטיפול ב-Lorazepam/ECT (Dulcan p.488)"
+  },
+  "etiology": {
+    "genetic": "לא צוין",
+    "neurobiology": "היפופונקציה של NMDA, דיס-אינהיביציה גלוטמטרגית, אובדן עיכוב GABAרגי במסלולים קורטיקו-סטריאטליים (StahlNeuro p.107, p.139)",
+    "environmental": "טראומה קשה, הזנחה, עומס פיזיולוגי ב-IEM (DSM p.96, Dulcan p.124)"
+  },
+  "treatment": {
+    "first_line": [
+      "Lorazepam 1-2mg IV/IM/Oral (Dulcan p.488, StahlKids p.264)",
+      "טיפול תומך, נוזלים, נוגדי קרישה פרופילקטיים LMWH (DSM p.135)"
+    ],
+    "second_line": [
+      "ECT / ניזעי חשמל בקטטוניה עמידה או ממאירה (Dulcan p.264, StahlKids p.118, Syllabus p.6)"
+    ],
+    "key_side_effects": [
+      "החמרה קשה ממתן אנטי-פסיכוטיים בשלב חריף / סיכון ל-NMS (DSM p.136, Syllabus p.33, StahlKids p.166)",
+      "סדציה ודיכוי נשימתי מבנזודיאזפינים (StahlKids p.264)"
+    ],
+    "monitoring": "ניטור מדדים חיוניים, אי-יציבות אוטונומית, ומעקב כמותי ב-BFCRS (DSM p.135, Dulcan p.605)"
+  },
+  "assessment_tools": {
+    "items": [
+      "הערכת 12 התסמינים ב-DSM-5-TR (DSM p.135)",
+      "סולם Clinician-Rated Dimensions של פסיכוזה (DSM p.852-853)",
+      "סולם Bush-Francis BFCRS (Dulcan p.70)"
+    ],
+    "key_numbers": [
+      "12 סימפטומים קריטריאליים ב-DSM (DSM p.135)",
+      "0-4 דירוג חומרה ממדי ב-DSM (DSM p.852-853)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "NMS - תסמונת נוירולפטית ממאירה (DSM p.811, Syllabus p.33)",
+      "Anti-NMDAR Encephalitis (Dulcan p.96, p.370)",
+      "Nonconvulsive Status Epilepticus - NCSE (Dulcan p.96)",
+      "Delirium היפואקטיבי (DSM p.136, Syllabus p.56)",
+      "Conversion / FND (DSM p.363)",
+      "Inborn Errors of Metabolism - IEM (Dulcan p.124)"
+    ],
+    "key_numbers": [
+      ">38°C חום ב-NMS (DSM p.811)",
+      "100% EEG תקין בהפרעת המרה (DSM p.363)"
+    ]
+  },
+  "bush_francis_scale": {
+    "items": [
+      "23 פריטים בסולם החומרה המלא (Dulcan p.70)",
+      "14 פריטים בתת-סולם ה-Screening (Dulcan p.70)",
+      "דירוג 0-3 לכל פריט (Dulcan p.70)"
+    ],
+    "key_numbers": [
+      "23 פריטים בסולם BFCRS המלא (Dulcan p.70)",
+      "14 פריטים בסקירה הראשונית (Dulcan p.70)",
+      "≥2 פריטים כסף סינון חיובי (Dulcan p.70)"
+    ]
+  },
+  "lorazepam_challenge": {
+    "items": [
+      "מתן מנה אקוטית 1-2mg IV/IM (Dulcan p.488)",
+      "מינון לילדים 0.05-0.1mg/kg (Dulcan p.377, StahlKids p.264)",
+      "תגובה חיובית = שיפור דרמטי בסימנים (Dulcan p.488)"
+    ],
+    "key_numbers": [
+      "1-2mg IV/IM מינון למבוגרים/מתבגרים (Dulcan p.488)",
+      "0.05-0.1mg/kg מינון למנה בילדים (Dulcan p.377)",
+      "15-30 דקות לזיהוי תגובה קלינית (Dulcan p.488)",
+      "8-24mg/day מינון יומי מירבי במקרים קשים (Dulcan p.488)"
+    ]
+  },
+  "high_yield": [
+    "אבחנת קטטוניה מחייבת נוכחות של לפחות 3 מתוך 12 סימנים פסיכומוטוריים (DSM p.135)",
+    "הפרעות מצב רוח (MDD ו-Bipolar) הן השכיחות ביותר כגורם לקטטוניה, יותר מסכיזופרניה (DSM p.136)",
+    "ב-ASD, שיא הסיכון לפריצת קטטוניה הוא בגיל ההתבגרות, ומתבטא בהחמרת SIB ונסיגה מוטורית (DSM p.57, Dulcan p.141)",
+    "חוסמי דופמין (נוגדי פסיכוזה) אסורים בשלב החריף בשל סיכון להחמרה קשה ול-NMS (DSM p.136, Syllabus p.33, StahlKids p.166)",
+    "אתגר Lorazepam של 1-2mg IV/IM מביא לשיפור קליני דרמטי תוך 15-30 דקות ומאשר אבחנה (Dulcan p.488)",
+    "ECT הוא טיפול קו שני בעמידות, וקו ראשון מיידי בקטטוניה ממאירה עם אי-יציבות אוטונומית (Dulcan p.264, Syllabus p.6)"
+  ]
+}
