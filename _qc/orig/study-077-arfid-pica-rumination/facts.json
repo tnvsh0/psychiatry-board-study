@@ -1,0 +1,115 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "ARFID (DSM p.376)",
+        "items": [
+          "Avoidant or restrictive eating leading to persistent failure to meet nutritional/energy needs (DSM p.376)",
+          "Significant weight loss or failure to achieve expected growth in children (DSM p.376)",
+          "Significant nutritional deficiency (DSM p.376)",
+          "Dependence on enteral feeding or oral nutritional supplements (DSM p.376)",
+          "Marked interference with psychosocial functioning (DSM p.377)",
+          "Absence of body image disturbance or body weight/shape concern (DSM p.377)"
+        ]
+      },
+      {
+        "name": "Pica (DSM p.371)",
+        "items": [
+          "Persistent eating of nonnutritive, nonfood substances for >=1 month (DSM p.371)",
+          "Developmentally inappropriate (recommended minimum age >=2 years) (DSM p.371, p.372)",
+          "Not culturally or socially normative (DSM p.371)"
+        ]
+      },
+      {
+        "name": "Rumination Disorder (DSM p.374)",
+        "items": [
+          "Repeated regurgitation of food for >=1 month (DSM p.374)",
+          "Food may be re-chewed, re-swallowed, or spit out without nausea or disgust (DSM p.374)",
+          "Not attributable to an associated gastrointestinal condition (e.g. GERD, pyloric stenosis) (DSM p.374)"
+        ]
+      }
+    ],
+    "thresholds": "Pica & Rumination: >=1 month (DSM p.371, p.374); ARFID: persistent failure to meet nutritional needs (DSM p.376)",
+    "subtypes": [
+      "ARFID - Sensory Sensitivity (Dulcan p.415)",
+      "ARFID - Lack of Interest in Eating/Food (Dulcan p.415)",
+      "ARFID - Fear of Aversive Consequences (Dulcan p.415)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "ARFID: 0.3% community (DSM p.377), similar to AN in pediatric clinics (Dulcan p.417); Pica: 1.6-5% school children (DSM p.372), 28% pregnant women (DSM p.373); Rumination: 1.5-5.1% primary school (Dulcan p.417)",
+    "sex_ratio": "ARFID: 1:1 overall, male predominance with comorbid ASD (DSM p.378); Pica: equal in children (DSM p.373)",
+    "onset_age_typical": "ARFID: Infancy/early childhood (sensory/interest) or any age (aversive event) (DSM p.377); Pica: Early childhood (DSM p.372); Rumination: 3-12 months in infants (DSM p.375)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Anxiety disorders (53% in ARFID) (Dulcan p.417)",
+      "Autism Spectrum Disorder (ASD) (Dulcan p.418)",
+      "ADHD (24% in ARFID) (Dulcan p.418)",
+      "Intellectual Disability (ID) (DSM p.373, p.375)",
+      "OCD (DSM p.378)"
+    ],
+    "prognosis": "ARFID: chronic if untreated (DSM p.377); Rumination in infants: often spontaneous remission but can be fatal if severe (DSM p.375)"
+  },
+  "etiology": {
+    "genetic": "Family history of anxiety disorders and maternal eating disorders in ARFID (DSM p.378)",
+    "neurobiology": "ARFID: 3D model - gustatory/insula sensory processing, hypothalamic/ghrelin appetite regulation, amygdala fear conditioning (Dulcan p.419). Pica & Rumination: CSTC dorsal habit loop (Dorsal Striatum to OFC) (StahlNeuro p.539, p.540)",
+    "environmental": "Pica/Rumination: neglect, lack of stimulation, psychosocial stress, maternal feeding interaction (DSM p.372, p.375, p.377)"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT-AR (Cognitive-Behavioral Therapy for ARFID, 4 stages) (Dulcan p.430)",
+      "FBT-ARFID (Family-Based Therapy) (Dulcan p.430)",
+      "Habit Reversal Training (HRT) + Diaphragmatic Breathing for Rumination (Dulcan pp.430-431)",
+      "Habit Reversal Training (HRT) for Pica (Dulcan p.431)"
+    ],
+    "second_line": [
+      "Olanzapine off-label for severe ARFID with anxiety/weight gain need (Dulcan p.428)",
+      "Mirtazapine / Cyproheptadine for appetite stimulation in ARFID (Dulcan p.428)",
+      "SSRIs (Fluoxetine, Sertraline) for comorbid anxiety/OCD (Dulcan p.428)"
+    ],
+    "key_side_effects": [
+      "Olanzapine: weight gain, metabolic syndrome, sedation (StahlKids pp.351-360)",
+      "Mirtazapine: sedation, weight gain (StahlKids p.780)",
+      "SSRIs: activation, disinhibition, suicidal ideation risk (StahlKids p.201)",
+      "Stimulants warning: appetite suppression exacerbates ARFID (Dulcan p.418)"
+    ],
+    "monitoring": "Weight, height/growth velocity, nutritional status, metabolic panel for SGA (fasting glucose, lipids) (Dulcan p.423; StahlKids p.353)"
+  },
+  "assessment_tools": {
+    "items": [
+      "PARDI (Pica, ARFID, and Rumination Disorder Interview) for ages 10-22 (Dulcan p.424)",
+      "NIAS (Nine Item ARFID Screen) with 3 subscales (Dulcan p.424)",
+      "EDY-Q (Eating Disorders in Youth-Questionnaire) for primary school children (Dulcan p.424)",
+      "Ch-EDE (Child Eating Disorder Examination) to differentiate ARFID from AN (Dulcan p.424)",
+      "ESP (Eating Disorder Screen for Primary Care) 5-question screener (Dulcan p.612)"
+    ],
+    "key_numbers": [
+      "9 items in NIAS (Dulcan p.424)",
+      "5 questions in ESP (Dulcan p.612)",
+      "3 subscales in NIAS (Dulcan p.424)",
+      "4 stages in CBT-AR (Dulcan p.430)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Celiac disease, IBD (Crohn's, UC), GERD, Achalasia (Dulcan p.423)",
+      "Tonsillar hypertrophy and swallowing neuromuscular disorders (DSM p.379; Dulcan p.423)",
+      "PANS/PANDAS with acute food restriction (DSM p.379; Dulcan p.371)",
+      "Anorexia Nervosa (distinguished by body image disturbance) (DSM p.379)",
+      "Pica complications: lead poisoning, bowel obstruction/bezoar, parasitic infection (DSM p.372; Dulcan p.421)",
+      "Rumination mimics: GERD, Pyloric stenosis, Gastroparesis, Sandifer syndrome (DSM p.375)"
+    ],
+    "key_numbers": [
+      "Minimum age 2 years for Pica to rule out developmental mouthing (DSM p.372)",
+      "Minimum duration >=1 month for Pica and Rumination (DSM p.371, p.374)"
+    ]
+  },
+  "high_yield": [
+    "ARFID is distinguished from AN/BN by the complete ABSENCE of body image disturbance and fear of weight gain (DSM p.377; Dulcan p.415)",
+    "Pica diagnosis requires a minimum age of 2 years to rule out normal developmental mouthing in infants (DSM p.372; Dulcan p.416)",
+    "Rumination is an un-forced regurgitation without nausea/disgust, effectively treated with Habit Reversal Training and Diaphragmatic Breathing (Dulcan pp.430-431)",
+    "Stimulants for comorbid ADHD (present in ~24% of ARFID) must be used with extreme caution due to appetite suppression exacerbating ARFID (Dulcan p.418)",
+    "Acute onset of extreme food restriction in children should raise suspicion for PANS/PANDAS (DSM p.379; Dulcan p.371)",
+    "CBT-AR Stage 1 focuses on early volume increase in underweight patients or variety expansion in normal weight patients (Dulcan p.430)"
+  ]
+}

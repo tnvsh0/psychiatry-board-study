@@ -1,0 +1,36 @@
+{
+ "tag": "study-077-arfid-pica-rumination",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:21:47+00:00",
+ "updated_at": "2026-09-25T15:21:47+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "c263aafc2d3ecb44387996208dddc627c38036e5e7cc34003f0613a8dbc05f9f",
+   "asset_id": 584686610,
+   "size": 6892,
+   "fetched_at": "2026-09-25T15:21:40+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "3b797b8707f13947e5f7febf8f95423b18479f64b152dd45135aa46a2d0e243c",
+   "asset_id": 584686615,
+   "size": 11393,
+   "fetched_at": "2026-09-25T15:21:42+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "65ddd39f9fa02da3298c1ea0b614f4c8f6d71c5d83608ea667d6840471dcca0d",
+   "asset_id": 584686609,
+   "size": 31363,
+   "fetched_at": "2026-09-25T15:21:44+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ead5dba8b35dab902ec5325b563ccecd81e4cfb7097e2650bd5ecc15212e7fb9",
+   "asset_id": 584686618,
+   "size": 37575,
+   "fetched_at": "2026-09-25T15:21:47+00:00"
+  }
+ ]
+}
