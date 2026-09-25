@@ -1,0 +1,36 @@
+{
+ "tag": "study-138-family-therapy-parent-management-training",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:19:45+00:00",
+ "updated_at": "2026-09-25T17:19:45+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "6aa2ae2fff20225cce05e072ff68757a88d4f1866b91e453fa136941fe6707bb",
+   "asset_id": 587928510,
+   "size": 8894,
+   "fetched_at": "2026-09-25T17:19:39+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5957f599312d702aeb858a740359237fe4e27624161a9865f664bf6827e8bd49",
+   "asset_id": 587928506,
+   "size": 12977,
+   "fetched_at": "2026-09-25T17:19:41+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "b84dee8ae1d75d7ff1f27d025c90107cab243bb8e715eb6f06292e17f087d284",
+   "asset_id": 587928508,
+   "size": 35761,
+   "fetched_at": "2026-09-25T17:19:43+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "057c81a36f1b0f0a095a2753524520d1ffa0a59637145fc990b63e304d281daf",
+   "asset_id": 587928504,
+   "size": 40383,
+   "fetched_at": "2026-09-25T17:19:45+00:00"
+  }
+ ]
+}
