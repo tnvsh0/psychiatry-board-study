@@ -1,0 +1,29 @@
+{
+ "tag": "study-121-cerebral-palsy",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:49:52+00:00",
+ "updated_at": "2026-09-25T16:49:52+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "832002a5155e004261759bd2419d8e820a8e08a08d7e64d3d8d052383eb0e7c7",
+   "asset_id": 587318477,
+   "size": 9228,
+   "fetched_at": "2026-09-25T16:49:42+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "eb063141678e669ed7f84d8a297bfb35fefcb862fedf08ca15541406eac078ed",
+   "asset_id": 587318485,
+   "size": 39775,
+   "fetched_at": "2026-09-25T16:49:47+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "1f47db634213eea68fd86bee930da93e7b35c4c1970b7c5770b91fe43282bfbc",
+   "asset_id": 587318480,
+   "size": 32416,
+   "fetched_at": "2026-09-25T16:49:52+00:00"
+  }
+ ]
+}
