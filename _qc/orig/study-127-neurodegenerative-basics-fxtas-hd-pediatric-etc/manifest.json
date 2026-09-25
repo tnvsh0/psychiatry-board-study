@@ -1,0 +1,36 @@
+{
+ "tag": "study-127-neurodegenerative-basics-fxtas-hd-pediatric-etc",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:01:59+00:00",
+ "updated_at": "2026-09-25T17:01:59+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "bfc960e20325503e57f43640c4bd5085c170ad84bc56faa54b71d1dd5588a7b4",
+   "asset_id": 587536669,
+   "size": 10803,
+   "fetched_at": "2026-09-25T17:01:53+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "f91b99c5a3b05d2096a049af7a490cad62cfc9b56cad59be0fe2e16a387f002f",
+   "asset_id": 587536675,
+   "size": 13294,
+   "fetched_at": "2026-09-25T17:01:56+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "6755fd3e53bd21f517b51e54e97e5429284c1215c424daa78624f21825bc00a7",
+   "asset_id": 587536670,
+   "size": 39185,
+   "fetched_at": "2026-09-25T17:01:57+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "5ddbba3630376f651824212783dd80e39549deee7d63aa91e8de22d154031139",
+   "asset_id": 587536677,
+   "size": 40239,
+   "fetched_at": "2026-09-25T17:01:59+00:00"
+  }
+ ]
+}

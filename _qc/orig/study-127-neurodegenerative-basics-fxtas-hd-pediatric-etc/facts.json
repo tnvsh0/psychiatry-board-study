@@ -1,0 +1,97 @@
+{
+  "anatomy": {
+    "items": [
+      "אטרופיה מסיבית ב-Caudate Nucleus ו-Putamen (הסטריאטום) ב-JHD (DSM p.728, StahlNeuro p.87)",
+      "מוטציה אוטוזומלית-דומיננטית בגן HTT (כרומוזום 4) עם הרחבת חזרות CAG מעל 50-80 ב-JHD (DSM p.727-728)",
+      "התרחבות חזרות CGG נשאית (55-200) בגן FMR1 ב-FXTAS הגורמת לרעילות RNA וגופיפי הכללה (Dulcan p.120)",
+      "אות T2/FLAIR גבוה ברגליות המוח הקטן התיכונות (Middle Cerebellar Peduncle / MCP sign) ב-FXTAS (Dulcan p.120)",
+      "הצטברות ליזוזומלית של כולסטרול וספינגוליפידים ב-NPC (גנים NPC1/NPC2) עם אובדן תאי פורקינייה ונוירונים היפוקרטינרגיים היפותלמיים (DSM p.423-424, StahlNeuro p.406-407)",
+      "שקיעת נחושת ב-Lenticular Nucleus (Putamen ו-Globus Pallidus) במחלת וילסון עקב מוטציה ב-ATP7B (כרומוזום 13) (Syllabus p.56, DSM p.809)",
+      "דה-מיאליניזציה נרחבת וסימטרית בחומר הלבן המוחי בלוקודיסטרופיות (MLD: חסר ARSA; X-ALD: מוטציית ABCD1 והצטברות VLCFA) (Syllabus p.55, DSM p.730-731)"
+    ],
+    "key_numbers": [
+      "40+ חזרות CAG = חדירות מלאה בגן HTT (DSM p.728)",
+      "50-80+ חזרות CAG = טווח אופייני ל-JHD פדיאטרי (<20y) (DSM p.727-728)",
+      "55-200 חזרות CGG = טווח פרמוטציה נשאית בגן FMR1 ב-FXTAS (Dulcan p.120)",
+      "95% ממקרי NPC נגרמים ממוטציה בגן NPC1 (DSM p.424, Dulcan p.121)"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "פנוטיפ Westphal ב-JHD (<20y): ברדיקינזיה, נוקשות היפרטונית (Rigidity), דיסטוניה ופרכוסים (DSM p.727)",
+      "דיסארתריה, דיספגיה וסיכון גבוה לדלקת ריאות שואפת (Aspiration Pneumonia) ב-JHD (DSM p.727-728)",
+      "רעד כוונתי (Intention tremor), אטקסיה צרבלרית מתקדמת ופרקינסוניזם ב-FXTAS (Dulcan p.120)",
+      "כשל שחלתי מוקדם (FMR1-related POI) מתחת לגיל 40 בנשים נשאיות ל-FXTAS (Dulcan p.120)",
+      "שיתוק מבט אנכי על-גרעיני (VSGP) במבט למטה ב-NPC (DSM p.424)",
+      "קטפלקסיה גלסטית (Gelastic cataplexy) ונרקולפסיה מסוג 1 משנית (NT1) ב-NPC (DSM p.423-424, StahlNeuro p.433)",
+      "רעד נפנוף כנפיים (Wing-beating tremor), דיסטוניה פציאלית (Risus Sardonicus) וטבעת Kayser-Fleischer בקורנית במחלת וילסון (Syllabus p.56, DSM p.817)",
+      "רגרסיה מוטורית, ספסטיות (UMN), רפלקסים ערים, בבינסקי חיובי ואי-ספיקת אדרנל (מחלת אדיסון) ב-X-ALD (Syllabus p.55, Dulcan p.93, DSM p.730)"
+    ],
+    "key_numbers": [
+      ">35% מילדי JHD סובלים מפרכוסים (DSM p.727)",
+      "10-20 שנות הישרדות ממוצעות מרגע אבחון JHD (DSM p.727-728)",
+      "<10 שנים = גיל אופייני למצג כבדי במחלת וילסון (Syllabus p.56)",
+      "10-20 שנים = גיל אופייני למצג נוירולוגי/פסיכיאטרי במחלת וילסון (Syllabus p.56)"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "תסמינים פרודרומליים ב-JHD: איריטביליות, התקפי זעם, אימפולסיביות, אפתיה, דיכאון מג'ורי ו-OCD מקדימים תסמינים מוטוריים (DSM p.727-728)",
+      "ליקוי בתפקודים ניהוליים (Executive dysfunction), צניחה אקדמית ודמנציה מתקדמת ב-JHD (DSM p.726-728)",
+      "FXTAS בסב (מעל גיל 50) מהווה סמן קליני לסקר משפחתי מוצלב להערכת ASD/ID/ADHD בנכד (Dulcan p.120, p.142)",
+      "\"דמנציה של הילדות\" ופסיכוזה בגיל ההתבגרות ב-NPC המאובחנת בטעות כסכיזופרניה שפתאומית (COS) (DSM p.424, Dulcan p.121, p.393)",
+      "מחלת וילסון מתייצגת לראשונה עם תסמינים פסיכיאטריים בלבד (שינוי אישיות, אימפולסיביות, דיכאון, פסיכוזה) (Syllabus p.56, Dulcan p.393)",
+      "אבחון שגוי של מחלת וילסון כ-Conduct Disorder, ODD, ADHD או סכיזופרניה מונע טיפול מציל חיים (Syllabus p.56, Dulcan p.393)",
+      "לוקודיסטרופיות בגיל הנעורים מתייצבות ראשונית עם תסמינים פסיכיאטריים ומאובחנות בטעות כ-Late-Onset ADHD, דיכאון או פסיכוזה (Syllabus p.55, Dulcan p.173, p.393)"
+    ],
+    "key_numbers": [
+      "20%-30% מחולי וילסון מציגים תסמינים פסיכיאטריים בלבד כתלונה ראשונית (Syllabus p.56, Dulcan p.393)",
+      ">50 שנים = גיל פורץ טיפוסי ל-FXTAS בזכרים נשאים (Dulcan p.120)"
+    ]
+  },
+  "workup": {
+    "items": [
+      "בדיקת PCR להערכת חזרות CAG בגן HTT ב-JHD (DSM p.728)",
+      "בדיקת ספירת חזרות CGG בגן FMR1 (טווח פרמוטציה: 55-200) ב-FXTAS (Dulcan p.120, p.123)",
+      "מדידת אוקסיסטרולים בפלזמה (Cholestane-3β,5α,6β-triol) וצביעת Filipin בפיברובלסטים ב-NPC (Dulcan p.121)",
+      "בדיקת צרולופלסמין בסרום (<20 mg/dL) ואיסוף שתן ל-24 שעות לנחושת (>100 mcg) במחלת וילסון (Syllabus p.56)",
+      "בדיקת מנורת סדק (Slit-lamp exam) לזיהוי טבעות Kayser-Fleischer בקורנית במחלת וילסון (Syllabus p.56, DSM p.817)",
+      "MRI מוחי: אות T2 ב-MCP sign ב-FXTAS, אטרופיה סטריאטלית ב-JHD, אות Panda Face ב-Midbrain במחלת וילסון, ודה-מיאליניזציה בחומר הלבן בלוקודיסטרופיות (Dulcan p.98, p.120, Syllabus p.55, p.56, DSM p.728)",
+      "בדיקת אנזימים בליקוציטים (ARSA ל-MLD, GALC ל-Krabbe) ומדידת VLCFA/ACTH ל-X-ALD (Syllabus p.55, DSM p.731)"
+    ],
+    "key_numbers": [
+      "<20 mg/dL = סף אבחנתי לצרולופלסמין נמוך בסרום במחלת וילסון (Syllabus p.56)",
+      ">100 mcg/24h = סף אבחנתי להפרשת נחושת מוגברת בשתן במחלת וילסון (Syllabus p.56)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Deutetrabenazine / Tetrabenazine (מעכבי VMAT2) להפרעות תנועה ב-JHD (Dulcan p.448-449, StahlNeuro p.175-176)",
+      "Miglustat (מעכב Glucosylceramide Synthase) להאטת הידרדרות נוירולוגית ב-NPC (Dulcan p.121)",
+      "Penicillamine (+ ויטמין B6 / Pyridoxine) או Trientine (צלטורים לנחושת) במחלת וילסון (Syllabus p.56)",
+      "Zinc Acetate (השראת Metallothionein במעי לעיכוב ספיגת נחושת) במחלת וילסון (Syllabus p.56)",
+      "השתלת תאי גזע המטופואטיים (HSCT) בשלב פרה-סימפטומטי/מוקדמי בלוקודיסטרופיות (Syllabus p.55)",
+      "SSRIs (Fluoxetine) לדיכאון, חרדה ותסמינים אובססיביים ב-JHD, FXTAS ולוקודיסטרופיות (DSM p.727, StahlKids p.208, p.299)"
+    ],
+    "second_line": [
+      "Aripiprazole / Risperidone במינון נמוך לתוקפנות ופסיכוזה ב-JHD, NPC ולוקודיסטרופיות (Dulcan p.448, StahlKids p.30, p.261)",
+      "Pitolisant (אנטגוניסט H3) / Sodium Oxybate / Modafinil לקטפלקסיה וישנוניות ב-NPC (StahlNeuro p.442, p.445-446, p.468)",
+      "Primidone / Propranolol / Gabapentin לרעד כוונתי ב-FXTAS (Dulcan p.120, StahlNeuro p.388)",
+      "Baclofen / Tizanidine לספסטיות בלוקודיסטרופיות (Dulcan p.93, Syllabus p.55)",
+      "הידרוקורטיזון ופלודרוקורטיזון לאי-ספיקת אדרנל ב-X-ALD (Syllabus p.55)"
+    ],
+    "key_side_effects": [
+      "סדציה, DIP, דיכאון ואזהרת אובדנות ב-Tetrabenazine (StahlNeuro p.175)",
+      "תסמונת נפרוטית, לופוס מושרה-תרופתית והחמרה נוירולוגית זמנית ב-Penicillamine (Syllabus p.56)",
+      "סיכון מוגבר במיוחד ל-EPS, החמרת נוקשות שרירים ו-NMS בנוגדי פסיכוזה במחלות גרעיני הבסיס (DSM p.810, StahlKids p.261-262)"
+    ],
+    "monitoring": "בדיקת גנוטייפ CYP2D6 לפני העלאת מינון Tetrabenazine (StahlNeuro p.175); ניטור תפקודי כבד, כליות וספירת דם בצלטורים (Syllabus p.56); ניטור סוכר, פרופיל ליפידים ומשקל בנוגדי פסיכוזה אטיפיקליים (StahlKids p.30)."
+  },
+  "high_yield": [
+    "Juvenile Huntington's Disease מתייצגת בגיל <20y עם פנוטיפ Westphal אקינטי-ריגידי (ברדיקינזיה ונוקשות) ולא כוראה, מורשתת בסחף אבהי (>50-80 CAG repeats), וכוללת פרכוסים ב->35% מהילדים (DSM p.727-728).",
+    "FXTAS בנשאי פרמוטציה (55-200 CGG) מתאפיינת ברעד כוונתי, אטקסיה ו-MCP sign ב-MRI; זיהוי FXTAS אצל סב מכוון לסקר גנטי לאם ולנכד המוערך בשל ASD/ID/ADHD (Dulcan p.120, p.142).",
+    "Niemann-Pick C מתאפיינת בשיתוק מבט אנכי על-גרעיני (VSGP), קטפלקסיה גלסטית ונרקולפסיה משנית מחסר היפוקרטין; פסיכוזה במתבגרים מאובחנת בטעות כסכיזופרניה שפתאומית (COS) (DSM p.423-424, Dulcan p.121, p.393).",
+    "מחלת וילסון מתייצגת לראשונה עם תסמינים פסיכיאטריים בלבד ב-20%-30% מהמתבגרים; מאופיינת ברעד נפנוף כנפיים, Risus Sardonicus, טבעות Kayser-Fleischer, וניתנת לריפוי ע\"י Penicillamine + ויטמין B6 או Trientine (Syllabus p.56, DSM p.817).",
+    "לוקודיסטרופיות מתאפיינות ברגרסיה מוטורית, ספסטיות (סימני UMN) ודה-מיאליניזציה ב-MRI; תסמינים פסיכיאטריים הם המצג הראשוני בגיל הנעורים (אבחון שגוי כ-Late-Onset ADHD); HSCT יעילה בשלב מוקדם/פרה-סימפטומטי בלבד (Syllabus p.55, DSM p.730-731)."
+  ]
+}
