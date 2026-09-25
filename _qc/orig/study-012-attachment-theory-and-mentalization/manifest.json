@@ -1,0 +1,64 @@
+{
+ "tag": "study-012-attachment-theory-and-mentalization",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:10:18+00:00",
+ "updated_at": "2026-09-25T13:10:18+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "e6f941a18bb501a1bd650c7d8dba2cdd24d48597d9f0f5c78f95a93b15535536",
+   "asset_id": 529460508,
+   "size": 5573,
+   "fetched_at": "2026-09-25T13:09:41+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "cf2f597e443d2e824461203a55775420d79beb2fe4bb7f93dcc2734d9802ef8b",
+   "asset_id": 529460449,
+   "size": 13757,
+   "fetched_at": "2026-09-25T13:09:48+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "8ba489da2e5f42355eae8789e0c27220bb49ce368b7909b065ff0a94805ab20c",
+   "asset_id": 529460476,
+   "size": 9835,
+   "fetched_at": "2026-09-25T13:09:58+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "34a0d681295c9439489837278ef30b135e82787dcb4d5c2eaae54909adee59aa",
+   "asset_id": 529460495,
+   "size": 20701,
+   "fetched_at": "2026-09-25T13:10:05+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "a93f9f4081fdf1eb75f9ffa62f15e0ff6217f930919611de42538c41c211ab73",
+   "asset_id": 529460450,
+   "size": 28815,
+   "fetched_at": "2026-09-25T13:10:11+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "0f3b93ff7099bbb6a853d808289db13100437b2f56efbe51df4a42e11d925dff",
+   "asset_id": 529460474,
+   "size": 4425,
+   "fetched_at": "2026-09-25T13:10:14+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "8bef051b7a5b1d1db787ade7b163766e1826f0e6e4a15f1599376f984d2f092e",
+   "asset_id": 529460445,
+   "size": 16623,
+   "fetched_at": "2026-09-25T13:10:16+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "f3eccb9fa66a58467fe77b6a3da989dc2d7134e8fe7fa2a221adadeb4a002b94",
+   "asset_id": 529460496,
+   "size": 29720,
+   "fetched_at": "2026-09-25T13:10:18+00:00"
+  }
+ ]
+}
