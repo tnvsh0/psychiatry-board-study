@@ -1,0 +1,36 @@
+{
+ "tag": "study-108-adolescent-suicidality",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:24:39+00:00",
+ "updated_at": "2026-09-25T16:24:39+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "d79795fbcf38a92a6f49e6c2f5f11e9b4a25b223ef0589e9b52d8a1dca70f741",
+   "asset_id": 586693995,
+   "size": 6298,
+   "fetched_at": "2026-09-25T16:24:14+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "d57e6810a5a8b01958c15e7d249bbf3e4134cba307f07d1f190000d85d14d2c8",
+   "asset_id": 586693999,
+   "size": 12943,
+   "fetched_at": "2026-09-25T16:24:20+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "d70e8610593946195415ba70b5986a30b29ca4b60eef0835e0608c1eeae6e45e",
+   "asset_id": 586693992,
+   "size": 36462,
+   "fetched_at": "2026-09-25T16:24:29+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "ecbe1b7585a2d99261eb4fd9f046fb2b8c147f5713d5cd065cdc6e64891ca667",
+   "asset_id": 586693993,
+   "size": 42192,
+   "fetched_at": "2026-09-25T16:24:39+00:00"
+  }
+ ]
+}
