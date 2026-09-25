@@ -1,0 +1,36 @@
+{
+ "tag": "study-037-pediatric-mood-dmdd-vs-pediatric-bipolar-teen-suicidality",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:06:36+00:00",
+ "updated_at": "2026-09-25T14:06:36+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "55aaa9ab7660d4b47efb72306a6fbaa0a9a46055fe0d0d4807377a9cfc146572",
+   "asset_id": 536894449,
+   "size": 12046,
+   "fetched_at": "2026-09-25T14:06:30+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "870fcf50f57d3cc0ec9e998f4e84ff0476f92e0bb10af085af20033cb1365b6d",
+   "asset_id": 536894453,
+   "size": 33408,
+   "fetched_at": "2026-09-25T14:06:32+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "380c733cc0757870e76151ee03d8bd1547d295e4b19152fe85baef0698e227a6",
+   "asset_id": 536894454,
+   "size": 35486,
+   "fetched_at": "2026-09-25T14:06:34+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "45d5d6b1d7f7078c6b07c0906354846569195e1afa2dee907768bca1fab8be08",
+   "asset_id": 536894447,
+   "size": 56599,
+   "fetched_at": "2026-09-25T14:06:36+00:00"
+  }
+ ]
+}
