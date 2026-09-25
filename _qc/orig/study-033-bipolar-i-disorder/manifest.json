@@ -1,0 +1,36 @@
+{
+ "tag": "study-033-bipolar-i-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:59:59+00:00",
+ "updated_at": "2026-09-25T13:59:59+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a7795a09d5b286f75649141a407bf220f916e47c31cd216d3770d76c03f97ddc",
+   "asset_id": 536645471,
+   "size": 8661,
+   "fetched_at": "2026-09-25T13:59:53+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "7f30dff34cc241ceb059d8b8bf316ac15a129be0108bba162ed918fe9da685e2",
+   "asset_id": 536645468,
+   "size": 10869,
+   "fetched_at": "2026-09-25T13:59:55+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "c18efd6ea7aeb819998e566f6086054092cdb0fb8231eba809e1af553ba28ebc",
+   "asset_id": 536645466,
+   "size": 35309,
+   "fetched_at": "2026-09-25T13:59:57+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "129aa82372dca0acb3d71411509a324756f506a4aee8d9cc9ea1fbc05089daa1",
+   "asset_id": 536645470,
+   "size": 45828,
+   "fetched_at": "2026-09-25T13:59:59+00:00"
+  }
+ ]
+}

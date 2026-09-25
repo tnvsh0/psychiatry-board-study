@@ -1,0 +1,127 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "DIGFAST",
+        "items": [
+          "Distractibility (DSM p.140)",
+          "Impulsivity/Indiscretion (DSM p.140)",
+          "Grandiosity (DSM p.140)",
+          "Flight of ideas (DSM p.140)",
+          "Activity increased (DSM p.140)",
+          "Sleep decreased need (DSM p.140)",
+          "Talkativeness/Pressured speech (DSM p.140)"
+        ]
+      }
+    ],
+    "thresholds": "מצב רוח מרומם, אקספנסיבי או רגיז למשך לפחות שבוע אחד רצוף, בשילוב לפחות 3 תסמיני DIGFAST (ארבעה במידה ומצב הרוח רגיז בלבד) (DSM p.140)",
+    "subtypes": [
+      "עם מאפיינים מעורבים (DSM p.170)",
+      "עם מחזוריות מהירה (DSM p.171)",
+      "עם מאפיינים פסיכוטיים (DSM p.173)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1.5% במבוגרים בארה\"ב (DSM p.146), ~0.6% במתבגרים (Dulcan p.289)",
+    "sex_ratio": "1.1:1 זכרים לנקבות (DSM p.146)",
+    "onset_age_typical": "גיל 22 בממוצע (DSM p.146)",
+    "heritability": "60% עד 93% בתאומים (Dulcan p.290), פי 10 סיכון מוגבר בקרוב משפחה מדרגה ראשונה (DSM p.146)",
+    "comorbidities": [
+      "ADHD (עד 90% במאניה פרה-פיוברטלית) (Dulcan p.295)",
+      "הפרעות חרדה (Dulcan p.295)",
+      "שימוש בחומרים (DSM p.148)"
+    ],
+    "prognosis": "מעל 90% חווים הישנות (DSM p.146), רק 24% euthymic ברוב הזמן במעקב (Dulcan p.292)"
+  },
+  "etiology": {
+    "genetic": "השפעה גנטית חזקה (60%-93% שונות מוסברת) (Dulcan p.290)",
+    "neurobiology": "היפר-דופמינרגיה מזוסטריאטלית D2 (StahlNeuro p.92), היפופונקציה של רסיפטורי NMDA על אינטרנוירונים GABA (StahlNeuro p.141), היפר-אקטיביות 5HT2A (StahlNeuro p.141), פתולוגיה באמיגדלה ובקורטקס הפאראלימבי (Dulcan p.290)",
+    "environmental": "אירועי חיים שליליים והתעללות (DSM p.147; Dulcan p.292)"
+  },
+  "treatment": {
+    "first_line": [
+      "Lithium למאניה חריפה/מעורבת (גילאי 7-17) (Dulcan p.298; StahlKids p.285)",
+      "SGA monotherapy: Aripiprazole, Asenapine, Quetiapine, Risperidone (גילאי 10-17), Olanzapine (גילאי 13-17) (Dulcan p.298)",
+      "פסיכותרפיה CBT-CFF, FFT-A, או PEP-MF (Dulcan p.297)"
+    ],
+    "second_line": [
+      "Lurasidone לדיכאון דו-קוטבי (גילאי 10-17) (Dulcan p.301; StahlKids p.299)",
+      "OFC (Olanzapine/Fluoxetine Combination) לדיכאון דו-קוטבי (Dulcan p.301; StahlKids p.351)",
+      "Lamotrigine כאחזקה (גילאי 13-17) (Dulcan p.301-302; StahlKids p.291)"
+    ],
+    "key_side_effects": [
+      "Lithium: עלייה במשקל, רעד, אנורזיס, פוליאוריה (StahlKids p.291, 292)",
+      "SGAs: תסמונת מטבולית, עלייה במשקל, EPS, אקתיזיה (Syllabus p.32-33; Dulcan p.291, 785)",
+      "Valproate: פגיעה בכבד, פנקראטיטיס, טרומבוציטופניה (Syllabus p.35; Dulcan p.291, 820)"
+    ],
+    "monitoring": "Lithium: רמת תרופה (0.6-1.2 mEq/L), TSH, Creatinine, אלקטרוליטים, ECG, הריון (Syllabus p.35; Dulcan p.291). Valproate: LFTs, ספירת דם וטסיות, עמילאז/ליפאז (Syllabus p.35; Dulcan p.291). SGAs: מעקב BMI, סוכר וליפידים, בדיקת AIMS לתנועות (Syllabus p.32-33; Dulcan p.291)"
+  },
+  "assessment_tools": {
+    "items": [
+      "ראיון K-SADS-PL להערכת תסמיני מצב רוח בילדים ונוער (Dulcan p.255, 295)",
+      "ראיון מובן NIMH DISC-IV (Dulcan p.255, 295)",
+      "שאלון YMRS להערכת חומרת מאניה (Dulcan p.295)",
+      "שאלון CDRS-R להערכת חומרת דיכאון (Dulcan p.295)",
+      "יומן וציר זמן של מצב רוח (Dulcan p.255)"
+    ],
+    "key_numbers": [
+      "ציון סף 20 ומעלה ב-YMRS מוגדר כמאניה משמעותית (Dulcan p.295)",
+      "ציון מעל 40 ב-CDRS-R מעיד על דיכאון קליני משמעותי (Dulcan p.295)",
+      "8 שנות מעקב פרוספקטיבי במחקר ה-COBY (Dulcan p.292)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "מחלת קושינג (DSM p.149, 160)",
+      "טרשת נפוצה MS (DSM p.149, 160)",
+      "אנצפליטיס נוגדני NMDA (DSM p.166)",
+      "חבלות ראש TBI או שבץ (DSM p.166)",
+      "הרעלה או גמילה מחומרים וסמים (DSM p.140)"
+    ],
+    "key_numbers": [
+      "סקר טוקסיקולוגי לשלילת סמים מעוררים במיון (Syllabus p.30-31; Dulcan p.291)",
+      "רמת TSH לשלילת פתולוגיה של בלוטת התריס (Syllabus p.35; Dulcan p.291)"
+    ]
+  },
+  "mania_vs_hypomania": {
+    "items": [
+      "מאניה גורמת לפגיעה בולטת בתפקוד החברתי/תעסוקתי, היפומאניה אינה פוגעת קשות (DSM p.140-141; Dulcan p.281)",
+      "אשפוז פסיכיאטרי או קיום תסמינים פסיכוטיים מגדיר אפיזודה כמאנית ושולל היפומאניה (DSM p.141; Dulcan p.281)"
+    ],
+    "key_numbers": [
+      "משך של שבוע 1 לפחות למאניה (או כל משך אם נדרש אשפוז) (DSM p.140; Dulcan p.281)",
+      "משך של 4 ימים רצופים לפחות להיפומאניה (DSM p.140; Dulcan p.281)"
+    ]
+  },
+  "mixed_features": {
+    "items": [
+      "החליף ב-DSM-5 את האבחנה של אפיזודה מעורבת (DSM p.170-171; Dulcan p.286-287)",
+      "אפיזודה מאנית/היפומאנית עם לפחות 3 תסמיני דיכאון (DSM p.170; Dulcan p.283, 451)",
+      "אפיזודה דיכאונית עם לפחות 3 תסמיני מאניה/היפומאניה (DSM p.170-171; Dulcan p.283, 451)",
+      "קשור לסיכון אובדני מוגבר ותגובה פחות טובה לליתיום (DSM p.145, 146; Dulcan p.287, 453)"
+    ],
+    "key_numbers": [
+      "3 תסמינים לפחות מהקוטב השני נדרשים לציון מאפיינים מעורבים (DSM p.170; Dulcan p.283, 451)"
+    ]
+  },
+  "rapid_cycling": {
+    "items": [
+      "מחזוריות מהירה מוגדרת כנוכחות אפיזודות מצב רוח מרובות בשנה (DSM p.171; Dulcan p.286)",
+      "אפיזודות מופרדות ע\"י רמיסיה של חודשיים או סוויץ' לקוטב הפוך (DSM p.171; Dulcan p.286)",
+      "שכיח יותר בנשים וקשור לפרוגנוזה גרועה (DSM p.147, 155-156)",
+      "מצריך שלילת פתולוגיה של בלוטת התריס (DSM p.159; Dulcan p.286)"
+    ],
+    "key_numbers": [
+      "4 אפיזודות לפחות של מצב רוח במהלך 12 החודשים האחרונים (DSM p.171; Dulcan p.286, 550)",
+      "2 חודשים רצופים של רמיסיה מלאה או חלקית נדרשים להפרדה בין אפיזודות (DSM p.171; Dulcan p.286)"
+    ]
+  },
+  "high_yield": [
+    "Lurasidone ו-OFC הן היחידות המאושרות FDA לדיכאון דו-קוטבי בצעירים (גילאי 10-17); Quetiapine הראה תוצאות שליליות בילדים (Dulcan p.301)",
+    "תרופות נוגדות פרכוסים (Valproate ER, Carbamazepine, Oxcarbazepine, Topiramate) הציגו כישלון (Negative trials) במאניה פדיאטרית (Dulcan p.298, 304)",
+    "בדו-קוטבי קומורבידי עם ADHD, יש לייצב את תסמיני מצב הרוח לחלוטין לפני התחלת טיפול בסטימולנטים (Syllabus p.35; Dulcan p.300)",
+    "ב-DTI נמצא כי Bipolar מאופיין בשינויים במיאלינציה של החומר הלבן, בניגוד ל-DMDD שמציג שינויים ממוקדים וירידה ב-FA (Dulcan p.291)",
+    "מנגנון הפסיכוזה והאגיטציה במאניה חריפה מערב היפר-דופמינרגיה בסטריאטום האסוציאטיבי, היפופונקציה קורטיקלית של קולטני NMDA, והיפר-סרוטונרגיה של 5HT2A (StahlNeuro p.92, 141)",
+    "ליתיום מציג אפקט מגן מוכח קלינית מפני אובדנות בקרב חולי הפרעה דו-קוטבית (Dulcan p.291, 810)"
+  ]
+}
