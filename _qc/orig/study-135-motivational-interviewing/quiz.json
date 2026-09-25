@@ -1,0 +1,257 @@
+{
+  "title": "Psychiatry Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "A 16-year-old male with moderate Cannabis Use Disorder and Class III Obesity presents for his third session. He states, 'I know my mom wants me to stop smoking, and I guess I should because it's expensive, but honestly, it's the only thing that helps me relax after school.' According to the DARN-CAT taxonomy of Change Talk, which category best describes his statement about the cost of his use? (Dulcan p.989, p.995)",
+      "answerOptions": [
+        {
+          "text": "Preparatory Change Talk: Reason",
+          "isCorrect": true,
+          "rationale": "The patient identifies a specific motive for change (expense) without yet expressing a firm commitment or taking action, which fits the 'Reason' category of preparatory talk."
+        },
+        {
+          "text": "Mobilizing Change Talk: Commitment",
+          "isCorrect": false,
+          "rationale": "Commitment talk involves firm 'I will' or 'I promise' statements, which are absent in this patient's ambivalent reflection."
+        },
+        {
+          "text": "Preparatory Change Talk: Ability",
+          "isCorrect": false,
+          "rationale": "Ability talk focuses on the patient's perceived self-efficacy or potential to change (e.g., 'I could stop'), rather than the external or internal motivations for doing so."
+        },
+        {
+          "text": "Mobilizing Change Talk: Activation",
+          "isCorrect": false,
+          "rationale": "Activation talk indicates a readiness or willingness to act (e.g., 'I am ready to try'), whereas this statement only lists a reason for potential change while emphasizing Sustain Talk."
+        }
+      ],
+      "hint": "Consider whether the statement reflects a motive for change or a specific plan/commitment."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "During an initial evaluation, a clinician is careful to maintain 'The Spirit of MI' by explicitly stating to an adolescent with Depression, 'You are the expert on your own life and your own values; my role is to help guide you toward what you decide is best.' This approach primarily demonstrates which core relational element? (Dulcan p.986)",
+      "answerOptions": [
+        {
+          "text": "Partnership",
+          "isCorrect": true,
+          "rationale": "Partnership is the concept that the therapist and client are equal experts, with the therapist as a guide and the client as the expert on their own life and reasons for change."
+        },
+        {
+          "text": "Compassion",
+          "isCorrect": false,
+          "rationale": "Compassion involves actively promoting the client's welfare as paramount, which is related but distinct from the egalitarian expertise emphasized in Partnership."
+        },
+        {
+          "text": "Evocation",
+          "isCorrect": false,
+          "rationale": "Evocation is the process of calling forth the client's internal motivations; the clinician's statement here defines the relationship structure rather than the act of eliciting ideas."
+        },
+        {
+          "text": "Altruism",
+          "isCorrect": false,
+          "rationale": "Altruism is not defined as one of the four core pillars of the Spirit of MI in the provided source material."
+        }
+      ],
+      "hint": "Focus on the therapist's acknowledgement of the client's status as an 'expert' in the room."
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "In a meta-analysis of the technical hypothesis of MI, it was discovered that the strength of association between the patient's ___ and poor behavioral outcomes was higher than the association between Change Talk and positive outcomes. (Dulcan p.990)",
+      "bestAnswer": "Sustain Talk",
+      "acceptableAnswers": [
+        "SustainTalk",
+        "Sustain-Talk",
+        "Sustain talk"
+      ],
+      "rationale": "Magill et al. (2018) found that statements favoring the status quo (Sustain Talk) have a more powerful predictive value for negative clinical outcomes than Change Talk does for success.",
+      "hint": "This term refers to the verbalizations that favor maintaining the current behavior or status quo."
+    },
+    {
+      "type": "multiple_select",
+      "question": "According to the principles of Motivational Interviewing and the technical hypothesis, which of the following therapist behaviors are considered 'MI-consistent' and are likely to lead to an increase in patient Change Talk? (Dulcan p.987, p.990)",
+      "answerOptions": [
+        {
+          "text": "Strategic use of complex reflections.",
+          "isCorrect": true,
+          "rationale": "Complex reflections go beyond simple paraphrasing to evoke deeper meaning and have been shown to jumpstart Change Talk."
+        },
+        {
+          "text": "Affirmations of the patient's strengths and autonomy.",
+          "isCorrect": true,
+          "rationale": "Affirmations build self-efficacy and support the relational element of acceptance, encouraging the patient to share more openly."
+        },
+        {
+          "text": "Providing 'Righting Reflex' feedback immediately when a patient mentions Sustain Talk.",
+          "isCorrect": false,
+          "rationale": "The 'Righting Reflex'\u2014the urge to correct the patient's behavior or persuade them\u2014is an MI-inconsistent behavior that often increases resistance."
+        },
+        {
+          "text": "Using open-ended questions to explore the future with change.",
+          "isCorrect": true,
+          "rationale": "Open-ended questions allow the patient to envision a different future and elicit their own motivations rather than the clinician's."
+        }
+      ],
+      "hint": "Consider which actions align with a non-confrontational, client-centered approach.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A patient in a forensic state hospital with a diagnosis of Schizophrenia is known for frequent, unprovoked physical assaults. Based on the neuroscientific classifications of violence, this patient's aggression is most likely characterized as: (StahlNeuro p.531, p.563)",
+      "answerOptions": [
+        {
+          "text": "Impulsive aggression",
+          "isCorrect": true,
+          "rationale": "The most frequent type of violent act in institutional settings and in patients with underlying psychotic illness is impulsive, often characterized by high autonomic arousal and poor control."
+        },
+        {
+          "text": "Organized (Predatory) aggression",
+          "isCorrect": false,
+          "rationale": "Organized violence is planned and goal-directed without autonomic arousal; it is less common in patients with active psychotic symptoms in these settings."
+        },
+        {
+          "text": "Instrumental aggression",
+          "isCorrect": false,
+          "rationale": "Instrumental aggression is another term for organized/predatory aggression, which is typically the least frequent type of violent act compared to impulsive aggression."
+        },
+        {
+          "text": "Proactive aggression",
+          "isCorrect": false,
+          "rationale": "Proactive aggression is planned and purposeful; psychotic and impulsive violence are reactive to internal (delusions) or external (stress) stimuli."
+        }
+      ],
+      "hint": "Consider the most common type of violence seen in institutionalized patients with psychotic disorders."
+    },
+    {
+      "type": "short_answer",
+      "question": "Explain the four components of the 'Acceptance' pillar within the Spirit of MI and how they differ from 'tacit approval' of behavior. (Dulcan p.986)",
+      "grading": {
+        "modelAnswer": "Acceptance consists of four components: absolute worth, accurate empathy, affirmation, and autonomy support. It differs from tacit approval because a clinician can acknowledge a patient's absolute right to make their own choices (autonomy) without necessarily agreeing with or approving of risky behaviors like substance misuse.",
+        "rationale": "Acceptance in MI is a technical and relational stance of non-judgmental validation of the person's humanity and choice, which does not equate to approving of their symptoms or dangerous actions.",
+        "requiredAttributes": [
+          "Lists the four components: absolute worth (or validation), accurate empathy, affirmation, and autonomy.",
+          "Distinguishes Acceptance from approval/agreement with behaviors.",
+          "Mentions that the clinician recognizes the client's right to make their own decisions."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Confusing acceptance with passive agreement or lack of therapeutic goals."
+          ],
+          "bluffs": [
+            "Saying that the clinician must accept whatever the patient says as being the right thing to do."
+          ]
+        }
+      },
+      "hint": "Think about the ethical stance of recognizing someone's right to choose, even if you disagree with the choice."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A clinician is working with an adolescent who is highly resistant to treatment. The clinician decides to use a 'double-sided reflection.' In order to be most effective in steering the conversation toward change, how should the clinician structure this reflection? (Dulcan p.988, p.995)",
+      "answerOptions": [
+        {
+          "text": "Start with a reflection of the Sustain Talk and end with the Change Talk.",
+          "isCorrect": true,
+          "rationale": "Ending the summary or reflection with Change Talk is strategic because the topic with which the clinician ends will lead the conversation in the next direction."
+        },
+        {
+          "text": "Start with the Change Talk and end with the Sustain Talk to show empathy.",
+          "isCorrect": false,
+          "rationale": "Ending with Sustain Talk would likely encourage the patient to elaborate further on reasons to stay the same, which is counter-productive to the goal of MI."
+        },
+        {
+          "text": "Only reflect the Change Talk and ignore the Sustain Talk entirely.",
+          "isCorrect": false,
+          "rationale": "While MI involves selective focus on Change Talk in later stages (Evoking/Planning), ignoring resistance entirely in early stages can prevent engagement and alliance building."
+        },
+        {
+          "text": "Reflect both simultaneously without a specific order to remain neutral.",
+          "isCorrect": false,
+          "rationale": "Neutrality is not the goal of MI; the clinician acts as a 'strategic guide' and the order of the reflection influences the direction of the client's next response."
+        }
+      ],
+      "hint": "The last thing said is usually what the patient responds to next."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "During which of the four MI processes is the clinician most likely to use a 'menu of options' or 'agenda map' to collaboratively determine the targets of the session? (Dulcan p.988-989, p.993-994)",
+      "answerOptions": [
+        {
+          "text": "Focusing",
+          "isCorrect": true,
+          "rationale": "Focusing (strategic centering) is the process of developing and maintaining a collaborative agenda and identifying potential targets for change."
+        },
+        {
+          "text": "Engaging",
+          "isCorrect": false,
+          "rationale": "Engaging is the foundational process focused on building the relationship and alliance rather than setting a specific agenda."
+        },
+        {
+          "text": "Evoking",
+          "isCorrect": false,
+          "rationale": "Evoking involves drawing out the patient's own reasons for change once a specific target has already been identified in the focusing process."
+        },
+        {
+          "text": "Planning",
+          "isCorrect": false,
+          "rationale": "Planning occurs once there is a commitment to change a specific behavior, involving the 'how' and 'when' rather than the initial selection of the topic."
+        }
+      ],
+      "hint": "This process involves 'collaborative alignment' to identify what to talk about."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Research regarding the efficacy of Motivational Interviewing (Hettema et al., 2005) suggests that which of the following is true regarding its impact on different demographic groups? (Dulcan p.985-986)",
+      "answerOptions": [
+        {
+          "text": "Larger effect sizes have been observed with minority youth compared with ethnic majority youth.",
+          "isCorrect": true,
+          "rationale": "Subgroup research on MI has indicated particularly strong benefits for minority populations, possibly due to the non-confrontational and culturally sensitive nature of the Spirit of MI."
+        },
+        {
+          "text": "MI is only effective for adolescents with high baseline motivation.",
+          "isCorrect": false,
+          "rationale": "MI was specifically designed for patients with low motivation or high ambivalence, such as those with substance use disorders."
+        },
+        {
+          "text": "Effect sizes for MI are consistent across all age groups and ethnicities.",
+          "isCorrect": false,
+          "rationale": "While effective for many, research has specifically highlighted variations in effect size, with notable gains in minority subgroups."
+        },
+        {
+          "text": "MI has been shown to be less effective in school settings than in outpatient clinics.",
+          "isCorrect": false,
+          "rationale": "MI has broad applications across settings, including schools, juvenile justice, and primary care, with positive results across these domains."
+        }
+      ],
+      "hint": "Consider the findings related to cultural and ethnic subgroups."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A clinician is evaluating an 8-year-old child who presents with repetitive head-banging and biting of his own hands. The clinician notes that these behaviors occur more frequently during times of frustration but also occur when the child is left alone. No positive psychotic symptoms are present. This behavior should be coded as: (DSM p.89, p.xxix)",
+      "answerOptions": [
+        {
+          "text": "F98.4 Stereotypic Movement Disorder, with self-injurious behavior",
+          "isCorrect": true,
+          "rationale": "Stereotypic Movement Disorder is characterized by repetitive, seemingly driven, and nonfunctional motor behavior; if the behavior causes bodily injury, the specifier 'with self-injurious behavior' is required."
+        },
+        {
+          "text": "F91.3 Oppositional Defiant Disorder",
+          "isCorrect": false,
+          "rationale": "ODD involves a pattern of angry/irritable mood and argumentative/defiant behavior toward others, not repetitive self-injurious motor behaviors."
+        },
+        {
+          "text": "F20.9 Schizophrenia",
+          "isCorrect": false,
+          "rationale": "The vignette specifies that no positive psychotic symptoms (delusions, hallucinations) are present, making Schizophrenia an incorrect diagnosis."
+        },
+        {
+          "text": "F95.2 Tourette's Disorder",
+          "isCorrect": false,
+          "rationale": "Tourette's Disorder requires both multiple motor tics and one or more vocal tics; the described behaviors are rhythmic and driven 'signature' movements rather than sudden, rapid tics."
+        }
+      ],
+      "hint": "Identify the DSM classification for repetitive, nonfunctional, driven motor behaviors."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+ "tag": "study-135-motivational-interviewing",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:15:48+00:00",
+ "updated_at": "2026-09-25T17:15:48+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "915bd64e4617019e00b06c7a39b7d39e12204bd76dcbd2e2c9e5b39c1cf0eef2",
+   "asset_id": 587809039,
+   "size": 8789,
+   "fetched_at": "2026-09-25T17:15:41+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "228c6a139d52abcea460cd4e08b6fb8a6610aad45329830b82821c80eb3c8af5",
+   "asset_id": 587809036,
+   "size": 8181,
+   "fetched_at": "2026-09-25T17:15:43+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "a5b42c80f1cf9ff626fbb1faf42fee92ed113739b1216907999155970879dc08",
+   "asset_id": 587809042,
+   "size": 16037,
+   "fetched_at": "2026-09-25T17:15:46+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "922a8b9e59a39f4a83baac4e02c5019116acc96f2de195d47c4291882a5c9b6a",
+   "asset_id": 587809043,
+   "size": 44131,
+   "fetched_at": "2026-09-25T17:15:48+00:00"
+  }
+ ]
+}
