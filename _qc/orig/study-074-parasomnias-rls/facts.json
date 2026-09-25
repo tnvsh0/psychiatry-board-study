@@ -1,0 +1,108 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "NREM Parasomnias (Sleepwalking & Sleep Terrors)",
+        "items": [
+          "Incomplete awakening from N3 slow-wave sleep during first third of night (DSM p.452)",
+          "Sleepwalking: blank staring face, unresponsiveness, difficult awakening (DSM p.452)",
+          "Sleep Terrors: panicky scream, intense fear, autonomic arousal (mydriasis, tachycardia, sweating) (DSM p.452)",
+          "Amnesia for the episode and no/minimal dream recall (DSM p.452)"
+        ]
+      },
+      {
+        "name": "REM Sleep Behavior Disorder (RBD)",
+        "items": [
+          "Recurrent vocalizations or complex motor behaviors during REM sleep (DSM p.461)",
+          "Dream-enactment behaviors reflecting violent/action dreams (DSM p.461)",
+          "Immediate full alertness and orientation upon awakening without confusion (DSM p.461)",
+          "REM sleep without atonia documented on PSG or established synucleinopathy (DSM p.461)"
+        ]
+      },
+      {
+        "name": "Restless Legs Syndrome (RLS)",
+        "items": [
+          "Urge to move legs usually accompanied by uncomfortable sensations (DSM p.464)",
+          "Urge begins or worsens during periods of rest or inactivity (DSM p.464)",
+          "Urge is partially or totally relieved by movement (DSM p.465)",
+          "Urge is worse or exclusively occurs in the evening or night (DSM p.465)"
+        ]
+      }
+    ],
+    "thresholds": "RLS: >=3 times/week for >=3 months (DSM p.465)",
+    "subtypes": [
+      "Sleepwalking specifiers: With sleep-related eating, With sleep-related sexual behavior (Sexsomnia) (DSM p.452)",
+      "RLS presentations: Familial early-onset (<45 years) vs. Late-onset (DSM p.466)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "RLS: 2%-4% in children (Dulcan p.485), 1.6% in adults (DSM p.465); NREM Sleepwalking: 14%-40% isolated, 5% annual in children (DSM p.454, Dulcan p.487); Sleep Terrors: 3%-6% in children (Dulcan p.488); RBD: 1%-2% in older adults (DSM p.462)",
+    "sex_ratio": "RLS: 2:1 F:M in adults (DSM p.465); RBD: Predominantly M (>50 years) (DSM p.462); NREM Sleepwalking: F>M in children, equal in adults (DSM p.454); Sleep Terrors: M>F in children (DSM p.454)",
+    "onset_age_typical": "Sleepwalking: 4-12 years peak (Dulcan p.488); Sleep Terrors: 1.5-10 years peak (Dulcan p.488); RLS: 10-30 years typical (DSM p.466); RBD: >50 years (DSM p.462)",
+    "heritability": "NREM Parasomnias: up to 80% family history, 60% risk if both parents sleepwalk (DSM p.454); RLS: up to 80% familial in young-onset (DSM p.466)",
+    "comorbidities": [
+      "RLS with ADHD: ~25% bidirectional overlap in children (Dulcan p.485, p.491)",
+      "RLS with PLMS: up to 90% (DSM p.465)",
+      "Idiopathic RBD with Synucleinopathies (Parkinson's, DLB, MSA): 75% conversion (DSM p.462)"
+    ],
+    "prognosis": "NREM Parasomnias: transient, 50%-65% remission by adolescence (DSM p.454, Dulcan p.487); RBD: 75% convert to neurodegenerative disease over 10-15 years (DSM p.462); RLS: chronic progressive course (DSM p.466)"
+  },
+  "etiology": {
+    "genetic": "MEIS1 gene variant doubles RLS risk (DSM p.467); Polygenic inheritance in NREM parasomnias (DSM p.454)",
+    "neurobiology": "RLS: central dopamine dysfunction (A11 diencephalospinal group) & central iron deficiency affecting Tyrosine Hydroxylase (DSM p.467, Dulcan p.485, StahlNeuro p.85); RBD: loss of REM atonia via pontine/medullary brainstem degeneration & alpha-synuclein deposition (DSM p.463, StahlNeuro p.506); NREM: incomplete arousal dissociation from N3 slow-wave sleep (DSM p.455)",
+    "environmental": "Sleep deprivation, fever, physical/emotional stress trigger NREM parasomnias (DSM p.454, Dulcan p.488); Pregnancy, uremia, SSRIs, SNRIs, TCAs, antihistamines, and dopamine antagonists exacerbate RLS (DSM p.467, Dulcan p.485)"
+  },
+  "treatment": {
+    "first_line": [
+      "RLS: Oral elemental iron 3-6 mg/kg/day if serum ferritin <50 ng/mL (Dulcan p.485)",
+      "Parasomnias: Environmental safety precautions & strict sleep hygiene (Dulcan p.488)",
+      "Sleep Terrors: Scheduled awakenings 15-20 min before usual event time (Dulcan p.488)"
+    ],
+    "second_line": [
+      "RLS: Dopamine agonists (Ropinirole, Pramipexole, Rotigotine) or Alpha-2-Delta ligands (Gabapentin, Pregabalin) (Dulcan p.485-486, StahlNeuro p.397, p.557)",
+      "Severe Parasomnias/RBD: Clonazepam 0.01 mg/kg (0.125-1.0 mg hs) (Dulcan p.482, p.488)",
+      "Refractory Parasomnias: Clonidine 0.025-0.3 mg hs (Dulcan p.482, StahlKids p.139)"
+    ],
+    "key_side_effects": [
+      "Dopaminergic Augmentation in RLS (earlier daily onset & worsening symptoms) (StahlNeuro p.530)",
+      "Clonazepam sedation, ataxia, and tolerance (Dulcan p.482)"
+    ],
+    "monitoring": "Serum ferritin every 3-4 months in RLS until target 80-100 ng/mL is reached (Dulcan p.485)"
+  },
+  "assessment_tools": {
+    "items": [
+      "BEARS pediatric sleep screening tool covering 5 clinical domains (Dulcan p.475)",
+      "Polysomnography (PSG) showing REM sleep without atonia required for definitive RBD diagnosis (DSM p.461, p.463)",
+      "2-week sleep log/diary for tracking sleep-wake regularity (Dulcan p.475, DSM p.420)",
+      "Serum ferritin level check mandatory in pediatric RLS assessment (Dulcan p.485)"
+    ],
+    "key_numbers": [
+      "5 domains in BEARS screening tool (Bedtime, Excessive daytime sleepiness, Awakenings, Regularity, Snoring) (Dulcan p.475)",
+      "50 ng/mL serum ferritin threshold requiring iron replacement in RLS (Dulcan p.485)",
+      "90% of RLS patients demonstrate Periodic Limb Movements in Sleep (PLMS) on PSG (DSM p.465)",
+      "14 days (2 weeks) standard duration for sleep log/diary monitoring (Dulcan p.475)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Nightmare Disorder: occurs during REM sleep in second half of night, vivid dream recall, full alertness, minimal autonomic arousal (DSM p.455, p.460)",
+      "Nocturnal Seizures: stereotyped brief motor movements, multiple per night, EEG epileptiform discharges (DSM p.456, p.464)",
+      "Medication-induced Akathisia: global body restlessness caused by dopamine antagonists, lacks evening worsening or relief by walking (DSM p.467, StahlKids p.153)",
+      "Growing Pains: deep nocturnal leg pain in children without urge to move or relief by walking (Dulcan p.499)",
+      "Nocturnal Leg Cramps: painful muscle contractions resolved by single stretch without urge to move (DSM p.467)"
+    ],
+    "key_numbers": [
+      "3 times per week for 3 months threshold distinguishes RLS from transient leg cramps (DSM p.465)",
+      "10 to 15 years latency between RBD onset and neurodegenerative synucleinopathy manifestation (DSM p.462)"
+    ]
+  },
+  "high_yield": [
+    "NREM parasomnias occur in N3 slow-wave sleep during the first third of the night, featuring complete amnesia, lack of dream recall, and impaired arousal (DSM p.452).",
+    "Idiopathic RBD is a major prodromal marker for alpha-synucleinopathies, with 75% of patients converting to Parkinson's disease, DLB, or MSA within 10-15 years (DSM p.462).",
+    "RBD in children or young adults is extremely rare and necessitates immediate evaluation for Narcolepsy, SSRI use, or brainstem lesions (DSM p.462).",
+    "RLS diagnosis requires all 4 core criteria: urge to move legs, worse at rest, relieved by movement, and worse in the evening/night (DSM p.464-465).",
+    "First-line medical treatment for pediatric RLS is oral elemental iron (3-6 mg/kg/day) when serum ferritin is <50 ng/mL, targeting 80-100 ng/mL (Dulcan p.485).",
+    "RLS has a bidirectional ~25% comorbidity with ADHD in pediatric populations (Dulcan p.485, p.491).",
+    "SSRIs, SNRIs, TCAs, first-generation antihistamines, and dopamine receptor antagonists exacerbate RLS and PLMS (DSM p.467, Dulcan p.485)."
+  ]
+}
