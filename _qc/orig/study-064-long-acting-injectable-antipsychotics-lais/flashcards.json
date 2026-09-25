@@ -1,0 +1,85 @@
+{
+  "title": "Antipsychotic Flashcards",
+  "cards": [
+    {
+      "front": "According to the DSM-5-TR, which diagnostic code should be used to document a patient's non-adherence to medical treatment?",
+      "back": "Z91.19 (DSM p. 835)."
+    },
+    {
+      "front": "What is the primary clinical rationale for using Long-Acting Injectable (LAI) antipsychotics in patients with schizophrenia spectrum disorders?",
+      "back": "To ensure treatment adherence and prevent early psychotic relapse (StahlNeuro p. 233, Dulcan p. 402)."
+    },
+    {
+      "front": "What neurobiological consequence is associated with each successive episode of psychotic relapse?",
+      "back": "Relapses are associated with a cumulative loss of brain tissue volume and increased resistance to future treatment (StahlNeuro p. 162, Dulcan p. 402)."
+    },
+    {
+      "front": "Why is a $21$-day (3-week) oral antipsychotic overlap mandatory when initiating Risperidone Consta?",
+      "back": "There is a significant lag time before the polymer microspheres release therapeutic levels of the medication into the bloodstream (StahlKids p. 42, StahlNeuro p. 234)."
+    },
+    {
+      "front": "Which LAI antipsychotic requires a $14$-day oral overlap period following the first injection?",
+      "back": "Aripiprazole Maintena (StahlKids p. 41, Source 5)."
+    },
+    {
+      "front": "How does the initiation protocol for Invega Sustenna (Paliperidone Palmitate) eliminate the need for oral overlap?",
+      "back": "It utilizes a rapid-loading dose in the deltoid muscle followed by a second dose one week later (StahlNeuro p. 234, Source 5)."
+    },
+    {
+      "front": "What is the required duration of clinical stability on Invega Sustenna before a patient can transition to the 3-month Invega Trinza formulation?",
+      "back": "A minimum of $4$ consecutive months of proven stability and tolerability (StahlKids p. 370, StahlNeuro p. 234)."
+    },
+    {
+      "front": "When converting from Invega Sustenna to Invega Trinza, the 3-month dose is calculated by multiplying the last monthly dose by _____.",
+      "back": "$3.5$ (StahlKids p. 370, Source 5)."
+    },
+    {
+      "front": "Which first-generation antipsychotic is FDA-approved for the treatment of schizophrenia in pediatric patients as young as $3$ years old?",
+      "back": "Haloperidol (Dulcan p. 402)."
+    },
+    {
+      "front": "Patients receiving Olanzapine Relprevv must be monitored for $3$ hours post-injection to detect which potentially severe complication?",
+      "back": "Post-injection delirium sedation syndrome (StahlNeuro p. 233)."
+    },
+    {
+      "front": "Which three Cytochrome P450 (CYP) enzymes are most critical for the clearance of the majority of antipsychotic medications?",
+      "back": "CYP3A4, CYP2D6, and CYP1A2 (Dulcan p. 785)."
+    },
+    {
+      "front": "Paliperidone carries a lower risk of drug-drug interactions because less than _____ percent of the drug undergoes first-pass hepatic metabolism.",
+      "back": "$10\\%$ (Dulcan p. 786)."
+    },
+    {
+      "front": "Initiation of Clozapine requires a baseline Absolute Neutrophil Count (ANC) of at least _____ in the general population.",
+      "back": "$1500/\\mu l$ (StahlKids p. 165)."
+    },
+    {
+      "front": "Which side effect, characterized by inner restlessness and an inability to remain still, is a common $D_{2}$ blockade-related risk in pediatric patients?",
+      "back": "Akathisia (Dulcan p. 820, StahlNeuro p. 163)."
+    },
+    {
+      "front": "The mechanism of Aripiprazole involves partial agonism at $D_{2}$ and $5-HT_{1A}$ receptors, combined with antagonism at the _____ receptor.",
+      "back": "$5-HT_{2A}$ (Dulcan p. 820, StahlNeuro p. 238)."
+    },
+    {
+      "front": "What is the recommended injection interval for Haloperidol Decanoate?",
+      "back": "Every $4$ weeks (StahlNeuro p. 233, Source 5)."
+    },
+    {
+      "front": "Which enzyme is responsible for storing monoamines and histamine in synaptic vesicles and is the target of treatments for tardive dyskinesia?",
+      "back": "VMAT2 (vesicular monoamine transporter 2) (StahlNeuro p. 48)."
+    },
+    {
+      "front": "How do LAI antipsychotics reduce the side-effect profile compared to irregular oral dosing?",
+      "back": "They eliminate the sharp \"peak-to-trough\" fluctuations in plasma drug levels associated with inconsistent pill-taking (StahlNeuro p. 233)."
+    },
+    {
+      "front": "In pediatric patients, why are more frequent dosing or higher weight-based doses often required compared to adults?",
+      "back": "Physiological developmental differences result in faster drug clearance and metabolism in children and adolescents (Dulcan p. 785)."
+    },
+    {
+      "front": "According to Dulcan's textbook, what is the status of systematic research on LAI antipsychotics in youth?",
+      "back": "LAI forms of antipsychotics have not been systematically studied in children and adolescents (Dulcan p. 402)."
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "drug_class": {
+    "members": [
+      "Haloperidol decanoate: FGA LAI, ester in sesame oil (q4w) (StahlKids p.258)",
+      "Risperidone Consta: SGA LAI, PLGA microspheres (q2w) (StahlKids p.423)",
+      "Paliperidone Sustenna: SGA LAI, nanocrystal palmitate (q1m) (StahlKids p.367)",
+      "Paliperidone Trinza: SGA LAI, 3-month formulation (q3m) (StahlKids p.367)",
+      "Paliperidone Hafyera: SGA LAI, 6-month formulation (q6m) (StahlNeuro p.235)",
+      "Aripiprazole Maintena: D2 partial agonist LAI (q1m) (StahlKids p.37)",
+      "Aripiprazole Aristada: Aripiprazole Lauroxil prodrug (q1m-q2m) (StahlKids p.37)",
+      "Olanzapine Relprevv: SGA LAI, pamoate salt with PDSS REMS warning (q2w-q4w) (StahlKids p.351)"
+    ],
+    "mechanism": "D2 receptor antagonism or D2 partial agonism, 5-HT2A antagonism (SGAs), 5-HT1A partial agonism (Aripiprazole) (StahlNeuro p.159, p.184, p.189)",
+    "kinetics": [
+      "Half-life: Haloperidol decanoate ~3 weeks (StahlKids p.258)",
+      "Half-life: Risperidone Consta 3-6 days (release lag 3 weeks) (StahlKids p.423)",
+      "Half-life: Paliperidone Sustenna 25-49 days (Dulcan p.820)",
+      "Half-life: Aripiprazole Maintena 30-47 days (Dulcan p.820)",
+      "CYP metabolism: CYP2D6/3A4 (Aripiprazole, Haloperidol), renal clearance for Paliperidone (<10% hepatic CYP) (Dulcan p.786, StahlKids p.367)"
+    ],
+    "onset_of_effect": "Oral overlap or loading protocol required for immediate therapeutic levels; full effect over weeks (StahlKids p.41, p.370)"
+  },
+  "indications": {
+    "items": [
+      "Schizophrenia acute and maintenance in adults (all LAIs) (StahlKids p.37, p.255, p.351, p.367, p.423)",
+      "Schizoaffective disorder in adults (Paliperidone Sustenna/Trinza) (StahlKids p.367)",
+      "Bipolar I disorder maintenance in adults (Risperidone Consta, Aripiprazole Maintena, Olanzapine Relprevv) (StahlKids p.37, p.351, p.423)",
+      "Off-label in older adolescents with severe nonadherence and recurrent psychosis (Dulcan p.402, StahlKids p.42)"
+    ],
+    "key_numbers": [
+      "0 FDA approvals for LAIs in pediatric patients < 18 years old (Dulcan p.402, StahlKids p.42)",
+      "18 years: minimum age for FDA-approved LAI indications (StahlKids p.42)",
+      "12 years: minimum age for oral Paliperidone FDA approval (Dulcan p.402)",
+      "13 years: minimum age for oral Risperidone, Aripiprazole, Olanzapine, Quetiapine in schizophrenia (Dulcan p.402)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Neuromotor: Parkinsonism (DIP), acute dystonia (laryngeal emergency), akathisia, tardive dyskinesia (TD), NMS (DSM p.807-816)",
+      "Hyperprolactinemia: galactorrhea, amenorrhea, gynecomastia, bone density loss (Dulcan p.824-825)",
+      "Cardiometabolic: weight gain, dyslipidemia, hyperglycemia, DKA/HHS risk (Dulcan p.820, StahlKids p.84)",
+      "Olanzapine Relprevv: Post-Injection Delirium Sedation Syndrome (PDSS) (StahlKids p.351, StahlNeuro p.225)"
+    ],
+    "key_numbers": [
+      "80%: D2 occupancy threshold for EPS/parkinsonism (StahlNeuro p.165)",
+      "60%-70%: D2 occupancy threshold for antipsychotic effect of full antagonists (Dulcan p.794, StahlNeuro p.165)",
+      "80%-85%: D2 occupancy threshold for Aripiprazole partial agonist (Dulcan p.794, StahlNeuro p.189)",
+      "0.07%: incidence of PDSS per injection with Olanzapine Relprevv (מקור: הקשר רחב)",
+      "3 hours: mandatory observation window post-injection for Olanzapine Relprevv (StahlKids p.351)",
+      "10%-20%: mortality rate of NMS if untreated (DSM p.810)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Weight, height, BMI percentile/Z-score: baseline, monthly for 3 months, then quarterly (Dulcan p.827)",
+      "Fasting glucose/HbA1c and lipids: baseline, 3 months, then annually (Dulcan p.827)",
+      "AIMS scale for tardive dyskinesia: baseline, 3 months, then every 6-12 months (Dulcan p.823, Syllabus p.39)",
+      "Prolactin level: measured ONLY if clinical symptoms develop (Dulcan p.835)",
+      "ECG (QTc interval): baseline for Haloperidol or cardiac risk factors (Dulcan p.825)"
+    ],
+    "key_numbers": [
+      "3 months: initial metabolic and AIMS re-evaluation interval (Dulcan p.823, p.827)",
+      "6-12 months: regular AIMS examination interval for TD (Dulcan p.823, Syllabus p.39)",
+      "200 ng/mL: prolactin level threshold requiring sella turcica MRI for prolactinoma (Dulcan p.835)",
+      "460-500 ms: QTc prolongation threshold requiring cardiology consultation (Dulcan p.825)",
+      "250-1000 mg/day: Metformin dosage for antipsychotic-induced weight gain (Dulcan p.835)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Oral tolerability testing rule: mandatory prior oral trial before first LAI dose (StahlKids p.42, p.370)",
+      "Injection sites: Deltoid (rapid absorption) or Gluteal (larger volume) (StahlKids p.41, p.370)",
+      "Olanzapine Relprevv: Gluteal injection ONLY (StahlKids p.357)",
+      "Z-Track technique: prevents subcutaneous leakage for oil/crystal suspensions (StahlKids p.354)",
+      "Managing missed doses: repeat loading or oral overlap based on delay duration (StahlKids p.370, p.426)"
+    ],
+    "key_numbers": [
+      "2 doses: day 1 (234mg) and day 8 (156mg) Deltoid loading injections for Paliperidone Sustenna (StahlKids p.370)",
+      "3 hours: mandatory post-injection observation for Olanzapine Relprevv REMS (StahlKids p.351)",
+      "6 weeks: delay threshold for Paliperidone Sustenna requiring re-loading (StahlKids p.370)",
+      "14 days: oral overlap required if Aripiprazole Maintena missed by >5-6 weeks (StahlKids p.41)"
+    ]
+  },
+  "LAI_indications": {
+    "items": [
+      "Nonadherence to oral medication (DSM-5-TR code Z91.19) (DSM p.835, Dulcan p.402)",
+      "Early relapse prevention and reduction of rehospitalization (Dulcan p.402, StahlNeuro p.233)",
+      "Stabilizing peak-to-trough blood level fluctuations (StahlNeuro p.233)",
+      "Providing immediate clinical transparency when doses are missed (StahlKids p.42, StahlNeuro p.233)"
+    ],
+    "key_numbers": [
+      "Z91.19: DSM-5-TR diagnostic code for Nonadherence to Medical Treatment (DSM p.835)",
+      ">50%: rate of nonadherence to oral antipsychotics in first-year schizophrenia (Dulcan p.402)",
+      "3x: increased suicide attempt risk associated with psychotic relapse (Dulcan p.402)"
+    ]
+  },
+  "conversion_oral_to_LAI": {
+    "items": [
+      "Risperidone Consta: mandatory 21-day (3-week) oral overlap due to PLGA lag time (StahlKids p.423, StahlNeuro p.234)",
+      "Paliperidone Sustenna: no oral overlap needed due to day 1 (234mg) and day 8 (156mg) Deltoid loading (StahlKids p.370, StahlNeuro p.234)",
+      "Paliperidone Trinza: switch after 4 months of sustained Paliperidone Sustenna stability (StahlKids p.370, StahlNeuro p.235)",
+      "Aripiprazole Maintena: mandatory 14-day oral overlap (StahlKids p.41, StahlNeuro p.238)",
+      "Aripiprazole Aristada: 21-day oral overlap or single Aristada Initio (675mg) + 1 oral dose (StahlKids p.41, StahlNeuro p.240)"
+    ],
+    "key_numbers": [
+      "21 days: mandatory oral overlap duration for Risperidone Consta (StahlKids p.423, StahlNeuro p.234)",
+      "14 days: mandatory oral overlap duration for Aripiprazole Maintena (StahlKids p.41, StahlNeuro p.238)",
+      "4 months: minimum Paliperidone Sustenna stability before converting to Trinza (StahlKids p.370)",
+      "3.5x: dose multiplication factor when converting Paliperidone Sustenna to Trinza (StahlKids p.370)",
+      "234 mg (day 1) and 156 mg (day 8): Sustenna Deltoid loading doses (StahlKids p.370)"
+    ]
+  },
+  "high_yield": [
+    "Risperidone Consta requires 21 days of oral overlap due to a 3-week PLGA polymer degradation lag time (StahlKids p.423, StahlNeuro p.234).",
+    "Paliperidone Sustenna loading requires Deltoid injections on Day 1 (234mg) and Day 8 (156mg), eliminating the need for oral overlap (StahlKids p.370, StahlNeuro p.234).",
+    "Paliperidone Trinza (q3m) conversion requires at least 4 months of stability on Sustenna, using a 3.5x dose multiplier (StahlKids p.370, StahlNeuro p.235).",
+    "Olanzapine Relprevv carries a Black Box warning for Post-Injection Delirium Sedation Syndrome (PDSS), requiring a 3-hour post-injection observation under REMS (StahlKids p.351, StahlNeuro p.225).",
+    "Oral tolerability testing is mandatory before administering the first LAI dose to rule out severe adverse reactions or allergies (StahlKids p.42, p.370).",
+    "Akathisia in youth is frequently misdiagnosed as worsening psychotic agitation, risking inappropriate dose escalation (DSM p.813, Dulcan p.821).",
+    "Routine prolactin monitoring in asymptomatic patients is not recommended; testing is indicated only when clinical symptoms appear (Dulcan p.835, StahlKids p.368).",
+    "AIMS examination for tardive dyskinesia must be performed at baseline, 3 months, and every 6-12 months thereafter (Dulcan p.823, Syllabus p.39)."
+  ]
+}

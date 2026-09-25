@@ -1,0 +1,36 @@
+{
+ "tag": "study-064-long-acting-injectable-antipsychotics-lais",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:54:35+00:00",
+ "updated_at": "2026-09-25T14:54:35+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "e4b206264b9996fce081a3fa985423062449606e37a5532aacd833acfd321050",
+   "asset_id": 571158061,
+   "size": 9067,
+   "fetched_at": "2026-09-25T14:54:09+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "aecd253c0578a29c57d9b31c485b7df46ffa59bf2fcf73c8a9adee303514bad5",
+   "asset_id": 571158060,
+   "size": 5068,
+   "fetched_at": "2026-09-25T14:54:18+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "d32716625c9ac159f94382c5ced99fcac1534d1845a74d1908e2af61a7b34c91",
+   "asset_id": 571161788,
+   "size": 33971,
+   "fetched_at": "2026-09-25T14:54:25+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "272a68de590f025c07e5b73cd9a8188357d8b79cf8e0430429df85ed7670183a",
+   "asset_id": 571158086,
+   "size": 51206,
+   "fetched_at": "2026-09-25T14:54:35+00:00"
+  }
+ ]
+}
