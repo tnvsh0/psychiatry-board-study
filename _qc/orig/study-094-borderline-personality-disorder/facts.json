@@ -1,0 +1,151 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster B / Core BPD Symptoms",
+        "items": [
+          "Frantic efforts to avoid abandonment (DSM p.752)",
+          "Unstable and intense interpersonal relationships with splitting (DSM p.752)",
+          "Identity disturbance (DSM p.752)",
+          "Impulsivity in >=2 self-damaging areas (DSM p.752)",
+          "Recurrent suicidal behavior, threats, or NSSI (DSM p.753)",
+          "Affective instability due to marked mood reactivity (DSM p.753)",
+          "Chronic feelings of emptiness (DSM p.753)",
+          "Inappropriate, intense anger or control difficulties (DSM p.753)",
+          "Transient stress-related paranoid ideation or severe dissociation (DSM p.753)"
+        ]
+      }
+    ],
+    "thresholds": ">=5/9 symptoms, duration >=1 year in adolescents under 18 (DSM p.735, 755)",
+    "subtypes": [
+      "DSM-5-TR Section III Alternative Model: Moderate or greater impairment in personality functioning (Identity, Self-Direction, Empathy, Intimacy) + >=4/7 pathological traits (DSM p.886-887)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1.4%-5.9% general population (median 2.7%) (DSM p.755); 6% primary care, 10% outpatient, 20% inpatient (DSM p.755)",
+    "sex_ratio": "3:1 F:M in clinical settings; 1:1 F:M in community samples (DSM p.755-756)",
+    "onset_age_typical": "Adolescence (age 12-13) to early adulthood (DSM p.755)",
+    "heritability": "5x higher prevalence among first-degree biological relatives (DSM p.755-756)",
+    "comorbidities": [
+      "MDD (DSM p.756)",
+      "PTSD (DSM p.756)",
+      "Substance Use Disorders (DSM p.756)",
+      "Eating Disorders (DSM p.756)",
+      "ADHD (DSM p.756)"
+    ],
+    "prognosis": "~6% lifetime suicide mortality (DSM p.756); high rates of stable remission (1-8 years) with impulsivity improving faster than affective symptoms (DSM p.755)"
+  },
+  "etiology": {
+    "genetic": "5x increased risk in 1st-degree relatives (DSM p.755-756); BDNF epigenetic alterations from early trauma (StahlNeuro p.147-149)",
+    "neurobiology": "Frontolimbic Top-Down failure (VMPFC/OFC -> Amygdala) (StahlNeuro p.453); Ventral Striatal loop in impulsivity (StahlNeuro p.538-540); low 5-HIAA/serotonin dysfunction (Dulcan p.584); reduced plasma oxytocin (Dulcan p.524)",
+    "environmental": "Linehan Biosocial Model: temperament x invalidating environment (Synopsis ch.19); high rates of childhood sexual/physical abuse and neglect (DSM p.755, Dulcan p.526)"
+  },
+  "treatment": {
+    "first_line": [
+      "DBT / DBT-A (Dialectical Behavior Therapy for Adolescents) (Dulcan p.558)",
+      "MBT / MBT-A (Mentalization-Based Treatment) (Dulcan p.559)"
+    ],
+    "second_line": [
+      "TFP (Transference-Focused Psychotherapy) (Synopsis ch.19)",
+      "Targeted Pharmacotherapy for symptom domains (Dulcan p.557, StahlKids p.138)"
+    ],
+    "key_side_effects": [
+      "FDA Black Box Warning for suicidality with SSRIs in adolescents (StahlKids p.219)",
+      "TEAS (Treatment-Emergent Activation Syndrome) with SSRIs (StahlKids p.219)",
+      "Disinhibition with Benzodiazepines leading to worsening anger/NSSI (Synopsis ch.19)"
+    ],
+    "monitoring": "Safety Planning & Means Restriction (Dulcan p.557); C-SSRS for suicide risk (Dulcan p.555); metabolic monitoring for SGAs (StahlKids p.36, 412)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Columbia-Suicide Severity Rating Scale (C-SSRS) (Dulcan p.555)",
+      "DSM-5 Level 1 Cross-Cutting Symptom Measure (DSM p.843-845)",
+      "Personality Inventory for DSM-5 (PID-5) (DSM p.894)",
+      "Level of Personality Functioning Scale (LPFS) (DSM p.882, 895)",
+      "Child Behavior Checklist (CBCL) Dysregulated Phenotype (Dulcan p.62, 86)",
+      "K-SADS-PL (Kiddie-SADS) (Dulcan p.75, 255)"
+    ],
+    "key_numbers": [
+      "9 DSM-5-TR categorical criteria (DSM p.752-753)",
+      "5/9 symptom threshold for diagnosis (DSM p.752)",
+      "1 year minimum duration for under 18 (DSM p.735, 755)",
+      "4/7 pathological personality traits in Section III (DSM p.886-887)",
+      "4 modes of DBT (Individual, Group, Phone, Consultation Team) (Synopsis ch.19)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Disruptive Mood Dysregulation Disorder (DMDD) (DSM p.178-179, Dulcan p.268)",
+      "Pediatric Bipolar Disorder (BD I/II) (DSM p.140, 150, 756, Dulcan p.289)",
+      "ADHD / Conduct Disorder (CD) (DSM p.75, 526, Dulcan p.199)",
+      "PTSD / Complex PTSD (DSM p.301-303, Dulcan p.352)",
+      "Dissociative Identity Disorder (DID) (DSM p.331)",
+      "Traumatic Brain Injury (TBI) / Frontal Lobe Damage (DSM p.776)",
+      "Temporal Lobe Epilepsy (DSM p.776)",
+      "PANS / PANDAS and Autoimmune Encephalopathy (Dulcan p.379, 407)"
+    ],
+    "key_numbers": [
+      "DMDD onset age must be before 10 years, diagnosed between ages 6-18 (DSM p.178)",
+      "Bipolar hypomania requires >=4 consecutive days, mania >=1 week (DSM p.140)"
+    ]
+  },
+  "affective_instability": {
+    "items": [
+      "Marked reactivity of mood to interpersonal stressors (DSM p.753-754)",
+      "Episodic dysphoria, panic, anxiety, or intense anger (DSM p.754)",
+      "Top-Down prefrontal control failure over hyper-reactive amygdala (StahlNeuro p.453)",
+      "Central serotonergic dysfunction / low CSF 5-HIAA (Dulcan p.584)"
+    ],
+    "key_numbers": [
+      "Mood swings typically last a few hours and rarely more than 2 days (DSM p.754)"
+    ]
+  },
+  "interpersonal_chaos": {
+    "items": [
+      "Frantic efforts to avoid real or imagined abandonment (DSM p.752-753)",
+      "Splitting - alternating between extreme idealization and devaluation (DSM p.752, Synopsis ch.19)",
+      "Projective Identification - 3-step defense mechanism (Synopsis ch.19)",
+      "Separation Insecurity trait in Section III (DSM p.887)",
+      "Low plasma oxytocin levels linked to attachment dysregulation (Dulcan p.524)"
+    ],
+    "key_numbers": [
+      "3-step process in Projective Identification (Projection, Pressure, Identification) (Synopsis ch.19)"
+    ]
+  },
+  "identity_disturbance": {
+    "items": [
+      "Markedly and persistently unstable self-image or sense of self (DSM p.752-753)",
+      "Identity Diffusion - lack of coherent integrated self-concept (Synopsis ch.19)",
+      "Feeling bad, evil, or non-existent in absence of relationships (DSM p.753)",
+      "Chronic feelings of emptiness ('Empty Self') (DSM p.754)",
+      "Transient stress-related dissociation (depersonalization/derealization) (DSM p.754)",
+      "Differentiated from normative adolescent Identity Problem (DSM p.757)"
+    ],
+    "key_numbers": [
+      "1 year minimum duration needed for adolescent diagnosis (DSM p.735, 755)"
+    ]
+  },
+  "impulsivity": {
+    "items": [
+      "Impulsivity in at least 2 self-damaging areas (spending, sex, substance abuse, reckless driving, binge eating) (DSM p.752-753)",
+      "Recurrent suicidal behavior, threats, gestures, or NSSI (DSM p.753)",
+      "NSSI serves negative reinforcement (affect regulation / grounding) (DSM p.754, Dulcan p.597)",
+      "Ventral Striatal loop dysregulation (Accumbens <-> Thalamus <-> VMPFC/ACC) (StahlNeuro p.538-540)",
+      "Aripiprazole, Risperidone, or Lithium for impulsive aggression (StahlKids p.36, 291, 412)"
+    ],
+    "key_numbers": [
+      "2 self-damaging areas required for criterion 4 (DSM p.752)",
+      "~6% lifetime suicide mortality rate in BPD (DSM p.756)",
+      "5 days or more of self-injury per year proposed for NSSI Disorder (DSM p.923)"
+    ]
+  },
+  "high_yield": [
+    "In adolescents under 18, BPD criteria must be present continuously for at least 1 year (DSM p.735, 755).",
+    "BPD mood reactivity lasts hours to max 2 days vs. Bipolar episodes lasting days to weeks with decreased need for sleep (DSM p.140, 756).",
+    "DMDD occurs in ages 6-18 with onset <10, lacking BPD core identity disturbance, abandonment panic, and splitting (DSM p.178-179).",
+    "Lifetime suicide mortality in BPD is ~6%, with impulsive symptoms remitting faster than affective symptoms over time (DSM p.755-756).",
+    "DBT-A and MBT-A are first-line evidence-based psychotherapies; pharmacotherapy is off-label and symptom-targeted only (Dulcan p.558, StahlKids p.138).",
+    "Benzodiazepines are strictly avoided in BPD due to severe disinhibition worsening rage outbursts and NSSI (Synopsis ch.19).",
+    "Impulsivity is driven by Ventral Striatal loop dysfunction (Accumbens <-> VMPFC/ACC) and central serotonin deficit (StahlNeuro p.538, Dulcan p.584)."
+  ]
+}
