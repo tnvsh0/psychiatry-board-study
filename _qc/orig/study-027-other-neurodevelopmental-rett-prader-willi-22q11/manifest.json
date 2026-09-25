@@ -1,0 +1,36 @@
+{
+ "tag": "study-027-other-neurodevelopmental-rett-prader-willi-22q11",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:48:34+00:00",
+ "updated_at": "2026-09-25T13:48:34+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "a17c3edf963a2d4bcda6cc7fe11c496342d463553ec0a4e4ae01bbb46045db87",
+   "asset_id": 536495726,
+   "size": 10845,
+   "fetched_at": "2026-09-25T13:48:28+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5a38edd3e4993d8ab441d5db6924de7169d99079ffcefbd1f1fd534b89db5bd2",
+   "asset_id": 536495728,
+   "size": 11607,
+   "fetched_at": "2026-09-25T13:48:30+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "3a74dcb36e7d6fa39317bd5ad41eed90f51de576b112fe3db079300cfe444c4e",
+   "asset_id": 536495730,
+   "size": 34859,
+   "fetched_at": "2026-09-25T13:48:32+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "8f2da0fce41cbec7342a6c2fe189d2ee3dd82815ea258e6b6b4310668f4c14ce",
+   "asset_id": 536495731,
+   "size": 36161,
+   "fetched_at": "2026-09-25T13:48:34+00:00"
+  }
+ ]
+}
