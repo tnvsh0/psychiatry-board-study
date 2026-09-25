@@ -1,0 +1,266 @@
+{
+  "title": "Bipolar Quiz",
+  "questions": [
+    {
+      "question": "A 15-year-old adolescent presents with a history of two major depressive episodes (MDE). Recently, they experienced a 5-day period of elevated mood, decreased need for sleep, and increased goal-directed activity that was noticeable to others but did not result in hospitalization or psychotic features. Which of the following is the most appropriate DSM-5-TR diagnosis?",
+      "answerOptions": [
+        {
+          "text": "Bipolar I Disorder",
+          "isCorrect": false,
+          "rationale": "Bipolar I requires at least one manic episode, which typically lasts at least 1 week or necessitates hospitalization, whereas this presentation matches hypomanic criteria (DSM p.139, 154)."
+        },
+        {
+          "text": "Bipolar II Disorder",
+          "isCorrect": true,
+          "rationale": "Bipolar II requires at least one hypomanic episode ($\\ge 4$ days) and at least one MDE, with no history of a manic episode (DSM p.154)."
+        },
+        {
+          "text": "Cyclothymic Disorder",
+          "isCorrect": false,
+          "rationale": "The presence of a full major depressive episode precludes the diagnosis of cyclothymic disorder (DSM p.160)."
+        },
+        {
+          "text": "Major Depressive Disorder with mixed features",
+          "isCorrect": false,
+          "rationale": "While mixed features involve manic symptoms during an MDE, the distinct 5-day hypomanic period satisfies the criteria for Bipolar II (DSM p.156)."
+        }
+      ],
+      "hint": "Consider the minimum duration and severity required for hypomania versus mania."
+    },
+    {
+      "question": "Regarding the differential diagnosis between Disruptive Mood Dysregulation Disorder (DMDD) and Oppositional Defiant Disorder (ODD), which statement correctly reflects the DSM-5-TR guidelines?",
+      "answerOptions": [
+        {
+          "text": "If a child meets criteria for both DMDD and ODD, both diagnoses should be assigned.",
+          "isCorrect": false,
+          "rationale": "The DSM-5-TR explicitly states that if an individual meets criteria for both, only DMDD should be diagnosed (DSM p.182)."
+        },
+        {
+          "text": "DMDD requires the presence of a persistently irritable or angry mood between temper outbursts, which is not a requirement for ODD.",
+          "isCorrect": true,
+          "rationale": "Inter-episodic irritability is a core requirement for DMDD, whereas ODD focuses more on the behavior itself (DSM p.182)."
+        },
+        {
+          "text": "ODD is considered a more severe form of DMDD and is placed in the Depressive Disorders chapter.",
+          "isCorrect": false,
+          "rationale": "DMDD is in the Depressive Disorders chapter due to its risk for later depression, while ODD is in the Disruptive, Impulse-Control, and Conduct Disorders chapter (DSM p.182)."
+        },
+        {
+          "text": "Symptoms of DMDD must be present for at least 6 months, while ODD requires 12 months.",
+          "isCorrect": false,
+          "rationale": "DMDD actually requires a duration of at least 12 months, whereas ODD requires only 6 months (DSM p.179, 522)."
+        }
+      ],
+      "hint": "Think about the hierarchy of these diagnoses and the role of inter-episodic mood."
+    },
+    {
+      "question": "A 12-year-old child is diagnosed with Bipolar I Disorder, currently in a major depressive episode. According to Dulcan and StahlKids, which of the following is a first-line, FDA-approved pharmacological treatment for pediatric bipolar depression in this age group?",
+      "answerOptions": [
+        {
+          "text": "Quetiapine monotherapy",
+          "isCorrect": false,
+          "rationale": "Quetiapine trials for pediatric bipolar depression were not significantly better than placebo, unlike in adults (Dulcan p.303)."
+        },
+        {
+          "text": "Lurasidone",
+          "isCorrect": true,
+          "rationale": "Lurasidone has FDA approval for bipolar depression in youth ages 10-17 based on positive clinical trials with an $ES=0.45$ (Dulcan p.303, StahlKids p.301)."
+        },
+        {
+          "text": "Lithium monotherapy",
+          "isCorrect": false,
+          "rationale": "While Lithium is approved for pediatric mania and maintenance, it is not specifically FDA-indicated for acute pediatric bipolar depression (StahlKids p.301)."
+        },
+        {
+          "text": "Lamotrigine",
+          "isCorrect": false,
+          "rationale": "Lamotrigine is used off-label for maintenance in pediatric bipolar disorder but lacks FDA approval for acute pediatric bipolar depression (Dulcan p.307)."
+        }
+      ],
+      "hint": "Identify which medication has specific evidence and approval for the depressive phase in children."
+    },
+    {
+      "question": "Recent neuroimaging research using Diffusion Tensor Imaging (DTI) has identified specific white matter differences between youth with Bipolar Disorder and youth with DMDD. What is the distinguishing finding for Bipolar Disorder according to these studies?",
+      "text": "White matter findings in Pediatric Bipolar.",
+      "answerOptions": [
+        {
+          "text": "Reduced fractional anisotropy (FA) in regionally discrete areas.",
+          "isCorrect": false,
+          "rationale": "This finding was specifically associated with DMDD rather than Bipolar Disorder (Dulcan p.294)."
+        },
+        {
+          "text": "Altered myelination patterns.",
+          "isCorrect": true,
+          "rationale": "Research indicates that white matter abnormalities in Bipolar Disorder involve altered myelination, distinguishing it from the discrete FA changes in DMDD (Dulcan p.294)."
+        },
+        {
+          "text": "Increased amygdala volume.",
+          "isCorrect": false,
+          "rationale": "Pediatric bipolar disorder is typically associated with decreased amygdala volume (Dulcan p.304)."
+        },
+        {
+          "text": "Hyperactivation of the prefrontal cortex during emotion labeling.",
+          "isCorrect": false,
+          "rationale": "Bipolar youth often show abnormalities, but the focus of the DTI study mentioned in the text was on structural white matter/myelination (Dulcan p.294)."
+        }
+      ],
+      "hint": "Recall the specific structural mechanism of white matter abnormality mentioned for Bipolar vs. DMDD."
+    },
+    {
+      "question": "In the assessment of a child for suspected Bipolar Disorder, the clinician utilizes 'Triangulation.' Which of the following best describes this process according to Dulcan?",
+      "answerOptions": [
+        {
+          "text": "Assessing three different symptom domains: mood, energy, and cognition.",
+          "isCorrect": false,
+          "rationale": "While these domains are assessed, triangulation refers to the sources of information (Dulcan p.295)."
+        },
+        {
+          "text": "Reconciling information from the child, parents, and other sources like teachers.",
+          "isCorrect": true,
+          "rationale": "Triangulation involves cross-referencing information from multiple informants to establish the chronology and nature of symptoms (Dulcan p.295)."
+        },
+        {
+          "text": "Evaluating three different diagnostic mimics: ADHD, ODD, and DMDD.",
+          "isCorrect": false,
+          "rationale": "This is differential diagnosis, not the structural assessment process of triangulation (Dulcan p.296)."
+        },
+        {
+          "text": "Using three separate rating scales (e.g., CBCL, P-GBI, and YMRS) to confirm the diagnosis.",
+          "isCorrect": false,
+          "rationale": "Rating scales are adjunctive; triangulation is about the clinical integration of multiple informants (Dulcan p.294)."
+        }
+      ],
+      "hint": "Focus on the 'informant' aspect of the diagnostic evaluation."
+    },
+    {
+      "question": "A 9-year-old child presents with severe, non-episodic irritability and frequent behavioral outbursts (average 4 times per week) across multiple settings. The symptoms began at age 7. There is no history of mood elevation. According to the DSM-5-TR, which diagnosis is most likely?",
+      "answerOptions": [
+        {
+          "text": "Pediatric Bipolar Disorder, Broad Phenotype",
+          "isCorrect": false,
+          "rationale": "Bipolar disorder requires episodic shifts in mood; chronic non-episodic irritability is better categorized elsewhere (Dulcan p.288)."
+        },
+        {
+          "text": "Disruptive Mood Dysregulation Disorder",
+          "isCorrect": true,
+          "rationale": "Chronic, severe irritability and temper outbursts with an onset before age 10 and no history of mania characterize DMDD (DSM p.178)."
+        },
+        {
+          "text": "Intermittent Explosive Disorder",
+          "isCorrect": false,
+          "rationale": "Intermittent Explosive Disorder does not require the persistently irritable mood between outbursts that is seen here (DSM p.182)."
+        },
+        {
+          "text": "Reactive Attachment Disorder",
+          "isCorrect": false,
+          "rationale": "While behavioral dysregulation can occur, there is no evidence in the vignette of the social-emotional neglect required for RAD (DSM p.295)."
+        }
+      ],
+      "hint": "The onset age and the non-episodic nature of the irritability are key."
+    },
+    {
+      "question": "StahlKids emphasizes that Lithium treatment in pediatric populations requires careful physiological monitoring. Which of the following is true regarding its use in children compared to adults?",
+      "answerOptions": [
+        {
+          "text": "Children generally have a longer half-life for Lithium and require only once-daily dosing.",
+          "isCorrect": false,
+          "rationale": "Children often have higher renal clearance and a shorter half-life, frequently requiring split doses (StahlKids p.44, Dulcan p.763)."
+        },
+        {
+          "text": "Cystatin C may be a more sensitive measure of renal function than creatinine in pediatric patients.",
+          "isCorrect": true,
+          "rationale": "StahlKids and recent guidelines suggest that for precise monitoring of renal function during lithium therapy, Cystatin C can be superior to creatinine (StahlKids p.45)."
+        },
+        {
+          "text": "Lithium is only FDA approved for adolescents aged 13 and older.",
+          "isCorrect": false,
+          "rationale": "Lithium recently received FDA approval for children as young as age 7 (Dulcan p.301, StahlKids p.44)."
+        },
+        {
+          "text": "Weight gain is not a significant concern with Lithium compared to atypical antipsychotics.",
+          "isCorrect": false,
+          "rationale": "While metabolic risk is lower than with some antipsychotics, Lithium is still associated with significant weight gain in pediatric patients (StahlKids p.46)."
+        }
+      ],
+      "hint": "Think about pediatric-specific renal clearance and advanced lab monitoring."
+    },
+    {
+      "question": "Based on the COBY (Course of Bipolar Youth) study results, which factor was significantly associated with the 'predominantly euthymic' trajectory in youth with bipolar spectrum disorders?",
+      "answerOptions": [
+        {
+          "text": "Earlier age of first symptoms and first episode.",
+          "isCorrect": false,
+          "rationale": "The euthymic group was actually older at the onset of their first symptoms and episode (Dulcan p.294)."
+        },
+        {
+          "text": "Absence of comorbid ADHD and anxiety disorders.",
+          "isCorrect": true,
+          "rationale": "Youth in the predominantly euthymic group had significantly lower rates of comorbid ADHD and anxiety compared to more chronic groups (Dulcan p.294)."
+        },
+        {
+          "text": "Being diagnosed with Bipolar Disorder Not Otherwise Specified (NOS).",
+          "isCorrect": false,
+          "rationale": "Bipolar NOS (Other Specified) youth often had a more chronic course and high conversion rates to Bipolar I/II (Dulcan p.294)."
+        },
+        {
+          "text": "High family loading for Bipolar I disorder.",
+          "isCorrect": false,
+          "rationale": "Lower rates of parental psychiatric disorders were found in the predominantly euthymic group (Dulcan p.294)."
+        }
+      ],
+      "hint": "Consider which clinical characteristic would logically predict a more stable and less chronic course."
+    },
+    {
+      "question": "A patient experiences chronic mood fluctuations for over 2 years, with numerous periods of hypomanic symptoms and depressive symptoms. However, the symptoms never meet the full symptomatic or duration criteria for a Major Depressive Episode or a Hypomanic Episode. What is the diagnosis?",
+      "answerOptions": [
+        {
+          "text": "Bipolar II Disorder",
+          "isCorrect": false,
+          "rationale": "Bipolar II requires full criteria for both a hypomanic episode and an MDE to be met at some point (DSM p.154)."
+        },
+        {
+          "text": "Cyclothymic Disorder",
+          "isCorrect": true,
+          "rationale": "Cyclothymic disorder is defined by subthreshold (subsyndromal) fluctuations that do not meet full episode criteria for at least 2 years (DSM p.160)."
+        },
+        {
+          "text": "Persistent Depressive Disorder (Dysthymia)",
+          "isCorrect": false,
+          "rationale": "Dysthymia does not involve periods of hypomanic symptoms (DSM p.193)."
+        },
+        {
+          "text": "Borderline Personality Disorder",
+          "isCorrect": false,
+          "rationale": "While mood lability is present, the primary definition of subthreshold mood cycles over 2 years fits the mood disorder diagnosis of Cyclothymia (DSM p.161)."
+        }
+      ],
+      "hint": "Focus on the 'subthreshold' nature and the chronicity of the symptoms."
+    },
+    {
+      "question": "When differentiating ADHD from a pediatric manic episode, which clinical feature is most suggestive of Bipolar I Disorder according to the DSM-5-TR and Dulcan?",
+      "answerOptions": [
+        {
+          "text": "Chronic distractibility and restlessness since early childhood.",
+          "isCorrect": false,
+          "rationale": "This describes the chronic, trait-like nature of ADHD (DSM p.139)."
+        },
+        {
+          "text": "Symptoms occurring in discrete episodes representing a clear change from baseline.",
+          "isCorrect": true,
+          "rationale": "Episodicity and a distinct change from the child's typical functioning are hallmark features of Bipolar Disorder, distinguishing it from the stability of ADHD (DSM p.149, Dulcan p.280)."
+        },
+        {
+          "text": "High levels of motor activity that are constant across environments.",
+          "isCorrect": false,
+          "rationale": "Constant, high motor activity is more common in ADHD; mania involves a change in energy associated with other mood symptoms (DSM p.76)."
+        },
+        {
+          "text": "Irritability that occurs primarily when the child is frustrated.",
+          "isCorrect": false,
+          "rationale": "Frustration-induced irritability is common in ADHD, ODD, and DMDD, whereas manic irritability is more pervasive or accompanied by grandiosity/decreased sleep (DSM p.182)."
+        }
+      ],
+      "hint": "Look for the difference between a constant behavioral trait and a periodic clinical state."
+    }
+  ]
+}

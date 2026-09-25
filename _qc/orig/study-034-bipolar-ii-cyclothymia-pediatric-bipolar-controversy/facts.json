@@ -1,0 +1,105 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Hypomanic symptoms",
+        "items": [
+          "Elevated, expansive, or irritable mood (DSM p.150)",
+          "Decreased need for sleep (DSM p.150)",
+          "Grandiosity or inflated self-esteem (DSM p.150)",
+          "Pressured speech (DSM p.150)",
+          "Racing thoughts or flight of ideas (DSM p.150)",
+          "Distractibility (DSM p.151)",
+          "Increased goal-directed activity or psychomotor agitation (DSM p.151)",
+          "Risky behaviors or excessive involvement in painful activities (DSM p.151)"
+        ]
+      },
+      {
+        "name": "DMDD (chronic irritability)",
+        "items": [
+          "Severe recurrent temper outbursts verbal/behavioral (DSM p.178)",
+          "Outbursts inconsistent with developmental level (DSM p.178)",
+          "Outbursts occur 3 or more times per week (DSM p.178)",
+          "Persistently irritable or angry mood between outbursts (DSM p.179)"
+        ]
+      }
+    ],
+    "thresholds": "Bipolar II: >=1 hypomanic episode (>=4 days) + >=1 MDE (>=2 weeks) (DSM p.150, p.152). Cyclothymia: >=1 year in youth with subthreshold fluctuations present at least half the time and no symptom-free period > 2 months (DSM p.159, p.160).",
+    "subtypes": [
+      "Current or most recent episode depressed (DSM p.150)",
+      "Current or most recent episode hypomanic (DSM p.150)",
+      "With mixed features (DSM p.170, Dulcan p.287)",
+      "With rapid cycling (DSM p.171, Dulcan p.287)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "Bipolar II 12-month prevalence: ~0.8% in US, ~0.3% globally (DSM p.153). Bipolar spectrum in youth: ~3.9% (Dulcan p.289). Cyclothymia lifetime prevalence: 0.4% to 2.5% (DSM p.160). DMDD prevalence: ~1.1% in school-age, ~0.8% in adolescents (Dulcan p.267-268).",
+    "sex_ratio": "Bipolar II: 1:1 in community but females seek treatment more and have more rapid cycling (DSM p.153). DMDD: Predominantly male in clinical samples (up to 80%) (DSM p.180).",
+    "onset_age_typical": "Typical onset of Bipolar: puberty to early adulthood (Dulcan p.279, p.225). Bipolar II mean onset age: ~20 years (DSM p.155). DMDD onset must be before age 10 years (DSM p.179, Dulcan p.266).",
+    "heritability": "Bipolar first-degree relatives have a 10-fold increased risk (DSM p.146). Cyclothymia relatives have increased risk for MDD, Bipolar I, and Bipolar II (DSM p.161). DMDD does not show familial link to Bipolar disorder (DSM p.153, Dulcan p.268, p.289).",
+    "comorbidities": [
+      "ADHD is comorbid in up to 90% of pediatric bipolar cases (broad phenotype) (Dulcan p.293, p.300)",
+      "Anxiety disorders (Dulcan p.232, p.289)",
+      "Sleep disorders (Dulcan p.232, p.289)",
+      "ODD is highly comorbid with broad phenotype bipolar (Dulcan p.293, p.300)"
+    ],
+    "prognosis": "Cyclothymia conversion rate to Bipolar I or II: 15% to 50% (DSM p.160). Diagnostic conversion rates are higher in youth than in adults (DSM p.161). Bipolar NOS converts to BP-I/II in ~40% over 4 years (Dulcan p.294)."
+  },
+  "etiology": {
+    "genetic": "Bipolar is highly heritable with a 10-fold risk in first-degree relatives (DSM p.146). No genetic link between chronic nonepisodic irritability (DMDD) and bipolar disorder (DSM p.153, Dulcan p.268, p.289).",
+    "neurobiology": "Involves amygdala volume reduction and prefrontal cortex (PFC) connections (Dulcan p.290, p.304). PFC tuning requires balanced dopamine (acting on postsynaptic D1 receptors) and norepinephrine (on alpha-2A receptors) (StahlNeuro p.80, p.455). White matter DTI shows discrete fractional anisotropy (FA) reduction in DMDD vs altered myelination in Bipolar (Dulcan p.292).",
+    "environmental": "Childhood trauma or adverse environments (family conflict, poverty, chaos, abuse, neglect) increase vulnerability to mood dysregulation (StahlKids p.634, p.650)."
+  },
+  "treatment": {
+    "first_line": [
+      "Lithium for acute mania/mixed states in patients ages 7 and older (FDA approved) (StahlKids p.285, Dulcan p.298)",
+      "Lurasidone for Bipolar Depression in youth ages 10-17 years (FDA approved) (StahlKids p.299, Dulcan p.298, p.301)",
+      "Olanzapine-Fluoxetine Combination (OFC) for Bipolar Depression in youth ages 10 and older (FDA approved) (Dulcan p.298, p.301, StahlKids p.364)",
+      "CFF-CBT (RAINBOW protocol) or FFT-A psychosocial therapies (Dulcan p.297, p.303)"
+    ],
+    "second_line": [
+      "Carbamazepine is a third-line agent for pediatric mania due to tolerability and drug-drug interactions (Dulcan p.771, p.442)",
+      "Valproate is off-label for pediatric mania but used as a second-line option (StahlKids p.465, Dulcan p.236, p.299)"
+    ],
+    "key_side_effects": [
+      "Lithium: Enuresis, weight gain, acne, concentration difficulties, hypothyroidism, tremor, renal impairment (StahlKids p.292, Dulcan p.765)",
+      "Risperidone: Hyperprolactinemia due to tuberoinfundibular D2 blockade (StahlNeuro p.84, Dulcan p.835)",
+      "Quetiapine: Sedation via H1 blockade, orthostasis via alpha1 blockade, weight gain (StahlNeuro p.184, StahlKids p.409)",
+      "Lurasidone: Risk of suicidality (black box warning) (StahlKids p.305)"
+    ],
+    "monitoring": "Lithium: TSH, Creatinine, Urine Specific Gravity, weight, and BMI (StahlKids p.285, p.291-292, Dulcan p.765). Atypical antipsychotics: Fasting blood glucose or HbA1c, lipids, weight/BMI, blood pressure, pulse, prolactin if symptomatic, EPS (Extrapyramidal Symptom Rating Scale or AIMS) (Dulcan p.827, p.828, p.834)."
+  },
+  "assessment_tools": {
+    "items": [
+      "CBCL Dysregulated Phenotype (CBCL-DP) is a screen for severe emotional dysregulation (Dulcan p.291, p.294)",
+      "K-SADS-PL (Kiddie-SADS) semistructured interview for youth ages 6-18 (Dulcan p.70, p.295)",
+      "Young Mania Rating Scale (YMRS) to rate severity of mania (Dulcan p.295)",
+      "Children's Depression Rating Scale-Revised (CDRS-R) to rate severity of depression (Dulcan p.256, p.295)"
+    ],
+    "key_numbers": [
+      "67: T-Score threshold on CBCL subscales of Anxiety/Depression, Aggression, and Attention to define CBCL-DP (Dulcan p.291, p.294)",
+      "20: YMRS cutoff score indicating clinically significant mania severity (Dulcan p.295)",
+      "40: CDRS-R score indicative of moderately severe depression (Dulcan p.256, p.295)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "ADHD: Chronic, stable, nonepisodic symptoms of inattention and hyperactivity vs episodic hypomania (DSM p.155, Dulcan p.173, p.295)",
+      "Borderline Personality Disorder (BPD): Affective lability with mood shifts lasting minutes or hours vs days in Bipolar II (DSM p.161, Dulcan p.296)",
+      "DMDD: Chronic nonepisodic irritability without distinct manic or hypomanic episodes (DSM p.179, Dulcan p.267, p.296)",
+      "Antidepressant-Induced Activation Syndrome (TEAS): Treatment-emergent activation after SSRI use, appearing in 10-20% of youth (DSM p.145, Dulcan p.301)",
+      "Hyperthyroidism: Mimics hypomanic restlessness; checked via TSH blood level (DSM p.160, Dulcan p.64)"
+    ],
+    "key_numbers": [
+      "10-20%: Percentage of children/adolescents treated with SSRIs who experience activation syndrome (Dulcan p.301)",
+      "4 days: Minimum duration of hypomanic symptoms required for Bipolar II, helping distinguish BPD mood shifts (DSM p.150, p.161)"
+    ]
+  },
+  "high_yield": [
+    "DMDD cannot be diagnosed alongside Oppositional Defiant Disorder (ODD); if criteria for both are met, only DMDD is assigned (DSM p.179, Dulcan p.267).",
+    "Under Bipolar II, if hypomanic symptoms last 3 days instead of 4, the diagnosis must be Other Specified Bipolar and Related Disorder (DSM p.150, p.168).",
+    "Quetiapine failed in pediatric clinical trials for Bipolar Depression and lacks FDA approval for this indication in youth (Dulcan p.298, p.301).",
+    "Lurasidone must be taken with a meal of at least 350 calories; taking it without food reduces absorption by 50% (StahlNeuro p.184).",
+    "Metformin is an effective add-on treatment to control antipsychotic-induced weight gain in children, based on the IMPACT trial (Dulcan p.782, p.835)."
+  ]
+}
