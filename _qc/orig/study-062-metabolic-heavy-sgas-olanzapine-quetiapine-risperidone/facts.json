@@ -1,0 +1,110 @@
+{
+  "drug_class": {
+    "members": [
+      "Olanzapine: Pines family, most severe metabolic risk and weight gain (Dulcan p.823, StahlNeuro p.196)",
+      "Quetiapine: Pines family, 3-tier dose mechanism (25-100mg H1 hypnotic, 300mg NET antidepressant in adults, 400-800mg D2/5-HT2A antipsychotic) (StahlNeuro p.218-219)",
+      "Risperidone: Dones family, potent D2/5-HT2A antagonism with dose-dependent EPS and marked prolactin elevation (Dulcan p.821, p.825, StahlNeuro p.221)",
+      "Paliperidone: Dones family, active metabolite 9-OH-risperidone, predominantly renal elimination with <10% hepatic metabolism (Dulcan p.786, StahlNeuro p.232)"
+    ],
+    "mechanism": "5-HT2A antagonism > D2 antagonism (SDA) releasing dopamine in nigrostriatal/mesocortical pathways; H1, 5-HT2C, M1, alpha1 receptor blockade (StahlNeuro p.184, p.204)",
+    "kinetics": [
+      "Olanzapine: t1/2 ~30h, CYP1A2 substrate (induced by smoking) (Dulcan p.786-787, StahlKids p.351)",
+      "Quetiapine: t1/2 6-7h, CYP3A4 substrate to active metabolite Norquetiapine (Dulcan p.786-787, StahlNeuro p.218)",
+      "Risperidone: t1/2 3h, CYP2D6 substrate to 9-OH-risperidone (Dulcan p.786-787, StahlKids p.423)",
+      "Paliperidone: t1/2 ~23h, <10% first-pass hepatic clearance, renal excretion (Dulcan p.785-786, StahlNeuro p.232)"
+    ],
+    "onset_of_effect": "1-2 weeks for initial response; 4-6 weeks for full trial (Dulcan p.402, p.797, StahlKids p.355)"
+  },
+  "indications": {
+    "items": [
+      "Schizophrenia (EOS): FDA approved for 13+ (Olanzapine, Quetiapine, Risperidone) and 12+ (Paliperidone OROS) (Dulcan p.402, p.787)",
+      "Bipolar I Mania: FDA approved for ages 10-17 (Quetiapine, Risperidone) and 13-17 (Olanzapine) (Dulcan p.787, StahlKids p.351)",
+      "Bipolar Depression: Symbyax (Olanzapine + Fluoxetine) FDA approved for 10-17; Quetiapine failed RCTs in pediatric bipolar depression (Dulcan p.301, p.805)",
+      "Autism Spectrum Disorder (ASD) Irritability: Risperidone FDA approved for ages 5-16 (Dulcan p.787, p.809)"
+    ],
+    "key_numbers": [
+      "NNT = 3-13 for SGA response in early-onset schizophrenia (Dulcan p.796)",
+      "NNT = 3-6 for SGA response/remission in pediatric bipolar mania (Dulcan p.805)",
+      "NNT = 2-5 for Risperidone in ASD irritability (Dulcan p.809)",
+      "NNT = 3-6 for Clozapine in treatment-resistant EOS (Dulcan p.397, p.796)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Metabolic dysfunction & weight gain: Olanzapine highest risk, followed by Risperidone/Paliperidone and Quetiapine (Dulcan p.823-824, StahlNeuro p.196)",
+      "Extrapyramidal symptoms (EPS) & Akathisia: Dose-dependent with Risperidone (>2-3mg/day) and Paliperidone; lowest with Quetiapine (Dulcan p.821, StahlNeuro p.221)",
+      "Hyperprolactinemia: Severe/sustained with Paliperidone >= Risperidone; minimal with Quetiapine (Dulcan p.825)",
+      "Sedation & hepatic transaminase elevation: Olanzapine causes ALT elevation in 48% of youth (Dulcan p.825-826)"
+    ],
+    "key_numbers": [
+      "NNH = 3 for >=7% weight gain with Olanzapine in youth (Dulcan p.823)",
+      "NNH = 6 for >=7% weight gain with Risperidone (Dulcan p.823)",
+      "NNH = 9 for >=7% weight gain with Quetiapine (Dulcan p.823)",
+      "NNH = 3-5 for ALT elevation >3x ULN with Olanzapine (Dulcan p.825-826)",
+      "48% ALT elevation rate with Olanzapine in pediatric schizophrenia (Dulcan p.825-826)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Neuromotor monitoring: SAS (parkinsonism), BARS (akathisia), AIMS (tardive dyskinesia) at baseline, 3 months, annually (Dulcan p.827 Table 37-7)",
+      "Cardiac ECG monitoring: Recommended at baseline for Ziprasidone (+8.74 msec QTc) and Clozapine; required for cardiac risk history (Dulcan p.824-825, p.827)",
+      "QTc threshold for discontinuation: QTc >= 500 msec requires immediate antipsychotic discontinuation (Dulcan p.832)"
+    ],
+    "key_numbers": [
+      "QTc < 440 msec normal in children (Dulcan p.825, p.832)",
+      "QTc >= 500 msec critical discontinuation threshold (Dulcan p.832)",
+      "3 hours post-injection observation for Olanzapine Relprevv due to PDSS (Dulcan p.787, StahlKids p.355)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Olanzapine: Starting 2.5-5mg/day at bedtime, target 10mg/day, max 20mg/day; smoking reduces levels by 40-50% via CYP1A2 (Dulcan p.786-787, StahlKids p.355-356)",
+      "Quetiapine: Starting 25mg bid (IR) or 50mg/day (XR), target 400-800mg/day; XR tablets swallowed whole (Dulcan p.787, StahlKids p.412)",
+      "Risperidone: Starting 0.25-0.5mg/day, target 1-3mg/day; no added efficacy above 3mg/day with increased EPS (Dulcan p.787, StahlKids p.425, p.428)",
+      "Paliperidone: OROS 3-12mg/day; swallow whole (never crush/chew) to prevent dose dumping; adjust for renal impairment (Dulcan p.787, StahlKids p.370, p.376-377)"
+    ],
+    "key_numbers": [
+      "3 mg/day efficacy ceiling for Risperidone in pediatric schizophrenia/mania (StahlKids p.425, p.428)",
+      "40-50% decrease in Olanzapine levels from smoking (Dulcan p.786, StahlKids p.356)",
+      "CrCl < 50 mL/min requires Paliperidone dose reduction (max 6mg/day CrCl 50-80, max 3mg/day CrCl 10-50) (StahlKids p.376)"
+    ]
+  },
+  "metabolic_monitoring": {
+    "items": [
+      "BMI percentile & z-score measured at baseline, every visit, 3 months, 6 months, annually (Dulcan p.827 Table 37-7)",
+      "Fasting glucose/HbA1c & lipids measured at baseline, 3 months, 6 months, annually (Dulcan p.827 Table 37-7)",
+      "Critical intervention threshold: >5% body weight gain in 3 months or >0.5 increase in BMI z-score (Dulcan p.829, p.834)",
+      "Intervention algorithm: Lifestyle -> Switch to low metabolic SGA -> Add Metformin 500-1000mg BID (Dulcan p.833-835)"
+    ],
+    "key_numbers": [
+      "BMI percentile >= 85th-95th = overweight; >= 95th = obesity (Dulcan p.829, DSM p.377)",
+      "HOMA-IR >= 4.4 indicates severe insulin resistance in adolescents (Dulcan p.829-830)",
+      "Triglycerides/HDL ratio > 3.5 indicates insulin resistance (Dulcan p.829-830)",
+      "Fasting triglycerides >= 110 mg/dL, Fasting glucose >= 126 mg/dL (diabetes) (Dulcan p.829)"
+    ]
+  },
+  "prolactin": {
+    "items": [
+      "Prolactin elevation rank order: Paliperidone >= Risperidone > Haloperidol > Olanzapine > Ziprasidone > Quetiapine >= Clozapine > Aripiprazole (Dulcan p.825)",
+      "Clinical presentation: Amenorrhea, galactorrhea, gynecomastia, delayed puberty, osteopenia (Dulcan p.825, StahlKids p.368)",
+      "Symptomatic testing protocol: Morning fasting blood sample 8-12h post-dose (Dulcan p.830)",
+      "Management: Prolactin > 200 ng/mL requires pituitary MRI; < 200 ng/mL add Aripiprazole 5-15mg/day or switch SGA (Dulcan p.833, p.835-836)"
+    ],
+    "key_numbers": [
+      "200 ng/mL prolactin threshold requiring pituitary MRI scan (Dulcan p.835-836)",
+      "5-15 mg/day low-dose Aripiprazole add-on to normalize prolactin (Dulcan p.833, p.836)"
+    ]
+  },
+  "high_yield": [
+    "Olanzapine carries the highest metabolic risk (NNH = 3 for >=7% weight gain) and causes ALT elevation in 48% of youth (Dulcan p.823-826, StahlNeuro p.196)",
+    "Quetiapine acts as 3 distinct drugs: 25-100mg H1 hypnotic, 300mg NET antidepressant (in adults), and 400-800mg D2/5-HT2A antipsychotic/antimanic (StahlNeuro p.218-219)",
+    "Quetiapine failed in RCTs for pediatric bipolar depression; Symbyax and Lurasidone are the only FDA-approved treatments for pediatric bipolar depression (Dulcan p.301, p.805, StahlKids p.418)",
+    "Risperidone shows dose-dependent EPS above 2-3mg/day and has a clinical efficacy ceiling at 3mg/day in pediatric schizophrenia/mania (Dulcan p.821, StahlKids p.425, p.428)",
+    "Risperidone and Paliperidone cause the most severe hyperprolactinemia (Paliperidone >= Risperidone) leading to galactorrhea, gynecomastia, and bone loss (Dulcan p.825, StahlKids p.367, p.423)",
+    "Paliperidone is excreted renally (<10% hepatic clearance) with zero CYP450 drug interactions; OROS tablets must never be crushed or chewed (Dulcan p.786, StahlNeuro p.232, StahlKids p.377)",
+    "TEOSS study showed equal efficacy between Olanzapine, Risperidone, and Molindone (34-50%), but Olanzapine caused the most weight gain (Dulcan p.402, p.821)",
+    "HOMA-IR >= 4.4 or Triglycerides/HDL ratio > 3.5 indicates marked insulin resistance in adolescents (Dulcan p.829-830)",
+    "IMPACT trial proved adding Metformin (500-1000mg BID) is as effective as switching to a low metabolic SGA (Dulcan p.824, p.835)",
+    "Symptomatic hyperprolactinemia > 200 ng/mL requires pituitary MRI; adjunctive low-dose Aripiprazole (5-15mg/day) effectively normalizes prolactin (Dulcan p.833, p.835-836)"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Psychopharmacology Flashcards",
+  "cards": [
+    {
+      "front": "Which SGA is associated with the highest metabolic risk and an NNH of 3 for weight gain $\\ge 7\\%$ in pediatric patients?",
+      "back": "Olanzapine (Dulcan p.823, StahlKids p.351)"
+    },
+    {
+      "front": "In the \"Three Bears\" model of Quetiapine dosing, what clinical effect is achieved at the \"Baby Bear\" dose (25-100 mg)?",
+      "back": "Sedative/Hypnotic effect via $H_{1}$ antagonism (StahlNeuro p.219, StahlKids p.419)"
+    },
+    {
+      "front": "What pharmacological action defines the \"Mama Bear\" dose (300 mg) of Quetiapine for treating bipolar depression?",
+      "back": "NET inhibition and $5\\text{-HT}_{2C}$ antagonism via the active metabolite Norquetiapine (StahlNeuro p.218-219, StahlKids p.409)"
+    },
+    {
+      "front": "What is the primary pharmacological requirement to reach the \"Papa Bear\" level (400-800 mg) of Quetiapine?",
+      "back": "Achieving $D_{2}$ receptor occupancy above $60\\%$ for antipsychotic/antimanic efficacy (StahlNeuro p.219, StahlKids p.412)"
+    },
+    {
+      "front": "According to pediatric clinical trials, what is the efficacy ceiling for Risperidone in treating Schizophrenia or Bipolar Disorder?",
+      "back": "3 mg/day, as higher doses increase side effects without additional benefit (StahlKids p.425, p.428)"
+    },
+    {
+      "front": "Which two SGAs are associated with the most severe treatment-emergent elevations in Prolactin levels?",
+      "back": "Risperidone and Paliperidone (Dulcan p.825, StahlKids p.367, p.423)"
+    },
+    {
+      "front": "What unique pharmacokinetic property distinguishes Paliperidone from Risperidone regarding its elimination?",
+      "back": "Paliperidone is primarily renally excreted with $< 10\\%$ hepatic metabolism (Dulcan p.786, StahlKids p.367)"
+    },
+    {
+      "front": "Which specific pharmacological combination is FDA-approved for treating pediatric bipolar depression in patients aged 10 and older?",
+      "back": "Olanzapine and Fluoxetine (Symbyax) (Dulcan p.301, StahlKids p.351)"
+    },
+    {
+      "front": "In the IMPACT study, what intervention was found to be as effective as switching to a lower-risk SGA for managing antipsychotic-induced weight gain?",
+      "back": "Adding Metformin (500-1000 mg bid) (Dulcan p.824, p.835)"
+    },
+    {
+      "front": "What serum Prolactin threshold in a symptomatic child requires an MRI of the sella turcica to rule out prolactinoma?",
+      "back": "$> 200\\text{ ng/mL}$ (Dulcan p.833, p.835-836)"
+    },
+    {
+      "front": "Which SGA had a $48\\%$ incidence of ALT elevation compared to $3\\%$ in the placebo group during pediatric controlled trials?",
+      "back": "Olanzapine (Dulcan p.825-826, StahlKids p.352)"
+    },
+    {
+      "front": "What HOMA-IR value serves as a threshold indicating significant insulin resistance in adolescents?",
+      "back": "$\\ge 4.4$ (Dulcan p.829-830)"
+    },
+    {
+      "front": "Why is the use of Quetiapine generally discouraged for treating pediatric bipolar depression despite its use in adults?",
+      "back": "It failed to demonstrate efficacy over placebo in pediatric RCTs (Dulcan p.301, p.805, StahlKids p.418)"
+    },
+    {
+      "front": "What critical clinical warning is associated with the administration of Paliperidone OROS tablets?",
+      "back": "They must be swallowed whole and never crushed, chewed, or halved (StahlKids p.377)"
+    },
+    {
+      "front": "What life-threatening skin condition is specifically warned against in the prescribing information for Olanzapine?",
+      "back": "Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS) (StahlKids p.352, p.354)"
+    },
+    {
+      "front": "How does cigarette smoking typically affect the plasma levels of Olanzapine?",
+      "back": "It induces CYP1A2, which significantly decreases Olanzapine levels (Dulcan p.786, StahlKids p.356)"
+    },
+    {
+      "front": "Which pharmacological mechanism allows Aripiprazole to effectively lower Prolactin levels when added to other SGAs?",
+      "back": "Partial $D_{2}$ agonism (StahlNeuro p.188, Dulcan p.835-836)"
+    },
+    {
+      "front": "What is the recommended frequency for monitoring BMI in children and adolescents after initiating Olanzapine?",
+      "back": "Monthly for the first 3 months, then quarterly (StahlKids p.351)"
+    },
+    {
+      "front": "What serum ratio is used as a marker for insulin resistance in adolescents besides the HOMA-IR?",
+      "back": "Triglycerides/HDL ratio $> 3.5$ (Dulcan p.829-830)"
+    },
+    {
+      "front": "What is the minimal age approved by the FDA for using Risperidone to treat irritability associated with Autism Spectrum Disorder?",
+      "back": "5 years old (Dulcan p.787, StahlKids p.423)"
+    }
+  ]
+}

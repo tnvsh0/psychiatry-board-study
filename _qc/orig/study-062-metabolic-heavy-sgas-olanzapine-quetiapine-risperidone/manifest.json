@@ -1,0 +1,36 @@
+{
+ "tag": "study-062-metabolic-heavy-sgas-olanzapine-quetiapine-risperidone",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:46:24+00:00",
+ "updated_at": "2026-09-25T14:46:24+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "46e8fdd7acb5c7cd684ac975f07f66258fdd3953180ccc12ee8f2f8fbdcc3caa",
+   "asset_id": 584442531,
+   "size": 8819,
+   "fetched_at": "2026-09-25T14:46:18+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "24ec92ad4d14b804f8b8a11e11b174bfb7cda9b0f060cf6d96f6d75b84ec0d91",
+   "asset_id": 584442532,
+   "size": 4889,
+   "fetched_at": "2026-09-25T14:46:20+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "97c4f926feea379247af977f8f5ac213c8fd56a88f71f3f3dd335b2b0ed9dd26",
+   "asset_id": 584442529,
+   "size": 35214,
+   "fetched_at": "2026-09-25T14:46:22+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2e1807e521a5fdef916b8c066670c111e5e0a135e2b42780b091bcbc91f266d0",
+   "asset_id": 584442525,
+   "size": 75399,
+   "fetched_at": "2026-09-25T14:46:24+00:00"
+  }
+ ]
+}
