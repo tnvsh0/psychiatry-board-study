@@ -1,10 +1,10 @@
 {
   "exam_date": "2026-11-25",
   "generated_from": "schedule.json",
-  "start_date": "2026-07-27",
-  "total_weeks": 17,
-  "learning_weeks": 14,
-  "review_weeks": 3,
+  "start_date": "2026-09-28",
+  "total_weeks": 8,
+  "learning_weeks": 8,
+  "review_weeks": 0,
   "study_days_per_week": 5,
   "chapters_total": 144,
   "final_stretch": {
@@ -16,8 +16,8 @@
     {
       "week": 1,
       "kind": "learning",
-      "start": "2026-07-27",
-      "end": "2026-08-02",
+      "start": "2026-09-28",
+      "end": "2026-10-04",
       "chapters": [
         1,
         2,
@@ -27,7 +27,14 @@
         6,
         7,
         8,
-        9
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
       ],
       "chapter_titles_he": [
         "בדיקת ילד ומתבגר",
@@ -38,53 +45,29 @@
         "מערכת הנוראפינפרין",
         "איזון GABA / גלוטמט",
         "התפתחות נורמטיבית: גיל הינקות (0-2)",
-        "התפתחות נורמטיבית: גיל הגן (2-5)"
-      ],
-      "phases": "Foundations",
-      "weighted_load": 11.4,
-      "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 2,
-      "kind": "learning",
-      "start": "2026-08-03",
-      "end": "2026-08-09",
-      "chapters": [
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20
-      ],
-      "chapter_titles_he": [
+        "התפתחות נורמטיבית: גיל הגן (2-5)",
         "התפתחות נורמטיבית: גיל בית ספר (6-12)",
         "התפתחות נורמטיבית: גיל ההתבגרות (13-18)",
         "תורת ההתקשרות ומנטליזציה",
         "טמפרמנט",
         "קריטריונים כלליים להפרעת אישיות",
         "מצב רוח, אפקט, טמפרמנט — הערכה קלינית",
-        "עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים",
-        "הפרעת קשב וריכוז (ADHD) — ליבה",
-        "טיפול ב-ADHD: סטימולנטים",
-        "טיפול ב-ADHD: לא-סטימולנטים",
-        "הפרעה אוטיסטית (ASD)"
+        "עקרונות פסיכופרמקולוגיה בילדים ובמתבגרים"
       ],
-      "phases": "Foundations · Neurodevelopmental",
-      "weighted_load": 12.0,
+      "phases": "Foundations",
+      "weighted_load": 18.2,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 3,
+      "week": 2,
       "kind": "learning",
-      "start": "2026-08-10",
-      "end": "2026-08-16",
+      "start": "2026-10-05",
+      "end": "2026-10-11",
       "chapters": [
+        17,
+        18,
+        19,
+        20,
         21,
         22,
         23,
@@ -94,9 +77,16 @@
         27,
         28,
         29,
-        30
+        30,
+        31,
+        32,
+        33
       ],
       "chapter_titles_he": [
+        "הפרעת קשב וריכוז (ADHD) — ליבה",
+        "טיפול ב-ADHD: סטימולנטים",
+        "טיפול ב-ADHD: לא-סטימולנטים",
+        "הפרעה אוטיסטית (ASD)",
         "מוגבלות שכלית התפתחותית",
         "הפרעות למידה ספציפיות (SLD)",
         "הפרעות תקשורת (שפה, הפקת דיבור, גמגום, פרגמטי)",
@@ -106,51 +96,28 @@
         "הפרעות נוירו-התפתחותיות נוספות",
         "הפרעת דיכאון מז'ורית (MDD)",
         "SSRI לעומק",
-        "SNRI + נוגדי דיכאון אטיפיים"
+        "SNRI + נוגדי דיכאון אטיפיים",
+        "TCA + MAOI",
+        "PDD + DMDD + PMDD",
+        "הפרעה דו-קוטבית I"
       ],
       "phases": "Neurodevelopmental · Mood and Anxiety",
-      "weighted_load": 11.3,
+      "weighted_load": 19.9,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 4,
+      "week": 3,
       "kind": "learning",
-      "start": "2026-08-17",
-      "end": "2026-08-23",
+      "start": "2026-10-12",
+      "end": "2026-10-18",
       "chapters": [
-        31,
-        32,
-        33,
         34,
         35,
         36,
         37,
         38,
         39,
-        40
-      ],
-      "chapter_titles_he": [
-        "TCA + MAOI",
-        "PDD + DMDD + PMDD",
-        "הפרעה דו-קוטבית I",
-        "Bipolar II + Cyclothymia + bipolar בילדים",
-        "ליתיום",
-        "מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine",
-        "ילדים: DMDD מול ביפולר; אובדנות נער",
-        "הפרעת חרדה מוכללת (GAD)",
-        "הפרעת פאניקה + אגורופוביה",
-        "חרדה חברתית + Selective Mutism"
-      ],
-      "phases": "Mood and Anxiety",
-      "weighted_load": 11.3,
-      "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 5,
-      "kind": "learning",
-      "start": "2026-08-24",
-      "end": "2026-08-30",
-      "chapters": [
+        40,
         41,
         42,
         43,
@@ -161,9 +128,17 @@
         48,
         49,
         50,
-        51
+        51,
+        52
       ],
       "chapter_titles_he": [
+        "Bipolar II + Cyclothymia + bipolar בילדים",
+        "ליתיום",
+        "מייצבי מצב רוח: Valproate, Lamotrigine, Carbamazepine",
+        "ילדים: DMDD מול ביפולר; אובדנות נער",
+        "הפרעת חרדה מוכללת (GAD)",
+        "הפרעת פאניקה + אגורופוביה",
+        "חרדה חברתית + Selective Mutism",
         "חרדת פרידה + פוביה ספציפית",
         "BZD + Buspirone + סקירת אנקסיוליטים",
         "OCD — ליבה",
@@ -174,19 +149,19 @@
         "טיפול ב-PTSD: Prazosin, SSRI, TF-CBT, EMDR",
         "תגובת לחץ חריפה + הפרעת הסתגלות",
         "אבל, שכול והפרעת אבל ממושך",
-        "התעללות והזנחה בילדים"
+        "התעללות והזנחה בילדים",
+        "RAD + DSED"
       ],
       "phases": "Mood and Anxiety · OCD and Trauma",
-      "weighted_load": 11.4,
+      "weighted_load": 20.0,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 6,
+      "week": 4,
       "kind": "learning",
-      "start": "2026-08-31",
-      "end": "2026-09-06",
+      "start": "2026-10-19",
+      "end": "2026-10-25",
       "chapters": [
-        52,
         53,
         54,
         55,
@@ -195,30 +170,7 @@
         58,
         59,
         60,
-        61
-      ],
-      "chapter_titles_he": [
-        "RAD + DSED",
-        "הפרעות דיסוציאטיביות",
-        "הפרעות סומטיות + Conversion + Factitious",
-        "סכיזופרניה — ליבה",
-        "ניורוביולוגיה של סכיזופרניה",
-        "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
-        "אנטיפסיכוטיים דור ראשון (FGA)",
-        "אנטיפסיכוטיים דור שני (SGA)",
-        "Clozapine — קלוזפין לעמיד לטיפול",
-        "אגוניסטים חלקיים: Aripiprazole, Brexpiprazole, Cariprazine"
-      ],
-      "phases": "OCD and Trauma · Psychosis and Antipsychotics",
-      "weighted_load": 11.4,
-      "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 7,
-      "kind": "learning",
-      "start": "2026-09-07",
-      "end": "2026-09-13",
-      "chapters": [
+        61,
         62,
         63,
         64,
@@ -230,6 +182,15 @@
         70
       ],
       "chapter_titles_he": [
+        "הפרעות דיסוציאטיביות",
+        "הפרעות סומטיות + Conversion + Factitious",
+        "סכיזופרניה — ליבה",
+        "ניורוביולוגיה של סכיזופרניה",
+        "Schizoaffective + Schizophreniform + Brief Psychotic + Delusional",
+        "אנטיפסיכוטיים דור ראשון (FGA)",
+        "אנטיפסיכוטיים דור שני (SGA)",
+        "Clozapine — קלוזפין לעמיד לטיפול",
+        "אגוניסטים חלקיים: Aripiprazole, Brexpiprazole, Cariprazine",
         "SGA מטבוליים: Olanzapine, Quetiapine, Risperidone",
         "SGA לא-מטבוליים: Lurasidone, Ziprasidone, Lumateperone",
         "זריקות אנטיפסיכוטיות ארוכות-טווח (LAI)",
@@ -240,15 +201,15 @@
         "ניהול פסיכוזה חריפה במיון",
         "ECT וטיפולים סומטיים אחרים"
       ],
-      "phases": "Psychosis and Antipsychotics",
-      "weighted_load": 9.8,
+      "phases": "OCD and Trauma · Psychosis and Antipsychotics",
+      "weighted_load": 20.5,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 8,
+      "week": 5,
       "kind": "learning",
-      "start": "2026-09-14",
-      "end": "2026-09-20",
+      "start": "2026-10-26",
+      "end": "2026-11-01",
       "chapters": [
         71,
         72,
@@ -259,30 +220,7 @@
         77,
         78,
         79,
-        80
-      ],
-      "chapter_titles_he": [
-        "נדודי שינה + CBT-I",
-        "תרופות שינה",
-        "נרקולפסיה + Pitolisant",
-        "פרסומניות + תסמונת רגליים חסרות מנוחה",
-        "Anorexia Nervosa",
-        "Bulimia Nervosa + Binge Eating Disorder",
-        "ARFID + Pica + Rumination",
-        "Enuresis + Encopresis",
-        "התפתחות שינה בילדים + תזוזת מתבגרים",
-        "הפרעות אכילה: FBT + ייצוב רפואי"
-      ],
-      "phases": "Sleep, Eating, Elimination",
-      "weighted_load": 9.2,
-      "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 9,
-      "kind": "learning",
-      "start": "2026-09-21",
-      "end": "2026-09-27",
-      "chapters": [
+        80,
         81,
         82,
         83,
@@ -295,6 +233,16 @@
         90
       ],
       "chapter_titles_he": [
+        "נדודי שינה + CBT-I",
+        "תרופות שינה",
+        "נרקולפסיה + Pitolisant",
+        "פרסומניות + תסמונת רגליים חסרות מנוחה",
+        "Anorexia Nervosa",
+        "Bulimia Nervosa + Binge Eating Disorder",
+        "ARFID + Pica + Rumination",
+        "Enuresis + Encopresis",
+        "התפתחות שינה בילדים + תזוזת מתבגרים",
+        "הפרעות אכילה: FBT + ייצוב רפואי",
         "הפרעת שימוש באלכוהול + גמילה",
         "טיפול ב-AUD: Naltrexone, Acamprosate, Disulfiram",
         "OUD + גמילה",
@@ -306,15 +254,15 @@
         "הלוצינוגנים + קפאין + שאיפות",
         "התמכרות התנהגותית: הימורים"
       ],
-      "phases": "Substance Use",
-      "weighted_load": 10.2,
+      "phases": "Sleep, Eating, Elimination · Substance Use",
+      "weighted_load": 19.4,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 10,
+      "week": 6,
       "kind": "learning",
-      "start": "2026-09-28",
-      "end": "2026-10-04",
+      "start": "2026-11-02",
+      "end": "2026-11-08",
       "chapters": [
         91,
         92,
@@ -326,7 +274,14 @@
         98,
         99,
         100,
-        101
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108
       ],
       "chapter_titles_he": [
         "הפרעת אישיות פרנואידית",
@@ -339,53 +294,29 @@
         "הפרעת אישיות נרציסיסטית",
         "הפרעת אישיות נמנעת",
         "הפרעת אישיות תלותית",
-        "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)"
-      ],
-      "phases": "Personality + Special Populations",
-      "weighted_load": 11.4,
-      "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 11,
-      "kind": "learning",
-      "start": "2026-10-05",
-      "end": "2026-10-11",
-      "chapters": [
-        102,
-        103,
-        104,
-        105,
-        106,
-        107,
-        108,
-        109,
-        110,
-        111,
-        112
-      ],
-      "chapter_titles_he": [
+        "הפרעת אישיות אובססיבית-קומפולסיבית (OCPD)",
         "פסיכיאטריה משפטית",
         "החוק הישראלי בפסיכיאטריה של הילד והמתבגר",
         "דיספוריה מגדרית + טיפול LGBTQ+",
         "תפקודים מיניים + הפרעות פרפיליות",
         "ODD, IED, Kleptomania, Pyromania",
         "אגרסיביות ואלימות בילדים ובמתבגרים",
-        "אובדנות בנער/ה",
-        "פגיעה עצמית ללא כוונת אובדנות (NSSI)",
-        "מעברים משפחתיים: גירושין, אימוץ ואומנה",
-        "היבטים תרבותיים ודתיים בבריאות הנפש של הילד",
-        "פסיכיאטריה פרינטלית"
+        "אובדנות בנער/ה"
       ],
       "phases": "Personality + Special Populations",
-      "weighted_load": 12.4,
+      "weighted_load": 19.7,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 12,
+      "week": 7,
       "kind": "learning",
-      "start": "2026-10-12",
-      "end": "2026-10-18",
+      "start": "2026-11-09",
+      "end": "2026-11-15",
       "chapters": [
+        109,
+        110,
+        111,
+        112,
         113,
         114,
         115,
@@ -397,9 +328,18 @@
         121,
         122,
         123,
-        124
+        124,
+        125,
+        126,
+        127,
+        128,
+        129
       ],
       "chapter_titles_he": [
+        "פגיעה עצמית ללא כוונת אובדנות (NSSI)",
+        "מעברים משפחתיים: גירושין, אימוץ ואומנה",
+        "היבטים תרבותיים ודתיים בבריאות הנפש של הילד",
+        "פסיכיאטריה פרינטלית",
         "Brexanolone + Zuranolone לדיכאון לאחר לידה",
         "גריאטריה — סקירה (delirium)",
         "נוירואנטומיה + בדיקה נוירולוגית בילדים",
@@ -411,51 +351,28 @@
         "שיתוק מוחין (Cerebral Palsy)",
         "תסמונות נוירוגנטיות",
         "תסמונות נוירוקוטנאיות",
-        "כאב ראש + מיגרנה"
-      ],
-      "phases": "Personality + Special Populations · Neurology + Cross-cutting",
-      "weighted_load": 11.3,
-      "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 13,
-      "kind": "learning",
-      "start": "2026-10-19",
-      "end": "2026-10-25",
-      "chapters": [
-        125,
-        126,
-        127,
-        128,
-        129,
-        130,
-        131,
-        132,
-        133,
-        134
-      ],
-      "chapter_titles_he": [
+        "כאב ראש + מיגרנה",
         "מחלות מטבוליות עם ביטוי פסיכיאטרי",
         "אוטואימוני: NMDA encephalitis, lupus, PANDAS",
         "ניוון עצבי בילדים",
         "רפואת שינה — אינטנסיבית",
-        "חירום פסיכיאטרי בילדים ובמתבגרים",
-        "ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות",
-        "סקירת תיאוריות פסיכותרפויטיות",
-        "CBT — תיאוריה ופרקטיקה",
-        "DBT — תיאוריה ופרקטיקה",
-        "IPT-A — פסיכותרפיה בין-אישית למתבגרים"
+        "חירום פסיכיאטרי בילדים ובמתבגרים"
       ],
-      "phases": "Neurology + Cross-cutting · Psychotherapy + Integration",
-      "weighted_load": 12.1,
+      "phases": "Personality + Special Populations · Neurology + Cross-cutting",
+      "weighted_load": 20.9,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
     },
     {
-      "week": 14,
+      "week": 8,
       "kind": "learning",
-      "start": "2026-10-26",
-      "end": "2026-11-01",
+      "start": "2026-11-16",
+      "end": "2026-11-22",
       "chapters": [
+        130,
+        131,
+        132,
+        133,
+        134,
         135,
         136,
         137,
@@ -468,6 +385,11 @@
         144
       ],
       "chapter_titles_he": [
+        "ייעוץ-קישור: פדיאטריה, אונקולוגיה ומחלות כרוניות",
+        "סקירת תיאוריות פסיכותרפויטיות",
+        "CBT — תיאוריה ופרקטיקה",
+        "DBT — תיאוריה ופרקטיקה",
+        "IPT-A — פסיכותרפיה בין-אישית למתבגרים",
         "ראיון מוטיבציוני",
         "מסגרות טיפול: אשפוז, אשפוז יום, מגורים ו-Systems of Care",
         "התערבויות וייעוץ במסגרת בית הספר",
@@ -479,36 +401,9 @@
         "רפואה מבוססת ראיות בפסיכיאטריה של הילד",
         "אינטגרציה + שאלות + סקירת נקודות חולשה"
       ],
-      "phases": "Psychotherapy + Integration",
-      "weighted_load": 11.3,
+      "phases": "Neurology + Cross-cutting · Psychotherapy + Integration",
+      "weighted_load": 17.9,
       "note": "4 ימי חומר חדש + יום חזרה שבועית"
-    },
-    {
-      "week": 15,
-      "kind": "review",
-      "start": "2026-11-02",
-      "end": "2026-11-08",
-      "chapters": [],
-      "title_he": "חזרה מרוכזת — חצי ראשון (פאזות 1–6)",
-      "note": "מעבר על נקודות ה-high-yield, כל הכרטיסיות שבתור, וסימון נקודות חולשה."
-    },
-    {
-      "week": 16,
-      "kind": "review",
-      "start": "2026-11-09",
-      "end": "2026-11-15",
-      "chapters": [],
-      "title_he": "חזרה מרוכזת — חצי שני (פאזות 7–10)",
-      "note": "מעבר על נקודות ה-high-yield, כל הכרטיסיות שבתור, וסימון נקודות חולשה."
-    },
-    {
-      "week": 17,
-      "kind": "review",
-      "start": "2026-11-16",
-      "end": "2026-11-22",
-      "chapters": [],
-      "title_he": "מבחני תרגול + נקודות חולשה",
-      "note": "וינייטות ומבחני תרגול; חזרה ממוקדת רק לנושאים שסומנו כחלשים בשבועיים הקודמים."
     }
   ]
 }

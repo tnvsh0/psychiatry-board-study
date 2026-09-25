@@ -1,0 +1,202 @@
+{
+  "84b6b353860a22fd": {
+    "from_chapter": 1,
+    "ease": 2.65,
+    "interval_days": 4,
+    "due_date": "2026-06-01",
+    "review_count": 1,
+    "last_grade": 3,
+    "last_seen": "2026-05-28T07:30:45",
+    "question_preview": "מהי הגדרת הילד כ-Moving Target בהערכה פסיכיאטרית?"
+  },
+  "8fa72e19b5b9e431": {
+    "from_chapter": 1,
+    "ease": 2.65,
+    "interval_days": 4,
+    "due_date": "2026-06-02",
+    "review_count": 1,
+    "last_grade": 3,
+    "last_seen": "2026-05-29T00:39:55",
+    "question_preview": "במסגרת ה-Developmental Ladder (מגדל בנאי 5 קומות), מה מסמל ה-Apprentice בקומה 3 "
+  },
+  "890409d6b3c1b64b": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "Developmental Red Flag (Frame 1): מה המשמעות הקלינית של NINJA-baby בתוך NIN-crad"
+  },
+  "5f73e6656d5dd2a7": {
+    "from_chapter": 1,
+    "ease": 2.65,
+    "interval_days": 4,
+    "due_date": "2026-06-02",
+    "review_count": 1,
+    "last_grade": 3,
+    "last_seen": "2026-05-29T00:40:13",
+    "question_preview": "מהי שיטת ה-Triangulation המומלצת לקבלת מידע מהימן בהערכת הילד?"
+  },
+  "4b472a1a65c7bbde": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "באיזה כלי אבחוני משתמשים להערכת תינוקות ופעוטות (גיל 0-3) הכולל 5 צירים?"
+  },
+  "ddec6ffac8f626d9": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מהו הדגש המרכזי של ציר 2 (Relational Context) באבחון פעוטות לפי ה-DC:0-5?"
+  },
+  "790e18ef27ad7424": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "Developmental Red Flag (Frame 5): מה מסמל ילד על Tricycle (3 גלגלים) המשתמש בארג"
+  },
+  "badaeffdffc23393": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מהו ה-Gold Standard כראיון חצי-מובנה לאבחון הפרעות מצב רוח ופסיכוזה בילדים?"
+  },
+  "8262ab61ec6b22aa": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "בפורמולציה של ה-4P, מה ההבדל בין גורם Predisposing לגורם Precipitating?"
+  },
+  "64c974d78fdfdff8": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "אילו מדדים גופניים יש לנטר באופן קבוע בילד המטופל ב-Methylphenidate?"
+  },
+  "2d899e734d5f6f6e": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מהו המושג Informed Assent בהקשר של טיפול פסיכיאטרי בקטינים?"
+  },
+  "60a0f7910131c76c": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מה מסמל ה-Apprentice בקומה 4 של ה-Developmental Ladder המכייל מכשיר 'EMO-METER'?"
+  },
+  "05c8bd08aa549405": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "בבדיקת סטטוס מנטלי (Pediatric MSE), מדוע חשוב לשים לב לסימני Dysmorphism בהופעה "
+  },
+  "99b10ed71472dd93": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "Developmental Red Flag (Frame 2): מה מסמל ה-CLOCK-TOWER המראה 12:00 כשתינוק בוהה"
+  },
+  "6cd3ed0acd416076": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "כיצד מוגדר גורם Perpetuating בפורמולציה הפסיכיאטרית (מודל ה-4P)?"
+  },
+  "8cdf306ff043293f": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "Developmental Red Flag (Frame 3): מה מסמל פעוט עם תליון חי (18) המחזיק בועת דיבו"
+  },
+  "967cd118f33e76ef": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מהו היתרון המרכזי בשימוש בשאלון ה-CBCL (Child Behavior Checklist)?"
+  },
+  "fe513fe9674d0a7c": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "בבדיקת גיל הגן לפי ה-Washington University Model, מה כוללת התצפית המובנית?"
+  },
+  "61f57ee27ad2129b": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מה מסמל ה-Apprentice בקומה 2 של ה-Developmental Ladder התולה לשונות (Tongues) על"
+  },
+  "7e5307edb05fa7b5": {
+    "from_chapter": 1,
+    "ease": 2.5,
+    "interval_days": 0,
+    "due_date": "2026-05-28",
+    "review_count": 0,
+    "last_grade": null,
+    "last_seen": null,
+    "question_preview": "מדוע חשוב לראיין את המתבגר בנפרד מהוריו במהלך הבדיקה?"
+  }
+}
