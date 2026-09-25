@@ -1,0 +1,85 @@
+{
+ "tag": "study-016-principles-of-pediatric-psychopharmacology",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:19:55+00:00",
+ "updated_at": "2026-09-25T13:19:55+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "1797772d0622c281320885ef5dce4cf1dc944c697d13b89a50071d7250ce8c72",
+   "asset_id": 530916299,
+   "size": 9238,
+   "fetched_at": "2026-09-25T13:18:30+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "bb6b99333a44f2ec3426d13fce31593ad2c3845457a16d42a52144c9d4d51224",
+   "asset_id": 530916251,
+   "size": 13470,
+   "fetched_at": "2026-09-25T13:18:38+00:00"
+  },
+  {
+   "name": "narration_main.txt",
+   "sha256": "090c01f13762fdef229a31107f6f22eb25cb62a8eef6c038846b6840770bf9b7",
+   "asset_id": 530916269,
+   "size": 8067,
+   "fetched_at": "2026-09-25T13:18:43+00:00"
+  },
+  {
+   "name": "narration_main2.txt",
+   "sha256": "58cd9634c679a02d31da2fd48f5a25cac8d3769f99ca6a0b3294ce14d49af1cf",
+   "asset_id": 530916283,
+   "size": 8356,
+   "fetched_at": "2026-09-25T13:18:50+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "c6bd1e846561648eccd978a7b12780f8f91895fe51ea34dbe4b1f8cd0f5d01b7",
+   "asset_id": 530916287,
+   "size": 35429,
+   "fetched_at": "2026-09-25T13:18:57+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "f1344c4ddaab16210c86595af01e7a229b721388be4fb4d3b590d93c6a73fd61",
+   "asset_id": 530916247,
+   "size": 42296,
+   "fetched_at": "2026-09-25T13:19:06+00:00"
+  },
+  {
+   "name": "sketchy_main.quiz.md",
+   "sha256": "a87829fb5622876f6a33e490223097a97bf8300ac7b38fd4feff86b7ca91f773",
+   "asset_id": 530916262,
+   "size": 5749,
+   "fetched_at": "2026-09-25T13:19:15+00:00"
+  },
+  {
+   "name": "sketchy_main.txt",
+   "sha256": "04504fd19142eb4aa0e60b8da1073e76258f0e9a2a83e56fe21b4c4ac0cbb158",
+   "asset_id": 530916249,
+   "size": 15714,
+   "fetched_at": "2026-09-25T13:19:29+00:00"
+  },
+  {
+   "name": "sketchy_main2.quiz.md",
+   "sha256": "e236b9b3ff57c57d716690c4dfade7aa72811f9a49eea63846cb47ac17b262c6",
+   "asset_id": 530916271,
+   "size": 6365,
+   "fetched_at": "2026-09-25T13:19:40+00:00"
+  },
+  {
+   "name": "sketchy_main2.txt",
+   "sha256": "e6d788c5c047a85ab109bb328889eea774e3e96d69b07555702bd8851cc9a46a",
+   "asset_id": 530916261,
+   "size": 16489,
+   "fetched_at": "2026-09-25T13:19:52+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "4a56dbbfe0730dd72a82f8a1fb3c61760c4afc0d3dd7bc51de2b77a4b0d5794d",
+   "asset_id": 530916293,
+   "size": 46944,
+   "fetched_at": "2026-09-25T13:19:55+00:00"
+  }
+ ]
+}

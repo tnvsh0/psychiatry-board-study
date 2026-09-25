@@ -1,0 +1,432 @@
+[
+ {
+  "day": 16,
+  "plate": "main",
+  "facts": 27,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e8: zone 'Trackside' added to the list",
+   "e13: dropped relation to unknown element 'Marshal holding SERT BLOCK restrictor plate'",
+   "e15: dropped relation to unknown element 'FLUOX and PAROX karts blocking drain'",
+   "e27: dropped relation to unknown element \"Marshal taking child's blood pressure\"",
+   "e4: hook de-asserted -> 'כמו שפחית שמן יחידה על מדף החלפים — פתרון פשוט ויעיל, כך יש שאיפה מתמדת למונוטרפיה ופישוט משטרי טיפול למניעת אינטראקציות תרופתיות.'",
+   "e18: hook de-asserted -> 'הסדרן המצביע על רשימת אבחון מקיפה, — הצורך לטפל בתסמונת אבחנתית מוגדרת (Syndrome/Diagnosis) ולא בסימפטום מטרה בודד.'",
+   "e22: hook de-asserted -> 'ההורה שחוגר את הילד לקארט במגע סמכותי ומעודד, — הגישה הסמכותית שמטרתה להעצים את המשפחה ולשפר את היענות לטיפול.'"
+  ],
+  "digit_strings_dropped": [
+   "18+ CONSENT",
+   "x2-5",
+   "CYP2D6",
+   "PIT EVERY 3 LAPS",
+   "2-3 MONTHS"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "8",
+     "30",
+     "30",
+     "30",
+     "0",
+     "1",
+     "3"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1387,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.151,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.2656,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [
+    "START LOW · GO SLOW",
+    "FLUOX ALL AGES",
+    "ESCITA TEENS ONLY"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the man in the orange safety vest holding the 'KIDS BURN FUEL FASTER' sign is larger.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "START LOW · GO SLOW",
+    "FLUOX ALL AGES",
+    "ESCITA TEENS ONLY"
+   ],
+   "score": 4,
+   "verified": true,
+   "stray_warning": [
+    "8",
+    "30",
+    "30",
+    "30",
+    "0",
+    "1",
+    "3"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — An outdoor children's go-kart track on a bright weekday: a tarmac circuit hemmed by stacked tyre walls, a steel start gantry, a paddock of small karts, a pit lane and a marshal's post.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is running a kids' karting session — strapping in, driving the circuit, marshalling flags at the posts, weighing in at the paddock, working the pit lane.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe stacked tyre-wall barrier curving from lower-left to upper-right, with the steel start/finish gantry straddling it overhead.\n\nZONES, and what belongs in each: Start/Finish Line · Paddock · Pit Lane · On the Track · First-Aid Hut · Marshal's Post · Trackside\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. Banner — in the Start/Finish Line\n  2. Two clipboards, Marshal, Parent, Child — in the Paddock\n  3. Go-kart — in the Paddock\n  4. Oil can — in the Pit Lane\n  5. Child, Wall growth chart — in the First-Aid Hut\n  6. Hut — in the First-Aid Hut\n  7. Sign — in the Paddock\n  8. Marshal, Sign — in the Trackside\n  9. Scale — in the Paddock\n  10. Go-kart, Sign — in the On the Track\n  11. Go-kart, Sign — in the On the Track\n  12. Go-kart, Child driver — in the Pit Lane\n  13. Throttle restrictor plate, Marshal — in the Pit Lane\n  14. Fuel pump — in the Pit Lane\n  15. Two go-karts, Drain — in the Pit Lane\n  16. Helmet, Rack — in the Paddock\n  17. Board — in the Paddock\n  18. Marshal, Checklist board — in the Marshal's Post\n  19. Parent, Child, Manual — in the Paddock\n  20. Child, Parent, Teacher, Go-kart — in the Pit Lane\n  21. Child, Medicine bottle, House background, School bus — in the Paddock\n  22. Parent, Child, Go-kart — in the Paddock\n  23. Pit board — in the Pit Lane\n  24. Lap-timing board — in the Start/Finish Line\n  25. Oil can — in the Pit Lane\n  26. Marshal, Child, Weigh-in platform, Height gauge board — in the Paddock\n  27. Marshal, Child, Blood-pressure cuff — in the First-Aid Hut\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"START LOW · GO SLOW\" — lettered on Banner\n  2. \"NO LABEL\" — lettered on Go-kart\n  3. \"FLUOX ALL AGES\" — lettered on Go-kart, Sign\n  4. \"ESCITA TEENS ONLY\" — lettered on Go-kart, Sign\n  5. \"SERTRA\" — lettered on Go-kart, Child driver\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on first-aid hut\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on paddock weigh-in platform scale\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on height gauge board\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — An outdoor children's go-kart track on a bright weekday: a tarmac circuit hemmed by stacked tyre walls, a steel start gantry, a paddock of small karts, a pit lane and a marshal's post.; everyone is Everyone is running a kids' karting session — strapping in, driving the circuit, marshalling flags at the posts, weighin; the largest thing in\nframe is The stacked tyre-wall barrier curving from lower-left to upper-right, with the steel start/finish gantry straddling it o; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"START LOW · GO SLOW\"\n  \"FLUOX ALL AGES\"\n  \"ESCITA TEENS ONLY\"\n  \"SERTRA\"\n  \"KIDS BURN FUEL FASTER\"\n  \"CBT & KARTING\"\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - The single largest object in the image is the house in the background on the left side, or potentially the yellow school bus in the background on the right. Both are inanimate structures. No person in the image is larger than these structures.\n\nYES\n  - NO, the adult male in the orange safety vest holding a clipboard, standing near the race track entrance on the right side of the image, is larger.\nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it."
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "YRS",
+     "paint": "7yr",
+     "tag": "YRS",
+     "chroma_pixels": 28970,
+     "blob_pixels": 28887,
+     "fill_ratio": 1.04,
+     "height_frac": 0.1387,
+     "width_frac": 0.0552,
+     "quad": [
+      [
+       2271,
+       161
+      ],
+      [
+       2419,
+       182
+      ],
+      [
+       2421,
+       373
+      ],
+      [
+       2271,
+       343
+      ]
+     ],
+     "bbox": [
+      2271,
+      161,
+      150,
+      212
+     ],
+     "height_pct": 13.8,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "PCT",
+     "paint": "50%",
+     "tag": "PCT",
+     "chroma_pixels": 45003,
+     "blob_pixels": 44541,
+     "fill_ratio": 1.077,
+     "height_frac": 0.151,
+     "width_frac": 0.0945,
+     "quad": [
+      [
+       432,
+       1278
+      ],
+      [
+       691,
+       1214
+      ],
+      [
+       691,
+       1367
+      ],
+      [
+       434,
+       1445
+      ]
+     ],
+     "bbox": [
+      432,
+      1214,
+      259,
+      231
+     ],
+     "height_pct": 15.04,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "WKS",
+     "paint": "8wk",
+     "tag": "WKS",
+     "chroma_pixels": 38453,
+     "blob_pixels": 37308,
+     "fill_ratio": 0.776,
+     "height_frac": 0.2656,
+     "width_frac": 0.0491,
+     "quad": [
+      [
+       879,
+       492
+      ],
+      [
+       1011,
+       528
+      ],
+      [
+       1013,
+       899
+      ],
+      [
+       880,
+       848
+      ]
+     ],
+     "bbox": [
+      879,
+      492,
+      134,
+      407
+     ],
+     "height_pct": 26.5,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 5171,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 754
+ },
+ {
+  "day": 16,
+  "plate": "main2",
+  "facts": 26,
+  "tries": 4,
+  "numbers_mode": "composite",
+  "table_warnings": [
+   "e5: dropped text 'SGA KART\\nANNUAL SERVICE 12 MONTHS' (over 5 words)",
+   "e13: dropped text 'YOUNG KIDS: 2-3X ACTIVATION\\nMORE VULNERABLE' (over 5 words)",
+   "e22: dropped text 'ALPHA-AGONIST\\nSLOW TAPER\\nHEART DANGER' (over the cap of 18)",
+   "e23: dropped text 'METFORMIN\\nANTIPSYCHOTIC WEIGHT GAIN' (over the cap of 18)",
+   "e24: dropped text 'ANC BASELINE MINIMUM' (over the cap of 18)",
+   "e25: dropped text 'FIRST SGA CHECK' (over the cap of 18)",
+   "e4: cue trimmed to 'Marshal about to wave black flag at ANC <1000'",
+   "e6: hook de-asserted -> 'הדגל השחור על מתקן הדגלים והקופסה השחורה עם אזהרת הסיכון — אזהרת הקופסה השחורה לעליית סיכון למחשבות אובדניות, במיוחד בקטינים עד גיל 25 המצוין על לוח מדידת הגובה.'",
+   "e14: cue trimmed to 'Kid kart at fuel pump'"
+  ],
+  "digit_strings_dropped": [
+   "ANC: <1000 STOP",
+   "ANTIDEPRESSANT: 4%\nPLACEBO: 2%",
+   "SSRI KARTS\n10-20% ACTIVATED",
+   "CYP2D6 INHIBITOR\nATOMOXETINE\n6-8X LEVELS",
+   "CYP2D6 INHIBITOR\nPIMOZIDE\nTHIORIDAZINE\nCONTRAINDICATED!"
+  ],
+  "model": "gemini-3-pro-image-preview",
+  "final_pass": false,
+  "gates": {
+   "numbers": {
+    "probed": true,
+    "missing": [],
+    "wrong": [],
+    "extra": [
+     "%",
+     "%",
+     "%",
+     "1",
+     "18",
+     "65",
+     "1718"
+    ],
+    "blank_plates_found": 3,
+    "blank_plates_wanted": 3,
+    "blank_plates": [
+     {
+      "name": "PURE GREEN",
+      "ok": true,
+      "height_frac": 0.1712,
+      "reject": null
+     },
+     {
+      "name": "PURE MAGENTA",
+      "ok": true,
+      "height_frac": 0.1276,
+      "reject": null
+     },
+     {
+      "name": "PURE CYAN",
+      "ok": true,
+      "height_frac": 0.2083,
+      "reject": null
+     }
+    ]
+   },
+   "text_missing": [
+    "WARNING: SUICIDE RISK",
+    "RISPERIDONE\nMILK EFFECT"
+   ],
+   "composition": {
+    "anchor_is_object": true,
+    "figures_even": false,
+    "frame_filled": true,
+    "_raw": {
+     "anchor_is_object": "YES",
+     "figures_even": "NO, the man in the orange vest holding the black flag in the top right is larger.",
+     "frame_filled": "YES"
+    },
+    "_probed": 3,
+    "_asked": 3
+   },
+   "missing_all": [
+    "WARNING: SUICIDE RISK",
+    "RISPERIDONE\nMILK EFFECT"
+   ],
+   "score": 3,
+   "verified": true,
+   "stray_warning": [
+    "%",
+    "%",
+    "%",
+    "1",
+    "18",
+    "65",
+    "1718"
+   ],
+   "model": "gemini-3-pro-image-preview",
+   "prompt": "Create a single full-color illustration in SketchyMedical style — a COMPLETE PLACE, not an infographic and not a poster.\n\nThe image MUST be:\n- A full environment filling the entire frame, edge to edge. NO blank or white background, NO vignette, NO edge darkening — the frame borders are as bright as the centre.\n- ONE CONTINUOUS SCENE — a single unified space, one perspective, one light source. If the topic has parts, render them as a single CUTAWAY / CROSS-SECTION connected by doorways, stairs and walkways, distinguished by contents rather than by frames or borders.\n- 12-25 human figures at comparable scale, with visible variety of age, build, skin tone and clothing. No figure exceeds roughly two-fifths of the frame height. The DOMINANT element is an INANIMATE structure that cuts the frame on a diagonal — a wall, a run of desks, a terraced pit face, a conveyor — never a person. There is NO protagonist.\n- ONE shared ambient activity that every figure is engaged in, each in their own way: everyone works the shift, queues, fishes, views the art. The figures do not interact with each other and nothing causes anything else, except where the brief explicitly names a relation between two props.\n- PACKED. Include roughly one ordinary non-mnemonic prop for every meaningful one — barrows, cable drums, stacked pallets, pigeons, coiled hose — so the place reads as a real working location rather than a diagram. Density is not a defect: this is a search field, not something to be parsed in a few seconds.\n- Flat digital cel illustration: crisp constant-width ink outlines over flat local-colour fills with soft airbrush gradient shading. Outlines are dark desaturated versions of the colour they enclose — warm brown around skin and wood, deep grey-blue around cloth — and pure black only on genuinely black objects. The room shell (sky, back wall, distant ground) carries no outline at all, only soft gradient, while every prop in front of it is fully inked.\n- Bright, deadpan, matter-of-fact register whatever the subject. The palette comes from the setting itself, never from a mood. Clean unmixed local colour; never combine low value with low saturation.\n- Each concept embedded as a physical character, object, prop or action woven INTO the scene, never placed beside it like an icon. NO callout arrows, NO leader lines, NO legend boxes, NO captions, NO floating overlays.\n- ANATOMY: every character has the correct number of hands, fingers and limbs. NO extra, duplicate, floating or disembodied hands/arms anywhere in the image.\n- PASTICHE QUARANTINE: another artist's technique may appear only as an object inside the world — a framed canvas, a poster, a screen — never as the rendering of the world itself.\n\nText rules:\n- 10-18 pieces of legible hand-lettered DIEGETIC text — shop signs, business logos, travel posters, T-shirt slogans, wall calendars, machine faceplates, names painted on hulls, price boards, jersey numbers. These are PROPS, not overlays, and they are the primary carrier of names, suffixes and numbers.\n- Full advertising sentences of 3-6 words over up to three lines are welcome (\"BREAK THOSE BAD SLEEPING HABITS!\"). Redundant labels bolted onto an object that visibly already is that object are welcome too — a taped sign reading DUAL COPIER/SCANNER on a photocopier — whenever the object's NAME is the mnemonic.\n- Typographic highlighting inside a word is welcome: set the target letters as enlarged or contrasting caps inside a plausible brand name.\n- Every OTHER piece of paper, screen, poster and document in the scene must be illegible squiggle-lines. Legibility is itself the signal that a string is load-bearing.\n- Only the strings listed under TEXT TO PAINT are guaranteed legible. Other signage may be small, angled, clipped by the frame edge or partly occluded.\n- STILL FORBIDDEN: callout arrows, leader lines, numeric badges laid over the artwork, legend boxes, captions, floating explanation text.\n- NO numerals anywhere in the frame except those explicitly specified. A stray decorative number competes with the load-bearing one and breaks the number check.\n\nComposition: aspect ratio 16:9 landscape. Think: ONE illustrated page from a Sketchy Medical book — pure storybook scene.\n\n\nTHE PLACE — An outdoor children's go-kart track on a bright weekday: a tarmac circuit hemmed by stacked tyre walls, a steel start gantry, a paddock of small karts, a pit lane and a marshal's post.\n\nTHE ONE SHARED ACTIVITY — every person in the frame is doing this, each in\ntheir own way. Nobody interacts with anybody else except where a relation is\nnamed below; nothing causes anything else; there is no story unfolding.\nEveryone is running a kids' karting session — strapping in, driving the circuit, marshalling flags at the posts, weighing in at the paddock, working the pit lane.\n\nTHE ANCHOR — the DOMINANT element of the picture, and it is INANIMATE. It cuts\nthe frame on a diagonal and divides it into zones. It is the largest thing in\nthe image. NO PROTAGONIST: no figure is larger or more important than the rest.\nThe stacked tyre-wall barrier curving from lower-left to upper-right, with the steel start/finish gantry straddling it overhead.\n\nZONES, and what belongs in each: Start/Finish Gantry Area · Track & Marshal Posts · Paddock & Pit Lane · First Aid & Supplies\n\nCAST AND DENSITY\nAbout 18 people, and EVERY ONE OF THEM IS DRAWN AT THE SAME SIZE. This is one\nhigh, wide shot of a whole room seen from a distance — it is not a photograph\nwith a foreground. Therefore:\n  - No person stands near the viewer. Nobody is in the front of the shot.\n  - No person is cut off by the edge of the frame, and nobody is drawn as a\n    half-body, a close-up, a face, or a pair of hands.\n  - Nobody leans, lies, reaches or falls toward the viewer.\n  - Every person is between one-sixth and one-quarter of the image height, feet\n    on the same floor, heads at roughly the same level across the picture.\nIf one person in the finished picture is noticeably bigger than the others, the\npicture is WRONG and must be redrawn — that single oversized figure is the most\ncommon failure of this brief. Give them visible variety of age, build, skin\ntone, hair and clothing: different colours and different garments on each, never\none shared outfit repeated across the cast. PACK the frame edge to edge, with\nroughly as much ordinary non-mnemonic clutter as meaningful detail so the place\nreads as real. No vignette, no edge darkening.\n\nTHINGS IN THIS PLACE\n  1. Miniature Ecg machine with leads connected to kart's wiring — in the Paddock & Pit Lane\n  2. Marshal holding open pouch, small white plastic tokens spilling out, counting them — in the Paddock & Pit Lane\n  3. Pit crew member holding a test tube labelled Cr to a karts fuel tank, another adjusting a small T' shaped valve on its engine — in the Paddock & Pit Lane\n  4. Marshal at post, hand on black flag from rack, digital display board showing Anc: < Stop — in the Track & Marshal Posts\n  5. Pit crew member using a large wrench on a kart with a sticker reading Annual Service Months — in the Paddock & Pit Lane\n  6. Black flag on flag rack, a separate black box with skull and crossbones, and the height gauge board at paddock gate — in the Start/Finish Gantry Area\n  7. Child driver in a kart, agitatedly shaking the steering wheel, bouncing in seat, eyes wide — in the Track & Marshal Posts\n  8. Marshal spraying an aerosol can labeled Risperidone onto a kart whose hood is visibly bulging, with a small milk bottle graphic next to it — in the Paddock & Pit Lane\n  9. Child driver in a purple kart, slumped with head nodding, eyes half-closed, kart moving slowly. A small blackboard with F Grade hangs from the kart. — in the Track & Marshal Posts\n  10. A kart labeled Alpha-agonist with a violently burst engine. A blood-pressure cuff, formerly attached to a nearby pole, is ripped and inflated, visibly bursting. — in the Paddock & Pit Lane\n  11. Lap-timing board with slotted cards, one reading Antidepressant: % and another Placebo: % — in the Start/Finish Gantry Area\n  12. A group of to small toy karts, some visibly vibrating or shaking, one labelled Ssri Karts. A sign nearby reads -% Activated. — in the Paddock & Pit Lane\n  13. Two groups of karts on the track: one with younger-looking, visibly agitated child drivers , and another with older, calm drivers . A sign between them points, reading Young Kids: -X Activation - More Vulnerable. — in the Track & Marshal Posts\n  14. A Kid kart being filled at the fuel pump. The pumps litre counter is high. A sign on the pump reads Kids Burn Fuel Faster'. — in the Paddock & Pit Lane\n  15. A kart with a Puberty banner on its side, visibly slowing down dramatically, engine sputtering and emitting smoke — in the Track & Marshal Posts\n  16. Child driver in a kart labeled Tca Kart, trying to start it but its only sputtering, with a sign Ontogeny: NO GO For Kids' — in the Track & Marshal Posts\n  17. Marshal holding a Cypd Inhibitor branded throttle restrictor plate. An Atomoxetine kart nearby is loudly over-revving. A sign above shows -X Levels. — in the Paddock & Pit Lane\n  18. A violent crash scene on the track with a Cypd Inhibitor kart colliding with Pimozide and Thioridazine karts, resulting in flames and a Contraindicated! sign. — in the Track & Marshal Posts\n  19. Two adults arguing fiercely over a child in a kart. A marshal holds a clipboard with an empty Consent Form clearly marked Sign Both Parents. — in the Paddock & Pit Lane\n  20. A shadowy adult figure covertly slipping a small pill into a child's drink bottle in a kart. The child is looking away, unaware. The bottle has a Unethical! stamp. — in the Paddock & Pit Lane\n  21. An Alpha-agonist kart being pulled very slowly by a marshal using a gradually uncoiling tow rope. A sign nearby shows a heart with a red danger symbol. — in the Track & Marshal Posts\n  22. A small Metformin kart happily pulling a wagon labeled Antipsychotic Weight Gain. The wagon looks noticeably lighter, with a miniature scale showing Weight Reduced. — in the Paddock & Pit Lane\n  23. First-aid hut with a digital display showing Anc Baseline Minimum — in the First Aid & Supplies\n  24. Paddock weigh-in platform scale — in the Paddock & Pit Lane\n\nTEXT TO PAINT — these strings, and ONLY these, are legible. Every other piece\nof paper, notice, board, poster and label in the scene is illegible squiggle-\nlines. NO numerals appear anywhere except where a blank plate is specified.\n  1. \"TCA KART\" — lettered on Miniature Ecg machine with leads connected to kart's wiring\n  2. \"CLOZAPINE\" — lettered on Marshal holding open pouch, small white plastic tokens spilling out, counting them\n  3. \"LITHIUM\" — lettered on Pit crew member holding a test tube labelled Cr to a karts fuel tank, another adjusting a small T' shaped valve on its engine\n  4. \"WARNING: SUICIDE RISK\" — lettered on Black flag on flag rack, a separate black box with skull and crossbones, and the height gauge board at paddock gate\n  5. \"ACTIVATED\" — lettered on Child driver in a kart, agitatedly shaking the steering wheel, bouncing in seat, eyes wide\n  6. \"RISPERIDONE\nMILK EFFECT\" — lettered on Marshal spraying an aerosol can labeled Risperidone onto a kart whose hood is visibly bulging, with a small milk bottle graphic next to it\n\nBLANK SIGN PLATES — the most important instruction in this brief.\nEach of these objects carries a BLANK rectangular sign plate filled with ONE\nflat, solid, completely uniform colour: no shading, no gradient, no texture, no\noutline crossing its face, and absolutely NO writing, lettering, numbers or\nmarks of any kind on it.\n  - a blank flat plate of PURE GREEN (exactly RGB 0,177,64) on first-aid hut\n  - a blank flat plate of PURE MAGENTA (exactly RGB 255,0,255) on paddock weigh-in platform scale\n  - a blank flat plate of PURE CYAN (exactly RGB 0,255,255) on height gauge board\n\nHOW BIG — each plate is a LARGE BOARD, not a label. It stands about ONE FIFTH\nOF THE FULL IMAGE HEIGHT tall and wider than it is tall: the size of a doorway,\na shop shutter or a big wall-mounted noticeboard, and clearly taller than the\nhead-to-waist of any person in the frame. A tag, a ticket, a badge, a sticker or\na small hanging sign is WRONG — if the plate is smaller than a person's torso,\nthe picture has to be redrawn. Three such boards in the scene is correct and\ndeliberate; make room for them.\n\nHOW DRAWN — each plate is the FACE OF THE OBJECT IT SITS ON, not a poster\nfloating in front of the scene. Draw the object that carries it — its frame,\nits posts, its bolts, its chains, its stand, the wall it is screwed to — so that\na viewer can see what holds it up and why it is there. A big cream rectangle\nhanging in mid-air belongs to nothing and teaches nothing.\nWithin that, keep the coloured face itself clean: square-on to the viewer,\nwhole and unbroken, its four corners all visible, and nothing crossing it — no\nperson, no pipe, no rope, no beam, no other sign over its face or clipping its\ncorners. Frame it, mount it, bolt it; just do not cover it.\nThese colours appear NOWHERE ELSE in the picture.\n\nREMINDER — An outdoor children's go-kart track on a bright weekday: a tarmac circuit hemmed by stacked tyre walls, a steel start gantry, a paddock of small karts, a pit lane and a marshal's post.; everyone is Everyone is running a kids' karting session — strapping in, driving the circuit, marshalling flags at the posts, weighin; the largest thing in\nframe is The stacked tyre-wall barrier curving from lower-left to upper-right, with the steel start/finish gantry straddling it o; no protagonist — every person the\nsame size, nobody near the viewer, nobody cropped by the frame; the blank colour plates are large boards, a fifth of the image height, unobstructed.\n\n\nTHESE WERE MISSING LAST TIME — letter them clearly:\n  \"WARNING: SUICIDE RISK\"\n  \"RISPERIDONE\nMILK EFFECT\"\n\nWHAT WAS WRONG WITH THE LAST PICTURE, as reported by someone who looked at it:\n  - NO, the worker distributing clozapine is larger.\nFix exactly that. If a figure was called out as larger, draw that same person at the size of everyone else, standing further back, not near the viewer and not reaching toward it."
+  },
+  "compositing": {
+   "image": "2752x1536",
+   "slots": [
+    {
+     "id": "WKS",
+     "paint": "1500",
+     "tag": "WKS",
+     "chroma_pixels": 61320,
+     "blob_pixels": 46980,
+     "fill_ratio": 1.037,
+     "height_frac": 0.1712,
+     "width_frac": 0.0839,
+     "quad": [
+      [
+       2339,
+       1232
+      ],
+      [
+       2568,
+       1285
+      ],
+      [
+       2569,
+       1494
+      ],
+      [
+       2339,
+       1418
+      ]
+     ],
+     "bbox": [
+      2339,
+      1232,
+      230,
+      262
+     ],
+     "height_pct": 17.06,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "MOS",
+     "paint": "3mo",
+     "tag": "MOS",
+     "chroma_pixels": 25823,
+     "blob_pixels": 24945,
+     "fill_ratio": 1.064,
+     "height_frac": 0.1276,
+     "width_frac": 0.06,
+     "quad": [
+      [
+       1318,
+       1014
+      ],
+      [
+       1482,
+       1064
+      ],
+      [
+       1482,
+       1209
+      ],
+      [
+       1318,
+       1155
+      ]
+     ],
+     "bbox": [
+      1318,
+      1014,
+      164,
+      195
+     ],
+     "height_pct": 12.7,
+     "status": "COMPOSITED"
+    },
+    {
+     "id": "N",
+     "paint": "25",
+     "tag": "N",
+     "chroma_pixels": 40220,
+     "blob_pixels": 39226,
+     "fill_ratio": 1.016,
+     "height_frac": 0.2083,
+     "width_frac": 0.0469,
+     "quad": [
+      [
+       298,
+       489
+      ],
+      [
+       425,
+       477
+      ],
+      [
+       425,
+       776
+      ],
+      [
+       297,
+       796
+      ]
+     ],
+     "bbox": [
+      297,
+      477,
+      128,
+      319
+     ],
+     "height_pct": 20.77,
+     "status": "COMPOSITED"
+    }
+   ],
+   "leftover_chroma_px": 17307,
+   "composited": 3,
+   "requested": 3
+  },
+  "narration_words": 798
+ }
+]
