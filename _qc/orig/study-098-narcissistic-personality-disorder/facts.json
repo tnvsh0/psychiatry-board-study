@@ -1,0 +1,80 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster B",
+        "items": [
+          "תחושה גרנדיוזית של חשיבות עצמית (DSM p.760)",
+          "עיסוק בפנטזיות של הצלחה, כוח, יופי או אהבה אידיאלית (DSM p.761)",
+          "אמונה בכישוריו ה'מיוחדים' והייחודיים (DSM p.761)",
+          "דרישה להערצה מופרזת (DSM p.761)",
+          "תחושת זכאות (Sense of entitlement) (DSM p.761)",
+          "ניצול בין-אישי (Interpersonally exploitative) (DSM p.761)",
+          "חוסר אמפתיה (Lack of empathy) (DSM p.761)",
+          "קנאה עזה באחרים או אמונה שאחרים מקנאים בו (DSM p.762)",
+          "התנהגות או עמדות יהירות ומתנשאות (DSM p.762)"
+        ]
+      }
+    ],
+    "thresholds": ">=5/9 symptoms, תחילת בבגרות המוקדמת (DSM p.760)",
+    "subtypes": [
+      "גרנדיוזי / גלוי (Grandiose / Overt) (DSM p.762, Synopsis ch.19 Personality Disorders)",
+      "פגיע / סמוי (Vulnerable / Covert) (DSM p.762, Synopsis ch.19 Personality Disorders)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "1.6% - 6.2% באוכלוסייה הכללית (DSM p.762), 2% - 16% קליני (Synopsis ch.19 Personality Disorders)",
+    "sex_ratio": "50% - 75% גברים (DSM p.763)",
+    "onset_age_typical": "בגרות מוקדמת (Early adulthood) (DSM p.760)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "דיכאון מג'ורי ודיסתימיה (DSM p.764)",
+      "שימוש בחומרים, במיוחד קוקאין (DSM p.764)",
+      "אנורקסיה נרבוזה (DSM p.764)",
+      "הפרעות אישיות מ-Cluster B ופרנואידית (DSM p.764)"
+    ],
+    "prognosis": "שחיקה מסוימת בסימפטומים הגלויים לאחר גיל 40, אך סיכון מוגבר לדיכאון ומרירות (DSM p.763)"
+  },
+  "etiology": {
+    "genetic": "לא צוין",
+    "neurobiology": "מסלול מזולימבי דופמינרגי (VTA ל-Ventral Striatum) ומעבר דורסלי ל-Dorsal Striatum לקומפולסיביות (StahlNeuro p.540-541)",
+    "environmental": "היעדר תגובתיות אמפתית או הורות מתגמלת סלקטיבית (Synopsis ch.19 Personality Disorders)"
+  },
+  "differential": {
+    "items": [
+      "הפרעת אישיות היסטריונית (HPD): HPD מוכנים להיראות נזקקים לקבלת תשומת לב, NPD דורשים הערצה על עליונות (DSM p.763)",
+      "הפרעת אישיות אנטי-סוציאלית (ASPD): ב-NPD אין בהכרח אימפולסיביות, עבריינות, אלימות פיזית או Conduct Disorder בילדות (DSM p.763, Dulcan p.223)",
+      "הפרעת אישיות גבולית (BPD): ב-NPD הדימוי העצמי יציב יחסית ללא חרדת ננטישה והרס עצמי מופגן (DSM p.763)",
+      "מאניה / היפומאניה: גרנדיוזיות אפיזודית המלווה בשינוי מצב רוח וירידה בשינה, בשונה מדפוס כרוני (DSM p.764)"
+    ],
+    "key_numbers": [
+      "5 מתוך 9 - קריטריוני DSM-5-TR נדרשים לאבחנה (DSM p.760)",
+      "50%-75% - שיעור גברים מתוך המאובחנים (DSM p.763)",
+      "1 שנה - משך מינימלי להפרעת אישיות בילדים/נוער (DSM p.735)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "טיפול ממוקד העברה (TFP) לשילוב חלקי העצמי והאובייקט (Synopsis ch.19 Personality Disorders)",
+      "טיפול מבוסס מנטליזציה (MBT / MBT-A) להבנת מצבים מנטליים (Dulcan p.556, p.853)",
+      "פסיכולוגיית העצמי (Self Psychology) לשיקוף ובניית self (Synopsis ch.19 Personality Disorders)"
+    ],
+    "second_line": [
+      "SSRIs (Fluoxetine) לדיכאון, חרדה ורגישות לדחייה לאחר פגיעה נרציסיסטית (StahlKids p.208)",
+      "מייצבי מצב רוח (Lithium, Valproate) לתנודתיות ואגרסיביות אימפולסיבית (Synopsis ch.19, StahlKids p.138)",
+      "נוגדי פסיכוזה אטיפיים (Risperidone, Olanzapine) למחשבות יחס וסערה חריפה (StahlKids p.353)"
+    ],
+    "key_side_effects": [
+      "עלייה במשקל ותסמונת מטבולית בנוגדי פסיכוזה אטיפיים (StahlKids p.353)",
+      "אי-שקט, בחילות ואקטזיה ב-SSRIs (StahlKids p.208)"
+    ],
+    "monitoring": "ניטור מטבולי (משקל, BMI, סוכר, ליפידים) באטיפיים, ורמות תרופה בדם ב-Lithium/Valproate (StahlKids p.138, p.353)"
+  },
+  "high_yield": [
+    "קריטריון סף לאבחנה ב-DSM-5-TR: לפחות 5 מתוך 9 קריטריונים (DSM p.760)",
+    "למטופלי NPD יש אמפתיה קוגניטיבית חלקית אך חסרה אמפתיה רגשית ישירה (DSM p.761)",
+    "נסיונות אובדניים ב-NPD מאופיינים בקטלניות רפואית גבוהה יותר ופחות אימפולסיביות (DSM p.763)",
+    "פגיעה נרציסיסטית (Narcissistic Injury) מובילה לזעם נרציסיסטי או לתגובה דיכאונית קשה (DSM p.762, Synopsis ch.19)",
+    "הבחנה מ-HPD: מטופלי HPD מוכנים להיראות חלשים או נזקקים; NPD דורשים הערצה על עליונות (DSM p.763)"
+  ]
+}

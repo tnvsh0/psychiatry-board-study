@@ -1,0 +1,36 @@
+{
+ "tag": "study-098-narcissistic-personality-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:58:49+00:00",
+ "updated_at": "2026-09-25T15:58:49+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "99ed97135aae9e20749c9cfbbfcebc73b5a0be5c8d2b47ca720dcccdb122ec58",
+   "asset_id": 585966316,
+   "size": 5677,
+   "fetched_at": "2026-09-25T15:58:42+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "505c9d4ba7f6cb6b3b3427b02d90268a426e75246a614e91511f96d3d448a845",
+   "asset_id": 585966317,
+   "size": 10006,
+   "fetched_at": "2026-09-25T15:58:45+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "dc4cd1ec57e7bf3e4967345e5a19870d78779fa72eb18c7162d1410efc2b529f",
+   "asset_id": 585966314,
+   "size": 31806,
+   "fetched_at": "2026-09-25T15:58:47+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "60b3889eda51ec82eef753e899285496362cd236376644ddd8e3507491548332",
+   "asset_id": 585966318,
+   "size": 30325,
+   "fetched_at": "2026-09-25T15:58:49+00:00"
+  }
+ ]
+}
