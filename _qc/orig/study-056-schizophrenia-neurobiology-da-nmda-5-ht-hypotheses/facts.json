@@ -1,0 +1,62 @@
+{
+  "DA_hypothesis": {
+    "items": [
+      "Hyperactivity of mesolimbic dopamine pathway at D2 receptors causes positive symptoms like delusions and hallucinations (StahlNeuro p.90).",
+      "Hypoactivity of mesocortical dopamine pathway to DLPFC and VMPFC causes negative and cognitive symptoms (StahlNeuro p.93-95).",
+      "PET imaging reveals increased dopamine synthesis and release specifically in the associative striatum (StahlNeuro p.92).",
+      "Blockade of D2 receptors in nigrostriatal pathway above 80% causes extrapyramidal symptoms (EPS) (StahlNeuro p.165).",
+      "Blockade of D2 in tuberoinfundibular pathway leads to hyperprolactinemia (StahlNeuro p.164)."
+    ],
+    "key_numbers": [
+      "80% D2 occupancy threshold for EPS (StahlNeuro p.165)",
+      "5 classic dopamine pathways in the brain (StahlNeuro p.84)"
+    ]
+  },
+  "NMDA_hypothesis": {
+    "items": [
+      "Hypofunction of NMDA receptors on parvalbumin-positive GABAergic interneurons causes tonic disinhibition of cortical pyramidal neurons (StahlNeuro p.105-107).",
+      "Uninhibited pyramidal neurons produce a glutamate surge that overstimulates subcortical mesolimbic dopamine neurons, causing secondary hyperdopaminergia (StahlNeuro p.110).",
+      "Ketamine and PCP act as non-competitive NMDA open-channel blockers, inducing positive, negative, and cognitive symptoms of schizophrenia (StahlNeuro p.105, p.108).",
+      "NMDA receptor opening requires co-agonists D-serine or glycine alongside glutamate and depolarization to remove the magnesium plug (StahlNeuro p.100)."
+    ],
+    "key_numbers": [
+      "3 conditions required for NMDA opening: glutamate, D-serine/glycine, and Mg2+ removal (StahlNeuro p.100)",
+      "2 co-agonists required at NMDA glycine site: D-serine or glycine (StahlNeuro p.99)"
+    ]
+  },
+  "5HT_hypothesis": {
+    "items": [
+      "5-HT2A receptor hyperfunction on apical dendrites of cortical layer V pyramidal neurons induces hallucinogen-like glutamate release (StahlNeuro p.125, p.131-132).",
+      "Atypical antipsychotics (SGAs) are defined by 5-HT2A receptor antagonism/inverse agonism equal to or exceeding D2 affinity (StahlNeuro p.183-188).",
+      "5-HT2A antagonism in the substantia nigra disinhibits dopamine release, reducing EPS risk in the motor striatum (StahlNeuro p.185).",
+      "5-HT2A antagonism in the VTA disinhibits dopamine release to the prefrontal cortex, improving negative symptoms (StahlNeuro p.186)."
+    ],
+    "key_numbers": [
+      "5-HT2A >= D2 binding affinity ratio defines atypical antipsychotics (StahlNeuro p.183)"
+    ]
+  },
+  "neuroimaging_findings": {
+    "items": [
+      "Structural MRI/CT consistently shows lateral and third ventriculomegaly and medial temporal/hippocampal volume reduction (DSM p.114; Dulcan p.391).",
+      "fMRI demonstrates DLPFC hypofrontality during working memory and executive functioning tasks (Dulcan p.391; StahlNeuro p.449).",
+      "Childhood-Onset Schizophrenia (COS) shows progressive cortical gray matter loss moving parietally to prefrontally during adolescence (Dulcan p.391, p.405).",
+      "DTI reveals reduced fractional anisotropy in white matter tracts, supporting the neural dysconnectivity hypothesis (Dulcan p.91, p.391)."
+    ],
+    "key_numbers": [
+      "2% to 5% reduction in total brain volume (Dulcan p.391)",
+      "3rd and lateral ventricles enlargement (DSM p.114; Dulcan p.391)"
+    ]
+  },
+  "etiology": {
+    "genetic": "Heritability ~70%-80%; polygenic common variants (PRS) and rare structural CNVs like 22q11.2 deletion (Dulcan p.118, p.390; DSM p.114).",
+    "neurobiology": "NMDA hypofunction on GABA interneurons leading to cortical disinhibition and mesolimbic hyperdopaminergia at D2 receptors (StahlNeuro p.90, p.105).",
+    "environmental": "Adolescent high-potency cannabis use, obstetric hypoxia, maternal infections, urbanicity, and advanced paternal age > 60 (Dulcan p.391; StahlNeuro p.149)."
+  },
+  "high_yield": [
+    "DSM-5-TR Criterion A requires at least 2 psychotic symptoms for 1 month (minimum 1 being delusions, hallucinations, or disorganized speech) with total duration >= 6 months (DSM p.114).",
+    "Childhood-Onset Schizophrenia (COS) onset < 13 years is associated with insidious onset, severe premorbid delays, and high CNV burden (Dulcan p.389, p.391).",
+    "22q11.2 deletion syndrome is the strongest single genetic risk factor, conferring a 25%-30% lifetime risk of schizophrenia (Dulcan p.118, p.391).",
+    "C4 allele variations in MHC locus 6p22 drive excessive microglia-mediated synaptic pruning during adolescent brain maturation (Synopsis ch.33 Neural Sciences).",
+    "5-HT2A antagonism disinhibits nigrostriatal and mesocortical dopamine release, mitigating EPS and improving negative symptoms (StahlNeuro p.185-187)."
+  ]
+}

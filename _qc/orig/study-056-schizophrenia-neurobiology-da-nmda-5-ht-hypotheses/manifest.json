@@ -1,0 +1,36 @@
+{
+ "tag": "study-056-schizophrenia-neurobiology-da-nmda-5-ht-hypotheses",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:34:14+00:00",
+ "updated_at": "2026-09-25T14:34:14+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "e82187d6d6299c218821b8554b041b9a440c15dc025d2dfbaec509b10913be36",
+   "asset_id": 565187316,
+   "size": 4855,
+   "fetched_at": "2026-09-25T14:34:08+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5e2f7e223dc0a083c643094c7c420605939812e2b46d035da4a48e5b040e3dfe",
+   "asset_id": 565187321,
+   "size": 11616,
+   "fetched_at": "2026-09-25T14:34:10+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "a9154239f64a2e118a58f5658b1680a2da46fc3b09d8f91cf622087f5422107d",
+   "asset_id": 565187322,
+   "size": 33294,
+   "fetched_at": "2026-09-25T14:34:12+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "40af525b77f2fa07533209f2964813a3fa9004d9260c70dfae824bf46e83f67b",
+   "asset_id": 565187320,
+   "size": 46332,
+   "fetched_at": "2026-09-25T14:34:14+00:00"
+  }
+ ]
+}
