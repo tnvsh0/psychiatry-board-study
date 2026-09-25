@@ -1,0 +1,36 @@
+{
+ "tag": "study-076-bulimia-nervosa-binge-eating-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:19:46+00:00",
+ "updated_at": "2026-09-25T15:19:46+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "22f0f32c7c2b383a9ada2a84f16f56fb9e22df7f65272107ce276f28108b5ee2",
+   "asset_id": 584650614,
+   "size": 8646,
+   "fetched_at": "2026-09-25T15:19:40+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "96ebc302369eef01f8bd4003674380ed6f3c0c43699ec73ba9f801f1e69955c3",
+   "asset_id": 584650611,
+   "size": 14129,
+   "fetched_at": "2026-09-25T15:19:42+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "f5422cf2fe53115ff53a06ed454eb58333e0ba82801436505d4a32f9bbf14a6b",
+   "asset_id": 584650622,
+   "size": 29304,
+   "fetched_at": "2026-09-25T15:19:44+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "6ffe26a36cec3807c881b34b1fedc9a4040fd2681aad6f9dbb88e4c5f817b777",
+   "asset_id": 584650615,
+   "size": 33257,
+   "fetched_at": "2026-09-25T15:19:46+00:00"
+  }
+ ]
+}

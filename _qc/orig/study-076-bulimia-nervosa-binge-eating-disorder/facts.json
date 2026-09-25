@@ -1,0 +1,108 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Bulimia Nervosa (BN)",
+        "items": [
+          "Recurrent episodes of binge eating (eating in discrete period <=2h definitely larger amount + sense of lack of control) (DSM p.387, Dulcan p.413)",
+          "Recurrent inappropriate compensatory behaviors to prevent weight gain (self-induced vomiting, laxatives, diuretics, fasting, excessive exercise) (DSM p.387, Dulcan p.413)",
+          "Self-evaluation unduly influenced by body shape and weight (DSM p.387, Dulcan p.413)"
+        ]
+      },
+      {
+        "name": "Binge Eating Disorder (BED)",
+        "items": [
+          "Recurrent episodes of binge eating (large amount in discrete period + loss of control) (DSM p.392, Dulcan p.414)",
+          "Binge episodes associated with >=3 of: rapid eating, uncomfortably full, eating large amounts when not hungry, eating alone due to embarrassment, feeling disgusted/depressed/guilty (DSM p.392-393, Dulcan p.414)",
+          "Marked distress regarding binge eating (DSM p.393, Dulcan p.414)",
+          "Absence of recurrent inappropriate compensatory behaviors (DSM p.393, Dulcan p.414)"
+        ]
+      }
+    ],
+    "thresholds": "BN and BED: average of >=1 episode per week for >=3 months (DSM p.387, p.393, Dulcan p.413-414)",
+    "subtypes": [
+      "BN Current Severity: Mild (1-3 compensatory/wk), Moderate (4-7/wk), Severe (8-13/wk), Extreme (>=14/wk) (DSM p.387, Dulcan p.413)",
+      "BED Current Severity: Mild (1-3 binges/wk), Moderate (4-7/wk), Severe (8-13/wk), Extreme (>=14/wk) (DSM p.393, Dulcan p.414)",
+      "OSFED: Atypical AN, Subthreshold BN, Subthreshold BED, Purging Disorder, Night Eating Syndrome (DSM p.396, Dulcan p.416)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "BN: 0.14%-0.3% 12-mo adult, 0.9% lifetime adolescents; BED: 0.44%-1.2% 12-mo adult, 1.6% lifetime adolescents (DSM p.389, p.394, Dulcan p.417)",
+    "sex_ratio": "BN: 3:1 to 10:1 F:M; BED: 2:1 to 3:1 F:M (DSM p.389, p.394, Dulcan p.417)",
+    "onset_age_typical": "Late adolescence to young adulthood (ages 15-20 for BN) (DSM p.390, Dulcan p.411, p.417)",
+    "heritability": "BN: 52%-62%; BED: 45%-57% (Dulcan p.418, DSM p.395)",
+    "comorbidities": [
+      "Major Depressive Disorder & Bipolar Disorders (DSM p.392, p.396)",
+      "Anxiety Disorders (Social Anxiety, GAD) (DSM p.392, p.396)",
+      "Substance Use Disorders (>=30% lifetime in BN, AUD/stimulants) (DSM p.392, Dulcan p.417)",
+      "Borderline Personality Disorder (DSM p.392, p.396)",
+      "ADHD (comorbid in BED) (StahlNeuro p.575)"
+    ],
+    "prognosis": "BN: Chronic or relapsing course; remission >1 yr predicts better long-term outcome (DSM p.390); BED: Higher remission rates than BN or AN (DSM p.395)"
+  },
+  "etiology": {
+    "genetic": "Heritability 52-62% (BN) and 45-57% (BED); familial transmission of eating, mood, anxiety, and substance disorders (Dulcan p.418, DSM p.390, p.395)",
+    "neurobiology": "Shift from Ventral Striatum (impulsivity, mesolimbic dopamine reward) to Dorsal Striatum (compulsivity, Caudate/Putamen habit loop); lisdexamfetamine restores top-down cortical control via striatal neuroplasticity (StahlNeuro p.538-540, p.574-575)",
+    "environmental": "Thin-ideal internalization, strict dietary restraint, pubertal maturation fat increases, childhood physical/sexual trauma, family conflict/criticism (DSM p.390, Dulcan p.418-419)"
+  },
+  "treatment": {
+    "first_line": [
+      "Family-Based Treatment for BN (FBT-BN) in 3 phases (reestablishing eating, transferring control, adolescent development) (Dulcan p.424)",
+      "Fluoxetine (Prozac) 60 mg/day (only FDA-approved SSRI for BN) (StahlKids p.207, Dulcan p.425)",
+      "Cognitive-Behavioral Therapy (CBT-BED / CBT-E) in 4 stages (Dulcan p.424, StahlNeuro p.575)",
+      "Lisdexamfetamine (Vyvanse) (only FDA-approved medication for BED in adults) (StahlKids p.289, StahlNeuro p.574)"
+    ],
+    "second_line": [
+      "Topiramate (Topamax) off-label for BED (reduces binges and weight) (StahlKids p.423, StahlNeuro p.575)",
+      "Adolescent-Focused Therapy (AFT) or Supportive Psychotherapy (Dulcan p.424-425)"
+    ],
+    "key_side_effects": [
+      "Fluoxetine: nausea, diarrhea, insomnia, TEAS activation (StahlKids p.207)",
+      "Lisdexamfetamine: insomnia, decreased appetite, BP/HR increase, abuse potential (StahlKids p.289)",
+      "Topiramate: cognitive fog, sedation, metabolic acidosis via serum bicarbonate reduction (StahlKids p.423)",
+      "Bupropion BLACK-BOX CONTRAINDICATION: lowers seizure threshold, strictly forbidden in BN/AN (Dulcan p.718, StahlKids p.83, p.90)"
+    ],
+    "monitoring": "Serum electrolytes (K+, Cl-, HCO3-), ECG (QTc interval), BP, HR, weight/height percentiles, serum bicarbonate baseline and periodic with topiramate (DSM p.391, Dulcan p.613, StahlKids p.423)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Eating Disorder Examination (EDE) - gold standard semi-structured interview (Dulcan p.424)",
+      "Child EDE - developmentally adapted version for children and young adolescents (Dulcan p.424)",
+      "EDE-Q & Parent EDE-Q - self/parent report questionnaire for binge/purge frequency (Dulcan p.424)",
+      "PARDI (Pica, ARFID, and Rumination Disorder Interview) (Dulcan p.424)",
+      "ESP (Eating Disorder Screen for Primary Care) - 5-question primary care screen (Dulcan p.612)"
+    ],
+    "key_numbers": [
+      "5 questions in ESP primary care screening tool (Dulcan p.612)",
+      "4 subscales in EDE (Restraint, Eating Concern, Shape Concern, Weight Concern) (Dulcan p.424)",
+      "3 phases in FBT-BN treatment model (Dulcan p.424)",
+      "4 stages in CBT-E treatment model (Dulcan p.424)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Anorexia Nervosa, Binge-Eating/Purging Type - differentiated by significantly low body weight (BMI < 5th percentile in children) (DSM p.381, p.387, Dulcan p.413)",
+      "Kleine-Levin Syndrome - neurological disorder with hyperphagia/hypersomnia lacking body shape/weight overvaluation (DSM p.392)",
+      "MDD with Atypical Features - overeating without inappropriate compensation or body image preoccupation (DSM p.392, p.395)",
+      "Borderline Personality Disorder - binge eating as part of impulsivity criterion (DSM p.392, p.396)",
+      "PANS/PANDAS - acute-onset eating restriction or OCD following streptococcal infection (Dulcan p.371)",
+      "Medical signs of vomiting/purging: Hypokalemic Hypochloremic Metabolic Alkalosis, Parotid Gland Hypertrophy, Dental Enamel Erosion, Russell's Sign, Mallory-Weiss tears (DSM p.389, p.391, Dulcan p.613)"
+    ],
+    "key_numbers": [
+      "BMI < 18.5 or < 5th percentile in children distinguishes AN Binge/Purging type from BN (DSM p.381, Dulcan p.413)",
+      "25%-33% suicidal ideation/attempt rate in BN (DSM p.391)",
+      "25% suicidal ideation rate in BED (DSM p.395)",
+      "30% lifetime substance use disorder comorbidity in BN (DSM p.392, Dulcan p.417)"
+    ]
+  },
+  "high_yield": [
+    "BN requires binges + inappropriate compensatory behaviors >=1/week for >=3 months; BED requires binges without compensation >=1/week for >=3 months (DSM p.387, p.393).",
+    "Weight is the cardinal differentiator: if body weight is significantly low (BMI < 5th percentile in children), the diagnosis MUST be Anorexia Nervosa Binge-eating/purging type, NOT Bulimia Nervosa (DSM p.381, p.387, Dulcan p.413).",
+    "Fluoxetine (Prozac) at 60 mg/day is the ONLY FDA-approved SSRI for Bulimia Nervosa (StahlKids p.207, Dulcan p.425).",
+    "Lisdexamfetamine (Vyvanse) is the ONLY FDA-approved medication for Binge Eating Disorder in adults, inducing striatal neuroplasticity to restore top-down cortical control (StahlKids p.289, StahlNeuro p.574-575).",
+    "Bupropion (Wellbutrin) is ABSOLUTELY CONTRAINDICATED (Black-Box) in Bulimia Nervosa and Anorexia Nervosa due to lowered seizure threshold and high risk of fatal seizures from electrolyte shifts (Dulcan p.718, StahlKids p.83, p.90).",
+    "Family-Based Treatment for Bulimia Nervosa (FBT-BN) in 3 phases is the first-line evidence-based treatment for adolescents with BN (Dulcan p.424).",
+    "Purging via vomiting causes Hypokalemic Hypochloremic Metabolic Alkalosis, Parotid Gland Hypertrophy, Dental Enamel Erosion, and Russell's Sign (DSM p.391, Dulcan p.613).",
+    "Neurobiologically, binge eating represents a transition from Ventral Striatum (impulsivity/mesolimbic dopamine reward) to Dorsal Striatum (compulsivity/Caudate & Putamen habit loop) (StahlNeuro p.538-540)."
+  ]
+}
