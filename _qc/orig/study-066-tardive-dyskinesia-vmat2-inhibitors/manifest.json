@@ -1,0 +1,36 @@
+{
+ "tag": "study-066-tardive-dyskinesia-vmat2-inhibitors",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:59:18+00:00",
+ "updated_at": "2026-09-25T14:59:18+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "0eda7d098f984465b0fbe83d5b813bcc5ac561588ab596666b854d5a8448bf83",
+   "asset_id": 571298863,
+   "size": 8980,
+   "fetched_at": "2026-09-25T14:59:11+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "ffb278e212fb230dd8bb63629b65a4e3d115a09640380c85d7146879cda14736",
+   "asset_id": 571298867,
+   "size": 12581,
+   "fetched_at": "2026-09-25T14:59:14+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "f205d19c6396ed91f170b2121783206fc468403fe7f091590ac96c907cd5b180",
+   "asset_id": 571298854,
+   "size": 29717,
+   "fetched_at": "2026-09-25T14:59:16+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "a4ec441d58d45352cb1b19241b64208fa562c64d7841764bea228ebf73ce64e4",
+   "asset_id": 571298859,
+   "size": 46144,
+   "fetched_at": "2026-09-25T14:59:18+00:00"
+  }
+ ]
+}
