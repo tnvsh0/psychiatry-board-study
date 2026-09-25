@@ -1,0 +1,74 @@
+{
+  "drug_class": {
+    "members": [
+      "Valproate (VPA): חומצת שומן פשוטה ומסועפת (Dulcan p.767)",
+      "Lamotrigine (LTG): מייצב \"מלמטה\" מונע אפיזודות דיכאוניות (StahlNeuro p.351)",
+      "Carbamazepine (CBZ): תרופה נוגדת פרכוסים בעלת מבנה טריציקלי (Dulcan p.770)",
+      "Oxcarbazepine: אנלוג מבני של CBZ פחות אינדוקציה אנזימטית (StahlNeuro p.351)"
+    ],
+    "mechanism": "חסימת תעלות נתרן תלויות-מתח VSSCs ב-CBZ, VPA, LTG, Oxcarbazepine (Dulcan p.770, p.773, StahlNeuro p.349, p.351); עיכוב שחרור Glutamate ב-LTG (StahlNeuro p.351); הגברת פעילות GABA ועיכוב GSK-3 ב-VPA (StahlNeuro p.349)",
+    "kinetics": [
+      "Auto-induction ב-CBZ: חצי חיים מתקצר מ-25-65 שעות ל-9-15 שעות בתוך 3-5 שבועות (Dulcan p.770)",
+      "VPA מעכב גלוקורונידציה ומכפיל רמות LTG בדם (Dulcan p.774)",
+      "פינוי כבדי (Clearance) של VPA בילדים מעל גיל 10 מוגבר ב-50% יחסית למשקלם (StahlKids p.468)"
+    ],
+    "onset_of_effect": "למוטריג'ין דורשת שבועות רבים בשל טיטרציה איטית ביותר (Dulcan p.775); divalproex ER אורכת כ-4 שבועות ומעלה (Dulcan p.768)"
+  },
+  "indications": {
+    "items": [
+      "Valproate: מאניה חריפה ומעורבת, וכן הפחתת אגרסיביות ב-Conduct Disorder (Dulcan p.767-768)",
+      "Lamotrigine: טיפול אחזקתי ומניעת הישנות של אפיזודות דיכאוניות, במיוחד בגילאי 13-17 (Dulcan p.302, p.773-774)",
+      "Carbamazepine: קו שלישי למאניה חריפה ומצבים מעורבים בילדים בהיעדר מחקרי RCT (Dulcan p.770-771)",
+      "Oxcarbazepine: אינה שימושית לאף הפרעה פסיכיאטרית בילדים ונוער לאחר כישלון ב-RCT במאניה (Dulcan p.772)"
+    ],
+    "key_numbers": [
+      "24% שיעור תגובה ל-Valproate במאניה ביפולרית בילדים במחקר TEAM (Dulcan p.300)",
+      "56% שיעור תגובה ל-Carbamazepine XR במחקר פתוח במאניה בילדים (Dulcan p.770)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Valproate: רעילות כבדית קטלנית (Hepatotoxicity) בילדים מתחת לגיל שנתיים (Dulcan p.768, StahlKids p.471), דלקת לבלב קטלנית (Pancreatitis) (Dulcan p.768), טרטוגניות Spina Bifida (Dulcan p.768), היפראמונמיה (StahlKids p.469), ו-PCOS (Dulcan p.768-769)",
+      "Lamotrigine: פריחות עוריות קשות ומסכנות חיים SJS/TEN (Dulcan p.774)",
+      "Carbamazepine: דיכוי מוח עצם (אנמיה אפלסטית, אגרנולוציטוזיס) (Dulcan p.771), והיפונתרמיה/SIADH (Dulcan p.771)",
+      "Oxcarbazepine: היפונתרמיה/SIADH בשכיחות גבוהה יותר מקרבמזפין (Dulcan p.771-772)"
+    ],
+    "key_numbers": [
+      "1% סיכון לפריחת SJS/TEN מ-Lamotrigine בילדים מתחת לגיל 16 (פי 3 מאשר במבוגרים) (Dulcan p.774)",
+      "פי 7 עלייה בסיכון ל-PCOS בנשים המטופלות ב-Valproate (Dulcan p.768-769)",
+      "12% שכיחות פריחות קלות שפירות בתחילת טיפול ב-Lamotrigine (Dulcan p.774)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Valproate: בדיקות בסיס וניטור תקופתי כל 6 חודשים של CBC, טרומבוציטים, LFTs, רמות שפל בדם, ובדיקת אמוניה במקרה של שינוי מנטלי (Dulcan p.768, StahlKids p.469)",
+      "Lamotrigine: מעקב קליני צמוד אחר פריחות, במיוחד ב-8 השבועות הראשונים; אין ניטור רמות שגרתי (Dulcan p.774-775)",
+      "Carbamazepine: CBC תקופתי למניעת דיכוי מוח עצם, LFTs, אלקטרוליטים, רמות בדם, ובדיקה גנטית HLA-B*1502 למטופלים אסיאתיים (Dulcan p.771-772)",
+      "Oxcarbazepine: מעקב אלקטרוליטים בדם (נתרן) בשל סיכון מוגבר להיפונתרמיה (Dulcan p.771-772)"
+    ],
+    "key_numbers": [
+      "45-125 מיקרוגרם/מ\"ל רמת יעד בסרום ל-Valproate (StahlKids p.469)",
+      "8-11 מיקרוגרם/מ\"ל רמת יעד בסרום ל-Carbamazepine (Dulcan p.772)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "התחלת Lamotrigine: טיטרציה איטית במיוחד. בנערים ללא VPA מתחילים ב-25 מ\"ג ליום; עם VPA מתחילים ב-25 מ\"ג פעם ביומיים (Dulcan p.775)",
+      "הבדלים התפתחותיים בילדים: נפח פיזור מוגבר לתרופות הידרופיליות ומטבוליזם כבדי מהיר מצריכים מינון מבוסס משקל גבוה יותר (Dulcan p.709)",
+      "אינטראקציה CBZ: משרה CYP3A4 חזק ומפחית רמות LTG ב-50% (Dulcan p.774-775)"
+    ],
+    "key_numbers": [
+      "50% הפחתה במינון התחלה ויעד של Lamotrigine בשילוב עם Valproate (Dulcan p.774-775)",
+      "1 שנה חובת הכשרה במרפאה ו-1 שנה במחלקת אשפוז בפסיכיאטריית ילדים בישראל (Syllabus p.2)"
+    ]
+  },
+  "high_yield": [
+    "סיכון SJS בילדים מתחת לגיל 16 תחת Lamotrigine הוא 1% (פי 3 מאשר במבוגרים) (Dulcan p.774).",
+    "Valproate מעכב גלוקורונידציה ומכפיל רמות Lamotrigine, דבר המעלה דרמטית סיכון לפריחה קטלנית ומחייב חצי מהמינון (Dulcan p.774).",
+    "ל-Carbamazepine תכונת Auto-induction המקצרת את חצי החיים שלה מ-25-65 ל-9-15 שעות בתוך 3-5 שבועות (Dulcan p.770).",
+    "חובה לבצע בדיקת סקר גנטית לאלל HLA-B*1502 במטופלים ממוצא אסיאתי לפני התחלת Carbamazepine למניעת SJS קטלני (Dulcan p.771-772).",
+    "Oxcarbazepine נכשלה לחלוטין במחקר RCT במאניה בילדים ואינה יעילה קלינית לפסיכיאטריית ילדים, אך נושאת סיכון היפונתרמיה/SIADH גבוה מקרבמזפין (Dulcan p.772).",
+    "היפראמונמיה ואנצפלופתיה מ-Valproate יכולות להופיע עם תפקודי כבד תקינים לחלוטין, במיוחד בשילוב Topiramate (StahlKids p.469).",
+    "טיפול ב-Valproate קשור לעלייה של פי 7 בסיכון ל-PCOS בקרב נערות צעירות (Dulcan p.768-769)."
+  ]
+}
