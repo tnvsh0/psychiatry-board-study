@@ -1,0 +1,36 @@
+{
+ "tag": "study-115-neuroanatomy-neurological-examination-of-child",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:37:08+00:00",
+ "updated_at": "2026-09-25T16:37:08+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "9102099fb250dd7a6aa199ec1c12a96363c99cb06d5d9fd6ca3c24b0cfd52939",
+   "asset_id": 587043596,
+   "size": 6808,
+   "fetched_at": "2026-09-25T16:37:00+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "73d83c07cdf39aeaa84b7bacd83cba238ce6e0eac78767a46eff42b566489595",
+   "asset_id": 587043601,
+   "size": 13417,
+   "fetched_at": "2026-09-25T16:37:03+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "59774142c9a938c019ec138c163827ace3cd514d49ba860680179393f02d3b9a",
+   "asset_id": 587043612,
+   "size": 40995,
+   "fetched_at": "2026-09-25T16:37:05+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "843589cd07824dbb4f609b55611d1a1da31275e3c4472eedb5857f8103138072",
+   "asset_id": 587043598,
+   "size": 41348,
+   "fetched_at": "2026-09-25T16:37:08+00:00"
+  }
+ ]
+}
