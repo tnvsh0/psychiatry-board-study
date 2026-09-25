@@ -1,0 +1,111 @@
+{
+  "history_origin": {
+    "items": [
+      "DSM-5-TR ניתק את OCD מהפרעות החרדה והגדיר פרק נפרד: 'Obsessive-Compulsive and Related Disorders' (DSM p.263, Dulcan p.365)",
+      "גיל ההופעה הממוצע בילדות הוא 9–10 שנים, עם שכיחות גבוהה יותר בבנים בגיל הקדם-פולשני (Dulcan p.367, DSM p.268)",
+      "Clomipramine הייתה התרופה הראשונה שאושרה ב-1989 על ידי ה-FDA ל-OCD פדיאטרי, ואישור ה-SSRIs החל בשנות ה-90 (Dulcan p.379, StahlKids p.125)"
+    ],
+    "key_numbers": [
+      "9–10 שנים (גיל הופעה ממוצע בילדים) (Dulcan p.367)",
+      "2:1 (יחס בנים:בנות בגיל הפרה-פובארטלי) (Dulcan p.367)",
+      "1989 (שנת אישור Clomipramine ב-FDA לילדים) (Dulcan p.379)"
+    ]
+  },
+  "core_principles": {
+    "items": [
+      "קריטריון A (F42.2) מחייב אובססיות, קומפולסיות או שתיהן, הגוזלות מעל שעה ביום או גורמות מצוקה/פגיעה תפקודית (DSM p.265)",
+      "האבחנה כוללת ספציפייר לרמת תובנה (Good/Fair, Poor, Absent/Delusional) וספציפייר מלווה טיקים (Tic-related) (DSM p.266)",
+      "פתופיזיולוגיה מבוססת על היפראקטיביות בלולאת ה-CSTC (Cortico-Striato-Thalamo-Cortical) ונפח תלמוס מוגדל (Dulcan p.369, StahlNeuro p.575)",
+      "במחלה כרונית חלה נדידה של השליטה העצבית מהסטריאטום הווונטרלי (אימפולסיביות) לדורסלי (הרגלים כפייתיים) (StahlNeuro p.539-540)"
+    ],
+    "key_numbers": [
+      "מעל שעה ביום (קריטריון זמן לאובססיות/קומפולסיות) (DSM p.265)",
+      "30% (שיעור קומורבידיות של טיקים ב-OCD פדיאטרי) (DSM p.266, Dulcan p.365)",
+      "4 (מימדי תסמינים עיקריים: זיהום, סימטריה, טאבו, נזק/בדיקה) (DSM p.266)"
+    ]
+  },
+  "practice_method": {
+    "items": [
+      "ERP (Exposure and Response Prevention) הינו פסיכותרפיית הקו הראשון בילדים ונוער (Dulcan p.376, StahlNeuro p.576)",
+      "הפרוטוקול כולל הבניית היררכיית חשיפה לפי סולם SUDS, חשיפה מדורגת ומניעת ביצוע הטקס הכפייתי (Dulcan p.378)",
+      "ERP מפעיל מנגנון Inhibitory Learning ומחזיר שליטה עצבית מהסטריאטום הדורסלי לווונטרלי ולפרונטל קורטקס (Dulcan p.378, StahlNeuro p.576)",
+      "הפחתת Family Accommodation (השתתפות המשפחה בטקסים) היא ניבוי מרכזי להצלחת הטיפול (Dulcan p.371, p.373)",
+      "סולם CY-BOCS הינו מדד הזהב להערכת חומרת התסמינים בילדים (Dulcan p.374)"
+    ],
+    "key_numbers": [
+      "14 (מספר מפגשים בפרוטוקול POTS ל-CBT) (Dulcan p.377)",
+      "0–40 (טווח ציון בסולם CY-BOCS) (Dulcan p.374)",
+      "8–15 קל, 16–23 בינוני, 24+ חמור (ציוני חומרה ב-CY-BOCS) (Dulcan p.374)"
+    ]
+  },
+  "evidence": {
+    "items": [
+      "מחקר POTS I הראה שטיפול משולב (CBT + Sertraline) הניב 54% Remission וגודל אפקט 1.40; CBT בלבד הניב 39% Remission ו-ES 0.97 (Dulcan p.381)",
+      "מחקר NordLOTS הראה שטיפול מדורג הביא 90% לתגובה קלינית ו-73% להפוגה מלאה כעבור 3 שנים (Dulcan p.373)",
+      "מטה-אנליזה של Geller et al. הראתה גודל אפקט משוקלל של 0.46 לטיפול תרופתי ב-OCD פדיאטרי מול פלצבו (Dulcan p.380)",
+      "מטה-אנליזה של Sánchez-Meca et al. הראתה גודל אפקט ממוצע של 1.7 לטיפול משולב (Dulcan p.381)"
+    ],
+    "key_numbers": [
+      "54% (שיעור הפוגה בטיפול משולב במחקר POTS I) (Dulcan p.381)",
+      "1.40 (גודל אפקט לטיפול משולב במחקר POTS I) (Dulcan p.381)",
+      "73% (שיעור הפוגה מלאה במעקב 3 שנים במחקר NordLOTS) (Dulcan p.373)",
+      "0.46 (גודל אפקט משוקלל לטיפול תרופתי מול פלצבו) (Dulcan p.380)"
+    ]
+  },
+  "indications": {
+    "items": [
+      "CBT/ERP בלבד מותווה כקו ראשון ב-OCD בדרגת חומרה קלה עד בינונית (CY-BOCS ≤ 23) (Dulcan p.376)",
+      "טיפול משולב (CBT + SSRI) מותווה במחלה חמורה (CY-BOCS > 23), תובנה ירודה, תחלואה נלווית קשה, או חוסר נגישות ל-CBT (Dulcan p.376)",
+      "ב-Tic-related OCD, מונותרפיה ב-Sertraline בלבד נכשלה בהפרדה מפלצבו, ונדרש CBT או טיפול משולב/אוגמנטציה (Dulcan p.377)",
+      "ב-PANDAS/PANS עם הופעה חריפה ודרמטית נדרש בירור זיהומי ושקילת טיפול אנטיביוטי/אימונולוגי (Dulcan p.367, p.369-371)"
+    ],
+    "key_numbers": [
+      "23 (סף ציון CY-BOCS המפריד בין התוויית CBT בלבד לטיפול משולב) (Dulcan p.376)",
+      "0% הפרדה מפלצבו ל-Sertraline בלבד ב-Tic-related OCD במחקר POTS (Dulcan p.377)"
+    ]
+  },
+  "pharmacotherapy_high_dose": {
+    "items": [
+      "טיפול ב-OCD מחייב מינונים גבוהים של SSRIs להשגת תפוסת SERT מירבית במעגלי CSTC (Dulcan p.379-380, StahlNeuro p.576)",
+      "שיפור תרופתי ב-OCD הינו איטי ודורש ניסיון של 8 עד 12 שבועות במינון היעד המרבי (Dulcan p.382, StahlNeuro p.576)",
+      "Sertraline מאושר מגיל 6 (מינון 50–200 מ\"ג/יום); Fluoxetine מאושר מגיל 7 (10–80 מ\"ג/יום); Fluvoxamine מאושר מגיל 8 (50–300 מ\"ג/יום) (Dulcan p.380, StahlKids p.199, p.229, p.439)",
+      "Clomipramine מאושר מגיל 10 כקו שני במינון 50–200 מ\"ג/יום ומחייב ניטור ECG עקב סיכון להארכת QTc והפרעות קצב (Dulcan p.379, StahlKids p.125)",
+      "Behavioral Activation Syndrome שכיחה פי 2–3 בילדים צעירים המטופלים ב-SSRIs (Dulcan p.734, StahlKids p.209)"
+    ],
+    "key_numbers": [
+      "8–12 שבועות (משך ניסיון תרופתי נדרש במינון יעד ב-OCD) (Dulcan p.382, StahlNeuro p.576)",
+      "גיל 6 (גיל מינימלי לאישור FDA ל-Sertraline ב-OCD) (StahlKids p.439)",
+      "גיל 7 (גיל מינימלי לאישור FDA ל-Fluoxetine ב-OCD) (StahlKids p.199)",
+      "גיל 8 (גיל מינימלי לאישור FDA ל-Fluvoxamine ב-OCD) (StahlKids p.229)",
+      "גיל 10 (גיל מינימלי לאישור FDA ל-Clomipramine ב-OCD) (StahlKids p.125)",
+      "50 מ\"ג/יום (סף מינון ב-Fluvoxamine שמעליו חובה לחלק ל-2 מנות יומיות) (StahlKids p.230)",
+      "2–3 פעמים (שכיחות מוגברת של Behavioral Activation בילדים לעומת מבוגרים) (Dulcan p.734)"
+    ]
+  },
+  "augmentation": {
+    "items": [
+      "עמידות לטיפול מוגדרת ככישלון 2 ניסיונות SSRI במינון מקסימלי (10–12 שבועות) וניסיון ERP מספק (Dulcan p.382)",
+      "אוגמנטציה באנטיפסיכוטיים לא טיפוסיים (Aripiprazole 2–15 מ\"ג/יום או Risperidone 0.5–2 מ\"ג/יום) היא האסטרטגיה המבוססת ביותר (Dulcan p.382, StahlKids p.37, p.423)",
+      "אוגמנטציה אנטיפסיכוטית מותווה במיוחד ב-Tic-related OCD, בתובנה ירודה מאוד וב-ASD (Dulcan p.382)",
+      "שילוב Fluvoxamine מעכב CYP1A2 עם Clomipramine מעלה בחדות רמות CMI סרוטונינרגי בדם, אך מחייב ניטור ECG ורמות בדם (StahlKids p.126, p.230)",
+      "אוגמנטציה ב-D-Cycloserine (אגוניסט חלקי ל-NMDA) הראתה תוצאות מעורבות עקב אפקט תקרה ב-CBT (Dulcan p.382, StahlNeuro p.576)"
+    ],
+    "key_numbers": [
+      "2–15 מ\"ג/יום (טווח מינון אוגמנטציה של Aripiprazole ב-OCD) (StahlKids p.37)",
+      "0.5–2 מ\"ג/יום (טווח מינון אוגמנטציה של Risperidone ב-OCD) (Dulcan p.382, StahlKids p.423)",
+      "10–12 שבועות (משך מינון מקסימלי הנדרש בכל ניסיון SSRI להגדרת עמידות) (Dulcan p.382)"
+    ]
+  },
+  "high_yield": [
+    "DSM-5-TR ניתק את OCD מהפרעות החרדה והגדיר פרק נפרד 'Obsessive-Compulsive and Related Disorders' (DSM p.263, Dulcan p.365)",
+    "גיל הופעה ממוצע בילדות הוא 9–10 שנים, עם יחס בנים:בנות 2:1 בגיל הקדם-פולשני (Dulcan p.367, DSM p.268)",
+    "מחקר POTS I הראה יעילות מרבית לטיפול משולב (CBT + Sertraline) עם 54% Remission ו-ES 1.40 (Dulcan p.381)",
+    "מטופלים עם Tic-related OCD נכשלו בתגובה ל-Sertraline בלבד, אך הגיבו מצוין ל-CBT, טיפול משולב, או אוגמנטציה באטיפיקליים (Dulcan p.377, p.382)",
+    "תגובה תרופתית ב-OCD דורשת מינונים גבוהים של SSRIs וזמן המתנה ממושך של 8–12 שבועות במינון היעד (Dulcan p.382, StahlNeuro p.576)",
+    "אישורי FDA פדיאטריים: Sertraline מגיל 6, Fluoxetine מגיל 7, Fluvoxamine מגיל 8, Clomipramine מגיל 10 (StahlKids p.125, p.199, p.230, p.439)",
+    "Clomipramine הינו קו שני בלבד ומחייב ניטור ECG בסיסי ולאחר עליות מינון בשל סיכון להארכת QTc והפרעות קצב (Dulcan p.379, StahlKids p.125)",
+    "Behavioral Activation Syndrome שכיחה פי 2–3 בילדים צעירים המטופלים ב-SSRIs ומחייבת האטת טיטרציה או הפחתת מינון (Dulcan p.734, StahlKids p.209)",
+    "אוגמנטציה ב-Aripiprazole (2–15 מ\"ג/יום) או Risperidone (0.5–2 מ\"ג/יום) היא קו ראשון ב-OCD עמיד (Dulcan p.382, StahlKids p.37)",
+    "שילוב Fluvoxamine מעכב CYP1A2 מעלה דרמטית רמות Clomipramine סרוטונינרגי, ומחייב ניטור ECG ורמות תרופה בדם (StahlKids p.126, p.230)"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+ "tag": "study-044-ocd-treatment-erp-high-dose-ssri",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:17:02+00:00",
+ "updated_at": "2026-09-25T14:17:02+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "37f3d29ad3a4ccbb92dfca3bbe54b2876e1f2c9a97b3855299fdd92b5ae54e49",
+   "asset_id": 563654890,
+   "size": 10679,
+   "fetched_at": "2026-09-25T14:16:56+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "1b37311859b5dd2593f0b6d1d18c165a4c6a033a273a8618ccda78fb31f0a420",
+   "asset_id": 563654888,
+   "size": 10138,
+   "fetched_at": "2026-09-25T14:16:58+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "da1d20c92af9a1b06c23bca2bedd3539cf54948593760f2700d2bce19538ee7d",
+   "asset_id": 563654887,
+   "size": 30707,
+   "fetched_at": "2026-09-25T14:17:00+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "5959931d66d61f01d46ac4b538107d9d056b09b20830a6d76b62e68b702de4ec",
+   "asset_id": 563654884,
+   "size": 35201,
+   "fetched_at": "2026-09-25T14:17:02+00:00"
+  }
+ ]
+}
