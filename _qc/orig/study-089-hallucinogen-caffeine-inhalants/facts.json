@@ -1,0 +1,148 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Other Hallucinogen Use Disorder",
+        "items": [
+          "Impaired control criteria 1-4 (DSM p.590)",
+          "Social impairment criteria 5-7 (DSM p.590-591)",
+          "Risky use criteria 8-9 (DSM p.591)",
+          "Tolerance criterion 10 (DSM p.591)",
+          "NO withdrawal criterion (DSM p.546, p.591)"
+        ]
+      },
+      {
+        "name": "Other Hallucinogen Intoxication",
+        "items": [
+          "Mydriasis / Pupillary dilation (DSM p.597)",
+          "Tachycardia & Palpitations (DSM p.597)",
+          "Sweating & Tremors (DSM p.597)",
+          "Blurry vision & Incoordination (DSM p.597)",
+          "Perceptual changes in full wakefulness (DSM p.596)"
+        ]
+      },
+      {
+        "name": "HPPD (Hallucinogen Persisting Perception Disorder)",
+        "items": [
+          "Geometric hallucinations (DSM p.598)",
+          "False movement in peripheral visual fields (DSM p.598)",
+          "Color flashes & intensified colors (DSM p.598)",
+          "Image trails & positive afterimages (DSM p.598-599)",
+          "Halos around objects (DSM p.599)",
+          "Intact reality testing REQUIRED (DSM p.599)"
+        ]
+      },
+      {
+        "name": "Phencyclidine Intoxication",
+        "items": [
+          "Vertical or horizontal nystagmus (DSM p.589, p.595)",
+          "Hypertension or tachycardia (DSM p.595)",
+          "Analgesia / Diminished responsiveness to pain (DSM p.595)",
+          "Ataxia & Dysarthria (DSM p.595)",
+          "Muscle rigidity & Seizures/Coma (DSM p.595)",
+          "Hyperacusis (DSM p.595)"
+        ]
+      },
+      {
+        "name": "Caffeine Intoxication & Withdrawal",
+        "items": [
+          "Intoxication (>250mg): Restlessness, Excitement, Flushed face, Diuresis, GI disturbance, Tachycardia (DSM p.569-570)",
+          "Withdrawal: Headache (hallmark), Fatigue/drowsiness, Dysphoric mood/irritability, Flu-like symptoms (DSM p.571-572)"
+        ]
+      },
+      {
+        "name": "Inhalant Intoxication",
+        "items": [
+          "Dizziness & Nystagmus (DSM p.605)",
+          "Incoordination, Slurred speech & Unsteady gait (DSM p.605)",
+          "Lethargy & Depressed reflexes (DSM p.605)",
+          "Tremor, Muscle weakness & Euphoria (DSM p.605-606)"
+        ]
+      }
+    ],
+    "thresholds": "SUDs: >=2/10 criteria/12 mo (DSM p.587, p.590, p.601); Caffeine Intoxication: >=5/12 symptoms (>250mg) (DSM p.569); Caffeine Withdrawal: >=3/5 symptoms (DSM p.571); Inhalant Intoxication: >=2/13 symptoms (DSM p.605)",
+    "subtypes": [
+      "Other Hallucinogen Use Disorder (DSM p.590)",
+      "HPPD (DSM p.598)",
+      "Phencyclidine Use Disorder (DSM p.587)",
+      "Caffeine Intoxication / Withdrawal (DSM p.569, p.571)",
+      "Caffeine Use Disorder - Section III only (DSM p.910)",
+      "Inhalant Use Disorder (DSM p.601)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "Hallucinogen SUD: 0.2% adolescents (12-17), 0.4% young adults (DSM p.592); Inhalants: 2.3%-2.7% annual use in adolescents (DSM p.603; Dulcan p.223); Caffeine: >85% daily consumption (DSM p.569)",
+    "sex_ratio": "Hallucinogens: Male > Female (60% M in adults) (DSM p.593); Inhalants in adolescents: 1:1 equal (2.4% F vs 2.2% M) (DSM p.607); PCP: 62% M in treatment (DSM p.589)",
+    "onset_age_typical": "Inhalants: Peak onset age 14 (DSM p.604); Hallucinogens: Peak age 18-25 (DSM p.592)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "ADHD (Dulcan p.223, p.235)",
+      "Conduct Disorder (DSM p.603; Dulcan p.223)",
+      "Major Depressive Disorder (Dulcan p.223)",
+      "PTSD (Dulcan p.223)"
+    ],
+    "prognosis": "Inhalant & Hallucinogen use typically remits in young adulthood; chronic inhalant use causes irreversible leukoencephalopathy (DSM p.604, p.712)"
+  },
+  "etiology": {
+    "genetic": "לא צוין",
+    "neurobiology": "5-HT2A receptor agonism on cortical pyramidal neurons (LSD/psilocybin) (StahlNeuro p.567); Open-channel NMDA block at PCP site -> GABA interneuron shutdown -> glutamate burst (PCP/ketamine) (StahlNeuro p.457, p.478); Adenosine A1/A2A antagonism restoring D2 sensitivity (caffeine) (StahlNeuro p.440); GABA-A/NMDA CNS depression + myelin dissolution & leukoencephalopathy (inhalants) (DSM p.603; StahlNeuro p.505)",
+    "environmental": "Peer drug use, high income/urban setting for MDMA (DSM p.593); Poverty, homelessness, indigenous isolated communities for inhalants (DSM p.603-604)"
+  },
+  "treatment": {
+    "first_line": [
+      "Family-based therapy (MDFT, FFT, MST, A-CRA) for adolescent SUD (Dulcan p.236-239)",
+      "Quiet low-stimulation room + verbal 'talk down' for bad trips (Dulcan p.608)",
+      "Lorazepam (0.05 mg/kg) for acute agitation/panic (Dulcan p.608; StahlKids p.281)"
+    ],
+    "second_line": [
+      "Short-term atypical antipsychotics (Risperidone, Olanzapine) for acute hallucinogen psychosis (Dulcan p.608)",
+      "Clonidine for severe HPPD distress (DSM p.599; StahlNeuro p.567)"
+    ],
+    "key_side_effects": [
+      "Chlorpromazine contraindication in PCP (exacerbates anticholinergic burden/seizures) (Dulcan p.608)",
+      "Epinephrine contraindication in inhalant toxicity (triggers fatal arrhythmia) (DSM p.604; Dulcan p.221)"
+    ],
+    "monitoring": "ECG & respiratory monitoring in severe caffeine (>5-10g) or inhalant intoxication; urine toxicology (note inhalants negative) (DSM p.570, p.603; Dulcan p.231)"
+  },
+  "assessment_tools": {
+    "items": [
+      "CRAFFT screener (6 items, >=2 positive indicates high risk) (Dulcan p.230)",
+      "S2BI (Screen to Brief Intervention) for AAP risk stratification (Dulcan p.229)",
+      "DSM-5 Level 1 Cross-Cutting Measure (Domain XI: any positive score requires Level 2 NIDA-ASSIST) (DSM p.846)",
+      "Standard urine drug screen is NEGATIVE for inhalants (DSM p.603)",
+      "Glue-sniffer's rash identification (DSM p.607)"
+    ],
+    "key_numbers": [
+      "6 items in CRAFFT (Dulcan p.230)",
+      "2 threshold score on CRAFFT (Dulcan p.230)",
+      "250 mg threshold for Caffeine Intoxication (DSM p.569)",
+      "8 days PCP detection window in urine (DSM p.589)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "HPPD vs Hallucinogen Psychosis: Intact reality testing in HPPD (DSM p.599)",
+      "PCP vs Stimulants: Vertical/horizontal nystagmus & analgesia unique to PCP (DSM p.589, p.595)",
+      "Caffeine Intoxication vs Panic Disorder / Mania (DSM p.255, p.570)",
+      "Caffeine Withdrawal Headache vs Migraine: 25mg caffeine challenge test resolves headache in 30-60 min (DSM p.573)",
+      "anti-NMDAR Encephalitis mimicking PCP/ketamine dissociation (Dulcan p.608)"
+    ],
+    "key_numbers": [
+      "25 mg caffeine challenge dose for withdrawal headache (DSM p.573)",
+      "30-60 minutes for headache relief post-caffeine (DSM p.573)",
+      "14 peak age for inhalant intoxication (DSM p.604)"
+    ]
+  },
+  "high_yield": [
+    "No withdrawal criterion exists in DSM-5-TR for classic hallucinogens, PCP, or inhalants (DSM p.546, p.588, p.591, p.603)",
+    "Intact reality testing is the essential prerequisite distinguishing HPPD from hallucinogen-induced psychosis (DSM p.599)",
+    "Vertical or horizontal nystagmus combined with analgesia is the pathognomonic diagnostic sign for PCP intoxication (DSM p.589, p.595)",
+    "Caffeine Use Disorder DOES NOT exist in DSM-5-TR Section II (Section III research criteria only) (DSM p.545, p.910)",
+    "Headache is the hallmark symptom of caffeine withdrawal occurring in 50% of cases (DSM p.572)",
+    "Standard urine drug screens cannot detect volatile inhalants; diagnosis is strictly clinical (DSM p.603; Dulcan p.231)",
+    "Inhalant use peaks at age 14 and is unique for equal sex prevalence in adolescents (DSM p.604, p.607)",
+    "Epinephrine is strictly contraindicated during inhalant resuscitation due to myocardial sensitization causing Sudden Sniffing Death (DSM p.604; Dulcan p.221)",
+    "5-HT2A receptor rapid downregulation mediates cross-tolerance across classic hallucinogens (StahlNeuro p.567)",
+    "PCP blocks NMDA receptors in open channels on GABA interneurons, causing cortical glutamate disinhibition (StahlNeuro p.457, p.478)"
+  ]
+}

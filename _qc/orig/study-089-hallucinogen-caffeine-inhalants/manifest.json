@@ -1,0 +1,36 @@
+{
+ "tag": "study-089-hallucinogen-caffeine-inhalants",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:39:32+00:00",
+ "updated_at": "2026-09-25T15:39:32+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "907649ba7167ac13cd980b081b6f5801ed4e1db902f676b2b5f45df51adfaf78",
+   "asset_id": 585120779,
+   "size": 8361,
+   "fetched_at": "2026-09-25T15:39:25+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "f644cbcdd334aeda3e4421cf06b8f3830fd4d3b3c6eab4adb99f2cd297e45631",
+   "asset_id": 585120780,
+   "size": 12795,
+   "fetched_at": "2026-09-25T15:39:27+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "86b648dff62afd66f45dc12c4debb0cba4c62206b3cfd2801a6ca83232c43228",
+   "asset_id": 585120782,
+   "size": 31939,
+   "fetched_at": "2026-09-25T15:39:30+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "992fb750278a6149cd74738b11ffed24109fa45f9a0e804a505f47aa9c629bf9",
+   "asset_id": 585120781,
+   "size": 43125,
+   "fetched_at": "2026-09-25T15:39:32+00:00"
+  }
+ ]
+}
