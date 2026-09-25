@@ -1,0 +1,36 @@
+{
+ "tag": "study-137-school-based-interventions-and-consultation",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T17:18:27+00:00",
+ "updated_at": "2026-09-25T17:18:27+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "adbf29ca3507091b01bd162e23c4f2cc78b3938e1e59d2161c59d22e4961bff5",
+   "asset_id": 587888361,
+   "size": 7439,
+   "fetched_at": "2026-09-25T17:18:20+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "7e5d46086337e88edd1f46194ba3b39fc59b7eaf2d833f30ee7764cf760dd77b",
+   "asset_id": 587888358,
+   "size": 15415,
+   "fetched_at": "2026-09-25T17:18:22+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "d761b6c3aec7bbecc8de5705767782f643c8d7fe20b224ac3f81ab0989c460e8",
+   "asset_id": 587888360,
+   "size": 40087,
+   "fetched_at": "2026-09-25T17:18:25+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "96b89860d46bde69ebbe5bfcee55b40f234b26da8ece1e50d422a3b0b1c35fe1",
+   "asset_id": 587888359,
+   "size": 39621,
+   "fetched_at": "2026-09-25T17:18:27+00:00"
+  }
+ ]
+}
