@@ -1,0 +1,36 @@
+{
+ "tag": "study-025-stereotypic-movement-developmental-coordination-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:44:58+00:00",
+ "updated_at": "2026-09-25T13:44:58+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "e3f39e47eb1385ad586e6aec7216a3cf58b96dd2350cd23167eac7a529b24013",
+   "asset_id": 563581736,
+   "size": 6875,
+   "fetched_at": "2026-09-25T13:44:52+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "f6bacbf863fe7a76b06493b8800bbbb0fbb8feb0b2908115992037fd5bce72eb",
+   "asset_id": 563581740,
+   "size": 12412,
+   "fetched_at": "2026-09-25T13:44:54+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "3c705c5724c8a72cc1892eff9c2edf7e62bf1d98d189b10b07dedf292899a78d",
+   "asset_id": 563581738,
+   "size": 33627,
+   "fetched_at": "2026-09-25T13:44:56+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b7370099f623bbcc01c28ee447b70d903b3adea7a1f10176b749801fc865ae57",
+   "asset_id": 563581746,
+   "size": 23402,
+   "fetched_at": "2026-09-25T13:44:58+00:00"
+  }
+ ]
+}

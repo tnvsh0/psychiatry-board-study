@@ -1,0 +1,98 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Stereotypic Movement Disorder (SMD)",
+        "items": [
+          "התנהגות מוטורית חזרתית, כביכול מונעת וחסרת תכלית (DSM p.89)",
+          "תנועות טיפוסיות: הנפת/סיבוב ידיים, נדנוד גוף, הטיחת ראש, נשיכה עצמית (DSM p.89)"
+        ]
+      },
+      {
+        "name": "Developmental Coordination Disorder (DCD / Dyspraxia)",
+        "items": [
+          "סרבול, איטיות ואי-דיוק בביצוע מיומנויות מוטוריות מתואמות (DSM p.85-86)",
+          "פגיעה משמעותית בפעילויות יומיומיות (ADL), לימודים וספורט (DSM p.86)"
+        ]
+      }
+    ],
+    "thresholds": "הופעה בתקופת ההתפתחות המוקדמת; הפרעה תפקודית ב-ADL או פציעה עצמית (DSM p.85-86, 89)",
+    "subtypes": [
+      "SMD With self-injurious behavior (DSM p.89)",
+      "SMD Without self-injurious behavior (DSM p.89)",
+      "SMD Associated with genetic/medical condition (DSM p.89)",
+      "DCD / Childhood Dyspraxia / Clumsy Child Syndrome (DSM p.86, Dulcan p.169)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "DCD: 5-8% בילדי בית ספר (DSM p.87); SMD: 3-4% מורכב (DSM p.90); SIB ב-ID: 4-16% (DSM p.90)",
+    "sex_ratio": "DCD: 2:1 עד 7:1 זכרים:נקבות (DSM p.87)",
+    "onset_age_typical": "SMD: לפני גיל 3 (80% לפני גיל 2) (DSM p.90); DCD: ילדות מוקדמת (DSM p.86)",
+    "heritability": "גבוהה ב-SMD (DSM p.91); סיכון גנטי מוגבר ב-DCD (DSM p.87)",
+    "comorbidities": [
+      "ADHD (~50% ב-DCD) (DSM p.88)",
+      "מוגבלות שכלית התפתחותית (ID) (DSM p.90)",
+      "הפרעה ברצף האוטיזם (ASD) (DSM p.91)",
+      "תסמונות גנטיות: Lesch-Nyhan, Rett, Prader-Willi, Fragile X (DSM p.91)"
+    ],
+    "prognosis": "DCD נמשכת ב-50-70% לגיל התבגרות/בגרות (DSM p.87); SMD ב-ID נמשכת שנים (DSM p.91)"
+  },
+  "etiology": {
+    "genetic": "מוטציות בגני MECP2 (Rett), HGPRT (Lesch-Nyhan), 15q11.2 (Prader-Willi), FMR1 (Fragile X) (DSM p.91, Dulcan p.118-121)",
+    "neurobiology": "ירידה בנפח הפוטמן (DSM p.91); מעבר מ-Ventral ל-Dorsal Striatum habit loop (StahlNeuro p.534-537); דיספונקציה צרבלרית ב-DCD (DSM p.87)",
+    "environmental": "בידוד חברתי, דחק סביבתי, כבידה/כאב (אוזניים/שיניים) ב-SMD (DSM p.91); פגות ומשקל לידה נמוך ב-DCD (DSM p.87)"
+  },
+  "treatment": {
+    "first_line": [
+      "ניתוח התנהגות יישומי (ABA) ואימון לתקשורת תפקודית (FCT) ל-SMD/SIB (Dulcan p.125)",
+      "אימון מוטורי ממוקד משימה (Task-oriented) בפיזיוטרפיה/ריפוי בעיסוק ל-DCD (Dulcan p.169)",
+      "ציוד הגנה פיזי (קסדות, כפפות) ל-SIB חמור (DSM p.89, Dulcan p.125)"
+    ],
+    "second_line": [
+      "Risperidone 0.5-3.0 mg/d (מאושר FDA לאיריטביליות/SIB באוטיזם גילאי 5-16) (Dulcan p.126, StahlKids p.430)",
+      "Aripiprazole 5-15 mg/d (מאושר FDA גילאי 6-17) (Dulcan p.126, StahlKids p.36)",
+      "Naltrexone 0.5-2.0 mg/kg/d ל-SIB ב-ID (Dulcan p.126)",
+      "Topiramate ל-Skin picking ב-Prader-Willi (Dulcan p.119, 126)"
+    ],
+    "key_side_effects": [
+      "עלייה במשקל, סינדרום מטבולי, היפרפרולקטינמיה (Risperidone) (StahlKids p.430)",
+      "אקתיזיה, סדציה (Aripiprazole) (StahlKids p.36)"
+    ],
+    "monitoring": "שקילה, BMI, פרופיל מטבולי (סוכר, ליפידים), AIMS לדיסקינזיה, ורמות פרולקטין (Dulcan p.668, StahlKids p.36, 430)"
+  },
+  "assessment_tools": {
+    "items": [
+      "Aberrant Behavior Checklist (ABC) למדידת היפראקטיביות, סטראוטיפיות ואיריטביליות (Dulcan p.126, 145)",
+      "Vineland-3 להערכת תפקוד אדפטיבי (Dulcan p.114)",
+      "Movement Assessment Battery for Children (MABC-2) ו-BOT-2 ל-DCD",
+      "Neurological Soft Signs: תנועות כוריאופורמיות ותנועות מראה (DSM p.87)"
+    ],
+    "key_numbers": [
+      "גיל 3 שנים - עמידה על רגל אחת (Dulcan p.102)",
+      "גיל 4 שנים - ניתור (hop) על רגל אחת (Dulcan p.102)",
+      "גיל 6 שנים - הליכת עקב-לצד-אגודל Tandem gait (Dulcan p.102)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "הפרעת טיקים / טורט: טיק הוא פתאומי, בלתי-קצבי, אגו-דיסטוני ומלווה בדחף מקדים (Premonitory urge); סטראוטיפיה היא קצבית, אגו-סינטונית וחסרת דחף מקדים (DSM p.91-92, Dulcan p.438)",
+      "הפרעה ברצף האוטיזם (ASD): SMD מאובחנת בנפרד רק בנוכחות SIB חמור (DSM p.57, 91)",
+      "Tardive Dyskinesia: תנועות אורו-פציאליות לא רצוניות עקב שגשוג קולטני D2 (DSM p.815, StahlNeuro p.165)",
+      "Akathisia: אי-שקט מוטורי פנימי עקב חסימת D2 אקוטית (DSM p.813)"
+    ],
+    "key_numbers": [
+      "80% מהסטראוטיפיות מתחילות לפני גיל 24 חודשים (DSM p.90)",
+      "שיא הופעת טיקים בגילאי 4-6 שנים (DSM p.91, Dulcan p.438)",
+      "50% חפיפה בין DCD ל-ADHD (DSM p.88)"
+    ]
+  },
+  "high_yield": [
+    "SMD מתחילה לפני גיל 3 (80% לפני גיל 24 חודשים); טיקים מתחילים בגילאי 4-6 (DSM p.90-91, Dulcan p.438)",
+    "סטראוטיפיות הן קצביות, אגו-סינטוניות, וחסרות דחף מקדים (Premonitory Urge); טיקים הם פתאומיים, אגו-דיסטוניים ומלווים בדחף (DSM p.91-92)",
+    "אין לאבחן SMD בנוכחות ASD אלא אם כן התנועות כוללות SIB חמור המהווה מוקד טיפולי (DSM p.91)",
+    "תרופות מאושרות FDA לרוגזנות/SIB באוטיזם: Risperidone (גילאי 5-16, 0.5-3.0 mg/d) ו-Aripiprazole (גילאי 6-17, 5-15 mg/d) (Dulcan p.126, StahlKids p.36, 430)",
+    "Naltrexone במינון 0.5-2.0 mg/kg/d חוסם אנדורפינים אנדוגניים להפחתת SIB ב-ID (Dulcan p.126)",
+    "DCD שכיחה ב-5-8% מילדי בית ספר, יחס זכרים 2:1 עד 7:1, ונמשכת ב-50-70% בבגרות (DSM p.87)",
+    "בסיס אנטומי ל-SMD: ירידה בנפח הפוטמן ומעבר מ-Ventral Striatum ל-Dorsal Striatum habit loop (DSM p.91, StahlNeuro p.534-537)"
+  ]
+}
