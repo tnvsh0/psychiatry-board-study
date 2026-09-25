@@ -1,0 +1,36 @@
+{
+ "tag": "study-038-generalized-anxiety-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:08:23+00:00",
+ "updated_at": "2026-09-25T14:08:23+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "6f1ac66944904d8acdb0754a7beb89a4e2b5220ee62c5d69451513e0980028e4",
+   "asset_id": 536919758,
+   "size": 9254,
+   "fetched_at": "2026-09-25T14:08:17+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "37f2cc3d300caf4cada0dbf08cc957117bd6af320e4ab1779ae1f1188f68a125",
+   "asset_id": 536919761,
+   "size": 10255,
+   "fetched_at": "2026-09-25T14:08:19+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "60c79206a90cf0b64578650915757a1e53e3031361130b2da539b6dc2a369528",
+   "asset_id": 536919764,
+   "size": 15863,
+   "fetched_at": "2026-09-25T14:08:21+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "b13f7512eb78f64790055c695f0b2afdab5154835ee09a64818794258f818ed3",
+   "asset_id": 536919766,
+   "size": 48079,
+   "fetched_at": "2026-09-25T14:08:23+00:00"
+  }
+ ]
+}
