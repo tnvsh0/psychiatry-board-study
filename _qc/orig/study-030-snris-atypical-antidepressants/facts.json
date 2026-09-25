@@ -1,0 +1,78 @@
+{
+  "drug_class": {
+    "members": [
+      "Duloxetine: GAD approved ages 7-17 (Dulcan p.743, StahlKids p.171)",
+      "Venlafaxine: Dose-dependent SERT/NET reuptake inhibitor (Dulcan p.751, StahlNeuro p.302)",
+      "Bupropion: NDRI, blocks DAT/NET (Dulcan p.717, StahlNeuro p.303, StahlKids p.83)",
+      "Mirtazapine: NaSSA, alpha-2 antagonist (Dulcan p.750, StahlNeuro p.308)",
+      "Trazodone: SARI, 5-HT2A antagonist and SERT inhibitor (Dulcan p.750, StahlNeuro p.311)",
+      "Vortioxetine: Multimodal, improves processing speed (Dulcan p.753, StahlNeuro p.315)",
+      "Vilazodone: SPARI, 5-HT1A partial agonist and SERT inhibitor (Dulcan p.752, StahlNeuro p.296)"
+    ],
+    "mechanism": "Inhibition of SERT, NET, or DAT, or antagonism of alpha-2/5-HT receptors (StahlNeuro p.298, StahlNeuro p.303, StahlNeuro p.308)",
+    "kinetics": [
+      "Bupropion: half-life 10-14 hours (StahlKids p.87)",
+      "Venlafaxine: half-life 3-7 hours (StahlKids p.483)",
+      "CYP2D6: converts Venlafaxine to active metabolite Desvenlafaxine (StahlNeuro p.302, StahlKids p.483)"
+    ],
+    "onset_of_effect": "Full therapeutic benefits take 2-8 weeks (StahlKids p.69, StahlKids p.83, StahlKids p.111)"
+  },
+  "indications": {
+    "items": [
+      "Duloxetine: Generalized Anxiety Disorder for ages 7-17 (Dulcan p.743, StahlKids p.171)",
+      "Bupropion: Major Depressive Disorder in adults, smoking cessation (Dulcan p.743, StahlKids p.83)",
+      "Venlafaxine: GAD and social anxiety disorder in adults, off-label in youth (Dulcan p.743, StahlKids p.479)"
+    ],
+    "key_numbers": [
+      "7-17: approved age range for Duloxetine in GAD (Dulcan p.743, StahlKids p.171)",
+      "2-8 weeks: time to onset of full therapeutic effect (StahlKids p.69, StahlKids p.83)",
+      "3: NNT of antidepressants for non-OCD anxiety disorders in children (StahlKids p.75)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Bupropion: Seizure risk (Dulcan p.747, StahlKids p.85)",
+      "Mirtazapine: Weight gain, increased appetite, and sedation (Dulcan p.750, StahlNeuro p.308)",
+      "Trazodone: Priapism in male patients (Dulcan p.750, StahlKids p.453)",
+      "Venlafaxine: Activation, suicidality, and blood pressure increase (Dulcan p.751, StahlKids p.480)",
+      "Vilazodone: High rate of gastrointestinal distress (Dulcan p.753, StahlKids p.172)"
+    ],
+    "key_numbers": [
+      "0.1%: seizure risk of Bupropion at 300 mg/day (Dulcan p.747, StahlKids p.85)",
+      "0.4%: seizure risk of Bupropion at 400 mg/day (Dulcan p.747, StahlKids p.85)",
+      "50%: percentage of pediatric patients experiencing transient blood pressure elevations on Duloxetine (Dulcan p.749, StahlKids p.173)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Duloxetine: Monitor blood pressure and pulse at baseline and regularly (Dulcan p.749, StahlKids p.171)",
+      "Duloxetine: Monitor weight and height against growth charts (Dulcan p.749, StahlKids p.171)",
+      "Bupropion: Monitor blood pressure at baseline and periodically (StahlKids p.83)",
+      "All Antidepressants: Weekly face-to-face monitoring recommended during the first 4 weeks (Dulcan p.228, StahlKids p.85)"
+    ],
+    "key_numbers": [
+      "4 weeks: frequency of weekly face-to-face monitoring recommended by FDA upon initiation (Dulcan p.228, StahlKids p.85)",
+      "2 mmHg: average blood pressure increase on Duloxetine (StahlKids p.172)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Duloxetine: Starting dose 30 mg once daily, target 30-60 mg, max 120 mg (StahlKids p.174)",
+      "Venlafaxine ER: Starting dose 37.5 mg once daily, target 75-150 mg, max 225 mg (Dulcan p.745, StahlKids p.483)",
+      "Bupropion XL: Preferred once-daily formulation, max dose 450 mg/day (StahlKids p.87)",
+      "Trazodone: Dosed at 25-150 mg/night for insomnia (StahlKids p.453)"
+    ],
+    "key_numbers": [
+      "30 mg: starting dose for Duloxetine in children with GAD (StahlKids p.174)",
+      "37.5 mg: starting dose of Venlafaxine ER in children (StahlKids p.483)",
+      "450 mg: maximum daily dosage of Bupropion (StahlKids p.87)"
+    ]
+  },
+  "high_yield": [
+    "Duloxetine is the only SNRI with FDA pediatric approval, indicated specifically for Generalized Anxiety Disorder in ages 7-17 (Dulcan p.743, StahlKids p.171).",
+    "Bupropion is strictly contraindicated in patients with anorexia or bulimia due to a dose-dependent seizure risk (Dulcan p.718, StahlKids p.85).",
+    "Venlafaxine carries the highest signal for treatment-emergent activation and suicidality in pediatric clinical trials compared to other antidepressants (Dulcan p.226, Dulcan p.751).",
+    "Trazodone can cause priapism in male adolescents, which is a urological emergency (Dulcan p.750, StahlKids p.453).",
+    "California Rocket Fuel is the synergistic combination of an SNRI (e.g., Venlafaxine) with Mirtazapine, utilizing reuptake blockade and alpha-2 antagonism (StahlNeuro p.308, StahlNeuro p.310)."
+  ]
+}

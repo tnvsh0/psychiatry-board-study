@@ -1,0 +1,36 @@
+{
+ "tag": "study-030-snris-atypical-antidepressants",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:54:30+00:00",
+ "updated_at": "2026-09-25T13:54:30+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "2089aba6f3b6bfba7dcafcc58eab2e8271b34e749a1da220bff9aa655b7afaae",
+   "asset_id": 536539716,
+   "size": 5032,
+   "fetched_at": "2026-09-25T13:54:13+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "626c4935679fdc8d6f0d3ce5db7cb0540cb3ffc57529617ffb8bfa34d09f3d2f",
+   "asset_id": 536539726,
+   "size": 15824,
+   "fetched_at": "2026-09-25T13:54:18+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "f73d530d6c955564ebecf4177f3da2dafa319a3df5d0b7e0c03a67b4e22b03c8",
+   "asset_id": 536539725,
+   "size": 33247,
+   "fetched_at": "2026-09-25T13:54:24+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "75888b3b87a704d65821b02291e1148bc5ff326f28472a925287383289d09f9f",
+   "asset_id": 536539717,
+   "size": 37544,
+   "fetched_at": "2026-09-25T13:54:30+00:00"
+  }
+ ]
+}
