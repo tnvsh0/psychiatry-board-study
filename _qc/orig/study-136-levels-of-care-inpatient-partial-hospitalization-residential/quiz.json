@@ -1,0 +1,209 @@
+{
+  "title": "Psychiatry Quiz",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "A 15-year-old male is brought to the emergency department after a high-lethality suicide attempt. He remains hemodynamically stable but continues to express a persistent wish to die and refuses to cooperate with safety planning. The family environment is described as supportive but currently overwhelmed. Which level of care is most appropriate for this patient's initial stabilization?",
+      "answerOptions": [
+        {
+          "text": "Acute Inpatient Hospitalization Unit (IU)",
+          "isCorrect": true,
+          "rationale": "Acute Inpatient Hospitalization is mandatory for patients presenting with high risk for danger to self or others and a need for constant 24-hour observation (Dulcan p. 1022)."
+        },
+        {
+          "text": "Partial Hospitalization (Day Treatment)",
+          "isCorrect": false,
+          "rationale": "While intensive, partial hospitalization is only suitable for patients whose risk is low to moderate and can be safely managed at home during evening and night hours (Dulcan p. 1022)."
+        },
+        {
+          "text": "Residential Treatment Center (RTC)",
+          "isCorrect": false,
+          "rationale": "RTCs are generally used for chronic behavioral instability rather than acute, high-lethality psychiatric emergencies requiring constant observation (Dulcan p. 1022)."
+        },
+        {
+          "text": "Intensive Outpatient Program (IOP)",
+          "isCorrect": false,
+          "rationale": "IOP does not provide the 24-hour continuous medical and nursing supervision required for a patient with active, persistent suicidal intent (Dulcan p. 1019, 1022)."
+        }
+      ],
+      "hint": "Consider the level of supervision and observation required for an immediate, high-lethality risk.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_select",
+      "question": "According to longitudinal research regarding adolescent psychiatric milieu treatment, which of the following factors significantly increase the risk of rapid rehospitalization within 4 to 24 months after discharge?",
+      "answerOptions": [
+        {
+          "text": "Presence of moderate to severe suicidal ideation at the time of the index admission.",
+          "isCorrect": true,
+          "rationale": "Research indicates that moderate to severe suicidal ideation is a strong predictor of rehospitalization risk in both the short-term and long-term (Dulcan p. 1032)."
+        },
+        {
+          "text": "A history of nonsuicidal self-injury (NSSI) in the month prior to the index hospitalization.",
+          "isCorrect": true,
+          "rationale": "Among depressed adolescents, pre-admission NSSI is a significant predictor of rehospitalization within 6 months of discharge (Dulcan p. 1032)."
+        },
+        {
+          "text": "High levels of externalizing behavior during the initial stay.",
+          "isCorrect": true,
+          "rationale": "The severity of externalizing behaviors and placement in residential treatment are linked to faster readmission rates (Dulcan p. 1032)."
+        },
+        {
+          "text": "A strong therapeutic alliance established with the clinical team prior to discharge.",
+          "isCorrect": false,
+          "rationale": "A strong treatment alliance is actually cited as a risk factor for rehospitalization in some studies, possibly due to the patient's increased comfort or perceived safety in the clinical environment (Dulcan p. 1032)."
+        }
+      ],
+      "hint": "Identify factors related to behavioral dysregulation and previous self-harm history.",
+      "hasAllOfTheAbove": false,
+      "hasNoneOfTheAbove": false
+    },
+    {
+      "type": "fill_in_the_blank",
+      "question": "The Systems of Care (SOC) philosophy originated in the United States in 1984 as a response to the fragmentation of services for children with serious emotional disturbances, specifically through the implementation of the ___ program.",
+      "bestAnswer": "CASSP",
+      "acceptableAnswers": [
+        "Child and Adolescent Service System Program",
+        "CASSP program"
+      ],
+      "rationale": "The Child and Adolescent Service System Program (CASSP) was the primary vehicle for developing the SOC philosophy to ensure interagency collaboration (Dulcan p. 1000).",
+      "hint": "This acronym represents the federal initiative funded by the U.S. Congress to improve multiagency service delivery."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A clinical team is implementing the Wraparound methodology for a child with complex needs. They insist on the principle that the team will not 'give up' on the child or exclude them from services even if behavioral crises occur or treatment fails initially. Which core principle of Wraparound does this represent?",
+      "answerOptions": [
+        {
+          "text": "Unconditional commitment",
+          "isCorrect": true,
+          "rationale": "The principle of unconditional commitment means the system commits to changing the service plan rather than terminating the child's participation when challenges arise (Dulcan p. 1002)."
+        },
+        {
+          "text": "Strength-based orientation",
+          "isCorrect": false,
+          "rationale": "While vital, the strength-based orientation refers to identifying assets rather than the refusal to discharge based on failure (Dulcan p. 1001)."
+        },
+        {
+          "text": "Cultural competence",
+          "isCorrect": false,
+          "rationale": "Cultural competence refers to tailoring services to values and preferences but does not specifically define the non-exclusion policy (Dulcan p. 1001, 1002)."
+        },
+        {
+          "text": "Individualized care",
+          "isCorrect": false,
+          "rationale": "Individualized care involves creating a unique plan, which is facilitated by unconditional commitment but is not the commitment itself (Dulcan p. 1000, 1002)."
+        }
+      ],
+      "hint": "Focus on the systemic promise to persist with the family regardless of behavioral setbacks.",
+      "imageUrls": []
+    },
+    {
+      "type": "short_answer",
+      "question": "Under what specific clinical circumstances is the use of Seclusion or Restraint (S&R) permitted in a pediatric psychiatric unit, and what must be attempted first?",
+      "grading": {
+        "modelAnswer": "Seclusion and restraint are permitted only in situations of imminent threat of physical harm to the patient or others. They should only be utilized after all less restrictive interventions, such as verbal de-escalation, sensory tools, or moving to a quiet room, have been attempted and failed (Dulcan p. 1023-1024).",
+        "rationale": "S&R is a high-risk intervention reserved strictly for immediate safety threats where de-escalation is no longer possible (Dulcan p. 1023-1024).",
+        "requiredAttributes": [
+          "Mentions 'imminent threat of harm' or 'safety threat'.",
+          "States that less restrictive measures (e.g., de-escalation) must have failed first.",
+          "Identifies the primary goal as physical safety."
+        ],
+        "errors": {
+          "misconceptions": [
+            "Stating S&R can be used for punishment or as a consequence for non-compliance.",
+            "Suggesting it is a first-line intervention for agitation."
+          ],
+          "bluffs": [
+            "Generalizing about hospital safety without naming the strict criteria of imminence and failure of alternatives."
+          ]
+        }
+      },
+      "hint": "Focus on the safety threshold and the hierarchy of behavioral interventions.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "A 22-month-old child presents with pervasive and extreme behavioral inhibition, characterized by intense fear and avoidance of unfamiliar people and situations. According to the DC:0-5 classification, which diagnosis is most appropriate, and what is its corresponding DSM-5 crosswalk?",
+      "answerOptions": [
+        {
+          "text": "Inhibition to novelty disorder; Other specified anxiety disorder",
+          "isCorrect": true,
+          "rationale": "DC:0-5 defines Inhibition to Novelty Disorder for children under 24 months, with the DSM-5 crosswalk being Other Specified Anxiety Disorder (Dulcan p. 21)."
+        },
+        {
+          "text": "Separation anxiety disorder; F93.0 Separation anxiety disorder",
+          "isCorrect": false,
+          "rationale": "Separation anxiety involves fear of detachment from caregivers, whereas this case specifies fear of unfamiliar novelty (DSM p. 190, Dulcan p. 21)."
+        },
+        {
+          "text": "Relationship-specific disorder; Parent-child relational problem",
+          "isCorrect": false,
+          "rationale": "Relationship-specific disorder is limited to a single specific relationship, while the scenario describes a pervasive pattern across novel situations (Dulcan p. 21)."
+        },
+        {
+          "text": "Disorder of dysregulated anger; Disruptive mood dysregulation disorder",
+          "isCorrect": false,
+          "rationale": "This diagnosis refers to anger and aggression, which is not the primary presentation described (Dulcan p. 21)."
+        }
+      ],
+      "hint": "Look for the specific DC:0-5 term for extreme inhibition in children under age 2.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "In the management of a therapeutic milieu, a multidisciplinary team is meeting to discuss a patient who is attempting to pit different staff members against one another to gain privileges. Which organizational factor is essential to prevent this phenomenon, known as 'splitting'?",
+      "answerOptions": [
+        {
+          "text": "Interdisciplinary communication and a unified approach",
+          "isCorrect": true,
+          "rationale": "Effective milieu management requires continuous communication and team meetings to maintain a consistent approach and prevent splits in the staff (Dulcan p. 1021, 1030)."
+        },
+        {
+          "text": "Implementation of a rigid token economy",
+          "isCorrect": false,
+          "rationale": "While helpful for structure, a token economy alone does not solve the interpersonal dynamics of staff splitting without communication (Dulcan p. 912, 1030)."
+        },
+        {
+          "text": "Increasing the staff-to-patient ratio",
+          "isCorrect": false,
+          "rationale": "Simply adding more staff can actually increase opportunities for splitting if communication protocols are not improved (Dulcan p. 1030)."
+        },
+        {
+          "text": "Using physical restraints as a deterrent",
+          "isCorrect": false,
+          "rationale": "Restraints are for imminent safety only and are not a tool for managing behavioral manipulation or staff dynamics (Dulcan p. 1023)."
+        }
+      ],
+      "hint": "Consider how teams stay aligned to avoid being manipulated by clinical presentations.",
+      "imageUrls": []
+    },
+    {
+      "type": "multiple_choice",
+      "question": "When initiating psychotropic medication in highly vulnerable children with complex disorders, which 'best practice' principle is emphasized to ensure safety and accurately assess efficacy?",
+      "answerOptions": [
+        {
+          "text": "Treat with one medication at a time and assess for a realistic time interval.",
+          "isCorrect": true,
+          "rationale": "StahlKids emphasizes monotherapy whenever possible and allowing sufficient time for the medication to work before changing it (StahlKids p. Practical Notes)."
+        },
+        {
+          "text": "Start at adult-equivalent doses to achieve rapid symptom control.",
+          "isCorrect": false,
+          "rationale": "Pediatric dosing often requires starting low and titrating carefully due to different metabolic profiles and vulnerability (StahlKids p. Practical Notes)."
+        },
+        {
+          "text": "Use polypharmacy as a first-line approach for complex comorbid presentations.",
+          "isCorrect": false,
+          "rationale": "Treating with one medication at a time is the preferred standard to isolate efficacy and side effects (StahlKids p. Practical Notes)."
+        },
+        {
+          "text": "Avoid medications entirely unless the child is in an inpatient setting.",
+          "isCorrect": false,
+          "rationale": "While cautious, the guidelines allow for medications in outpatients when symptoms are severe or psychosocial interventions fail (StahlKids p. Practical Notes)."
+        }
+      ],
+      "hint": "Think about the simplest way to track the clinical impact of a single intervention.",
+      "imageUrls": []
+    }
+  ]
+}
