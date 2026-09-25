@@ -1,0 +1,98 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "DSM-5-TR Gambling Disorder (F63.0) 9 Criteria",
+        "items": [
+          "Tolerance: צורך להמר בסכומים גדלים והולכים להשגת הריגוש (DSM p.661)",
+          "Withdrawal: אי-שקט או עצבנות בעת ניסיון להפחית או להפסיק להמר (DSM p.661)",
+          "Loss of control: ניסיונות כושלים חוזרים לשלוט, לצמצם או להפסיק (DSM p.661)",
+          "Preoccupation: עיסוק מחשבתי מתמיד בחוויות הימור, תכנון או גיוס כספים (DSM p.662)",
+          "Distress gambling: הימורים תכופים בעת חוויית מצוקה רגשית (DSM p.662)",
+          "Chasing losses: חזרה ביום אחר כדי להחזיר הפסדים כספיים (DSM p.662)",
+          "Lying: שקרים לבני משפחה ומטפלים להסתרת היקף ההימורים (DSM p.662)",
+          "Jeopardized relationships/opportunities: סיכון/אובדן קשר משמעותי, עבודה או לימודים (DSM p.662)",
+          "Bailout: הסתמכות על אחרים לחילוץ ממצב כספי נואש שנגרם מהימורים (DSM p.662)"
+        ]
+      }
+    ],
+    "thresholds": "פגיעה תפקודית/מצוקה + לפחות 4 מתוך 9 קריטריונים בתוך 12 חודשים. שלילת אפיזודה מאנית (DSM p.661-662)",
+    "subtypes": [
+      "Episodic (אפיזודי, התקפים עם הפוגות של מספר חודשים) (DSM p.662)",
+      "Persistent (מתמשך, תסמינים רציפים לאורך שנים) (DSM p.662)",
+      "Mild (4-5 קריטריונים) (DSM p.662)",
+      "Moderate (6-7 קריטריונים) (DSM p.662)",
+      "Severe (8-9 קריטריונים) (DSM p.662)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "מבוגרים: 0.2%-0.3% בשנה החולפת, 0.4%-1.0% לאורך החיים (DSM p.662-663). מתבגרים: 60%-80% הימרו בשנה החולפת, 3%-8% בעיית הימורים חמורה, 10%-15% בסיכון (Dulcan p.225)",
+    "sex_ratio": "3:1 M:F בשכיחות לאורך החיים (0.6% גברים vs 0.2% נשים) (DSM p.663-664)",
+    "onset_age_typical": "גיל ההתבגרות או בגרות צעירה (שיא התחלה מוקדמת בגברים בגילאי 18-21) (DSM p.663-664)",
+    "heritability": "מתאם גבוה בתאומים מונוזיגוטיים מול דיזיגוטיים; שכיחות מוגברת בקרובי משפחה מדרגה ראשונה של AUD (DSM p.664)",
+    "comorbidities": [
+      "SUD / Alcohol Use Disorder (~75% תחלואה פסיכיאטרית נלווית כללית) (DSM p.664-665)",
+      "MDD / Depressive Disorders (DSM p.664)",
+      "Anxiety Disorders (DSM p.664)",
+      "ADHD & Conduct Disorder בילדים/נוער (Dulcan p.226-227)",
+      "Antisocial Personality Disorder (DSM p.664)"
+    ],
+    "prognosis": "התחלה מוקדמת מקושרת לאימפולסיביות ותחלואה חמורה; אפקט Telescoping בנשים (הדרדרות מהירה מהתחלה להפרעה) (DSM p.664)"
+  },
+  "etiology": {
+    "genetic": "התקבצות משפחתית, תורשתיות גבוהה בתאומים מונוזיגוטיים, חפיפה גנטית עם AUD ו-Behavioral Disinhibition (DSM p.664)",
+    "neurobiology": "העתקת מוקד מ-Ventral Striatum (אימפולסיביות/חיפוש תגמול) ל-Dorsal Striatum (כפייתיות/הרגל) (StahlNeuro p.538-540); גירוי מסלול מזולימבי דופמינרגי ושחרור אופיאואידים אנדוגניים (StahlNeuro p.541-543, p.555-556); חוסר הבשלה קורטיקלית Top-Down מול תת-קורטיקלית במתבגרים (Dulcan p.227)",
+    "environmental": "חשיפה מוקדמת להימורים עם משפחה/חברים, נגישות להסתירות באינטרנט, Loot Boxes במשחקי וידאו, מצוקה נפשית וסטרס (DSM p.664, Dulcan p.222)"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT (Cognitive-Behavioral Therapy) - ממוקד בתיקון עיוותים קוגניטיביים (Illusion of Control, Chasing Losses) ומניעת מעדות (Dulcan p.239)",
+      "Motivational Interviewing (MI / MET) - להגברת מוטיבציה והתגברות על אמביוולנטיות (Dulcan p.238-239)"
+    ],
+    "second_line": [
+      "Naltrexone (Off-label) - אנטגוניסט קולטני μ-Opioid למניעת דיס-אינהיביציה דופמינרגית והכחדה פרמקולוגית (Pharmacological Extinction) (StahlNeuro p.555-556, p.571-572)",
+      "Nalmefene (Off-label) - אנטגוניסט אופיאואידי (StahlNeuro p.555)",
+      "Topiramate (Off-label) - מודולטור גאבאארגי/גלוטמטרגי להפחתת דחפים (StahlNeuro p.556, p.575)",
+      "SSRIs - מותווים לתחלואה נלווית של דיכאון/חרדה (Dulcan p.227)",
+      "Gamblers Anonymous (GA) / קבוצות 12 הצעדים (Dulcan p.238)"
+    ],
+    "key_side_effects": [
+      "Naltrexone: בחילות, רעילות כבדית במינונים גבוהים, תסמני גמילה באופיאואידים (StahlNeuro p.555)",
+      "Topiramate: האטה קוגניטיבית, ירידה במשקל, נמנום, אבנים בכליות (StahlKids p.482)"
+    ],
+    "monitoring": "בדיקות תפקודי כבד ב-Naltrexone, ניטור כספי הדוק על ידי ההורים, אזהרת אי-שילוב נוער עם התמכרות התנהגותית בלבד במסגרות SUD למניעת הדבקה חברתית (Dulcan p.239)"
+  },
+  "assessment_tools": {
+    "items": [
+      "SOGS-RA (South Oaks Gambling Screen - Revised for Adolescents) - שאלון סינון מותאם ומתוקף למתבגרים (Dulcan p.225)",
+      "MAGS (Massachusetts Adolescent Gambling Screen) - כלי סינון למתבגרים (Dulcan p.225)",
+      "DSM-5-TR Level 1 Cross-Cutting Symptom Measure - סריקת 12-13 דומיינים נפשיים (DSM p.841-846)",
+      "CRAFFT & S2BI - סינון התנהגויות סיכון ברפואה ראשונית (Dulcan p.229-230)",
+      "Timeline Followback / Calendar - שחזור תדירות וסכומים לאורך ציר זמן (Dulcan p.230, p.256)"
+    ],
+    "key_numbers": [
+      "4/9 קריטריונים ב-12 חודשים לאבחנת Gambling Disorder (DSM p.661)",
+      "5/9 קריטריונים ב-12 חודשים לאבחנת Internet Gaming Disorder (Section III) (DSM p.913-914)",
+      "12-13 דומיינים קליניים ב-DSM-5 Level 1 Cross-Cutting Measure (DSM p.841)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Dopamine Agonist-Induced Gambling - דחף כפייתי להמר שמושרה מתרופות אגוניסטיות לדופמין (Pramipexole, Ropinirole, L-Dopa) לפרקינסון/RLS (DSM p.663, p.665, StahlNeuro p.575)",
+      "Manic Episode - הימורים מופרזים בזמן מאניה בלבד (אבחנה כפולה תינתן רק אם קיימים הימורים פתולוגיים מחוץ לאפיזודות מאניות) (DSM p.661, p.665)",
+      "Internet Gaming Disorder (Section III) - משחקי וידאו/רשת ללא הימור כספי (DSM p.913-914, Dulcan p.222)",
+      "Nondisordered Social/Professional Gambling - הימורים מבוקרים, חברתיים או מקצועיים עם סיכון מחושב וללא Chasing (DSM p.665)"
+    ],
+    "key_numbers": [
+      "15x סיכון תמותה מאובדנות מוגבר ב-Gambling Disorder מול אוכלוסייה כללית (DSM p.664-665)",
+      "50% מחשבות אובדניות ו-17% ניסיונות אובדניים בקרב מטופלים בהפרעת הימורים (DSM p.664)"
+    ]
+  },
+  "high_yield": [
+    "הפרעת הימורים (Gambling Disorder) היא ההתמכרות ההתנהגותית היחידה הרשמית ב-DSM-5-TR Section II תחת Substance-Related and Addictive Disorders (DSM p.661).",
+    "Internet Gaming Disorder מופיעה ב-DSM-5-TR Section III (Conditions for Further Study) ועוסקת אך ורק במשחקים ללא הימור כספי; הימורים באינטרנט מסווגים תחת Gambling Disorder (DSM p.913, Dulcan p.222).",
+    "באישור פרמקולוגי, Naltrexone פועל Off-label על מנגנון Pharmacological Extinction (הכחדה פרמקולוגית) ע''י חסימת קולטני μ-Opioid ב-VTA ובלימת נחשול דופמין ב-Nucleus Accumbens בעת הימור (StahlNeuro p.555-556, p.571-572).",
+    "תופעת ה-Telescoping: נשים מתחילות להמר בגיל מאוחר יותר מגברים אך מדרדרות להפרעה פתולוגית במהירות גבוהה בהרבה (DSM p.664).",
+    "אזהרת מיקום קלינית: אין לשלב בני נוער עם התמכרות התנהגותית בלבד במסגרות טיפוליות המיועדות ל-SUD בשל סיכון להדבקה חברתית (Dulcan p.239)."
+  ]
+}
