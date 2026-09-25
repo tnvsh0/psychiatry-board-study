@@ -1,0 +1,79 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster C (Anxious/Fearful)",
+        "items": [
+          "Avoids occupational activities involving significant interpersonal contact due to fear of criticism/rejection",
+          "Unwilling to get involved with people unless certain of being liked",
+          "Shows restraint within intimate relationships due to fear of being shamed or ridiculed",
+          "Preoccupied with being criticized or rejected in social situations",
+          "Inhibited in new interpersonal situations because of feelings of inadequacy",
+          "Views self as socially inept, personally unappealing, or inferior to others",
+          "Unusually reluctant to take personal risks or engage in new activities due to fear of embarrassment"
+        ]
+      }
+    ],
+    "thresholds": ">=4/7 criteria starting by early adulthood (DSM p.764-765)",
+    "subtypes": [
+      "Section III Alternative Model: Anxiousness, Withdrawal, Anhedonia, Intimacy Avoidance (DSM p.885-886)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "2.1%–5.2% adults (0.8% in adults >65y) (DSM p.766-767)",
+    "sex_ratio": "Slightly higher in women in community surveys; equal in Synopsis (DSM p.766, Synopsis ch.19)",
+    "onset_age_typical": "Childhood shyness escalating during adolescence and early adulthood (DSM p.766-767)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "Social Anxiety Disorder (DSM p.768)",
+      "Major Depressive Disorder (DSM p.768)",
+      "Persistent Depressive Disorder (DSM p.768)",
+      "Substance Use Disorders (DSM p.768)",
+      "Dependent/Schizoid Personality Disorders (DSM p.768)"
+    ],
+    "prognosis": "Tends to attenuate or remit with age (0.8% prevalence above age 65) (DSM p.767)"
+  },
+  "etiology": {
+    "genetic": "Cluster C genetic vulnerability to anxiety and harm avoidance (Synopsis ch.19)",
+    "neurobiology": "High Harm Avoidance (HA), High Reward Dependence (RD), Low Novelty Seeking (NS) (Cloninger model; Synopsis ch.19)",
+    "environmental": "Insecure attachment (preoccupied/fearful), insensitive or traumatized parenting (DSM p.766, Dulcan p.525)"
+  },
+  "differential": {
+    "items": [
+      "Schizoid PD: AvPD craves companionship but fears rejection; Schizoid has no desire/enjoyment in relationships (DSM p.742, 767)",
+      "Social Anxiety Disorder: AvPD features a pervasive entrenched view of self as socially inept/inferior and broader avoidance (DSM p.767)",
+      "Dependent PD: AvPD avoids social proximity due to fear of rejection; Dependent seeks proximity and submission (DSM p.767)",
+      "Agoraphobia: AvPD is motivated by fear of rejection/shame; Agoraphobia by fear of panic/physical harm (DSM p.767)",
+      "Paranoid PD: AvPD reluctance to confide is due to fear of embarrassment/inadequacy, not malicious intent (DSM p.767)"
+    ],
+    "key_numbers": [
+      ">=4 of 7 criteria required for DSM-5-TR diagnosis (DSM p.764)",
+      "5.2% prevalence in NCS-R Part II (DSM p.766)",
+      "2.4% prevalence in NESARC (DSM p.766)",
+      "2.1% median prevalence across 6 epidemiological studies (DSM p.766)",
+      "0.8% prevalence in adults over 65 years (DSM p.767)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "CBT with gradual in vivo exposure (Synopsis ch.19)",
+      "Coping Cat / SET-C protocols for pediatric social anxiety/avoidance (Dulcan p.334, 971-972)",
+      "Assertiveness training and Group therapy (Synopsis ch.19)"
+    ],
+    "second_line": [
+      "SSRIs (Sertraline, Fluoxetine) for rejection sensitivity and comorbid anxiety/depression (Synopsis ch.19, Dulcan p.330)",
+      "Beta-blockers (Atenolol, Propranolol) for autonomic hyperarousal during social exposure (Synopsis ch.19)"
+    ],
+    "key_side_effects": [
+      "Behavioral activation, insomnia, motor restlessness, and suicidal ideation risk in youth SSRI initiation (Dulcan p.249, StahlKids p.285)"
+    ],
+    "monitoring": "Monitor weekly for activation/suicidality at start; full trial 8-12 weeks; continue 12 months after response (Dulcan p.331)"
+  },
+  "high_yield": [
+    "Crucial distinction from Schizoid PD: AvPD deeply craves human companionship ('desire for companionship') but is paralyzed by fear of rejection (DSM p.767, Synopsis ch.19)",
+    "Differs from Social Anxiety Disorder by an entrenched, pervasive view of self as globally inferior/socially inept (DSM p.767)",
+    "Cloninger temperament profile: High Harm Avoidance (HA), High Reward Dependence (RD), Low Novelty Seeking (NS) (Synopsis ch.19)",
+    "CBT warning: Uncontrolled exposure tasks that end in failure can reinforce fragile self-esteem (Synopsis ch.19)",
+    "Pediatric CAMS trial benchmark: Sertraline + CBT achieved 81% response rate vs 60% CBT alone (Dulcan p.330-331)"
+  ]
+}

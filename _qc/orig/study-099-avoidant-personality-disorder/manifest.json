@@ -1,0 +1,36 @@
+{
+ "tag": "study-099-avoidant-personality-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:01:11+00:00",
+ "updated_at": "2026-09-25T16:01:11+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "521343b0ca03dd006998f288b1314cb6c960325e0d14b8903bbe0d6e2191638a",
+   "asset_id": 585996470,
+   "size": 4852,
+   "fetched_at": "2026-09-25T16:00:46+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "c8b8b02d690d34325af66c8bd82d89d31ff5b46bac754a033ac73d87d1f2dac5",
+   "asset_id": 585996465,
+   "size": 11084,
+   "fetched_at": "2026-09-25T16:00:57+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "64d548e5757cd1a5198d0c4dea7ec18f69a0af32bba3418822ff37f358971cc7",
+   "asset_id": 585996468,
+   "size": 39747,
+   "fetched_at": "2026-09-25T16:01:04+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "3c717e877cc9aef20edb7485970cd0bb7455ee0f695a82c381c6e32a99ff0585",
+   "asset_id": 585996466,
+   "size": 32484,
+   "fetched_at": "2026-09-25T16:01:11+00:00"
+  }
+ ]
+}
