@@ -1,0 +1,36 @@
+{
+ "tag": "study-069-acute-psychosis-ed-management",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:04:02+00:00",
+ "updated_at": "2026-09-25T15:04:02+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3596594d599391611823056091c82912862b571fc5245a7c15572c0f89f81382",
+   "asset_id": 571420293,
+   "size": 6869,
+   "fetched_at": "2026-09-25T15:03:39+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "9c868bd7b5c0bb87fbcd9d428257d6da096adc35754ca0ad013705bbd91e88ed",
+   "asset_id": 571420296,
+   "size": 13480,
+   "fetched_at": "2026-09-25T15:03:47+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "1d1b30901e27114d8b0426aac96c8857911eea14311df21da4aa856399cdb400",
+   "asset_id": 571420299,
+   "size": 38642,
+   "fetched_at": "2026-09-25T15:03:55+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "205d458e1e2bbfcb81686db2c50ad87234d7bc71613dfa3b0e9c14fbd817e05e",
+   "asset_id": 571420294,
+   "size": 29418,
+   "fetched_at": "2026-09-25T15:04:02+00:00"
+  }
+ ]
+}
