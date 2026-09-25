@@ -1,0 +1,95 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "DID (Dissociative Identity Disorder)",
+        "items": [
+          "פיצול זהות ל-2+ זהויות נפרדות או חווית דיבוק (DSM p.330)",
+          "אמנזיה חוזרת לאירועים יומיומיים, מידע אישי או טראומה (DSM p.330)"
+        ]
+      },
+      {
+        "name": "Dissociative Amnesia",
+        "items": [
+          "אי-יכולת להיזכר במידע אוטוביוגרפי חשוב (DSM p.337)"
+        ]
+      },
+      {
+        "name": "Depersonalization / Derealization Disorder",
+        "items": [
+          "דפרסונליזציה - תחושת נתק מהעצמי, מהגוף או מהמחשבות (DSM p.343)",
+          "דה-ריאליזציה - תחושת נתק או חוסר מציאות ביחס לסביבה (DSM p.343)"
+        ]
+      }
+    ],
+    "thresholds": "מצוקה קלינית משמעותית או פגיעה תפקודית; בוחן מציאות תקין לחלוטין בדפרסונליזציה/דה-ריאליזציה (DSM p.330, 337, 343-344)",
+    "subtypes": [
+      "With dissociative fugue (DSM p.337)",
+      "Other Specified Dissociative Disorder - Dissociative trance, acute reactions <1 month (DSM p.347)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "DID: 1.5% במבוגרים (DSM p.333); Amnesia: 1.8% (DSM p.339); Depersonalization: 1%-2% (DSM p.344, Synopsis ch.11)",
+    "sex_ratio": "DID במבוגרים בקליניקה: 8:1 לטובת נשים (Synopsis ch.11); בילדים/נוער ובקהילה: 1:1 (DSM p.334)",
+    "onset_age_typical": "Depersonalization: גיל ממוצע 16 (DSM p.344); DID: פריצה בילדות מוקדמת (DSM p.333)",
+    "heritability": "~45%-50% (DSM p.334, 340)",
+    "comorbidities": [
+      "PTSD (DSM p.336)",
+      "Major Depressive Disorder (DSM p.336)",
+      "Substance Use Disorders (DSM p.336)",
+      "Functional Neurological Symptom Disorder / Conversion (DSM p.336)"
+    ],
+    "prognosis": "מהלך כרוני לרוב; >70% ממטופלי חוץ עם DID ביצעו ניסיון אובדני (DSM p.334, 345)"
+  },
+  "etiology": {
+    "genetic": "שונות גנטית מסבירה כ-45%-50% מהתסמינים הדיסוציאטיביים (DSM p.334, 340)",
+    "neurobiology": "דיסרעולציית ציר HPA וקואורדינציית Locus coeruleus, אטרופיה בהיפוקמפוס, מעורבות amygdala, orbitofrontal cortex, NMDA/גלוטמט וקולטני 5-HT2A (Dulcan p.527, StahlNeuro p.95, 368, 383)",
+    "environmental": "טראומה מוקדמת והתעללות פיזית/מינית/רגשית בילדות לפני גיל 5-6 בכ-90% מהמקרים (DSM p.333, Dulcan p.527)"
+  },
+  "treatment": {
+    "first_line": [
+      "פסיכותרפיה בשלבים: ייצוב -> עיבוד טראומה -> אינטגרציה (Synopsis ch.11)",
+      "Trauma-Focused CBT (TF-CBT) בילדים ונוער (Dulcan p.528)"
+    ],
+    "second_line": [
+      "SSRI (Fluoxetine, Sertraline) לקומורבידיות של דיכאון/חרדה (Dulcan p.261, 330, StahlKids p.205, 441)",
+      "Prazosin לסיוטים וסיוטי טראומה (Dulcan p.528, StahlNeuro p.389)"
+    ],
+    "key_side_effects": [
+      "אקטיבציה, הפרעות שינה, בחילות וכאבי בטן עם SSRI (Dulcan p.331, StahlKids p.207)",
+      "תת-לחץ דם אורתוסטטי עם Prazosin (StahlKids p.139)"
+    ],
+    "monitoring": "ניטור רציף של סיכון אובדני, אקטיבציה פסיכומוטורית ובטיחות (Dulcan p.528, StahlKids p.207)"
+  },
+  "assessment_tools": {
+    "items": [
+      "DES-II / A-DES (Adolescent Dissociative Experiences Scale) לסריקת תסמינים (Synopsis ch.11)",
+      "SCID-D ראיון קליני מובנה לאבחון הפרעות דיסוציאטיביות (Synopsis ch.11)",
+      "DSM-5 Level 1 Cross-Cutting Symptom Measure domain XI לדיסוציאציה (DSM p.842, 844)"
+    ],
+    "key_numbers": [
+      "23 שאלות ב-Level 1 Cross-Cutting Symptom Measure למבוגרים (DSM p.844)",
+      "25 שאלות ב-Level 1 Measure להורים לילדים בגילאי 6-17 (DSM p.845)",
+      "סף 'Mild or greater' בדומיין XI להעמקת בירור קליני (DSM p.844)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "אפילפסיה של אונה טמפורלית (Complex Partial Seizures) המחייבת EEG (DSM p.330, 338, 344)",
+      "חבלת ראש מוחית (TBI) ואמנזיה אורגנית (DSM p.338, 344)",
+      "הרעלת או גמילת חומרים פסיכואקטיביים כגון Ketamine, PCP, Cannabis, Alcohol blackouts (DSM p.330, 338, StahlNeuro p.138)"
+    ],
+    "key_numbers": [
+      "גיל 40: הופעת דפרסונליזציה מעל גיל 40 נדירה ביותר ומחייבת בירור נוירולוגי אורגני אלתר (DSM p.344)",
+      "15% מקרי דפרסונליזציה מופעלים על ידי שימוש בחומרים פסיכואקטיביים (DSM p.346)"
+    ]
+  },
+  "high_yield": [
+    "מעל 70% ממטופלי חוץ המאובחנים עם DID ביצעו ניסיון אובדני (DSM p.334)",
+    "יחס המין ב-DID במבוגרים בקליניקה הוא 8:1 לטובת נשים, אך בילדים/נוער ובקהילה היחס הוא 1:1 (DSM p.334, Synopsis ch.11)",
+    "הוספת Sertraline ל-TF-CBT בילדים עם טראומה/PTSD לא הראתה יתרון על פני TF-CBT בלבד (Dulcan p.528)",
+    "ילדים שעברו התעללות ושומעים קולות פנימיים מאובחנים לעיתים מזומנות בטעות כסובלים מסכיזופרניה (Dulcan p.527)",
+    "בוחן המציאות נשאר תקין לחלוטין בהפרעת דפרסונליזציה/דה-ריאליזציה (DSM p.343-344)",
+    "מתחלים (Malingering) מציגים זהויות סטריאוטיפיות ונהנים מהאבחנה, בעוד מטופלי DID אמיתיים מתביישים ומסתירים תסמינים (DSM p.337)"
+  ]
+}

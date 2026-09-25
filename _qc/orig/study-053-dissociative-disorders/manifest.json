@@ -1,0 +1,36 @@
+{
+ "tag": "study-053-dissociative-disorders",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:29:48+00:00",
+ "updated_at": "2026-09-25T14:29:48+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "3f56ae5899ddd05aa14e3d1a5693fc57898b5eecfad1661a602af9cf4b89ade6",
+   "asset_id": 564018367,
+   "size": 6222,
+   "fetched_at": "2026-09-25T14:29:41+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "f74f4dccadc664636bcb400a9256c5fd7e5fb647548b5dba7959cae7bdb06a4c",
+   "asset_id": 564018364,
+   "size": 10430,
+   "fetched_at": "2026-09-25T14:29:43+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "c4ef453b9325605e63b4eb55027cd14cd022a3e1a0258941b5b2190baa640203",
+   "asset_id": 564018362,
+   "size": 33667,
+   "fetched_at": "2026-09-25T14:29:45+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "f6994a062f73357c6cc176413e830cd61111f97db431c94dfbcc8542e055385b",
+   "asset_id": 564018366,
+   "size": 24505,
+   "fetched_at": "2026-09-25T14:29:48+00:00"
+  }
+ ]
+}
