@@ -1,0 +1,36 @@
+{
+ "tag": "study-104-gender-dysphoria-lgbtq-affirming-care",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:09:38+00:00",
+ "updated_at": "2026-09-25T16:09:38+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "7fdc218ed78f7b25b1caea1a12b8e6bb1a640e9e4b43174eddfd2c40a8aa1f28",
+   "asset_id": 586493282,
+   "size": 8336,
+   "fetched_at": "2026-09-25T16:09:31+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "771533f5fe12586f965a7ff2fa65a2229a8ae0ad310fca0fd68e85b4eb69928b",
+   "asset_id": 586493277,
+   "size": 14472,
+   "fetched_at": "2026-09-25T16:09:34+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "bf16ce885586225ba0ae4e6039b26c9d2c99ee84fdfb25bd8194b401a3eaf91f",
+   "asset_id": 586493279,
+   "size": 35917,
+   "fetched_at": "2026-09-25T16:09:36+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2f5b98426a761effb591ecf11522a8cec173cca051b526e7cfe54be05834e241",
+   "asset_id": 586493276,
+   "size": 49629,
+   "fetched_at": "2026-09-25T16:09:38+00:00"
+  }
+ ]
+}

@@ -1,0 +1,112 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Children (F64.2)",
+        "items": [
+          "A1 (חובה): תשוקה עזה להיות בן/בת המגדר השני או התעקשות כזו (DSM p.512)",
+          "A2: העדפת לבוש קרוס-דרסינג או התנגדות ללבוש המגדר המיוחס (DSM p.512)",
+          "A3: העדפת תפקידי המגדר השני במשחקי דמיון (DSM p.512)",
+          "A4: העדפת צעצועים ומשחקים של המגדר השני (DSM p.512)",
+          "A5: העדפת חברים למשחק בני המגדר השני (DSM p.512)",
+          "A6: דחיית צעצועים/פעילויות אופייניים ו-Rough-and-tumble play (DSM p.512)",
+          "A7: סלידה חזקה מהאנטומיה המינית העצמית (DSM p.512)",
+          "A8: תשוקה חזקה למאפייני מין תואמים (DSM p.512)"
+        ]
+      },
+      {
+        "name": "Adolescents and Adults (F64.0)",
+        "items": [
+          "1. אי-תאימות מסומנת למאפייני מין ראשוניים/משניים (DSM p.513)",
+          "2. תשוקה להיפטר ממאפייני מין ראשוניים/משניים (DSM p.513)",
+          "3. תשוקה למאפייני מין של המגדר השני (DSM p.513)",
+          "4. תשוקה חזקה להיות בן/בת המגדר השני (DSM p.513)",
+          "5. תשוקה שיתייחסו כבן/בת המגדר השני (DSM p.513)",
+          "6. שכנוע פנימי חזק ברגשות/תגובות של המגדר השני (DSM p.513)"
+        ]
+      }
+    ],
+    "thresholds": "ילדים: >=6/8 קריטריונים (A1 חובה), משך >=6 חודשים (DSM p.512). מתבגרים/מבוגרים: >=2/6 קריטריונים, משך >=6 חודשים (DSM p.513).",
+    "subtypes": [
+      "With a disorder/difference of sex development (DSD) (DSM p.513)",
+      "Posttransition (DSM p.514)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "<0.1% במרפאות; 0.5%-0.6% בסקרים; 1.8% בתיכונים (YRBSS) (DSM p.515, Dulcan p.569)",
+    "sex_ratio": "ילדים: 1.25:1 עד 4.3:1 AMAB:AFAB; מתבגרים: היפוך לטובת AFAB; מבוגרים: 1:1 עד 6.1:1 AMAB:AFAB (DSM p.518)",
+    "onset_age_typical": "מוקדמת: גיל 2-4 שנים; מאוחרת: גיל ההתבגרות/פיוברטי (DSM p.516, p.517)",
+    "heritability": "תאימות מוגברת בתאומים מונוזיגוטים, אדריכלות פוליגנטית (DSM p.517)",
+    "comorbidities": [
+      "דיכאון וחרדה (DSM p.520)",
+      "PTSD (Dulcan p.570)",
+      "Autism Spectrum Disorder (ASD - ייצוג עודף) (DSM p.515, Dulcan p.569)",
+      "ניסיונות אובדניים (35% בשנה החולפת, 41% אורך חיים) (DSM p.518, Dulcan p.565, p.569)"
+    ],
+    "prognosis": "Persistence בילדות: 2%-39% ב-AMAB, 12%-50% ב-AFAB. רוב המנסיגים (Desisters) יזהו כהומוסקסואלים/לסביות סיסג'נדרים (DSM p.516)."
+  },
+  "etiology": {
+    "genetic": "בסיס פוליגנטי (Polygenetic), תאימות מוגברת בתאומים מונוזיגוטים מול דיזיגוטים (DSM p.517)",
+    "neurobiology": "דיפרנציאציה מוחי ברחם, השפעות אנדרוגנים/אסטרוגנים על מעגלי cortex וסיסטמה לימבית; רמות הורמונים היקפיות תקינות (StahlNeuro p.29, p.278, DSM p.517, Dulcan p.567)",
+    "environmental": "מודל לחץ המיעוט (Minority Stress): דחייה משפחתית (מנבא מרכזי), אפליה, בריונות בבית ספר, והסתרה (Dulcan p.570)"
+  },
+  "treatment": {
+    "first_line": [
+      "מעבר חברתי (Social Transition - הפיך לחלוטין) (Dulcan p.574)",
+      "חוסמי בגרות מינית (GnRH Analogs: Leuprolide, Histrelin ב-Tanner Stage II - הפיך לחלוטין) (Dulcan p.574-575)",
+      "פסיכותרפיה אפורמטיבית (AFFIRM CBT, טיפול משפחתי) (Dulcan p.573-574)"
+    ],
+    "second_line": [
+      "הורמונים מאששי מגדר (Testosterone / Estrogen + Spironolactone מגיל 16 - הפיך חלקית) (Dulcan p.575)",
+      "ניתוחים להתאמה מילדרת (Top Surgery במתבגרים מאוחרים, Bottom Surgery מעל 18) (Dulcan p.575)"
+    ],
+    "key_side_effects": [
+      "חוסמי GnRH: הפחתת צפיפות עצם (BMD) (Dulcan p.575)",
+      "הורמונים: שינויי קול/שד בלתי-הפיכים, פגיעה בפוריות (Dulcan p.575)",
+      "SSRIs לתחלואה נלווית: תופעות לוואי מיניות, תסמונת הפעלה TEAS, סיכון אובדנות מוגבר בתחילה (StahlKids p.138, p.171)"
+    ],
+    "monitoring": "צפיפות עצם (BMD DEXA), קצב גדילה, מדדים מטבוליים/אנדוקריניים, ניטור אובדנות ב-SSRIs (Dulcan p.575, StahlKids p.138)"
+  },
+  "assessment_tools": {
+    "items": [
+      "AACAP Practice Parameter הערכה פסיכוסקסואלית (Dulcan p.572)",
+      "GIQC - שאלון דיווח הורים לילדים (Dulcan p.573)",
+      "UGDS - Utrecht Gender Dysphoria Scale (Dulcan p.573)",
+      "TCS - Transgender Congruence Scale (Dulcan p.573)",
+      "BIS - Body Image Scale (Dulcan p.573)",
+      "GMSR - Gender Minority Stress and Resilience Measure (Dulcan p.573)",
+      "PAGE - Parental Acceptance of Gender Expansiveness (Dulcan p.573)",
+      "WPATH Standards of Care (SOC) להערכה מולטי-דיסציפלינרית (Dulcan p.573, p.575)"
+    ],
+    "key_numbers": [
+      "גיל 7+ - סף לקבלת Informed Assent מילדים (StahlKids p.51)",
+      "6 חודשים - משך תסמינים מינימלי לקריטריון DSM (DSM p.512)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Congenital Adrenal Hyperplasia (CAH 46,XX - עודף אנדרוגנים ברחם) (DSM p.512, p.517-518)",
+      "Androgen Insensitivity Syndrome (AIS 46,XY - כשל קולטנים) (DSM p.511, p.517)",
+      "5-Alpha Reductase-2 / 17-Beta-HSD-3 Deficiency (46,XY - וריליזציה בפיוברטי) (DSM p.517-518)",
+      "Cloacal Exstrophy / Penile Agenesis (46,XY - מום אנטומי) (DSM p.518)",
+      "Autism Spectrum Disorder (ASD - עיסוק אובססיבי נוקשה) (DSM p.519, Dulcan p.569)",
+      "Schizophrenia & Psychosis (מחשבות שווא תנודתיות) (DSM p.520)",
+      "Transvestic Disorder (עוררות מינית) (DSM p.519)",
+      "Body Dysmorphic Disorder (BDD - פגם אסתטי מדומיין) (DSM p.519)",
+      "Nonconformity to Gender Roles (אי-תאימות ללא מצוקה) (DSM p.519)"
+    ],
+    "key_numbers": [
+      "20% - שיעור מחשבות שווא של שינוי מין בחולי סכיזופרניה (DSM p.520)"
+    ]
+  },
+  "high_yield": [
+    "קריטריון A1 (תשוקה להיות/התעקשות כבן המגדר השני) הוא קריטריון חובה מוחלט בילדים ב-DSM-5-TR (DSM p.512).",
+    "סף קריטריונים: 6/8 בילדים מול 2/6 במתבגרים ומבוגרים, משך >=6 חודשים (DSM p.512-513).",
+    "שיעור Persistence בילדות נמוך: 2%-39% ב-AMAB ו-12%-50% ב-AFAB; רוב ה-Desisters הופכים להומוסקסואלים/לסביות סיסג'נדרים (DSM p.516).",
+    "היפוך דמוגרפי (Demographic Shift): מעבר לשליטת AFAB בקרב מתבגרים הפונים לטיפול (DSM p.518).",
+    "דחייה משפחתית (Family rejection) היא המתווך והמנבא החזק ביותר לניסיונות אובדניים ולשימוש בחומרים בנוער LGBTQ+ (Dulcan p.570).",
+    "חוסמי בגרות מינית (GnRH Analogs) מותחלים ב-Tanner Stage II והם הפיכים לחלוטין (Dulcan p.574-575).",
+    "חסר ב-5-Alpha Reductase-2 ו-17-Beta-HSD-3 בנבדקי 46,XY גורם לווריליזציה בפיוברטי ומעבר מאישה לגבר (DSM p.517-518).",
+    "קבלת Informed Assent נדרשת אתית וקלינית מילדים מעל גיל 7 שנים (StahlKids p.51)."
+  ]
+}
