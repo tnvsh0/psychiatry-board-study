@@ -1,0 +1,36 @@
+{
+ "tag": "study-093-schizotypal-personality-disorder",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T15:47:21+00:00",
+ "updated_at": "2026-09-25T15:47:21+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "21a596c9c0457d300ffb939a5ff80552b642a73ae177ca2d41e5cbb43698254a",
+   "asset_id": 585788834,
+   "size": 6052,
+   "fetched_at": "2026-09-25T15:47:10+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "6a73304889bb74955fdae9fa41b6547fc899f221bb6dd7b52db53a81f0a289bb",
+   "asset_id": 585788835,
+   "size": 13266,
+   "fetched_at": "2026-09-25T15:47:13+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "4ebba150492606548bfc89e51fda2777ec231994e3095306e54ecd416e42ade9",
+   "asset_id": 585788836,
+   "size": 29582,
+   "fetched_at": "2026-09-25T15:47:15+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "5ce32e33f330c782f31dfc902a0f17d502a8c8df7401be1bd79eae7db4627689",
+   "asset_id": 585788837,
+   "size": 51442,
+   "fetched_at": "2026-09-25T15:47:21+00:00"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Cluster A / DSM-5-TR Section II",
+        "items": [
+          "Ideas of reference (DSM p.744)",
+          "Odd beliefs or magical thinking (DSM p.744)",
+          "Unusual perceptual experiences / bodily illusions (DSM p.745)",
+          "Odd thinking and speech (DSM p.745)",
+          "Suspiciousness or paranoid ideation (DSM p.745)",
+          "Inappropriate or constricted affect (DSM p.745)",
+          "Odd, eccentric, or peculiar behavior/appearance (DSM p.745)",
+          "Lack of close friends or confidants (DSM p.745)",
+          "Excessive social anxiety linked to paranoid fears (DSM p.745)"
+        ]
+      }
+    ],
+    "thresholds": "≥5 מתוך 9 קריטריונים (DSM p.744)",
+    "subtypes": [
+      "Schizotypal Personality Disorder (Premorbid) (DSM p.745)",
+      "Alternative Model Section III: Psychoticism and Detachment (DSM p.889)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "3.3% (NCS-R), 3.9% (NESARC), 0.6% חציון (DSM p.746); 3.9%-4.6% (Synopsis ch.19 Personality Disorders)",
+    "sex_ratio": "שכיחות מעט גבוהה יותר בגברים (DSM p.746)",
+    "onset_age_typical": "ילדות / התבגרות מוקדמת, יציב בבגרות (DSM p.746)",
+    "heritability": "קונקורדנציה 33% ב-MZ לעומת 4% ב-DZ (Synopsis ch.19 Personality Disorders)",
+    "comorbidities": [
+      "Major Depressive Disorder (30%-50% פעיל, >50% במהלך החיים) (Synopsis ch.19 Personality Disorders; DSM p.746)",
+      "Schizoid, Paranoid, Avoidant, Borderline PDs (DSM p.748)"
+    ],
+    "prognosis": "מהלך כרוני ויציב, מיעוט מפתח סכיזופרניה, 10% התאבדות (DSM p.746; Synopsis ch.19 Personality Disorders)"
+  },
+  "etiology": {
+    "genetic": "התקבצות משפחתית גבוהה בקרובי דרגה ראשונה של חולי סכיזופרניה, PRS פוליגני משותף (DSM p.746; StahlNeuro p.148)",
+    "neurobiology": "דיסרגולציה דופמינרגית subthreshold ב-associative striatum (StahlNeuro p.92, p.141), היפופונקציה של NMDA receptors על אינטרנוירוני GABA (StahlNeuro p.105), גיזום סינפטי אבנורמלי competitive elimination (StahlNeuro p.150), ליקוי SPEM (Synopsis ch.19 Personality Disorders)",
+    "environmental": "אינטראקציה גנטית-סביבתית (GxE), עומס אפיגנטי מסטרסורים מוקדמים, טראומה וקנאביס (StahlNeuro p.148; Dulcan p.200)"
+  },
+  "differential": {
+    "items": [
+      "Schizophrenia: מעבר הסף הפסיכוטי עם דלוזיות והזיות קבועות (DSM p.113, p.747)",
+      "ASD / SPCD: ליקויים חמורים בהדדיות רגשית ורוטינות חזרתיות מגיל ינקות (DSM p.60, p.747; Dulcan p.145)",
+      "Schizoid PD: העדר עיוותים קוגניטיביים/תפיסתיים וחשיבה מאגית (DSM p.743, p.747)",
+      "Avoidant PD: תשוקה אקטיבית לקשר הנבלמת מפחד דחייה (DSM p.747)",
+      "Attenuated Psychosis Syndrome: שינוי מצבי חריף (State) בתוך שנה לעומת תכונה כרונית (Trait) (DSM p.903, p.906)"
+    ],
+    "key_numbers": [
+      "10% שיעור התאבדות מוחלט (Synopsis ch.19 Personality Disorders)",
+      "30%-50% תחלואה נלווית של דיכאון מג'ורי (Synopsis ch.19 Personality Disorders)"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "פסיכותרפיה: עמדה תומכת לא-שיפוטית, CBT לבדיקת מציאות רכה, אימון כישורים חברתיים עם וידאו (Synopsis ch.19 Personality Disorders)",
+      "SGAs במינון נמוך: Aripiprazole (2.5-10 mg/day), Risperidone (0.5-2 mg/day), Quetiapine (25-150 mg/day) לפרנויה ורעיונות יחס (Synopsis ch.19; StahlKids p.36, p.408, p.412)",
+      "SSRIs: Fluoxetine, Escitalopram, Sertraline לחרדה חברתית ודיכאון (Synopsis ch.19; StahlKids p.194, p.213, p.420)"
+    ],
+    "second_line": [
+      "FGAs במינון נמוך מאוד (Haloperidol 0.5-1 mg/day) במקרי החמרה (Synopsis ch.19; StahlKids p.263)",
+      "מייצבי מצב רוח (Valproate, Lithium) לאי-יציבות אפקטיבית (Synopsis ch.19; StahlKids p.280, p.381)"
+    ],
+    "key_side_effects": [
+      "דיס-אינהיביציה התנהגותית והחמרת חשדנות מבנזודיאזפינים (Synopsis ch.19 Personality Disorders)",
+      "עלייה במשקל, סינדרום מטבולי, היפרפרולקטינמיה מ-SGAs (Dulcan p.127; StahlKids p.380)",
+      "EPS/TD מ-FGAs (StahlNeuro p.169; StahlKids p.263)"
+    ],
+    "monitoring": "ניטור מטבולי בילדים: משקל/BMI בכל מפגש, גלוקוז וליפידים בצום בבסיס, ב-12 שבועות ושנתי, פרולקטין, ו-ECG/QTc (Dulcan p.127, p.235; StahlKids p.371, p.380)"
+  },
+  "high_yield": [
+    "סף אבחנתי: >=5/9 קריטריונים ב-DSM-5-TR; בילדים מתבטא בפנטזיות ביזאריות (DSM p.744)",
+    "הבדל מרכזי מסכיזופרניה: היעדר פסיכוזה גלויה וקבועה; רעיונות יחס ולא דלוזיות יחס (DSM p.113, p.745, p.747)",
+    "הבדל מרכזי מ-Avoidant PD: ב-Avoidant יש תשוקה אקטיבית לקשר; ב-StPD החרדה פרנואידית ולא פוחתת (DSM p.745, p.747)",
+    "10% מהמאובחנים ב-StPD מסיימים את חייהם בהתאבדות (Synopsis ch.19 Personality Disorders)",
+    "סמן קצה נוירופיזיולוגי: ליקוי בתנועות עיניים מעקב איטי SPEM (Synopsis ch.19 Personality Disorders)",
+    "אזהרה חמורה: הימנעות מבנזודיאזפינים מחשש לדיס-אינהיביציה והחמרת פרנויה (Synopsis ch.19 Personality Disorders)"
+  ]
+}
