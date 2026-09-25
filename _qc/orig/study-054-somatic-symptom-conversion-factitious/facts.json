@@ -1,0 +1,119 @@
+{
+  "criteria": {
+    "clusters": [
+      {
+        "name": "Somatic Symptom Disorder (SSD)",
+        "items": [
+          "תסמין סומטי מטריד אחד או יותר (קריטריון A) (DSM p.351)",
+          "מחשבות מופרזות/לא-פרופורציונליות על חומרת התסמינים (B1) (DSM p.351)",
+          "חרדה גבוהה ומתמשכת לגבי בריאות (B2) (DSM p.351)",
+          "זמן ואנרגיה מופרזים המוקדשים לתסמינים (B3) (DSM p.351)"
+        ]
+      },
+      {
+        "name": "Illness Anxiety Disorder (IAD)",
+        "items": [
+          "עיסוק יתר בחשש מלהיות חולה במחלה קשה (קריטריון A) (DSM p.357)",
+          "תסמינים סומטיים אינם נוכחים או קלים בלבד (קריטריון B) (DSM p.357)",
+          "רמת חרדה גבוהה לגבי הבריאות (קריטריון C) (DSM p.357)",
+          "התנהגויות בדיקה מופרזות או הימנעות (קריטריון D) (DSM p.357)"
+        ]
+      },
+      {
+        "name": "Conversion Disorder (FNSD)",
+        "items": [
+          "שינוי בתפקוד מוטורי רצוני או תחושתי (קריטריון A) (DSM p.360)",
+          "ראיות קליניות לאי-תאימות אנטומית/נוירולוגית (קריטריון B) (DSM p.360)"
+        ]
+      },
+      {
+        "name": "Factitious Disorder",
+        "items": [
+          "זיוף תסמינים או גרימת פציעה המלווה בהונאה (קריטריון A) (DSM p.367)",
+          "הצגת העצמי או אחר כחולה/פצוע (קריטריון B) (DSM p.367)",
+          "היעדר תגמול/רווח חיצוני גלוי (קריטריון C) (DSM p.367)"
+        ]
+      }
+    ],
+    "thresholds": "משך מעל 6 חודשים ב-SSD ו-IAD (DSM p.351, p.357); אקוטי <6 חודשים, כרוני >=6 חודשים ב-Conversion (DSM p.360)",
+    "subtypes": [
+      "SSD: With predominant pain, Persistent (DSM p.351)",
+      "IAD: Care-seeking type, Care-avoidant type (DSM p.357)",
+      "Conversion: Weakness/paralysis, Abnormal movement, Swallowing, Speech, Seizures/attacks, Anesthesia/sensory loss, Special sensory, Mixed (DSM p.360)",
+      "Factitious: Imposed on Self [F68.10], Imposed on Another [F68.A] (DSM p.367)"
+    ]
+  },
+  "epidemiology": {
+    "prevalence": "SSD: 4%-6% בבוגרים (DSM p.353), ~20% בילדים בגילאי 5-7 (DSM p.353); Conversion: <1% באוכלוסייה, 5%-14% בבית חולים (DSM p.362)",
+    "sex_ratio": "SSD: F > M (DSM p.353); Conversion: F > M (2:1-3:1) (DSM p.362); IAD: F = M (DSM p.358)",
+    "onset_age_typical": "גילאי 6-12 בילדים (Dulcan p.59); בגרות מוקדמת ב-IAD (DSM p.358); Conversion מגיל 7-8 (Synopsis ch.12)",
+    "heritability": "לא צוין",
+    "comorbidities": [
+      "הפרעות חרדה (DSM p.355)",
+      "הפרעות דיכאון (DSM p.356)",
+      "OCD (StahlNeuro p.540)",
+      "הפרעות אישיות (Synopsis ch.12)"
+    ],
+    "prognosis": "Conversion: 95% החלמה ספונטנית תוך 2 שבועות באשפוז (Synopsis ch.12); <50% החלמה אם מעל 6 חודשים (Synopsis ch.12)"
+  },
+  "etiology": {
+    "genetic": "טמפרמנט עוררות רגשית שלילית (Negative Affectivity/Neuroticism) (DSM p.353)",
+    "neurobiology": "Suprasegmental Central Sensitization בתלמוס/קורטקס (StahlNeuro p.385); מעגל Worry/CSTC (StahlNeuro p.540); חסר עיכוב מונואמינרגי יורד NE/5HT (StahlNeuro p.391)",
+    "environmental": "SES נמוך, טראומה/ניצול בילדות, חיזוקים הורותיים לתלונות סומטיות (DSM p.353-354, Dulcan p.1088)"
+  },
+  "treatment": {
+    "first_line": [
+      "CBT - טיפול קוגניטיבי-התנהגותי (Synopsis ch.12)",
+      "Gatekeeper Model - רופא יחיד עם ביקורים מתוזמנים מראש (Dulcan p.1088, Synopsis ch.12)",
+      "Duloxetine (SNRI) - התחלה 30 mg/day, טיטרציה ל-60 mg/day בילדים מגיל 7 (StahlKids p.171-173)"
+    ],
+    "second_line": [
+      "SSRIs (Fluoxetine, Sertraline) לחרדה נלווית (StahlKids p.185, p.439)",
+      "Alpha-2-Delta Ligands (Gabapentin, Pregabalin) לכאב/ריגוש מרכזי (StahlNeuro p.395-399)",
+      "פיזיותרפיה והיפנוזה ל-Conversion (Synopsis ch.12)"
+    ],
+    "key_side_effects": [
+      "בחילות בתחילת טיפול ב-Duloxetine (StahlKids p.174)",
+      "Treatment-Emergent Activation Syndrome (TEAS) בילדים (StahlKids p.171, Dulcan p.269)",
+      "עליית לחץ דם, דופק, ירידה במשקל, ואזהרת קופסה שחורה לאובדניות (StahlKids p.174-175)"
+    ],
+    "monitoring": "מדדי לחץ דם, דופק, משקל ועקומות גדילה בילדים; ניטור מחשבות אובדניות (StahlKids p.174-175)"
+  },
+  "assessment_tools": {
+    "items": [
+      "DSM-5 Level 1 Cross-Cutting Measure - סעיף סומטי (DSM p.845)",
+      "PHQ-15 - Patient Health Questionnaire-15 Somatic Symptom Severity Scale (DSM p.846)",
+      "PARS - Pediatric Anxiety Rating Scale (Dulcan p.327)",
+      "SCARED - Screen for Child Anxiety Related Emotional Disorders (Dulcan p.328)",
+      "Triangulation - הצלבת מידע מתלמיד, הורה ובית ספר (StahlKids p.151)"
+    ],
+    "key_numbers": [
+      "15 פריטים סומטיים ב-PHQ-15 (DSM p.846)",
+      "13 פריטים סומטיים מתוך 50 ב-PARS (Dulcan p.327)",
+      "41 פריטים ב-SCARED (Dulcan p.328)",
+      "ציון Mild (2) ומעלה ב-Level 1 דורש הערכת עומק Level 2 (DSM p.845)"
+    ]
+  },
+  "medical_mimics": {
+    "items": [
+      "Hoover's Sign - מבחן חיובי לשיתוק תפקודי ברגל (Synopsis ch.12)",
+      "Tremor Entrainment Test - שינוי תדר רעד תפקודי בתנועה קצבית (DSM p.361)",
+      "Factitious Hypoglycemia - אינסולין גבוה בדם עם C-Peptide מדוכא/נמוך (Synopsis ch.12)",
+      "PNES vs אפילפסיה - ניטור Video-EEG איקטלי (Dulcan p.96, Synopsis ch.12)",
+      "Autoimmune Encephalitis (Anti-NMDAR) ו-PANS/PANDAS (Dulcan p.96, p.370)"
+    ],
+    "key_numbers": [
+      "95% החלמה ספונטנית תוך 2 שבועות ב-Conversion אקוטי באשפוז (Synopsis ch.12)",
+      "C-Peptide נמוך/מדוכא בהיפוגליקמיה פקטיטיבית (Synopsis ch.12)",
+      "גיל > 7 שנים לקבלת Informed Assent מילד (StahlKids p.51)"
+    ]
+  },
+  "high_yield": [
+    "SSD אינו דורש שהתסמין יהיה בלתי מוסבר רפואית; קיום מחלה אורגנית אינו שולל SSD (DSM p.349-351)",
+    "SSD מול IAD: ב-SSD תסמינים סומטיים בולטים ומציקים; ב-IAD תסמינים סומטיים מינוריים או נעדרים לחלוטין (DSM p.350, p.357)",
+    "Conversion דורש ראיות חיוביות לאי-תאימות אנטומית (Rule-in) כגון מבחן הובר, ולא דורש דחק נפשי בחובה (DSM p.350, p.360)",
+    "Factitious Disorder Imposed on Another: האבחנה ניתנת למפברק/הורה (F68.A), והילד מקבל אבחנת התעללות בילד (DSM p.367-368)",
+    "Factitious מול Malingering: Factitious מונע מאימוץ תפקיד החולה ללא רווח חיצוני; Malingering מונע מרווח משני/חיצוני גלוי (DSM p.368, p.370)",
+    "Duloxetine (SNRI): תרופת הבחירה לסומטיזציה/כאב בילדים מגיל 7 (GAD) ו-13 (פיברומיאלגיה), מינון 30-60 mg/day (StahlKids p.171-173, StahlNeuro p.392)"
+  ]
+}

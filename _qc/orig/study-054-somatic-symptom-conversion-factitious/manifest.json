@@ -1,0 +1,36 @@
+{
+ "tag": "study-054-somatic-symptom-conversion-factitious",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T14:30:44+00:00",
+ "updated_at": "2026-09-25T14:30:44+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "1b8cb24515a5e5e93b65868ad6052962498c3ba445977b01a6bcb4cbef9025ed",
+   "asset_id": 564066285,
+   "size": 7929,
+   "fetched_at": "2026-09-25T14:30:37+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "5736018f1f1e57a7815535a5652ba55dacaeb6949ea8ca3075fc8312a3fced06",
+   "asset_id": 564066289,
+   "size": 15046,
+   "fetched_at": "2026-09-25T14:30:40+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "ea7c992ca580cb24c8ed1d5c9912e25ae12e9b7aa84ad783dc46cd3cac70ca83",
+   "asset_id": 564066291,
+   "size": 32482,
+   "fetched_at": "2026-09-25T14:30:42+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "c285e58acb2e57f34ab932ace7db8bd3c10bb4fda4429d3a2d5be214f00ffcfa",
+   "asset_id": 564066287,
+   "size": 32053,
+   "fetched_at": "2026-09-25T14:30:44+00:00"
+  }
+ ]
+}
