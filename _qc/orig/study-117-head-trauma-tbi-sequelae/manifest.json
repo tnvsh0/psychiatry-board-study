@@ -1,0 +1,36 @@
+{
+ "tag": "study-117-head-trauma-tbi-sequelae",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T16:44:08+00:00",
+ "updated_at": "2026-09-25T16:44:08+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "203ef3afc1495a7e9cf2c0ea0016bb59e57f7c07ca071593eeab48520e724b74",
+   "asset_id": 587135712,
+   "size": 4767,
+   "fetched_at": "2026-09-25T16:44:02+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "aa8d4b8bb88e3d1445f8e9e54d8c6de54062dbfc33a2756c961392b712d7d8dc",
+   "asset_id": 587135711,
+   "size": 10313,
+   "fetched_at": "2026-09-25T16:44:04+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "8220e044bffaa165a659c4165e105230cb522680143b49183efa0d6d7769f28f",
+   "asset_id": 587135708,
+   "size": 28538,
+   "fetched_at": "2026-09-25T16:44:06+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "9ef4a70bec22efb9a7829a9db90791c760dca6718693c9ae5343ceaefd017afa",
+   "asset_id": 587135705,
+   "size": 34859,
+   "fetched_at": "2026-09-25T16:44:08+00:00"
+  }
+ ]
+}

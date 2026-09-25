@@ -1,0 +1,79 @@
+{
+  "anatomy": {
+    "items": [
+      "DLPFC: תסמונת דיס-אקזקיוטיבית וקשיי קשב (StahlNeuro p.147, p.453)",
+      "VMPFC/OFC: חוסר עכבות, אימפולסיביות ואגרסיביות (DSM p.777, StahlNeuro p.451)",
+      "נזק אקסונלי מפושט (DAI) מגזירת סיבי חומר לבן (DSM p.707)",
+      "שקע Tau היפר-פוספורילירטיבי בעומק ה-Sulci ב-CTE (StahlNeuro p.576)"
+    ],
+    "key_numbers": [
+      "2 אונות עיקריות נפגעות: פרונטלית וטמפורלית",
+      "3 מנגנונים ביומכניים: impact, acceleration/deceleration, blast"
+    ]
+  },
+  "clinical_presentation": {
+    "items": [
+      "Mild TBI/Concussion: GCS 13-15, LOC ≤30 דקות, PTA ≤1 יום (DSM p.708)",
+      "Complicated Mild TBI: מדדי mTBI אך עם ממצא פתולוגי בהדמיה (DSM p.707)",
+      "Moderate TBI: GCS 9-12, LOC 30 דקות עד 24 שעות (DSM p.708)",
+      "Severe TBI: GCS 3-8, LOC ≥24 שעות, PTA ≥7 ימים (DSM p.708)",
+      "Post-Concussion Syndrome (PCS): תסמינים נמשכים מעבר ל-3 חודשים (DSM p.709)"
+    ],
+    "key_numbers": [
+      "GCS 13-15: חבלה קלה",
+      "GCS 9-12: חבלה בינונית",
+      "GCS 3-8: חבלה חמורה",
+      ">3 חודשים: הגדרת PCS"
+    ]
+  },
+  "psychiatric_relevance": {
+    "items": [
+      "דיכאון לאחר TBI: סיכון מוגבר פי 2-3 (DSM p.208)",
+      "נגעים פרונטליים שמאליים: מקושרים לדיכאון אקוטי (DSM p.208)",
+      "אובדנות: מחשבות אובדניות ב-10%, ניסיונות ב-0.8%-1.7% (DSM p.710-711)",
+      "שינוי אישיות פרונטלי (F07.0): Apathetic, Disinhibited, Aggressive (DSM p.777)",
+      "PTSD מול TBI: שכחה ב-TBI היא כשל קידוד (PTA), ב-PTSD היא אמנזיה דיסוציאטיבית (DSM p.312)"
+    ],
+    "key_numbers": [
+      "פי 2-3 סיכון לדיכאון",
+      "10% מחשבות אובדניות",
+      "0.8%-1.7% ניסיונות אובדן לאורך 20 שנה"
+    ]
+  },
+  "workup": {
+    "items": [
+      "CT מוח: בדיקת הבחירה הדחופה בשלב האקוטי (Dulcan p.98)",
+      "MRI מוח: בדיקת הבחירה הראשונה בילדים בבירור לא-דחוף (Dulcan p.98)",
+      "DTI: הערכת נזק אקסונלי מפושט (DAI) בחומר הלבן (Dulcan p.98)",
+      "EEG: שלילת פרכוסים פוסט-טראומטיים ו-Non-convulsive Status Epilepticus (Dulcan p.96)"
+    ],
+    "key_numbers": [
+      "3 תגובות ב-GCS: עיניים (1-4), מילולי (1-5), מוטורי (1-6)",
+      "GCS ציון כולל: 3 עד 15"
+    ]
+  },
+  "treatment": {
+    "first_line": [
+      "Sertraline / Citalopram (SSRIs) לדיכאון וחרדה לאחר TBI (Dulcan p.1083)",
+      "Valproate / Carbamazepine לאגרסיביות אימפולסיבית ואי-שקט (Dulcan p.768)",
+      "Methylphenidate / Atomoxetine לתסמיני קשב והאטה קוגניטיבית (StahlKids p.68, p.342)"
+    ],
+    "second_line": [
+      "Duloxetine (SNRI) לדיכאון מלווה בכאב סומטי/PCS (StahlKids p.179)",
+      "Prazosin להפחתת סיוטי לילה ועוררות ב-PTSD נלווה (Dulcan p.359)",
+      "Guanfacine לקשיי קשב ואימפולסיביות (StahlKids p.248)"
+    ],
+    "key_side_effects": [
+      "הורדת סף פרכוסים בממריצים/נוגדי דיכאון",
+      "רגישות יתר ותגובות פרדוקסליות בילדים עם פגיעה מוחית (StahlKids p.248, p.416)"
+    ],
+    "monitoring": "ניטור סף פרכוסים, מדדים חיוניים, תופעות לוואי מטבוליות וסיכון אובדני (StahlKids p.95, p.342)"
+  },
+  "high_yield": [
+    "Complicated Mild TBI בעל פרוגנוזה וסיכון לסיבוכים הדומה ל-Moderate TBI בשל הדמיה מוחית לא תקינה (DSM p.707)",
+    "דיכאון אקוטי לאחר TBI מקושר לנגעים מוקדיים באזור הפרונטלי השמאלי (Left Frontal) (DSM p.208)",
+    "איסור מוחלט על הרגעה לא-ספציפית (כתונת משוגעים כימית) בילדים עם פגיעה מוחית (StahlKids p.262, p.416)",
+    "CTE נגרמת מחבלות קלות חוזרות (Repetitive mTBI) ומאופיינת בשקע Tau סביב כלי דם ב-Sulci (StahlNeuro p.576)",
+    "הבחנה בין TBI ל-PTSD: בלבול ודיסאוריינטציה ספציפיים ל-TBI; פלאשבקים והימנעות ספציפיים ל-PTSD (DSM p.312)"
+  ]
+}
