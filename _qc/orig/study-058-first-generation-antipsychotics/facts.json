@@ -1,0 +1,98 @@
+{
+  "drug_class": {
+    "members": [
+      "Haloperidol - High-potency Butyrophenone, high D2 affinity, low sedation (Dulcan p.787, StahlNeuro p.180, StahlKids p.254)",
+      "Chlorpromazine - Low-potency Phenothiazine, high sedation, M1, alpha-1 blockade (Dulcan p.787, StahlNeuro p.180, StahlKids p.96)",
+      "Fluphenazine - High-potency Phenothiazine, high EPS, available as decanoate LAI (Dulcan p.787, StahlKids p.213)",
+      "Pimozide - High-potency Diphenylbutylpiperidine, D2 + calcium channel blocker, unique to Tourette (Dulcan p.447, StahlKids p.395)"
+    ],
+    "mechanism": "Dopamine D2 receptor antagonism across mesolimbic, nigrostriatal, tuberoinfundibular, and mesocortical pathways (Dulcan p.794, StahlNeuro p.161)",
+    "kinetics": [
+      "Half-life oral Haloperidol: ~18 hours (Dulcan p.788, StahlKids p.255)",
+      "Metabolism: Hepatic via CYP2D6 and CYP3A4 (Dulcan p.786, StahlKids p.255)",
+      "Plasma drug levels: Measurable for Haloperidol (StahlKids p.255, StahlNeuro p.202)"
+    ],
+    "onset_of_effect": "Acute sedation/antipsychotic action in hours to days; full antipsychotic effect in 2–6 weeks (Dulcan p.795, StahlNeuro p.161)"
+  },
+  "indications": {
+    "items": [
+      "Schizophrenia in youth: Haloperidol approved >=3 years, Trifluoperazine approved >=6 years, Thiothixene approved >=12 years (Dulcan p.402, p.796)",
+      "Tourette Syndrome: Haloperidol (FDA approved), Pimozide approved >=8 years as 2nd line (Dulcan p.447, StahlKids p.395)",
+      "Severe behavior problems & ADHD: Legacy FDA approval for Chlorpromazine and Haloperidol (StahlKids p.96, p.254)"
+    ],
+    "key_numbers": [
+      "60-70% - D2 occupancy required for antipsychotic effect (Dulcan p.795, StahlNeuro p.161)",
+      "3 years - Minimum approved age for Haloperidol in schizophrenia (Dulcan p.402)",
+      "8 years - Minimum approved age for Pimozide in Tourette (Dulcan p.447, StahlKids p.395)"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Hyperprolactinemia: Galactorrhea, amenorrhea, gynecomastia via tuberoinfundibular D2 blockade (Dulcan p.820, StahlNeuro p.164)",
+      "Sedation: H1 and M1 blockade, prominent in low-potency FGAs like Chlorpromazine (StahlNeuro p.180, StahlKids p.97)",
+      "Anticholinergic effects: Dry mouth, constipation, urinary retention via M1 blockade (StahlNeuro p.168)",
+      "QTc prolongation: Risk of Torsades de Pointes, especially with Pimozide and Thioridazine (Dulcan p.447, StahlKids p.396)"
+    ],
+    "key_numbers": [
+      ">80% - D2 occupancy threshold causing EPS and hyperprolactinemia (Dulcan p.795, StahlNeuro p.161)",
+      "10-20% - Fatality rate of Neuroleptic Malignant Syndrome (NMS) (DSM p.810)"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "AIMS scale: Mandatory baseline and periodic screening for Tardive Dyskinesia (Dulcan p.827)",
+      "ECG and electrolytes: Required at baseline and titration for Pimozide (Dulcan p.447, StahlKids p.396)",
+      "CYP2D6 genotyping: Required before exceeding 0.05 mg/kg/day of Pimozide (StahlKids p.400)",
+      "Metabolic & vital monitoring: Weight, BMI z-score, BP, fasting glucose/lipids (Dulcan p.827)"
+    ],
+    "key_numbers": [
+      "0.05 mg/kg/day - Pimozide dose threshold requiring CYP2D6 genotyping (StahlKids p.400)",
+      "3 months - Interval for initial post-baseline AIMS and metabolic re-evaluation (Dulcan p.827)"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "Start low, go slow: Weight-based dosing and slow titration due to pediatric sensitivity (Dulcan p.686, StahlKids p.39)",
+      "LAI formulations: Haldol decanoate and Fluphenazine decanoate not FDA-approved in youth; contra-indicated <12 years (Dulcan p.402, StahlKids p.218)",
+      "Chemical straightjacket prohibition: Strict ethical ban on using FGAs for non-specific behavioral control without diagnosis (StahlKids p.104, Dulcan p.508)"
+    ],
+    "key_numbers": [
+      "10 mg/day - Absolute maximum daily dose of Pimozide (Dulcan p.448, StahlKids p.400)",
+      "12 years - Minimum age for Fluphenazine decanoate (StahlKids p.218)"
+    ]
+  },
+  "EPS_focus": {
+    "items": [
+      "Acute Dystonia: Sustained muscle contraction (torticollis, oculogyric crisis, laryngeal dystonia); treat with IM/IV Benztropine (DSM p.812)",
+      "Parkinsonism (DIP): Rigidity, bradykinesia, 3-6 Hz rest tremor; treat with dose reduction or oral anticholinergics (DSM p.807, StahlNeuro p.165)",
+      "Acute Akathisia: Subjective inner restlessness + objective pacing; treat with Propranolol (DSM p.813, StahlNeuro p.169)",
+      "Tardive Dyskinesia (TD): Orofacial dyskinesia from upregulated/supersensitive D2 receptors; treat with VMAT2 inhibitors (Valbenazine/Deutetrabenazine); anticholinergics worsen TD! (DSM p.814, StahlNeuro p.170)",
+      "NMS: Hyperthermia (>38°C), lead-pipe rigidity, autonomic instability, CPK elevation; treat with withdrawal, ICU, Dantrolene/Bromocriptine (DSM p.810)"
+    ],
+    "key_numbers": [
+      "24-48 hours - Timeframe for 50% of Acute Dystonia onset (DSM p.812)",
+      "3-6 Hz - Frequency of parkinsonian resting tremor (DSM p.808)",
+      "3 months - Minimum exposure duration before diagnosing Tardive Dyskinesia (DSM p.815)",
+      ">38.0°C - Temperature criterion for NMS (DSM p.810)"
+    ]
+  },
+  "potency_spectrum": {
+    "items": [
+      "High-potency (Haloperidol, Fluphenazine): High D2 affinity, low mg dose, high EPS, low sedation/anticholinergic (Dulcan p.787, StahlNeuro p.180)",
+      "Low-potency (Chlorpromazine): Low D2 affinity, high mg dose, low EPS, high sedation/anticholinergic/orthostasis (Dulcan p.787, StahlNeuro p.180)",
+      "Chlorpromazine equivalence: 2 mg Haloperidol = 2 mg Fluphenazine = 2 mg Pimozide = 100 mg Chlorpromazine (Dulcan p.787)"
+    ],
+    "key_numbers": [
+      "100 mg - Standard Chlorpromazine dose equivalent baseline (Dulcan p.787)",
+      "2 mg - Equivalent dose of Haloperidol to 100 mg Chlorpromazine (Dulcan p.787)"
+    ]
+  },
+  "high_yield": [
+    "Anticholinergics treat DIP but WORSEN Tardive Dyskinesia (TD) (DSM p.815, StahlNeuro p.170)",
+    "Propranolol is the first-line treatment for acute akathisia, not anticholinergics (DSM p.813, StahlNeuro p.169)",
+    "Pimozide requires baseline ECG, electrolyte check, and CYP2D6 genotyping due to QTc risk (Dulcan p.447, StahlKids p.400)",
+    "Acute laryngeal dystonia is a life-threatening airway emergency treated immediately with IM/IV Benztropine or Diphenhydramine (DSM p.812)",
+    "TEOSS study showed equal efficacy between Molindone (FGA) and SGAs in early-onset schizophrenia, but higher EPS (Dulcan p.402, p.821)",
+    "VMAT2 inhibitors (Valbenazine, Deutetrabenazine) are FDA-approved treatments for Tardive Dyskinesia (DSM p.816, StahlNeuro p.173)"
+  ]
+}

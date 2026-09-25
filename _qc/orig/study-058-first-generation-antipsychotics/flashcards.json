@@ -1,0 +1,245 @@
+{
+  "title": "Antipsychotics Flashcards",
+  "cards": [
+    {
+      "front": "\u05de\u05d4\u05d5 \u05de\u05e0\u05d2\u05e0\u05d5\u05df \u05d4\u05e4\u05e2\u05d5\u05dc\u05d4 \u05d4\u05e8\u05d0\u05e9\u05d9 (primary mechanism) \u05d4\u05de\u05e9\u05d5\u05ea\u05e3 \u05dc\u05db\u05dc \u05d4-First Generation Antipsychotics (FGA)?",
+      "back": "$D_{2}$ receptor antagonism (StahlNeuro p. 161)."
+    },
+    {
+      "front": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05de\u05e1\u05dc\u05d5\u05dc \u05d3\u05d5\u05e4\u05de\u05d9\u05e0\u05e8\u05d2\u05d9 \u05d7\u05e1\u05d9\u05de\u05ea \u05e7\u05d5\u05dc\u05d8\u05e0\u05d9 $D_{2}$ \u05de\u05d5\u05d1\u05d9\u05dc\u05d4 \u05dc\u05d4\u05e4\u05d7\u05ea\u05ea positive symptoms?",
+      "back": "Mesolimbic/mesostriatal dopamine pathway (StahlNeuro p. 162)."
+    },
+    {
+      "front": "\u05db\u05d9\u05e6\u05d3 \u05de\u05e9\u05e4\u05d9\u05e2\u05d4 \u05d7\u05e1\u05d9\u05de\u05ea $D_{2}$ \u05d1-Nigrostriatal pathway \u05e2\u05dc \u05d4\u05de\u05d8\u05d5\u05e4\u05dc?",
+      "back": "It leads to extrapyramidal side effects (EPS) or drug-induced parkinsonism (StahlNeuro p. 169)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4-therapeutic window \u05d4\u05de\u05e9\u05d5\u05e2\u05e8 \u05e9\u05dc \u05ea\u05e4\u05d5\u05e1\u05ea \u05e7\u05d5\u05dc\u05d8\u05e0\u05d9 $D_{2}$ (receptor occupancy) \u05dc\u05d4\u05e9\u05d2\u05ea \u05d0\u05e4\u05e7\u05d8 \u05d0\u05e0\u05d8\u05d9\u05e4\u05e1\u05d9\u05db\u05d5\u05d8\u05d9 \u05dc\u05dc\u05d0 EPS?",
+      "back": "$60\\%-70\\%$ (Dulcan p. 794, StahlNeuro p. 201)."
+    },
+    {
+      "front": "\u05d4\u05d2\u05d3\u05e8 \u05d0\u05ea \u05d4\u05de\u05d5\u05e9\u05d2 'Potency' \u05d1\u05d4\u05e7\u05e9\u05e8 \u05e9\u05dc FGA.",
+      "back": "The affinity of the drug for $D_{2}$ receptors, which determines the dose required for effect (StahlNeuro p. 201)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05de\u05d0\u05e4\u05d9\u05d9\u05df \u05d4\u05e7\u05dc\u05d9\u05e0\u05d9 \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05e9\u05dc \u05ea\u05e8\u05d5\u05e4\u05d5\u05ea FGA \u05de\u05e1\u05d5\u05d2 Low-potency (\u05db\u05d2\u05d5\u05df Chlorpromazine)?",
+      "back": "Lower EPS risk but higher sedation, anticholinergic effects, and orthostatic hypotension (StahlKids p. 104, Dulcan p. 821)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05de\u05d0\u05e4\u05d9\u05d9\u05df \u05d4\u05e7\u05dc\u05d9\u05e0\u05d9 \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05e9\u05dc \u05ea\u05e8\u05d5\u05e4\u05d5\u05ea FGA \u05de\u05e1\u05d5\u05d2 High-potency (\u05db\u05d2\u05d5\u05df Haloperidol)?",
+      "back": "Higher EPS risk but lower sedation and lower anticholinergic activity (StahlKids p. 264, Dulcan p. 821)."
+    },
+    {
+      "front": "\u05db\u05d9\u05e6\u05d3 \u05de\u05e9\u05e4\u05d9\u05e2\u05d4 \u05d4-Potency \u05e9\u05dc \u05d4\u05ea\u05e8\u05d5\u05e4\u05d4 \u05e2\u05dc \u05d4\u05e1\u05d9\u05db\u05d5\u05df \u05dc-Hyperprolactinemia?",
+      "back": "High-potency FGAs generally cause more significant and sustained prolactin elevation (Dulcan p. 825)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05de\u05d9\u05d9\u05d3\u05d9 (Emergency treatment) \u05d1\u05de\u05e6\u05d1 \u05e9\u05dc Acute laryngeal dystonia?",
+      "back": "Immediate administration of IM or IV Benztropine or Diphenhydramine (DSM p. 812)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05ea\u05e8\u05d5\u05e4\u05d4 \u05e9\u05d4\u05d9\u05d0 \u05e7\u05d5 \u05e8\u05d0\u05e9\u05d5\u05df (First-line) \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Akathisia \u05d4\u05e0\u05d2\u05e8\u05de\u05ea \u05de-FGAs?",
+      "back": "Propranolol (Dulcan p. 813)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d0\u05d9\u05df \u05dc\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-Anticholinergics \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Tardive Dyskinesia (TD)?",
+      "back": "Anticholinergics can worsen the symptoms of Tardive Dyskinesia (Dulcan p. 815, StahlNeuro p. 170)."
+    },
+    {
+      "front": "\u05de\u05d4 \u05d4\u05e8\u05d0\u05d5 \u05de\u05de\u05e6\u05d0\u05d9 \u05de\u05d7\u05e7\u05e8 \u05d4-TEOSS \u05dc\u05d2\u05d1\u05d9 \u05d4\u05d9\u05e2\u05d9\u05dc\u05d5\u05ea \u05e9\u05dc Molindone (FGA) \u05dc\u05e2\u05d5\u05de\u05ea SGAs \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd \u05e2\u05dd EOS?",
+      "back": "There was no significant difference in efficacy, though Molindone had higher EPS rates (Dulcan p. 802, p. 821)."
+    },
+    {
+      "front": "\u05dc\u05d0\u05d9\u05dc\u05d5 \u05d1\u05d3\u05d9\u05e7\u05d5\u05ea \u05e0\u05d9\u05d8\u05d5\u05e8 \u05d6\u05e7\u05d5\u05e7 \u05de\u05d8\u05d5\u05e4\u05dc \u05dc\u05e4\u05e0\u05d9 \u05d4\u05ea\u05d7\u05dc\u05ea \u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Pimozide?",
+      "back": "Baseline ECG, serum potassium and magnesium levels, and CYP2D6 genotyping (Dulcan p. 447, StahlKids p. 400)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05d0\u05d9\u05e0\u05d3\u05d9\u05e7\u05e6\u05d9\u05d4 \u05d4\u05de\u05d0\u05d5\u05e9\u05e8\u05ea (FDA approved) \u05dc\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-Pimozide \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd \u05d5\u05e0\u05d5\u05e2\u05e8?",
+      "back": "Tourette's Disorder (in patients who failed standard treatment) (StahlKids p. 396, Dulcan p. 789)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05ea\u05d5\u05e4\u05e2\u05ea \u05d4\u05dc\u05d5\u05d5\u05d0\u05d9 \u05d4\u05dc\u05d1\u05d1\u05d9\u05ea \u05d4\u05de\u05e1\u05d5\u05db\u05e0\u05ea \u05d1\u05d9\u05d5\u05ea\u05e8 \u05d4\u05de\u05d6\u05d5\u05d4\u05d4 \u05e2\u05dd Pimozide \u05d5-Thioridazine?",
+      "back": "QTc interval prolongation, which can lead to torsades de pointes (StahlKids p. 405, Dulcan p. 825)."
+    },
+    {
+      "front": "\u05d0\u05d9\u05dc\u05d5 \u05ea\u05e8\u05d5\u05e4\u05d5\u05ea (Class) \u05de\u05d0\u05d5\u05e9\u05e8\u05d5\u05ea \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4-FDA \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Tardive Dyskinesia?",
+      "back": "VMAT2 inhibitors, such as Valbenazine or Deutetrabenazine (DSM p. 816, StahlNeuro p. 173)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05de\u05e0\u05d2\u05e0\u05d5\u05df \u05d4-Rebound \u05d4\u05e4\u05e1\u05d9\u05db\u05d5\u05d8\u05d9 \u05d1\u05e2\u05ea \u05d4\u05e4\u05e1\u05e7\u05ea FGA \u05de\u05d4\u05d9\u05e8\u05d4?",
+      "back": "Upregulated and hypersensitive $D_{2}$ receptors (Dopamine supersensitivity) (Dulcan p. 795)."
+    },
+    {
+      "front": "\u05d4\u05d2\u05d3\u05e8 \u05d0\u05ea \u05d4\u05de\u05d0\u05e4\u05d9\u05d9\u05e0\u05d9\u05dd \u05d4\u05e7\u05dc\u05d9\u05e0\u05d9\u05d9\u05dd \u05e9\u05dc Neuroleptic Malignant Syndrome (NMS).",
+      "back": "Fever, muscle rigidity ('lead pipe'), autonomic instability, and elevated creatine kinase (CK) (Dulcan p. 822)."
+    },
+    {
+      "front": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05d2\u05d9\u05dc \u05de\u05d0\u05d5\u05e9\u05e8 \u05d4\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-Haloperidol \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Schizophrenia \u05dc\u05e4\u05d9 \u05d4-FDA?",
+      "back": "Ages 3 years and older (Dulcan p. 788)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d9\u05dc\u05d3\u05d9\u05dd \u05d5\u05de\u05ea\u05d1\u05d2\u05e8\u05d9\u05dd \u05e8\u05d2\u05d9\u05e9\u05d9\u05dd \u05d9\u05d5\u05ea\u05e8 \u05dc-EPS \u05dc\u05e2\u05d5\u05de\u05ea \u05de\u05d1\u05d5\u05d2\u05e8\u05d9\u05dd?",
+      "back": "Due to developmental differences in dopamine receptor density and sensitivity in the striatum (Dulcan p. 821, StahlKids p. 264)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05e9\u05d9\u05e2\u05d5\u05e8 \u05d4\u05d4\u05d9\u05d0\u05e8\u05e2\u05d5\u05ea \u05d4\u05e9\u05e0\u05ea\u05d9 (Annualized incidence) \u05e9\u05dc Tardive Dyskinesia \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd \u05d4\u05de\u05d8\u05d5\u05e4\u05dc\u05d9\u05dd \u05d1\u05d0\u05e0\u05d8\u05d9\u05e4\u05e1\u05d9\u05db\u05d5\u05d8\u05d9\u05d9\u05dd?",
+      "back": "$0.4\\%$ (Dulcan p. 822)."
+    },
+    {
+      "front": "\u05d0\u05d9\u05dc\u05d5 \u05e7\u05d5\u05dc\u05d8\u05e0\u05d9\u05dd \u05e0\u05d5\u05e1\u05e4\u05d9\u05dd (\u05de\u05dc\u05d1\u05d3 $D_{2}$) \u05d7\u05d5\u05e1\u05de\u05ea Chlorpromazine \u05d4\u05ea\u05d5\u05e8\u05de\u05d9\u05dd \u05dc\u05d0\u05e4\u05e7\u05d8 \u05d4-Sedative \u05e9\u05dc\u05d4?",
+      "back": "$H_{1}$ (Histamine-1) and $\\alpha_{1}$-adrenergic receptors (StahlNeuro p. 204, StahlKids p. 104)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05e1\u05d9\u05db\u05d5\u05df \u05d1\u05e9\u05d9\u05dc\u05d5\u05d1 \u05e9\u05dc Chlorpromazine \u05e2\u05dd \u05ea\u05e8\u05d5\u05e4\u05d5\u05ea \u05d0\u05e0\u05d8\u05d9-\u05db\u05d5\u05dc\u05d9\u05e0\u05e8\u05d2\u05d9\u05d5\u05ea?",
+      "back": "Increased risk of severe constipation, cognitive blurring, and potentially paralytic ileus (StahlNeuro p. 176, StahlKids p. 104)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d9\u05e9 \u05e6\u05d5\u05e8\u05da \u05d1\u05e0\u05d9\u05d8\u05d5\u05e8 \u05ea\u05e4\u05e7\u05d5\u05d3\u05d9 \u05db\u05d1\u05d3 (Liver enzymes) \u05d1\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-FGA?",
+      "back": "FGAs can cause transient or significant elevations in transaminases (AST/ALT) (Dulcan p. 825)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05de\u05d5\u05de\u05dc\u05e5 \u05dc-Drug-Induced Parkinsonism (DIP)?",
+      "back": "Reducing the antipsychotic dose or adding an anticholinergic agent like Benztropine (StahlNeuro p. 176, Dulcan p. 826)."
+    },
+    {
+      "front": "\u05d0\u05d9\u05d6\u05d5 \u05ea\u05d5\u05e4\u05e2\u05ea \u05dc\u05d5\u05d5\u05d0\u05d9 \u05e9\u05dc FGA \u05de\u05ea\u05d5\u05d0\u05e8\u05ea \u05db-'Subjective feeling of inner restlessness and inability to sit still'?",
+      "back": "Akathisia (Dulcan p. 822, DSM p. 813)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05d0\u05d9\u05e0\u05d3\u05d9\u05e7\u05e6\u05d9\u05d4 \u05e9\u05dc Haloperidol decanoate?",
+      "back": "Long-term maintenance treatment of schizophrenia in patients requiring a long-acting injectable (LAI) (StahlKids p. 263)."
+    },
+    {
+      "front": "\u05d0\u05d9\u05d6\u05d4 \u05d0\u05e0\u05d6\u05d9\u05dd \u05db\u05d1\u05d3\u05d9 (CYP) \u05d4\u05d5\u05d0 \u05d4\u05de\u05d8\u05d1\u05d5\u05dc\u05d9\u05d6\u05d8\u05d5\u05e8 \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05e9\u05dc Haloperidol?",
+      "back": "CYP3A4 (Dulcan p. 786)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4-Half-life \u05d4\u05de\u05de\u05d5\u05e6\u05e2 \u05e9\u05dc Haloperidol \u05d1\u05de\u05ea\u05df \u05e4\u05d5\u05de\u05d9 (Oral)?",
+      "back": "Approximately 18 hours (Dulcan p. 787)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d9\u05e9 \u05dc\u05d4\u05d9\u05de\u05e0\u05e2 \u05de\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-FGA \u05d1\u05de\u05d9\u05e0\u05d5\u05e0\u05d9\u05dd \u05d2\u05d1\u05d5\u05d4\u05d9\u05dd \u05db-'Chemical straightjacket' \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd?",
+      "back": "It causes 'neurolepsis'\u2014psychomotor slowing and emotional indifference\u2014which interferes with learning and development (StahlNeuro p. 161, StahlKids p. 221)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4-Potency spectrum \u05e9\u05dc Fluphenazine \u05dc\u05e2\u05d5\u05de\u05ea Chlorpromazine?",
+      "back": "Fluphenazine is a high-potency agent, while Chlorpromazine is low-potency (StahlNeuro p. 204)."
+    },
+    {
+      "front": "\u05de\u05d4\u05df \u05d4\u05d4\u05e0\u05d7\u05d9\u05d5\u05ea \u05dc\u05d1\u05d9\u05e6\u05d5\u05e2 'Washout' \u05d1\u05de\u05e2\u05d1\u05e8 \u05d1\u05d9\u05df FGAs \u05e9\u05d5\u05e0\u05d9\u05dd \u05dc\u05de\u05e0\u05d9\u05e2\u05ea Withdrawal dyskinesia?",
+      "back": "Taper the first medication slowly while gradually introducing the new one (cross-titration) (Dulcan p. 795)."
+    },
+    {
+      "front": "\u05d0\u05d9\u05d6\u05d5 \u05d1\u05d3\u05d9\u05e7\u05d4 \u05d2\u05d5\u05e4\u05e0\u05d9\u05ea \u05d9\u05e9 \u05dc\u05d1\u05e6\u05e2 \u05d1\u05d0\u05d5\u05e4\u05df \u05ea\u05e7\u05d5\u05e4\u05ea\u05d9 \u05dc\u05de\u05d8\u05d5\u05e4\u05dc \u05d1-FGA \u05dc\u05d6\u05d9\u05d4\u05d5\u05d9 \u05de\u05d5\u05e7\u05d3\u05dd \u05e9\u05dc Tardive Dyskinesia?",
+      "back": "Abnormal Involuntary Movement Scale (AIMS) (Dulcan p. 826, StahlKids p. 264)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05e7\u05e9\u05e8 \u05d1\u05d9\u05df \u05d7\u05e1\u05d9\u05de\u05ea \u05e7\u05d5\u05dc\u05d8\u05e0\u05d9 $\\alpha_{1}$ \u05dc\u05d1\u05d9\u05df \u05ea\u05d5\u05e4\u05e2\u05ea \u05d4\u05dc\u05d5\u05d5\u05d0\u05d9 \u05e9\u05dc Priapism?",
+      "back": "$\\alpha_{1}$ blockade can lead to failure of detumescence, constituting a urological emergency (StahlKids p. 104)."
+    },
+    {
+      "front": "\u05db\u05d9\u05e6\u05d3 \u05de\u05e9\u05e4\u05d9\u05e2\u05d4 \u05d7\u05e1\u05d9\u05de\u05ea \u05e7\u05d5\u05dc\u05d8\u05e0\u05d9 $M_{1}$ (Muscarinic) \u05e2\u05dc \u05d4\u05e8\u05d0\u05d9\u05d9\u05d4?",
+      "back": "It causes blurred vision due to cycloplegia (StahlNeuro p. 176, StahlKids p. 221)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05ea\u05e8\u05d5\u05e4\u05ea\u05d9 \u05d4\u05de\u05d5\u05e2\u05d3\u05e3 \u05dc-Acute Dystonia \u05d4\u05de\u05d5\u05e4\u05d9\u05e2\u05d4 \u05ea\u05d5\u05da \u05e9\u05e2\u05d5\u05ea \u05de\u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05d8\u05d9\u05e4\u05d5\u05dc?",
+      "back": "Anticholinergics or antihistamines (e.g., Diphenhydramine) (DSM p. 812)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 Pimozide \u05d0\u05e1\u05d5\u05e8\u05d4 \u05dc\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1\u05de\u05d8\u05d5\u05e4\u05dc\u05d9\u05dd \u05d4\u05e0\u05d5\u05d8\u05dc\u05d9\u05dd \u05de\u05e2\u05db\u05d1\u05d9 CYP3A4 \u05d7\u05d6\u05e7\u05d9\u05dd?",
+      "back": "It increases the risk of toxic plasma levels leading to fatal arrhythmias (StahlKids p. 400)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05e1\u05d9\u05db\u05d5\u05df \u05d4\u05de\u05e8\u05db\u05d6\u05d9 \u05d1\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-FGA \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd \u05e2\u05dd Intellectual Disability (ID)?",
+      "back": "Increased sensitivity to sedation and cognitive blunting which impairs rehabilitation (Dulcan p. 785)."
+    },
+    {
+      "front": "\u05d4\u05d0\u05dd FGAs \u05d9\u05e2\u05d9\u05dc\u05d9\u05dd \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Negative symptoms \u05e9\u05dc Schizophrenia?",
+      "back": "Generally no; they may actually worsen negative symptoms through $D_{2}$ blockade in the prefrontal cortex (StahlNeuro p. 161)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05e0\u05d8\u05d9\u05d9\u05d4 \u05e9\u05dc FGAs \u05dc\u05d2\u05d1\u05d9 \u05e9\u05d9\u05e0\u05d5\u05d9\u05d9\u05dd \u05de\u05d8\u05d1\u05d5\u05dc\u05d9\u05d9\u05dd (\u05de\u05e9\u05e7\u05dc, \u05e1\u05d5\u05db\u05e8) \u05d1\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4 \u05dc-SGAs?",
+      "back": "FGAs generally have a lower risk of weight gain and metabolic syndrome than many SGAs (e.g., Olanzapine), with the exception of Low-potency agents (Dulcan p. 821)."
+    },
+    {
+      "front": "\u05d0\u05d9\u05dc\u05d5 \u05de\u05d4-FGAs \u05de\u05d0\u05d5\u05e9\u05e8\u05d9\u05dd \u05dc\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-Pediatric Tourette's Disorder?",
+      "back": "Haloperidol and Pimozide (Dulcan p. 789)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4-Target symptom \u05d4\u05e2\u05d9\u05e7\u05e8\u05d9 \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-FGA \u05d1\u05d4\u05e4\u05e8\u05e2\u05d5\u05ea \u05d4\u05ea\u05e0\u05d4\u05d2\u05d5\u05ea \u05e7\u05e9\u05d5\u05ea?",
+      "back": "Severe aggression and combative, explosive hyperexcitability (StahlKids p. 263)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d9\u05e9 \u05dc\u05d4\u05d9\u05de\u05e0\u05e2 \u05de\u05de\u05ea\u05df IV Haloperidol?",
+      "back": "Increased risk of QTc prolongation and sudden cardiac death compared to other routes (Dulcan p. 825)."
+    },
+    {
+      "front": "\u05db\u05d9\u05e6\u05d3 \u05de\u05e9\u05e4\u05d9\u05e2 \u05e2\u05d9\u05e9\u05d5\u05df \u05e2\u05dc \u05e8\u05de\u05d5\u05ea \u05d4-Chlorpromazine \u05d1\u05d3\u05dd?",
+      "back": "Smoking induces CYP1A2, which can lower the plasma levels of certain FGAs (Dulcan p. 786)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05de\u05d5\u05e0\u05d7 'Secondary negative symptoms' \u05d1\u05d4\u05e7\u05e9\u05e8 \u05e9\u05dc \u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-FGA?",
+      "back": "Apathy and social withdrawal caused by $D_{2}$ blockade rather than the illness itself (StahlNeuro p. 161)."
+    },
+    {
+      "front": "\u05d1\u05d0\u05d9\u05d6\u05d4 \u05e9\u05dc\u05d1 \u05e9\u05dc \u05d4\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05e1\u05d9\u05db\u05d5\u05df \u05dc-Acute Dystonia \u05d4\u05d5\u05d0 \u05d4\u05d2\u05d1\u05d5\u05d4 \u05d1\u05d9\u05d5\u05ea\u05e8?",
+      "back": "Within the first few days of starting or rapidly increasing the dose (DSM p. 811)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05ea\u05e8\u05d5\u05e4\u05d4 Loxapine?",
+      "back": "A mid-potency FGA that is sometimes considered to have 'atypical' properties due to its $5HT_{2A}$ antagonism (StahlNeuro p. 180)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4-Typical dosage range \u05e9\u05dc Pimozide \u05d1\u05d9\u05dc\u05d3\u05d9\u05dd?",
+      "back": "$0.05\\text{ mg/kg}$ up to a maximum of $10\\text{ mg/day}$ (StahlKids p. 399)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d9\u05e9 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05e8\u05de\u05d5\u05ea \u05d0\u05dc\u05e7\u05d8\u05e8\u05d5\u05dc\u05d9\u05d8\u05d9\u05dd (K, Mg) \u05dc\u05e4\u05e0\u05d9 \u05d5\u05d1\u05d6\u05de\u05df \u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-FGA \u05d1\u05e2\u05dc \u05e1\u05d9\u05db\u05d5\u05df \u05dc\u05d1\u05d1\u05d9?",
+      "back": "Hypokalemia or hypomagnesemia increases the risk of QTc prolongation and arrhythmias (StahlKids p. 400)."
+    },
+    {
+      "front": "\u05d4\u05d0\u05dd \u05de\u05ea\u05df 'Decanoate' \u05e9\u05dc Haloperidol \u05de\u05ea\u05d0\u05d9\u05dd \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1-Acute psychosis?",
+      "back": "No, LAIs are for maintenance only and take time to reach steady state (StahlKids p. 263)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05e1\u05d9\u05db\u05d5\u05df \u05d1\u05e9\u05d9\u05dc\u05d5\u05d1 \u05e9\u05dc FGA \u05e2\u05dd \u05ea\u05e8\u05d5\u05e4\u05d5\u05ea \u05de\u05e1\u05d5\u05d2 SSRI?",
+      "back": "Some SSRIs (like Fluoxetine/Paroxetine) inhibit CYP2D6, leading to increased FGA levels and EPS risk (StahlKids p. 400)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05ea\u05d5\u05e4\u05e2\u05ea \u05d4\u05dc\u05d5\u05d5\u05d0\u05d9 'Rabbit syndrome'?",
+      "back": "A late-onset extrapyramidal symptom characterized by rhythmic tremors of the perioral muscles (DSM p. 814)."
+    },
+    {
+      "front": "\u05db\u05d9\u05e6\u05d3 FGA \u05de\u05e9\u05e4\u05d9\u05e2 \u05e2\u05dc \u05e1\u05e3 \u05d4\u05e4\u05e8\u05db\u05d5\u05e1 (Seizure threshold)?",
+      "back": "FGAs generally lower the seizure threshold, especially Low-potency agents like Chlorpromazine (Dulcan p. 821, StahlKids p. 104)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05de\u05d0\u05e4\u05d9\u05d9\u05df \u05d4\u05d9\u05d9\u05d7\u05d5\u05d3\u05d9 \u05e9\u05dc Molindone \u05de\u05d1\u05d7\u05d9\u05e0\u05ea \u05e9\u05d9\u05e0\u05d5\u05d9 \u05de\u05e9\u05e7\u05dc?",
+      "back": "It is associated with less weight gain or even weight loss compared to other FGAs and SGAs (Dulcan p. 821)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05d0\u05d9\u05e0\u05d3\u05d9\u05e7\u05e6\u05d9\u05d4 \u05e9\u05dc Thioridazine?",
+      "back": "Currently restricted as a second-line treatment for schizophrenia due to significant QTc risks (StahlNeuro p. 180)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d9 \u05d4\u05d4\u05e0\u05d7\u05d9\u05d4 \u05dc\u05d2\u05d1\u05d9 'Drug holidays' \u05d1\u05e9\u05d9\u05de\u05d5\u05e9 \u05d1-FGA?",
+      "back": "They are generally not recommended as they may increase the risk of Tardive Dyskinesia (StahlKids p. 264)."
+    },
+    {
+      "front": "\u05db\u05d9\u05e6\u05d3 \u05e0\u05d6\u05d4\u05d4 Akathisia \u05d1\u05de\u05d8\u05d5\u05e4\u05dc \u05e6\u05e2\u05d9\u05e8 \u05e9\u05d0\u05d9\u05e0\u05d5 \u05de\u05e1\u05d5\u05d2\u05dc \u05dc\u05ea\u05d0\u05e8 \u05ea\u05d7\u05d5\u05e9\u05d4 \u05e1\u05d5\u05d1\u05d9\u05d9\u05e7\u05d8\u05d9\u05d1\u05d9\u05ea?",
+      "back": "Observe for increased foot tapping, pacing, or general agitation/irritability that worsens after dosing (Dulcan p. 822)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05de\u05d5\u05e2\u05d3\u05e3 \u05d1-NMS?",
+      "back": "Immediate discontinuation of the antipsychotic and supportive care (cooling, hydration) (Dulcan p. 823)."
+    },
+    {
+      "front": "\u05de\u05d4\u05d5 \u05d4-CHLOR dose equivalent (\u05e9\u05dc Chlorpromazine $100\\text{ mg}$) \u05e2\u05d1\u05d5\u05e8 Haloperidol?",
+      "back": "$2\\text{ mg}$ (Dulcan p. 788)."
+    },
+    {
+      "front": "\u05de\u05d3\u05d5\u05e2 \u05d9\u05e9 \u05dc\u05d4\u05d9\u05de\u05e0\u05e2 \u05de\u05e9\u05d9\u05de\u05d5\u05e9 \u05de\u05de\u05d5\u05e9\u05da \u05d1-FGA \u05dc\u05d8\u05d9\u05e4\u05d5\u05dc \u05d1\u05e1\u05d9\u05de\u05e4\u05d8\u05d5\u05de\u05d9\u05dd \u05e9\u05dc ADHD?",
+      "back": "Because the risk of Tardive Dyskinesia and cognitive dulling outweighs the benefits for ADHD symptoms (StahlKids p. 403)."
+    }
+  ]
+}
