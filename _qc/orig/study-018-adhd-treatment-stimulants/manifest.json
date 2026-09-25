@@ -1,0 +1,43 @@
+{
+ "tag": "study-018-adhd-treatment-stimulants",
+ "repo": "tnvsh0/psychiatry-board-study",
+ "created_at": "2026-09-25T13:28:17+00:00",
+ "updated_at": "2026-09-25T13:28:17+00:00",
+ "assets": [
+  {
+   "name": "facts.json",
+   "sha256": "0c04aa99182bb63c0c38390fe5b4b2a9e7943b495e3995131bd604c4b3398d0e",
+   "asset_id": 530711377,
+   "size": 5782,
+   "fetched_at": "2026-09-25T13:27:39+00:00"
+  },
+  {
+   "name": "flashcards.json",
+   "sha256": "10856935df57a953e6823c4f6d15d275864628975ecb153cee58af27be3b0175",
+   "asset_id": 530711357,
+   "size": 11270,
+   "fetched_at": "2026-09-25T13:27:53+00:00"
+  },
+  {
+   "name": "plates_report.json",
+   "sha256": "ade5ddf17686d46e5408f937167bfede45a449e763eef4a3548368d459830e88",
+   "asset_id": 530711358,
+   "size": 747,
+   "fetched_at": "2026-09-25T13:28:10+00:00"
+  },
+  {
+   "name": "quiz.json",
+   "sha256": "077d64ca173f3de411bbfbd8d3b36a4aa7cccd488a26e6c45a346ed1044cc5c1",
+   "asset_id": 530711360,
+   "size": 15829,
+   "fetched_at": "2026-09-25T13:28:13+00:00"
+  },
+  {
+   "name": "study_guide.md",
+   "sha256": "2c232221c9344a759fdfab5222e6d58e7ea0a80145b44da2443d95f844f7aaad",
+   "asset_id": 530711354,
+   "size": 41912,
+   "fetched_at": "2026-09-25T13:28:17+00:00"
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+  "drug_class": {
+    "members": [
+      "Methylphenidate: blocks DAT/NET אלוסטרית, has no effect on VMAT2 [1]",
+      "Dexmethylphenidate: the active D-enantiomer, twice as active as racemic D,L-MPH [1, 2]",
+      "Amphetamine: competitive inhibitor of DAT/NET, inhibits VMAT2 and reverses transporter direction [3]",
+      "Lisdexamfetamine: prodrug coupled with L-lysine, requires RBC enzymatic cleavage, reducing abuse potential [4]"
+    ],
+    "mechanism": "Enhances DA and NE in synaptic cleft of Prefrontal Cortex (PFC), optimizing the signal-to-noise ratio via alpha-2A and D1 receptors [1, 5, 6]",
+    "kinetics": [
+      "MPH half-life is ~5 hours [7, 8]; Amphetamine half-life is 10-12 hours [9]",
+      "Amphetamine metabolized primarily by CYP2D6 [10]; MPH by carboxylesterase CES1 [11]",
+      "Slow-release formulations occupancy of DAT is typically maintained below saturation at 50%-60% to avoid euphoria [12]"
+    ],
+    "onset_of_effect": "Immediate-release: 30-45 minutes [13, 14]; Extended-release: within 1 hour [15]"
+  },
+  "indications": {
+    "items": [
+      "ADHD in children (6 years and older) and adolescents [16, 17]",
+      "ADHD Combined, Predominantly Inattentive, or Predominantly Hyperactive presentations [18]",
+      "Narcolepsy in children and adolescents (Dexmethylphenidate, D-Amphetamine, Lisdexamfetamine) [19-21]",
+      "Short-term stimulant response rate is ~70%, increasing to ~85% with sequential trials of both classes [22, 23]"
+    ],
+    "key_numbers": [
+      "70% - response rate for single stimulant trial [22, 23]",
+      "85% - response rate after trying both classes sequentially [22, 23]",
+      "6 out of 9 - symptoms required for pediatric ADHD diagnosis (under age 17) [18]",
+      "5 out of 9 - symptoms required for diagnosis in age 17 and older [18]",
+      "12 - age before which symptoms must first manifest [18]"
+    ]
+  },
+  "side_effects_class": {
+    "items": [
+      "Appetite suppression and weight loss via DA/NE activity in hypothalamic hunger center [24]",
+      "Insomnia or delayed sleep onset (related to late-day dosing or evening rebound effect) [25]",
+      "Temporary growth deceleration in childhood, though expected adult height is eventually attained [24]",
+      "Moderate cardiovascular changes: increases in heart rate (3-10 bpm) and blood pressure (3-8 mmHg systolic, 2-14 mmHg diastolic) [25]",
+      "Zombie-like syndrome: cognitive overstimulation, flat affect, social withdrawal due to overdosage [26]"
+    ],
+    "key_numbers": [
+      "3-10 bpm - average increase in resting heart rate [25]",
+      "3-8 mmHg - average increase in systolic blood pressure [25]",
+      "2-14 mmHg - average increase in diastolic blood pressure [25]",
+      "15-20% - high school students reporting serious suicidal thoughts (requiring vigilance for comorbid depression) [26]"
+    ]
+  },
+  "monitoring": {
+    "items": [
+      "Baseline measurements of blood pressure, heart rate, height, and weight plotted on growth percentiles [27]",
+      "Thorough cardiac family/personal history screening for sudden cardiac death, syncope, or arrhythmias [27]",
+      "Routine pre-treatment ECG is not mandatory for healthy, asymptomatic children without cardiac risk factors [27]",
+      "Dampening or tracking of vital signs, height, and weight at every follow-up visit [28]",
+      "Periodic complete blood count (CBC) recommended for long-term Dexmethylphenidate due to rare leukopenia/anemia risk [28]"
+    ],
+    "key_numbers": [
+      "1 to 4 weeks - visitation frequency recommended during dose titration phase [28]",
+      "3 to 6 months - מעקב frequency for patients on a stable maintenance dose [28]"
+    ]
+  },
+  "practical_use": {
+    "items": [
+      "weekly titration: start at lowest dose and increase weekly until optimal response is achieved with minimal side effects [29]",
+      "Ritalin LA / Metadate CD: capsules can be opened and beads sprinkled on applesauce [8]",
+      "Concerta: OROS osmotic pump tablet, contraindicated in patients with severe GI narrowing/obstruction [8]",
+      "Daytrana: transdermal patch worn on hip for 9 hours; risk of skin irritation or chemical leukoderma [8]",
+      "Jornay PM: taken at bedtime with a delayed-release coating of 8-10 hours to target morning impairment [8]",
+      "Cotempla XR-ODT: orally disintegrating tablet, useful for patients with dysphagia [8]"
+    ],
+    "key_numbers": [
+      "10-12 hours - duration of effect for Concerta, Vyvanse, and Jornay PM [8, 30]",
+      "16 hours - duration of action of Adhansia XR [8]",
+      "3-4 hours - duration of effect of immediate-release Ritalin/Methylin [8]",
+      "9 hours - maximum wear time for Daytrana transdermal patch [8]",
+      "8-10 hours - delayed-release lag time before Jornay PM begins active absorption [8]"
+    ]
+  },
+  "high_yield": [
+    "Pubertal shift: hepatic metabolism slows at puberty, potentially causing sudden toxicity from previously stable stimulant doses [31]",
+    "Fragile X Syndrome: stimulants are first-line for ADHD but have lower effect sizes and higher rates of side effects like irritability [32]",
+    "Prader-Willi Syndrome: stimulants treat ADHD and temporarily suppress hyperphagia to assist with weight management [32]",
+    "ADHD vs Bipolar: ADHD is chronic/continuous, Bipolar is episodic; ADHD has resistance to sleep, Bipolar has decreased need for sleep [33]",
+    "Kowatch algorithm: in comorbid mania and ADHD, prioritize stabilizing the manic episode first before initiating stimulants [26]",
+    "Zombie effect: a flat, dull, over-focused affect indicates stimulant overdosage (high DAT occupancy) rather than depressive comorbidity [26]"
+  ]
+}

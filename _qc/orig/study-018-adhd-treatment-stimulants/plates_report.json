@@ -1,0 +1,18 @@
+[
+ {
+  "day": 18,
+  "plate": "main",
+  "facts": 26,
+  "tries": 0,
+  "numbers_mode": "composite",
+  "error": "director never produced a valid table: ['fs_alpha_2a_receptor: hook uses מסמל/מייצג, which asserts the link instead of showing why it holds: \"האוזניות בצורת אלפא עם הכיתוב 2A על הדיג\\'יי מייצגות את קולטני אלפא-2A, דרכם משופר יחס אות-רעש.\"', 'e_diagnosis_pediatric: same (category, material, colour) as e_kinetics_halflife_amphetamine']"
+ },
+ {
+  "day": 18,
+  "plate": "main2",
+  "facts": 25,
+  "tries": 0,
+  "numbers_mode": "composite",
+  "error": "director never produced a valid table: ['fact not represented: monitoring.items[4]']"
+ }
+]
