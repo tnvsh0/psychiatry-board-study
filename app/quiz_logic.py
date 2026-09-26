@@ -408,6 +408,17 @@ def qc_mark(item) -> dict | None:
     if status != "active":
         return None
     sources = _sources(rec)
+    # A content mark ASSERTS a comparison against a book — the headline below
+    # says so in as many words — so a record with no book behind it must not
+    # print one. Tested 2026-09-26: an impossible-citation flag relabelled
+    # `content` renders as "נמצאה סתירה מול ספר הלימוד" with an empty source
+    # list, which tells the learner a textbook disagrees with his material when
+    # what was actually found is that a page number does not exist. The free
+    # checks cannot reach this function today (they carry no `kind` the app
+    # knows, which is why they show nothing), and this is what keeps that true
+    # if anyone ever routes them here by renaming the kind.
+    if not sources:
+        return None
     severity = str(rec.get("severity") or "").strip().lower()
     conflict = len(sources) > 1
     return {
