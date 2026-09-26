@@ -95,6 +95,7 @@ CHECKS: dict[str, dict] = {
     "hygiene_arabic":       {"he": "אותיות ערביות בתוך עברית", "blocking": True},
     "hygiene_english_stem": {"he": "גוף שאלה באנגלית בלבד", "blocking": False},
     "legend_chip_is_page":  {"he": "'מספרים לבחינה' שהוא מספר עמוד", "blocking": True},
+    "legend_chip_lost_unit": {"he": "'מספרים לבחינה' שאיבד יחידה", "blocking": False},
     "missing_asset":        {"he": "נכס חובה חסר", "blocking": True},
     "empty_asset":          {"he": "נכס חובה ריק (אין מה לשפוט)", "blocking": True},
     "backfill_asset":       {"he": "נכס להשלמה (אינו חוסם)", "blocking": False},
@@ -491,6 +492,37 @@ def _span_flag(flags: dict, uid: str, check: str, text: str, *patterns,
 # citations
 
 
+def _page_donors(book: str, printed: int, unit_cites: list) -> tuple[list, list]:
+    """Which OTHER books of the notebook do have this printed page.
+
+    "StahlKids has no page 774" is true and leaves the owner nowhere. The
+    2026-09-25 audit opened the pages by hand and found the shape behind a
+    quarter of this family: the NUMBER is right and the BOOK is wrong, the page
+    having bled off a neighbouring citation — `(Dulcan p.835, StahlKids p.835)`
+    is the bug bare, one number attributed to two books. The note that says
+    "this page does not exist" invites him to delete a correct pointer.
+
+    Two tiers, because they are not equally strong evidence:
+      * `near`  — a book cited ELSEWHERE IN THE SAME UNIT that has the page.
+                  That is the bleed, and it names the likely donor.
+      * `any_`  — any other book that has it. Weaker, but it is still the
+                  difference between "look here" and "nowhere".
+    Neither decides the fact: only a reader with the book open does (§5.8).
+    """
+    def has(key: str) -> bool:
+        try:
+            return bool(qc_books.book(key).has_page(printed))
+        except Exception:
+            return False
+
+    near_keys = {c["book"] for c in unit_cites
+                 if c.get("book") and c["book"] != book}
+    near = sorted(k for k in near_keys if k in qc_books.SPECS and has(k))
+    any_ = sorted(k for k in qc_books.SPECS
+                  if k != book and k not in near and has(k))
+    return near, any_
+
+
 def _lint_citations(cites_by_uid: dict, flags: dict, skipped: list) -> None:
     """Impossible pages, per unit. Needs the PDFs.
 
@@ -515,9 +547,32 @@ def _lint_citations(cites_by_uid: dict, flags: dict, skipped: list) -> None:
                 except Exception:
                     tops[c["book"]] = 0
             top = tops[c["book"]]
+            near, any_ = _page_donors(c["book"], c["printed"], cites)
+            # Tier 0, and the commonest shape in the corpus: ONE citation listing
+            # several pages for one book, of which the first is valid and a later
+            # one is not — `(StahlNeuro p. 114, 654)`, `(StahlNeuro p. 289, 902)`.
+            # Saying which of the two numbers is the good one is the whole note:
+            # the owner keeps p.114 and asks about p.654, instead of losing both.
+            ok_same_raw = sorted({s["printed"] for s in cites
+                                  if s.get("raw") == c.get("raw")
+                                  and s.get("book") == c.get("book")
+                                  and s.get("printed") is not None
+                                  and s not in bad})
+            if ok_same_raw:
+                where = (f"; באותו ציטוט עמ' "
+                         + ", ".join(str(p) for p in ok_same_raw[:3])
+                         + " כן תקין — כנראה מספר עמוד עודף או של ספר אחר")
+            elif near:
+                where = ("; העמוד הזה קיים ב-" + ", ".join(near[:2])
+                         + ", שמצוטט באותה יחידה — ייתכן ששם הספר הוא הטעות")
+            elif any_:
+                where = "; לעמוד הזה יש טקסט ב-" + ", ".join(any_[:2])
+            else:
+                where = "; אין עמוד כזה באף ספר במחברת"
             _add(flags, uid, "impossible_citation",
                  f"{c['book']} עמ' {c['printed']}"
-                 + (f" (עד {top})" if top else "") + f" — {c['raw'][:60]}")
+                 + (f" (עד {top})" if top else "") + where
+                 + f" — {c['raw'][:60]}")
 
 
 # ---------------------------------------------------------------------------
@@ -677,9 +732,28 @@ def _lint_legend_chips(units: list, cites_by_uid: dict, flags: dict) -> None:
         cited = {c["printed"] for uid, cs in cites_by_uid.items()
                  for c in cs if c["printed"] is not None
                  and uid.startswith(f"L:{u.meta.get('file')}:")}
-        for chip in u.meta.get("chips") or []:
-            m = _CHIP_PAGE_RE.match(chip.strip())
-            if m and int(m.group(1)) in cited:
+        chips = [str(x).strip() for x in (u.meta.get("chips") or [])]
+        for chip in chips:
+            m = _CHIP_PAGE_RE.match(chip)
+            if not m or int(m.group(1)) not in cited:
+                continue
+            # Half of this check's flags were a different defect wearing the
+            # same clothes (audited 2026-09-25, 4 of 8). Chapter 008's row reads
+            # `18mo · עד18mo · 18 · 18-36mo`: the bare `18` is 18 months with the
+            # unit dropped, and it coincides with a cited page. Chapter 020's
+            # reads `40% · 140 · 460 · 141 · 67`, where nothing carries those
+            # numbers with a unit and the legend cites `(Dulcan p.140, 493)` and
+            # `(Dulcan p.141)` — those are folios in the row of numbers to
+            # memorise. The twin is what tells them apart, so each is now named
+            # for what it is instead of one of them being wrong.
+            digits = m.group(1)
+            bounded = re.compile(rf"(?<!\d){re.escape(digits)}(?!\d)")
+            twin = any(other != chip and bounded.search(other)
+                       for other in chips)
+            if twin:
+                _add(flags, u.uid, "legend_chip_lost_unit",
+                     f"{chip} — מופיע באותה שורה גם עם יחידה; כנראה נשמטה")
+            else:
                 _add(flags, u.uid, "legend_chip_is_page",
                      f"{chip} — עמוד מצוטט באותה אגדה")
 

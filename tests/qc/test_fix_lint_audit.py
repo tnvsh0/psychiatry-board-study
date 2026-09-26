@@ -169,3 +169,54 @@ class TheRepairKeepsItsEvidence(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TheCitationSaysWhereToLook(unittest.TestCase):
+    """"This page does not exist" is true and leaves him nowhere.
+
+    70% of the family is one citation listing several pages for one book where a
+    later one is out of range — `(StahlNeuro p.80, p.843)`. Naming the number
+    that IS valid is the note: he keeps p.80 and asks about p.843, instead of
+    losing both.
+    """
+
+    def cites(self, *specs):
+        return [{"book": b, "printed": p, "raw": raw, "section": None,
+                 "unit": "G:1", "span": [0, 1], "ambiguous": False}
+                for b, p, raw in specs]
+
+    def details(self, cites):
+        flags, skipped = {}, []
+        qc_lint._lint_citations({"G:1": cites}, flags, skipped)
+        self.assertEqual(skipped, [], "the books were not available")
+        return [f["detail"] for v in flags.values() for f in v]
+
+    def test_a_valid_page_in_the_same_citation_is_named(self):
+        got = self.details(self.cites(
+            ("StahlNeuro", 80, "StahlNeuro p.80, p.843"),
+            ("StahlNeuro", 843, "StahlNeuro p.80, p.843")))
+        self.assertEqual(len(got), 1, got)
+        self.assertIn("843", got[0])
+        self.assertIn("עמ' 80 כן תקין", got[0])
+
+    def test_a_book_cited_in_the_same_unit_that_has_the_page(self):
+        got = self.details(self.cites(
+            ("StahlNeuro", 666, "StahlNeuro p. 666"),
+            ("Dulcan", 300, "Dulcan p. 300")))
+        self.assertEqual(len(got), 1, got)
+        self.assertIn("Dulcan", got[0])
+        self.assertIn("שמצוטט באותה יחידה", got[0])
+
+    def test_otherwise_it_says_which_book_does_have_it(self):
+        got = self.details(self.cites(("StahlNeuro", 642, "StahlNeuro p. 642")))
+        self.assertEqual(len(got), 1, got)
+        self.assertIn("יש טקסט ב", got[0])
+
+    def test_a_page_in_no_book_at_all_says_so(self):
+        got = self.details(self.cites(("StahlKids", 1184, "StahlKids p.1184")))
+        self.assertEqual(len(got), 1, got)
+        self.assertIn("אין עמוד כזה באף ספר", got[0])
+
+    def test_a_valid_citation_is_not_flagged(self):
+        self.assertEqual(self.details(self.cites(
+            ("StahlNeuro", 80, "StahlNeuro p.80"))), [])
