@@ -899,6 +899,9 @@ class ChapterRun:
         self.inputs: dict[str, dict] = {}           # released sha/id per asset
         self.hygiene: dict = {}
         self.lint: dict = {}
+        # The same checks on the bytes as published, before hygiene repairs them
+        # in memory. See hygiene_and_lint for why one measurement was not enough.
+        self.released_lint: dict = {}
         self.plan: list[PlannedCall] = []
         self.judgments: list[Judgment] = []
         self.fixes: list[dict] = []
@@ -962,10 +965,32 @@ class ChapterRun:
     def hygiene_and_lint(self) -> None:
         if self.journal.done("linted") and self._load("lint.json"):
             self.lint = self._load("lint.json")
+            self.released_lint = self._load("lint_released.json", default={}) or {}
             self.hygiene = self._load("hygiene.json", default={}) or {}
             for name, text in (self.hygiene.get("assets") or {}).items():
                 self.assets[name] = text
             return
+        # TWO measurements, because they answer different questions and the run
+        # only ever recorded one of them.
+        #
+        # `lint_released` is the state of the BYTES THE LEARNER HAS. It runs
+        # before hygiene touches anything, and the offline checks only: the
+        # book-backed ones are the expensive half and a citation does not move
+        # when an escape is stripped around it.
+        #
+        # `lint` stays what it was — the full check on the cleaned text, which is
+        # what decides whether a chapter still needs the judge or the owner.
+        #
+        # Why this matters (measured over the 144 released snapshots on
+        # 2026-09-26): the post-hygiene lint reported 34 hygiene_latex flags in
+        # 18 chapters, no markers, no sign-offs and no skewed answer keys. The
+        # released bytes carry 925 LaTeX contaminations in 126 chapters, 117
+        # NotebookLM markers, 24 chatbot sign-offs and 53 skewed keys. Every one
+        # of those had been repaired IN MEMORY before the check ran, and under
+        # --dry-run or --no-upload the repair is never published — so the run
+        # declared clean the very chapters whose published material was not.
+        self.released_lint = qc_lint.lint_chapter(
+            self.tag, dict(self.assets), use_books=False)
         self.hygiene = self._run_hygiene()
         for name, text in (self.hygiene.get("assets") or {}).items():
             self.assets[name] = text
@@ -973,8 +998,10 @@ class ChapterRun:
             self.tag, self.assets, use_books=self.opts.use_books)
         self._save("hygiene.json", self.hygiene)
         self._save("lint.json", self.lint)
+        self._save("lint_released.json", self.released_lint)
         self.journal.mark("linted", counts=self.lint.get("counts"),
                           blocking=self.lint.get("blocking"),
+                          released_counts=self.released_lint.get("counts"),
                           hygiene=len(self.hygiene.get("changes") or []))
 
     def _run_hygiene(self) -> dict:
