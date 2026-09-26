@@ -99,13 +99,23 @@ def make_audio(job: dict) -> tuple[bool, str]:
     if not task:
         return False, "generation refused (likely the daily cap)"
 
-    ok = ds.wait_for_artifacts({"audio": task})
-    if not ok.get("audio"):
-        return False, "generation never completed"
+    # {uuid: kind} — the orientation wait_for_artifacts documents and matches
+    # against the artifact listing. Passing {"audio": task} instead matched
+    # nothing, timed out after the full wait, and then returned a record that is
+    # TRUTHY ("audio" -> (uuid, "timeout", None)), so this function went on to
+    # call download_artifact with a tuple as the artifact id. No episode was
+    # ever attached by this script; it reported a download failure every time.
+    ok = ds.wait_for_artifacts({task: "audio"})
+    done = [aid for aid, (_k, status, _a) in (ok or {}).items()
+            if status == "completed"]
+    if not done:
+        state = ", ".join(sorted({s for _k, s, _a in (ok or {}).values()}))
+        return False, f"generation never completed ({state or 'no status'})"
+    task = done[0]
 
     WORK.mkdir(parents=True, exist_ok=True)
     out = WORK / f"day-{idx:03d}.mp3"
-    if not ds.download_artifact("audio", ok["audio"], out) or not out.exists():
+    if not ds.download_artifact("audio", task, out) or not out.exists():
         return False, "download failed"
     size = out.stat().st_size
     if size < 100_000:
