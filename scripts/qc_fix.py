@@ -793,7 +793,18 @@ def rebalance_keys(quiz, tag: str, *, log: list | None = None):
     for n, (i, item, okey, opts) in enumerate(eligible):
         pinned = _pinned_options(item, opts)
         free = [o for o in opts if o not in pinned]
-        key = next(o for o in free if o.get("isCorrect"))
+        # The key can be PINNED without its text spelling an all/none phrase:
+        # `_pinned_options` also honours the item-level hasAllOfTheAbove /
+        # hasNoneOfTheAbove flag and pins the LAST option, while the eligibility
+        # loop above only tests the key's TEXT against _ALL_NONE_RE. An item that
+        # sets the flag and has the key last therefore reached here with the key
+        # outside `free`, and a bare `next()` raises StopIteration — crashing
+        # hygiene, and with it the chapter, on a quiz that is merely unusual.
+        key = next((o for o in free if o.get("isCorrect")), None)
+        if key is None:
+            _log(log, tag, i, item,
+                 "the key is a pinned option (all/none flag on the item)")
+            continue
         rest = sorted((o for o in free if o is not key), key=_sort_key)
         pos = plan[n] % len(free)
         was = free.index(key)

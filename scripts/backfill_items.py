@@ -64,6 +64,50 @@ KINDS = ("quiz.json", "flashcards.json", "facts.json")
 # generator is asked for 8-10 quiz items and a standard card set; anything at or
 # below this is a failure that produced valid JSON.
 MIN_ITEMS = 3
+# What a dead NotebookLM session looks like coming out of daily_study.
+_DEAD_SESSION = ("session is dead", "AuthExpired", "not authenticated",
+                 "no stored session")
+
+
+def _session_dead(exc: Exception) -> bool:
+    return any(m.lower() in str(exc).lower() for m in _DEAD_SESSION)
+
+
+def _relogin() -> bool:
+    """Re-mint the session from the persistent browser profile.
+
+    The stored cookies expire every few hours, and the first run of this script
+    lost all four chapters to one dead session at 02:40. The profile still holds
+    a valid Google session, so `notebooklm login` mints new cookies without a
+    person — the same recovery bulk_run performs for the queue, kept here rather
+    than imported, because bulk_run refuses to load as a library on purpose (its
+    profile guard runs at import).
+
+    Never --fresh: that deletes the profile, and then a person really is needed.
+    """
+    print("      [i] session expired — re-minting from the browser profile...",
+          flush=True)
+    try:
+        r = subprocess.run(
+            ["notebooklm", "-p", ds.NOTEBOOKLM_PROFILE, "login"],
+            capture_output=True, text=True, encoding="utf-8",
+            errors="replace", timeout=600)
+        out = " ".join(((r.stdout or "") + " " + (r.stderr or "")).split())
+    except subprocess.TimeoutExpired:
+        out = "login timed out after 600s"
+    probe = subprocess.run(
+        ["notebooklm", "-p", ds.NOTEBOOKLM_PROFILE, "list"],
+        capture_output=True, text=True, encoding="utf-8",
+        errors="replace", timeout=180)
+    body = (probe.stdout or "") + (probe.stderr or "")
+    if probe.returncode == 0 and not any(m.lower() in body.lower()
+                                        for m in _DEAD_SESSION):
+        print("      [i] re-auth succeeded", flush=True)
+        return True
+    # Say what happened: a bare "failed" is what made the queue's first version
+    # of this unexplainable.
+    print(f"      [i] re-auth failed: {out[:200]}", flush=True)
+    return False
 
 
 def _gh_json(args: list[str]) -> dict | list:
@@ -193,11 +237,23 @@ def main() -> int:
         title = j["day"].get("title_he", j["day"].get("title_en", ""))
         print(f"\n[{j['index']:3}] {title[:40]} — {', '.join(j['want'])}",
               flush=True)
-        try:
-            nb_id, _ = ds.find_day_notebook(j["index"], title)
-        except RuntimeError as exc:
-            print(f"      FAIL could not look up the notebook: {exc}")
-            continue
+        nb_id = None
+        for attempt in (1, 2):
+            try:
+                nb_id, _ = ds.find_day_notebook(j["index"], title)
+                break
+            except RuntimeError as exc:
+                # The stored cookies expire every few hours and the first run of
+                # this script lost all four chapters to one dead session. The
+                # persistent browser profile still holds a valid Google session,
+                # so bulk_run re-mints in-process rather than waiting for a
+                # person; a backfill that runs unattended overnight needs the
+                # same thing.
+                if attempt == 1 and _session_dead(exc):
+                    if _relogin():
+                        continue
+                print(f"      FAIL could not look up the notebook: {exc}")
+                break
         if not nb_id:
             print("      FAIL no notebook for this chapter "
                   "(re-run the chapter first)")
