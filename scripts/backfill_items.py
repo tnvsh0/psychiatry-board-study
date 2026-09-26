@@ -255,8 +255,18 @@ def main() -> int:
                 print(f"      FAIL could not look up the notebook: {exc}")
                 break
         if not nb_id:
-            print("      FAIL no notebook for this chapter "
-                  "(re-run the chapter first)")
+            # Measured 2026-09-26: the account holds 112 per-day notebooks for
+            # 144 chapters, and chapters 1-22 (bar 23 and 25) are the ones gone.
+            # Rebuilding one means re-attaching every textbook, which is the
+            # opening act of a full chapter run and is guarded there by a dozen
+            # refusals this script has no business duplicating. Say so plainly
+            # instead of "re-run the chapter first", which reads like advice
+            # when it is the only option and has a cost the owner should weigh:
+            # a re-run also REPLACES the study guide that is already published.
+            print("      SKIP its NotebookLM notebook no longer exists, so the "
+                  "sources are not there to generate from. Filling this one "
+                  "means a full chapter re-run, which also replaces the "
+                  "published study guide — the owner's call.")
             continue
         ds.use_notebook(nb_id)
         for name in j["want"]:
