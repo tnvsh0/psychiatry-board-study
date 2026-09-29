@@ -376,6 +376,21 @@ Statuses: `approved`; `fixed`; `needs_owner`; `needs_regeneration`; `unjudged`. 
   on `approved`/`fixed` (confirm once that `/releases/tags/{tag}` hides drafts).
 - Every uploader (daily_study, backfill_audio, backfill_infographics, regen_image,
   backfill_plates) refuses unless the chapter's verdict covers that asset's sha256.
+- **One standing exception, owner's decision 2026-09-29: the answer-order rebalance.**
+  `qc_fix.rebalance_keys` may be published without a verdict, through
+  `scripts/qc_publish_rebalance.py` and nothing else. What forced it: measured over all
+  141 released quizzes the key was option A in 864 of the 949 single-answer items (91%,
+  D never), so the quiz scored recognition of "pick the first one" and not knowledge —
+  and the repair was finished and verified while the judge was quota-locked for five
+  days. Why it is safe to carve out and stays narrow: the repair reorders options and
+  edits no content, §5.9 already classes key position as a presentation fix needing
+  neither an LLM nor the owner, `_qc/orig/` holds the pristine bytes committed under
+  §2.5, and the script re-derives the repair and re-verifies every item and option of
+  every file at upload time — same key, same option multiset, no other field moved,
+  idempotent — refusing any chapter that fails. Published 141/141 on 2026-09-29;
+  read back from GitHub the key distribution is A 23 / B 24 / C 21 / D 22 over a
+  14-release sample. This exception covers no other fix: hygiene, Tier 1 and Tier 2
+  still wait for a verdict.
 - daily_notify says "ready" only for `approved`/`fixed`.
 - While judging is quota-blocked, the queue pauses.
 - New chapters: generation prompt constraint + lint gate against the longest-option bias.

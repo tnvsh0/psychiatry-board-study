@@ -1,0 +1,854 @@
+{
+ "what": "answer-order rebalance (qc_fix.rebalance_keys), published without a judge verdict on the owner's decision of 2026-09-29",
+ "published": [
+  {
+   "tag": "study-001-psychiatric-examination-of-child-and-adolescent",
+   "asset": "quiz.json",
+   "sha256_before": "16d7af913db8ef65b440c8ff98eb326082990c2a48f8486e8d55ca6db2f1d006",
+   "sha256_after": "7cabf9029335eddcffc2380faaaa0ac655883d78accf6efdd16980bd5d983bdd"
+  },
+  {
+   "tag": "study-002-neuroanatomy-basics-for-psychiatry",
+   "asset": "quiz.json",
+   "sha256_before": "d91d003466a474a07c376f9e14b2ad0f7684414ab845c1963c5b56494dbea00b",
+   "sha256_after": "98fe1d4d129a2a3ee45b0e407206537c479ce92170a22ab4c92e6af07cc3e45b"
+  },
+  {
+   "tag": "study-004-dopamine-pathways",
+   "asset": "quiz.json",
+   "sha256_before": "24d1e9a287ac919ea4da27538d97ff7fb3a55ebc1183f0e1a0c201f7609bb0f3",
+   "sha256_after": "f43d83a6fe34144cbf83aefb6c420417754fa4485c0a4f572ddbc5489bc8516a"
+  },
+  {
+   "tag": "study-005-serotonin-system",
+   "asset": "quiz.json",
+   "sha256_before": "c2532bf501d4800ae202d02a2f2c0f6e3539411a70c4c1f36b5fbd64dae3663e",
+   "sha256_after": "9ae61ee6b693a2505fe8ac8164c28eb476651a6168bb5c50e999d084c4af5d86"
+  },
+  {
+   "tag": "study-006-norepinephrine-system",
+   "asset": "quiz.json",
+   "sha256_before": "3a1e0506a6e761eb6aece18ae470646dd4487092be3aebd16a7e3746613e2c66",
+   "sha256_after": "90824c788a938b8fab14b439b5311d9c8d6ed62cc701b54f2b9815122c3d0ae1"
+  },
+  {
+   "tag": "study-007-gaba-glutamate-balance",
+   "asset": "quiz.json",
+   "sha256_before": "25c2ff4f16e17a25ed9f27092e05fe34d218b5e9f1c086650d90fda2ac89f724",
+   "sha256_after": "e2023ba5a790d085bbad72384e69928763f421a52f83905c18e8000deeffa2f4"
+  },
+  {
+   "tag": "study-008-normative-development-0-2-infancy",
+   "asset": "quiz.json",
+   "sha256_before": "7c954bfa0851526d4bb9a70a536f05606b855d18c6179c9c48d4e374436f6748",
+   "sha256_after": "7159a90ab20d028111ec4ccb928b65ea295b1b878031a5fe81337b52cdb0f278"
+  },
+  {
+   "tag": "study-009-normative-development-2-5-preschool",
+   "asset": "quiz.json",
+   "sha256_before": "7bf7826487f02e6ec6138f28d69d72b378a89a773a11ee9afa47f0414ad0d9f5",
+   "sha256_after": "8d064b18449b641e91d0ff3293f83ceec615e3c0a51878dddcce8374405fc7f2"
+  },
+  {
+   "tag": "study-012-attachment-theory-and-mentalization",
+   "asset": "quiz.json",
+   "sha256_before": "8cec76abdf4d50855e1ebef3aa9f9635526699f3d79a10e764a124cb5df059b7",
+   "sha256_after": "cbe1241e0d1d38eea3b2fb091debd9cbbcbd28a720fecd85c73a22e85b4343d9"
+  },
+  {
+   "tag": "study-013-temperament",
+   "asset": "quiz.json",
+   "sha256_before": "ad719eb367e12643179563ddf1bc86468697dfd6d2896af963cb81895dccc26b",
+   "sha256_after": "83278af98259d6ea1a7e1f40a7c63b3b49e0afa91d6a0179c6e230ee23c49e6a"
+  },
+  {
+   "tag": "study-014-general-personality-disorder-criteria",
+   "asset": "quiz.json",
+   "sha256_before": "7fe6983d9a9fe340ddc3455712f65e74c4bb3b29897d999710a7b270d210ada0",
+   "sha256_after": "eb42debc923513dd82773ee5d43d894bffbb30a43f7f5412b30362e9744ad0b9"
+  },
+  {
+   "tag": "study-015-mood-affect-and-temperament-clinical-assessment",
+   "asset": "quiz.json",
+   "sha256_before": "b1f4e0632ce4d161223386199c8d0d3017bacbebadc091758a809a0cf88a7b35",
+   "sha256_after": "f924991086f571e4efa8c5c4dbe346b9863bb5cf265b27f38a2242e485b652d7"
+  },
+  {
+   "tag": "study-016-principles-of-pediatric-psychopharmacology",
+   "asset": "quiz.json",
+   "sha256_before": "e5dd4c64c6766cb1856c98e150469571e80e17f8fca6b73643a6b3b574c1e088",
+   "sha256_after": "7d07d1f35474e66e47ecff9e17e2ac9d3c510fea880540af4208ab1088c317d4"
+  },
+  {
+   "tag": "study-017-adhd-core",
+   "asset": "quiz.json",
+   "sha256_before": "8cfb439c53ba6daae4662a25082bd44c974b861cde559da3af18bfa6c6f39dcc",
+   "sha256_after": "963a171d6d04d3b70cc4c2738704181182f8b9804e1e0d0e01aaab20d337dc05"
+  },
+  {
+   "tag": "study-018-adhd-treatment-stimulants",
+   "asset": "quiz.json",
+   "sha256_before": "ad8a19f741075765c2c3bb75f55e014aba1b0d92f4ed2fd9889aeb670b058f89",
+   "sha256_after": "be9da292786e0320a31a6cb234e760cfaa70c3cbec86c008872259fb934efb2e"
+  },
+  {
+   "tag": "study-019-adhd-treatment-non-stimulants",
+   "asset": "quiz.json",
+   "sha256_before": "cc24621e7e5b1799441b32ab1346db865a85efea40d0b81a8767acf73c60ba1b",
+   "sha256_after": "541d19adedd6ca996813c6f087e64706d707a4635ea8f477eb3cddb17bf688d7"
+  },
+  {
+   "tag": "study-020-autism-spectrum-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "758907f0f566f2913fcf3e1c6f6ba57ca563c357f39a233b99695f9b55b5052e",
+   "sha256_after": "685748e68c08a5e2427974ac6a0d24c106dc31c7f8093adae9dbfc027a7f93fd"
+  },
+  {
+   "tag": "study-021-intellectual-developmental-disorder-intellectual-disability",
+   "asset": "quiz.json",
+   "sha256_before": "3a002e3ee5b6f79720295230106c9669e49ea90ba7a5f0a4fc87d6cca46b96ce",
+   "sha256_after": "a7ec26899a040dedce123cf4de5888eb50a536a932d82d4e6b29023bbdeb68db"
+  },
+  {
+   "tag": "study-022-specific-learning-disorder-sld",
+   "asset": "quiz.json",
+   "sha256_before": "1d31f061e33fe314470818afe0dc454a7dd15c0f62d41e120aeee1605d3cfadd",
+   "sha256_after": "2d98d4b1753e6cdd6ae9786fcc8c90e5b3dfb294f2538721a41c059b32b28940"
+  },
+  {
+   "tag": "study-023-communication-disorders-language-speech-stuttering-social-pr",
+   "asset": "quiz.json",
+   "sha256_before": "ff52ac2936adc131084dcc77dc5718b0eb8435130b880cfa08916c329c600287",
+   "sha256_after": "f98872a896aed6dc7654d11afcefcf3b7e3e7805772fa08a17bf109b27801b7c"
+  },
+  {
+   "tag": "study-024-tic-disorders-tourette-s",
+   "asset": "quiz.json",
+   "sha256_before": "1bf333a3ab155539c10519c48a2e8378655e06728bf6fab5ae6f0061b2c23166",
+   "sha256_after": "faae6c05205b850d12d1dea4519f766070216e7c0fe6ddc167a585f3ca63da4a"
+  },
+  {
+   "tag": "study-025-stereotypic-movement-developmental-coordination-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "a029e938459888dbe3df129da9ac7df51f973fc34942cb7fdfb674df93204fcc",
+   "sha256_after": "37110cb7519a00790c0d7498a325d8ecaff340a969f00973143a9f612e4cb13c"
+  },
+  {
+   "tag": "study-026-id-review-down-syndrome-fragile-x",
+   "asset": "quiz.json",
+   "sha256_before": "9d71b94cc90029e2d609592d2efe15ac4f84aff5246a60603055fe15e2fd4ca7",
+   "sha256_after": "af5dd264b312bece9c37bbf3d97008700672f64664ede96cebb2669d8f71b3ca"
+  },
+  {
+   "tag": "study-027-other-neurodevelopmental-rett-prader-willi-22q11",
+   "asset": "quiz.json",
+   "sha256_before": "8b9a96a7701639fe706a4f96752eb20175625aa18d1d33d24421cff3841c5267",
+   "sha256_after": "d94f049d25aedfb8074034ce5ca42e4d2ded34c9271b2dab11a925abd2fa4e62"
+  },
+  {
+   "tag": "study-028-major-depressive-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "cfe19f494c5d3234f51af852ffcc0d11e21cf5e07b3c5e17ad67335cf7457562",
+   "sha256_after": "2e1eceba7de27d53e550f05ca84434c486739ee30c6a7658f357df9d16576d03"
+  },
+  {
+   "tag": "study-029-ssris-deep-dive",
+   "asset": "quiz.json",
+   "sha256_before": "dcd1df6a4bd9a227622a834401144cb6d6f232d62006f33f0d124503020ee06a",
+   "sha256_after": "01a9b99d52d4003f65def34e9cc240f433761e66f8c70d3fa28e9851e7b463de"
+  },
+  {
+   "tag": "study-030-snris-atypical-antidepressants",
+   "asset": "quiz.json",
+   "sha256_before": "e33b2329823fcfb6c876add79f28d346a146746873e8cca593da8f16f19f05a1",
+   "sha256_after": "ed4e62dfdb89cb314766bf02d9ce20363aa34feec68be0fe32baba89478cf4b7"
+  },
+  {
+   "tag": "study-031-tcas-maois",
+   "asset": "quiz.json",
+   "sha256_before": "a94cb099a488013ab72248969d71f09a6a45dc4cd78c0c8578a05bb4f43d11c2",
+   "sha256_after": "5487ca0ce6f8749079389b4e4bc39bac95d8dd074dd80c78cec6ff42fdd79651"
+  },
+  {
+   "tag": "study-032-persistent-depressive-dmdd-pmdd",
+   "asset": "quiz.json",
+   "sha256_before": "20788f109b2d5cdaeae9302296f168eabee7c2018e937c5e8e9f9876e91a1ad6",
+   "sha256_after": "e6bedf49b375bea884400d61484568a571d0db179d2c424e587448d6aaa2a481"
+  },
+  {
+   "tag": "study-033-bipolar-i-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "b88158e3969a3eb7c564d19843b90140b1abd2ae275e7c716778252c5dab7df8",
+   "sha256_after": "dfd73d096dcf477a7857ce2e34b229114b9d954c96da0472c51d90792127b192"
+  },
+  {
+   "tag": "study-034-bipolar-ii-cyclothymia-pediatric-bipolar-controversy",
+   "asset": "quiz.json",
+   "sha256_before": "6720f9095ea7916e17f3e7353aa2b4a1f36feea442854d58ac49ae6f99afae81",
+   "sha256_after": "1f884316c50b4931a21d97e878a96c3540613be19c25e0faad8f8fd00bbf95a5"
+  },
+  {
+   "tag": "study-035-lithium",
+   "asset": "quiz.json",
+   "sha256_before": "8821748657a591d057882c692e63344cfcf3181eed55231bf352c9c43cb0011b",
+   "sha256_after": "a7a6f44a0025ccc724036759548fbf33310407c542934c22a8e3213e1b9fbbda"
+  },
+  {
+   "tag": "study-036-mood-stabilizers-valproate-lamotrigine-carbamazepine",
+   "asset": "quiz.json",
+   "sha256_before": "79bd4093e62a26800b91f828658806c40dcfe806b999eeaf03d52b040c5bb525",
+   "sha256_after": "7bd8bef368410e6ec9dcbb25822822f183bb56e64a6ac66041cc20157761b064"
+  },
+  {
+   "tag": "study-037-pediatric-mood-dmdd-vs-pediatric-bipolar-teen-suicidality",
+   "asset": "quiz.json",
+   "sha256_before": "453591cc2fc3abbb4cf83d88ec3e794ad2d3f10619251d11b7f8eaca8ccf14a4",
+   "sha256_after": "7b90280a3433fcce60e98a0422339c1bb2350608b70b978aced900001e74adac"
+  },
+  {
+   "tag": "study-038-generalized-anxiety-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "3f4758b5f81f1892468bd984a7d4d295e6d22572ffae946f607fbcdf4197e96e",
+   "sha256_after": "1f61314abddaff05c93c30dafeaf596ace7c844e8bd4aac4246f97896f57018c"
+  },
+  {
+   "tag": "study-039-panic-disorder-agoraphobia",
+   "asset": "quiz.json",
+   "sha256_before": "df5bed8547b74058bfef4378be0a75b6d97d1b987c030bfc0bb3231f5ebca097",
+   "sha256_after": "fa09251888bf541b2aa81c048758322636d5339946bab10cbcbcf2f6a3e65ed4"
+  },
+  {
+   "tag": "study-040-social-anxiety-selective-mutism",
+   "asset": "quiz.json",
+   "sha256_before": "030ba477f6bb742e3682d556196111f9d48558f7578af2b5baa6f4a208481767",
+   "sha256_after": "92e09c7958ba043df0a0442dab9fabf98893657a7740df7fb4b643b0015359a0"
+  },
+  {
+   "tag": "study-041-separation-anxiety-specific-phobia",
+   "asset": "quiz.json",
+   "sha256_before": "f0f866bc051dc0e75ca7bd301e66793ede45eb571a228dd29ed2c57e1b242728",
+   "sha256_after": "82dc8f25a20ca6df0c67d30f909314f853de90ff726d7480f7b3faa3bc5b93d5"
+  },
+  {
+   "tag": "study-042-benzodiazepines-buspirone-sleep-aids-overview",
+   "asset": "quiz.json",
+   "sha256_before": "61a6ff6316aa7c9cb12926f972e4453a635c61f60e1a9dceadd7ee60a1c0222c",
+   "sha256_after": "4c335f26b9d97377c0775f2db3785191cce98a864254ae96db0cb7bd5162e996"
+  },
+  {
+   "tag": "study-043-ocd-core",
+   "asset": "quiz.json",
+   "sha256_before": "ce74c79f7cdc8e21c88a772806a75e4035838f432d5398052b0ee7ffeb648bf1",
+   "sha256_after": "06d027f735ec03cd2a86c1ab55f40f40ae5ef5807faf6d8827addcb491e07a54"
+  },
+  {
+   "tag": "study-044-ocd-treatment-erp-high-dose-ssri",
+   "asset": "quiz.json",
+   "sha256_before": "318360e3901e81a40a7ce1ad26f91e18873c2c6123d044e09638aa43e03a65a1",
+   "sha256_after": "866a937b7cbe43fc238deb63490af760a2d4a0f12eb187da9e9f127e1087b41d"
+  },
+  {
+   "tag": "study-045-body-dysmorphic-hoarding",
+   "asset": "quiz.json",
+   "sha256_before": "c49185cf7fd2eb387c427a1a1a5db9379badd37459b2603e535acab5c7ae3f98",
+   "sha256_after": "b63e545035bf5abad22059b04f93444627847ff886fdb72b224907b7d4636437"
+  },
+  {
+   "tag": "study-046-trichotillomania-excoriation",
+   "asset": "quiz.json",
+   "sha256_before": "f7f73793a2dd5dcd251e16c80ad46306a404eb0b9a9b8842426ec80cb0ea4e7c",
+   "sha256_after": "ddfd57a9733e2b066b797f00222d2dd2bfbd56d76cd35098fd9c740f6ec2c00b"
+  },
+  {
+   "tag": "study-047-ptsd-core",
+   "asset": "quiz.json",
+   "sha256_before": "e29d38862338f144c3cb0ba7dc6b144ff06caa68b1aad4cbc408bed136d0298f",
+   "sha256_after": "80427121e2ff35747b517d8f18cd146d38bf05c975bc2b0a204726c9ab06742f"
+  },
+  {
+   "tag": "study-048-ptsd-treatment-prazosin-ssris-trauma-focused-therapies",
+   "asset": "quiz.json",
+   "sha256_before": "6cf0281343d2663e622e5707a4f80b9fb259f90a64282994767adf0806731872",
+   "sha256_after": "0507026f764eaf6e3ae4e2ac0f67c0684e2efeac1dffaa44596808df49740557"
+  },
+  {
+   "tag": "study-049-acute-stress-adjustment-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "622b04339db3095a88feb7e7d0171cc9df7e33d8d939446fc1163af4c9ad9719",
+   "sha256_after": "da1c8fa141789452b7fea0dc53b1e331c6549abe3641959e9e70a5c5948dc957"
+  },
+  {
+   "tag": "study-050-grief-bereavement-and-prolonged-grief-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "20dc764b41ef02d1af9303bf339a2ca61550129098a0f5be1c6b731cb8783ec5",
+   "sha256_after": "eccffe82a8dc65f7c0022e083aff90cdfd61b8a0d08b076e55684bf6a8954dad"
+  },
+  {
+   "tag": "study-051-child-abuse-and-neglect",
+   "asset": "quiz.json",
+   "sha256_before": "a68e63cb45e647e9f1f2f35842d25cae33b29298e522ac3d7ee3c597c3425328",
+   "sha256_after": "f089225e2488951b3e612a050b0b5a987a74e38bf383465d2253a84fb528f703"
+  },
+  {
+   "tag": "study-052-reactive-attachment-disorder-disinhibited-social-engagement",
+   "asset": "quiz.json",
+   "sha256_before": "bc3288deec6e3c2773b3a5d10778398dc520e978b77390f6b4bd9c798da444b7",
+   "sha256_after": "0d188f2a83e3fcf4a2c974f5c94ec013c1a8c0f7effcfd212e0834e87ac73b57"
+  },
+  {
+   "tag": "study-053-dissociative-disorders",
+   "asset": "quiz.json",
+   "sha256_before": "ce71233a914c6f110a28827519c14724ce42b32e07baa13b5c08b3f0bc3ac63f",
+   "sha256_after": "bd7f6fde9e1595043c778c2e5a825e224e5d813c4c20b85e05d02c49a44952de"
+  },
+  {
+   "tag": "study-054-somatic-symptom-conversion-factitious",
+   "asset": "quiz.json",
+   "sha256_before": "1d98498113e249602606b672ce349719cde31601430d5ecc4784f27876bdb40f",
+   "sha256_after": "08c38b220fbf9dea5c08f402a534d5be87f48fec04217480e40ebee1458724d6"
+  },
+  {
+   "tag": "study-055-schizophrenia-core",
+   "asset": "quiz.json",
+   "sha256_before": "4a2884ec62bebf1f738fdcd383ff15ee6956f92e17d4db7acd1b2a20ec3efa12",
+   "sha256_after": "d7862031e7ba652aa9b02181a511700829db2b0cd0e0a2a44c253989922003a5"
+  },
+  {
+   "tag": "study-056-schizophrenia-neurobiology-da-nmda-5-ht-hypotheses",
+   "asset": "quiz.json",
+   "sha256_before": "5225b33eba2fea4ec1e76900bcf53362c75becb85b4b7a84ff5564f9311ca8bd",
+   "sha256_after": "92f986c354cc76a86716313b425f1acc152543aafb283a066a4c58aa7952a13a"
+  },
+  {
+   "tag": "study-057-schizoaffective-schizophreniform-brief-psychotic-delusional",
+   "asset": "quiz.json",
+   "sha256_before": "d82db5d41bf3e4a7388f641fb8fa2ee281086aa166701747d3fbc67644c1d805",
+   "sha256_after": "5b23ec3ff888a52afebaa2826c0e313a2421ed9bbf513adda65941c430de242f"
+  },
+  {
+   "tag": "study-058-first-generation-antipsychotics",
+   "asset": "quiz.json",
+   "sha256_before": "d51b5f2c71865ca086da5ac26cc546d0681e38a136989e94c855713d359956db",
+   "sha256_after": "5e57fb42483aed6dd3b995b9fedcbb7a1c7634b34e95939238191a7d1daebc13"
+  },
+  {
+   "tag": "study-059-second-generation-antipsychotics-overview",
+   "asset": "quiz.json",
+   "sha256_before": "35ec8d094f75c834728b4b20945bcfebb170a57a1af3cba708f2ce7bb1f37e5b",
+   "sha256_after": "583ac63b0fbee32406f51cc1ffbe2b240b188065374c00808a05d8cdd40df180"
+  },
+  {
+   "tag": "study-060-clozapine-the-gold-standard-for-treatment-resistant",
+   "asset": "quiz.json",
+   "sha256_before": "c9ab87e80d732b1c032bedd7e99dc5022a8ca6d702f999a7bdeccfebd63a636d",
+   "sha256_after": "c85fef42dab411170dbe4672624e1136a0a74dc0651eb7199e636cbccd10ca59"
+  },
+  {
+   "tag": "study-061-partial-agonists-aripiprazole-brexpiprazole-cariprazine",
+   "asset": "quiz.json",
+   "sha256_before": "ba47cce725164e43b182edc319210d101cc44a0853c012542c23522d489320d5",
+   "sha256_after": "f63156f6ac40499542c83e53f778377b7fa7396b5b76b2ce04a71b5fb00dce35"
+  },
+  {
+   "tag": "study-062-metabolic-heavy-sgas-olanzapine-quetiapine-risperidone",
+   "asset": "quiz.json",
+   "sha256_before": "551cf55e16a5d27d4cc9d9b7fc0486586e8528434369f8a8b84bc3ae09174db9",
+   "sha256_after": "04c7dca927db811dd772a52d5f5938417d06ac497d81923807cbe9e5032bc33c"
+  },
+  {
+   "tag": "study-063-low-metabolic-sgas-lurasidone-ziprasidone-lumateperone",
+   "asset": "quiz.json",
+   "sha256_before": "f8d8a6bb43619b9655fbe84ba3fbba45a2c6e1d88d23fe832248788e024626ed",
+   "sha256_after": "17825e3eb366e4d2f2659716a6daf86d56ad7a536d991c2e2f66f73709d126d6"
+  },
+  {
+   "tag": "study-064-long-acting-injectable-antipsychotics-lais",
+   "asset": "quiz.json",
+   "sha256_before": "19273c32ded175f0e0195086efdfc38c6f1d023914c2c8b1a8370db23ee6d6ba",
+   "sha256_after": "ed2e9cc77cec90435f16486aa3263dace1f0a7422eadd0e5877b216fc09dad11"
+  },
+  {
+   "tag": "study-065-eps-spectrum-dystonia-akathisia-parkinsonism",
+   "asset": "quiz.json",
+   "sha256_before": "f990d2a6a4960d4fdf681065d25e5b4b02829b4e95b83716f387999f43618eaa",
+   "sha256_after": "94e2ba8d273f7ab9b4990d1aaf77dd77db78413742c17f3d3b2b74136c1de312"
+  },
+  {
+   "tag": "study-066-tardive-dyskinesia-vmat2-inhibitors",
+   "asset": "quiz.json",
+   "sha256_before": "daefec224c773caa3fed5a6c0597ee1670fd0629b92e28af01fd1a5f2945c0eb",
+   "sha256_after": "f2bf6d86fcb56aa4b1630c99288e626cb1ef0a816e35d2b64f86a709a5b810b3"
+  },
+  {
+   "tag": "study-067-neuroleptic-malignant-syndrome",
+   "asset": "quiz.json",
+   "sha256_before": "070aa9e1d613feadc44f9d8c3784f5bb025873940f5f0458ae03ca91670fa35e",
+   "sha256_after": "cf33e3540433c7f4617ad42df1c076580ad99c7855553a91bfccc85995c70bca"
+  },
+  {
+   "tag": "study-068-catatonia",
+   "asset": "quiz.json",
+   "sha256_before": "ac4b3f0a3bab68c68761331d0ec43e79296123be2c03a97d12d90b6efeac0a09",
+   "sha256_after": "09495d8452be9bee3861509935e6ebb3f6b7de99b3d41327797ac514bbc5eff8"
+  },
+  {
+   "tag": "study-069-acute-psychosis-ed-management",
+   "asset": "quiz.json",
+   "sha256_before": "3d40837679f2848ea3e267ef4b1cefb6738f5a64d8efe4a235b5362bcf7fe83d",
+   "sha256_after": "041dc69448e1b81b19f5b26d831de0474837da0cd2408c4b5ffd7c1766e3ee37"
+  },
+  {
+   "tag": "study-070-ect-and-other-somatic-therapies",
+   "asset": "quiz.json",
+   "sha256_before": "4aa84ff86c9af57f55767302d671a5a74b47fb1040836faa0529b4ba7c6192d5",
+   "sha256_after": "f4a4723ddaaa2bb18922b324c72e783b0ead2aaeb2d4e5834bc8f1c9de3b6e89"
+  },
+  {
+   "tag": "study-071-insomnia-cbt-i",
+   "asset": "quiz.json",
+   "sha256_before": "10996c711bc06f14cbf8ddd9a699240101de56c8eeb7ca9ac6ae864afa6cd1db",
+   "sha256_after": "8cc5d75b773e6a9d34bf2f80b02f7234a36435880bc6136bd95967179d2959bf"
+  },
+  {
+   "tag": "study-072-sleep-aids-z-drugs-doras-melatonin",
+   "asset": "quiz.json",
+   "sha256_before": "8d0bc319f62c749ce5744515455a2924b45d5fa7badce923699d9c52f1590b19",
+   "sha256_after": "874807f9c60340ce8c8b3726333358ed0cc93e670b12c8a5a7809e9bfc34e105"
+  },
+  {
+   "tag": "study-073-narcolepsy-pitolisant",
+   "asset": "quiz.json",
+   "sha256_before": "8436ab5735c2bd80edf258a8d826c81d7ae9f002a50c39368f498edad440a159",
+   "sha256_after": "280403ca3e1b5e7a778a09532b4c576ed3cd15698f863906eaabc5dd847e1c43"
+  },
+  {
+   "tag": "study-074-parasomnias-rls",
+   "asset": "quiz.json",
+   "sha256_before": "79cb03108f319efed6a5b473812df6d017b19bbc361cca0cd1c5788bd7859386",
+   "sha256_after": "249bca2f302b3b5590f9b97ede1ecc50c85e28e4766b326577a5fbf761a1d72a"
+  },
+  {
+   "tag": "study-075-anorexia-nervosa",
+   "asset": "quiz.json",
+   "sha256_before": "83127ee0bcbd21588f9c60c2f8eb00dbaab71ecab9532803101f35c463764a37",
+   "sha256_after": "9696f3cf58f2478d35804d9d37c8cd8f44dc7960343b58809ba460f0c287158d"
+  },
+  {
+   "tag": "study-076-bulimia-nervosa-binge-eating-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "43b2722dea843f766f16b7542038a4f7b6676e55ff0ec330d478c6c5aaff963f",
+   "sha256_after": "e3572a78b5a1448942be5ad1ee9c3a16ec943e6099dc5f9dbabbe952384db4c4"
+  },
+  {
+   "tag": "study-077-arfid-pica-rumination",
+   "asset": "quiz.json",
+   "sha256_before": "22b293d59ee96d8d0e666a248b84869a0de6328ec8fce52c702c054670a9deff",
+   "sha256_after": "82c2eefd7a9e6fdb5be3c0d58beb6ba711cb3d409e4d1f11fb56e495d8129914"
+  },
+  {
+   "tag": "study-078-enuresis-encopresis",
+   "asset": "quiz.json",
+   "sha256_before": "0c67d09017d86f6eb00abbcd86048b5ef223e84204f119d14f9daad0d8b026b8",
+   "sha256_after": "8cc9469b56aaa1c390770e816107d27b5d1aa7b13e3a4c12828eee9ef151e483"
+  },
+  {
+   "tag": "study-079-sleep-development-in-children-adolescent-shift",
+   "asset": "quiz.json",
+   "sha256_before": "b08bc43093a0931a5da8553396532d06567a0867c42f0ce4e4373899a6381d32",
+   "sha256_after": "dfb3acf3126b512ee57892c57f7ff66402640b31e744e73112a4d25da4724fd5"
+  },
+  {
+   "tag": "study-080-eating-disorders-intensive-fbt-medical-stabilization",
+   "asset": "quiz.json",
+   "sha256_before": "0bf1edf6f574e55a8a9e4373cd7ecb0668f51df5223ddc1265faa0fdd8ec26d2",
+   "sha256_after": "ed7b555c5b480c1448c85ba950a54a7e29d212770cd4cfbc2d0f8bab9ba181da"
+  },
+  {
+   "tag": "study-081-alcohol-use-disorder-withdrawal",
+   "asset": "quiz.json",
+   "sha256_before": "c18ead2f7e0d067373dd0c5bb6bf2e5533a516c860c8898b593a6f5fdc9a0855",
+   "sha256_after": "18404ad8ff22d3671f4678030b40faac277c3bf8ad5f6ff86ed34f3d0b54c32d"
+  },
+  {
+   "tag": "study-082-alcohol-treatment-naltrexone-acamprosate-disulfiram",
+   "asset": "quiz.json",
+   "sha256_before": "877c4281a3682a4655e0f9faa3f2d0df5720cf7ea11634cdf63bec49c667b974",
+   "sha256_after": "3516104071fea0fd01d94be9caa1b3191ccc099d4ec5c60beb494117300ad8bb"
+  },
+  {
+   "tag": "study-083-opioid-use-disorder-withdrawal",
+   "asset": "quiz.json",
+   "sha256_before": "2e3ea3232b20980b98095c4646105ad98af392a8d8aa9d8262cda4c94a0c220f",
+   "sha256_after": "9cd385c820eef81830b7ed76450c212420526e8f63ed51d281a114cb89c1d77e"
+  },
+  {
+   "tag": "study-084-oud-treatment-methadone-buprenorphine-naltrexone-naloxone",
+   "asset": "quiz.json",
+   "sha256_before": "ac03339aadce512287a392a84e89996128ea128bbd394beed83380f80b5df15d",
+   "sha256_after": "c5a130a0a87f154eea8ba85e1824d8149ca86ad702560bc8937007b85598cfb6"
+  },
+  {
+   "tag": "study-085-stimulant-use-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "ca4db56a0c1f4315dca9846708956fddf50fbbfc5d99d0a7f53c6b4a61ee908c",
+   "sha256_after": "26c742f69581e18dc8a18f64e15ea10c1a847eeac4a97ee2e6938c3db1e08202"
+  },
+  {
+   "tag": "study-086-cannabis-use-disorder-cannabis-induced-disorders",
+   "asset": "quiz.json",
+   "sha256_before": "40a87a04899cc05a39039744ad3167b420fec0485178fd577498546ffab1640c",
+   "sha256_after": "2f21643b89308f617dfa0584b02be4124495cb28ca0d7b83b658d9160c7123f3"
+  },
+  {
+   "tag": "study-087-tobacco-cessation-varenicline-nrt-bupropion",
+   "asset": "quiz.json",
+   "sha256_before": "1579f9dd24402d99a0e54dcf74f5f87e40d0cfbd3ccf122610eafbde3a2a47bd",
+   "sha256_after": "e11938b33d6e8d80e316b87a58dd48b7bbfbce2ab0934d44cca8e8c9d583bd20"
+  },
+  {
+   "tag": "study-088-sedative-hypnotic-anxiolytic-use-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "2b9e5847d5e90a025341949695dd24bf5721eb72aa98b2d9a86022c334e03d7d",
+   "sha256_after": "5eca1e7ed6923a2280e71722854f7cfef72005787b4b81791902305ae1665dff"
+  },
+  {
+   "tag": "study-089-hallucinogen-caffeine-inhalants",
+   "asset": "quiz.json",
+   "sha256_before": "4ed9c0dfb81c43f00f166ff50ec90f0e09f22a2f6f9105c5cc886596846ed9d8",
+   "sha256_after": "632a37aa34ac7ff8609b2eba25cde95ce66a86f9cf72e270d1630b29e913fc14"
+  },
+  {
+   "tag": "study-090-gambling-disorder-behavioral-addictions",
+   "asset": "quiz.json",
+   "sha256_before": "373a02e9356c3da165a4c0367c6acf511d09d44744430e9a9bc95646cdd48f78",
+   "sha256_after": "c10a6d279e9d39a682e2ef51bbbadd4df63cc9cc49a469c749665cdbc975bddf"
+  },
+  {
+   "tag": "study-091-paranoid-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "7c9e65295be47f245b20be2c52f78b58bcdd2ae9c695cfd1dbc8a488b15a071e",
+   "sha256_after": "851c5126e3e63725d93919cc31fd2e8b0bd67ed933dcc6073b59e3f6212a4a33"
+  },
+  {
+   "tag": "study-092-schizoid-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "8491f39d3bc1b52ea878a1de654414e58d2cd10494c8d382a7da0053f398a546",
+   "sha256_after": "7f47695285f14a79ecb53de9ac90c15e4db15303fdc8c6594bbe11b8117926a7"
+  },
+  {
+   "tag": "study-093-schizotypal-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "df3cf521411ae79c6eee9174d9f02984c287ac147d915a360706a57e0335ec72",
+   "sha256_after": "c6c928bbd129f19cf733707125d573971e0401c19e4493774698782da5d5ddf3"
+  },
+  {
+   "tag": "study-094-borderline-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "3735be8053033d3d7ac1a4970c30d2bbb5ae6128b7ef5fb797d4e178fe89ce1b",
+   "sha256_after": "439373411943a670e4a7432607f87971c2f26477240bc3db5cef9a178abdf183"
+  },
+  {
+   "tag": "study-095-bpd-treatment-dbt",
+   "asset": "quiz.json",
+   "sha256_before": "cb6f672342a021ff9fb3b4928513730c6cdacad0f20a7fdb2d7b295604f746ba",
+   "sha256_after": "2d61010108a970b705005f6a785b05b8bd67ba3148ef1675c2b1bd6d6aeb9cdf"
+  },
+  {
+   "tag": "study-096-antisocial-pd-conduct-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "8ea8085707faecdf4d8b7925c7afe9779199ed751f733c377e5839008d900889",
+   "sha256_after": "5af2e1d998d65cc3429ad5c1503cbe6b35f09b1c8b61e0462e10cee27a00b164"
+  },
+  {
+   "tag": "study-097-histrionic-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "1eefc1750c50480150c4fc1ee50a37787dcefe65e7c3353b461762ad102fc595",
+   "sha256_after": "3a6ae35ee17d97173cf1d7835cd51ddb2d30a78c435340bcf265a8da6bb09e89"
+  },
+  {
+   "tag": "study-098-narcissistic-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "92b9463e4abd0d08b1c22bfeb031235bc7ef24e8a36400062455f2b95c407d13",
+   "sha256_after": "9a1f4301f5952ed0e3b2321310de3f5f1c70d28a129af2d2806ca8820f5997e3"
+  },
+  {
+   "tag": "study-099-avoidant-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "0acfd28bc3545e2e54ddd1d4f0bec134d1970b6a7fcd3f05e4b7853afb2f88a4",
+   "sha256_after": "714b129dc6793dd4e1dbd28e79600310600b4ad9e8944ae672289dc5d5aaaa36"
+  },
+  {
+   "tag": "study-100-dependent-personality-disorder",
+   "asset": "quiz.json",
+   "sha256_before": "f1f1ac6cc0a65422b30aa18326ceb5d83ded073b5671fd2c65594f5a81ec7f23",
+   "sha256_after": "5b046ccca7b9952a682b5bb20f0b2b53bfccee055f405544a1c33c2b5a41ab55"
+  },
+  {
+   "tag": "study-101-obsessive-compulsive-personality-disorder-ocpd",
+   "asset": "quiz.json",
+   "sha256_before": "82722bd48c10eb26035f33a4e143dd45bd09320d35d1e7d12e9640fedeee71d2",
+   "sha256_after": "eae9a32e1c741b0f449d33f107c6aa0d2710f1f4649d31868e74b542dc838425"
+  },
+  {
+   "tag": "study-102-forensic-psychiatry-competency-insanity-tarasoff",
+   "asset": "quiz.json",
+   "sha256_before": "7191b9d423399c655bcc4624d5c138c1daf55d8879bdb35757704599be7a2257",
+   "sha256_after": "6d8c6f5856d71ed642c77bc30f5d400687989d81458368e5392075f555908f80"
+  },
+  {
+   "tag": "study-103-israeli-law-in-child-and-adolescent-psychiatry",
+   "asset": "quiz.json",
+   "sha256_before": "a1002622d66b456841d0a78b384947d30b630851e5bf1726e3fdab6a4f9d5dde",
+   "sha256_after": "6759b1dbae1ae704220f1e2f3a8f2ef90af1e38d2d85125a2b14264888772f69"
+  },
+  {
+   "tag": "study-104-gender-dysphoria-lgbtq-affirming-care",
+   "asset": "quiz.json",
+   "sha256_before": "2ed17e596d73f87a50aad9c59f5da805547a9d738928b7114f8885cc610331e2",
+   "sha256_after": "f1121f1348f637199902d47216ca612ace33dc47ea7676b518489194e5b6f869"
+  },
+  {
+   "tag": "study-105-sexual-dysfunctions-paraphilic-disorders",
+   "asset": "quiz.json",
+   "sha256_before": "6815fde711ac1bac1013d20918c3e9ef0ddbde27c4ff0b0bd045c8292cc3d306",
+   "sha256_after": "bc988b03fff2e101accf3730c2447f4f54128a03fb638244bbef4adfb46b0275"
+  },
+  {
+   "tag": "study-106-disruptive-impulse-odd-ied-kleptomania-pyromania",
+   "asset": "quiz.json",
+   "sha256_before": "8abadff08a21b0f7b057e240c48f50d0b1edbdb3da4c2700b3ddb74b47c6b070",
+   "sha256_after": "9af7410cf3bdd8137857bc32d2f69dc3c80aa818dd43e30b485e4d5357a2b5d7"
+  },
+  {
+   "tag": "study-107-aggression-and-violence-in-youth",
+   "asset": "quiz.json",
+   "sha256_before": "9648b137d33a17a6b848eb0f6b30c727f4d1c7932142580b198ee2c98f8caacd",
+   "sha256_after": "28054519f19ee6e2204eea4d476e5758d7656496014eefc7a1db778a9594279c"
+  },
+  {
+   "tag": "study-108-adolescent-suicidality",
+   "asset": "quiz.json",
+   "sha256_before": "6d53096c8d3cff0017c84431178da7f046f5dfb564e64e380d909efc62267617",
+   "sha256_after": "f0538cc173adc977c3fef1861a769fe9fda0a0c342d66e87d82bca9da42d0230"
+  },
+  {
+   "tag": "study-109-self-injurious-behavior-nssi",
+   "asset": "quiz.json",
+   "sha256_before": "f49531ac1e991747c8dd645f8b00efe003f26b48b0e5e80573c02f6ea9fdfe2d",
+   "sha256_after": "6f517aa05d97a5b396f5c8e23e55e93082f152c2033101ba5c9d01f4822537db"
+  },
+  {
+   "tag": "study-110-family-transitions-divorce-adoption-foster-care",
+   "asset": "quiz.json",
+   "sha256_before": "b391e2329d40b578bc2d62bbfc81e8b1a18085da5ea308fc39577473b4f37b0e",
+   "sha256_after": "430c640e0cb452038b34ea20a23c4109697fada58e94a51dd5a1ccb5850d7f97"
+  },
+  {
+   "tag": "study-111-cultural-and-religious-issues-in-child-mental-health",
+   "asset": "quiz.json",
+   "sha256_before": "d44f3ff87915ca013ec93de0c6d2f336867aab5f179ae3804011aee6b55ad170",
+   "sha256_after": "f51f08417ebc692f2167ff423779efde59fdd8bdf44082b0774a2ef7f2f9cfbb"
+  },
+  {
+   "tag": "study-112-perinatal-psychiatry-postpartum-depression-psychosis",
+   "asset": "quiz.json",
+   "sha256_before": "288ca398caacc4d95a29b117ee79c63f00a25d88098083fb21254989100aa9a1",
+   "sha256_after": "bf5cab50c5ecc6d90b5e9e537b326a822c900d033e3695941c968f4e6415a431"
+  },
+  {
+   "tag": "study-113-brexanolone-zuranolone-ppd-specific",
+   "asset": "quiz.json",
+   "sha256_before": "b9653387e2a76efff63f6ed1f84f7dbce5952e772360c0ef11c84d57b979b3d2",
+   "sha256_after": "8c6aa0effcbaf7316652d8ff764db0dafb82fbabc1ece692cfcf464c231f9295"
+  },
+  {
+   "tag": "study-114-geriatric-overview-delirium-focus-light-touch",
+   "asset": "quiz.json",
+   "sha256_before": "1c4ad10bfd0b7c22495f96d2e27c985c56ac30262ae368d796302a371bd28839",
+   "sha256_after": "74071dc934bf9240b0b4541d345e1d96835275fa6d907d368f8957ea933838d0"
+  },
+  {
+   "tag": "study-115-neuroanatomy-neurological-examination-of-child",
+   "asset": "quiz.json",
+   "sha256_before": "bb89f4051769e3e8ea088fcd99c73624bccfd9bc9948ba4191667674d7f288f7",
+   "sha256_after": "68444e5765db65ad6a21a5cbe3d96909414f335d054160a2fa523d7524d919f7"
+  },
+  {
+   "tag": "study-116-seizures-epilepsy",
+   "asset": "quiz.json",
+   "sha256_before": "a6401b8381e082e67f1de4566b02485391adf5c19f3ff12437f006bfebb5b754",
+   "sha256_after": "6aaf2b06238639a80c993b822388985867bb9e5ac9842d8c31ce068983d5ad01"
+  },
+  {
+   "tag": "study-117-head-trauma-tbi-sequelae",
+   "asset": "quiz.json",
+   "sha256_before": "9c0a1446f7529ef326aec486e1b967f0a27539d1ec74309bd9664bfb6645eaa0",
+   "sha256_after": "c97c8634b095576dab712794de76c12b531a7c02b6cad66a321c2ec2671dbec6"
+  },
+  {
+   "tag": "study-118-cns-infections-with-psychiatric-sequelae",
+   "asset": "quiz.json",
+   "sha256_before": "ed105287842a141c43f59a3fc575c32d239cc87aa082e6fb6631def6d53ba0a3",
+   "sha256_after": "0c8743e9658eaf09d107fa1363eb5b079f99d46e721dccfec1812125ff8aeecd"
+  },
+  {
+   "tag": "study-119-movement-disorders-huntington-wilson",
+   "asset": "quiz.json",
+   "sha256_before": "7bd89346493632f5f3e4920991cb04c42c37395cc138f22a7bfde2a3afc1da7f",
+   "sha256_after": "aa9808c561bf62b130a9fe4ae02631386da44c3d2d9464abb5811eba5a6c4320"
+  },
+  {
+   "tag": "study-120-brain-tumors-pseudotumor",
+   "asset": "quiz.json",
+   "sha256_before": "d9879be569d35e3fa2f4ab8e44549397e62dd2b3e9346559d75e367bf96bb9af",
+   "sha256_after": "c6bc4b52483c0dae2e2feed3b6c04e44be6d1376266b198b949d25917b17ec71"
+  },
+  {
+   "tag": "study-121-cerebral-palsy",
+   "asset": "quiz.json",
+   "sha256_before": "b1666f0f8ee8a309099365d768fdf1934f2675c4e95cfcdec135f7ac7d2aacf1",
+   "sha256_after": "94f230388ab64d0d43f959721efeb62324a60691f3c9a69cdbf3bc99f40e85ec"
+  },
+  {
+   "tag": "study-122-neurogenetic-syndromes-williams-prader-willi-angelman-22q11",
+   "asset": "quiz.json",
+   "sha256_before": "82ab5f8f89b55a147c12e4a2da9b44a220bfe7f8fb09e586802632260b17ce8b",
+   "sha256_after": "3967a38c4b49e7153e32533e8d52773b6ef6d845c0335ebfedad0d5eb342ea0f"
+  },
+  {
+   "tag": "study-123-neurocutaneous-tuberous-sclerosis-neurofibromatosis",
+   "asset": "quiz.json",
+   "sha256_before": "a771e28e461c66a08a99d0852ea12286d836ac7738aa26a9828da476e7be632b",
+   "sha256_after": "f8abaae2a93b948d2ed77d187713a448b3a73746b8d2b4d698780668ce613b58"
+  },
+  {
+   "tag": "study-124-headache-migraine",
+   "asset": "quiz.json",
+   "sha256_before": "283cf05e9415c5f0acc5951694e95dfebc3bd0727202359b288adfa8fbdfdb3f",
+   "sha256_after": "f4b8c6a06c9b75b1d5a2da6bc0669b4554b3a31d64c37530f5928417e33d05f8"
+  },
+  {
+   "tag": "study-125-metabolic-disorders-with-psychiatric-presentation",
+   "asset": "quiz.json",
+   "sha256_before": "f92ca4be795333007e0d797728148141447edd08158c0026904ff54bbd6f3754",
+   "sha256_after": "5567a9d7ea42727be4e88dbc71166ac178579bcda906b9477e45b107c1fd5692"
+  },
+  {
+   "tag": "study-126-autoimmune-nmda-receptor-encephalitis-lupus-pandas",
+   "asset": "quiz.json",
+   "sha256_before": "e66deffda9131f7790c0384ca355266a88868c8d6100aa564be68a381c96cf4e",
+   "sha256_after": "19ec9c5b4b06941aa077e25f7de463baf06957e8af92e93940efe0b7852551de"
+  },
+  {
+   "tag": "study-127-neurodegenerative-basics-fxtas-hd-pediatric-etc",
+   "asset": "quiz.json",
+   "sha256_before": "27bdd81349f180ce0928df549b3a9822adc1162ceb96642cbb13ac5ffb1b103d",
+   "sha256_after": "e35276cf642c84137380ae5709c157757170d7ed2b3d9633a247aaf5b29f540c"
+  },
+  {
+   "tag": "study-128-sleep-medicine-intensive",
+   "asset": "quiz.json",
+   "sha256_before": "44d47419b3a6901172eea55749fb8ee1224214691464d39d1e04b5cf242cba76",
+   "sha256_after": "5e3dcc4deee294e734f2b69d1363f28db8b79b09f1690ca4d96d275cb2f06b6b"
+  },
+  {
+   "tag": "study-129-pediatric-psychiatric-emergencies",
+   "asset": "quiz.json",
+   "sha256_before": "087e7552a2947d3b7d9c26c7d3a15ee3d5069ae086302c25f5aede72b1fbbfb8",
+   "sha256_after": "7515ab4a32cdb7846b2cc3d9ccead5c89a8905940e25b40b6a4a72b97d0dca88"
+  },
+  {
+   "tag": "study-130-consultation-liaison-pediatrics-oncology-chronic-illness",
+   "asset": "quiz.json",
+   "sha256_before": "1467d1aacc1ffd0a14efa2ba5399577a3ab2e2fddd7acaa826db1bda9a572515",
+   "sha256_after": "9f609e5a99685b539cc30f4a74af451799e670750a628ed3234e01ca570defe3"
+  },
+  {
+   "tag": "study-131-psychotherapy-theories-overview",
+   "asset": "quiz.json",
+   "sha256_before": "287bc951a8f97f34ef149508859b1b13bf42b989372b54e67625d3d546243a01",
+   "sha256_after": "03c22a009cb212b898f3ac98afe6306ec91519d3087da2652358d5b2052ecce7"
+  },
+  {
+   "tag": "study-132-cbt-theory-practice",
+   "asset": "quiz.json",
+   "sha256_before": "00db7b70049ad6230a79cd2b92940df90c936d135af82ae4d6131041a4179643",
+   "sha256_after": "c0e449638e603853d90100076e412542e6d3992dd0f2c6fde72fce3867a284af"
+  },
+  {
+   "tag": "study-133-dbt-theory-practice",
+   "asset": "quiz.json",
+   "sha256_before": "8cbb157889ba5e780020b8b64feeec429b13d84721307f10c65a8ebb38a4a70b",
+   "sha256_after": "e1b118a19f9e833ecb7fdfd8364b42b8f0eab9f612cf678a1e91f628d140a0a7"
+  },
+  {
+   "tag": "study-134-ipt-a-interpersonal-psychotherapy-for-adolescents",
+   "asset": "quiz.json",
+   "sha256_before": "7bae307b38789e044855e7dd46b634a599c2b1a632ff937a820fe3220d2d0d22",
+   "sha256_after": "d220a31bde62a32f2af47c868d5fdab6bd02e57b450aa2d3727d4a8fb5e1642a"
+  },
+  {
+   "tag": "study-135-motivational-interviewing",
+   "asset": "quiz.json",
+   "sha256_before": "b96c7cf4aa2d03ff9c867def45b5ed345bc3337857543d3dc59b05b3df9b090c",
+   "sha256_after": "9830f1c7231d55f57961ef6af265e8d3c7af32069b96e84ba479a361f72ccb4f"
+  },
+  {
+   "tag": "study-136-levels-of-care-inpatient-partial-hospitalization-residential",
+   "asset": "quiz.json",
+   "sha256_before": "41b21adb0fc0eec4e9840e7ced81c15782a992582c945507299e0d594df2aabe",
+   "sha256_after": "6eb338ae447058fc9ffc45d778a024d3fa43c213ef0753b95116419f90ef780e"
+  },
+  {
+   "tag": "study-137-school-based-interventions-and-consultation",
+   "asset": "quiz.json",
+   "sha256_before": "a3eaae98173d04f98f32da9935708b42e7ff393faa9b652b44af0b1263279372",
+   "sha256_after": "cdc040b436eeb4d987b3f5944e0ceeca176572b02d6faf84619462cf7f7b3d43"
+  },
+  {
+   "tag": "study-138-family-therapy-parent-management-training",
+   "asset": "quiz.json",
+   "sha256_before": "d3e713506626f3a2a8696124c46b85c0d607ca5f914d880d4a7530cb299f9e21",
+   "sha256_after": "74e8f10407f5f30a958e2c0ccaddc13177b3d58a42f0e843c60dce941f00b059"
+  },
+  {
+   "tag": "study-139-psychodynamic-anna-freud-klein-kohut-mentalization",
+   "asset": "quiz.json",
+   "sha256_before": "27f8b0fd8ceac0c57b41d6cf48dc9d2db9c77007581f03821c6330ab49bf3288",
+   "sha256_after": "fd46f055c43f2b3c7557120beb7034c56d10640f9e708b22038b05cafe1c23ea"
+  },
+  {
+   "tag": "study-140-object-relations-winnicott-mahler-kernberg",
+   "asset": "quiz.json",
+   "sha256_before": "3975895948eff32003322d6aa984dbe6a18226388993a0e9217e115a1ce94238",
+   "sha256_after": "33d5035f341183d0563f10f69c4be9abea68bc7784975349ae6a13f9b08a98aa"
+  },
+  {
+   "tag": "study-141-later-theorists-erikson-bion-ogden-lacan-spitz-stern-relatio",
+   "asset": "quiz.json",
+   "sha256_before": "0aa9cdbffef00df111c42176920437df97b111f1a94dcf88c4dcd54be627a430",
+   "sha256_after": "0a4ef861666561c06a941d9b65d26420e6f604c92f9ab3ea93ff33c84b5c96f9"
+  },
+  {
+   "tag": "study-142-telemental-health-for-children-and-adolescents",
+   "asset": "quiz.json",
+   "sha256_before": "a9b80bf091861688fcd8986f7c17f07a880aa3ccfe5769c496c38a8d5833e9f3",
+   "sha256_after": "83d0104de281bd95dd8bebc2ff9632d7d4a6c40a9dcb96dca77d451f668392c6"
+  },
+  {
+   "tag": "study-143-evidence-based-practice-in-child-psychiatry",
+   "asset": "quiz.json",
+   "sha256_before": "f599ef96651785d6d7dd960498683a8ca4fa7dab157985a30bb0f05a9a9c7f27",
+   "sha256_after": "6b7bb165703cfa24e2755866b159f670023f196d01ee64152ce8f9a4e09d0e10"
+  },
+  {
+   "tag": "study-144-integration-practice-questions-weak-spot-review",
+   "asset": "quiz.json",
+   "sha256_before": "1cfdec12c74cd0d0d540c78806bb1e50b620deaa8d7cf6888630623455165de2",
+   "sha256_after": "05e34f2eccb12ef075c816d56e1690c7d32be125291eb38f121abb7fff3a383e"
+  }
+ ],
+ "unchanged": [],
+ "refused": [],
+ "failed": []
+}
