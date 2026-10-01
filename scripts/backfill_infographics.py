@@ -139,9 +139,12 @@ def main() -> int:
                     help="chapters to attempt this run (the daily cap is small)")
     ap.add_argument("--per-chapter", type=int, default=2)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--day", type=int, help="just this chapter")
     a = ap.parse_args()
 
     jobs = chapters_missing_infographics()
+    if a.day is not None:
+        jobs = [j for j in jobs if j["index"] == a.day]
     print(f"{len(jobs)} released chapter(s) have no infographic")
     if not jobs:
         return 0
@@ -150,11 +153,19 @@ def main() -> int:
             print(f"  {j['index']:3} {j['day'].get('title_he','')[:44]}")
         return 0
 
-    total = 0
-    for j in jobs[:a.limit]:
+    total = attempted = 0
+    for j in jobs:
+        if attempted >= a.limit:
+            break
         print(f"[{j['index']:3}] {j['day'].get('title_he','')[:40]} — generating...",
               flush=True)
         n, note = make_for_chapter(j, a.per_chapter)
+        if n == 0 and note.startswith("no notebook"):
+            # Same reason as backfill_audio: a chapter whose notebook is gone
+            # is not an attempt, and must not use up the run's allowance.
+            print(f"[{j['index']:3}] SKIP {note}", flush=True)
+            continue
+        attempted += 1
         total += n
         print(f"[{j['index']:3}] {'OK  ' if n else 'FAIL'} {note}", flush=True)
         if n == 0 and any(m.lower() in note.lower() for m in RATE):

@@ -137,9 +137,12 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=3,
                     help="how many to attempt this run (the daily cap is small)")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--day", type=int, help="just this chapter")
     a = ap.parse_args()
 
     jobs = releases_missing_audio()
+    if a.day is not None:
+        jobs = [j for j in jobs if j["index"] == a.day]
     print(f"{len(jobs)} released chapter(s) have no audio yet")
     if not jobs:
         return 0
@@ -148,11 +151,22 @@ def main() -> int:
             print(f"  {j['index']:3} {j['day'].get('title_he', '')[:44]}")
         return 0
 
-    done = 0
-    for j in jobs[:a.limit]:
+    done = attempted = 0
+    for j in jobs:
+        if attempted >= a.limit:
+            break
         print(f"[{j['index']:3}] {j['day'].get('title_he', '')[:40]} — generating...",
               flush=True)
         ok, note = make_audio(j)
+        if not ok and note.startswith("no notebook"):
+            # Chapters 1-22 lost their notebooks (measured 2026-09-26: 112 of
+            # 144 remain). Counting them against --limit meant a daily run
+            # spent its whole allowance failing on chapters 1-3 and never
+            # reached one it could make — the first live test of Hebrew audio,
+            # 2026-10-02, never got past chapter 2.
+            print(f"[{j['index']:3}] SKIP {note}", flush=True)
+            continue
+        attempted += 1
         print(f"[{j['index']:3}] {'OK  ' if ok else 'FAIL'} {note}", flush=True)
         done += ok
         if not ok and any(m.lower() in note.lower() for m in RATE_MARKERS + ("cap",)):
