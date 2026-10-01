@@ -1979,7 +1979,25 @@ Length: long and thorough — {words}. This is study material, not a summary."""
         ans, over = ask(group, words)
         if ans is not None:
             return [ans]
-        if not over or len(group) < 2:
+        if not over:
+            return None
+        if len(group) < 2:
+            # One aspect, still over the cap: nothing left to split by aspect,
+            # but the length is still there to shrink. Chapter 3 (the
+            # neurotransmitter overview, with Synopsis ch.33 attached) failed
+            # its 2026-10-01 re-run this way at every split down to one aspect,
+            # which aborted the whole chapter and left week 1 without its quiz
+            # and cards. A shorter extract for one dense aspect is worth more
+            # than no chapter: the day notebook also carries the textbooks, so
+            # the guide and the quiz are not limited to what this returns.
+            for shorter in ("600-1000 words", "350-600 words"):
+                print(f"    [i] one aspect still over the cap; asking for "
+                      f"{shorter}", file=sys.stderr)
+                ans, over = ask(group, shorter)
+                if ans is not None:
+                    return [ans]
+                if not over:
+                    return None
             return None
         mid = (len(group) + 1) // 2
         print(f"    [i] part of {len(group)} aspects still over the cap; "
