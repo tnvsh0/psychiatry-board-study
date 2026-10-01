@@ -407,7 +407,16 @@ _MATH_REGIONS = (
     re.compile(r"\$[^$\n]{0,200}?[\\^_{][^$\n]{0,200}?\$"),
     re.compile(r"\\{1,2}\((?:(?!\\{1,2}\)).){0,300}\\{1,2}\)", re.S),
     re.compile(r"\\{1,2}\[(?:(?!\\{1,2}\]).){0,300}\\{1,2}\]", re.S),
+    # Last, so a span with LaTeX inside is taken by the first pattern whole.
+    # See qc_lint._PLAIN_MATH_BODY: chapter 006 came out of this pass reading
+    # `ה-cell bodies של רוב ה-$neurons$ ... ב-$brainstem$` because only the first
+    # of three spans had a LaTeX character in it.
+    re.compile(qc_lint._PLAIN_MATH_BODY),                     # noqa: SLF001
 )
+# LaTeX spacing. `$Tyrosine\ hydroxylase$` came out as `Tyrosine\ hydroxylase`
+# with the backslash still in it: `\ ` is not a letter command, so the residual
+# check below — which looked only for `\letter` — let it through.
+_LATEX_SPACES = re.compile(r"\\[ ,;:!>]")
 _GREEK = {
     "alpha": "α", "beta": "β", "gamma": "γ", "delta": "δ", "epsilon": "ε",
     "zeta": "ζ", "eta": "η", "theta": "θ", "iota": "ι", "kappa": "κ",
@@ -455,7 +464,13 @@ def _collapse_math(region: str) -> str | None:
     body = re.sub(r"\\{1,2}[()\[\]]", "", body)
     body = body.replace("$", "")
     body = re.sub(r"\\([%&#_${}])", r"\1", body)
-    if _RESIDUAL_LATEX.search(body) or "{" in body or "}" in body:
+    body = _LATEX_SPACES.sub(" ", body)
+    body = re.sub(r"[ \t]{2,}", " ", body)
+    # ANY backslash left is something this function did not understand. The
+    # earlier test was `\\[A-Za-z]` only, which is how `Tyrosine\ hydroxylase`
+    # was emitted with its backslash; refusing keeps hygiene_latex raised and
+    # the string in front of the owner instead.
+    if "\\" in body or _RESIDUAL_LATEX.search(body) or "{" in body or "}" in body:
         return None
     return body.strip()
 
@@ -478,6 +493,19 @@ def collapse_latex(s: str) -> tuple[str, list[tuple[str, str, bool]]]:
             events.append((m.group(0), got, True))
         pieces.append(out[last:])
         out = "".join(pieces)
+    # A formatting command in PROSE, outside any math delimiter: chapter 006's
+    # card reads `ה-\textit{rate-limiting enzyme}`. Every region pattern above
+    # needs `$`, `\(` or `\[`, so this was flagged by the lint and never cleaned.
+    # Unwrapping keeps the words and drops only the command; a body that still
+    # holds a backslash is left for the owner, as everywhere else here.
+    def _unwrap(m: re.Match) -> str:
+        inner = m.group(1)
+        if "\\" in inner:
+            events.append((m.group(0), m.group(0), False))
+            return m.group(0)
+        events.append((m.group(0), inner, True))
+        return inner
+    out = _UNWRAP_RE.sub(_unwrap, out)
     for bad, good in _LOOSE_ESCAPES:
         if bad in out:
             events.append((bad, good, True))

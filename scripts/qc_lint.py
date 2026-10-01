@@ -193,6 +193,18 @@ _LATEX_RE = re.compile(r"\\{1,2}(?:[A-Za-z]{2,}|[(){}\[\]%$_^&#~\"'])")
 # Inline math: `$...$` with something LaTeX-ish inside, so a plain "$5" (a price
 # this material never quotes, but still) does not fire on its own.
 _MATH_RE = re.compile(r"\$[^$\n]{0,120}[\\^_{][^$\n]{0,120}\$")
+# Math delimiters around PLAIN text: `ה-$neurons$`, `ב-$brainstem$`, `($TOH$)`.
+# NotebookLM wraps ordinary English words in `$…$`, and the guard above — which
+# needs a LaTeX-ish character inside — let 821 of these through in 45 chapters
+# (measured 2026-10-01 over _qc/orig). The fixer had the same guard, so it
+# cleaned `$cell\ bodies$` and left `$neurons$` in the SAME sentence: half-clean
+# text, which reads worse than the original. A Latin letter must come right
+# after the `$` or after a run of digits: that admits `$5HT$` (serotonin, in
+# chapter 007) and still keeps a price out — `$5 ליום` and `$20 ו-$30` have a
+# space or a Hebrew letter there, never a Latin one.
+# One body, used by qc_fix as well, for the reason the marker regex has one.
+_PLAIN_MATH_BODY = r"\$[0-9]*[A-Za-z][^$\n]{0,80}?\$"
+_PLAIN_MATH_RE = re.compile(_PLAIN_MATH_BODY)
 # A stem this long with no Hebrew letter at all is an untranslated item: the
 # owner studies in Hebrew and the app renders RTL. Short English stems ("MTA
 # study?") are not the failure; whole vignettes are (36 of the sampled items).
@@ -447,7 +459,8 @@ def _lint_hygiene(u: qc_units.Unit, flags: dict) -> None:
     for phrase in _SIGNOFFS:
         if phrase in text:
             _add(flags, u.uid, "hygiene_signoff", phrase)
-    _span_flag(flags, u.uid, "hygiene_latex", text, _LATEX_RE, _MATH_RE)
+    _span_flag(flags, u.uid, "hygiene_latex", text, _LATEX_RE, _MATH_RE,
+               _PLAIN_MATH_RE)
     for label in _LEAKED_LABELS:
         if label in text:
             _add(flags, u.uid, "hygiene_leaked_label", label)
