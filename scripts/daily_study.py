@@ -3187,7 +3187,18 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.day:
-        generate_day(args.day, schedule, symbols, output_dir, dry_run=args.dry_run)
+        result = generate_day(args.day, schedule, symbols, output_dir,
+                              dry_run=args.dry_run)
+        # generate_day returns None on three failures (the day is not in the
+        # schedule, the extraction aborted, nothing downloaded) and on the
+        # dry-run preview. The process used to exit 0 on all of them, and
+        # bulk_run reads rc 0 as success: chapter 3's 2026-10-01 re-run printed
+        # "Could not extract content ... Aborting." and exited 0. On a first
+        # run the missing release caught it; on a re-run the OLD release is
+        # still there, so the abort would have been recorded as done and its
+        # evidence swept.
+        if result is None and not args.dry_run:
+            sys.exit(1)
     elif args.bulk:
         for d in range(args.start_from, args.end_at + 1):
             # Resume: check if release already exists

@@ -91,6 +91,32 @@ def save_state(st: dict) -> None:
     STATE.write_text(json.dumps(st, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+def refreshed_since(tag: str, t0: datetime) -> bool:
+    """Did this run actually replace the chapter's study material?
+
+    For a first run, `released(tag)` already answers that: no release before,
+    a release after. For --rerun it cannot — the old release is there before
+    the run starts, so a regeneration that aborted would read as done. The
+    study guide is the asset every successful run re-uploads and the one the
+    owner studies through, so its timestamp is the test.
+    """
+    r = subprocess.run(["gh", "release", "view", tag, "--repo", GH_REPO,
+                        "--json", "assets"],
+                       capture_output=True, text=True, encoding="utf-8",
+                       errors="replace")
+    if r.returncode != 0:
+        return False
+    try:
+        assets = json.loads(r.stdout or "{}").get("assets", [])
+    except Exception:
+        return False
+    for a in assets:
+        if a.get("name") == "study_guide.md" and a.get("updatedAt"):
+            when = datetime.fromisoformat(a["updatedAt"].replace("Z", "+00:00"))
+            return when >= t0
+    return False
+
+
 def released(tag: str) -> bool:
     """Does this chapter's release exist? Two things ride on the answer.
 
@@ -345,7 +371,11 @@ def main() -> int:
     ap.add_argument("--retry-failed", action="store_true",
                     help="second-chance pass over chapters that failed earlier")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--rerun", help="comma-separated chapters to REGENERATE even "
+                    "though their release exists (replaces the published assets)")
     a = ap.parse_args()
+    rerun = ({int(x) for x in a.rerun.replace(" ", "").split(",") if x}
+             if a.rerun else set())
 
     sched = json.loads((ROOT / "schedule" / "schedule.json").read_text(encoding="utf-8"))
     days = {d["index"]: d for d in sched["days"]}
@@ -353,7 +383,9 @@ def main() -> int:
     st["started_at"] = st.get("started_at") or datetime.now(timezone.utc).isoformat()
 
     queue = [i for i in range(a.start, a.end + 1) if i in days]
-    if a.retry_failed:
+    if rerun:
+        queue = [i for i in queue if i in rerun]
+    elif a.retry_failed:
         queue = [i for i in queue if str(i) in st["failed"]]
     else:
         queue = [i for i in queue if i not in st["done"]]
@@ -418,7 +450,13 @@ def main() -> int:
         # FAILED after succeeding, and never swept.
         tag = f"study-{idx:03d}-{slugify(day.get('title_en', ''))}"
 
-        if released(tag):
+        # --rerun is the one way past this. It exists because the owner
+        # approved regenerating chapters whose release is incomplete or wrong
+        # (1, 3, 10, 11 missing a third of their material; 9, 18, 34 quizzes in
+        # English), and the only other route — calling daily_study --day
+        # directly — has none of this runner's re-login: on 2026-10-01 four of
+        # seven such re-runs died on one expired session.
+        if released(tag) and idx not in rerun:
             print(f"[{idx:3}] already released — sweeping local copy")
             freed = sweep_local(idx)
             if idx not in st["done"]:
@@ -428,6 +466,7 @@ def main() -> int:
             continue
 
         print(f"[{idx:3}] {day['title_he'][:40]} — generating...", flush=True)
+        t0 = datetime.now(timezone.utc)
         ok, note = run_chapter(idx, ROOT / "_bulk" / "logs")
         # Wait out a network outage and give the chapter its turn again,
         # instead of letting the outage fail three chapters and stop the run.
@@ -446,6 +485,11 @@ def main() -> int:
                 return 2
             print(f"[{idx:3}] network is back — retrying", flush=True)
             ok, note = run_chapter(idx, ROOT / "_bulk" / "logs")
+        if ok and idx in rerun and not refreshed_since(tag, t0):
+            ok = False
+            note = (f"{note} :: REGENERATION DID NOT LAND — the release's "
+                    f"study_guide.md is older than this run, so the published "
+                    f"material is still the old one")
         if ok and released(tag):
             freed = sweep_local(idx)
             st["done"].append(idx)
@@ -488,7 +532,16 @@ def main() -> int:
                 st["failed"].pop(str(idx), None)
                 save_state(st)
                 print(f"[{idx:3}] retrying after re-auth", flush=True)
+                t0 = datetime.now(timezone.utc)
                 ok, note = run_chapter(idx, ROOT / "_bulk" / "logs")
+                # The same --rerun guard as the main path. This branch had its
+                # own copy of the success test, so a guard added only above
+                # would be skipped by exactly the chapters an expired session
+                # interrupts — four of the seven re-runs on 2026-10-01.
+                if ok and idx in rerun and not refreshed_since(tag, t0):
+                    ok = False
+                    note = (f"{note} :: REGENERATION DID NOT LAND — "
+                            f"study_guide.md is older than this run")
                 if ok and released(tag):
                     freed = sweep_local(idx)
                     st["done"].append(idx)
