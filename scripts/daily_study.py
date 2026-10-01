@@ -2429,6 +2429,56 @@ def wait_for_artifacts(task_ids, max_wait=ARTIFACT_MAX_WAIT_S):
     return results
 
 
+def rebalance_quiz_file(path, tag: str) -> bool:
+    """Move each quiz key off option A, in place, before the quiz is published.
+
+    The prompt asks NotebookLM to vary the key and it does not: chapter 38's
+    regenerated quiz (2026-09-26) put the correct answer on A in all seven
+    items, the same 91%-on-A pattern measured across the 141 released quizzes.
+    Asking harder is not a fix, so the pipeline does it — the same
+    qc_fix.rebalance_keys that was published to the backlog under the owner's
+    §5.12 exception, which is what lets it run here without a verdict.
+
+    Fail-closed in the safe direction: if the result does not keep every item's
+    single correct answer and its option set unchanged, the file is left as
+    NotebookLM wrote it. An unbalanced quiz is a worse test; a quiz whose
+    correct answer moved to the wrong option is a wrong one.
+    """
+    path = Path(path)
+    try:
+        import qc_fix   # local: only the publish path needs it
+        import qc_lint
+        raw = path.read_text(encoding="utf-8")
+        before = json.loads(raw)
+        after = qc_fix.rebalance_keys(json.loads(raw), tag)
+        a = qc_lint._quiz_item_list(before)
+        b = qc_lint._quiz_item_list(after)
+
+        def keys(items):
+            out = []
+            for it in items:
+                opts = qc_lint._options(it)
+                out.append((sorted(json.dumps(o, sort_keys=True, ensure_ascii=False)
+                                   for o in opts),
+                            [o.get("text") for o in opts
+                             if isinstance(o, dict) and o.get("isCorrect")]))
+            return out
+
+        if len(a) != len(b) or keys(a) != keys(b):
+            print("  [!] quiz rebalance did not preserve the answers; "
+                  "publishing it unbalanced rather than wrong", flush=True)
+            return False
+        if json.dumps(after, sort_keys=True) == json.dumps(before, sort_keys=True):
+            return True
+        path.write_text(json.dumps(after, ensure_ascii=False, indent=1),
+                        encoding="utf-8")
+        print("  [i] quiz answer order rebalanced (content unchanged)", flush=True)
+        return True
+    except Exception as exc:                                  # noqa: BLE001
+        print(f"  [!] quiz rebalance skipped: {exc}", flush=True)
+        return False
+
+
 def download_artifact(kind, artifact_id, out_path):
     cmd = {
         "audio": ["download", "audio", str(out_path), "-a", artifact_id],
@@ -3031,6 +3081,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         suffix = "" if kind == base_kind else f"_{kind.split('_', 1)[1]}"
         out_path = day_dir / f"{base_kind}{suffix}.{ext}"
         if download_artifact(base_kind, aid, out_path):
+            if base_kind == "quiz":
+                rebalance_quiz_file(out_path, f"study-{day_index:03d}")
             size_mb = out_path.stat().st_size / (1024 * 1024)
             print(f"  [OK] {out_path.name} ({size_mb:.1f} MB)")
             assets.append(out_path)

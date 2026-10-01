@@ -37,6 +37,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 import time
@@ -162,6 +163,38 @@ def _items_in(path: Path, name: str) -> int:
     return len(data) if isinstance(data, list) else -1
 
 
+_HEB = re.compile(r"[֐-׿]")
+
+
+def _hebrew_share(path: Path, name: str) -> tuple[int, int]:
+    """(items whose prompt side carries Hebrew, items) — the quiz stem, the card
+    front. The answer side legitimately holds English terms (K-SADS-PL, DAT,
+    Tyrosine hydroxylase), which is why it is not what is counted."""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8", errors="replace"))
+    except Exception:
+        return 0, 0
+    items = []
+    if isinstance(data, dict):
+        for key in ("items", "flashcards", "cards", "questions", "quiz"):
+            if isinstance(data.get(key), list):
+                items = data[key]
+                break
+    elif isinstance(data, list):
+        items = data
+    heb = total = 0
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        side = next((str(it[k]) for k in ("question", "front", "stem", "term",
+                                          "prompt") if it.get(k)), "")
+        if not side:
+            continue
+        total += 1
+        heb += bool(_HEB.search(side))
+    return heb, total
+
+
 def make_one(job: dict, name: str, nb_id: str) -> tuple[bool, str]:
     """Generate, validate and attach ONE asset. (ok, note)"""
     idx, day, tag = job["index"], job["day"], job["tag"]
@@ -204,6 +237,25 @@ def make_one(job: dict, name: str, nb_id: str) -> tuple[bool, str]:
         out.unlink(missing_ok=True)
         return False, (f"only {n} item(s) — not uploading a stub"
                        if n >= 0 else "unusable JSON — not uploading")
+    # A regenerated set that came back in English again is the defect it was
+    # regenerated to remove, so it does not go up. 13 quizzes and 6 card sets
+    # were published wholly in English (every item, not some), which is what a
+    # run that ignored "בעברית" looks like — so the test is the same shape.
+    if name in ("quiz.json", "flashcards.json"):
+        heb, total = _hebrew_share(out, name)
+        if total and heb * 2 < total:
+            out.unlink(missing_ok=True)
+            return False, (f"came back in English ({heb}/{total} items in "
+                           f"Hebrew) — not uploading")
+    if name == "quiz.json":
+        # NotebookLM puts the key on A however the prompt asks (chapter 38's
+        # regenerated quiz: 7 of 7). Without this every regenerated quiz would
+        # undo the backlog rebalance the owner just published.
+        ds.rebalance_quiz_file(out, tag)
+    # Upload under the asset's own name; the working file carries the day.
+    staged = out.with_name(name)
+    staged.write_text(out.read_text(encoding="utf-8"), encoding="utf-8")
+    out = staged
     u = subprocess.run(["gh", "release", "upload", tag, str(out),
                         "--repo", ds.GITHUB_REPO, "--clobber"],
                        capture_output=True, text=True, encoding="utf-8",
@@ -219,9 +271,28 @@ def main() -> int:
                     help="how many CHAPTERS to attempt this run")
     ap.add_argument("--day", type=int, help="just this chapter")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--regenerate", choices=("quiz.json", "flashcards.json"),
+                    help="REPLACE this asset on --days even though it exists "
+                         "(the 13 quizzes and 6 card sets published in English)")
+    ap.add_argument("--days", help="comma-separated chapters for --regenerate")
     a = ap.parse_args()
 
-    jobs = missing_items(a.day)
+    if a.regenerate:
+        if not a.days:
+            ap.error("--regenerate needs --days")
+        wanted = {int(x) for x in a.days.replace(" ", "").split(",") if x}
+        sched = {d["index"]: d for d in ds.load_schedule()["days"]}
+        tags = {int(r["tagName"].split("-")[1]): r["tagName"]
+                for r in _gh_json(["release", "list", "--limit", "300",
+                                   "--json", "tagName"])
+                if r["tagName"].startswith("study-")}
+        jobs = [{"index": i, "tag": tags[i], "day": sched[i],
+                 "want": [a.regenerate]}
+                for i in sorted(wanted) if i in tags and i in sched]
+        print(f"regenerating {a.regenerate} for {len(jobs)} chapter(s): "
+              f"{[j['index'] for j in jobs]}")
+    else:
+        jobs = missing_items(a.day)
     total = sum(len(j["want"]) for j in jobs)
     print(f"{len(jobs)} released chapter(s) missing {total} essential asset(s)")
     if not jobs:
