@@ -492,7 +492,8 @@ def main() -> int:
                     f"material is still the old one")
         if ok and released(tag):
             freed = sweep_local(idx)
-            st["done"].append(idx)
+            if idx not in st["done"]:
+                st["done"].append(idx)
             st["failed"].pop(str(idx), None)
             consecutive = 0
             print(f"[{idx:3}] DONE  {note.split('::')[0].strip()} — freed {freed}MB")
@@ -544,7 +545,8 @@ def main() -> int:
                             f"study_guide.md is older than this run")
                 if ok and released(tag):
                     freed = sweep_local(idx)
-                    st["done"].append(idx)
+                    if idx not in st["done"]:
+                        st["done"].append(idx)
                     save_state(st)
                     print(f"[{idx:3}] DONE  after re-auth — freed {freed}MB")
                     time.sleep(CHAPTER_GAP_S)
