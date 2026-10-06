@@ -330,13 +330,66 @@ def _card_list(name: str, data: Any) -> list[dict]:
     raise UnitError(f"{name}: expected a list of cards, got {type(data).__name__}")
 
 
+def card_side_text(value) -> str | None:
+    """A flashcard side as plain text, or None if its shape is not understood.
+
+    NotebookLM changed its flashcard format around 2026-10-01: a side used to
+    be a string and is now `{"flashcardContentBlock": [{"type": "text",
+    "content": "…"}]}`. Every set generated since then — 14 chapters,
+    including five the owner studies in week 1 — came back that way, and both
+    the app and this module read the dict as if it were the text. Only `text`
+    blocks have been seen; a block of any other type is not guessed at, so the
+    caller can refuse instead of dropping it silently.
+    """
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, dict) and isinstance(value.get("flashcardContentBlock"), list):
+        parts = []
+        for block in value["flashcardContentBlock"]:
+            if not isinstance(block, dict) or block.get("type") != "text":
+                return None
+            parts.append(str(block.get("content") or ""))
+        return "\n".join(parts)
+    return None
+
+
+def flatten_flashcards(data):
+    """(data, sides changed) with every card side as plain text, in place.
+
+    Raises UnitError on a side whose shape card_side_text does not know: a
+    rewrite that dropped an image or a table block would publish a card with
+    part of its answer missing, and nothing downstream could tell.
+    """
+    changed = 0
+    for i, card in enumerate(_card_list("flashcards.json", data)):
+        if not isinstance(card, dict):
+            continue
+        for side in ("front", "back"):
+            if side not in card or isinstance(card[side], str):
+                continue
+            text = card_side_text(card[side])
+            if text is None:
+                raise UnitError(f"flashcards.json: card {i + 1} {side} has a "
+                                f"shape this code does not understand: "
+                                f"{json.dumps(card[side], ensure_ascii=False)[:120]}")
+            card[side] = text
+            changed += 1
+    return data, changed
+
+
 def _card_units(name: str, text: str) -> list[Unit]:
     cards = _card_list(name, _load_json(name, text))
     out = []
     for i, card in enumerate(cards):
         if not isinstance(card, dict):
             raise UnitError(f"{name}: card {i + 1} is {type(card).__name__}")
-        front, back = card.get("front", ""), card.get("back", "")
+        front = card_side_text(card.get("front", ""))
+        back = card_side_text(card.get("back", ""))
+        if front is None or back is None:
+            raise UnitError(f"{name}: card {i + 1} has a side this code does "
+                            f"not understand")
         lines = [f"front: {front}", f"back: {back}"]
         for k, v in card.items():
             if k not in ("front", "back") and v not in (None, "", [], {}):

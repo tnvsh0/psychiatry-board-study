@@ -1,0 +1,92 @@
+{
+ "what": "flashcards.json converted from NotebookLM's flashcardContentBlock format to plain-text sides; content unchanged",
+ "at": "2026-10-06T19:39:18+00:00",
+ "published": [
+  {
+   "tag": "study-001-psychiatric-examination-of-child-and-adolescent",
+   "sides": 36,
+   "sha256_before": "39bb1445d09a0d9342ff8b62119ff55247e5f3dba829947d8794e0b8be6887da",
+   "sha256_after": "c727dac73b2d1d683d1aeda317e3e4a64bcd656aac2db802388da9050798d419"
+  },
+  {
+   "tag": "study-003-neurotransmitters-overview",
+   "sides": 36,
+   "sha256_before": "d24d0913912e3f7473d5b03ab48b7403bd4863e78de96fd8f51f80f694df14a8",
+   "sha256_after": "d809d2f597ad588ab341a06d8af9885f36193a8cd3e4c8a42e6885a1f51eae96"
+  },
+  {
+   "tag": "study-009-normative-development-2-5-preschool",
+   "sides": 32,
+   "sha256_before": "a418bd7668a5f25e909b6e80f3ad7145165d1941159ffb7ecb37f03878ee5fff",
+   "sha256_after": "9f4ec77c47ab7add34662a6a87e39164159e0b2bdaf3706ba19aab6bddd95f9d"
+  },
+  {
+   "tag": "study-010-normative-development-6-12-school-age",
+   "sides": 32,
+   "sha256_before": "06f142553a8985d0f591d44525a9a3a595361a9356e1d01583283dcb75ada0c3",
+   "sha256_after": "f32d162a57ca9d1d17072d61c6743ba225a81eef4f7d91782839432bdf91016e"
+  },
+  {
+   "tag": "study-011-normative-development-13-18-adolescence",
+   "sides": 32,
+   "sha256_before": "e85a390cd9dd44e4b4d09824ee5ba2bee7c5bc584e47a48c98001fb64b88836c",
+   "sha256_after": "9f59959e034a90b6e13e4ba754e72d45458672e512a8269fc01ecdf33d73c0b1"
+  },
+  {
+   "tag": "study-018-adhd-treatment-stimulants",
+   "sides": 36,
+   "sha256_before": "51664a1292d4425e0a3bf83e75522f4801bcb297bd633a242bc3bf1c4e07a7d1",
+   "sha256_after": "791aeef1e55d7092e965297ab4e9848bba177724192ea3f8b30a4cc4648a4565"
+  },
+  {
+   "tag": "study-024-tic-disorders-tourette-s",
+   "sides": 36,
+   "sha256_before": "a615c2bf4c2f82730897fc72c5c52e320967c0da6c784d5d631aca5f04cd5bc3",
+   "sha256_after": "be3e6c9c6e60fa85c1b24ce660614e9e5c7d42f948440011ac371011282355d5"
+  },
+  {
+   "tag": "study-034-bipolar-ii-cyclothymia-pediatric-bipolar-controversy",
+   "sides": 32,
+   "sha256_before": "63fc77bf68ae1341230647e78b8165aa1c459c83905d0cb9ee564896e3408a25",
+   "sha256_after": "4f60c052a21af1814e72f37165790ec7845a1f07078a3c9e15ea2c20bf0aa2ec"
+  },
+  {
+   "tag": "study-041-separation-anxiety-specific-phobia",
+   "sides": 36,
+   "sha256_before": "1523f89057c05b1900f38c071fc4742fca40ec0aed7fc472854cdd6065ae30c3",
+   "sha256_after": "ad98c1addba33864ed97dca7c71807f5822bad23798cb2a6487aff7df8216829"
+  },
+  {
+   "tag": "study-055-schizophrenia-core",
+   "sides": 38,
+   "sha256_before": "d1fa409e9b5b1879161847d7da196f2bd9ad5121a9a9f8d301984f1e576b1b80",
+   "sha256_after": "1a473c9427493b83095e5d6478902f34c3db7d3824754d7dbe51ee5f88fb58e8"
+  },
+  {
+   "tag": "study-062-metabolic-heavy-sgas-olanzapine-quetiapine-risperidone",
+   "sides": 36,
+   "sha256_before": "8175b20b418249dccd3c62d934b4facc9ef7fa2c5d541b2cc3a84c7462742659",
+   "sha256_after": "ff75a263ab885c6d771bccca34575b7e1797ec209bb5552e5a70fb3f962586c8"
+  },
+  {
+   "tag": "study-064-long-acting-injectable-antipsychotics-lais",
+   "sides": 36,
+   "sha256_before": "f8d8160afcea5faac8f81cc7acd32d3009544fb470744e0a40dca3168b23882f",
+   "sha256_after": "4df1a13bce587ae26623219f33fb883698ba0c7c101471bf33a2b3d899b77b0a"
+  },
+  {
+   "tag": "study-109-self-injurious-behavior-nssi",
+   "sides": 36,
+   "sha256_before": "d7f15b8c5c902a41cebe289754e38888cbde1aeca86e147dfb9fac998753add6",
+   "sha256_after": "f90c0288a4092c4a6d0551e63ee20ed7d904a9b038314a7f196689bdad3d9a04"
+  },
+  {
+   "tag": "study-121-cerebral-palsy",
+   "sides": 36,
+   "sha256_before": "5c756463d09a84b7d6328763053f5317061e3be7b8de40a842c60bddecb4f9b8",
+   "sha256_after": "a9a5306f78cf3023c78304ad669520a4879b917788a4148107b8d98e56c86906"
+  }
+ ],
+ "failed": [],
+ "refused": []
+}

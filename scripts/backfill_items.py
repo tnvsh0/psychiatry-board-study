@@ -237,6 +237,16 @@ def make_one(job: dict, name: str, nb_id: str) -> tuple[bool, str]:
         out.unlink(missing_ok=True)
         return False, (f"only {n} item(s) — not uploading a stub"
                        if n >= 0 else "unusable JSON — not uploading")
+    if name == "flashcards.json":
+        # First, so the language gate below reads TEXT. Run on the new
+        # NotebookLM format it read `str(dict)`, which contains the Hebrew it is
+        # looking for, and passed every set by accident — the same accident that
+        # let 14 unreadable sets reach the app.
+        try:
+            ds.flatten_flashcards_file(out)
+        except Exception as exc:                          # noqa: BLE001
+            out.unlink(missing_ok=True)
+            return False, f"flashcards in a shape that cannot be read: {exc}"
     # A regenerated set that came back in English again is the defect it was
     # regenerated to remove, so it does not go up. 13 quizzes and 6 card sets
     # were published wholly in English (every item, not some), which is what a

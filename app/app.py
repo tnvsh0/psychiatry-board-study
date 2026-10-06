@@ -48,7 +48,7 @@ from sr_engine import (  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from quiz_logic import (  # noqa: E402
     normalize_item, grade, qc_mark, card_due_override, parse_qc_json,
-    badge_text, asset_lines, errata_for_asset,
+    badge_text, asset_lines, errata_for_asset, side_text,
     MULTIPLE_CHOICE, MULTIPLE_SELECT, FILL_IN_THE_BLANK, SHORT_ANSWER,
 )
 
@@ -538,8 +538,12 @@ def render_erratum_card(e: dict, *, title: str = "") -> None:
 # ── Flashcard SR rendering ─────────────────────────────────────────────────
 def _extract_qa(card_raw: dict) -> tuple[str, str]:
     """Pull (question, answer) from a flashcard JSON record."""
-    q = card_raw.get("front") or card_raw.get("question") or card_raw.get("q", "")
-    a = card_raw.get("back") or card_raw.get("answer") or card_raw.get("a", "")
+    # Through side_text: a side in NotebookLM's post-2026-10-01 format is a
+    # dict, and handing that to st.markdown showed the learner its repr.
+    q = side_text(card_raw.get("front")) or side_text(card_raw.get("question")) \
+        or side_text(card_raw.get("q"))
+    a = side_text(card_raw.get("back")) or side_text(card_raw.get("answer")) \
+        or side_text(card_raw.get("a"))
     return q, a
 
 

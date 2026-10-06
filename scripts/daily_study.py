@@ -2497,6 +2497,30 @@ def rebalance_quiz_file(path, tag: str) -> bool:
         return False
 
 
+def flatten_flashcards_file(path) -> int:
+    """Rewrite a downloaded flashcards.json with every side as plain text.
+
+    NotebookLM's flashcard format changed around 2026-10-01 — a side became
+    `{"flashcardContentBlock": [{"type": "text", "content": …}]}` — and the
+    app read that dict as the question: 14 chapters published since then,
+    five of them in week 1, could not be studied. One canonical format here
+    means the app, the QC run and every tool read the same thing.
+
+    Raises if a side has a block that is not text, rather than publishing a
+    card with part of its answer dropped; the chapter then fails loudly.
+    """
+    import qc_units   # local: only the publish path needs it
+    path = Path(path)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    data, n = qc_units.flatten_flashcards(data)
+    if n:
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=2),
+                        encoding="utf-8")
+        print(f"  [i] flashcards: {n} card sides converted from the new "
+              f"NotebookLM format to plain text", flush=True)
+    return n
+
+
 def download_artifact(kind, artifact_id, out_path):
     cmd = {
         "audio": ["download", "audio", str(out_path), "-a", artifact_id],
@@ -3101,6 +3125,8 @@ def generate_day(day_index, schedule, symbols, output_dir, dry_run=False):
         if download_artifact(base_kind, aid, out_path):
             if base_kind == "quiz":
                 rebalance_quiz_file(out_path, f"study-{day_index:03d}")
+            elif base_kind == "flashcards":
+                flatten_flashcards_file(out_path)
             size_mb = out_path.stat().st_size / (1024 * 1024)
             print(f"  [OK] {out_path.name} ({size_mb:.1f} MB)")
             assets.append(out_path)

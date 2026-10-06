@@ -231,10 +231,31 @@ def _run_start(clause: list[str], needle: list[str]) -> int:
 
 
 # ── Item normalization ──────────────────────────────────────────────────────
+def side_text(v) -> str:
+    """A field's text, including a flashcard side in NotebookLM's new format.
+
+    Around 2026-10-01 NotebookLM started returning a card side as
+    `{"flashcardContentBlock": [{"type": "text", "content": "…"}]}`. The app
+    read that dict as the question, and `_text` below skipped it as a
+    non-string — so item_id hashed "" for EVERY such card, and the spaced-
+    repetition progress would have filed a whole chapter's cards under one id.
+    The pipeline now writes plain text again; this is the guard for a file that
+    did not come through it. Lenient by design, unlike the pipeline: it shows
+    the text blocks it understands rather than failing the learner's screen.
+    """
+    if isinstance(v, str):
+        return v
+    if isinstance(v, dict) and isinstance(v.get("flashcardContentBlock"), list):
+        return "\n".join(str(b.get("content") or "")
+                         for b in v["flashcardContentBlock"]
+                         if isinstance(b, dict) and b.get("type") == "text")
+    return ""
+
+
 def _text(d: dict, *keys) -> str:
     for k in keys:
-        v = d.get(k)
-        if isinstance(v, str) and v.strip():
+        v = side_text(d.get(k))
+        if v.strip():
             return v.strip()
     return ""
 
