@@ -69,3 +69,8 @@ _qc/*/*
 
 # Printed→PDF page maps of the books (§5.10, "any pages.json")
 **/pages.json
+
+# A second calibration tree (study scope, 2026-10-06). Like _qc/calibration it
+# holds SEEDED copies of chapters with deliberate errors in them; nothing in it
+# may ever reach the history of the repo that publishes the owner's material.
+_qc_cal2/
