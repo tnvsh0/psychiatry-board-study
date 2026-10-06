@@ -271,19 +271,38 @@ def load_chapter(tag: str, *, root=None, gh=None, fetch: bool = True
     got = _read_dir(cached)
     if got:
         return got
+    # The release BEFORE the fixtures whenever fetching is allowed. Fixtures-
+    # first was right for tests and wrong for a real build: on 2026-10-06 the
+    # study-scope set took chapter 001 from tests/qc/fixtures/quiz — an old
+    # quiz and card set with no study guide — instead of the chapter as
+    # published, which had been regenerated on 2026-10-01 with a new guide. It
+    # seeded zero items there and would have spent two agy calls measuring
+    # nothing. Fixtures stay the offline path (fetch=False), and the fallback
+    # when GitHub cannot be reached, so a machine with no network still builds
+    # the part of the set they cover.
+    fetch_error = None
+    if fetch:
+        try:
+            cached.mkdir(parents=True, exist_ok=True)
+            qc_store.fetch(tag, cached, gh=gh or qc_store.Gh(), text_only=True)
+            got = _read_dir(cached)
+            if got:
+                return got
+        except Exception as exc:                                # noqa: BLE001
+            fetch_error = exc
     for sub in ("quiz", "text"):
         got = _read_dir(FIXTURES / sub / tag)
         if got:
+            if fetch:
+                _print(f"  [!] {tag}: the release could not be read "
+                       f"({fetch_error}); using the test fixture instead")
             return got
     if not fetch:
         raise CalibrationError(
             f"{tag}: no cached material under {cached} and fetching is off")
-    cached.mkdir(parents=True, exist_ok=True)
-    qc_store.fetch(tag, cached, gh=gh or qc_store.Gh(), text_only=True)
-    got = _read_dir(cached)
-    if not got:
-        raise CalibrationError(f"{tag}: the release served no text assets")
-    return got
+    if fetch_error is not None:
+        raise CalibrationError(f"{tag}: could not fetch the release: {fetch_error}")
+    raise CalibrationError(f"{tag}: the release served no text assets")
 
 
 def _read_dir(d: Path) -> dict[str, str]:
