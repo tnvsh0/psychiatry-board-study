@@ -1956,6 +1956,10 @@ def set_id(doc: dict) -> str:
              "|".join(sorted(f"{g.get('gid')}:{g.get('unit')}:{g.get('label')}"
                              for g in doc.get("gold") or [])),
              str(doc.get("seed"))]
+    # Appended only when present, so every set built before scopes existed
+    # keeps the id its judgments are bound to.
+    if doc.get("scope"):
+        parts.append("scope:" + ",".join(sorted(doc["scope"])))
     return hashlib.sha256("\n".join(parts).encode("utf-8")).hexdigest()[:16]
 
 
@@ -1998,7 +2002,7 @@ def build(*, tags: Sequence[str] = DEFAULT_CHAPTERS, root=None, gh=None,
           fetch: bool = True, n_mutants: int = MIN_MUTANTS,
           n_negatives: int = MIN_NEGATIVES, with_gold: bool = True,
           with_controls: bool = True, seed: int = 20260923,
-          force: bool = False) -> dict:
+          force: bool = False, scope: frozenset | None = None) -> dict:
     """Prepare the whole set. No agy call, no upload, no network beyond the
     read-only asset download.
 
@@ -2026,6 +2030,12 @@ def build(*, tags: Sequence[str] = DEFAULT_CHAPTERS, root=None, gh=None,
     tags = list(dict.fromkeys(list(tags) + sorted({g["tag"] for g in gold_rows})))
     assets_by_tag, pool = confirmed_pool(tags, root=root, gh=gh, fetch=fetch,
                                          pages=pages)
+    if scope is not None:
+        # A set about the study scope seeds its errors only where the judge
+        # will read, and draws its negatives from there too: a mutant in
+        # facts.json under `--scope study` would never be judged, and §6's
+        # recall would then be measured on a denominator that cannot score.
+        pool = [c for c in pool if c.artifact in scope]
     mutants, seeded, discarded = seed_mutants(
         pool, assets_by_tag, n=n_mutants, pages=pages, seed=seed,
         protect=sorted(gold_units(gold_rows)))
@@ -2062,6 +2072,10 @@ def build(*, tags: Sequence[str] = DEFAULT_CHAPTERS, root=None, gh=None,
         "discarded": discarded,
         "controls": controls() if with_controls else [],
         "build_seconds": round(time.time() - t0, 1),
+        # Recorded so `--run` judges the same scope the set was seeded for. A
+        # set seeded for the study scope but run over every asset would spend
+        # quota on facts and legends; the other way round, it could not score.
+        "scope": sorted(scope) if scope is not None else None,
     }
     doc["set_id"] = set_id(doc)
     doc["counts"] = _set_counts(doc)
@@ -2436,9 +2450,11 @@ def run_prepared(*, root=None, tags: Sequence[str] | None = None,
         items_by_tag.setdefault(x["tag"], []).append(x["nid"])
 
     gh = LocalGh(seeded_root(root))
+    scope = doc.get("scope")
     opts = qc_run.Options(
         tags=list(chapters), calibration=True, no_upload=True,
-        root=judge_root(root), model=model, page_limit=page_limit)
+        root=judge_root(root), model=model, page_limit=page_limit,
+        scope=frozenset(scope) if scope else None)
     # qc_store.snapshot() commits `_qc/orig/` by explicit path (§2.5). Under
     # the calibration root that directory holds SEEDED bytes, and committing
     # those would put 60 deliberate errors into the history of the repository
@@ -3401,6 +3417,12 @@ def main(argv=None) -> int:
                     help="use only cached material; never call gh")
     ap.add_argument("--model", help="override the agy model (§4: pro-high)")
     ap.add_argument("--page-limit", type=int)
+    ap.add_argument("--scope", help="build a set for these assets only: "
+                    "'study' (guide, flashcards, quiz) or a comma list")
+    ap.add_argument("--no-gold", action="store_true",
+                    help="leave out the adjudicated gold items (and their chapters)")
+    ap.add_argument("--no-controls", action="store_true",
+                    help="leave out the negative-control runs (they cost calls)")
     ap.add_argument("--qc-dir", help="use this _qc/ tree instead of the repo's")
     ap.add_argument("--force", action="store_true",
                     help="rebuild even though the current set has already been "
@@ -3416,9 +3438,12 @@ def main(argv=None) -> int:
         asked.extend(x.strip() for x in str(chunk).split(",") if x.strip())
 
     if a.build:
+        import qc_run
         doc = build(tags=asked or DEFAULT_CHAPTERS, root=root,
                     fetch=not a.no_fetch, n_mutants=a.mutants,
-                    n_negatives=a.negatives, force=a.force)
+                    n_negatives=a.negatives, force=a.force,
+                    scope=qc_run.parse_scope(a.scope),
+                    with_gold=not a.no_gold, with_controls=not a.no_controls)
         c = doc["counts"]
         _print(f"נבנה ב-{doc['build_seconds']}s: {c['mutants']} מוטנטים, "
                f"{c['negatives']} שליליים, {c['gold_total']} פריטי זהב "

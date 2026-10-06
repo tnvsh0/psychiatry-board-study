@@ -379,6 +379,13 @@ class Options:
     root: Path | None = None              # the _qc/ tree; None = qc_store's
     model: str | None = None
     max_rejudge: int = MAX_REJUDGE_ROUNDS
+    # The release assets the judge reads; None = every judged asset. Owner's
+    # decision 2026-10-01: the agy quota buys ~55 calls a week, the study guide,
+    # the cards and the quiz are what he studies from, and facts.json and the
+    # plate legends feed plates he will draw only after studying a chapter. The
+    # assets left out are NOT judged and are reported as uncovered — the chapter
+    # does not read as checked on the strength of a judge that never read them.
+    scope: frozenset | None = None
 
     @property
     def uploads_allowed(self) -> bool:
@@ -1039,6 +1046,16 @@ class ChapterRun:
         describes what was actually judged.
         """
         units = self.units()
+        if self.opts.scope is not None:
+            # Out of scope means out of the BUNDLE, never out of the chapter:
+            # uncovered_units() still counts these, so publishable() holds their
+            # assets and the verdict cannot call the chapter fully covered.
+            left = sorted({u.artifact for u in units
+                           if u.artifact not in self.opts.scope})
+            units = [u for u in units if u.artifact in self.opts.scope]
+            if left and round_no == 0:
+                self.notes.append("לא נשפטו בכוונה (מחוץ להיקף): "
+                                  + ", ".join(left))
         cites = qc_cite.cites_by_unit(units)
         out_dir = self.work / f"round{round_no}"
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -2483,11 +2500,29 @@ def build_options(a) -> Options:
     tags = []
     for chunk in (a.chapters or []):
         tags.extend(x for x in str(chunk).split(",") if x.strip())
+    scope = getattr(a, "scope", None)
     return Options(
         tags=tags, all_chapters=bool(a.all), calibration=bool(a.calibration),
         dry_run=bool(a.dry_run), no_upload=bool(a.no_upload),
         page_limit=a.page_limit, use_books=not a.no_books,
-        root=Path(a.qc_dir) if a.qc_dir else None, model=a.model)
+        root=Path(a.qc_dir) if a.qc_dir else None, model=a.model,
+        scope=parse_scope(scope))
+
+
+# What `--scope study` means: the three assets the owner studies from.
+STUDY_SCOPE = frozenset({"study_guide.md", "report.md", "flashcards.json",
+                         "quiz.json"})
+
+
+def parse_scope(value) -> frozenset | None:
+    """`None` / "" = everything; "study" = STUDY_SCOPE; else a comma list of
+    asset names. report.md is study_guide.md's name in the oldest chapters."""
+    if not value:
+        return None
+    value = str(value).strip()
+    if value == "study":
+        return STUDY_SCOPE
+    return frozenset(x.strip() for x in value.split(",") if x.strip())
 
 
 def main(argv=None) -> int:
@@ -2512,6 +2547,9 @@ def main(argv=None) -> int:
                          "\"2-8 weeks\") and nothing else; exit 3 if it fails")
     ap.add_argument("--model", help="override the agy model (§4: pro-high)")
     ap.add_argument("--qc-dir", help="use this _qc/ tree instead of the repo's")
+    ap.add_argument("--scope",
+                    help="assets to judge: 'study' (guide, flashcards, quiz) "
+                         "or a comma list; default every judged asset")
     a = ap.parse_args(argv)
     if not a.all and not a.chapters and not a.probe:
         ap.error("give --chapters, --all or --probe")
