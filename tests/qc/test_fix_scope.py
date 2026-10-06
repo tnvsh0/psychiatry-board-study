@@ -132,3 +132,39 @@ class CalibrationSetIdentity(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RangeMutantsScoreOnTheBoundThatMoved(unittest.TestCase):
+    """`65 ל-75` seeded as `66 ל-75`: the judge must name 66, in any form."""
+
+    M = {"mutation": "number", "before": "65 ל-75", "after": "66 ל-75"}
+
+    def hit(self, said="", problem=""):
+        import qc_calibrate as Q
+        return Q._hits_mutant({"said": said, "problem": problem}, self.M)
+
+    def test_quoting_the_span_naturally_is_a_hit(self):
+        for said in ("נע בין **66 ל-75**", "בין 66 ל-75", "IQ 66-75",
+                     "הטווח הוא 66 עד 75"):
+            self.assertTrue(self.hit(said=said), said)
+
+    def test_naming_the_moved_bound_alone_is_a_hit(self):
+        self.assertTrue(self.hit(problem="הספר מציין 65, לא 66"))
+
+    def test_naming_only_the_unchanged_bound_is_not(self):
+        """The flattering direction the old test took."""
+        self.assertFalse(self.hit(problem="הספר מציין 75"))
+
+    def test_an_unrelated_range_is_not(self):
+        self.assertFalse(self.hit(said="בין 10 ל-13"))
+
+    def test_a_single_value_mutant_is_scored_exactly_as_before(self):
+        """The new branch is only for multi-value spans; one value goes through
+        _hits_value unchanged, bucket rules included."""
+        import qc_calibrate as Q
+        m = {"mutation": "number", "before": "8", "after": "9"}
+        for said in ("9", "המספר הוא 9", "9 קריטריונים", "19 mg", "8 בלבד"):
+            f = {"said": said}
+            self.assertEqual(Q._hits_mutant(f, m), Q._hits_value(f, "9"), said)
+        self.assertTrue(Q._hits_mutant({"said": "המספר הוא 9"}, m))
+        self.assertFalse(Q._hits_mutant({"said": "19 mg"}, m))

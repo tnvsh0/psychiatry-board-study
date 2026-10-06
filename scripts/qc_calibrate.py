@@ -2774,12 +2774,43 @@ def _key_needles(option: str, before: str = "") -> list[str]:
     return out or [text[:80]]
 
 
+def _endpoints(keys: set[tuple]) -> set[float]:
+    """Every number in a set of value keys, a range contributing both ends."""
+    out: set[float] = set()
+    for key in keys:
+        kind, val = key[0], str(key[-1])
+        parts = val.strip("()").split(",") if kind == "range" else (
+            [val] if kind == "number" else [])
+        for p in parts:
+            try:
+                out.add(float(p.strip()))
+            except ValueError:
+                pass
+    return out
+
+
 def _hits_mutant(f: dict, m: dict) -> bool:
     """Did this finding name the value that was seeded into this mutant?"""
     if str(m.get("mutation") or "") == "key_swap":
         return any(_hits_value(f, n) for n in
                    _key_needles(m.get("after"), str(m.get("before") or "")))
-    return _hits_value(f, str(m.get("after") or ""))
+    after = str(m.get("after") or "")
+    # A seeded span holding a RANGE. The bare span `66 ל-75` parses as two
+    # numbers, while the judge quoting it naturally — `נע בין 66 ל-75` — parses
+    # as one range value, so the two never intersected and a correct finding
+    # scored as a miss (021 and 011's guides, found by the 2026-10-06 review
+    # before any result was in). The other way round the old test was
+    # flattering: a finding that mentioned only the UNCHANGED bound (75) hit.
+    # So the needle is the bound that moved, compared as a number whether the
+    # finding wrote it alone or inside a range.
+    after_keys = _value_keys(after)
+    if len(after_keys) >= 2 or any(k[0] == "range" for k in after_keys):
+        moved = _endpoints(after_keys) - _endpoints(
+            _value_keys(str(m.get("before") or "")))
+        if moved:
+            said = (str(f.get("said") or ""), str(f.get("problem") or ""))
+            return any(moved & _endpoints(_value_keys(h)) for h in said)
+    return _hits_value(f, after)
 
 
 def score(doc: dict, *, root=None) -> dict:
@@ -2884,6 +2915,11 @@ def score(doc: dict, *, root=None) -> dict:
         "by_unit_type": _breakdown(judged_m, "unit_type"),
         "by_book": _breakdown(recall_pool, "book"),
         "by_mutation": _breakdown(judged_m, "mutation"),
+        # False positives per unit type, the twin of by_unit_type. The headline
+        # rate is mostly the study guide's — 59 of the study-scope set's 93
+        # negatives are guide units — so "can a NOTE on a flashcard be trusted"
+        # had no number of its own, and that is the question the owner decides.
+        "fp_by_unit_type": _fp_breakdown(judged_n, "unit_type"),
         "mutants": mutants,
         "negatives": negs,
         "gold": gold_scored,
@@ -2891,6 +2927,14 @@ def score(doc: dict, *, root=None) -> dict:
     out.update(_call_metrics(doc, root=root))
     out["controls"] = _control_metrics(doc)
     return out
+
+
+def _fp_breakdown(rows: Sequence[dict], key: str) -> dict:
+    groups: dict[str, list[dict]] = {}
+    for r in rows:
+        groups.setdefault(str(r.get(key) or "?"), []).append(r)
+    return {k: rate(sum(1 for r in v if r.get("fp_any")), len(v))
+            for k, v in sorted(groups.items())}
 
 
 def _breakdown(rows: Sequence[dict], key: str) -> dict:
@@ -3293,6 +3337,7 @@ def render_report(doc: dict, s: dict) -> str:
     L += _table("recall לפי ספר", s.get("by_book") or {})
     L += _table("recall לפי סוג שינוי", s.get("by_mutation") or {})
     L += _table("recall לפי סוג יחידה", s.get("by_unit_type") or {})
+    L += _table("false positives לפי סוג יחידה", s.get("fp_by_unit_type") or {})
 
     L.append("## בקרות שליליות")
     L.append("")
