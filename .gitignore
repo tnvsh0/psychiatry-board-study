@@ -74,3 +74,4 @@ _qc/*/*
 # holds SEEDED copies of chapters with deliberate errors in them; nothing in it
 # may ever reach the history of the repo that publishes the owner's material.
 _qc_cal2/
+_bulk/drive_ids.json
