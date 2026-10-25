@@ -535,6 +535,37 @@ def render_erratum_card(e: dict, *, title: str = "") -> None:
     render_qc_mark(e, compact=True)
 
 
+# ── Studies and assessment tools ──────────────────────────────────────────
+def render_references(items: list, kind: str | None) -> None:
+    """One block per study or tool: Hebrew summary first, then where it is from.
+
+    origin "book" = described in the course textbooks (book and printed page);
+    origin "pubmed" = beyond the books, cited from its PubMed record.
+    """
+    for it in items:
+        if kind == "tools":
+            name = it.get("name") or ""
+            abbrev = it.get("abbrev") or ""
+            title = f"{abbrev} — {name}" if abbrev and name and abbrev != name else (abbrev or name)
+            facts = " · ".join(x for x in (it.get("measures"), it.get("ages"),
+                                           it.get("informant"), it.get("use")) if x)
+        else:
+            title = it.get("name") or ""
+            facts = " · ".join(x for x in (it.get("design"), str(it.get("year") or "")) if x)
+        if it.get("origin") == "pubmed":
+            where = (f"מחוץ לספרים · {', '.join(it.get('authors') or [it.get('first_author', '')])}. "
+                     f"{it.get('title', '')} {it.get('journal', '')} {it.get('year', '')}. "
+                     f"[PubMed {it.get('pmid')}](https://pubmed.ncbi.nlm.nih.gov/{it.get('pmid')}/)")
+        else:
+            where = f"מתוך {it.get('book')}, עמ' {it.get('page')}"
+        st.markdown(
+            f'<div dir="rtl" style="text-align:right;margin:10px 0 2px"><b>{_esc(title)}</b>'
+            + (f'<span style="opacity:.65;font-size:.85em"> · {_esc(facts)}</span>' if facts else "")
+            + f'</div><div dir="rtl" style="text-align:right">{_esc(it.get("summary_he", ""))}</div>',
+            unsafe_allow_html=True)
+        st.caption(where)
+
+
 # ── Flashcard SR rendering ─────────────────────────────────────────────────
 def _extract_qa(card_raw: dict) -> tuple[str, str]:
     """Pull (question, answer) from a flashcard JSON record."""
@@ -1312,6 +1343,24 @@ def render_day_page(day, symbols, progress, palette):
                     render_chapter_flashcards_sr(idx, cards_raw)
                 elif cards_raw is not None:
                     st.json(cards_raw)
+
+    # Important studies and assessment tools (build_references.py). Every item
+    # passed a check before it was published: a quote found on the cited book
+    # page, or a matching PubMed record whose abstract the summary is drawn from.
+    for asset_name, label in (("studies.json", "📚 מחקרים חשובים"),
+                              ("tools.json", "📏 שאלונים וכלי הערכה")):
+        url = assets.get(asset_name)
+        if not url:
+            continue
+        raw = fetch_text(url)
+        try:
+            doc = json.loads(raw) if raw else {}
+        except Exception:
+            doc = {}
+        items = doc.get("items") or []
+        if items:
+            with st.expander(f"{label} ({len(items)})", expanded=False):
+                render_references(items, doc.get("kind"))
 
     # Quiz — handles NotebookLM's answerOptions structure
     quiz_url = assets.get("quiz.json")
