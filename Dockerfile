@@ -10,6 +10,7 @@ RUN pip install --no-cache-dir streamlit requests
 
 # app.py imports sr_engine; put them side by side so the bare import resolves.
 COPY app/app.py .
+COPY app/quiz_logic.py .
 COPY scripts/sr_engine.py .
 
 # schedule + symbols + per-day artifacts are fetched live from the (private)

@@ -59,6 +59,22 @@ BRANCH = "main"
 RAW_BASE = f"https://raw.githubusercontent.com/{GITHUB_REPO}/{BRANCH}"
 API_BASE = f"https://api.github.com/repos/{GITHUB_REPO}"
 
+
+@st.cache_resource(ttl=3600)
+def _token_is_live(token: str) -> bool:
+    """A revoked token turns every authenticated call into a 401, which hides a
+    public repo's releases behind "content not generated yet". Check it once an
+    hour and drop it if GitHub rejects it, so reads fall back to anonymous."""
+    try:
+        r = requests.get(API_BASE, headers={"Authorization": f"Bearer {token}"}, timeout=10)
+    except requests.RequestException:
+        return True
+    return r.status_code not in (401, 403)
+
+
+if GITHUB_TOKEN and not _token_is_live(GITHUB_TOKEN):
+    GITHUB_TOKEN = ""
+
 # Local path (used when running from inside the repo)
 LOCAL_ROOT = Path(__file__).resolve().parent.parent
 SCHEDULE_LOCAL = LOCAL_ROOT / "schedule" / "schedule.json"
